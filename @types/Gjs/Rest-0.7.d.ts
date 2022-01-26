@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Rest-0.7
  */
@@ -77,7 +83,8 @@ interface ProxyCallContinuousCallback {
 interface ProxyCallUploadCallback {
     (call: ProxyCall, total: number, uploaded: number, error: GLib.Error, weak_object: GObject.Object, userdata?: object | null): void
 }
-export interface OAuth2Proxy_ConstructProps extends Proxy_ConstructProps {
+interface OAuth2Proxy_ConstructProps extends Proxy_ConstructProps {
+    /* Constructor properties of Rest-0.7.Rest.OAuth2Proxy */
     access_token?: string
     auth_endpoint?: string
     client_id?: string
@@ -93,11 +100,10 @@ class OAuth2Proxy {
     url_format: string
     user_agent: string
     username: string
-    /* Fields of Rest-0.7.Rest.OAuth2Proxy */
-    parent: Proxy
-    priv: OAuth2ProxyPrivate
+    /* Fields of Rest-0.7.Rest.Proxy */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.OAuth2Proxy */
     build_login_url(redirect_uri: string): string
     build_login_url_full(redirect_uri: string, extra_params: GLib.HashTable): string
@@ -174,20 +180,20 @@ class OAuth2Proxy {
     _init (config?: OAuth2Proxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(client_id: string, auth_endpoint: string, url_format: string, binding_required: boolean): OAuth2Proxy
+    /* Function overloads */
     static new(url_format: string, binding_required: boolean): OAuth2Proxy
     static new_with_token(client_id: string, access_token: string, auth_endpoint: string, url_format: string, binding_required: boolean): OAuth2Proxy
     static extract_access_token(url: string): string
     static $gtype: GObject.Type
 }
-export interface OAuth2ProxyCall_ConstructProps extends ProxyCall_ConstructProps {
+interface OAuth2ProxyCall_ConstructProps extends ProxyCall_ConstructProps {
 }
 class OAuth2ProxyCall {
-    /* Fields of Rest-0.7.Rest.OAuth2ProxyCall */
-    parent: ProxyCall
     /* Fields of Rest-0.7.Rest.ProxyCall */
-    priv: ProxyCallPrivate
+    readonly parent: GObject.Object
+    readonly priv: ProxyCallPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.ProxyCall */
     add_header(header: string, value: string): void
     add_param(name: string, value: string): void
@@ -259,7 +265,8 @@ class OAuth2ProxyCall {
     _init (config?: OAuth2ProxyCall_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface OAuthProxy_ConstructProps extends Proxy_ConstructProps {
+interface OAuthProxy_ConstructProps extends Proxy_ConstructProps {
+    /* Constructor properties of Rest-0.7.Rest.OAuthProxy */
     consumer_key?: string
     consumer_secret?: string
     signature_host?: string
@@ -281,10 +288,10 @@ class OAuthProxy {
     url_format: string
     user_agent: string
     username: string
-    /* Fields of Rest-0.7.Rest.OAuthProxy */
-    parent: Proxy
+    /* Fields of Rest-0.7.Rest.Proxy */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.OAuthProxy */
     access_token(function_: string, verifier: string): boolean
     access_token_async(function_: string, verifier: string, callback: OAuthProxyAuthCallback, weak_object: GObject.Object): boolean
@@ -377,19 +384,19 @@ class OAuthProxy {
     _init (config?: OAuthProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(consumer_key: string, consumer_secret: string, url_format: string, binding_required: boolean): OAuthProxy
+    /* Function overloads */
     static new(url_format: string, binding_required: boolean): OAuthProxy
     static new_with_token(consumer_key: string, consumer_secret: string, token: string, token_secret: string, url_format: string, binding_required: boolean): OAuthProxy
     static $gtype: GObject.Type
 }
-export interface OAuthProxyCall_ConstructProps extends ProxyCall_ConstructProps {
+interface OAuthProxyCall_ConstructProps extends ProxyCall_ConstructProps {
 }
 class OAuthProxyCall {
-    /* Fields of Rest-0.7.Rest.OAuthProxyCall */
-    parent: ProxyCall
     /* Fields of Rest-0.7.Rest.ProxyCall */
-    priv: ProxyCallPrivate
+    readonly parent: GObject.Object
+    readonly priv: ProxyCallPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.OAuthProxyCall */
     parse_token_reponse(): void
     parse_token_response(): void
@@ -464,7 +471,8 @@ class OAuthProxyCall {
     _init (config?: OAuthProxyCall_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Proxy_ConstructProps extends GObject.Object_ConstructProps {
+interface Proxy_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Rest-0.7.Rest.Proxy */
     binding_required?: boolean
     disable_cookies?: boolean
     password?: string
@@ -483,10 +491,8 @@ class Proxy {
     url_format: string
     user_agent: string
     username: string
-    /* Fields of Rest-0.7.Rest.Proxy */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.Proxy */
     add_soup_feature(feature: Soup.SessionFeature): void
     get_user_agent(): string
@@ -559,14 +565,11 @@ class Proxy {
     static new_with_authentication(url_format: string, binding_required: boolean, username: string, password: string): Proxy
     static $gtype: GObject.Type
 }
-export interface ProxyAuth_ConstructProps extends GObject.Object_ConstructProps {
+interface ProxyAuth_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ProxyAuth {
-    /* Fields of Rest-0.7.Rest.ProxyAuth */
-    parent: GObject.Object
-    priv: ProxyAuthPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.ProxyAuth */
     cancel(): void
     pause(): void
@@ -614,15 +617,13 @@ class ProxyAuth {
     _init (config?: ProxyAuth_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ProxyCall_ConstructProps extends GObject.Object_ConstructProps {
+interface ProxyCall_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Rest-0.7.Rest.ProxyCall */
     proxy?: Proxy
 }
 class ProxyCall {
-    /* Fields of Rest-0.7.Rest.ProxyCall */
-    parent: GObject.Object
-    priv: ProxyCallPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.ProxyCall */
     add_header(header: string, value: string): void
     add_param(name: string, value: string): void
@@ -694,13 +695,11 @@ class ProxyCall {
     _init (config?: ProxyCall_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface XmlParser_ConstructProps extends GObject.Object_ConstructProps {
+interface XmlParser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class XmlParser {
-    /* Fields of Rest-0.7.Rest.XmlParser */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.XmlParser */
     parse_from_data(data: string, len: number): XmlNode
     /* Methods of GObject-2.0.GObject.Object */
@@ -750,12 +749,12 @@ class XmlParser {
 }
 abstract class OAuth2ProxyCallClass {
     /* Fields of Rest-0.7.Rest.OAuth2ProxyCallClass */
-    parent_class: ProxyCallClass
+    readonly parent_class: ProxyCallClass
     static name: string
 }
 abstract class OAuth2ProxyClass {
     /* Fields of Rest-0.7.Rest.OAuth2ProxyClass */
-    parent_class: ProxyClass
+    readonly parent_class: ProxyClass
     static name: string
 }
 class OAuth2ProxyPrivate {
@@ -763,12 +762,12 @@ class OAuth2ProxyPrivate {
 }
 abstract class OAuthProxyCallClass {
     /* Fields of Rest-0.7.Rest.OAuthProxyCallClass */
-    parent_class: ProxyCallClass
+    readonly parent_class: ProxyCallClass
     static name: string
 }
 abstract class OAuthProxyClass {
     /* Fields of Rest-0.7.Rest.OAuthProxyClass */
-    parent_class: ProxyClass
+    readonly parent_class: ProxyClass
     static name: string
 }
 class Param {
@@ -783,9 +782,9 @@ class Param {
     unref(): void
     static name: string
     /* Static methods and pseudo-constructors */
-    static new_full(name: string, use: MemoryUse, data: Uint8Array[], content_type: string, filename: string): Param
+    static new_full(name: string, use: MemoryUse, data: Uint8Array, content_type: string, filename: string): Param
     static new_string(name: string, use: MemoryUse, string: string): Param
-    static new_with_owner(name: string, data: Uint8Array[], content_type: string, filename?: string | null, owner?: object | null, owner_dnotify?: GLib.DestroyNotify | null): Param
+    static new_with_owner(name: string, data: Uint8Array, content_type: string, filename?: string | null, owner?: object | null, owner_dnotify?: GLib.DestroyNotify | null): Param
 }
 class Params {
     /* Methods of Rest-0.7.Rest.Params */
@@ -805,7 +804,7 @@ class ParamsIter {
 }
 abstract class ProxyAuthClass {
     /* Fields of Rest-0.7.Rest.ProxyAuthClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ProxyAuthPrivate {
@@ -813,8 +812,8 @@ class ProxyAuthPrivate {
 }
 abstract class ProxyCallClass {
     /* Fields of Rest-0.7.Rest.ProxyCallClass */
-    prepare: (call: ProxyCall) => boolean
-    serialize_params: (call: ProxyCall) => [ /* returnType */ boolean, /* content_type */ string, /* content */ string, /* content_len */ number ]
+    readonly prepare: (call: ProxyCall) => boolean
+    readonly serialize_params: (call: ProxyCall) => [ /* returnType */ boolean, /* content_type */ string, /* content */ string, /* content_len */ number ]
     static name: string
 }
 class ProxyCallPrivate {
@@ -822,17 +821,17 @@ class ProxyCallPrivate {
 }
 abstract class ProxyClass {
     /* Fields of Rest-0.7.Rest.ProxyClass */
-    new_call: (proxy: Proxy) => ProxyCall
-    authenticate: (proxy: Proxy, auth: ProxyAuth, retrying: boolean) => boolean
+    readonly new_call: (proxy: Proxy) => ProxyCall
+    readonly authenticate: (proxy: Proxy, auth: ProxyAuth, retrying: boolean) => boolean
     static name: string
 }
 class XmlNode {
     /* Fields of Rest-0.7.Rest.XmlNode */
-    name: string
-    content: string
-    children: GLib.HashTable
-    attrs: GLib.HashTable
-    next: XmlNode
+    readonly name: string
+    readonly content: string
+    readonly children: GLib.HashTable
+    readonly attrs: GLib.HashTable
+    readonly next: XmlNode
     /* Methods of Rest-0.7.Rest.XmlNode */
     add_attr(attribute: string, value: string): void
     add_child(tag: string): XmlNode
@@ -845,7 +844,7 @@ class XmlNode {
 }
 abstract class XmlParserClass {
     /* Fields of Rest-0.7.Rest.XmlParserClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

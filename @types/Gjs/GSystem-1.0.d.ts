@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GSystem-1.0
  */
@@ -59,11 +65,11 @@ function shutil_cp_al_or_fallback(src: Gio.File, dest: Gio.File, cancellable?: G
 function shutil_rm_rf(path: Gio.File, cancellable?: Gio.Cancellable | null): boolean
 function shutil_rm_rf_at(dfd: number, path: string, cancellable?: Gio.Cancellable | null): boolean
 function stdout_is_journal(): boolean
-export interface Console_ConstructProps extends GObject.Object_ConstructProps {
+interface Console_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Console {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSystem-1.0.GSystem.Console */
     begin_status_line(line: string, cancellable?: Gio.Cancellable | null): boolean
     end_status_line(cancellable?: Gio.Cancellable | null): boolean
@@ -116,12 +122,13 @@ class Console {
     static get_stdout(): Gio.OutputStream
     static $gtype: GObject.Type
 }
-export interface Subprocess_ConstructProps extends GObject.Object_ConstructProps {
+interface Subprocess_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GSystem-1.0.GSystem.Subprocess */
     context?: SubprocessContext
 }
 class Subprocess {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSystem-1.0.GSystem.Subprocess */
     force_exit(): void
     get_pid(): GLib.Pid
@@ -184,14 +191,15 @@ class Subprocess {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SubprocessContext_ConstructProps extends GObject.Object_ConstructProps {
+interface SubprocessContext_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GSystem-1.0.GSystem.SubprocessContext */
     argv?: string[]
 }
 class SubprocessContext {
     /* Properties of GSystem-1.0.GSystem.SubprocessContext */
     argv: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSystem-1.0.GSystem.SubprocessContext */
     argv_append(arg: string): void
     open_pipe_read(): [ /* returnType */ boolean, /* out_stream */ Gio.InputStream, /* out_fdno */ number ]
@@ -259,9 +267,9 @@ class SubprocessContext {
 }
 class DirFdIterator {
     /* Fields of GSystem-1.0.GSystem.DirFdIterator */
-    initialized: boolean
-    fd: number
-    padding_data: object[]
+    readonly initialized: boolean
+    readonly fd: number
+    readonly padding_data: object[]
     static name: string
 }
 }

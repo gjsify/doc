@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * FolksDummy-0.6
  */
@@ -11,7 +17,7 @@ import type Folks from './Folks-0.6';
 
 export namespace FolksDummy {
 
-export interface Backend_ConstructProps extends Folks.Backend_ConstructProps {
+interface Backend_ConstructProps extends Folks.Backend_ConstructProps {
 }
 class Backend {
     /* Properties of Folks-0.6.Folks.Backend */
@@ -20,7 +26,7 @@ class Backend {
     readonly name: string
     readonly persona_stores: Gee.Map
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksDummy-0.6.FolksDummy.Backend */
     register_persona_stores(stores: Gee.Set, enable_stores: boolean): void
     unregister_persona_stores(stores: Gee.Set): void
@@ -108,25 +114,41 @@ class Backend {
     static new(): Backend
     static $gtype: GObject.Type
 }
-export interface FullPersona_ConstructProps extends Persona_ConstructProps {
+interface FullPersona_ConstructProps extends Persona_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.AntiLinkable */
     anti_links?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.AvatarDetails */
     avatar?: Gio.LoadableIcon
+    /* Constructor properties of Folks-0.6.Folks.BirthdayDetails */
     birthday?: GLib.DateTime
     calendar_event_id?: string
+    /* Constructor properties of Folks-0.6.Folks.EmailDetails */
     email_addresses?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.FavouriteDetails */
     is_favourite?: boolean
+    /* Constructor properties of Folks-0.6.Folks.GenderDetails */
     gender?: Folks.Gender
+    /* Constructor properties of Folks-0.6.Folks.GroupDetails */
     groups?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.ImDetails */
     im_addresses?: Gee.MultiMap
+    /* Constructor properties of Folks-0.6.Folks.LocalIdDetails */
     local_ids?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.NameDetails */
     structured_name?: Folks.StructuredName
     full_name?: string
     nickname?: string
+    /* Constructor properties of Folks-0.6.Folks.NoteDetails */
     notes?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.PhoneDetails */
     phone_numbers?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.RoleDetails */
     roles?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.UrlDetails */
     urls?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.PostalAddressDetails */
     postal_addresses?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses?: Gee.MultiMap
 }
 class FullPersona {
@@ -172,7 +194,7 @@ class FullPersona {
     /* Properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksDummy-0.6.FolksDummy.FullPersona */
     update_gender(gender: Folks.Gender): void
     update_calendar_event_id(calendar_event_id?: string | null): void
@@ -490,10 +512,13 @@ class FullPersona {
     _init (config?: FullPersona_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(store: PersonaStore, contact_id: string, is_user: boolean, linkable_properties: string[]): FullPersona
+    /* Function overloads */
+    static new(store: PersonaStore, contact_id: string, is_user: boolean, linkable_properties: string[]): FullPersona
     static normalise_im_address(im_address: string, protocol: string): string
     static $gtype: GObject.Type
 }
-export interface PersonaStore_ConstructProps extends Folks.PersonaStore_ConstructProps {
+interface PersonaStore_ConstructProps extends Folks.PersonaStore_ConstructProps {
+    /* Constructor properties of FolksDummy-0.6.FolksDummy.PersonaStore */
     persona_type?: GObject.Type
 }
 class PersonaStore {
@@ -514,7 +539,7 @@ class PersonaStore {
     is_primary_store: boolean
     is_user_set_default: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksDummy-0.6.FolksDummy.PersonaStore */
     update_capabilities(can_add_personas: Folks.MaybeBool, can_alias_personas: Folks.MaybeBool, can_remove_personas: Folks.MaybeBool): void
     freeze_personas_changed(): void
@@ -654,7 +679,8 @@ class PersonaStore {
     static new(id: string, display_name: string, always_writeable_properties: string[]): PersonaStore
     static $gtype: GObject.Type
 }
-export interface Persona_ConstructProps extends Folks.Persona_ConstructProps {
+interface Persona_ConstructProps extends Folks.Persona_ConstructProps {
+    /* Constructor properties of FolksDummy-0.6.FolksDummy.Persona */
     property_change_delay?: number
 }
 class Persona {
@@ -665,7 +691,7 @@ class Persona {
     readonly linkable_properties: string[]
     readonly writeable_properties: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksDummy-0.6.FolksDummy.Persona */
     update_writeable_properties(writeable_properties: string[]): void
     update_linkable_properties(linkable_properties: string[]): void

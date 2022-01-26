@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * HarfBuzz-0.0
  */
@@ -740,25 +746,25 @@ enum ot_math_glyph_part_flags_t {
 enum ot_var_axis_flags_t {
     HIDDEN,
 }
-export const AAT_LAYOUT_NO_SELECTOR_INDEX: number
-export const BUFFER_REPLACEMENT_CODEPOINT_DEFAULT: number
-export const FEATURE_GLOBAL_START: number
-export const LANGUAGE_INVALID: language_t
-export const MAP_VALUE_INVALID: codepoint_t
-export const OT_LAYOUT_DEFAULT_LANGUAGE_INDEX: number
-export const OT_LAYOUT_NO_FEATURE_INDEX: number
-export const OT_LAYOUT_NO_SCRIPT_INDEX: number
-export const OT_LAYOUT_NO_VARIATIONS_INDEX: number
-export const OT_MAX_TAGS_PER_LANGUAGE: number
-export const OT_MAX_TAGS_PER_SCRIPT: number
-export const OT_VAR_NO_AXIS_INDEX: number
-export const SET_VALUE_INVALID: codepoint_t
-export const UNICODE_MAX: number
-export const UNICODE_MAX_DECOMPOSITION_LEN: number
-export const VERSION_MAJOR: number
-export const VERSION_MICRO: number
-export const VERSION_MINOR: number
-export const VERSION_STRING: string
+const AAT_LAYOUT_NO_SELECTOR_INDEX: number
+const BUFFER_REPLACEMENT_CODEPOINT_DEFAULT: number
+const FEATURE_GLOBAL_START: number
+const LANGUAGE_INVALID: language_t
+const MAP_VALUE_INVALID: codepoint_t
+const OT_LAYOUT_DEFAULT_LANGUAGE_INDEX: number
+const OT_LAYOUT_NO_FEATURE_INDEX: number
+const OT_LAYOUT_NO_SCRIPT_INDEX: number
+const OT_LAYOUT_NO_VARIATIONS_INDEX: number
+const OT_MAX_TAGS_PER_LANGUAGE: number
+const OT_MAX_TAGS_PER_SCRIPT: number
+const OT_VAR_NO_AXIS_INDEX: number
+const SET_VALUE_INVALID: codepoint_t
+const UNICODE_MAX: number
+const UNICODE_MAX_DECOMPOSITION_LEN: number
+const VERSION_MAJOR: number
+const VERSION_MICRO: number
+const VERSION_MINOR: number
+const VERSION_STRING: string
 function blob_copy_writable_or_fail(blob: blob_t): blob_t
 function blob_create_from_file(file_name: string): blob_t
 function blob_create_sub_blob(parent: blob_t, offset: number, length: number): blob_t
@@ -770,10 +776,10 @@ function blob_is_immutable(blob: blob_t): bool_t
 function blob_make_immutable(blob: blob_t): void
 function buffer_add(buffer: buffer_t, codepoint: codepoint_t, cluster: number): void
 function buffer_add_codepoints(buffer: buffer_t, text: codepoint_t[], item_offset: number, item_length: number): void
-function buffer_add_latin1(buffer: buffer_t, text: Uint8Array[], item_offset: number, item_length: number): void
+function buffer_add_latin1(buffer: buffer_t, text: Uint8Array, item_offset: number, item_length: number): void
 function buffer_add_utf16(buffer: buffer_t, text: number[], item_offset: number, item_length: number): void
 function buffer_add_utf32(buffer: buffer_t, text: number[], item_offset: number, item_length: number): void
-function buffer_add_utf8(buffer: buffer_t, text: Uint8Array[], item_offset: number, item_length: number): void
+function buffer_add_utf8(buffer: buffer_t, text: Uint8Array, item_offset: number, item_length: number): void
 function buffer_allocation_successful(buffer: buffer_t): bool_t
 function buffer_append(buffer: buffer_t, source: buffer_t, start: number, end: number): void
 function buffer_clear_contents(buffer: buffer_t): void
@@ -803,12 +809,12 @@ function buffer_reset(buffer: buffer_t): void
 function buffer_reverse(buffer: buffer_t): void
 function buffer_reverse_clusters(buffer: buffer_t): void
 function buffer_reverse_range(buffer: buffer_t, start: number, end: number): void
-function buffer_serialize(buffer: buffer_t, start: number, end: number, font: font_t | null, format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [ /* returnType */ number, /* buf */ Uint8Array[], /* buf_consumed */ number | null ]
-function buffer_serialize_format_from_string(str: Uint8Array[]): buffer_serialize_format_t
+function buffer_serialize(buffer: buffer_t, start: number, end: number, font: font_t | null, format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [ /* returnType */ number, /* buf */ Uint8Array, /* buf_consumed */ number | null ]
+function buffer_serialize_format_from_string(str: Uint8Array): buffer_serialize_format_t
 function buffer_serialize_format_to_string(format: buffer_serialize_format_t): string
-function buffer_serialize_glyphs(buffer: buffer_t, start: number, end: number, font: font_t | null, format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [ /* returnType */ number, /* buf */ Uint8Array[], /* buf_consumed */ number | null ]
+function buffer_serialize_glyphs(buffer: buffer_t, start: number, end: number, font: font_t | null, format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [ /* returnType */ number, /* buf */ Uint8Array, /* buf_consumed */ number | null ]
 function buffer_serialize_list_formats(): string[]
-function buffer_serialize_unicode(buffer: buffer_t, start: number, end: number, format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [ /* returnType */ number, /* buf */ Uint8Array[], /* buf_consumed */ number | null ]
+function buffer_serialize_unicode(buffer: buffer_t, start: number, end: number, format: buffer_serialize_format_t, flags: buffer_serialize_flags_t): [ /* returnType */ number, /* buf */ Uint8Array, /* buf_consumed */ number | null ]
 function buffer_set_cluster_level(buffer: buffer_t, cluster_level: buffer_cluster_level_t): void
 function buffer_set_content_type(buffer: buffer_t, content_type: buffer_content_type_t): void
 function buffer_set_direction(buffer: buffer_t, direction: direction_t): void
@@ -825,7 +831,7 @@ function color_get_alpha(color: color_t): number
 function color_get_blue(color: color_t): number
 function color_get_green(color: color_t): number
 function color_get_red(color: color_t): number
-function direction_from_string(str: Uint8Array[]): direction_t
+function direction_from_string(str: Uint8Array): direction_t
 function direction_to_string(direction: direction_t): string
 function face_builder_add_table(face: face_t, tag: tag_t, blob: blob_t): bool_t
 function face_builder_create(): face_t
@@ -847,7 +853,7 @@ function face_reference_table(face: face_t, tag: tag_t): blob_t
 function face_set_glyph_count(face: face_t, glyph_count: number): void
 function face_set_index(face: face_t, index: number): void
 function face_set_upem(face: face_t, upem: number): void
-function feature_from_string(str: Uint8Array[]): [ /* returnType */ bool_t, /* feature */ feature_t ]
+function feature_from_string(str: Uint8Array): [ /* returnType */ bool_t, /* feature */ feature_t ]
 function feature_to_string(feature: feature_t): /* buf */ string[]
 function font_add_glyph_origin_for_direction(font: font_t, glyph: codepoint_t, direction: direction_t): [ /* x */ position_t, /* y */ position_t ]
 function font_create(face: face_t): font_t
@@ -906,7 +912,7 @@ function font_get_scale(font: font_t): [ /* x_scale */ number, /* y_scale */ num
 function font_get_v_extents(font: font_t): [ /* returnType */ bool_t, /* extents */ font_extents_t ]
 function font_get_var_coords_normalized(font: font_t, length: number): number
 function font_get_variation_glyph(font: font_t, unicode: codepoint_t, variation_selector: codepoint_t): [ /* returnType */ bool_t, /* glyph */ codepoint_t ]
-function font_glyph_from_string(font: font_t, s: Uint8Array[]): [ /* returnType */ bool_t, /* glyph */ codepoint_t ]
+function font_glyph_from_string(font: font_t, s: Uint8Array): [ /* returnType */ bool_t, /* glyph */ codepoint_t ]
 function font_glyph_to_string(font: font_t, glyph: codepoint_t, s: string[]): void
 function font_is_immutable(font: font_t): bool_t
 function font_make_immutable(font: font_t): void
@@ -932,7 +938,7 @@ function glib_get_unicode_funcs(): unicode_funcs_t
 function glib_script_from_script(script: script_t): GLib.UnicodeScript
 function glib_script_to_script(script: GLib.UnicodeScript): script_t
 function glyph_info_get_glyph_flags(info: glyph_info_t): glyph_flags_t
-function language_from_string(str: Uint8Array[]): language_t
+function language_from_string(str: Uint8Array): language_t
 function language_get_default(): language_t
 function language_to_string(language: language_t): string
 function map_allocation_successful(map: map_t): bool_t
@@ -1032,7 +1038,7 @@ function ot_var_named_instance_get_subfamily_name_id(face: face_t, instance_inde
 function ot_var_normalize_coords(face: face_t, coords_length: number, design_coords: number): /* normalized_coords */ number
 function ot_var_normalize_variations(face: face_t, variations: variation_t, variations_length: number): /* coords */ number[]
 function script_from_iso15924_tag(tag: tag_t): script_t
-function script_from_string(str: Uint8Array[]): script_t
+function script_from_string(str: Uint8Array): script_t
 function script_get_horizontal_direction(script: script_t): direction_t
 function script_to_iso15924_tag(script: script_t): tag_t
 function segment_properties_equal(a: segment_properties_t, b: segment_properties_t): bool_t
@@ -1072,8 +1078,8 @@ function shape_plan_create_cached2(face: face_t, props: segment_properties_t, us
 function shape_plan_execute(shape_plan: shape_plan_t, font: font_t, buffer: buffer_t, features: feature_t[]): bool_t
 function shape_plan_get_empty(): shape_plan_t
 function shape_plan_get_shaper(shape_plan: shape_plan_t): string
-function tag_from_string(str: Uint8Array[]): tag_t
-function tag_to_string(tag: tag_t): /* buf */ Uint8Array[]
+function tag_from_string(str: Uint8Array): tag_t
+function tag_to_string(tag: tag_t): /* buf */ Uint8Array
 function unicode_combining_class(ufuncs: unicode_funcs_t, unicode: codepoint_t): unicode_combining_class_t
 function unicode_compose(ufuncs: unicode_funcs_t, a: codepoint_t, b: codepoint_t): [ /* returnType */ bool_t, /* ab */ codepoint_t ]
 function unicode_decompose(ufuncs: unicode_funcs_t, ab: codepoint_t): [ /* returnType */ bool_t, /* a */ codepoint_t, /* b */ codepoint_t ]
@@ -1184,19 +1190,19 @@ class face_t {
 }
 class feature_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.feature_t */
-    tag: tag_t
-    value: number
-    start: number
-    end: number
+    readonly tag: tag_t
+    readonly value: number
+    readonly start: number
+    readonly end: number
     /* Methods of HarfBuzz-0.0.HarfBuzz.feature_t */
     _string(): /* buf */ string[]
     static name: string
 }
 class font_extents_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.font_extents_t */
-    ascender: position_t
-    descender: position_t
-    line_gap: position_t
+    readonly ascender: position_t
+    readonly descender: position_t
+    readonly line_gap: position_t
     static name: string
 }
 class font_funcs_t {
@@ -1207,24 +1213,24 @@ class font_t {
 }
 class glyph_extents_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.glyph_extents_t */
-    x_bearing: position_t
-    y_bearing: position_t
-    width: position_t
-    height: position_t
+    readonly x_bearing: position_t
+    readonly y_bearing: position_t
+    readonly width: position_t
+    readonly height: position_t
     static name: string
 }
 class glyph_info_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.glyph_info_t */
-    codepoint: codepoint_t
-    cluster: number
+    readonly codepoint: codepoint_t
+    readonly cluster: number
     static name: string
 }
 class glyph_position_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.glyph_position_t */
-    x_advance: position_t
-    y_advance: position_t
-    x_offset: position_t
-    y_offset: position_t
+    readonly x_advance: position_t
+    readonly y_advance: position_t
+    readonly x_offset: position_t
+    readonly y_offset: position_t
     static name: string
 }
 class language_t {
@@ -1237,56 +1243,56 @@ class map_t {
 }
 class ot_color_layer_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_color_layer_t */
-    glyph: codepoint_t
-    color_index: number
+    readonly glyph: codepoint_t
+    readonly color_index: number
     static name: string
 }
 class ot_math_glyph_part_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_math_glyph_part_t */
-    glyph: codepoint_t
-    start_connector_length: position_t
-    end_connector_length: position_t
-    full_advance: position_t
-    flags: ot_math_glyph_part_flags_t
+    readonly glyph: codepoint_t
+    readonly start_connector_length: position_t
+    readonly end_connector_length: position_t
+    readonly full_advance: position_t
+    readonly flags: ot_math_glyph_part_flags_t
     static name: string
 }
 class ot_math_glyph_variant_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_math_glyph_variant_t */
-    glyph: codepoint_t
-    advance: position_t
+    readonly glyph: codepoint_t
+    readonly advance: position_t
     static name: string
 }
 class ot_name_entry_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_name_entry_t */
-    name_id: ot_name_id_t
-    language: language_t
+    readonly name_id: ot_name_id_t
+    readonly language: language_t
     static name: string
 }
 class ot_var_axis_info_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_var_axis_info_t */
-    axis_index: number
-    tag: tag_t
-    name_id: ot_name_id_t
-    flags: ot_var_axis_flags_t
-    min_value: number
-    default_value: number
-    max_value: number
+    readonly axis_index: number
+    readonly tag: tag_t
+    readonly name_id: ot_name_id_t
+    readonly flags: ot_var_axis_flags_t
+    readonly min_value: number
+    readonly default_value: number
+    readonly max_value: number
     static name: string
 }
 class ot_var_axis_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_var_axis_t */
-    tag: tag_t
-    name_id: ot_name_id_t
-    min_value: number
-    default_value: number
-    max_value: number
+    readonly tag: tag_t
+    readonly name_id: ot_name_id_t
+    readonly min_value: number
+    readonly default_value: number
+    readonly max_value: number
     static name: string
 }
 class segment_properties_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.segment_properties_t */
-    direction: direction_t
-    script: script_t
-    language: language_t
+    readonly direction: direction_t
+    readonly script: script_t
+    readonly language: language_t
     static name: string
 }
 class set_t {
@@ -1303,38 +1309,31 @@ class user_data_key_t {
 }
 class variation_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.variation_t */
-    tag: tag_t
-    value: number
+    readonly tag: tag_t
+    readonly value: number
     /* Methods of HarfBuzz-0.0.HarfBuzz.variation_t */
     _string(buf: string, size: number): void
     static name: string
 }
 class var_int_t {
-    /* Fields of HarfBuzz-0.0.HarfBuzz.var_int_t */
-    u32: number
-    i32: number
-    u16: number[]
-    i16: number[]
-    u8: Uint8Array[]
-    i8: Uint8Array[]
     static name: string
 }
-type bool_t = number
-type codepoint_t = number
-type color_t = number
-type font_get_font_h_extents_func_t = font_get_font_extents_func_t
-type font_get_font_v_extents_func_t = font_get_font_extents_func_t
-type font_get_glyph_h_advance_func_t = font_get_glyph_advance_func_t
-type font_get_glyph_h_advances_func_t = font_get_glyph_advances_func_t
-type font_get_glyph_h_kerning_func_t = font_get_glyph_kerning_func_t
-type font_get_glyph_h_origin_func_t = font_get_glyph_origin_func_t
-type font_get_glyph_v_advance_func_t = font_get_glyph_advance_func_t
-type font_get_glyph_v_advances_func_t = font_get_glyph_advances_func_t
-type font_get_glyph_v_kerning_func_t = font_get_glyph_kerning_func_t
-type font_get_glyph_v_origin_func_t = font_get_glyph_origin_func_t
-type mask_t = number
-type ot_name_id_t = number
-type position_t = number
-type tag_t = number
+    type bool_t = number
+    type codepoint_t = number
+    type color_t = number
+    type font_get_font_h_extents_func_t = font_get_font_extents_func_t
+    type font_get_font_v_extents_func_t = font_get_font_extents_func_t
+    type font_get_glyph_h_advance_func_t = font_get_glyph_advance_func_t
+    type font_get_glyph_h_advances_func_t = font_get_glyph_advances_func_t
+    type font_get_glyph_h_kerning_func_t = font_get_glyph_kerning_func_t
+    type font_get_glyph_h_origin_func_t = font_get_glyph_origin_func_t
+    type font_get_glyph_v_advance_func_t = font_get_glyph_advance_func_t
+    type font_get_glyph_v_advances_func_t = font_get_glyph_advances_func_t
+    type font_get_glyph_v_kerning_func_t = font_get_glyph_kerning_func_t
+    type font_get_glyph_v_origin_func_t = font_get_glyph_origin_func_t
+    type mask_t = number
+    type ot_name_id_t = number
+    type position_t = number
+    type tag_t = number
 }
 export default HarfBuzz;

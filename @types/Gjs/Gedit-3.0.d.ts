@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gedit-3.0
  */
@@ -113,7 +119,7 @@ class WindowActivatable {
     vfunc_update_state(): void
     static name: string
 }
-export interface App_ConstructProps extends Gtk.Application_ConstructProps {
+interface App_ConstructProps extends Gtk.Application_ConstructProps {
 }
 class App {
     /* Properties of Gtk-3.0.Gtk.Application */
@@ -131,12 +137,10 @@ class App {
     readonly is_registered: boolean
     readonly is_remote: boolean
     resource_base_path: string
-    /* Fields of Gedit-3.0.Gedit.App */
-    parent_instance: Gtk.Application
     /* Fields of Gtk-3.0.Gtk.Application */
-    parent: Gio.Application
+    readonly parent: Gio.Application
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.App */
     create_window(screen?: Gdk.Screen | null): Window
     get_documents(): Document[]
@@ -248,6 +252,23 @@ class App {
     vfunc_process_window_event(window: Window, event: Gdk.Event): boolean
     vfunc_set_window_title(window: Window, title: string): void
     vfunc_show_help(parent: Gtk.Window, name: string, link_id: string): boolean
+    vfunc_action_added(action_name: string): void
+    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void
+    vfunc_action_removed(action_name: string): void
+    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void
+    vfunc_activate_action(action_name: string, parameter?: GLib.Variant | null): void
+    vfunc_change_action_state(action_name: string, value: GLib.Variant): void
+    vfunc_get_action_enabled(action_name: string): boolean
+    vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null
+    vfunc_get_action_state(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null
+    vfunc_has_action(action_name: string): boolean
+    vfunc_list_actions(): string[]
+    vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
+    vfunc_add_action(action: Gio.Action): void
+    vfunc_lookup_action(action_name: string): Gio.Action | null
+    vfunc_remove_action(action_name: string): void
     /* Virtual methods of Gtk-3.0.Gtk.Application */
     vfunc_window_added(window: Gtk.Window): void
     vfunc_window_removed(window: Gtk.Window): void
@@ -374,9 +395,14 @@ class App {
     static name: string
     constructor (config?: App_ConstructProps)
     _init (config?: App_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): App
+    /* Function overloads */
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): App
     static $gtype: GObject.Type
 }
-export interface Document_ConstructProps extends GtkSource.Buffer_ConstructProps {
+interface Document_ConstructProps extends GtkSource.Buffer_ConstructProps {
+    /* Constructor properties of Gedit-3.0.Gedit.Document */
     content_type?: string
     use_gvfs_metadata?: boolean
 }
@@ -402,12 +428,11 @@ class Document {
     readonly has_selection: boolean
     readonly paste_target_list: Gtk.TargetList
     text: string
-    /* Fields of Gedit-3.0.Gedit.Document */
-    parent_instance: GtkSource.Buffer
     /* Fields of GtkSource-4.GtkSource.Buffer */
-    priv: GtkSource.BufferPrivate
+    readonly parent_instance: Gtk.TextBuffer
+    readonly priv: GtkSource.BufferPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.Document */
     get_content_type(): string
     get_file(): GtkSource.File
@@ -471,7 +496,7 @@ class Document {
     delete_mark(mark: Gtk.TextMark): void
     delete_mark_by_name(name: string): void
     delete_selection(interactive: boolean, default_editable: boolean): boolean
-    deserialize(content_buffer: Gtk.TextBuffer, format: Gdk.Atom, iter: Gtk.TextIter, data: Uint8Array[]): boolean
+    deserialize(content_buffer: Gtk.TextBuffer, format: Gdk.Atom, iter: Gtk.TextIter, data: Uint8Array): boolean
     deserialize_get_can_create_tags(format: Gdk.Atom): boolean
     deserialize_set_can_create_tags(format: Gdk.Atom, can_create_tags: boolean): void
     end_user_action(): void
@@ -521,7 +546,7 @@ class Document {
     remove_tag(tag: Gtk.TextTag, start: Gtk.TextIter, end: Gtk.TextIter): void
     remove_tag_by_name(name: string, start: Gtk.TextIter, end: Gtk.TextIter): void
     select_range(ins: Gtk.TextIter, bound: Gtk.TextIter): void
-    serialize(content_buffer: Gtk.TextBuffer, format: Gdk.Atom, start: Gtk.TextIter, end: Gtk.TextIter): Uint8Array[]
+    serialize(content_buffer: Gtk.TextBuffer, format: Gdk.Atom, start: Gtk.TextIter, end: Gtk.TextIter): Uint8Array
     set_modified(setting: boolean): void
     set_text(text: string, len: number): void
     unregister_deserialize_format(format: Gdk.Atom): void
@@ -701,11 +726,15 @@ class Document {
     _init (config?: Document_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Document
+    /* Function overloads */
+    static new(table?: Gtk.TextTagTable | null): Document
     static new(table?: Gtk.TextTagTable | null): Document
     static $gtype: GObject.Type
 }
-export interface EncodingsComboBox_ConstructProps extends Gtk.ComboBox_ConstructProps {
+interface EncodingsComboBox_ConstructProps extends Gtk.ComboBox_ConstructProps {
+    /* Constructor properties of Gedit-3.0.Gedit.EncodingsComboBox */
     save_mode?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled?: boolean
 }
 class EncodingsComboBox {
@@ -773,13 +802,13 @@ class EncodingsComboBox {
     /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
     /* Fields of Gtk-3.0.Gtk.ComboBox */
-    parent_instance: Gtk.Bin
+    readonly parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.EncodingsComboBox */
     get_selected_encoding(): GtkSource.Encoding
     set_selected_encoding(encoding: GtkSource.Encoding): void
@@ -824,7 +853,7 @@ class EncodingsComboBox {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1052,6 +1081,7 @@ class EncodingsComboBox {
     set_direction(dir: Gtk.TextDirection): void
     set_double_buffered(double_buffered: boolean): void
     set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
     set_font_map(font_map?: Pango.FontMap | null): void
     set_font_options(options?: cairo.FontOptions | null): void
     set_halign(align: Gtk.Align): void
@@ -1137,6 +1167,7 @@ class EncodingsComboBox {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
@@ -1652,15 +1683,17 @@ class EncodingsComboBox {
     _init (config?: EncodingsComboBox_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(save_mode: boolean): EncodingsComboBox
+    /* Function overloads */
     static new(): EncodingsComboBox
     static $gtype: GObject.Type
 }
-export interface MenuExtension_ConstructProps extends GObject.Object_ConstructProps {
+interface MenuExtension_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gedit-3.0.Gedit.MenuExtension */
     menu?: Gio.Menu
 }
 class MenuExtension {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.MenuExtension */
     append_menu_item(item: Gio.MenuItem): void
     prepend_menu_item(item: Gio.MenuItem): void
@@ -1710,7 +1743,8 @@ class MenuExtension {
     static new(menu: Gio.Menu): MenuExtension
     static $gtype: GObject.Type
 }
-export interface Message_ConstructProps extends GObject.Object_ConstructProps {
+interface Message_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gedit-3.0.Gedit.Message */
     method?: string
     object_path?: string
 }
@@ -1718,11 +1752,8 @@ class Message {
     /* Properties of Gedit-3.0.Gedit.Message */
     method: string
     object_path: string
-    /* Fields of Gedit-3.0.Gedit.Message */
-    parent: GObject.Object
-    priv: MessagePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.Message */
     get_method(): string
     get_object_path(): string
@@ -1779,14 +1810,11 @@ class Message {
     static type_identifier(object_path?: string | null, method?: string | null): string
     static $gtype: GObject.Type
 }
-export interface MessageBus_ConstructProps extends GObject.Object_ConstructProps {
+interface MessageBus_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MessageBus {
-    /* Fields of Gedit-3.0.Gedit.MessageBus */
-    parent: GObject.Object
-    priv: MessageBusPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.MessageBus */
     block(id: number): void
     block_by_func(object_path: string, method: string, callback: MessageCallback): void
@@ -1863,8 +1891,10 @@ class MessageBus {
     static get_default(): MessageBus
     static $gtype: GObject.Type
 }
-export interface ProgressInfoBar_ConstructProps extends Gtk.InfoBar_ConstructProps {
+interface ProgressInfoBar_ConstructProps extends Gtk.InfoBar_ConstructProps {
+    /* Constructor properties of Gedit-3.0.Gedit.ProgressInfoBar */
     has_cancel_button?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class ProgressInfoBar {
@@ -1907,7 +1937,6 @@ class ProgressInfoBar {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -1922,14 +1951,16 @@ class ProgressInfoBar {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
+    /* Fields of Gtk-3.0.Gtk.InfoBar */
+    readonly parent: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.ProgressInfoBar */
     pulse(): void
     set_fraction(fraction: number): void
@@ -1968,7 +1999,7 @@ class ProgressInfoBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2283,6 +2314,7 @@ class ProgressInfoBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -2704,8 +2736,6 @@ class ProgressInfoBar {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
@@ -2741,11 +2771,13 @@ class ProgressInfoBar {
     _init (config?: ProgressInfoBar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(icon_name: string, markup: string, has_cancel: boolean): ProgressInfoBar
+    /* Function overloads */
     static new(): ProgressInfoBar
     static new(orientation: Gtk.Orientation, spacing: number): ProgressInfoBar
     static $gtype: GObject.Type
 }
-export interface Statusbar_ConstructProps extends Gtk.Statusbar_ConstructProps {
+interface Statusbar_ConstructProps extends Gtk.Statusbar_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Statusbar {
@@ -2800,15 +2832,15 @@ class Statusbar {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Statusbar */
-    parent_widget: Gtk.Box
+    readonly parent_widget: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.Statusbar */
     clear_overwrite(): void
     set_overwrite(overwrite: boolean): void
@@ -2838,7 +2870,7 @@ class Statusbar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3153,6 +3185,7 @@ class Statusbar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -3605,12 +3638,15 @@ class Statusbar {
     _init (config?: Statusbar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Statusbar
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): Statusbar
     static $gtype: GObject.Type
 }
-export interface Tab_ConstructProps extends Gtk.Box_ConstructProps {
+interface Tab_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gedit-3.0.Gedit.Tab */
     autosave?: boolean
     autosave_interval?: number
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Tab {
@@ -3670,13 +3706,13 @@ class Tab {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.Tab */
     get_auto_save_enabled(): boolean
     get_auto_save_interval(): number
@@ -3704,7 +3740,7 @@ class Tab {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4019,6 +4055,7 @@ class Tab {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -4475,7 +4512,8 @@ class Tab {
     static get_from_document(doc: Document): Tab
     static $gtype: GObject.Type
 }
-export interface View_ConstructProps extends GtkSource.View_ConstructProps {
+interface View_ConstructProps extends GtkSource.View_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -4551,7 +4589,6 @@ class View {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -4569,16 +4606,15 @@ class View {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Gedit-3.0.Gedit.View */
-    view: GtkSource.View
     /* Fields of GtkSource-4.GtkSource.View */
-    priv: GtkSource.ViewPrivate
+    readonly parent: Gtk.TextView
+    readonly priv: GtkSource.ViewPrivate
     /* Fields of Gtk-3.0.Gtk.TextView */
-    parent_instance: Gtk.Container
+    readonly parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.View */
     copy_clipboard(): void
     cut_clipboard(): void
@@ -4659,7 +4695,7 @@ class View {
     get_top_margin(): number
     get_vadjustment(): Gtk.Adjustment
     get_visible_rect(): /* visible_rect */ Gdk.Rectangle
-    /* get_window clashes with Gtk.Widget.get_window */
+    get_window(win: Gtk.TextWindowType): Gdk.Window | null
     get_window_type(window: Gdk.Window): Gtk.TextWindowType
     get_wrap_mode(): Gtk.WrapMode
     im_context_filter_keypress(event: Gdk.EventKey): boolean
@@ -4698,7 +4734,7 @@ class View {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5013,6 +5049,7 @@ class View {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hscroll_policy(): Gtk.ScrollablePolicy
@@ -5023,6 +5060,17 @@ class View {
     set_vscroll_policy(policy: Gtk.ScrollablePolicy): void
     /* Virtual methods of Gedit-3.0.Gedit.View */
     vfunc_drop_uris(uri_list: string): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
+    vfunc_get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     /* Virtual methods of GtkSource-4.GtkSource.View */
     vfunc_line_mark_activated(iter: Gtk.TextIter, event: Gdk.Event): void
     vfunc_move_lines(down: boolean): void
@@ -5599,8 +5647,6 @@ class View {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
@@ -5642,12 +5688,15 @@ class View {
     _init (config?: View_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(doc: Document): View
+    /* Function overloads */
+    static new(): View
     static new(): View
     static new_with_buffer(buffer: GtkSource.Buffer): View
+    /* Function overloads */
     static new_with_buffer(buffer: Gtk.TextBuffer): View
     static $gtype: GObject.Type
 }
-export interface Window_ConstructProps extends Gtk.ApplicationWindow_ConstructProps {
+interface Window_ConstructProps extends Gtk.ApplicationWindow_ConstructProps {
 }
 class Window {
     /* Properties of Gedit-3.0.Gedit.Window */
@@ -5732,16 +5781,16 @@ class Window {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.ApplicationWindow */
-    parent_instance: Gtk.Window
+    readonly parent_instance: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gedit-3.0.Gedit.Window */
     close_all_tabs(): void
     close_tab(tab: Tab): void
@@ -5881,7 +5930,7 @@ class Window {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6125,6 +6174,7 @@ class Window {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -6213,12 +6263,30 @@ class Window {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gedit-3.0.Gedit.Window */
     vfunc_active_tab_changed(tab: Tab): void
     vfunc_active_tab_state_changed(): void
     vfunc_tab_added(tab: Tab): void
     vfunc_tab_removed(tab: Tab): void
     vfunc_tabs_reordered(): void
+    vfunc_action_added(action_name: string): void
+    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void
+    vfunc_action_removed(action_name: string): void
+    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void
+    vfunc_activate_action(action_name: string, parameter?: GLib.Variant | null): void
+    vfunc_change_action_state(action_name: string, value: GLib.Variant): void
+    vfunc_get_action_enabled(action_name: string): boolean
+    vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null
+    vfunc_get_action_state(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null
+    vfunc_has_action(action_name: string): boolean
+    vfunc_list_actions(): string[]
+    vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
+    vfunc_add_action(action: Gio.Action): void
+    vfunc_lookup_action(action_name: string): Gio.Action | null
+    vfunc_remove_action(action_name: string): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -6786,51 +6854,52 @@ class Window {
     _init (config?: Window_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(application: Gtk.Application): Window
+    /* Function overloads */
     static new(type: Gtk.WindowType): Window
     static $gtype: GObject.Type
 }
 abstract class AppActivatableInterface {
     /* Fields of Gedit-3.0.Gedit.AppActivatableInterface */
-    g_iface: GObject.TypeInterface
-    activate: (activatable: AppActivatable) => void
-    deactivate: (activatable: AppActivatable) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly activate: (activatable: AppActivatable) => void
+    readonly deactivate: (activatable: AppActivatable) => void
     static name: string
 }
 abstract class AppClass {
     /* Fields of Gedit-3.0.Gedit.AppClass */
-    parent_class: Gtk.ApplicationClass
-    show_help: (app: App, parent: Gtk.Window, name: string, link_id: string) => boolean
-    help_link_id: (app: App, name: string, link_id: string) => string
-    set_window_title: (app: App, window: Window, title: string) => void
-    process_window_event: (app: App, window: Window, event: Gdk.Event) => boolean
+    readonly parent_class: Gtk.ApplicationClass
+    readonly show_help: (app: App, parent: Gtk.Window, name: string, link_id: string) => boolean
+    readonly help_link_id: (app: App, name: string, link_id: string) => string
+    readonly set_window_title: (app: App, window: Window, title: string) => void
+    readonly process_window_event: (app: App, window: Window, event: Gdk.Event) => boolean
     static name: string
 }
 abstract class DocumentClass {
     /* Fields of Gedit-3.0.Gedit.DocumentClass */
-    parent_class: GtkSource.BufferClass
-    cursor_moved: (document: Document) => void
-    load: (document: Document) => void
-    loaded: (document: Document) => void
-    save: (document: Document) => void
-    saved: (document: Document) => void
+    readonly parent_class: GtkSource.BufferClass
+    readonly cursor_moved: (document: Document) => void
+    readonly load: (document: Document) => void
+    readonly loaded: (document: Document) => void
+    readonly save: (document: Document) => void
+    readonly saved: (document: Document) => void
     static name: string
 }
 abstract class EncodingsComboBoxClass {
     /* Fields of Gedit-3.0.Gedit.EncodingsComboBoxClass */
-    parent_class: Gtk.ComboBoxClass
+    readonly parent_class: Gtk.ComboBoxClass
     static name: string
 }
 abstract class MenuExtensionClass {
     /* Fields of Gedit-3.0.Gedit.MenuExtensionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MessageBusClass {
     /* Fields of Gedit-3.0.Gedit.MessageBusClass */
-    parent_class: GObject.ObjectClass
-    dispatch: (bus: MessageBus, message: Message) => void
-    registered: (bus: MessageBus, object_path: string, method: string) => void
-    unregistered: (bus: MessageBus, object_path: string, method: string) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly dispatch: (bus: MessageBus, message: Message) => void
+    readonly registered: (bus: MessageBus, object_path: string, method: string) => void
+    readonly unregistered: (bus: MessageBus, object_path: string, method: string) => void
     static name: string
 }
 class MessageBusPrivate {
@@ -6838,7 +6907,7 @@ class MessageBusPrivate {
 }
 abstract class MessageClass {
     /* Fields of Gedit-3.0.Gedit.MessageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MessagePrivate {
@@ -6846,31 +6915,31 @@ class MessagePrivate {
 }
 abstract class ProgressInfoBarClass {
     /* Fields of Gedit-3.0.Gedit.ProgressInfoBarClass */
-    parent_class: Gtk.InfoBarClass
+    readonly parent_class: Gtk.InfoBarClass
     static name: string
 }
 abstract class StatusbarClass {
     /* Fields of Gedit-3.0.Gedit.StatusbarClass */
-    parent_class: Gtk.StatusbarClass
+    readonly parent_class: Gtk.StatusbarClass
     static name: string
 }
 abstract class TabClass {
     /* Fields of Gedit-3.0.Gedit.TabClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 abstract class ViewActivatableInterface {
     /* Fields of Gedit-3.0.Gedit.ViewActivatableInterface */
-    g_iface: GObject.TypeInterface
-    activate: (activatable: ViewActivatable) => void
-    deactivate: (activatable: ViewActivatable) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly activate: (activatable: ViewActivatable) => void
+    readonly deactivate: (activatable: ViewActivatable) => void
     static name: string
 }
 abstract class ViewClass {
     /* Fields of Gedit-3.0.Gedit.ViewClass */
-    parent_class: GtkSource.ViewClass
-    drop_uris: (view: View, uri_list: string) => void
-    padding: object
+    readonly parent_class: GtkSource.ViewClass
+    readonly drop_uris: (view: View, uri_list: string) => void
+    readonly padding: object
     static name: string
 }
 class ViewPrivate {
@@ -6878,20 +6947,20 @@ class ViewPrivate {
 }
 abstract class WindowActivatableInterface {
     /* Fields of Gedit-3.0.Gedit.WindowActivatableInterface */
-    g_iface: GObject.TypeInterface
-    activate: (activatable: WindowActivatable) => void
-    deactivate: (activatable: WindowActivatable) => void
-    update_state: (activatable: WindowActivatable) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly activate: (activatable: WindowActivatable) => void
+    readonly deactivate: (activatable: WindowActivatable) => void
+    readonly update_state: (activatable: WindowActivatable) => void
     static name: string
 }
 abstract class WindowClass {
     /* Fields of Gedit-3.0.Gedit.WindowClass */
-    parent_class: Gtk.ApplicationWindowClass
-    tab_added: (window: Window, tab: Tab) => void
-    tab_removed: (window: Window, tab: Tab) => void
-    tabs_reordered: (window: Window) => void
-    active_tab_changed: (window: Window, tab: Tab) => void
-    active_tab_state_changed: (window: Window) => void
+    readonly parent_class: Gtk.ApplicationWindowClass
+    readonly tab_added: (window: Window, tab: Tab) => void
+    readonly tab_removed: (window: Window, tab: Tab) => void
+    readonly tabs_reordered: (window: Window) => void
+    readonly active_tab_changed: (window: Window, tab: Tab) => void
+    readonly active_tab_state_changed: (window: Window) => void
     static name: string
 }
 class WindowPrivate {

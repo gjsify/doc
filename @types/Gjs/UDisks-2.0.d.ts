@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * UDisks-2.0
  */
@@ -46,10 +52,10 @@ enum PartitionTypeInfoFlags {
     CREATE_ONLY,
     SYSTEM,
 }
-export const ERROR_NUM_ENTRIES: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const ERROR_NUM_ENTRIES: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function block_interface_info(): Gio.DBusInterfaceInfo
 function block_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 function drive_ata_interface_info(): Gio.DBusInterfaceInfo
@@ -752,7 +758,8 @@ class Swapspace {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export interface BlockProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface BlockProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Block */
     configuration?: GLib.Variant
     crypto_backing_device?: string
     device?: string
@@ -809,7 +816,7 @@ class BlockProxy {
     size: number
     symlinks: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1028,12 +1035,19 @@ class BlockProxy {
     _init (config?: BlockProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): BlockProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): BlockProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): BlockProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): BlockProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): BlockProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): BlockProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): BlockProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): BlockProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -1041,7 +1055,8 @@ class BlockProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface BlockSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface BlockSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Block */
     configuration?: GLib.Variant
     crypto_backing_device?: string
     device?: string
@@ -1096,7 +1111,7 @@ class BlockSkeleton {
     size: number
     symlinks: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1297,14 +1312,14 @@ class BlockSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Client {
     /* Properties of UDisks-2.0.UDisks.Client */
     readonly manager: Manager
     readonly object_manager: Gio.DBusObjectManager
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of UDisks-2.0.UDisks.Client */
     get_all_blocks_for_mdraid(raid: MDRaid): Block[]
     get_block_for_dev(block_device_number: number): Block
@@ -1406,7 +1421,8 @@ class Client {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DriveAtaProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface DriveAtaProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.DriveAta */
     aam_enabled?: boolean
     aam_supported?: boolean
     aam_vendor_recommended_value?: number
@@ -1465,7 +1481,7 @@ class DriveAtaProxy {
     write_cache_enabled: boolean
     write_cache_supported: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1686,12 +1702,19 @@ class DriveAtaProxy {
     _init (config?: DriveAtaProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): DriveAtaProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): DriveAtaProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): DriveAtaProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): DriveAtaProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): DriveAtaProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): DriveAtaProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): DriveAtaProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): DriveAtaProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -1699,7 +1722,8 @@ class DriveAtaProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface DriveAtaSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface DriveAtaSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.DriveAta */
     aam_enabled?: boolean
     aam_supported?: boolean
     aam_vendor_recommended_value?: number
@@ -1756,7 +1780,7 @@ class DriveAtaSkeleton {
     write_cache_enabled: boolean
     write_cache_supported: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1959,7 +1983,8 @@ class DriveAtaSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface DriveProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface DriveProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Drive */
     can_power_off?: boolean
     configuration?: GLib.Variant
     connection_bus?: string
@@ -2026,7 +2051,7 @@ class DriveProxy {
     vendor: string
     wwn: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -2207,12 +2232,19 @@ class DriveProxy {
     _init (config?: DriveProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): DriveProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): DriveProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): DriveProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): DriveProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): DriveProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): DriveProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): DriveProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): DriveProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -2220,7 +2252,8 @@ class DriveProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface DriveSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface DriveSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Drive */
     can_power_off?: boolean
     configuration?: GLib.Variant
     connection_bus?: string
@@ -2285,7 +2318,7 @@ class DriveSkeleton {
     vendor: string
     wwn: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -2448,7 +2481,8 @@ class DriveSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface EncryptedProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface EncryptedProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Encrypted */
     child_configuration?: GLib.Variant
 }
 class EncryptedProxy {
@@ -2459,7 +2493,7 @@ class EncryptedProxy {
     /* Properties of UDisks-2.0.UDisks.Encrypted */
     child_configuration: GLib.Variant
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -2584,12 +2618,19 @@ class EncryptedProxy {
     _init (config?: EncryptedProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): EncryptedProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): EncryptedProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): EncryptedProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): EncryptedProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): EncryptedProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): EncryptedProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): EncryptedProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): EncryptedProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -2597,7 +2638,8 @@ class EncryptedProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface EncryptedSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface EncryptedSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Encrypted */
     child_configuration?: GLib.Variant
 }
 class EncryptedSkeleton {
@@ -2606,7 +2648,7 @@ class EncryptedSkeleton {
     /* Properties of UDisks-2.0.UDisks.Encrypted */
     child_configuration: GLib.Variant
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -2713,7 +2755,8 @@ class EncryptedSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface FilesystemProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface FilesystemProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Filesystem */
     mount_points?: string[]
 }
 class FilesystemProxy {
@@ -2724,7 +2767,7 @@ class FilesystemProxy {
     /* Properties of UDisks-2.0.UDisks.Filesystem */
     mount_points: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -2849,12 +2892,19 @@ class FilesystemProxy {
     _init (config?: FilesystemProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): FilesystemProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): FilesystemProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): FilesystemProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): FilesystemProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): FilesystemProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): FilesystemProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): FilesystemProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): FilesystemProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -2862,7 +2912,8 @@ class FilesystemProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface FilesystemSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface FilesystemSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Filesystem */
     mount_points?: string[]
 }
 class FilesystemSkeleton {
@@ -2871,7 +2922,7 @@ class FilesystemSkeleton {
     /* Properties of UDisks-2.0.UDisks.Filesystem */
     mount_points: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -2978,7 +3029,8 @@ class FilesystemSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface JobProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface JobProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Job */
     bytes?: number
     cancelable?: boolean
     expected_end_time?: number
@@ -3007,7 +3059,7 @@ class JobProxy {
     start_time: number
     started_by_uid: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -3139,12 +3191,19 @@ class JobProxy {
     _init (config?: JobProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): JobProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): JobProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): JobProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): JobProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): JobProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): JobProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): JobProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): JobProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -3152,7 +3211,8 @@ class JobProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface JobSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface JobSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Job */
     bytes?: number
     cancelable?: boolean
     expected_end_time?: number
@@ -3179,7 +3239,7 @@ class JobSkeleton {
     start_time: number
     started_by_uid: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -3293,7 +3353,8 @@ class JobSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface LoopProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface LoopProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Loop */
     autoclear?: boolean
     backing_file?: string
     setup_by_uid?: number
@@ -3308,7 +3369,7 @@ class LoopProxy {
     backing_file: string
     setup_by_uid: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -3429,12 +3490,19 @@ class LoopProxy {
     _init (config?: LoopProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): LoopProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): LoopProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): LoopProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): LoopProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): LoopProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): LoopProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): LoopProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): LoopProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -3442,7 +3510,8 @@ class LoopProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface LoopSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface LoopSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Loop */
     autoclear?: boolean
     backing_file?: string
     setup_by_uid?: number
@@ -3455,7 +3524,7 @@ class LoopSkeleton {
     backing_file: string
     setup_by_uid: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -3558,7 +3627,8 @@ class LoopSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MDRaidProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface MDRaidProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.MDRaid */
     active_devices?: GLib.Variant
     bitmap_location?: string
     child_configuration?: GLib.Variant
@@ -3597,7 +3667,7 @@ class MDRaidProxy {
     sync_remaining_time: number
     uuid: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -3782,12 +3852,19 @@ class MDRaidProxy {
     _init (config?: MDRaidProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): MDRaidProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): MDRaidProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): MDRaidProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): MDRaidProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): MDRaidProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MDRaidProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): MDRaidProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MDRaidProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -3795,7 +3872,8 @@ class MDRaidProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MDRaidSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface MDRaidSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.MDRaid */
     active_devices?: GLib.Variant
     bitmap_location?: string
     child_configuration?: GLib.Variant
@@ -3832,7 +3910,7 @@ class MDRaidSkeleton {
     sync_remaining_time: number
     uuid: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -3999,7 +4077,8 @@ class MDRaidSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Manager */
     supported_filesystems?: string[]
     version?: string
 }
@@ -4012,7 +4091,7 @@ class ManagerProxy {
     supported_filesystems: string[]
     version: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -4139,12 +4218,19 @@ class ManagerProxy {
     _init (config?: ManagerProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ManagerProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ManagerProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): ManagerProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ManagerProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ManagerProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ManagerProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ManagerProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ManagerProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -4152,7 +4238,8 @@ class ManagerProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Manager */
     supported_filesystems?: string[]
     version?: string
 }
@@ -4163,7 +4250,7 @@ class ManagerSkeleton {
     supported_filesystems: string[]
     version: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -4272,11 +4359,11 @@ class ManagerSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ObjectInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface ObjectInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ObjectInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of UDisks-2.0.UDisks.ObjectInfo */
     get_description(): string
     get_icon(): Gio.Icon
@@ -4331,13 +4418,13 @@ class ObjectInfo {
     _init (config?: ObjectInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ObjectManagerClient_ConstructProps extends Gio.DBusObjectManagerClient_ConstructProps {
+interface ObjectManagerClient_ConstructProps extends Gio.DBusObjectManagerClient_ConstructProps {
 }
 class ObjectManagerClient {
     /* Properties of Gio-2.0.Gio.DBusObjectManagerClient */
     readonly name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusObjectManagerClient */
     get_connection(): Gio.DBusConnection
     get_flags(): Gio.DBusObjectManagerClientFlags
@@ -4434,19 +4521,27 @@ class ObjectManagerClient {
     _init (config?: ObjectManagerClient_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ObjectManagerClient
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ObjectManagerClient
+    static new_for_bus_finish(res: Gio.AsyncResult): ObjectManagerClient
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ObjectManagerClient
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ObjectManagerClient
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func?: Gio.DBusProxyTypeFunc | null, cancellable?: Gio.Cancellable | null): ObjectManagerClient
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusObjectManagerClientFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ObjectManagerClient
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusObjectManagerClientFlags, name: string | null, object_path: string, get_proxy_type_func?: Gio.DBusProxyTypeFunc | null, cancellable?: Gio.Cancellable | null): ObjectManagerClient
     static get_proxy_type(manager: Gio.DBusObjectManagerClient, object_path: string, interface_name?: string | null, user_data?: object | null): GObject.Type
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func?: Gio.DBusProxyTypeFunc | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ObjectProxy_ConstructProps extends Gio.DBusObjectProxy_ConstructProps {
+interface ObjectProxy_ConstructProps extends Gio.DBusObjectProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Object */
     block?: Block
     drive?: Drive
     drive_ata?: DriveAta
@@ -4475,7 +4570,7 @@ class ObjectProxy {
     partition_table: PartitionTable
     swapspace: Swapspace
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusObjectProxy */
     get_connection(): Gio.DBusConnection
     /* Methods of GObject-2.0.GObject.Object */
@@ -4575,9 +4670,12 @@ class ObjectProxy {
     _init (config?: ObjectProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: Gio.DBusConnection, object_path: string): ObjectProxy
+    /* Function overloads */
+    static new(connection: Gio.DBusConnection, object_path: string): ObjectProxy
     static $gtype: GObject.Type
 }
-export interface ObjectSkeleton_ConstructProps extends Gio.DBusObjectSkeleton_ConstructProps {
+interface ObjectSkeleton_ConstructProps extends Gio.DBusObjectSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Object */
     block?: Block
     drive?: Drive
     drive_ata?: DriveAta
@@ -4608,7 +4706,7 @@ class ObjectSkeleton {
     partition_table: PartitionTable
     swapspace: Swapspace
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of UDisks-2.0.UDisks.ObjectSkeleton */
     set_block(interface_?: Block | null): void
     set_drive(interface_?: Drive | null): void
@@ -4733,9 +4831,12 @@ class ObjectSkeleton {
     _init (config?: ObjectSkeleton_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(object_path: string): ObjectSkeleton
+    /* Function overloads */
+    static new(object_path: string): ObjectSkeleton
     static $gtype: GObject.Type
 }
-export interface PartitionProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface PartitionProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Partition */
     flags?: number
     is_contained?: boolean
     is_container?: boolean
@@ -4764,7 +4865,7 @@ class PartitionProxy {
     type: string
     uuid: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -4915,12 +5016,19 @@ class PartitionProxy {
     _init (config?: PartitionProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): PartitionProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): PartitionProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): PartitionProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): PartitionProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): PartitionProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PartitionProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): PartitionProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PartitionProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -4928,7 +5036,8 @@ class PartitionProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface PartitionSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface PartitionSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Partition */
     flags?: number
     is_contained?: boolean
     is_container?: boolean
@@ -4955,7 +5064,7 @@ class PartitionSkeleton {
     type: string
     uuid: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -5088,7 +5197,8 @@ class PartitionSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface PartitionTableProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface PartitionTableProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.PartitionTable */
     type?: string
 }
 class PartitionTableProxy {
@@ -5099,7 +5209,7 @@ class PartitionTableProxy {
     /* Properties of UDisks-2.0.UDisks.PartitionTable */
     type: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -5216,12 +5326,19 @@ class PartitionTableProxy {
     _init (config?: PartitionTableProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): PartitionTableProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): PartitionTableProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): PartitionTableProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): PartitionTableProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): PartitionTableProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PartitionTableProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): PartitionTableProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PartitionTableProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -5229,7 +5346,8 @@ class PartitionTableProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface PartitionTableSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface PartitionTableSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.PartitionTable */
     type?: string
 }
 class PartitionTableSkeleton {
@@ -5238,7 +5356,7 @@ class PartitionTableSkeleton {
     /* Properties of UDisks-2.0.UDisks.PartitionTable */
     type: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -5337,7 +5455,8 @@ class PartitionTableSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface SwapspaceProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface SwapspaceProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Swapspace */
     active?: boolean
 }
 class SwapspaceProxy {
@@ -5348,7 +5467,7 @@ class SwapspaceProxy {
     /* Properties of UDisks-2.0.UDisks.Swapspace */
     active: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -5465,12 +5584,19 @@ class SwapspaceProxy {
     _init (config?: SwapspaceProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): SwapspaceProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): SwapspaceProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): SwapspaceProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): SwapspaceProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): SwapspaceProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): SwapspaceProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): SwapspaceProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): SwapspaceProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -5478,7 +5604,8 @@ class SwapspaceProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface SwapspaceSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface SwapspaceSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of UDisks-2.0.UDisks.Swapspace */
     active?: boolean
 }
 class SwapspaceSkeleton {
@@ -5487,7 +5614,7 @@ class SwapspaceSkeleton {
     /* Properties of UDisks-2.0.UDisks.Swapspace */
     active: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -5588,45 +5715,45 @@ class SwapspaceSkeleton {
 }
 abstract class BlockIface {
     /* Fields of UDisks-2.0.UDisks.BlockIface */
-    parent_iface: GObject.TypeInterface
-    handle_add_configuration_item: (object: Block, invocation: Gio.DBusMethodInvocation, arg_item: GLib.Variant, arg_options: GLib.Variant) => boolean
-    handle_format: (object: Block, invocation: Gio.DBusMethodInvocation, arg_type: string, arg_options: GLib.Variant) => boolean
-    handle_get_secret_configuration: (object: Block, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_open_for_backup: (object: Block, invocation: Gio.DBusMethodInvocation, fd_list: Gio.UnixFDList, arg_options: GLib.Variant) => boolean
-    handle_open_for_benchmark: (object: Block, invocation: Gio.DBusMethodInvocation, fd_list: Gio.UnixFDList, arg_options: GLib.Variant) => boolean
-    handle_open_for_restore: (object: Block, invocation: Gio.DBusMethodInvocation, fd_list: Gio.UnixFDList, arg_options: GLib.Variant) => boolean
-    handle_remove_configuration_item: (object: Block, invocation: Gio.DBusMethodInvocation, arg_item: GLib.Variant, arg_options: GLib.Variant) => boolean
-    handle_rescan: (object: Block, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_update_configuration_item: (object: Block, invocation: Gio.DBusMethodInvocation, arg_old_item: GLib.Variant, arg_new_item: GLib.Variant, arg_options: GLib.Variant) => boolean
-    get_configuration: (object: Block) => GLib.Variant
-    get_crypto_backing_device: (object: Block) => string
-    get_device: (object: Block) => string
-    get_device_number: (object: Block) => number
-    get_drive: (object: Block) => string
-    get_hint_auto: (object: Block) => boolean
-    get_hint_icon_name: (object: Block) => string
-    get_hint_ignore: (object: Block) => boolean
-    get_hint_name: (object: Block) => string
-    get_hint_partitionable: (object: Block) => boolean
-    get_hint_system: (object: Block) => boolean
-    get_id_label: (object: Block) => string
-    get_id_type: (object: Block) => string
-    get_id_usage: (object: Block) => string
-    get_id_uuid: (object: Block) => string
-    get_id_version: (object: Block) => string
-    get_preferred_device: (object: Block) => string
-    get_read_only: (object: Block) => boolean
-    get_size: (object: Block) => number
-    get_symlinks: (object: Block) => string[]
-    get_hint_symbolic_icon_name: (object: Block) => string
-    get_id: (object: Block) => string
-    get_mdraid: (object: Block) => string
-    get_mdraid_member: (object: Block) => string
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_add_configuration_item: (object: Block, invocation: Gio.DBusMethodInvocation, arg_item: GLib.Variant, arg_options: GLib.Variant) => boolean
+    readonly handle_format: (object: Block, invocation: Gio.DBusMethodInvocation, arg_type: string, arg_options: GLib.Variant) => boolean
+    readonly handle_get_secret_configuration: (object: Block, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_open_for_backup: (object: Block, invocation: Gio.DBusMethodInvocation, fd_list: Gio.UnixFDList, arg_options: GLib.Variant) => boolean
+    readonly handle_open_for_benchmark: (object: Block, invocation: Gio.DBusMethodInvocation, fd_list: Gio.UnixFDList, arg_options: GLib.Variant) => boolean
+    readonly handle_open_for_restore: (object: Block, invocation: Gio.DBusMethodInvocation, fd_list: Gio.UnixFDList, arg_options: GLib.Variant) => boolean
+    readonly handle_remove_configuration_item: (object: Block, invocation: Gio.DBusMethodInvocation, arg_item: GLib.Variant, arg_options: GLib.Variant) => boolean
+    readonly handle_rescan: (object: Block, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_update_configuration_item: (object: Block, invocation: Gio.DBusMethodInvocation, arg_old_item: GLib.Variant, arg_new_item: GLib.Variant, arg_options: GLib.Variant) => boolean
+    readonly get_configuration: (object: Block) => GLib.Variant
+    readonly get_crypto_backing_device: (object: Block) => string
+    readonly get_device: (object: Block) => string
+    readonly get_device_number: (object: Block) => number
+    readonly get_drive: (object: Block) => string
+    readonly get_hint_auto: (object: Block) => boolean
+    readonly get_hint_icon_name: (object: Block) => string
+    readonly get_hint_ignore: (object: Block) => boolean
+    readonly get_hint_name: (object: Block) => string
+    readonly get_hint_partitionable: (object: Block) => boolean
+    readonly get_hint_system: (object: Block) => boolean
+    readonly get_id_label: (object: Block) => string
+    readonly get_id_type: (object: Block) => string
+    readonly get_id_usage: (object: Block) => string
+    readonly get_id_uuid: (object: Block) => string
+    readonly get_id_version: (object: Block) => string
+    readonly get_preferred_device: (object: Block) => string
+    readonly get_read_only: (object: Block) => boolean
+    readonly get_size: (object: Block) => number
+    readonly get_symlinks: (object: Block) => string[]
+    readonly get_hint_symbolic_icon_name: (object: Block) => string
+    readonly get_id: (object: Block) => string
+    readonly get_mdraid: (object: Block) => string
+    readonly get_mdraid_member: (object: Block) => string
     static name: string
 }
 abstract class BlockProxyClass {
     /* Fields of UDisks-2.0.UDisks.BlockProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class BlockProxyPrivate {
@@ -5634,7 +5761,7 @@ class BlockProxyPrivate {
 }
 abstract class BlockSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.BlockSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class BlockSkeletonPrivate {
@@ -5642,46 +5769,46 @@ class BlockSkeletonPrivate {
 }
 abstract class DriveAtaIface {
     /* Fields of UDisks-2.0.UDisks.DriveAtaIface */
-    parent_iface: GObject.TypeInterface
-    handle_pm_get_state: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_pm_standby: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_pm_wakeup: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_security_erase_unit: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_smart_get_attributes: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_smart_selftest_abort: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_smart_selftest_start: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_type: string, arg_options: GLib.Variant) => boolean
-    handle_smart_update: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    get_aam_enabled: (object: DriveAta) => boolean
-    get_aam_supported: (object: DriveAta) => boolean
-    get_aam_vendor_recommended_value: (object: DriveAta) => number
-    get_apm_enabled: (object: DriveAta) => boolean
-    get_apm_supported: (object: DriveAta) => boolean
-    get_pm_enabled: (object: DriveAta) => boolean
-    get_pm_supported: (object: DriveAta) => boolean
-    get_security_enhanced_erase_unit_minutes: (object: DriveAta) => number
-    get_security_erase_unit_minutes: (object: DriveAta) => number
-    get_security_frozen: (object: DriveAta) => boolean
-    get_smart_enabled: (object: DriveAta) => boolean
-    get_smart_failing: (object: DriveAta) => boolean
-    get_smart_num_attributes_failed_in_the_past: (object: DriveAta) => number
-    get_smart_num_attributes_failing: (object: DriveAta) => number
-    get_smart_num_bad_sectors: (object: DriveAta) => number
-    get_smart_power_on_seconds: (object: DriveAta) => number
-    get_smart_selftest_percent_remaining: (object: DriveAta) => number
-    get_smart_selftest_status: (object: DriveAta) => string
-    get_smart_supported: (object: DriveAta) => boolean
-    get_smart_temperature: (object: DriveAta) => number
-    get_smart_updated: (object: DriveAta) => number
-    handle_smart_set_enabled: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_value: boolean, arg_options: GLib.Variant) => boolean
-    get_write_cache_enabled: (object: DriveAta) => boolean
-    get_write_cache_supported: (object: DriveAta) => boolean
-    get_read_lookahead_enabled: (object: DriveAta) => boolean
-    get_read_lookahead_supported: (object: DriveAta) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_pm_get_state: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_pm_standby: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_pm_wakeup: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_security_erase_unit: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_smart_get_attributes: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_smart_selftest_abort: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_smart_selftest_start: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_type: string, arg_options: GLib.Variant) => boolean
+    readonly handle_smart_update: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly get_aam_enabled: (object: DriveAta) => boolean
+    readonly get_aam_supported: (object: DriveAta) => boolean
+    readonly get_aam_vendor_recommended_value: (object: DriveAta) => number
+    readonly get_apm_enabled: (object: DriveAta) => boolean
+    readonly get_apm_supported: (object: DriveAta) => boolean
+    readonly get_pm_enabled: (object: DriveAta) => boolean
+    readonly get_pm_supported: (object: DriveAta) => boolean
+    readonly get_security_enhanced_erase_unit_minutes: (object: DriveAta) => number
+    readonly get_security_erase_unit_minutes: (object: DriveAta) => number
+    readonly get_security_frozen: (object: DriveAta) => boolean
+    readonly get_smart_enabled: (object: DriveAta) => boolean
+    readonly get_smart_failing: (object: DriveAta) => boolean
+    readonly get_smart_num_attributes_failed_in_the_past: (object: DriveAta) => number
+    readonly get_smart_num_attributes_failing: (object: DriveAta) => number
+    readonly get_smart_num_bad_sectors: (object: DriveAta) => number
+    readonly get_smart_power_on_seconds: (object: DriveAta) => number
+    readonly get_smart_selftest_percent_remaining: (object: DriveAta) => number
+    readonly get_smart_selftest_status: (object: DriveAta) => string
+    readonly get_smart_supported: (object: DriveAta) => boolean
+    readonly get_smart_temperature: (object: DriveAta) => number
+    readonly get_smart_updated: (object: DriveAta) => number
+    readonly handle_smart_set_enabled: (object: DriveAta, invocation: Gio.DBusMethodInvocation, arg_value: boolean, arg_options: GLib.Variant) => boolean
+    readonly get_write_cache_enabled: (object: DriveAta) => boolean
+    readonly get_write_cache_supported: (object: DriveAta) => boolean
+    readonly get_read_lookahead_enabled: (object: DriveAta) => boolean
+    readonly get_read_lookahead_supported: (object: DriveAta) => boolean
     static name: string
 }
 abstract class DriveAtaProxyClass {
     /* Fields of UDisks-2.0.UDisks.DriveAtaProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class DriveAtaProxyPrivate {
@@ -5689,7 +5816,7 @@ class DriveAtaProxyPrivate {
 }
 abstract class DriveAtaSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.DriveAtaSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class DriveAtaSkeletonPrivate {
@@ -5697,44 +5824,44 @@ class DriveAtaSkeletonPrivate {
 }
 abstract class DriveIface {
     /* Fields of UDisks-2.0.UDisks.DriveIface */
-    parent_iface: GObject.TypeInterface
-    handle_eject: (object: Drive, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_set_configuration: (object: Drive, invocation: Gio.DBusMethodInvocation, arg_value: GLib.Variant, arg_options: GLib.Variant) => boolean
-    get_configuration: (object: Drive) => GLib.Variant
-    get_connection_bus: (object: Drive) => string
-    get_ejectable: (object: Drive) => boolean
-    get_id: (object: Drive) => string
-    get_media: (object: Drive) => string
-    get_media_available: (object: Drive) => boolean
-    get_media_change_detected: (object: Drive) => boolean
-    get_media_compatibility: (object: Drive) => string[]
-    get_media_removable: (object: Drive) => boolean
-    get_model: (object: Drive) => string
-    get_optical: (object: Drive) => boolean
-    get_optical_blank: (object: Drive) => boolean
-    get_optical_num_audio_tracks: (object: Drive) => number
-    get_optical_num_data_tracks: (object: Drive) => number
-    get_optical_num_sessions: (object: Drive) => number
-    get_optical_num_tracks: (object: Drive) => number
-    get_removable: (object: Drive) => boolean
-    get_revision: (object: Drive) => string
-    get_rotation_rate: (object: Drive) => number
-    get_seat: (object: Drive) => string
-    get_serial: (object: Drive) => string
-    get_size: (object: Drive) => number
-    get_sort_key: (object: Drive) => string
-    get_time_detected: (object: Drive) => number
-    get_time_media_detected: (object: Drive) => number
-    get_vendor: (object: Drive) => string
-    get_wwn: (object: Drive) => string
-    handle_power_off: (object: Drive, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    get_can_power_off: (object: Drive) => boolean
-    get_sibling_id: (object: Drive) => string
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_eject: (object: Drive, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_set_configuration: (object: Drive, invocation: Gio.DBusMethodInvocation, arg_value: GLib.Variant, arg_options: GLib.Variant) => boolean
+    readonly get_configuration: (object: Drive) => GLib.Variant
+    readonly get_connection_bus: (object: Drive) => string
+    readonly get_ejectable: (object: Drive) => boolean
+    readonly get_id: (object: Drive) => string
+    readonly get_media: (object: Drive) => string
+    readonly get_media_available: (object: Drive) => boolean
+    readonly get_media_change_detected: (object: Drive) => boolean
+    readonly get_media_compatibility: (object: Drive) => string[]
+    readonly get_media_removable: (object: Drive) => boolean
+    readonly get_model: (object: Drive) => string
+    readonly get_optical: (object: Drive) => boolean
+    readonly get_optical_blank: (object: Drive) => boolean
+    readonly get_optical_num_audio_tracks: (object: Drive) => number
+    readonly get_optical_num_data_tracks: (object: Drive) => number
+    readonly get_optical_num_sessions: (object: Drive) => number
+    readonly get_optical_num_tracks: (object: Drive) => number
+    readonly get_removable: (object: Drive) => boolean
+    readonly get_revision: (object: Drive) => string
+    readonly get_rotation_rate: (object: Drive) => number
+    readonly get_seat: (object: Drive) => string
+    readonly get_serial: (object: Drive) => string
+    readonly get_size: (object: Drive) => number
+    readonly get_sort_key: (object: Drive) => string
+    readonly get_time_detected: (object: Drive) => number
+    readonly get_time_media_detected: (object: Drive) => number
+    readonly get_vendor: (object: Drive) => string
+    readonly get_wwn: (object: Drive) => string
+    readonly handle_power_off: (object: Drive, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly get_can_power_off: (object: Drive) => boolean
+    readonly get_sibling_id: (object: Drive) => string
     static name: string
 }
 abstract class DriveProxyClass {
     /* Fields of UDisks-2.0.UDisks.DriveProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class DriveProxyPrivate {
@@ -5742,7 +5869,7 @@ class DriveProxyPrivate {
 }
 abstract class DriveSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.DriveSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class DriveSkeletonPrivate {
@@ -5750,16 +5877,16 @@ class DriveSkeletonPrivate {
 }
 abstract class EncryptedIface {
     /* Fields of UDisks-2.0.UDisks.EncryptedIface */
-    parent_iface: GObject.TypeInterface
-    handle_change_passphrase: (object: Encrypted, invocation: Gio.DBusMethodInvocation, arg_passphrase: string, arg_new_passphrase: string, arg_options: GLib.Variant) => boolean
-    handle_lock: (object: Encrypted, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_unlock: (object: Encrypted, invocation: Gio.DBusMethodInvocation, arg_passphrase: string, arg_options: GLib.Variant) => boolean
-    get_child_configuration: (object: Encrypted) => GLib.Variant
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_change_passphrase: (object: Encrypted, invocation: Gio.DBusMethodInvocation, arg_passphrase: string, arg_new_passphrase: string, arg_options: GLib.Variant) => boolean
+    readonly handle_lock: (object: Encrypted, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_unlock: (object: Encrypted, invocation: Gio.DBusMethodInvocation, arg_passphrase: string, arg_options: GLib.Variant) => boolean
+    readonly get_child_configuration: (object: Encrypted) => GLib.Variant
     static name: string
 }
 abstract class EncryptedProxyClass {
     /* Fields of UDisks-2.0.UDisks.EncryptedProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class EncryptedProxyPrivate {
@@ -5767,7 +5894,7 @@ class EncryptedProxyPrivate {
 }
 abstract class EncryptedSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.EncryptedSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class EncryptedSkeletonPrivate {
@@ -5775,16 +5902,16 @@ class EncryptedSkeletonPrivate {
 }
 abstract class FilesystemIface {
     /* Fields of UDisks-2.0.UDisks.FilesystemIface */
-    parent_iface: GObject.TypeInterface
-    handle_mount: (object: Filesystem, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_set_label: (object: Filesystem, invocation: Gio.DBusMethodInvocation, arg_label: string, arg_options: GLib.Variant) => boolean
-    handle_unmount: (object: Filesystem, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    get_mount_points: (object: Filesystem) => string[]
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_mount: (object: Filesystem, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_set_label: (object: Filesystem, invocation: Gio.DBusMethodInvocation, arg_label: string, arg_options: GLib.Variant) => boolean
+    readonly handle_unmount: (object: Filesystem, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly get_mount_points: (object: Filesystem) => string[]
     static name: string
 }
 abstract class FilesystemProxyClass {
     /* Fields of UDisks-2.0.UDisks.FilesystemProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class FilesystemProxyPrivate {
@@ -5792,7 +5919,7 @@ class FilesystemProxyPrivate {
 }
 abstract class FilesystemSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.FilesystemSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class FilesystemSkeletonPrivate {
@@ -5800,24 +5927,24 @@ class FilesystemSkeletonPrivate {
 }
 abstract class JobIface {
     /* Fields of UDisks-2.0.UDisks.JobIface */
-    parent_iface: GObject.TypeInterface
-    handle_cancel: (object: Job, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    get_cancelable: (object: Job) => boolean
-    get_expected_end_time: (object: Job) => number
-    get_objects: (object: Job) => string[]
-    get_operation: (object: Job) => string
-    get_progress: (object: Job) => number
-    get_progress_valid: (object: Job) => boolean
-    get_start_time: (object: Job) => number
-    get_started_by_uid: (object: Job) => number
-    completed: (object: Job, arg_success: boolean, arg_message: string) => void
-    get_bytes: (object: Job) => number
-    get_rate: (object: Job) => number
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_cancel: (object: Job, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly get_cancelable: (object: Job) => boolean
+    readonly get_expected_end_time: (object: Job) => number
+    readonly get_objects: (object: Job) => string[]
+    readonly get_operation: (object: Job) => string
+    readonly get_progress: (object: Job) => number
+    readonly get_progress_valid: (object: Job) => boolean
+    readonly get_start_time: (object: Job) => number
+    readonly get_started_by_uid: (object: Job) => number
+    readonly completed: (object: Job, arg_success: boolean, arg_message: string) => void
+    readonly get_bytes: (object: Job) => number
+    readonly get_rate: (object: Job) => number
     static name: string
 }
 abstract class JobProxyClass {
     /* Fields of UDisks-2.0.UDisks.JobProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class JobProxyPrivate {
@@ -5825,7 +5952,7 @@ class JobProxyPrivate {
 }
 abstract class JobSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.JobSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class JobSkeletonPrivate {
@@ -5833,17 +5960,17 @@ class JobSkeletonPrivate {
 }
 abstract class LoopIface {
     /* Fields of UDisks-2.0.UDisks.LoopIface */
-    parent_iface: GObject.TypeInterface
-    handle_delete: (object: Loop, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_set_autoclear: (object: Loop, invocation: Gio.DBusMethodInvocation, arg_value: boolean, arg_options: GLib.Variant) => boolean
-    get_autoclear: (object: Loop) => boolean
-    get_backing_file: (object: Loop) => string
-    get_setup_by_uid: (object: Loop) => number
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_delete: (object: Loop, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_set_autoclear: (object: Loop, invocation: Gio.DBusMethodInvocation, arg_value: boolean, arg_options: GLib.Variant) => boolean
+    readonly get_autoclear: (object: Loop) => boolean
+    readonly get_backing_file: (object: Loop) => string
+    readonly get_setup_by_uid: (object: Loop) => number
     static name: string
 }
 abstract class LoopProxyClass {
     /* Fields of UDisks-2.0.UDisks.LoopProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class LoopProxyPrivate {
@@ -5851,7 +5978,7 @@ class LoopProxyPrivate {
 }
 abstract class LoopSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.LoopSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class LoopSkeletonPrivate {
@@ -5859,34 +5986,34 @@ class LoopSkeletonPrivate {
 }
 abstract class MDRaidIface {
     /* Fields of UDisks-2.0.UDisks.MDRaidIface */
-    parent_iface: GObject.TypeInterface
-    handle_add_device: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_device: string, arg_options: GLib.Variant) => boolean
-    handle_delete: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_remove_device: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_device: string, arg_options: GLib.Variant) => boolean
-    handle_request_sync_action: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_sync_action: string, arg_options: GLib.Variant) => boolean
-    handle_set_bitmap_location: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_value: string, arg_options: GLib.Variant) => boolean
-    handle_start: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_stop: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    get_active_devices: (object: MDRaid) => GLib.Variant
-    get_bitmap_location: (object: MDRaid) => string
-    get_child_configuration: (object: MDRaid) => GLib.Variant
-    get_chunk_size: (object: MDRaid) => number
-    get_degraded: (object: MDRaid) => number
-    get_level: (object: MDRaid) => string
-    get_name: (object: MDRaid) => string
-    get_num_devices: (object: MDRaid) => number
-    get_running: (object: MDRaid) => boolean
-    get_size: (object: MDRaid) => number
-    get_sync_action: (object: MDRaid) => string
-    get_sync_completed: (object: MDRaid) => number
-    get_sync_rate: (object: MDRaid) => number
-    get_sync_remaining_time: (object: MDRaid) => number
-    get_uuid: (object: MDRaid) => string
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_add_device: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_device: string, arg_options: GLib.Variant) => boolean
+    readonly handle_delete: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_remove_device: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_device: string, arg_options: GLib.Variant) => boolean
+    readonly handle_request_sync_action: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_sync_action: string, arg_options: GLib.Variant) => boolean
+    readonly handle_set_bitmap_location: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_value: string, arg_options: GLib.Variant) => boolean
+    readonly handle_start: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_stop: (object: MDRaid, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly get_active_devices: (object: MDRaid) => GLib.Variant
+    readonly get_bitmap_location: (object: MDRaid) => string
+    readonly get_child_configuration: (object: MDRaid) => GLib.Variant
+    readonly get_chunk_size: (object: MDRaid) => number
+    readonly get_degraded: (object: MDRaid) => number
+    readonly get_level: (object: MDRaid) => string
+    readonly get_name: (object: MDRaid) => string
+    readonly get_num_devices: (object: MDRaid) => number
+    readonly get_running: (object: MDRaid) => boolean
+    readonly get_size: (object: MDRaid) => number
+    readonly get_sync_action: (object: MDRaid) => string
+    readonly get_sync_completed: (object: MDRaid) => number
+    readonly get_sync_rate: (object: MDRaid) => number
+    readonly get_sync_remaining_time: (object: MDRaid) => number
+    readonly get_uuid: (object: MDRaid) => string
     static name: string
 }
 abstract class MDRaidProxyClass {
     /* Fields of UDisks-2.0.UDisks.MDRaidProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class MDRaidProxyPrivate {
@@ -5894,7 +6021,7 @@ class MDRaidProxyPrivate {
 }
 abstract class MDRaidSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.MDRaidSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class MDRaidSkeletonPrivate {
@@ -5902,17 +6029,17 @@ class MDRaidSkeletonPrivate {
 }
 abstract class ManagerIface {
     /* Fields of UDisks-2.0.UDisks.ManagerIface */
-    parent_iface: GObject.TypeInterface
-    handle_enable_modules: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_enable: boolean) => boolean
-    handle_loop_setup: (object: Manager, invocation: Gio.DBusMethodInvocation, fd_list: Gio.UnixFDList, arg_fd: GLib.Variant, arg_options: GLib.Variant) => boolean
-    get_supported_filesystems: (object: Manager) => string[]
-    get_version: (object: Manager) => string
-    handle_mdraid_create: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_blocks: string, arg_level: string, arg_name: string, arg_chunk: number, arg_options: GLib.Variant) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_enable_modules: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_enable: boolean) => boolean
+    readonly handle_loop_setup: (object: Manager, invocation: Gio.DBusMethodInvocation, fd_list: Gio.UnixFDList, arg_fd: GLib.Variant, arg_options: GLib.Variant) => boolean
+    readonly get_supported_filesystems: (object: Manager) => string[]
+    readonly get_version: (object: Manager) => string
+    readonly handle_mdraid_create: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_blocks: string, arg_level: string, arg_name: string, arg_chunk: number, arg_options: GLib.Variant) => boolean
     static name: string
 }
 abstract class ManagerProxyClass {
     /* Fields of UDisks-2.0.UDisks.ManagerProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ManagerProxyPrivate {
@@ -5920,7 +6047,7 @@ class ManagerProxyPrivate {
 }
 abstract class ManagerSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.ManagerSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ManagerSkeletonPrivate {
@@ -5928,12 +6055,12 @@ class ManagerSkeletonPrivate {
 }
 abstract class ObjectIface {
     /* Fields of UDisks-2.0.UDisks.ObjectIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class ObjectManagerClientClass {
     /* Fields of UDisks-2.0.UDisks.ObjectManagerClientClass */
-    parent_class: Gio.DBusObjectManagerClientClass
+    readonly parent_class: Gio.DBusObjectManagerClientClass
     static name: string
 }
 class ObjectManagerClientPrivate {
@@ -5941,7 +6068,7 @@ class ObjectManagerClientPrivate {
 }
 abstract class ObjectProxyClass {
     /* Fields of UDisks-2.0.UDisks.ObjectProxyClass */
-    parent_class: Gio.DBusObjectProxyClass
+    readonly parent_class: Gio.DBusObjectProxyClass
     static name: string
 }
 class ObjectProxyPrivate {
@@ -5949,7 +6076,7 @@ class ObjectProxyPrivate {
 }
 abstract class ObjectSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.ObjectSkeletonClass */
-    parent_class: Gio.DBusObjectSkeletonClass
+    readonly parent_class: Gio.DBusObjectSkeletonClass
     static name: string
 }
 class ObjectSkeletonPrivate {
@@ -5957,26 +6084,26 @@ class ObjectSkeletonPrivate {
 }
 abstract class PartitionIface {
     /* Fields of UDisks-2.0.UDisks.PartitionIface */
-    parent_iface: GObject.TypeInterface
-    handle_delete: (object: Partition, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_set_flags: (object: Partition, invocation: Gio.DBusMethodInvocation, arg_flags: number, arg_options: GLib.Variant) => boolean
-    handle_set_name: (object: Partition, invocation: Gio.DBusMethodInvocation, arg_name: string, arg_options: GLib.Variant) => boolean
-    handle_set_type: (object: Partition, invocation: Gio.DBusMethodInvocation, arg_type: string, arg_options: GLib.Variant) => boolean
-    get_flags: (object: Partition) => number
-    get_is_contained: (object: Partition) => boolean
-    get_is_container: (object: Partition) => boolean
-    get_name: (object: Partition) => string
-    get_number: (object: Partition) => number
-    get_offset: (object: Partition) => number
-    get_size: (object: Partition) => number
-    get_table: (object: Partition) => string
-    get_type_: (object: Partition) => string
-    get_uuid: (object: Partition) => string
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_delete: (object: Partition, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_set_flags: (object: Partition, invocation: Gio.DBusMethodInvocation, arg_flags: number, arg_options: GLib.Variant) => boolean
+    readonly handle_set_name: (object: Partition, invocation: Gio.DBusMethodInvocation, arg_name: string, arg_options: GLib.Variant) => boolean
+    readonly handle_set_type: (object: Partition, invocation: Gio.DBusMethodInvocation, arg_type: string, arg_options: GLib.Variant) => boolean
+    readonly get_flags: (object: Partition) => number
+    readonly get_is_contained: (object: Partition) => boolean
+    readonly get_is_container: (object: Partition) => boolean
+    readonly get_name: (object: Partition) => string
+    readonly get_number: (object: Partition) => number
+    readonly get_offset: (object: Partition) => number
+    readonly get_size: (object: Partition) => number
+    readonly get_table: (object: Partition) => string
+    readonly get_type_: (object: Partition) => string
+    readonly get_uuid: (object: Partition) => string
     static name: string
 }
 abstract class PartitionProxyClass {
     /* Fields of UDisks-2.0.UDisks.PartitionProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class PartitionProxyPrivate {
@@ -5984,7 +6111,7 @@ class PartitionProxyPrivate {
 }
 abstract class PartitionSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.PartitionSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class PartitionSkeletonPrivate {
@@ -5992,15 +6119,15 @@ class PartitionSkeletonPrivate {
 }
 abstract class PartitionTableIface {
     /* Fields of UDisks-2.0.UDisks.PartitionTableIface */
-    parent_iface: GObject.TypeInterface
-    handle_create_partition: (object: PartitionTable, invocation: Gio.DBusMethodInvocation, arg_offset: number, arg_size: number, arg_type: string, arg_name: string, arg_options: GLib.Variant) => boolean
-    handle_create_partition_and_format: (object: PartitionTable, invocation: Gio.DBusMethodInvocation, arg_offset: number, arg_size: number, arg_type: string, arg_name: string, arg_options: GLib.Variant, arg_format_type: string, arg_format_options: GLib.Variant) => boolean
-    get_type_: (object: PartitionTable) => string
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_create_partition: (object: PartitionTable, invocation: Gio.DBusMethodInvocation, arg_offset: number, arg_size: number, arg_type: string, arg_name: string, arg_options: GLib.Variant) => boolean
+    readonly handle_create_partition_and_format: (object: PartitionTable, invocation: Gio.DBusMethodInvocation, arg_offset: number, arg_size: number, arg_type: string, arg_name: string, arg_options: GLib.Variant, arg_format_type: string, arg_format_options: GLib.Variant) => boolean
+    readonly get_type_: (object: PartitionTable) => string
     static name: string
 }
 abstract class PartitionTableProxyClass {
     /* Fields of UDisks-2.0.UDisks.PartitionTableProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class PartitionTableProxyPrivate {
@@ -6008,7 +6135,7 @@ class PartitionTableProxyPrivate {
 }
 abstract class PartitionTableSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.PartitionTableSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class PartitionTableSkeletonPrivate {
@@ -6016,25 +6143,25 @@ class PartitionTableSkeletonPrivate {
 }
 class PartitionTypeInfo {
     /* Fields of UDisks-2.0.UDisks.PartitionTypeInfo */
-    table_type: string
-    table_subtype: string
-    type: string
-    flags: PartitionTypeInfoFlags
+    readonly table_type: string
+    readonly table_subtype: string
+    readonly type: string
+    readonly flags: PartitionTypeInfoFlags
     /* Methods of UDisks-2.0.UDisks.PartitionTypeInfo */
     free(): void
     static name: string
 }
 abstract class SwapspaceIface {
     /* Fields of UDisks-2.0.UDisks.SwapspaceIface */
-    parent_iface: GObject.TypeInterface
-    handle_start: (object: Swapspace, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    handle_stop: (object: Swapspace, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
-    get_active: (object: Swapspace) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_start: (object: Swapspace, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly handle_stop: (object: Swapspace, invocation: Gio.DBusMethodInvocation, arg_options: GLib.Variant) => boolean
+    readonly get_active: (object: Swapspace) => boolean
     static name: string
 }
 abstract class SwapspaceProxyClass {
     /* Fields of UDisks-2.0.UDisks.SwapspaceProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class SwapspaceProxyPrivate {
@@ -6042,7 +6169,7 @@ class SwapspaceProxyPrivate {
 }
 abstract class SwapspaceSkeletonClass {
     /* Fields of UDisks-2.0.UDisks.SwapspaceSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class SwapspaceSkeletonPrivate {

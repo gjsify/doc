@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * MediaArt-2.0
  */
@@ -25,7 +31,7 @@ enum ProcessFlags {
     NONE,
     FORCE,
 }
-function buffer_to_jpeg(buffer: Uint8Array[], buffer_mime: string, target: string): boolean
+function buffer_to_jpeg(buffer: Uint8Array, buffer_mime: string, target: string): boolean
 function error_quark(): GLib.Quark
 function file_to_jpeg(filename: string, target: string): boolean
 function get_file(artist?: string | null, title?: string | null, prefix?: string | null): [ /* returnType */ boolean, /* cache_file */ Gio.File | null ]
@@ -36,14 +42,14 @@ function remove(artist: string, album?: string | null, cancellable?: Gio.Cancell
 function remove_async(artist: string, album: string | null, io_priority: number, source_object?: GObject.Object | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
 function remove_finish(source_object: GObject.Object | null, result: Gio.AsyncResult): boolean
 function strip_invalid_entities(original?: string | null): string
-export interface Process_ConstructProps extends GObject.Object_ConstructProps {
+interface Process_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Process {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of MediaArt-2.0.MediaArt.Process */
-    buffer(type: Type, flags: ProcessFlags, related_file: Gio.File, buffer: Uint8Array[] | null, mime?: string | null, artist?: string | null, title?: string | null, cancellable?: Gio.Cancellable | null): boolean
-    buffer_async(type: Type, flags: ProcessFlags, related_file: Gio.File, buffer: Uint8Array[] | null, mime: string, artist: string | null, title: string | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    buffer(type: Type, flags: ProcessFlags, related_file: Gio.File, buffer: Uint8Array | null, mime?: string | null, artist?: string | null, title?: string | null, cancellable?: Gio.Cancellable | null): boolean
+    buffer_async(type: Type, flags: ProcessFlags, related_file: Gio.File, buffer: Uint8Array | null, mime: string, artist: string | null, title: string | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     buffer_finish(result: Gio.AsyncResult): boolean
     file(type: Type, flags: ProcessFlags, file: Gio.File, artist?: string | null, title?: string | null, cancellable?: Gio.Cancellable | null): boolean
     file_async(type: Type, flags: ProcessFlags, file: Gio.File, artist: string | null, title: string | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void

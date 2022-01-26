@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GDesktopEnums-3.0
  */
@@ -22,8 +28,8 @@ enum BackgroundStyle {
     SPANNED,
 }
 enum ClockFormat {
-    /* 24H (invalid, starts with a number) */
-    /* 12H (invalid, starts with a number) */
+    TODO_24H,
+    TODO_12H,
 }
 enum ColorScheme {
     DEFAULT,

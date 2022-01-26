@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Vgpg-1
  */
@@ -16,14 +22,14 @@ import type Vgda from './Vgda-1';
 
 export namespace Vgpg {
 
-export interface Connection_ConstructProps extends Vgda.GProvider_ConstructProps {
+interface Connection_ConstructProps extends Vgda.GProvider_ConstructProps {
 }
 class Connection {
     /* Fields of Vgda-1.Vgda.GProvider */
-    _provider: string
-    _cnc_string: string
+    readonly _provider: string
+    readonly _cnc_string: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Vgpg-1.Vgpg.Connection */
     current_user(): Vda.Role | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -86,6 +92,8 @@ class Connection {
     constructor (config?: Connection_ConstructProps)
     _init (config?: Connection_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    static new(): Connection
+    /* Function overloads */
     static new(): Connection
     static $gtype: GObject.Type
 }

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PeasGtk-1.0
  */
@@ -27,9 +33,11 @@ class Configurable {
     vfunc_create_configure_widget(): Gtk.Widget
     static name: string
 }
-export interface PluginManager_ConstructProps extends Gtk.Box_ConstructProps {
+interface PluginManager_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of PeasGtk-1.0.PeasGtk.PluginManager */
     engine?: Peas.Engine
     view?: PluginManagerView
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class PluginManager {
@@ -83,16 +91,14 @@ class PluginManager {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of PeasGtk-1.0.PeasGtk.PluginManager */
-    box: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PeasGtk-1.0.PeasGtk.PluginManager */
     get_view(): Gtk.Widget
     /* Methods of Gtk-3.0.Gtk.Box */
@@ -113,7 +119,7 @@ class PluginManager {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -428,6 +434,7 @@ class PluginManager {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -870,12 +877,15 @@ class PluginManager {
     _init (config?: PluginManager_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(engine?: Peas.Engine | null): PluginManager
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): PluginManager
     static $gtype: GObject.Type
 }
-export interface PluginManagerView_ConstructProps extends Gtk.TreeView_ConstructProps {
+interface PluginManagerView_ConstructProps extends Gtk.TreeView_ConstructProps {
+    /* Constructor properties of PeasGtk-1.0.PeasGtk.PluginManagerView */
     engine?: Peas.Engine
     show_builtin?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -934,7 +944,6 @@ class PluginManagerView {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -952,12 +961,14 @@ class PluginManagerView {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
+    /* Fields of Gtk-3.0.Gtk.TreeView */
+    readonly parent: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PeasGtk-1.0.PeasGtk.PluginManagerView */
     get_selected_plugin(): Peas.PluginInfo
     get_show_builtin(): boolean
@@ -1063,7 +1074,7 @@ class PluginManagerView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1378,6 +1389,7 @@ class PluginManagerView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hscroll_policy(): Gtk.ScrollablePolicy
@@ -1888,8 +1900,6 @@ class PluginManagerView {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: PluginManagerView, pspec: GObject.ParamSpec) => void)): number
@@ -1931,18 +1941,19 @@ class PluginManagerView {
     _init (config?: PluginManagerView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(engine?: Peas.Engine | null): PluginManagerView
+    /* Function overloads */
     static new(): PluginManagerView
     static $gtype: GObject.Type
 }
 abstract class ConfigurableInterface {
     /* Fields of PeasGtk-1.0.PeasGtk.ConfigurableInterface */
-    g_iface: GObject.TypeInterface
-    create_configure_widget: (configurable: Configurable) => Gtk.Widget
+    readonly g_iface: GObject.TypeInterface
+    readonly create_configure_widget: (configurable: Configurable) => Gtk.Widget
     static name: string
 }
 abstract class PluginManagerClass {
     /* Fields of PeasGtk-1.0.PeasGtk.PluginManagerClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 class PluginManagerPrivate {
@@ -1950,8 +1961,8 @@ class PluginManagerPrivate {
 }
 abstract class PluginManagerViewClass {
     /* Fields of PeasGtk-1.0.PeasGtk.PluginManagerViewClass */
-    parent_class: Gtk.TreeViewClass
-    populate_popup: (view: PluginManagerView, menu: Gtk.Menu) => void
+    readonly parent_class: Gtk.TreeViewClass
+    readonly populate_popup: (view: PluginManagerView, menu: Gtk.Menu) => void
     static name: string
 }
 class PluginManagerViewPrivate {

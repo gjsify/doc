@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GMenu-3.0
  */
@@ -26,14 +32,15 @@ enum TreeFlags {
     SORT_DISPLAY_NAME,
     INCLUDE_UNALLOCATED,
 }
-export interface Tree_ConstructProps extends GObject.Object_ConstructProps {
+interface Tree_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GMenu-3.0.GMenu.Tree */
     flags?: TreeFlags
     menu_basename?: string
     menu_path?: string
 }
 class Tree {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMenu-3.0.GMenu.Tree */
     get_canonical_menu_path(): string
     get_directory_from_path(path: string): TreeDirectory
@@ -104,7 +111,7 @@ class TreeAlias {
 }
 abstract class TreeClass {
     /* Fields of GMenu-3.0.GMenu.TreeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class TreeDirectory {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GSSDP-1.2
  */
@@ -19,9 +25,10 @@ enum UDAVersion {
     VERSION_1_0,
     VERSION_1_1,
 }
-export const ALL_RESOURCES: string
+const ALL_RESOURCES: string
 function error_quark(): GLib.Quark
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GSSDP-1.2.GSSDP.Client */
     active?: boolean
     address_family?: Gio.SocketFamily
     boot_id?: number
@@ -44,10 +51,8 @@ class Client {
     host_mask: Gio.InetAddressMask
     network: string
     server_id: string
-    /* Fields of GSSDP-1.2.GSSDP.Client */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSSDP-1.2.GSSDP.Client */
     add_cache_entry(ip_address: string, user_agent: string): void
     append_header(name: string, value?: string | null): void
@@ -138,7 +143,8 @@ class Client {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ResourceBrowser_ConstructProps extends GObject.Object_ConstructProps {
+interface ResourceBrowser_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GSSDP-1.2.GSSDP.ResourceBrowser */
     active?: boolean
     client?: Client
     mx?: number
@@ -149,10 +155,8 @@ class ResourceBrowser {
     active: boolean
     mx: number
     target: string
-    /* Fields of GSSDP-1.2.GSSDP.ResourceBrowser */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSSDP-1.2.GSSDP.ResourceBrowser */
     get_active(): boolean
     get_client(): Client
@@ -226,7 +230,8 @@ class ResourceBrowser {
     static new(client: Client, target: string): ResourceBrowser
     static $gtype: GObject.Type
 }
-export interface ResourceGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface ResourceGroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GSSDP-1.2.GSSDP.ResourceGroup */
     available?: boolean
     client?: Client
     max_age?: number
@@ -237,10 +242,8 @@ class ResourceGroup {
     available: boolean
     max_age: number
     message_delay: number
-    /* Fields of GSSDP-1.2.GSSDP.ResourceGroup */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSSDP-1.2.GSSDP.ResourceGroup */
     add_resource(target: string, usn: string, locations: string[]): number
     add_resource_simple(target: string, usn: string, location: string): number
@@ -306,19 +309,19 @@ class ResourceGroup {
 }
 abstract class ClientClass {
     /* Fields of GSSDP-1.2.GSSDP.ClientClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ResourceBrowserClass {
     /* Fields of GSSDP-1.2.GSSDP.ResourceBrowserClass */
-    parent_class: GObject.ObjectClass
-    resource_update: (resource_browser: ResourceBrowser, usn: string, boot_id: number, next_boot_id: number) => void
-    resource_unavailable: (resource_browser: ResourceBrowser, usn: string) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly resource_update: (resource_browser: ResourceBrowser, usn: string, boot_id: number, next_boot_id: number) => void
+    readonly resource_unavailable: (resource_browser: ResourceBrowser, usn: string) => void
     static name: string
 }
 abstract class ResourceGroupClass {
     /* Fields of GSSDP-1.2.GSSDP.ResourceGroupClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

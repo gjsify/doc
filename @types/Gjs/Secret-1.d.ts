@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Secret-1
  */
@@ -60,12 +66,12 @@ enum ServiceFlags {
     OPEN_SESSION,
     LOAD_COLLECTIONS,
 }
-export const BACKEND_EXTENSION_POINT_NAME: string
-export const COLLECTION_DEFAULT: string
-export const COLLECTION_SESSION: string
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const BACKEND_EXTENSION_POINT_NAME: string
+const COLLECTION_DEFAULT: string
+const COLLECTION_SESSION: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function backend_get(flags: BackendFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
 function backend_get_finish(result: Gio.AsyncResult): Backend
 function error_get_quark(): GLib.Quark
@@ -127,7 +133,8 @@ class Retrievable {
     vfunc_retrieve_secret_finish(result: Gio.AsyncResult): Value | null
     static name: string
 }
-export interface Collection_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface Collection_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Secret-1.Secret.Collection */
     created?: number
     flags?: CollectionFlags
     label?: string
@@ -144,10 +151,8 @@ class Collection {
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of Secret-1.Secret.Collection */
-    parent: Gio.DBusProxy
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Secret-1.Secret.Collection */
     delete(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     delete_finish(result: Gio.AsyncResult): boolean
@@ -282,9 +287,11 @@ class Collection {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Item_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface Item_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Secret-1.Secret.Item */
     flags?: ItemFlags
     service?: Service
+    /* Constructor properties of Secret-1.Secret.Retrievable */
     attributes?: GLib.HashTable
     created?: number
     label?: string
@@ -302,10 +309,8 @@ class Item {
     created: number
     label: string
     modified: number
-    /* Fields of Secret-1.Secret.Item */
-    parent_instance: Gio.DBusProxy
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Secret-1.Secret.Item */
     delete(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     delete_finish(result: Gio.AsyncResult): boolean
@@ -453,17 +458,15 @@ class Item {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Prompt_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface Prompt_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class Prompt {
     /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of Secret-1.Secret.Prompt */
-    parent_instance: Gio.DBusProxy
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Secret-1.Secret.Prompt */
     perform(window_id: string | null, return_type: GLib.VariantType, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     perform_finish(result: Gio.AsyncResult): GLib.Variant
@@ -568,7 +571,8 @@ class Prompt {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Service_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface Service_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Secret-1.Secret.Backend */
     flags?: ServiceFlags
 }
 class Service {
@@ -576,10 +580,8 @@ class Service {
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of Secret-1.Secret.Service */
-    parent: Gio.DBusProxy
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Secret-1.Secret.Service */
     clear(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     clear_finish(result: Gio.AsyncResult): boolean
@@ -731,8 +733,10 @@ class Service {
     /* Static methods and pseudo-constructors */
     static disconnect(): void
     static get(flags: ServiceFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static get(flags: BackendFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static get_finish(result: Gio.AsyncResult): Service
+    /* Function overloads */
     static get_finish(result: Gio.AsyncResult): Backend
     static get_sync(flags: ServiceFlags, cancellable?: Gio.Cancellable | null): Service
     static open(service_gtype: GObject.Type, service_bus_name: string | null, flags: ServiceFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -744,21 +748,21 @@ class Service {
 }
 abstract class BackendInterface {
     /* Fields of Secret-1.Secret.BackendInterface */
-    parent_iface: GObject.TypeInterface
-    ensure_for_flags: (self: Backend, flags: BackendFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    ensure_for_flags_finish: (self: Backend, result: Gio.AsyncResult) => boolean
-    store: (self: Backend, schema: Schema, attributes: GLib.HashTable, collection: string, label: string, value: Value, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    store_finish: (self: Backend, result: Gio.AsyncResult) => boolean
-    lookup: (self: Backend, schema: Schema, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    lookup_finish: (self: Backend, result: Gio.AsyncResult) => Value
-    clear: (self: Backend, schema: Schema, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    clear_finish: (self: Backend, result: Gio.AsyncResult) => boolean
-    search: (self: Backend, schema: Schema, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly ensure_for_flags: (self: Backend, flags: BackendFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly ensure_for_flags_finish: (self: Backend, result: Gio.AsyncResult) => boolean
+    readonly store: (self: Backend, schema: Schema, attributes: GLib.HashTable, collection: string, label: string, value: Value, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly store_finish: (self: Backend, result: Gio.AsyncResult) => boolean
+    readonly lookup: (self: Backend, schema: Schema, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly lookup_finish: (self: Backend, result: Gio.AsyncResult) => Value
+    readonly clear: (self: Backend, schema: Schema, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly clear_finish: (self: Backend, result: Gio.AsyncResult) => boolean
+    readonly search: (self: Backend, schema: Schema, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
     static name: string
 }
 abstract class CollectionClass {
     /* Fields of Secret-1.Secret.CollectionClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class CollectionPrivate {
@@ -766,7 +770,7 @@ class CollectionPrivate {
 }
 abstract class ItemClass {
     /* Fields of Secret-1.Secret.ItemClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ItemPrivate {
@@ -774,7 +778,7 @@ class ItemPrivate {
 }
 abstract class PromptClass {
     /* Fields of Secret-1.Secret.PromptClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class PromptPrivate {
@@ -782,16 +786,16 @@ class PromptPrivate {
 }
 abstract class RetrievableInterface {
     /* Fields of Secret-1.Secret.RetrievableInterface */
-    parent_iface: GObject.TypeInterface
-    retrieve_secret: (self: Retrievable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    retrieve_secret_finish: (self: Retrievable, result: Gio.AsyncResult) => Value | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly retrieve_secret: (self: Retrievable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly retrieve_secret_finish: (self: Retrievable, result: Gio.AsyncResult) => Value | null
     static name: string
 }
 class Schema {
     /* Fields of Secret-1.Secret.Schema */
-    name: string
-    flags: SchemaFlags
-    attributes: SchemaAttribute[]
+    readonly name: string
+    readonly flags: SchemaFlags
+    readonly attributes: SchemaAttribute[]
     /* Methods of Secret-1.Secret.Schema */
     ref(): Schema
     unref(): void
@@ -803,20 +807,20 @@ class Schema {
 }
 class SchemaAttribute {
     /* Fields of Secret-1.Secret.SchemaAttribute */
-    name: string
-    type: SchemaAttributeType
+    readonly name: string
+    readonly type: SchemaAttributeType
     static name: string
 }
 abstract class ServiceClass {
     /* Fields of Secret-1.Secret.ServiceClass */
-    parent_class: Gio.DBusProxyClass
-    collection_gtype: GObject.Type
-    item_gtype: GObject.Type
-    prompt_sync: (self: Service, prompt: Prompt, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType) => GLib.Variant
-    prompt_async: (self: Service, prompt: Prompt, return_type: GLib.VariantType, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    prompt_finish: (self: Service, result: Gio.AsyncResult) => GLib.Variant
-    get_collection_gtype: (self: Service) => GObject.Type
-    get_item_gtype: (self: Service) => GObject.Type
+    readonly parent_class: Gio.DBusProxyClass
+    readonly collection_gtype: GObject.Type
+    readonly item_gtype: GObject.Type
+    readonly prompt_sync: (self: Service, prompt: Prompt, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType) => GLib.Variant
+    readonly prompt_async: (self: Service, prompt: Prompt, return_type: GLib.VariantType, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly prompt_finish: (self: Service, result: Gio.AsyncResult) => GLib.Variant
+    readonly get_collection_gtype: (self: Service) => GObject.Type
+    readonly get_item_gtype: (self: Service) => GObject.Type
     static name: string
 }
 class ServicePrivate {
@@ -824,7 +828,7 @@ class ServicePrivate {
 }
 class Value {
     /* Methods of Secret-1.Secret.Value */
-    get(): Uint8Array[]
+    get(): Uint8Array
     get_content_type(): string
     get_text(): string | null
     ref(): Value

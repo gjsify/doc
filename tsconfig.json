@@ -2,7 +2,7 @@
   "compilerOptions": {
     "lib": ["ESNext"],                 
     "target": "ESNext",
-    "module": "commonjs",
+    "module": "ESNext",
     "outDir": "lib",
     "strict": true,
     "noImplicitAny": false,
@@ -12,7 +12,14 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "rootDir": "src",
+    "rootDir": "./",
     "resolveJsonModule": true,
+    "skipLibCheck": true
   },
+  "include": [
+    "./typedoc.ts"
+  ],
+  "exclude": [
+    "@types"
+  ]
 }

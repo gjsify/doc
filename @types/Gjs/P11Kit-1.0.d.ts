@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * P11Kit-1.0
  */
@@ -33,9 +39,9 @@ enum UriType {
     OBJECT_ON_TOKEN_AND_MODULE,
     ANY,
 }
-export const PIN_FALLBACK: string
-export const URI_SCHEME: string
-export const URI_SCHEME_LEN: number
+const PIN_FALLBACK: string
+const URI_SCHEME: string
+const URI_SCHEME_LEN: number
 function space_strdup(string: number, max_length: number): string
 function space_strlen(string: number, max_length: number): number
 function uri_message(code: number): string

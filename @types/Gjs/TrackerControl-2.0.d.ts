@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * TrackerControl-2.0
  */
@@ -13,15 +19,14 @@ enum MinerManagerError {
     NOT_AVAILABLE,
     NOENT,
 }
-export interface MinerManager_ConstructProps extends GObject.Object_ConstructProps {
+interface MinerManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TrackerControl-2.0.TrackerControl.MinerManager */
     auto_start?: boolean
     domain_ontology?: string
 }
 class MinerManager {
-    /* Fields of TrackerControl-2.0.TrackerControl.MinerManager */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TrackerControl-2.0.TrackerControl.MinerManager */
     get_available(): string[] | null
     get_description(miner: string): string
@@ -115,12 +120,12 @@ class MinerManager {
 }
 abstract class MinerManagerClass {
     /* Fields of TrackerControl-2.0.TrackerControl.MinerManagerClass */
-    parent_class: GObject.ObjectClass
-    miner_progress: (manager: MinerManager, miner_name: string, status: string, progress: number) => void
-    miner_paused: (manager: MinerManager, miner_name: string) => void
-    miner_resumed: (manager: MinerManager, miner_name: string) => void
-    miner_activated: (manager: MinerManager, miner_name: string) => void
-    miner_deactivated: (manager: MinerManager, miner_name: string) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly miner_progress: (manager: MinerManager, miner_name: string, status: string, progress: number) => void
+    readonly miner_paused: (manager: MinerManager, miner_name: string) => void
+    readonly miner_resumed: (manager: MinerManager, miner_name: string) => void
+    readonly miner_activated: (manager: MinerManager, miner_name: string) => void
+    readonly miner_deactivated: (manager: MinerManager, miner_name: string) => void
     static name: string
 }
 }

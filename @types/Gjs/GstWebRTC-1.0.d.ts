@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstWebRTC-1.0
  */
@@ -130,7 +136,8 @@ enum WebRTCStatsType {
     CERTIFICATE,
 }
 function webrtc_sdp_type_to_string(type: WebRTCSDPType): string
-export interface WebRTCDTLSTransport_ConstructProps extends Gst.Object_ConstructProps {
+interface WebRTCDTLSTransport_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstWebRTC-1.0.GstWebRTC.WebRTCDTLSTransport */
     certificate?: string
     client?: boolean
     session_id?: number
@@ -142,15 +149,14 @@ class WebRTCDTLSTransport {
     readonly remote_certificate: string
     readonly state: WebRTCDTLSTransportState
     readonly transport: WebRTCICETransport
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
@@ -225,10 +231,6 @@ class WebRTCDTLSTransport {
     connect_after(sigName: "notify::state", callback: (($obj: WebRTCDTLSTransport, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::transport", callback: (($obj: WebRTCDTLSTransport, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::transport", callback: (($obj: WebRTCDTLSTransport, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: WebRTCDTLSTransport, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: WebRTCDTLSTransport, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: WebRTCDTLSTransport, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: WebRTCDTLSTransport, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -238,7 +240,8 @@ class WebRTCDTLSTransport {
     _init (config?: WebRTCDTLSTransport_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebRTCDataChannel_ConstructProps extends GObject.Object_ConstructProps {
+interface WebRTCDataChannel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GstWebRTC-1.0.GstWebRTC.WebRTCDataChannel */
     buffered_amount_low_threshold?: number
     id?: number
     label?: string
@@ -255,7 +258,7 @@ class WebRTCDataChannel {
     buffered_amount_low_threshold: number
     readonly ready_state: WebRTCDataChannelState
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstWebRTC-1.0.GstWebRTC.WebRTCDataChannel */
     close(): void
     send_data(data?: GLib.Bytes | null): void
@@ -337,22 +340,22 @@ class WebRTCDataChannel {
     _init (config?: WebRTCDataChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebRTCICETransport_ConstructProps extends Gst.Object_ConstructProps {
+interface WebRTCICETransport_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstWebRTC-1.0.GstWebRTC.WebRTCICETransport */
     component?: WebRTCICEComponent
 }
 class WebRTCICETransport {
     /* Properties of GstWebRTC-1.0.GstWebRTC.WebRTCICETransport */
     readonly gathering_state: WebRTCICEGatheringState
     readonly state: WebRTCICEConnectionState
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
@@ -428,10 +431,6 @@ class WebRTCICETransport {
     connect_after(sigName: "notify::gathering-state", callback: (($obj: WebRTCICETransport, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::state", callback: (($obj: WebRTCICETransport, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::state", callback: (($obj: WebRTCICETransport, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: WebRTCICETransport, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: WebRTCICETransport, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: WebRTCICETransport, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: WebRTCICETransport, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -441,20 +440,19 @@ class WebRTCICETransport {
     _init (config?: WebRTCICETransport_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebRTCRTPReceiver_ConstructProps extends Gst.Object_ConstructProps {
+interface WebRTCRTPReceiver_ConstructProps extends Gst.Object_ConstructProps {
 }
 class WebRTCRTPReceiver {
     /* Properties of GstWebRTC-1.0.GstWebRTC.WebRTCRTPReceiver */
     readonly transport: WebRTCDTLSTransport
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
@@ -521,10 +519,6 @@ class WebRTCRTPReceiver {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::transport", callback: (($obj: WebRTCRTPReceiver, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::transport", callback: (($obj: WebRTCRTPReceiver, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: WebRTCRTPReceiver, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: WebRTCRTPReceiver, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: WebRTCRTPReceiver, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: WebRTCRTPReceiver, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -534,22 +528,22 @@ class WebRTCRTPReceiver {
     _init (config?: WebRTCRTPReceiver_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebRTCRTPSender_ConstructProps extends Gst.Object_ConstructProps {
+interface WebRTCRTPSender_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstWebRTC-1.0.GstWebRTC.WebRTCRTPSender */
     priority?: WebRTCPriorityType
 }
 class WebRTCRTPSender {
     /* Properties of GstWebRTC-1.0.GstWebRTC.WebRTCRTPSender */
     priority: WebRTCPriorityType
     readonly transport: WebRTCDTLSTransport
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstWebRTC-1.0.GstWebRTC.WebRTCRTPSender */
     set_priority(priority: WebRTCPriorityType): void
     /* Methods of Gst-1.0.Gst.Object */
@@ -620,10 +614,6 @@ class WebRTCRTPSender {
     connect_after(sigName: "notify::priority", callback: (($obj: WebRTCRTPSender, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::transport", callback: (($obj: WebRTCRTPSender, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::transport", callback: (($obj: WebRTCRTPSender, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: WebRTCRTPSender, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: WebRTCRTPSender, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: WebRTCRTPSender, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: WebRTCRTPSender, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -633,7 +623,8 @@ class WebRTCRTPSender {
     _init (config?: WebRTCRTPSender_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebRTCRTPTransceiver_ConstructProps extends Gst.Object_ConstructProps {
+interface WebRTCRTPTransceiver_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstWebRTC-1.0.GstWebRTC.WebRTCRTPTransceiver */
     codec_preferences?: Gst.Caps
     direction?: WebRTCRTPTransceiverDirection
     mlineindex?: number
@@ -647,15 +638,14 @@ class WebRTCRTPTransceiver {
     direction: WebRTCRTPTransceiverDirection
     readonly kind: WebRTCKind
     readonly mid: string
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
@@ -730,10 +720,6 @@ class WebRTCRTPTransceiver {
     connect_after(sigName: "notify::kind", callback: (($obj: WebRTCRTPTransceiver, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::mid", callback: (($obj: WebRTCRTPTransceiver, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::mid", callback: (($obj: WebRTCRTPTransceiver, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: WebRTCRTPTransceiver, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: WebRTCRTPTransceiver, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: WebRTCRTPTransceiver, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: WebRTCRTPTransceiver, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -743,7 +729,7 @@ class WebRTCRTPTransceiver {
     _init (config?: WebRTCRTPTransceiver_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebRTCSCTPTransport_ConstructProps extends Gst.Object_ConstructProps {
+interface WebRTCSCTPTransport_ConstructProps extends Gst.Object_ConstructProps {
 }
 class WebRTCSCTPTransport {
     /* Properties of GstWebRTC-1.0.GstWebRTC.WebRTCSCTPTransport */
@@ -751,15 +737,14 @@ class WebRTCSCTPTransport {
     readonly max_message_size: number
     readonly state: WebRTCSCTPTransportState
     readonly transport: WebRTCDTLSTransport
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
@@ -832,10 +817,6 @@ class WebRTCSCTPTransport {
     connect_after(sigName: "notify::state", callback: (($obj: WebRTCSCTPTransport, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::transport", callback: (($obj: WebRTCSCTPTransport, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::transport", callback: (($obj: WebRTCSCTPTransport, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: WebRTCSCTPTransport, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: WebRTCSCTPTransport, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: WebRTCSCTPTransport, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: WebRTCSCTPTransport, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -868,8 +849,8 @@ abstract class WebRTCSCTPTransportClass {
 }
 class WebRTCSessionDescription {
     /* Fields of GstWebRTC-1.0.GstWebRTC.WebRTCSessionDescription */
-    type: WebRTCSDPType
-    sdp: GstSdp.SDPMessage
+    readonly type: WebRTCSDPType
+    readonly sdp: GstSdp.SDPMessage
     /* Methods of GstWebRTC-1.0.GstWebRTC.WebRTCSessionDescription */
     copy(): WebRTCSessionDescription
     free(): void

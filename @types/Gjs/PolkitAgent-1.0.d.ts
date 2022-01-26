@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PolkitAgent-1.0
  */
@@ -15,13 +21,11 @@ enum RegisterFlags {
     RUN_IN_THREAD,
 }
 function register_listener(listener: Listener, subject: Polkit.Subject, object_path: string): boolean
-export interface Listener_ConstructProps extends GObject.Object_ConstructProps {
+interface Listener_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Listener {
-    /* Fields of PolkitAgent-1.0.PolkitAgent.Listener */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PolkitAgent-1.0.PolkitAgent.Listener */
     initiate_authentication(action_id: string, message: string, icon_name: string, details: Polkit.Details, cookie: string, identities: Polkit.Identity[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     initiate_authentication_finish(res: Gio.AsyncResult): boolean
@@ -75,13 +79,14 @@ class Listener {
     static unregister(registration_handle?: object | null): void
     static $gtype: GObject.Type
 }
-export interface Session_ConstructProps extends GObject.Object_ConstructProps {
+interface Session_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of PolkitAgent-1.0.PolkitAgent.Session */
     cookie?: string
     identity?: Polkit.Identity
 }
 class Session {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PolkitAgent-1.0.PolkitAgent.Session */
     cancel(): void
     initiate(): void
@@ -144,13 +149,13 @@ class Session {
     static new(identity: Polkit.Identity, cookie: string): Session
     static $gtype: GObject.Type
 }
-export interface TextListener_ConstructProps extends Listener_ConstructProps {
+interface TextListener_ConstructProps extends Listener_ConstructProps {
 }
 class TextListener {
     /* Fields of PolkitAgent-1.0.PolkitAgent.Listener */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PolkitAgent-1.0.PolkitAgent.Listener */
     initiate_authentication(action_id: string, message: string, icon_name: string, details: Polkit.Details, cookie: string, identities: Polkit.Identity[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     initiate_authentication_finish(res: Gio.AsyncResult): boolean
@@ -211,9 +216,9 @@ class TextListener {
 }
 abstract class ListenerClass {
     /* Fields of PolkitAgent-1.0.PolkitAgent.ListenerClass */
-    parent_class: GObject.ObjectClass
-    initiate_authentication: (listener: Listener, action_id: string, message: string, icon_name: string, details: Polkit.Details, cookie: string, identities: Polkit.Identity[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    initiate_authentication_finish: (listener: Listener, res: Gio.AsyncResult) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly initiate_authentication: (listener: Listener, action_id: string, message: string, icon_name: string, details: Polkit.Details, cookie: string, identities: Polkit.Identity[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly initiate_authentication_finish: (listener: Listener, res: Gio.AsyncResult) => boolean
     static name: string
 }
 abstract class SessionClass {

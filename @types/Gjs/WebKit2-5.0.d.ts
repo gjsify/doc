@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * WebKit2-5.0
  */
@@ -304,18 +310,18 @@ enum WebsiteDataTypes {
     DOM_CACHE,
     ALL,
 }
-export const EDITING_COMMAND_COPY: string
-export const EDITING_COMMAND_CREATE_LINK: string
-export const EDITING_COMMAND_CUT: string
-export const EDITING_COMMAND_INSERT_IMAGE: string
-export const EDITING_COMMAND_PASTE: string
-export const EDITING_COMMAND_PASTE_AS_PLAIN_TEXT: string
-export const EDITING_COMMAND_REDO: string
-export const EDITING_COMMAND_SELECT_ALL: string
-export const EDITING_COMMAND_UNDO: string
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const EDITING_COMMAND_COPY: string
+const EDITING_COMMAND_CREATE_LINK: string
+const EDITING_COMMAND_CUT: string
+const EDITING_COMMAND_INSERT_IMAGE: string
+const EDITING_COMMAND_PASTE: string
+const EDITING_COMMAND_PASTE_AS_PLAIN_TEXT: string
+const EDITING_COMMAND_REDO: string
+const EDITING_COMMAND_SELECT_ALL: string
+const EDITING_COMMAND_UNDO: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function download_error_quark(): GLib.Quark
 function favicon_database_error_quark(): GLib.Quark
 function get_major_version(): number
@@ -346,13 +352,11 @@ class PermissionRequest {
     vfunc_deny(): void
     static name: string
 }
-export interface AuthenticationRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthenticationRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AuthenticationRequest {
-    /* Fields of WebKit2-5.0.WebKit2.AuthenticationRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.AuthenticationRequest */
     authenticate(credential?: Credential | null): void
     can_save_credentials(): boolean
@@ -418,15 +422,13 @@ class AuthenticationRequest {
     _init (config?: AuthenticationRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AutomationSession_ConstructProps extends GObject.Object_ConstructProps {
+interface AutomationSession_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.AutomationSession */
     id?: string
 }
 class AutomationSession {
-    /* Fields of WebKit2-5.0.WebKit2.AutomationSession */
-    parent: GObject.Object
-    priv: AutomationSessionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.AutomationSession */
     get_application_info(): ApplicationInfo
     get_id(): string
@@ -478,14 +480,11 @@ class AutomationSession {
     _init (config?: AutomationSession_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BackForwardList_ConstructProps extends GObject.Object_ConstructProps {
+interface BackForwardList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BackForwardList {
-    /* Fields of WebKit2-5.0.WebKit2.BackForwardList */
-    parent: GObject.Object
-    priv: BackForwardListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.BackForwardList */
     get_back_item(): BackForwardListItem | null
     get_back_list(): BackForwardListItem[]
@@ -543,14 +542,11 @@ class BackForwardList {
     _init (config?: BackForwardList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BackForwardListItem_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface BackForwardListItem_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
 class BackForwardListItem {
-    /* Fields of WebKit2-5.0.WebKit2.BackForwardListItem */
-    parent: GObject.InitiallyUnowned
-    priv: BackForwardListItemPrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.BackForwardListItem */
     get_original_uri(): string
     get_title(): string
@@ -598,16 +594,15 @@ class BackForwardListItem {
     _init (config?: BackForwardListItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ColorChooserRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface ColorChooserRequest_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.ColorChooserRequest */
     rgba?: Gdk.RGBA
 }
 class ColorChooserRequest {
     /* Properties of WebKit2-5.0.WebKit2.ColorChooserRequest */
     rgba: Gdk.RGBA
-    /* Fields of WebKit2-5.0.WebKit2.ColorChooserRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.ColorChooserRequest */
     cancel(): void
     finish(): void
@@ -663,14 +658,11 @@ class ColorChooserRequest {
     _init (config?: ColorChooserRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ContextMenu_ConstructProps extends GObject.Object_ConstructProps {
+interface ContextMenu_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ContextMenu {
-    /* Fields of WebKit2-5.0.WebKit2.ContextMenu */
-    parent: GObject.Object
-    priv: ContextMenuPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.ContextMenu */
     append(item: ContextMenuItem): void
     first(): ContextMenuItem
@@ -731,14 +723,11 @@ class ContextMenu {
     static new_with_items(items: ContextMenuItem[]): ContextMenu
     static $gtype: GObject.Type
 }
-export interface ContextMenuItem_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface ContextMenuItem_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
 class ContextMenuItem {
-    /* Fields of WebKit2-5.0.WebKit2.ContextMenuItem */
-    parent: GObject.InitiallyUnowned
-    priv: ContextMenuItemPrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.ContextMenuItem */
     get_gaction(): Gio.Action
     get_stock_action(): ContextMenuAction
@@ -794,14 +783,11 @@ class ContextMenuItem {
     static new_with_submenu(label: string, submenu: ContextMenu): ContextMenuItem
     static $gtype: GObject.Type
 }
-export interface CookieManager_ConstructProps extends GObject.Object_ConstructProps {
+interface CookieManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CookieManager {
-    /* Fields of WebKit2-5.0.WebKit2.CookieManager */
-    parent: GObject.Object
-    priv: CookieManagerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.CookieManager */
     add_cookie(cookie: Soup.Cookie, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     add_cookie_finish(result: Gio.AsyncResult): boolean
@@ -864,13 +850,11 @@ class CookieManager {
     _init (config?: CookieManager_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceInfoPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface DeviceInfoPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DeviceInfoPermissionRequest {
-    /* Fields of WebKit2-5.0.WebKit2.DeviceInfoPermissionRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -920,7 +904,8 @@ class DeviceInfoPermissionRequest {
     _init (config?: DeviceInfoPermissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Download_ConstructProps extends GObject.Object_ConstructProps {
+interface Download_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.Download */
     allow_overwrite?: boolean
 }
 class Download {
@@ -929,11 +914,8 @@ class Download {
     readonly destination: string
     readonly estimated_progress: number
     readonly response: URIResponse
-    /* Fields of WebKit2-5.0.WebKit2.Download */
-    parent: GObject.Object
-    priv: DownloadPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.Download */
     cancel(): void
     get_allow_overwrite(): boolean
@@ -1015,16 +997,13 @@ class Download {
     _init (config?: Download_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EditorState_ConstructProps extends GObject.Object_ConstructProps {
+interface EditorState_ConstructProps extends GObject.Object_ConstructProps {
 }
 class EditorState {
     /* Properties of WebKit2-5.0.WebKit2.EditorState */
     readonly typing_attributes: number
-    /* Fields of WebKit2-5.0.WebKit2.EditorState */
-    parent: GObject.Object
-    priv: EditorStatePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.EditorState */
     get_typing_attributes(): number
     is_copy_available(): boolean
@@ -1077,14 +1056,11 @@ class EditorState {
     _init (config?: EditorState_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FaviconDatabase_ConstructProps extends GObject.Object_ConstructProps {
+interface FaviconDatabase_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FaviconDatabase {
-    /* Fields of WebKit2-5.0.WebKit2.FaviconDatabase */
-    parent: GObject.Object
-    priv: FaviconDatabasePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.FaviconDatabase */
     clear(): void
     get_favicon(page_uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1137,7 +1113,7 @@ class FaviconDatabase {
     _init (config?: FaviconDatabase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FileChooserRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface FileChooserRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FileChooserRequest {
     /* Properties of WebKit2-5.0.WebKit2.FileChooserRequest */
@@ -1145,10 +1121,8 @@ class FileChooserRequest {
     readonly mime_types: string[]
     readonly select_multiple: boolean
     readonly selected_files: string[]
-    /* Fields of WebKit2-5.0.WebKit2.FileChooserRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.FileChooserRequest */
     cancel(): void
     get_mime_types(): string[]
@@ -1207,7 +1181,8 @@ class FileChooserRequest {
     _init (config?: FileChooserRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FindController_ConstructProps extends GObject.Object_ConstructProps {
+interface FindController_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.FindController */
     web_view?: WebView
 }
 class FindController {
@@ -1215,10 +1190,8 @@ class FindController {
     readonly max_match_count: number
     readonly options: FindOptions
     readonly text: string
-    /* Fields of WebKit2-5.0.WebKit2.FindController */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.FindController */
     count_matches(search_text: string, find_options: number, max_match_count: number): void
     get_max_match_count(): number
@@ -1288,13 +1261,11 @@ class FindController {
     _init (config?: FindController_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FormSubmissionRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface FormSubmissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FormSubmissionRequest {
-    /* Fields of WebKit2-5.0.WebKit2.FormSubmissionRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.FormSubmissionRequest */
     get_text_fields(): GLib.HashTable | null
     list_text_fields(): [ /* returnType */ boolean, /* field_names */ string[] | null, /* field_values */ string[] | null ]
@@ -1342,15 +1313,13 @@ class FormSubmissionRequest {
     _init (config?: FormSubmissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GeolocationManager_ConstructProps extends GObject.Object_ConstructProps {
+interface GeolocationManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class GeolocationManager {
     /* Properties of WebKit2-5.0.WebKit2.GeolocationManager */
     readonly enable_high_accuracy: boolean
-    /* Fields of WebKit2-5.0.WebKit2.GeolocationManager */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.GeolocationManager */
     failed(error_message: string): void
     get_enable_high_accuracy(): boolean
@@ -1407,13 +1376,11 @@ class GeolocationManager {
     _init (config?: GeolocationManager_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GeolocationPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface GeolocationPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class GeolocationPermissionRequest {
-    /* Fields of WebKit2-5.0.WebKit2.GeolocationPermissionRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1463,7 +1430,8 @@ class GeolocationPermissionRequest {
     _init (config?: GeolocationPermissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface HitTestResult_ConstructProps extends GObject.Object_ConstructProps {
+interface HitTestResult_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.HitTestResult */
     context?: number
     image_uri?: string
     link_label?: string
@@ -1472,11 +1440,8 @@ export interface HitTestResult_ConstructProps extends GObject.Object_ConstructPr
     media_uri?: string
 }
 class HitTestResult {
-    /* Fields of WebKit2-5.0.WebKit2.HitTestResult */
-    parent: GObject.Object
-    priv: HitTestResultPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.HitTestResult */
     context_is_editable(): boolean
     context_is_image(): boolean
@@ -1533,7 +1498,8 @@ class HitTestResult {
     _init (config?: HitTestResult_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface InputMethodContext_ConstructProps extends GObject.Object_ConstructProps {
+interface InputMethodContext_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.InputMethodContext */
     input_hints?: InputHints
     input_purpose?: InputPurpose
 }
@@ -1541,10 +1507,8 @@ class InputMethodContext {
     /* Properties of WebKit2-5.0.WebKit2.InputMethodContext */
     input_hints: InputHints
     input_purpose: InputPurpose
-    /* Fields of WebKit2-5.0.WebKit2.InputMethodContext */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.InputMethodContext */
     filter_key_event(key_event: Gdk.Event): boolean
     get_input_hints(): InputHints
@@ -1635,14 +1599,11 @@ class InputMethodContext {
     _init (config?: InputMethodContext_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface InstallMissingMediaPluginsPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface InstallMissingMediaPluginsPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class InstallMissingMediaPluginsPermissionRequest {
-    /* Fields of WebKit2-5.0.WebKit2.InstallMissingMediaPluginsPermissionRequest */
-    parent: GObject.Object
-    priv: InstallMissingMediaPluginsPermissionRequestPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.InstallMissingMediaPluginsPermissionRequest */
     get_description(): string
     /* Methods of GObject-2.0.GObject.Object */
@@ -1694,13 +1655,11 @@ class InstallMissingMediaPluginsPermissionRequest {
     _init (config?: InstallMissingMediaPluginsPermissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MediaKeySystemPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface MediaKeySystemPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MediaKeySystemPermissionRequest {
-    /* Fields of WebKit2-5.0.WebKit2.MediaKeySystemPermissionRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1750,7 +1709,7 @@ class MediaKeySystemPermissionRequest {
     _init (config?: MediaKeySystemPermissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NavigationPolicyDecision_ConstructProps extends PolicyDecision_ConstructProps {
+interface NavigationPolicyDecision_ConstructProps extends PolicyDecision_ConstructProps {
 }
 class NavigationPolicyDecision {
     /* Properties of WebKit2-5.0.WebKit2.NavigationPolicyDecision */
@@ -1760,10 +1719,10 @@ class NavigationPolicyDecision {
     readonly navigation_action: NavigationAction
     readonly navigation_type: NavigationType
     readonly request: URIRequest
-    /* Fields of WebKit2-5.0.WebKit2.NavigationPolicyDecision */
-    parent: PolicyDecision
+    /* Fields of WebKit2-5.0.WebKit2.PolicyDecision */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.NavigationPolicyDecision */
     get_frame_name(): string
     get_modifiers(): number
@@ -1831,7 +1790,7 @@ class NavigationPolicyDecision {
     _init (config?: NavigationPolicyDecision_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Notification_ConstructProps extends GObject.Object_ConstructProps {
+interface Notification_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Notification {
     /* Properties of WebKit2-5.0.WebKit2.Notification */
@@ -1839,11 +1798,8 @@ class Notification {
     readonly id: number
     readonly tag: string
     readonly title: string
-    /* Fields of WebKit2-5.0.WebKit2.Notification */
-    parent: GObject.Object
-    priv: NotificationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.Notification */
     clicked(): void
     close(): void
@@ -1909,13 +1865,11 @@ class Notification {
     _init (config?: Notification_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NotificationPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface NotificationPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class NotificationPermissionRequest {
-    /* Fields of WebKit2-5.0.WebKit2.NotificationPermissionRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1965,14 +1919,11 @@ class NotificationPermissionRequest {
     _init (config?: NotificationPermissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface OptionMenu_ConstructProps extends GObject.Object_ConstructProps {
+interface OptionMenu_ConstructProps extends GObject.Object_ConstructProps {
 }
 class OptionMenu {
-    /* Fields of WebKit2-5.0.WebKit2.OptionMenu */
-    parent: GObject.Object
-    priv: OptionMenuPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.OptionMenu */
     activate_item(index: number): void
     close(): void
@@ -2026,14 +1977,11 @@ class OptionMenu {
     _init (config?: OptionMenu_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
+interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Plugin {
-    /* Fields of WebKit2-5.0.WebKit2.Plugin */
-    parent: GObject.Object
-    priv: PluginPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.Plugin */
     get_description(): string
     get_mime_info_list(): MimeInfo[]
@@ -2082,13 +2030,11 @@ class Plugin {
     _init (config?: Plugin_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PointerLockPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface PointerLockPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PointerLockPermissionRequest {
-    /* Fields of WebKit2-5.0.WebKit2.PointerLockPermissionRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2138,13 +2084,11 @@ class PointerLockPermissionRequest {
     _init (config?: PointerLockPermissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PolicyDecision_ConstructProps extends GObject.Object_ConstructProps {
+interface PolicyDecision_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PolicyDecision {
-    /* Fields of WebKit2-5.0.WebKit2.PolicyDecision */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.PolicyDecision */
     download(): void
     ignore(): void
@@ -2193,16 +2137,14 @@ class PolicyDecision {
     _init (config?: PolicyDecision_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PrintCustomWidget_ConstructProps extends GObject.Object_ConstructProps {
+interface PrintCustomWidget_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.PrintCustomWidget */
     title?: string
     widget?: Gtk.Widget
 }
 class PrintCustomWidget {
-    /* Fields of WebKit2-5.0.WebKit2.PrintCustomWidget */
-    parent: GObject.Object
-    priv: PrintCustomWidgetPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.PrintCustomWidget */
     get_title(): string
     get_widget(): Gtk.Widget
@@ -2261,7 +2203,8 @@ class PrintCustomWidget {
     static new(widget: Gtk.Widget, title: string): PrintCustomWidget
     static $gtype: GObject.Type
 }
-export interface PrintOperation_ConstructProps extends GObject.Object_ConstructProps {
+interface PrintOperation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.PrintOperation */
     page_setup?: Gtk.PageSetup
     print_settings?: Gtk.PrintSettings
     web_view?: WebView
@@ -2270,11 +2213,8 @@ class PrintOperation {
     /* Properties of WebKit2-5.0.WebKit2.PrintOperation */
     page_setup: Gtk.PageSetup
     print_settings: Gtk.PrintSettings
-    /* Fields of WebKit2-5.0.WebKit2.PrintOperation */
-    parent: GObject.Object
-    priv: PrintOperationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.PrintOperation */
     get_page_setup(): Gtk.PageSetup
     get_print_settings(): Gtk.PrintSettings
@@ -2341,16 +2281,16 @@ class PrintOperation {
     static new(web_view: WebView): PrintOperation
     static $gtype: GObject.Type
 }
-export interface ResponsePolicyDecision_ConstructProps extends PolicyDecision_ConstructProps {
+interface ResponsePolicyDecision_ConstructProps extends PolicyDecision_ConstructProps {
 }
 class ResponsePolicyDecision {
     /* Properties of WebKit2-5.0.WebKit2.ResponsePolicyDecision */
     readonly request: URIRequest
     readonly response: URIResponse
-    /* Fields of WebKit2-5.0.WebKit2.ResponsePolicyDecision */
-    parent: PolicyDecision
+    /* Fields of WebKit2-5.0.WebKit2.PolicyDecision */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.ResponsePolicyDecision */
     get_request(): URIRequest
     get_response(): URIResponse
@@ -2407,14 +2347,11 @@ class ResponsePolicyDecision {
     _init (config?: ResponsePolicyDecision_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SecurityManager_ConstructProps extends GObject.Object_ConstructProps {
+interface SecurityManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SecurityManager {
-    /* Fields of WebKit2-5.0.WebKit2.SecurityManager */
-    parent: GObject.Object
-    priv: SecurityManagerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.SecurityManager */
     register_uri_scheme_as_cors_enabled(scheme: string): void
     register_uri_scheme_as_display_isolated(scheme: string): void
@@ -2471,7 +2408,8 @@ class SecurityManager {
     _init (config?: SecurityManager_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Settings_ConstructProps extends GObject.Object_ConstructProps {
+interface Settings_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.Settings */
     allow_file_access_from_file_urls?: boolean
     allow_modal_dialogs?: boolean
     allow_top_navigation_to_data_urls?: boolean
@@ -2593,11 +2531,8 @@ class Settings {
     serif_font_family: string
     user_agent: string
     zoom_text_only: boolean
-    /* Fields of WebKit2-5.0.WebKit2.Settings */
-    parent_instance: GObject.Object
-    priv: SettingsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.Settings */
     get_allow_file_access_from_file_urls(): boolean
     get_allow_modal_dialogs(): boolean
@@ -2883,16 +2818,15 @@ class Settings {
     static font_size_to_points(pixels: number): number
     static $gtype: GObject.Type
 }
-export interface URIRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface URIRequest_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.URIRequest */
     uri?: string
 }
 class URIRequest {
     /* Properties of WebKit2-5.0.WebKit2.URIRequest */
     uri: string
-    /* Fields of WebKit2-5.0.WebKit2.URIRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.URIRequest */
     get_http_headers(): Soup.MessageHeaders
     get_http_method(): string
@@ -2945,7 +2879,7 @@ class URIRequest {
     static new(uri: string): URIRequest
     static $gtype: GObject.Type
 }
-export interface URIResponse_ConstructProps extends GObject.Object_ConstructProps {
+interface URIResponse_ConstructProps extends GObject.Object_ConstructProps {
 }
 class URIResponse {
     /* Properties of WebKit2-5.0.WebKit2.URIResponse */
@@ -2955,10 +2889,8 @@ class URIResponse {
     readonly status_code: number
     readonly suggested_filename: string
     readonly uri: string
-    /* Fields of WebKit2-5.0.WebKit2.URIResponse */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.URIResponse */
     get_content_length(): number
     get_http_headers(): Soup.MessageHeaders
@@ -3021,14 +2953,11 @@ class URIResponse {
     _init (config?: URIResponse_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface URISchemeRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface URISchemeRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class URISchemeRequest {
-    /* Fields of WebKit2-5.0.WebKit2.URISchemeRequest */
-    parent: GObject.Object
-    priv: URISchemeRequestPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.URISchemeRequest */
     finish(stream: Gio.InputStream, stream_length: number, content_type?: string | null): void
     finish_error(error: GLib.Error): void
@@ -3082,16 +3011,14 @@ class URISchemeRequest {
     _init (config?: URISchemeRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface URISchemeResponse_ConstructProps extends GObject.Object_ConstructProps {
+interface URISchemeResponse_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.URISchemeResponse */
     stream?: Gio.InputStream
     stream_length?: number
 }
 class URISchemeResponse {
-    /* Fields of WebKit2-5.0.WebKit2.URISchemeResponse */
-    parent: GObject.Object
-    priv: URISchemeResponsePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.URISchemeResponse */
     set_content_type(content_type: string): void
     set_http_headers(headers: Soup.MessageHeaders): void
@@ -3141,14 +3068,13 @@ class URISchemeResponse {
     static new(input_stream: Gio.InputStream, stream_length: number): URISchemeResponse
     static $gtype: GObject.Type
 }
-export interface UserContentFilterStore_ConstructProps extends GObject.Object_ConstructProps {
+interface UserContentFilterStore_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.UserContentFilterStore */
     path?: string
 }
 class UserContentFilterStore {
-    /* Fields of WebKit2-5.0.WebKit2.UserContentFilterStore */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.UserContentFilterStore */
     fetch_identifiers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     fetch_identifiers_finish(result: Gio.AsyncResult): string[]
@@ -3206,13 +3132,11 @@ class UserContentFilterStore {
     static new(storage_path: string): UserContentFilterStore
     static $gtype: GObject.Type
 }
-export interface UserContentManager_ConstructProps extends GObject.Object_ConstructProps {
+interface UserContentManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class UserContentManager {
-    /* Fields of WebKit2-5.0.WebKit2.UserContentManager */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.UserContentManager */
     add_filter(filter: UserContentFilter): void
     add_script(script: UserScript): void
@@ -3277,16 +3201,14 @@ class UserContentManager {
     static new(): UserContentManager
     static $gtype: GObject.Type
 }
-export interface UserMediaPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface UserMediaPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class UserMediaPermissionRequest {
     /* Properties of WebKit2-5.0.WebKit2.UserMediaPermissionRequest */
     readonly is_for_audio_device: boolean
     readonly is_for_video_device: boolean
-    /* Fields of WebKit2-5.0.WebKit2.UserMediaPermissionRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3340,17 +3262,15 @@ class UserMediaPermissionRequest {
     _init (config?: UserMediaPermissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UserMessage_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface UserMessage_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.UserMessage */
     fd_list?: Gio.UnixFDList
     name?: string
     parameters?: GLib.Variant
 }
 class UserMessage {
-    /* Fields of WebKit2-5.0.WebKit2.UserMessage */
-    parent: GObject.InitiallyUnowned
-    priv: UserMessagePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.UserMessage */
     get_fd_list(): Gio.UnixFDList | null
     get_name(): string
@@ -3402,17 +3322,16 @@ class UserMessage {
     static new_with_fd_list(name: string, parameters?: GLib.Variant | null, fd_list?: Gio.UnixFDList | null): UserMessage
     static $gtype: GObject.Type
 }
-export interface WebContext_ConstructProps extends GObject.Object_ConstructProps {
+interface WebContext_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.WebContext */
     local_storage_directory?: string
     memory_pressure_settings?: MemoryPressureSettings
     process_swap_on_cross_site_navigation_enabled?: boolean
     website_data_manager?: WebsiteDataManager
 }
 class WebContext {
-    /* Fields of WebKit2-5.0.WebKit2.WebContext */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.WebContext */
     add_path_to_sandbox(path: string, read_only: boolean): void
     allow_tls_certificate_for_host(certificate: Gio.TlsCertificate, host: string): void
@@ -3526,18 +3445,15 @@ class WebContext {
     static get_default(): WebContext
     static $gtype: GObject.Type
 }
-export interface WebInspector_ConstructProps extends GObject.Object_ConstructProps {
+interface WebInspector_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WebInspector {
     /* Properties of WebKit2-5.0.WebKit2.WebInspector */
     readonly attached_height: number
     readonly can_attach: boolean
     readonly inspected_uri: string
-    /* Fields of WebKit2-5.0.WebKit2.WebInspector */
-    parent: GObject.Object
-    priv: WebInspectorPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.WebInspector */
     attach(): void
     close(): void
@@ -3613,20 +3529,17 @@ class WebInspector {
     _init (config?: WebInspector_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebResource_ConstructProps extends GObject.Object_ConstructProps {
+interface WebResource_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WebResource {
     /* Properties of WebKit2-5.0.WebKit2.WebResource */
     readonly response: URIResponse
     readonly uri: string
-    /* Fields of WebKit2-5.0.WebKit2.WebResource */
-    parent: GObject.Object
-    priv: WebResourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.WebResource */
     get_data(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_data_finish(result: Gio.AsyncResult): Uint8Array[]
+    get_data_finish(result: Gio.AsyncResult): Uint8Array
     get_response(): URIResponse
     get_uri(): string
     /* Methods of GObject-2.0.GObject.Object */
@@ -3692,7 +3605,8 @@ class WebResource {
     _init (config?: WebResource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebView_ConstructProps extends WebViewBase_ConstructProps {
+interface WebView_ConstructProps extends WebViewBase_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.WebView */
     automation_presentation_type?: AutomationBrowsingContextPresentation
     camera_capture_state?: MediaCaptureState
     display_capture_state?: MediaCaptureState
@@ -3707,6 +3621,7 @@ export interface WebView_ConstructProps extends WebViewBase_ConstructProps {
     web_context?: WebContext
     website_policies?: WebsitePolicies
     zoom_level?: number
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class WebView {
@@ -3763,11 +3678,11 @@ class WebView {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of WebKit2-5.0.WebKit2.WebViewBase */
-    parentInstance: Gtk.Widget
+    readonly parentInstance: Gtk.Widget
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.WebView */
     can_execute_editing_command(command: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     can_execute_editing_command_finish(result: Gio.AsyncResult): boolean
@@ -4036,7 +3951,7 @@ class WebView {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of WebKit2-5.0.WebKit2.WebView */
     vfunc_authenticate(request: AuthenticationRequest): boolean
     vfunc_close(): void
@@ -4064,6 +3979,15 @@ class WebView {
     vfunc_user_message_received(message: UserMessage): boolean
     vfunc_web_process_crashed(): boolean
     vfunc_web_process_terminated(reason: WebProcessTerminationReason): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ Gtk.BuildableParser, /* data */ object | null ]
+    vfunc_get_id(): string
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_id(id: string): void
     /* Virtual methods of WebKit2-5.0.WebKit2.WebViewBase */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4347,7 +4271,8 @@ class WebView {
     static new_with_user_content_manager(user_content_manager: UserContentManager): WebView
     static $gtype: GObject.Type
 }
-export interface WebViewBase_ConstructProps extends Gtk.Widget_ConstructProps {
+interface WebViewBase_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class WebViewBase {
@@ -4387,12 +4312,10 @@ class WebViewBase {
     width_request: number
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
-    /* Fields of WebKit2-5.0.WebKit2.WebViewBase */
-    parentInstance: Gtk.Widget
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-4.0.Gtk.Widget */
     action_set_enabled(action_name: string, enabled: boolean): void
     activate(): boolean
@@ -4581,7 +4504,7 @@ class WebViewBase {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of WebKit2-5.0.WebKit2.WebViewBase */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -4747,13 +4670,11 @@ class WebViewBase {
     _init (config?: WebViewBase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebsiteDataAccessPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface WebsiteDataAccessPermissionRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WebsiteDataAccessPermissionRequest {
-    /* Fields of WebKit2-5.0.WebKit2.WebsiteDataAccessPermissionRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.WebsiteDataAccessPermissionRequest */
     get_current_domain(): string
     get_requesting_domain(): string
@@ -4806,7 +4727,8 @@ class WebsiteDataAccessPermissionRequest {
     _init (config?: WebsiteDataAccessPermissionRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebsiteDataManager_ConstructProps extends GObject.Object_ConstructProps {
+interface WebsiteDataManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.WebsiteDataManager */
     base_cache_directory?: string
     base_data_directory?: string
     disk_cache_directory?: string
@@ -4821,11 +4743,8 @@ export interface WebsiteDataManager_ConstructProps extends GObject.Object_Constr
     websql_directory?: string
 }
 class WebsiteDataManager {
-    /* Fields of WebKit2-5.0.WebKit2.WebsiteDataManager */
-    parent: GObject.Object
-    priv: WebsiteDataManagerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.WebsiteDataManager */
     clear(types: WebsiteDataTypes, timespan: GLib.TimeSpan, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     clear_finish(result: Gio.AsyncResult): boolean
@@ -4901,15 +4820,13 @@ class WebsiteDataManager {
     static set_memory_pressure_settings(settings: MemoryPressureSettings): void
     static $gtype: GObject.Type
 }
-export interface WebsitePolicies_ConstructProps extends GObject.Object_ConstructProps {
+interface WebsitePolicies_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.WebsitePolicies */
     autoplay?: AutoplayPolicy
 }
 class WebsitePolicies {
-    /* Fields of WebKit2-5.0.WebKit2.WebsitePolicies */
-    parent: GObject.Object
-    priv: WebsitePoliciesPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.WebsitePolicies */
     get_autoplay_policy(): AutoplayPolicy
     /* Methods of GObject-2.0.GObject.Object */
@@ -4957,7 +4874,8 @@ class WebsitePolicies {
     static new(): WebsitePolicies
     static $gtype: GObject.Type
 }
-export interface WindowProperties_ConstructProps extends GObject.Object_ConstructProps {
+interface WindowProperties_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2-5.0.WebKit2.WindowProperties */
     fullscreen?: boolean
     geometry?: Gdk.Rectangle
     locationbar_visible?: boolean
@@ -4968,10 +4886,8 @@ export interface WindowProperties_ConstructProps extends GObject.Object_Construc
     toolbar_visible?: boolean
 }
 class WindowProperties {
-    /* Fields of WebKit2-5.0.WebKit2.WindowProperties */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2-5.0.WebKit2.WindowProperties */
     get_fullscreen(): boolean
     get_geometry(): /* geometry */ Gdk.Rectangle
@@ -5040,7 +4956,7 @@ class ApplicationInfo {
 }
 abstract class AuthenticationRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.AuthenticationRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AuthenticationRequestPrivate {
@@ -5048,7 +4964,7 @@ class AuthenticationRequestPrivate {
 }
 abstract class AutomationSessionClass {
     /* Fields of WebKit2-5.0.WebKit2.AutomationSessionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AutomationSessionPrivate {
@@ -5056,12 +4972,12 @@ class AutomationSessionPrivate {
 }
 abstract class BackForwardListClass {
     /* Fields of WebKit2-5.0.WebKit2.BackForwardListClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class BackForwardListItemClass {
     /* Fields of WebKit2-5.0.WebKit2.BackForwardListItemClass */
-    parent_class: GObject.InitiallyUnownedClass
+    readonly parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
 class BackForwardListItemPrivate {
@@ -5072,7 +4988,7 @@ class BackForwardListPrivate {
 }
 abstract class ColorChooserRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.ColorChooserRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ColorChooserRequestPrivate {
@@ -5080,12 +4996,12 @@ class ColorChooserRequestPrivate {
 }
 abstract class ContextMenuClass {
     /* Fields of WebKit2-5.0.WebKit2.ContextMenuClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ContextMenuItemClass {
     /* Fields of WebKit2-5.0.WebKit2.ContextMenuItemClass */
-    parent_class: GObject.InitiallyUnownedClass
+    readonly parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
 class ContextMenuItemPrivate {
@@ -5096,7 +5012,7 @@ class ContextMenuPrivate {
 }
 abstract class CookieManagerClass {
     /* Fields of WebKit2-5.0.WebKit2.CookieManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CookieManagerPrivate {
@@ -5121,7 +5037,7 @@ class Credential {
 }
 abstract class DeviceInfoPermissionRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.DeviceInfoPermissionRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DeviceInfoPermissionRequestPrivate {
@@ -5129,8 +5045,8 @@ class DeviceInfoPermissionRequestPrivate {
 }
 abstract class DownloadClass {
     /* Fields of WebKit2-5.0.WebKit2.DownloadClass */
-    parent_class: GObject.ObjectClass
-    decide_destination: (download: Download, suggested_filename: string) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly decide_destination: (download: Download, suggested_filename: string) => boolean
     static name: string
 }
 class DownloadPrivate {
@@ -5138,7 +5054,7 @@ class DownloadPrivate {
 }
 abstract class EditorStateClass {
     /* Fields of WebKit2-5.0.WebKit2.EditorStateClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class EditorStatePrivate {
@@ -5146,7 +5062,7 @@ class EditorStatePrivate {
 }
 abstract class FaviconDatabaseClass {
     /* Fields of WebKit2-5.0.WebKit2.FaviconDatabaseClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class FaviconDatabasePrivate {
@@ -5154,7 +5070,7 @@ class FaviconDatabasePrivate {
 }
 abstract class FileChooserRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.FileChooserRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class FileChooserRequestPrivate {
@@ -5162,7 +5078,7 @@ class FileChooserRequestPrivate {
 }
 abstract class FindControllerClass {
     /* Fields of WebKit2-5.0.WebKit2.FindControllerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class FindControllerPrivate {
@@ -5170,7 +5086,7 @@ class FindControllerPrivate {
 }
 abstract class FormSubmissionRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.FormSubmissionRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class FormSubmissionRequestPrivate {
@@ -5178,7 +5094,7 @@ class FormSubmissionRequestPrivate {
 }
 abstract class GeolocationManagerClass {
     /* Fields of WebKit2-5.0.WebKit2.GeolocationManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class GeolocationManagerPrivate {
@@ -5186,7 +5102,7 @@ class GeolocationManagerPrivate {
 }
 abstract class GeolocationPermissionRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.GeolocationPermissionRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class GeolocationPermissionRequestPrivate {
@@ -5209,7 +5125,7 @@ class GeolocationPosition {
 }
 abstract class HitTestResultClass {
     /* Fields of WebKit2-5.0.WebKit2.HitTestResultClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class HitTestResultPrivate {
@@ -5234,20 +5150,20 @@ class ITPThirdParty {
 }
 abstract class InputMethodContextClass {
     /* Fields of WebKit2-5.0.WebKit2.InputMethodContextClass */
-    parent_class: GObject.ObjectClass
-    preedit_started: (context: InputMethodContext) => void
-    preedit_changed: (context: InputMethodContext) => void
-    preedit_finished: (context: InputMethodContext) => void
-    committed: (context: InputMethodContext, text: string) => void
-    delete_surrounding: (context: InputMethodContext, offset: number, n_chars: number) => void
-    set_enable_preedit: (context: InputMethodContext, enabled: boolean) => void
-    get_preedit: (context: InputMethodContext) => [ /* text */ string | null, /* underlines */ InputMethodUnderline[] | null, /* cursor_offset */ number | null ]
-    filter_key_event: (context: InputMethodContext, key_event: Gdk.Event) => boolean
-    notify_focus_in: (context: InputMethodContext) => void
-    notify_focus_out: (context: InputMethodContext) => void
-    notify_cursor_area: (context: InputMethodContext, x: number, y: number, width: number, height: number) => void
-    notify_surrounding: (context: InputMethodContext, text: string, length: number, cursor_index: number, selection_index: number) => void
-    reset: (context: InputMethodContext) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly preedit_started: (context: InputMethodContext) => void
+    readonly preedit_changed: (context: InputMethodContext) => void
+    readonly preedit_finished: (context: InputMethodContext) => void
+    readonly committed: (context: InputMethodContext, text: string) => void
+    readonly delete_surrounding: (context: InputMethodContext, offset: number, n_chars: number) => void
+    readonly set_enable_preedit: (context: InputMethodContext, enabled: boolean) => void
+    readonly get_preedit: (context: InputMethodContext) => [ /* text */ string | null, /* underlines */ InputMethodUnderline[] | null, /* cursor_offset */ number | null ]
+    readonly filter_key_event: (context: InputMethodContext, key_event: Gdk.Event) => boolean
+    readonly notify_focus_in: (context: InputMethodContext) => void
+    readonly notify_focus_out: (context: InputMethodContext) => void
+    readonly notify_cursor_area: (context: InputMethodContext, x: number, y: number, width: number, height: number) => void
+    readonly notify_surrounding: (context: InputMethodContext, text: string, length: number, cursor_index: number, selection_index: number) => void
+    readonly reset: (context: InputMethodContext) => void
     static name: string
 }
 class InputMethodContextPrivate {
@@ -5266,7 +5182,7 @@ class InputMethodUnderline {
 }
 abstract class InstallMissingMediaPluginsPermissionRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.InstallMissingMediaPluginsPermissionRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class InstallMissingMediaPluginsPermissionRequestPrivate {
@@ -5281,7 +5197,7 @@ class JavascriptResult {
 }
 abstract class MediaKeySystemPermissionRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.MediaKeySystemPermissionRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MediaKeySystemPermissionRequestPrivate {
@@ -5330,7 +5246,7 @@ class NavigationAction {
 }
 abstract class NavigationPolicyDecisionClass {
     /* Fields of WebKit2-5.0.WebKit2.NavigationPolicyDecisionClass */
-    parent_class: PolicyDecisionClass
+    readonly parent_class: PolicyDecisionClass
     static name: string
 }
 class NavigationPolicyDecisionPrivate {
@@ -5349,12 +5265,12 @@ class NetworkProxySettings {
 }
 abstract class NotificationClass {
     /* Fields of WebKit2-5.0.WebKit2.NotificationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class NotificationPermissionRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.NotificationPermissionRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class NotificationPermissionRequestPrivate {
@@ -5365,7 +5281,7 @@ class NotificationPrivate {
 }
 abstract class OptionMenuClass {
     /* Fields of WebKit2-5.0.WebKit2.OptionMenuClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class OptionMenuItem {
@@ -5385,14 +5301,14 @@ class OptionMenuPrivate {
 }
 abstract class PermissionRequestIface {
     /* Fields of WebKit2-5.0.WebKit2.PermissionRequestIface */
-    parent_interface: GObject.TypeInterface
-    allow: (request: PermissionRequest) => void
-    deny: (request: PermissionRequest) => void
+    readonly parent_interface: GObject.TypeInterface
+    readonly allow: (request: PermissionRequest) => void
+    readonly deny: (request: PermissionRequest) => void
     static name: string
 }
 abstract class PluginClass {
     /* Fields of WebKit2-5.0.WebKit2.PluginClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PluginPrivate {
@@ -5400,7 +5316,7 @@ class PluginPrivate {
 }
 abstract class PointerLockPermissionRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.PointerLockPermissionRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PointerLockPermissionRequestPrivate {
@@ -5408,7 +5324,7 @@ class PointerLockPermissionRequestPrivate {
 }
 abstract class PolicyDecisionClass {
     /* Fields of WebKit2-5.0.WebKit2.PolicyDecisionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PolicyDecisionPrivate {
@@ -5416,9 +5332,9 @@ class PolicyDecisionPrivate {
 }
 abstract class PrintCustomWidgetClass {
     /* Fields of WebKit2-5.0.WebKit2.PrintCustomWidgetClass */
-    parent_class: GObject.ObjectClass
-    apply: (print_custom_widget: PrintCustomWidget, widget: Gtk.Widget) => void
-    update: (print_custom_widget: PrintCustomWidget, widget: Gtk.Widget, page_setup: Gtk.PageSetup, print_settings: Gtk.PrintSettings) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly apply: (print_custom_widget: PrintCustomWidget, widget: Gtk.Widget) => void
+    readonly update: (print_custom_widget: PrintCustomWidget, widget: Gtk.Widget, page_setup: Gtk.PageSetup, print_settings: Gtk.PrintSettings) => void
     static name: string
 }
 class PrintCustomWidgetPrivate {
@@ -5426,7 +5342,7 @@ class PrintCustomWidgetPrivate {
 }
 abstract class PrintOperationClass {
     /* Fields of WebKit2-5.0.WebKit2.PrintOperationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PrintOperationPrivate {
@@ -5434,7 +5350,7 @@ class PrintOperationPrivate {
 }
 abstract class ResponsePolicyDecisionClass {
     /* Fields of WebKit2-5.0.WebKit2.ResponsePolicyDecisionClass */
-    parent_class: PolicyDecisionClass
+    readonly parent_class: PolicyDecisionClass
     static name: string
 }
 class ResponsePolicyDecisionPrivate {
@@ -5454,7 +5370,7 @@ class ScriptDialog {
 }
 abstract class SecurityManagerClass {
     /* Fields of WebKit2-5.0.WebKit2.SecurityManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SecurityManagerPrivate {
@@ -5478,7 +5394,7 @@ class SecurityOrigin {
 }
 abstract class SettingsClass {
     /* Fields of WebKit2-5.0.WebKit2.SettingsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SettingsPrivate {
@@ -5486,7 +5402,7 @@ class SettingsPrivate {
 }
 abstract class URIRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.URIRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class URIRequestPrivate {
@@ -5494,7 +5410,7 @@ class URIRequestPrivate {
 }
 abstract class URIResponseClass {
     /* Fields of WebKit2-5.0.WebKit2.URIResponseClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class URIResponsePrivate {
@@ -5502,7 +5418,7 @@ class URIResponsePrivate {
 }
 abstract class URISchemeRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.URISchemeRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class URISchemeRequestPrivate {
@@ -5510,7 +5426,7 @@ class URISchemeRequestPrivate {
 }
 abstract class URISchemeResponseClass {
     /* Fields of WebKit2-5.0.WebKit2.URISchemeResponseClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class URISchemeResponsePrivate {
@@ -5525,7 +5441,7 @@ class UserContentFilter {
 }
 abstract class UserContentFilterStoreClass {
     /* Fields of WebKit2-5.0.WebKit2.UserContentFilterStoreClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class UserContentFilterStorePrivate {
@@ -5533,7 +5449,7 @@ class UserContentFilterStorePrivate {
 }
 abstract class UserContentManagerClass {
     /* Fields of WebKit2-5.0.WebKit2.UserContentManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class UserContentManagerPrivate {
@@ -5541,7 +5457,7 @@ class UserContentManagerPrivate {
 }
 abstract class UserMediaPermissionRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.UserMediaPermissionRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class UserMediaPermissionRequestPrivate {
@@ -5549,7 +5465,7 @@ class UserMediaPermissionRequestPrivate {
 }
 abstract class UserMessageClass {
     /* Fields of WebKit2-5.0.WebKit2.UserMessageClass */
-    parent_class: GObject.InitiallyUnownedClass
+    readonly parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
 class UserMessagePrivate {
@@ -5579,12 +5495,12 @@ class UserStyleSheet {
 }
 abstract class WebContextClass {
     /* Fields of WebKit2-5.0.WebKit2.WebContextClass */
-    parent: GObject.ObjectClass
-    download_started: (context: WebContext, download: Download) => void
-    initialize_web_extensions: (context: WebContext) => void
-    initialize_notification_permissions: (context: WebContext) => void
-    automation_started: (context: WebContext, session: AutomationSession) => void
-    user_message_received: (context: WebContext, message: UserMessage) => boolean
+    readonly parent: GObject.ObjectClass
+    readonly download_started: (context: WebContext, download: Download) => void
+    readonly initialize_web_extensions: (context: WebContext) => void
+    readonly initialize_notification_permissions: (context: WebContext) => void
+    readonly automation_started: (context: WebContext, session: AutomationSession) => void
+    readonly user_message_received: (context: WebContext, message: UserMessage) => boolean
     static name: string
 }
 class WebContextPrivate {
@@ -5592,7 +5508,7 @@ class WebContextPrivate {
 }
 abstract class WebInspectorClass {
     /* Fields of WebKit2-5.0.WebKit2.WebInspectorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WebInspectorPrivate {
@@ -5600,7 +5516,7 @@ class WebInspectorPrivate {
 }
 abstract class WebResourceClass {
     /* Fields of WebKit2-5.0.WebKit2.WebResourceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WebResourcePrivate {
@@ -5608,7 +5524,7 @@ class WebResourcePrivate {
 }
 abstract class WebViewBaseClass {
     /* Fields of WebKit2-5.0.WebKit2.WebViewBaseClass */
-    parentClass: Gtk.WidgetClass
+    readonly parentClass: Gtk.WidgetClass
     static name: string
 }
 class WebViewBasePrivate {
@@ -5616,33 +5532,33 @@ class WebViewBasePrivate {
 }
 abstract class WebViewClass {
     /* Fields of WebKit2-5.0.WebKit2.WebViewClass */
-    parent: WebViewBaseClass
-    load_changed: (web_view: WebView, load_event: LoadEvent) => void
-    load_failed: (web_view: WebView, load_event: LoadEvent, failing_uri: string, error: GLib.Error) => boolean
-    ready_to_show: (web_view: WebView) => void
-    run_as_modal: (web_view: WebView) => void
-    close: (web_view: WebView) => void
-    script_dialog: (web_view: WebView, dialog: ScriptDialog) => boolean
-    decide_policy: (web_view: WebView, decision: PolicyDecision, type: PolicyDecisionType) => boolean
-    permission_request: (web_view: WebView, permission_request: PermissionRequest) => boolean
-    mouse_target_changed: (web_view: WebView, hit_test_result: HitTestResult, modifiers: number) => void
-    print: (web_view: WebView, print_operation: PrintOperation) => boolean
-    resource_load_started: (web_view: WebView, resource: WebResource, request: URIRequest) => void
-    enter_fullscreen: (web_view: WebView) => boolean
-    leave_fullscreen: (web_view: WebView) => boolean
-    run_file_chooser: (web_view: WebView, request: FileChooserRequest) => boolean
-    context_menu: (web_view: WebView, context_menu: ContextMenu, event: Gdk.Event, hit_test_result: HitTestResult) => boolean
-    context_menu_dismissed: (web_view: WebView) => void
-    submit_form: (web_view: WebView, request: FormSubmissionRequest) => void
-    insecure_content_detected: (web_view: WebView, event: InsecureContentEvent) => void
-    web_process_crashed: (web_view: WebView) => boolean
-    authenticate: (web_view: WebView, request: AuthenticationRequest) => boolean
-    load_failed_with_tls_errors: (web_view: WebView, failing_uri: string, certificate: Gio.TlsCertificate, errors: Gio.TlsCertificateFlags) => boolean
-    show_notification: (web_view: WebView, notification: Notification) => boolean
-    run_color_chooser: (web_view: WebView, request: ColorChooserRequest) => boolean
-    show_option_menu: (web_view: WebView, rectangle: Gdk.Rectangle, menu: OptionMenu) => boolean
-    web_process_terminated: (web_view: WebView, reason: WebProcessTerminationReason) => void
-    user_message_received: (web_view: WebView, message: UserMessage) => boolean
+    readonly parent: WebViewBaseClass
+    readonly load_changed: (web_view: WebView, load_event: LoadEvent) => void
+    readonly load_failed: (web_view: WebView, load_event: LoadEvent, failing_uri: string, error: GLib.Error) => boolean
+    readonly ready_to_show: (web_view: WebView) => void
+    readonly run_as_modal: (web_view: WebView) => void
+    readonly close: (web_view: WebView) => void
+    readonly script_dialog: (web_view: WebView, dialog: ScriptDialog) => boolean
+    readonly decide_policy: (web_view: WebView, decision: PolicyDecision, type: PolicyDecisionType) => boolean
+    readonly permission_request: (web_view: WebView, permission_request: PermissionRequest) => boolean
+    readonly mouse_target_changed: (web_view: WebView, hit_test_result: HitTestResult, modifiers: number) => void
+    readonly print: (web_view: WebView, print_operation: PrintOperation) => boolean
+    readonly resource_load_started: (web_view: WebView, resource: WebResource, request: URIRequest) => void
+    readonly enter_fullscreen: (web_view: WebView) => boolean
+    readonly leave_fullscreen: (web_view: WebView) => boolean
+    readonly run_file_chooser: (web_view: WebView, request: FileChooserRequest) => boolean
+    readonly context_menu: (web_view: WebView, context_menu: ContextMenu, event: Gdk.Event, hit_test_result: HitTestResult) => boolean
+    readonly context_menu_dismissed: (web_view: WebView) => void
+    readonly submit_form: (web_view: WebView, request: FormSubmissionRequest) => void
+    readonly insecure_content_detected: (web_view: WebView, event: InsecureContentEvent) => void
+    readonly web_process_crashed: (web_view: WebView) => boolean
+    readonly authenticate: (web_view: WebView, request: AuthenticationRequest) => boolean
+    readonly load_failed_with_tls_errors: (web_view: WebView, failing_uri: string, certificate: Gio.TlsCertificate, errors: Gio.TlsCertificateFlags) => boolean
+    readonly show_notification: (web_view: WebView, notification: Notification) => boolean
+    readonly run_color_chooser: (web_view: WebView, request: ColorChooserRequest) => boolean
+    readonly show_option_menu: (web_view: WebView, rectangle: Gdk.Rectangle, menu: OptionMenu) => boolean
+    readonly web_process_terminated: (web_view: WebView, reason: WebProcessTerminationReason) => void
+    readonly user_message_received: (web_view: WebView, message: UserMessage) => boolean
     static name: string
 }
 class WebViewPrivate {
@@ -5670,7 +5586,7 @@ class WebsiteData {
 }
 abstract class WebsiteDataAccessPermissionRequestClass {
     /* Fields of WebKit2-5.0.WebKit2.WebsiteDataAccessPermissionRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WebsiteDataAccessPermissionRequestPrivate {
@@ -5678,7 +5594,7 @@ class WebsiteDataAccessPermissionRequestPrivate {
 }
 abstract class WebsiteDataManagerClass {
     /* Fields of WebKit2-5.0.WebKit2.WebsiteDataManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WebsiteDataManagerPrivate {
@@ -5686,7 +5602,7 @@ class WebsiteDataManagerPrivate {
 }
 abstract class WebsitePoliciesClass {
     /* Fields of WebKit2-5.0.WebKit2.WebsitePoliciesClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WebsitePoliciesPrivate {
@@ -5694,7 +5610,7 @@ class WebsitePoliciesPrivate {
 }
 abstract class WindowPropertiesClass {
     /* Fields of WebKit2-5.0.WebKit2.WindowPropertiesClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WindowPropertiesPrivate {

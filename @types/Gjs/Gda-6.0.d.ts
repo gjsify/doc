@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gda-6.0
  */
@@ -630,17 +636,17 @@ enum ValueAttribute {
     NO_MODIF,
     READ_ONLY,
 }
-export const ATTRIBUTE_AUTO_INCREMENT: string
-export const ATTRIBUTE_DESCRIPTION: string
-export const ATTRIBUTE_IS_DEFAULT: string
-export const ATTRIBUTE_NAME: string
-export const ATTRIBUTE_NUMERIC_PRECISION: string
-export const ATTRIBUTE_NUMERIC_SCALE: string
-export const ATTRIBUTE_TREE_NODE_UNKNOWN_CHILDREN: string
-export const EXTRA_AUTO_INCREMENT: string
-export const SQLSTATE_GENERAL_ERROR: string
-export const SQLSTATE_NO_ERROR: string
-export const TIMEZONE_INVALID: number
+const ATTRIBUTE_AUTO_INCREMENT: string
+const ATTRIBUTE_DESCRIPTION: string
+const ATTRIBUTE_IS_DEFAULT: string
+const ATTRIBUTE_NAME: string
+const ATTRIBUTE_NUMERIC_PRECISION: string
+const ATTRIBUTE_NUMERIC_SCALE: string
+const ATTRIBUTE_TREE_NODE_UNKNOWN_CHILDREN: string
+const EXTRA_AUTO_INCREMENT: string
+const SQLSTATE_GENERAL_ERROR: string
+const SQLSTATE_NO_ERROR: string
+const TIMEZONE_INVALID: number
 function alphanum_to_text(text: string): string | null
 function completion_list_get(cnc: Connection, sql: string, start: number, end: number): string[] | null
 function compute_dml_statements(cnc: Connection, select_stmt: Statement, require_pk: boolean): [ /* returnType */ boolean, /* insert_stmt */ Statement | null, /* update_stmt */ Statement | null, /* delete_stmt */ Statement | null ]
@@ -1056,13 +1062,11 @@ class ProviderMeta {
     /* Static methods and pseudo-constructors */
     static error_quark(): GLib.Quark
 }
-export interface Batch_ConstructProps extends GObject.Object_ConstructProps {
+interface Batch_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Batch {
-    /* Fields of Gda-6.0.Gda.Batch */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.Batch */
     add_statement(stmt: Statement): void
     copy(): Batch
@@ -1122,14 +1126,13 @@ class Batch {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface BlobOp_ConstructProps extends GObject.Object_ConstructProps {
+interface BlobOp_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.BlobOp */
     connection?: Connection
 }
 class BlobOp {
-    /* Fields of Gda-6.0.Gda.BlobOp */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.BlobOp */
     get_length(): number
     read(blob: Blob, offset: number, size: number): number
@@ -1179,7 +1182,8 @@ class BlobOp {
     _init (config?: BlobOp_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Column_ConstructProps extends GObject.Object_ConstructProps {
+interface Column_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.Column */
     desc?: string
     id?: string
     name?: string
@@ -1189,10 +1193,8 @@ class Column {
     desc: string
     id: string
     name: string
-    /* Fields of Gda-6.0.Gda.Column */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.Column */
     copy(): Column
     get_allow_null(): boolean
@@ -1272,7 +1274,8 @@ class Column {
     static new(): Column
     static $gtype: GObject.Type
 }
-export interface Config_ConstructProps extends GObject.Object_ConstructProps {
+interface Config_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.Config */
     system_filename?: string
     user_filename?: string
 }
@@ -1280,10 +1283,8 @@ class Config {
     /* Properties of Gda-6.0.Gda.Config */
     system_filename: string
     user_filename: string
-    /* Fields of Gda-6.0.Gda.Config */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1364,7 +1365,8 @@ class Config {
     static remove_dsn(dsn_name: string): boolean
     static $gtype: GObject.Type
 }
-export interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.Connection */
     auth_string?: string
     cnc_string?: string
     dsn?: string
@@ -1384,10 +1386,8 @@ class Connection {
     execution_timer: boolean
     meta_store: MetaStore
     provider: ServerProvider
-    /* Fields of Gda-6.0.Gda.Connection */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.Connection */
     add_event(event: ConnectionEvent): void
     add_prepared_statement(gda_stmt: Statement, prepared_stmt: PStmt): void
@@ -1558,16 +1558,15 @@ class Connection {
     static string_split(string: string): [ /* out_cnc_params */ string, /* out_provider */ string, /* out_username */ string, /* out_password */ string ]
     static $gtype: GObject.Type
 }
-export interface ConnectionEvent_ConstructProps extends GObject.Object_ConstructProps {
+interface ConnectionEvent_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.ConnectionEvent */
     type?: number
 }
 class ConnectionEvent {
     /* Properties of Gda-6.0.Gda.ConnectionEvent */
     type: number
-    /* Fields of Gda-6.0.Gda.ConnectionEvent */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.ConnectionEvent */
     get_code(): number
     get_description(): string
@@ -1626,14 +1625,13 @@ class ConnectionEvent {
     _init (config?: ConnectionEvent_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DataAccessWrapper_ConstructProps extends GObject.Object_ConstructProps {
+interface DataAccessWrapper_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DataAccessWrapper */
     model?: DataModel
 }
 class DataAccessWrapper {
-    /* Fields of Gda-6.0.Gda.DataAccessWrapper */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataAccessWrapper */
     set_mapping(mapping: number[] | null): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -1742,7 +1740,8 @@ class DataAccessWrapper {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataComparator_ConstructProps extends GObject.Object_ConstructProps {
+interface DataComparator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DataComparator */
     new_model?: DataModel
     old_model?: DataModel
 }
@@ -1750,10 +1749,8 @@ class DataComparator {
     /* Properties of Gda-6.0.Gda.DataComparator */
     new_model: DataModel
     old_model: DataModel
-    /* Fields of Gda-6.0.Gda.DataComparator */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataComparator */
     compute_diff(): boolean
     get_diff(pos: number): Diff
@@ -1815,7 +1812,8 @@ class DataComparator {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataModelArray_ConstructProps extends GObject.Object_ConstructProps {
+interface DataModelArray_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DataModelArray */
     n_columns?: number
     read_only?: boolean
 }
@@ -1823,10 +1821,8 @@ class DataModelArray {
     /* Properties of Gda-6.0.Gda.DataModelArray */
     n_columns: number
     read_only: boolean
-    /* Fields of Gda-6.0.Gda.DataModelArray */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataModelArray */
     clear(): void
     get_row(row: number): Row
@@ -1942,14 +1938,13 @@ class DataModelArray {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataModelDir_ConstructProps extends GObject.Object_ConstructProps {
+interface DataModelDir_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DataModelDir */
     basedir?: string
 }
 class DataModelDir {
-    /* Fields of Gda-6.0.Gda.DataModelDir */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataModelDir */
     clean_errors(): void
     get_errors(): GLib.Error[]
@@ -2059,7 +2054,8 @@ class DataModelDir {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataModelImport_ConstructProps extends GObject.Object_ConstructProps {
+interface DataModelImport_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DataModelImport */
     data_string?: string
     filename?: string
     options?: Set
@@ -2070,10 +2066,8 @@ export interface DataModelImport_ConstructProps extends GObject.Object_Construct
 class DataModelImport {
     /* Properties of Gda-6.0.Gda.DataModelImport */
     strict: boolean
-    /* Fields of Gda-6.0.Gda.DataModelImport */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataModelImport */
     clean_errors(): void
     get_errors(): GLib.Error[]
@@ -2188,7 +2182,7 @@ class DataModelImport {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataModelImportIter_ConstructProps extends DataModelIter_ConstructProps {
+interface DataModelImportIter_ConstructProps extends DataModelIter_ConstructProps {
 }
 class DataModelImportIter {
     /* Properties of Gda-6.0.Gda.DataModelIter */
@@ -2200,10 +2194,10 @@ class DataModelImportIter {
     id: string
     name: string
     validate_changes: boolean
-    /* Fields of Gda-6.0.Gda.DataModelImportIter */
-    parent_instance: DataModelIter
+    /* Fields of Gda-6.0.Gda.DataModelIter */
+    readonly parent_instance: Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataModelIter */
     get_holder_for_field(col: number): Holder
     get_row(): number
@@ -2334,7 +2328,8 @@ class DataModelImportIter {
     _init (config?: DataModelImportIter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DataModelIter_ConstructProps extends Set_ConstructProps {
+interface DataModelIter_ConstructProps extends Set_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DataModelIter */
     current_row?: number
     data_model?: DataModel
     update_model?: boolean
@@ -2349,10 +2344,10 @@ class DataModelIter {
     id: string
     name: string
     validate_changes: boolean
-    /* Fields of Gda-6.0.Gda.DataModelIter */
-    parent_instance: Set
+    /* Fields of Gda-6.0.Gda.Set */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataModelIter */
     get_holder_for_field(col: number): Holder
     get_row(): number
@@ -2485,15 +2480,13 @@ class DataModelIter {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataModelSelect_ConstructProps extends GObject.Object_ConstructProps {
+interface DataModelSelect_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DataModelSelect {
     /* Properties of Gda-6.0.Gda.DataModelSelect */
     readonly valid: boolean
-    /* Fields of Gda-6.0.Gda.DataModelSelect */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataModelSelect */
     get_parameters(): Set
     is_valid(): boolean
@@ -2614,16 +2607,15 @@ class DataModelSelect {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataPivot_ConstructProps extends GObject.Object_ConstructProps {
+interface DataPivot_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DataPivot */
     model?: DataModel
 }
 class DataPivot {
     /* Properties of Gda-6.0.Gda.DataPivot */
     model: DataModel
-    /* Fields of Gda-6.0.Gda.DataPivot */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataPivot */
     add_data(aggregate_type: DataPivotAggregate, field: string, alias?: string | null): boolean
     add_field(field_type: DataPivotFieldType, field: string, alias?: string | null): boolean
@@ -2736,7 +2728,8 @@ class DataPivot {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataProxy_ConstructProps extends GObject.Object_ConstructProps {
+interface DataProxy_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DataProxy */
     cache_changes?: boolean
     defer_sync?: boolean
     model?: DataModel
@@ -2750,10 +2743,8 @@ class DataProxy {
     model: DataModel
     prepend_null_entry: boolean
     sample_size: number
-    /* Fields of Gda-6.0.Gda.DataProxy */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataProxy */
     alter_value_attributes(proxy_row: number, col: number, alter_flags: ValueAttribute): void
     apply_all_changes(): boolean
@@ -2928,7 +2919,8 @@ class DataProxy {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataSelect_ConstructProps extends GObject.Object_ConstructProps {
+interface DataSelect_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DataSelect */
     connection?: Connection
     delete_stmt?: Statement
     exec_params?: Set
@@ -2948,10 +2940,8 @@ class DataSelect {
     readonly select_stmt: Statement
     store_all_rows: boolean
     update_stmt: Statement
-    /* Fields of Gda-6.0.Gda.DataSelect */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataSelect */
     compute_columns_attributes(): boolean
     compute_modification_statements(): boolean
@@ -3094,7 +3084,7 @@ class DataSelect {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataSelectIter_ConstructProps extends DataModelIter_ConstructProps {
+interface DataSelectIter_ConstructProps extends DataModelIter_ConstructProps {
 }
 class DataSelectIter {
     /* Properties of Gda-6.0.Gda.DataModelIter */
@@ -3106,10 +3096,10 @@ class DataSelectIter {
     id: string
     name: string
     validate_changes: boolean
-    /* Fields of Gda-6.0.Gda.DataSelectIter */
-    parent_instance: DataModelIter
+    /* Fields of Gda-6.0.Gda.DataModelIter */
+    readonly parent_instance: Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DataModelIter */
     get_holder_for_field(col: number): Holder
     get_row(): number
@@ -3240,13 +3230,11 @@ class DataSelectIter {
     _init (config?: DataSelectIter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DbBase_ConstructProps extends GObject.Object_ConstructProps {
+interface DbBase_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DbBase {
-    /* Fields of Gda-6.0.Gda.DbBase */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DbBase */
     compare(b: DbBase): number
     get_catalog(): string
@@ -3302,7 +3290,8 @@ class DbBase {
     static new(): DbBase
     static $gtype: GObject.Type
 }
-export interface DbCatalog_ConstructProps extends GObject.Object_ConstructProps {
+interface DbCatalog_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DbCatalog */
     connection?: Connection
     schema_name?: string
 }
@@ -3310,14 +3299,14 @@ class DbCatalog {
     /* Properties of Gda-6.0.Gda.DbCatalog */
     connection: Connection
     schema_name: string
-    /* Fields of Gda-6.0.Gda.DbCatalog */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DbCatalog */
     append_table(table: DbTable): void
     append_view(view: DbView): void
+    get_table(catalog: string, schema: string, name: string): DbTable
     get_tables(): DbTable[]
+    get_view(catalog: string, schema: string, name: string): DbView
     get_views(): DbView[]
     parse_cnc(): boolean
     parse_file(xmlfile: Gio.File): boolean
@@ -3376,7 +3365,8 @@ class DbCatalog {
     static validate_file_from_path(xmlfile: string): boolean
     static $gtype: GObject.Type
 }
-export interface DbColumn_ConstructProps extends GObject.Object_ConstructProps {
+interface DbColumn_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DbColumn */
     autoinc?: boolean
     check?: string
     comment?: string
@@ -3402,10 +3392,8 @@ class DbColumn {
     size: number
     table: DbTable
     unique: boolean
-    /* Fields of Gda-6.0.Gda.DbColumn */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DbColumn */
     get_autoinc(): boolean
     get_check(): string
@@ -3513,13 +3501,11 @@ class DbColumn {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DbFkey_ConstructProps extends GObject.Object_ConstructProps {
+interface DbFkey_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DbFkey {
-    /* Fields of Gda-6.0.Gda.DbFkey */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DbFkey */
     get_field_name(): string[]
     get_ondelete(): string
@@ -3584,16 +3570,17 @@ class DbFkey {
     static new(): DbFkey
     static $gtype: GObject.Type
 }
-export interface DbIndex_ConstructProps extends DbBase_ConstructProps {
+interface DbIndex_ConstructProps extends DbBase_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DbIndex */
     table?: DbTable
 }
 class DbIndex {
     /* Properties of Gda-6.0.Gda.DbIndex */
     table: DbTable
-    /* Fields of Gda-6.0.Gda.DbIndex */
-    parent_instance: DbBase
+    /* Fields of Gda-6.0.Gda.DbBase */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DbIndex */
     append_field(field: DbIndexField): void
     get_fields(): DbIndexField[] | null
@@ -3663,16 +3650,16 @@ class DbIndex {
     _init (config?: DbIndex_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DbIndex
+    /* Function overloads */
+    static new(): DbIndex
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DbIndexField_ConstructProps extends GObject.Object_ConstructProps {
+interface DbIndexField_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DbIndexField {
-    /* Fields of Gda-6.0.Gda.DbIndexField */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DbIndexField */
     get_collate(): string
     get_column(): DbColumn
@@ -3726,7 +3713,8 @@ class DbIndexField {
     static new(): DbIndexField
     static $gtype: GObject.Type
 }
-export interface DbTable_ConstructProps extends DbBase_ConstructProps {
+interface DbTable_ConstructProps extends DbBase_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DbTable */
     comment?: string
     istemp?: string
 }
@@ -3734,10 +3722,10 @@ class DbTable {
     /* Properties of Gda-6.0.Gda.DbTable */
     comment: string
     istemp: string
-    /* Fields of Gda-6.0.Gda.DbTable */
-    parent_instance: DbBase
+    /* Fields of Gda-6.0.Gda.DbBase */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DbTable */
     append_column(column: DbColumn): void
     append_constraint(constr: string): void
@@ -3819,10 +3807,13 @@ class DbTable {
     _init (config?: DbTable_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DbTable
+    /* Function overloads */
+    static new(): DbTable
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DbView_ConstructProps extends DbBase_ConstructProps {
+interface DbView_ConstructProps extends DbBase_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.DbView */
     defstring?: string
     ifnoexist?: boolean
     istemp?: boolean
@@ -3834,10 +3825,10 @@ class DbView {
     ifnoexist: boolean
     istemp: boolean
     replace: boolean
-    /* Fields of Gda-6.0.Gda.DbView */
-    parent_instance: DbBase
+    /* Fields of Gda-6.0.Gda.DbBase */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.DbView */
     get_defstring(): string
     get_ifnoexist(): boolean
@@ -3922,14 +3913,16 @@ class DbView {
     _init (config?: DbView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DbView
+    /* Function overloads */
+    static new(): DbView
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface HandlerBin_ConstructProps extends GObject.Object_ConstructProps {
+interface HandlerBin_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HandlerBin {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3992,11 +3985,11 @@ class HandlerBin {
     static get_default(for_type: GObject.Type): DataHandler
     static $gtype: GObject.Type
 }
-export interface HandlerBoolean_ConstructProps extends GObject.Object_ConstructProps {
+interface HandlerBoolean_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HandlerBoolean {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4059,11 +4052,11 @@ class HandlerBoolean {
     static get_default(for_type: GObject.Type): DataHandler
     static $gtype: GObject.Type
 }
-export interface HandlerNumerical_ConstructProps extends GObject.Object_ConstructProps {
+interface HandlerNumerical_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HandlerNumerical {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4126,11 +4119,11 @@ class HandlerNumerical {
     static get_default(for_type: GObject.Type): DataHandler
     static $gtype: GObject.Type
 }
-export interface HandlerString_ConstructProps extends GObject.Object_ConstructProps {
+interface HandlerString_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HandlerString {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4194,13 +4187,11 @@ class HandlerString {
     static get_default(for_type: GObject.Type): DataHandler
     static $gtype: GObject.Type
 }
-export interface HandlerText_ConstructProps extends GObject.Object_ConstructProps {
+interface HandlerText_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HandlerText {
-    /* Fields of Gda-6.0.Gda.HandlerText */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4263,11 +4254,11 @@ class HandlerText {
     static get_default(for_type: GObject.Type): DataHandler
     static $gtype: GObject.Type
 }
-export interface HandlerTime_ConstructProps extends GObject.Object_ConstructProps {
+interface HandlerTime_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HandlerTime {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.HandlerTime */
     get_format(type: GObject.Type): string
     get_hint(type: GObject.Type): string
@@ -4337,11 +4328,11 @@ class HandlerTime {
     static get_default(for_type: GObject.Type): DataHandler
     static $gtype: GObject.Type
 }
-export interface HandlerType_ConstructProps extends GObject.Object_ConstructProps {
+interface HandlerType_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HandlerType {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4404,7 +4395,8 @@ class HandlerType {
     static get_default(for_type: GObject.Type): DataHandler
     static $gtype: GObject.Type
 }
-export interface Holder_ConstructProps extends GObject.Object_ConstructProps {
+interface Holder_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.Holder */
     description?: string
     full_bind?: Holder
     g_type?: GObject.Type
@@ -4430,10 +4422,8 @@ class Holder {
     source_column: number
     source_model: DataModel
     validate_changes: boolean
-    /* Fields of Gda-6.0.Gda.Holder */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.Holder */
     copy(): Holder
     force_invalid(): void
@@ -4552,17 +4542,16 @@ class Holder {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface MetaStore_ConstructProps extends GObject.Object_ConstructProps {
+interface MetaStore_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.MetaStore */
     catalog?: string
     cnc?: Connection
     cnc_string?: string
     schema?: string
 }
 class MetaStore {
-    /* Fields of Gda-6.0.Gda.MetaStore */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.MetaStore */
     create_modify_data_model(table_name: string): DataModel
     create_struct(features: MetaStructFeature): MetaStruct
@@ -4643,15 +4632,14 @@ class MetaStore {
     static sql_identifier_quote(id: string, cnc: Connection): string
     static $gtype: GObject.Type
 }
-export interface MetaStruct_ConstructProps extends GObject.Object_ConstructProps {
+interface MetaStruct_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.MetaStruct */
     features?: number
     meta_store?: MetaStore
 }
 class MetaStruct {
-    /* Fields of Gda-6.0.Gda.MetaStruct */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.MetaStruct */
     complement(type: MetaDbObjectType, catalog: any | null, schema: any | null, name: any): MetaDbObject | null
     complement_all(): boolean
@@ -4709,13 +4697,11 @@ class MetaStruct {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface PStmt_ConstructProps extends GObject.Object_ConstructProps {
+interface PStmt_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PStmt {
-    /* Fields of Gda-6.0.Gda.PStmt */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.PStmt */
     copy_contents(dest: PStmt): void
     get_gda_statement(): Statement
@@ -4772,14 +4758,13 @@ class PStmt {
     _init (config?: PStmt_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RepetitiveStatement_ConstructProps extends GObject.Object_ConstructProps {
+interface RepetitiveStatement_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.RepetitiveStatement */
     statement?: Statement
 }
 class RepetitiveStatement {
-    /* Fields of Gda-6.0.Gda.RepetitiveStatement */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.RepetitiveStatement */
     append_set(values: Set, make_copy: boolean): boolean
     get_all_sets(): Set[]
@@ -4829,16 +4814,15 @@ class RepetitiveStatement {
     static new(stmt: Statement): RepetitiveStatement
     static $gtype: GObject.Type
 }
-export interface Row_ConstructProps extends GObject.Object_ConstructProps {
+interface Row_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.Row */
     model?: DataModel
     model_row?: number
     nb_values?: number
 }
 class Row {
-    /* Fields of Gda-6.0.Gda.Row */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.Row */
     get_length(): number
     get_value(num: number): any | null
@@ -4892,7 +4876,8 @@ class Row {
     static new_from_data_model(model: DataModel, row: number): Row
     static $gtype: GObject.Type
 }
-export interface ServerOperation_ConstructProps extends GObject.Object_ConstructProps {
+interface ServerOperation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.ServerOperation */
     connection?: Connection
     op_type?: number
     provider?: ServerProvider
@@ -4900,10 +4885,8 @@ export interface ServerOperation_ConstructProps extends GObject.Object_Construct
     spec_resource?: string
 }
 class ServerOperation {
-    /* Fields of Gda-6.0.Gda.ServerOperation */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.ServerOperation */
     add_item_to_sequence(seq_path: string): number
     del_item_from_sequence(item_path: string): boolean
@@ -4987,13 +4970,11 @@ class ServerOperation {
     static string_to_op_type(str: string): ServerOperationType
     static $gtype: GObject.Type
 }
-export interface ServerProvider_ConstructProps extends GObject.Object_ConstructProps {
+interface ServerProvider_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServerProvider {
-    /* Fields of Gda-6.0.Gda.ServerProvider */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.ServerProvider */
     create_operation(cnc: Connection | null, type: ServerOperationType, options?: Set | null): ServerOperation | null
     create_parser(cnc?: Connection | null): SqlParser
@@ -5073,7 +5054,8 @@ class ServerProvider {
     static set_impl_functions(klass: ServerProviderClass, type: ServerProviderFunctionsType, functions_set?: object | null): void
     static $gtype: GObject.Type
 }
-export interface Set_ConstructProps extends GObject.Object_ConstructProps {
+interface Set_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.Set */
     description?: string
     holders?: object
     id?: string
@@ -5086,10 +5068,8 @@ class Set {
     id: string
     name: string
     validate_changes: boolean
-    /* Fields of Gda-6.0.Gda.Set */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.Set */
     add_holder(holder: Holder): boolean
     copy(): Set
@@ -5198,13 +5178,11 @@ class Set {
 class Short {
     static name: string
 }
-export interface SqlBuilder_ConstructProps extends GObject.Object_ConstructProps {
+interface SqlBuilder_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SqlBuilder {
-    /* Fields of Gda-6.0.Gda.SqlBuilder */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.SqlBuilder */
     add_case(test_expr: SqlBuilderId, else_expr: SqlBuilderId, when_array: SqlBuilderId[], then_array: SqlBuilderId[]): SqlBuilderId
     add_cond(op: SqlOperatorType, op1: SqlBuilderId, op2: SqlBuilderId, op3: SqlBuilderId): SqlBuilderId
@@ -5283,7 +5261,8 @@ class SqlBuilder {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface SqlParser_ConstructProps extends GObject.Object_ConstructProps {
+interface SqlParser_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.SqlParser */
     debug?: boolean
     mode?: number
     tokenizer_flavour?: number
@@ -5295,10 +5274,8 @@ class SqlParser {
     readonly line_error: number
     mode: number
     tokenizer_flavour: number
-    /* Fields of Gda-6.0.Gda.SqlParser */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.SqlParser */
     parse_file_as_batch(filename: string): Batch | null
     parse_string(sql: string): [ /* returnType */ Statement | null, /* remain */ string | null ]
@@ -5369,16 +5346,15 @@ class SqlParser {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface Statement_ConstructProps extends GObject.Object_ConstructProps {
+interface Statement_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.Statement */
     structure?: SqlStatement
 }
 class Statement {
     /* Properties of Gda-6.0.Gda.Statement */
     structure: SqlStatement
-    /* Fields of Gda-6.0.Gda.Statement */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.Statement */
     check_structure(): boolean
     check_validity(cnc?: Connection | null): boolean
@@ -5448,13 +5424,11 @@ class Statement {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface TransactionStatus_ConstructProps extends GObject.Object_ConstructProps {
+interface TransactionStatus_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TransactionStatus {
-    /* Fields of Gda-6.0.Gda.TransactionStatus */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.TransactionStatus */
     add_event_sql(sql: string, conn_event: ConnectionEvent): TransactionStatusEvent
     add_event_sub(sub_trans: TransactionStatus): TransactionStatusEvent
@@ -5511,15 +5485,13 @@ class TransactionStatus {
     static new(name: string): TransactionStatus
     static $gtype: GObject.Type
 }
-export interface Tree_ConstructProps extends GObject.Object_ConstructProps {
+interface Tree_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Tree {
     /* Properties of Gda-6.0.Gda.Tree */
     readonly is_list: boolean
-    /* Fields of Gda-6.0.Gda.Tree */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.Tree */
     add_manager(manager: TreeManager): void
     clean(): void
@@ -5598,7 +5570,8 @@ class Tree {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface TreeManager_ConstructProps extends GObject.Object_ConstructProps {
+interface TreeManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.TreeManager */
     func?: TreeManagerNodesFunc
     recursive?: boolean
 }
@@ -5606,10 +5579,8 @@ class TreeManager {
     /* Properties of Gda-6.0.Gda.TreeManager */
     func: TreeManagerNodesFunc
     recursive: boolean
-    /* Fields of Gda-6.0.Gda.TreeManager */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.TreeManager */
     add_manager(sub: TreeManager): void
     add_new_node_attribute(attribute: string, value?: any | null): void
@@ -5666,7 +5637,8 @@ class TreeManager {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface TreeMgrColumns_ConstructProps extends TreeManager_ConstructProps {
+interface TreeMgrColumns_ConstructProps extends TreeManager_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.TreeMgrColumns */
     connection?: Connection
     meta_store?: MetaStore
     schema?: string
@@ -5676,10 +5648,10 @@ class TreeMgrColumns {
     /* Properties of Gda-6.0.Gda.TreeManager */
     func: TreeManagerNodesFunc
     recursive: boolean
-    /* Fields of Gda-6.0.Gda.TreeMgrColumns */
-    parent_instance: TreeManager
+    /* Fields of Gda-6.0.Gda.TreeManager */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.TreeManager */
     add_manager(sub: TreeManager): void
     add_new_node_attribute(attribute: string, value?: any | null): void
@@ -5735,17 +5707,18 @@ class TreeMgrColumns {
     static new(cnc: Connection, schema: string, table_name: string): TreeMgrColumns
     static $gtype: GObject.Type
 }
-export interface TreeMgrLabel_ConstructProps extends TreeManager_ConstructProps {
+interface TreeMgrLabel_ConstructProps extends TreeManager_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.TreeMgrLabel */
     label?: string
 }
 class TreeMgrLabel {
     /* Properties of Gda-6.0.Gda.TreeManager */
     func: TreeManagerNodesFunc
     recursive: boolean
-    /* Fields of Gda-6.0.Gda.TreeMgrLabel */
-    parent_instance: TreeManager
+    /* Fields of Gda-6.0.Gda.TreeManager */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.TreeManager */
     add_manager(sub: TreeManager): void
     add_new_node_attribute(attribute: string, value?: any | null): void
@@ -5801,7 +5774,8 @@ class TreeMgrLabel {
     static new(label: string): TreeMgrLabel
     static $gtype: GObject.Type
 }
-export interface TreeMgrSchemas_ConstructProps extends TreeManager_ConstructProps {
+interface TreeMgrSchemas_ConstructProps extends TreeManager_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.TreeMgrSchemas */
     connection?: Connection
     meta_store?: MetaStore
 }
@@ -5809,10 +5783,10 @@ class TreeMgrSchemas {
     /* Properties of Gda-6.0.Gda.TreeManager */
     func: TreeManagerNodesFunc
     recursive: boolean
-    /* Fields of Gda-6.0.Gda.TreeMgrSchemas */
-    parent_instance: TreeManager
+    /* Fields of Gda-6.0.Gda.TreeManager */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.TreeManager */
     add_manager(sub: TreeManager): void
     add_new_node_attribute(attribute: string, value?: any | null): void
@@ -5868,7 +5842,8 @@ class TreeMgrSchemas {
     static new(cnc: Connection): TreeMgrSchemas
     static $gtype: GObject.Type
 }
-export interface TreeMgrSelect_ConstructProps extends TreeManager_ConstructProps {
+interface TreeMgrSelect_ConstructProps extends TreeManager_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.TreeMgrSelect */
     connection?: Connection
     params?: Set
     statement?: Statement
@@ -5877,10 +5852,10 @@ class TreeMgrSelect {
     /* Properties of Gda-6.0.Gda.TreeManager */
     func: TreeManagerNodesFunc
     recursive: boolean
-    /* Fields of Gda-6.0.Gda.TreeMgrSelect */
-    parent_instance: TreeManager
+    /* Fields of Gda-6.0.Gda.TreeManager */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.TreeManager */
     add_manager(sub: TreeManager): void
     add_new_node_attribute(attribute: string, value?: any | null): void
@@ -5936,7 +5911,8 @@ class TreeMgrSelect {
     static new(cnc: Connection, stmt: Statement, params: Set): TreeMgrSelect
     static $gtype: GObject.Type
 }
-export interface TreeMgrTables_ConstructProps extends TreeManager_ConstructProps {
+interface TreeMgrTables_ConstructProps extends TreeManager_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.TreeMgrTables */
     connection?: Connection
     meta_store?: MetaStore
     schema?: string
@@ -5945,10 +5921,10 @@ class TreeMgrTables {
     /* Properties of Gda-6.0.Gda.TreeManager */
     func: TreeManagerNodesFunc
     recursive: boolean
-    /* Fields of Gda-6.0.Gda.TreeMgrTables */
-    parent_instance: TreeManager
+    /* Fields of Gda-6.0.Gda.TreeManager */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.TreeManager */
     add_manager(sub: TreeManager): void
     add_new_node_attribute(attribute: string, value?: any | null): void
@@ -6004,16 +5980,15 @@ class TreeMgrTables {
     static new(cnc: Connection, schema?: string | null): TreeMgrTables
     static $gtype: GObject.Type
 }
-export interface TreeNode_ConstructProps extends GObject.Object_ConstructProps {
+interface TreeNode_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.TreeNode */
     name?: string
 }
 class TreeNode {
     /* Properties of Gda-6.0.Gda.TreeNode */
     name: string
-    /* Fields of Gda-6.0.Gda.TreeNode */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.TreeNode */
     fetch_attribute(attribute: string): any
     get_child_index(index: number): TreeNode
@@ -6093,15 +6068,14 @@ class TreeNode {
 class UShort {
     static name: string
 }
-export interface XaTransaction_ConstructProps extends GObject.Object_ConstructProps {
+interface XaTransaction_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gda-6.0.Gda.XaTransaction */
     format_id?: number
     transaction_id?: string
 }
 class XaTransaction {
-    /* Fields of Gda-6.0.Gda.XaTransaction */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gda-6.0.Gda.XaTransaction */
     begin(): boolean
     commit(): [ /* returnType */ boolean, /* cnc_to_recover */ Connection[] | null ]
@@ -6158,8 +6132,8 @@ class XaTransaction {
 }
 abstract class BatchClass {
     /* Fields of Gda-6.0.Gda.BatchClass */
-    parent_class: GObject.ObjectClass
-    changed: (batch: Batch, changed_stmt: Statement) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (batch: Batch, changed_stmt: Statement) => void
     static name: string
 }
 class Binary {
@@ -6169,8 +6143,8 @@ class Binary {
     get_data(): object | null
     get_size(): number
     reset_data(): void
-    set_data(val: Uint8Array[]): void
-    take_data(val: Uint8Array[]): void
+    set_data(val: Uint8Array): void
+    take_data(val: Uint8Array): void
     to_string(maxlen: number): string
     static name: string
     static new(): Binary
@@ -6194,83 +6168,83 @@ class Blob {
 }
 abstract class BlobOpClass {
     /* Fields of Gda-6.0.Gda.BlobOpClass */
-    parent_class: GObject.ObjectClass
-    functions: object
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly functions: object
+    readonly padding: object[]
     static name: string
 }
 class BlobOpFunctions {
     /* Fields of Gda-6.0.Gda.BlobOpFunctions */
-    get_length: (op: BlobOp) => number
-    read: (op: BlobOp, blob: Blob, offset: number, size: number) => number
-    write: (op: BlobOp, blob: Blob, offset: number) => number
-    write_all: (op: BlobOp, blob: Blob) => boolean
+    readonly get_length: (op: BlobOp) => number
+    readonly read: (op: BlobOp, blob: Blob, offset: number, size: number) => number
+    readonly write: (op: BlobOp, blob: Blob, offset: number) => number
+    readonly write_all: (op: BlobOp, blob: Blob) => boolean
     static name: string
 }
 abstract class ColumnClass {
     /* Fields of Gda-6.0.Gda.ColumnClass */
-    parent_class: GObject.ObjectClass
-    name_changed: (column: Column, old_name: string) => void
-    g_type_changed: (column: Column, old_type: GObject.Type, new_type: GObject.Type) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly name_changed: (column: Column, old_name: string) => void
+    readonly g_type_changed: (column: Column, old_type: GObject.Type, new_type: GObject.Type) => void
     static name: string
 }
 abstract class ConfigClass {
     /* Fields of Gda-6.0.Gda.ConfigClass */
-    parent_class: GObject.ObjectClass
-    dsn_added: (conf: Config, new_dsn: DsnInfo) => void
-    dsn_to_be_removed: (conf: Config, old_dsn: DsnInfo) => void
-    dsn_removed: (conf: Config, old_dsn: DsnInfo) => void
-    dsn_changed: (conf: Config, dsn: DsnInfo) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly dsn_added: (conf: Config, new_dsn: DsnInfo) => void
+    readonly dsn_to_be_removed: (conf: Config, old_dsn: DsnInfo) => void
+    readonly dsn_removed: (conf: Config, old_dsn: DsnInfo) => void
+    readonly dsn_changed: (conf: Config, dsn: DsnInfo) => void
     static name: string
 }
 abstract class ConnectionClass {
     /* Fields of Gda-6.0.Gda.ConnectionClass */
-    object_class: GObject.ObjectClass
-    status_changed: (obj: Connection, status: ConnectionStatus) => void
-    error: (cnc: Connection, error: ConnectionEvent) => void
-    opened: (obj: Connection) => void
-    closed: (obj: Connection) => void
-    dsn_changed: (obj: Connection) => void
-    transaction_status_changed: (obj: Connection) => void
+    readonly object_class: GObject.ObjectClass
+    readonly status_changed: (obj: Connection, status: ConnectionStatus) => void
+    readonly error: (cnc: Connection, error: ConnectionEvent) => void
+    readonly opened: (obj: Connection) => void
+    readonly closed: (obj: Connection) => void
+    readonly dsn_changed: (obj: Connection) => void
+    readonly transaction_status_changed: (obj: Connection) => void
     static name: string
 }
 abstract class ConnectionEventClass {
     /* Fields of Gda-6.0.Gda.ConnectionEventClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DataAccessWrapperClass {
     /* Fields of Gda-6.0.Gda.DataAccessWrapperClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DataComparatorClass {
     /* Fields of Gda-6.0.Gda.DataComparatorClass */
-    parent_class: GObject.ObjectClass
-    diff_computed: (comp: DataComparator, diff: Diff) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly diff_computed: (comp: DataComparator, diff: Diff) => boolean
     static name: string
 }
 abstract class DataHandlerInterface {
     /* Fields of Gda-6.0.Gda.DataHandlerInterface */
-    g_iface: GObject.TypeInterface
-    get_sql_from_value: (dh: DataHandler, value?: any | null) => string
-    get_str_from_value: (dh: DataHandler, value?: any | null) => string
-    get_value_from_sql: (dh: DataHandler, sql: string | null, type: GObject.Type) => any
-    get_value_from_str: (dh: DataHandler, str: string | null, type: GObject.Type) => any
-    get_sane_init_value: (dh: DataHandler, type: GObject.Type) => any | null
-    accepts_g_type: (dh: DataHandler, type: GObject.Type) => boolean
-    get_descr: (dh: DataHandler) => string
+    readonly g_iface: GObject.TypeInterface
+    readonly get_sql_from_value: (dh: DataHandler, value?: any | null) => string
+    readonly get_str_from_value: (dh: DataHandler, value?: any | null) => string
+    readonly get_value_from_sql: (dh: DataHandler, sql: string | null, type: GObject.Type) => any
+    readonly get_value_from_str: (dh: DataHandler, str: string | null, type: GObject.Type) => any
+    readonly get_sane_init_value: (dh: DataHandler, type: GObject.Type) => any | null
+    readonly accepts_g_type: (dh: DataHandler, type: GObject.Type) => boolean
+    readonly get_descr: (dh: DataHandler) => string
     static name: string
 }
 abstract class DataModelArrayClass {
     /* Fields of Gda-6.0.Gda.DataModelArrayClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DataModelDirClass {
     /* Fields of Gda-6.0.Gda.DataModelDirClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DataModelIface {
@@ -6278,158 +6252,158 @@ abstract class DataModelIface {
 }
 abstract class DataModelImportClass {
     /* Fields of Gda-6.0.Gda.DataModelImportClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DataModelImportIterClass {
     /* Fields of Gda-6.0.Gda.DataModelImportIterClass */
-    parent_class: DataModelIterClass
+    readonly parent_class: DataModelIterClass
     static name: string
 }
 class DataModelInterface {
     /* Fields of Gda-6.0.Gda.DataModelInterface */
-    g_iface: GObject.TypeInterface
-    get_n_rows: (model: DataModel) => number
-    get_n_columns: (model: DataModel) => number
-    get_access_flags: (model: DataModel) => DataModelAccessFlags
-    get_value_at: (model: DataModel, col: number, row: number) => any
-    get_attributes_at: (model: DataModel, col: number, row: number) => ValueAttribute
-    set_value_at: (model: DataModel, col: number, row: number, value: any) => boolean
-    append_row: (model: DataModel) => number
-    remove_row: (model: DataModel, row: number) => boolean
-    freeze: (model: DataModel) => void
-    thaw: (model: DataModel) => void
-    get_notify: (model: DataModel) => boolean
-    send_hint: (model: DataModel, hint: DataModelHint, hint_value: any) => void
-    get_exceptions: (model: DataModel) => GLib.Error
-    row_inserted: (model: DataModel, row: number) => void
-    row_updated: (model: DataModel, row: number) => void
-    row_removed: (model: DataModel, row: number) => void
-    changed: (model: DataModel) => void
-    reset: (model: DataModel) => void
-    access_changed: (model: DataModel) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly get_n_rows: (model: DataModel) => number
+    readonly get_n_columns: (model: DataModel) => number
+    readonly get_access_flags: (model: DataModel) => DataModelAccessFlags
+    readonly get_value_at: (model: DataModel, col: number, row: number) => any
+    readonly get_attributes_at: (model: DataModel, col: number, row: number) => ValueAttribute
+    readonly set_value_at: (model: DataModel, col: number, row: number, value: any) => boolean
+    readonly append_row: (model: DataModel) => number
+    readonly remove_row: (model: DataModel, row: number) => boolean
+    readonly freeze: (model: DataModel) => void
+    readonly thaw: (model: DataModel) => void
+    readonly get_notify: (model: DataModel) => boolean
+    readonly send_hint: (model: DataModel, hint: DataModelHint, hint_value: any) => void
+    readonly get_exceptions: (model: DataModel) => GLib.Error
+    readonly row_inserted: (model: DataModel, row: number) => void
+    readonly row_updated: (model: DataModel, row: number) => void
+    readonly row_removed: (model: DataModel, row: number) => void
+    readonly changed: (model: DataModel) => void
+    readonly reset: (model: DataModel) => void
+    readonly access_changed: (model: DataModel) => void
     static name: string
 }
 abstract class DataModelIterClass {
     /* Fields of Gda-6.0.Gda.DataModelIterClass */
-    parent_class: SetClass
-    move_to_row: (iter: DataModelIter, row: number) => boolean
-    move_next: (iter: DataModelIter) => boolean
-    move_prev: (iter: DataModelIter) => boolean
-    set_value_at: (iter: DataModelIter, col: number, value: any) => boolean
-    row_changed: (iter: DataModelIter, row: number) => void
-    end_of_data: (iter: DataModelIter) => void
+    readonly parent_class: SetClass
+    readonly move_to_row: (iter: DataModelIter, row: number) => boolean
+    readonly move_next: (iter: DataModelIter) => boolean
+    readonly move_prev: (iter: DataModelIter) => boolean
+    readonly set_value_at: (iter: DataModelIter, col: number, value: any) => boolean
+    readonly row_changed: (iter: DataModelIter, row: number) => void
+    readonly end_of_data: (iter: DataModelIter) => void
     static name: string
 }
 abstract class DataModelSelectClass {
     /* Fields of Gda-6.0.Gda.DataModelSelectClass */
-    parent_class: GObject.ObjectClass
-    updated: (model: DataModelSelect) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly updated: (model: DataModelSelect) => void
     static name: string
 }
 abstract class DataPivotClass {
     /* Fields of Gda-6.0.Gda.DataPivotClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DataProxyClass {
     /* Fields of Gda-6.0.Gda.DataProxyClass */
-    parent_class: GObject.ObjectClass
-    row_delete_changed: (proxy: DataProxy, row: number, to_be_deleted: boolean) => void
-    sample_size_changed: (proxy: DataProxy, sample_size: number) => void
-    sample_changed: (proxy: DataProxy, sample_start: number, sample_end: number) => void
-    validate_row_changes: (proxy: DataProxy, row: number, proxied_row: number) => GLib.Error
-    row_changes_applied: (proxy: DataProxy, row: number, proxied_row: number) => void
-    filter_changed: (proxy: DataProxy) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly row_delete_changed: (proxy: DataProxy, row: number, to_be_deleted: boolean) => void
+    readonly sample_size_changed: (proxy: DataProxy, sample_size: number) => void
+    readonly sample_changed: (proxy: DataProxy, sample_start: number, sample_end: number) => void
+    readonly validate_row_changes: (proxy: DataProxy, row: number, proxied_row: number) => GLib.Error
+    readonly row_changes_applied: (proxy: DataProxy, row: number, proxied_row: number) => void
+    readonly filter_changed: (proxy: DataProxy) => void
     static name: string
 }
 abstract class DataSelectClass {
     /* Fields of Gda-6.0.Gda.DataSelectClass */
-    parent_class: GObject.ObjectClass
-    fetch_nb_rows: (model: DataSelect) => number
-    fetch_random: (model: DataSelect, prow: Row, rownum: number) => boolean
-    store_all: (model: DataSelect) => boolean
-    fetch_next: (model: DataSelect, prow: Row, rownum: number) => boolean
-    fetch_prev: (model: DataSelect, prow: Row, rownum: number) => boolean
-    fetch_at: (model: DataSelect, prow: Row, rownum: number) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly fetch_nb_rows: (model: DataSelect) => number
+    readonly fetch_random: (model: DataSelect, prow: Row, rownum: number) => boolean
+    readonly store_all: (model: DataSelect) => boolean
+    readonly fetch_next: (model: DataSelect, prow: Row, rownum: number) => boolean
+    readonly fetch_prev: (model: DataSelect, prow: Row, rownum: number) => boolean
+    readonly fetch_at: (model: DataSelect, prow: Row, rownum: number) => boolean
     static name: string
 }
 abstract class DataSelectIterClass {
     /* Fields of Gda-6.0.Gda.DataSelectIterClass */
-    parent_class: DataModelIterClass
+    readonly parent_class: DataModelIterClass
     static name: string
 }
 abstract class DbBaseClass {
     /* Fields of Gda-6.0.Gda.DbBaseClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 abstract class DbBuildableInterface {
     /* Fields of Gda-6.0.Gda.DbBuildableInterface */
-    parent_iface: GObject.TypeInterface
-    parse_node: (self: DbBuildable, node: libxml2.NodePtr) => boolean
-    write_node: (self: DbBuildable, node: libxml2.NodePtr) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly parse_node: (self: DbBuildable, node: libxml2.NodePtr) => boolean
+    readonly write_node: (self: DbBuildable, node: libxml2.NodePtr) => boolean
     static name: string
 }
 abstract class DbCatalogClass {
     /* Fields of Gda-6.0.Gda.DbCatalogClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 abstract class DbColumnClass {
     /* Fields of Gda-6.0.Gda.DbColumnClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 abstract class DbFkeyClass {
     /* Fields of Gda-6.0.Gda.DbFkeyClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DbIndexClass {
     /* Fields of Gda-6.0.Gda.DbIndexClass */
-    parent_class: DbBaseClass
+    readonly parent_class: DbBaseClass
     static name: string
 }
 abstract class DbIndexFieldClass {
     /* Fields of Gda-6.0.Gda.DbIndexFieldClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DbTableClass {
     /* Fields of Gda-6.0.Gda.DbTableClass */
-    parent_class: DbBaseClass
+    readonly parent_class: DbBaseClass
     static name: string
 }
 abstract class DbViewClass {
     /* Fields of Gda-6.0.Gda.DbViewClass */
-    parent_class: DbBaseClass
+    readonly parent_class: DbBaseClass
     static name: string
 }
 abstract class DdlModifiableInterface {
     /* Fields of Gda-6.0.Gda.DdlModifiableInterface */
-    parent_iface: GObject.TypeInterface
-    create: (self: DdlModifiable, cnc: Connection) => boolean
-    drop: (self: DdlModifiable, cnc: Connection) => boolean
-    rename: (self: DdlModifiable, cnc: Connection) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly create: (self: DdlModifiable, cnc: Connection) => boolean
+    readonly drop: (self: DdlModifiable, cnc: Connection) => boolean
+    readonly rename: (self: DdlModifiable, cnc: Connection) => boolean
     static name: string
 }
 class Diff {
     /* Fields of Gda-6.0.Gda.Diff */
-    type: DiffType
-    old_row: number
-    new_row: number
-    values: GLib.HashTable
+    readonly type: DiffType
+    readonly old_row: number
+    readonly new_row: number
+    readonly values: GLib.HashTable
     static name: string
 }
 class DsnInfo {
     /* Fields of Gda-6.0.Gda.DsnInfo */
-    name: string
-    provider: string
-    description: string
-    cnc_string: string
-    auth_string: string
-    is_system: boolean
+    readonly name: string
+    readonly provider: string
+    readonly description: string
+    readonly cnc_string: string
+    readonly auth_string: string
+    readonly is_system: boolean
     /* Methods of Gda-6.0.Gda.DsnInfo */
     copy(): DsnInfo
     equal(dsn2?: DsnInfo | null): boolean
@@ -6456,63 +6430,63 @@ class GeometricPoint {
 }
 abstract class HandlerBinClass {
     /* Fields of Gda-6.0.Gda.HandlerBinClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HandlerBooleanClass {
     /* Fields of Gda-6.0.Gda.HandlerBooleanClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HandlerNumericalClass {
     /* Fields of Gda-6.0.Gda.HandlerNumericalClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HandlerStringClass {
     /* Fields of Gda-6.0.Gda.HandlerStringClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HandlerTextClass {
     /* Fields of Gda-6.0.Gda.HandlerTextClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HandlerTimeClass {
     /* Fields of Gda-6.0.Gda.HandlerTimeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HandlerTypeClass {
     /* Fields of Gda-6.0.Gda.HandlerTypeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HolderClass {
     /* Fields of Gda-6.0.Gda.HolderClass */
-    parent_class: GObject.ObjectClass
-    changed: (holder: Holder) => void
-    source_changed: (holder: Holder) => void
-    validate_change: (holder: Holder, new_value: any) => GLib.Error
-    to_default: (holder: Holder) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (holder: Holder) => void
+    readonly source_changed: (holder: Holder) => void
+    readonly validate_change: (holder: Holder, new_value: any) => GLib.Error
+    readonly to_default: (holder: Holder) => void
     static name: string
 }
 abstract class LockableInterface {
     /* Fields of Gda-6.0.Gda.LockableInterface */
-    g_iface: GObject.TypeInterface
-    lock: (lockable: Lockable) => void
-    trylock: (lockable: Lockable) => boolean
-    unlock: (lockable: Lockable) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly lock: (lockable: Lockable) => void
+    readonly trylock: (lockable: Lockable) => boolean
+    readonly unlock: (lockable: Lockable) => void
     static name: string
 }
 class MetaContext {
     /* Fields of Gda-6.0.Gda.MetaContext */
-    table_name: string
-    size: number
-    column_names: string[]
-    column_values: any[]
-    columns: GLib.HashTable
+    readonly table_name: string
+    readonly size: number
+    readonly column_names: string[]
+    readonly column_values: any[]
+    readonly columns: GLib.HashTable
     /* Methods of Gda-6.0.Gda.MetaContext */
     copy(): MetaContext
     free(): void
@@ -6530,15 +6504,15 @@ class MetaContext {
 }
 class MetaDbObject {
     /* Fields of Gda-6.0.Gda.MetaDbObject */
-    obj_type: MetaDbObjectType
-    outdated: boolean
-    obj_catalog: string
-    obj_schema: string
-    obj_name: string
-    obj_short_name: string
-    obj_full_name: string
-    obj_owner: string
-    depend_list: MetaDbObject[]
+    readonly obj_type: MetaDbObjectType
+    readonly outdated: boolean
+    readonly obj_catalog: string
+    readonly obj_schema: string
+    readonly obj_name: string
+    readonly obj_short_name: string
+    readonly obj_full_name: string
+    readonly obj_owner: string
+    readonly depend_list: MetaDbObject[]
     static name: string
 }
 class MetaStoreChange {
@@ -6558,54 +6532,54 @@ class MetaStoreChange {
 }
 abstract class MetaStoreClass {
     /* Fields of Gda-6.0.Gda.MetaStoreClass */
-    parent_class: GObject.ObjectClass
-    meta_reset: (store: MetaStore) => void
-    suggest_update: (store: MetaStore, suggest: MetaContext) => GLib.Error
+    readonly parent_class: GObject.ObjectClass
+    readonly meta_reset: (store: MetaStore) => void
+    readonly suggest_update: (store: MetaStore, suggest: MetaContext) => GLib.Error
     static name: string
 }
 abstract class MetaStructClass {
     /* Fields of Gda-6.0.Gda.MetaStructClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MetaTable {
     /* Fields of Gda-6.0.Gda.MetaTable */
-    columns: MetaTableColumn[]
-    pk_cols_array: number
-    pk_cols_nb: number
-    reverse_fk_list: MetaTableForeignKey[]
-    fk_list: MetaTableForeignKey[]
+    readonly columns: MetaTableColumn[]
+    readonly pk_cols_array: number
+    readonly pk_cols_nb: number
+    readonly reverse_fk_list: MetaTableForeignKey[]
+    readonly fk_list: MetaTableForeignKey[]
     static name: string
 }
 class MetaTableColumn {
     /* Fields of Gda-6.0.Gda.MetaTableColumn */
-    column_name: string
-    column_type: string
-    gtype: GObject.Type
-    pkey: boolean
-    nullok: boolean
-    default_value: string
-    auto_incement: boolean
-    desc: string
+    readonly column_name: string
+    readonly column_type: string
+    readonly gtype: GObject.Type
+    readonly pkey: boolean
+    readonly nullok: boolean
+    readonly default_value: string
+    readonly auto_incement: boolean
+    readonly desc: string
     static name: string
 }
 class MetaTableForeignKey {
     /* Fields of Gda-6.0.Gda.MetaTableForeignKey */
-    meta_table: MetaDbObject
-    depend_on: MetaDbObject
-    cols_nb: number
-    fk_cols_array: number
-    fk_names_array: string
-    ref_pk_cols_array: number
-    ref_pk_names_array: string
-    fk_name: string
+    readonly meta_table: MetaDbObject
+    readonly depend_on: MetaDbObject
+    readonly cols_nb: number
+    readonly fk_cols_array: number
+    readonly fk_names_array: string
+    readonly ref_pk_cols_array: number
+    readonly ref_pk_names_array: string
+    readonly fk_name: string
     static name: string
 }
 class MetaView {
     /* Fields of Gda-6.0.Gda.MetaView */
-    table: MetaTable
-    view_def: string
-    is_updatable: boolean
+    readonly table: MetaTable
+    readonly view_def: string
+    readonly is_updatable: boolean
     static name: string
 }
 class Numeric {
@@ -6628,112 +6602,112 @@ class Numeric {
 }
 abstract class PStmtClass {
     /* Fields of Gda-6.0.Gda.PStmtClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ProviderInfo {
     /* Fields of Gda-6.0.Gda.ProviderInfo */
-    id: string
-    location: string
-    description: string
-    dsn_params: Set
-    auth_params: Set
-    icon_id: string
+    readonly id: string
+    readonly location: string
+    readonly description: string
+    readonly dsn_params: Set
+    readonly auth_params: Set
+    readonly icon_id: string
     static name: string
 }
 abstract class ProviderInterface {
     /* Fields of Gda-6.0.Gda.ProviderInterface */
-    g_iface: GObject.TypeInterface
-    get_name: (provider: Provider) => string
-    get_version: (provider: Provider) => string
-    get_server_version: (provider: Provider, cnc: Connection) => string
-    supports_feature: (provider: Provider, cnc: Connection, feature: ConnectionFeature) => boolean
-    create_connection: (provider: Provider) => Connection
-    create_parser: (provider: Provider, cnc: Connection) => SqlParser
-    get_data_handler: (provider: Provider, cnc: Connection, g_type: GObject.Type, dbms_type: string) => DataHandler
-    get_def_dbms_type: (provider: Provider, cnc: Connection, g_type: GObject.Type) => string
-    supports_operation: (provider: Provider, cnc: Connection, type: ServerOperationType, options: Set) => boolean
-    create_operation: (provider: Provider, cnc: Connection, type: ServerOperationType, options: Set) => ServerOperation
-    render_operation: (provider: Provider, cnc: Connection, op: ServerOperation) => string
-    statement_to_sql: (provider: Provider, cnc: Connection, stmt: Statement, params: Set | null, flags: StatementSqlFlag) => [ /* returnType */ string, /* params_used */ Holder[] | null ]
-    identifier_quote: (provider: Provider, cnc: Connection | null, id: string, for_meta_store: boolean, force_quotes: boolean) => string
-    statement_rewrite: (provider: Provider, cnc: Connection, stmt: Statement, params: Set) => SqlStatement
-    open_connection: (provider: Provider, cnc: Connection, params: QuarkList, auth: QuarkList) => boolean
-    prepare_connection: (provider: Provider, cnc: Connection, params: QuarkList, auth: QuarkList) => boolean
-    close_connection: (provider: Provider, cnc: Connection) => boolean
-    escape_string: (provider: Provider, cnc: Connection, str: string) => string
-    unescape_string: (provider: Provider, cnc: Connection, str: string) => string
-    perform_operation: (provider: Provider, cnc: Connection, op: ServerOperation) => boolean
-    begin_transaction: (provider: Provider, cnc: Connection, name: string, level: TransactionIsolation) => boolean
-    commit_transaction: (provider: Provider, cnc: Connection, name: string) => boolean
-    rollback_transaction: (provider: Provider, cnc: Connection, name: string) => boolean
-    add_savepoint: (provider: Provider, cnc: Connection, name: string) => boolean
-    rollback_savepoint: (provider: Provider, cnc: Connection, name: string) => boolean
-    delete_savepoint: (provider: Provider, cnc: Connection, name: string) => boolean
-    statement_prepare: (provider: Provider, cnc: Connection, stmt: Statement) => boolean
-    statement_execute: (provider: Provider, cnc: Connection, stmt: Statement, params: Set, model_usage: StatementModelUsage, col_types: GObject.Type, last_inserted_row: Set) => GObject.Object
-    get_last_inserted: (provider: Provider, cnc: Connection) => Set
-    padding: object[]
+    readonly g_iface: GObject.TypeInterface
+    readonly get_name: (provider: Provider) => string
+    readonly get_version: (provider: Provider) => string
+    readonly get_server_version: (provider: Provider, cnc: Connection) => string
+    readonly supports_feature: (provider: Provider, cnc: Connection, feature: ConnectionFeature) => boolean
+    readonly create_connection: (provider: Provider) => Connection
+    readonly create_parser: (provider: Provider, cnc: Connection) => SqlParser
+    readonly get_data_handler: (provider: Provider, cnc: Connection, g_type: GObject.Type, dbms_type: string) => DataHandler
+    readonly get_def_dbms_type: (provider: Provider, cnc: Connection, g_type: GObject.Type) => string
+    readonly supports_operation: (provider: Provider, cnc: Connection, type: ServerOperationType, options: Set) => boolean
+    readonly create_operation: (provider: Provider, cnc: Connection, type: ServerOperationType, options: Set) => ServerOperation
+    readonly render_operation: (provider: Provider, cnc: Connection, op: ServerOperation) => string
+    readonly statement_to_sql: (provider: Provider, cnc: Connection, stmt: Statement, params: Set | null, flags: StatementSqlFlag) => [ /* returnType */ string, /* params_used */ Holder[] | null ]
+    readonly identifier_quote: (provider: Provider, cnc: Connection | null, id: string, for_meta_store: boolean, force_quotes: boolean) => string
+    readonly statement_rewrite: (provider: Provider, cnc: Connection, stmt: Statement, params: Set) => SqlStatement
+    readonly open_connection: (provider: Provider, cnc: Connection, params: QuarkList, auth: QuarkList) => boolean
+    readonly prepare_connection: (provider: Provider, cnc: Connection, params: QuarkList, auth: QuarkList) => boolean
+    readonly close_connection: (provider: Provider, cnc: Connection) => boolean
+    readonly escape_string: (provider: Provider, cnc: Connection, str: string) => string
+    readonly unescape_string: (provider: Provider, cnc: Connection, str: string) => string
+    readonly perform_operation: (provider: Provider, cnc: Connection, op: ServerOperation) => boolean
+    readonly begin_transaction: (provider: Provider, cnc: Connection, name: string, level: TransactionIsolation) => boolean
+    readonly commit_transaction: (provider: Provider, cnc: Connection, name: string) => boolean
+    readonly rollback_transaction: (provider: Provider, cnc: Connection, name: string) => boolean
+    readonly add_savepoint: (provider: Provider, cnc: Connection, name: string) => boolean
+    readonly rollback_savepoint: (provider: Provider, cnc: Connection, name: string) => boolean
+    readonly delete_savepoint: (provider: Provider, cnc: Connection, name: string) => boolean
+    readonly statement_prepare: (provider: Provider, cnc: Connection, stmt: Statement) => boolean
+    readonly statement_execute: (provider: Provider, cnc: Connection, stmt: Statement, params: Set, model_usage: StatementModelUsage, col_types: GObject.Type, last_inserted_row: Set) => GObject.Object
+    readonly get_last_inserted: (provider: Provider, cnc: Connection) => Set
+    readonly padding: object[]
     static name: string
 }
 abstract class ProviderMetaInterface {
     /* Fields of Gda-6.0.Gda.ProviderMetaInterface */
-    g_iface: GObject.TypeInterface
-    btypes: (prov: ProviderMeta) => DataModel
-    udts: (prov: ProviderMeta) => DataModel
-    udt: (prov: ProviderMeta, udt_catalog: string, udt_schema: string) => Row
-    udt_cols: (prov: ProviderMeta) => DataModel
-    udt_col: (prov: ProviderMeta, udt_catalog: string, udt_schema: string, udt_name: string) => Row
-    enums_type: (prov: ProviderMeta) => DataModel
-    enum_type: (prov: ProviderMeta, udt_catalog: string, udt_schema: string, udt_name: string) => Row
-    domains: (prov: ProviderMeta) => DataModel
-    domain: (prov: ProviderMeta, domain_catalog: string, domain_schema: string) => Row
-    domains_constraints: (prov: ProviderMeta) => DataModel
-    domain_constraints: (prov: ProviderMeta, domain_catalog: string, domain_schema: string, domain_name: string) => DataModel
-    domain_constraint: (prov: ProviderMeta, domain_catalog: string, domain_schema: string, domain_name: string, constraint_name: string) => Row
-    element_types: (prov: ProviderMeta) => DataModel
-    element_type: (prov: ProviderMeta, specific_name: string) => Row
-    collations: (prov: ProviderMeta) => DataModel
-    collation: (prov: ProviderMeta, collation_catalog: string, collation_schema: string, collation_name_n: string) => Row
-    character_sets: (prov: ProviderMeta) => DataModel
-    character_set: (prov: ProviderMeta, chset_catalog: string, chset_schema: string, chset_name_n: string) => Row
-    schematas: (prov: ProviderMeta) => DataModel
-    schemata: (prov: ProviderMeta, catalog_name: string, schema_name_n: string) => Row
-    tables_columns: (prov: ProviderMeta) => DataModel
-    tables: (prov: ProviderMeta) => DataModel
-    table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name_n: string) => Row
-    views: (prov: ProviderMeta) => DataModel
-    view: (prov: ProviderMeta, view_catalog: string, view_schema: string, view_name_n: string) => Row
-    columns: (prov: ProviderMeta) => DataModel
-    table_columns: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => DataModel
-    table_column: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, column_name: string) => Row
-    views_columns: (prov: ProviderMeta) => DataModel
-    view_columns: (prov: ProviderMeta, view_catalog: string, view_schema: string, view_name: string) => DataModel
-    view_column: (prov: ProviderMeta, view_catalog: string, view_schema: string, view_name: string, column_name: string) => Row
-    constraints_tables: (prov: ProviderMeta) => DataModel
-    constraints_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => DataModel
-    constraint_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, constraint_name_n: string) => Row
-    constraints_ref: (prov: ProviderMeta) => DataModel
-    constraints_ref_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => DataModel
-    constraint_ref: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, constraint_name: string) => Row
-    key_columns: (prov: ProviderMeta) => DataModel
-    key_column: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, constraint_name: string) => Row
-    check_columns: (prov: ProviderMeta) => DataModel
-    check_column: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, constraint_name: string) => Row
-    triggers: (prov: ProviderMeta) => DataModel
-    trigger: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => Row
-    routines: (prov: ProviderMeta) => DataModel
-    routine: (prov: ProviderMeta, routine_catalog: string, routine_schema: string, routine_name_n: string) => Row
-    routines_col: (prov: ProviderMeta) => DataModel
-    routine_col: (prov: ProviderMeta, rout_catalog: string, rout_schema: string, rout_name: string) => Row
-    routines_pars: (prov: ProviderMeta) => DataModel
-    routine_pars: (prov: ProviderMeta, rout_catalog: string, rout_schema: string, rout_name: string) => Row
-    indexes_tables: (prov: ProviderMeta) => DataModel
-    indexes_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => DataModel
-    index_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, index_name_n: string) => Row
-    index_cols: (prov: ProviderMeta) => DataModel
-    index_col: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, index_name: string) => Row
-    padding: object[]
+    readonly g_iface: GObject.TypeInterface
+    readonly btypes: (prov: ProviderMeta) => DataModel
+    readonly udts: (prov: ProviderMeta) => DataModel
+    readonly udt: (prov: ProviderMeta, udt_catalog: string, udt_schema: string) => Row
+    readonly udt_cols: (prov: ProviderMeta) => DataModel
+    readonly udt_col: (prov: ProviderMeta, udt_catalog: string, udt_schema: string, udt_name: string) => Row
+    readonly enums_type: (prov: ProviderMeta) => DataModel
+    readonly enum_type: (prov: ProviderMeta, udt_catalog: string, udt_schema: string, udt_name: string) => Row
+    readonly domains: (prov: ProviderMeta) => DataModel
+    readonly domain: (prov: ProviderMeta, domain_catalog: string, domain_schema: string) => Row
+    readonly domains_constraints: (prov: ProviderMeta) => DataModel
+    readonly domain_constraints: (prov: ProviderMeta, domain_catalog: string, domain_schema: string, domain_name: string) => DataModel
+    readonly domain_constraint: (prov: ProviderMeta, domain_catalog: string, domain_schema: string, domain_name: string, constraint_name: string) => Row
+    readonly element_types: (prov: ProviderMeta) => DataModel
+    readonly element_type: (prov: ProviderMeta, specific_name: string) => Row
+    readonly collations: (prov: ProviderMeta) => DataModel
+    readonly collation: (prov: ProviderMeta, collation_catalog: string, collation_schema: string, collation_name_n: string) => Row
+    readonly character_sets: (prov: ProviderMeta) => DataModel
+    readonly character_set: (prov: ProviderMeta, chset_catalog: string, chset_schema: string, chset_name_n: string) => Row
+    readonly schematas: (prov: ProviderMeta) => DataModel
+    readonly schemata: (prov: ProviderMeta, catalog_name: string, schema_name_n: string) => Row
+    readonly tables_columns: (prov: ProviderMeta) => DataModel
+    readonly tables: (prov: ProviderMeta) => DataModel
+    readonly table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name_n: string) => Row
+    readonly views: (prov: ProviderMeta) => DataModel
+    readonly view: (prov: ProviderMeta, view_catalog: string, view_schema: string, view_name_n: string) => Row
+    readonly columns: (prov: ProviderMeta) => DataModel
+    readonly table_columns: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => DataModel
+    readonly table_column: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, column_name: string) => Row
+    readonly views_columns: (prov: ProviderMeta) => DataModel
+    readonly view_columns: (prov: ProviderMeta, view_catalog: string, view_schema: string, view_name: string) => DataModel
+    readonly view_column: (prov: ProviderMeta, view_catalog: string, view_schema: string, view_name: string, column_name: string) => Row
+    readonly constraints_tables: (prov: ProviderMeta) => DataModel
+    readonly constraints_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => DataModel
+    readonly constraint_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, constraint_name_n: string) => Row
+    readonly constraints_ref: (prov: ProviderMeta) => DataModel
+    readonly constraints_ref_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => DataModel
+    readonly constraint_ref: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, constraint_name: string) => Row
+    readonly key_columns: (prov: ProviderMeta) => DataModel
+    readonly key_column: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, constraint_name: string) => Row
+    readonly check_columns: (prov: ProviderMeta) => DataModel
+    readonly check_column: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, constraint_name: string) => Row
+    readonly triggers: (prov: ProviderMeta) => DataModel
+    readonly trigger: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => Row
+    readonly routines: (prov: ProviderMeta) => DataModel
+    readonly routine: (prov: ProviderMeta, routine_catalog: string, routine_schema: string, routine_name_n: string) => Row
+    readonly routines_col: (prov: ProviderMeta) => DataModel
+    readonly routine_col: (prov: ProviderMeta, rout_catalog: string, rout_schema: string, rout_name: string) => Row
+    readonly routines_pars: (prov: ProviderMeta) => DataModel
+    readonly routine_pars: (prov: ProviderMeta, rout_catalog: string, rout_schema: string, rout_name: string) => Row
+    readonly indexes_tables: (prov: ProviderMeta) => DataModel
+    readonly indexes_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string) => DataModel
+    readonly index_table: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, index_name_n: string) => Row
+    readonly index_cols: (prov: ProviderMeta) => DataModel
+    readonly index_col: (prov: ProviderMeta, table_catalog: string, table_schema: string, table_name: string, index_name: string) => Row
+    readonly padding: object[]
     static name: string
 }
 class QuarkList {
@@ -6755,19 +6729,19 @@ class QuarkList {
 }
 abstract class RepetitiveStatementClass {
     /* Fields of Gda-6.0.Gda.RepetitiveStatementClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RowClass {
     /* Fields of Gda-6.0.Gda.RowClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ServerOperationClass {
     /* Fields of Gda-6.0.Gda.ServerOperationClass */
-    parent_class: GObject.ObjectClass
-    seq_item_added: (op: ServerOperation, seq_path: string, item_index: number) => void
-    seq_item_remove: (op: ServerOperation, seq_path: string, item_index: number) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly seq_item_added: (op: ServerOperation, seq_path: string, item_index: number) => void
+    readonly seq_item_remove: (op: ServerOperation, seq_path: string, item_index: number) => void
     static name: string
 }
 class ServerOperationCreateTableArg {
@@ -6810,13 +6784,13 @@ class ServerOperationCreateTableArgFKeyRefField {
 }
 class ServerOperationNode {
     /* Fields of Gda-6.0.Gda.ServerOperationNode */
-    type: ServerOperationNodeType
-    status: ServerOperationNodeStatus
-    plist: Set
-    model: DataModel
-    column: Column
-    param: Holder
-    priv: object
+    readonly type: ServerOperationNodeType
+    readonly status: ServerOperationNodeStatus
+    readonly plist: Set
+    readonly model: DataModel
+    readonly column: Column
+    readonly param: Holder
+    readonly priv: object
     /* Methods of Gda-6.0.Gda.ServerOperationNode */
     copy(): ServerOperationNode
     free(): void
@@ -6824,97 +6798,97 @@ class ServerOperationNode {
 }
 class ServerProviderBase {
     /* Fields of Gda-6.0.Gda.ServerProviderBase */
-    get_name: (provider: ServerProvider) => string
-    get_version: (provider: ServerProvider) => string
-    get_server_version: (provider: ServerProvider, cnc: Connection) => string
-    supports_feature: (provider: ServerProvider, cnc: Connection, feature: ConnectionFeature) => boolean
-    create_worker: (provider: ServerProvider, for_cnc: boolean) => Worker
-    get_def_dbms_type: (provider: ServerProvider, cnc: Connection, g_type: GObject.Type) => string
-    supports_operation: (provider: ServerProvider, cnc: Connection, type: ServerOperationType, options: Set) => boolean
-    render_operation: (provider: ServerProvider, cnc: Connection, op: ServerOperation) => string
-    identifier_quote: (provider: ServerProvider, cnc: Connection, id: string, for_meta_store: boolean, force_quotes: boolean) => string
-    statement_rewrite: (provider: ServerProvider, cnc: Connection, stmt: Statement, params: Set) => SqlStatement
-    open_connection: (provider: ServerProvider, cnc: Connection, params: QuarkList, auth: QuarkList) => boolean
-    prepare_connection: (provider: ServerProvider, cnc: Connection, params: QuarkList, auth: QuarkList) => boolean
-    close_connection: (provider: ServerProvider, cnc: Connection) => boolean
-    escape_string: (provider: ServerProvider, cnc: Connection, str: string) => string
-    unescape_string: (provider: ServerProvider, cnc: Connection, str: string) => string
-    perform_operation: (provider: ServerProvider, cnc: Connection, op: ServerOperation) => boolean
-    begin_transaction: (provider: ServerProvider, cnc: Connection, name: string, level: TransactionIsolation) => boolean
-    commit_transaction: (provider: ServerProvider, cnc: Connection, name: string) => boolean
-    rollback_transaction: (provider: ServerProvider, cnc: Connection, name: string) => boolean
-    add_savepoint: (provider: ServerProvider, cnc: Connection, name: string) => boolean
-    rollback_savepoint: (provider: ServerProvider, cnc: Connection, name: string) => boolean
-    delete_savepoint: (provider: ServerProvider, cnc: Connection, name: string) => boolean
-    statement_prepare: (provider: ServerProvider, cnc: Connection, stmt: Statement) => boolean
+    readonly get_name: (provider: ServerProvider) => string
+    readonly get_version: (provider: ServerProvider) => string
+    readonly get_server_version: (provider: ServerProvider, cnc: Connection) => string
+    readonly supports_feature: (provider: ServerProvider, cnc: Connection, feature: ConnectionFeature) => boolean
+    readonly create_worker: (provider: ServerProvider, for_cnc: boolean) => Worker
+    readonly get_def_dbms_type: (provider: ServerProvider, cnc: Connection, g_type: GObject.Type) => string
+    readonly supports_operation: (provider: ServerProvider, cnc: Connection, type: ServerOperationType, options: Set) => boolean
+    readonly render_operation: (provider: ServerProvider, cnc: Connection, op: ServerOperation) => string
+    readonly identifier_quote: (provider: ServerProvider, cnc: Connection, id: string, for_meta_store: boolean, force_quotes: boolean) => string
+    readonly statement_rewrite: (provider: ServerProvider, cnc: Connection, stmt: Statement, params: Set) => SqlStatement
+    readonly open_connection: (provider: ServerProvider, cnc: Connection, params: QuarkList, auth: QuarkList) => boolean
+    readonly prepare_connection: (provider: ServerProvider, cnc: Connection, params: QuarkList, auth: QuarkList) => boolean
+    readonly close_connection: (provider: ServerProvider, cnc: Connection) => boolean
+    readonly escape_string: (provider: ServerProvider, cnc: Connection, str: string) => string
+    readonly unescape_string: (provider: ServerProvider, cnc: Connection, str: string) => string
+    readonly perform_operation: (provider: ServerProvider, cnc: Connection, op: ServerOperation) => boolean
+    readonly begin_transaction: (provider: ServerProvider, cnc: Connection, name: string, level: TransactionIsolation) => boolean
+    readonly commit_transaction: (provider: ServerProvider, cnc: Connection, name: string) => boolean
+    readonly rollback_transaction: (provider: ServerProvider, cnc: Connection, name: string) => boolean
+    readonly add_savepoint: (provider: ServerProvider, cnc: Connection, name: string) => boolean
+    readonly rollback_savepoint: (provider: ServerProvider, cnc: Connection, name: string) => boolean
+    readonly delete_savepoint: (provider: ServerProvider, cnc: Connection, name: string) => boolean
+    readonly statement_prepare: (provider: ServerProvider, cnc: Connection, stmt: Statement) => boolean
     static name: string
 }
 abstract class ServerProviderClass {
     /* Fields of Gda-6.0.Gda.ServerProviderClass */
-    parent_class: GObject.ObjectClass
-    functions_sets: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly functions_sets: object[]
     static name: string
 }
 class ServerProviderConnectionData {
     /* Fields of Gda-6.0.Gda.ServerProviderConnectionData */
-    worker: Worker
-    provider_data_destroy_func: GLib.DestroyNotify
-    pad1: object
-    pad2: object
+    readonly worker: Worker
+    readonly provider_data_destroy_func: GLib.DestroyNotify
+    readonly pad1: object
+    readonly pad2: object
     static name: string
 }
 class ServerProviderHandlerInfo {
     /* Fields of Gda-6.0.Gda.ServerProviderHandlerInfo */
-    cnc: Connection
-    g_type: GObject.Type
-    dbms_type: string
+    readonly cnc: Connection
+    readonly g_type: GObject.Type
+    readonly dbms_type: string
     static name: string
 }
 class ServerProviderMeta {
     /* Fields of Gda-6.0.Gda.ServerProviderMeta */
-    udt: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, udt_catalog: any, udt_schema: any) => boolean
-    udt_cols: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, udt_catalog: any, udt_schema: any, udt_name: any) => boolean
-    enums: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, udt_catalog: any, udt_schema: any, udt_name: any) => boolean
-    domains: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, domain_catalog: any, domain_schema: any) => boolean
-    constraints_dom: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, domain_catalog: any, domain_schema: any, domain_name: any) => boolean
-    el_types: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, specific_name: any) => boolean
-    collations: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, collation_catalog: any, collation_schema: any, collation_name_n: any) => boolean
-    character_sets: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, chset_catalog: any, chset_schema: any, chset_name_n: any) => boolean
-    schemata: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, catalog_name: any, schema_name_n: any) => boolean
-    tables_views: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name_n: any) => boolean
-    columns: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any) => boolean
-    view_cols: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, view_catalog: any, view_schema: any, view_name: any) => boolean
-    constraints_tab: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, constraint_name_n: any) => boolean
-    constraints_ref: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, constraint_name: any) => boolean
-    key_columns: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, constraint_name: any) => boolean
-    check_columns: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, constraint_name: any) => boolean
-    triggers: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any) => boolean
-    routines: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, routine_catalog: any, routine_schema: any, routine_name_n: any) => boolean
-    routine_col: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, rout_catalog: any, rout_schema: any, rout_name: any, col_name: any, ordinal_position: any) => boolean
-    routine_par: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, rout_catalog: any, rout_schema: any, rout_name: any) => boolean
-    indexes_tab: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, index_name_n: any) => boolean
-    index_cols: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, index_name: any) => boolean
+    readonly udt: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, udt_catalog: any, udt_schema: any) => boolean
+    readonly udt_cols: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, udt_catalog: any, udt_schema: any, udt_name: any) => boolean
+    readonly enums: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, udt_catalog: any, udt_schema: any, udt_name: any) => boolean
+    readonly domains: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, domain_catalog: any, domain_schema: any) => boolean
+    readonly constraints_dom: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, domain_catalog: any, domain_schema: any, domain_name: any) => boolean
+    readonly el_types: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, specific_name: any) => boolean
+    readonly collations: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, collation_catalog: any, collation_schema: any, collation_name_n: any) => boolean
+    readonly character_sets: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, chset_catalog: any, chset_schema: any, chset_name_n: any) => boolean
+    readonly schemata: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, catalog_name: any, schema_name_n: any) => boolean
+    readonly tables_views: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name_n: any) => boolean
+    readonly columns: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any) => boolean
+    readonly view_cols: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, view_catalog: any, view_schema: any, view_name: any) => boolean
+    readonly constraints_tab: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, constraint_name_n: any) => boolean
+    readonly constraints_ref: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, constraint_name: any) => boolean
+    readonly key_columns: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, constraint_name: any) => boolean
+    readonly check_columns: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, constraint_name: any) => boolean
+    readonly triggers: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any) => boolean
+    readonly routines: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, routine_catalog: any, routine_schema: any, routine_name_n: any) => boolean
+    readonly routine_col: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, rout_catalog: any, rout_schema: any, rout_name: any, col_name: any, ordinal_position: any) => boolean
+    readonly routine_par: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, rout_catalog: any, rout_schema: any, rout_name: any) => boolean
+    readonly indexes_tab: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, index_name_n: any) => boolean
+    readonly index_cols: (prov: ServerProvider, cnc: Connection, meta: MetaStore, ctx: MetaContext, error: GLib.Error, table_catalog: any, table_schema: any, table_name: any, index_name: any) => boolean
     static name: string
 }
 class ServerProviderXa {
     /* Fields of Gda-6.0.Gda.ServerProviderXa */
-    xa_start: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
-    xa_end: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
-    xa_prepare: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
-    xa_commit: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
-    xa_rollback: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
+    readonly xa_start: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
+    readonly xa_end: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
+    readonly xa_prepare: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
+    readonly xa_commit: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
+    readonly xa_rollback: (prov: ServerProvider, cnc: Connection, trx: XaTransactionId) => boolean
     static name: string
 }
 abstract class SetClass {
     /* Fields of Gda-6.0.Gda.SetClass */
-    parent_class: GObject.ObjectClass
-    validate_holder_change: (set: Set, holder: Holder, new_value: any) => GLib.Error
-    validate_set: (set: Set) => GLib.Error
-    holder_changed: (set: Set, holder: Holder) => void
-    holder_attr_changed: (set: Set, holder: Holder, attr_name: string, attr_value: any) => void
-    public_data_changed: (set: Set) => void
-    holder_type_set: (set: Set, holder: Holder) => void
-    source_model_changed: (set: Set, source: SetSource) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly validate_holder_change: (set: Set, holder: Holder, new_value: any) => GLib.Error
+    readonly validate_set: (set: Set) => GLib.Error
+    readonly holder_changed: (set: Set, holder: Holder) => void
+    readonly holder_attr_changed: (set: Set, holder: Holder, attr_name: string, attr_value: any) => void
+    readonly public_data_changed: (set: Set) => void
+    readonly holder_type_set: (set: Set, holder: Holder) => void
+    readonly source_model_changed: (set: Set, source: SetSource) => void
     static name: string
 }
 class SetGroup {
@@ -6966,8 +6940,8 @@ class SetSource {
 }
 class SqlAnyPart {
     /* Fields of Gda-6.0.Gda.SqlAnyPart */
-    type: SqlAnyPartType
-    parent: SqlAnyPart
+    readonly type: SqlAnyPartType
+    readonly parent: SqlAnyPart
     /* Methods of Gda-6.0.Gda.SqlAnyPart */
     check_structure(): boolean
     foreach(func: SqlForeachFunc): boolean
@@ -6975,16 +6949,16 @@ class SqlAnyPart {
 }
 abstract class SqlBuilderClass {
     /* Fields of Gda-6.0.Gda.SqlBuilderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SqlCase {
     /* Fields of Gda-6.0.Gda.SqlCase */
-    any: SqlAnyPart
-    base_expr: SqlExpr
-    when_expr_list: object[]
-    then_expr_list: object[]
-    else_expr: SqlExpr
+    readonly any: SqlAnyPart
+    readonly base_expr: SqlExpr
+    readonly when_expr_list: object[]
+    readonly then_expr_list: object[]
+    readonly else_expr: SqlExpr
     /* Methods of Gda-6.0.Gda.SqlCase */
     copy(): SqlCase
     free(): void
@@ -6997,15 +6971,15 @@ class SqlCase {
 }
 class SqlExpr {
     /* Fields of Gda-6.0.Gda.SqlExpr */
-    any: SqlAnyPart
-    value: any
-    param_spec: SqlParamSpec
-    func: SqlFunction
-    cond: SqlOperation
-    select: SqlAnyPart
-    case_s: SqlCase
-    cast_as: string
-    value_is_ident: boolean
+    readonly any: SqlAnyPart
+    readonly value: any
+    readonly param_spec: SqlParamSpec
+    readonly func: SqlFunction
+    readonly cond: SqlOperation
+    readonly select: SqlAnyPart
+    readonly case_s: SqlCase
+    readonly cast_as: string
+    readonly value_is_ident: boolean
     /* Methods of Gda-6.0.Gda.SqlExpr */
     copy(): SqlExpr
     free(): void
@@ -7019,9 +6993,9 @@ class SqlExpr {
 }
 class SqlField {
     /* Fields of Gda-6.0.Gda.SqlField */
-    any: SqlAnyPart
-    field_name: string
-    validity_meta_table_column: MetaTableColumn
+    readonly any: SqlAnyPart
+    readonly field_name: string
+    readonly validity_meta_table_column: MetaTableColumn
     /* Methods of Gda-6.0.Gda.SqlField */
     copy(): SqlField
     free(): void
@@ -7035,9 +7009,9 @@ class SqlField {
 }
 class SqlFunction {
     /* Fields of Gda-6.0.Gda.SqlFunction */
-    any: SqlAnyPart
-    function_name: string
-    args_list: object[]
+    readonly any: SqlAnyPart
+    readonly function_name: string
+    readonly args_list: object[]
     /* Methods of Gda-6.0.Gda.SqlFunction */
     check_clean(): void
     copy(): SqlFunction
@@ -7053,9 +7027,9 @@ class SqlFunction {
 }
 class SqlOperation {
     /* Fields of Gda-6.0.Gda.SqlOperation */
-    any: SqlAnyPart
-    operator_type: SqlOperatorType
-    operands: SqlExpr[]
+    readonly any: SqlAnyPart
+    readonly operator_type: SqlOperatorType
+    readonly operands: SqlExpr[]
     /* Methods of Gda-6.0.Gda.SqlOperation */
     copy(): SqlOperation
     free(): void
@@ -7070,14 +7044,14 @@ class SqlOperation {
 }
 class SqlParamSpec {
     /* Fields of Gda-6.0.Gda.SqlParamSpec */
-    name: string
-    descr: string
-    is_param: boolean
-    nullok: boolean
-    g_type: GObject.Type
-    validity_meta_dict: object
-    _gda_reserved1: object
-    _gda_reserved2: object
+    readonly name: string
+    readonly descr: string
+    readonly is_param: boolean
+    readonly nullok: boolean
+    readonly g_type: GObject.Type
+    readonly validity_meta_dict: object
+    readonly _gda_reserved1: object
+    readonly _gda_reserved2: object
     /* Methods of Gda-6.0.Gda.SqlParamSpec */
     copy(): SqlParamSpec
     free(): void
@@ -7094,34 +7068,34 @@ class SqlParamSpec {
 }
 abstract class SqlParserClass {
     /* Fields of Gda-6.0.Gda.SqlParserClass */
-    parent_class: GObject.ObjectClass
-    delim_alloc: (f: object) => object
-    delim_free: (d: object, f: object) => void
-    delim_trace: (d: object, s: string) => void
-    delim_parse: (d: object, i: number, v: any, iface: SqlParserIface) => void
-    delim_tokens_trans: number
-    parser_alloc: (f: object) => object
-    parser_free: (p: object, f: object) => void
-    parser_trace: (p: object, s: string) => void
-    parser_parse: (p: object, i: number, v: any, iface: SqlParserIface) => void
-    parser_tokens_trans: number
+    readonly parent_class: GObject.ObjectClass
+    readonly delim_alloc: (f: object) => object
+    readonly delim_free: (d: object, f: object) => void
+    readonly delim_trace: (d: object, s: string) => void
+    readonly delim_parse: (d: object, i: number, v: any, iface: SqlParserIface) => void
+    readonly delim_tokens_trans: number
+    readonly parser_alloc: (f: object) => object
+    readonly parser_free: (p: object, f: object) => void
+    readonly parser_trace: (p: object, s: string) => void
+    readonly parser_parse: (p: object, i: number, v: any, iface: SqlParserIface) => void
+    readonly parser_tokens_trans: number
     static name: string
 }
 class SqlParserIface {
     /* Fields of Gda-6.0.Gda.SqlParserIface */
-    parser: SqlParser
-    parsed_statement: SqlStatement
+    readonly parser: SqlParser
+    readonly parsed_statement: SqlStatement
     static name: string
 }
 class SqlSelectField {
     /* Fields of Gda-6.0.Gda.SqlSelectField */
-    any: SqlAnyPart
-    expr: SqlExpr
-    field_name: string
-    table_name: string
-    as: string
-    validity_meta_object: MetaDbObject
-    validity_meta_table_column: MetaTableColumn
+    readonly any: SqlAnyPart
+    readonly expr: SqlExpr
+    readonly field_name: string
+    readonly table_name: string
+    readonly as: string
+    readonly validity_meta_object: MetaDbObject
+    readonly validity_meta_table_column: MetaTableColumn
     /* Methods of Gda-6.0.Gda.SqlSelectField */
     copy(): SqlSelectField
     free(): void
@@ -7137,9 +7111,9 @@ class SqlSelectField {
 }
 class SqlSelectFrom {
     /* Fields of Gda-6.0.Gda.SqlSelectFrom */
-    any: SqlAnyPart
-    targets: SqlSelectTarget[]
-    joins: SqlSelectJoin[]
+    readonly any: SqlAnyPart
+    readonly targets: SqlSelectTarget[]
+    readonly joins: SqlSelectJoin[]
     /* Methods of Gda-6.0.Gda.SqlSelectFrom */
     copy(): SqlSelectFrom
     free(): void
@@ -7154,11 +7128,11 @@ class SqlSelectFrom {
 }
 class SqlSelectJoin {
     /* Fields of Gda-6.0.Gda.SqlSelectJoin */
-    any: SqlAnyPart
-    type: SqlSelectJoinType
-    position: number
-    expr: SqlExpr
-    use: object[]
+    readonly any: SqlAnyPart
+    readonly type: SqlSelectJoinType
+    readonly position: number
+    readonly expr: SqlExpr
+    readonly use: object[]
     /* Methods of Gda-6.0.Gda.SqlSelectJoin */
     copy(): SqlSelectJoin
     free(): void
@@ -7172,10 +7146,10 @@ class SqlSelectJoin {
 }
 class SqlSelectOrder {
     /* Fields of Gda-6.0.Gda.SqlSelectOrder */
-    any: SqlAnyPart
-    expr: SqlExpr
-    asc: boolean
-    collation_name: string
+    readonly any: SqlAnyPart
+    readonly expr: SqlExpr
+    readonly asc: boolean
+    readonly collation_name: string
     /* Methods of Gda-6.0.Gda.SqlSelectOrder */
     copy(): SqlSelectOrder
     free(): void
@@ -7188,11 +7162,11 @@ class SqlSelectOrder {
 }
 class SqlSelectTarget {
     /* Fields of Gda-6.0.Gda.SqlSelectTarget */
-    any: SqlAnyPart
-    expr: SqlExpr
-    table_name: string
-    as: string
-    validity_meta_object: MetaDbObject
+    readonly any: SqlAnyPart
+    readonly expr: SqlExpr
+    readonly table_name: string
+    readonly as: string
+    readonly validity_meta_object: MetaDbObject
     /* Methods of Gda-6.0.Gda.SqlSelectTarget */
     copy(): SqlSelectTarget
     free(): void
@@ -7208,10 +7182,10 @@ class SqlSelectTarget {
 }
 class SqlStatement {
     /* Fields of Gda-6.0.Gda.SqlStatement */
-    sql: string
-    stmt_type: SqlStatementType
-    contents: object
-    validity_meta_struct: MetaStruct
+    readonly sql: string
+    readonly stmt_type: SqlStatementType
+    readonly contents: object
+    readonly validity_meta_struct: MetaStruct
     /* Methods of Gda-6.0.Gda.SqlStatement */
     check_clean(): void
     check_structure(): boolean
@@ -7258,91 +7232,91 @@ class SqlStatement {
 }
 class SqlStatementCheckValidityData {
     /* Fields of Gda-6.0.Gda.SqlStatementCheckValidityData */
-    cnc: Connection
-    store: MetaStore
-    mstruct: MetaStruct
+    readonly cnc: Connection
+    readonly store: MetaStore
+    readonly mstruct: MetaStruct
     static name: string
 }
 class SqlStatementCompound {
     /* Fields of Gda-6.0.Gda.SqlStatementCompound */
-    any: SqlAnyPart
-    compound_type: SqlStatementCompoundType
-    stmt_list: object[]
+    readonly any: SqlAnyPart
+    readonly compound_type: SqlStatementCompoundType
+    readonly stmt_list: object[]
     static name: string
 }
 class SqlStatementContentsInfo {
     /* Fields of Gda-6.0.Gda.SqlStatementContentsInfo */
-    type: SqlStatementType
-    name: string
-    construct: () => object
-    free: (stm: object) => void
-    copy: (stm: object) => object
-    serialize: (stm: object) => string
-    check_structure_func: SqlForeachFunc
-    check_validity_func: SqlForeachFunc
+    readonly type: SqlStatementType
+    readonly name: string
+    readonly construct: () => object
+    readonly free: (stm: object) => void
+    readonly copy: (stm: object) => object
+    readonly serialize: (stm: object) => string
+    readonly check_structure_func: SqlForeachFunc
+    readonly check_validity_func: SqlForeachFunc
     static name: string
 }
 class SqlStatementDelete {
     /* Fields of Gda-6.0.Gda.SqlStatementDelete */
-    any: SqlAnyPart
-    table: SqlTable
-    cond: SqlExpr
+    readonly any: SqlAnyPart
+    readonly table: SqlTable
+    readonly cond: SqlExpr
     static name: string
 }
 class SqlStatementInsert {
     /* Fields of Gda-6.0.Gda.SqlStatementInsert */
-    any: SqlAnyPart
-    on_conflict: string
-    table: SqlTable
-    fields_list: object[]
-    values_list: object[]
-    select: SqlAnyPart
+    readonly any: SqlAnyPart
+    readonly on_conflict: string
+    readonly table: SqlTable
+    readonly fields_list: object[]
+    readonly values_list: object[]
+    readonly select: SqlAnyPart
     static name: string
 }
 class SqlStatementSelect {
     /* Fields of Gda-6.0.Gda.SqlStatementSelect */
-    any: SqlAnyPart
-    distinct: boolean
-    distinct_expr: SqlExpr
-    expr_list: object[]
-    from: SqlSelectFrom
-    where_cond: SqlExpr
-    group_by: object[]
-    having_cond: SqlExpr
-    order_by: object[]
-    limit_count: SqlExpr
-    limit_offset: SqlExpr
+    readonly any: SqlAnyPart
+    readonly distinct: boolean
+    readonly distinct_expr: SqlExpr
+    readonly expr_list: object[]
+    readonly from: SqlSelectFrom
+    readonly where_cond: SqlExpr
+    readonly group_by: object[]
+    readonly having_cond: SqlExpr
+    readonly order_by: object[]
+    readonly limit_count: SqlExpr
+    readonly limit_offset: SqlExpr
     static name: string
 }
 class SqlStatementTransaction {
     /* Fields of Gda-6.0.Gda.SqlStatementTransaction */
-    any: SqlAnyPart
-    isolation_level: TransactionIsolation
-    trans_mode: string
-    trans_name: string
+    readonly any: SqlAnyPart
+    readonly isolation_level: TransactionIsolation
+    readonly trans_mode: string
+    readonly trans_name: string
     static name: string
 }
 class SqlStatementUnknown {
     /* Fields of Gda-6.0.Gda.SqlStatementUnknown */
-    any: SqlAnyPart
-    expressions: object[]
+    readonly any: SqlAnyPart
+    readonly expressions: object[]
     static name: string
 }
 class SqlStatementUpdate {
     /* Fields of Gda-6.0.Gda.SqlStatementUpdate */
-    any: SqlAnyPart
-    on_conflict: string
-    table: SqlTable
-    fields_list: object[]
-    expr_list: object[]
-    cond: SqlExpr
+    readonly any: SqlAnyPart
+    readonly on_conflict: string
+    readonly table: SqlTable
+    readonly fields_list: object[]
+    readonly expr_list: object[]
+    readonly cond: SqlExpr
     static name: string
 }
 class SqlTable {
     /* Fields of Gda-6.0.Gda.SqlTable */
-    any: SqlAnyPart
-    table_name: string
-    validity_meta_object: MetaDbObject
+    readonly any: SqlAnyPart
+    readonly table_name: string
+    readonly validity_meta_object: MetaDbObject
     /* Methods of Gda-6.0.Gda.SqlTable */
     copy(): SqlTable
     free(): void
@@ -7356,9 +7330,9 @@ class SqlTable {
 }
 abstract class StatementClass {
     /* Fields of Gda-6.0.Gda.StatementClass */
-    parent_class: GObject.ObjectClass
-    checked: (stmt: Statement, cnc: Connection, checked: boolean) => void
-    reset: (stmt: Statement) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly checked: (stmt: Statement, cnc: Connection, checked: boolean) => void
+    readonly reset: (stmt: Statement) => void
     static name: string
 }
 class Text {
@@ -7405,64 +7379,64 @@ class Time {
 }
 abstract class TransactionStatusClass {
     /* Fields of Gda-6.0.Gda.TransactionStatusClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class TransactionStatusEvent {
     /* Fields of Gda-6.0.Gda.TransactionStatusEvent */
-    trans: TransactionStatus
-    type: TransactionStatusEventType
-    conn_event: ConnectionEvent
+    readonly trans: TransactionStatus
+    readonly type: TransactionStatusEventType
+    readonly conn_event: ConnectionEvent
     static name: string
 }
 abstract class TreeClass {
     /* Fields of Gda-6.0.Gda.TreeClass */
-    object_class: GObject.ObjectClass
-    node_changed: (tree: Tree, node: TreeNode) => void
-    node_inserted: (tree: Tree, node: TreeNode) => void
-    node_has_child_toggled: (tree: Tree, node: TreeNode) => void
-    node_deleted: (tree: Tree, node_path: string) => void
+    readonly object_class: GObject.ObjectClass
+    readonly node_changed: (tree: Tree, node: TreeNode) => void
+    readonly node_inserted: (tree: Tree, node: TreeNode) => void
+    readonly node_has_child_toggled: (tree: Tree, node: TreeNode) => void
+    readonly node_deleted: (tree: Tree, node_path: string) => void
     static name: string
 }
 abstract class TreeManagerClass {
     /* Fields of Gda-6.0.Gda.TreeManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TreeMgrColumnsClass {
     /* Fields of Gda-6.0.Gda.TreeMgrColumnsClass */
-    object_class: TreeManagerClass
+    readonly object_class: TreeManagerClass
     static name: string
 }
 abstract class TreeMgrLabelClass {
     /* Fields of Gda-6.0.Gda.TreeMgrLabelClass */
-    parent_class: TreeManagerClass
+    readonly parent_class: TreeManagerClass
     static name: string
 }
 abstract class TreeMgrSchemasClass {
     /* Fields of Gda-6.0.Gda.TreeMgrSchemasClass */
-    object_class: TreeManagerClass
+    readonly object_class: TreeManagerClass
     static name: string
 }
 abstract class TreeMgrSelectClass {
     /* Fields of Gda-6.0.Gda.TreeMgrSelectClass */
-    object_class: TreeManagerClass
+    readonly object_class: TreeManagerClass
     static name: string
 }
 abstract class TreeMgrTablesClass {
     /* Fields of Gda-6.0.Gda.TreeMgrTablesClass */
-    object_class: TreeManagerClass
+    readonly object_class: TreeManagerClass
     static name: string
 }
 abstract class TreeNodeClass {
     /* Fields of Gda-6.0.Gda.TreeNodeClass */
-    object_class: GObject.ObjectClass
-    node_changed: (reporting: TreeNode, node: TreeNode) => void
-    node_inserted: (reporting: TreeNode, node: TreeNode) => void
-    node_has_child_toggled: (reporting: TreeNode, node: TreeNode) => void
-    node_deleted: (reporting: TreeNode, relative_path: string) => void
-    dump_header: (node: TreeNode) => string
-    dump_children: (node: TreeNode, prefix: string, in_string: GLib.String) => void
+    readonly object_class: GObject.ObjectClass
+    readonly node_changed: (reporting: TreeNode, node: TreeNode) => void
+    readonly node_inserted: (reporting: TreeNode, node: TreeNode) => void
+    readonly node_has_child_toggled: (reporting: TreeNode, node: TreeNode) => void
+    readonly node_deleted: (reporting: TreeNode, relative_path: string) => void
+    readonly dump_header: (node: TreeNode) => string
+    readonly dump_children: (node: TreeNode, prefix: string, in_string: GLib.String) => void
     static name: string
 }
 class Worker {
@@ -7488,19 +7462,19 @@ class Worker {
 }
 abstract class XaTransactionClass {
     /* Fields of Gda-6.0.Gda.XaTransactionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class XaTransactionId {
     /* Fields of Gda-6.0.Gda.XaTransactionId */
-    format: number
-    gtrid_length: number
-    bqual_length: number
-    data: number[]
+    readonly format: number
+    readonly gtrid_length: number
+    readonly bqual_length: number
+    readonly data: number[]
     /* Methods of Gda-6.0.Gda.XaTransactionId */
     to_string(): string
     static name: string
 }
-type SqlBuilderId = number
+    type SqlBuilderId = number
 }
 export default Gda;

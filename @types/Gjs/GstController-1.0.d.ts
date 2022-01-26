@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstController-1.0
  */
@@ -30,7 +36,8 @@ interface DirectControlBindingConvertGValue {
 interface DirectControlBindingConvertValue {
     (self: DirectControlBinding, src_value: number, dest_value?: object | null): void
 }
-export interface ARGBControlBinding_ConstructProps extends Gst.ControlBinding_ConstructProps {
+interface ARGBControlBinding_ConstructProps extends Gst.ControlBinding_ConstructProps {
+    /* Constructor properties of GstController-1.0.GstController.ARGBControlBinding */
     control_source_a?: Gst.ControlSource
     control_source_b?: Gst.ControlSource
     control_source_g?: Gst.ControlSource
@@ -42,17 +49,16 @@ class ARGBControlBinding {
     control_source_b: Gst.ControlSource
     control_source_g: Gst.ControlSource
     control_source_r: Gst.ControlSource
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.ControlBinding */
-    pspec: GObject.ParamSpec
+    readonly parent: Gst.Object
+    readonly name: string
+    readonly pspec: GObject.ParamSpec
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.ControlBinding */
     get_g_value_array(timestamp: Gst.ClockTime, interval: Gst.ClockTime, values: any[]): boolean
     get_value(timestamp: Gst.ClockTime): any | null
@@ -135,10 +141,6 @@ class ARGBControlBinding {
     connect_after(sigName: "notify::control-source-g", callback: (($obj: ARGBControlBinding, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::control-source-r", callback: (($obj: ARGBControlBinding, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::control-source-r", callback: (($obj: ARGBControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: ARGBControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: ARGBControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ARGBControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ARGBControlBinding, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -150,24 +152,24 @@ class ARGBControlBinding {
     static new(object: Gst.Object, property_name: string, cs_a: Gst.ControlSource, cs_r: Gst.ControlSource, cs_g: Gst.ControlSource, cs_b: Gst.ControlSource): ARGBControlBinding
     static $gtype: GObject.Type
 }
-export interface DirectControlBinding_ConstructProps extends Gst.ControlBinding_ConstructProps {
+interface DirectControlBinding_ConstructProps extends Gst.ControlBinding_ConstructProps {
+    /* Constructor properties of GstController-1.0.GstController.DirectControlBinding */
     absolute?: boolean
     control_source?: Gst.ControlSource
 }
 class DirectControlBinding {
     /* Properties of GstController-1.0.GstController.DirectControlBinding */
     control_source: Gst.ControlSource
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.ControlBinding */
-    pspec: GObject.ParamSpec
+    readonly parent: Gst.Object
+    readonly name: string
+    readonly pspec: GObject.ParamSpec
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.ControlBinding */
     get_g_value_array(timestamp: Gst.ClockTime, interval: Gst.ClockTime, values: any[]): boolean
     get_value(timestamp: Gst.ClockTime): any | null
@@ -244,10 +246,6 @@ class DirectControlBinding {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::control-source", callback: (($obj: DirectControlBinding, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::control-source", callback: (($obj: DirectControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: DirectControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: DirectControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: DirectControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: DirectControlBinding, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -260,28 +258,28 @@ class DirectControlBinding {
     static new_absolute(object: Gst.Object, property_name: string, cs: Gst.ControlSource): DirectControlBinding
     static $gtype: GObject.Type
 }
-export interface InterpolationControlSource_ConstructProps extends TimedValueControlSource_ConstructProps {
+interface InterpolationControlSource_ConstructProps extends TimedValueControlSource_ConstructProps {
+    /* Constructor properties of GstController-1.0.GstController.InterpolationControlSource */
     mode?: InterpolationMode
 }
 class InterpolationControlSource {
     /* Properties of GstController-1.0.GstController.InterpolationControlSource */
     mode: InterpolationMode
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of GstController-1.0.GstController.TimedValueControlSource */
-    lock: GLib.Mutex
-    values: GLib.Sequence
-    nvalues: number
-    valid_cache: boolean
+    readonly parent: Gst.ControlSource
+    readonly lock: GLib.Mutex
+    readonly values: GLib.Sequence
+    readonly nvalues: number
+    readonly valid_cache: boolean
     /* Fields of Gst-1.0.Gst.ControlSource */
-    get_value: Gst.ControlSourceGetValue
-    get_value_array: Gst.ControlSourceGetValueArray
+    readonly get_value: Gst.ControlSourceGetValue
+    readonly get_value_array: Gst.ControlSourceGetValueArray
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstController-1.0.GstController.TimedValueControlSource */
     find_control_point_iter(timestamp: Gst.ClockTime): GLib.SequenceIter
     get_all(): Gst.TimedValue[]
@@ -368,10 +366,6 @@ class InterpolationControlSource {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::mode", callback: (($obj: InterpolationControlSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::mode", callback: (($obj: InterpolationControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InterpolationControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InterpolationControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: InterpolationControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: InterpolationControlSource, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -383,7 +377,8 @@ class InterpolationControlSource {
     static new(): InterpolationControlSource
     static $gtype: GObject.Type
 }
-export interface LFOControlSource_ConstructProps extends Gst.ControlSource_ConstructProps {
+interface LFOControlSource_ConstructProps extends Gst.ControlSource_ConstructProps {
+    /* Constructor properties of GstController-1.0.GstController.LFOControlSource */
     amplitude?: number
     frequency?: number
     offset?: number
@@ -397,18 +392,17 @@ class LFOControlSource {
     offset: number
     timeshift: number
     waveform: LFOWaveform
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.ControlSource */
-    get_value: Gst.ControlSourceGetValue
-    get_value_array: Gst.ControlSourceGetValueArray
+    readonly parent: Gst.Object
+    readonly get_value: Gst.ControlSourceGetValue
+    readonly get_value_array: Gst.ControlSourceGetValueArray
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.ControlSource */
     control_source_get_value(timestamp: Gst.ClockTime): [ /* returnType */ boolean, /* value */ number ]
     control_source_get_value_array(timestamp: Gst.ClockTime, interval: Gst.ClockTime, values: number[]): boolean
@@ -485,10 +479,6 @@ class LFOControlSource {
     connect_after(sigName: "notify::timeshift", callback: (($obj: LFOControlSource, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::waveform", callback: (($obj: LFOControlSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::waveform", callback: (($obj: LFOControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: LFOControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: LFOControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: LFOControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: LFOControlSource, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -500,20 +490,19 @@ class LFOControlSource {
     static new(): LFOControlSource
     static $gtype: GObject.Type
 }
-export interface ProxyControlBinding_ConstructProps extends Gst.ControlBinding_ConstructProps {
+interface ProxyControlBinding_ConstructProps extends Gst.ControlBinding_ConstructProps {
 }
 class ProxyControlBinding {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.ControlBinding */
-    pspec: GObject.ParamSpec
+    readonly parent: Gst.Object
+    readonly name: string
+    readonly pspec: GObject.ParamSpec
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.ControlBinding */
     get_g_value_array(timestamp: Gst.ClockTime, interval: Gst.ClockTime, values: any[]): boolean
     get_value(timestamp: Gst.ClockTime): any | null
@@ -588,10 +577,6 @@ class ProxyControlBinding {
     connect(sigName: "notify", callback: (($obj: ProxyControlBinding, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ProxyControlBinding, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: ProxyControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: ProxyControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ProxyControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ProxyControlBinding, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -603,25 +588,20 @@ class ProxyControlBinding {
     static new(object: Gst.Object, property_name: string, ref_object: Gst.Object, ref_property_name: string): ProxyControlBinding
     static $gtype: GObject.Type
 }
-export interface TimedValueControlSource_ConstructProps extends Gst.ControlSource_ConstructProps {
+interface TimedValueControlSource_ConstructProps extends Gst.ControlSource_ConstructProps {
 }
 class TimedValueControlSource {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstController-1.0.GstController.TimedValueControlSource */
-    lock: GLib.Mutex
-    values: GLib.Sequence
-    nvalues: number
-    valid_cache: boolean
     /* Fields of Gst-1.0.Gst.ControlSource */
-    get_value: Gst.ControlSourceGetValue
-    get_value_array: Gst.ControlSourceGetValueArray
+    readonly parent: Gst.Object
+    readonly get_value: Gst.ControlSourceGetValue
+    readonly get_value_array: Gst.ControlSourceGetValueArray
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstController-1.0.GstController.TimedValueControlSource */
     find_control_point_iter(timestamp: Gst.ClockTime): GLib.SequenceIter
     get_all(): Gst.TimedValue[]
@@ -706,10 +686,6 @@ class TimedValueControlSource {
     connect(sigName: "notify", callback: (($obj: TimedValueControlSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TimedValueControlSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TimedValueControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TimedValueControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TimedValueControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TimedValueControlSource, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -719,28 +695,28 @@ class TimedValueControlSource {
     _init (config?: TimedValueControlSource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TriggerControlSource_ConstructProps extends TimedValueControlSource_ConstructProps {
+interface TriggerControlSource_ConstructProps extends TimedValueControlSource_ConstructProps {
+    /* Constructor properties of GstController-1.0.GstController.TriggerControlSource */
     tolerance?: number
 }
 class TriggerControlSource {
     /* Properties of GstController-1.0.GstController.TriggerControlSource */
     tolerance: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of GstController-1.0.GstController.TimedValueControlSource */
-    lock: GLib.Mutex
-    values: GLib.Sequence
-    nvalues: number
-    valid_cache: boolean
+    readonly parent: Gst.ControlSource
+    readonly lock: GLib.Mutex
+    readonly values: GLib.Sequence
+    readonly nvalues: number
+    readonly valid_cache: boolean
     /* Fields of Gst-1.0.Gst.ControlSource */
-    get_value: Gst.ControlSourceGetValue
-    get_value_array: Gst.ControlSourceGetValueArray
+    readonly get_value: Gst.ControlSourceGetValue
+    readonly get_value_array: Gst.ControlSourceGetValueArray
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstController-1.0.GstController.TimedValueControlSource */
     find_control_point_iter(timestamp: Gst.ClockTime): GLib.SequenceIter
     get_all(): Gst.TimedValue[]
@@ -827,10 +803,6 @@ class TriggerControlSource {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::tolerance", callback: (($obj: TriggerControlSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::tolerance", callback: (($obj: TriggerControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: TriggerControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TriggerControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TriggerControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TriggerControlSource, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -844,13 +816,13 @@ class TriggerControlSource {
 }
 abstract class ARGBControlBindingClass {
     /* Fields of GstController-1.0.GstController.ARGBControlBindingClass */
-    parent_class: Gst.ControlBindingClass
+    readonly parent_class: Gst.ControlBindingClass
     static name: string
 }
 class ControlPoint {
     /* Fields of GstController-1.0.GstController.ControlPoint */
-    timestamp: Gst.ClockTime
-    value: number
+    readonly timestamp: Gst.ClockTime
+    readonly value: number
     /* Methods of GstController-1.0.GstController.ControlPoint */
     copy(): ControlPoint
     free(): void
@@ -858,12 +830,12 @@ class ControlPoint {
 }
 abstract class DirectControlBindingClass {
     /* Fields of GstController-1.0.GstController.DirectControlBindingClass */
-    parent_class: Gst.ControlBindingClass
+    readonly parent_class: Gst.ControlBindingClass
     static name: string
 }
 abstract class InterpolationControlSourceClass {
     /* Fields of GstController-1.0.GstController.InterpolationControlSourceClass */
-    parent_class: TimedValueControlSourceClass
+    readonly parent_class: TimedValueControlSourceClass
     static name: string
 }
 class InterpolationControlSourcePrivate {
@@ -871,7 +843,7 @@ class InterpolationControlSourcePrivate {
 }
 abstract class LFOControlSourceClass {
     /* Fields of GstController-1.0.GstController.LFOControlSourceClass */
-    parent_class: Gst.ControlSourceClass
+    readonly parent_class: Gst.ControlSourceClass
     static name: string
 }
 class LFOControlSourcePrivate {
@@ -882,7 +854,7 @@ abstract class ProxyControlBindingClass {
 }
 abstract class TimedValueControlSourceClass {
     /* Fields of GstController-1.0.GstController.TimedValueControlSourceClass */
-    parent_class: Gst.ControlSourceClass
+    readonly parent_class: Gst.ControlSourceClass
     static name: string
 }
 class TimedValueControlSourcePrivate {
@@ -890,7 +862,7 @@ class TimedValueControlSourcePrivate {
 }
 abstract class TriggerControlSourceClass {
     /* Fields of GstController-1.0.GstController.TriggerControlSourceClass */
-    parent_class: TimedValueControlSourceClass
+    readonly parent_class: TimedValueControlSourceClass
     static name: string
 }
 class TriggerControlSourcePrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * RygelRenderer-2.6
  */
@@ -16,7 +22,8 @@ import type GUPnPAV from './GUPnPAV-1.0';
 
 export namespace RygelRenderer {
 
-export interface MediaPlayer_ConstructProps extends GObject.Object_ConstructProps {
+interface MediaPlayer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelRenderer-2.6.RygelRenderer.MediaPlayer */
     playback_state?: string
     playback_speed?: string
     uri?: string
@@ -44,7 +51,7 @@ class MediaPlayer {
     readonly byte_position: number
     user_agent: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelRenderer-2.6.RygelRenderer.MediaPlayer */
     seek(time: number): boolean
     seek_bytes(bytes: number): boolean
@@ -178,7 +185,8 @@ class MediaPlayer {
     _init (config?: MediaPlayer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayerController_ConstructProps extends GObject.Object_ConstructProps {
+interface PlayerController_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelRenderer-2.6.RygelRenderer.PlayerController */
     playback_state?: string
     n_tracks?: number
     track?: number
@@ -205,7 +213,7 @@ class PlayerController {
     play_mode: string
     readonly can_pause: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelRenderer-2.6.RygelRenderer.PlayerController */
     next(): boolean
     previous(): boolean
@@ -334,7 +342,8 @@ class PlayerController {
     _init (config?: PlayerController_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MediaRendererPlugin_ConstructProps extends RygelCore.Plugin_ConstructProps {
+interface MediaRendererPlugin_ConstructProps extends RygelCore.Plugin_ConstructProps {
+    /* Constructor properties of RygelRenderer-2.6.RygelRenderer.MediaRendererPlugin */
     supported_profiles?: RygelCore.DLNAProfile[]
 }
 class MediaRendererPlugin {
@@ -348,9 +357,9 @@ class MediaRendererPlugin {
     icon_infos: Gee.ArrayList
     default_icons: Gee.ArrayList
     /* Fields of GUPnP-1.2.GUPnP.ResourceFactory */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelRenderer-2.6.RygelRenderer.MediaRendererPlugin */
     get_player(): MediaPlayer | null
     get_controller(): PlayerController
@@ -440,18 +449,20 @@ class MediaRendererPlugin {
     _init (config?: MediaRendererPlugin_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(name: string, title: string | null, description: string | null, capabilities: RygelCore.PluginCapabilities): MediaRendererPlugin
+    /* Function overloads */
     static new(desc_path: string, name: string, title: string | null, description: string | null, capabilities: RygelCore.PluginCapabilities): MediaRendererPlugin
     static new(): MediaRendererPlugin
     static $gtype: GObject.Type
 }
-export interface MediaRenderer_ConstructProps extends RygelCore.MediaDevice_ConstructProps {
+interface MediaRenderer_ConstructProps extends RygelCore.MediaDevice_ConstructProps {
+    /* Constructor properties of RygelRenderer-2.6.RygelRenderer.MediaRenderer */
     player?: MediaPlayer
 }
 class MediaRenderer {
     /* Properties of RygelCore-2.6.RygelCore.MediaDevice */
     plugin: RygelCore.Plugin
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.MediaDevice */
     add_interface(iface: string): void
     remove_interface(iface: string): void
@@ -509,8 +520,8 @@ class MediaRenderer {
 }
 abstract class MediaRendererPluginClass {
     /* Fields of RygelRenderer-2.6.RygelRenderer.MediaRendererPluginClass */
-    get_player: (self: MediaRendererPlugin) => MediaPlayer | null
-    get_controller: (self: MediaRendererPlugin) => PlayerController
+    readonly get_player: (self: MediaRendererPlugin) => MediaPlayer | null
+    readonly get_controller: (self: MediaRendererPlugin) => PlayerController
     static name: string
 }
 class MediaRendererPluginPrivate {
@@ -524,66 +535,66 @@ class MediaRendererPrivate {
 }
 abstract class MediaPlayerIface {
     /* Fields of RygelRenderer-2.6.RygelRenderer.MediaPlayerIface */
-    seek: (self: MediaPlayer, time: number) => boolean
-    seek_bytes: (self: MediaPlayer, bytes: number) => boolean
-    get_protocols: () => [ /* returnType */ string[], /* result_length1 */ number ]
-    get_mime_types: () => [ /* returnType */ string[], /* result_length1 */ number ]
-    get_playback_state: (self: MediaPlayer) => string
-    set_playback_state: (self: MediaPlayer, value: string) => void
-    get_allowed_playback_speeds: () => [ /* returnType */ string[], /* result_length1 */ number ]
-    get_playback_speed: (self: MediaPlayer) => string
-    set_playback_speed: (self: MediaPlayer, value: string) => void
-    get_uri: (self: MediaPlayer) => string | null
-    set_uri: (self: MediaPlayer, value?: string | null) => void
-    get_volume: (self: MediaPlayer) => number
-    set_volume: (self: MediaPlayer, value: number) => void
-    get_duration: (self: MediaPlayer) => number
-    get_size: (self: MediaPlayer) => number
-    get_metadata: (self: MediaPlayer) => string | null
-    set_metadata: (self: MediaPlayer, value?: string | null) => void
-    get_mime_type: (self: MediaPlayer) => string | null
-    set_mime_type: (self: MediaPlayer, value?: string | null) => void
-    get_can_seek: (self: MediaPlayer) => boolean
-    get_can_seek_bytes: (self: MediaPlayer) => boolean
-    get_content_features: (self: MediaPlayer) => string | null
-    set_content_features: (self: MediaPlayer, value?: string | null) => void
-    get_position: (self: MediaPlayer) => number
-    get_byte_position: (self: MediaPlayer) => number
-    get_user_agent: (self: MediaPlayer) => string | null
-    set_user_agent: (self: MediaPlayer, value?: string | null) => void
+    readonly seek: (self: MediaPlayer, time: number) => boolean
+    readonly seek_bytes: (self: MediaPlayer, bytes: number) => boolean
+    readonly get_protocols: () => [ /* returnType */ string[], /* result_length1 */ number ]
+    readonly get_mime_types: () => [ /* returnType */ string[], /* result_length1 */ number ]
+    readonly get_playback_state: (self: MediaPlayer) => string
+    readonly set_playback_state: (self: MediaPlayer, value: string) => void
+    readonly get_allowed_playback_speeds: () => [ /* returnType */ string[], /* result_length1 */ number ]
+    readonly get_playback_speed: (self: MediaPlayer) => string
+    readonly set_playback_speed: (self: MediaPlayer, value: string) => void
+    readonly get_uri: (self: MediaPlayer) => string | null
+    readonly set_uri: (self: MediaPlayer, value?: string | null) => void
+    readonly get_volume: (self: MediaPlayer) => number
+    readonly set_volume: (self: MediaPlayer, value: number) => void
+    readonly get_duration: (self: MediaPlayer) => number
+    readonly get_size: (self: MediaPlayer) => number
+    readonly get_metadata: (self: MediaPlayer) => string | null
+    readonly set_metadata: (self: MediaPlayer, value?: string | null) => void
+    readonly get_mime_type: (self: MediaPlayer) => string | null
+    readonly set_mime_type: (self: MediaPlayer, value?: string | null) => void
+    readonly get_can_seek: (self: MediaPlayer) => boolean
+    readonly get_can_seek_bytes: (self: MediaPlayer) => boolean
+    readonly get_content_features: (self: MediaPlayer) => string | null
+    readonly set_content_features: (self: MediaPlayer, value?: string | null) => void
+    readonly get_position: (self: MediaPlayer) => number
+    readonly get_byte_position: (self: MediaPlayer) => number
+    readonly get_user_agent: (self: MediaPlayer) => string | null
+    readonly set_user_agent: (self: MediaPlayer, value?: string | null) => void
     static name: string
 }
 abstract class PlayerControllerIface {
     /* Fields of RygelRenderer-2.6.RygelRenderer.PlayerControllerIface */
-    next: (self: PlayerController) => boolean
-    previous: (self: PlayerController) => boolean
-    set_single_play_uri: (self: PlayerController, uri: string, metadata: string, mime?: string | null, features?: string | null) => void
-    set_playlist_uri: (self: PlayerController, uri: string, metadata: string, collection: GUPnPAV.MediaCollection) => void
-    set_next_single_play_uri: (self: PlayerController, uri: string, metadata: string, mime?: string | null, features?: string | null) => void
-    set_next_playlist_uri: (self: PlayerController, uri: string, metadata: string, collection: GUPnPAV.MediaCollection) => void
-    is_play_mode_valid: (self: PlayerController, play_mode: string) => boolean
-    get_playback_state: (self: PlayerController) => string
-    set_playback_state: (self: PlayerController, value: string) => void
-    get_n_tracks: (self: PlayerController) => number
-    set_n_tracks: (self: PlayerController, value: number) => void
-    get_track: (self: PlayerController) => number
-    set_track: (self: PlayerController, value: number) => void
-    get_uri: (self: PlayerController) => string
-    set_uri: (self: PlayerController, value: string) => void
-    get_metadata: (self: PlayerController) => string
-    set_metadata: (self: PlayerController, value: string) => void
-    get_track_uri: (self: PlayerController) => string
-    set_track_uri: (self: PlayerController, value: string) => void
-    get_track_metadata: (self: PlayerController) => string
-    set_track_metadata: (self: PlayerController, value: string) => void
-    get_next_uri: (self: PlayerController) => string
-    set_next_uri: (self: PlayerController, value: string) => void
-    get_next_metadata: (self: PlayerController) => string
-    set_next_metadata: (self: PlayerController, value: string) => void
-    get_current_transport_actions: (self: PlayerController) => string
-    get_play_mode: (self: PlayerController) => string
-    set_play_mode: (self: PlayerController, value: string) => void
-    get_can_pause: (self: PlayerController) => boolean
+    readonly next: (self: PlayerController) => boolean
+    readonly previous: (self: PlayerController) => boolean
+    readonly set_single_play_uri: (self: PlayerController, uri: string, metadata: string, mime?: string | null, features?: string | null) => void
+    readonly set_playlist_uri: (self: PlayerController, uri: string, metadata: string, collection: GUPnPAV.MediaCollection) => void
+    readonly set_next_single_play_uri: (self: PlayerController, uri: string, metadata: string, mime?: string | null, features?: string | null) => void
+    readonly set_next_playlist_uri: (self: PlayerController, uri: string, metadata: string, collection: GUPnPAV.MediaCollection) => void
+    readonly is_play_mode_valid: (self: PlayerController, play_mode: string) => boolean
+    readonly get_playback_state: (self: PlayerController) => string
+    readonly set_playback_state: (self: PlayerController, value: string) => void
+    readonly get_n_tracks: (self: PlayerController) => number
+    readonly set_n_tracks: (self: PlayerController, value: number) => void
+    readonly get_track: (self: PlayerController) => number
+    readonly set_track: (self: PlayerController, value: number) => void
+    readonly get_uri: (self: PlayerController) => string
+    readonly set_uri: (self: PlayerController, value: string) => void
+    readonly get_metadata: (self: PlayerController) => string
+    readonly set_metadata: (self: PlayerController, value: string) => void
+    readonly get_track_uri: (self: PlayerController) => string
+    readonly set_track_uri: (self: PlayerController, value: string) => void
+    readonly get_track_metadata: (self: PlayerController) => string
+    readonly set_track_metadata: (self: PlayerController, value: string) => void
+    readonly get_next_uri: (self: PlayerController) => string
+    readonly set_next_uri: (self: PlayerController, value: string) => void
+    readonly get_next_metadata: (self: PlayerController) => string
+    readonly set_next_metadata: (self: PlayerController, value: string) => void
+    readonly get_current_transport_actions: (self: PlayerController) => string
+    readonly get_play_mode: (self: PlayerController) => string
+    readonly set_play_mode: (self: PlayerController, value: string) => void
+    readonly get_can_pause: (self: PlayerController) => boolean
     static name: string
 }
 }

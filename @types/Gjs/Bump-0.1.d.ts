@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Bump-0.1
  */
@@ -13,13 +19,13 @@ export namespace Bump {
 interface Callback {
     (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): object | null
 }
-export interface Queue_ConstructProps extends GObject.Object_ConstructProps {
+interface Queue_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Queue {
     /* Properties of Bump-0.1.Bump.Queue */
     readonly length: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.Queue */
     process(wait: GLib.TimeSpan): boolean
     get_length(): number
@@ -71,11 +77,13 @@ class Queue {
     _init (config?: Queue_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Threading_ConstructProps extends GObject.Object_ConstructProps {
+interface Threading_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Threading {
+    /* Properties of Bump-0.1.Bump.Queue */
+    readonly length: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.Threading */
     get_max_threads(): number
     set_max_threads(value: number): void
@@ -108,8 +116,13 @@ class Threading {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of Bump-0.1.Bump.Queue */
+    process(wait: GLib.TimeSpan): boolean
+    get_length(): number
     /* Virtual methods of Bump-0.1.Bump.Threading */
     vfunc_spawn(max_new_threads: number): number
+    vfunc_process(wait: GLib.TimeSpan): boolean
+    vfunc_get_length(): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -122,6 +135,8 @@ class Threading {
     connect(sigName: "notify", callback: (($obj: Threading, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Threading, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::length", callback: (($obj: Threading, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::length", callback: (($obj: Threading, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -131,7 +146,8 @@ class Threading {
     _init (config?: Threading_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AsyncPriorityQueue_ConstructProps extends Gee.PriorityQueue_ConstructProps {
+interface AsyncPriorityQueue_ConstructProps extends Gee.PriorityQueue_ConstructProps {
+    /* Constructor properties of Bump-0.1.Bump.AsyncPriorityQueue */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -149,13 +165,14 @@ class AsyncPriorityQueue {
     readonly read_only: boolean
     readonly read_only_view: Gee.Collection
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.AsyncPriorityQueue */
     poll_timed(wait: GLib.TimeSpan): object | null
     peek_timed(wait: GLib.TimeSpan): object | null
     offer(element?: object | null): boolean
     get_waiting_threads(): number
     /* Methods of Gee-0.8.Gee.PriorityQueue */
+    offer(element?: object | null): boolean
     drain(recipient: Gee.Collection, amount: number): number
     get_compare_func(): [ /* returnType */ GLib.CompareDataFunc, /* result_target */ object | null ]
     /* Methods of Gee-0.8.Gee.AbstractQueue */
@@ -224,12 +241,58 @@ class AsyncPriorityQueue {
     vfunc_get_is_full(): boolean
     vfunc_offer(element?: object | null): boolean
     vfunc_drain(recipient: Gee.Collection, amount: number): number
-    /* Virtual methods of Gee-0.8.Gee.AbstractCollection */
     vfunc_contains(item?: object | null): boolean
     vfunc_add(item?: object | null): boolean
     vfunc_remove(item?: object | null): boolean
     vfunc_clear(): void
+    vfunc_add_all(collection: Gee.Collection): boolean
+    vfunc_contains_all(collection: Gee.Collection): boolean
+    vfunc_remove_all(collection: Gee.Collection): boolean
+    vfunc_retain_all(collection: Gee.Collection): boolean
+    vfunc_to_array(): object[]
+    vfunc_add_all_array(array: object[]): boolean
+    vfunc_contains_all_array(array: object[]): boolean
+    vfunc_remove_all_array(array: object[]): boolean
+    vfunc_add_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_contains_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_remove_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_get_size(): number
+    vfunc_get_is_empty(): boolean
+    vfunc_get_read_only(): boolean
+    vfunc_get_read_only_view(): Gee.Collection
     vfunc_iterator(): Gee.Iterator
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    vfunc_fold(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): object | null
+    vfunc_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.MapFunc): Gee.Iterator
+    vfunc_scan(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): Gee.Iterator
+    vfunc_filter(pred: Gee.Predicate): Gee.Iterator
+    vfunc_chop(offset: number, length: number): Gee.Iterator
+    vfunc_flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FlatMapFunc): Gee.Iterator
+    vfunc_tee(forks: number): Gee.Iterator[]
+    vfunc_first_match(pred: Gee.Predicate): object | null
+    vfunc_any_match(pred: Gee.Predicate): boolean
+    vfunc_all_match(pred: Gee.Predicate): boolean
+    vfunc_max(compare: GLib.CompareDataFunc): object | null
+    vfunc_min(compare: GLib.CompareDataFunc): object | null
+    vfunc_order_by(compare: GLib.CompareDataFunc | null): Gee.Iterator
+    vfunc_get_element_type(): GObject.Type
+    /* Virtual methods of Gee-0.8.Gee.AbstractCollection */
+    vfunc_contains(item?: object | null): boolean
+    /* Function overloads */
+    vfunc_contains(item?: object | null): boolean
+    vfunc_add(item?: object | null): boolean
+    /* Function overloads */
+    vfunc_add(item?: object | null): boolean
+    vfunc_remove(item?: object | null): boolean
+    /* Function overloads */
+    vfunc_remove(item?: object | null): boolean
+    vfunc_clear(): void
+    vfunc_iterator(): Gee.Iterator
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    /* Function overloads */
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_foreach(f: Gee.ForallFunc): boolean
     vfunc_foreach(f: Gee.ForallFunc): boolean
     vfunc_reserved0(): void
     vfunc_reserved1(): void
@@ -310,9 +373,12 @@ class AsyncPriorityQueue {
     _init (config?: AsyncPriorityQueue_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, compare_func: GLib.CompareDataFunc | null): AsyncPriorityQueue
+    /* Function overloads */
+    static new(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, compare_func: GLib.CompareDataFunc | null): AsyncPriorityQueue
     static $gtype: GObject.Type
 }
-export interface Claim_ConstructProps extends GObject.Object_ConstructProps {
+interface Claim_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Bump-0.1.Bump.Claim */
     time_acquired?: number
     time_released?: number
 }
@@ -323,7 +389,7 @@ class Claim {
     time_released: number
     readonly duration_held: GLib.TimeSpan
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.Claim */
     release(): void
     init(cancellable?: Gio.Cancellable | null): boolean
@@ -355,6 +421,8 @@ class Claim {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.Initable */
+    init(cancellable?: Gio.Cancellable | null): boolean
     /* Methods of Gio-2.0.Gio.AsyncInitable */
     init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_finish(res: Gio.AsyncResult): boolean
@@ -362,8 +430,14 @@ class Claim {
     /* Virtual methods of Bump-0.1.Bump.Claim */
     vfunc_release(): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
+    /* Function overloads */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(_res_: Gio.AsyncResult): boolean
+    /* Function overloads */
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -397,7 +471,8 @@ class Claim {
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static $gtype: GObject.Type
 }
-export interface Event_ConstructProps extends GObject.Object_ConstructProps {
+interface Event_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Bump-0.1.Bump.Event */
     t_type?: GObject.Type
     t_dup_func?: GObject.BoxedCopyFunc
     t_destroy_func?: GLib.DestroyNotify
@@ -409,7 +484,7 @@ class Event {
     /* Properties of Bump-0.1.Bump.Event */
     triggered: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.Event */
     reset(): void
     trigger(value?: object | null): void
@@ -469,14 +544,15 @@ class Event {
     static new(t_type: GObject.Type, t_dup_func: GObject.BoxedCopyFunc, t_destroy_func: GLib.DestroyNotify, auto_reset: boolean): Event
     static $gtype: GObject.Type
 }
-export interface Factory_ConstructProps extends GObject.Object_ConstructProps {
+interface Factory_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Bump-0.1.Bump.Factory */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
 }
 class Factory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.Factory */
     create(priority: number, cancellable?: Gio.Cancellable | null): object | null
     create_async(priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -544,7 +620,8 @@ class Factory {
     _init (config?: Factory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Lazy_ConstructProps extends Factory_ConstructProps {
+interface Lazy_ConstructProps extends Factory_ConstructProps {
+    /* Constructor properties of Bump-0.1.Bump.Lazy */
     t_type?: GObject.Type
     t_dup_func?: GObject.BoxedCopyFunc
     t_destroy_func?: GLib.DestroyNotify
@@ -555,7 +632,7 @@ class Lazy {
     readonly value: object
     readonly is_initialized: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.Lazy */
     get_pool(): TaskQueue
     get_value(): object | null
@@ -633,7 +710,8 @@ class Lazy {
     static new(t_type: GObject.Type, t_dup_func: GObject.BoxedCopyFunc, t_destroy_func: GLib.DestroyNotify): Lazy
     static $gtype: GObject.Type
 }
-export interface ResourceClaim_ConstructProps extends Claim_ConstructProps {
+interface ResourceClaim_ConstructProps extends Claim_ConstructProps {
+    /* Constructor properties of Bump-0.1.Bump.ResourceClaim */
     t_type?: GObject.Type
     t_dup_func?: GObject.BoxedCopyFunc
     t_destroy_func?: GLib.DestroyNotify
@@ -648,7 +726,7 @@ class ResourceClaim {
     time_released: number
     readonly duration_held: GLib.TimeSpan
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.ResourceClaim */
     get_pool(): ResourcePool
     get_resource(): object | null
@@ -686,8 +764,14 @@ class ResourceClaim {
     /* Virtual methods of Bump-0.1.Bump.Claim */
     vfunc_release(): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
+    /* Function overloads */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(_res_: Gio.AsyncResult): boolean
+    /* Function overloads */
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -719,10 +803,12 @@ class ResourceClaim {
     _init (config?: ResourceClaim_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(t_type: GObject.Type, t_dup_func: GObject.BoxedCopyFunc, t_destroy_func: GLib.DestroyNotify, pool: ResourcePool): ResourceClaim
+    /* Function overloads */
     static new(): ResourceClaim
     static $gtype: GObject.Type
 }
-export interface ResourcePool_ConstructProps extends Factory_ConstructProps {
+interface ResourcePool_ConstructProps extends Factory_ConstructProps {
+    /* Constructor properties of Bump-0.1.Bump.ResourcePool */
     t_type?: GObject.Type
     t_dup_func?: GObject.BoxedCopyFunc
     t_destroy_func?: GLib.DestroyNotify
@@ -738,7 +824,7 @@ class ResourcePool {
     readonly idle_resources: number
     readonly active_resources: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.ResourcePool */
     release(resource?: object | null): void
     execute(r_type: GObject.Type, r_dup_func: GObject.BoxedCopyFunc, r_destroy_func: GLib.DestroyNotify, func: any, priority: number, cancellable?: Gio.Cancellable | null): object | null
@@ -835,7 +921,8 @@ class ResourcePool {
     static new(t_type: GObject.Type, t_dup_func: GObject.BoxedCopyFunc, t_destroy_func: GLib.DestroyNotify, max_resources: number): ResourcePool
     static $gtype: GObject.Type
 }
-export interface Semaphore_ConstructProps extends TaskQueue_ConstructProps {
+interface Semaphore_ConstructProps extends TaskQueue_ConstructProps {
+    /* Constructor properties of Bump-0.1.Bump.Semaphore */
     max_claims?: number
     claims?: number
     pool?: TaskQueue
@@ -844,7 +931,7 @@ class Semaphore {
     /* Properties of Bump-0.1.Bump.Semaphore */
     claims: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.Semaphore */
     unlock(): void
     lock(priority: number, cancellable?: Gio.Cancellable | null): void
@@ -893,7 +980,12 @@ class Semaphore {
     vfunc_claim_finish(_res_: Gio.AsyncResult): SemaphoreClaim
     /* Virtual methods of Bump-0.1.Bump.TaskQueue */
     vfunc_spawn(max: number): number
+    /* Function overloads */
+    vfunc_spawn(max_new_threads: number): number
     vfunc_add(task: GLib.SourceFunc, priority: number, cancellable?: Gio.Cancellable | null): void
+    vfunc_process(wait: GLib.TimeSpan): boolean
+    /* Function overloads */
+    vfunc_process(wait: GLib.TimeSpan): boolean
     vfunc_process(wait: GLib.TimeSpan): boolean
     vfunc_execute(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null): object | null
     vfunc_execute_async(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -924,10 +1016,12 @@ class Semaphore {
     _init (config?: Semaphore_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(max_claims: number): Semaphore
+    /* Function overloads */
     static new(): Semaphore
     static $gtype: GObject.Type
 }
-export interface SemaphoreClaim_ConstructProps extends Claim_ConstructProps {
+interface SemaphoreClaim_ConstructProps extends Claim_ConstructProps {
+    /* Constructor properties of Bump-0.1.Bump.SemaphoreClaim */
     semaphore?: Semaphore
 }
 class SemaphoreClaim {
@@ -937,7 +1031,7 @@ class SemaphoreClaim {
     time_released: number
     readonly duration_held: GLib.TimeSpan
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.SemaphoreClaim */
     get_semaphore(): Semaphore
     /* Methods of Bump-0.1.Bump.Claim */
@@ -974,8 +1068,14 @@ class SemaphoreClaim {
     /* Virtual methods of Bump-0.1.Bump.Claim */
     vfunc_release(): void
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
+    /* Function overloads */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_init_finish(_res_: Gio.AsyncResult): boolean
+    /* Function overloads */
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1005,13 +1105,13 @@ class SemaphoreClaim {
     _init (config?: SemaphoreClaim_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TaskQueue_ConstructProps extends GObject.Object_ConstructProps {
+interface TaskQueue_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TaskQueue {
     /* Properties of Bump-0.1.Bump.Queue */
     readonly length: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bump-0.1.Bump.TaskQueue */
     spawn(max: number): number
     add(task: GLib.SourceFunc, priority: number, cancellable?: Gio.Cancellable | null): void
@@ -1044,6 +1144,7 @@ class TaskQueue {
     unref(): void
     watch_closure(closure: Function): void
     /* Methods of Bump-0.1.Bump.Queue */
+    process(wait: GLib.TimeSpan): boolean
     get_length(): number
     /* Methods of Bump-0.1.Bump.Threading */
     get_max_threads(): number
@@ -1057,7 +1158,12 @@ class TaskQueue {
     spawn(max_new_threads: number): number
     /* Virtual methods of Bump-0.1.Bump.TaskQueue */
     vfunc_spawn(max: number): number
+    /* Function overloads */
+    vfunc_spawn(max_new_threads: number): number
     vfunc_add(task: GLib.SourceFunc, priority: number, cancellable?: Gio.Cancellable | null): void
+    vfunc_process(wait: GLib.TimeSpan): boolean
+    /* Function overloads */
+    vfunc_process(wait: GLib.TimeSpan): boolean
     vfunc_process(wait: GLib.TimeSpan): boolean
     vfunc_execute(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null): object | null
     vfunc_execute_async(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -1099,10 +1205,10 @@ class AsyncPriorityQueuePrivate {
 }
 abstract class ClaimClass {
     /* Fields of Bump-0.1.Bump.ClaimClass */
-    release: () => void
-    init: (cancellable?: Gio.Cancellable | null) => boolean
-    init_async: (io_priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    init_finish: (_res_: Gio.AsyncResult) => boolean
+    readonly release: () => void
+    readonly init: (cancellable?: Gio.Cancellable | null) => boolean
+    readonly init_async: (io_priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly init_finish: (_res_: Gio.AsyncResult) => boolean
     static name: string
 }
 class ClaimPrivate {
@@ -1116,16 +1222,16 @@ class EventPrivate {
 }
 abstract class FactoryClass {
     /* Fields of Bump-0.1.Bump.FactoryClass */
-    create: (priority: number, cancellable?: Gio.Cancellable | null) => object | null
-    create_async: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    create_finish: (_res_: Gio.AsyncResult) => object | null
-    create_background: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    create_background_finish: (_res_: Gio.AsyncResult) => object | null
-    acquire: (priority: number, cancellable?: Gio.Cancellable | null) => object | null
-    acquire_async: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    acquire_finish: (_res_: Gio.AsyncResult) => object | null
-    acquire_background: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    acquire_background_finish: (_res_: Gio.AsyncResult) => object | null
+    readonly create: (priority: number, cancellable?: Gio.Cancellable | null) => object | null
+    readonly create_async: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly create_finish: (_res_: Gio.AsyncResult) => object | null
+    readonly create_background: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly create_background_finish: (_res_: Gio.AsyncResult) => object | null
+    readonly acquire: (priority: number, cancellable?: Gio.Cancellable | null) => object | null
+    readonly acquire_async: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly acquire_finish: (_res_: Gio.AsyncResult) => object | null
+    readonly acquire_background: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly acquire_background_finish: (_res_: Gio.AsyncResult) => object | null
     static name: string
 }
 class FactoryPrivate {
@@ -1145,7 +1251,7 @@ class ResourceClaimPrivate {
 }
 abstract class ResourcePoolClass {
     /* Fields of Bump-0.1.Bump.ResourcePoolClass */
-    release: (resource?: object | null) => void
+    readonly release: (resource?: object | null) => void
     static name: string
 }
 class ResourcePoolPrivate {
@@ -1153,9 +1259,9 @@ class ResourcePoolPrivate {
 }
 abstract class SemaphoreClass {
     /* Fields of Bump-0.1.Bump.SemaphoreClass */
-    claim: (priority: number, cancellable?: Gio.Cancellable | null) => SemaphoreClaim
-    claim_async: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    claim_finish: (_res_: Gio.AsyncResult) => SemaphoreClaim
+    readonly claim: (priority: number, cancellable?: Gio.Cancellable | null) => SemaphoreClaim
+    readonly claim_async: (priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly claim_finish: (_res_: Gio.AsyncResult) => SemaphoreClaim
     static name: string
 }
 class SemaphorePrivate {
@@ -1169,14 +1275,14 @@ class SemaphoreClaimPrivate {
 }
 abstract class TaskQueueClass {
     /* Fields of Bump-0.1.Bump.TaskQueueClass */
-    spawn: (max: number) => number
-    add: (task: GLib.SourceFunc, priority: number, cancellable?: Gio.Cancellable | null) => void
-    process: (wait: GLib.TimeSpan) => boolean
-    execute: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null) => object | null
-    execute_async: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    execute_finish: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, _res_: Gio.AsyncResult) => object | null
-    execute_background: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    execute_background_finish: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, _res_: Gio.AsyncResult) => object | null
+    readonly spawn: (max: number) => number
+    readonly add: (task: GLib.SourceFunc, priority: number, cancellable?: Gio.Cancellable | null) => void
+    readonly process: (wait: GLib.TimeSpan) => boolean
+    readonly execute: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null) => object | null
+    readonly execute_async: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly execute_finish: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, _res_: Gio.AsyncResult) => object | null
+    readonly execute_background: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: Callback, priority: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly execute_background_finish: (g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, _res_: Gio.AsyncResult) => object | null
     static name: string
 }
 class TaskQueuePrivate {
@@ -1184,13 +1290,13 @@ class TaskQueuePrivate {
 }
 abstract class QueueIface {
     /* Fields of Bump-0.1.Bump.QueueIface */
-    process: (wait: GLib.TimeSpan) => boolean
-    get_length: () => number
+    readonly process: (wait: GLib.TimeSpan) => boolean
+    readonly get_length: () => number
     static name: string
 }
 abstract class ThreadingIface {
     /* Fields of Bump-0.1.Bump.ThreadingIface */
-    spawn: (max_new_threads: number) => number
+    readonly spawn: (max_new_threads: number) => number
     static name: string
 }
 }

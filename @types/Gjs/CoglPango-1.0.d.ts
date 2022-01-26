@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * CoglPango-1.0
  */
@@ -25,14 +31,15 @@ function font_map_set_use_mipmapping(font_map: FontMap, value: Cogl.Bool): void
 function render_layout(layout: Pango.Layout, x: number, y: number, color: Cogl.Color, flags: number): void
 function render_layout_line(line: Pango.LayoutLine, x: number, y: number, color: Cogl.Color): void
 function render_layout_subpixel(layout: Pango.Layout, x: number, y: number, color: Cogl.Color, flags: number): void
-export interface Renderer_ConstructProps extends Pango.Renderer_ConstructProps {
+interface Renderer_ConstructProps extends Pango.Renderer_ConstructProps {
+    /* Constructor properties of CoglPango-1.0.CoglPango.Renderer */
     context?: object
 }
 class Renderer {
     /* Fields of Pango-1.0.Pango.Renderer */
-    matrix: Pango.Matrix
+    readonly matrix: Pango.Matrix
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.Renderer */
     activate(): void
     deactivate(): void
@@ -111,6 +118,6 @@ class Renderer {
 abstract class RendererClass {
     static name: string
 }
-type FontMap = PangoCairo.FontMap
+    type FontMap = PangoCairo.FontMap
 }
 export default CoglPango;

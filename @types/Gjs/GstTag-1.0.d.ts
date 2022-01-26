@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstTag-1.0
  */
@@ -54,45 +60,45 @@ enum TagLicenseFlags {
     CREATIVE_COMMONS_LICENSE,
     FREE_SOFTWARE_FOUNDATION_LICENSE,
 }
-export const TAG_ACOUSTID_FINGERPRINT: string
-export const TAG_ACOUSTID_ID: string
-export const TAG_CAPTURING_CONTRAST: string
-export const TAG_CAPTURING_DIGITAL_ZOOM_RATIO: string
-export const TAG_CAPTURING_EXPOSURE_COMPENSATION: string
-export const TAG_CAPTURING_EXPOSURE_MODE: string
-export const TAG_CAPTURING_EXPOSURE_PROGRAM: string
-export const TAG_CAPTURING_FLASH_FIRED: string
-export const TAG_CAPTURING_FLASH_MODE: string
-export const TAG_CAPTURING_FOCAL_LENGTH: string
-export const TAG_CAPTURING_FOCAL_LENGTH_35_MM: string
-export const TAG_CAPTURING_FOCAL_RATIO: string
-export const TAG_CAPTURING_GAIN_ADJUSTMENT: string
-export const TAG_CAPTURING_ISO_SPEED: string
-export const TAG_CAPTURING_METERING_MODE: string
-export const TAG_CAPTURING_SATURATION: string
-export const TAG_CAPTURING_SCENE_CAPTURE_TYPE: string
-export const TAG_CAPTURING_SHARPNESS: string
-export const TAG_CAPTURING_SHUTTER_SPEED: string
-export const TAG_CAPTURING_SOURCE: string
-export const TAG_CAPTURING_WHITE_BALANCE: string
-export const TAG_CDDA_CDDB_DISCID: string
-export const TAG_CDDA_CDDB_DISCID_FULL: string
-export const TAG_CDDA_MUSICBRAINZ_DISCID: string
-export const TAG_CDDA_MUSICBRAINZ_DISCID_FULL: string
-export const TAG_CMML_CLIP: string
-export const TAG_CMML_HEAD: string
-export const TAG_CMML_STREAM: string
-export const TAG_ID3V2_HEADER_SIZE: number
-export const TAG_IMAGE_HORIZONTAL_PPI: string
-export const TAG_IMAGE_VERTICAL_PPI: string
-export const TAG_MUSICAL_KEY: string
-export const TAG_MUSICBRAINZ_ALBUMARTISTID: string
-export const TAG_MUSICBRAINZ_ALBUMID: string
-export const TAG_MUSICBRAINZ_ARTISTID: string
-export const TAG_MUSICBRAINZ_RELEASEGROUPID: string
-export const TAG_MUSICBRAINZ_RELEASETRACKID: string
-export const TAG_MUSICBRAINZ_TRACKID: string
-export const TAG_MUSICBRAINZ_TRMID: string
+const TAG_ACOUSTID_FINGERPRINT: string
+const TAG_ACOUSTID_ID: string
+const TAG_CAPTURING_CONTRAST: string
+const TAG_CAPTURING_DIGITAL_ZOOM_RATIO: string
+const TAG_CAPTURING_EXPOSURE_COMPENSATION: string
+const TAG_CAPTURING_EXPOSURE_MODE: string
+const TAG_CAPTURING_EXPOSURE_PROGRAM: string
+const TAG_CAPTURING_FLASH_FIRED: string
+const TAG_CAPTURING_FLASH_MODE: string
+const TAG_CAPTURING_FOCAL_LENGTH: string
+const TAG_CAPTURING_FOCAL_LENGTH_35_MM: string
+const TAG_CAPTURING_FOCAL_RATIO: string
+const TAG_CAPTURING_GAIN_ADJUSTMENT: string
+const TAG_CAPTURING_ISO_SPEED: string
+const TAG_CAPTURING_METERING_MODE: string
+const TAG_CAPTURING_SATURATION: string
+const TAG_CAPTURING_SCENE_CAPTURE_TYPE: string
+const TAG_CAPTURING_SHARPNESS: string
+const TAG_CAPTURING_SHUTTER_SPEED: string
+const TAG_CAPTURING_SOURCE: string
+const TAG_CAPTURING_WHITE_BALANCE: string
+const TAG_CDDA_CDDB_DISCID: string
+const TAG_CDDA_CDDB_DISCID_FULL: string
+const TAG_CDDA_MUSICBRAINZ_DISCID: string
+const TAG_CDDA_MUSICBRAINZ_DISCID_FULL: string
+const TAG_CMML_CLIP: string
+const TAG_CMML_HEAD: string
+const TAG_CMML_STREAM: string
+const TAG_ID3V2_HEADER_SIZE: number
+const TAG_IMAGE_HORIZONTAL_PPI: string
+const TAG_IMAGE_VERTICAL_PPI: string
+const TAG_MUSICAL_KEY: string
+const TAG_MUSICBRAINZ_ALBUMARTISTID: string
+const TAG_MUSICBRAINZ_ALBUMID: string
+const TAG_MUSICBRAINZ_ARTISTID: string
+const TAG_MUSICBRAINZ_RELEASEGROUPID: string
+const TAG_MUSICBRAINZ_RELEASETRACKID: string
+const TAG_MUSICBRAINZ_TRACKID: string
+const TAG_MUSICBRAINZ_TRMID: string
 function tag_check_language_code(lang_code: string): boolean
 function tag_freeform_string_to_utf8(data: number[], env_vars: string[]): string
 function tag_from_id3_tag(id3_tag: string): string
@@ -113,18 +119,18 @@ function tag_get_license_version(license_ref: string): string
 function tag_get_licenses(): string[]
 function tag_id3_genre_count(): number
 function tag_id3_genre_get(id: number): string
-function tag_image_data_to_image_sample(image_data: Uint8Array[], image_type: TagImageType): Gst.Sample
-function tag_list_add_id3_image(tag_list: Gst.TagList, image_data: Uint8Array[], id3_picture_type: number): boolean
+function tag_image_data_to_image_sample(image_data: Uint8Array, image_type: TagImageType): Gst.Sample
+function tag_list_add_id3_image(tag_list: Gst.TagList, image_data: Uint8Array, id3_picture_type: number): boolean
 function tag_list_from_exif_buffer(buffer: Gst.Buffer, byte_order: number, base_offset: number): Gst.TagList
 function tag_list_from_exif_buffer_with_tiff_header(buffer: Gst.Buffer): Gst.TagList
 function tag_list_from_id3v2_tag(buffer: Gst.Buffer): Gst.TagList
-function tag_list_from_vorbiscomment(data: Uint8Array[], id_data: Uint8Array[]): [ /* returnType */ Gst.TagList, /* vendor_string */ string | null ]
-function tag_list_from_vorbiscomment_buffer(buffer: Gst.Buffer, id_data: Uint8Array[]): [ /* returnType */ Gst.TagList, /* vendor_string */ string | null ]
+function tag_list_from_vorbiscomment(data: Uint8Array, id_data: Uint8Array): [ /* returnType */ Gst.TagList, /* vendor_string */ string | null ]
+function tag_list_from_vorbiscomment_buffer(buffer: Gst.Buffer, id_data: Uint8Array): [ /* returnType */ Gst.TagList, /* vendor_string */ string | null ]
 function tag_list_from_xmp_buffer(buffer: Gst.Buffer): Gst.TagList
-function tag_list_new_from_id3v1(data: Uint8Array[]): Gst.TagList
+function tag_list_new_from_id3v1(data: Uint8Array): Gst.TagList
 function tag_list_to_exif_buffer(taglist: Gst.TagList, byte_order: number, base_offset: number): Gst.Buffer
 function tag_list_to_exif_buffer_with_tiff_header(taglist: Gst.TagList): Gst.Buffer
-function tag_list_to_vorbiscomment_buffer(list: Gst.TagList, id_data: Uint8Array[], vendor_string?: string | null): Gst.Buffer
+function tag_list_to_vorbiscomment_buffer(list: Gst.TagList, id_data: Uint8Array, vendor_string?: string | null): Gst.Buffer
 function tag_list_to_xmp_buffer(list: Gst.TagList, read_only: boolean, schemas: string[]): Gst.Buffer
 function tag_parse_extended_comment(ext_comment: string, fail_if_no_key: boolean): [ /* returnType */ boolean, /* key */ string | null, /* lang */ string | null, /* value */ string ]
 function tag_register_musicbrainz_tags(): void
@@ -133,39 +139,38 @@ function tag_to_vorbis_comments(list: Gst.TagList, tag: string): string[]
 function tag_to_vorbis_tag(gst_tag: string): string
 function tag_xmp_list_schemas(): string[]
 function vorbis_tag_add(list: Gst.TagList, tag: string, value: string): void
-export interface TagXmpWriter_ConstructProps extends Gst.Element_ConstructProps {
+interface TagXmpWriter_ConstructProps extends Gst.Element_ConstructProps {
 }
 class TagXmpWriter {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstTag-1.0.GstTag.TagXmpWriter */
     add_all_schemas(): void
     add_schema(schema: string): void
@@ -331,10 +336,6 @@ class TagXmpWriter {
     connect(sigName: "notify", callback: (($obj: TagXmpWriter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TagXmpWriter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TagXmpWriter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TagXmpWriter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TagXmpWriter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TagXmpWriter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -344,41 +345,38 @@ class TagXmpWriter {
     _init (config?: TagXmpWriter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TagDemux_ConstructProps extends Gst.Element_ConstructProps {
+interface TagDemux_ConstructProps extends Gst.Element_ConstructProps {
 }
 class TagDemux {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstTag-1.0.GstTag.TagDemux */
-    element: Gst.Element
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Element */
     abort_state(): void
     add_pad(pad: Gst.Pad): boolean
@@ -541,10 +539,6 @@ class TagDemux {
     connect(sigName: "notify", callback: (($obj: TagDemux, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TagDemux, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TagDemux, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TagDemux, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TagDemux, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TagDemux, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -554,41 +548,38 @@ class TagDemux {
     _init (config?: TagDemux_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TagMux_ConstructProps extends Gst.Element_ConstructProps {
+interface TagMux_ConstructProps extends Gst.Element_ConstructProps {
 }
 class TagMux {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstTag-1.0.GstTag.TagMux */
-    element: Gst.Element
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Element */
     abort_state(): void
     add_pad(pad: Gst.Pad): boolean
@@ -757,10 +748,6 @@ class TagMux {
     connect(sigName: "notify", callback: (($obj: TagMux, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TagMux, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TagMux, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TagMux, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TagMux, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TagMux, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -772,12 +759,12 @@ class TagMux {
 }
 abstract class TagDemuxClass {
     /* Fields of GstTag-1.0.GstTag.TagDemuxClass */
-    parent_class: Gst.ElementClass
-    min_start_size: number
-    min_end_size: number
-    identify_tag: (demux: TagDemux, buffer: Gst.Buffer, start_tag: boolean, tag_size: number) => boolean
-    parse_tag: (demux: TagDemux, buffer: Gst.Buffer, start_tag: boolean, tag_size: number, tags: Gst.TagList) => TagDemuxResult
-    merge_tags: (demux: TagDemux, start_tags: Gst.TagList, end_tags: Gst.TagList) => Gst.TagList
+    readonly parent_class: Gst.ElementClass
+    readonly min_start_size: number
+    readonly min_end_size: number
+    readonly identify_tag: (demux: TagDemux, buffer: Gst.Buffer, start_tag: boolean, tag_size: number) => boolean
+    readonly parse_tag: (demux: TagDemux, buffer: Gst.Buffer, start_tag: boolean, tag_size: number, tags: Gst.TagList) => TagDemuxResult
+    readonly merge_tags: (demux: TagDemux, start_tags: Gst.TagList, end_tags: Gst.TagList) => Gst.TagList
     static name: string
 }
 class TagDemuxPrivate {
@@ -785,9 +772,9 @@ class TagDemuxPrivate {
 }
 abstract class TagMuxClass {
     /* Fields of GstTag-1.0.GstTag.TagMuxClass */
-    parent_class: Gst.ElementClass
-    render_start_tag: (mux: TagMux, tag_list: Gst.TagList) => Gst.Buffer
-    render_end_tag: (mux: TagMux, tag_list: Gst.TagList) => Gst.Buffer
+    readonly parent_class: Gst.ElementClass
+    readonly render_start_tag: (mux: TagMux, tag_list: Gst.TagList) => Gst.Buffer
+    readonly render_end_tag: (mux: TagMux, tag_list: Gst.TagList) => Gst.Buffer
     static name: string
 }
 class TagMuxPrivate {
@@ -795,7 +782,7 @@ class TagMuxPrivate {
 }
 abstract class TagXmpWriterInterface {
     /* Fields of GstTag-1.0.GstTag.TagXmpWriterInterface */
-    parent: GObject.TypeInterface
+    readonly parent: GObject.TypeInterface
     static name: string
 }
 }

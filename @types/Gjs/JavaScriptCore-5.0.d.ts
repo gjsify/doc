@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * JavaScriptCore-5.0
  */
@@ -34,13 +40,13 @@ enum ValuePropertyFlags {
     ENUMERABLE,
     WRITABLE,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const OPTIONS_USE_DFG: string
-export const OPTIONS_USE_FTL: string
-export const OPTIONS_USE_JIT: string
-export const OPTIONS_USE_LLINT: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const OPTIONS_USE_DFG: string
+const OPTIONS_USE_FTL: string
+const OPTIONS_USE_JIT: string
+const OPTIONS_USE_LLINT: string
 function get_major_version(): number
 function get_micro_version(): number
 function get_minor_version(): number
@@ -81,14 +87,15 @@ interface ExceptionHandler {
 interface OptionsFunc {
     (option: string, type: OptionType, description?: string | null): boolean
 }
-export interface Class_ConstructProps extends GObject.Object_ConstructProps {
+interface Class_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of JavaScriptCore-5.0.JavaScriptCore.Class */
     context?: Context
     name?: string
     parent?: Class
 }
 class Class {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of JavaScriptCore-5.0.JavaScriptCore.Class */
     add_constructor_variadic(name: string | null, callback: GObject.Callback, return_type: GObject.Type): Value
     add_constructor(name: string | null, callback: GObject.Callback, return_type: GObject.Type, parameter_types?: GObject.Type[] | null): Value
@@ -140,14 +147,13 @@ class Class {
     _init (config?: Class_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Context_ConstructProps extends GObject.Object_ConstructProps {
+interface Context_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of JavaScriptCore-5.0.JavaScriptCore.Context */
     virtual_machine?: VirtualMachine
 }
 class Context {
-    /* Fields of JavaScriptCore-5.0.JavaScriptCore.Context */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of JavaScriptCore-5.0.JavaScriptCore.Context */
     check_syntax(code: string, length: number, mode: CheckSyntaxMode, uri: string, line_number: number): [ /* returnType */ CheckSyntaxResult, /* exception */ Exception | null ]
     clear_exception(): void
@@ -212,13 +218,11 @@ class Context {
     static get_current(): Context | null
     static $gtype: GObject.Type
 }
-export interface Exception_ConstructProps extends GObject.Object_ConstructProps {
+interface Exception_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Exception {
-    /* Fields of JavaScriptCore-5.0.JavaScriptCore.Exception */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of JavaScriptCore-5.0.JavaScriptCore.Exception */
     get_backtrace_string(): string | null
     get_column_number(): number
@@ -274,14 +278,13 @@ class Exception {
     static new_with_name(context: Context, name: string, message: string): Exception
     static $gtype: GObject.Type
 }
-export interface Value_ConstructProps extends GObject.Object_ConstructProps {
+interface Value_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of JavaScriptCore-5.0.JavaScriptCore.Value */
     context?: Context
 }
 class Value {
-    /* Fields of JavaScriptCore-5.0.JavaScriptCore.Value */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of JavaScriptCore-5.0.JavaScriptCore.Value */
     constructor_call(parameters?: Value[] | null): Value
     function_call(parameters?: Value[] | null): Value
@@ -368,13 +371,11 @@ class Value {
     static new_undefined(context: Context): Value
     static $gtype: GObject.Type
 }
-export interface VirtualMachine_ConstructProps extends GObject.Object_ConstructProps {
+interface VirtualMachine_ConstructProps extends GObject.Object_ConstructProps {
 }
 class VirtualMachine {
-    /* Fields of JavaScriptCore-5.0.JavaScriptCore.VirtualMachine */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -420,14 +421,13 @@ class VirtualMachine {
     static new(): VirtualMachine
     static $gtype: GObject.Type
 }
-export interface WeakValue_ConstructProps extends GObject.Object_ConstructProps {
+interface WeakValue_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of JavaScriptCore-5.0.JavaScriptCore.WeakValue */
     value?: Value
 }
 class WeakValue {
-    /* Fields of JavaScriptCore-5.0.JavaScriptCore.WeakValue */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of JavaScriptCore-5.0.JavaScriptCore.WeakValue */
     get_value(): Value
     /* Methods of GObject-2.0.GObject.Object */
@@ -484,16 +484,16 @@ abstract class ClassClass {
 }
 class ClassVTable {
     /* Fields of JavaScriptCore-5.0.JavaScriptCore.ClassVTable */
-    get_property: ClassGetPropertyFunction
-    set_property: ClassSetPropertyFunction
-    has_property: ClassHasPropertyFunction
-    delete_property: ClassDeletePropertyFunction
-    enumerate_properties: ClassEnumeratePropertiesFunction
+    readonly get_property: ClassGetPropertyFunction
+    readonly set_property: ClassSetPropertyFunction
+    readonly has_property: ClassHasPropertyFunction
+    readonly delete_property: ClassDeletePropertyFunction
+    readonly enumerate_properties: ClassEnumeratePropertiesFunction
     static name: string
 }
 abstract class ContextClass {
     /* Fields of JavaScriptCore-5.0.JavaScriptCore.ContextClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ContextPrivate {
@@ -501,7 +501,7 @@ class ContextPrivate {
 }
 abstract class ExceptionClass {
     /* Fields of JavaScriptCore-5.0.JavaScriptCore.ExceptionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ExceptionPrivate {
@@ -509,7 +509,7 @@ class ExceptionPrivate {
 }
 abstract class ValueClass {
     /* Fields of JavaScriptCore-5.0.JavaScriptCore.ValueClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ValuePrivate {
@@ -517,7 +517,7 @@ class ValuePrivate {
 }
 abstract class VirtualMachineClass {
     /* Fields of JavaScriptCore-5.0.JavaScriptCore.VirtualMachineClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class VirtualMachinePrivate {
@@ -525,7 +525,7 @@ class VirtualMachinePrivate {
 }
 abstract class WeakValueClass {
     /* Fields of JavaScriptCore-5.0.JavaScriptCore.WeakValueClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WeakValuePrivate {

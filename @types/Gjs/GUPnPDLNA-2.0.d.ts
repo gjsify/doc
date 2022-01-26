@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GUPnPDLNA-2.0
  */
@@ -13,13 +19,11 @@ enum ValueState {
     UNSET,
     UNSUPPORTED,
 }
-export interface AudioInformation_ConstructProps extends GObject.Object_ConstructProps {
+interface AudioInformation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AudioInformation {
-    /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.AudioInformation */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -63,13 +67,11 @@ class AudioInformation {
     _init (config?: AudioInformation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ContainerInformation_ConstructProps extends GObject.Object_ConstructProps {
+interface ContainerInformation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ContainerInformation {
-    /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.ContainerInformation */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -113,13 +115,11 @@ class ContainerInformation {
     _init (config?: ContainerInformation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ImageInformation_ConstructProps extends GObject.Object_ConstructProps {
+interface ImageInformation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ImageInformation {
-    /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.ImageInformation */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -163,7 +163,8 @@ class ImageInformation {
     _init (config?: ImageInformation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Information_ConstructProps extends GObject.Object_ConstructProps {
+interface Information_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPDLNA-2.0.GUPnPDLNA.Information */
     uri?: string
 }
 class Information {
@@ -172,10 +173,8 @@ class Information {
     readonly container_information: ContainerInformation
     readonly image_information: ImageInformation
     readonly video_information: VideoInformation
-    /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.Information */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPDLNA-2.0.GUPnPDLNA.Information */
     get_audio_information(): AudioInformation
     get_container_information(): ContainerInformation
@@ -240,7 +239,8 @@ class Information {
     _init (config?: Information_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Profile_ConstructProps extends GObject.Object_ConstructProps {
+interface Profile_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPDLNA-2.0.GUPnPDLNA.Profile */
     audio_restrictions?: object
     container_restrictions?: object
     extended?: boolean
@@ -250,10 +250,8 @@ export interface Profile_ConstructProps extends GObject.Object_ConstructProps {
     video_restrictions?: object
 }
 class Profile {
-    /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.Profile */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPDLNA-2.0.GUPnPDLNA.Profile */
     get_audio_restrictions(): Restriction[]
     get_container_restrictions(): Restriction[]
@@ -305,15 +303,14 @@ class Profile {
     _init (config?: Profile_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ProfileGuesser_ConstructProps extends GObject.Object_ConstructProps {
+interface ProfileGuesser_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPDLNA-2.0.GUPnPDLNA.ProfileGuesser */
     extended_mode?: boolean
     relaxed_mode?: boolean
 }
 class ProfileGuesser {
-    /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.ProfileGuesser */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPDLNA-2.0.GUPnPDLNA.ProfileGuesser */
     get_extended_mode(): boolean
     get_profile(name: string): Profile
@@ -372,13 +369,11 @@ class ProfileGuesser {
     static cleanup(): void
     static $gtype: GObject.Type
 }
-export interface VideoInformation_ConstructProps extends GObject.Object_ConstructProps {
+interface VideoInformation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class VideoInformation {
-    /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.VideoInformation */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -424,20 +419,20 @@ class VideoInformation {
 }
 abstract class AudioInformationClass {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.AudioInformationClass */
-    parent_class: GObject.ObjectClass
-    _reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly _reserved: object[]
     static name: string
 }
 class BoolValue {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.BoolValue */
-    value: boolean
-    state: ValueState
+    readonly value: boolean
+    readonly state: ValueState
     static name: string
 }
 abstract class ContainerInformationClass {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.ContainerInformationClass */
-    parent_class: GObject.ObjectClass
-    _reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly _reserved: object[]
     static name: string
 }
 class Fraction {
@@ -458,26 +453,26 @@ class FractionRange {
 }
 class FractionValue {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.FractionValue */
-    numerator: number
-    denominator: number
-    state: ValueState
+    readonly numerator: number
+    readonly denominator: number
+    readonly state: ValueState
     static name: string
 }
 abstract class ImageInformationClass {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.ImageInformationClass */
-    parent_class: GObject.ObjectClass
-    _reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly _reserved: object[]
     static name: string
 }
 abstract class InformationClass {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.InformationClass */
-    parent_class: GObject.ObjectClass
-    get_audio_information: (info: Information) => AudioInformation
-    get_container_information: (info: Information) => ContainerInformation
-    get_image_information: (info: Information) => ImageInformation
-    get_video_information: (info: Information) => VideoInformation
-    get_profile_name: (info: Information) => string
-    _reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly get_audio_information: (info: Information) => AudioInformation
+    readonly get_container_information: (info: Information) => ContainerInformation
+    readonly get_image_information: (info: Information) => ImageInformation
+    readonly get_video_information: (info: Information) => VideoInformation
+    readonly get_profile_name: (info: Information) => string
+    readonly _reserved: object[]
     static name: string
 }
 class IntRange {
@@ -490,18 +485,18 @@ class IntRange {
 }
 class IntValue {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.IntValue */
-    value: number
-    state: ValueState
+    readonly value: number
+    readonly state: ValueState
     static name: string
 }
 abstract class ProfileClass {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.ProfileClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ProfileGuesserClass {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.ProfileGuesserClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Restriction {
@@ -516,8 +511,8 @@ class Restriction {
 }
 class StringValue {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.StringValue */
-    value: string
-    state: ValueState
+    readonly value: string
+    readonly state: ValueState
     static name: string
 }
 class ValueList {
@@ -531,8 +526,8 @@ class ValueList {
 }
 abstract class VideoInformationClass {
     /* Fields of GUPnPDLNA-2.0.GUPnPDLNA.VideoInformationClass */
-    parent_class: GObject.ObjectClass
-    _reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly _reserved: object[]
     static name: string
 }
 }

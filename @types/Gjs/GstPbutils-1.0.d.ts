@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstPbutils-1.0
  */
@@ -62,41 +68,41 @@ enum PbUtilsCapsDescriptionFlags {
     TAG,
     GENERIC,
 }
-export const ENCODING_CATEGORY_CAPTURE: string
-export const ENCODING_CATEGORY_DEVICE: string
-export const ENCODING_CATEGORY_FILE_EXTENSION: string
-export const ENCODING_CATEGORY_ONLINE_SERVICE: string
-export const ENCODING_CATEGORY_STORAGE_EDITING: string
-export const PLUGINS_BASE_VERSION_MAJOR: number
-export const PLUGINS_BASE_VERSION_MICRO: number
-export const PLUGINS_BASE_VERSION_MINOR: number
-export const PLUGINS_BASE_VERSION_NANO: number
-function codec_utils_aac_caps_set_level_and_profile(caps: Gst.Caps, audio_config: Uint8Array[]): boolean
-function codec_utils_aac_get_channels(audio_config: Uint8Array[]): number
+const ENCODING_CATEGORY_CAPTURE: string
+const ENCODING_CATEGORY_DEVICE: string
+const ENCODING_CATEGORY_FILE_EXTENSION: string
+const ENCODING_CATEGORY_ONLINE_SERVICE: string
+const ENCODING_CATEGORY_STORAGE_EDITING: string
+const PLUGINS_BASE_VERSION_MAJOR: number
+const PLUGINS_BASE_VERSION_MICRO: number
+const PLUGINS_BASE_VERSION_MINOR: number
+const PLUGINS_BASE_VERSION_NANO: number
+function codec_utils_aac_caps_set_level_and_profile(caps: Gst.Caps, audio_config: Uint8Array): boolean
+function codec_utils_aac_get_channels(audio_config: Uint8Array): number
 function codec_utils_aac_get_index_from_sample_rate(rate: number): number
-function codec_utils_aac_get_level(audio_config: Uint8Array[]): string
-function codec_utils_aac_get_profile(audio_config: Uint8Array[]): string
-function codec_utils_aac_get_sample_rate(audio_config: Uint8Array[]): number
+function codec_utils_aac_get_level(audio_config: Uint8Array): string
+function codec_utils_aac_get_profile(audio_config: Uint8Array): string
+function codec_utils_aac_get_sample_rate(audio_config: Uint8Array): number
 function codec_utils_aac_get_sample_rate_from_index(sr_idx: number): number
 function codec_utils_caps_get_mime_codec(caps: Gst.Caps): string
-function codec_utils_h264_caps_set_level_and_profile(caps: Gst.Caps, sps: Uint8Array[]): boolean
-function codec_utils_h264_get_level(sps: Uint8Array[]): string
+function codec_utils_h264_caps_set_level_and_profile(caps: Gst.Caps, sps: Uint8Array): boolean
+function codec_utils_h264_get_level(sps: Uint8Array): string
 function codec_utils_h264_get_level_idc(level: string): number
-function codec_utils_h264_get_profile(sps: Uint8Array[]): string
-function codec_utils_h264_get_profile_flags_level(codec_data: number, len: number, profile: number, flags: number, level: number): boolean
-function codec_utils_h265_caps_set_level_tier_and_profile(caps: Gst.Caps, profile_tier_level: Uint8Array[]): boolean
-function codec_utils_h265_get_level(profile_tier_level: Uint8Array[]): string
+function codec_utils_h264_get_profile(sps: Uint8Array): string
+function codec_utils_h264_get_profile_flags_level(codec_data: Uint8Array): [ /* returnType */ boolean, /* profile */ number | null, /* flags */ number | null, /* level */ number | null ]
+function codec_utils_h265_caps_set_level_tier_and_profile(caps: Gst.Caps, profile_tier_level: Uint8Array): boolean
+function codec_utils_h265_get_level(profile_tier_level: Uint8Array): string
 function codec_utils_h265_get_level_idc(level: string): number
-function codec_utils_h265_get_profile(profile_tier_level: Uint8Array[]): string
-function codec_utils_h265_get_tier(profile_tier_level: Uint8Array[]): string
-function codec_utils_mpeg4video_caps_set_level_and_profile(caps: Gst.Caps, vis_obj_seq: Uint8Array[]): boolean
-function codec_utils_mpeg4video_get_level(vis_obj_seq: Uint8Array[]): string
-function codec_utils_mpeg4video_get_profile(vis_obj_seq: Uint8Array[]): string
-function codec_utils_opus_create_caps(rate: number, channels: number, channel_mapping_family: number, stream_count: number, coupled_count: number, channel_mapping?: Uint8Array[] | null): Gst.Caps
+function codec_utils_h265_get_profile(profile_tier_level: Uint8Array): string
+function codec_utils_h265_get_tier(profile_tier_level: Uint8Array): string
+function codec_utils_mpeg4video_caps_set_level_and_profile(caps: Gst.Caps, vis_obj_seq: Uint8Array): boolean
+function codec_utils_mpeg4video_get_level(vis_obj_seq: Uint8Array): string
+function codec_utils_mpeg4video_get_profile(vis_obj_seq: Uint8Array): string
+function codec_utils_opus_create_caps(rate: number, channels: number, channel_mapping_family: number, stream_count: number, coupled_count: number, channel_mapping?: Uint8Array | null): Gst.Caps
 function codec_utils_opus_create_caps_from_header(header: Gst.Buffer, comments?: Gst.Buffer | null): Gst.Caps
-function codec_utils_opus_create_header(rate: number, channels: number, channel_mapping_family: number, stream_count: number, coupled_count: number, channel_mapping: Uint8Array[] | null, pre_skip: number, output_gain: number): Gst.Buffer
-function codec_utils_opus_parse_caps(caps: Gst.Caps): [ /* returnType */ boolean, /* rate */ number, /* channels */ number, /* channel_mapping_family */ number, /* stream_count */ number, /* coupled_count */ number, /* channel_mapping */ Uint8Array[] ]
-function codec_utils_opus_parse_header(header: Gst.Buffer): [ /* returnType */ boolean, /* rate */ number, /* channels */ number, /* channel_mapping_family */ number, /* stream_count */ number, /* coupled_count */ number, /* channel_mapping */ Uint8Array[], /* pre_skip */ number, /* output_gain */ number ]
+function codec_utils_opus_create_header(rate: number, channels: number, channel_mapping_family: number, stream_count: number, coupled_count: number, channel_mapping: Uint8Array | null, pre_skip: number, output_gain: number): Gst.Buffer
+function codec_utils_opus_parse_caps(caps: Gst.Caps): [ /* returnType */ boolean, /* rate */ number | null, /* channels */ number | null, /* channel_mapping_family */ number | null, /* stream_count */ number | null, /* coupled_count */ number | null, /* channel_mapping */ Uint8Array | null ]
+function codec_utils_opus_parse_header(header: Gst.Buffer): [ /* returnType */ boolean, /* rate */ number | null, /* channels */ number | null, /* channel_mapping_family */ number | null, /* stream_count */ number | null, /* coupled_count */ number | null, /* channel_mapping */ Uint8Array | null, /* pre_skip */ number | null, /* output_gain */ number | null ]
 function encoding_list_all_targets(categoryname?: string | null): EncodingTarget[]
 function encoding_list_available_categories(): string[]
 function install_plugins_async(details: string[], ctx: InstallPluginsContext | null, func: InstallPluginsResultFunc): InstallPluginsReturn
@@ -135,7 +141,8 @@ interface AudioVisualizerShaderFunc {
 interface InstallPluginsResultFunc {
     (result: InstallPluginsReturn): void
 }
-export interface AudioVisualizer_ConstructProps extends Gst.Element_ConstructProps {
+interface AudioVisualizer_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstPbutils-1.0.GstPbutils.AudioVisualizer */
     shade_amount?: number
     shader?: AudioVisualizerShader
 }
@@ -143,40 +150,35 @@ class AudioVisualizer {
     /* Properties of GstPbutils-1.0.GstPbutils.AudioVisualizer */
     shade_amount: number
     shader: AudioVisualizerShader
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstPbutils-1.0.GstPbutils.AudioVisualizer */
-    req_spf: number
-    vinfo: GstVideo.VideoInfo
-    ainfo: GstAudio.AudioInfo
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Element */
     abort_state(): void
     add_pad(pad: Gst.Pad): boolean
@@ -343,10 +345,6 @@ class AudioVisualizer {
     connect_after(sigName: "notify::shade-amount", callback: (($obj: AudioVisualizer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::shader", callback: (($obj: AudioVisualizer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::shader", callback: (($obj: AudioVisualizer, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioVisualizer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioVisualizer, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioVisualizer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioVisualizer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -356,7 +354,8 @@ class AudioVisualizer {
     _init (config?: AudioVisualizer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Discoverer_ConstructProps extends GObject.Object_ConstructProps {
+interface Discoverer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GstPbutils-1.0.GstPbutils.Discoverer */
     timeout?: number
     use_cache?: boolean
 }
@@ -364,10 +363,8 @@ class Discoverer {
     /* Properties of GstPbutils-1.0.GstPbutils.Discoverer */
     timeout: number
     use_cache: boolean
-    /* Fields of GstPbutils-1.0.GstPbutils.Discoverer */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.Discoverer */
     discover_uri(uri: string): DiscovererInfo
     discover_uri_async(uri: string): boolean
@@ -440,11 +437,11 @@ class Discoverer {
     static new(timeout: Gst.ClockTime): Discoverer
     static $gtype: GObject.Type
 }
-export interface DiscovererAudioInfo_ConstructProps extends DiscovererStreamInfo_ConstructProps {
+interface DiscovererAudioInfo_ConstructProps extends DiscovererStreamInfo_ConstructProps {
 }
 class DiscovererAudioInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.DiscovererAudioInfo */
     get_bitrate(): number
     get_channel_mask(): number
@@ -506,11 +503,11 @@ class DiscovererAudioInfo {
     _init (config?: DiscovererAudioInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DiscovererContainerInfo_ConstructProps extends DiscovererStreamInfo_ConstructProps {
+interface DiscovererContainerInfo_ConstructProps extends DiscovererStreamInfo_ConstructProps {
 }
 class DiscovererContainerInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.DiscovererContainerInfo */
     get_streams(): DiscovererStreamInfo[]
     get_tags(): Gst.TagList
@@ -566,11 +563,11 @@ class DiscovererContainerInfo {
     _init (config?: DiscovererContainerInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DiscovererInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface DiscovererInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DiscovererInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.DiscovererInfo */
     copy(): DiscovererInfo
     get_audio_streams(): DiscovererStreamInfo[]
@@ -635,11 +632,11 @@ class DiscovererInfo {
     static from_variant(variant: GLib.Variant): DiscovererInfo
     static $gtype: GObject.Type
 }
-export interface DiscovererStreamInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface DiscovererStreamInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DiscovererStreamInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.DiscovererStreamInfo */
     get_caps(): Gst.Caps
     get_misc(): Gst.Structure
@@ -695,11 +692,11 @@ class DiscovererStreamInfo {
     static list_free(infos: DiscovererStreamInfo[]): void
     static $gtype: GObject.Type
 }
-export interface DiscovererSubtitleInfo_ConstructProps extends DiscovererStreamInfo_ConstructProps {
+interface DiscovererSubtitleInfo_ConstructProps extends DiscovererStreamInfo_ConstructProps {
 }
 class DiscovererSubtitleInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.DiscovererSubtitleInfo */
     get_language(): string
     /* Methods of GstPbutils-1.0.GstPbutils.DiscovererStreamInfo */
@@ -755,11 +752,11 @@ class DiscovererSubtitleInfo {
     _init (config?: DiscovererSubtitleInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DiscovererVideoInfo_ConstructProps extends DiscovererStreamInfo_ConstructProps {
+interface DiscovererVideoInfo_ConstructProps extends DiscovererStreamInfo_ConstructProps {
 }
 class DiscovererVideoInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.DiscovererVideoInfo */
     get_bitrate(): number
     get_depth(): number
@@ -825,14 +822,14 @@ class DiscovererVideoInfo {
     _init (config?: DiscovererVideoInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EncodingAudioProfile_ConstructProps extends EncodingProfile_ConstructProps {
+interface EncodingAudioProfile_ConstructProps extends EncodingProfile_ConstructProps {
 }
 class EncodingAudioProfile {
     /* Properties of GstPbutils-1.0.GstPbutils.EncodingProfile */
     element_properties: Gst.Structure
     restriction_caps: Gst.Caps
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.EncodingProfile */
     copy(): EncodingProfile
     get_allow_dynamic_output(): boolean
@@ -910,14 +907,14 @@ class EncodingAudioProfile {
     static new(format: Gst.Caps, preset: string | null, restriction: Gst.Caps | null, presence: number): EncodingAudioProfile
     static $gtype: GObject.Type
 }
-export interface EncodingContainerProfile_ConstructProps extends EncodingProfile_ConstructProps {
+interface EncodingContainerProfile_ConstructProps extends EncodingProfile_ConstructProps {
 }
 class EncodingContainerProfile {
     /* Properties of GstPbutils-1.0.GstPbutils.EncodingProfile */
     element_properties: Gst.Structure
     restriction_caps: Gst.Caps
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.EncodingContainerProfile */
     add_profile(profile: EncodingProfile): boolean
     contains_profile(profile: EncodingProfile): boolean
@@ -999,7 +996,8 @@ class EncodingContainerProfile {
     static new(name: string | null, description: string | null, format: Gst.Caps, preset?: string | null): EncodingContainerProfile
     static $gtype: GObject.Type
 }
-export interface EncodingProfile_ConstructProps extends GObject.Object_ConstructProps {
+interface EncodingProfile_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GstPbutils-1.0.GstPbutils.EncodingProfile */
     element_properties?: Gst.Structure
     restriction_caps?: Gst.Caps
 }
@@ -1008,7 +1006,7 @@ class EncodingProfile {
     element_properties: Gst.Structure
     restriction_caps: Gst.Caps
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.EncodingProfile */
     copy(): EncodingProfile
     get_allow_dynamic_output(): boolean
@@ -1087,11 +1085,11 @@ class EncodingProfile {
     static from_discoverer(info: DiscovererInfo): EncodingProfile
     static $gtype: GObject.Type
 }
-export interface EncodingTarget_ConstructProps extends GObject.Object_ConstructProps {
+interface EncodingTarget_ConstructProps extends GObject.Object_ConstructProps {
 }
 class EncodingTarget {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.EncodingTarget */
     add_profile(profile: EncodingProfile): boolean
     get_category(): string
@@ -1149,14 +1147,14 @@ class EncodingTarget {
     static load_from_file(filepath: string): EncodingTarget
     static $gtype: GObject.Type
 }
-export interface EncodingVideoProfile_ConstructProps extends EncodingProfile_ConstructProps {
+interface EncodingVideoProfile_ConstructProps extends EncodingProfile_ConstructProps {
 }
 class EncodingVideoProfile {
     /* Properties of GstPbutils-1.0.GstPbutils.EncodingProfile */
     element_properties: Gst.Structure
     restriction_caps: Gst.Caps
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPbutils-1.0.GstPbutils.EncodingVideoProfile */
     get_pass(): number
     get_variableframerate(): boolean
@@ -1241,9 +1239,9 @@ class EncodingVideoProfile {
 }
 abstract class AudioVisualizerClass {
     /* Fields of GstPbutils-1.0.GstPbutils.AudioVisualizerClass */
-    setup: (scope: AudioVisualizer) => boolean
-    render: (scope: AudioVisualizer, audio: Gst.Buffer, video: GstVideo.VideoFrame) => boolean
-    decide_allocation: (scope: AudioVisualizer, query: Gst.Query) => boolean
+    readonly setup: (scope: AudioVisualizer) => boolean
+    readonly render: (scope: AudioVisualizer, audio: Gst.Buffer, video: GstVideo.VideoFrame) => boolean
+    readonly decide_allocation: (scope: AudioVisualizer, query: Gst.Query) => boolean
     static name: string
 }
 class AudioVisualizerPrivate {
@@ -1251,12 +1249,12 @@ class AudioVisualizerPrivate {
 }
 abstract class DiscovererClass {
     /* Fields of GstPbutils-1.0.GstPbutils.DiscovererClass */
-    parentclass: GObject.ObjectClass
-    finished: (discoverer: Discoverer) => void
-    starting: (discoverer: Discoverer) => void
-    discovered: (discoverer: Discoverer, info: DiscovererInfo, err: GLib.Error) => void
-    source_setup: (discoverer: Discoverer, source: Gst.Element) => void
-    _reserved: object[]
+    readonly parentclass: GObject.ObjectClass
+    readonly finished: (discoverer: Discoverer) => void
+    readonly starting: (discoverer: Discoverer) => void
+    readonly discovered: (discoverer: Discoverer, info: DiscovererInfo, err: GLib.Error) => void
+    readonly source_setup: (discoverer: Discoverer, source: Gst.Element) => void
+    readonly _reserved: object[]
     static name: string
 }
 class DiscovererPrivate {
@@ -1288,12 +1286,12 @@ class InstallPluginsContext {
     /* Static methods and pseudo-constructors */
     static new(): InstallPluginsContext
 }
-type DiscovererAudioInfoClass = GObject.ObjectClass
-type DiscovererContainerInfoClass = GObject.ObjectClass
-type DiscovererInfoClass = GObject.ObjectClass
-type DiscovererStreamInfoClass = GObject.ObjectClass
-type DiscovererSubtitleInfoClass = GObject.ObjectClass
-type DiscovererVideoInfoClass = GObject.ObjectClass
-type EncodingTargetClass = GObject.ObjectClass
+    type DiscovererAudioInfoClass = GObject.ObjectClass
+    type DiscovererContainerInfoClass = GObject.ObjectClass
+    type DiscovererInfoClass = GObject.ObjectClass
+    type DiscovererStreamInfoClass = GObject.ObjectClass
+    type DiscovererSubtitleInfoClass = GObject.ObjectClass
+    type DiscovererVideoInfoClass = GObject.ObjectClass
+    type EncodingTargetClass = GObject.ObjectClass
 }
 export default GstPbutils;

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * IAnjuta-3.0
  */
@@ -250,24 +256,24 @@ enum SymbolType {
 enum VcsError {
     UNKOWN_ERROR,
 }
-export const BUILDER_CONFIGURATION_DEBUG: string
-export const BUILDER_CONFIGURATION_OPTIMIZED: string
-export const BUILDER_CONFIGURATION_PROFILING: string
-export const BUILDER_ROOT_URI: string
-export const DOCUMENT_MANAGER_CURRENT_DOCUMENT: string
-export const EDITOR_INDENT_WIDTH_KEY: string
-export const EDITOR_PREF_SCHEMA: string
-export const EDITOR_TAB_WIDTH_KEY: string
-export const EDITOR_USE_TABS_KEY: string
-export const FILE_MANAGER_SELECTED_FILE: string
-export const LANGUAGE_PROVIDER_PREF_AUTOCOMPLETE_BRACE_AFTER_FUNC: string
-export const LANGUAGE_PROVIDER_PREF_AUTOCOMPLETE_CLOSEBRACE_AFTER_FUNC: string
-export const LANGUAGE_PROVIDER_PREF_AUTOCOMPLETE_ENABLE: string
-export const LANGUAGE_PROVIDER_PREF_AUTOCOMPLETE_SPACE_AFTER_FUNC: string
-export const LANGUAGE_PROVIDER_PREF_CALLTIP_ENABLE: string
-export const PROJECT_MANAGER_CURRENT_PROJECT: string
-export const PROJECT_MANAGER_CURRENT_URI: string
-export const PROJECT_MANAGER_PROJECT_ROOT_URI: string
+const BUILDER_CONFIGURATION_DEBUG: string
+const BUILDER_CONFIGURATION_OPTIMIZED: string
+const BUILDER_CONFIGURATION_PROFILING: string
+const BUILDER_ROOT_URI: string
+const DOCUMENT_MANAGER_CURRENT_DOCUMENT: string
+const EDITOR_INDENT_WIDTH_KEY: string
+const EDITOR_PREF_SCHEMA: string
+const EDITOR_TAB_WIDTH_KEY: string
+const EDITOR_USE_TABS_KEY: string
+const FILE_MANAGER_SELECTED_FILE: string
+const LANGUAGE_PROVIDER_PREF_AUTOCOMPLETE_BRACE_AFTER_FUNC: string
+const LANGUAGE_PROVIDER_PREF_AUTOCOMPLETE_CLOSEBRACE_AFTER_FUNC: string
+const LANGUAGE_PROVIDER_PREF_AUTOCOMPLETE_ENABLE: string
+const LANGUAGE_PROVIDER_PREF_AUTOCOMPLETE_SPACE_AFTER_FUNC: string
+const LANGUAGE_PROVIDER_PREF_CALLTIP_ENABLE: string
+const PROJECT_MANAGER_CURRENT_PROJECT: string
+const PROJECT_MANAGER_CURRENT_URI: string
+const PROJECT_MANAGER_PROJECT_ROOT_URI: string
 function buildable_error_quark(): GLib.Quark
 function builder_error_quark(): GLib.Quark
 function debug_manager_error_quark(): GLib.Quark
@@ -3470,742 +3476,742 @@ class Wizard {
 }
 abstract class BuildableIface {
     /* Fields of IAnjuta-3.0.IAnjuta.BuildableIface */
-    g_iface: GObject.TypeInterface
-    build: (obj: Buildable, uri: string) => void
-    clean: (obj: Buildable, uri: string) => void
-    configure: (obj: Buildable, uri: string) => void
-    execute: (obj: Buildable, uri: string) => void
-    generate: (obj: Buildable, uri: string) => void
-    get_command: (obj: Buildable, command_id: BuildableCommand) => string
-    install: (obj: Buildable, uri: string) => void
-    reset_commands: (obj: Buildable) => void
-    set_command: (obj: Buildable, command_id: BuildableCommand, command: string) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly build: (obj: Buildable, uri: string) => void
+    readonly clean: (obj: Buildable, uri: string) => void
+    readonly configure: (obj: Buildable, uri: string) => void
+    readonly execute: (obj: Buildable, uri: string) => void
+    readonly generate: (obj: Buildable, uri: string) => void
+    readonly get_command: (obj: Buildable, command_id: BuildableCommand) => string
+    readonly install: (obj: Buildable, uri: string) => void
+    readonly reset_commands: (obj: Buildable) => void
+    readonly set_command: (obj: Buildable, command_id: BuildableCommand, command: string) => void
     static name: string
 }
 abstract class BuilderIface {
     /* Fields of IAnjuta-3.0.IAnjuta.BuilderIface */
-    g_iface: GObject.TypeInterface
-    cancel: (obj: Builder, handle: BuilderHandle) => void
-    get_uri_configuration: (obj: Builder, uri: string) => string
-    list_configuration: (obj: Builder) => string[]
+    readonly g_iface: GObject.TypeInterface
+    readonly cancel: (obj: Builder, handle: BuilderHandle) => void
+    readonly get_uri_configuration: (obj: Builder, uri: string) => string
+    readonly list_configuration: (obj: Builder) => string[]
     static name: string
 }
 abstract class DebugManagerIface {
     /* Fields of IAnjuta-3.0.IAnjuta.DebugManagerIface */
-    g_iface: GObject.TypeInterface
-    breakpoint_changed: (obj: DebugManager, breakpoint: DebuggerBreakpointItem) => void
-    debugger_started: (obj: DebugManager) => void
-    debugger_stopped: (obj: DebugManager, err: GLib.Error) => void
-    frame_changed: (obj: DebugManager, frame: number, thread: number) => void
-    location_changed: (obj: DebugManager, address: number, uri: string, line: number) => void
-    program_exited: (obj: DebugManager) => void
-    program_loaded: (obj: DebugManager) => void
-    program_moved: (obj: DebugManager, pid: number, tid: number, address: number, file: string, line: number) => void
-    program_running: (obj: DebugManager) => void
-    program_started: (obj: DebugManager) => void
-    program_stopped: (obj: DebugManager) => void
-    program_unloaded: (obj: DebugManager) => void
-    sharedlib_event: (obj: DebugManager) => void
-    signal_received: (obj: DebugManager, name: string, description: string) => void
-    quit: (obj: DebugManager) => boolean
-    start: (obj: DebugManager, uri: string) => boolean
-    start_remote: (obj: DebugManager, server: string, uri: string) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly breakpoint_changed: (obj: DebugManager, breakpoint: DebuggerBreakpointItem) => void
+    readonly debugger_started: (obj: DebugManager) => void
+    readonly debugger_stopped: (obj: DebugManager, err: GLib.Error) => void
+    readonly frame_changed: (obj: DebugManager, frame: number, thread: number) => void
+    readonly location_changed: (obj: DebugManager, address: number, uri: string, line: number) => void
+    readonly program_exited: (obj: DebugManager) => void
+    readonly program_loaded: (obj: DebugManager) => void
+    readonly program_moved: (obj: DebugManager, pid: number, tid: number, address: number, file: string, line: number) => void
+    readonly program_running: (obj: DebugManager) => void
+    readonly program_started: (obj: DebugManager) => void
+    readonly program_stopped: (obj: DebugManager) => void
+    readonly program_unloaded: (obj: DebugManager) => void
+    readonly sharedlib_event: (obj: DebugManager) => void
+    readonly signal_received: (obj: DebugManager, name: string, description: string) => void
+    readonly quit: (obj: DebugManager) => boolean
+    readonly start: (obj: DebugManager, uri: string) => boolean
+    readonly start_remote: (obj: DebugManager, server: string, uri: string) => boolean
     static name: string
 }
 abstract class DebuggerBreakpointIface {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerBreakpointIface */
-    g_iface: DebuggerIface
-    implement_breakpoint: (obj: DebuggerBreakpoint) => number
+    readonly g_iface: DebuggerIface
+    readonly implement_breakpoint: (obj: DebuggerBreakpoint) => number
     static name: string
 }
 class DebuggerBreakpointItem {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerBreakpointItem */
-    type: number
-    id: number
-    file: string
-    line: number
-    function_: string
-    address: number
-    enable: boolean
-    ignore: number
-    times: number
-    condition: string
-    temporary: boolean
-    pending: boolean
+    readonly type: number
+    readonly id: number
+    readonly file: string
+    readonly line: number
+    readonly function_: string
+    readonly address: number
+    readonly enable: boolean
+    readonly ignore: number
+    readonly times: number
+    readonly condition: string
+    readonly temporary: boolean
+    readonly pending: boolean
     static name: string
 }
 class DebuggerFrame {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerFrame */
-    thread: number
-    level: number
-    args: string
-    file: string
-    line: number
-    function_: string
-    library: string
-    address: number
+    readonly thread: number
+    readonly level: number
+    readonly args: string
+    readonly file: string
+    readonly line: number
+    readonly function_: string
+    readonly library: string
+    readonly address: number
     static name: string
 }
 abstract class DebuggerIface {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerIface */
-    g_iface: GObject.TypeInterface
-    debugger_ready: (obj: Debugger, state: DebuggerState) => void
-    debugger_started: (obj: Debugger) => void
-    debugger_stopped: (obj: Debugger, err: GLib.Error) => void
-    frame_changed: (obj: Debugger, frame: number, thread: number) => void
-    program_exited: (obj: Debugger) => void
-    program_loaded: (obj: Debugger) => void
-    program_moved: (obj: Debugger, pid: number, tid: number, address: number, file: string, line: number) => void
-    program_running: (obj: Debugger) => void
-    program_stopped: (obj: Debugger) => void
-    sharedlib_event: (obj: Debugger) => void
-    signal_received: (obj: Debugger, name: string, description: string) => void
-    abort: (obj: Debugger) => boolean
-    attach: (obj: Debugger, pid: number, source_search_directories: string[]) => boolean
-    connect: (obj: Debugger, server: string, args: string, terminal: boolean, stop: boolean) => boolean
-    disable_log: (obj: Debugger) => void
-    enable_log: (obj: Debugger, log: MessageView) => void
-    exit: (obj: Debugger) => boolean
-    get_state: (obj: Debugger) => DebuggerState
-    handle_signal: (obj: Debugger, name: string, stop: boolean, print: boolean, ignore: boolean) => boolean
-    interrupt: (obj: Debugger) => boolean
-    load: (obj: Debugger, file: string, mime_type: string, source_search_directories: string[]) => boolean
-    quit: (obj: Debugger) => boolean
-    run: (obj: Debugger) => boolean
-    run_from: (obj: Debugger, file: string, line: number) => boolean
-    run_to: (obj: Debugger, file: string, line: number) => boolean
-    send_command: (obj: Debugger, command: string) => boolean
-    set_environment: (obj: Debugger, env: string) => boolean
-    set_frame: (obj: Debugger, frame: number) => boolean
-    set_thread: (obj: Debugger, thread: number) => boolean
-    set_working_directory: (obj: Debugger, dir: string) => boolean
-    start: (obj: Debugger, args: string, terminal: boolean, stop: boolean) => boolean
-    step_in: (obj: Debugger) => boolean
-    step_out: (obj: Debugger) => boolean
-    step_over: (obj: Debugger) => boolean
-    unload: (obj: Debugger) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly debugger_ready: (obj: Debugger, state: DebuggerState) => void
+    readonly debugger_started: (obj: Debugger) => void
+    readonly debugger_stopped: (obj: Debugger, err: GLib.Error) => void
+    readonly frame_changed: (obj: Debugger, frame: number, thread: number) => void
+    readonly program_exited: (obj: Debugger) => void
+    readonly program_loaded: (obj: Debugger) => void
+    readonly program_moved: (obj: Debugger, pid: number, tid: number, address: number, file: string, line: number) => void
+    readonly program_running: (obj: Debugger) => void
+    readonly program_stopped: (obj: Debugger) => void
+    readonly sharedlib_event: (obj: Debugger) => void
+    readonly signal_received: (obj: Debugger, name: string, description: string) => void
+    readonly abort: (obj: Debugger) => boolean
+    readonly attach: (obj: Debugger, pid: number, source_search_directories: string[]) => boolean
+    readonly connect: (obj: Debugger, server: string, args: string, terminal: boolean, stop: boolean) => boolean
+    readonly disable_log: (obj: Debugger) => void
+    readonly enable_log: (obj: Debugger, log: MessageView) => void
+    readonly exit: (obj: Debugger) => boolean
+    readonly get_state: (obj: Debugger) => DebuggerState
+    readonly handle_signal: (obj: Debugger, name: string, stop: boolean, print: boolean, ignore: boolean) => boolean
+    readonly interrupt: (obj: Debugger) => boolean
+    readonly load: (obj: Debugger, file: string, mime_type: string, source_search_directories: string[]) => boolean
+    readonly quit: (obj: Debugger) => boolean
+    readonly run: (obj: Debugger) => boolean
+    readonly run_from: (obj: Debugger, file: string, line: number) => boolean
+    readonly run_to: (obj: Debugger, file: string, line: number) => boolean
+    readonly send_command: (obj: Debugger, command: string) => boolean
+    readonly set_environment: (obj: Debugger, env: string) => boolean
+    readonly set_frame: (obj: Debugger, frame: number) => boolean
+    readonly set_thread: (obj: Debugger, thread: number) => boolean
+    readonly set_working_directory: (obj: Debugger, dir: string) => boolean
+    readonly start: (obj: Debugger, args: string, terminal: boolean, stop: boolean) => boolean
+    readonly step_in: (obj: Debugger) => boolean
+    readonly step_out: (obj: Debugger) => boolean
+    readonly step_over: (obj: Debugger) => boolean
+    readonly unload: (obj: Debugger) => boolean
     static name: string
 }
 class DebuggerInstructionALine {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerInstructionALine */
-    address: number
-    label: string
-    text: string
+    readonly address: number
+    readonly label: string
+    readonly text: string
     static name: string
 }
 class DebuggerInstructionDisassembly {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerInstructionDisassembly */
-    size: number
-    data: DebuggerInstructionALine[]
+    readonly size: number
+    readonly data: DebuggerInstructionALine[]
     static name: string
 }
 abstract class DebuggerInstructionIface {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerInstructionIface */
-    g_iface: DebuggerIface
-    run_from_address: (obj: DebuggerInstruction, address: number) => boolean
-    run_to_address: (obj: DebuggerInstruction, address: number) => boolean
-    step_in_instruction: (obj: DebuggerInstruction) => boolean
-    step_over_instruction: (obj: DebuggerInstruction) => boolean
+    readonly g_iface: DebuggerIface
+    readonly run_from_address: (obj: DebuggerInstruction, address: number) => boolean
+    readonly run_to_address: (obj: DebuggerInstruction, address: number) => boolean
+    readonly step_in_instruction: (obj: DebuggerInstruction) => boolean
+    readonly step_over_instruction: (obj: DebuggerInstruction) => boolean
     static name: string
 }
 class DebuggerMemoryBlock {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerMemoryBlock */
-    address: number
-    length: number
-    data: string
+    readonly address: number
+    readonly length: number
+    readonly data: string
     static name: string
 }
 abstract class DebuggerMemoryIface {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerMemoryIface */
-    g_iface: DebuggerIface
+    readonly g_iface: DebuggerIface
     static name: string
 }
 class DebuggerRegisterData {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerRegisterData */
-    num: number
-    name: string
-    value: string
+    readonly num: number
+    readonly name: string
+    readonly value: string
     static name: string
 }
 abstract class DebuggerRegisterIface {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerRegisterIface */
-    g_iface: DebuggerIface
-    write_register: (obj: DebuggerRegister, value: DebuggerRegisterData) => boolean
+    readonly g_iface: DebuggerIface
+    readonly write_register: (obj: DebuggerRegister, value: DebuggerRegisterData) => boolean
     static name: string
 }
 abstract class DebuggerVariableIface {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerVariableIface */
-    g_iface: DebuggerIface
-    assign: (obj: DebuggerVariable, name: string, value: string) => boolean
-    destroy: (obj: DebuggerVariable, name: string) => boolean
+    readonly g_iface: DebuggerIface
+    readonly assign: (obj: DebuggerVariable, name: string, value: string) => boolean
+    readonly destroy: (obj: DebuggerVariable, name: string) => boolean
     static name: string
 }
 class DebuggerVariableObject {
     /* Fields of IAnjuta-3.0.IAnjuta.DebuggerVariableObject */
-    name: string
-    expression: string
-    type: string
-    value: string
-    changed: boolean
-    exited: boolean
-    deleted: boolean
-    children: number
-    has_more: boolean
+    readonly name: string
+    readonly expression: string
+    readonly type: string
+    readonly value: string
+    readonly changed: boolean
+    readonly exited: boolean
+    readonly deleted: boolean
+    readonly children: number
+    readonly has_more: boolean
     static name: string
 }
 abstract class DocumentIface {
     /* Fields of IAnjuta-3.0.IAnjuta.DocumentIface */
-    g_iface: GObject.TypeInterface
-    update_ui: (obj: Document) => void
-    begin_undo_action: (obj: Document) => void
-    can_redo: (obj: Document) => boolean
-    can_undo: (obj: Document) => boolean
-    clear: (obj: Document) => void
-    copy: (obj: Document) => void
-    cut: (obj: Document) => void
-    end_undo_action: (obj: Document) => void
-    get_filename: (obj: Document) => string
-    grab_focus: (obj: Document) => void
-    paste: (obj: Document) => void
-    redo: (obj: Document) => void
-    undo: (obj: Document) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly update_ui: (obj: Document) => void
+    readonly begin_undo_action: (obj: Document) => void
+    readonly can_redo: (obj: Document) => boolean
+    readonly can_undo: (obj: Document) => boolean
+    readonly clear: (obj: Document) => void
+    readonly copy: (obj: Document) => void
+    readonly cut: (obj: Document) => void
+    readonly end_undo_action: (obj: Document) => void
+    readonly get_filename: (obj: Document) => string
+    readonly grab_focus: (obj: Document) => void
+    readonly paste: (obj: Document) => void
+    readonly redo: (obj: Document) => void
+    readonly undo: (obj: Document) => void
     static name: string
 }
 abstract class DocumentManagerIface {
     /* Fields of IAnjuta-3.0.IAnjuta.DocumentManagerIface */
-    g_iface: GObject.TypeInterface
-    document_added: (obj: DocumentManager, doc: Document) => void
-    document_removed: (obj: DocumentManager, doc: Document) => void
-    add_bookmark: (obj: DocumentManager, file: Gio.File, line: number) => void
-    add_buffer: (obj: DocumentManager, name: string, content: string) => Editor
-    add_document: (obj: DocumentManager, document: Document) => void
-    find_document_with_file: (obj: DocumentManager, file: Gio.File) => Document
-    get_current_document: (obj: DocumentManager) => Document
-    get_doc_widgets: (obj: DocumentManager) => Gtk.Widget[]
-    get_file: (obj: DocumentManager, filename: string) => Gio.File
-    goto_file_line: (obj: DocumentManager, file: Gio.File, lineno: number) => Editor
-    goto_file_line_mark: (obj: DocumentManager, file: Gio.File, lineno: number, mark: boolean) => Editor
-    remove_document: (obj: DocumentManager, document: Document, save_before: boolean) => boolean
-    set_current_document: (obj: DocumentManager, document: Document) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly document_added: (obj: DocumentManager, doc: Document) => void
+    readonly document_removed: (obj: DocumentManager, doc: Document) => void
+    readonly add_bookmark: (obj: DocumentManager, file: Gio.File, line: number) => void
+    readonly add_buffer: (obj: DocumentManager, name: string, content: string) => Editor
+    readonly add_document: (obj: DocumentManager, document: Document) => void
+    readonly find_document_with_file: (obj: DocumentManager, file: Gio.File) => Document
+    readonly get_current_document: (obj: DocumentManager) => Document
+    readonly get_doc_widgets: (obj: DocumentManager) => Gtk.Widget[]
+    readonly get_file: (obj: DocumentManager, filename: string) => Gio.File
+    readonly goto_file_line: (obj: DocumentManager, file: Gio.File, lineno: number) => Editor
+    readonly goto_file_line_mark: (obj: DocumentManager, file: Gio.File, lineno: number, mark: boolean) => Editor
+    readonly remove_document: (obj: DocumentManager, document: Document, save_before: boolean) => boolean
+    readonly set_current_document: (obj: DocumentManager, document: Document) => void
     static name: string
 }
 abstract class EditorAssistIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorAssistIface */
-    g_iface: EditorIface
-    cancelled: (obj: EditorAssist) => void
-    add: (obj: EditorAssist, provider: Provider) => void
-    invoke: (obj: EditorAssist, provider: Provider) => void
-    proposals: (obj: EditorAssist, provider: Provider, proposals: EditorAssistProposal[], pre_word: string, finished: boolean) => void
-    remove: (obj: EditorAssist, provider: Provider) => void
+    readonly g_iface: EditorIface
+    readonly cancelled: (obj: EditorAssist) => void
+    readonly add: (obj: EditorAssist, provider: Provider) => void
+    readonly invoke: (obj: EditorAssist, provider: Provider) => void
+    readonly proposals: (obj: EditorAssist, provider: Provider, proposals: EditorAssistProposal[], pre_word: string, finished: boolean) => void
+    readonly remove: (obj: EditorAssist, provider: Provider) => void
     static name: string
 }
 class EditorAssistProposal {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorAssistProposal */
-    label: string
-    markup: string
-    info: string
-    text: string
-    icon: GdkPixbuf.Pixbuf
-    data: object
+    readonly label: string
+    readonly markup: string
+    readonly info: string
+    readonly text: string
+    readonly icon: GdkPixbuf.Pixbuf
+    readonly data: object
     static name: string
 }
 abstract class EditorCellIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorCellIface */
-    g_iface: GObject.TypeInterface
-    get_attribute: (obj: EditorCell) => EditorAttribute
-    get_char: (obj: EditorCell, char_index: number) => number
-    get_character: (obj: EditorCell) => string
-    get_length: (obj: EditorCell) => number
+    readonly g_iface: GObject.TypeInterface
+    readonly get_attribute: (obj: EditorCell) => EditorAttribute
+    readonly get_char: (obj: EditorCell, char_index: number) => number
+    readonly get_character: (obj: EditorCell) => string
+    readonly get_length: (obj: EditorCell) => number
     static name: string
 }
 abstract class EditorCellStyleIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorCellStyleIface */
-    g_iface: EditorCellIface
-    get_background_color: (obj: EditorCellStyle) => string
-    get_color: (obj: EditorCellStyle) => string
-    get_font_description: (obj: EditorCellStyle) => string
+    readonly g_iface: EditorCellIface
+    readonly get_background_color: (obj: EditorCellStyle) => string
+    readonly get_color: (obj: EditorCellStyle) => string
+    readonly get_font_description: (obj: EditorCellStyle) => string
     static name: string
 }
 abstract class EditorCommentIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorCommentIface */
-    g_iface: EditorIface
-    block: (obj: EditorComment) => void
-    box: (obj: EditorComment) => void
-    stream: (obj: EditorComment) => void
+    readonly g_iface: EditorIface
+    readonly block: (obj: EditorComment) => void
+    readonly box: (obj: EditorComment) => void
+    readonly stream: (obj: EditorComment) => void
     static name: string
 }
 abstract class EditorConvertIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorConvertIface */
-    g_iface: EditorIface
-    to_lower: (obj: EditorConvert, start_position: Iterable, end_position: Iterable) => void
-    to_upper: (obj: EditorConvert, start_position: Iterable, end_position: Iterable) => void
+    readonly g_iface: EditorIface
+    readonly to_lower: (obj: EditorConvert, start_position: Iterable, end_position: Iterable) => void
+    readonly to_upper: (obj: EditorConvert, start_position: Iterable, end_position: Iterable) => void
     static name: string
 }
 abstract class EditorFactoryIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorFactoryIface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class EditorFoldsIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorFoldsIface */
-    g_iface: EditorIface
-    close_all: (obj: EditorFolds) => void
-    open_all: (obj: EditorFolds) => void
-    toggle_current: (obj: EditorFolds) => void
+    readonly g_iface: EditorIface
+    readonly close_all: (obj: EditorFolds) => void
+    readonly open_all: (obj: EditorFolds) => void
+    readonly toggle_current: (obj: EditorFolds) => void
     static name: string
 }
 abstract class EditorGladeSignalIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorGladeSignalIface */
-    g_iface: EditorIface
-    drop: (obj: EditorGladeSignal, iterator: Iterable, signal_data: string) => void
-    drop_possible: (obj: EditorGladeSignal, iterator: Iterable) => boolean
+    readonly g_iface: EditorIface
+    readonly drop: (obj: EditorGladeSignal, iterator: Iterable, signal_data: string) => void
+    readonly drop_possible: (obj: EditorGladeSignal, iterator: Iterable) => boolean
     static name: string
 }
 abstract class EditorGotoIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorGotoIface */
-    g_iface: EditorIface
-    end_block: (obj: EditorGoto) => void
-    matching_brace: (obj: EditorGoto) => void
-    start_block: (obj: EditorGoto) => void
+    readonly g_iface: EditorIface
+    readonly end_block: (obj: EditorGoto) => void
+    readonly matching_brace: (obj: EditorGoto) => void
+    readonly start_block: (obj: EditorGoto) => void
     static name: string
 }
 abstract class EditorHoverIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorHoverIface */
-    g_iface: EditorIface
-    hover_leave: (obj: EditorHover, position: Iterable) => void
-    hover_over: (obj: EditorHover, position: Iterable) => void
-    display: (obj: EditorHover, position: Iterable, info: string) => void
+    readonly g_iface: EditorIface
+    readonly hover_leave: (obj: EditorHover, position: Iterable) => void
+    readonly hover_over: (obj: EditorHover, position: Iterable) => void
+    readonly display: (obj: EditorHover, position: Iterable, info: string) => void
     static name: string
 }
 abstract class EditorIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorIface */
-    g_iface: GObject.TypeInterface
-    backspace: (obj: Editor) => void
-    changed: (obj: Editor, position: Iterable, added: boolean, length: number, lines: number, text: string) => void
-    char_added: (obj: Editor, position: Iterable, ch: number) => void
-    code_changed: (obj: Editor, position: Iterable, code: string) => void
-    cursor_moved: (obj: Editor) => void
-    glade_callback_add: (obj: Editor, widget_typename: string, signal_name: string, handler_name: string, object: string, swap: boolean, after: boolean, filename: string) => void
-    glade_member_add: (obj: Editor, widget_typename: string, widget_name: string, filename: string) => void
-    line_marks_gutter_clicked: (obj: Editor, location: number) => void
-    append: (obj: Editor, text: string, length: number) => void
-    erase: (obj: Editor, position_start: Iterable, position_end: Iterable) => void
-    erase_all: (obj: Editor) => void
-    get_column: (obj: Editor) => number
-    get_current_word: (obj: Editor) => string
-    get_end_position: (obj: Editor) => Iterable
-    get_indentsize: (obj: Editor) => number
-    get_length: (obj: Editor) => number
-    get_line_begin_position: (obj: Editor, line: number) => Iterable
-    get_line_end_position: (obj: Editor, line: number) => Iterable
-    get_line_from_position: (obj: Editor, position: Iterable) => number
-    get_lineno: (obj: Editor) => number
-    get_offset: (obj: Editor) => number
-    get_overwrite: (obj: Editor) => boolean
-    get_position: (obj: Editor) => Iterable
-    get_start_position: (obj: Editor) => Iterable
-    get_tabsize: (obj: Editor) => number
-    get_text: (obj: Editor, begin: Iterable, end: Iterable) => string
-    get_text_all: (obj: Editor) => string
-    get_use_spaces: (obj: Editor) => boolean
-    goto_end: (obj: Editor) => void
-    goto_line: (obj: Editor, lineno: number) => void
-    goto_position: (obj: Editor, position: Iterable) => void
-    goto_start: (obj: Editor) => void
-    insert: (obj: Editor, position: Iterable, text: string, length: number) => void
-    set_auto_indent: (obj: Editor, auto_indent: boolean) => void
-    set_indentsize: (obj: Editor, indentsize: number) => void
-    set_popup_menu: (obj: Editor, menu: Gtk.Widget) => void
-    set_tabsize: (obj: Editor, tabsize: number) => void
-    set_use_spaces: (obj: Editor, use_spaces: boolean) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly backspace: (obj: Editor) => void
+    readonly changed: (obj: Editor, position: Iterable, added: boolean, length: number, lines: number, text: string) => void
+    readonly char_added: (obj: Editor, position: Iterable, ch: number) => void
+    readonly code_changed: (obj: Editor, position: Iterable, code: string) => void
+    readonly cursor_moved: (obj: Editor) => void
+    readonly glade_callback_add: (obj: Editor, widget_typename: string, signal_name: string, handler_name: string, object: string, swap: boolean, after: boolean, filename: string) => void
+    readonly glade_member_add: (obj: Editor, widget_typename: string, widget_name: string, filename: string) => void
+    readonly line_marks_gutter_clicked: (obj: Editor, location: number) => void
+    readonly append: (obj: Editor, text: string, length: number) => void
+    readonly erase: (obj: Editor, position_start: Iterable, position_end: Iterable) => void
+    readonly erase_all: (obj: Editor) => void
+    readonly get_column: (obj: Editor) => number
+    readonly get_current_word: (obj: Editor) => string
+    readonly get_end_position: (obj: Editor) => Iterable
+    readonly get_indentsize: (obj: Editor) => number
+    readonly get_length: (obj: Editor) => number
+    readonly get_line_begin_position: (obj: Editor, line: number) => Iterable
+    readonly get_line_end_position: (obj: Editor, line: number) => Iterable
+    readonly get_line_from_position: (obj: Editor, position: Iterable) => number
+    readonly get_lineno: (obj: Editor) => number
+    readonly get_offset: (obj: Editor) => number
+    readonly get_overwrite: (obj: Editor) => boolean
+    readonly get_position: (obj: Editor) => Iterable
+    readonly get_start_position: (obj: Editor) => Iterable
+    readonly get_tabsize: (obj: Editor) => number
+    readonly get_text: (obj: Editor, begin: Iterable, end: Iterable) => string
+    readonly get_text_all: (obj: Editor) => string
+    readonly get_use_spaces: (obj: Editor) => boolean
+    readonly goto_end: (obj: Editor) => void
+    readonly goto_line: (obj: Editor, lineno: number) => void
+    readonly goto_position: (obj: Editor, position: Iterable) => void
+    readonly goto_start: (obj: Editor) => void
+    readonly insert: (obj: Editor, position: Iterable, text: string, length: number) => void
+    readonly set_auto_indent: (obj: Editor, auto_indent: boolean) => void
+    readonly set_indentsize: (obj: Editor, indentsize: number) => void
+    readonly set_popup_menu: (obj: Editor, menu: Gtk.Widget) => void
+    readonly set_tabsize: (obj: Editor, tabsize: number) => void
+    readonly set_use_spaces: (obj: Editor, use_spaces: boolean) => void
     static name: string
 }
 abstract class EditorLanguageIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorLanguageIface */
-    g_iface: EditorIface
-    language_changed: (obj: EditorLanguage, language: string) => void
-    get_language: (obj: EditorLanguage) => string
-    get_language_name: (obj: EditorLanguage, language: string) => string
-    get_supported_languages: (obj: EditorLanguage) => string[]
-    set_language: (obj: EditorLanguage, language: string) => void
+    readonly g_iface: EditorIface
+    readonly language_changed: (obj: EditorLanguage, language: string) => void
+    readonly get_language: (obj: EditorLanguage) => string
+    readonly get_language_name: (obj: EditorLanguage, language: string) => string
+    readonly get_supported_languages: (obj: EditorLanguage) => string[]
+    readonly set_language: (obj: EditorLanguage, language: string) => void
     static name: string
 }
 abstract class EditorLineModeIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorLineModeIface */
-    g_iface: EditorIface
-    convert: (obj: EditorLineMode, mode: EditorLineModeType) => void
-    fix: (obj: EditorLineMode) => void
-    get: (obj: EditorLineMode) => EditorLineModeType
-    set: (obj: EditorLineMode, mode: EditorLineModeType) => void
+    readonly g_iface: EditorIface
+    readonly convert: (obj: EditorLineMode, mode: EditorLineModeType) => void
+    readonly fix: (obj: EditorLineMode) => void
+    readonly get: (obj: EditorLineMode) => EditorLineModeType
+    readonly set: (obj: EditorLineMode, mode: EditorLineModeType) => void
     static name: string
 }
 abstract class EditorSearchIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorSearchIface */
-    g_iface: EditorIface
-    backward: (obj: EditorSearch, search: string, case_sensitive: boolean, start: EditorCell, end: EditorCell) => [ /* returnType */ boolean, /* result_start */ EditorCell, /* result_end */ EditorCell ]
-    forward: (obj: EditorSearch, search: string, case_sensitive: boolean, start: EditorCell, end: EditorCell) => [ /* returnType */ boolean, /* result_start */ EditorCell, /* result_end */ EditorCell ]
+    readonly g_iface: EditorIface
+    readonly backward: (obj: EditorSearch, search: string, case_sensitive: boolean, start: EditorCell, end: EditorCell) => [ /* returnType */ boolean, /* result_start */ EditorCell, /* result_end */ EditorCell ]
+    readonly forward: (obj: EditorSearch, search: string, case_sensitive: boolean, start: EditorCell, end: EditorCell) => [ /* returnType */ boolean, /* result_start */ EditorCell, /* result_end */ EditorCell ]
     static name: string
 }
 abstract class EditorSelectionIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorSelectionIface */
-    g_iface: EditorIface
-    get: (obj: EditorSelection) => string
-    has_selection: (obj: EditorSelection) => boolean
-    replace: (obj: EditorSelection, text: string, length: number) => void
-    select_all: (obj: EditorSelection) => void
-    select_block: (obj: EditorSelection) => void
-    select_function: (obj: EditorSelection) => void
-    set: (obj: EditorSelection, start: Iterable, end: Iterable, scroll: boolean) => void
+    readonly g_iface: EditorIface
+    readonly get: (obj: EditorSelection) => string
+    readonly has_selection: (obj: EditorSelection) => boolean
+    readonly replace: (obj: EditorSelection, text: string, length: number) => void
+    readonly select_all: (obj: EditorSelection) => void
+    readonly select_block: (obj: EditorSelection) => void
+    readonly select_function: (obj: EditorSelection) => void
+    readonly set: (obj: EditorSelection, start: Iterable, end: Iterable, scroll: boolean) => void
     static name: string
 }
 abstract class EditorTipIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorTipIface */
-    g_iface: EditorIface
-    cancel: (obj: EditorTip) => void
-    show: (obj: EditorTip, tips: string[], position: Iterable) => void
-    visible: (obj: EditorTip) => boolean
+    readonly g_iface: EditorIface
+    readonly cancel: (obj: EditorTip) => void
+    readonly show: (obj: EditorTip, tips: string[], position: Iterable) => void
+    readonly visible: (obj: EditorTip) => boolean
     static name: string
 }
 abstract class EditorViewIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorViewIface */
-    g_iface: EditorIface
-    create: (obj: EditorView) => void
-    get_count: (obj: EditorView) => number
-    remove_current: (obj: EditorView) => void
+    readonly g_iface: EditorIface
+    readonly create: (obj: EditorView) => void
+    readonly get_count: (obj: EditorView) => number
+    readonly remove_current: (obj: EditorView) => void
     static name: string
 }
 abstract class EditorZoomIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EditorZoomIface */
-    g_iface: EditorIface
-    in_: (obj: EditorZoom) => void
-    out: (obj: EditorZoom) => void
+    readonly g_iface: EditorIface
+    readonly in_: (obj: EditorZoom) => void
+    readonly out: (obj: EditorZoom) => void
     static name: string
 }
 abstract class EnvironmentIface {
     /* Fields of IAnjuta-3.0.IAnjuta.EnvironmentIface */
-    g_iface: GObject.TypeInterface
-    get_real_directory: (obj: Environment, dir: string) => string
-    override: (obj: Environment, dirp: string, argvp: string, envp: string) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly get_real_directory: (obj: Environment, dir: string) => string
+    readonly override: (obj: Environment, dirp: string, argvp: string, envp: string) => boolean
     static name: string
 }
 abstract class FileIface {
     /* Fields of IAnjuta-3.0.IAnjuta.FileIface */
-    g_iface: GObject.TypeInterface
-    opened: (obj: File) => void
-    get_file: (obj: File) => Gio.File
-    open: (obj: File, file: Gio.File) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly opened: (obj: File) => void
+    readonly get_file: (obj: File) => Gio.File
+    readonly open: (obj: File, file: Gio.File) => void
     static name: string
 }
 abstract class FileLoaderIface {
     /* Fields of IAnjuta-3.0.IAnjuta.FileLoaderIface */
-    g_iface: LoaderIface
-    peek_interface: (obj: FileLoader, file: Gio.File) => string
+    readonly g_iface: LoaderIface
+    readonly peek_interface: (obj: FileLoader, file: Gio.File) => string
     static name: string
 }
 abstract class FileManagerIface {
     /* Fields of IAnjuta-3.0.IAnjuta.FileManagerIface */
-    g_iface: GObject.TypeInterface
-    section_changed: (obj: FileManager, file: Gio.File) => void
-    set_root: (obj: FileManager, root_uri: string) => void
-    set_selected: (obj: FileManager, file: Gio.File) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly section_changed: (obj: FileManager, file: Gio.File) => void
+    readonly set_root: (obj: FileManager, root_uri: string) => void
+    readonly set_selected: (obj: FileManager, file: Gio.File) => void
     static name: string
 }
 abstract class FileSavableIface {
     /* Fields of IAnjuta-3.0.IAnjuta.FileSavableIface */
-    g_iface: FileIface
-    saved: (obj: FileSavable, file: Gio.File) => void
-    update_save_ui: (obj: FileSavable) => void
-    is_conflict: (obj: FileSavable) => boolean
-    is_dirty: (obj: FileSavable) => boolean
-    is_read_only: (obj: FileSavable) => boolean
-    save: (obj: FileSavable) => void
-    save_as: (obj: FileSavable, file: Gio.File) => void
-    set_dirty: (obj: FileSavable, dirty: boolean) => void
+    readonly g_iface: FileIface
+    readonly saved: (obj: FileSavable, file: Gio.File) => void
+    readonly update_save_ui: (obj: FileSavable) => void
+    readonly is_conflict: (obj: FileSavable) => boolean
+    readonly is_dirty: (obj: FileSavable) => boolean
+    readonly is_read_only: (obj: FileSavable) => boolean
+    readonly save: (obj: FileSavable) => void
+    readonly save_as: (obj: FileSavable, file: Gio.File) => void
+    readonly set_dirty: (obj: FileSavable, dirty: boolean) => void
     static name: string
 }
 abstract class GladeIface {
     /* Fields of IAnjuta-3.0.IAnjuta.GladeIface */
-    g_iface: GObject.TypeInterface
-    add_association: (obj: Glade, master: string, slave: string) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly add_association: (obj: Glade, master: string, slave: string) => void
     static name: string
 }
 abstract class HelpIface {
     /* Fields of IAnjuta-3.0.IAnjuta.HelpIface */
-    g_iface: GObject.TypeInterface
-    search: (obj: Help, query: string) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly search: (obj: Help, query: string) => void
     static name: string
 }
 abstract class IndenterIface {
     /* Fields of IAnjuta-3.0.IAnjuta.IndenterIface */
-    g_iface: GObject.TypeInterface
-    indent: (obj: Indenter, start: Iterable, end: Iterable) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly indent: (obj: Indenter, start: Iterable, end: Iterable) => void
     static name: string
 }
 abstract class IndicableIface {
     /* Fields of IAnjuta-3.0.IAnjuta.IndicableIface */
-    g_iface: GObject.TypeInterface
-    clear: (obj: Indicable) => void
-    set: (obj: Indicable, begin_location: Iterable, end_location: Iterable, indicator: IndicableIndicator) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly clear: (obj: Indicable) => void
+    readonly set: (obj: Indicable, begin_location: Iterable, end_location: Iterable, indicator: IndicableIndicator) => void
     static name: string
 }
 abstract class IterableIface {
     /* Fields of IAnjuta-3.0.IAnjuta.IterableIface */
-    g_iface: GObject.TypeInterface
-    assign: (obj: Iterable, src_iter: Iterable) => void
-    clone: (obj: Iterable) => Iterable
-    compare: (obj: Iterable, iter2: Iterable) => number
-    diff: (obj: Iterable, iter2: Iterable) => number
-    first: (obj: Iterable) => boolean
-    get_length: (obj: Iterable) => number
-    get_position: (obj: Iterable) => number
-    last: (obj: Iterable) => boolean
-    next: (obj: Iterable) => boolean
-    previous: (obj: Iterable) => boolean
-    set_position: (obj: Iterable, position: number) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly assign: (obj: Iterable, src_iter: Iterable) => void
+    readonly clone: (obj: Iterable) => Iterable
+    readonly compare: (obj: Iterable, iter2: Iterable) => number
+    readonly diff: (obj: Iterable, iter2: Iterable) => number
+    readonly first: (obj: Iterable) => boolean
+    readonly get_length: (obj: Iterable) => number
+    readonly get_position: (obj: Iterable) => number
+    readonly last: (obj: Iterable) => boolean
+    readonly next: (obj: Iterable) => boolean
+    readonly previous: (obj: Iterable) => boolean
+    readonly set_position: (obj: Iterable, position: number) => boolean
     static name: string
 }
 abstract class IterableTreeIface {
     /* Fields of IAnjuta-3.0.IAnjuta.IterableTreeIface */
-    g_iface: IterableIface
-    children: (obj: IterableTree) => boolean
-    has_children: (obj: IterableTree) => boolean
-    parent: (obj: IterableTree) => boolean
+    readonly g_iface: IterableIface
+    readonly children: (obj: IterableTree) => boolean
+    readonly has_children: (obj: IterableTree) => boolean
+    readonly parent: (obj: IterableTree) => boolean
     static name: string
 }
 abstract class LanguageIface {
     /* Fields of IAnjuta-3.0.IAnjuta.LanguageIface */
-    g_iface: GObject.TypeInterface
-    get_from_editor: (obj: Language, editor: EditorLanguage) => LanguageId
-    get_from_mime_type: (obj: Language, mime_type: string) => LanguageId
-    get_from_string: (obj: Language, string: string) => LanguageId
-    get_languages: (obj: Language) => number[]
-    get_make_target: (obj: Language, id: LanguageId) => string
-    get_name: (obj: Language, id: LanguageId) => string
-    get_name_from_editor: (obj: Language, editor: EditorLanguage) => string
+    readonly g_iface: GObject.TypeInterface
+    readonly get_from_editor: (obj: Language, editor: EditorLanguage) => LanguageId
+    readonly get_from_mime_type: (obj: Language, mime_type: string) => LanguageId
+    readonly get_from_string: (obj: Language, string: string) => LanguageId
+    readonly get_languages: (obj: Language) => number[]
+    readonly get_make_target: (obj: Language, id: LanguageId) => string
+    readonly get_name: (obj: Language, id: LanguageId) => string
+    readonly get_name_from_editor: (obj: Language, editor: EditorLanguage) => string
     static name: string
 }
 abstract class LanguageProviderIface {
     /* Fields of IAnjuta-3.0.IAnjuta.LanguageProviderIface */
-    g_iface: ProviderIface
-    get_calltip_cache: (obj: LanguageProvider, call_context: string) => string[]
-    get_calltip_context: (obj: LanguageProvider, iter: Iterable) => string
-    new_calltip: (obj: LanguageProvider, call_context: string, iter: Iterable) => void
-    populate_completions: (obj: LanguageProvider, iter: Iterable) => Iterable | null
+    readonly g_iface: ProviderIface
+    readonly get_calltip_cache: (obj: LanguageProvider, call_context: string) => string[]
+    readonly get_calltip_context: (obj: LanguageProvider, iter: Iterable) => string
+    readonly new_calltip: (obj: LanguageProvider, call_context: string, iter: Iterable) => void
+    readonly populate_completions: (obj: LanguageProvider, iter: Iterable) => Iterable | null
     static name: string
 }
 abstract class LoaderIface {
     /* Fields of IAnjuta-3.0.IAnjuta.LoaderIface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class MarkableIface {
     /* Fields of IAnjuta-3.0.IAnjuta.MarkableIface */
-    g_iface: GObject.TypeInterface
-    marker_clicked: (obj: Markable, double_click: boolean, location: number) => void
-    delete_all_markers: (obj: Markable, marker: MarkableMarker) => void
-    is_marker_set: (obj: Markable, location: number, marker: MarkableMarker) => boolean
-    location_from_handle: (obj: Markable, handle: number) => number
-    mark: (obj: Markable, location: number, marker: MarkableMarker, tooltip?: string | null) => number
-    unmark: (obj: Markable, location: number, marker: MarkableMarker) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly marker_clicked: (obj: Markable, double_click: boolean, location: number) => void
+    readonly delete_all_markers: (obj: Markable, marker: MarkableMarker) => void
+    readonly is_marker_set: (obj: Markable, location: number, marker: MarkableMarker) => boolean
+    readonly location_from_handle: (obj: Markable, handle: number) => number
+    readonly mark: (obj: Markable, location: number, marker: MarkableMarker, tooltip?: string | null) => number
+    readonly unmark: (obj: Markable, location: number, marker: MarkableMarker) => void
     static name: string
 }
 abstract class MessageManagerIface {
     /* Fields of IAnjuta-3.0.IAnjuta.MessageManagerIface */
-    g_iface: GObject.TypeInterface
-    remove_view: (obj: MessageManager, view: MessageView) => void
-    set_current_view: (obj: MessageManager, view: MessageView) => void
-    set_view_icon: (obj: MessageManager, view: MessageView, icon: GdkPixbuf.PixbufAnimation) => void
-    set_view_icon_from_stock: (obj: MessageManager, view: MessageView, icon: string) => void
-    set_view_title: (obj: MessageManager, view: MessageView, title: string) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly remove_view: (obj: MessageManager, view: MessageView) => void
+    readonly set_current_view: (obj: MessageManager, view: MessageView) => void
+    readonly set_view_icon: (obj: MessageManager, view: MessageView, icon: GdkPixbuf.PixbufAnimation) => void
+    readonly set_view_icon_from_stock: (obj: MessageManager, view: MessageView, icon: string) => void
+    readonly set_view_title: (obj: MessageManager, view: MessageView, title: string) => void
     static name: string
 }
 abstract class MessageViewIface {
     /* Fields of IAnjuta-3.0.IAnjuta.MessageViewIface */
-    g_iface: GObject.TypeInterface
-    buffer_flushed: (obj: MessageView, line: string) => void
-    message_clicked: (obj: MessageView, message: string) => void
-    append: (obj: MessageView, type: MessageViewType, summary: string, details: string) => void
-    buffer_append: (obj: MessageView, text: string) => void
-    clear: (obj: MessageView) => void
-    get_current_message: (obj: MessageView) => string
-    select_next: (obj: MessageView) => void
-    select_previous: (obj: MessageView) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly buffer_flushed: (obj: MessageView, line: string) => void
+    readonly message_clicked: (obj: MessageView, message: string) => void
+    readonly append: (obj: MessageView, type: MessageViewType, summary: string, details: string) => void
+    readonly buffer_append: (obj: MessageView, text: string) => void
+    readonly clear: (obj: MessageView) => void
+    readonly get_current_message: (obj: MessageView) => string
+    readonly select_next: (obj: MessageView) => void
+    readonly select_previous: (obj: MessageView) => void
     static name: string
 }
 abstract class PluginFactoryIface {
     /* Fields of IAnjuta-3.0.IAnjuta.PluginFactoryIface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class PreferencesIface {
     /* Fields of IAnjuta-3.0.IAnjuta.PreferencesIface */
-    g_iface: GObject.TypeInterface
-    merge: (obj: Preferences, prefs: Anjuta.Preferences) => void
-    unmerge: (obj: Preferences, prefs: Anjuta.Preferences) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly merge: (obj: Preferences, prefs: Anjuta.Preferences) => void
+    readonly unmerge: (obj: Preferences, prefs: Anjuta.Preferences) => void
     static name: string
 }
 abstract class PrintIface {
     /* Fields of IAnjuta-3.0.IAnjuta.PrintIface */
-    g_iface: GObject.TypeInterface
-    print: (obj: Print) => void
-    print_preview: (obj: Print) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly print: (obj: Print) => void
+    readonly print_preview: (obj: Print) => void
     static name: string
 }
 abstract class ProjectBackendIface {
     /* Fields of IAnjuta-3.0.IAnjuta.ProjectBackendIface */
-    g_iface: GObject.TypeInterface
-    new_project: (obj: ProjectBackend, file: Gio.File) => Project
-    probe: (obj: ProjectBackend, directory: Gio.File) => number
+    readonly g_iface: GObject.TypeInterface
+    readonly new_project: (obj: ProjectBackend, file: Gio.File) => Project
+    readonly probe: (obj: ProjectBackend, directory: Gio.File) => number
     static name: string
 }
 abstract class ProjectChooserIface {
     /* Fields of IAnjuta-3.0.IAnjuta.ProjectChooserIface */
-    g_iface: GObject.TypeInterface
-    changed: (obj: ProjectChooser) => void
-    get_selected: (obj: ProjectChooser) => Gio.File
-    set_project_model: (obj: ProjectChooser, manager: ProjectManager, child_type: Anjuta.ProjectNodeType) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly changed: (obj: ProjectChooser) => void
+    readonly get_selected: (obj: ProjectChooser) => Gio.File
+    readonly set_project_model: (obj: ProjectChooser, manager: ProjectManager, child_type: Anjuta.ProjectNodeType) => boolean
     static name: string
 }
 abstract class ProjectIface {
     /* Fields of IAnjuta-3.0.IAnjuta.ProjectIface */
-    g_iface: GObject.TypeInterface
-    file_changed: (obj: Project, node?: object | null) => void
-    node_changed: (obj: Project, node: object | null, error: GLib.Error) => void
-    node_loaded: (obj: Project, node: object | null, error: GLib.Error) => void
-    node_saved: (obj: Project, node: object | null, error: GLib.Error) => void
-    add_node_after: (obj: Project, parent: Anjuta.ProjectNode, sibling: Anjuta.ProjectNode | null, type: Anjuta.ProjectNodeType, file?: Gio.File | null, name?: string | null) => Anjuta.ProjectNode
-    add_node_before: (obj: Project, parent: Anjuta.ProjectNode, sibling: Anjuta.ProjectNode | null, type: Anjuta.ProjectNodeType, file?: Gio.File | null, name?: string | null) => Anjuta.ProjectNode
-    get_node_info: (obj: Project) => Anjuta.ProjectNodeInfo[]
-    get_root: (obj: Project) => Anjuta.ProjectNode
-    is_loaded: (obj: Project) => boolean
-    load_node: (obj: Project, node: Anjuta.ProjectNode) => boolean
-    remove_node: (obj: Project, node: Anjuta.ProjectNode) => boolean
-    remove_property: (obj: Project, node: Anjuta.ProjectNode, id: string, name?: string | null) => boolean
-    save_node: (obj: Project, node: Anjuta.ProjectNode) => boolean
-    set_property: (obj: Project, node: Anjuta.ProjectNode, id: string, name: string | null, value: string) => Anjuta.ProjectProperty | null
+    readonly g_iface: GObject.TypeInterface
+    readonly file_changed: (obj: Project, node?: object | null) => void
+    readonly node_changed: (obj: Project, node: object | null, error: GLib.Error) => void
+    readonly node_loaded: (obj: Project, node: object | null, error: GLib.Error) => void
+    readonly node_saved: (obj: Project, node: object | null, error: GLib.Error) => void
+    readonly add_node_after: (obj: Project, parent: Anjuta.ProjectNode, sibling: Anjuta.ProjectNode | null, type: Anjuta.ProjectNodeType, file?: Gio.File | null, name?: string | null) => Anjuta.ProjectNode
+    readonly add_node_before: (obj: Project, parent: Anjuta.ProjectNode, sibling: Anjuta.ProjectNode | null, type: Anjuta.ProjectNodeType, file?: Gio.File | null, name?: string | null) => Anjuta.ProjectNode
+    readonly get_node_info: (obj: Project) => Anjuta.ProjectNodeInfo[]
+    readonly get_root: (obj: Project) => Anjuta.ProjectNode
+    readonly is_loaded: (obj: Project) => boolean
+    readonly load_node: (obj: Project, node: Anjuta.ProjectNode) => boolean
+    readonly remove_node: (obj: Project, node: Anjuta.ProjectNode) => boolean
+    readonly remove_property: (obj: Project, node: Anjuta.ProjectNode, id: string, name?: string | null) => boolean
+    readonly save_node: (obj: Project, node: Anjuta.ProjectNode) => boolean
+    readonly set_property: (obj: Project, node: Anjuta.ProjectNode, id: string, name: string | null, value: string) => Anjuta.ProjectProperty | null
     static name: string
 }
 abstract class ProjectManagerIface {
     /* Fields of IAnjuta-3.0.IAnjuta.ProjectManagerIface */
-    g_iface: GObject.TypeInterface
-    element_added: (obj: ProjectManager, element: Gio.File) => void
-    element_removed: (obj: ProjectManager, element: Gio.File) => void
-    element_selected: (obj: ProjectManager, element: Gio.File) => void
-    project_loaded: (obj: ProjectManager, error: GLib.Error) => void
-    add_group: (obj: ProjectManager, name: string, default_group?: Gio.File | null) => Gio.File
-    add_source: (obj: ProjectManager, name: string, default_target?: Gio.File | null) => Gio.File
-    add_source_quiet: (obj: ProjectManager, name: string, target: Gio.File) => Gio.File
-    add_sources: (obj: ProjectManager, names: string[], default_target?: Gio.File | null) => Gio.File[]
-    add_target: (obj: ProjectManager, name: string, default_group?: Gio.File | null) => Gio.File
-    get_capabilities: (obj: ProjectManager) => number
-    get_children: (obj: ProjectManager, parent: Gio.File, children_type: number) => Gio.File[]
-    get_current_project: (obj: ProjectManager) => Project
-    get_elements: (obj: ProjectManager, element_type: Anjuta.ProjectNodeType) => Gio.File[]
-    get_packages: (obj: ProjectManager) => string[]
-    get_selected: (obj: ProjectManager) => Gio.File
-    get_target_type: (obj: ProjectManager, target: Gio.File) => Anjuta.ProjectNodeType
-    get_targets: (obj: ProjectManager, target_type: Anjuta.ProjectNodeType) => Gio.File[]
-    is_open: (obj: ProjectManager) => boolean
-    remove_file: (obj: ProjectManager, file: Gio.File) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly element_added: (obj: ProjectManager, element: Gio.File) => void
+    readonly element_removed: (obj: ProjectManager, element: Gio.File) => void
+    readonly element_selected: (obj: ProjectManager, element: Gio.File) => void
+    readonly project_loaded: (obj: ProjectManager, error: GLib.Error) => void
+    readonly add_group: (obj: ProjectManager, name: string, default_group?: Gio.File | null) => Gio.File
+    readonly add_source: (obj: ProjectManager, name: string, default_target?: Gio.File | null) => Gio.File
+    readonly add_source_quiet: (obj: ProjectManager, name: string, target: Gio.File) => Gio.File
+    readonly add_sources: (obj: ProjectManager, names: string[], default_target?: Gio.File | null) => Gio.File[]
+    readonly add_target: (obj: ProjectManager, name: string, default_group?: Gio.File | null) => Gio.File
+    readonly get_capabilities: (obj: ProjectManager) => number
+    readonly get_children: (obj: ProjectManager, parent: Gio.File, children_type: number) => Gio.File[]
+    readonly get_current_project: (obj: ProjectManager) => Project
+    readonly get_elements: (obj: ProjectManager, element_type: Anjuta.ProjectNodeType) => Gio.File[]
+    readonly get_packages: (obj: ProjectManager) => string[]
+    readonly get_selected: (obj: ProjectManager) => Gio.File
+    readonly get_target_type: (obj: ProjectManager, target: Gio.File) => Anjuta.ProjectNodeType
+    readonly get_targets: (obj: ProjectManager, target_type: Anjuta.ProjectNodeType) => Gio.File[]
+    readonly is_open: (obj: ProjectManager) => boolean
+    readonly remove_file: (obj: ProjectManager, file: Gio.File) => boolean
     static name: string
 }
 abstract class ProviderIface {
     /* Fields of IAnjuta-3.0.IAnjuta.ProviderIface */
-    g_iface: GObject.TypeInterface
-    activate: (obj: Provider, iter: Iterable, data?: object | null) => void
-    get_name: (obj: Provider) => string
-    get_start_iter: (obj: Provider) => Iterable
-    populate: (obj: Provider, iter: Iterable) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly activate: (obj: Provider, iter: Iterable, data?: object | null) => void
+    readonly get_name: (obj: Provider) => string
+    readonly get_start_iter: (obj: Provider) => Iterable
+    readonly populate: (obj: Provider, iter: Iterable) => void
     static name: string
 }
 abstract class SnippetsManagerIface {
     /* Fields of IAnjuta-3.0.IAnjuta.SnippetsManagerIface */
-    g_iface: GObject.TypeInterface
-    insert: (obj: SnippetsManager, key: string, editing_session: boolean) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly insert: (obj: SnippetsManager, key: string, editing_session: boolean) => boolean
     static name: string
 }
 abstract class StreamIface {
     /* Fields of IAnjuta-3.0.IAnjuta.StreamIface */
-    g_iface: GObject.TypeInterface
-    open: (obj: Stream, stream?: object | null) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly open: (obj: Stream, stream?: object | null) => void
     static name: string
 }
 abstract class StreamLoaderIface {
     /* Fields of IAnjuta-3.0.IAnjuta.StreamLoaderIface */
-    g_iface: LoaderIface
-    peek_interface: (obj: StreamLoader, stream?: object | null) => string
+    readonly g_iface: LoaderIface
+    readonly peek_interface: (obj: StreamLoader, stream?: object | null) => string
     static name: string
 }
 abstract class StreamSavableIface {
     /* Fields of IAnjuta-3.0.IAnjuta.StreamSavableIface */
-    g_iface: StreamIface
-    save: (obj: StreamSavable, stream?: object | null) => void
+    readonly g_iface: StreamIface
+    readonly save: (obj: StreamSavable, stream?: object | null) => void
     static name: string
 }
 abstract class SymbolIface {
     /* Fields of IAnjuta-3.0.IAnjuta.SymbolIface */
-    g_iface: GObject.TypeInterface
-    get_boolean: (obj: Symbol, field: SymbolField) => boolean
-    get_icon: (obj: Symbol) => GdkPixbuf.Pixbuf
-    get_int: (obj: Symbol, field: SymbolField) => number
-    get_string: (obj: Symbol, field: SymbolField) => string
-    get_sym_type: (obj: Symbol) => SymbolType
+    readonly g_iface: GObject.TypeInterface
+    readonly get_boolean: (obj: Symbol, field: SymbolField) => boolean
+    readonly get_icon: (obj: Symbol) => GdkPixbuf.Pixbuf
+    readonly get_int: (obj: Symbol, field: SymbolField) => number
+    readonly get_string: (obj: Symbol, field: SymbolField) => string
+    readonly get_sym_type: (obj: Symbol) => SymbolType
     static name: string
 }
 abstract class SymbolManagerIface {
     /* Fields of IAnjuta-3.0.IAnjuta.SymbolManagerIface */
-    g_iface: GObject.TypeInterface
-    prj_scan_end: (obj: SymbolManager, process_id: number) => void
-    sys_scan_end: (obj: SymbolManager, process_id: number) => void
-    activate_package: (obj: SymbolManager, pkg_name: string, pkg_version: string) => boolean
-    deactivate_all: (obj: SymbolManager) => void
-    deactivate_package: (obj: SymbolManager, pkg_name: string, pkg_version: string) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly prj_scan_end: (obj: SymbolManager, process_id: number) => void
+    readonly sys_scan_end: (obj: SymbolManager, process_id: number) => void
+    readonly activate_package: (obj: SymbolManager, pkg_name: string, pkg_version: string) => boolean
+    readonly deactivate_all: (obj: SymbolManager) => void
+    readonly deactivate_package: (obj: SymbolManager, pkg_name: string, pkg_version: string) => void
     static name: string
 }
 abstract class SymbolQueryIface {
     /* Fields of IAnjuta-3.0.IAnjuta.SymbolQueryIface */
-    g_iface: GObject.TypeInterface
-    async_result: (obj: SymbolQuery, result: GObject.Object) => void
-    cancel: (obj: SymbolQuery) => void
-    set_fields: (obj: SymbolQuery, n_fields: number, fields: SymbolField) => void
-    set_file_scope: (obj: SymbolQuery, filescope_search: SymbolQueryFileScope) => void
-    set_filters: (obj: SymbolQuery, filters: SymbolType, include_types: boolean) => void
-    set_group_by: (obj: SymbolQuery, field: SymbolField) => void
-    set_limit: (obj: SymbolQuery, limit: number) => void
-    set_mode: (obj: SymbolQuery, mode: SymbolQueryMode) => void
-    set_offset: (obj: SymbolQuery, offset: number) => void
-    set_order_by: (obj: SymbolQuery, field: SymbolField) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly async_result: (obj: SymbolQuery, result: GObject.Object) => void
+    readonly cancel: (obj: SymbolQuery) => void
+    readonly set_fields: (obj: SymbolQuery, n_fields: number, fields: SymbolField) => void
+    readonly set_file_scope: (obj: SymbolQuery, filescope_search: SymbolQueryFileScope) => void
+    readonly set_filters: (obj: SymbolQuery, filters: SymbolType, include_types: boolean) => void
+    readonly set_group_by: (obj: SymbolQuery, field: SymbolField) => void
+    readonly set_limit: (obj: SymbolQuery, limit: number) => void
+    readonly set_mode: (obj: SymbolQuery, mode: SymbolQueryMode) => void
+    readonly set_offset: (obj: SymbolQuery, offset: number) => void
+    readonly set_order_by: (obj: SymbolQuery, field: SymbolField) => void
     static name: string
 }
 abstract class TerminalIface {
     /* Fields of IAnjuta-3.0.IAnjuta.TerminalIface */
-    g_iface: GObject.TypeInterface
-    child_exited: (obj: Terminal, pid: number, status: number) => void
-    execute_command: (obj: Terminal, directory: string, command: string, environment: string[]) => number
+    readonly g_iface: GObject.TypeInterface
+    readonly child_exited: (obj: Terminal, pid: number, status: number) => void
+    readonly execute_command: (obj: Terminal, directory: string, command: string, environment: string[]) => number
     static name: string
 }
 abstract class TodoIface {
     /* Fields of IAnjuta-3.0.IAnjuta.TodoIface */
-    g_iface: GObject.TypeInterface
-    load: (obj: Todo, file: Gio.File) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly load: (obj: Todo, file: Gio.File) => void
     static name: string
 }
 abstract class VcsIface {
     /* Fields of IAnjuta-3.0.IAnjuta.VcsIface */
-    g_iface: GObject.TypeInterface
-    status_changed: (obj: Vcs) => void
-    add: (obj: Vcs, files: Gio.File[], notify: Anjuta.AsyncNotify) => void
-    checkout: (obj: Vcs, repository_location: string, dest: Gio.File, cancel: Gio.Cancellable | null, notify: Anjuta.AsyncNotify) => void
-    remove: (obj: Vcs, files: Gio.File[], notify: Anjuta.AsyncNotify) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly status_changed: (obj: Vcs) => void
+    readonly add: (obj: Vcs, files: Gio.File[], notify: Anjuta.AsyncNotify) => void
+    readonly checkout: (obj: Vcs, repository_location: string, dest: Gio.File, cancel: Gio.Cancellable | null, notify: Anjuta.AsyncNotify) => void
+    readonly remove: (obj: Vcs, files: Gio.File[], notify: Anjuta.AsyncNotify) => void
     static name: string
 }
 abstract class WizardIface {
     /* Fields of IAnjuta-3.0.IAnjuta.WizardIface */
-    g_iface: GObject.TypeInterface
-    activate: (obj: Wizard) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly activate: (obj: Wizard) => void
     static name: string
 }
-type BuilderHandle = object
-type LanguageId = number
+    type BuilderHandle = object
+    type LanguageId = number
 }
 export default IAnjuta;

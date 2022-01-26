@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GtkClutter-1.0
  */
@@ -29,7 +35,8 @@ enum TextureError {
 }
 function init(argv?: string[] | null): [ /* returnType */ Clutter.InitError, /* argv */ string[] | null ]
 function init_with_args(argv?: string[] | null, parameter_string?: string | null, entries?: GLib.OptionEntry[] | null, translation_domain?: string | null): [ /* returnType */ Clutter.InitError, /* argv */ string[] | null ]
-export interface Actor_ConstructProps extends Clutter.Actor_ConstructProps {
+interface Actor_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of GtkClutter-1.0.GtkClutter.Actor */
     contents?: Gtk.Widget
 }
 class Actor {
@@ -119,9 +126,9 @@ class Actor {
     y_expand: boolean
     z_position: number
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GtkClutter-1.0.GtkClutter.Actor */
     get_contents(): Gtk.Widget
     get_widget(): Gtk.Widget
@@ -749,7 +756,8 @@ class Actor {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface Embed_ConstructProps extends Gtk.Container_ConstructProps {
+interface Embed_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of GtkClutter-1.0.GtkClutter.Embed */
     use_layout_size?: boolean
 }
 class Embed {
@@ -800,11 +808,11 @@ class Embed {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GtkClutter-1.0.GtkClutter.Embed */
     get_stage(): Clutter.Actor
     get_use_layout_size(): boolean
@@ -813,7 +821,7 @@ class Embed {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1128,6 +1136,7 @@ class Embed {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of GtkClutter-1.0.GtkClutter.Embed */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1563,7 +1572,7 @@ class Embed {
     static new(): Embed
     static $gtype: GObject.Type
 }
-export interface Texture_ConstructProps extends Clutter.Texture_ConstructProps {
+interface Texture_ConstructProps extends Clutter.Texture_ConstructProps {
 }
 class Texture {
     /* Properties of Clutter-1.0.Clutter.Texture */
@@ -1662,9 +1671,9 @@ class Texture {
     y_expand: boolean
     z_position: number
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GtkClutter-1.0.GtkClutter.Texture */
     set_from_icon_name(widget: Gtk.Widget | null, icon_name: string, icon_size: Gtk.IconSize): boolean
     set_from_pixbuf(pixbuf: GdkPixbuf.Pixbuf): boolean
@@ -1682,13 +1691,13 @@ class Texture {
     get_pixel_format(): Cogl.PixelFormat
     get_repeat(): [ /* repeat_x */ boolean, /* repeat_y */ boolean ]
     get_sync_size(): boolean
-    set_area_from_rgb_data(data: Uint8Array[], has_alpha: boolean, x: number, y: number, width: number, height: number, rowstride: number, bpp: number, flags: Clutter.TextureFlags): boolean
+    set_area_from_rgb_data(data: Uint8Array, has_alpha: boolean, x: number, y: number, width: number, height: number, rowstride: number, bpp: number, flags: Clutter.TextureFlags): boolean
     set_cogl_material(cogl_material: Cogl.Handle): void
     set_cogl_texture(cogl_tex: Cogl.Handle): void
     set_filter_quality(filter_quality: Clutter.TextureQuality): void
     set_from_file(filename: string): boolean
-    set_from_rgb_data(data: Uint8Array[], has_alpha: boolean, width: number, height: number, rowstride: number, bpp: number, flags: Clutter.TextureFlags): boolean
-    set_from_yuv_data(data: Uint8Array[], width: number, height: number, flags: Clutter.TextureFlags): boolean
+    set_from_rgb_data(data: Uint8Array, has_alpha: boolean, width: number, height: number, rowstride: number, bpp: number, flags: Clutter.TextureFlags): boolean
+    set_from_yuv_data(data: Uint8Array, width: number, height: number, flags: Clutter.TextureFlags): boolean
     set_keep_aspect_ratio(keep_aspect: boolean): void
     set_load_async(load_async: boolean): void
     set_load_data_async(load_async: boolean): void
@@ -2353,7 +2362,7 @@ class Texture {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface Window_ConstructProps extends Gtk.Window_ConstructProps {
+interface Window_ConstructProps extends Gtk.Window_ConstructProps {
 }
 class Window {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -2434,16 +2443,16 @@ class Window {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GtkClutter-1.0.GtkClutter.Window */
     get_stage(): Clutter.Actor
     /* Methods of Gtk-3.0.Gtk.Window */
@@ -2559,7 +2568,7 @@ class Window {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2803,6 +2812,7 @@ class Window {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -2871,6 +2881,7 @@ class Window {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of GtkClutter-1.0.GtkClutter.Window */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3388,6 +3399,7 @@ class Window {
     _init (config?: Window_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Window
+    /* Function overloads */
     static new(type: Gtk.WindowType): Window
     static $gtype: GObject.Type
 }

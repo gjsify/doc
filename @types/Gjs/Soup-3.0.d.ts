@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Soup-3.0
  */
@@ -209,18 +215,18 @@ enum ServerListenOptions {
     IPV4_ONLY,
     IPV6_ONLY,
 }
-export const COOKIE_MAX_AGE_ONE_DAY: number
-export const COOKIE_MAX_AGE_ONE_HOUR: number
-export const COOKIE_MAX_AGE_ONE_WEEK: number
-export const COOKIE_MAX_AGE_ONE_YEAR: number
-export const FORM_MIME_TYPE_MULTIPART: string
-export const FORM_MIME_TYPE_URLENCODED: string
-export const HSTS_POLICY_MAX_AGE_PAST: number
-export const HTTP_URI_FLAGS: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const VERSION_MIN_REQUIRED: number
+const COOKIE_MAX_AGE_ONE_DAY: number
+const COOKIE_MAX_AGE_ONE_HOUR: number
+const COOKIE_MAX_AGE_ONE_WEEK: number
+const COOKIE_MAX_AGE_ONE_YEAR: number
+const FORM_MIME_TYPE_MULTIPART: string
+const FORM_MIME_TYPE_URLENCODED: string
+const HSTS_POLICY_MAX_AGE_PAST: number
+const HTTP_URI_FLAGS: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const VERSION_MIN_REQUIRED: number
 function check_version(major: number, minor: number, micro: number): boolean
 function cookie_parse(header: string, origin?: GLib.Uri | null): Cookie | null
 function cookies_from_request(msg: Message): Cookie[]
@@ -294,7 +300,8 @@ interface ServerWebsocketCallback {
 class SessionFeature {
     static name: string
 }
-export interface Auth_ConstructProps extends GObject.Object_ConstructProps {
+interface Auth_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.Auth */
     authority?: string
     is_for_proxy?: boolean
     realm?: string
@@ -307,10 +314,8 @@ class Auth {
     is_for_proxy: boolean
     realm: string
     readonly scheme_name: string
-    /* Fields of Soup-3.0.Soup.Auth */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Auth */
     authenticate(username: string, password: string): void
     can_authenticate(): boolean
@@ -388,7 +393,7 @@ class Auth {
     static new(type: GObject.Type, msg: Message, auth_header: string): Auth
     static $gtype: GObject.Type
 }
-export interface AuthBasic_ConstructProps extends Auth_ConstructProps {
+interface AuthBasic_ConstructProps extends Auth_ConstructProps {
 }
 class AuthBasic {
     /* Properties of Soup-3.0.Soup.Auth */
@@ -399,9 +404,9 @@ class AuthBasic {
     realm: string
     readonly scheme_name: string
     /* Fields of Soup-3.0.Soup.Auth */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Auth */
     authenticate(username: string, password: string): void
     can_authenticate(): boolean
@@ -477,7 +482,7 @@ class AuthBasic {
     _init (config?: AuthBasic_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AuthDigest_ConstructProps extends Auth_ConstructProps {
+interface AuthDigest_ConstructProps extends Auth_ConstructProps {
 }
 class AuthDigest {
     /* Properties of Soup-3.0.Soup.Auth */
@@ -488,9 +493,9 @@ class AuthDigest {
     realm: string
     readonly scheme_name: string
     /* Fields of Soup-3.0.Soup.Auth */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Auth */
     authenticate(username: string, password: string): void
     can_authenticate(): boolean
@@ -566,7 +571,8 @@ class AuthDigest {
     _init (config?: AuthDigest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AuthDomain_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthDomain_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.AuthDomain */
     filter?: AuthDomainFilter
     filter_data?: object
     generic_auth_callback?: AuthDomainGenericAuthCallback
@@ -580,10 +586,8 @@ class AuthDomain {
     filter_data: object
     generic_auth_callback: AuthDomainGenericAuthCallback
     generic_auth_data: object
-    /* Fields of Soup-3.0.Soup.AuthDomain */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.AuthDomain */
     accepts(msg: ServerMessage): string | null
     add_path(path: string): void
@@ -650,7 +654,8 @@ class AuthDomain {
     _init (config?: AuthDomain_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AuthDomainBasic_ConstructProps extends AuthDomain_ConstructProps {
+interface AuthDomainBasic_ConstructProps extends AuthDomain_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.AuthDomainBasic */
     auth_callback?: AuthDomainBasicAuthCallback
     auth_data?: object
 }
@@ -664,9 +669,9 @@ class AuthDomainBasic {
     generic_auth_callback: AuthDomainGenericAuthCallback
     generic_auth_data: object
     /* Fields of Soup-3.0.Soup.AuthDomain */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.AuthDomainBasic */
     set_auth_callback(callback: AuthDomainBasicAuthCallback): void
     /* Methods of Soup-3.0.Soup.AuthDomain */
@@ -739,7 +744,8 @@ class AuthDomainBasic {
     _init (config?: AuthDomainBasic_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AuthDomainDigest_ConstructProps extends AuthDomain_ConstructProps {
+interface AuthDomainDigest_ConstructProps extends AuthDomain_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.AuthDomainDigest */
     auth_callback?: AuthDomainDigestAuthCallback
     auth_data?: object
 }
@@ -753,9 +759,9 @@ class AuthDomainDigest {
     generic_auth_callback: AuthDomainGenericAuthCallback
     generic_auth_data: object
     /* Fields of Soup-3.0.Soup.AuthDomain */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.AuthDomainDigest */
     set_auth_callback(callback: AuthDomainDigestAuthCallback): void
     /* Methods of Soup-3.0.Soup.AuthDomain */
@@ -830,11 +836,11 @@ class AuthDomainDigest {
     static encode_password(username: string, realm: string, password: string): string
     static $gtype: GObject.Type
 }
-export interface AuthManager_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AuthManager {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.AuthManager */
     clear_cached_credentials(): void
     use_auth(uri: GLib.Uri, auth: Auth): void
@@ -885,7 +891,7 @@ class AuthManager {
     _init (config?: AuthManager_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AuthNTLM_ConstructProps extends Auth_ConstructProps {
+interface AuthNTLM_ConstructProps extends Auth_ConstructProps {
 }
 class AuthNTLM {
     /* Properties of Soup-3.0.Soup.Auth */
@@ -896,9 +902,9 @@ class AuthNTLM {
     realm: string
     readonly scheme_name: string
     /* Fields of Soup-3.0.Soup.Auth */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Auth */
     authenticate(username: string, password: string): void
     can_authenticate(): boolean
@@ -974,7 +980,7 @@ class AuthNTLM {
     _init (config?: AuthNTLM_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AuthNegotiate_ConstructProps extends Auth_ConstructProps {
+interface AuthNegotiate_ConstructProps extends Auth_ConstructProps {
 }
 class AuthNegotiate {
     /* Properties of Soup-3.0.Soup.Auth */
@@ -985,9 +991,9 @@ class AuthNegotiate {
     realm: string
     readonly scheme_name: string
     /* Fields of Soup-3.0.Soup.Auth */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Auth */
     authenticate(username: string, password: string): void
     can_authenticate(): boolean
@@ -1065,15 +1071,14 @@ class AuthNegotiate {
     static supported(): boolean
     static $gtype: GObject.Type
 }
-export interface Cache_ConstructProps extends GObject.Object_ConstructProps {
+interface Cache_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.Cache */
     cache_dir?: string
     cache_type?: CacheType
 }
 class Cache {
-    /* Fields of Soup-3.0.Soup.Cache */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Cache */
     clear(): void
     dump(): void
@@ -1128,11 +1133,11 @@ class Cache {
     static new(cache_dir: string | null, cache_type: CacheType): Cache
     static $gtype: GObject.Type
 }
-export interface ContentDecoder_ConstructProps extends GObject.Object_ConstructProps {
+interface ContentDecoder_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ContentDecoder {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1176,11 +1181,11 @@ class ContentDecoder {
     _init (config?: ContentDecoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ContentSniffer_ConstructProps extends GObject.Object_ConstructProps {
+interface ContentSniffer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ContentSniffer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.ContentSniffer */
     sniff(msg: Message, buffer: GLib.Bytes): [ /* returnType */ string, /* params */ GLib.HashTable | null ]
     /* Methods of GObject-2.0.GObject.Object */
@@ -1228,17 +1233,16 @@ class ContentSniffer {
     static new(): ContentSniffer
     static $gtype: GObject.Type
 }
-export interface CookieJar_ConstructProps extends GObject.Object_ConstructProps {
+interface CookieJar_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.CookieJar */
     accept_policy?: CookieJarAcceptPolicy
     read_only?: boolean
 }
 class CookieJar {
     /* Properties of Soup-3.0.Soup.CookieJar */
     accept_policy: CookieJarAcceptPolicy
-    /* Fields of Soup-3.0.Soup.CookieJar */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.CookieJar */
     add_cookie(cookie: Cookie): void
     add_cookie_full(cookie: Cookie, uri?: GLib.Uri | null, first_party?: GLib.Uri | null): void
@@ -1308,16 +1312,17 @@ class CookieJar {
     static new(): CookieJar
     static $gtype: GObject.Type
 }
-export interface CookieJarDB_ConstructProps extends CookieJar_ConstructProps {
+interface CookieJarDB_ConstructProps extends CookieJar_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.CookieJarDB */
     filename?: string
 }
 class CookieJarDB {
     /* Properties of Soup-3.0.Soup.CookieJar */
     accept_policy: CookieJarAcceptPolicy
     /* Fields of Soup-3.0.Soup.CookieJar */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.CookieJar */
     add_cookie(cookie: Cookie): void
     add_cookie_full(cookie: Cookie, uri?: GLib.Uri | null, first_party?: GLib.Uri | null): void
@@ -1385,19 +1390,21 @@ class CookieJarDB {
     _init (config?: CookieJarDB_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(filename: string, read_only: boolean): CookieJarDB
+    /* Function overloads */
     static new(): CookieJarDB
     static $gtype: GObject.Type
 }
-export interface CookieJarText_ConstructProps extends CookieJar_ConstructProps {
+interface CookieJarText_ConstructProps extends CookieJar_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.CookieJarText */
     filename?: string
 }
 class CookieJarText {
     /* Properties of Soup-3.0.Soup.CookieJar */
     accept_policy: CookieJarAcceptPolicy
     /* Fields of Soup-3.0.Soup.CookieJar */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.CookieJar */
     add_cookie(cookie: Cookie): void
     add_cookie_full(cookie: Cookie, uri?: GLib.Uri | null, first_party?: GLib.Uri | null): void
@@ -1465,16 +1472,15 @@ class CookieJarText {
     _init (config?: CookieJarText_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(filename: string, read_only: boolean): CookieJarText
+    /* Function overloads */
     static new(): CookieJarText
     static $gtype: GObject.Type
 }
-export interface HSTSEnforcer_ConstructProps extends GObject.Object_ConstructProps {
+interface HSTSEnforcer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HSTSEnforcer {
-    /* Fields of Soup-3.0.Soup.HSTSEnforcer */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.HSTSEnforcer */
     get_domains(session_policies: boolean): string[]
     get_policies(session_policies: boolean): HSTSPolicy[]
@@ -1535,14 +1541,15 @@ class HSTSEnforcer {
     static new(): HSTSEnforcer
     static $gtype: GObject.Type
 }
-export interface HSTSEnforcerDB_ConstructProps extends HSTSEnforcer_ConstructProps {
+interface HSTSEnforcerDB_ConstructProps extends HSTSEnforcer_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.HSTSEnforcerDB */
     filename?: string
 }
 class HSTSEnforcerDB {
     /* Fields of Soup-3.0.Soup.HSTSEnforcer */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.HSTSEnforcer */
     get_domains(session_policies: boolean): string[]
     get_policies(session_policies: boolean): HSTSPolicy[]
@@ -1601,10 +1608,12 @@ class HSTSEnforcerDB {
     _init (config?: HSTSEnforcerDB_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(filename: string): HSTSEnforcerDB
+    /* Function overloads */
     static new(): HSTSEnforcerDB
     static $gtype: GObject.Type
 }
-export interface Logger_ConstructProps extends GObject.Object_ConstructProps {
+interface Logger_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.Logger */
     level?: LoggerLogLevel
     max_body_size?: number
 }
@@ -1613,7 +1622,7 @@ class Logger {
     level: LoggerLogLevel
     max_body_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Logger */
     get_max_body_size(): number
     set_max_body_size(max_body_size: number): void
@@ -1669,7 +1678,8 @@ class Logger {
     static new(level: LoggerLogLevel): Logger
     static $gtype: GObject.Type
 }
-export interface Message_ConstructProps extends GObject.Object_ConstructProps {
+interface Message_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.Message */
     first_party?: GLib.Uri
     flags?: MessageFlags
     is_options_ping?: boolean
@@ -1700,7 +1710,7 @@ class Message {
     readonly tls_protocol_version: Gio.TlsProtocolVersion
     uri: GLib.Uri
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Message */
     add_flags(flags: MessageFlags): void
     disable_feature(feature_type: GObject.Type): void
@@ -1874,17 +1884,18 @@ class Message {
     static new_options_ping(base_uri: GLib.Uri): Message
     static $gtype: GObject.Type
 }
-export interface MultipartInputStream_ConstructProps extends Gio.FilterInputStream_ConstructProps {
+interface MultipartInputStream_ConstructProps extends Gio.FilterInputStream_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.MultipartInputStream */
     message?: Message
 }
 class MultipartInputStream {
     /* Properties of Gio-2.0.Gio.FilterInputStream */
     close_base_stream: boolean
     /* Fields of Gio-2.0.Gio.FilterInputStream */
-    parent_instance: Gio.InputStream
-    base_stream: Gio.InputStream
+    readonly parent_instance: Gio.InputStream
+    readonly base_stream: Gio.InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.MultipartInputStream */
     get_headers(): MessageHeaders | null
     next_part(cancellable?: Gio.Cancellable | null): Gio.InputStream | null
@@ -1901,11 +1912,11 @@ class MultipartInputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -1940,17 +1951,17 @@ class MultipartInputStream {
     can_poll(): boolean
     create_source(cancellable?: Gio.Cancellable | null): GLib.Source
     is_readable(): boolean
-    read_nonblocking(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
+    read_nonblocking(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
     /* Virtual methods of Soup-3.0.Soup.MultipartInputStream */
     vfunc_can_poll(): boolean
     vfunc_create_source(cancellable?: Gio.Cancellable | null): GLib.Source
     vfunc_is_readable(): boolean
-    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array[] | null ]
+    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array | null ]
     /* Virtual methods of Gio-2.0.Gio.InputStream */
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -1981,7 +1992,8 @@ class MultipartInputStream {
     static new(msg: Message, base_stream: Gio.InputStream): MultipartInputStream
     static $gtype: GObject.Type
 }
-export interface Server_ConstructProps extends GObject.Object_ConstructProps {
+interface Server_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.Server */
     raw_paths?: boolean
     server_header?: string
     tls_auth_mode?: Gio.TlsAuthenticationMode
@@ -1994,10 +2006,8 @@ class Server {
     tls_auth_mode: Gio.TlsAuthenticationMode
     tls_certificate: Gio.TlsCertificate
     tls_database: Gio.TlsDatabase
-    /* Fields of Soup-3.0.Soup.Server */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Server */
     accept_iostream(stream: Gio.IOStream, local_addr?: Gio.SocketAddress | null, remote_addr?: Gio.SocketAddress | null): boolean
     add_auth_domain(auth_domain: AuthDomain): void
@@ -2093,11 +2103,11 @@ class Server {
     _init (config?: Server_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ServerMessage_ConstructProps extends GObject.Object_ConstructProps {
+interface ServerMessage_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServerMessage {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.ServerMessage */
     get_http_version(): HTTPVersion
     get_local_address(): Gio.SocketAddress | null
@@ -2115,7 +2125,7 @@ class ServerMessage {
     is_options_ping(): boolean
     set_http_version(version: HTTPVersion): void
     set_redirect(status_code: number, redirect_uri: string): void
-    set_response(content_type: string | null, resp_use: MemoryUse, resp_body: Uint8Array[] | null): void
+    set_response(content_type: string | null, resp_use: MemoryUse, resp_body: Uint8Array | null): void
     set_status(status_code: number, reason_phrase?: string | null): void
     steal_connection(): Gio.IOStream
     /* Methods of GObject-2.0.GObject.Object */
@@ -2195,7 +2205,8 @@ class ServerMessage {
     _init (config?: ServerMessage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Session_ConstructProps extends GObject.Object_ConstructProps {
+interface Session_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.Session */
     accept_language?: string
     accept_language_auto?: boolean
     idle_timeout?: number
@@ -2219,10 +2230,8 @@ class Session {
     tls_database: Gio.TlsDatabase
     tls_interaction: Gio.TlsInteraction
     user_agent: string
-    /* Fields of Soup-3.0.Soup.Session */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.Session */
     abort(): void
     add_feature(feature: SessionFeature): void
@@ -2334,7 +2343,8 @@ class Session {
     static new(): Session
     static $gtype: GObject.Type
 }
-export interface WebsocketConnection_ConstructProps extends GObject.Object_ConstructProps {
+interface WebsocketConnection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Soup-3.0.Soup.WebsocketConnection */
     connection_type?: WebsocketConnectionType
     extensions?: object
     io_stream?: Gio.IOStream
@@ -2350,7 +2360,7 @@ class WebsocketConnection {
     max_incoming_payload_size: number
     readonly state: WebsocketState
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.WebsocketConnection */
     close(code: number, data?: string | null): void
     get_close_code(): number
@@ -2364,7 +2374,7 @@ class WebsocketConnection {
     get_protocol(): string | null
     get_state(): WebsocketState
     get_uri(): GLib.Uri
-    send_binary(data: Uint8Array[] | null): void
+    send_binary(data: Uint8Array | null): void
     send_message(type: WebsocketDataType, message: GLib.Bytes): void
     send_text(text: string): void
     set_keepalive_interval(interval: number): void
@@ -2436,13 +2446,11 @@ class WebsocketConnection {
     static new(stream: Gio.IOStream, uri: GLib.Uri, type: WebsocketConnectionType, origin: string | null, protocol: string | null, extensions: WebsocketExtension[]): WebsocketConnection
     static $gtype: GObject.Type
 }
-export interface WebsocketExtension_ConstructProps extends GObject.Object_ConstructProps {
+interface WebsocketExtension_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WebsocketExtension {
-    /* Fields of Soup-3.0.Soup.WebsocketExtension */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.WebsocketExtension */
     configure(connection_type: WebsocketConnectionType, params?: GLib.HashTable | null): boolean
     get_request_params(): string | null
@@ -2498,13 +2506,13 @@ class WebsocketExtension {
     _init (config?: WebsocketExtension_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebsocketExtensionDeflate_ConstructProps extends WebsocketExtension_ConstructProps {
+interface WebsocketExtensionDeflate_ConstructProps extends WebsocketExtension_ConstructProps {
 }
 class WebsocketExtensionDeflate {
     /* Fields of Soup-3.0.Soup.WebsocketExtension */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-3.0.Soup.WebsocketExtension */
     configure(connection_type: WebsocketConnectionType, params?: GLib.HashTable | null): boolean
     get_request_params(): string | null
@@ -2560,11 +2568,11 @@ class WebsocketExtensionDeflate {
     _init (config?: WebsocketExtensionDeflate_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebsocketExtensionManager_ConstructProps extends GObject.Object_ConstructProps {
+interface WebsocketExtensionManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WebsocketExtensionManager {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2610,48 +2618,48 @@ class WebsocketExtensionManager {
 }
 abstract class AuthClass {
     /* Fields of Soup-3.0.Soup.AuthClass */
-    parent_class: GObject.ObjectClass
-    scheme_name: string
-    strength: number
-    update: (auth: Auth, msg: Message, auth_header: GLib.HashTable) => boolean
-    get_protection_space: (auth: Auth, source_uri: GLib.Uri) => string[]
-    authenticate: (auth: Auth, username: string, password: string) => void
-    is_authenticated: (auth: Auth) => boolean
-    get_authorization: (auth: Auth, msg: Message) => string
-    is_ready: (auth: Auth, msg: Message) => boolean
-    can_authenticate: (auth: Auth) => boolean
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly scheme_name: string
+    readonly strength: number
+    readonly update: (auth: Auth, msg: Message, auth_header: GLib.HashTable) => boolean
+    readonly get_protection_space: (auth: Auth, source_uri: GLib.Uri) => string[]
+    readonly authenticate: (auth: Auth, username: string, password: string) => void
+    readonly is_authenticated: (auth: Auth) => boolean
+    readonly get_authorization: (auth: Auth, msg: Message) => string
+    readonly is_ready: (auth: Auth, msg: Message) => boolean
+    readonly can_authenticate: (auth: Auth) => boolean
+    readonly padding: object[]
     static name: string
 }
 abstract class AuthDomainBasicClass {
     /* Fields of Soup-3.0.Soup.AuthDomainBasicClass */
-    parent_class: AuthDomainClass
+    readonly parent_class: AuthDomainClass
     static name: string
 }
 abstract class AuthDomainClass {
     /* Fields of Soup-3.0.Soup.AuthDomainClass */
-    parent_class: GObject.ObjectClass
-    accepts: (domain: AuthDomain, msg: ServerMessage, header: string) => string
-    challenge: (domain: AuthDomain, msg: ServerMessage) => string
-    check_password: (domain: AuthDomain, msg: ServerMessage, username: string, password: string) => boolean
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly accepts: (domain: AuthDomain, msg: ServerMessage, header: string) => string
+    readonly challenge: (domain: AuthDomain, msg: ServerMessage) => string
+    readonly check_password: (domain: AuthDomain, msg: ServerMessage, username: string, password: string) => boolean
+    readonly padding: object[]
     static name: string
 }
 abstract class AuthDomainDigestClass {
     /* Fields of Soup-3.0.Soup.AuthDomainDigestClass */
-    parent_class: AuthDomainClass
+    readonly parent_class: AuthDomainClass
     static name: string
 }
 abstract class AuthManagerClass {
     /* Fields of Soup-3.0.Soup.AuthManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CacheClass {
     /* Fields of Soup-3.0.Soup.CacheClass */
-    parent_class: GObject.ObjectClass
-    get_cacheability: (cache: Cache, msg: Message) => Cacheability
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly get_cacheability: (cache: Cache, msg: Message) => Cacheability
+    readonly padding: object[]
     static name: string
 }
 class ClientMessageIO {
@@ -2662,12 +2670,12 @@ class Connection {
 }
 abstract class ContentDecoderClass {
     /* Fields of Soup-3.0.Soup.ContentDecoderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ContentSnifferClass {
     /* Fields of Soup-3.0.Soup.ContentSnifferClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Cookie {
@@ -2705,34 +2713,34 @@ class Cookie {
 }
 abstract class CookieJarClass {
     /* Fields of Soup-3.0.Soup.CookieJarClass */
-    parent_class: GObject.ObjectClass
-    save: (jar: CookieJar) => void
-    is_persistent: (jar: CookieJar) => boolean
-    changed: (jar: CookieJar, old_cookie: Cookie, new_cookie: Cookie) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly save: (jar: CookieJar) => void
+    readonly is_persistent: (jar: CookieJar) => boolean
+    readonly changed: (jar: CookieJar, old_cookie: Cookie, new_cookie: Cookie) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class CookieJarDBClass {
     /* Fields of Soup-3.0.Soup.CookieJarDBClass */
-    parent_class: CookieJarClass
+    readonly parent_class: CookieJarClass
     static name: string
 }
 abstract class CookieJarTextClass {
     /* Fields of Soup-3.0.Soup.CookieJarTextClass */
-    parent_class: CookieJarClass
+    readonly parent_class: CookieJarClass
     static name: string
 }
 abstract class HSTSEnforcerClass {
     /* Fields of Soup-3.0.Soup.HSTSEnforcerClass */
-    parent_class: GObject.ObjectClass
-    is_persistent: (hsts_enforcer: HSTSEnforcer) => boolean
-    has_valid_policy: (hsts_enforcer: HSTSEnforcer, domain: string) => boolean
-    changed: (enforcer: HSTSEnforcer, old_policy: HSTSPolicy, new_policy: HSTSPolicy) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly is_persistent: (hsts_enforcer: HSTSEnforcer) => boolean
+    readonly has_valid_policy: (hsts_enforcer: HSTSEnforcer, domain: string) => boolean
+    readonly changed: (enforcer: HSTSEnforcer, old_policy: HSTSPolicy, new_policy: HSTSPolicy) => void
     static name: string
 }
 abstract class HSTSEnforcerDBClass {
     /* Fields of Soup-3.0.Soup.HSTSEnforcerDBClass */
-    parent_class: HSTSEnforcerClass
+    readonly parent_class: HSTSEnforcerClass
     static name: string
 }
 class HSTSPolicy {
@@ -2757,16 +2765,16 @@ class HSTSPolicy {
 }
 abstract class LoggerClass {
     /* Fields of Soup-3.0.Soup.LoggerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MessageBody {
     /* Fields of Soup-3.0.Soup.MessageBody */
-    data: Uint8Array[]
-    length: number
+    readonly data: Uint8Array
+    readonly length: number
     /* Methods of Soup-3.0.Soup.MessageBody */
     append_bytes(buffer: GLib.Bytes): void
-    append(data: Uint8Array[]): void
+    append(data: Uint8Array): void
     complete(): void
     flatten(): GLib.Bytes
     get_accumulate(): boolean
@@ -2785,7 +2793,7 @@ class MessageBody {
 }
 abstract class MessageClass {
     /* Fields of Soup-3.0.Soup.MessageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MessageHeaders {
@@ -2877,35 +2885,35 @@ class Multipart {
 }
 abstract class MultipartInputStreamClass {
     /* Fields of Soup-3.0.Soup.MultipartInputStreamClass */
-    parent_class: Gio.FilterInputStreamClass
+    readonly parent_class: Gio.FilterInputStreamClass
     static name: string
 }
 class Range {
     /* Fields of Soup-3.0.Soup.Range */
-    start: number
-    end: number
+    readonly start: number
+    readonly end: number
     static name: string
 }
 abstract class ServerClass {
     /* Fields of Soup-3.0.Soup.ServerClass */
-    parent_class: GObject.ObjectClass
-    request_started: (server: Server, msg: ServerMessage) => void
-    request_read: (server: Server, msg: ServerMessage) => void
-    request_finished: (server: Server, msg: ServerMessage) => void
-    request_aborted: (server: Server, msg: ServerMessage) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly request_started: (server: Server, msg: ServerMessage) => void
+    readonly request_read: (server: Server, msg: ServerMessage) => void
+    readonly request_finished: (server: Server, msg: ServerMessage) => void
+    readonly request_aborted: (server: Server, msg: ServerMessage) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class ServerMessageClass {
     /* Fields of Soup-3.0.Soup.ServerMessageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SessionClass {
     /* Fields of Soup-3.0.Soup.SessionClass */
-    parent_class: GObject.ObjectClass
-    request_queued: (session: Session, msg: Message) => void
-    request_unqueued: (session: Session, msg: Message) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly request_queued: (session: Session, msg: Message) => void
+    readonly request_unqueued: (session: Session, msg: Message) => void
     static name: string
 }
 abstract class SessionFeatureInterface {
@@ -2916,28 +2924,28 @@ class Socket {
 }
 abstract class WebsocketConnectionClass {
     /* Fields of Soup-3.0.Soup.WebsocketConnectionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class WebsocketExtensionClass {
     /* Fields of Soup-3.0.Soup.WebsocketExtensionClass */
-    parent_class: GObject.ObjectClass
-    name: string
-    configure: (extension: WebsocketExtension, connection_type: WebsocketConnectionType, params?: GLib.HashTable | null) => boolean
-    get_request_params: (extension: WebsocketExtension) => string | null
-    get_response_params: (extension: WebsocketExtension) => string | null
-    process_outgoing_message: (extension: WebsocketExtension, header: number, payload: GLib.Bytes) => [ /* returnType */ GLib.Bytes, /* header */ number ]
-    process_incoming_message: (extension: WebsocketExtension, header: number, payload: GLib.Bytes) => [ /* returnType */ GLib.Bytes, /* header */ number ]
+    readonly parent_class: GObject.ObjectClass
+    readonly name: string
+    readonly configure: (extension: WebsocketExtension, connection_type: WebsocketConnectionType, params?: GLib.HashTable | null) => boolean
+    readonly get_request_params: (extension: WebsocketExtension) => string | null
+    readonly get_response_params: (extension: WebsocketExtension) => string | null
+    readonly process_outgoing_message: (extension: WebsocketExtension, header: number, payload: GLib.Bytes) => [ /* returnType */ GLib.Bytes, /* header */ number ]
+    readonly process_incoming_message: (extension: WebsocketExtension, header: number, payload: GLib.Bytes) => [ /* returnType */ GLib.Bytes, /* header */ number ]
     static name: string
 }
 abstract class WebsocketExtensionDeflateClass {
     /* Fields of Soup-3.0.Soup.WebsocketExtensionDeflateClass */
-    parent_class: WebsocketExtensionClass
+    readonly parent_class: WebsocketExtensionClass
     static name: string
 }
 abstract class WebsocketExtensionManagerClass {
     /* Fields of Soup-3.0.Soup.WebsocketExtensionManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Poppler-0.18
  */
@@ -42,7 +48,7 @@ enum AdditionalActionType {
     CALCULATE_FIELD,
 }
 enum AnnotExternalDataType {
-    /* 3D (invalid, starts with a number) */
+    TODO_3D,
     UNKNOWN,
 }
 enum AnnotFreeTextQuadding {
@@ -90,7 +96,7 @@ enum AnnotType {
     PRINTER_MARK,
     TRAP_NET,
     WATERMARK,
-    /* 3D (invalid, starts with a number) */
+    TODO_3D,
 }
 enum Backend {
     UNKNOWN,
@@ -170,14 +176,14 @@ enum PDFConformance {
 }
 enum PDFPart {
     UNSET,
-    /* 1 (invalid, starts with a number) */
-    /* 2 (invalid, starts with a number) */
-    /* 3 (invalid, starts with a number) */
-    /* 4 (invalid, starts with a number) */
-    /* 5 (invalid, starts with a number) */
-    /* 6 (invalid, starts with a number) */
-    /* 7 (invalid, starts with a number) */
-    /* 8 (invalid, starts with a number) */
+    TODO_1,
+    TODO_2,
+    TODO_3,
+    TODO_4,
+    TODO_5,
+    TODO_6,
+    TODO_7,
+    TODO_8,
     NONE,
 }
 enum PDFSubtype {
@@ -328,10 +334,10 @@ enum StructureFormState {
 }
 enum StructureGlyphOrientation {
     AUTO,
-    /* 0 (invalid, starts with a number) */
-    /* 90 (invalid, starts with a number) */
-    /* 180 (invalid, starts with a number) */
-    /* 270 (invalid, starts with a number) */
+    TODO_0,
+    TODO_90,
+    TODO_180,
+    TODO_270,
 }
 enum StructureInlineAlign {
     START,
@@ -442,36 +448,36 @@ enum ViewerPreferences {
     DISPLAY_DOC_TITLE,
     DIRECTION_RTL,
 }
-export const ANNOT_TEXT_ICON_CIRCLE: string
-export const ANNOT_TEXT_ICON_COMMENT: string
-export const ANNOT_TEXT_ICON_CROSS: string
-export const ANNOT_TEXT_ICON_HELP: string
-export const ANNOT_TEXT_ICON_INSERT: string
-export const ANNOT_TEXT_ICON_KEY: string
-export const ANNOT_TEXT_ICON_NEW_PARAGRAPH: string
-export const ANNOT_TEXT_ICON_NOTE: string
-export const ANNOT_TEXT_ICON_PARAGRAPH: string
-export const HAS_CAIRO: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const ANNOT_TEXT_ICON_CIRCLE: string
+const ANNOT_TEXT_ICON_COMMENT: string
+const ANNOT_TEXT_ICON_CROSS: string
+const ANNOT_TEXT_ICON_HELP: string
+const ANNOT_TEXT_ICON_INSERT: string
+const ANNOT_TEXT_ICON_KEY: string
+const ANNOT_TEXT_ICON_NEW_PARAGRAPH: string
+const ANNOT_TEXT_ICON_NOTE: string
+const ANNOT_TEXT_ICON_PARAGRAPH: string
+const HAS_CAIRO: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function date_parse(date: string, timet: number): boolean
 function error_quark(): GLib.Quark
 function get_backend(): Backend
 function get_version(): string
-function named_dest_from_bytestring(data: Uint8Array[]): string
-function named_dest_to_bytestring(name: string): Uint8Array[] | null
+function named_dest_from_bytestring(data: Uint8Array): string
+function named_dest_to_bytestring(name: string): Uint8Array | null
 interface AttachmentSaveFunc {
-    (buf: Uint8Array[]): boolean
+    (buf: Uint8Array): boolean
 }
 interface MediaSaveFunc {
-    (buf: Uint8Array[]): boolean
+    (buf: Uint8Array): boolean
 }
-export interface Annot_ConstructProps extends GObject.Object_ConstructProps {
+interface Annot_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Annot {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.Annot */
     get_annot_type(): AnnotType
     get_color(): Color
@@ -528,11 +534,11 @@ class Annot {
     _init (config?: Annot_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AnnotCircle_ConstructProps extends AnnotMarkup_ConstructProps {
+interface AnnotCircle_ConstructProps extends AnnotMarkup_ConstructProps {
 }
 class AnnotCircle {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotCircle */
     get_interior_color(): Color
     set_interior_color(poppler_color?: Color | null): void
@@ -609,11 +615,11 @@ class AnnotCircle {
     static new(doc: Document, rect: Rectangle): AnnotCircle
     static $gtype: GObject.Type
 }
-export interface AnnotFileAttachment_ConstructProps extends AnnotMarkup_ConstructProps {
+interface AnnotFileAttachment_ConstructProps extends AnnotMarkup_ConstructProps {
 }
 class AnnotFileAttachment {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotFileAttachment */
     get_attachment(): Attachment
     get_name(): string
@@ -687,11 +693,11 @@ class AnnotFileAttachment {
     _init (config?: AnnotFileAttachment_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AnnotFreeText_ConstructProps extends AnnotMarkup_ConstructProps {
+interface AnnotFreeText_ConstructProps extends AnnotMarkup_ConstructProps {
 }
 class AnnotFreeText {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotFreeText */
     get_callout_line(): AnnotCalloutLine
     get_quadding(): AnnotFreeTextQuadding
@@ -766,11 +772,11 @@ class AnnotFreeText {
     _init (config?: AnnotFreeText_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AnnotLine_ConstructProps extends AnnotMarkup_ConstructProps {
+interface AnnotLine_ConstructProps extends AnnotMarkup_ConstructProps {
 }
 class AnnotLine {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotLine */
     set_vertices(start: Point, end: Point): void
     /* Methods of Poppler-0.18.Poppler.AnnotMarkup */
@@ -846,11 +852,11 @@ class AnnotLine {
     static new(doc: Document, rect: Rectangle, start: Point, end: Point): AnnotLine
     static $gtype: GObject.Type
 }
-export interface AnnotMarkup_ConstructProps extends Annot_ConstructProps {
+interface AnnotMarkup_ConstructProps extends Annot_ConstructProps {
 }
 class AnnotMarkup {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotMarkup */
     get_date(): GLib.Date
     get_external_data(): AnnotExternalDataType
@@ -922,11 +928,11 @@ class AnnotMarkup {
     _init (config?: AnnotMarkup_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AnnotMovie_ConstructProps extends Annot_ConstructProps {
+interface AnnotMovie_ConstructProps extends Annot_ConstructProps {
 }
 class AnnotMovie {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotMovie */
     get_movie(): Movie
     get_title(): string
@@ -986,11 +992,11 @@ class AnnotMovie {
     _init (config?: AnnotMovie_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AnnotScreen_ConstructProps extends Annot_ConstructProps {
+interface AnnotScreen_ConstructProps extends Annot_ConstructProps {
 }
 class AnnotScreen {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotScreen */
     get_action(): Action
     /* Methods of Poppler-0.18.Poppler.Annot */
@@ -1049,11 +1055,11 @@ class AnnotScreen {
     _init (config?: AnnotScreen_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AnnotSquare_ConstructProps extends AnnotMarkup_ConstructProps {
+interface AnnotSquare_ConstructProps extends AnnotMarkup_ConstructProps {
 }
 class AnnotSquare {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotSquare */
     get_interior_color(): Color
     set_interior_color(poppler_color?: Color | null): void
@@ -1130,11 +1136,11 @@ class AnnotSquare {
     static new(doc: Document, rect: Rectangle): AnnotSquare
     static $gtype: GObject.Type
 }
-export interface AnnotText_ConstructProps extends AnnotMarkup_ConstructProps {
+interface AnnotText_ConstructProps extends AnnotMarkup_ConstructProps {
 }
 class AnnotText {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotText */
     get_icon(): string
     get_is_open(): boolean
@@ -1214,11 +1220,11 @@ class AnnotText {
     static new(doc: Document, rect: Rectangle): AnnotText
     static $gtype: GObject.Type
 }
-export interface AnnotTextMarkup_ConstructProps extends AnnotMarkup_ConstructProps {
+interface AnnotTextMarkup_ConstructProps extends AnnotMarkup_ConstructProps {
 }
 class AnnotTextMarkup {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.AnnotTextMarkup */
     get_quadrilaterals(): Quadrilateral[]
     set_quadrilaterals(quadrilaterals: Quadrilateral[]): void
@@ -1298,19 +1304,11 @@ class AnnotTextMarkup {
     static new_underline(doc: Document, rect: Rectangle, quadrilaterals: Quadrilateral[]): AnnotTextMarkup
     static $gtype: GObject.Type
 }
-export interface Attachment_ConstructProps extends GObject.Object_ConstructProps {
+interface Attachment_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Attachment {
-    /* Fields of Poppler-0.18.Poppler.Attachment */
-    parent: GObject.Object
-    name: string
-    description: string
-    size: number
-    mtime: GLib.Time
-    ctime: GLib.Time
-    checksum: GLib.String
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.Attachment */
     get_checksum(): GLib.String
     get_ctime(): GLib.DateTime | null
@@ -1363,7 +1361,8 @@ class Attachment {
     _init (config?: Attachment_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Document_ConstructProps extends GObject.Object_ConstructProps {
+interface Document_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Poppler-0.18.Poppler.Document */
     author?: string
     creation_date?: number
     creation_datetime?: GLib.DateTime
@@ -1404,7 +1403,7 @@ class Document {
     title: string
     readonly viewer_preferences: ViewerPreferences
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.Document */
     find_dest(link_name: string): Dest
     get_attachments(): Attachment[]
@@ -1548,17 +1547,17 @@ class Document {
     _init (config?: Document_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_from_bytes(bytes: GLib.Bytes, password?: string | null): Document
-    static new_from_data(data: Uint8Array[], password?: string | null): Document
+    static new_from_data(data: Uint8Array, password?: string | null): Document
     static new_from_file(uri: string, password?: string | null): Document
     static new_from_gfile(file: Gio.File, password?: string | null, cancellable?: Gio.Cancellable | null): Document
     static new_from_stream(stream: Gio.InputStream, length: number, password?: string | null, cancellable?: Gio.Cancellable | null): Document
     static $gtype: GObject.Type
 }
-export interface FontInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface FontInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FontInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.FontInfo */
     free(): void
     scan(n_pages: number): [ /* returnType */ boolean, /* iter */ FontsIter ]
@@ -1607,11 +1606,11 @@ class FontInfo {
     static new(document: Document): FontInfo
     static $gtype: GObject.Type
 }
-export interface FormField_ConstructProps extends GObject.Object_ConstructProps {
+interface FormField_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FormField {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.FormField */
     button_get_button_type(): FormButtonType
     button_get_state(): boolean
@@ -1690,11 +1689,11 @@ class FormField {
     _init (config?: FormField_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Layer_ConstructProps extends GObject.Object_ConstructProps {
+interface Layer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Layer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.Layer */
     get_radio_button_group_id(): number
     get_title(): string
@@ -1745,11 +1744,11 @@ class Layer {
     _init (config?: Layer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Media_ConstructProps extends GObject.Object_ConstructProps {
+interface Media_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Media {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.Media */
     get_filename(): string
     get_mime_type(): string
@@ -1799,11 +1798,11 @@ class Media {
     _init (config?: Media_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Movie_ConstructProps extends GObject.Object_ConstructProps {
+interface Movie_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Movie {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.Movie */
     get_aspect(width: number, height: number): void
     get_duration(): number
@@ -1859,11 +1858,11 @@ class Movie {
     _init (config?: Movie_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PSFile_ConstructProps extends GObject.Object_ConstructProps {
+interface PSFile_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PSFile {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.PSFile */
     free(): void
     set_duplex(duplex: boolean): void
@@ -1913,13 +1912,13 @@ class PSFile {
     static new(document: Document, filename: string, first_page: number, n_pages: number): PSFile
     static $gtype: GObject.Type
 }
-export interface Page_ConstructProps extends GObject.Object_ConstructProps {
+interface Page_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Page {
     /* Properties of Poppler-0.18.Poppler.Page */
     readonly label: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.Page */
     add_annot(annot: Annot): void
     find_text(text: string): Rectangle[]
@@ -2005,11 +2004,11 @@ class Page {
     static selection_region_free(region: Rectangle[]): void
     static $gtype: GObject.Type
 }
-export interface StructureElement_ConstructProps extends GObject.Object_ConstructProps {
+interface StructureElement_ConstructProps extends GObject.Object_ConstructProps {
 }
 class StructureElement {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Poppler-0.18.Poppler.StructureElement */
     get_abbreviation(): string
     get_actual_text(): string
@@ -2111,100 +2110,100 @@ class StructureElement {
 }
 class ActionAny {
     /* Fields of Poppler-0.18.Poppler.ActionAny */
-    type: ActionType
-    title: string
+    readonly type: ActionType
+    readonly title: string
     static name: string
 }
 class ActionGotoDest {
     /* Fields of Poppler-0.18.Poppler.ActionGotoDest */
-    type: ActionType
-    title: string
-    dest: Dest
+    readonly type: ActionType
+    readonly title: string
+    readonly dest: Dest
     static name: string
 }
 class ActionGotoRemote {
     /* Fields of Poppler-0.18.Poppler.ActionGotoRemote */
-    type: ActionType
-    title: string
-    file_name: string
-    dest: Dest
+    readonly type: ActionType
+    readonly title: string
+    readonly file_name: string
+    readonly dest: Dest
     static name: string
 }
 class ActionJavascript {
     /* Fields of Poppler-0.18.Poppler.ActionJavascript */
-    type: ActionType
-    title: string
-    script: string
+    readonly type: ActionType
+    readonly title: string
+    readonly script: string
     static name: string
 }
 class ActionLaunch {
     /* Fields of Poppler-0.18.Poppler.ActionLaunch */
-    type: ActionType
-    title: string
-    file_name: string
-    params: string
+    readonly type: ActionType
+    readonly title: string
+    readonly file_name: string
+    readonly params: string
     static name: string
 }
 class ActionLayer {
     /* Fields of Poppler-0.18.Poppler.ActionLayer */
-    action: ActionLayerAction
-    layers: object[]
+    readonly action: ActionLayerAction
+    readonly layers: object[]
     static name: string
 }
 class ActionMovie {
     /* Fields of Poppler-0.18.Poppler.ActionMovie */
-    type: ActionType
-    title: string
-    operation: ActionMovieOperation
-    movie: Movie
+    readonly type: ActionType
+    readonly title: string
+    readonly operation: ActionMovieOperation
+    readonly movie: Movie
     static name: string
 }
 class ActionNamed {
     /* Fields of Poppler-0.18.Poppler.ActionNamed */
-    type: ActionType
-    title: string
-    named_dest: string
+    readonly type: ActionType
+    readonly title: string
+    readonly named_dest: string
     static name: string
 }
 class ActionOCGState {
     /* Fields of Poppler-0.18.Poppler.ActionOCGState */
-    type: ActionType
-    title: string
-    state_list: object[]
+    readonly type: ActionType
+    readonly title: string
+    readonly state_list: object[]
     static name: string
 }
 class ActionRendition {
     /* Fields of Poppler-0.18.Poppler.ActionRendition */
-    type: ActionType
-    title: string
-    op: number
-    media: Media
+    readonly type: ActionType
+    readonly title: string
+    readonly op: number
+    readonly media: Media
     static name: string
 }
 class ActionResetForm {
     /* Fields of Poppler-0.18.Poppler.ActionResetForm */
-    type: ActionType
-    title: string
-    fields: object[]
-    exclude: boolean
+    readonly type: ActionType
+    readonly title: string
+    readonly fields: object[]
+    readonly exclude: boolean
     static name: string
 }
 class ActionUri {
     /* Fields of Poppler-0.18.Poppler.ActionUri */
-    type: ActionType
-    title: string
-    uri: string
+    readonly type: ActionType
+    readonly title: string
+    readonly uri: string
     static name: string
 }
 class AnnotCalloutLine {
     /* Fields of Poppler-0.18.Poppler.AnnotCalloutLine */
-    multiline: boolean
-    x1: number
-    y1: number
-    x2: number
-    y2: number
-    x3: number
-    y3: number
+    readonly multiline: boolean
+    readonly x1: number
+    readonly y1: number
+    readonly x2: number
+    readonly y2: number
+    readonly x3: number
+    readonly y3: number
     /* Methods of Poppler-0.18.Poppler.AnnotCalloutLine */
     copy(): AnnotCalloutLine
     free(): void
@@ -2216,8 +2215,8 @@ class AnnotCalloutLine {
 }
 class AnnotMapping {
     /* Fields of Poppler-0.18.Poppler.AnnotMapping */
-    area: Rectangle
-    annot: Annot
+    readonly area: Rectangle
+    readonly annot: Annot
     /* Methods of Poppler-0.18.Poppler.AnnotMapping */
     copy(): AnnotMapping
     free(): void
@@ -2229,14 +2228,14 @@ class AnnotMapping {
 }
 abstract class AttachmentClass {
     /* Fields of Poppler-0.18.Poppler.AttachmentClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Color {
     /* Fields of Poppler-0.18.Poppler.Color */
-    red: number
-    green: number
-    blue: number
+    readonly red: number
+    readonly green: number
+    readonly blue: number
     /* Methods of Poppler-0.18.Poppler.Color */
     copy(): Color
     free(): void
@@ -2248,17 +2247,17 @@ class Color {
 }
 class Dest {
     /* Fields of Poppler-0.18.Poppler.Dest */
-    type: DestType
-    page_num: number
-    left: number
-    bottom: number
-    right: number
-    top: number
-    zoom: number
-    named_dest: string
-    change_left: number
-    change_top: number
-    change_zoom: number
+    readonly type: DestType
+    readonly page_num: number
+    readonly left: number
+    readonly bottom: number
+    readonly right: number
+    readonly top: number
+    readonly zoom: number
+    readonly named_dest: string
+    readonly change_left: number
+    readonly change_top: number
+    readonly change_zoom: number
     /* Methods of Poppler-0.18.Poppler.Dest */
     copy(): Dest
     free(): void
@@ -2281,8 +2280,8 @@ class FontsIter {
 }
 class FormFieldMapping {
     /* Fields of Poppler-0.18.Poppler.FormFieldMapping */
-    area: Rectangle
-    field: FormField
+    readonly area: Rectangle
+    readonly field: FormField
     /* Methods of Poppler-0.18.Poppler.FormFieldMapping */
     copy(): FormFieldMapping
     free(): void
@@ -2294,8 +2293,8 @@ class FormFieldMapping {
 }
 class ImageMapping {
     /* Fields of Poppler-0.18.Poppler.ImageMapping */
-    area: Rectangle
-    image_id: number
+    readonly area: Rectangle
+    readonly image_id: number
     /* Methods of Poppler-0.18.Poppler.ImageMapping */
     copy(): ImageMapping
     free(): void
@@ -2335,8 +2334,8 @@ class LayersIter {
 }
 class LinkMapping {
     /* Fields of Poppler-0.18.Poppler.LinkMapping */
-    area: Rectangle
-    action: Action
+    readonly area: Rectangle
+    readonly action: Action
     /* Methods of Poppler-0.18.Poppler.LinkMapping */
     copy(): LinkMapping
     free(): void
@@ -2348,20 +2347,20 @@ class LinkMapping {
 }
 class PageRange {
     /* Fields of Poppler-0.18.Poppler.PageRange */
-    start_page: number
-    end_page: number
+    readonly start_page: number
+    readonly end_page: number
     static name: string
 }
 class PageTransition {
     /* Fields of Poppler-0.18.Poppler.PageTransition */
-    type: PageTransitionType
-    alignment: PageTransitionAlignment
-    direction: PageTransitionDirection
-    duration: number
-    angle: number
-    scale: number
-    rectangular: boolean
-    duration_real: number
+    readonly type: PageTransitionType
+    readonly alignment: PageTransitionAlignment
+    readonly direction: PageTransitionDirection
+    readonly duration: number
+    readonly angle: number
+    readonly scale: number
+    readonly rectangular: boolean
+    readonly duration_real: number
     /* Methods of Poppler-0.18.Poppler.PageTransition */
     copy(): PageTransition
     free(): void
@@ -2373,8 +2372,8 @@ class PageTransition {
 }
 class Point {
     /* Fields of Poppler-0.18.Poppler.Point */
-    x: number
-    y: number
+    readonly x: number
+    readonly y: number
     /* Methods of Poppler-0.18.Poppler.Point */
     copy(): Point
     free(): void
@@ -2386,10 +2385,10 @@ class Point {
 }
 class Quadrilateral {
     /* Fields of Poppler-0.18.Poppler.Quadrilateral */
-    p1: Point
-    p2: Point
-    p3: Point
-    p4: Point
+    readonly p1: Point
+    readonly p2: Point
+    readonly p3: Point
+    readonly p4: Point
     /* Methods of Poppler-0.18.Poppler.Quadrilateral */
     copy(): Quadrilateral
     free(): void
@@ -2401,10 +2400,10 @@ class Quadrilateral {
 }
 class Rectangle {
     /* Fields of Poppler-0.18.Poppler.Rectangle */
-    x1: number
-    y1: number
-    x2: number
-    y2: number
+    readonly x1: number
+    readonly y1: number
+    readonly x2: number
+    readonly y2: number
     /* Methods of Poppler-0.18.Poppler.Rectangle */
     copy(): Rectangle
     free(): void
@@ -2429,12 +2428,12 @@ class StructureElementIter {
 }
 class TextAttributes {
     /* Fields of Poppler-0.18.Poppler.TextAttributes */
-    font_name: string
-    font_size: number
-    is_underlined: boolean
-    color: Color
-    start_index: number
-    end_index: number
+    readonly font_name: string
+    readonly font_size: number
+    readonly is_underlined: boolean
+    readonly color: Color
+    readonly start_index: number
+    readonly end_index: number
     /* Methods of Poppler-0.18.Poppler.TextAttributes */
     copy(): TextAttributes
     free(): void
@@ -2457,19 +2456,6 @@ class TextSpan {
     static name: string
 }
 class Action {
-    /* Fields of Poppler-0.18.Poppler.Action */
-    type: ActionType
-    any: ActionAny
-    goto_dest: ActionGotoDest
-    goto_remote: ActionGotoRemote
-    launch: ActionLaunch
-    uri: ActionUri
-    named: ActionNamed
-    movie: ActionMovie
-    rendition: ActionRendition
-    ocg_state: ActionOCGState
-    javascript: ActionJavascript
-    reset_form: ActionResetForm
     /* Methods of Poppler-0.18.Poppler.Action */
     copy(): Action
     free(): void

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * WebKit2WebExtension-5.0
  */
@@ -100,93 +106,93 @@ enum HitTestResultContext {
     SCROLLBAR,
     SELECTION,
 }
-export const DOM_CSS_RULE_CHARSET_RULE: number
-export const DOM_CSS_RULE_FONT_FACE_RULE: number
-export const DOM_CSS_RULE_IMPORT_RULE: number
-export const DOM_CSS_RULE_MEDIA_RULE: number
-export const DOM_CSS_RULE_PAGE_RULE: number
-export const DOM_CSS_RULE_STYLE_RULE: number
-export const DOM_CSS_RULE_UNKNOWN_RULE: number
-export const DOM_CSS_VALUE_CSS_CUSTOM: number
-export const DOM_CSS_VALUE_CSS_INHERIT: number
-export const DOM_CSS_VALUE_CSS_PRIMITIVE_VALUE: number
-export const DOM_CSS_VALUE_CSS_VALUE_LIST: number
-export const DOM_ELEMENT_ALLOW_KEYBOARD_INPUT: number
-export const DOM_EVENT_AT_TARGET: number
-export const DOM_EVENT_BLUR: number
-export const DOM_EVENT_BUBBLING_PHASE: number
-export const DOM_EVENT_CAPTURING_PHASE: number
-export const DOM_EVENT_CHANGE: number
-export const DOM_EVENT_CLICK: number
-export const DOM_EVENT_DBLCLICK: number
-export const DOM_EVENT_DRAGDROP: number
-export const DOM_EVENT_FOCUS: number
-export const DOM_EVENT_KEYDOWN: number
-export const DOM_EVENT_KEYPRESS: number
-export const DOM_EVENT_KEYUP: number
-export const DOM_EVENT_MOUSEDOWN: number
-export const DOM_EVENT_MOUSEDRAG: number
-export const DOM_EVENT_MOUSEMOVE: number
-export const DOM_EVENT_MOUSEOUT: number
-export const DOM_EVENT_MOUSEOVER: number
-export const DOM_EVENT_MOUSEUP: number
-export const DOM_EVENT_NONE: number
-export const DOM_EVENT_SELECT: number
-export const DOM_KEYBOARD_EVENT_KEY_LOCATION_LEFT: number
-export const DOM_KEYBOARD_EVENT_KEY_LOCATION_NUMPAD: number
-export const DOM_KEYBOARD_EVENT_KEY_LOCATION_RIGHT: number
-export const DOM_KEYBOARD_EVENT_KEY_LOCATION_STANDARD: number
-export const DOM_NODE_ATTRIBUTE_NODE: number
-export const DOM_NODE_CDATA_SECTION_NODE: number
-export const DOM_NODE_COMMENT_NODE: number
-export const DOM_NODE_DOCUMENT_FRAGMENT_NODE: number
-export const DOM_NODE_DOCUMENT_NODE: number
-export const DOM_NODE_DOCUMENT_POSITION_CONTAINED_BY: number
-export const DOM_NODE_DOCUMENT_POSITION_CONTAINS: number
-export const DOM_NODE_DOCUMENT_POSITION_DISCONNECTED: number
-export const DOM_NODE_DOCUMENT_POSITION_FOLLOWING: number
-export const DOM_NODE_DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: number
-export const DOM_NODE_DOCUMENT_POSITION_PRECEDING: number
-export const DOM_NODE_DOCUMENT_TYPE_NODE: number
-export const DOM_NODE_ELEMENT_NODE: number
-export const DOM_NODE_ENTITY_NODE: number
-export const DOM_NODE_ENTITY_REFERENCE_NODE: number
-export const DOM_NODE_FILTER_ACCEPT: number
-export const DOM_NODE_FILTER_REJECT: number
-export const DOM_NODE_FILTER_SHOW_ALL: number
-export const DOM_NODE_FILTER_SHOW_ATTRIBUTE: number
-export const DOM_NODE_FILTER_SHOW_CDATA_SECTION: number
-export const DOM_NODE_FILTER_SHOW_COMMENT: number
-export const DOM_NODE_FILTER_SHOW_DOCUMENT: number
-export const DOM_NODE_FILTER_SHOW_DOCUMENT_FRAGMENT: number
-export const DOM_NODE_FILTER_SHOW_DOCUMENT_TYPE: number
-export const DOM_NODE_FILTER_SHOW_ELEMENT: number
-export const DOM_NODE_FILTER_SHOW_ENTITY: number
-export const DOM_NODE_FILTER_SHOW_ENTITY_REFERENCE: number
-export const DOM_NODE_FILTER_SHOW_NOTATION: number
-export const DOM_NODE_FILTER_SHOW_PROCESSING_INSTRUCTION: number
-export const DOM_NODE_FILTER_SHOW_TEXT: number
-export const DOM_NODE_FILTER_SKIP: number
-export const DOM_NODE_PROCESSING_INSTRUCTION_NODE: number
-export const DOM_NODE_TEXT_NODE: number
-export const DOM_RANGE_END_TO_END: number
-export const DOM_RANGE_END_TO_START: number
-export const DOM_RANGE_NODE_AFTER: number
-export const DOM_RANGE_NODE_BEFORE: number
-export const DOM_RANGE_NODE_BEFORE_AND_AFTER: number
-export const DOM_RANGE_NODE_INSIDE: number
-export const DOM_RANGE_START_TO_END: number
-export const DOM_RANGE_START_TO_START: number
-export const DOM_XPATH_RESULT_ANY_TYPE: number
-export const DOM_XPATH_RESULT_ANY_UNORDERED_NODE_TYPE: number
-export const DOM_XPATH_RESULT_BOOLEAN_TYPE: number
-export const DOM_XPATH_RESULT_FIRST_ORDERED_NODE_TYPE: number
-export const DOM_XPATH_RESULT_NUMBER_TYPE: number
-export const DOM_XPATH_RESULT_ORDERED_NODE_ITERATOR_TYPE: number
-export const DOM_XPATH_RESULT_ORDERED_NODE_SNAPSHOT_TYPE: number
-export const DOM_XPATH_RESULT_STRING_TYPE: number
-export const DOM_XPATH_RESULT_UNORDERED_NODE_ITERATOR_TYPE: number
-export const DOM_XPATH_RESULT_UNORDERED_NODE_SNAPSHOT_TYPE: number
+const DOM_CSS_RULE_CHARSET_RULE: number
+const DOM_CSS_RULE_FONT_FACE_RULE: number
+const DOM_CSS_RULE_IMPORT_RULE: number
+const DOM_CSS_RULE_MEDIA_RULE: number
+const DOM_CSS_RULE_PAGE_RULE: number
+const DOM_CSS_RULE_STYLE_RULE: number
+const DOM_CSS_RULE_UNKNOWN_RULE: number
+const DOM_CSS_VALUE_CSS_CUSTOM: number
+const DOM_CSS_VALUE_CSS_INHERIT: number
+const DOM_CSS_VALUE_CSS_PRIMITIVE_VALUE: number
+const DOM_CSS_VALUE_CSS_VALUE_LIST: number
+const DOM_ELEMENT_ALLOW_KEYBOARD_INPUT: number
+const DOM_EVENT_AT_TARGET: number
+const DOM_EVENT_BLUR: number
+const DOM_EVENT_BUBBLING_PHASE: number
+const DOM_EVENT_CAPTURING_PHASE: number
+const DOM_EVENT_CHANGE: number
+const DOM_EVENT_CLICK: number
+const DOM_EVENT_DBLCLICK: number
+const DOM_EVENT_DRAGDROP: number
+const DOM_EVENT_FOCUS: number
+const DOM_EVENT_KEYDOWN: number
+const DOM_EVENT_KEYPRESS: number
+const DOM_EVENT_KEYUP: number
+const DOM_EVENT_MOUSEDOWN: number
+const DOM_EVENT_MOUSEDRAG: number
+const DOM_EVENT_MOUSEMOVE: number
+const DOM_EVENT_MOUSEOUT: number
+const DOM_EVENT_MOUSEOVER: number
+const DOM_EVENT_MOUSEUP: number
+const DOM_EVENT_NONE: number
+const DOM_EVENT_SELECT: number
+const DOM_KEYBOARD_EVENT_KEY_LOCATION_LEFT: number
+const DOM_KEYBOARD_EVENT_KEY_LOCATION_NUMPAD: number
+const DOM_KEYBOARD_EVENT_KEY_LOCATION_RIGHT: number
+const DOM_KEYBOARD_EVENT_KEY_LOCATION_STANDARD: number
+const DOM_NODE_ATTRIBUTE_NODE: number
+const DOM_NODE_CDATA_SECTION_NODE: number
+const DOM_NODE_COMMENT_NODE: number
+const DOM_NODE_DOCUMENT_FRAGMENT_NODE: number
+const DOM_NODE_DOCUMENT_NODE: number
+const DOM_NODE_DOCUMENT_POSITION_CONTAINED_BY: number
+const DOM_NODE_DOCUMENT_POSITION_CONTAINS: number
+const DOM_NODE_DOCUMENT_POSITION_DISCONNECTED: number
+const DOM_NODE_DOCUMENT_POSITION_FOLLOWING: number
+const DOM_NODE_DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: number
+const DOM_NODE_DOCUMENT_POSITION_PRECEDING: number
+const DOM_NODE_DOCUMENT_TYPE_NODE: number
+const DOM_NODE_ELEMENT_NODE: number
+const DOM_NODE_ENTITY_NODE: number
+const DOM_NODE_ENTITY_REFERENCE_NODE: number
+const DOM_NODE_FILTER_ACCEPT: number
+const DOM_NODE_FILTER_REJECT: number
+const DOM_NODE_FILTER_SHOW_ALL: number
+const DOM_NODE_FILTER_SHOW_ATTRIBUTE: number
+const DOM_NODE_FILTER_SHOW_CDATA_SECTION: number
+const DOM_NODE_FILTER_SHOW_COMMENT: number
+const DOM_NODE_FILTER_SHOW_DOCUMENT: number
+const DOM_NODE_FILTER_SHOW_DOCUMENT_FRAGMENT: number
+const DOM_NODE_FILTER_SHOW_DOCUMENT_TYPE: number
+const DOM_NODE_FILTER_SHOW_ELEMENT: number
+const DOM_NODE_FILTER_SHOW_ENTITY: number
+const DOM_NODE_FILTER_SHOW_ENTITY_REFERENCE: number
+const DOM_NODE_FILTER_SHOW_NOTATION: number
+const DOM_NODE_FILTER_SHOW_PROCESSING_INSTRUCTION: number
+const DOM_NODE_FILTER_SHOW_TEXT: number
+const DOM_NODE_FILTER_SKIP: number
+const DOM_NODE_PROCESSING_INSTRUCTION_NODE: number
+const DOM_NODE_TEXT_NODE: number
+const DOM_RANGE_END_TO_END: number
+const DOM_RANGE_END_TO_START: number
+const DOM_RANGE_NODE_AFTER: number
+const DOM_RANGE_NODE_BEFORE: number
+const DOM_RANGE_NODE_BEFORE_AND_AFTER: number
+const DOM_RANGE_NODE_INSIDE: number
+const DOM_RANGE_START_TO_END: number
+const DOM_RANGE_START_TO_START: number
+const DOM_XPATH_RESULT_ANY_TYPE: number
+const DOM_XPATH_RESULT_ANY_UNORDERED_NODE_TYPE: number
+const DOM_XPATH_RESULT_BOOLEAN_TYPE: number
+const DOM_XPATH_RESULT_FIRST_ORDERED_NODE_TYPE: number
+const DOM_XPATH_RESULT_NUMBER_TYPE: number
+const DOM_XPATH_RESULT_ORDERED_NODE_ITERATOR_TYPE: number
+const DOM_XPATH_RESULT_ORDERED_NODE_SNAPSHOT_TYPE: number
+const DOM_XPATH_RESULT_STRING_TYPE: number
+const DOM_XPATH_RESULT_UNORDERED_NODE_ITERATOR_TYPE: number
+const DOM_XPATH_RESULT_UNORDERED_NODE_SNAPSHOT_TYPE: number
 interface WebExtensionInitializeFunction {
     (extension: WebExtension): void
 }
@@ -218,11 +224,11 @@ class DOMXPathNSResolver {
     vfunc_lookup_namespace_uri(prefix: string): string
     static name: string
 }
-export interface ContextMenu_ConstructProps extends GObject.Object_ConstructProps {
+interface ContextMenu_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ContextMenu {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.ContextMenu */
     append(item: ContextMenuItem): void
     first(): ContextMenuItem
@@ -283,11 +289,11 @@ class ContextMenu {
     static new_with_items(items: ContextMenuItem[]): ContextMenu
     static $gtype: GObject.Type
 }
-export interface ContextMenuItem_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface ContextMenuItem_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
 class ContextMenuItem {
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.ContextMenuItem */
     get_gaction(): Gio.Action
     get_stock_action(): ContextMenuAction
@@ -343,7 +349,8 @@ class ContextMenuItem {
     static new_with_submenu(label: string, submenu: ContextMenu): ContextMenuItem
     static $gtype: GObject.Type
 }
-export interface DOMAttr_ConstructProps extends DOMNode_ConstructProps {
+interface DOMAttr_ConstructProps extends DOMNode_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMAttr */
     value?: string
 }
 class DOMAttr {
@@ -369,13 +376,13 @@ class DOMAttr {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMAttr */
-    parent_instance: DOMNode
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMAttr */
     get_local_name(): string
     get_name(): string
@@ -444,6 +451,10 @@ class DOMAttr {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMAttr */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -509,18 +520,16 @@ class DOMAttr {
     _init (config?: DOMAttr_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMBlob_ConstructProps extends DOMObject_ConstructProps {
+interface DOMBlob_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMBlob {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMBlob */
     readonly size: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMBlob */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMBlob */
     get_size(): number
     /* Methods of GObject-2.0.GObject.Object */
@@ -568,7 +577,7 @@ class DOMBlob {
     _init (config?: DOMBlob_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMCDATASection_ConstructProps extends DOMText_ConstructProps {
+interface DOMCDATASection_ConstructProps extends DOMText_ConstructProps {
 }
 class DOMCDATASection {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMText */
@@ -590,13 +599,13 @@ class DOMCDATASection {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCDATASection */
-    parent_instance: DOMText
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMText */
+    readonly parent_instance: DOMCharacterData
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMText */
     get_whole_text(): string
     replace_whole_text(content: string): DOMText
@@ -672,6 +681,18 @@ class DOMCDATASection {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCDATASection */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMText */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -729,7 +750,8 @@ class DOMCDATASection {
     _init (config?: DOMCDATASection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMCSSRule_ConstructProps extends DOMObject_ConstructProps {
+interface DOMCSSRule_ConstructProps extends DOMObject_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSRule */
     css_text?: string
 }
 class DOMCSSRule {
@@ -738,13 +760,11 @@ class DOMCSSRule {
     readonly parent_rule: DOMCSSRule
     readonly parent_style_sheet: DOMCSSStyleSheet
     readonly type: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSRule */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSRule */
     get_css_text(): string
     get_parent_rule(): DOMCSSRule
@@ -802,18 +822,16 @@ class DOMCSSRule {
     _init (config?: DOMCSSRule_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMCSSRuleList_ConstructProps extends DOMObject_ConstructProps {
+interface DOMCSSRuleList_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMCSSRuleList {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSRuleList */
     readonly length: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSRuleList */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSRuleList */
     get_length(): number
     item(index: number): DOMCSSRule
@@ -862,7 +880,8 @@ class DOMCSSRuleList {
     _init (config?: DOMCSSRuleList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMCSSStyleDeclaration_ConstructProps extends DOMObject_ConstructProps {
+interface DOMCSSStyleDeclaration_ConstructProps extends DOMObject_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSStyleDeclaration */
     css_text?: string
 }
 class DOMCSSStyleDeclaration {
@@ -870,13 +889,11 @@ class DOMCSSStyleDeclaration {
     css_text: string
     readonly length: number
     readonly parent_rule: DOMCSSRule
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSStyleDeclaration */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSStyleDeclaration */
     get_css_text(): string
     get_length(): number
@@ -938,7 +955,7 @@ class DOMCSSStyleDeclaration {
     _init (config?: DOMCSSStyleDeclaration_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMCSSStyleSheet_ConstructProps extends DOMStyleSheet_ConstructProps {
+interface DOMCSSStyleSheet_ConstructProps extends DOMStyleSheet_ConstructProps {
 }
 class DOMCSSStyleSheet {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSStyleSheet */
@@ -953,13 +970,13 @@ class DOMCSSStyleSheet {
     readonly parent_style_sheet: DOMStyleSheet
     readonly title: string
     readonly type: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSStyleSheet */
-    parent_instance: DOMStyleSheet
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMStyleSheet */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSStyleSheet */
     add_rule(selector: string, style: string, index: number): number
     delete_rule(index: number): void
@@ -1040,20 +1057,19 @@ class DOMCSSStyleSheet {
     _init (config?: DOMCSSStyleSheet_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMCSSValue_ConstructProps extends DOMObject_ConstructProps {
+interface DOMCSSValue_ConstructProps extends DOMObject_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSValue */
     css_text?: string
 }
 class DOMCSSValue {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSValue */
     css_text: string
     readonly css_value_type: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSValue */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSValue */
     get_css_text(): string
     get_css_value_type(): number
@@ -1105,7 +1121,8 @@ class DOMCSSValue {
     _init (config?: DOMCSSValue_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMCharacterData_ConstructProps extends DOMNode_ConstructProps {
+interface DOMCharacterData_ConstructProps extends DOMNode_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
     data?: string
 }
 class DOMCharacterData {
@@ -1126,13 +1143,13 @@ class DOMCharacterData {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
-    parent_instance: DOMNode
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
     append_data(data: string): void
     delete_data(offset: number, length: number): void
@@ -1204,6 +1221,10 @@ class DOMCharacterData {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -1259,7 +1280,7 @@ class DOMCharacterData {
     _init (config?: DOMCharacterData_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMClientRect_ConstructProps extends DOMObject_ConstructProps {
+interface DOMClientRect_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMClientRect {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMClientRect */
@@ -1269,13 +1290,11 @@ class DOMClientRect {
     readonly right: number
     readonly top: number
     readonly width: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMClientRect */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMClientRect */
     get_bottom(): number
     get_height(): number
@@ -1338,18 +1357,16 @@ class DOMClientRect {
     _init (config?: DOMClientRect_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMClientRectList_ConstructProps extends DOMObject_ConstructProps {
+interface DOMClientRectList_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMClientRectList {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMClientRectList */
     readonly length: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMClientRectList */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMClientRectList */
     get_length(): number
     item(index: number): DOMClientRect
@@ -1398,7 +1415,7 @@ class DOMClientRectList {
     _init (config?: DOMClientRectList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMComment_ConstructProps extends DOMCharacterData_ConstructProps {
+interface DOMComment_ConstructProps extends DOMCharacterData_ConstructProps {
 }
 class DOMComment {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
@@ -1418,13 +1435,13 @@ class DOMComment {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMComment */
-    parent_instance: DOMCharacterData
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
+    readonly parent_instance: DOMNode
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
     append_data(data: string): void
     delete_data(offset: number, length: number): void
@@ -1496,6 +1513,14 @@ class DOMComment {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMComment */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -1551,16 +1576,14 @@ class DOMComment {
     _init (config?: DOMComment_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMDOMImplementation_ConstructProps extends DOMObject_ConstructProps {
+interface DOMDOMImplementation_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMDOMImplementation {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMImplementation */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMImplementation */
     create_css_style_sheet(title: string, media: string): DOMCSSStyleSheet
     create_document(namespaceURI: string | null, qualifiedName: string, doctype?: DOMDocumentType | null): DOMDocument
@@ -1610,7 +1633,7 @@ class DOMDOMImplementation {
     _init (config?: DOMDOMImplementation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMDOMSelection_ConstructProps extends DOMObject_ConstructProps {
+interface DOMDOMSelection_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMDOMSelection {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMSelection */
@@ -1625,13 +1648,11 @@ class DOMDOMSelection {
     readonly is_collapsed: boolean
     readonly range_count: number
     readonly type: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMSelection */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMSelection */
     add_range(range: DOMRange): void
     collapse(node: DOMNode, offset: number): void
@@ -1723,20 +1744,19 @@ class DOMDOMSelection {
     _init (config?: DOMDOMSelection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMDOMTokenList_ConstructProps extends DOMObject_ConstructProps {
+interface DOMDOMTokenList_ConstructProps extends DOMObject_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMTokenList */
     value?: string
 }
 class DOMDOMTokenList {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMTokenList */
     readonly length: number
     value: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMTokenList */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMTokenList */
     contains(token: string): boolean
     get_length(): number
@@ -1792,7 +1812,8 @@ class DOMDOMTokenList {
     _init (config?: DOMDOMTokenList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMDOMWindow_ConstructProps extends DOMObject_ConstructProps {
+interface DOMDOMWindow_ConstructProps extends DOMObject_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMWindow */
     default_status?: string
     name?: string
     status?: string
@@ -1827,13 +1848,11 @@ class DOMDOMWindow {
     status: string
     readonly top: DOMDOMWindow
     readonly window: DOMDOMWindow
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMWindow */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMWindow */
     alert(message: string): void
     blur(): void
@@ -1993,7 +2012,8 @@ class DOMDOMWindow {
     _init (config?: DOMDOMWindow_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMDocument_ConstructProps extends DOMNode_ConstructProps {
+interface DOMDocument_ConstructProps extends DOMNode_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocument */
     charset?: string
     cookie?: string
     design_mode?: string
@@ -2071,13 +2091,13 @@ class DOMDocument {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocument */
-    parent_instance: DOMNode
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocument */
     adopt_node(source: DOMNode): DOMNode
     caret_range_from_point(x: number, y: number): DOMRange
@@ -2246,6 +2266,10 @@ class DOMDocument {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocument */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -2399,7 +2423,7 @@ class DOMDocument {
     _init (config?: DOMDocument_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMDocumentFragment_ConstructProps extends DOMNode_ConstructProps {
+interface DOMDocumentFragment_ConstructProps extends DOMNode_ConstructProps {
 }
 class DOMDocumentFragment {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentFragment */
@@ -2421,13 +2445,13 @@ class DOMDocumentFragment {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentFragment */
-    parent_instance: DOMNode
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentFragment */
     get_child_element_count(): number
     get_children(): DOMHTMLCollection
@@ -2498,6 +2522,10 @@ class DOMDocumentFragment {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentFragment */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -2557,7 +2585,7 @@ class DOMDocumentFragment {
     _init (config?: DOMDocumentFragment_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMDocumentType_ConstructProps extends DOMNode_ConstructProps {
+interface DOMDocumentType_ConstructProps extends DOMNode_ConstructProps {
 }
 class DOMDocumentType {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentType */
@@ -2581,13 +2609,13 @@ class DOMDocumentType {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentType */
-    parent_instance: DOMNode
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentType */
     get_entities(): DOMNamedNodeMap
     get_internal_subset(): string
@@ -2657,6 +2685,10 @@ class DOMDocumentType {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentType */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -2720,7 +2752,8 @@ class DOMDocumentType {
     _init (config?: DOMDocumentType_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMElement_ConstructProps extends DOMNode_ConstructProps {
+interface DOMElement_ConstructProps extends DOMNode_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
     class_name?: string
     id?: string
     inner_html?: string
@@ -2775,13 +2808,13 @@ class DOMElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
-    parent_instance: DOMNode
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
     blur(): void
     closest(selectors: string): DOMElement
@@ -2922,6 +2955,10 @@ class DOMElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -3035,7 +3072,7 @@ class DOMElement {
     _init (config?: DOMElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMEntityReference_ConstructProps extends DOMNode_ConstructProps {
+interface DOMEntityReference_ConstructProps extends DOMNode_ConstructProps {
 }
 class DOMEntityReference {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
@@ -3052,13 +3089,13 @@ class DOMEntityReference {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMEntityReference */
-    parent_instance: DOMNode
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     append_child(newChild: DOMNode): DOMNode
     clone_node(deep: boolean): DOMNode
@@ -3121,6 +3158,10 @@ class DOMEntityReference {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMEntityReference */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -3172,7 +3213,8 @@ class DOMEntityReference {
     _init (config?: DOMEntityReference_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMEvent_ConstructProps extends DOMObject_ConstructProps {
+interface DOMEvent_ConstructProps extends DOMObject_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMEvent */
     cancel_bubble?: boolean
     return_value?: boolean
 }
@@ -3188,13 +3230,11 @@ class DOMEvent {
     readonly target: DOMEventTarget
     readonly time_stamp: number
     readonly type: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMEvent */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMEvent */
     get_bubbles(): boolean
     get_cancel_bubble(): boolean
@@ -3274,20 +3314,20 @@ class DOMEvent {
     _init (config?: DOMEvent_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMFile_ConstructProps extends DOMBlob_ConstructProps {
+interface DOMFile_ConstructProps extends DOMBlob_ConstructProps {
 }
 class DOMFile {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMFile */
     readonly name: string
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMBlob */
     readonly size: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMFile */
-    parent_instance: DOMBlob
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMBlob */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMFile */
     get_name(): string
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMBlob */
@@ -3339,18 +3379,16 @@ class DOMFile {
     _init (config?: DOMFile_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMFileList_ConstructProps extends DOMObject_ConstructProps {
+interface DOMFileList_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMFileList {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMFileList */
     readonly length: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMFileList */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMFileList */
     get_length(): number
     item(index: number): DOMFile
@@ -3399,7 +3437,8 @@ class DOMFileList {
     _init (config?: DOMFileList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLAnchorElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLAnchorElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAnchorElement */
     charset?: string
     coords?: string
     hash?: string
@@ -3500,13 +3539,13 @@ class DOMHTMLAnchorElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAnchorElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAnchorElement */
     get_charset(): string
     get_coords(): string
@@ -3715,6 +3754,18 @@ class DOMHTMLAnchorElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAnchorElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -3892,7 +3943,8 @@ class DOMHTMLAnchorElement {
     _init (config?: DOMHTMLAnchorElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLAppletElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLAppletElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAppletElement */
     align?: string
     alt?: string
     archive?: string
@@ -3979,13 +4031,13 @@ class DOMHTMLAppletElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAppletElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAppletElement */
     get_align(): string
     get_alt(): string
@@ -4180,6 +4232,18 @@ class DOMHTMLAppletElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAppletElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -4343,7 +4407,8 @@ class DOMHTMLAppletElement {
     _init (config?: DOMHTMLAppletElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLAreaElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLAreaElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAreaElement */
     alt?: string
     coords?: string
     hash?: string
@@ -4434,13 +4499,13 @@ class DOMHTMLAreaElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAreaElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAreaElement */
     get_alt(): string
     get_coords(): string
@@ -4639,6 +4704,18 @@ class DOMHTMLAreaElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAreaElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -4806,7 +4883,8 @@ class DOMHTMLAreaElement {
     _init (config?: DOMHTMLAreaElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLBRElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLBRElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBRElement */
     clear?: string
 }
 class DOMHTMLBRElement {
@@ -4873,13 +4951,13 @@ class DOMHTMLBRElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBRElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBRElement */
     get_clear(): string
     set_clear(value: string): void
@@ -5054,6 +5132,18 @@ class DOMHTMLBRElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBRElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -5197,7 +5287,8 @@ class DOMHTMLBRElement {
     _init (config?: DOMHTMLBRElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLBaseElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLBaseElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBaseElement */
     href?: string
     target?: string
 }
@@ -5266,13 +5357,13 @@ class DOMHTMLBaseElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBaseElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBaseElement */
     get_href(): string
     get_target(): string
@@ -5449,6 +5540,18 @@ class DOMHTMLBaseElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBaseElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -5594,7 +5697,7 @@ class DOMHTMLBaseElement {
     _init (config?: DOMHTMLBaseElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLBaseFontElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLBaseFontElement_ConstructProps extends DOMHTMLElement_ConstructProps {
 }
 class DOMHTMLBaseFontElement {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
@@ -5658,13 +5761,13 @@ class DOMHTMLBaseFontElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBaseFontElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBaseFontElement */
     get_color(): string
     get_face(): string
@@ -5843,6 +5946,18 @@ class DOMHTMLBaseFontElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBaseFontElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -5984,7 +6099,8 @@ class DOMHTMLBaseFontElement {
     _init (config?: DOMHTMLBaseFontElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLBodyElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLBodyElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBodyElement */
     a_link?: string
     background?: string
     bg_color?: string
@@ -6061,13 +6177,13 @@ class DOMHTMLBodyElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBodyElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBodyElement */
     get_a_link(): string
     get_background(): string
@@ -6252,6 +6368,18 @@ class DOMHTMLBodyElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBodyElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -6405,7 +6533,8 @@ class DOMHTMLBodyElement {
     _init (config?: DOMHTMLBodyElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLButtonElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLButtonElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLButtonElement */
     autofocus?: boolean
     disabled?: boolean
     name?: string
@@ -6482,13 +6611,13 @@ class DOMHTMLButtonElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLButtonElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLButtonElement */
     get_autofocus(): boolean
     get_button_type(): string
@@ -6673,6 +6802,18 @@ class DOMHTMLButtonElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLButtonElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -6828,7 +6969,8 @@ class DOMHTMLButtonElement {
     _init (config?: DOMHTMLButtonElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLCanvasElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLCanvasElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCanvasElement */
     height?: number
     width?: number
 }
@@ -6897,13 +7039,13 @@ class DOMHTMLCanvasElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCanvasElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCanvasElement */
     get_height(): number
     get_width(): number
@@ -7080,6 +7222,18 @@ class DOMHTMLCanvasElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCanvasElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -7225,18 +7379,16 @@ class DOMHTMLCanvasElement {
     _init (config?: DOMHTMLCanvasElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLCollection_ConstructProps extends DOMObject_ConstructProps {
+interface DOMHTMLCollection_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMHTMLCollection {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCollection */
     readonly length: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCollection */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCollection */
     get_length(): number
     item(index: number): DOMNode
@@ -7286,7 +7438,8 @@ class DOMHTMLCollection {
     _init (config?: DOMHTMLCollection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLDListElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLDListElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDListElement */
     compact?: boolean
 }
 class DOMHTMLDListElement {
@@ -7353,13 +7506,13 @@ class DOMHTMLDListElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDListElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDListElement */
     get_compact(): boolean
     set_compact(value: boolean): void
@@ -7534,6 +7687,18 @@ class DOMHTMLDListElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDListElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -7677,7 +7842,8 @@ class DOMHTMLDListElement {
     _init (config?: DOMHTMLDListElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLDirectoryElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLDirectoryElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDirectoryElement */
     compact?: boolean
 }
 class DOMHTMLDirectoryElement {
@@ -7744,13 +7910,13 @@ class DOMHTMLDirectoryElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDirectoryElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDirectoryElement */
     get_compact(): boolean
     set_compact(value: boolean): void
@@ -7925,6 +8091,18 @@ class DOMHTMLDirectoryElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDirectoryElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -8068,7 +8246,8 @@ class DOMHTMLDirectoryElement {
     _init (config?: DOMHTMLDirectoryElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLDivElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLDivElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDivElement */
     align?: string
 }
 class DOMHTMLDivElement {
@@ -8135,13 +8314,13 @@ class DOMHTMLDivElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDivElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDivElement */
     get_align(): string
     set_align(value: string): void
@@ -8316,6 +8495,18 @@ class DOMHTMLDivElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDivElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -8459,7 +8650,8 @@ class DOMHTMLDivElement {
     _init (config?: DOMHTMLDivElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLDocument_ConstructProps extends DOMDocument_ConstructProps {
+interface DOMHTMLDocument_ConstructProps extends DOMDocument_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDocument */
     alink_color?: string
     bg_color?: string
     dir?: string
@@ -8542,13 +8734,13 @@ class DOMHTMLDocument {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDocument */
-    parent_instance: DOMDocument
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocument */
+    readonly parent_instance: DOMNode
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDocument */
     capture_events(): void
     clear(): void
@@ -8665,6 +8857,8 @@ class DOMHTMLDocument {
     set_body(value: DOMHTMLElement): void
     set_charset(value: string): void
     set_cookie(value: string): void
+    set_design_mode(value: string): void
+    set_dir(value: string): void
     set_document_uri(value: string): void
     set_selected_stylesheet_set(value: string): void
     set_title(value: string): void
@@ -8734,6 +8928,14 @@ class DOMHTMLDocument {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDocument */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocument */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -8901,7 +9103,8 @@ class DOMHTMLDocument {
     _init (config?: DOMHTMLDocument_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLElement_ConstructProps extends DOMElement_ConstructProps {
+interface DOMHTMLElement_ConstructProps extends DOMElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
     access_key?: string
     content_editable?: string
     dir?: string
@@ -8978,13 +9181,13 @@ class DOMHTMLElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
-    parent_instance: DOMElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    readonly parent_instance: DOMNode
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
     click(): void
     get_access_key(): string
@@ -9156,6 +9359,14 @@ class DOMHTMLElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -9297,7 +9508,8 @@ class DOMHTMLElement {
     _init (config?: DOMHTMLElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLEmbedElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLEmbedElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLEmbedElement */
     align?: string
     height?: number
     name?: string
@@ -9374,13 +9586,13 @@ class DOMHTMLEmbedElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLEmbedElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLEmbedElement */
     get_align(): string
     get_height(): number
@@ -9565,6 +9777,18 @@ class DOMHTMLEmbedElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLEmbedElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -9718,7 +9942,7 @@ class DOMHTMLEmbedElement {
     _init (config?: DOMHTMLEmbedElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLFieldSetElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLFieldSetElement_ConstructProps extends DOMHTMLElement_ConstructProps {
 }
 class DOMHTMLFieldSetElement {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFieldSetElement */
@@ -9784,13 +10008,13 @@ class DOMHTMLFieldSetElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFieldSetElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFieldSetElement */
     get_form(): DOMHTMLFormElement
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
@@ -9964,6 +10188,18 @@ class DOMHTMLFieldSetElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFieldSetElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -10107,7 +10343,8 @@ class DOMHTMLFieldSetElement {
     _init (config?: DOMHTMLFieldSetElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLFontElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLFontElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFontElement */
     color?: string
     face?: string
     size?: string
@@ -10178,13 +10415,13 @@ class DOMHTMLFontElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFontElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFontElement */
     get_color(): string
     get_face(): string
@@ -10363,6 +10600,18 @@ class DOMHTMLFontElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFontElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -10510,7 +10759,8 @@ class DOMHTMLFontElement {
     _init (config?: DOMHTMLFontElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLFormElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLFormElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFormElement */
     accept_charset?: string
     action?: string
     encoding?: string
@@ -10591,13 +10841,13 @@ class DOMHTMLFormElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFormElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFormElement */
     get_accept_charset(): string
     get_action(): string
@@ -10788,6 +11038,18 @@ class DOMHTMLFormElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFormElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -10947,7 +11209,8 @@ class DOMHTMLFormElement {
     _init (config?: DOMHTMLFormElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLFrameElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLFrameElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameElement */
     frame_border?: string
     long_desc?: string
     margin_height?: string
@@ -11032,13 +11295,13 @@ class DOMHTMLFrameElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameElement */
     get_content_document(): DOMDocument
     get_content_window(): DOMDOMWindow
@@ -11231,6 +11494,18 @@ class DOMHTMLFrameElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -11396,7 +11671,8 @@ class DOMHTMLFrameElement {
     _init (config?: DOMHTMLFrameElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLFrameSetElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLFrameSetElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameSetElement */
     cols?: string
     rows?: string
 }
@@ -11465,13 +11741,13 @@ class DOMHTMLFrameSetElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameSetElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameSetElement */
     get_cols(): string
     get_rows(): string
@@ -11648,6 +11924,18 @@ class DOMHTMLFrameSetElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameSetElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -11793,7 +12081,8 @@ class DOMHTMLFrameSetElement {
     _init (config?: DOMHTMLFrameSetElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLHRElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLHRElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHRElement */
     align?: string
     no_shade?: boolean
     size?: string
@@ -11866,13 +12155,13 @@ class DOMHTMLHRElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHRElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHRElement */
     get_align(): string
     get_no_shade(): boolean
@@ -12053,6 +12342,18 @@ class DOMHTMLHRElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHRElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -12202,7 +12503,8 @@ class DOMHTMLHRElement {
     _init (config?: DOMHTMLHRElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLHeadElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLHeadElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadElement */
     profile?: string
 }
 class DOMHTMLHeadElement {
@@ -12269,13 +12571,13 @@ class DOMHTMLHeadElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadElement */
     get_profile(): string
     set_profile(value: string): void
@@ -12450,6 +12752,18 @@ class DOMHTMLHeadElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -12593,7 +12907,8 @@ class DOMHTMLHeadElement {
     _init (config?: DOMHTMLHeadElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLHeadingElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLHeadingElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadingElement */
     align?: string
 }
 class DOMHTMLHeadingElement {
@@ -12660,13 +12975,13 @@ class DOMHTMLHeadingElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadingElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadingElement */
     get_align(): string
     set_align(value: string): void
@@ -12841,6 +13156,18 @@ class DOMHTMLHeadingElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadingElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -12984,7 +13311,8 @@ class DOMHTMLHeadingElement {
     _init (config?: DOMHTMLHeadingElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLHtmlElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLHtmlElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHtmlElement */
     version?: string
 }
 class DOMHTMLHtmlElement {
@@ -13051,13 +13379,13 @@ class DOMHTMLHtmlElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHtmlElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHtmlElement */
     get_version(): string
     set_version(value: string): void
@@ -13232,6 +13560,18 @@ class DOMHTMLHtmlElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHtmlElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -13375,7 +13715,8 @@ class DOMHTMLHtmlElement {
     _init (config?: DOMHTMLHtmlElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLIFrameElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLIFrameElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLIFrameElement */
     align?: string
     frame_border?: string
     height?: string
@@ -13462,13 +13803,13 @@ class DOMHTMLIFrameElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLIFrameElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLIFrameElement */
     get_align(): string
     get_content_document(): DOMDocument
@@ -13663,6 +14004,18 @@ class DOMHTMLIFrameElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLIFrameElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -13828,7 +14181,8 @@ class DOMHTMLIFrameElement {
     _init (config?: DOMHTMLIFrameElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLImageElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLImageElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLImageElement */
     align?: string
     alt?: string
     border?: string
@@ -13924,13 +14278,13 @@ class DOMHTMLImageElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLImageElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLImageElement */
     get_align(): string
     get_alt(): string
@@ -14134,6 +14488,18 @@ class DOMHTMLImageElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLImageElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -14311,7 +14677,8 @@ class DOMHTMLImageElement {
     _init (config?: DOMHTMLImageElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLInputElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLInputElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLInputElement */
     accept?: string
     align?: string
     alt?: string
@@ -14421,13 +14788,13 @@ class DOMHTMLInputElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLInputElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLInputElement */
     get_accept(): string
     get_align(): string
@@ -14652,6 +15019,18 @@ class DOMHTMLInputElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLInputElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -14841,7 +15220,8 @@ class DOMHTMLInputElement {
     _init (config?: DOMHTMLInputElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLLIElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLLIElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLIElement */
     type?: string
     value?: number
 }
@@ -14910,13 +15290,13 @@ class DOMHTMLLIElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLIElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLIElement */
     get_type_attr(): string
     get_value(): number
@@ -15093,6 +15473,18 @@ class DOMHTMLLIElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLIElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -15238,7 +15630,8 @@ class DOMHTMLLIElement {
     _init (config?: DOMHTMLLIElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLLabelElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLLabelElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLabelElement */
     html_for?: string
 }
 class DOMHTMLLabelElement {
@@ -15306,13 +15699,13 @@ class DOMHTMLLabelElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLabelElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLabelElement */
     get_form(): DOMHTMLFormElement
     get_html_for(): string
@@ -15488,6 +15881,18 @@ class DOMHTMLLabelElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLabelElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -15633,7 +16038,8 @@ class DOMHTMLLabelElement {
     _init (config?: DOMHTMLLabelElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLLegendElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLLegendElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLegendElement */
     align?: string
 }
 class DOMHTMLLegendElement {
@@ -15701,13 +16107,13 @@ class DOMHTMLLegendElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLegendElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLegendElement */
     get_align(): string
     get_form(): DOMHTMLFormElement
@@ -15883,6 +16289,18 @@ class DOMHTMLLegendElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLegendElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -16028,7 +16446,8 @@ class DOMHTMLLegendElement {
     _init (config?: DOMHTMLLegendElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLLinkElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLLinkElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLinkElement */
     charset?: string
     disabled?: boolean
     href?: string
@@ -16113,13 +16532,13 @@ class DOMHTMLLinkElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLinkElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLinkElement */
     get_charset(): string
     get_disabled(): boolean
@@ -16313,6 +16732,18 @@ class DOMHTMLLinkElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLinkElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -16476,7 +16907,8 @@ class DOMHTMLLinkElement {
     _init (config?: DOMHTMLLinkElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLMapElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLMapElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMapElement */
     name?: string
 }
 class DOMHTMLMapElement {
@@ -16544,13 +16976,13 @@ class DOMHTMLMapElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMapElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMapElement */
     get_areas(): DOMHTMLCollection
     get_name(): string
@@ -16726,6 +17158,18 @@ class DOMHTMLMapElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMapElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -16871,7 +17315,7 @@ class DOMHTMLMapElement {
     _init (config?: DOMHTMLMapElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLMarqueeElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLMarqueeElement_ConstructProps extends DOMHTMLElement_ConstructProps {
 }
 class DOMHTMLMarqueeElement {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
@@ -16935,13 +17379,13 @@ class DOMHTMLMarqueeElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMarqueeElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMarqueeElement */
     start(): void
     stop(): void
@@ -17116,6 +17560,18 @@ class DOMHTMLMarqueeElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMarqueeElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -17257,7 +17713,8 @@ class DOMHTMLMarqueeElement {
     _init (config?: DOMHTMLMarqueeElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLMenuElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLMenuElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMenuElement */
     compact?: boolean
 }
 class DOMHTMLMenuElement {
@@ -17324,13 +17781,13 @@ class DOMHTMLMenuElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMenuElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMenuElement */
     get_compact(): boolean
     set_compact(value: boolean): void
@@ -17505,6 +17962,18 @@ class DOMHTMLMenuElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMenuElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -17648,7 +18117,8 @@ class DOMHTMLMenuElement {
     _init (config?: DOMHTMLMenuElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLMetaElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLMetaElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMetaElement */
     content?: string
     http_equiv?: string
     name?: string
@@ -17721,13 +18191,13 @@ class DOMHTMLMetaElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMetaElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMetaElement */
     get_content(): string
     get_http_equiv(): string
@@ -17908,6 +18378,18 @@ class DOMHTMLMetaElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMetaElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -18057,7 +18539,8 @@ class DOMHTMLMetaElement {
     _init (config?: DOMHTMLMetaElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLModElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLModElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLModElement */
     cite?: string
     date_time?: string
 }
@@ -18126,13 +18609,13 @@ class DOMHTMLModElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLModElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLModElement */
     get_cite(): string
     get_date_time(): string
@@ -18309,6 +18792,18 @@ class DOMHTMLModElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLModElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -18454,7 +18949,8 @@ class DOMHTMLModElement {
     _init (config?: DOMHTMLModElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLOListElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLOListElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOListElement */
     compact?: boolean
     start?: number
     type?: string
@@ -18525,13 +19021,13 @@ class DOMHTMLOListElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOListElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOListElement */
     get_compact(): boolean
     get_start(): number
@@ -18710,6 +19206,18 @@ class DOMHTMLOListElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOListElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -18857,7 +19365,8 @@ class DOMHTMLOListElement {
     _init (config?: DOMHTMLOListElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLObjectElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLObjectElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLObjectElement */
     align?: string
     archive?: string
     border?: string
@@ -18956,13 +19465,13 @@ class DOMHTMLObjectElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLObjectElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLObjectElement */
     get_align(): string
     get_archive(): string
@@ -19169,6 +19678,18 @@ class DOMHTMLObjectElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLObjectElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -19346,7 +19867,8 @@ class DOMHTMLObjectElement {
     _init (config?: DOMHTMLObjectElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLOptGroupElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLOptGroupElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptGroupElement */
     disabled?: boolean
     label?: string
 }
@@ -19415,13 +19937,13 @@ class DOMHTMLOptGroupElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptGroupElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptGroupElement */
     get_disabled(): boolean
     get_label(): string
@@ -19598,6 +20120,18 @@ class DOMHTMLOptGroupElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptGroupElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -19743,7 +20277,8 @@ class DOMHTMLOptGroupElement {
     _init (config?: DOMHTMLOptGroupElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLOptionElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLOptionElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionElement */
     default_selected?: boolean
     disabled?: boolean
     label?: string
@@ -19821,13 +20356,13 @@ class DOMHTMLOptionElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionElement */
     get_default_selected(): boolean
     get_disabled(): boolean
@@ -20013,6 +20548,18 @@ class DOMHTMLOptionElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -20170,20 +20717,21 @@ class DOMHTMLOptionElement {
     _init (config?: DOMHTMLOptionElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLOptionsCollection_ConstructProps extends DOMHTMLCollection_ConstructProps {
+interface DOMHTMLOptionsCollection_ConstructProps extends DOMHTMLCollection_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionsCollection */
     selected_index?: number
 }
 class DOMHTMLOptionsCollection {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionsCollection */
     readonly length: number
     selected_index: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionsCollection */
-    parent_instance: DOMHTMLCollection
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCollection */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionsCollection */
     get_length(): number
     get_selected_index(): number
@@ -20191,6 +20739,7 @@ class DOMHTMLOptionsCollection {
     set_selected_index(value: number): void
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCollection */
     item(index: number): DOMNode
+    named_item(name: string): DOMNode
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -20238,7 +20787,8 @@ class DOMHTMLOptionsCollection {
     _init (config?: DOMHTMLOptionsCollection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLParagraphElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLParagraphElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParagraphElement */
     align?: string
 }
 class DOMHTMLParagraphElement {
@@ -20305,13 +20855,13 @@ class DOMHTMLParagraphElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParagraphElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParagraphElement */
     get_align(): string
     set_align(value: string): void
@@ -20486,6 +21036,18 @@ class DOMHTMLParagraphElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParagraphElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -20629,7 +21191,8 @@ class DOMHTMLParagraphElement {
     _init (config?: DOMHTMLParagraphElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLParamElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLParamElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParamElement */
     name?: string
     type?: string
     value?: string
@@ -20702,13 +21265,13 @@ class DOMHTMLParamElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParamElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParamElement */
     get_name(): string
     get_type_attr(): string
@@ -20889,6 +21452,18 @@ class DOMHTMLParamElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParamElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -21038,7 +21613,8 @@ class DOMHTMLParamElement {
     _init (config?: DOMHTMLParamElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLPreElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLPreElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLPreElement */
     width?: number
     wrap?: boolean
 }
@@ -21107,13 +21683,13 @@ class DOMHTMLPreElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLPreElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLPreElement */
     get_width(): number
     get_wrap(): boolean
@@ -21290,6 +21866,18 @@ class DOMHTMLPreElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLPreElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -21435,7 +22023,8 @@ class DOMHTMLPreElement {
     _init (config?: DOMHTMLPreElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLQuoteElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLQuoteElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLQuoteElement */
     cite?: string
 }
 class DOMHTMLQuoteElement {
@@ -21502,13 +22091,13 @@ class DOMHTMLQuoteElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLQuoteElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLQuoteElement */
     get_cite(): string
     set_cite(value: string): void
@@ -21683,6 +22272,18 @@ class DOMHTMLQuoteElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLQuoteElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -21826,7 +22427,8 @@ class DOMHTMLQuoteElement {
     _init (config?: DOMHTMLQuoteElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLScriptElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLScriptElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLScriptElement */
     charset?: string
     defer?: boolean
     event?: string
@@ -21905,13 +22507,13 @@ class DOMHTMLScriptElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLScriptElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLScriptElement */
     get_charset(): string
     get_defer(): boolean
@@ -22098,6 +22700,18 @@ class DOMHTMLScriptElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLScriptElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -22253,7 +22867,8 @@ class DOMHTMLScriptElement {
     _init (config?: DOMHTMLScriptElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLSelectElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLSelectElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLSelectElement */
     autofocus?: boolean
     disabled?: boolean
     length?: number
@@ -22338,13 +22953,13 @@ class DOMHTMLSelectElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLSelectElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLSelectElement */
     add(element: DOMHTMLElement, before: DOMHTMLElement): void
     get_autofocus(): boolean
@@ -22541,6 +23156,18 @@ class DOMHTMLSelectElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLSelectElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -22706,7 +23333,8 @@ class DOMHTMLSelectElement {
     _init (config?: DOMHTMLSelectElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLStyleElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLStyleElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLStyleElement */
     disabled?: boolean
     media?: string
     type?: string
@@ -22778,13 +23406,13 @@ class DOMHTMLStyleElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLStyleElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLStyleElement */
     get_disabled(): boolean
     get_media(): string
@@ -22964,6 +23592,18 @@ class DOMHTMLStyleElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLStyleElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -23113,7 +23753,8 @@ class DOMHTMLStyleElement {
     _init (config?: DOMHTMLStyleElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLTableCaptionElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLTableCaptionElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCaptionElement */
     align?: string
 }
 class DOMHTMLTableCaptionElement {
@@ -23180,13 +23821,13 @@ class DOMHTMLTableCaptionElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCaptionElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCaptionElement */
     get_align(): string
     set_align(value: string): void
@@ -23361,6 +24002,18 @@ class DOMHTMLTableCaptionElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCaptionElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -23504,7 +24157,8 @@ class DOMHTMLTableCaptionElement {
     _init (config?: DOMHTMLTableCaptionElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLTableCellElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLTableCellElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCellElement */
     abbr?: string
     align?: string
     axis?: string
@@ -23598,13 +24252,13 @@ class DOMHTMLTableCellElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCellElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCellElement */
     get_abbr(): string
     get_align(): string
@@ -23806,6 +24460,18 @@ class DOMHTMLTableCellElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCellElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -23977,7 +24643,8 @@ class DOMHTMLTableCellElement {
     _init (config?: DOMHTMLTableCellElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLTableColElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLTableColElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableColElement */
     align?: string
     ch?: string
     ch_off?: string
@@ -24054,13 +24721,13 @@ class DOMHTMLTableColElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableColElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableColElement */
     get_align(): string
     get_ch(): string
@@ -24245,6 +24912,18 @@ class DOMHTMLTableColElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableColElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -24398,7 +25077,8 @@ class DOMHTMLTableColElement {
     _init (config?: DOMHTMLTableColElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLTableElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLTableElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableElement */
     align?: string
     bg_color?: string
     border?: string
@@ -24484,13 +25164,13 @@ class DOMHTMLTableElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableElement */
     create_caption(): DOMHTMLElement
     create_t_foot(): DOMHTMLElement
@@ -24695,6 +25375,18 @@ class DOMHTMLTableElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -24862,7 +25554,8 @@ class DOMHTMLTableElement {
     _init (config?: DOMHTMLTableElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLTableRowElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLTableRowElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableRowElement */
     align?: string
     bg_color?: string
     ch?: string
@@ -24940,13 +25633,13 @@ class DOMHTMLTableRowElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableRowElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableRowElement */
     delete_cell(index: number): void
     get_align(): string
@@ -25134,6 +25827,18 @@ class DOMHTMLTableRowElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableRowElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -25291,7 +25996,8 @@ class DOMHTMLTableRowElement {
     _init (config?: DOMHTMLTableRowElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLTableSectionElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLTableSectionElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableSectionElement */
     align?: string
     ch?: string
     ch_off?: string
@@ -25365,13 +26071,13 @@ class DOMHTMLTableSectionElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableSectionElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableSectionElement */
     delete_row(index: number): void
     get_align(): string
@@ -25555,6 +26261,18 @@ class DOMHTMLTableSectionElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableSectionElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -25706,7 +26424,8 @@ class DOMHTMLTableSectionElement {
     _init (config?: DOMHTMLTableSectionElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLTextAreaElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLTextAreaElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTextAreaElement */
     autofocus?: boolean
     cols?: number
     default_value?: string
@@ -25794,13 +26513,13 @@ class DOMHTMLTextAreaElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTextAreaElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTextAreaElement */
     get_area_type(): string
     get_autofocus(): boolean
@@ -25999,6 +26718,18 @@ class DOMHTMLTextAreaElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTextAreaElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -26166,7 +26897,8 @@ class DOMHTMLTextAreaElement {
     _init (config?: DOMHTMLTextAreaElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLTitleElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLTitleElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTitleElement */
     text?: string
 }
 class DOMHTMLTitleElement {
@@ -26233,13 +26965,13 @@ class DOMHTMLTitleElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTitleElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTitleElement */
     get_text(): string
     set_text(value: string): void
@@ -26414,6 +27146,18 @@ class DOMHTMLTitleElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTitleElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -26557,7 +27301,8 @@ class DOMHTMLTitleElement {
     _init (config?: DOMHTMLTitleElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMHTMLUListElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+interface DOMHTMLUListElement_ConstructProps extends DOMHTMLElement_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLUListElement */
     compact?: boolean
     type?: string
 }
@@ -26626,13 +27371,13 @@ class DOMHTMLUListElement {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLUListElement */
-    parent_instance: DOMHTMLElement
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    readonly parent_instance: DOMElement
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLUListElement */
     get_compact(): boolean
     get_type_attr(): string
@@ -26809,6 +27554,18 @@ class DOMHTMLUListElement {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLUListElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElement */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -26954,7 +27711,7 @@ class DOMHTMLUListElement {
     _init (config?: DOMHTMLUListElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMKeyboardEvent_ConstructProps extends DOMUIEvent_ConstructProps {
+interface DOMKeyboardEvent_ConstructProps extends DOMUIEvent_ConstructProps {
 }
 class DOMKeyboardEvent {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMKeyboardEvent */
@@ -26985,13 +27742,13 @@ class DOMKeyboardEvent {
     readonly target: DOMEventTarget
     readonly time_stamp: number
     readonly type: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMKeyboardEvent */
-    parent_instance: DOMUIEvent
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMUIEvent */
+    readonly parent_instance: DOMEvent
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMKeyboardEvent */
     get_alt_graph_key(): boolean
     get_alt_key(): boolean
@@ -27121,20 +27878,19 @@ class DOMKeyboardEvent {
     _init (config?: DOMKeyboardEvent_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMMediaList_ConstructProps extends DOMObject_ConstructProps {
+interface DOMMediaList_ConstructProps extends DOMObject_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMediaList */
     media_text?: string
 }
 class DOMMediaList {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMediaList */
     readonly length: number
     media_text: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMediaList */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMediaList */
     append_medium(newMedium: string): void
     delete_medium(oldMedium: string): void
@@ -27189,7 +27945,7 @@ class DOMMediaList {
     _init (config?: DOMMediaList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMMouseEvent_ConstructProps extends DOMUIEvent_ConstructProps {
+interface DOMMouseEvent_ConstructProps extends DOMUIEvent_ConstructProps {
 }
 class DOMMouseEvent {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMouseEvent */
@@ -27229,13 +27985,13 @@ class DOMMouseEvent {
     readonly target: DOMEventTarget
     readonly time_stamp: number
     readonly type: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMouseEvent */
-    parent_instance: DOMUIEvent
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMUIEvent */
+    readonly parent_instance: DOMEvent
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMouseEvent */
     get_alt_key(): boolean
     get_button(): number
@@ -27391,18 +28147,16 @@ class DOMMouseEvent {
     _init (config?: DOMMouseEvent_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMNamedNodeMap_ConstructProps extends DOMObject_ConstructProps {
+interface DOMNamedNodeMap_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMNamedNodeMap {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNamedNodeMap */
     readonly length: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNamedNodeMap */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNamedNodeMap */
     get_length(): number
     get_named_item(name: string): DOMNode
@@ -27457,7 +28211,8 @@ class DOMNamedNodeMap {
     _init (config?: DOMNamedNodeMap_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMNode_ConstructProps extends DOMObject_ConstructProps {
+interface DOMNode_ConstructProps extends DOMObject_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     node_value?: string
     text_content?: string
 }
@@ -27476,13 +28231,11 @@ class DOMNode {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     append_child(newChild: DOMNode): DOMNode
     clone_node(deep: boolean): DOMNode
@@ -27598,7 +28351,7 @@ class DOMNode {
     static for_js_value(value: JavaScriptCore.Value): DOMNode
     static $gtype: GObject.Type
 }
-export interface DOMNodeIterator_ConstructProps extends DOMObject_ConstructProps {
+interface DOMNodeIterator_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMNodeIterator {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeIterator */
@@ -27607,13 +28360,11 @@ class DOMNodeIterator {
     readonly reference_node: DOMNode
     readonly root: DOMNode
     readonly what_to_show: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeIterator */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeIterator */
     detach(): void
     get_expand_entity_references(): boolean
@@ -27677,18 +28428,16 @@ class DOMNodeIterator {
     _init (config?: DOMNodeIterator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMNodeList_ConstructProps extends DOMObject_ConstructProps {
+interface DOMNodeList_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMNodeList {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeList */
     readonly length: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeList */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeList */
     get_length(): number
     item(index: number): DOMNode
@@ -27737,15 +28486,13 @@ class DOMNodeList {
     _init (config?: DOMNodeList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMObject_ConstructProps extends GObject.Object_ConstructProps {
+interface DOMObject_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
     core_object?: object
 }
 class DOMObject {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -27789,7 +28536,7 @@ class DOMObject {
     _init (config?: DOMObject_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMProcessingInstruction_ConstructProps extends DOMCharacterData_ConstructProps {
+interface DOMProcessingInstruction_ConstructProps extends DOMCharacterData_ConstructProps {
 }
 class DOMProcessingInstruction {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMProcessingInstruction */
@@ -27812,13 +28559,13 @@ class DOMProcessingInstruction {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMProcessingInstruction */
-    parent_instance: DOMCharacterData
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
+    readonly parent_instance: DOMNode
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMProcessingInstruction */
     get_sheet(): DOMStyleSheet
     get_target(): string
@@ -27893,6 +28640,14 @@ class DOMProcessingInstruction {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMProcessingInstruction */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -27952,7 +28707,7 @@ class DOMProcessingInstruction {
     _init (config?: DOMProcessingInstruction_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMRange_ConstructProps extends DOMObject_ConstructProps {
+interface DOMRange_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMRange {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMRange */
@@ -27963,13 +28718,11 @@ class DOMRange {
     readonly start_container: DOMNode
     readonly start_offset: number
     readonly text: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMRange */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMRange */
     clone_contents(): DOMDocumentFragment
     clone_range(): DOMRange
@@ -28059,7 +28812,8 @@ class DOMRange {
     _init (config?: DOMRange_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMStyleSheet_ConstructProps extends DOMObject_ConstructProps {
+interface DOMStyleSheet_ConstructProps extends DOMObject_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMStyleSheet */
     disabled?: boolean
 }
 class DOMStyleSheet {
@@ -28071,13 +28825,11 @@ class DOMStyleSheet {
     readonly parent_style_sheet: DOMStyleSheet
     readonly title: string
     readonly type: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMStyleSheet */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMStyleSheet */
     get_content_type(): string
     get_disabled(): boolean
@@ -28144,18 +28896,16 @@ class DOMStyleSheet {
     _init (config?: DOMStyleSheet_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMStyleSheetList_ConstructProps extends DOMObject_ConstructProps {
+interface DOMStyleSheetList_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMStyleSheetList {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMStyleSheetList */
     readonly length: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMStyleSheetList */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMStyleSheetList */
     get_length(): number
     item(index: number): DOMStyleSheet
@@ -28204,7 +28954,7 @@ class DOMStyleSheetList {
     _init (config?: DOMStyleSheetList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMText_ConstructProps extends DOMCharacterData_ConstructProps {
+interface DOMText_ConstructProps extends DOMCharacterData_ConstructProps {
 }
 class DOMText {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMText */
@@ -28226,13 +28976,13 @@ class DOMText {
     readonly parent_node: DOMNode
     readonly previous_sibling: DOMNode
     text_content: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMText */
-    parent_instance: DOMCharacterData
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
+    readonly parent_instance: DOMNode
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMText */
     get_whole_text(): string
     replace_whole_text(content: string): DOMText
@@ -28308,6 +29058,14 @@ class DOMText {
     add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     dispatch_event(event: DOMEvent): boolean
     remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMText */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterData */
+    vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
+    vfunc_dispatch_event(event: DOMEvent): boolean
+    vfunc_remove_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     /* Virtual methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNode */
     vfunc_add_event_listener(event_name: string, handler: Function, use_capture: boolean): boolean
     vfunc_dispatch_event(event: DOMEvent): boolean
@@ -28365,7 +29123,7 @@ class DOMText {
     _init (config?: DOMText_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMTreeWalker_ConstructProps extends DOMObject_ConstructProps {
+interface DOMTreeWalker_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMTreeWalker {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMTreeWalker */
@@ -28373,13 +29131,11 @@ class DOMTreeWalker {
     readonly filter: DOMNodeFilter
     readonly root: DOMNode
     readonly what_to_show: number
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMTreeWalker */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMTreeWalker */
     first_child(): DOMNode
     get_current_node(): DOMNode
@@ -28445,7 +29201,7 @@ class DOMTreeWalker {
     _init (config?: DOMTreeWalker_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMUIEvent_ConstructProps extends DOMEvent_ConstructProps {
+interface DOMUIEvent_ConstructProps extends DOMEvent_ConstructProps {
 }
 class DOMUIEvent {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMUIEvent */
@@ -28468,13 +29224,13 @@ class DOMUIEvent {
     readonly target: DOMEventTarget
     readonly time_stamp: number
     readonly type: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMUIEvent */
-    parent_instance: DOMEvent
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMEvent */
+    readonly parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMUIEvent */
     get_char_code(): number
     get_detail(): number
@@ -28580,7 +29336,7 @@ class DOMUIEvent {
     _init (config?: DOMUIEvent_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMWheelEvent_ConstructProps extends DOMMouseEvent_ConstructProps {
+interface DOMWheelEvent_ConstructProps extends DOMMouseEvent_ConstructProps {
 }
 class DOMWheelEvent {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMWheelEvent */
@@ -28624,13 +29380,13 @@ class DOMWheelEvent {
     readonly target: DOMEventTarget
     readonly time_stamp: number
     readonly type: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMWheelEvent */
-    parent_instance: DOMMouseEvent
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMouseEvent */
+    readonly parent_instance: DOMUIEvent
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMWheelEvent */
     get_wheel_delta(): number
     get_wheel_delta_x(): number
@@ -28797,16 +29553,14 @@ class DOMWheelEvent {
     _init (config?: DOMWheelEvent_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMXPathExpression_ConstructProps extends DOMObject_ConstructProps {
+interface DOMXPathExpression_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMXPathExpression {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMXPathExpression */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMXPathExpression */
     evaluate(contextNode: DOMNode, type: number, inResult: DOMXPathResult): DOMXPathResult
     /* Methods of GObject-2.0.GObject.Object */
@@ -28852,7 +29606,7 @@ class DOMXPathExpression {
     _init (config?: DOMXPathExpression_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DOMXPathResult_ConstructProps extends DOMObject_ConstructProps {
+interface DOMXPathResult_ConstructProps extends DOMObject_ConstructProps {
 }
 class DOMXPathResult {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMXPathResult */
@@ -28863,13 +29617,11 @@ class DOMXPathResult {
     readonly single_node_value: DOMNode
     readonly snapshot_length: number
     readonly string_value: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMXPathResult */
-    parent_instance: DOMObject
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObject */
-    parentInstance: GObject.Object
-    coreObject: object
+    readonly parentInstance: GObject.Object
+    readonly coreObject: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMXPathResult */
     get_boolean_value(): boolean
     get_invalid_iterator_state(): boolean
@@ -28937,14 +29689,11 @@ class DOMXPathResult {
     _init (config?: DOMXPathResult_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Frame_ConstructProps extends GObject.Object_ConstructProps {
+interface Frame_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Frame {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.Frame */
-    parent: GObject.Object
-    priv: FramePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.Frame */
     get_id(): number
     get_js_context(): JavaScriptCore.Context
@@ -28996,7 +29745,8 @@ class Frame {
     _init (config?: Frame_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface HitTestResult_ConstructProps extends GObject.Object_ConstructProps {
+interface HitTestResult_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.HitTestResult */
     context?: number
     image_uri?: string
     link_label?: string
@@ -29005,11 +29755,8 @@ export interface HitTestResult_ConstructProps extends GObject.Object_ConstructPr
     media_uri?: string
 }
 class HitTestResult {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.HitTestResult */
-    parent: GObject.Object
-    priv: HitTestResultPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.HitTestResult */
     context_is_editable(): boolean
     context_is_image(): boolean
@@ -29066,14 +29813,11 @@ class HitTestResult {
     _init (config?: HitTestResult_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ScriptWorld_ConstructProps extends GObject.Object_ConstructProps {
+interface ScriptWorld_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ScriptWorld {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.ScriptWorld */
-    parent: GObject.Object
-    priv: ScriptWorldPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.ScriptWorld */
     get_name(): string
     /* Methods of GObject-2.0.GObject.Object */
@@ -29127,16 +29871,15 @@ class ScriptWorld {
     static get_default(): ScriptWorld
     static $gtype: GObject.Type
 }
-export interface URIRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface URIRequest_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.URIRequest */
     uri?: string
 }
 class URIRequest {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.URIRequest */
     uri: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.URIRequest */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.URIRequest */
     get_http_headers(): Soup.MessageHeaders
     get_http_method(): string
@@ -29189,7 +29932,7 @@ class URIRequest {
     static new(uri: string): URIRequest
     static $gtype: GObject.Type
 }
-export interface URIResponse_ConstructProps extends GObject.Object_ConstructProps {
+interface URIResponse_ConstructProps extends GObject.Object_ConstructProps {
 }
 class URIResponse {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.URIResponse */
@@ -29199,10 +29942,8 @@ class URIResponse {
     readonly status_code: number
     readonly suggested_filename: string
     readonly uri: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.URIResponse */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.URIResponse */
     get_content_length(): number
     get_http_headers(): Soup.MessageHeaders
@@ -29265,17 +30006,15 @@ class URIResponse {
     _init (config?: URIResponse_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UserMessage_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface UserMessage_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.UserMessage */
     fd_list?: Gio.UnixFDList
     name?: string
     parameters?: GLib.Variant
 }
 class UserMessage {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.UserMessage */
-    parent: GObject.InitiallyUnowned
-    priv: UserMessagePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.UserMessage */
     get_fd_list(): Gio.UnixFDList | null
     get_name(): string
@@ -29328,14 +30067,11 @@ class UserMessage {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface WebEditor_ConstructProps extends GObject.Object_ConstructProps {
+interface WebEditor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WebEditor {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.WebEditor */
-    parent: GObject.Object
-    priv: WebEditorPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.WebEditor */
     get_page(): WebPage
     /* Methods of GObject-2.0.GObject.Object */
@@ -29385,14 +30121,11 @@ class WebEditor {
     _init (config?: WebEditor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebExtension_ConstructProps extends GObject.Object_ConstructProps {
+interface WebExtension_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WebExtension {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.WebExtension */
-    parent: GObject.Object
-    priv: WebExtensionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.WebExtension */
     get_page(page_id: number): WebPage
     send_message_to_context(message: UserMessage, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -29447,15 +30180,16 @@ class WebExtension {
     _init (config?: WebExtension_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebHitTestResult_ConstructProps extends HitTestResult_ConstructProps {
+interface WebHitTestResult_ConstructProps extends HitTestResult_ConstructProps {
+    /* Constructor properties of WebKit2WebExtension-5.0.WebKit2WebExtension.WebHitTestResult */
     node?: DOMNode
 }
 class WebHitTestResult {
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.WebHitTestResult */
-    parent: HitTestResult
-    priv: WebHitTestResultPrivate
+    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.HitTestResult */
+    readonly parent: GObject.Object
+    readonly priv: HitTestResultPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.WebHitTestResult */
     get_node(): DOMNode
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.HitTestResult */
@@ -29514,16 +30248,13 @@ class WebHitTestResult {
     _init (config?: WebHitTestResult_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebPage_ConstructProps extends GObject.Object_ConstructProps {
+interface WebPage_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WebPage {
     /* Properties of WebKit2WebExtension-5.0.WebKit2WebExtension.WebPage */
     readonly uri: string
-    /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.WebPage */
-    parent: GObject.Object
-    priv: WebPagePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of WebKit2WebExtension-5.0.WebKit2WebExtension.WebPage */
     get_dom_document(): DOMDocument
     get_editor(): WebEditor
@@ -29615,12 +30346,12 @@ class ConsoleMessage {
 }
 abstract class ContextMenuClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.ContextMenuClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ContextMenuItemClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.ContextMenuItemClass */
-    parent_class: GObject.InitiallyUnownedClass
+    readonly parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
 class ContextMenuItemPrivate {
@@ -29631,527 +30362,527 @@ class ContextMenuPrivate {
 }
 abstract class DOMAttrClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMAttrClass */
-    parent_class: DOMNodeClass
+    readonly parent_class: DOMNodeClass
     static name: string
 }
 abstract class DOMBlobClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMBlobClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMCDATASectionClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCDATASectionClass */
-    parent_class: DOMTextClass
+    readonly parent_class: DOMTextClass
     static name: string
 }
 abstract class DOMCSSRuleClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSRuleClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMCSSRuleListClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSRuleListClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMCSSStyleDeclarationClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSStyleDeclarationClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMCSSStyleSheetClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSStyleSheetClass */
-    parent_class: DOMStyleSheetClass
+    readonly parent_class: DOMStyleSheetClass
     static name: string
 }
 abstract class DOMCSSValueClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCSSValueClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMCharacterDataClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCharacterDataClass */
-    parent_class: DOMNodeClass
+    readonly parent_class: DOMNodeClass
     static name: string
 }
 abstract class DOMClientRectClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMClientRectClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMClientRectListClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMClientRectListClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMCommentClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMCommentClass */
-    parent_class: DOMCharacterDataClass
+    readonly parent_class: DOMCharacterDataClass
     static name: string
 }
 abstract class DOMDOMImplementationClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMImplementationClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMDOMSelectionClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMSelectionClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMDOMTokenListClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMTokenListClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMDOMWindowClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDOMWindowClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMDocumentClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentClass */
-    parent_class: DOMNodeClass
+    readonly parent_class: DOMNodeClass
     static name: string
 }
 abstract class DOMDocumentFragmentClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentFragmentClass */
-    parent_class: DOMNodeClass
+    readonly parent_class: DOMNodeClass
     static name: string
 }
 abstract class DOMDocumentTypeClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMDocumentTypeClass */
-    parent_class: DOMNodeClass
+    readonly parent_class: DOMNodeClass
     static name: string
 }
 abstract class DOMElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMElementClass */
-    parent_class: DOMNodeClass
+    readonly parent_class: DOMNodeClass
     static name: string
 }
 abstract class DOMEntityReferenceClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMEntityReferenceClass */
-    parent_class: DOMNodeClass
+    readonly parent_class: DOMNodeClass
     static name: string
 }
 abstract class DOMEventClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMEventClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMEventTargetIface {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMEventTargetIface */
-    gIface: GObject.TypeInterface
-    dispatch_event: (target: DOMEventTarget, event: DOMEvent) => boolean
-    add_event_listener: (target: DOMEventTarget, event_name: string, handler: Function, use_capture: boolean) => boolean
-    remove_event_listener: (target: DOMEventTarget, event_name: string, handler: Function, use_capture: boolean) => boolean
+    readonly gIface: GObject.TypeInterface
+    readonly dispatch_event: (target: DOMEventTarget, event: DOMEvent) => boolean
+    readonly add_event_listener: (target: DOMEventTarget, event_name: string, handler: Function, use_capture: boolean) => boolean
+    readonly remove_event_listener: (target: DOMEventTarget, event_name: string, handler: Function, use_capture: boolean) => boolean
     static name: string
 }
 abstract class DOMFileClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMFileClass */
-    parent_class: DOMBlobClass
+    readonly parent_class: DOMBlobClass
     static name: string
 }
 abstract class DOMFileListClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMFileListClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMHTMLAnchorElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAnchorElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLAppletElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAppletElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLAreaElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLAreaElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLBRElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBRElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLBaseElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBaseElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLBaseFontElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBaseFontElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLBodyElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLBodyElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLButtonElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLButtonElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLCanvasElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCanvasElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLCollectionClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLCollectionClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMHTMLDListElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDListElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLDirectoryElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDirectoryElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLDivElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDivElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLDocumentClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLDocumentClass */
-    parent_class: DOMDocumentClass
+    readonly parent_class: DOMDocumentClass
     static name: string
 }
 abstract class DOMHTMLElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLElementClass */
-    parent_class: DOMElementClass
+    readonly parent_class: DOMElementClass
     static name: string
 }
 abstract class DOMHTMLEmbedElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLEmbedElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLFieldSetElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFieldSetElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLFontElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFontElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLFormElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFormElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLFrameElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLFrameSetElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLFrameSetElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLHRElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHRElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLHeadElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLHeadingElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHeadingElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLHtmlElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLHtmlElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLIFrameElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLIFrameElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLImageElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLImageElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLInputElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLInputElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLLIElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLIElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLLabelElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLabelElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLLegendElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLegendElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLLinkElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLLinkElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLMapElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMapElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLMarqueeElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMarqueeElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLMenuElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMenuElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLMetaElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLMetaElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLModElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLModElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLOListElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOListElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLObjectElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLObjectElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLOptGroupElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptGroupElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLOptionElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLOptionsCollectionClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLOptionsCollectionClass */
-    parent_class: DOMHTMLCollectionClass
+    readonly parent_class: DOMHTMLCollectionClass
     static name: string
 }
 abstract class DOMHTMLParagraphElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParagraphElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLParamElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLParamElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLPreElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLPreElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLQuoteElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLQuoteElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLScriptElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLScriptElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLSelectElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLSelectElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLStyleElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLStyleElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLTableCaptionElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCaptionElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLTableCellElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableCellElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLTableColElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableColElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLTableElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLTableRowElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableRowElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLTableSectionElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTableSectionElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLTextAreaElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTextAreaElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLTitleElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLTitleElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMHTMLUListElementClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMHTMLUListElementClass */
-    parent_class: DOMHTMLElementClass
+    readonly parent_class: DOMHTMLElementClass
     static name: string
 }
 abstract class DOMKeyboardEventClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMKeyboardEventClass */
-    parent_class: DOMUIEventClass
+    readonly parent_class: DOMUIEventClass
     static name: string
 }
 abstract class DOMMediaListClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMediaListClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMMouseEventClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMMouseEventClass */
-    parent_class: DOMUIEventClass
+    readonly parent_class: DOMUIEventClass
     static name: string
 }
 abstract class DOMNamedNodeMapClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNamedNodeMapClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMNodeClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMNodeFilterIface {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeFilterIface */
-    gIface: GObject.TypeInterface
-    accept_node: (filter: DOMNodeFilter, node: DOMNode) => number
+    readonly gIface: GObject.TypeInterface
+    readonly accept_node: (filter: DOMNodeFilter, node: DOMNode) => number
     static name: string
 }
 abstract class DOMNodeIteratorClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeIteratorClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMNodeListClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMNodeListClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMObjectClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMObjectClass */
-    parentClass: GObject.ObjectClass
+    readonly parentClass: GObject.ObjectClass
     static name: string
 }
 abstract class DOMProcessingInstructionClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMProcessingInstructionClass */
-    parent_class: DOMCharacterDataClass
+    readonly parent_class: DOMCharacterDataClass
     static name: string
 }
 abstract class DOMRangeClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMRangeClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMStyleSheetClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMStyleSheetClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMStyleSheetListClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMStyleSheetListClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMTextClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMTextClass */
-    parent_class: DOMCharacterDataClass
+    readonly parent_class: DOMCharacterDataClass
     static name: string
 }
 abstract class DOMTreeWalkerClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMTreeWalkerClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMUIEventClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMUIEventClass */
-    parent_class: DOMEventClass
+    readonly parent_class: DOMEventClass
     static name: string
 }
 abstract class DOMWheelEventClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMWheelEventClass */
-    parent_class: DOMMouseEventClass
+    readonly parent_class: DOMMouseEventClass
     static name: string
 }
 abstract class DOMXPathExpressionClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMXPathExpressionClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class DOMXPathNSResolverIface {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMXPathNSResolverIface */
-    gIface: GObject.TypeInterface
-    lookup_namespace_uri: (resolver: DOMXPathNSResolver, prefix: string) => string
+    readonly gIface: GObject.TypeInterface
+    readonly lookup_namespace_uri: (resolver: DOMXPathNSResolver, prefix: string) => string
     static name: string
 }
 abstract class DOMXPathResultClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.DOMXPathResultClass */
-    parent_class: DOMObjectClass
+    readonly parent_class: DOMObjectClass
     static name: string
 }
 abstract class FrameClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.FrameClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class FramePrivate {
@@ -30159,7 +30890,7 @@ class FramePrivate {
 }
 abstract class HitTestResultClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.HitTestResultClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class HitTestResultPrivate {
@@ -30167,7 +30898,7 @@ class HitTestResultPrivate {
 }
 abstract class ScriptWorldClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.ScriptWorldClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ScriptWorldPrivate {
@@ -30175,7 +30906,7 @@ class ScriptWorldPrivate {
 }
 abstract class URIRequestClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.URIRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class URIRequestPrivate {
@@ -30183,7 +30914,7 @@ class URIRequestPrivate {
 }
 abstract class URIResponseClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.URIResponseClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class URIResponsePrivate {
@@ -30191,7 +30922,7 @@ class URIResponsePrivate {
 }
 abstract class UserMessageClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.UserMessageClass */
-    parent_class: GObject.InitiallyUnownedClass
+    readonly parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
 class UserMessagePrivate {
@@ -30199,7 +30930,7 @@ class UserMessagePrivate {
 }
 abstract class WebEditorClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.WebEditorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WebEditorPrivate {
@@ -30207,7 +30938,7 @@ class WebEditorPrivate {
 }
 abstract class WebExtensionClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.WebExtensionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WebExtensionPrivate {
@@ -30215,7 +30946,7 @@ class WebExtensionPrivate {
 }
 abstract class WebHitTestResultClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.WebHitTestResultClass */
-    parent_class: HitTestResultClass
+    readonly parent_class: HitTestResultClass
     static name: string
 }
 class WebHitTestResultPrivate {
@@ -30223,7 +30954,7 @@ class WebHitTestResultPrivate {
 }
 abstract class WebPageClass {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension.WebPageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WebPagePrivate {
@@ -30231,14 +30962,14 @@ class WebPagePrivate {
 }
 class _ContextMenu {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension._ContextMenu */
-    parent: GObject.Object
-    priv: ContextMenuPrivate
+    readonly parent: GObject.Object
+    readonly priv: ContextMenuPrivate
     static name: string
 }
 class _ContextMenuItem {
     /* Fields of WebKit2WebExtension-5.0.WebKit2WebExtension._ContextMenuItem */
-    parent: GObject.InitiallyUnowned
-    priv: ContextMenuItemPrivate
+    readonly parent: GObject.InitiallyUnowned
+    readonly priv: ContextMenuItemPrivate
     static name: string
 }
 }

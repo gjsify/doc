@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * TelepathyFarstream-0.6
  */
@@ -13,7 +19,8 @@ import type Farstream from './Farstream-0.2';
 
 export namespace TelepathyFarstream {
 
-export interface Channel_ConstructProps extends GObject.Object_ConstructProps {
+interface Channel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TelepathyFarstream-0.6.TelepathyFarstream.Channel */
     channel?: TelepathyGLib.Channel
 }
 class Channel {
@@ -21,7 +28,7 @@ class Channel {
     readonly fs_conferences: object[]
     readonly object_path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TelepathyFarstream-0.6.TelepathyFarstream.Channel */
     bus_message(message: Gst.Message): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -98,7 +105,7 @@ class Channel {
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static $gtype: GObject.Type
 }
-export interface Content_ConstructProps extends GObject.Object_ConstructProps {
+interface Content_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Content {
     /* Properties of TelepathyFarstream-0.6.TelepathyFarstream.Content */
@@ -109,7 +116,7 @@ class Content {
     readonly sink_pad: Gst.Pad
     readonly tf_channel: Channel
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TelepathyFarstream-0.6.TelepathyFarstream.Content */
     error(message: string): void
     iterate_src_pads(handles: number, handle_count: number): Gst.Iterator

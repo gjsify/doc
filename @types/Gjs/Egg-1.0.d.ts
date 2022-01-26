@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Egg-1.0
  */
@@ -39,7 +45,7 @@ enum ThreeGridColumn {
     CENTER,
     RIGHT,
 }
-export const COUNTER_REQUIRES_ATOMIC: number
+const COUNTER_REQUIRES_ATOMIC: number
 function counter_arena_get_default(): CounterArena
 function date_time_format_for_display(self: GLib.DateTime): string
 function frame_source_add(frames_per_sec: number, callback: GLib.SourceFunc): number
@@ -50,7 +56,8 @@ interface CounterForeachFunc {
 interface TaskCacheCallback {
     (self: TaskCache, key: object | null, task: Gio.Task): void
 }
-export interface Animation_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface Animation_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.Animation */
     duration?: number
     frame_clock?: Gdk.FrameClock
     mode?: AnimationMode
@@ -58,7 +65,7 @@ export interface Animation_ConstructProps extends GObject.InitiallyUnowned_Const
 }
 class Animation {
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.Animation */
     add_property(pspec: GObject.ParamSpec, value: any): void
     start(): void
@@ -112,14 +119,15 @@ class Animation {
     static calculate_duration(monitor: Gdk.Monitor, from_value: number, to_value: number): number
     static $gtype: GObject.Type
 }
-export interface BindingGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface BindingGroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.BindingGroup */
     source?: GObject.Object
 }
 class BindingGroup {
     /* Properties of Egg-1.0.Egg.BindingGroup */
     source: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.BindingGroup */
     bind(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): void
     bind_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to?: Function | null, transform_from?: Function | null): void
@@ -172,8 +180,10 @@ class BindingGroup {
     static new(): BindingGroup
     static $gtype: GObject.Type
 }
-export interface Box_ConstructProps extends Gtk.Box_ConstructProps {
+interface Box_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.Box */
     max_width_request?: number
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Box {
@@ -229,14 +239,14 @@ class Box {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Egg-1.0.Egg.Box */
-    parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.Box */
     get_max_width_request(): number
     set_max_width_request(max_width_request: number): void
@@ -258,7 +268,7 @@ class Box {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -573,6 +583,7 @@ class Box {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -1017,10 +1028,12 @@ class Box {
     _init (config?: Box_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Box
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): Box
     static $gtype: GObject.Type
 }
-export interface CenteringBin_ConstructProps extends Gtk.Bin_ConstructProps {
+interface CenteringBin_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.CenteringBin */
     max_width_request?: number
 }
 class CenteringBin {
@@ -1070,21 +1083,21 @@ class CenteringBin {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.CenteringBin */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
     /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1399,6 +1412,7 @@ class CenteringBin {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.CenteringBin */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1834,7 +1848,8 @@ class CenteringBin {
     static new(): CenteringBin
     static $gtype: GObject.Type
 }
-export interface ColumnLayout_ConstructProps extends Gtk.Container_ConstructProps {
+interface ColumnLayout_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.ColumnLayout */
     column_spacing?: number
     column_width?: number
     max_columns?: number
@@ -1890,12 +1905,12 @@ class ColumnLayout {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.ColumnLayout */
-    parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.ColumnLayout */
     get_column_spacing(): number
     get_column_width(): number
@@ -1909,7 +1924,7 @@ class ColumnLayout {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2224,6 +2239,7 @@ class ColumnLayout {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.ColumnLayout */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -2665,7 +2681,7 @@ class ColumnLayout {
     static new(): ColumnLayout
     static $gtype: GObject.Type
 }
-export interface ElasticBin_ConstructProps extends Gtk.Bin_ConstructProps {
+interface ElasticBin_ConstructProps extends Gtk.Bin_ConstructProps {
 }
 class ElasticBin {
     /* Properties of Gtk-3.0.Gtk.Container */
@@ -2712,21 +2728,21 @@ class ElasticBin {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.ElasticBin */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Bin */
     get_child(): Gtk.Widget | null
     /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3041,6 +3057,7 @@ class ElasticBin {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.ElasticBin */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3474,7 +3491,8 @@ class ElasticBin {
     static new(): ElasticBin
     static $gtype: GObject.Type
 }
-export interface EmptyState_ConstructProps extends Gtk.Bin_ConstructProps {
+interface EmptyState_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.EmptyState */
     icon_name?: string
     pixel_size?: number
     resource?: string
@@ -3532,14 +3550,14 @@ class EmptyState {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.EmptyState */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.EmptyState */
     get_icon_name(): string
     get_subtitle(): string
@@ -3554,7 +3572,7 @@ class EmptyState {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3869,6 +3887,7 @@ class EmptyState {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.EmptyState */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -4312,8 +4331,10 @@ class EmptyState {
     static new(): EmptyState
     static $gtype: GObject.Type
 }
-export interface EntryBox_ConstructProps extends Gtk.Box_ConstructProps {
+interface EntryBox_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.EntryBox */
     max_width_chars?: number
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EntryBox {
@@ -4370,13 +4391,13 @@ class EntryBox {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
@@ -4395,7 +4416,7 @@ class EntryBox {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4710,6 +4731,7 @@ class EntryBox {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -5154,10 +5176,12 @@ class EntryBox {
     _init (config?: EntryBox_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): EntryBox
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): EntryBox
     static $gtype: GObject.Type
 }
-export interface FileChooserEntry_ConstructProps extends Gtk.Bin_ConstructProps {
+interface FileChooserEntry_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.FileChooserEntry */
     action?: Gtk.FileChooserAction
     create_folders?: boolean
     do_overwrite_confirmation?: boolean
@@ -5223,14 +5247,14 @@ class FileChooserEntry {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.FileChooserEntry */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.FileChooserEntry */
     get_file(): Gio.File | null
     set_file(file: Gio.File): void
@@ -5240,7 +5264,7 @@ class FileChooserEntry {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5555,6 +5579,7 @@ class FileChooserEntry {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.FileChooserEntry */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -6006,7 +6031,8 @@ class FileChooserEntry {
     static new(title: string, action: Gtk.FileChooserAction): FileChooserEntry
     static $gtype: GObject.Type
 }
-export interface ListBox_ConstructProps extends Gtk.ListBox_ConstructProps {
+interface ListBox_ConstructProps extends Gtk.ListBox_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.ListBox */
     property_name?: string
     row_type?: GObject.Type
     row_type_name?: string
@@ -6059,12 +6085,12 @@ class ListBox {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.ListBox */
-    parent_instance: Gtk.ListBox
+    /* Fields of Gtk-3.0.Gtk.ListBox */
+    readonly parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.ListBox */
     get_model(): Gio.ListModel | null
     get_property_name(): string
@@ -6102,7 +6128,7 @@ class ListBox {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6417,6 +6443,7 @@ class ListBox {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.ListBox */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -6886,14 +6913,15 @@ class ListBox {
     _init (config?: ListBox_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(row_type: GObject.Type, property_name: string): ListBox
+    /* Function overloads */
     static new(): ListBox
     static $gtype: GObject.Type
 }
-export interface MenuManager_ConstructProps extends GObject.Object_ConstructProps {
+interface MenuManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MenuManager {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.MenuManager */
     add_filename(filename: string): number
     add_resource(resource: string): number
@@ -6944,7 +6972,8 @@ class MenuManager {
     static new(): MenuManager
     static $gtype: GObject.Type
 }
-export interface PillBox_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface PillBox_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.PillBox */
     label?: string
 }
 class PillBox {
@@ -6998,15 +7027,15 @@ class PillBox {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.PillBox */
     get_label(): string
     set_label(label: string): void
@@ -7021,7 +7050,7 @@ class PillBox {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7336,6 +7365,7 @@ class PillBox {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.PillBox */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -7773,10 +7803,12 @@ class PillBox {
     _init (config?: PillBox_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(label: string): PillBox
+    /* Function overloads */
     static new(): PillBox
     static $gtype: GObject.Type
 }
-export interface PriorityBox_ConstructProps extends Gtk.Box_ConstructProps {
+interface PriorityBox_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class PriorityBox {
@@ -7830,14 +7862,14 @@ class PriorityBox {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Egg-1.0.Egg.PriorityBox */
-    parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
@@ -7856,7 +7888,7 @@ class PriorityBox {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8171,6 +8203,7 @@ class PriorityBox {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -8613,14 +8646,18 @@ class PriorityBox {
     _init (config?: PriorityBox_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PriorityBox
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): PriorityBox
     static $gtype: GObject.Type
 }
-export interface ProgressButton_ConstructProps extends Gtk.Button_ConstructProps {
+interface ProgressButton_ConstructProps extends Gtk.Button_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.ProgressButton */
     progress?: number
     show_progress?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
+    /* Constructor properties of Gtk-3.0.Gtk.Activatable */
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
@@ -8688,14 +8725,14 @@ class ProgressButton {
     /* Properties of Gtk-3.0.Gtk.Activatable */
     related_action: Gtk.Action
     use_action_appearance: boolean
-    /* Fields of Egg-1.0.Egg.ProgressButton */
-    parent_instance: Gtk.Button
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.ProgressButton */
     get_progress(): number
     get_show_progress(): boolean
@@ -8732,7 +8769,7 @@ class ProgressButton {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8960,6 +8997,7 @@ class ProgressButton {
     set_direction(dir: Gtk.TextDirection): void
     set_double_buffered(double_buffered: boolean): void
     set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
     set_font_map(font_map?: Pango.FontMap | null): void
     set_font_options(options?: cairo.FontOptions | null): void
     set_halign(align: Gtk.Align): void
@@ -9058,6 +9096,7 @@ class ProgressButton {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.ProgressButton */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
@@ -9553,7 +9592,8 @@ class ProgressButton {
     static new(): ProgressButton
     static $gtype: GObject.Type
 }
-export interface RadioBox_ConstructProps extends Gtk.Bin_ConstructProps {
+interface RadioBox_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.RadioBox */
     active_id?: string
     show_more?: boolean
 }
@@ -9606,14 +9646,14 @@ class RadioBox {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.RadioBox */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.RadioBox */
     add_item(id: string, text: string): void
     get_active_id(): string
@@ -9624,7 +9664,7 @@ class RadioBox {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9939,6 +9979,7 @@ class RadioBox {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.RadioBox */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -10382,7 +10423,7 @@ class RadioBox {
     static new(): RadioBox
     static $gtype: GObject.Type
 }
-export interface ScrolledWindow_ConstructProps extends Gtk.ScrolledWindow_ConstructProps {
+interface ScrolledWindow_ConstructProps extends Gtk.ScrolledWindow_ConstructProps {
 }
 class ScrolledWindow {
     /* Properties of Gtk-3.0.Gtk.ScrolledWindow */
@@ -10446,14 +10487,14 @@ class ScrolledWindow {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.ScrolledWindow */
-    container: Gtk.Bin
-    priv: Gtk.ScrolledWindowPrivate
+    readonly container: Gtk.Bin
+    readonly priv: Gtk.ScrolledWindowPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.ScrolledWindow */
     add_with_viewport(child: Gtk.Widget): void
     get_capture_button_press(): boolean
@@ -10493,7 +10534,7 @@ class ScrolledWindow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10808,6 +10849,7 @@ class ScrolledWindow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.ScrolledWindow */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -11285,7 +11327,8 @@ class ScrolledWindow {
     _init (config?: ScrolledWindow_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SearchBar_ConstructProps extends Gtk.Bin_ConstructProps {
+interface SearchBar_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SearchBar */
     search_mode_enabled?: boolean
     show_close_button?: boolean
 }
@@ -11337,14 +11380,14 @@ class SearchBar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.SearchBar */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.SearchBar */
     get_entry(): Gtk.SearchEntry
     get_search_mode_enabled(): boolean
@@ -11357,7 +11400,7 @@ class SearchBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -11672,6 +11715,7 @@ class SearchBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.SearchBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -12116,7 +12160,8 @@ class SearchBar {
     static new(): SearchBar
     static $gtype: GObject.Type
 }
-export interface SettingsFlagAction_ConstructProps extends GObject.Object_ConstructProps {
+interface SettingsFlagAction_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SettingsFlagAction */
     flag_nick?: string
     schema_id?: string
     schema_key?: string
@@ -12131,7 +12176,7 @@ class SettingsFlagAction {
     readonly state: GLib.Variant
     readonly state_type: GLib.VariantType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -12209,13 +12254,14 @@ class SettingsFlagAction {
     static print_detailed_name(action_name: string, target_value?: GLib.Variant | null): string
     static $gtype: GObject.Type
 }
-export interface SettingsSandwich_ConstructProps extends GObject.Object_ConstructProps {
+interface SettingsSandwich_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SettingsSandwich */
     path?: string
     schema_id?: string
 }
 class SettingsSandwich {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.SettingsSandwich */
     append(settings: Gio.Settings): void
     bind(key: string, object: object | null, property: string, flags: Gio.SettingsBindFlags): void
@@ -12280,7 +12326,8 @@ class SettingsSandwich {
     static new(schema_id: string, path: string): SettingsSandwich
     static $gtype: GObject.Type
 }
-export interface SignalGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface SignalGroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SignalGroup */
     target?: GObject.Object
     target_type?: GObject.Type
 }
@@ -12288,7 +12335,7 @@ class SignalGroup {
     /* Properties of Egg-1.0.Egg.SignalGroup */
     target: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.SignalGroup */
     block(): void
     connect_data(detailed_signal: string, c_handler: GObject.Callback, flags: GObject.ConnectFlags): void
@@ -12350,7 +12397,8 @@ class SignalGroup {
     static new(target_type: GObject.Type): SignalGroup
     static $gtype: GObject.Type
 }
-export interface SimpleLabel_ConstructProps extends Gtk.Widget_ConstructProps {
+interface SimpleLabel_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SimpleLabel */
     label?: string
     width_chars?: number
     xalign?: number
@@ -12401,9 +12449,9 @@ class SimpleLabel {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.SimpleLabel */
     get_label(): string
     get_width_chars(): number
@@ -12701,6 +12749,7 @@ class SimpleLabel {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.SimpleLabel */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -13110,7 +13159,8 @@ class SimpleLabel {
     static new(label: string): SimpleLabel
     static $gtype: GObject.Type
 }
-export interface SimplePopover_ConstructProps extends Gtk.Popover_ConstructProps {
+interface SimplePopover_ConstructProps extends Gtk.Popover_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SimplePopover */
     button_text?: string
     message?: string
     ready?: boolean
@@ -13175,14 +13225,14 @@ class SimplePopover {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.SimplePopover */
-    parent_instance: Gtk.Popover
+    /* Fields of Gtk-3.0.Gtk.Popover */
+    readonly parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.SimplePopover */
     get_button_text(): string
     get_message(): string
@@ -13218,7 +13268,7 @@ class SimplePopover {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -13533,6 +13583,7 @@ class SimplePopover {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.SimplePopover */
     vfunc_activate(text: string): void
     vfunc_changed(): void
@@ -14005,10 +14056,12 @@ class SimplePopover {
     _init (config?: SimplePopover_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SimplePopover
+    /* Function overloads */
     static new(relative_to?: Gtk.Widget | null): SimplePopover
     static $gtype: GObject.Type
 }
-export interface Slider_ConstructProps extends Gtk.Container_ConstructProps {
+interface Slider_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.Slider */
     position?: SliderPosition
 }
 class Slider {
@@ -14058,12 +14111,12 @@ class Slider {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.Slider */
-    parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.Slider */
     add_slider(widget: Gtk.Widget, position: SliderPosition): void
     get_position(): SliderPosition
@@ -14072,7 +14125,7 @@ class Slider {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -14387,6 +14440,7 @@ class Slider {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.Slider */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -14822,16 +14876,15 @@ class Slider {
     static new(): Slider
     static $gtype: GObject.Type
 }
-export interface StateMachine_ConstructProps extends GObject.Object_ConstructProps {
+interface StateMachine_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.StateMachine */
     state?: string
 }
 class StateMachine {
     /* Properties of Egg-1.0.Egg.StateMachine */
     state: string
-    /* Fields of Egg-1.0.Egg.StateMachine */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.StateMachine */
     add_binding(state: string, source_object: object | null, source_property: string, target_object: object | null, target_property: string, flags: GObject.BindingFlags): void
     add_propertyv(state: string, object: object | null, property: string, value: any): void
@@ -14908,7 +14961,8 @@ class StateMachine {
     static new(): StateMachine
     static $gtype: GObject.Type
 }
-export interface Suggestion_ConstructProps extends GObject.Object_ConstructProps {
+interface Suggestion_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.Suggestion */
     icon_name?: string
     id?: string
     subtitle?: string
@@ -14920,10 +14974,8 @@ class Suggestion {
     id: string
     subtitle: string
     title: string
-    /* Fields of Egg-1.0.Egg.Suggestion */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.Suggestion */
     get_icon_name(): string
     get_id(): string
@@ -14998,8 +15050,10 @@ class Suggestion {
     static new(): Suggestion
     static $gtype: GObject.Type
 }
-export interface SuggestionEntry_ConstructProps extends Gtk.Entry_ConstructProps {
+interface SuggestionEntry_ConstructProps extends Gtk.Entry_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SuggestionEntry */
     model?: Gio.ListModel
+    /* Constructor properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled?: boolean
 }
 class SuggestionEntry {
@@ -15100,10 +15154,10 @@ class SuggestionEntry {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
-    /* Fields of Egg-1.0.Egg.SuggestionEntry */
-    parent_instance: Gtk.Entry
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.SuggestionEntry */
     get_model(): Gio.ListModel | null
     get_suggestion(): Suggestion | null
@@ -15475,6 +15529,7 @@ class SuggestionEntry {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
@@ -16111,7 +16166,8 @@ class SuggestionEntry {
     static new(): SuggestionEntry
     static $gtype: GObject.Type
 }
-export interface SuggestionEntryBuffer_ConstructProps extends Gtk.EntryBuffer_ConstructProps {
+interface SuggestionEntryBuffer_ConstructProps extends Gtk.EntryBuffer_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SuggestionEntryBuffer */
     suggestion?: Suggestion
 }
 class SuggestionEntryBuffer {
@@ -16121,10 +16177,10 @@ class SuggestionEntryBuffer {
     readonly length: number
     max_length: number
     text: string
-    /* Fields of Egg-1.0.Egg.SuggestionEntryBuffer */
-    parent_instance: Gtk.EntryBuffer
+    /* Fields of Gtk-3.0.Gtk.EntryBuffer */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.SuggestionEntryBuffer */
     commit(): void
     get_suggestion(): Suggestion | null
@@ -16207,10 +16263,12 @@ class SuggestionEntryBuffer {
     _init (config?: SuggestionEntryBuffer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SuggestionEntryBuffer
+    /* Function overloads */
     static new(initial_chars: string | null, n_initial_chars: number): SuggestionEntryBuffer
     static $gtype: GObject.Type
 }
-export interface SuggestionPopover_ConstructProps extends Gtk.Window_ConstructProps {
+interface SuggestionPopover_ConstructProps extends Gtk.Window_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SuggestionPopover */
     model?: Suggestion
     relative_to?: Gtk.Widget
     selected?: Suggestion
@@ -16298,16 +16356,16 @@ class SuggestionPopover {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.SuggestionPopover */
     activate_selected(): void
     get_model(): Gio.ListModel | null
@@ -16432,7 +16490,7 @@ class SuggestionPopover {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -16676,6 +16734,7 @@ class SuggestionPopover {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -16744,6 +16803,7 @@ class SuggestionPopover {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.SuggestionPopover */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -17271,10 +17331,12 @@ class SuggestionPopover {
     _init (config?: SuggestionPopover_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SuggestionPopover
+    /* Function overloads */
     static new(type: Gtk.WindowType): SuggestionPopover
     static $gtype: GObject.Type
 }
-export interface SuggestionRow_ConstructProps extends Gtk.ListBoxRow_ConstructProps {
+interface SuggestionRow_ConstructProps extends Gtk.ListBoxRow_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.SuggestionRow */
     suggestion?: Suggestion
 }
 class SuggestionRow {
@@ -17327,14 +17389,14 @@ class SuggestionRow {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.SuggestionRow */
-    parent_instance: Gtk.ListBoxRow
+    /* Fields of Gtk-3.0.Gtk.ListBoxRow */
+    readonly parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.SuggestionRow */
     get_suggestion(): Suggestion
     set_suggestion(suggestion: Suggestion): void
@@ -17354,7 +17416,7 @@ class SuggestionRow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -17669,6 +17731,7 @@ class SuggestionRow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.SuggestionRow */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -18114,7 +18177,8 @@ class SuggestionRow {
     static new(): SuggestionRow
     static $gtype: GObject.Type
 }
-export interface TaskCache_ConstructProps extends GObject.Object_ConstructProps {
+interface TaskCache_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.TaskCache */
     key_copy_func?: object
     key_destroy_func?: object
     key_equal_func?: object
@@ -18128,7 +18192,7 @@ export interface TaskCache_ConstructProps extends GObject.Object_ConstructProps 
 }
 class TaskCache {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.TaskCache */
     evict(key?: object | null): boolean
     evict_all(): void
@@ -18179,7 +18243,8 @@ class TaskCache {
     _init (config?: TaskCache_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ThreeGrid_ConstructProps extends Gtk.Container_ConstructProps {
+interface ThreeGrid_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.ThreeGrid */
     column_spacing?: number
     row_spacing?: number
 }
@@ -18231,17 +18296,17 @@ class ThreeGrid {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Egg-1.0.Egg.ThreeGrid */
-    parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -18556,6 +18621,7 @@ class ThreeGrid {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Egg-1.0.Egg.ThreeGrid */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -18993,12 +19059,13 @@ class ThreeGrid {
     static new(): ThreeGrid
     static $gtype: GObject.Type
 }
-export interface WidgetActionGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface WidgetActionGroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Egg-1.0.Egg.WidgetActionGroup */
     widget?: Gtk.Widget
 }
 class WidgetActionGroup {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Egg-1.0.Egg.WidgetActionGroup */
     set_action_enabled(action_name: string, enabled: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -19091,35 +19158,35 @@ class WidgetActionGroup {
 }
 abstract class AnimationClass {
     /* Fields of Egg-1.0.Egg.AnimationClass */
-    parent_class: GObject.InitiallyUnownedClass
+    readonly parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
 abstract class BindingGroupClass {
     /* Fields of Egg-1.0.Egg.BindingGroupClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class BoxClass {
     /* Fields of Egg-1.0.Egg.BoxClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 abstract class CenteringBinClass {
     /* Fields of Egg-1.0.Egg.CenteringBinClass */
-    parent: Gtk.BinClass
+    readonly parent: Gtk.BinClass
     static name: string
 }
 abstract class ColumnLayoutClass {
     /* Fields of Egg-1.0.Egg.ColumnLayoutClass */
-    parent: Gtk.ContainerClass
+    readonly parent: Gtk.ContainerClass
     static name: string
 }
 class Counter {
     /* Fields of Egg-1.0.Egg.Counter */
-    values: CounterValue
-    category: string
-    name: string
-    description: string
+    readonly values: CounterValue
+    readonly category: string
+    readonly name: string
+    readonly description: string
     /* Methods of Egg-1.0.Egg.Counter */
     get(): number
     reset(): void
@@ -19138,42 +19205,42 @@ class CounterArena {
 }
 class CounterValue {
     /* Fields of Egg-1.0.Egg.CounterValue */
-    value: number
-    padding: number[]
+    readonly value: number
+    readonly padding: number[]
     static name: string
 }
 abstract class ElasticBinClass {
     /* Fields of Egg-1.0.Egg.ElasticBinClass */
-    parent_class: Gtk.BinClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
+    readonly parent_class: Gtk.BinClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
     static name: string
 }
 abstract class EmptyStateClass {
     /* Fields of Egg-1.0.Egg.EmptyStateClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class EntryBoxClass {
     /* Fields of Egg-1.0.Egg.EntryBoxClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 abstract class FileChooserEntryClass {
     /* Fields of Egg-1.0.Egg.FileChooserEntryClass */
-    parent_class: Gtk.BinClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
+    readonly parent_class: Gtk.BinClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
     static name: string
 }
 class Heap {
     /* Fields of Egg-1.0.Egg.Heap */
-    data: string
-    len: number
+    readonly data: string
+    readonly len: number
     /* Methods of Egg-1.0.Egg.Heap */
     extract(result?: object | null): boolean
     extract_index(index_: number, result?: object | null): boolean
@@ -19188,170 +19255,170 @@ class Heap {
 }
 abstract class ListBoxClass {
     /* Fields of Egg-1.0.Egg.ListBoxClass */
-    parent_class: Gtk.ListBoxClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
+    readonly parent_class: Gtk.ListBoxClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
     static name: string
 }
 abstract class MenuManagerClass {
     /* Fields of Egg-1.0.Egg.MenuManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PillBoxClass {
     /* Fields of Egg-1.0.Egg.PillBoxClass */
-    parent_class: Gtk.EventBoxClass
+    readonly parent_class: Gtk.EventBoxClass
     static name: string
 }
 abstract class PriorityBoxClass {
     /* Fields of Egg-1.0.Egg.PriorityBoxClass */
-    parent_class: Gtk.BoxClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
+    readonly parent_class: Gtk.BoxClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
     static name: string
 }
 abstract class ProgressButtonClass {
     /* Fields of Egg-1.0.Egg.ProgressButtonClass */
-    parent_class: Gtk.ButtonClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
+    readonly parent_class: Gtk.ButtonClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
     static name: string
 }
 abstract class RadioBoxClass {
     /* Fields of Egg-1.0.Egg.RadioBoxClass */
-    parent_class: Gtk.BinClass
-    _padding1: object
-    _padding2: object
-    _padding3: object
-    _padding4: object
+    readonly parent_class: Gtk.BinClass
+    readonly _padding1: object
+    readonly _padding2: object
+    readonly _padding3: object
+    readonly _padding4: object
     static name: string
 }
 abstract class ScrolledWindowClass {
     /* Fields of Egg-1.0.Egg.ScrolledWindowClass */
-    parent_class: Gtk.ScrolledWindowClass
+    readonly parent_class: Gtk.ScrolledWindowClass
     static name: string
 }
 abstract class SearchBarClass {
     /* Fields of Egg-1.0.Egg.SearchBarClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class SettingsFlagActionClass {
     /* Fields of Egg-1.0.Egg.SettingsFlagActionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SettingsSandwichClass {
     /* Fields of Egg-1.0.Egg.SettingsSandwichClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SignalGroupClass {
     /* Fields of Egg-1.0.Egg.SignalGroupClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SimpleLabelClass {
     /* Fields of Egg-1.0.Egg.SimpleLabelClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class SimplePopoverClass {
     /* Fields of Egg-1.0.Egg.SimplePopoverClass */
-    parent: Gtk.PopoverClass
-    activate: (self: SimplePopover, text: string) => void
-    insert_text: (self: SimplePopover, position: number, chars: string, n_chars: number) => boolean
-    changed: (self: SimplePopover) => void
+    readonly parent: Gtk.PopoverClass
+    readonly activate: (self: SimplePopover, text: string) => void
+    readonly insert_text: (self: SimplePopover, position: number, chars: string, n_chars: number) => boolean
+    readonly changed: (self: SimplePopover) => void
     static name: string
 }
 abstract class SliderClass {
     /* Fields of Egg-1.0.Egg.SliderClass */
-    parent_instance: Gtk.ContainerClass
+    readonly parent_instance: Gtk.ContainerClass
     static name: string
 }
 abstract class StateMachineClass {
     /* Fields of Egg-1.0.Egg.StateMachineClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 abstract class SuggestionClass {
     /* Fields of Egg-1.0.Egg.SuggestionClass */
-    parent_class: GObject.ObjectClass
-    suggest_suffix: (self: Suggestion, typed_text: string) => string | null
-    replace_typed_text: (self: Suggestion, typed_text: string) => string | null
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
+    readonly parent_class: GObject.ObjectClass
+    readonly suggest_suffix: (self: Suggestion, typed_text: string) => string | null
+    readonly replace_typed_text: (self: Suggestion, typed_text: string) => string | null
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
     static name: string
 }
 abstract class SuggestionEntryBufferClass {
     /* Fields of Egg-1.0.Egg.SuggestionEntryBufferClass */
-    parent_class: Gtk.EntryBufferClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
+    readonly parent_class: Gtk.EntryBufferClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
     static name: string
 }
 abstract class SuggestionEntryClass {
     /* Fields of Egg-1.0.Egg.SuggestionEntryClass */
-    parent_class: Gtk.EntryClass
-    hide_suggestions: (self: SuggestionEntry) => void
-    show_suggestions: (self: SuggestionEntry) => void
-    move_suggestion: (self: SuggestionEntry, amount: number) => void
-    suggestion_activated: (self: SuggestionEntry, suggestion: Suggestion) => void
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
-    _reserved5: object
-    _reserved6: object
-    _reserved7: object
-    _reserved8: object
+    readonly parent_class: Gtk.EntryClass
+    readonly hide_suggestions: (self: SuggestionEntry) => void
+    readonly show_suggestions: (self: SuggestionEntry) => void
+    readonly move_suggestion: (self: SuggestionEntry, amount: number) => void
+    readonly suggestion_activated: (self: SuggestionEntry, suggestion: Suggestion) => void
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
+    readonly _reserved5: object
+    readonly _reserved6: object
+    readonly _reserved7: object
+    readonly _reserved8: object
     static name: string
 }
 abstract class SuggestionPopoverClass {
     /* Fields of Egg-1.0.Egg.SuggestionPopoverClass */
-    parent_class: Gtk.WindowClass
+    readonly parent_class: Gtk.WindowClass
     static name: string
 }
 abstract class SuggestionRowClass {
     /* Fields of Egg-1.0.Egg.SuggestionRowClass */
-    parent_class: Gtk.ListBoxRowClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
+    readonly parent_class: Gtk.ListBoxRowClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
     static name: string
 }
 abstract class TaskCacheClass {
     /* Fields of Egg-1.0.Egg.TaskCacheClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ThreeGridClass {
     /* Fields of Egg-1.0.Egg.ThreeGridClass */
-    parent_class: Gtk.ContainerClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
-    _reserved5: object
-    _reserved6: object
-    _reserved7: object
-    _reserved8: object
+    readonly parent_class: Gtk.ContainerClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
+    readonly _reserved5: object
+    readonly _reserved6: object
+    readonly _reserved7: object
+    readonly _reserved8: object
     static name: string
 }
 abstract class WidgetActionGroupClass {
     /* Fields of Egg-1.0.Egg.WidgetActionGroupClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

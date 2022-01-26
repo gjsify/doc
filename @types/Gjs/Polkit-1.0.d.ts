@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Polkit-1.0
  */
@@ -69,11 +75,11 @@ class Subject {
     /* Static methods and pseudo-constructors */
     static from_string(str: string): Subject
 }
-export interface ActionDescription_ConstructProps extends GObject.Object_ConstructProps {
+interface ActionDescription_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ActionDescription {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.ActionDescription */
     get_action_id(): string
     get_annotation(key: string): string | null
@@ -129,7 +135,7 @@ class ActionDescription {
     _init (config?: ActionDescription_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Authority_ConstructProps extends GObject.Object_ConstructProps {
+interface Authority_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Authority {
     /* Properties of Polkit-1.0.Polkit.Authority */
@@ -138,7 +144,7 @@ class Authority {
     readonly backend_version: string
     readonly owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.Authority */
     authentication_agent_response(cookie: string, identity: Identity, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     authentication_agent_response_finish(res: Gio.AsyncResult): boolean
@@ -243,11 +249,11 @@ class Authority {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface AuthorizationResult_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthorizationResult_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AuthorizationResult {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.AuthorizationResult */
     get_details(): Details | null
     get_dismissed(): boolean
@@ -300,11 +306,11 @@ class AuthorizationResult {
     static new(is_authorized: boolean, is_challenge: boolean, details?: Details | null): AuthorizationResult
     static $gtype: GObject.Type
 }
-export interface Details_ConstructProps extends GObject.Object_ConstructProps {
+interface Details_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Details {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.Details */
     get_keys(): string[] | null
     insert(key: string, value?: string | null): void
@@ -354,7 +360,8 @@ class Details {
     static new(): Details
     static $gtype: GObject.Type
 }
-export interface Permission_ConstructProps extends Gio.Permission_ConstructProps {
+interface Permission_ConstructProps extends Gio.Permission_ConstructProps {
+    /* Constructor properties of Polkit-1.0.Polkit.Permission */
     action_id?: string
     subject?: Subject
 }
@@ -364,9 +371,9 @@ class Permission {
     readonly can_acquire: boolean
     readonly can_release: boolean
     /* Fields of Gio-2.0.Gio.Permission */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.Permission */
     get_action_id(): string
     get_subject(): Subject
@@ -452,14 +459,15 @@ class Permission {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SystemBusName_ConstructProps extends GObject.Object_ConstructProps {
+interface SystemBusName_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Polkit-1.0.Polkit.SystemBusName */
     name?: string
 }
 class SystemBusName {
     /* Properties of Polkit-1.0.Polkit.SystemBusName */
     name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.SystemBusName */
     get_name(): string
     get_process_sync(cancellable?: Gio.Cancellable | null): Subject | null
@@ -526,11 +534,11 @@ class SystemBusName {
     static from_string(str: string): Subject
     static $gtype: GObject.Type
 }
-export interface TemporaryAuthorization_ConstructProps extends GObject.Object_ConstructProps {
+interface TemporaryAuthorization_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TemporaryAuthorization {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.TemporaryAuthorization */
     get_action_id(): string
     get_id(): string
@@ -580,14 +588,15 @@ class TemporaryAuthorization {
     _init (config?: TemporaryAuthorization_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UnixGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface UnixGroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Polkit-1.0.Polkit.UnixGroup */
     gid?: number
 }
 class UnixGroup {
     /* Properties of Polkit-1.0.Polkit.UnixGroup */
     gid: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.UnixGroup */
     get_gid(): number
     set_gid(gid: number): void
@@ -647,14 +656,15 @@ class UnixGroup {
     static from_string(str: string): Identity | null
     static $gtype: GObject.Type
 }
-export interface UnixNetgroup_ConstructProps extends GObject.Object_ConstructProps {
+interface UnixNetgroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Polkit-1.0.Polkit.UnixNetgroup */
     name?: string
 }
 class UnixNetgroup {
     /* Properties of Polkit-1.0.Polkit.UnixNetgroup */
     name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.UnixNetgroup */
     get_name(): string
     set_name(name: string): void
@@ -713,7 +723,8 @@ class UnixNetgroup {
     static from_string(str: string): Identity | null
     static $gtype: GObject.Type
 }
-export interface UnixProcess_ConstructProps extends GObject.Object_ConstructProps {
+interface UnixProcess_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Polkit-1.0.Polkit.UnixProcess */
     pid?: number
     start_time?: number
     uid?: number
@@ -724,7 +735,7 @@ class UnixProcess {
     start_time: number
     uid: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.UnixProcess */
     get_owner(): number
     get_pid(): number
@@ -800,7 +811,8 @@ class UnixProcess {
     static from_string(str: string): Subject
     static $gtype: GObject.Type
 }
-export interface UnixSession_ConstructProps extends GObject.Object_ConstructProps {
+interface UnixSession_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Polkit-1.0.Polkit.UnixSession */
     pid?: number
     session_id?: string
 }
@@ -808,7 +820,7 @@ class UnixSession {
     /* Properties of Polkit-1.0.Polkit.UnixSession */
     session_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.UnixSession */
     get_session_id(): string
     set_session_id(session_id: string): void
@@ -887,14 +899,15 @@ class UnixSession {
     static from_string(str: string): Subject
     static $gtype: GObject.Type
 }
-export interface UnixUser_ConstructProps extends GObject.Object_ConstructProps {
+interface UnixUser_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Polkit-1.0.Polkit.UnixUser */
     uid?: number
 }
 class UnixUser {
     /* Properties of Polkit-1.0.Polkit.UnixUser */
     uid: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Polkit-1.0.Polkit.UnixUser */
     get_name(): string | null
     get_uid(): number
@@ -969,21 +982,21 @@ abstract class DetailsClass {
 }
 abstract class IdentityIface {
     /* Fields of Polkit-1.0.Polkit.IdentityIface */
-    parent_iface: GObject.TypeInterface
-    hash: (identity: Identity) => number
-    equal: (a: Identity, b: Identity) => boolean
-    to_string: (identity: Identity) => string
+    readonly parent_iface: GObject.TypeInterface
+    readonly hash: (identity: Identity) => number
+    readonly equal: (a: Identity, b: Identity) => boolean
+    readonly to_string: (identity: Identity) => string
     static name: string
 }
 abstract class SubjectIface {
     /* Fields of Polkit-1.0.Polkit.SubjectIface */
-    parent_iface: GObject.TypeInterface
-    hash: (subject: Subject) => number
-    equal: (a: Subject, b: Subject) => boolean
-    to_string: (subject: Subject) => string
-    exists: (subject: Subject, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    exists_finish: (subject: Subject, res: Gio.AsyncResult) => boolean
-    exists_sync: (subject: Subject, cancellable?: Gio.Cancellable | null) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly hash: (subject: Subject) => number
+    readonly equal: (a: Subject, b: Subject) => boolean
+    readonly to_string: (subject: Subject) => string
+    readonly exists: (subject: Subject, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly exists_finish: (subject: Subject, res: Gio.AsyncResult) => boolean
+    readonly exists_sync: (subject: Subject, cancellable?: Gio.Cancellable | null) => boolean
     static name: string
 }
 abstract class SystemBusNameClass {

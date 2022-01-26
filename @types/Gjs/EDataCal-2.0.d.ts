@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EDataCal-2.0
  */
@@ -19,10 +25,10 @@ import type EBackend from './EBackend-1.2';
 
 export namespace EDataCal {
 
-export const EDS_CALENDAR_MODULES: string
-export const EDS_SUBPROCESS_CAL_PATH: string
-export const INTERVALTREE_DEBUG: number
-export const LIBICAL_GLIB_UNSTABLE_API: number
+const EDS_CALENDAR_MODULES: string
+const EDS_SUBPROCESS_CAL_PATH: string
+const INTERVALTREE_DEBUG: number
+const LIBICAL_GLIB_UNSTABLE_API: number
 function cal_cache_offline_change_free(change?: object | null): void
 function cal_cache_search_data_free(ptr?: object | null): void
 function cal_meta_backend_info_free(ptr?: object | null): void
@@ -35,7 +41,8 @@ interface CalBackendForeachViewFunc {
 interface CalCacheSearchFunc {
     (cal_cache: CalCache, uid: string, rid: string | null, revision: string, object: string, extra: string, custom_flags: number, offline_state: EBackend.OfflineState): boolean
 }
-export interface CalBackend_ConstructProps extends EBackend.Backend_ConstructProps {
+interface CalBackend_ConstructProps extends EBackend.Backend_ConstructProps {
+    /* Constructor properties of EDataCal-2.0.EDataCal.CalBackend */
     cache_dir?: string
     kind?: number
     registry?: EDataServer.SourceRegistry
@@ -52,7 +59,7 @@ class CalBackend {
     online: boolean
     readonly user_prompter: EBackend.UserPrompter
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataCal-2.0.EDataCal.CalBackend */
     add_timezone(tzobject: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     add_timezone_finish(result: Gio.AsyncResult): boolean
@@ -243,11 +250,11 @@ class CalBackend {
     static user_declined(registry: EDataServer.SourceRegistry, icalcomp: ICalGLib.Component): boolean
     static $gtype: GObject.Type
 }
-export interface CalBackendFactory_ConstructProps extends EBackend.BackendFactory_ConstructProps {
+interface CalBackendFactory_ConstructProps extends EBackend.BackendFactory_ConstructProps {
 }
 class CalBackendFactory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.BackendFactory */
     get_hash_key(): string
     get_module_filename(): string
@@ -301,11 +308,11 @@ class CalBackendFactory {
     _init (config?: CalBackendFactory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CalBackendSExp_ConstructProps extends GObject.Object_ConstructProps {
+interface CalBackendSExp_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CalBackendSExp {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataCal-2.0.EDataCal.CalBackendSExp */
     evaluate_occur_times(start: number, end: number): boolean
     lock(): void
@@ -358,7 +365,7 @@ class CalBackendSExp {
     static new(text: string): CalBackendSExp
     static $gtype: GObject.Type
 }
-export interface CalBackendSync_ConstructProps extends CalBackend_ConstructProps {
+interface CalBackendSync_ConstructProps extends CalBackend_ConstructProps {
 }
 class CalBackendSync {
     /* Properties of EDataCal-2.0.EDataCal.CalBackend */
@@ -371,7 +378,7 @@ class CalBackendSync {
     online: boolean
     readonly user_prompter: EBackend.UserPrompter
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataCal-2.0.EDataCal.CalBackendSync */
     add_timezone(cal: DataCal, cancellable: Gio.Cancellable | null, tzobject: string): void
     create_objects(cal: DataCal, cancellable: Gio.Cancellable | null, calobjs: string[], opflags: ECal.OperationFlags): [ /* uids */ string[], /* new_components */ ECal.Component[] ]
@@ -513,6 +520,8 @@ class CalBackendSync {
     vfunc_open_sync(cal: DataCal, cancellable?: Gio.Cancellable | null): void
     vfunc_receive_objects_sync(cal: DataCal, cancellable: Gio.Cancellable | null, calobj: string, opflags: ECal.OperationFlags): void
     vfunc_refresh_sync(cal: DataCal, cancellable?: Gio.Cancellable | null): void
+    vfunc_timezone_added(zone: ICalGLib.Timezone): void
+    vfunc_tzcache_add_timezone(zone: ICalGLib.Timezone): void
     /* Virtual methods of EDataCal-2.0.EDataCal.CalBackend */
     vfunc_closed(sender: string): void
     vfunc_impl_add_timezone(cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, tzobject: string): void
@@ -581,11 +590,11 @@ class CalBackendSync {
     _init (config?: CalBackendSync_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CalCache_ConstructProps extends EBackend.Cache_ConstructProps {
+interface CalCache_ConstructProps extends EBackend.Cache_ConstructProps {
 }
 class CalCache {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataCal-2.0.EDataCal.CalCache */
     contains(uid: string, rid: string | null, deleted_flag: EBackend.CacheDeletedFlag): boolean
     delete_attachments(component: ICalGLib.Component, cancellable?: Gio.Cancellable | null): boolean
@@ -741,7 +750,8 @@ class CalCache {
     static resolve_timezone_cb(tzid: string, cal_cache?: object | null, cancellable?: Gio.Cancellable | null): ICalGLib.Timezone | null
     static $gtype: GObject.Type
 }
-export interface CalMetaBackend_ConstructProps extends CalBackendSync_ConstructProps {
+interface CalMetaBackend_ConstructProps extends CalBackendSync_ConstructProps {
+    /* Constructor properties of EDataCal-2.0.EDataCal.CalMetaBackend */
     cache?: CalCache
 }
 class CalMetaBackend {
@@ -757,7 +767,7 @@ class CalMetaBackend {
     online: boolean
     readonly user_prompter: EBackend.UserPrompter
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataCal-2.0.EDataCal.CalMetaBackend */
     connect_sync(credentials?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_auth_result */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -860,6 +870,7 @@ class CalMetaBackend {
     ref_proxy_resolver(): Gio.ProxyResolver | null
     refresh(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     refresh_finish(result: Gio.AsyncResult): boolean
+    refresh_sync(cancellable?: Gio.Cancellable | null): boolean
     remove_objects(component_ids: ECal.ComponentId[], mod: ECal.ObjModType, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     remove_objects_finish(result: Gio.AsyncResult): boolean
     remove_objects_sync(component_ids: ECal.ComponentId[], mod: ECal.ObjModType, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null): boolean
@@ -933,6 +944,8 @@ class CalMetaBackend {
     vfunc_search_components_sync(expr?: string | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_components */ ECal.Component[] ]
     vfunc_search_sync(expr?: string | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_icalstrings */ string[] ]
     vfunc_source_changed(): void
+    vfunc_timezone_added(zone: ICalGLib.Timezone): void
+    vfunc_tzcache_add_timezone(zone: ICalGLib.Timezone): void
     /* Virtual methods of EDataCal-2.0.EDataCal.CalBackendSync */
     vfunc_add_timezone_sync(cal: DataCal, cancellable: Gio.Cancellable | null, tzobject: string): void
     vfunc_discard_alarm_sync(cal: DataCal, cancellable: Gio.Cancellable | null, uid: string, rid: string, auid: string, opflags: ECal.OperationFlags): void
@@ -941,6 +954,8 @@ class CalMetaBackend {
     vfunc_open_sync(cal: DataCal, cancellable?: Gio.Cancellable | null): void
     vfunc_receive_objects_sync(cal: DataCal, cancellable: Gio.Cancellable | null, calobj: string, opflags: ECal.OperationFlags): void
     vfunc_refresh_sync(cal: DataCal, cancellable?: Gio.Cancellable | null): void
+    vfunc_timezone_added(zone: ICalGLib.Timezone): void
+    vfunc_tzcache_add_timezone(zone: ICalGLib.Timezone): void
     /* Virtual methods of EDataCal-2.0.EDataCal.CalBackend */
     vfunc_closed(sender: string): void
     vfunc_impl_add_timezone(cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, tzobject: string): void
@@ -1018,17 +1033,15 @@ class CalMetaBackend {
     _init (config?: CalMetaBackend_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DataCal_ConstructProps extends GObject.Object_ConstructProps {
+interface DataCal_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataCal-2.0.EDataCal.DataCal */
     backend?: CalBackend
     connection?: Gio.DBusConnection
     object_path?: string
 }
 class DataCal {
-    /* Fields of EDataCal-2.0.EDataCal.DataCal */
-    parent: GObject.Object
-    priv: DataCalPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataCal-2.0.EDataCal.DataCal */
     get_connection(): Gio.DBusConnection
     get_object_path(): string
@@ -1100,16 +1113,13 @@ class DataCal {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DataCalFactory_ConstructProps extends EBackend.DataFactory_ConstructProps {
+interface DataCalFactory_ConstructProps extends EBackend.DataFactory_ConstructProps {
 }
 class DataCalFactory {
     /* Properties of EBackend-1.2.EBackend.DataFactory */
     readonly registry: EDataServer.SourceRegistry
-    /* Fields of EDataCal-2.0.EDataCal.DataCalFactory */
-    parent: EBackend.DataFactory
-    priv: DataCalFactoryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.DataFactory */
     backend_closed(backend: EBackend.Backend): void
     backend_closed_by_sender(backend: EBackend.Backend, sender: string): void
@@ -1156,6 +1166,8 @@ class DataCalFactory {
     load_extensions(): void
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of EDataCal-2.0.EDataCal.DataCalFactory */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of EBackend-1.2.EBackend.DataFactory */
     vfunc_complete_open(invocation: Gio.DBusMethodInvocation, object_path: string, bus_name: string, extension_name: string): void
     vfunc_create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend
@@ -1206,20 +1218,19 @@ class DataCalFactory {
     _init (config?: DataCalFactory_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(backend_per_process: number, cancellable?: Gio.Cancellable | null): DataCalFactory
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DataCalView_ConstructProps extends GObject.Object_ConstructProps {
+interface DataCalView_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataCal-2.0.EDataCal.DataCalView */
     backend?: CalBackend
     connection?: Gio.DBusConnection
     object_path?: string
     sexp?: CalBackendSExp
 }
 class DataCalView {
-    /* Fields of EDataCal-2.0.EDataCal.DataCalView */
-    parent: GObject.Object
-    priv: DataCalViewPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataCal-2.0.EDataCal.DataCalView */
     component_matches(component: ECal.Component): boolean
     get_component_string(component: ECal.Component): string
@@ -1291,11 +1302,11 @@ class DataCalView {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface IntervalTree_ConstructProps extends GObject.Object_ConstructProps {
+interface IntervalTree_ConstructProps extends GObject.Object_ConstructProps {
 }
 class IntervalTree {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataCal-2.0.EDataCal.IntervalTree */
     destroy(): void
     dump(): void
@@ -1347,16 +1358,13 @@ class IntervalTree {
     static new(): IntervalTree
     static $gtype: GObject.Type
 }
-export interface SubprocessCalFactory_ConstructProps extends EBackend.SubprocessFactory_ConstructProps {
+interface SubprocessCalFactory_ConstructProps extends EBackend.SubprocessFactory_ConstructProps {
 }
 class SubprocessCalFactory {
     /* Properties of EBackend-1.2.EBackend.SubprocessFactory */
     readonly registry: EDataServer.SourceRegistry
-    /* Fields of EDataCal-2.0.EDataCal.SubprocessCalFactory */
-    parent: EBackend.SubprocessFactory
-    priv: SubprocessCalFactoryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.SubprocessFactory */
     call_backends_prepare_shutdown(): void
     get_backends_list(): EBackend.Backend[]
@@ -1388,6 +1396,8 @@ class SubprocessCalFactory {
     watch_closure(closure: Function): void
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of EDataCal-2.0.EDataCal.SubprocessCalFactory */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of EBackend-1.2.EBackend.SubprocessFactory */
     vfunc_backend_closed(backend: EBackend.Backend): void
     vfunc_backend_created(backend: EBackend.Backend): void
@@ -1416,34 +1426,35 @@ class SubprocessCalFactory {
     _init (config?: SubprocessCalFactory_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(cancellable?: Gio.Cancellable | null): SubprocessCalFactory
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
 abstract class CalBackendClass {
     /* Fields of EDataCal-2.0.EDataCal.CalBackendClass */
-    use_serial_dispatch_queue: boolean
-    impl_get_backend_property: (backend: CalBackend, prop_name: string) => string
-    impl_open: (backend: CalBackend, cal: DataCal, opid: number, cancellable?: Gio.Cancellable | null) => void
-    impl_refresh: (backend: CalBackend, cal: DataCal, opid: number, cancellable?: Gio.Cancellable | null) => void
-    impl_get_object: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, uid: string, rid: string) => void
-    impl_get_object_list: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, sexp: string) => void
-    impl_receive_objects: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, calobj: string, opflags: ECal.OperationFlags) => void
-    impl_send_objects: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, calobj: string, opflags: ECal.OperationFlags) => void
-    impl_get_attachment_uris: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, uid: string, rid: string) => void
-    impl_discard_alarm: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, uid: string, rid: string, auid: string, opflags: ECal.OperationFlags) => void
-    impl_get_timezone: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, tzid: string) => void
-    impl_add_timezone: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, tzobject: string) => void
-    impl_start_view: (backend: CalBackend, view: DataCalView) => void
-    impl_stop_view: (backend: CalBackend, view: DataCalView) => void
-    closed: (backend: CalBackend, sender: string) => void
-    shutdown: (backend: CalBackend) => void
-    reserved_padding: object[]
+    readonly use_serial_dispatch_queue: boolean
+    readonly impl_get_backend_property: (backend: CalBackend, prop_name: string) => string
+    readonly impl_open: (backend: CalBackend, cal: DataCal, opid: number, cancellable?: Gio.Cancellable | null) => void
+    readonly impl_refresh: (backend: CalBackend, cal: DataCal, opid: number, cancellable?: Gio.Cancellable | null) => void
+    readonly impl_get_object: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, uid: string, rid: string) => void
+    readonly impl_get_object_list: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, sexp: string) => void
+    readonly impl_receive_objects: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, calobj: string, opflags: ECal.OperationFlags) => void
+    readonly impl_send_objects: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, calobj: string, opflags: ECal.OperationFlags) => void
+    readonly impl_get_attachment_uris: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, uid: string, rid: string) => void
+    readonly impl_discard_alarm: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, uid: string, rid: string, auid: string, opflags: ECal.OperationFlags) => void
+    readonly impl_get_timezone: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, tzid: string) => void
+    readonly impl_add_timezone: (backend: CalBackend, cal: DataCal, opid: number, cancellable: Gio.Cancellable | null, tzobject: string) => void
+    readonly impl_start_view: (backend: CalBackend, view: DataCalView) => void
+    readonly impl_stop_view: (backend: CalBackend, view: DataCalView) => void
+    readonly closed: (backend: CalBackend, sender: string) => void
+    readonly shutdown: (backend: CalBackend) => void
+    readonly reserved_padding: object[]
     static name: string
 }
 abstract class CalBackendFactoryClass {
     /* Fields of EDataCal-2.0.EDataCal.CalBackendFactoryClass */
-    factory_name: string
-    component_kind: ICalGLib.ComponentKind
-    backend_type: GObject.Type
+    readonly factory_name: string
+    readonly component_kind: ICalGLib.ComponentKind
+    readonly backend_type: GObject.Type
     static name: string
 }
 class CalBackendFactoryPrivate {
@@ -1460,14 +1471,14 @@ class CalBackendSExpPrivate {
 }
 abstract class CalBackendSyncClass {
     /* Fields of EDataCal-2.0.EDataCal.CalBackendSyncClass */
-    open_sync: (backend: CalBackendSync, cal: DataCal, cancellable?: Gio.Cancellable | null) => void
-    refresh_sync: (backend: CalBackendSync, cal: DataCal, cancellable?: Gio.Cancellable | null) => void
-    get_object_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, uid: string, rid: string, calobj: string) => void
-    receive_objects_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, calobj: string, opflags: ECal.OperationFlags) => void
-    discard_alarm_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, uid: string, rid: string, auid: string, opflags: ECal.OperationFlags) => void
-    get_timezone_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, tzid: string, tzobject: string) => void
-    add_timezone_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, tzobject: string) => void
-    reserved_padding: object[]
+    readonly open_sync: (backend: CalBackendSync, cal: DataCal, cancellable?: Gio.Cancellable | null) => void
+    readonly refresh_sync: (backend: CalBackendSync, cal: DataCal, cancellable?: Gio.Cancellable | null) => void
+    readonly get_object_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, uid: string, rid: string, calobj: string) => void
+    readonly receive_objects_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, calobj: string, opflags: ECal.OperationFlags) => void
+    readonly discard_alarm_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, uid: string, rid: string, auid: string, opflags: ECal.OperationFlags) => void
+    readonly get_timezone_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, tzid: string, tzobject: string) => void
+    readonly add_timezone_sync: (backend: CalBackendSync, cal: DataCal, cancellable: Gio.Cancellable | null, tzobject: string) => void
+    readonly reserved_padding: object[]
     static name: string
 }
 class CalBackendSyncPrivate {
@@ -1475,16 +1486,16 @@ class CalBackendSyncPrivate {
 }
 abstract class CalCacheClass {
     /* Fields of EDataCal-2.0.EDataCal.CalCacheClass */
-    dup_component_revision: (cal_cache: CalCache, icomp: ICalGLib.Component) => string
+    readonly dup_component_revision: (cal_cache: CalCache, icomp: ICalGLib.Component) => string
     static name: string
 }
 class CalCacheOfflineChange {
     /* Fields of EDataCal-2.0.EDataCal.CalCacheOfflineChange */
-    uid: string
-    rid: string
-    revision: string
-    object: string
-    state: EBackend.OfflineState
+    readonly uid: string
+    readonly rid: string
+    readonly revision: string
+    readonly object: string
+    readonly state: EBackend.OfflineState
     /* Methods of EDataCal-2.0.EDataCal.CalCacheOfflineChange */
     copy(): CalCacheOfflineChange
     static name: string
@@ -1499,10 +1510,10 @@ class CalCachePrivate {
 }
 class CalCacheSearchData {
     /* Fields of EDataCal-2.0.EDataCal.CalCacheSearchData */
-    uid: string
-    rid: string
-    object: string
-    extra: string
+    readonly uid: string
+    readonly rid: string
+    readonly object: string
+    readonly extra: string
     /* Methods of EDataCal-2.0.EDataCal.CalCacheSearchData */
     copy(): CalCacheSearchData
     static name: string
@@ -1514,26 +1525,26 @@ class CalCacheSearchData {
 }
 abstract class CalMetaBackendClass {
     /* Fields of EDataCal-2.0.EDataCal.CalMetaBackendClass */
-    connect_sync: (meta_backend: CalMetaBackend, credentials?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_auth_result */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
-    disconnect_sync: (meta_backend: CalMetaBackend, cancellable?: Gio.Cancellable | null) => boolean
-    get_changes_sync: (meta_backend: CalMetaBackend, last_sync_tag: string | null, is_repeat: boolean, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_repeat */ boolean, /* out_created_objects */ CalMetaBackendInfo[], /* out_modified_objects */ CalMetaBackendInfo[], /* out_removed_objects */ CalMetaBackendInfo[] ]
-    list_existing_sync: (meta_backend: CalMetaBackend, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_existing_objects */ CalMetaBackendInfo[] ]
-    load_component_sync: (meta_backend: CalMetaBackend, uid: string, extra?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_component */ ICalGLib.Component, /* out_extra */ string ]
-    save_component_sync: (meta_backend: CalMetaBackend, overwrite_existing: boolean, conflict_resolution: EDataServer.ConflictResolution, instances: ECal.Component[], extra: string | null, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_uid */ string, /* out_new_extra */ string ]
-    remove_component_sync: (meta_backend: CalMetaBackend, conflict_resolution: EDataServer.ConflictResolution, uid: string, extra: string | null, object: string | null, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null) => boolean
-    search_sync: (meta_backend: CalMetaBackend, expr?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_icalstrings */ string[] ]
-    search_components_sync: (meta_backend: CalMetaBackend, expr?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_components */ ECal.Component[] ]
-    requires_reconnect: (meta_backend: CalMetaBackend) => boolean
-    source_changed: (meta_backend: CalMetaBackend) => void
-    get_ssl_error_details: (meta_backend: CalMetaBackend) => [ /* returnType */ boolean, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
+    readonly connect_sync: (meta_backend: CalMetaBackend, credentials?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_auth_result */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
+    readonly disconnect_sync: (meta_backend: CalMetaBackend, cancellable?: Gio.Cancellable | null) => boolean
+    readonly get_changes_sync: (meta_backend: CalMetaBackend, last_sync_tag: string | null, is_repeat: boolean, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_repeat */ boolean, /* out_created_objects */ CalMetaBackendInfo[], /* out_modified_objects */ CalMetaBackendInfo[], /* out_removed_objects */ CalMetaBackendInfo[] ]
+    readonly list_existing_sync: (meta_backend: CalMetaBackend, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_existing_objects */ CalMetaBackendInfo[] ]
+    readonly load_component_sync: (meta_backend: CalMetaBackend, uid: string, extra?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_component */ ICalGLib.Component, /* out_extra */ string ]
+    readonly save_component_sync: (meta_backend: CalMetaBackend, overwrite_existing: boolean, conflict_resolution: EDataServer.ConflictResolution, instances: ECal.Component[], extra: string | null, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_uid */ string, /* out_new_extra */ string ]
+    readonly remove_component_sync: (meta_backend: CalMetaBackend, conflict_resolution: EDataServer.ConflictResolution, uid: string, extra: string | null, object: string | null, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null) => boolean
+    readonly search_sync: (meta_backend: CalMetaBackend, expr?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_icalstrings */ string[] ]
+    readonly search_components_sync: (meta_backend: CalMetaBackend, expr?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_components */ ECal.Component[] ]
+    readonly requires_reconnect: (meta_backend: CalMetaBackend) => boolean
+    readonly source_changed: (meta_backend: CalMetaBackend) => void
+    readonly get_ssl_error_details: (meta_backend: CalMetaBackend) => [ /* returnType */ boolean, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     static name: string
 }
 class CalMetaBackendInfo {
     /* Fields of EDataCal-2.0.EDataCal.CalMetaBackendInfo */
-    uid: string
-    revision: string
-    object: string
-    extra: string
+    readonly uid: string
+    readonly revision: string
+    readonly object: string
+    readonly extra: string
     /* Methods of EDataCal-2.0.EDataCal.CalMetaBackendInfo */
     copy(): CalMetaBackendInfo
     static name: string
@@ -1548,12 +1559,12 @@ class CalMetaBackendPrivate {
 }
 abstract class DataCalClass {
     /* Fields of EDataCal-2.0.EDataCal.DataCalClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DataCalFactoryClass {
     /* Fields of EDataCal-2.0.EDataCal.DataCalFactoryClass */
-    parent_class: EBackend.DataFactoryClass
+    readonly parent_class: EBackend.DataFactoryClass
     static name: string
 }
 class DataCalFactoryPrivate {
@@ -1564,7 +1575,7 @@ class DataCalPrivate {
 }
 abstract class DataCalViewClass {
     /* Fields of EDataCal-2.0.EDataCal.DataCalViewClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DataCalViewPrivate {
@@ -1578,7 +1589,7 @@ class IntervalTreePrivate {
 }
 abstract class SubprocessCalFactoryClass {
     /* Fields of EDataCal-2.0.EDataCal.SubprocessCalFactoryClass */
-    parent_class: EBackend.SubprocessFactoryClass
+    readonly parent_class: EBackend.SubprocessFactoryClass
     static name: string
 }
 class SubprocessCalFactoryPrivate {

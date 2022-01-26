@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EBook-1.2
  */
@@ -46,7 +52,7 @@ enum BookStatus {
 }
 function book_error_quark(): GLib.Quark
 function book_utils_get_recipient_certificates_sync(registry: EDataServer.SourceRegistry, only_clients: BookClient[] | null, flags: Camel.RecipientCertificateFlags, recipients: string[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_certificates */ string[] ]
-export interface BookClient_ConstructProps extends EDataServer.Client_ConstructProps {
+interface BookClient_ConstructProps extends EDataServer.Client_ConstructProps {
 }
 class BookClient {
     /* Properties of EBook-1.2.EBook.BookClient */
@@ -58,7 +64,7 @@ class BookClient {
     readonly opened: boolean
     readonly readonly: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBook-1.2.EBook.BookClient */
     add_contact(contact: EBookContacts.Contact, opflags: EBookContacts.BookOperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     add_contact_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_added_uid */ string | null ]
@@ -253,7 +259,8 @@ class BookClient {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface BookClientCursor_ConstructProps extends GObject.Object_ConstructProps {
+interface BookClientCursor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EBook-1.2.EBook.BookClientCursor */
     client?: BookClient
     connection?: Gio.DBusConnection
     context?: GLib.MainContext
@@ -266,7 +273,7 @@ class BookClientCursor {
     readonly position: number
     readonly total: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBook-1.2.EBook.BookClientCursor */
     get_alphabet(): [ /* returnType */ string[], /* n_labels */ number | null, /* underflow */ number | null, /* inflow */ number | null, /* overflow */ number | null ]
     get_contact_alphabetic_index(contact: EBookContacts.Contact): number
@@ -342,14 +349,15 @@ class BookClientCursor {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface BookClientView_ConstructProps extends GObject.Object_ConstructProps {
+interface BookClientView_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EBook-1.2.EBook.BookClientView */
     client?: BookClient
     connection?: Gio.DBusConnection
     object_path?: string
 }
 class BookClientView {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBook-1.2.EBook.BookClientView */
     get_client(): BookClient
     get_connection(): Gio.DBusConnection
@@ -427,14 +435,11 @@ class BookClientView {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Destination_ConstructProps extends GObject.Object_ConstructProps {
+interface Destination_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Destination {
-    /* Fields of EBook-1.2.EBook.Destination */
-    object: GObject.Object
-    priv: DestinationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBook-1.2.EBook.Destination */
     copy(): Destination
     empty(): boolean
@@ -526,7 +531,7 @@ abstract class BookClientClass {
 }
 abstract class BookClientCursorClass {
     /* Fields of EBook-1.2.EBook.BookClientCursorClass */
-    refresh: (cursor: BookClientCursor) => void
+    readonly refresh: (cursor: BookClientCursor) => void
     static name: string
 }
 class BookClientCursorPrivate {
@@ -537,8 +542,8 @@ class BookClientPrivate {
 }
 abstract class BookClientViewClass {
     /* Fields of EBook-1.2.EBook.BookClientViewClass */
-    progress: (client_view: BookClientView, percent: number, message: string) => void
-    complete: (client_view: BookClientView, error: GLib.Error) => void
+    readonly progress: (client_view: BookClientView, percent: number, message: string) => void
+    readonly complete: (client_view: BookClientView, error: GLib.Error) => void
     static name: string
 }
 class BookClientViewPrivate {
@@ -546,8 +551,8 @@ class BookClientViewPrivate {
 }
 abstract class DestinationClass {
     /* Fields of EBook-1.2.EBook.DestinationClass */
-    parent_class: GObject.ObjectClass
-    changed: (destination: Destination) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (destination: Destination) => void
     static name: string
 }
 class DestinationPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Signon-2.0
  */
@@ -58,21 +64,21 @@ enum IdentityType {
     WEB,
     NETWORK,
 }
-export const SESSION_DATA_CAPTION: string
-export const SESSION_DATA_PROXY: string
-export const SESSION_DATA_REALM: string
-export const SESSION_DATA_RENEW_TOKEN: string
-export const SESSION_DATA_SECRET: string
-export const SESSION_DATA_TIMEOUT: string
-export const SESSION_DATA_UI_POLICY: string
-export const SESSION_DATA_USERNAME: string
-export const SESSION_DATA_WINDOW_ID: string
+const SESSION_DATA_CAPTION: string
+const SESSION_DATA_PROXY: string
+const SESSION_DATA_REALM: string
+const SESSION_DATA_RENEW_TOKEN: string
+const SESSION_DATA_SECRET: string
+const SESSION_DATA_TIMEOUT: string
+const SESSION_DATA_UI_POLICY: string
+const SESSION_DATA_USERNAME: string
+const SESSION_DATA_WINDOW_ID: string
 function error_quark(): GLib.Quark
-export interface AuthService_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthService_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AuthService {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Signon-2.0.Signon.AuthService */
     get_mechanisms(method: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_mechanisms_finish(result: Gio.AsyncResult): string[]
@@ -125,11 +131,11 @@ class AuthService {
     static new(): AuthService
     static $gtype: GObject.Type
 }
-export interface AuthSession_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthSession_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AuthSession {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Signon-2.0.Signon.AuthSession */
     cancel(): void
     get_method(): string
@@ -184,12 +190,13 @@ class AuthSession {
     static new(id: number, method_name: string): AuthSession
     static $gtype: GObject.Type
 }
-export interface Identity_ConstructProps extends GObject.Object_ConstructProps {
+interface Identity_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Signon-2.0.Signon.Identity */
     id?: number
 }
 class Identity {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Signon-2.0.Signon.Identity */
     create_session(method: string): AuthSession
     get_id(): number
@@ -256,17 +263,17 @@ class Identity {
 }
 abstract class AuthServiceClass {
     /* Fields of Signon-2.0.Signon.AuthServiceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class AuthSessionClass {
     /* Fields of Signon-2.0.Signon.AuthSessionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class IdentityClass {
     /* Fields of Signon-2.0.Signon.IdentityClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class IdentityInfo {

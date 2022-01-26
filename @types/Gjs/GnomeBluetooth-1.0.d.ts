@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GnomeBluetooth-1.0
  */
@@ -73,40 +79,41 @@ enum Type {
     WEARABLE,
     TOY,
 }
-export const CHOOSER_COMBO_FIRST_DEVICE: string
-export const TYPE_AUDIO: number
-export const TYPE_INPUT: number
-export const UUID_A2DP: number
-export const UUID_A2DP_SINK: number
-export const UUID_A2DP_SOURCE: number
-export const UUID_AVRCP_CONTROL: number
-export const UUID_AVRCP_TARGET: number
-export const UUID_DUN: number
-export const UUID_FTP: number
-export const UUID_GENERIC_AUDIO: number
-export const UUID_GENERIC_NET: number
-export const UUID_HFP_AG: number
-export const UUID_HFP_HF: number
-export const UUID_HID: number
-export const UUID_HSP: number
-export const UUID_HSP_AG: number
-export const UUID_IRMC: number
-export const UUID_OPP: number
-export const UUID_PAN_GN: number
-export const UUID_PAN_NAP: number
-export const UUID_PAN_PANU: number
-export const UUID_PBAP: number
-export const UUID_PNP: number
-export const UUID_SAP: number
-export const UUID_SDP: number
-export const UUID_SPP: number
-export const UUID_VDP_SOURCE: number
+const CHOOSER_COMBO_FIRST_DEVICE: string
+const TYPE_AUDIO: number
+const TYPE_INPUT: number
+const UUID_A2DP: number
+const UUID_A2DP_SINK: number
+const UUID_A2DP_SOURCE: number
+const UUID_AVRCP_CONTROL: number
+const UUID_AVRCP_TARGET: number
+const UUID_DUN: number
+const UUID_FTP: number
+const UUID_GENERIC_AUDIO: number
+const UUID_GENERIC_NET: number
+const UUID_HFP_AG: number
+const UUID_HFP_HF: number
+const UUID_HID: number
+const UUID_HSP: number
+const UUID_HSP_AG: number
+const UUID_IRMC: number
+const UUID_OPP: number
+const UUID_PAN_GN: number
+const UUID_PAN_NAP: number
+const UUID_PAN_PANU: number
+const UUID_PBAP: number
+const UUID_PNP: number
+const UUID_SAP: number
+const UUID_SDP: number
+const UUID_SPP: number
+const UUID_VDP_SOURCE: number
 function class_to_type(class_: number): Type
 function send_to_address(address: string, alias: string): void
 function type_to_string(type: number): string
 function uuid_to_string(uuid: string): string
 function verify_address(bdaddr: string): boolean
-export interface Chooser_ConstructProps extends Gtk.Box_ConstructProps {
+interface Chooser_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of GnomeBluetooth-1.0.GnomeBluetooth.Chooser */
     device_selected?: string
     device_service_filter?: string
     device_type_filter?: number
@@ -117,6 +124,7 @@ export interface Chooser_ConstructProps extends Gtk.Box_ConstructProps {
     show_device_type_column?: boolean
     show_pairing?: boolean
     show_searching?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Chooser {
@@ -181,13 +189,13 @@ class Chooser {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.Chooser */
     dump_selected_device(): void
     get_scrolled_window(): Gtk.Widget
@@ -217,7 +225,7 @@ class Chooser {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -532,6 +540,7 @@ class Chooser {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -1001,13 +1010,17 @@ class Chooser {
     _init (config?: Chooser_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Chooser
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): Chooser
     static $gtype: GObject.Type
 }
-export interface ChooserButton_ConstructProps extends Gtk.Button_ConstructProps {
+interface ChooserButton_ConstructProps extends Gtk.Button_ConstructProps {
+    /* Constructor properties of GnomeBluetooth-1.0.GnomeBluetooth.ChooserButton */
     device?: string
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
+    /* Constructor properties of Gtk-3.0.Gtk.Activatable */
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
@@ -1076,13 +1089,13 @@ class ChooserButton {
     related_action: Gtk.Action
     use_action_appearance: boolean
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.ChooserButton */
     available(): boolean
     /* Methods of Gtk-3.0.Gtk.Button */
@@ -1116,7 +1129,7 @@ class ChooserButton {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1344,6 +1357,7 @@ class ChooserButton {
     set_direction(dir: Gtk.TextDirection): void
     set_double_buffered(double_buffered: boolean): void
     set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
     set_font_map(font_map?: Pango.FontMap | null): void
     set_font_options(options?: cairo.FontOptions | null): void
     set_halign(align: Gtk.Align): void
@@ -1442,6 +1456,7 @@ class ChooserButton {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of GnomeBluetooth-1.0.GnomeBluetooth.ChooserButton */
     vfunc_chooser_created(chooser: Gtk.Widget): void
     vfunc_get_action_name(): string | null
@@ -1942,8 +1957,10 @@ class ChooserButton {
     static new(): ChooserButton
     static $gtype: GObject.Type
 }
-export interface ChooserCombo_ConstructProps extends Gtk.Box_ConstructProps {
+interface ChooserCombo_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of GnomeBluetooth-1.0.GnomeBluetooth.ChooserCombo */
     device?: string
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class ChooserCombo {
@@ -2000,16 +2017,14 @@ class ChooserCombo {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ChooserCombo */
-    priv: ChooserComboPrivate
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
@@ -2028,7 +2043,7 @@ class ChooserCombo {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2343,6 +2358,7 @@ class ChooserCombo {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -2794,10 +2810,12 @@ class ChooserCombo {
     _init (config?: ChooserCombo_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): ChooserCombo
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): ChooserCombo
     static $gtype: GObject.Type
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GnomeBluetooth-1.0.GnomeBluetooth.Client */
     default_adapter_discoverable?: boolean
     default_adapter_discovering?: boolean
 }
@@ -2808,10 +2826,8 @@ class Client {
     default_adapter_discovering: boolean
     readonly default_adapter_name: string
     readonly default_adapter_powered: boolean
-    /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.Client */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.Client */
     connect_service(path: string, connect: boolean, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
     connect_service_finish(res: Gio.AsyncResult): boolean
@@ -2878,11 +2894,13 @@ class Client {
     static new(): Client
     static $gtype: GObject.Type
 }
-export interface FilterWidget_ConstructProps extends Gtk.Box_ConstructProps {
+interface FilterWidget_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of GnomeBluetooth-1.0.GnomeBluetooth.FilterWidget */
     device_service_filter?: string
     device_type_filter?: number
     show_device_category?: boolean
     show_device_type?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class FilterWidget {
@@ -2942,13 +2960,13 @@ class FilterWidget {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.FilterWidget */
     bind_filter(chooser: Chooser): void
     set_title(title: string): void
@@ -2970,7 +2988,7 @@ class FilterWidget {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3285,6 +3303,7 @@ class FilterWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -3735,10 +3754,12 @@ class FilterWidget {
     _init (config?: FilterWidget_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FilterWidget
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): FilterWidget
     static $gtype: GObject.Type
 }
-export interface SettingsWidget_ConstructProps extends Gtk.Box_ConstructProps {
+interface SettingsWidget_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class SettingsWidget {
@@ -3793,13 +3814,13 @@ class SettingsWidget {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeBluetooth-1.0.GnomeBluetooth.SettingsWidget */
     get_default_adapter_powered(): boolean
     /* Methods of Gtk-3.0.Gtk.Box */
@@ -3820,7 +3841,7 @@ class SettingsWidget {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4135,6 +4156,7 @@ class SettingsWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -4584,26 +4606,27 @@ class SettingsWidget {
     _init (config?: SettingsWidget_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SettingsWidget
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): SettingsWidget
     static $gtype: GObject.Type
 }
 abstract class ChooserButtonClass {
     /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ChooserButtonClass */
-    parent_class: Gtk.ButtonClass
-    chooser_created: (self: ChooserButton, chooser: Gtk.Widget) => void
+    readonly parent_class: Gtk.ButtonClass
+    readonly chooser_created: (self: ChooserButton, chooser: Gtk.Widget) => void
     static name: string
 }
 abstract class ChooserClass {
     /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ChooserClass */
-    parent_class: Gtk.BoxClass
-    selected_device_changed: (chooser: Chooser, address: string) => void
-    selected_device_activated: (chooser: Chooser, address: string) => void
+    readonly parent_class: Gtk.BoxClass
+    readonly selected_device_changed: (chooser: Chooser, address: string) => void
+    readonly selected_device_activated: (chooser: Chooser, address: string) => void
     static name: string
 }
 abstract class ChooserComboClass {
     /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ChooserComboClass */
-    parent_class: Gtk.BoxClass
-    chooser_created: (self: ChooserCombo, chooser: Gtk.Widget) => void
+    readonly parent_class: Gtk.BoxClass
+    readonly chooser_created: (self: ChooserCombo, chooser: Gtk.Widget) => void
     static name: string
 }
 class ChooserComboPrivate {
@@ -4611,17 +4634,17 @@ class ChooserComboPrivate {
 }
 abstract class ClientClass {
     /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.ClientClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FilterWidgetClass {
     /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.FilterWidgetClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 abstract class SettingsWidgetClass {
     /* Fields of GnomeBluetooth-1.0.GnomeBluetooth.SettingsWidgetClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 }

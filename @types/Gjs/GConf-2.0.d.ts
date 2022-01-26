@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GConf-2.0
  */
@@ -80,13 +86,11 @@ interface ListenersForeach {
 interface ListenersPredicate {
     (location: string, cnxn_id: number, listener_data?: object | null): boolean
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Client {
-    /* Fields of GConf-2.0.GConf.Client */
-    object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GConf-2.0.GConf.Client */
     add_dir(dir: string, preload: ClientPreloadType): void
     all_dirs(dir: string): string[]
@@ -208,13 +212,13 @@ class ChangeSet {
 }
 abstract class ClientClass {
     /* Fields of GConf-2.0.GConf.ClientClass */
-    parent_class: GObject.ObjectClass
-    value_changed: (client: Client, key: string, value: Value) => void
-    unreturned_error: (client: Client, error: GLib.Error) => void
-    error: (client: Client, error: GLib.Error) => void
-    pad1: GLib.Func
-    pad2: GLib.Func
-    pad3: GLib.Func
+    readonly parent_class: GObject.ObjectClass
+    readonly value_changed: (client: Client, key: string, value: Value) => void
+    readonly unreturned_error: (client: Client, error: GLib.Error) => void
+    readonly error: (client: Client, error: GLib.Error) => void
+    readonly pad1: GLib.Func
+    readonly pad2: GLib.Func
+    readonly pad3: GLib.Func
     static name: string
 }
 class Engine {
@@ -258,8 +262,8 @@ class Engine {
 }
 class Entry {
     /* Fields of GConf-2.0.GConf.Entry */
-    key: string
-    value: Value
+    readonly key: string
+    readonly value: Value
     /* Methods of GConf-2.0.GConf.Entry */
     copy(): Entry
     equal(b: Entry): boolean
@@ -286,8 +290,8 @@ class Entry {
 }
 class EnumStringPair {
     /* Fields of GConf-2.0.GConf.EnumStringPair */
-    enum_value: number
-    str: string
+    readonly enum_value: number
+    readonly str: string
     static name: string
 }
 class Listeners {
@@ -304,9 +308,9 @@ class Listeners {
 }
 class MetaInfo {
     /* Fields of GConf-2.0.GConf.MetaInfo */
-    schema: string
-    mod_user: string
-    mod_time: GLib.Time
+    readonly schema: string
+    readonly mod_user: string
+    readonly mod_time: GLib.Time
     /* Methods of GConf-2.0.GConf.MetaInfo */
     free(): void
     get_mod_user(): string
@@ -342,7 +346,7 @@ class Schema {
 }
 class Value {
     /* Fields of GConf-2.0.GConf.Value */
-    type: ValueType
+    readonly type: ValueType
     /* Methods of GConf-2.0.GConf.Value */
     compare(value_b: Value): number
     copy(): Value

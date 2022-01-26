@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstApp-1.0
  */
@@ -21,7 +27,8 @@ enum AppStreamType {
     SEEKABLE,
     RANDOM_ACCESS,
 }
-export interface AppSink_ConstructProps extends GstBase.BaseSink_ConstructProps {
+interface AppSink_ConstructProps extends GstBase.BaseSink_ConstructProps {
+    /* Constructor properties of GstApp-1.0.GstApp.AppSink */
     buffer_list?: boolean
     caps?: Gst.Caps
     drop?: boolean
@@ -52,52 +59,49 @@ class AppSink {
     sync: boolean
     throttle_time: number
     ts_offset: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstApp-1.0.GstApp.AppSink */
-    basesink: GstBase.BaseSink
     /* Fields of GstBase-1.0.GstBase.BaseSink */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    pad_mode: Gst.PadMode
-    offset: number
-    can_activate_pull: boolean
-    can_activate_push: boolean
-    preroll_lock: GLib.Mutex
-    preroll_cond: GLib.Cond
-    need_preroll: boolean
-    have_preroll: boolean
-    playing_async: boolean
-    have_newsegment: boolean
-    segment: Gst.Segment
+    readonly element: Gst.Element
+    readonly sinkpad: Gst.Pad
+    readonly pad_mode: Gst.PadMode
+    readonly offset: number
+    readonly can_activate_pull: boolean
+    readonly can_activate_push: boolean
+    readonly preroll_lock: GLib.Mutex
+    readonly preroll_cond: GLib.Cond
+    readonly need_preroll: boolean
+    readonly have_preroll: boolean
+    readonly playing_async: boolean
+    readonly have_newsegment: boolean
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstApp-1.0.GstApp.AppSink */
     get_buffer_list_support(): boolean
     get_caps(): Gst.Caps
@@ -277,6 +281,9 @@ class AppSink {
     vfunc_try_pull_sample(timeout: Gst.ClockTime): Gst.Sample | null
     vfunc_get_uri(): string | null
     vfunc_set_uri(uri: string): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSink */
     vfunc_activate_pull(active: boolean): boolean
     vfunc_event(event: Gst.Event): boolean
@@ -287,6 +294,8 @@ class AppSink {
     vfunc_prepare_list(buffer_list: Gst.BufferList): Gst.FlowReturn
     vfunc_preroll(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_propose_allocation(query: Gst.Query): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_render(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_render_list(buffer_list: Gst.BufferList): Gst.FlowReturn
@@ -409,10 +418,6 @@ class AppSink {
     connect_after(sigName: "notify::throttle-time", callback: (($obj: AppSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::ts-offset", callback: (($obj: AppSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::ts-offset", callback: (($obj: AppSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AppSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AppSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AppSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AppSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -422,7 +427,8 @@ class AppSink {
     _init (config?: AppSink_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AppSrc_ConstructProps extends GstBase.BaseSrc_ConstructProps {
+interface AppSrc_ConstructProps extends GstBase.BaseSrc_ConstructProps {
+    /* Constructor properties of GstApp-1.0.GstApp.AppSrc */
     block?: boolean
     caps?: Gst.Caps
     duration?: number
@@ -462,57 +468,54 @@ class AppSrc {
     size: number
     stream_type: AppStreamType
     /* Properties of GstBase-1.0.GstBase.BaseSrc */
-    blocksize: number
     do_timestamp: boolean
-    num_buffers: number
-    typefind: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstApp-1.0.GstApp.AppSrc */
-    basesrc: GstBase.BaseSrc
     /* Fields of GstBase-1.0.GstBase.BaseSrc */
-    element: Gst.Element
-    srcpad: Gst.Pad
-    live_lock: GLib.Mutex
-    live_cond: GLib.Cond
-    live_running: boolean
-    can_activate_push: boolean
-    random_access: boolean
-    clock_id: Gst.ClockID
-    segment: Gst.Segment
-    need_newsegment: boolean
-    num_buffers_left: number
-    running: boolean
-    pending_seek: Gst.Event
-    priv: GstBase.BaseSrcPrivate
+    readonly element: Gst.Element
+    readonly srcpad: Gst.Pad
+    readonly live_lock: GLib.Mutex
+    readonly live_cond: GLib.Cond
+    readonly live_running: boolean
+    readonly blocksize: number
+    readonly can_activate_push: boolean
+    readonly random_access: boolean
+    readonly clock_id: Gst.ClockID
+    readonly segment: Gst.Segment
+    readonly need_newsegment: boolean
+    readonly num_buffers: number
+    readonly num_buffers_left: number
+    readonly typefind: boolean
+    readonly running: boolean
+    readonly pending_seek: Gst.Event
+    readonly priv: GstBase.BaseSrcPrivate
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstApp-1.0.GstApp.AppSrc */
     end_of_stream(): Gst.FlowReturn
     get_caps(): Gst.Caps
@@ -691,6 +694,9 @@ class AppSrc {
     vfunc_seek_data(offset: number): boolean
     vfunc_get_uri(): string | null
     vfunc_set_uri(uri: string): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSrc */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
@@ -705,6 +711,8 @@ class AppSrc {
     vfunc_is_seekable(): boolean
     vfunc_negotiate(): boolean
     vfunc_prepare_seek_segment(seek: Gst.Event, segment: Gst.Segment): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(caps: Gst.Caps): boolean
     vfunc_start(): boolean
@@ -816,18 +824,8 @@ class AppSrc {
     connect_after(sigName: "notify::size", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::stream-type", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::stream-type", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::blocksize", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::blocksize", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::do-timestamp", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::do-timestamp", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::num-buffers", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::num-buffers", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::typefind", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::typefind", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AppSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -839,23 +837,23 @@ class AppSrc {
 }
 class AppSinkCallbacks {
     /* Fields of GstApp-1.0.GstApp.AppSinkCallbacks */
-    eos: (appsink: AppSink) => void
-    new_preroll: (appsink: AppSink) => Gst.FlowReturn
-    new_sample: (appsink: AppSink) => Gst.FlowReturn
-    new_event: (appsink: AppSink) => boolean
+    readonly eos: (appsink: AppSink) => void
+    readonly new_preroll: (appsink: AppSink) => Gst.FlowReturn
+    readonly new_sample: (appsink: AppSink) => Gst.FlowReturn
+    readonly new_event: (appsink: AppSink) => boolean
     static name: string
 }
 abstract class AppSinkClass {
     /* Fields of GstApp-1.0.GstApp.AppSinkClass */
-    basesink_class: GstBase.BaseSinkClass
-    eos: (appsink: AppSink) => void
-    new_preroll: (appsink: AppSink) => Gst.FlowReturn
-    new_sample: (appsink: AppSink) => Gst.FlowReturn
-    pull_preroll: (appsink: AppSink) => Gst.Sample | null
-    pull_sample: (appsink: AppSink) => Gst.Sample | null
-    try_pull_preroll: (appsink: AppSink, timeout: Gst.ClockTime) => Gst.Sample | null
-    try_pull_sample: (appsink: AppSink, timeout: Gst.ClockTime) => Gst.Sample | null
-    try_pull_object: (appsink: AppSink, timeout: Gst.ClockTime) => Gst.MiniObject
+    readonly basesink_class: GstBase.BaseSinkClass
+    readonly eos: (appsink: AppSink) => void
+    readonly new_preroll: (appsink: AppSink) => Gst.FlowReturn
+    readonly new_sample: (appsink: AppSink) => Gst.FlowReturn
+    readonly pull_preroll: (appsink: AppSink) => Gst.Sample | null
+    readonly pull_sample: (appsink: AppSink) => Gst.Sample | null
+    readonly try_pull_preroll: (appsink: AppSink, timeout: Gst.ClockTime) => Gst.Sample | null
+    readonly try_pull_sample: (appsink: AppSink, timeout: Gst.ClockTime) => Gst.Sample | null
+    readonly try_pull_object: (appsink: AppSink, timeout: Gst.ClockTime) => Gst.MiniObject
     static name: string
 }
 class AppSinkPrivate {
@@ -863,21 +861,21 @@ class AppSinkPrivate {
 }
 class AppSrcCallbacks {
     /* Fields of GstApp-1.0.GstApp.AppSrcCallbacks */
-    need_data: (src: AppSrc, length: number) => void
-    enough_data: (src: AppSrc) => void
-    seek_data: (src: AppSrc, offset: number) => boolean
+    readonly need_data: (src: AppSrc, length: number) => void
+    readonly enough_data: (src: AppSrc) => void
+    readonly seek_data: (src: AppSrc, offset: number) => boolean
     static name: string
 }
 abstract class AppSrcClass {
     /* Fields of GstApp-1.0.GstApp.AppSrcClass */
-    basesrc_class: GstBase.BaseSrcClass
-    need_data: (appsrc: AppSrc, length: number) => void
-    enough_data: (appsrc: AppSrc) => void
-    seek_data: (appsrc: AppSrc, offset: number) => boolean
-    push_buffer: (appsrc: AppSrc, buffer: Gst.Buffer) => Gst.FlowReturn
-    end_of_stream: (appsrc: AppSrc) => Gst.FlowReturn
-    push_sample: (appsrc: AppSrc, sample: Gst.Sample) => Gst.FlowReturn
-    push_buffer_list: (appsrc: AppSrc, buffer_list: Gst.BufferList) => Gst.FlowReturn
+    readonly basesrc_class: GstBase.BaseSrcClass
+    readonly need_data: (appsrc: AppSrc, length: number) => void
+    readonly enough_data: (appsrc: AppSrc) => void
+    readonly seek_data: (appsrc: AppSrc, offset: number) => boolean
+    readonly push_buffer: (appsrc: AppSrc, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly end_of_stream: (appsrc: AppSrc) => Gst.FlowReturn
+    readonly push_sample: (appsrc: AppSrc, sample: Gst.Sample) => Gst.FlowReturn
+    readonly push_buffer_list: (appsrc: AppSrc, buffer_list: Gst.BufferList) => Gst.FlowReturn
     static name: string
 }
 class AppSrcPrivate {

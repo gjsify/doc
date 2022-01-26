@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gdl-3
  */
@@ -76,13 +82,14 @@ enum DockParamFlags {
     EXPORT,
     AFTER,
 }
-export const DOCK_MASTER_PROPERTY: string
-export const DOCK_NAME_PROPERTY: string
-export const DOCK_OBJECT_FLAGS_SHIFT: number
+const DOCK_MASTER_PROPERTY: string
+const DOCK_NAME_PROPERTY: string
+const DOCK_OBJECT_FLAGS_SHIFT: number
 function marshal_VOID__OBJECT_ENUM_BOXED(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
 function marshal_VOID__OBJECT_INT_INT(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
 function marshal_VOID__UINT_UINT(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
-export interface Dock_ConstructProps extends DockObject_ConstructProps {
+interface Dock_ConstructProps extends DockObject_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.Dock */
     default_title?: string
     floating?: boolean
     floatx?: number
@@ -148,19 +155,16 @@ class Dock {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.Dock */
-    object: DockObject
-    priv: DockPrivate
     /* Fields of Gdl-3.Gdl.DockObject */
-    container: Gtk.Container
-    deprecated_flags: DockObjectFlags
-    deprecated_master: GObject.Object
+    readonly container: Gtk.Container
+    readonly deprecated_flags: DockObjectFlags
+    readonly deprecated_master: GObject.Object
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.Dock */
     add_floating_item(item: DockItem, x: number, y: number, width: number, height: number): void
     add_item(item: DockItem, placement: DockPlacement): void
@@ -209,7 +213,7 @@ class Dock {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -452,6 +456,7 @@ class Dock {
     set_margin_right(margin: number): void
     set_margin_start(margin: number): void
     set_margin_top(margin: number): void
+    set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
     set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
@@ -522,8 +527,19 @@ class Dock {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.Dock */
     vfunc_layout_changed(): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockObject */
     vfunc_child_placement(child: DockObject, placement?: DockPlacement | null): boolean
     vfunc_detach(recursive: boolean): void
@@ -995,9 +1011,11 @@ class Dock {
     static new(): Dock
     static $gtype: GObject.Type
 }
-export interface DockBar_ConstructProps extends Gtk.Box_ConstructProps {
+interface DockBar_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockBar */
     dockbar_style?: DockBarStyle
     master?: GObject.Object
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class DockBar {
@@ -1055,13 +1073,13 @@ class DockBar {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockBar */
     get_orientation(): Gtk.Orientation
     get_style(): DockBarStyle
@@ -1085,7 +1103,7 @@ class DockBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1400,6 +1418,9 @@ class DockBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Methods of Gtk-3.0.Gtk.Orientable */
+    set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gdl-3.Gdl.DockBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1843,10 +1864,12 @@ class DockBar {
     _init (config?: DockBar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(master?: GObject.Object | null): DockBar
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): DockBar
     static $gtype: GObject.Type
 }
-export interface DockItem_ConstructProps extends DockObject_ConstructProps {
+interface DockItem_ConstructProps extends DockObject_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockItem */
     behavior?: DockItemBehavior
     closed?: boolean
     iconified?: boolean
@@ -1915,18 +1938,16 @@ class DockItem {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.DockItem */
-    object: DockObject
     /* Fields of Gdl-3.Gdl.DockObject */
-    container: Gtk.Container
-    deprecated_flags: DockObjectFlags
-    deprecated_master: GObject.Object
+    readonly container: Gtk.Container
+    readonly deprecated_flags: DockObjectFlags
+    readonly deprecated_master: GObject.Object
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockItem */
     bind(dock: Gtk.Widget): void
     dock_to(target: DockItem | null, position: DockPlacement, docking_param: number): void
@@ -1990,7 +2011,7 @@ class DockItem {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2233,6 +2254,7 @@ class DockItem {
     set_margin_right(margin: number): void
     set_margin_start(margin: number): void
     set_margin_top(margin: number): void
+    set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
     set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
@@ -2303,12 +2325,23 @@ class DockItem {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockItem */
     vfunc_dock_drag_begin(): void
     vfunc_dock_drag_end(cancelled: boolean): void
     vfunc_dock_drag_motion(device: Gdk.Device, x: number, y: number): void
     vfunc_move_focus_child(direction: Gtk.DirectionType): void
     vfunc_set_orientation(orientation: Gtk.Orientation): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockObject */
     vfunc_child_placement(child: DockObject, placement?: DockPlacement | null): boolean
     vfunc_detach(recursive: boolean): void
@@ -2802,7 +2835,7 @@ class DockItem {
     static set_has_grip(item_class: DockItem | Function | GObject.Type, has_grip: boolean): void
     static $gtype: GObject.Type
 }
-export interface DockItemButtonImage_ConstructProps extends Gtk.Widget_ConstructProps {
+interface DockItemButtonImage_ConstructProps extends Gtk.Widget_ConstructProps {
 }
 class DockItemButtonImage {
     /* Properties of Gtk-3.0.Gtk.Widget */
@@ -2845,12 +2878,10 @@ class DockItemButtonImage {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.DockItemButtonImage */
-    image_type: DockItemButtonImageType
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Widget */
     activate(): boolean
     add_accelerator(accel_signal: string, accel_group: Gtk.AccelGroup, accel_key: number, accel_mods: Gdk.ModifierType, accel_flags: Gtk.AccelFlags): void
@@ -3141,6 +3172,7 @@ class DockItemButtonImage {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockItemButtonImage */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3544,7 +3576,8 @@ class DockItemButtonImage {
     static new(image_type: DockItemButtonImageType): DockItemButtonImage
     static $gtype: GObject.Type
 }
-export interface DockItemGrip_ConstructProps extends Gtk.Container_ConstructProps {
+interface DockItemGrip_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockItemGrip */
     item?: DockItem
 }
 class DockItemGrip {
@@ -3592,14 +3625,12 @@ class DockItemGrip {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.DockItemGrip */
-    priv: DockItemGripPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockItemGrip */
     has_event(event: Gdk.Event): boolean
     hide_handle(): void
@@ -3610,7 +3641,7 @@ class DockItemGrip {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3925,6 +3956,7 @@ class DockItemGrip {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockItemGrip */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -4358,17 +4390,16 @@ class DockItemGrip {
     static new(item: DockItem): DockItemGrip
     static $gtype: GObject.Type
 }
-export interface DockLayout_ConstructProps extends GObject.Object_ConstructProps {
+interface DockLayout_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockLayout */
     master?: GObject.Object
 }
 class DockLayout {
     /* Properties of Gdl-3.Gdl.DockLayout */
     readonly dirty: boolean
     master: GObject.Object
-    /* Fields of Gdl-3.Gdl.DockLayout */
-    g_object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockLayout */
     attach(master: DockMaster): void
     delete_layout(name: string): void
@@ -4429,7 +4460,8 @@ class DockLayout {
     static new(master: GObject.Object): DockLayout
     static $gtype: GObject.Type
 }
-export interface DockMaster_ConstructProps extends GObject.Object_ConstructProps {
+interface DockMaster_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockMaster */
     default_title?: string
     locked?: number
     switcher_style?: SwitcherStyle
@@ -4443,11 +4475,8 @@ class DockMaster {
     switcher_style: SwitcherStyle
     tab_pos: Gtk.PositionType
     tab_reorderable: boolean
-    /* Fields of Gdl-3.Gdl.DockMaster */
-    object: GObject.Object
-    priv: DockMasterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockMaster */
     add(object: DockObject): void
     foreach(function_: GLib.Func): void
@@ -4516,7 +4545,8 @@ class DockMaster {
     _init (config?: DockMaster_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DockNotebook_ConstructProps extends DockItem_ConstructProps {
+interface DockNotebook_ConstructProps extends DockItem_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockNotebook */
     page?: number
 }
 class DockNotebook {
@@ -4580,21 +4610,18 @@ class DockNotebook {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.DockNotebook */
-    item: DockItem
-    priv: DockNotebookPrivate
     /* Fields of Gdl-3.Gdl.DockItem */
-    object: DockObject
+    readonly object: DockObject
     /* Fields of Gdl-3.Gdl.DockObject */
-    container: Gtk.Container
-    deprecated_flags: DockObjectFlags
-    deprecated_master: GObject.Object
+    readonly container: Gtk.Container
+    readonly deprecated_flags: DockObjectFlags
+    readonly deprecated_master: GObject.Object
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockItem */
     bind(dock: Gtk.Widget): void
     dock_to(target: DockItem | null, position: DockPlacement, docking_param: number): void
@@ -4658,7 +4685,7 @@ class DockNotebook {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4901,6 +4928,7 @@ class DockNotebook {
     set_margin_right(margin: number): void
     set_margin_start(margin: number): void
     set_margin_top(margin: number): void
+    set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
     set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
@@ -4971,12 +4999,34 @@ class DockNotebook {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Virtual methods of Gdl-3.Gdl.DockNotebook */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockItem */
     vfunc_dock_drag_begin(): void
     vfunc_dock_drag_end(cancelled: boolean): void
     vfunc_dock_drag_motion(device: Gdk.Device, x: number, y: number): void
     vfunc_move_focus_child(direction: Gtk.DirectionType): void
     vfunc_set_orientation(orientation: Gtk.Orientation): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockObject */
     vfunc_child_placement(child: DockObject, placement?: DockPlacement | null): boolean
     vfunc_detach(recursive: boolean): void
@@ -5467,10 +5517,12 @@ class DockNotebook {
     _init (config?: DockNotebook_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DockNotebook
+    /* Function overloads */
     static new(name: string, long_name: string, behavior: DockItemBehavior): DockNotebook
     static $gtype: GObject.Type
 }
-export interface DockObject_ConstructProps extends Gtk.Container_ConstructProps {
+interface DockObject_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockObject */
     long_name?: string
     master?: DockMaster
     name?: string
@@ -5527,16 +5579,12 @@ class DockObject {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.DockObject */
-    container: Gtk.Container
-    deprecated_flags: DockObjectFlags
-    deprecated_master: GObject.Object
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockObject */
     bind(master: GObject.Object): void
     child_placement(child: DockObject, placement?: DockPlacement | null): boolean
@@ -5572,7 +5620,7 @@ class DockObject {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5815,6 +5863,7 @@ class DockObject {
     set_margin_right(margin: number): void
     set_margin_start(margin: number): void
     set_margin_top(margin: number): void
+    set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
     set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
@@ -5885,6 +5934,7 @@ class DockObject {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockObject */
     vfunc_child_placement(child: DockObject, placement?: DockPlacement | null): boolean
     vfunc_detach(recursive: boolean): void
@@ -6340,10 +6390,10 @@ class DockObject {
     static nick_from_type(type: GObject.Type): string
     static set_type_for_nick(nick: string, type: GObject.Type): GObject.Type
     static type_from_nick(nick: string): GObject.Type
-    static set_is_compound(object_class: DockObject | Function | GObject.Type, is_compound: boolean): void
     static $gtype: GObject.Type
 }
-export interface DockPaned_ConstructProps extends DockItem_ConstructProps {
+interface DockPaned_ConstructProps extends DockItem_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockPaned */
     position?: number
 }
 class DockPaned {
@@ -6407,21 +6457,18 @@ class DockPaned {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.DockPaned */
-    dock_item: DockItem
-    priv: DockPanedPrivate
     /* Fields of Gdl-3.Gdl.DockItem */
-    object: DockObject
+    readonly object: DockObject
     /* Fields of Gdl-3.Gdl.DockObject */
-    container: Gtk.Container
-    deprecated_flags: DockObjectFlags
-    deprecated_master: GObject.Object
+    readonly container: Gtk.Container
+    readonly deprecated_flags: DockObjectFlags
+    readonly deprecated_master: GObject.Object
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockItem */
     bind(dock: Gtk.Widget): void
     dock_to(target: DockItem | null, position: DockPlacement, docking_param: number): void
@@ -6485,7 +6532,7 @@ class DockPaned {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6728,6 +6775,7 @@ class DockPaned {
     set_margin_right(margin: number): void
     set_margin_start(margin: number): void
     set_margin_top(margin: number): void
+    set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
     set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
@@ -6798,12 +6846,34 @@ class DockPaned {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Virtual methods of Gdl-3.Gdl.DockPaned */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockItem */
     vfunc_dock_drag_begin(): void
     vfunc_dock_drag_end(cancelled: boolean): void
     vfunc_dock_drag_motion(device: Gdk.Device, x: number, y: number): void
     vfunc_move_focus_child(direction: Gtk.DirectionType): void
     vfunc_set_orientation(orientation: Gtk.Orientation): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockObject */
     vfunc_child_placement(child: DockObject, placement?: DockPlacement | null): boolean
     vfunc_detach(recursive: boolean): void
@@ -7294,13 +7364,15 @@ class DockPaned {
     _init (config?: DockPaned_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(orientation: Gtk.Orientation): DockPaned
+    /* Function overloads */
     static new(name: string, long_name: string, behavior: DockItemBehavior): DockPaned
     static $gtype: GObject.Type
 }
 class DockParam {
     static name: string
 }
-export interface DockPlaceholder_ConstructProps extends DockObject_ConstructProps {
+interface DockPlaceholder_ConstructProps extends DockObject_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockPlaceholder */
     floating?: boolean
     floatx?: number
     floaty?: number
@@ -7365,19 +7437,16 @@ class DockPlaceholder {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.DockPlaceholder */
-    object: DockObject
-    priv: DockPlaceholderPrivate
     /* Fields of Gdl-3.Gdl.DockObject */
-    container: Gtk.Container
-    deprecated_flags: DockObjectFlags
-    deprecated_master: GObject.Object
+    readonly container: Gtk.Container
+    readonly deprecated_flags: DockObjectFlags
+    readonly deprecated_master: GObject.Object
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockPlaceholder */
     attach(object: DockObject): void
     /* Methods of Gdl-3.Gdl.DockObject */
@@ -7415,7 +7484,7 @@ class DockPlaceholder {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7658,6 +7727,7 @@ class DockPlaceholder {
     set_margin_right(margin: number): void
     set_margin_start(margin: number): void
     set_margin_top(margin: number): void
+    set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
     set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
@@ -7728,6 +7798,18 @@ class DockPlaceholder {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Virtual methods of Gdl-3.Gdl.DockPlaceholder */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockObject */
     vfunc_child_placement(child: DockObject, placement?: DockPlacement | null): boolean
     vfunc_detach(recursive: boolean): void
@@ -8191,7 +8273,8 @@ class DockPlaceholder {
     static new(name: string, object: DockObject, position: DockPlacement, sticky: boolean): DockPlaceholder
     static $gtype: GObject.Type
 }
-export interface DockTablabel_ConstructProps extends Gtk.Bin_ConstructProps {
+interface DockTablabel_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.DockTablabel */
     item?: DockItem
 }
 class DockTablabel {
@@ -8241,20 +8324,14 @@ class DockTablabel {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.DockTablabel */
-    drag_handle_size: number
-    event_window: Gdk.Window
-    active: boolean
-    drag_start_event: Gdk.EventButton
-    pre_drag: boolean
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.DockTablabel */
     activate(): void
     deactivate(): void
@@ -8264,7 +8341,7 @@ class DockTablabel {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8579,6 +8656,7 @@ class DockTablabel {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockTablabel */
     vfunc_button_pressed_handle(event: Gdk.EventButton): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -9019,7 +9097,7 @@ class DockTablabel {
     static new(item: DockItem): DockTablabel
     static $gtype: GObject.Type
 }
-export interface PreviewWindow_ConstructProps extends Gtk.Window_ConstructProps {
+interface PreviewWindow_ConstructProps extends Gtk.Window_ConstructProps {
 }
 class PreviewWindow {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -9099,17 +9177,17 @@ class PreviewWindow {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.PreviewWindow */
-    parent_instance: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.PreviewWindow */
     update(rect: Gdk.Rectangle): void
     /* Methods of Gtk-3.0.Gtk.Window */
@@ -9225,7 +9303,7 @@ class PreviewWindow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9469,6 +9547,7 @@ class PreviewWindow {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -9537,6 +9616,7 @@ class PreviewWindow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.PreviewWindow */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -10054,10 +10134,12 @@ class PreviewWindow {
     _init (config?: PreviewWindow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PreviewWindow
+    /* Function overloads */
     static new(type: Gtk.WindowType): PreviewWindow
     static $gtype: GObject.Type
 }
-export interface Switcher_ConstructProps extends Gtk.Notebook_ConstructProps {
+interface Switcher_ConstructProps extends Gtk.Notebook_ConstructProps {
+    /* Constructor properties of Gdl-3.Gdl.Switcher */
     switcher_style?: SwitcherStyle
     tab_pos?: Gtk.PositionType
     tab_reorderable?: boolean
@@ -10118,14 +10200,12 @@ class Switcher {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gdl-3.Gdl.Switcher */
-    priv: SwitcherPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdl-3.Gdl.Switcher */
     insert_page(page: Gtk.Widget, tab_widget: Gtk.Widget, label: string, tooltips: string, stock_id: string, pixbuf_icon: GdkPixbuf.Pixbuf, position: number): number
     /* Methods of Gtk-3.0.Gtk.Notebook */
@@ -10177,7 +10257,7 @@ class Switcher {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10492,6 +10572,7 @@ class Switcher {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.Switcher */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -10987,7 +11068,7 @@ class Switcher {
 }
 abstract class DockBarClass {
     /* Fields of Gdl-3.Gdl.DockBarClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 class DockBarPrivate {
@@ -10995,25 +11076,25 @@ class DockBarPrivate {
 }
 abstract class DockClass {
     /* Fields of Gdl-3.Gdl.DockClass */
-    layout_changed: (dock: Dock) => void
+    readonly layout_changed: (dock: Dock) => void
     static name: string
 }
 abstract class DockItemButtonImageClass {
     /* Fields of Gdl-3.Gdl.DockItemButtonImageClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class DockItemClass {
     /* Fields of Gdl-3.Gdl.DockItemClass */
-    parent_class: DockObjectClass
-    priv: DockItemClassPrivate
-    set_orientation: (item: DockItem, orientation: Gtk.Orientation) => void
-    dock_drag_begin: (item: DockItem) => void
-    dock_drag_motion: (item: DockItem, device: Gdk.Device, x: number, y: number) => void
-    dock_drag_end: (item: DockItem, cancelled: boolean) => void
-    move_focus_child: (item: DockItem, direction: Gtk.DirectionType) => void
+    readonly parent_class: DockObjectClass
+    readonly priv: DockItemClassPrivate
+    readonly set_orientation: (item: DockItem, orientation: Gtk.Orientation) => void
+    readonly dock_drag_begin: (item: DockItem) => void
+    readonly dock_drag_motion: (item: DockItem, device: Gdk.Device, x: number, y: number) => void
+    readonly dock_drag_end: (item: DockItem, cancelled: boolean) => void
+    readonly move_focus_child: (item: DockItem, direction: Gtk.DirectionType) => void
     /* Methods of Gdl-3.Gdl.DockItemClass */
-    set_has_grip(item_class: DockItem | Function | GObject.Type, has_grip: boolean): void
+    static set_has_grip(item_class: DockItem | Function | GObject.Type, has_grip: boolean): void
     static name: string
 }
 class DockItemClassPrivate {
@@ -11021,7 +11102,7 @@ class DockItemClassPrivate {
 }
 abstract class DockItemGripClass {
     /* Fields of Gdl-3.Gdl.DockItemGripClass */
-    parent_class: Gtk.ContainerClass
+    readonly parent_class: Gtk.ContainerClass
     static name: string
 }
 class DockItemGripPrivate {
@@ -11032,7 +11113,7 @@ class DockItemPrivate {
 }
 abstract class DockLayoutClass {
     /* Fields of Gdl-3.Gdl.DockLayoutClass */
-    g_object_class: GObject.ObjectClass
+    readonly g_object_class: GObject.ObjectClass
     static name: string
 }
 class DockLayoutPrivate {
@@ -11040,8 +11121,8 @@ class DockLayoutPrivate {
 }
 abstract class DockMasterClass {
     /* Fields of Gdl-3.Gdl.DockMasterClass */
-    parent_class: GObject.ObjectClass
-    layout_changed: (master: DockMaster) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly layout_changed: (master: DockMaster) => void
     static name: string
 }
 class DockMasterPrivate {
@@ -11049,8 +11130,8 @@ class DockMasterPrivate {
 }
 abstract class DockNotebookClass {
     /* Fields of Gdl-3.Gdl.DockNotebookClass */
-    parent_class: DockItemClass
-    priv: DockNotebookClassPrivate
+    readonly parent_class: DockItemClass
+    readonly priv: DockNotebookClassPrivate
     static name: string
 }
 class DockNotebookClassPrivate {
@@ -11061,17 +11142,17 @@ class DockNotebookPrivate {
 }
 abstract class DockObjectClass {
     /* Fields of Gdl-3.Gdl.DockObjectClass */
-    parent_class: Gtk.ContainerClass
-    priv: DockObjectClassPrivate
-    detach: (object: DockObject, recursive: boolean) => void
-    reduce: (object: DockObject) => void
-    dock_request: (object: DockObject, x: number, y: number, request: DockRequest) => boolean
-    dock: (object: DockObject, requestor: DockObject, position: DockPlacement, other_data?: any | null) => void
-    reorder: (object: DockObject, child: DockObject, new_position: DockPlacement, other_data?: any | null) => boolean
-    present: (object: DockObject, child?: DockObject | null) => void
-    child_placement: (object: DockObject, child: DockObject, placement?: DockPlacement | null) => boolean
+    readonly parent_class: Gtk.ContainerClass
+    readonly priv: DockObjectClassPrivate
+    readonly detach: (object: DockObject, recursive: boolean) => void
+    readonly reduce: (object: DockObject) => void
+    readonly dock_request: (object: DockObject, x: number, y: number, request: DockRequest) => boolean
+    readonly dock: (object: DockObject, requestor: DockObject, position: DockPlacement, other_data?: any | null) => void
+    readonly reorder: (object: DockObject, child: DockObject, new_position: DockPlacement, other_data?: any | null) => boolean
+    readonly present: (object: DockObject, child?: DockObject | null) => void
+    readonly child_placement: (object: DockObject, child: DockObject, placement?: DockPlacement | null) => boolean
     /* Methods of Gdl-3.Gdl.DockObjectClass */
-    set_is_compound(object_class: DockObject | Function | GObject.Type, is_compound: boolean): void
+    static set_is_compound(object_class: DockObject | Function | GObject.Type, is_compound: boolean): void
     static name: string
 }
 class DockObjectClassPrivate {
@@ -11082,7 +11163,7 @@ class DockObjectPrivate {
 }
 abstract class DockPanedClass {
     /* Fields of Gdl-3.Gdl.DockPanedClass */
-    parent_class: DockItemClass
+    readonly parent_class: DockItemClass
     static name: string
 }
 class DockPanedPrivate {
@@ -11090,7 +11171,7 @@ class DockPanedPrivate {
 }
 abstract class DockPlaceholderClass {
     /* Fields of Gdl-3.Gdl.DockPlaceholderClass */
-    parent_class: DockObjectClass
+    readonly parent_class: DockObjectClass
     static name: string
 }
 class DockPlaceholderPrivate {
@@ -11101,28 +11182,28 @@ class DockPrivate {
 }
 class DockRequest {
     /* Fields of Gdl-3.Gdl.DockRequest */
-    applicant: DockObject
-    target: DockObject
-    position: DockPlacement
-    rect: cairo.RectangleInt
-    extra: any
+    readonly applicant: DockObject
+    readonly target: DockObject
+    readonly position: DockPlacement
+    readonly rect: cairo.RectangleInt
+    readonly extra: any
     static name: string
 }
 abstract class DockTablabelClass {
     /* Fields of Gdl-3.Gdl.DockTablabelClass */
-    parent_class: Gtk.BinClass
-    button_pressed_handle: (tablabel: DockTablabel, event: Gdk.EventButton) => void
+    readonly parent_class: Gtk.BinClass
+    readonly button_pressed_handle: (tablabel: DockTablabel, event: Gdk.EventButton) => void
     static name: string
 }
 abstract class PreviewWindowClass {
     /* Fields of Gdl-3.Gdl.PreviewWindowClass */
-    parent_class: Gtk.WindowClass
+    readonly parent_class: Gtk.WindowClass
     static name: string
 }
 abstract class SwitcherClass {
     /* Fields of Gdl-3.Gdl.SwitcherClass */
-    parent_class: Gtk.NotebookClass
-    priv: SwitcherClassPrivate
+    readonly parent_class: Gtk.NotebookClass
+    readonly priv: SwitcherClassPrivate
     static name: string
 }
 class SwitcherClassPrivate {

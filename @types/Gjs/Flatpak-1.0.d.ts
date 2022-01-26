@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Flatpak-1.0
  */
@@ -107,9 +113,9 @@ enum UpdateFlags {
     NO_PRUNE,
     NO_TRIGGERS,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function error_quark(): GLib.Quark
 function get_default_arch(): string
 function get_supported_arches(): string[]
@@ -119,14 +125,15 @@ function transaction_operation_type_to_string(kind: TransactionOperationType): s
 interface ProgressCallback {
     (status: string, progress: number, estimating: boolean): void
 }
-export interface BundleRef_ConstructProps extends Ref_ConstructProps {
+interface BundleRef_ConstructProps extends Ref_ConstructProps {
+    /* Constructor properties of Flatpak-1.0.Flatpak.BundleRef */
     file?: Gio.File
 }
 class BundleRef {
-    /* Fields of Flatpak-1.0.Flatpak.BundleRef */
-    parent: Ref
+    /* Fields of Flatpak-1.0.Flatpak.Ref */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.BundleRef */
     get_appstream(): GLib.Bytes
     get_file(): Gio.File
@@ -188,13 +195,11 @@ class BundleRef {
     static new(file: Gio.File): BundleRef
     static $gtype: GObject.Type
 }
-export interface Installation_ConstructProps extends GObject.Object_ConstructProps {
+interface Installation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Installation {
-    /* Fields of Flatpak-1.0.Flatpak.Installation */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.Installation */
     add_remote(remote: Remote, if_needed: boolean, cancellable?: Gio.Cancellable | null): boolean
     cleanup_local_refs_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -297,7 +302,8 @@ class Installation {
     static new_user(cancellable?: Gio.Cancellable | null): Installation
     static $gtype: GObject.Type
 }
-export interface InstalledRef_ConstructProps extends Ref_ConstructProps {
+interface InstalledRef_ConstructProps extends Ref_ConstructProps {
+    /* Constructor properties of Flatpak-1.0.Flatpak.InstalledRef */
     appdata_content_rating?: GLib.HashTable
     appdata_content_rating_type?: string
     appdata_license?: string
@@ -321,10 +327,10 @@ class InstalledRef {
     latest_commit: string
     origin: string
     subpaths: string[]
-    /* Fields of Flatpak-1.0.Flatpak.InstalledRef */
-    parent: Ref
+    /* Fields of Flatpak-1.0.Flatpak.Ref */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.InstalledRef */
     get_appdata_content_rating(): GLib.HashTable | null
     get_appdata_content_rating_type(): string | null
@@ -405,13 +411,11 @@ class InstalledRef {
     _init (config?: InstalledRef_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Instance_ConstructProps extends GObject.Object_ConstructProps {
+interface Instance_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Instance {
-    /* Fields of Flatpak-1.0.Flatpak.Instance */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.Instance */
     get_app(): string
     get_arch(): string
@@ -469,7 +473,8 @@ class Instance {
     static get_all(): Instance[]
     static $gtype: GObject.Type
 }
-export interface Ref_ConstructProps extends GObject.Object_ConstructProps {
+interface Ref_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Flatpak-1.0.Flatpak.Ref */
     arch?: string
     branch?: string
     collection_id?: string
@@ -478,10 +483,8 @@ export interface Ref_ConstructProps extends GObject.Object_ConstructProps {
     name?: string
 }
 class Ref {
-    /* Fields of Flatpak-1.0.Flatpak.Ref */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.Ref */
     format_ref(): string
     get_arch(): string
@@ -535,17 +538,18 @@ class Ref {
     static parse(ref: string): Ref
     static $gtype: GObject.Type
 }
-export interface RelatedRef_ConstructProps extends Ref_ConstructProps {
+interface RelatedRef_ConstructProps extends Ref_ConstructProps {
+    /* Constructor properties of Flatpak-1.0.Flatpak.RelatedRef */
     should_autoprune?: boolean
     should_delete?: boolean
     should_download?: boolean
     subpaths?: string[]
 }
 class RelatedRef {
-    /* Fields of Flatpak-1.0.Flatpak.RelatedRef */
-    parent: Ref
+    /* Fields of Flatpak-1.0.Flatpak.Ref */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.RelatedRef */
     get_subpaths(): string[]
     should_autoprune(): boolean
@@ -602,17 +606,16 @@ class RelatedRef {
     _init (config?: RelatedRef_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Remote_ConstructProps extends GObject.Object_ConstructProps {
+interface Remote_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Flatpak-1.0.Flatpak.Remote */
     name?: string
     type?: RemoteType
 }
 class Remote {
     /* Properties of Flatpak-1.0.Flatpak.Remote */
     name: string
-    /* Fields of Flatpak-1.0.Flatpak.Remote */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.Remote */
     get_appstream_dir(arch?: string | null): Gio.File
     get_appstream_timestamp(arch?: string | null): Gio.File
@@ -697,7 +700,8 @@ class Remote {
     static new_from_file(name: string, data: GLib.Bytes): Remote
     static $gtype: GObject.Type
 }
-export interface RemoteRef_ConstructProps extends Ref_ConstructProps {
+interface RemoteRef_ConstructProps extends Ref_ConstructProps {
+    /* Constructor properties of Flatpak-1.0.Flatpak.RemoteRef */
     download_size?: number
     end_of_life?: string
     end_of_life_rebase?: string
@@ -706,10 +710,10 @@ export interface RemoteRef_ConstructProps extends Ref_ConstructProps {
     remote_name?: string
 }
 class RemoteRef {
-    /* Fields of Flatpak-1.0.Flatpak.RemoteRef */
-    parent: Ref
+    /* Fields of Flatpak-1.0.Flatpak.Ref */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.RemoteRef */
     get_download_size(): number
     get_eol(): string
@@ -768,14 +772,13 @@ class RemoteRef {
     _init (config?: RemoteRef_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Transaction_ConstructProps extends GObject.Object_ConstructProps {
+interface Transaction_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Flatpak-1.0.Flatpak.Transaction */
     installation?: Installation
 }
 class Transaction {
-    /* Fields of Flatpak-1.0.Flatpak.Transaction */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.Transaction */
     abort_webflow(id: number): void
     add_default_dependency_sources(): void
@@ -907,11 +910,11 @@ class Transaction {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface TransactionOperation_ConstructProps extends GObject.Object_ConstructProps {
+interface TransactionOperation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TransactionOperation {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.TransactionOperation */
     get_bundle_path(): Gio.File
     get_commit(): string
@@ -967,11 +970,11 @@ class TransactionOperation {
     _init (config?: TransactionOperation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TransactionProgress_ConstructProps extends GObject.Object_ConstructProps {
+interface TransactionProgress_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TransactionProgress {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Flatpak-1.0.Flatpak.TransactionProgress */
     get_bytes_transferred(): number
     get_is_estimating(): boolean
@@ -1028,71 +1031,71 @@ class TransactionProgress {
 }
 abstract class BundleRefClass {
     /* Fields of Flatpak-1.0.Flatpak.BundleRefClass */
-    parent_class: RefClass
+    readonly parent_class: RefClass
     static name: string
 }
 abstract class InstallationClass {
     /* Fields of Flatpak-1.0.Flatpak.InstallationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class InstalledRefClass {
     /* Fields of Flatpak-1.0.Flatpak.InstalledRefClass */
-    parent_class: RefClass
+    readonly parent_class: RefClass
     static name: string
 }
 abstract class InstanceClass {
     /* Fields of Flatpak-1.0.Flatpak.InstanceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RefClass {
     /* Fields of Flatpak-1.0.Flatpak.RefClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RelatedRefClass {
     /* Fields of Flatpak-1.0.Flatpak.RelatedRefClass */
-    parent_class: RefClass
+    readonly parent_class: RefClass
     static name: string
 }
 abstract class RemoteClass {
     /* Fields of Flatpak-1.0.Flatpak.RemoteClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RemoteRefClass {
     /* Fields of Flatpak-1.0.Flatpak.RemoteRefClass */
-    parent_class: RefClass
+    readonly parent_class: RefClass
     static name: string
 }
 abstract class TransactionClass {
     /* Fields of Flatpak-1.0.Flatpak.TransactionClass */
-    parent_class: GObject.ObjectClass
-    new_operation: (transaction: Transaction, operation: TransactionOperation, progress: TransactionProgress) => void
-    operation_done: (transaction: Transaction, operation: TransactionOperation, commit: string, details: TransactionResult) => void
-    operation_error: (transaction: Transaction, operation: TransactionOperation, error: GLib.Error, detail: TransactionErrorDetails) => boolean
-    choose_remote_for_ref: (transaction: Transaction, for_ref: string, runtime_ref: string, remotes: string) => number
-    end_of_lifed: (transaction: Transaction, ref: string, reason: string, rebase: string) => void
-    ready: (transaction: Transaction) => boolean
-    add_new_remote: (transaction: Transaction, reason: TransactionRemoteReason, from_id: string, remote_name: string, url: string) => boolean
-    run: (transaction: Transaction, cancellable?: Gio.Cancellable | null) => boolean
-    end_of_lifed_with_rebase: (transaction: Transaction, remote: string, ref: string, reason: string, rebased_to_ref: string, previous_ids: string) => boolean
-    webflow_start: (transaction: Transaction, remote: string, url: string, options: GLib.Variant, id: number) => boolean
-    webflow_done: (transaction: Transaction, options: GLib.Variant, id: number) => void
-    basic_auth_start: (transaction: Transaction, remote: string, realm: string, options: GLib.Variant, id: number) => boolean
-    install_authenticator: (transaction: Transaction, remote: string, authenticator_ref: string) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly new_operation: (transaction: Transaction, operation: TransactionOperation, progress: TransactionProgress) => void
+    readonly operation_done: (transaction: Transaction, operation: TransactionOperation, commit: string, details: TransactionResult) => void
+    readonly operation_error: (transaction: Transaction, operation: TransactionOperation, error: GLib.Error, detail: TransactionErrorDetails) => boolean
+    readonly choose_remote_for_ref: (transaction: Transaction, for_ref: string, runtime_ref: string, remotes: string) => number
+    readonly end_of_lifed: (transaction: Transaction, ref: string, reason: string, rebase: string) => void
+    readonly ready: (transaction: Transaction) => boolean
+    readonly add_new_remote: (transaction: Transaction, reason: TransactionRemoteReason, from_id: string, remote_name: string, url: string) => boolean
+    readonly run: (transaction: Transaction, cancellable?: Gio.Cancellable | null) => boolean
+    readonly end_of_lifed_with_rebase: (transaction: Transaction, remote: string, ref: string, reason: string, rebased_to_ref: string, previous_ids: string) => boolean
+    readonly webflow_start: (transaction: Transaction, remote: string, url: string, options: GLib.Variant, id: number) => boolean
+    readonly webflow_done: (transaction: Transaction, options: GLib.Variant, id: number) => void
+    readonly basic_auth_start: (transaction: Transaction, remote: string, realm: string, options: GLib.Variant, id: number) => boolean
+    readonly install_authenticator: (transaction: Transaction, remote: string, authenticator_ref: string) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class TransactionOperationClass {
     /* Fields of Flatpak-1.0.Flatpak.TransactionOperationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TransactionProgressClass {
     /* Fields of Flatpak-1.0.Flatpak.TransactionProgressClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

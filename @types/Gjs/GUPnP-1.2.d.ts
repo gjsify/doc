@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GUPnP-1.2
  */
@@ -87,7 +93,8 @@ class Acl {
     vfunc_is_allowed_finish(res: Gio.AsyncResult): boolean
     static name: string
 }
-export interface Context_ConstructProps extends GSSDP.Client_ConstructProps {
+interface Context_ConstructProps extends GSSDP.Client_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.Context */
     acl?: Acl
     default_language?: string
     port?: number
@@ -107,10 +114,10 @@ class Context {
     host_mask: Gio.InetAddressMask
     network: string
     server_id: string
-    /* Fields of GUPnP-1.2.GUPnP.Context */
-    parent_instance: GSSDP.Client
+    /* Fields of GSSDP-1.2.GSSDP.Client */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.Context */
     add_server_handler(use_acl: boolean, path: string, callback: Soup.ServerCallback): void
     get_acl(): Acl
@@ -172,6 +179,8 @@ class Context {
     watch_closure(closure: Function): void
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of GUPnP-1.2.GUPnP.Context */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GSSDP-1.2.GSSDP.Client */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
@@ -221,20 +230,21 @@ class Context {
     _init (config?: Context_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(iface: string | null, port: number): Context
+    /* Function overloads */
     static new(iface?: string | null): Context
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ContextFilter_ConstructProps extends GObject.Object_ConstructProps {
+interface ContextFilter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.ContextFilter */
     enabled?: boolean
     entries?: string[]
 }
 class ContextFilter {
     /* Properties of GUPnP-1.2.GUPnP.ContextFilter */
     enabled: boolean
-    /* Fields of GUPnP-1.2.GUPnP.ContextFilter */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.ContextFilter */
     add_entry(entry: string): boolean
     add_entryv(entries: string[]): void
@@ -290,7 +300,8 @@ class ContextFilter {
     _init (config?: ContextFilter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ContextManager_ConstructProps extends GObject.Object_ConstructProps {
+interface ContextManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.ContextManager */
     family?: Gio.SocketFamily
     port?: number
     uda_version?: GSSDP.UDAVersion
@@ -298,10 +309,8 @@ export interface ContextManager_ConstructProps extends GObject.Object_ConstructP
 class ContextManager {
     /* Properties of GUPnP-1.2.GUPnP.ContextManager */
     readonly context_filter: ContextFilter
-    /* Fields of GUPnP-1.2.GUPnP.ContextManager */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.ContextManager */
     get_context_filter(): ContextFilter
     get_port(): number
@@ -366,7 +375,8 @@ class ContextManager {
     static create_full(uda_version: GSSDP.UDAVersion, family: Gio.SocketFamily, port: number): ContextManager
     static $gtype: GObject.Type
 }
-export interface ControlPoint_ConstructProps extends GSSDP.ResourceBrowser_ConstructProps {
+interface ControlPoint_ConstructProps extends GSSDP.ResourceBrowser_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.ControlPoint */
     resource_factory?: ResourceFactory
 }
 class ControlPoint {
@@ -374,10 +384,10 @@ class ControlPoint {
     active: boolean
     mx: number
     target: string
-    /* Fields of GUPnP-1.2.GUPnP.ControlPoint */
-    parent_instance: GSSDP.ResourceBrowser
+    /* Fields of GSSDP-1.2.GSSDP.ResourceBrowser */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.ControlPoint */
     get_context(): Context
     get_resource_factory(): ResourceFactory
@@ -472,22 +482,25 @@ class ControlPoint {
     _init (config?: ControlPoint_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(context: Context, target: string): ControlPoint
+    /* Function overloads */
     static new(client: GSSDP.Client, target: string): ControlPoint
     static new_full(context: Context, factory: ResourceFactory, target: string): ControlPoint
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends DeviceInfo_ConstructProps {
+interface Device_ConstructProps extends DeviceInfo_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.Device */
     root_device?: RootDevice
 }
 class Device {
     /* Properties of GUPnP-1.2.GUPnP.DeviceInfo */
+    document: XMLDoc
     element: object
     location: string
     url_base: Soup.URI
-    /* Fields of GUPnP-1.2.GUPnP.Device */
-    parent_instance: DeviceInfo
+    /* Fields of GUPnP-1.2.GUPnP.DeviceInfo */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.DeviceInfo */
     get_context(): Context
     get_description_value(element: string): string | null
@@ -549,6 +562,8 @@ class Device {
     connect(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::document", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::document", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::element", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::element", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::location", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
@@ -564,7 +579,8 @@ class Device {
     _init (config?: Device_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface DeviceInfo_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.DeviceInfo */
     context?: Context
     device_type?: string
     document?: XMLDoc
@@ -576,13 +592,12 @@ export interface DeviceInfo_ConstructProps extends GObject.Object_ConstructProps
 }
 class DeviceInfo {
     /* Properties of GUPnP-1.2.GUPnP.DeviceInfo */
+    document: XMLDoc
     element: object
     location: string
     url_base: Soup.URI
-    /* Fields of GUPnP-1.2.GUPnP.DeviceInfo */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.DeviceInfo */
     get_context(): Context
     get_description_value(element: string): string | null
@@ -644,6 +659,8 @@ class DeviceInfo {
     connect(sigName: "notify", callback: (($obj: DeviceInfo, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceInfo, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::document", callback: (($obj: DeviceInfo, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::document", callback: (($obj: DeviceInfo, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::element", callback: (($obj: DeviceInfo, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::element", callback: (($obj: DeviceInfo, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::location", callback: (($obj: DeviceInfo, pspec: GObject.ParamSpec) => void)): number
@@ -659,17 +676,18 @@ class DeviceInfo {
     _init (config?: DeviceInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceProxy_ConstructProps extends DeviceInfo_ConstructProps {
+interface DeviceProxy_ConstructProps extends DeviceInfo_ConstructProps {
 }
 class DeviceProxy {
     /* Properties of GUPnP-1.2.GUPnP.DeviceInfo */
+    document: XMLDoc
     element: object
     location: string
     url_base: Soup.URI
-    /* Fields of GUPnP-1.2.GUPnP.DeviceProxy */
-    parent_instance: DeviceInfo
+    /* Fields of GUPnP-1.2.GUPnP.DeviceInfo */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.DeviceInfo */
     get_context(): Context
     get_description_value(element: string): string | null
@@ -731,6 +749,8 @@ class DeviceProxy {
     connect(sigName: "notify", callback: (($obj: DeviceProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::document", callback: (($obj: DeviceProxy, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::document", callback: (($obj: DeviceProxy, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::element", callback: (($obj: DeviceProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::element", callback: (($obj: DeviceProxy, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::location", callback: (($obj: DeviceProxy, pspec: GObject.ParamSpec) => void)): number
@@ -746,13 +766,11 @@ class DeviceProxy {
     _init (config?: DeviceProxy_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ResourceFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface ResourceFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ResourceFactory {
-    /* Fields of GUPnP-1.2.GUPnP.ResourceFactory */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.ResourceFactory */
     register_resource_proxy_type(upnp_type: string, type: GObject.Type): void
     register_resource_type(upnp_type: string, type: GObject.Type): void
@@ -804,7 +822,8 @@ class ResourceFactory {
     static get_default(): ResourceFactory
     static $gtype: GObject.Type
 }
-export interface RootDevice_ConstructProps extends Device_ConstructProps {
+interface RootDevice_ConstructProps extends Device_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.RootDevice */
     available?: boolean
     description_dir?: string
     description_doc?: XMLDoc
@@ -814,16 +833,18 @@ class RootDevice {
     /* Properties of GUPnP-1.2.GUPnP.RootDevice */
     available: boolean
     /* Properties of GUPnP-1.2.GUPnP.DeviceInfo */
+    document: XMLDoc
     element: object
     location: string
     url_base: Soup.URI
-    /* Fields of GUPnP-1.2.GUPnP.RootDevice */
-    parent_instance: Device
+    /* Fields of GUPnP-1.2.GUPnP.Device */
+    readonly parent_instance: DeviceInfo
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.RootDevice */
     get_available(): boolean
     get_description_dir(): string
+    get_description_document_name(): string
     get_description_path(): string
     get_relative_location(): string
     get_ssdp_resource_group(): GSSDP.ResourceGroup
@@ -895,6 +916,8 @@ class RootDevice {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::available", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::available", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::document", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::document", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::element", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::element", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::location", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
@@ -914,14 +937,15 @@ class RootDevice {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Service_ConstructProps extends ServiceInfo_ConstructProps {
+interface Service_ConstructProps extends ServiceInfo_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.Service */
     root_device?: RootDevice
 }
 class Service {
-    /* Fields of GUPnP-1.2.GUPnP.Service */
-    parent_instance: ServiceInfo
+    /* Fields of GUPnP-1.2.GUPnP.ServiceInfo */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.Service */
     freeze_notify(): void
     notify_value(variable: string, value: any): void
@@ -995,7 +1019,8 @@ class Service {
     _init (config?: Service_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ServiceInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface ServiceInfo_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.ServiceInfo */
     context?: Context
     document?: XMLDoc
     element?: object
@@ -1005,10 +1030,8 @@ export interface ServiceInfo_ConstructProps extends GObject.Object_ConstructProp
     url_base?: Soup.URI
 }
 class ServiceInfo {
-    /* Fields of GUPnP-1.2.GUPnP.ServiceInfo */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.ServiceInfo */
     get_context(): Context
     get_control_url(): string
@@ -1066,12 +1089,13 @@ class ServiceInfo {
     _init (config?: ServiceInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ServiceIntrospection_ConstructProps extends GObject.Object_ConstructProps {
+interface ServiceIntrospection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.ServiceIntrospection */
     scpd?: object
 }
 class ServiceIntrospection {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.ServiceIntrospection */
     get_action(action_name: string): ServiceActionInfo | null
     get_state_variable(variable_name: string): ServiceStateVariableInfo | null
@@ -1122,16 +1146,17 @@ class ServiceIntrospection {
     _init (config?: ServiceIntrospection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ServiceProxy_ConstructProps extends ServiceInfo_ConstructProps {
+interface ServiceProxy_ConstructProps extends ServiceInfo_ConstructProps {
+    /* Constructor properties of GUPnP-1.2.GUPnP.ServiceProxy */
     subscribed?: boolean
 }
 class ServiceProxy {
     /* Properties of GUPnP-1.2.GUPnP.ServiceProxy */
     subscribed: boolean
-    /* Fields of GUPnP-1.2.GUPnP.ServiceProxy */
-    parent_instance: ServiceInfo
+    /* Fields of GUPnP-1.2.GUPnP.ServiceInfo */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.ServiceProxy */
     add_notify(variable: string, type: GObject.Type, callback: ServiceProxyNotifyCallback): boolean
     add_raw_notify(callback: ServiceProxyNotifyCallback): boolean
@@ -1212,11 +1237,11 @@ class ServiceProxy {
     _init (config?: ServiceProxy_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface XMLDoc_ConstructProps extends GObject.Object_ConstructProps {
+interface XMLDoc_ConstructProps extends GObject.Object_ConstructProps {
 }
 class XMLDoc {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.XMLDoc */
     get_doc(): libxml2.Doc
     /* Methods of GObject-2.0.GObject.Object */
@@ -1267,60 +1292,60 @@ class XMLDoc {
 }
 abstract class AclInterface {
     /* Fields of GUPnP-1.2.GUPnP.AclInterface */
-    parent: GObject.TypeInterface
-    is_allowed: (self: Acl, device: object | null, service: object | null, path: string, address: string, agent?: string | null) => boolean
-    is_allowed_async: (self: Acl, device: object | null, service: object | null, path: string, address: string, agent?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    is_allowed_finish: (self: Acl, res: Gio.AsyncResult) => boolean
-    can_sync: (self: Acl) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly is_allowed: (self: Acl, device: object | null, service: object | null, path: string, address: string, agent?: string | null) => boolean
+    readonly is_allowed_async: (self: Acl, device: object | null, service: object | null, path: string, address: string, agent?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly is_allowed_finish: (self: Acl, res: Gio.AsyncResult) => boolean
+    readonly can_sync: (self: Acl) => boolean
     static name: string
 }
 abstract class ContextClass {
     /* Fields of GUPnP-1.2.GUPnP.ContextClass */
-    parent_class: GSSDP.ClientClass
+    readonly parent_class: GSSDP.ClientClass
     static name: string
 }
 abstract class ContextFilterClass {
     /* Fields of GUPnP-1.2.GUPnP.ContextFilterClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ContextManagerClass {
     /* Fields of GUPnP-1.2.GUPnP.ContextManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ControlPointClass {
     /* Fields of GUPnP-1.2.GUPnP.ControlPointClass */
-    parent_class: GSSDP.ResourceBrowserClass
-    device_proxy_available: (control_point: ControlPoint, proxy: DeviceProxy) => void
-    device_proxy_unavailable: (control_point: ControlPoint, proxy: DeviceProxy) => void
-    service_proxy_available: (control_point: ControlPoint, proxy: ServiceProxy) => void
-    service_proxy_unavailable: (control_point: ControlPoint, proxy: ServiceProxy) => void
+    readonly parent_class: GSSDP.ResourceBrowserClass
+    readonly device_proxy_available: (control_point: ControlPoint, proxy: DeviceProxy) => void
+    readonly device_proxy_unavailable: (control_point: ControlPoint, proxy: DeviceProxy) => void
+    readonly service_proxy_available: (control_point: ControlPoint, proxy: ServiceProxy) => void
+    readonly service_proxy_unavailable: (control_point: ControlPoint, proxy: ServiceProxy) => void
     static name: string
 }
 abstract class DeviceClass {
     /* Fields of GUPnP-1.2.GUPnP.DeviceClass */
-    parent_class: DeviceInfoClass
+    readonly parent_class: DeviceInfoClass
     static name: string
 }
 abstract class DeviceInfoClass {
     /* Fields of GUPnP-1.2.GUPnP.DeviceInfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DeviceProxyClass {
     /* Fields of GUPnP-1.2.GUPnP.DeviceProxyClass */
-    parent_class: DeviceInfoClass
+    readonly parent_class: DeviceInfoClass
     static name: string
 }
 abstract class ResourceFactoryClass {
     /* Fields of GUPnP-1.2.GUPnP.ResourceFactoryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RootDeviceClass {
     /* Fields of GUPnP-1.2.GUPnP.RootDeviceClass */
-    parent_class: DeviceClass
+    readonly parent_class: DeviceClass
     static name: string
 }
 class ServiceAction {
@@ -1333,39 +1358,40 @@ class ServiceAction {
     get_values(arg_names: string[], arg_types: GObject.Type[]): any[]
     return(): void
     return_error(error_code: number, error_description: string): void
+    return_success(): void
     set_value(argument: string, value: any): void
     set_values(arg_names: string[], arg_values: any[]): void
     static name: string
 }
 class ServiceActionArgInfo {
     /* Fields of GUPnP-1.2.GUPnP.ServiceActionArgInfo */
-    name: string
-    direction: ServiceActionArgDirection
-    related_state_variable: string
-    retval: boolean
+    readonly name: string
+    readonly direction: ServiceActionArgDirection
+    readonly related_state_variable: string
+    readonly retval: boolean
     static name: string
 }
 class ServiceActionInfo {
     /* Fields of GUPnP-1.2.GUPnP.ServiceActionInfo */
-    name: string
-    arguments_: ServiceActionArgInfo[]
+    readonly name: string
+    readonly arguments_: ServiceActionArgInfo[]
     static name: string
 }
 abstract class ServiceClass {
     /* Fields of GUPnP-1.2.GUPnP.ServiceClass */
-    parent_class: ServiceInfoClass
-    action_invoked: (service: Service, action: ServiceAction) => void
-    query_variable: (service: Service, variable: string, value: any) => void
+    readonly parent_class: ServiceInfoClass
+    readonly action_invoked: (service: Service, action: ServiceAction) => void
+    readonly query_variable: (service: Service, variable: string, value: any) => void
     static name: string
 }
 abstract class ServiceInfoClass {
     /* Fields of GUPnP-1.2.GUPnP.ServiceInfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ServiceIntrospectionClass {
     /* Fields of GUPnP-1.2.GUPnP.ServiceIntrospectionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ServiceProxyAction {
@@ -1373,6 +1399,7 @@ class ServiceProxyAction {
     get_result_hash(out_hash: GLib.HashTable): [ /* returnType */ boolean, /* out_hash */ GLib.HashTable ]
     get_result_list(out_names: string[], out_types: GObject.Type[]): [ /* returnType */ boolean, /* out_values */ any[] ]
     ref(): ServiceProxyAction
+    set(key: string, value: any): boolean
     unref(): void
     static name: string
     /* Static methods and pseudo-constructors */
@@ -1380,28 +1407,28 @@ class ServiceProxyAction {
 }
 abstract class ServiceProxyClass {
     /* Fields of GUPnP-1.2.GUPnP.ServiceProxyClass */
-    parent_class: ServiceInfoClass
-    subscription_lost: (proxy: ServiceProxy, reason: GLib.Error) => void
+    readonly parent_class: ServiceInfoClass
+    readonly subscription_lost: (proxy: ServiceProxy, reason: GLib.Error) => void
     static name: string
 }
 class ServiceStateVariableInfo {
     /* Fields of GUPnP-1.2.GUPnP.ServiceStateVariableInfo */
-    name: string
-    send_events: boolean
-    is_numeric: boolean
-    type: GObject.Type
-    default_value: any
-    minimum: any
-    maximum: any
-    step: any
-    allowed_values: string[]
+    readonly name: string
+    readonly send_events: boolean
+    readonly is_numeric: boolean
+    readonly type: GObject.Type
+    readonly default_value: any
+    readonly minimum: any
+    readonly maximum: any
+    readonly step: any
+    readonly allowed_values: string[]
     static name: string
 }
 abstract class XMLDocClass {
     /* Fields of GUPnP-1.2.GUPnP.XMLDocClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
-type WhiteList = ContextFilter
+    type WhiteList = ContextFilter
 }
 export default GUPnP;

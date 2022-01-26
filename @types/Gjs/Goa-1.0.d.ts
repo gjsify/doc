@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Goa-1.0
  */
@@ -17,7 +23,7 @@ enum Error {
     NOT_AUTHORIZED,
     SSL,
 }
-export const ERROR_NUM_ENTRIES: number
+const ERROR_NUM_ENTRIES: number
 function account_interface_info(): Gio.DBusInterfaceInfo
 function account_override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 function calendar_interface_info(): Gio.DBusInterfaceInfo
@@ -389,7 +395,8 @@ class Todo {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export interface AccountProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface AccountProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Account */
     attention_needed?: boolean
     calendar_disabled?: boolean
     chat_disabled?: boolean
@@ -442,7 +449,7 @@ class AccountProxy {
     ticketing_disabled: boolean
     todo_disabled: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -601,12 +608,19 @@ class AccountProxy {
     _init (config?: AccountProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): AccountProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): AccountProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): AccountProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): AccountProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): AccountProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): AccountProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): AccountProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): AccountProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -614,7 +628,8 @@ class AccountProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface AccountSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface AccountSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Account */
     attention_needed?: boolean
     calendar_disabled?: boolean
     chat_disabled?: boolean
@@ -665,7 +680,7 @@ class AccountSkeleton {
     ticketing_disabled: boolean
     todo_disabled: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -806,7 +821,8 @@ class AccountSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface CalendarProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface CalendarProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Calendar */
     accept_ssl_errors?: boolean
     uri?: string
 }
@@ -819,7 +835,7 @@ class CalendarProxy {
     accept_ssl_errors: boolean
     uri: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -920,12 +936,19 @@ class CalendarProxy {
     _init (config?: CalendarProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): CalendarProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): CalendarProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): CalendarProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): CalendarProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): CalendarProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): CalendarProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): CalendarProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): CalendarProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -933,7 +956,8 @@ class CalendarProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface CalendarSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface CalendarSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Calendar */
     accept_ssl_errors?: boolean
     uri?: string
 }
@@ -944,7 +968,7 @@ class CalendarSkeleton {
     accept_ssl_errors: boolean
     uri: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1027,7 +1051,7 @@ class CalendarSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ChatProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ChatProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class ChatProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -1035,7 +1059,7 @@ class ChatProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1132,12 +1156,19 @@ class ChatProxy {
     _init (config?: ChatProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ChatProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ChatProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): ChatProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ChatProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ChatProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ChatProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ChatProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ChatProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -1145,13 +1176,13 @@ class ChatProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ChatSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ChatSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class ChatSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1230,13 +1261,13 @@ class ChatSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Client {
     /* Properties of Goa-1.0.Goa.Client */
     readonly object_manager: Gio.DBusObjectManager
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Goa-1.0.Goa.Client */
     get_accounts(): Object[]
     get_manager(): Manager | null
@@ -1312,7 +1343,8 @@ class Client {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ContactsProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ContactsProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Contacts */
     accept_ssl_errors?: boolean
     uri?: string
 }
@@ -1325,7 +1357,7 @@ class ContactsProxy {
     accept_ssl_errors: boolean
     uri: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1426,12 +1458,19 @@ class ContactsProxy {
     _init (config?: ContactsProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ContactsProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ContactsProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): ContactsProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ContactsProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ContactsProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ContactsProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ContactsProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ContactsProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -1439,7 +1478,8 @@ class ContactsProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ContactsSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ContactsSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Contacts */
     accept_ssl_errors?: boolean
     uri?: string
 }
@@ -1450,7 +1490,7 @@ class ContactsSkeleton {
     accept_ssl_errors: boolean
     uri: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1533,7 +1573,7 @@ class ContactsSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface DocumentsProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface DocumentsProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class DocumentsProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -1541,7 +1581,7 @@ class DocumentsProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1638,12 +1678,19 @@ class DocumentsProxy {
     _init (config?: DocumentsProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): DocumentsProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): DocumentsProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): DocumentsProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): DocumentsProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): DocumentsProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): DocumentsProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): DocumentsProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): DocumentsProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -1651,13 +1698,13 @@ class DocumentsProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface DocumentsSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface DocumentsSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class DocumentsSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1736,7 +1783,8 @@ class DocumentsSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ExchangeProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ExchangeProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Exchange */
     accept_ssl_errors?: boolean
     host?: string
 }
@@ -1749,7 +1797,7 @@ class ExchangeProxy {
     accept_ssl_errors: boolean
     host: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1850,12 +1898,19 @@ class ExchangeProxy {
     _init (config?: ExchangeProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ExchangeProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ExchangeProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): ExchangeProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ExchangeProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ExchangeProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ExchangeProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ExchangeProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ExchangeProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -1863,7 +1918,8 @@ class ExchangeProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ExchangeSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ExchangeSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Exchange */
     accept_ssl_errors?: boolean
     host?: string
 }
@@ -1874,7 +1930,7 @@ class ExchangeSkeleton {
     accept_ssl_errors: boolean
     host: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1957,7 +2013,8 @@ class ExchangeSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface FilesProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface FilesProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Files */
     accept_ssl_errors?: boolean
     uri?: string
 }
@@ -1970,7 +2027,7 @@ class FilesProxy {
     accept_ssl_errors: boolean
     uri: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -2071,12 +2128,19 @@ class FilesProxy {
     _init (config?: FilesProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): FilesProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): FilesProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): FilesProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): FilesProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): FilesProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): FilesProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): FilesProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): FilesProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -2084,7 +2148,8 @@ class FilesProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface FilesSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface FilesSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Files */
     accept_ssl_errors?: boolean
     uri?: string
 }
@@ -2095,7 +2160,7 @@ class FilesSkeleton {
     accept_ssl_errors: boolean
     uri: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -2178,7 +2243,8 @@ class FilesSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MailProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface MailProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Mail */
     email_address?: string
     imap_accept_ssl_errors?: boolean
     imap_host?: string
@@ -2223,7 +2289,7 @@ class MailProxy {
     smtp_use_tls: boolean
     smtp_user_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -2356,12 +2422,19 @@ class MailProxy {
     _init (config?: MailProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): MailProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): MailProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): MailProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): MailProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): MailProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MailProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): MailProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MailProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -2369,7 +2442,8 @@ class MailProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MailSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface MailSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Mail */
     email_address?: string
     imap_accept_ssl_errors?: boolean
     imap_host?: string
@@ -2412,7 +2486,7 @@ class MailSkeleton {
     smtp_use_tls: boolean
     smtp_user_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -2527,7 +2601,7 @@ class MailSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class ManagerProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -2535,7 +2609,7 @@ class ManagerProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -2650,12 +2724,19 @@ class ManagerProxy {
     _init (config?: ManagerProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ManagerProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ManagerProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): ManagerProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ManagerProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ManagerProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ManagerProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ManagerProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ManagerProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -2663,13 +2744,13 @@ class ManagerProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class ManagerSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -2766,7 +2847,7 @@ class ManagerSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MapsProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface MapsProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class MapsProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -2774,7 +2855,7 @@ class MapsProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -2871,12 +2952,19 @@ class MapsProxy {
     _init (config?: MapsProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): MapsProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): MapsProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): MapsProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): MapsProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): MapsProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MapsProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): MapsProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MapsProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -2884,13 +2972,13 @@ class MapsProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MapsSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface MapsSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class MapsSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -2969,7 +3057,8 @@ class MapsSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MediaServerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface MediaServerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.MediaServer */
     dlna_supported?: boolean
     udn?: string
 }
@@ -2982,7 +3071,7 @@ class MediaServerProxy {
     dlna_supported: boolean
     udn: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -3083,12 +3172,19 @@ class MediaServerProxy {
     _init (config?: MediaServerProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): MediaServerProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): MediaServerProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): MediaServerProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): MediaServerProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): MediaServerProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MediaServerProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): MediaServerProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MediaServerProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -3096,7 +3192,8 @@ class MediaServerProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MediaServerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface MediaServerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.MediaServer */
     dlna_supported?: boolean
     udn?: string
 }
@@ -3107,7 +3204,7 @@ class MediaServerSkeleton {
     dlna_supported: boolean
     udn: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -3190,7 +3287,7 @@ class MediaServerSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MusicProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface MusicProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class MusicProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -3198,7 +3295,7 @@ class MusicProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -3295,12 +3392,19 @@ class MusicProxy {
     _init (config?: MusicProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): MusicProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): MusicProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): MusicProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): MusicProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): MusicProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MusicProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): MusicProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): MusicProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -3308,13 +3412,13 @@ class MusicProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface MusicSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface MusicSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class MusicSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -3393,7 +3497,8 @@ class MusicSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface OAuth2BasedProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface OAuth2BasedProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.OAuth2Based */
     client_id?: string
     client_secret?: string
 }
@@ -3406,7 +3511,7 @@ class OAuth2BasedProxy {
     client_id: string
     client_secret: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -3517,12 +3622,19 @@ class OAuth2BasedProxy {
     _init (config?: OAuth2BasedProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): OAuth2BasedProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): OAuth2BasedProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): OAuth2BasedProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): OAuth2BasedProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): OAuth2BasedProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): OAuth2BasedProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): OAuth2BasedProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): OAuth2BasedProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -3530,7 +3642,8 @@ class OAuth2BasedProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface OAuth2BasedSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface OAuth2BasedSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.OAuth2Based */
     client_id?: string
     client_secret?: string
 }
@@ -3541,7 +3654,7 @@ class OAuth2BasedSkeleton {
     client_id: string
     client_secret: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -3634,7 +3747,8 @@ class OAuth2BasedSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface OAuthBasedProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface OAuthBasedProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.OAuthBased */
     consumer_key?: string
     consumer_secret?: string
 }
@@ -3647,7 +3761,7 @@ class OAuthBasedProxy {
     consumer_key: string
     consumer_secret: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -3758,12 +3872,19 @@ class OAuthBasedProxy {
     _init (config?: OAuthBasedProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): OAuthBasedProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): OAuthBasedProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): OAuthBasedProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): OAuthBasedProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): OAuthBasedProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): OAuthBasedProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): OAuthBasedProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): OAuthBasedProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -3771,7 +3892,8 @@ class OAuthBasedProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface OAuthBasedSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface OAuthBasedSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.OAuthBased */
     consumer_key?: string
     consumer_secret?: string
 }
@@ -3782,7 +3904,7 @@ class OAuthBasedSkeleton {
     consumer_key: string
     consumer_secret: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -3875,13 +3997,13 @@ class OAuthBasedSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ObjectManagerClient_ConstructProps extends Gio.DBusObjectManagerClient_ConstructProps {
+interface ObjectManagerClient_ConstructProps extends Gio.DBusObjectManagerClient_ConstructProps {
 }
 class ObjectManagerClient {
     /* Properties of Gio-2.0.Gio.DBusObjectManagerClient */
     readonly name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusObjectManagerClient */
     get_connection(): Gio.DBusConnection
     get_flags(): Gio.DBusObjectManagerClientFlags
@@ -3978,19 +4100,27 @@ class ObjectManagerClient {
     _init (config?: ObjectManagerClient_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ObjectManagerClient
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ObjectManagerClient
+    static new_for_bus_finish(res: Gio.AsyncResult): ObjectManagerClient
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ObjectManagerClient
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ObjectManagerClient
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func?: Gio.DBusProxyTypeFunc | null, cancellable?: Gio.Cancellable | null): ObjectManagerClient
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusObjectManagerClientFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ObjectManagerClient
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusObjectManagerClientFlags, name: string | null, object_path: string, get_proxy_type_func?: Gio.DBusProxyTypeFunc | null, cancellable?: Gio.Cancellable | null): ObjectManagerClient
     static get_proxy_type(manager: Gio.DBusObjectManagerClient, object_path: string, interface_name?: string | null, user_data?: object | null): GObject.Type
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, object_path: string, get_proxy_type_func?: Gio.DBusProxyTypeFunc | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ObjectProxy_ConstructProps extends Gio.DBusObjectProxy_ConstructProps {
+interface ObjectProxy_ConstructProps extends Gio.DBusObjectProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Object */
     account?: Account
     calendar?: Calendar
     chat?: Chat
@@ -4035,7 +4165,7 @@ class ObjectProxy {
     ticketing: Ticketing
     todo: Todo
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusObjectProxy */
     get_connection(): Gio.DBusConnection
     /* Methods of GObject-2.0.GObject.Object */
@@ -4159,9 +4289,12 @@ class ObjectProxy {
     _init (config?: ObjectProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: Gio.DBusConnection, object_path: string): ObjectProxy
+    /* Function overloads */
+    static new(connection: Gio.DBusConnection, object_path: string): ObjectProxy
     static $gtype: GObject.Type
 }
-export interface ObjectSkeleton_ConstructProps extends Gio.DBusObjectSkeleton_ConstructProps {
+interface ObjectSkeleton_ConstructProps extends Gio.DBusObjectSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Object */
     account?: Account
     calendar?: Calendar
     chat?: Chat
@@ -4208,7 +4341,7 @@ class ObjectSkeleton {
     ticketing: Ticketing
     todo: Todo
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Goa-1.0.Goa.ObjectSkeleton */
     set_account(interface_?: Account | null): void
     set_calendar(interface_?: Calendar | null): void
@@ -4365,9 +4498,11 @@ class ObjectSkeleton {
     _init (config?: ObjectSkeleton_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(object_path: string): ObjectSkeleton
+    /* Function overloads */
+    static new(object_path: string): ObjectSkeleton
     static $gtype: GObject.Type
 }
-export interface PasswordBasedProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface PasswordBasedProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class PasswordBasedProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -4375,7 +4510,7 @@ class PasswordBasedProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -4482,12 +4617,19 @@ class PasswordBasedProxy {
     _init (config?: PasswordBasedProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): PasswordBasedProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): PasswordBasedProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): PasswordBasedProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): PasswordBasedProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): PasswordBasedProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PasswordBasedProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): PasswordBasedProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PasswordBasedProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -4495,13 +4637,13 @@ class PasswordBasedProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface PasswordBasedSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface PasswordBasedSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class PasswordBasedSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -4590,7 +4732,7 @@ class PasswordBasedSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface PhotosProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface PhotosProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class PhotosProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -4598,7 +4740,7 @@ class PhotosProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -4695,12 +4837,19 @@ class PhotosProxy {
     _init (config?: PhotosProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): PhotosProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): PhotosProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): PhotosProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): PhotosProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): PhotosProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PhotosProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): PhotosProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PhotosProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -4708,13 +4857,13 @@ class PhotosProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface PhotosSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface PhotosSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class PhotosSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -4793,7 +4942,7 @@ class PhotosSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface PrintersProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface PrintersProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class PrintersProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -4801,7 +4950,7 @@ class PrintersProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -4898,12 +5047,19 @@ class PrintersProxy {
     _init (config?: PrintersProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): PrintersProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): PrintersProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): PrintersProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): PrintersProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): PrintersProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PrintersProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): PrintersProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): PrintersProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -4911,13 +5067,13 @@ class PrintersProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface PrintersSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface PrintersSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class PrintersSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -4996,7 +5152,7 @@ class PrintersSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ReadLaterProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ReadLaterProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class ReadLaterProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -5004,7 +5160,7 @@ class ReadLaterProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -5101,12 +5257,19 @@ class ReadLaterProxy {
     _init (config?: ReadLaterProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ReadLaterProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ReadLaterProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): ReadLaterProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ReadLaterProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ReadLaterProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ReadLaterProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ReadLaterProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ReadLaterProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -5114,13 +5277,13 @@ class ReadLaterProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ReadLaterSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ReadLaterSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class ReadLaterSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -5199,7 +5362,8 @@ class ReadLaterSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface TicketingProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface TicketingProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Ticketing */
     details?: GLib.Variant
 }
 class TicketingProxy {
@@ -5210,7 +5374,7 @@ class TicketingProxy {
     /* Properties of Goa-1.0.Goa.Ticketing */
     details: GLib.Variant
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -5319,12 +5483,19 @@ class TicketingProxy {
     _init (config?: TicketingProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): TicketingProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): TicketingProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): TicketingProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): TicketingProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): TicketingProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): TicketingProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): TicketingProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): TicketingProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -5332,7 +5503,8 @@ class TicketingProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface TicketingSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface TicketingSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Goa-1.0.Goa.Ticketing */
     details?: GLib.Variant
 }
 class TicketingSkeleton {
@@ -5341,7 +5513,7 @@ class TicketingSkeleton {
     /* Properties of Goa-1.0.Goa.Ticketing */
     details: GLib.Variant
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -5432,7 +5604,7 @@ class TicketingSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface TodoProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface TodoProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class TodoProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -5440,7 +5612,7 @@ class TodoProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -5537,12 +5709,19 @@ class TodoProxy {
     _init (config?: TodoProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): TodoProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): TodoProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): TodoProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): TodoProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): TodoProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): TodoProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): TodoProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): TodoProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
@@ -5550,13 +5729,13 @@ class TodoProxy {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface TodoSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface TodoSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class TodoSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -5637,36 +5816,36 @@ class TodoSkeleton {
 }
 abstract class AccountIface {
     /* Fields of Goa-1.0.Goa.AccountIface */
-    parent_iface: GObject.TypeInterface
-    handle_ensure_credentials: (object: Account, invocation: Gio.DBusMethodInvocation) => boolean
-    handle_remove: (object: Account, invocation: Gio.DBusMethodInvocation) => boolean
-    get_attention_needed: (object: Account) => boolean
-    get_calendar_disabled: (object: Account) => boolean
-    get_chat_disabled: (object: Account) => boolean
-    get_contacts_disabled: (object: Account) => boolean
-    get_documents_disabled: (object: Account) => boolean
-    get_id: (object: Account) => string | null
-    get_identity: (object: Account) => string | null
-    get_is_temporary: (object: Account) => boolean
-    get_mail_disabled: (object: Account) => boolean
-    get_presentation_identity: (object: Account) => string | null
-    get_provider_icon: (object: Account) => string | null
-    get_provider_name: (object: Account) => string | null
-    get_provider_type: (object: Account) => string | null
-    get_ticketing_disabled: (object: Account) => boolean
-    get_files_disabled: (object: Account) => boolean
-    get_photos_disabled: (object: Account) => boolean
-    get_printers_disabled: (object: Account) => boolean
-    get_read_later_disabled: (object: Account) => boolean
-    get_maps_disabled: (object: Account) => boolean
-    get_is_locked: (object: Account) => boolean
-    get_music_disabled: (object: Account) => boolean
-    get_todo_disabled: (object: Account) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_ensure_credentials: (object: Account, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly handle_remove: (object: Account, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly get_attention_needed: (object: Account) => boolean
+    readonly get_calendar_disabled: (object: Account) => boolean
+    readonly get_chat_disabled: (object: Account) => boolean
+    readonly get_contacts_disabled: (object: Account) => boolean
+    readonly get_documents_disabled: (object: Account) => boolean
+    readonly get_id: (object: Account) => string | null
+    readonly get_identity: (object: Account) => string | null
+    readonly get_is_temporary: (object: Account) => boolean
+    readonly get_mail_disabled: (object: Account) => boolean
+    readonly get_presentation_identity: (object: Account) => string | null
+    readonly get_provider_icon: (object: Account) => string | null
+    readonly get_provider_name: (object: Account) => string | null
+    readonly get_provider_type: (object: Account) => string | null
+    readonly get_ticketing_disabled: (object: Account) => boolean
+    readonly get_files_disabled: (object: Account) => boolean
+    readonly get_photos_disabled: (object: Account) => boolean
+    readonly get_printers_disabled: (object: Account) => boolean
+    readonly get_read_later_disabled: (object: Account) => boolean
+    readonly get_maps_disabled: (object: Account) => boolean
+    readonly get_is_locked: (object: Account) => boolean
+    readonly get_music_disabled: (object: Account) => boolean
+    readonly get_todo_disabled: (object: Account) => boolean
     static name: string
 }
 abstract class AccountProxyClass {
     /* Fields of Goa-1.0.Goa.AccountProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class AccountProxyPrivate {
@@ -5674,7 +5853,7 @@ class AccountProxyPrivate {
 }
 abstract class AccountSkeletonClass {
     /* Fields of Goa-1.0.Goa.AccountSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class AccountSkeletonPrivate {
@@ -5682,14 +5861,14 @@ class AccountSkeletonPrivate {
 }
 abstract class CalendarIface {
     /* Fields of Goa-1.0.Goa.CalendarIface */
-    parent_iface: GObject.TypeInterface
-    get_accept_ssl_errors: (object: Calendar) => boolean
-    get_uri: (object: Calendar) => string | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_accept_ssl_errors: (object: Calendar) => boolean
+    readonly get_uri: (object: Calendar) => string | null
     static name: string
 }
 abstract class CalendarProxyClass {
     /* Fields of Goa-1.0.Goa.CalendarProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class CalendarProxyPrivate {
@@ -5697,7 +5876,7 @@ class CalendarProxyPrivate {
 }
 abstract class CalendarSkeletonClass {
     /* Fields of Goa-1.0.Goa.CalendarSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class CalendarSkeletonPrivate {
@@ -5705,12 +5884,12 @@ class CalendarSkeletonPrivate {
 }
 abstract class ChatIface {
     /* Fields of Goa-1.0.Goa.ChatIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class ChatProxyClass {
     /* Fields of Goa-1.0.Goa.ChatProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ChatProxyPrivate {
@@ -5718,7 +5897,7 @@ class ChatProxyPrivate {
 }
 abstract class ChatSkeletonClass {
     /* Fields of Goa-1.0.Goa.ChatSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ChatSkeletonPrivate {
@@ -5726,19 +5905,19 @@ class ChatSkeletonPrivate {
 }
 abstract class ClientClass {
     /* Fields of Goa-1.0.Goa.ClientClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ContactsIface {
     /* Fields of Goa-1.0.Goa.ContactsIface */
-    parent_iface: GObject.TypeInterface
-    get_accept_ssl_errors: (object: Contacts) => boolean
-    get_uri: (object: Contacts) => string | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_accept_ssl_errors: (object: Contacts) => boolean
+    readonly get_uri: (object: Contacts) => string | null
     static name: string
 }
 abstract class ContactsProxyClass {
     /* Fields of Goa-1.0.Goa.ContactsProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ContactsProxyPrivate {
@@ -5746,7 +5925,7 @@ class ContactsProxyPrivate {
 }
 abstract class ContactsSkeletonClass {
     /* Fields of Goa-1.0.Goa.ContactsSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ContactsSkeletonPrivate {
@@ -5754,12 +5933,12 @@ class ContactsSkeletonPrivate {
 }
 abstract class DocumentsIface {
     /* Fields of Goa-1.0.Goa.DocumentsIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class DocumentsProxyClass {
     /* Fields of Goa-1.0.Goa.DocumentsProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class DocumentsProxyPrivate {
@@ -5767,7 +5946,7 @@ class DocumentsProxyPrivate {
 }
 abstract class DocumentsSkeletonClass {
     /* Fields of Goa-1.0.Goa.DocumentsSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class DocumentsSkeletonPrivate {
@@ -5775,14 +5954,14 @@ class DocumentsSkeletonPrivate {
 }
 abstract class ExchangeIface {
     /* Fields of Goa-1.0.Goa.ExchangeIface */
-    parent_iface: GObject.TypeInterface
-    get_host: (object: Exchange) => string | null
-    get_accept_ssl_errors: (object: Exchange) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_host: (object: Exchange) => string | null
+    readonly get_accept_ssl_errors: (object: Exchange) => boolean
     static name: string
 }
 abstract class ExchangeProxyClass {
     /* Fields of Goa-1.0.Goa.ExchangeProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ExchangeProxyPrivate {
@@ -5790,7 +5969,7 @@ class ExchangeProxyPrivate {
 }
 abstract class ExchangeSkeletonClass {
     /* Fields of Goa-1.0.Goa.ExchangeSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ExchangeSkeletonPrivate {
@@ -5798,14 +5977,14 @@ class ExchangeSkeletonPrivate {
 }
 abstract class FilesIface {
     /* Fields of Goa-1.0.Goa.FilesIface */
-    parent_iface: GObject.TypeInterface
-    get_accept_ssl_errors: (object: Files) => boolean
-    get_uri: (object: Files) => string | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_accept_ssl_errors: (object: Files) => boolean
+    readonly get_uri: (object: Files) => string | null
     static name: string
 }
 abstract class FilesProxyClass {
     /* Fields of Goa-1.0.Goa.FilesProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class FilesProxyPrivate {
@@ -5813,7 +5992,7 @@ class FilesProxyPrivate {
 }
 abstract class FilesSkeletonClass {
     /* Fields of Goa-1.0.Goa.FilesSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class FilesSkeletonPrivate {
@@ -5821,30 +6000,30 @@ class FilesSkeletonPrivate {
 }
 abstract class MailIface {
     /* Fields of Goa-1.0.Goa.MailIface */
-    parent_iface: GObject.TypeInterface
-    get_email_address: (object: Mail) => string | null
-    get_imap_host: (object: Mail) => string | null
-    get_imap_supported: (object: Mail) => boolean
-    get_imap_use_tls: (object: Mail) => boolean
-    get_imap_user_name: (object: Mail) => string | null
-    get_smtp_host: (object: Mail) => string | null
-    get_smtp_supported: (object: Mail) => boolean
-    get_smtp_use_tls: (object: Mail) => boolean
-    get_smtp_user_name: (object: Mail) => string | null
-    get_imap_accept_ssl_errors: (object: Mail) => boolean
-    get_imap_use_ssl: (object: Mail) => boolean
-    get_name: (object: Mail) => string | null
-    get_smtp_accept_ssl_errors: (object: Mail) => boolean
-    get_smtp_use_auth: (object: Mail) => boolean
-    get_smtp_use_ssl: (object: Mail) => boolean
-    get_smtp_auth_login: (object: Mail) => boolean
-    get_smtp_auth_plain: (object: Mail) => boolean
-    get_smtp_auth_xoauth2: (object: Mail) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_email_address: (object: Mail) => string | null
+    readonly get_imap_host: (object: Mail) => string | null
+    readonly get_imap_supported: (object: Mail) => boolean
+    readonly get_imap_use_tls: (object: Mail) => boolean
+    readonly get_imap_user_name: (object: Mail) => string | null
+    readonly get_smtp_host: (object: Mail) => string | null
+    readonly get_smtp_supported: (object: Mail) => boolean
+    readonly get_smtp_use_tls: (object: Mail) => boolean
+    readonly get_smtp_user_name: (object: Mail) => string | null
+    readonly get_imap_accept_ssl_errors: (object: Mail) => boolean
+    readonly get_imap_use_ssl: (object: Mail) => boolean
+    readonly get_name: (object: Mail) => string | null
+    readonly get_smtp_accept_ssl_errors: (object: Mail) => boolean
+    readonly get_smtp_use_auth: (object: Mail) => boolean
+    readonly get_smtp_use_ssl: (object: Mail) => boolean
+    readonly get_smtp_auth_login: (object: Mail) => boolean
+    readonly get_smtp_auth_plain: (object: Mail) => boolean
+    readonly get_smtp_auth_xoauth2: (object: Mail) => boolean
     static name: string
 }
 abstract class MailProxyClass {
     /* Fields of Goa-1.0.Goa.MailProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class MailProxyPrivate {
@@ -5852,7 +6031,7 @@ class MailProxyPrivate {
 }
 abstract class MailSkeletonClass {
     /* Fields of Goa-1.0.Goa.MailSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class MailSkeletonPrivate {
@@ -5860,14 +6039,14 @@ class MailSkeletonPrivate {
 }
 abstract class ManagerIface {
     /* Fields of Goa-1.0.Goa.ManagerIface */
-    parent_iface: GObject.TypeInterface
-    handle_add_account: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_provider: string, arg_identity: string, arg_presentation_identity: string, arg_credentials: GLib.Variant, arg_details: GLib.Variant) => boolean
-    handle_is_supported_provider: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_provider_type: string) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_add_account: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_provider: string, arg_identity: string, arg_presentation_identity: string, arg_credentials: GLib.Variant, arg_details: GLib.Variant) => boolean
+    readonly handle_is_supported_provider: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_provider_type: string) => boolean
     static name: string
 }
 abstract class ManagerProxyClass {
     /* Fields of Goa-1.0.Goa.ManagerProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ManagerProxyPrivate {
@@ -5875,7 +6054,7 @@ class ManagerProxyPrivate {
 }
 abstract class ManagerSkeletonClass {
     /* Fields of Goa-1.0.Goa.ManagerSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ManagerSkeletonPrivate {
@@ -5883,12 +6062,12 @@ class ManagerSkeletonPrivate {
 }
 abstract class MapsIface {
     /* Fields of Goa-1.0.Goa.MapsIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class MapsProxyClass {
     /* Fields of Goa-1.0.Goa.MapsProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class MapsProxyPrivate {
@@ -5896,7 +6075,7 @@ class MapsProxyPrivate {
 }
 abstract class MapsSkeletonClass {
     /* Fields of Goa-1.0.Goa.MapsSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class MapsSkeletonPrivate {
@@ -5904,14 +6083,14 @@ class MapsSkeletonPrivate {
 }
 abstract class MediaServerIface {
     /* Fields of Goa-1.0.Goa.MediaServerIface */
-    parent_iface: GObject.TypeInterface
-    get_dlna_supported: (object: MediaServer) => boolean
-    get_udn: (object: MediaServer) => string | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_dlna_supported: (object: MediaServer) => boolean
+    readonly get_udn: (object: MediaServer) => string | null
     static name: string
 }
 abstract class MediaServerProxyClass {
     /* Fields of Goa-1.0.Goa.MediaServerProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class MediaServerProxyPrivate {
@@ -5919,7 +6098,7 @@ class MediaServerProxyPrivate {
 }
 abstract class MediaServerSkeletonClass {
     /* Fields of Goa-1.0.Goa.MediaServerSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class MediaServerSkeletonPrivate {
@@ -5927,12 +6106,12 @@ class MediaServerSkeletonPrivate {
 }
 abstract class MusicIface {
     /* Fields of Goa-1.0.Goa.MusicIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class MusicProxyClass {
     /* Fields of Goa-1.0.Goa.MusicProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class MusicProxyPrivate {
@@ -5940,7 +6119,7 @@ class MusicProxyPrivate {
 }
 abstract class MusicSkeletonClass {
     /* Fields of Goa-1.0.Goa.MusicSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class MusicSkeletonPrivate {
@@ -5948,15 +6127,15 @@ class MusicSkeletonPrivate {
 }
 abstract class OAuth2BasedIface {
     /* Fields of Goa-1.0.Goa.OAuth2BasedIface */
-    parent_iface: GObject.TypeInterface
-    handle_get_access_token: (object: OAuth2Based, invocation: Gio.DBusMethodInvocation) => boolean
-    get_client_id: (object: OAuth2Based) => string | null
-    get_client_secret: (object: OAuth2Based) => string | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_get_access_token: (object: OAuth2Based, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly get_client_id: (object: OAuth2Based) => string | null
+    readonly get_client_secret: (object: OAuth2Based) => string | null
     static name: string
 }
 abstract class OAuth2BasedProxyClass {
     /* Fields of Goa-1.0.Goa.OAuth2BasedProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class OAuth2BasedProxyPrivate {
@@ -5964,7 +6143,7 @@ class OAuth2BasedProxyPrivate {
 }
 abstract class OAuth2BasedSkeletonClass {
     /* Fields of Goa-1.0.Goa.OAuth2BasedSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class OAuth2BasedSkeletonPrivate {
@@ -5972,15 +6151,15 @@ class OAuth2BasedSkeletonPrivate {
 }
 abstract class OAuthBasedIface {
     /* Fields of Goa-1.0.Goa.OAuthBasedIface */
-    parent_iface: GObject.TypeInterface
-    handle_get_access_token: (object: OAuthBased, invocation: Gio.DBusMethodInvocation) => boolean
-    get_consumer_key: (object: OAuthBased) => string | null
-    get_consumer_secret: (object: OAuthBased) => string | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_get_access_token: (object: OAuthBased, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly get_consumer_key: (object: OAuthBased) => string | null
+    readonly get_consumer_secret: (object: OAuthBased) => string | null
     static name: string
 }
 abstract class OAuthBasedProxyClass {
     /* Fields of Goa-1.0.Goa.OAuthBasedProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class OAuthBasedProxyPrivate {
@@ -5988,7 +6167,7 @@ class OAuthBasedProxyPrivate {
 }
 abstract class OAuthBasedSkeletonClass {
     /* Fields of Goa-1.0.Goa.OAuthBasedSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class OAuthBasedSkeletonPrivate {
@@ -5996,12 +6175,12 @@ class OAuthBasedSkeletonPrivate {
 }
 abstract class ObjectIface {
     /* Fields of Goa-1.0.Goa.ObjectIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class ObjectManagerClientClass {
     /* Fields of Goa-1.0.Goa.ObjectManagerClientClass */
-    parent_class: Gio.DBusObjectManagerClientClass
+    readonly parent_class: Gio.DBusObjectManagerClientClass
     static name: string
 }
 class ObjectManagerClientPrivate {
@@ -6009,7 +6188,7 @@ class ObjectManagerClientPrivate {
 }
 abstract class ObjectProxyClass {
     /* Fields of Goa-1.0.Goa.ObjectProxyClass */
-    parent_class: Gio.DBusObjectProxyClass
+    readonly parent_class: Gio.DBusObjectProxyClass
     static name: string
 }
 class ObjectProxyPrivate {
@@ -6017,7 +6196,7 @@ class ObjectProxyPrivate {
 }
 abstract class ObjectSkeletonClass {
     /* Fields of Goa-1.0.Goa.ObjectSkeletonClass */
-    parent_class: Gio.DBusObjectSkeletonClass
+    readonly parent_class: Gio.DBusObjectSkeletonClass
     static name: string
 }
 class ObjectSkeletonPrivate {
@@ -6025,13 +6204,13 @@ class ObjectSkeletonPrivate {
 }
 abstract class PasswordBasedIface {
     /* Fields of Goa-1.0.Goa.PasswordBasedIface */
-    parent_iface: GObject.TypeInterface
-    handle_get_password: (object: PasswordBased, invocation: Gio.DBusMethodInvocation, arg_id: string) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_get_password: (object: PasswordBased, invocation: Gio.DBusMethodInvocation, arg_id: string) => boolean
     static name: string
 }
 abstract class PasswordBasedProxyClass {
     /* Fields of Goa-1.0.Goa.PasswordBasedProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class PasswordBasedProxyPrivate {
@@ -6039,7 +6218,7 @@ class PasswordBasedProxyPrivate {
 }
 abstract class PasswordBasedSkeletonClass {
     /* Fields of Goa-1.0.Goa.PasswordBasedSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class PasswordBasedSkeletonPrivate {
@@ -6047,12 +6226,12 @@ class PasswordBasedSkeletonPrivate {
 }
 abstract class PhotosIface {
     /* Fields of Goa-1.0.Goa.PhotosIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class PhotosProxyClass {
     /* Fields of Goa-1.0.Goa.PhotosProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class PhotosProxyPrivate {
@@ -6060,7 +6239,7 @@ class PhotosProxyPrivate {
 }
 abstract class PhotosSkeletonClass {
     /* Fields of Goa-1.0.Goa.PhotosSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class PhotosSkeletonPrivate {
@@ -6068,12 +6247,12 @@ class PhotosSkeletonPrivate {
 }
 abstract class PrintersIface {
     /* Fields of Goa-1.0.Goa.PrintersIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class PrintersProxyClass {
     /* Fields of Goa-1.0.Goa.PrintersProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class PrintersProxyPrivate {
@@ -6081,7 +6260,7 @@ class PrintersProxyPrivate {
 }
 abstract class PrintersSkeletonClass {
     /* Fields of Goa-1.0.Goa.PrintersSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class PrintersSkeletonPrivate {
@@ -6089,12 +6268,12 @@ class PrintersSkeletonPrivate {
 }
 abstract class ReadLaterIface {
     /* Fields of Goa-1.0.Goa.ReadLaterIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class ReadLaterProxyClass {
     /* Fields of Goa-1.0.Goa.ReadLaterProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ReadLaterProxyPrivate {
@@ -6102,7 +6281,7 @@ class ReadLaterProxyPrivate {
 }
 abstract class ReadLaterSkeletonClass {
     /* Fields of Goa-1.0.Goa.ReadLaterSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ReadLaterSkeletonPrivate {
@@ -6110,14 +6289,14 @@ class ReadLaterSkeletonPrivate {
 }
 abstract class TicketingIface {
     /* Fields of Goa-1.0.Goa.TicketingIface */
-    parent_iface: GObject.TypeInterface
-    handle_get_ticket: (object: Ticketing, invocation: Gio.DBusMethodInvocation) => boolean
-    get_details: (object: Ticketing) => GLib.Variant | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_get_ticket: (object: Ticketing, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly get_details: (object: Ticketing) => GLib.Variant | null
     static name: string
 }
 abstract class TicketingProxyClass {
     /* Fields of Goa-1.0.Goa.TicketingProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class TicketingProxyPrivate {
@@ -6125,7 +6304,7 @@ class TicketingProxyPrivate {
 }
 abstract class TicketingSkeletonClass {
     /* Fields of Goa-1.0.Goa.TicketingSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class TicketingSkeletonPrivate {
@@ -6133,12 +6312,12 @@ class TicketingSkeletonPrivate {
 }
 abstract class TodoIface {
     /* Fields of Goa-1.0.Goa.TodoIface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 abstract class TodoProxyClass {
     /* Fields of Goa-1.0.Goa.TodoProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class TodoProxyPrivate {
@@ -6146,7 +6325,7 @@ class TodoProxyPrivate {
 }
 abstract class TodoSkeletonClass {
     /* Fields of Goa-1.0.Goa.TodoSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class TodoSkeletonPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EvinceDocument-3.0
  */
@@ -218,14 +224,15 @@ enum FindOptions {
     CASE_SENSITIVE,
     WHOLE_WORDS_ONLY,
 }
-export const MAJOR_VERSION: number
-export const MINOR_VERSION: number
+const MAJOR_VERSION: number
+const MINOR_VERSION: number
 function backends_manager_get_document(mime_type: string): Document
 function backends_manager_get_document_module_name(document: Document): string
 function document_error_quark(): GLib.Quark
 function file_compress(uri: string, type: CompressionType): string
 function file_copy_metadata(from: string, to: string): boolean
 function file_get_mime_type(uri: string, fast: boolean): string
+function file_get_mime_type_from_fd(fd: number): string
 function file_is_temp(file: Gio.File): boolean
 function file_uncompress(uri: string, type: CompressionType): string
 function get_locale_dir(): string
@@ -234,12 +241,15 @@ function mkdtemp(tmpl: string): string
 function mkstemp(tmpl: string, file_name: string): number
 function mkstemp_file(tmpl: string): Gio.File
 function rect_cmp(a: Rectangle, b: Rectangle): number
+function should_use_portal(): boolean
 function shutdown(): void
 function tmp_file_unlink(file: Gio.File): void
 function tmp_filename_unlink(filename: string): void
 function tmp_uri_unlink(uri: string): void
 function xfer_uri_simple(from: string, to: string): boolean
-export interface AnnotationMarkup_ConstructProps extends Annotation_ConstructProps {
+function xmp_parse(xmp: string, size: number, info: DocumentInfo): boolean
+interface AnnotationMarkup_ConstructProps extends Annotation_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.AnnotationMarkup */
     can_have_popup?: boolean
     has_popup?: boolean
     label?: string
@@ -263,7 +273,7 @@ class AnnotationMarkup {
     name: string
     rgba: Gdk.RGBA
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.AnnotationMarkup */
     get_label(): string
     get_opacity(): number
@@ -575,7 +585,8 @@ class Selection {
     vfunc_render_selection(rc: RenderContext, surface: cairo.Surface, points: Rectangle, old_points: Rectangle, style: SelectionStyle, text: Gdk.Color, base: Gdk.Color): void
     static name: string
 }
-export interface Annotation_ConstructProps extends GObject.Object_ConstructProps {
+interface Annotation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.Annotation */
     area?: Rectangle
     color?: object
     contents?: string
@@ -593,7 +604,7 @@ class Annotation {
     name: string
     rgba: Gdk.RGBA
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.Annotation */
     equal(other: Annotation): boolean
     get_annotation_type(): AnnotationType
@@ -668,8 +679,10 @@ class Annotation {
     _init (config?: Annotation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AnnotationAttachment_ConstructProps extends Annotation_ConstructProps {
+interface AnnotationAttachment_ConstructProps extends Annotation_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.AnnotationAttachment */
     attachment?: Attachment
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.AnnotationMarkup */
     can_have_popup?: boolean
     has_popup?: boolean
     label?: string
@@ -695,7 +708,7 @@ class AnnotationAttachment {
     popup_is_open: boolean
     rectangle: Rectangle
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.AnnotationAttachment */
     get_attachment(): Attachment
     set_attachment(attachment: Attachment): boolean
@@ -799,9 +812,11 @@ class AnnotationAttachment {
     static new(page: Page, attachment: Attachment): AnnotationAttachment
     static $gtype: GObject.Type
 }
-export interface AnnotationText_ConstructProps extends Annotation_ConstructProps {
+interface AnnotationText_ConstructProps extends Annotation_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.AnnotationText */
     icon?: AnnotationTextIcon
     is_open?: boolean
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.AnnotationMarkup */
     can_have_popup?: boolean
     has_popup?: boolean
     label?: string
@@ -828,7 +843,7 @@ class AnnotationText {
     popup_is_open: boolean
     rectangle: Rectangle
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.AnnotationText */
     get_icon(): AnnotationTextIcon
     get_is_open(): boolean
@@ -936,8 +951,10 @@ class AnnotationText {
     static new(page: Page): AnnotationText
     static $gtype: GObject.Type
 }
-export interface AnnotationTextMarkup_ConstructProps extends Annotation_ConstructProps {
+interface AnnotationTextMarkup_ConstructProps extends Annotation_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.AnnotationTextMarkup */
     type?: AnnotationTextMarkupType
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.AnnotationMarkup */
     can_have_popup?: boolean
     has_popup?: boolean
     label?: string
@@ -963,7 +980,7 @@ class AnnotationTextMarkup {
     popup_is_open: boolean
     rectangle: Rectangle
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.AnnotationTextMarkup */
     get_markup_type(): AnnotationTextMarkupType
     set_markup_type(markup_type: AnnotationTextMarkupType): boolean
@@ -1070,7 +1087,8 @@ class AnnotationTextMarkup {
     static underline_new(page: Page): AnnotationTextMarkup
     static $gtype: GObject.Type
 }
-export interface Attachment_ConstructProps extends GObject.Object_ConstructProps {
+interface Attachment_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.Attachment */
     ctime?: number
     data?: object
     description?: string
@@ -1079,10 +1097,8 @@ export interface Attachment_ConstructProps extends GObject.Object_ConstructProps
     size?: number
 }
 class Attachment {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.Attachment */
-    base_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.Attachment */
     get_creation_date(): GLib.Time
     get_description(): string
@@ -1137,17 +1153,15 @@ class Attachment {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface Document_ConstructProps extends GObject.Object_ConstructProps {
+interface Document_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.Document */
     modified?: boolean
 }
 class Document {
     /* Properties of EvinceDocument-3.0.EvinceDocument.Document */
     modified: boolean
-    /* Fields of EvinceDocument-3.0.EvinceDocument.Document */
-    base: GObject.Object
-    priv: DocumentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.Document */
     check_dimensions(): boolean
     find_page_by_label(page_label: string, page_index: number): boolean
@@ -1170,6 +1184,7 @@ class Document {
     has_text_page_labels(): boolean
     is_page_size_uniform(): boolean
     load(uri: string): boolean
+    load_fd(fd: number, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null): boolean
     load_full(uri: string, flags: DocumentLoadFlags): boolean
     load_gfile(file: Gio.File, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null): boolean
     load_stream(stream: Gio.InputStream, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null): boolean
@@ -1209,6 +1224,7 @@ class Document {
     vfunc_get_thumbnail(rc: RenderContext): GdkPixbuf.Pixbuf
     vfunc_get_thumbnail_surface(rc: RenderContext): cairo.Surface
     vfunc_load(uri: string): boolean
+    vfunc_load_fd(fd: number, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null): boolean
     vfunc_load_gfile(file: Gio.File, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null): boolean
     vfunc_load_stream(stream: Gio.InputStream, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null): boolean
     vfunc_render(rc: RenderContext): cairo.Surface
@@ -1241,6 +1257,7 @@ class Document {
     static doc_mutex_unlock(): void
     static factory_add_filters(chooser: Gtk.Widget, document: Document): void
     static factory_get_document(uri: string): Document
+    static factory_get_document_for_fd(fd: number, mime_type: string, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null): Document
     static factory_get_document_for_gfile(file: Gio.File, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null): Document
     static factory_get_document_for_stream(stream: Gio.InputStream, mime_type: string | null, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null): Document
     static factory_get_document_full(uri: string, flags: DocumentLoadFlags): Document
@@ -1267,22 +1284,11 @@ class Document {
     static misc_surface_rotate_and_scale(surface: cairo.Surface, dest_width: number, dest_height: number, dest_rotation: number): cairo.Surface
     static $gtype: GObject.Type
 }
-export interface FormField_ConstructProps extends GObject.Object_ConstructProps {
+interface FormField_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FormField {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.FormField */
-    parent: GObject.Object
-    id: number
-    is_read_only: boolean
-    font_size: number
-    activation_link: Link
-    page: Page
-    changed: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
-    /* Methods of EvinceDocument-3.0.EvinceDocument.FormField */
-    get_alternate_name(): string
-    set_alternate_name(alternative_text: string): void
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1326,25 +1332,19 @@ class FormField {
     _init (config?: FormField_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FormFieldButton_ConstructProps extends FormField_ConstructProps {
+interface FormFieldButton_ConstructProps extends FormField_ConstructProps {
 }
 class FormFieldButton {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.FormFieldButton */
-    parent: FormField
-    type: FormFieldButtonType
-    state: boolean
     /* Fields of EvinceDocument-3.0.EvinceDocument.FormField */
-    id: number
-    is_read_only: boolean
-    font_size: number
-    activation_link: Link
-    page: Page
-    changed: boolean
+    readonly parent: GObject.Object
+    readonly id: number
+    readonly is_read_only: boolean
+    readonly font_size: number
+    readonly activation_link: Link
+    readonly page: Page
+    readonly changed: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
-    /* Methods of EvinceDocument-3.0.EvinceDocument.FormField */
-    get_alternate_name(): string
-    set_alternate_name(alternative_text: string): void
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1390,30 +1390,19 @@ class FormFieldButton {
     static new(id: number, type: FormFieldButtonType): FormFieldButton
     static $gtype: GObject.Type
 }
-export interface FormFieldChoice_ConstructProps extends FormField_ConstructProps {
+interface FormFieldChoice_ConstructProps extends FormField_ConstructProps {
 }
 class FormFieldChoice {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.FormFieldChoice */
-    parent: FormField
-    type: FormFieldChoiceType
-    multi_select: boolean
-    is_editable: boolean
-    do_spell_check: boolean
-    commit_on_sel_change: boolean
-    selected_items: object[]
-    text: string
     /* Fields of EvinceDocument-3.0.EvinceDocument.FormField */
-    id: number
-    is_read_only: boolean
-    font_size: number
-    activation_link: Link
-    page: Page
-    changed: boolean
+    readonly parent: GObject.Object
+    readonly id: number
+    readonly is_read_only: boolean
+    readonly font_size: number
+    readonly activation_link: Link
+    readonly page: Page
+    readonly changed: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
-    /* Methods of EvinceDocument-3.0.EvinceDocument.FormField */
-    get_alternate_name(): string
-    set_alternate_name(alternative_text: string): void
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1459,23 +1448,19 @@ class FormFieldChoice {
     static new(id: number, type: FormFieldChoiceType): FormFieldChoice
     static $gtype: GObject.Type
 }
-export interface FormFieldSignature_ConstructProps extends FormField_ConstructProps {
+interface FormFieldSignature_ConstructProps extends FormField_ConstructProps {
 }
 class FormFieldSignature {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.FormFieldSignature */
-    parent: FormField
     /* Fields of EvinceDocument-3.0.EvinceDocument.FormField */
-    id: number
-    is_read_only: boolean
-    font_size: number
-    activation_link: Link
-    page: Page
-    changed: boolean
+    readonly parent: GObject.Object
+    readonly id: number
+    readonly is_read_only: boolean
+    readonly font_size: number
+    readonly activation_link: Link
+    readonly page: Page
+    readonly changed: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
-    /* Methods of EvinceDocument-3.0.EvinceDocument.FormField */
-    get_alternate_name(): string
-    set_alternate_name(alternative_text: string): void
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1521,31 +1506,19 @@ class FormFieldSignature {
     static new(id: number): FormFieldSignature
     static $gtype: GObject.Type
 }
-export interface FormFieldText_ConstructProps extends FormField_ConstructProps {
+interface FormFieldText_ConstructProps extends FormField_ConstructProps {
 }
 class FormFieldText {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.FormFieldText */
-    parent: FormField
-    type: FormFieldTextType
-    do_spell_check: boolean
-    do_scroll: boolean
-    comb: boolean
-    is_rich_text: boolean
-    is_password: boolean
-    max_len: number
-    text: string
     /* Fields of EvinceDocument-3.0.EvinceDocument.FormField */
-    id: number
-    is_read_only: boolean
-    font_size: number
-    activation_link: Link
-    page: Page
-    changed: boolean
+    readonly parent: GObject.Object
+    readonly id: number
+    readonly is_read_only: boolean
+    readonly font_size: number
+    readonly activation_link: Link
+    readonly page: Page
+    readonly changed: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
-    /* Methods of EvinceDocument-3.0.EvinceDocument.FormField */
-    get_alternate_name(): string
-    set_alternate_name(alternative_text: string): void
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1591,14 +1564,11 @@ class FormFieldText {
     static new(id: number, type: FormFieldTextType): FormFieldText
     static $gtype: GObject.Type
 }
-export interface Image_ConstructProps extends GObject.Object_ConstructProps {
+interface Image_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Image {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.Image */
-    base_instance: GObject.Object
-    priv: ImagePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.Image */
     get_id(): number
     get_page(): number
@@ -1651,14 +1621,11 @@ class Image {
     static new_from_pixbuf(pixbuf: GdkPixbuf.Pixbuf): Image
     static $gtype: GObject.Type
 }
-export interface Layer_ConstructProps extends GObject.Object_ConstructProps {
+interface Layer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Layer {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.Layer */
-    base_instance: GObject.Object
-    priv: LayerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.Layer */
     get_rb_group(): number
     is_parent(): boolean
@@ -1707,13 +1674,14 @@ class Layer {
     static new(is_parent: boolean, rb_group: number): Layer
     static $gtype: GObject.Type
 }
-export interface Link_ConstructProps extends GObject.Object_ConstructProps {
+interface Link_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.Link */
     action?: LinkAction
     title?: string
 }
 class Link {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.Link */
     get_action(): LinkAction
     get_title(): string
@@ -1762,7 +1730,8 @@ class Link {
     static new(title: string, action: LinkAction): Link
     static $gtype: GObject.Type
 }
-export interface LinkAction_ConstructProps extends GObject.Object_ConstructProps {
+interface LinkAction_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.LinkAction */
     dest?: LinkDest
     exclude_reset_fields?: boolean
     filename?: string
@@ -1777,7 +1746,7 @@ export interface LinkAction_ConstructProps extends GObject.Object_ConstructProps
 }
 class LinkAction {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.LinkAction */
     equal(b: LinkAction): boolean
     get_action_type(): LinkActionType
@@ -1840,7 +1809,8 @@ class LinkAction {
     static new_remote(dest: LinkDest, filename: string): LinkAction
     static $gtype: GObject.Type
 }
-export interface LinkDest_ConstructProps extends GObject.Object_ConstructProps {
+interface LinkDest_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.LinkDest */
     bottom?: number
     change?: number
     left?: number
@@ -1854,7 +1824,7 @@ export interface LinkDest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class LinkDest {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.LinkDest */
     equal(b: LinkDest): boolean
     get_bottom(): number
@@ -1918,14 +1888,11 @@ class LinkDest {
     static new_xyz(page: number, left: number, top: number, zoom: number, change_left: boolean, change_top: boolean, change_zoom: boolean): LinkDest
     static $gtype: GObject.Type
 }
-export interface Media_ConstructProps extends GObject.Object_ConstructProps {
+interface Media_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Media {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.Media */
-    base_instance: GObject.Object
-    priv: MediaPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.Media */
     get_page_index(): number
     get_show_controls(): boolean
@@ -1976,16 +1943,11 @@ class Media {
     static new_for_uri(page: Page, uri: string): Media
     static $gtype: GObject.Type
 }
-export interface Page_ConstructProps extends GObject.Object_ConstructProps {
+interface Page_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Page {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.Page */
-    base_instance: GObject.Object
-    index: number
-    backend_page: BackendPage
-    backend_destroy_func: BackendPageDestroyFunc
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2031,18 +1993,11 @@ class Page {
     static new(index: number): Page
     static $gtype: GObject.Type
 }
-export interface RenderContext_ConstructProps extends GObject.Object_ConstructProps {
+interface RenderContext_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RenderContext {
-    /* Fields of EvinceDocument-3.0.EvinceDocument.RenderContext */
-    parent: GObject.Object
-    page: Page
-    rotation: number
-    scale: number
-    target_width: number
-    target_height: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceDocument-3.0.EvinceDocument.RenderContext */
     compute_scaled_size(width_points: number, height_points: number, scaled_width: number, scaled_height: number): void
     compute_scales(width_points: number, height_points: number, scale_x: number, scale_y: number): void
@@ -2096,7 +2051,8 @@ class RenderContext {
     static new(page: Page, rotation: number, scale: number): RenderContext
     static $gtype: GObject.Type
 }
-export interface TransitionEffect_ConstructProps extends GObject.Object_ConstructProps {
+interface TransitionEffect_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EvinceDocument-3.0.EvinceDocument.TransitionEffect */
     alignment?: TransitionEffectAlignment
     angle?: number
     direction?: TransitionEffectDirection
@@ -2116,10 +2072,8 @@ class TransitionEffect {
     rectangular: boolean
     scale: number
     type: TransitionEffectType
-    /* Fields of EvinceDocument-3.0.EvinceDocument.TransitionEffect */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2196,152 +2150,162 @@ abstract class AnnotationTextMarkupClass {
 }
 abstract class AsyncRendererInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.AsyncRendererInterface */
-    base_iface: GObject.TypeInterface
-    render_finished: (renderer: AsyncRenderer, pixbuf: GdkPixbuf.Pixbuf) => void
-    render_pixbuf: (renderer: AsyncRenderer, page: number, scale: number, rotation: number) => void
+    readonly base_iface: GObject.TypeInterface
+    readonly render_finished: (renderer: AsyncRenderer, pixbuf: GdkPixbuf.Pixbuf) => void
+    readonly render_pixbuf: (renderer: AsyncRenderer, page: number, scale: number, rotation: number) => void
     static name: string
 }
 abstract class AttachmentClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.AttachmentClass */
-    base_class: GObject.ObjectClass
+    readonly base_class: GObject.ObjectClass
     static name: string
 }
 abstract class DocumentAnnotationsInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentAnnotationsInterface */
-    base_iface: GObject.TypeInterface
-    get_annotations: (document_annots: DocumentAnnotations, page: Page) => MappingList
-    document_is_modified: (document_annots: DocumentAnnotations) => boolean
-    add_annotation: (document_annots: DocumentAnnotations, annot: Annotation, rect: Rectangle) => void
-    save_annotation: (document_annots: DocumentAnnotations, annot: Annotation, mask: AnnotationsSaveMask) => void
-    remove_annotation: (document_annots: DocumentAnnotations, annot: Annotation) => void
-    over_markup: (document_annots: DocumentAnnotations, annot: Annotation, x: number, y: number) => AnnotationsOverMarkup
+    readonly base_iface: GObject.TypeInterface
+    readonly get_annotations: (document_annots: DocumentAnnotations, page: Page) => MappingList
+    readonly document_is_modified: (document_annots: DocumentAnnotations) => boolean
+    readonly add_annotation: (document_annots: DocumentAnnotations, annot: Annotation, rect: Rectangle) => void
+    readonly save_annotation: (document_annots: DocumentAnnotations, annot: Annotation, mask: AnnotationsSaveMask) => void
+    readonly remove_annotation: (document_annots: DocumentAnnotations, annot: Annotation) => void
+    readonly over_markup: (document_annots: DocumentAnnotations, annot: Annotation, x: number, y: number) => AnnotationsOverMarkup
     static name: string
 }
 abstract class DocumentAttachmentsInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentAttachmentsInterface */
-    base_iface: GObject.TypeInterface
-    has_attachments: (document_attachments: DocumentAttachments) => boolean
-    get_attachments: (document_attachments: DocumentAttachments) => Attachment[]
+    readonly base_iface: GObject.TypeInterface
+    readonly has_attachments: (document_attachments: DocumentAttachments) => boolean
+    readonly get_attachments: (document_attachments: DocumentAttachments) => Attachment[]
     static name: string
 }
 class DocumentBackendInfo {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentBackendInfo */
-    name: string
-    version: string
+    readonly name: string
+    readonly version: string
     static name: string
 }
 abstract class DocumentClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentClass */
-    base_class: GObject.ObjectClass
-    load: (document: Document, uri: string) => boolean
-    save: (document: Document, uri: string) => boolean
-    get_n_pages: (document: Document) => number
-    get_page: (document: Document, index: number) => Page
-    get_page_size: (document: Document, page: Page) => [ /* width */ number | null, /* height */ number | null ]
-    get_page_label: (document: Document, page: Page) => string
-    render: (document: Document, rc: RenderContext) => cairo.Surface
-    get_thumbnail: (document: Document, rc: RenderContext) => GdkPixbuf.Pixbuf
-    get_info: (document: Document) => DocumentInfo
-    get_backend_info: (document: Document, info: DocumentBackendInfo) => boolean
-    support_synctex: (document: Document) => boolean
-    load_stream: (document: Document, stream: Gio.InputStream, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null) => boolean
-    load_gfile: (document: Document, file: Gio.File, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null) => boolean
-    get_thumbnail_surface: (document: Document, rc: RenderContext) => cairo.Surface
+    readonly base_class: GObject.ObjectClass
+    readonly load: (document: Document, uri: string) => boolean
+    readonly save: (document: Document, uri: string) => boolean
+    readonly get_n_pages: (document: Document) => number
+    readonly get_page: (document: Document, index: number) => Page
+    readonly get_page_size: (document: Document, page: Page) => [ /* width */ number | null, /* height */ number | null ]
+    readonly get_page_label: (document: Document, page: Page) => string
+    readonly render: (document: Document, rc: RenderContext) => cairo.Surface
+    readonly get_thumbnail: (document: Document, rc: RenderContext) => GdkPixbuf.Pixbuf
+    readonly get_info: (document: Document) => DocumentInfo
+    readonly get_backend_info: (document: Document, info: DocumentBackendInfo) => boolean
+    readonly support_synctex: (document: Document) => boolean
+    readonly load_stream: (document: Document, stream: Gio.InputStream, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null) => boolean
+    readonly load_gfile: (document: Document, file: Gio.File, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null) => boolean
+    readonly get_thumbnail_surface: (document: Document, rc: RenderContext) => cairo.Surface
+    readonly load_fd: (document: Document, fd: number, flags: DocumentLoadFlags, cancellable?: Gio.Cancellable | null) => boolean
     static name: string
 }
 abstract class DocumentFindInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentFindInterface */
-    base_iface: GObject.TypeInterface
-    find_text: (document_find: DocumentFind, page: Page, text: string, case_sensitive: boolean) => Rectangle[]
-    find_text_with_options: (document_find: DocumentFind, page: Page, text: string, options: FindOptions) => Rectangle[]
-    get_supported_options: (document_find: DocumentFind) => FindOptions
+    readonly base_iface: GObject.TypeInterface
+    readonly find_text: (document_find: DocumentFind, page: Page, text: string, case_sensitive: boolean) => Rectangle[]
+    readonly find_text_with_options: (document_find: DocumentFind, page: Page, text: string, options: FindOptions) => Rectangle[]
+    readonly get_supported_options: (document_find: DocumentFind) => FindOptions
     static name: string
 }
 abstract class DocumentFontsInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentFontsInterface */
-    base_iface: GObject.TypeInterface
-    scan: (document_fonts: DocumentFonts, n_pages: number) => boolean
-    get_progress: (document_fonts: DocumentFonts) => number
-    fill_model: (document_fonts: DocumentFonts, model: Gtk.TreeModel) => void
-    get_fonts_summary: (document_fonts: DocumentFonts) => string
+    readonly base_iface: GObject.TypeInterface
+    readonly scan: (document_fonts: DocumentFonts, n_pages: number) => boolean
+    readonly get_progress: (document_fonts: DocumentFonts) => number
+    readonly fill_model: (document_fonts: DocumentFonts, model: Gtk.TreeModel) => void
+    readonly get_fonts_summary: (document_fonts: DocumentFonts) => string
     static name: string
 }
 abstract class DocumentFormsInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentFormsInterface */
-    base_iface: GObject.TypeInterface
-    get_form_fields: (document_forms: DocumentForms, page: Page) => MappingList
-    document_is_modified: (document_forms: DocumentForms) => boolean
-    form_field_text_get_text: (document_forms: DocumentForms, field: FormField) => string
-    form_field_text_set_text: (document_forms: DocumentForms, field: FormField, text: string) => void
-    form_field_button_get_state: (document_forms: DocumentForms, field: FormField) => boolean
-    form_field_button_set_state: (document_forms: DocumentForms, field: FormField, state: boolean) => void
-    form_field_choice_get_item: (document_forms: DocumentForms, field: FormField, index: number) => string
-    form_field_choice_get_n_items: (document_forms: DocumentForms, field: FormField) => number
-    form_field_choice_is_item_selected: (document_forms: DocumentForms, field: FormField, index: number) => boolean
-    form_field_choice_select_item: (document_forms: DocumentForms, field: FormField, index: number) => void
-    form_field_choice_toggle_item: (document_forms: DocumentForms, field: FormField, index: number) => void
-    form_field_choice_unselect_all: (document_forms: DocumentForms, field: FormField) => void
-    form_field_choice_set_text: (document_forms: DocumentForms, field: FormField, text: string) => void
-    form_field_choice_get_text: (document_forms: DocumentForms, field: FormField) => string
-    reset_form: (document_forms: DocumentForms, action: LinkAction) => void
+    readonly base_iface: GObject.TypeInterface
+    readonly get_form_fields: (document_forms: DocumentForms, page: Page) => MappingList
+    readonly document_is_modified: (document_forms: DocumentForms) => boolean
+    readonly form_field_text_get_text: (document_forms: DocumentForms, field: FormField) => string
+    readonly form_field_text_set_text: (document_forms: DocumentForms, field: FormField, text: string) => void
+    readonly form_field_button_get_state: (document_forms: DocumentForms, field: FormField) => boolean
+    readonly form_field_button_set_state: (document_forms: DocumentForms, field: FormField, state: boolean) => void
+    readonly form_field_choice_get_item: (document_forms: DocumentForms, field: FormField, index: number) => string
+    readonly form_field_choice_get_n_items: (document_forms: DocumentForms, field: FormField) => number
+    readonly form_field_choice_is_item_selected: (document_forms: DocumentForms, field: FormField, index: number) => boolean
+    readonly form_field_choice_select_item: (document_forms: DocumentForms, field: FormField, index: number) => void
+    readonly form_field_choice_toggle_item: (document_forms: DocumentForms, field: FormField, index: number) => void
+    readonly form_field_choice_unselect_all: (document_forms: DocumentForms, field: FormField) => void
+    readonly form_field_choice_set_text: (document_forms: DocumentForms, field: FormField, text: string) => void
+    readonly form_field_choice_get_text: (document_forms: DocumentForms, field: FormField) => string
+    readonly reset_form: (document_forms: DocumentForms, action: LinkAction) => void
     static name: string
 }
 abstract class DocumentImagesInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentImagesInterface */
-    base_iface: GObject.TypeInterface
-    get_image_mapping: (document_images: DocumentImages, page: Page) => MappingList
-    get_image: (document_images: DocumentImages, image: Image) => GdkPixbuf.Pixbuf
+    readonly base_iface: GObject.TypeInterface
+    readonly get_image_mapping: (document_images: DocumentImages, page: Page) => MappingList
+    readonly get_image: (document_images: DocumentImages, image: Image) => GdkPixbuf.Pixbuf
     static name: string
 }
 class DocumentInfo {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentInfo */
-    title: string
-    format: string
-    author: string
-    subject: string
-    keywords: string
-    creator: string
-    producer: string
-    linearized: string
-    security: string
-    creation_date: GLib.DateTime
-    modified_date: GLib.DateTime
-    layout: DocumentLayout
-    mode: DocumentMode
-    ui_hints: number
-    permissions: number
-    n_pages: number
-    paper_height: number
-    paper_width: number
-    license: DocumentLicense
-    contains_js: DocumentContainsJS
-    fields_mask: number
+    readonly title: string
+    readonly format: string
+    readonly author: string
+    readonly subject: string
+    readonly keywords: string
+    readonly creator: string
+    readonly producer: string
+    readonly linearized: string
+    readonly security: string
+    readonly creation_date: GLib.Time
+    readonly modified_date: GLib.Time
+    readonly layout: DocumentLayout
+    readonly mode: DocumentMode
+    readonly ui_hints: number
+    readonly permissions: number
+    readonly n_pages: number
+    readonly paper_height: number
+    readonly paper_width: number
+    readonly license: DocumentLicense
+    readonly contains_js: DocumentContainsJS
+    readonly fields_mask: number
     /* Methods of EvinceDocument-3.0.EvinceDocument.DocumentInfo */
     copy(): DocumentInfo
     free(): void
+    get_created_datetime(): GLib.DateTime | null
+    get_modified_datetime(): GLib.DateTime | null
+    set_from_xmp(xmp: string, size: number): boolean
+    take_created_datetime(datetime: GLib.DateTime): void
+    take_modified_datetime(datetime: GLib.DateTime): void
     static name: string
+    static new(): DocumentInfo
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): DocumentInfo
 }
 abstract class DocumentLayersInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentLayersInterface */
-    base_iface: GObject.TypeInterface
-    has_layers: (document_layers: DocumentLayers) => boolean
-    get_layers: (document_layers: DocumentLayers) => Gtk.TreeModel
-    show_layer: (document_layers: DocumentLayers, layer: Layer) => void
-    hide_layer: (document_layers: DocumentLayers, layer: Layer) => void
-    layer_is_visible: (document_layers: DocumentLayers, layer: Layer) => boolean
+    readonly base_iface: GObject.TypeInterface
+    readonly has_layers: (document_layers: DocumentLayers) => boolean
+    readonly get_layers: (document_layers: DocumentLayers) => Gtk.TreeModel
+    readonly show_layer: (document_layers: DocumentLayers, layer: Layer) => void
+    readonly hide_layer: (document_layers: DocumentLayers, layer: Layer) => void
+    readonly layer_is_visible: (document_layers: DocumentLayers, layer: Layer) => boolean
     static name: string
 }
 class DocumentLicense {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentLicense */
-    text: string
-    uri: string
-    web_statement: string
+    readonly text: string
+    readonly uri: string
+    readonly web_statement: string
     /* Methods of EvinceDocument-3.0.EvinceDocument.DocumentLicense */
     copy(): DocumentLicense
     free(): void
-    get_text(): string
-    get_uri(): string
-    get_web_statement(): string
+    get_text(): string | null
+    get_uri(): string | null
+    get_web_statement(): string | null
     static name: string
     static new(): DocumentLicense
     constructor()
@@ -2350,24 +2314,24 @@ class DocumentLicense {
 }
 abstract class DocumentLinksInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentLinksInterface */
-    base_iface: GObject.TypeInterface
-    has_document_links: (document_links: DocumentLinks) => boolean
-    get_links_model: (document_links: DocumentLinks) => Gtk.TreeModel
-    get_links: (document_links: DocumentLinks, page: Page) => MappingList
-    find_link_dest: (document_links: DocumentLinks, link_name: string) => LinkDest
-    find_link_page: (document_links: DocumentLinks, link_name: string) => number
+    readonly base_iface: GObject.TypeInterface
+    readonly has_document_links: (document_links: DocumentLinks) => boolean
+    readonly get_links_model: (document_links: DocumentLinks) => Gtk.TreeModel
+    readonly get_links: (document_links: DocumentLinks, page: Page) => MappingList
+    readonly find_link_dest: (document_links: DocumentLinks, link_name: string) => LinkDest
+    readonly find_link_page: (document_links: DocumentLinks, link_name: string) => number
     static name: string
 }
 abstract class DocumentMediaInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentMediaInterface */
-    base_iface: GObject.TypeInterface
-    get_media_mapping: (document_media: DocumentMedia, page: Page) => MappingList
+    readonly base_iface: GObject.TypeInterface
+    readonly get_media_mapping: (document_media: DocumentMedia, page: Page) => MappingList
     static name: string
 }
 abstract class DocumentPrintInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentPrintInterface */
-    base_iface: GObject.TypeInterface
-    print_page: (document_print: DocumentPrint, page: Page, cr: cairo.Context) => void
+    readonly base_iface: GObject.TypeInterface
+    readonly print_page: (document_print: DocumentPrint, page: Page, cr: cairo.Context) => void
     static name: string
 }
 class DocumentPrivate {
@@ -2375,78 +2339,78 @@ class DocumentPrivate {
 }
 abstract class DocumentSecurityInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentSecurityInterface */
-    base_iface: GObject.TypeInterface
-    has_document_security: (document_security: DocumentSecurity) => boolean
-    set_password: (document_security: DocumentSecurity, password: string) => void
+    readonly base_iface: GObject.TypeInterface
+    readonly has_document_security: (document_security: DocumentSecurity) => boolean
+    readonly set_password: (document_security: DocumentSecurity, password: string) => void
     static name: string
 }
 abstract class DocumentTextInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentTextInterface */
-    base_iface: GObject.TypeInterface
-    get_text_mapping: (document_text: DocumentText, page: Page) => cairo.Region
-    get_text: (document_text: DocumentText, page: Page) => string
-    get_text_layout: (document_text: DocumentText, page: Page, areas: Rectangle, n_areas: number) => boolean
-    get_text_attrs: (document_text: DocumentText, page: Page) => Pango.AttrList
+    readonly base_iface: GObject.TypeInterface
+    readonly get_text_mapping: (document_text: DocumentText, page: Page) => cairo.Region
+    readonly get_text: (document_text: DocumentText, page: Page) => string
+    readonly get_text_layout: (document_text: DocumentText, page: Page, areas: Rectangle, n_areas: number) => boolean
+    readonly get_text_attrs: (document_text: DocumentText, page: Page) => Pango.AttrList
     static name: string
 }
 abstract class DocumentTransitionInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.DocumentTransitionInterface */
-    base_iface: GObject.TypeInterface
-    get_page_duration: (document_trans: DocumentTransition, page: number) => number
-    get_effect: (document_trans: DocumentTransition, page: number) => TransitionEffect
+    readonly base_iface: GObject.TypeInterface
+    readonly get_page_duration: (document_trans: DocumentTransition, page: number) => number
+    readonly get_effect: (document_trans: DocumentTransition, page: number) => TransitionEffect
     static name: string
 }
 class FileExporterContext {
     /* Fields of EvinceDocument-3.0.EvinceDocument.FileExporterContext */
-    format: FileExporterFormat
-    filename: string
-    first_page: number
-    last_page: number
-    paper_width: number
-    paper_height: number
-    duplex: boolean
-    pages_per_sheet: number
+    readonly format: FileExporterFormat
+    readonly filename: string
+    readonly first_page: number
+    readonly last_page: number
+    readonly paper_width: number
+    readonly paper_height: number
+    readonly duplex: boolean
+    readonly pages_per_sheet: number
     static name: string
 }
 abstract class FileExporterInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.FileExporterInterface */
-    base_iface: GObject.TypeInterface
-    begin: (exporter: FileExporter, fc: FileExporterContext) => void
-    begin_page: (exporter: FileExporter) => void
-    do_page: (exporter: FileExporter, rc: RenderContext) => void
-    end_page: (exporter: FileExporter) => void
-    end: (exporter: FileExporter) => void
-    get_capabilities: (exporter: FileExporter) => FileExporterCapabilities
+    readonly base_iface: GObject.TypeInterface
+    readonly begin: (exporter: FileExporter, fc: FileExporterContext) => void
+    readonly begin_page: (exporter: FileExporter) => void
+    readonly do_page: (exporter: FileExporter, rc: RenderContext) => void
+    readonly end_page: (exporter: FileExporter) => void
+    readonly end: (exporter: FileExporter) => void
+    readonly get_capabilities: (exporter: FileExporter) => FileExporterCapabilities
     static name: string
 }
 abstract class FormFieldButtonClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.FormFieldButtonClass */
-    parent_class: FormFieldClass
+    readonly parent_class: FormFieldClass
     static name: string
 }
 abstract class FormFieldChoiceClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.FormFieldChoiceClass */
-    parent_class: FormFieldClass
+    readonly parent_class: FormFieldClass
     static name: string
 }
 abstract class FormFieldClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.FormFieldClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FormFieldSignatureClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.FormFieldSignatureClass */
-    parent_class: FormFieldClass
+    readonly parent_class: FormFieldClass
     static name: string
 }
 abstract class FormFieldTextClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.FormFieldTextClass */
-    parent_class: FormFieldClass
+    readonly parent_class: FormFieldClass
     static name: string
 }
 abstract class ImageClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.ImageClass */
-    base_class: GObject.ObjectClass
+    readonly base_class: GObject.ObjectClass
     static name: string
 }
 class ImagePrivate {
@@ -2454,7 +2418,7 @@ class ImagePrivate {
 }
 abstract class LayerClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.LayerClass */
-    base_class: GObject.ObjectClass
+    readonly base_class: GObject.ObjectClass
     static name: string
 }
 class LayerPrivate {
@@ -2480,8 +2444,8 @@ class LinkPrivate {
 }
 class Mapping {
     /* Fields of EvinceDocument-3.0.EvinceDocument.Mapping */
-    area: Rectangle
-    data: object
+    readonly area: Rectangle
+    readonly data: object
     static name: string
 }
 class MappingList {
@@ -2505,7 +2469,7 @@ class MappingList {
 }
 abstract class MediaClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.MediaClass */
-    base_class: GObject.ObjectClass
+    readonly base_class: GObject.ObjectClass
     static name: string
 }
 class MediaPrivate {
@@ -2513,21 +2477,21 @@ class MediaPrivate {
 }
 abstract class PageClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.PageClass */
-    base_class: GObject.ObjectClass
+    readonly base_class: GObject.ObjectClass
     static name: string
 }
 class Point {
     /* Fields of EvinceDocument-3.0.EvinceDocument.Point */
-    x: number
-    y: number
+    readonly x: number
+    readonly y: number
     static name: string
 }
 class Rectangle {
     /* Fields of EvinceDocument-3.0.EvinceDocument.Rectangle */
-    x1: number
-    y1: number
-    x2: number
-    y2: number
+    readonly x1: number
+    readonly y1: number
+    readonly x2: number
+    readonly y2: number
     /* Methods of EvinceDocument-3.0.EvinceDocument.Rectangle */
     copy(): Rectangle
     free(): void
@@ -2539,22 +2503,22 @@ class Rectangle {
 }
 abstract class RenderContextClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.RenderContextClass */
-    klass: GObject.ObjectClass
+    readonly klass: GObject.ObjectClass
     static name: string
 }
 abstract class SelectionInterface {
     /* Fields of EvinceDocument-3.0.EvinceDocument.SelectionInterface */
-    base_iface: GObject.TypeInterface
-    render_selection: (selection: Selection, rc: RenderContext, surface: cairo.Surface, points: Rectangle, old_points: Rectangle, style: SelectionStyle, text: Gdk.Color, base: Gdk.Color) => void
-    get_selected_text: (selection: Selection, page: Page, style: SelectionStyle, points: Rectangle) => string
-    get_selection_region: (selection: Selection, rc: RenderContext, style: SelectionStyle, points: Rectangle) => cairo.Region
+    readonly base_iface: GObject.TypeInterface
+    readonly render_selection: (selection: Selection, rc: RenderContext, surface: cairo.Surface, points: Rectangle, old_points: Rectangle, style: SelectionStyle, text: Gdk.Color, base: Gdk.Color) => void
+    readonly get_selected_text: (selection: Selection, page: Page, style: SelectionStyle, points: Rectangle) => string
+    readonly get_selection_region: (selection: Selection, rc: RenderContext, style: SelectionStyle, points: Rectangle) => cairo.Region
     static name: string
 }
 class SourceLink {
     /* Fields of EvinceDocument-3.0.EvinceDocument.SourceLink */
-    filename: string
-    line: number
-    col: number
+    readonly filename: string
+    readonly line: number
+    readonly col: number
     /* Methods of EvinceDocument-3.0.EvinceDocument.SourceLink */
     copy(): SourceLink
     free(): void
@@ -2566,16 +2530,16 @@ class SourceLink {
 }
 abstract class TransitionEffectClass {
     /* Fields of EvinceDocument-3.0.EvinceDocument.TransitionEffectClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class TypeInfo {
     /* Fields of EvinceDocument-3.0.EvinceDocument.TypeInfo */
-    desc: string
-    mime_types: string
+    readonly desc: string
+    readonly mime_types: string
     static name: string
 }
-type BackendPage = object
-type BackendPageDestroyFunc = GLib.DestroyNotify
+    type BackendPage = object
+    type BackendPageDestroyFunc = GLib.DestroyNotify
 }
 export default EvinceDocument;

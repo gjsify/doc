@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GTop-2.0
  */
@@ -8,374 +14,374 @@ import type GLib from './GLib-2.0';
 
 export namespace GTop {
 
-export const AUTH_NAMESZ: number
-export const AUTH_TIMEOUT: number
-export const CONN_INTERNET: number
-export const CONN_IPC: number
-export const CONN_UNIX: number
-export const DEFAULT_PORT: number
-export const DEFAUTH_NAME: string
-export const EOT_CHR: number
-export const EOT_STR: string
-export const FALSE: number
-export const GLIBTOP_CMND_CPU: number
-export const GLIBTOP_CMND_DISK: number
-export const GLIBTOP_CMND_FSUSAGE: number
-export const GLIBTOP_CMND_LOADAVG: number
-export const GLIBTOP_CMND_MEM: number
-export const GLIBTOP_CMND_MOUNTLIST: number
-export const GLIBTOP_CMND_MSG_LIMITS: number
-export const GLIBTOP_CMND_NETLIST: number
-export const GLIBTOP_CMND_NETLOAD: number
-export const GLIBTOP_CMND_PPP: number
-export const GLIBTOP_CMND_PROCLIST: number
-export const GLIBTOP_CMND_PROC_AFFINITY: number
-export const GLIBTOP_CMND_PROC_ARGS: number
-export const GLIBTOP_CMND_PROC_IO: number
-export const GLIBTOP_CMND_PROC_KERNEL: number
-export const GLIBTOP_CMND_PROC_MAP: number
-export const GLIBTOP_CMND_PROC_MEM: number
-export const GLIBTOP_CMND_PROC_OPEN_FILES: number
-export const GLIBTOP_CMND_PROC_SEGMENT: number
-export const GLIBTOP_CMND_PROC_SIGNAL: number
-export const GLIBTOP_CMND_PROC_STATE: number
-export const GLIBTOP_CMND_PROC_TIME: number
-export const GLIBTOP_CMND_PROC_UID: number
-export const GLIBTOP_CMND_PROC_WD: number
-export const GLIBTOP_CMND_QUIT: number
-export const GLIBTOP_CMND_SEM_LIMITS: number
-export const GLIBTOP_CMND_SHM_LIMITS: number
-export const GLIBTOP_CMND_SWAP: number
-export const GLIBTOP_CMND_SYSDEPS: number
-export const GLIBTOP_CMND_UPTIME: number
-export const GLIBTOP_CPU_FREQUENCY: number
-export const GLIBTOP_CPU_IDLE: number
-export const GLIBTOP_CPU_IOWAIT: number
-export const GLIBTOP_CPU_IRQ: number
-export const GLIBTOP_CPU_NICE: number
-export const GLIBTOP_CPU_SOFTIRQ: number
-export const GLIBTOP_CPU_SYS: number
-export const GLIBTOP_CPU_TOTAL: number
-export const GLIBTOP_CPU_USER: number
-export const GLIBTOP_ERROR_METHOD_ABORT: number
-export const GLIBTOP_ERROR_METHOD_IGNORE: number
-export const GLIBTOP_ERROR_METHOD_WARN: number
-export const GLIBTOP_ERROR_METHOD_WARN_ONCE: number
-export const GLIBTOP_EXCLUDE_IDLE: number
-export const GLIBTOP_EXCLUDE_NOTTY: number
-export const GLIBTOP_EXCLUDE_SYSTEM: number
-export const GLIBTOP_FEATURES_EXCEPT: number
-export const GLIBTOP_FEATURES_NO_SERVER: number
-export const GLIBTOP_FILE_ENTRY_FD: number
-export const GLIBTOP_FILE_ENTRY_INETSOCKET_DST_HOST: number
-export const GLIBTOP_FILE_ENTRY_INETSOCKET_DST_PORT: number
-export const GLIBTOP_FILE_ENTRY_NAME: number
-export const GLIBTOP_FILE_ENTRY_TYPE: number
-export const GLIBTOP_FSUSAGE_BAVAIL: number
-export const GLIBTOP_FSUSAGE_BFREE: number
-export const GLIBTOP_FSUSAGE_BLOCKS: number
-export const GLIBTOP_FSUSAGE_BLOCK_SIZE: number
-export const GLIBTOP_FSUSAGE_FFREE: number
-export const GLIBTOP_FSUSAGE_FILES: number
-export const GLIBTOP_FSUSAGE_READ: number
-export const GLIBTOP_FSUSAGE_WRITE: number
-export const GLIBTOP_INIT_NO_INIT: number
-export const GLIBTOP_INIT_NO_OPEN: number
-export const GLIBTOP_IPC_MSGMAP: number
-export const GLIBTOP_IPC_MSGMAX: number
-export const GLIBTOP_IPC_MSGMNB: number
-export const GLIBTOP_IPC_MSGMNI: number
-export const GLIBTOP_IPC_MSGPOOL: number
-export const GLIBTOP_IPC_MSGSSZ: number
-export const GLIBTOP_IPC_MSGTQL: number
-export const GLIBTOP_IPC_SEMAEM: number
-export const GLIBTOP_IPC_SEMMAP: number
-export const GLIBTOP_IPC_SEMMNI: number
-export const GLIBTOP_IPC_SEMMNS: number
-export const GLIBTOP_IPC_SEMMNU: number
-export const GLIBTOP_IPC_SEMMSL: number
-export const GLIBTOP_IPC_SEMOPM: number
-export const GLIBTOP_IPC_SEMUME: number
-export const GLIBTOP_IPC_SEMUSZ: number
-export const GLIBTOP_IPC_SEMVMX: number
-export const GLIBTOP_IPC_SHMALL: number
-export const GLIBTOP_IPC_SHMMAX: number
-export const GLIBTOP_IPC_SHMMIN: number
-export const GLIBTOP_IPC_SHMMNI: number
-export const GLIBTOP_IPC_SHMSEG: number
-export const GLIBTOP_KERN_PROC_ALL: number
-export const GLIBTOP_KERN_PROC_MASK: number
-export const GLIBTOP_KERN_PROC_PGRP: number
-export const GLIBTOP_KERN_PROC_PID: number
-export const GLIBTOP_KERN_PROC_RUID: number
-export const GLIBTOP_KERN_PROC_SESSION: number
-export const GLIBTOP_KERN_PROC_TTY: number
-export const GLIBTOP_KERN_PROC_UID: number
-export const GLIBTOP_LOADAVG_LAST_PID: number
-export const GLIBTOP_LOADAVG_LOADAVG: number
-export const GLIBTOP_LOADAVG_NR_RUNNING: number
-export const GLIBTOP_LOADAVG_NR_TASKS: number
-export const GLIBTOP_MAP_ENTRY_DEVICE: number
-export const GLIBTOP_MAP_ENTRY_END: number
-export const GLIBTOP_MAP_ENTRY_FILENAME: number
-export const GLIBTOP_MAP_ENTRY_INODE: number
-export const GLIBTOP_MAP_ENTRY_OFFSET: number
-export const GLIBTOP_MAP_ENTRY_PERM: number
-export const GLIBTOP_MAP_ENTRY_PRIVATE_CLEAN: number
-export const GLIBTOP_MAP_ENTRY_PRIVATE_DIRTY: number
-export const GLIBTOP_MAP_ENTRY_PSS: number
-export const GLIBTOP_MAP_ENTRY_RSS: number
-export const GLIBTOP_MAP_ENTRY_SHARED_CLEAN: number
-export const GLIBTOP_MAP_ENTRY_SHARED_DIRTY: number
-export const GLIBTOP_MAP_ENTRY_SIZE: number
-export const GLIBTOP_MAP_ENTRY_START: number
-export const GLIBTOP_MAP_ENTRY_SWAP: number
-export const GLIBTOP_MAP_FILENAME_LEN: number
-export const GLIBTOP_MAP_PERM_EXECUTE: number
-export const GLIBTOP_MAP_PERM_PRIVATE: number
-export const GLIBTOP_MAP_PERM_READ: number
-export const GLIBTOP_MAP_PERM_SHARED: number
-export const GLIBTOP_MAP_PERM_WRITE: number
-export const GLIBTOP_MAX_CMND: number
-export const GLIBTOP_MAX_CPU: number
-export const GLIBTOP_MAX_DISK: number
-export const GLIBTOP_MAX_FSUSAGE: number
-export const GLIBTOP_MAX_GROUPS: number
-export const GLIBTOP_MAX_LOADAVG: number
-export const GLIBTOP_MAX_MAP_ENTRY: number
-export const GLIBTOP_MAX_MEM: number
-export const GLIBTOP_MAX_MOUNTLIST: number
-export const GLIBTOP_MAX_MSG_LIMITS: number
-export const GLIBTOP_MAX_NETLIST: number
-export const GLIBTOP_MAX_NETLOAD: number
-export const GLIBTOP_MAX_OPEN_FILE_ENTRY: number
-export const GLIBTOP_MAX_PPP: number
-export const GLIBTOP_MAX_PROCLIST: number
-export const GLIBTOP_MAX_PROC_AFFINITY: number
-export const GLIBTOP_MAX_PROC_ARGS: number
-export const GLIBTOP_MAX_PROC_IO: number
-export const GLIBTOP_MAX_PROC_KERNEL: number
-export const GLIBTOP_MAX_PROC_MAP: number
-export const GLIBTOP_MAX_PROC_MEM: number
-export const GLIBTOP_MAX_PROC_OPEN_FILES: number
-export const GLIBTOP_MAX_PROC_SEGMENT: number
-export const GLIBTOP_MAX_PROC_SIGNAL: number
-export const GLIBTOP_MAX_PROC_STATE: number
-export const GLIBTOP_MAX_PROC_TIME: number
-export const GLIBTOP_MAX_PROC_UID: number
-export const GLIBTOP_MAX_PROC_WD: number
-export const GLIBTOP_MAX_SEM_LIMITS: number
-export const GLIBTOP_MAX_SHM_LIMITS: number
-export const GLIBTOP_MAX_SWAP: number
-export const GLIBTOP_MAX_SYSDEPS: number
-export const GLIBTOP_MAX_SYSINFO: number
-export const GLIBTOP_MAX_UPTIME: number
-export const GLIBTOP_MEM_BUFFER: number
-export const GLIBTOP_MEM_CACHED: number
-export const GLIBTOP_MEM_FREE: number
-export const GLIBTOP_MEM_LOCKED: number
-export const GLIBTOP_MEM_SHARED: number
-export const GLIBTOP_MEM_TOTAL: number
-export const GLIBTOP_MEM_USED: number
-export const GLIBTOP_MEM_USER: number
-export const GLIBTOP_METHOD_DIRECT: number
-export const GLIBTOP_METHOD_INET: number
-export const GLIBTOP_METHOD_PIPE: number
-export const GLIBTOP_METHOD_UNIX: number
-export const GLIBTOP_MOUNTENTRY_LEN: number
-export const GLIBTOP_MOUNTLIST_NUMBER: number
-export const GLIBTOP_MOUNTLIST_SIZE: number
-export const GLIBTOP_MOUNTLIST_TOTAL: number
-export const GLIBTOP_NCPU: number
-export const GLIBTOP_NDISK: number
-export const GLIBTOP_NETLIST_NUMBER: number
-export const GLIBTOP_NETLOAD_ADDRESS: number
-export const GLIBTOP_NETLOAD_ADDRESS6: number
-export const GLIBTOP_NETLOAD_BYTES_IN: number
-export const GLIBTOP_NETLOAD_BYTES_OUT: number
-export const GLIBTOP_NETLOAD_BYTES_TOTAL: number
-export const GLIBTOP_NETLOAD_COLLISIONS: number
-export const GLIBTOP_NETLOAD_ERRORS_IN: number
-export const GLIBTOP_NETLOAD_ERRORS_OUT: number
-export const GLIBTOP_NETLOAD_ERRORS_TOTAL: number
-export const GLIBTOP_NETLOAD_HWADDRESS: number
-export const GLIBTOP_NETLOAD_IF_FLAGS: number
-export const GLIBTOP_NETLOAD_MTU: number
-export const GLIBTOP_NETLOAD_PACKETS_IN: number
-export const GLIBTOP_NETLOAD_PACKETS_OUT: number
-export const GLIBTOP_NETLOAD_PACKETS_TOTAL: number
-export const GLIBTOP_NETLOAD_PREFIX6: number
-export const GLIBTOP_NETLOAD_SCOPE6: number
-export const GLIBTOP_NETLOAD_SUBNET: number
-export const GLIBTOP_OPEN_DEST_HOST_LEN: number
-export const GLIBTOP_OPEN_FILENAME_LEN: number
-export const GLIBTOP_PARAM_COMMAND: number
-export const GLIBTOP_PARAM_ERROR_METHOD: number
-export const GLIBTOP_PARAM_FEATURES: number
-export const GLIBTOP_PARAM_HOST: number
-export const GLIBTOP_PARAM_METHOD: number
-export const GLIBTOP_PARAM_PORT: number
-export const GLIBTOP_PARAM_REQUIRED: number
-export const GLIBTOP_PPP_BYTES_IN: number
-export const GLIBTOP_PPP_BYTES_OUT: number
-export const GLIBTOP_PPP_STATE: number
-export const GLIBTOP_PROCESS_DEAD: number
-export const GLIBTOP_PROCESS_INTERRUPTIBLE: number
-export const GLIBTOP_PROCESS_RUNNING: number
-export const GLIBTOP_PROCESS_STOPPED: number
-export const GLIBTOP_PROCESS_SWAPPING: number
-export const GLIBTOP_PROCESS_UNINTERRUPTIBLE: number
-export const GLIBTOP_PROCESS_ZOMBIE: number
-export const GLIBTOP_PROCLIST_NUMBER: number
-export const GLIBTOP_PROCLIST_SIZE: number
-export const GLIBTOP_PROCLIST_TOTAL: number
-export const GLIBTOP_PROC_AFFINITY_ALL: number
-export const GLIBTOP_PROC_AFFINITY_NUMBER: number
-export const GLIBTOP_PROC_ARGS_SIZE: number
-export const GLIBTOP_PROC_IO_DISK_RBYTES: number
-export const GLIBTOP_PROC_IO_DISK_RCHAR: number
-export const GLIBTOP_PROC_IO_DISK_WBYTES: number
-export const GLIBTOP_PROC_IO_DISK_WCHAR: number
-export const GLIBTOP_PROC_KERNEL_CMAJ_FLT: number
-export const GLIBTOP_PROC_KERNEL_CMIN_FLT: number
-export const GLIBTOP_PROC_KERNEL_KSTK_EIP: number
-export const GLIBTOP_PROC_KERNEL_KSTK_ESP: number
-export const GLIBTOP_PROC_KERNEL_K_FLAGS: number
-export const GLIBTOP_PROC_KERNEL_MAJ_FLT: number
-export const GLIBTOP_PROC_KERNEL_MIN_FLT: number
-export const GLIBTOP_PROC_KERNEL_NWCHAN: number
-export const GLIBTOP_PROC_KERNEL_WCHAN: number
-export const GLIBTOP_PROC_MAP_NUMBER: number
-export const GLIBTOP_PROC_MAP_SIZE: number
-export const GLIBTOP_PROC_MAP_TOTAL: number
-export const GLIBTOP_PROC_MEM_RESIDENT: number
-export const GLIBTOP_PROC_MEM_RSS: number
-export const GLIBTOP_PROC_MEM_RSS_RLIM: number
-export const GLIBTOP_PROC_MEM_SHARE: number
-export const GLIBTOP_PROC_MEM_SIZE: number
-export const GLIBTOP_PROC_MEM_VSIZE: number
-export const GLIBTOP_PROC_OPEN_FILES_NUMBER: number
-export const GLIBTOP_PROC_OPEN_FILES_SIZE: number
-export const GLIBTOP_PROC_OPEN_FILES_TOTAL: number
-export const GLIBTOP_PROC_SEGMENT_DATA_RSS: number
-export const GLIBTOP_PROC_SEGMENT_DIRTY_SIZE: number
-export const GLIBTOP_PROC_SEGMENT_END_CODE: number
-export const GLIBTOP_PROC_SEGMENT_SHLIB_RSS: number
-export const GLIBTOP_PROC_SEGMENT_STACK_RSS: number
-export const GLIBTOP_PROC_SEGMENT_START_CODE: number
-export const GLIBTOP_PROC_SEGMENT_START_STACK: number
-export const GLIBTOP_PROC_SEGMENT_TEXT_RSS: number
-export const GLIBTOP_PROC_SIGNAL_BLOCKED: number
-export const GLIBTOP_PROC_SIGNAL_SIGCATCH: number
-export const GLIBTOP_PROC_SIGNAL_SIGIGNORE: number
-export const GLIBTOP_PROC_SIGNAL_SIGNAL: number
-export const GLIBTOP_PROC_STATE_CMD: number
-export const GLIBTOP_PROC_STATE_GID: number
-export const GLIBTOP_PROC_STATE_HAS_CPU: number
-export const GLIBTOP_PROC_STATE_LAST_PROCESSOR: number
-export const GLIBTOP_PROC_STATE_PROCESSOR: number
-export const GLIBTOP_PROC_STATE_RGID: number
-export const GLIBTOP_PROC_STATE_RUID: number
-export const GLIBTOP_PROC_STATE_STATE: number
-export const GLIBTOP_PROC_STATE_UID: number
-export const GLIBTOP_PROC_TIME_CSTIME: number
-export const GLIBTOP_PROC_TIME_CUTIME: number
-export const GLIBTOP_PROC_TIME_FREQUENCY: number
-export const GLIBTOP_PROC_TIME_IT_REAL_VALUE: number
-export const GLIBTOP_PROC_TIME_RTIME: number
-export const GLIBTOP_PROC_TIME_START_TIME: number
-export const GLIBTOP_PROC_TIME_STIME: number
-export const GLIBTOP_PROC_TIME_TIMEOUT: number
-export const GLIBTOP_PROC_TIME_UTIME: number
-export const GLIBTOP_PROC_TIME_XCPU_STIME: number
-export const GLIBTOP_PROC_TIME_XCPU_UTIME: number
-export const GLIBTOP_PROC_UID_EGID: number
-export const GLIBTOP_PROC_UID_EUID: number
-export const GLIBTOP_PROC_UID_FSGID: number
-export const GLIBTOP_PROC_UID_FSUID: number
-export const GLIBTOP_PROC_UID_GID: number
-export const GLIBTOP_PROC_UID_GROUPS: number
-export const GLIBTOP_PROC_UID_NGROUPS: number
-export const GLIBTOP_PROC_UID_NICE: number
-export const GLIBTOP_PROC_UID_PGRP: number
-export const GLIBTOP_PROC_UID_PID: number
-export const GLIBTOP_PROC_UID_PPID: number
-export const GLIBTOP_PROC_UID_PRIORITY: number
-export const GLIBTOP_PROC_UID_SESSION: number
-export const GLIBTOP_PROC_UID_SGID: number
-export const GLIBTOP_PROC_UID_SUID: number
-export const GLIBTOP_PROC_UID_TPGID: number
-export const GLIBTOP_PROC_UID_TTY: number
-export const GLIBTOP_PROC_UID_UID: number
-export const GLIBTOP_PROC_WD_EXE: number
-export const GLIBTOP_PROC_WD_EXE_LEN: number
-export const GLIBTOP_PROC_WD_NUMBER: number
-export const GLIBTOP_PROC_WD_ROOT: number
-export const GLIBTOP_PROC_WD_ROOT_LEN: number
-export const GLIBTOP_SWAP_FREE: number
-export const GLIBTOP_SWAP_PAGEIN: number
-export const GLIBTOP_SWAP_PAGEOUT: number
-export const GLIBTOP_SWAP_TOTAL: number
-export const GLIBTOP_SWAP_USED: number
-export const GLIBTOP_SYSDEPS_ALL: number
-export const GLIBTOP_SYSDEPS_CPU: number
-export const GLIBTOP_SYSDEPS_DISK: number
-export const GLIBTOP_SYSDEPS_FEATURES: number
-export const GLIBTOP_SYSDEPS_FSUSAGE: number
-export const GLIBTOP_SYSDEPS_LOADAVG: number
-export const GLIBTOP_SYSDEPS_MEM: number
-export const GLIBTOP_SYSDEPS_MOUNTLIST: number
-export const GLIBTOP_SYSDEPS_MSG_LIMITS: number
-export const GLIBTOP_SYSDEPS_NETLIST: number
-export const GLIBTOP_SYSDEPS_NETLOAD: number
-export const GLIBTOP_SYSDEPS_PPP: number
-export const GLIBTOP_SYSDEPS_PROCLIST: number
-export const GLIBTOP_SYSDEPS_PROC_AFFINITY: number
-export const GLIBTOP_SYSDEPS_PROC_ARGS: number
-export const GLIBTOP_SYSDEPS_PROC_IO: number
-export const GLIBTOP_SYSDEPS_PROC_KERNEL: number
-export const GLIBTOP_SYSDEPS_PROC_MAP: number
-export const GLIBTOP_SYSDEPS_PROC_MEM: number
-export const GLIBTOP_SYSDEPS_PROC_OPEN_FILES: number
-export const GLIBTOP_SYSDEPS_PROC_SEGMENT: number
-export const GLIBTOP_SYSDEPS_PROC_SIGNAL: number
-export const GLIBTOP_SYSDEPS_PROC_STATE: number
-export const GLIBTOP_SYSDEPS_PROC_TIME: number
-export const GLIBTOP_SYSDEPS_PROC_UID: number
-export const GLIBTOP_SYSDEPS_PROC_WD: number
-export const GLIBTOP_SYSDEPS_SEM_LIMITS: number
-export const GLIBTOP_SYSDEPS_SHM_LIMITS: number
-export const GLIBTOP_SYSDEPS_SWAP: number
-export const GLIBTOP_SYSDEPS_UPTIME: number
-export const GLIBTOP_SYSINFO_CPUINFO: number
-export const GLIBTOP_SYSINFO_NCPU: number
-export const GLIBTOP_UPTIME_BOOT_TIME: number
-export const GLIBTOP_UPTIME_IDLETIME: number
-export const GLIBTOP_UPTIME_UPTIME: number
-export const GLIBTOP_XCPU_FLAGS: number
-export const GLIBTOP_XCPU_IDLE: number
-export const GLIBTOP_XCPU_IOWAIT: number
-export const GLIBTOP_XCPU_IRQ: number
-export const GLIBTOP_XCPU_NICE: number
-export const GLIBTOP_XCPU_SOFTIRQ: number
-export const GLIBTOP_XCPU_SYS: number
-export const GLIBTOP_XCPU_TOTAL: number
-export const GLIBTOP_XCPU_USER: number
-export const GLIBTOP_XDISK_SECTORS_READ: number
-export const GLIBTOP_XDISK_SECTORS_WRITE: number
-export const GLIBTOP_XDISK_TIME_READ: number
-export const GLIBTOP_XDISK_TIME_WRITE: number
-export const HOSTNAMSZ: number
-export const LIBGTOP_MAJOR_VERSION: number
-export const LIBGTOP_MICRO_VERSION: number
-export const LIBGTOP_MINOR_VERSION: number
-export const MCOOKIE_NAME: string
-export const MCOOKIE_SCREEN: string
-export const MCOOKIE_X_NAME: string
-export const PATCHLEVEL: number
-export const REPLYSIZ: number
-export const TABLE_SIZE: number
-export const TRUE: number
+const AUTH_NAMESZ: number
+const AUTH_TIMEOUT: number
+const CONN_INTERNET: number
+const CONN_IPC: number
+const CONN_UNIX: number
+const DEFAULT_PORT: number
+const DEFAUTH_NAME: string
+const EOT_CHR: number
+const EOT_STR: string
+const FALSE: number
+const GLIBTOP_CMND_CPU: number
+const GLIBTOP_CMND_DISK: number
+const GLIBTOP_CMND_FSUSAGE: number
+const GLIBTOP_CMND_LOADAVG: number
+const GLIBTOP_CMND_MEM: number
+const GLIBTOP_CMND_MOUNTLIST: number
+const GLIBTOP_CMND_MSG_LIMITS: number
+const GLIBTOP_CMND_NETLIST: number
+const GLIBTOP_CMND_NETLOAD: number
+const GLIBTOP_CMND_PPP: number
+const GLIBTOP_CMND_PROCLIST: number
+const GLIBTOP_CMND_PROC_AFFINITY: number
+const GLIBTOP_CMND_PROC_ARGS: number
+const GLIBTOP_CMND_PROC_IO: number
+const GLIBTOP_CMND_PROC_KERNEL: number
+const GLIBTOP_CMND_PROC_MAP: number
+const GLIBTOP_CMND_PROC_MEM: number
+const GLIBTOP_CMND_PROC_OPEN_FILES: number
+const GLIBTOP_CMND_PROC_SEGMENT: number
+const GLIBTOP_CMND_PROC_SIGNAL: number
+const GLIBTOP_CMND_PROC_STATE: number
+const GLIBTOP_CMND_PROC_TIME: number
+const GLIBTOP_CMND_PROC_UID: number
+const GLIBTOP_CMND_PROC_WD: number
+const GLIBTOP_CMND_QUIT: number
+const GLIBTOP_CMND_SEM_LIMITS: number
+const GLIBTOP_CMND_SHM_LIMITS: number
+const GLIBTOP_CMND_SWAP: number
+const GLIBTOP_CMND_SYSDEPS: number
+const GLIBTOP_CMND_UPTIME: number
+const GLIBTOP_CPU_FREQUENCY: number
+const GLIBTOP_CPU_IDLE: number
+const GLIBTOP_CPU_IOWAIT: number
+const GLIBTOP_CPU_IRQ: number
+const GLIBTOP_CPU_NICE: number
+const GLIBTOP_CPU_SOFTIRQ: number
+const GLIBTOP_CPU_SYS: number
+const GLIBTOP_CPU_TOTAL: number
+const GLIBTOP_CPU_USER: number
+const GLIBTOP_ERROR_METHOD_ABORT: number
+const GLIBTOP_ERROR_METHOD_IGNORE: number
+const GLIBTOP_ERROR_METHOD_WARN: number
+const GLIBTOP_ERROR_METHOD_WARN_ONCE: number
+const GLIBTOP_EXCLUDE_IDLE: number
+const GLIBTOP_EXCLUDE_NOTTY: number
+const GLIBTOP_EXCLUDE_SYSTEM: number
+const GLIBTOP_FEATURES_EXCEPT: number
+const GLIBTOP_FEATURES_NO_SERVER: number
+const GLIBTOP_FILE_ENTRY_FD: number
+const GLIBTOP_FILE_ENTRY_INETSOCKET_DST_HOST: number
+const GLIBTOP_FILE_ENTRY_INETSOCKET_DST_PORT: number
+const GLIBTOP_FILE_ENTRY_NAME: number
+const GLIBTOP_FILE_ENTRY_TYPE: number
+const GLIBTOP_FSUSAGE_BAVAIL: number
+const GLIBTOP_FSUSAGE_BFREE: number
+const GLIBTOP_FSUSAGE_BLOCKS: number
+const GLIBTOP_FSUSAGE_BLOCK_SIZE: number
+const GLIBTOP_FSUSAGE_FFREE: number
+const GLIBTOP_FSUSAGE_FILES: number
+const GLIBTOP_FSUSAGE_READ: number
+const GLIBTOP_FSUSAGE_WRITE: number
+const GLIBTOP_INIT_NO_INIT: number
+const GLIBTOP_INIT_NO_OPEN: number
+const GLIBTOP_IPC_MSGMAP: number
+const GLIBTOP_IPC_MSGMAX: number
+const GLIBTOP_IPC_MSGMNB: number
+const GLIBTOP_IPC_MSGMNI: number
+const GLIBTOP_IPC_MSGPOOL: number
+const GLIBTOP_IPC_MSGSSZ: number
+const GLIBTOP_IPC_MSGTQL: number
+const GLIBTOP_IPC_SEMAEM: number
+const GLIBTOP_IPC_SEMMAP: number
+const GLIBTOP_IPC_SEMMNI: number
+const GLIBTOP_IPC_SEMMNS: number
+const GLIBTOP_IPC_SEMMNU: number
+const GLIBTOP_IPC_SEMMSL: number
+const GLIBTOP_IPC_SEMOPM: number
+const GLIBTOP_IPC_SEMUME: number
+const GLIBTOP_IPC_SEMUSZ: number
+const GLIBTOP_IPC_SEMVMX: number
+const GLIBTOP_IPC_SHMALL: number
+const GLIBTOP_IPC_SHMMAX: number
+const GLIBTOP_IPC_SHMMIN: number
+const GLIBTOP_IPC_SHMMNI: number
+const GLIBTOP_IPC_SHMSEG: number
+const GLIBTOP_KERN_PROC_ALL: number
+const GLIBTOP_KERN_PROC_MASK: number
+const GLIBTOP_KERN_PROC_PGRP: number
+const GLIBTOP_KERN_PROC_PID: number
+const GLIBTOP_KERN_PROC_RUID: number
+const GLIBTOP_KERN_PROC_SESSION: number
+const GLIBTOP_KERN_PROC_TTY: number
+const GLIBTOP_KERN_PROC_UID: number
+const GLIBTOP_LOADAVG_LAST_PID: number
+const GLIBTOP_LOADAVG_LOADAVG: number
+const GLIBTOP_LOADAVG_NR_RUNNING: number
+const GLIBTOP_LOADAVG_NR_TASKS: number
+const GLIBTOP_MAP_ENTRY_DEVICE: number
+const GLIBTOP_MAP_ENTRY_END: number
+const GLIBTOP_MAP_ENTRY_FILENAME: number
+const GLIBTOP_MAP_ENTRY_INODE: number
+const GLIBTOP_MAP_ENTRY_OFFSET: number
+const GLIBTOP_MAP_ENTRY_PERM: number
+const GLIBTOP_MAP_ENTRY_PRIVATE_CLEAN: number
+const GLIBTOP_MAP_ENTRY_PRIVATE_DIRTY: number
+const GLIBTOP_MAP_ENTRY_PSS: number
+const GLIBTOP_MAP_ENTRY_RSS: number
+const GLIBTOP_MAP_ENTRY_SHARED_CLEAN: number
+const GLIBTOP_MAP_ENTRY_SHARED_DIRTY: number
+const GLIBTOP_MAP_ENTRY_SIZE: number
+const GLIBTOP_MAP_ENTRY_START: number
+const GLIBTOP_MAP_ENTRY_SWAP: number
+const GLIBTOP_MAP_FILENAME_LEN: number
+const GLIBTOP_MAP_PERM_EXECUTE: number
+const GLIBTOP_MAP_PERM_PRIVATE: number
+const GLIBTOP_MAP_PERM_READ: number
+const GLIBTOP_MAP_PERM_SHARED: number
+const GLIBTOP_MAP_PERM_WRITE: number
+const GLIBTOP_MAX_CMND: number
+const GLIBTOP_MAX_CPU: number
+const GLIBTOP_MAX_DISK: number
+const GLIBTOP_MAX_FSUSAGE: number
+const GLIBTOP_MAX_GROUPS: number
+const GLIBTOP_MAX_LOADAVG: number
+const GLIBTOP_MAX_MAP_ENTRY: number
+const GLIBTOP_MAX_MEM: number
+const GLIBTOP_MAX_MOUNTLIST: number
+const GLIBTOP_MAX_MSG_LIMITS: number
+const GLIBTOP_MAX_NETLIST: number
+const GLIBTOP_MAX_NETLOAD: number
+const GLIBTOP_MAX_OPEN_FILE_ENTRY: number
+const GLIBTOP_MAX_PPP: number
+const GLIBTOP_MAX_PROCLIST: number
+const GLIBTOP_MAX_PROC_AFFINITY: number
+const GLIBTOP_MAX_PROC_ARGS: number
+const GLIBTOP_MAX_PROC_IO: number
+const GLIBTOP_MAX_PROC_KERNEL: number
+const GLIBTOP_MAX_PROC_MAP: number
+const GLIBTOP_MAX_PROC_MEM: number
+const GLIBTOP_MAX_PROC_OPEN_FILES: number
+const GLIBTOP_MAX_PROC_SEGMENT: number
+const GLIBTOP_MAX_PROC_SIGNAL: number
+const GLIBTOP_MAX_PROC_STATE: number
+const GLIBTOP_MAX_PROC_TIME: number
+const GLIBTOP_MAX_PROC_UID: number
+const GLIBTOP_MAX_PROC_WD: number
+const GLIBTOP_MAX_SEM_LIMITS: number
+const GLIBTOP_MAX_SHM_LIMITS: number
+const GLIBTOP_MAX_SWAP: number
+const GLIBTOP_MAX_SYSDEPS: number
+const GLIBTOP_MAX_SYSINFO: number
+const GLIBTOP_MAX_UPTIME: number
+const GLIBTOP_MEM_BUFFER: number
+const GLIBTOP_MEM_CACHED: number
+const GLIBTOP_MEM_FREE: number
+const GLIBTOP_MEM_LOCKED: number
+const GLIBTOP_MEM_SHARED: number
+const GLIBTOP_MEM_TOTAL: number
+const GLIBTOP_MEM_USED: number
+const GLIBTOP_MEM_USER: number
+const GLIBTOP_METHOD_DIRECT: number
+const GLIBTOP_METHOD_INET: number
+const GLIBTOP_METHOD_PIPE: number
+const GLIBTOP_METHOD_UNIX: number
+const GLIBTOP_MOUNTENTRY_LEN: number
+const GLIBTOP_MOUNTLIST_NUMBER: number
+const GLIBTOP_MOUNTLIST_SIZE: number
+const GLIBTOP_MOUNTLIST_TOTAL: number
+const GLIBTOP_NCPU: number
+const GLIBTOP_NDISK: number
+const GLIBTOP_NETLIST_NUMBER: number
+const GLIBTOP_NETLOAD_ADDRESS: number
+const GLIBTOP_NETLOAD_ADDRESS6: number
+const GLIBTOP_NETLOAD_BYTES_IN: number
+const GLIBTOP_NETLOAD_BYTES_OUT: number
+const GLIBTOP_NETLOAD_BYTES_TOTAL: number
+const GLIBTOP_NETLOAD_COLLISIONS: number
+const GLIBTOP_NETLOAD_ERRORS_IN: number
+const GLIBTOP_NETLOAD_ERRORS_OUT: number
+const GLIBTOP_NETLOAD_ERRORS_TOTAL: number
+const GLIBTOP_NETLOAD_HWADDRESS: number
+const GLIBTOP_NETLOAD_IF_FLAGS: number
+const GLIBTOP_NETLOAD_MTU: number
+const GLIBTOP_NETLOAD_PACKETS_IN: number
+const GLIBTOP_NETLOAD_PACKETS_OUT: number
+const GLIBTOP_NETLOAD_PACKETS_TOTAL: number
+const GLIBTOP_NETLOAD_PREFIX6: number
+const GLIBTOP_NETLOAD_SCOPE6: number
+const GLIBTOP_NETLOAD_SUBNET: number
+const GLIBTOP_OPEN_DEST_HOST_LEN: number
+const GLIBTOP_OPEN_FILENAME_LEN: number
+const GLIBTOP_PARAM_COMMAND: number
+const GLIBTOP_PARAM_ERROR_METHOD: number
+const GLIBTOP_PARAM_FEATURES: number
+const GLIBTOP_PARAM_HOST: number
+const GLIBTOP_PARAM_METHOD: number
+const GLIBTOP_PARAM_PORT: number
+const GLIBTOP_PARAM_REQUIRED: number
+const GLIBTOP_PPP_BYTES_IN: number
+const GLIBTOP_PPP_BYTES_OUT: number
+const GLIBTOP_PPP_STATE: number
+const GLIBTOP_PROCESS_DEAD: number
+const GLIBTOP_PROCESS_INTERRUPTIBLE: number
+const GLIBTOP_PROCESS_RUNNING: number
+const GLIBTOP_PROCESS_STOPPED: number
+const GLIBTOP_PROCESS_SWAPPING: number
+const GLIBTOP_PROCESS_UNINTERRUPTIBLE: number
+const GLIBTOP_PROCESS_ZOMBIE: number
+const GLIBTOP_PROCLIST_NUMBER: number
+const GLIBTOP_PROCLIST_SIZE: number
+const GLIBTOP_PROCLIST_TOTAL: number
+const GLIBTOP_PROC_AFFINITY_ALL: number
+const GLIBTOP_PROC_AFFINITY_NUMBER: number
+const GLIBTOP_PROC_ARGS_SIZE: number
+const GLIBTOP_PROC_IO_DISK_RBYTES: number
+const GLIBTOP_PROC_IO_DISK_RCHAR: number
+const GLIBTOP_PROC_IO_DISK_WBYTES: number
+const GLIBTOP_PROC_IO_DISK_WCHAR: number
+const GLIBTOP_PROC_KERNEL_CMAJ_FLT: number
+const GLIBTOP_PROC_KERNEL_CMIN_FLT: number
+const GLIBTOP_PROC_KERNEL_KSTK_EIP: number
+const GLIBTOP_PROC_KERNEL_KSTK_ESP: number
+const GLIBTOP_PROC_KERNEL_K_FLAGS: number
+const GLIBTOP_PROC_KERNEL_MAJ_FLT: number
+const GLIBTOP_PROC_KERNEL_MIN_FLT: number
+const GLIBTOP_PROC_KERNEL_NWCHAN: number
+const GLIBTOP_PROC_KERNEL_WCHAN: number
+const GLIBTOP_PROC_MAP_NUMBER: number
+const GLIBTOP_PROC_MAP_SIZE: number
+const GLIBTOP_PROC_MAP_TOTAL: number
+const GLIBTOP_PROC_MEM_RESIDENT: number
+const GLIBTOP_PROC_MEM_RSS: number
+const GLIBTOP_PROC_MEM_RSS_RLIM: number
+const GLIBTOP_PROC_MEM_SHARE: number
+const GLIBTOP_PROC_MEM_SIZE: number
+const GLIBTOP_PROC_MEM_VSIZE: number
+const GLIBTOP_PROC_OPEN_FILES_NUMBER: number
+const GLIBTOP_PROC_OPEN_FILES_SIZE: number
+const GLIBTOP_PROC_OPEN_FILES_TOTAL: number
+const GLIBTOP_PROC_SEGMENT_DATA_RSS: number
+const GLIBTOP_PROC_SEGMENT_DIRTY_SIZE: number
+const GLIBTOP_PROC_SEGMENT_END_CODE: number
+const GLIBTOP_PROC_SEGMENT_SHLIB_RSS: number
+const GLIBTOP_PROC_SEGMENT_STACK_RSS: number
+const GLIBTOP_PROC_SEGMENT_START_CODE: number
+const GLIBTOP_PROC_SEGMENT_START_STACK: number
+const GLIBTOP_PROC_SEGMENT_TEXT_RSS: number
+const GLIBTOP_PROC_SIGNAL_BLOCKED: number
+const GLIBTOP_PROC_SIGNAL_SIGCATCH: number
+const GLIBTOP_PROC_SIGNAL_SIGIGNORE: number
+const GLIBTOP_PROC_SIGNAL_SIGNAL: number
+const GLIBTOP_PROC_STATE_CMD: number
+const GLIBTOP_PROC_STATE_GID: number
+const GLIBTOP_PROC_STATE_HAS_CPU: number
+const GLIBTOP_PROC_STATE_LAST_PROCESSOR: number
+const GLIBTOP_PROC_STATE_PROCESSOR: number
+const GLIBTOP_PROC_STATE_RGID: number
+const GLIBTOP_PROC_STATE_RUID: number
+const GLIBTOP_PROC_STATE_STATE: number
+const GLIBTOP_PROC_STATE_UID: number
+const GLIBTOP_PROC_TIME_CSTIME: number
+const GLIBTOP_PROC_TIME_CUTIME: number
+const GLIBTOP_PROC_TIME_FREQUENCY: number
+const GLIBTOP_PROC_TIME_IT_REAL_VALUE: number
+const GLIBTOP_PROC_TIME_RTIME: number
+const GLIBTOP_PROC_TIME_START_TIME: number
+const GLIBTOP_PROC_TIME_STIME: number
+const GLIBTOP_PROC_TIME_TIMEOUT: number
+const GLIBTOP_PROC_TIME_UTIME: number
+const GLIBTOP_PROC_TIME_XCPU_STIME: number
+const GLIBTOP_PROC_TIME_XCPU_UTIME: number
+const GLIBTOP_PROC_UID_EGID: number
+const GLIBTOP_PROC_UID_EUID: number
+const GLIBTOP_PROC_UID_FSGID: number
+const GLIBTOP_PROC_UID_FSUID: number
+const GLIBTOP_PROC_UID_GID: number
+const GLIBTOP_PROC_UID_GROUPS: number
+const GLIBTOP_PROC_UID_NGROUPS: number
+const GLIBTOP_PROC_UID_NICE: number
+const GLIBTOP_PROC_UID_PGRP: number
+const GLIBTOP_PROC_UID_PID: number
+const GLIBTOP_PROC_UID_PPID: number
+const GLIBTOP_PROC_UID_PRIORITY: number
+const GLIBTOP_PROC_UID_SESSION: number
+const GLIBTOP_PROC_UID_SGID: number
+const GLIBTOP_PROC_UID_SUID: number
+const GLIBTOP_PROC_UID_TPGID: number
+const GLIBTOP_PROC_UID_TTY: number
+const GLIBTOP_PROC_UID_UID: number
+const GLIBTOP_PROC_WD_EXE: number
+const GLIBTOP_PROC_WD_EXE_LEN: number
+const GLIBTOP_PROC_WD_NUMBER: number
+const GLIBTOP_PROC_WD_ROOT: number
+const GLIBTOP_PROC_WD_ROOT_LEN: number
+const GLIBTOP_SWAP_FREE: number
+const GLIBTOP_SWAP_PAGEIN: number
+const GLIBTOP_SWAP_PAGEOUT: number
+const GLIBTOP_SWAP_TOTAL: number
+const GLIBTOP_SWAP_USED: number
+const GLIBTOP_SYSDEPS_ALL: number
+const GLIBTOP_SYSDEPS_CPU: number
+const GLIBTOP_SYSDEPS_DISK: number
+const GLIBTOP_SYSDEPS_FEATURES: number
+const GLIBTOP_SYSDEPS_FSUSAGE: number
+const GLIBTOP_SYSDEPS_LOADAVG: number
+const GLIBTOP_SYSDEPS_MEM: number
+const GLIBTOP_SYSDEPS_MOUNTLIST: number
+const GLIBTOP_SYSDEPS_MSG_LIMITS: number
+const GLIBTOP_SYSDEPS_NETLIST: number
+const GLIBTOP_SYSDEPS_NETLOAD: number
+const GLIBTOP_SYSDEPS_PPP: number
+const GLIBTOP_SYSDEPS_PROCLIST: number
+const GLIBTOP_SYSDEPS_PROC_AFFINITY: number
+const GLIBTOP_SYSDEPS_PROC_ARGS: number
+const GLIBTOP_SYSDEPS_PROC_IO: number
+const GLIBTOP_SYSDEPS_PROC_KERNEL: number
+const GLIBTOP_SYSDEPS_PROC_MAP: number
+const GLIBTOP_SYSDEPS_PROC_MEM: number
+const GLIBTOP_SYSDEPS_PROC_OPEN_FILES: number
+const GLIBTOP_SYSDEPS_PROC_SEGMENT: number
+const GLIBTOP_SYSDEPS_PROC_SIGNAL: number
+const GLIBTOP_SYSDEPS_PROC_STATE: number
+const GLIBTOP_SYSDEPS_PROC_TIME: number
+const GLIBTOP_SYSDEPS_PROC_UID: number
+const GLIBTOP_SYSDEPS_PROC_WD: number
+const GLIBTOP_SYSDEPS_SEM_LIMITS: number
+const GLIBTOP_SYSDEPS_SHM_LIMITS: number
+const GLIBTOP_SYSDEPS_SWAP: number
+const GLIBTOP_SYSDEPS_UPTIME: number
+const GLIBTOP_SYSINFO_CPUINFO: number
+const GLIBTOP_SYSINFO_NCPU: number
+const GLIBTOP_UPTIME_BOOT_TIME: number
+const GLIBTOP_UPTIME_IDLETIME: number
+const GLIBTOP_UPTIME_UPTIME: number
+const GLIBTOP_XCPU_FLAGS: number
+const GLIBTOP_XCPU_IDLE: number
+const GLIBTOP_XCPU_IOWAIT: number
+const GLIBTOP_XCPU_IRQ: number
+const GLIBTOP_XCPU_NICE: number
+const GLIBTOP_XCPU_SOFTIRQ: number
+const GLIBTOP_XCPU_SYS: number
+const GLIBTOP_XCPU_TOTAL: number
+const GLIBTOP_XCPU_USER: number
+const GLIBTOP_XDISK_SECTORS_READ: number
+const GLIBTOP_XDISK_SECTORS_WRITE: number
+const GLIBTOP_XDISK_TIME_READ: number
+const GLIBTOP_XDISK_TIME_WRITE: number
+const HOSTNAMSZ: number
+const LIBGTOP_MAJOR_VERSION: number
+const LIBGTOP_MICRO_VERSION: number
+const LIBGTOP_MINOR_VERSION: number
+const MCOOKIE_NAME: string
+const MCOOKIE_SCREEN: string
+const MCOOKIE_X_NAME: string
+const PATCHLEVEL: number
+const REPLYSIZ: number
+const TABLE_SIZE: number
+const TRUE: number
 function glibtop_close(): void
 function glibtop_get_cpu(buf: glibtop_cpu): void
 function glibtop_get_disk(buf: glibtop_disk): void
@@ -414,32 +420,32 @@ function glibtop_internet_addr(host: string): number
 function glibtop_make_connection(hostarg: string, portarg: number, s: number): number
 class glibtop {
     /* Fields of GTop-2.0.GTop.glibtop */
-    flags: number
-    method: number
-    error_method: number
-    input: number[]
-    output: number[]
-    socket: number
-    ncpu: number
-    real_ncpu: number
-    os_version_code: number
-    name: string
-    server_command: string
-    server_host: string
-    server_user: string
-    server_rsh: string
-    features: number
-    server_port: number
-    sysdeps: glibtop_sysdeps
-    required: glibtop_sysdeps
-    pid: number
-    uid: number
-    euid: number
-    gid: number
-    egid: number
-    machine: glibtop_machine
-    ndisk: number
-    real_ndisk: number
+    readonly flags: number
+    readonly method: number
+    readonly error_method: number
+    readonly input: number[]
+    readonly output: number[]
+    readonly socket: number
+    readonly ncpu: number
+    readonly real_ncpu: number
+    readonly os_version_code: number
+    readonly name: string
+    readonly server_command: string
+    readonly server_host: string
+    readonly server_user: string
+    readonly server_rsh: string
+    readonly features: number
+    readonly server_port: number
+    readonly sysdeps: glibtop_sysdeps
+    readonly required: glibtop_sysdeps
+    readonly pid: number
+    readonly uid: number
+    readonly euid: number
+    readonly gid: number
+    readonly egid: number
+    readonly machine: glibtop_machine
+    readonly ndisk: number
+    readonly real_ndisk: number
     /* Methods of GTop-2.0.GTop.glibtop */
     call_l(command: number, send_size: number, send_buf: object | null, recv_size: number, recv_buf?: object | null): object | null
     call_s(command: number, send_size: number, send_buf: object | null, recv_size: number, recv_buf?: object | null): object | null
@@ -549,72 +555,72 @@ class glibtop {
 }
 class glibtop_command {
     /* Fields of GTop-2.0.GTop.glibtop_command */
-    command: number
-    size: number
-    data_size: number
-    parameter: number[]
+    readonly command: number
+    readonly size: number
+    readonly data_size: number
+    readonly parameter: number[]
     static name: string
 }
 class glibtop_cpu {
     /* Fields of GTop-2.0.GTop.glibtop_cpu */
-    flags: number
-    total: number
-    user: number
-    nice: number
-    sys: number
-    idle: number
-    iowait: number
-    irq: number
-    softirq: number
-    frequency: number
-    xcpu_total: number[]
-    xcpu_user: number[]
-    xcpu_nice: number[]
-    xcpu_sys: number[]
-    xcpu_idle: number[]
-    xcpu_iowait: number[]
-    xcpu_irq: number[]
-    xcpu_softirq: number[]
-    xcpu_flags: number
+    readonly flags: number
+    readonly total: number
+    readonly user: number
+    readonly nice: number
+    readonly sys: number
+    readonly idle: number
+    readonly iowait: number
+    readonly irq: number
+    readonly softirq: number
+    readonly frequency: number
+    readonly xcpu_total: number[]
+    readonly xcpu_user: number[]
+    readonly xcpu_nice: number[]
+    readonly xcpu_sys: number[]
+    readonly xcpu_idle: number[]
+    readonly xcpu_iowait: number[]
+    readonly xcpu_irq: number[]
+    readonly xcpu_softirq: number[]
+    readonly xcpu_flags: number
     static name: string
 }
 class glibtop_disk {
     /* Fields of GTop-2.0.GTop.glibtop_disk */
-    flags: number
-    xdisk_sectors_read: number[]
-    xdisk_time_read: number[]
-    xdisk_sectors_write: number[]
-    xdisk_time_write: number[]
-    xdisk_flags: number
+    readonly flags: number
+    readonly xdisk_sectors_read: number[]
+    readonly xdisk_time_read: number[]
+    readonly xdisk_sectors_write: number[]
+    readonly xdisk_time_write: number[]
+    readonly xdisk_flags: number
     static name: string
 }
 class glibtop_entry {
     /* Fields of GTop-2.0.GTop.glibtop_entry */
-    labels: object[]
-    values: GLib.HashTable
-    descriptions: GLib.HashTable
+    readonly labels: object[]
+    readonly values: GLib.HashTable
+    readonly descriptions: GLib.HashTable
     static name: string
 }
 class glibtop_fsusage {
     /* Fields of GTop-2.0.GTop.glibtop_fsusage */
-    flags: number
-    blocks: number
-    bfree: number
-    bavail: number
-    files: number
-    ffree: number
-    block_size: number
-    read: number
-    write: number
+    readonly flags: number
+    readonly blocks: number
+    readonly bfree: number
+    readonly bavail: number
+    readonly files: number
+    readonly ffree: number
+    readonly block_size: number
+    readonly read: number
+    readonly write: number
     static name: string
 }
 class glibtop_loadavg {
     /* Fields of GTop-2.0.GTop.glibtop_loadavg */
-    flags: number
-    loadavg: number[]
-    nr_running: number
-    nr_tasks: number
-    last_pid: number
+    readonly flags: number
+    readonly loadavg: number[]
+    readonly nr_running: number
+    readonly nr_tasks: number
+    readonly last_pid: number
     static name: string
 }
 class glibtop_machine {
@@ -622,412 +628,380 @@ class glibtop_machine {
 }
 class glibtop_map_entry {
     /* Fields of GTop-2.0.GTop.glibtop_map_entry */
-    flags: number
-    start: number
-    end: number
-    offset: number
-    perm: number
-    inode: number
-    device: number
-    size: number
-    rss: number
-    shared_clean: number
-    shared_dirty: number
-    private_clean: number
-    private_dirty: number
-    pss: number
-    swap: number
-    filename: number[]
+    readonly flags: number
+    readonly start: number
+    readonly end: number
+    readonly offset: number
+    readonly perm: number
+    readonly inode: number
+    readonly device: number
+    readonly size: number
+    readonly rss: number
+    readonly shared_clean: number
+    readonly shared_dirty: number
+    readonly private_clean: number
+    readonly private_dirty: number
+    readonly pss: number
+    readonly swap: number
+    readonly filename: number[]
     static name: string
 }
 class glibtop_mem {
     /* Fields of GTop-2.0.GTop.glibtop_mem */
-    flags: number
-    total: number
-    used: number
-    free: number
-    shared: number
-    buffer: number
-    cached: number
-    user: number
-    locked: number
+    readonly flags: number
+    readonly total: number
+    readonly used: number
+    readonly free: number
+    readonly shared: number
+    readonly buffer: number
+    readonly cached: number
+    readonly user: number
+    readonly locked: number
     static name: string
 }
 class glibtop_mountentry {
     /* Fields of GTop-2.0.GTop.glibtop_mountentry */
-    dev: number
-    devname: number[]
-    mountdir: number[]
-    type: number[]
+    readonly dev: number
+    readonly devname: number[]
+    readonly mountdir: number[]
+    readonly type: number[]
     static name: string
 }
 class glibtop_mountlist {
     /* Fields of GTop-2.0.GTop.glibtop_mountlist */
-    flags: number
-    number: number
-    total: number
-    size: number
+    readonly flags: number
+    readonly number: number
+    readonly total: number
+    readonly size: number
     static name: string
 }
 class glibtop_msg_limits {
     /* Fields of GTop-2.0.GTop.glibtop_msg_limits */
-    flags: number
-    msgpool: number
-    msgmap: number
-    msgmax: number
-    msgmnb: number
-    msgmni: number
-    msgssz: number
-    msgtql: number
+    readonly flags: number
+    readonly msgpool: number
+    readonly msgmap: number
+    readonly msgmax: number
+    readonly msgmnb: number
+    readonly msgmni: number
+    readonly msgssz: number
+    readonly msgtql: number
     static name: string
 }
 class glibtop_netlist {
     /* Fields of GTop-2.0.GTop.glibtop_netlist */
-    flags: number
-    number: number
+    readonly flags: number
+    readonly number: number
     static name: string
 }
 class glibtop_netload {
     /* Fields of GTop-2.0.GTop.glibtop_netload */
-    flags: number
-    if_flags: number
-    mtu: number
-    subnet: number
-    address: number
-    packets_in: number
-    packets_out: number
-    packets_total: number
-    bytes_in: number
-    bytes_out: number
-    bytes_total: number
-    errors_in: number
-    errors_out: number
-    errors_total: number
-    collisions: number
-    address6: Uint8Array[]
-    prefix6: Uint8Array[]
-    scope6: number
-    hwaddress: Uint8Array[]
+    readonly flags: number
+    readonly if_flags: number
+    readonly mtu: number
+    readonly subnet: number
+    readonly address: number
+    readonly packets_in: number
+    readonly packets_out: number
+    readonly packets_total: number
+    readonly bytes_in: number
+    readonly bytes_out: number
+    readonly bytes_total: number
+    readonly errors_in: number
+    readonly errors_out: number
+    readonly errors_total: number
+    readonly collisions: number
+    readonly address6: Uint8Array
+    readonly prefix6: Uint8Array
+    readonly scope6: number
+    readonly hwaddress: Uint8Array
     static name: string
 }
 class glibtop_open_files_entry {
     /* Fields of GTop-2.0.GTop.glibtop_open_files_entry */
-    fd: number
-    type: number
+    readonly fd: number
+    readonly type: number
     static name: string
 }
 class glibtop_ppp {
     /* Fields of GTop-2.0.GTop.glibtop_ppp */
-    flags: number
-    state: number
-    bytes_in: number
-    bytes_out: number
+    readonly flags: number
+    readonly state: number
+    readonly bytes_in: number
+    readonly bytes_out: number
     static name: string
 }
 class glibtop_proc_affinity {
     /* Fields of GTop-2.0.GTop.glibtop_proc_affinity */
-    flags: number
-    number: number
-    all: boolean
+    readonly flags: number
+    readonly number: number
+    readonly all: boolean
     static name: string
 }
 class glibtop_proc_args {
     /* Fields of GTop-2.0.GTop.glibtop_proc_args */
-    flags: number
-    size: number
+    readonly flags: number
+    readonly size: number
     static name: string
 }
 class glibtop_proc_io {
     /* Fields of GTop-2.0.GTop.glibtop_proc_io */
-    flags: number
-    disk_rchar: number
-    disk_wchar: number
-    disk_rbytes: number
-    disk_wbytes: number
-    reserved: number[]
+    readonly flags: number
+    readonly disk_rchar: number
+    readonly disk_wchar: number
+    readonly disk_rbytes: number
+    readonly disk_wbytes: number
+    readonly reserved: number[]
     static name: string
 }
 class glibtop_proc_kernel {
     /* Fields of GTop-2.0.GTop.glibtop_proc_kernel */
-    flags: number
-    k_flags: number
-    min_flt: number
-    maj_flt: number
-    cmin_flt: number
-    cmaj_flt: number
-    kstk_esp: number
-    kstk_eip: number
-    nwchan: number
-    wchan: number[]
+    readonly flags: number
+    readonly k_flags: number
+    readonly min_flt: number
+    readonly maj_flt: number
+    readonly cmin_flt: number
+    readonly cmaj_flt: number
+    readonly kstk_esp: number
+    readonly kstk_eip: number
+    readonly nwchan: number
+    readonly wchan: number[]
     static name: string
 }
 class glibtop_proc_map {
     /* Fields of GTop-2.0.GTop.glibtop_proc_map */
-    flags: number
-    number: number
-    total: number
-    size: number
+    readonly flags: number
+    readonly number: number
+    readonly total: number
+    readonly size: number
     static name: string
 }
 class glibtop_proc_mem {
     /* Fields of GTop-2.0.GTop.glibtop_proc_mem */
-    flags: number
-    size: number
-    vsize: number
-    resident: number
-    share: number
-    rss: number
-    rss_rlim: number
+    readonly flags: number
+    readonly size: number
+    readonly vsize: number
+    readonly resident: number
+    readonly share: number
+    readonly rss: number
+    readonly rss_rlim: number
     static name: string
 }
 class glibtop_proc_open_files {
     /* Fields of GTop-2.0.GTop.glibtop_proc_open_files */
-    flags: number
-    number: number
-    total: number
-    size: number
+    readonly flags: number
+    readonly number: number
+    readonly total: number
+    readonly size: number
     static name: string
 }
 class glibtop_proc_segment {
     /* Fields of GTop-2.0.GTop.glibtop_proc_segment */
-    flags: number
-    text_rss: number
-    shlib_rss: number
-    data_rss: number
-    stack_rss: number
-    dirty_size: number
-    start_code: number
-    end_code: number
-    start_stack: number
+    readonly flags: number
+    readonly text_rss: number
+    readonly shlib_rss: number
+    readonly data_rss: number
+    readonly stack_rss: number
+    readonly dirty_size: number
+    readonly start_code: number
+    readonly end_code: number
+    readonly start_stack: number
     static name: string
 }
 class glibtop_proc_signal {
     /* Fields of GTop-2.0.GTop.glibtop_proc_signal */
-    flags: number
-    signal: number[]
-    blocked: number[]
-    sigignore: number[]
-    sigcatch: number[]
+    readonly flags: number
+    readonly signal: number[]
+    readonly blocked: number[]
+    readonly sigignore: number[]
+    readonly sigcatch: number[]
     static name: string
 }
 class glibtop_proc_state {
     /* Fields of GTop-2.0.GTop.glibtop_proc_state */
-    flags: number
-    cmd: number[]
-    state: number
-    uid: number
-    gid: number
-    ruid: number
-    rgid: number
-    has_cpu: number
-    processor: number
-    last_processor: number
+    readonly flags: number
+    readonly cmd: number[]
+    readonly state: number
+    readonly uid: number
+    readonly gid: number
+    readonly ruid: number
+    readonly rgid: number
+    readonly has_cpu: number
+    readonly processor: number
+    readonly last_processor: number
     static name: string
 }
 class glibtop_proc_time {
     /* Fields of GTop-2.0.GTop.glibtop_proc_time */
-    start_time: number
-    rtime: number
-    utime: number
-    stime: number
-    cutime: number
-    cstime: number
-    timeout: number
-    it_real_value: number
-    frequency: number
-    xcpu_utime: number[]
-    xcpu_stime: number[]
+    readonly start_time: number
+    readonly rtime: number
+    readonly utime: number
+    readonly stime: number
+    readonly cutime: number
+    readonly cstime: number
+    readonly timeout: number
+    readonly it_real_value: number
+    readonly frequency: number
+    readonly xcpu_utime: number[]
+    readonly xcpu_stime: number[]
     static name: string
 }
 class glibtop_proc_uid {
     /* Fields of GTop-2.0.GTop.glibtop_proc_uid */
-    flags: number
-    uid: number
-    euid: number
-    gid: number
-    egid: number
-    suid: number
-    sgid: number
-    fsuid: number
-    fsgid: number
-    pid: number
-    ppid: number
-    pgrp: number
-    session: number
-    tty: number
-    tpgid: number
-    priority: number
-    nice: number
-    ngroups: number
-    groups: number[]
+    readonly flags: number
+    readonly uid: number
+    readonly euid: number
+    readonly gid: number
+    readonly egid: number
+    readonly suid: number
+    readonly sgid: number
+    readonly fsuid: number
+    readonly fsgid: number
+    readonly pid: number
+    readonly ppid: number
+    readonly pgrp: number
+    readonly session: number
+    readonly tty: number
+    readonly tpgid: number
+    readonly priority: number
+    readonly nice: number
+    readonly ngroups: number
+    readonly groups: number[]
     static name: string
 }
 class glibtop_proc_wd {
     /* Fields of GTop-2.0.GTop.glibtop_proc_wd */
-    flags: number
-    number: number
-    root: number[]
-    exe: number[]
+    readonly flags: number
+    readonly number: number
+    readonly root: number[]
+    readonly exe: number[]
     static name: string
 }
 class glibtop_proclist {
     /* Fields of GTop-2.0.GTop.glibtop_proclist */
-    flags: number
-    number: number
-    total: number
-    size: number
+    readonly flags: number
+    readonly number: number
+    readonly total: number
+    readonly size: number
     static name: string
 }
 class glibtop_response {
     /* Fields of GTop-2.0.GTop.glibtop_response */
-    offset: number
-    size: number
-    data_size: number
-    u: glibtop_response_union
+    readonly offset: number
+    readonly size: number
+    readonly data_size: number
+    readonly u: glibtop_response_union
     static name: string
 }
 class glibtop_sem_limits {
     /* Fields of GTop-2.0.GTop.glibtop_sem_limits */
-    flags: number
-    semmap: number
-    semmni: number
-    semmns: number
-    semmnu: number
-    semmsl: number
-    semopm: number
-    semume: number
-    semusz: number
-    semvmx: number
-    semaem: number
+    readonly flags: number
+    readonly semmap: number
+    readonly semmni: number
+    readonly semmns: number
+    readonly semmnu: number
+    readonly semmsl: number
+    readonly semopm: number
+    readonly semume: number
+    readonly semusz: number
+    readonly semvmx: number
+    readonly semaem: number
     static name: string
 }
 class glibtop_shm_limits {
     /* Fields of GTop-2.0.GTop.glibtop_shm_limits */
-    flags: number
-    shmmax: number
-    shmmin: number
-    shmmni: number
-    shmseg: number
-    shmall: number
+    readonly flags: number
+    readonly shmmax: number
+    readonly shmmin: number
+    readonly shmmni: number
+    readonly shmseg: number
+    readonly shmall: number
     static name: string
 }
 class glibtop_signame {
     /* Fields of GTop-2.0.GTop.glibtop_signame */
-    number: number
-    name: string
-    label: string
+    readonly number: number
+    readonly name: string
+    readonly label: string
     static name: string
 }
 class glibtop_swap {
     /* Fields of GTop-2.0.GTop.glibtop_swap */
-    flags: number
-    total: number
-    used: number
-    free: number
-    pagein: number
-    pageout: number
+    readonly flags: number
+    readonly total: number
+    readonly used: number
+    readonly free: number
+    readonly pagein: number
+    readonly pageout: number
     static name: string
 }
 class glibtop_sysdeps {
     /* Fields of GTop-2.0.GTop.glibtop_sysdeps */
-    flags: number
-    features: number
-    cpu: number
-    mem: number
-    swap: number
-    uptime: number
-    loadavg: number
-    shm_limits: number
-    msg_limits: number
-    sem_limits: number
-    proclist: number
-    proc_state: number
-    proc_uid: number
-    proc_mem: number
-    proc_time: number
-    proc_signal: number
-    proc_kernel: number
-    proc_segment: number
-    proc_args: number
-    proc_map: number
-    proc_open_files: number
-    mountlist: number
-    fsusage: number
-    netlist: number
-    netload: number
-    ppp: number
-    proc_wd: number
-    proc_affinity: number
-    proc_io: number
-    disk: number
-    reserved1: number
-    reserved2: number
-    reserved3: number
-    reserved4: number
-    reserved5: number
-    reserved6: number
-    reserved7: number
+    readonly flags: number
+    readonly features: number
+    readonly cpu: number
+    readonly mem: number
+    readonly swap: number
+    readonly uptime: number
+    readonly loadavg: number
+    readonly shm_limits: number
+    readonly msg_limits: number
+    readonly sem_limits: number
+    readonly proclist: number
+    readonly proc_state: number
+    readonly proc_uid: number
+    readonly proc_mem: number
+    readonly proc_time: number
+    readonly proc_signal: number
+    readonly proc_kernel: number
+    readonly proc_segment: number
+    readonly proc_args: number
+    readonly proc_map: number
+    readonly proc_open_files: number
+    readonly mountlist: number
+    readonly fsusage: number
+    readonly netlist: number
+    readonly netload: number
+    readonly ppp: number
+    readonly proc_wd: number
+    readonly proc_affinity: number
+    readonly proc_io: number
+    readonly disk: number
+    readonly reserved1: number
+    readonly reserved2: number
+    readonly reserved3: number
+    readonly reserved4: number
+    readonly reserved5: number
+    readonly reserved6: number
+    readonly reserved7: number
     static name: string
 }
 class glibtop_sysinfo {
     /* Fields of GTop-2.0.GTop.glibtop_sysinfo */
-    flags: number
-    ncpu: number
-    cpuinfo: glibtop_entry[]
+    readonly flags: number
+    readonly ncpu: number
+    readonly cpuinfo: glibtop_entry[]
     static name: string
 }
 class glibtop_uptime {
     /* Fields of GTop-2.0.GTop.glibtop_uptime */
-    flags: number
-    uptime: number
-    idletime: number
-    boot_time: number
+    readonly flags: number
+    readonly uptime: number
+    readonly idletime: number
+    readonly boot_time: number
     static name: string
 }
 class partition_info {
     /* Fields of GTop-2.0.GTop.partition_info */
-    name: number[]
-    type: number[]
-    raid_num: number[]
-    max: number
+    readonly name: number[]
+    readonly type: number[]
+    readonly raid_num: number[]
+    readonly max: number
     static name: string
 }
 class glibtop_response_union {
-    /* Fields of GTop-2.0.GTop.glibtop_response_union */
-    data: glibtop_union
-    sysdeps: glibtop_sysdeps
     static name: string
 }
 class glibtop_union {
-    /* Fields of GTop-2.0.GTop.glibtop_union */
-    cpu: glibtop_cpu
-    disk: glibtop_disk
-    mem: glibtop_mem
-    swap: glibtop_swap
-    uptime: glibtop_uptime
-    loadavg: glibtop_loadavg
-    shm_limits: glibtop_shm_limits
-    msg_limits: glibtop_msg_limits
-    sem_limits: glibtop_sem_limits
-    proclist: glibtop_proclist
-    proc_state: glibtop_proc_state
-    proc_uid: glibtop_proc_uid
-    proc_mem: glibtop_proc_mem
-    proc_time: glibtop_proc_time
-    proc_signal: glibtop_proc_signal
-    proc_kernel: glibtop_proc_kernel
-    proc_segment: glibtop_proc_segment
-    proc_args: glibtop_proc_args
-    proc_map: glibtop_proc_map
-    mountlist: glibtop_mountlist
-    fsusage: glibtop_fsusage
-    netlist: glibtop_netlist
-    netload: glibtop_netload
-    ppp: glibtop_ppp
-    proc_open_files: glibtop_proc_open_files
-    proc_wd: glibtop_proc_wd
-    proc_affinity: glibtop_proc_affinity
-    proc_io: glibtop_proc_io
     static name: string
 }
 }

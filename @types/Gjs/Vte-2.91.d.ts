@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Vte-2.91
  */
@@ -22,7 +28,6 @@ enum Align {
     START,
     CENTER,
     END,
-    START_FILL,
 }
 enum CursorBlinkMode {
     SYSTEM,
@@ -79,15 +84,15 @@ enum PtyFlags {
     NO_CTTY,
     DEFAULT,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const REGEX_FLAGS_DEFAULT: number
-export const SPAWN_NO_PARENT_ENVV: number
-export const SPAWN_NO_SYSTEMD_SCOPE: number
-export const SPAWN_REQUIRE_SYSTEMD_SCOPE: number
-export const TEST_FLAGS_ALL: number
-export const TEST_FLAGS_NONE: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const REGEX_FLAGS_DEFAULT: number
+const SPAWN_NO_PARENT_ENVV: number
+const SPAWN_NO_SYSTEMD_SCOPE: number
+const SPAWN_REQUIRE_SYSTEMD_SCOPE: number
+const TEST_FLAGS_ALL: number
+const TEST_FLAGS_NONE: number
 function get_encoding_supported(encoding: string): boolean
 function get_encodings(include_aliases: boolean): string[]
 function get_feature_flags(): FeatureFlags
@@ -104,13 +109,14 @@ interface SelectionFunc {
 interface TerminalSpawnAsyncCallback {
     (terminal: Terminal, pid: GLib.Pid, error: GLib.Error): void
 }
-export interface Pty_ConstructProps extends GObject.Object_ConstructProps {
+interface Pty_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Vte-2.91.Vte.Pty */
     fd?: number
     flags?: PtyFlags
 }
 class Pty {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Vte-2.91.Vte.Pty */
     child_setup(): void
     close(): void
@@ -172,7 +178,8 @@ class Pty {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Terminal_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Terminal_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Vte-2.91.Vte.Terminal */
     allow_bold?: boolean
     allow_hyperlink?: boolean
     audible_bell?: boolean
@@ -201,7 +208,10 @@ export interface Terminal_ConstructProps extends Gtk.Widget_ConstructProps {
     scrollback_lines?: number
     text_blink_mode?: TextBlinkMode
     xalign?: Align
+    xfill?: boolean
     yalign?: Align
+    yfill?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -243,7 +253,9 @@ class Terminal {
     readonly window_title: string
     readonly word_char_exceptions: string
     xalign: Align
+    xfill: boolean
     yalign: Align
+    yfill: boolean
     /* Properties of Gtk-3.0.Gtk.Widget */
     app_paintable: boolean
     can_default: boolean
@@ -289,21 +301,19 @@ class Terminal {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Vte-2.91.Vte.Terminal */
-    widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Vte-2.91.Vte.Terminal */
     copy_clipboard(): void
     copy_clipboard_format(format: Format): void
     copy_primary(): void
     event_check_gregex_simple(event: Gdk.Event, regexes: GLib.Regex[], match_flags: GLib.RegexMatchFlags): [ /* returnType */ boolean, /* matches */ string[] ]
     event_check_regex_simple(event: Gdk.Event, regexes: Regex[], match_flags: number): string[] | null
-    feed(data: Uint8Array[] | null): void
-    feed_child(text: Uint8Array[] | null): void
-    feed_child_binary(data: Uint8Array[] | null): void
+    feed(data: Uint8Array | null): void
+    feed_child(text: Uint8Array | null): void
+    feed_child_binary(data: Uint8Array | null): void
     get_allow_bold(): boolean
     get_allow_hyperlink(): boolean
     get_audible_bell(): boolean
@@ -346,7 +356,9 @@ class Terminal {
     get_window_title(): string | null
     get_word_char_exceptions(): string | null
     get_xalign(): Align
+    get_xfill(): boolean
     get_yalign(): Align
+    get_yfill(): boolean
     hyperlink_check_event(event: Gdk.Event): string | null
     match_add_gregex(gregex: GLib.Regex, gflags: GLib.RegexMatchFlags): number
     match_add_regex(regex: Regex, flags: number): number
@@ -412,7 +424,9 @@ class Terminal {
     set_text_blink_mode(text_blink_mode: TextBlinkMode): void
     set_word_char_exceptions(exceptions: string): void
     set_xalign(align: Align): void
+    set_xfill(fill: boolean): void
     set_yalign(align: Align): void
+    set_yfill(fill: boolean): void
     spawn_async(pty_flags: PtyFlags, working_directory: string | null, argv: string[], envv: string[] | null, spawn_flags: GLib.SpawnFlags, timeout: number, cancellable?: Gio.Cancellable | null): void
     spawn_sync(pty_flags: PtyFlags, working_directory: string | null, argv: string[], envv: string[] | null, spawn_flags: GLib.SpawnFlags, child_setup?: GLib.SpawnChildSetupFunc | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* child_pid */ GLib.Pid | null ]
     spawn_with_fds_async(pty_flags: PtyFlags, working_directory: string | null, argv: string[], envv: string[] | null, fds: number[] | null, map_fds: number[] | null, spawn_flags: GLib.SpawnFlags, timeout: number, cancellable?: Gio.Cancellable | null): void
@@ -709,6 +723,7 @@ class Terminal {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hadjustment(): Gtk.Adjustment
@@ -1224,8 +1239,12 @@ class Terminal {
     connect_after(sigName: "notify::word-char-exceptions", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::xalign", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::xalign", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::xfill", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::xfill", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::yalign", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::yalign", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::yfill", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::yfill", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::app-paintable", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::app-paintable", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::can-default", callback: (($obj: Terminal, pspec: GObject.ParamSpec) => void)): number
@@ -1342,35 +1361,35 @@ class Regex {
 }
 abstract class TerminalClass {
     /* Fields of Vte-2.91.Vte.TerminalClass */
-    parent_class: Gtk.WidgetClass
-    eof: (terminal: Terminal) => void
-    child_exited: (terminal: Terminal, status: number) => void
-    encoding_changed: (terminal: Terminal) => void
-    char_size_changed: (terminal: Terminal, char_width: number, char_height: number) => void
-    window_title_changed: (terminal: Terminal) => void
-    icon_title_changed: (terminal: Terminal) => void
-    selection_changed: (terminal: Terminal) => void
-    contents_changed: (terminal: Terminal) => void
-    cursor_moved: (terminal: Terminal) => void
-    commit: (terminal: Terminal, text: string, size: number) => void
-    deiconify_window: (terminal: Terminal) => void
-    iconify_window: (terminal: Terminal) => void
-    raise_window: (terminal: Terminal) => void
-    lower_window: (terminal: Terminal) => void
-    refresh_window: (terminal: Terminal) => void
-    restore_window: (terminal: Terminal) => void
-    maximize_window: (terminal: Terminal) => void
-    resize_window: (terminal: Terminal, width: number, height: number) => void
-    move_window: (terminal: Terminal, x: number, y: number) => void
-    increase_font_size: (terminal: Terminal) => void
-    decrease_font_size: (terminal: Terminal) => void
-    text_modified: (terminal: Terminal) => void
-    text_inserted: (terminal: Terminal) => void
-    text_deleted: (terminal: Terminal) => void
-    text_scrolled: (terminal: Terminal, delta: number) => void
-    copy_clipboard: (terminal: Terminal) => void
-    paste_clipboard: (terminal: Terminal) => void
-    bell: (terminal: Terminal) => void
+    readonly parent_class: Gtk.WidgetClass
+    readonly eof: (terminal: Terminal) => void
+    readonly child_exited: (terminal: Terminal, status: number) => void
+    readonly encoding_changed: (terminal: Terminal) => void
+    readonly char_size_changed: (terminal: Terminal, char_width: number, char_height: number) => void
+    readonly window_title_changed: (terminal: Terminal) => void
+    readonly icon_title_changed: (terminal: Terminal) => void
+    readonly selection_changed: (terminal: Terminal) => void
+    readonly contents_changed: (terminal: Terminal) => void
+    readonly cursor_moved: (terminal: Terminal) => void
+    readonly commit: (terminal: Terminal, text: string, size: number) => void
+    readonly deiconify_window: (terminal: Terminal) => void
+    readonly iconify_window: (terminal: Terminal) => void
+    readonly raise_window: (terminal: Terminal) => void
+    readonly lower_window: (terminal: Terminal) => void
+    readonly refresh_window: (terminal: Terminal) => void
+    readonly restore_window: (terminal: Terminal) => void
+    readonly maximize_window: (terminal: Terminal) => void
+    readonly resize_window: (terminal: Terminal, width: number, height: number) => void
+    readonly move_window: (terminal: Terminal, x: number, y: number) => void
+    readonly increase_font_size: (terminal: Terminal) => void
+    readonly decrease_font_size: (terminal: Terminal) => void
+    readonly text_modified: (terminal: Terminal) => void
+    readonly text_inserted: (terminal: Terminal) => void
+    readonly text_deleted: (terminal: Terminal) => void
+    readonly text_scrolled: (terminal: Terminal, delta: number) => void
+    readonly copy_clipboard: (terminal: Terminal) => void
+    readonly paste_clipboard: (terminal: Terminal) => void
+    readonly bell: (terminal: Terminal) => void
     static name: string
 }
 class TerminalClassPrivate {

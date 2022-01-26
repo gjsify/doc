@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Parquet-1.0
  */
@@ -10,18 +16,17 @@ import type GLib from './GLib-2.0';
 
 export namespace Parquet {
 
-export const VERSION_MAJOR: number
-export const VERSION_MICRO: number
-export const VERSION_MINOR: number
-export const VERSION_TAG: string
-export interface ArrowFileReader_ConstructProps extends GObject.Object_ConstructProps {
+const VERSION_MAJOR: number
+const VERSION_MICRO: number
+const VERSION_MINOR: number
+const VERSION_TAG: string
+interface ArrowFileReader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Parquet-1.0.Parquet.ArrowFileReader */
     arrow_file_reader?: object
 }
 class ArrowFileReader {
-    /* Fields of Parquet-1.0.Parquet.ArrowFileReader */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Parquet-1.0.Parquet.ArrowFileReader */
     get_n_row_groups(): number
     get_schema(): Arrow.Schema | null
@@ -75,14 +80,13 @@ class ArrowFileReader {
     static new_path(path: string): ArrowFileReader
     static $gtype: GObject.Type
 }
-export interface ArrowFileWriter_ConstructProps extends GObject.Object_ConstructProps {
+interface ArrowFileWriter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Parquet-1.0.Parquet.ArrowFileWriter */
     arrow_file_writer?: object
 }
 class ArrowFileWriter {
-    /* Fields of Parquet-1.0.Parquet.ArrowFileWriter */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Parquet-1.0.Parquet.ArrowFileWriter */
     close(): boolean
     write_table(table: Arrow.Table, chunk_size: number): boolean
@@ -132,13 +136,11 @@ class ArrowFileWriter {
     static new_path(schema: Arrow.Schema, path: string, writer_properties?: WriterProperties | null): ArrowFileWriter
     static $gtype: GObject.Type
 }
-export interface WriterProperties_ConstructProps extends GObject.Object_ConstructProps {
+interface WriterProperties_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WriterProperties {
-    /* Fields of Parquet-1.0.Parquet.WriterProperties */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Parquet-1.0.Parquet.WriterProperties */
     disable_dictionary(path?: string | null): void
     enable_dictionary(path?: string | null): void
@@ -200,17 +202,17 @@ class WriterProperties {
 }
 abstract class ArrowFileReaderClass {
     /* Fields of Parquet-1.0.Parquet.ArrowFileReaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ArrowFileWriterClass {
     /* Fields of Parquet-1.0.Parquet.ArrowFileWriterClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class WriterPropertiesClass {
     /* Fields of Parquet-1.0.Parquet.WriterPropertiesClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Pango-1.0
  */
@@ -355,19 +361,19 @@ enum ShowFlags {
     LINE_BREAKS,
     IGNORABLES,
 }
-export const ANALYSIS_FLAG_CENTERED_BASELINE: number
-export const ANALYSIS_FLAG_IS_ELLIPSIS: number
-export const ANALYSIS_FLAG_NEED_HYPHEN: number
-export const ATTR_INDEX_FROM_TEXT_BEGINNING: number
-export const ATTR_INDEX_TO_TEXT_END: number
-export const GLYPH_EMPTY: Glyph
-export const GLYPH_INVALID_INPUT: Glyph
-export const GLYPH_UNKNOWN_FLAG: Glyph
-export const SCALE: number
-export const VERSION_MAJOR: number
-export const VERSION_MICRO: number
-export const VERSION_MINOR: number
-export const VERSION_STRING: string
+const ANALYSIS_FLAG_CENTERED_BASELINE: number
+const ANALYSIS_FLAG_IS_ELLIPSIS: number
+const ANALYSIS_FLAG_NEED_HYPHEN: number
+const ATTR_INDEX_FROM_TEXT_BEGINNING: number
+const ATTR_INDEX_TO_TEXT_END: number
+const GLYPH_EMPTY: Glyph
+const GLYPH_INVALID_INPUT: Glyph
+const GLYPH_UNKNOWN_FLAG: Glyph
+const SCALE: number
+const VERSION_MAJOR: number
+const VERSION_MICRO: number
+const VERSION_MINOR: number
+const VERSION_STRING: string
 function attr_allow_breaks_new(allow_breaks: boolean): Attribute
 function attr_background_alpha_new(alpha: number): Attribute
 function attr_background_new(red: number, green: number, blue: number): Attribute
@@ -471,11 +477,11 @@ interface AttrFilterFunc {
 interface FontsetForeachFunc {
     (fontset: Fontset, font: Font): boolean
 }
-export interface Context_ConstructProps extends GObject.Object_ConstructProps {
+interface Context_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Context {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.Context */
     changed(): void
     get_base_dir(): Direction
@@ -545,18 +551,18 @@ class Context {
     static new(): Context
     static $gtype: GObject.Type
 }
-export interface Coverage_ConstructProps extends GObject.Object_ConstructProps {
+interface Coverage_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Coverage {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.Coverage */
     copy(): Coverage
     get(index_: number): CoverageLevel
     max(other: Coverage): void
     ref(): Coverage
     set(index_: number, level: CoverageLevel): void
-    to_bytes(): /* bytes */ Uint8Array[]
+    to_bytes(): /* bytes */ Uint8Array
     unref(): void
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
@@ -600,16 +606,14 @@ class Coverage {
     _init (config?: Coverage_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Coverage
-    static from_bytes(bytes: Uint8Array[]): Coverage | null
+    static from_bytes(bytes: Uint8Array): Coverage | null
     static $gtype: GObject.Type
 }
-export interface Font_ConstructProps extends GObject.Object_ConstructProps {
+interface Font_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Font {
-    /* Fields of Pango-1.0.Pango.Font */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.Font */
     describe(): FontDescription
     describe_with_absolute_size(): FontDescription
@@ -677,13 +681,11 @@ class Font {
     static deserialize(context: Context, bytes: GLib.Bytes): Font | null
     static $gtype: GObject.Type
 }
-export interface FontFace_ConstructProps extends GObject.Object_ConstructProps {
+interface FontFace_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FontFace {
-    /* Fields of Pango-1.0.Pango.FontFace */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.FontFace */
     describe(): FontDescription
     get_face_name(): string
@@ -739,13 +741,11 @@ class FontFace {
     _init (config?: FontFace_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FontFamily_ConstructProps extends GObject.Object_ConstructProps {
+interface FontFamily_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FontFamily {
-    /* Fields of Pango-1.0.Pango.FontFamily */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.FontFamily */
     get_face(name?: string | null): FontFace | null
     get_name(): string
@@ -801,13 +801,11 @@ class FontFamily {
     _init (config?: FontFamily_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FontMap_ConstructProps extends GObject.Object_ConstructProps {
+interface FontMap_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FontMap {
-    /* Fields of Pango-1.0.Pango.FontMap */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.FontMap */
     changed(): void
     create_context(): Context
@@ -866,13 +864,11 @@ class FontMap {
     _init (config?: FontMap_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Fontset_ConstructProps extends GObject.Object_ConstructProps {
+interface Fontset_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Fontset {
-    /* Fields of Pango-1.0.Pango.Fontset */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.Fontset */
     foreach(func: FontsetForeachFunc): void
     get_font(wc: number): Font
@@ -925,13 +921,13 @@ class Fontset {
     _init (config?: Fontset_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FontsetSimple_ConstructProps extends Fontset_ConstructProps {
+interface FontsetSimple_ConstructProps extends Fontset_ConstructProps {
 }
 class FontsetSimple {
     /* Fields of Pango-1.0.Pango.Fontset */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.FontsetSimple */
     append(font: Font): void
     size(): number
@@ -989,11 +985,11 @@ class FontsetSimple {
     static new(language: Language): FontsetSimple
     static $gtype: GObject.Type
 }
-export interface Layout_ConstructProps extends GObject.Object_ConstructProps {
+interface Layout_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Layout {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.Layout */
     context_changed(): void
     copy(): Layout
@@ -1105,13 +1101,11 @@ class Layout {
     static deserialize(context: Context, bytes: GLib.Bytes, flags: LayoutDeserializeFlags): Layout | null
     static $gtype: GObject.Type
 }
-export interface Renderer_ConstructProps extends GObject.Object_ConstructProps {
+interface Renderer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Renderer {
-    /* Fields of Pango-1.0.Pango.Renderer */
-    matrix: Matrix
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Pango-1.0.Pango.Renderer */
     activate(): void
     deactivate(): void
@@ -1189,53 +1183,53 @@ class Renderer {
 }
 class Analysis {
     /* Fields of Pango-1.0.Pango.Analysis */
-    shape_engine: object
-    lang_engine: object
-    font: Font
-    level: number
-    gravity: number
-    flags: number
-    script: number
-    language: Language
-    extra_attrs: object[]
+    readonly shape_engine: object
+    readonly lang_engine: object
+    readonly font: Font
+    readonly level: number
+    readonly gravity: number
+    readonly flags: number
+    readonly script: number
+    readonly language: Language
+    readonly extra_attrs: object[]
     static name: string
 }
 class AttrClass {
     /* Fields of Pango-1.0.Pango.AttrClass */
-    type: AttrType
-    copy: (attr: Attribute) => Attribute
-    destroy: (attr: Attribute) => void
-    equal: (attr1: Attribute, attr2: Attribute) => boolean
+    readonly type: AttrType
+    readonly copy: (attr: Attribute) => Attribute
+    readonly destroy: (attr: Attribute) => void
+    readonly equal: (attr1: Attribute, attr2: Attribute) => boolean
     static name: string
 }
 class AttrColor {
     /* Fields of Pango-1.0.Pango.AttrColor */
-    attr: Attribute
-    color: Color
+    readonly attr: Attribute
+    readonly color: Color
     static name: string
 }
 class AttrFloat {
     /* Fields of Pango-1.0.Pango.AttrFloat */
-    attr: Attribute
-    value: number
+    readonly attr: Attribute
+    readonly value: number
     static name: string
 }
 class AttrFontDesc {
     /* Fields of Pango-1.0.Pango.AttrFontDesc */
-    attr: Attribute
-    desc: FontDescription
+    readonly attr: Attribute
+    readonly desc: FontDescription
     static name: string
 }
 class AttrFontFeatures {
     /* Fields of Pango-1.0.Pango.AttrFontFeatures */
-    attr: Attribute
-    features: string
+    readonly attr: Attribute
+    readonly features: string
     static name: string
 }
 class AttrInt {
     /* Fields of Pango-1.0.Pango.AttrInt */
-    attr: Attribute
-    value: number
+    readonly attr: Attribute
+    readonly value: number
     static name: string
 }
 class AttrIterator {
@@ -1251,8 +1245,8 @@ class AttrIterator {
 }
 class AttrLanguage {
     /* Fields of Pango-1.0.Pango.AttrLanguage */
-    attr: Attribute
-    value: Language
+    readonly attr: Attribute
+    readonly value: Language
     static name: string
 }
 class AttrList {
@@ -1279,36 +1273,36 @@ class AttrList {
 }
 class AttrShape {
     /* Fields of Pango-1.0.Pango.AttrShape */
-    attr: Attribute
-    ink_rect: Rectangle
-    logical_rect: Rectangle
-    data: object
-    copy_func: AttrDataCopyFunc
-    destroy_func: GLib.DestroyNotify
+    readonly attr: Attribute
+    readonly ink_rect: Rectangle
+    readonly logical_rect: Rectangle
+    readonly data: object
+    readonly copy_func: AttrDataCopyFunc
+    readonly destroy_func: GLib.DestroyNotify
     static name: string
     /* Static methods and pseudo-constructors */
     static new_with_data(ink_rect: Rectangle, logical_rect: Rectangle, data?: object | null, copy_func?: AttrDataCopyFunc | null): Attribute
 }
 class AttrSize {
     /* Fields of Pango-1.0.Pango.AttrSize */
-    attr: Attribute
-    size: number
-    absolute: number
+    readonly attr: Attribute
+    readonly size: number
+    readonly absolute: number
     static name: string
     /* Static methods and pseudo-constructors */
     static new_absolute(size: number): Attribute
 }
 class AttrString {
     /* Fields of Pango-1.0.Pango.AttrString */
-    attr: Attribute
-    value: string
+    readonly attr: Attribute
+    readonly value: string
     static name: string
 }
 class Attribute {
     /* Fields of Pango-1.0.Pango.Attribute */
-    klass: AttrClass
-    start_index: number
-    end_index: number
+    readonly klass: AttrClass
+    readonly start_index: number
+    readonly end_index: number
     /* Methods of Pango-1.0.Pango.Attribute */
     as_color(): AttrColor | null
     as_float(): AttrFloat | null
@@ -1327,9 +1321,9 @@ class Attribute {
 }
 class Color {
     /* Fields of Pango-1.0.Pango.Color */
-    red: number
-    green: number
-    blue: number
+    readonly red: number
+    readonly green: number
+    readonly blue: number
     /* Methods of Pango-1.0.Pango.Color */
     copy(): Color | null
     free(): void
@@ -1343,15 +1337,15 @@ abstract class ContextClass {
 }
 abstract class FontClass {
     /* Fields of Pango-1.0.Pango.FontClass */
-    parent_class: GObject.ObjectClass
-    describe: (font: Font) => FontDescription
-    get_coverage: (font: Font, language: Language) => Coverage
-    get_glyph_extents: (font: Font | null, glyph: Glyph) => [ /* ink_rect */ Rectangle | null, /* logical_rect */ Rectangle | null ]
-    get_metrics: (font?: Font | null, language?: Language | null) => FontMetrics
-    get_font_map: (font?: Font | null) => FontMap | null
-    describe_absolute: (font: Font) => FontDescription
-    get_features: (font: Font, num_features: number) => [ /* features */ HarfBuzz.feature_t[], /* num_features */ number ]
-    create_hb_font: (font: Font) => HarfBuzz.font_t
+    readonly parent_class: GObject.ObjectClass
+    readonly describe: (font: Font) => FontDescription
+    readonly get_coverage: (font: Font, language: Language) => Coverage
+    readonly get_glyph_extents: (font: Font | null, glyph: Glyph) => [ /* ink_rect */ Rectangle | null, /* logical_rect */ Rectangle | null ]
+    readonly get_metrics: (font?: Font | null, language?: Language | null) => FontMetrics
+    readonly get_font_map: (font?: Font | null) => FontMap | null
+    readonly describe_absolute: (font: Font) => FontDescription
+    readonly get_features: (font: Font, num_features: number) => [ /* features */ HarfBuzz.feature_t[], /* num_features */ number ]
+    readonly create_hb_font: (font: Font) => HarfBuzz.font_t
     static name: string
 }
 class FontDescription {
@@ -1397,34 +1391,34 @@ class FontDescription {
 }
 abstract class FontFaceClass {
     /* Fields of Pango-1.0.Pango.FontFaceClass */
-    parent_class: GObject.ObjectClass
-    get_face_name: (face: FontFace) => string
-    describe: (face: FontFace) => FontDescription
-    list_sizes: (face: FontFace) => /* sizes */ number[] | null
-    is_synthesized: (face: FontFace) => boolean
-    get_family: (face: FontFace) => FontFamily
+    readonly parent_class: GObject.ObjectClass
+    readonly get_face_name: (face: FontFace) => string
+    readonly describe: (face: FontFace) => FontDescription
+    readonly list_sizes: (face: FontFace) => /* sizes */ number[] | null
+    readonly is_synthesized: (face: FontFace) => boolean
+    readonly get_family: (face: FontFace) => FontFamily
     static name: string
 }
 abstract class FontFamilyClass {
     /* Fields of Pango-1.0.Pango.FontFamilyClass */
-    parent_class: GObject.ObjectClass
-    list_faces: (family: FontFamily) => /* faces */ FontFace[] | null
-    get_name: (family: FontFamily) => string
-    is_monospace: (family: FontFamily) => boolean
-    is_variable: (family: FontFamily) => boolean
-    get_face: (family: FontFamily, name?: string | null) => FontFace | null
+    readonly parent_class: GObject.ObjectClass
+    readonly list_faces: (family: FontFamily) => /* faces */ FontFace[] | null
+    readonly get_name: (family: FontFamily) => string
+    readonly is_monospace: (family: FontFamily) => boolean
+    readonly is_variable: (family: FontFamily) => boolean
+    readonly get_face: (family: FontFamily, name?: string | null) => FontFace | null
     static name: string
 }
 abstract class FontMapClass {
     /* Fields of Pango-1.0.Pango.FontMapClass */
-    parent_class: GObject.ObjectClass
-    load_font: (fontmap: FontMap, context: Context, desc: FontDescription) => Font | null
-    list_families: (fontmap: FontMap) => /* families */ FontFamily[]
-    load_fontset: (fontmap: FontMap, context: Context, desc: FontDescription, language: Language) => Fontset | null
-    shape_engine_type: string
-    get_serial: (fontmap: FontMap) => number
-    changed: (fontmap: FontMap) => void
-    get_family: (fontmap: FontMap, name: string) => FontFamily
+    readonly parent_class: GObject.ObjectClass
+    readonly load_font: (fontmap: FontMap, context: Context, desc: FontDescription) => Font | null
+    readonly list_families: (fontmap: FontMap) => /* families */ FontFamily[]
+    readonly load_fontset: (fontmap: FontMap, context: Context, desc: FontDescription, language: Language) => Fontset | null
+    readonly shape_engine_type: string
+    readonly get_serial: (fontmap: FontMap) => number
+    readonly changed: (fontmap: FontMap) => void
+    readonly get_family: (fontmap: FontMap, name: string) => FontFamily
     static name: string
 }
 class FontMetrics {
@@ -1444,11 +1438,11 @@ class FontMetrics {
 }
 abstract class FontsetClass {
     /* Fields of Pango-1.0.Pango.FontsetClass */
-    parent_class: GObject.ObjectClass
-    get_font: (fontset: Fontset, wc: number) => Font
-    get_metrics: (fontset: Fontset) => FontMetrics
-    get_language: (fontset: Fontset) => Language
-    foreach: (fontset: Fontset, func: FontsetForeachFunc) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly get_font: (fontset: Fontset, wc: number) => Font
+    readonly get_metrics: (fontset: Fontset) => FontMetrics
+    readonly get_language: (fontset: Fontset) => Language
+    readonly foreach: (fontset: Fontset, func: FontsetForeachFunc) => void
     static name: string
 }
 abstract class FontsetSimpleClass {
@@ -1456,25 +1450,25 @@ abstract class FontsetSimpleClass {
 }
 class GlyphGeometry {
     /* Fields of Pango-1.0.Pango.GlyphGeometry */
-    width: GlyphUnit
-    x_offset: GlyphUnit
-    y_offset: GlyphUnit
+    readonly width: GlyphUnit
+    readonly x_offset: GlyphUnit
+    readonly y_offset: GlyphUnit
     static name: string
 }
 class GlyphInfo {
     /* Fields of Pango-1.0.Pango.GlyphInfo */
-    glyph: Glyph
-    geometry: GlyphGeometry
-    attr: GlyphVisAttr
+    readonly glyph: Glyph
+    readonly geometry: GlyphGeometry
+    readonly attr: GlyphVisAttr
     static name: string
 }
 class GlyphItem {
     /* Fields of Pango-1.0.Pango.GlyphItem */
-    item: Item
-    glyphs: GlyphString
-    y_offset: number
-    start_x_offset: number
-    end_x_offset: number
+    readonly item: Item
+    readonly glyphs: GlyphString
+    readonly y_offset: number
+    readonly start_x_offset: number
+    readonly end_x_offset: number
     /* Methods of Pango-1.0.Pango.GlyphItem */
     apply_attrs(text: string, list: AttrList): GlyphItem[]
     copy(): GlyphItem | null
@@ -1486,14 +1480,14 @@ class GlyphItem {
 }
 class GlyphItemIter {
     /* Fields of Pango-1.0.Pango.GlyphItemIter */
-    glyph_item: GlyphItem
-    text: string
-    start_glyph: number
-    start_index: number
-    start_char: number
-    end_glyph: number
-    end_index: number
-    end_char: number
+    readonly glyph_item: GlyphItem
+    readonly text: string
+    readonly start_glyph: number
+    readonly start_index: number
+    readonly start_char: number
+    readonly end_glyph: number
+    readonly end_index: number
+    readonly end_char: number
     /* Methods of Pango-1.0.Pango.GlyphItemIter */
     copy(): GlyphItemIter | null
     free(): void
@@ -1505,9 +1499,9 @@ class GlyphItemIter {
 }
 class GlyphString {
     /* Fields of Pango-1.0.Pango.GlyphString */
-    num_glyphs: number
-    glyphs: GlyphInfo[]
-    log_clusters: number
+    readonly num_glyphs: number
+    readonly glyphs: GlyphInfo[]
+    readonly log_clusters: number
     /* Methods of Pango-1.0.Pango.GlyphString */
     copy(): GlyphString | null
     extents(font: Font): [ /* ink_rect */ Rectangle | null, /* logical_rect */ Rectangle | null ]
@@ -1527,16 +1521,16 @@ class GlyphString {
 }
 class GlyphVisAttr {
     /* Fields of Pango-1.0.Pango.GlyphVisAttr */
-    is_cluster_start: number
-    is_color: number
+    readonly is_cluster_start: number
+    readonly is_color: number
     static name: string
 }
 class Item {
     /* Fields of Pango-1.0.Pango.Item */
-    offset: number
-    length: number
-    num_chars: number
-    analysis: Analysis
+    readonly offset: number
+    readonly length: number
+    readonly num_chars: number
+    readonly analysis: Analysis
     /* Methods of Pango-1.0.Pango.Item */
     apply_attrs(iter: AttrIterator): void
     copy(): Item | null
@@ -1591,12 +1585,12 @@ class LayoutIter {
 }
 class LayoutLine {
     /* Fields of Pango-1.0.Pango.LayoutLine */
-    layout: Layout
-    start_index: number
-    length: number
-    runs: LayoutRun[]
-    is_paragraph_start: number
-    resolved_dir: number
+    readonly layout: Layout
+    readonly start_index: number
+    readonly length: number
+    readonly runs: LayoutRun[]
+    readonly is_paragraph_start: number
+    readonly resolved_dir: number
     /* Methods of Pango-1.0.Pango.LayoutLine */
     get_extents(): [ /* ink_rect */ Rectangle | null, /* logical_rect */ Rectangle | null ]
     get_height(): /* height */ number | null
@@ -1613,38 +1607,39 @@ class LayoutLine {
 }
 class LogAttr {
     /* Fields of Pango-1.0.Pango.LogAttr */
-    is_line_break: number
-    is_mandatory_break: number
-    is_char_break: number
-    is_white: number
-    is_cursor_position: number
-    is_word_start: number
-    is_word_end: number
-    is_sentence_boundary: number
-    is_sentence_start: number
-    is_sentence_end: number
-    backspace_deletes_character: number
-    is_expandable_space: number
-    is_word_boundary: number
-    break_inserts_hyphen: number
-    break_removes_preceding: number
-    reserved: number
+    readonly is_line_break: number
+    readonly is_mandatory_break: number
+    readonly is_char_break: number
+    readonly is_white: number
+    readonly is_cursor_position: number
+    readonly is_word_start: number
+    readonly is_word_end: number
+    readonly is_sentence_boundary: number
+    readonly is_sentence_start: number
+    readonly is_sentence_end: number
+    readonly backspace_deletes_character: number
+    readonly is_expandable_space: number
+    readonly is_word_boundary: number
+    readonly break_inserts_hyphen: number
+    readonly break_removes_preceding: number
+    readonly reserved: number
     static name: string
 }
 class Matrix {
     /* Fields of Pango-1.0.Pango.Matrix */
-    xx: number
-    xy: number
-    yx: number
-    yy: number
-    x0: number
-    y0: number
+    readonly xx: number
+    readonly xy: number
+    readonly yx: number
+    readonly yy: number
+    readonly x0: number
+    readonly y0: number
     /* Methods of Pango-1.0.Pango.Matrix */
     concat(new_matrix: Matrix): void
     copy(): Matrix | null
     free(): void
     get_font_scale_factor(): number
     get_font_scale_factors(): [ /* xscale */ number | null, /* yscale */ number | null ]
+    get_slant_ratio(): number
     rotate(degrees: number): void
     scale(scale_x: number, scale_y: number): void
     transform_distance(dx: number, dy: number): [ /* dx */ number, /* dy */ number ]
@@ -1656,25 +1651,25 @@ class Matrix {
 }
 class Rectangle {
     /* Fields of Pango-1.0.Pango.Rectangle */
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     static name: string
 }
 abstract class RendererClass {
     /* Fields of Pango-1.0.Pango.RendererClass */
-    draw_glyphs: (renderer: Renderer, font: Font, glyphs: GlyphString, x: number, y: number) => void
-    draw_rectangle: (renderer: Renderer, part: RenderPart, x: number, y: number, width: number, height: number) => void
-    draw_error_underline: (renderer: Renderer, x: number, y: number, width: number, height: number) => void
-    draw_shape: (renderer: Renderer, attr: AttrShape, x: number, y: number) => void
-    draw_trapezoid: (renderer: Renderer, part: RenderPart, y1_: number, x11: number, x21: number, y2: number, x12: number, x22: number) => void
-    draw_glyph: (renderer: Renderer, font: Font, glyph: Glyph, x: number, y: number) => void
-    part_changed: (renderer: Renderer, part: RenderPart) => void
-    begin: (renderer: Renderer) => void
-    end: (renderer: Renderer) => void
-    prepare_run: (renderer: Renderer, run: LayoutRun) => void
-    draw_glyph_item: (renderer: Renderer, text: string | null, glyph_item: GlyphItem, x: number, y: number) => void
+    readonly draw_glyphs: (renderer: Renderer, font: Font, glyphs: GlyphString, x: number, y: number) => void
+    readonly draw_rectangle: (renderer: Renderer, part: RenderPart, x: number, y: number, width: number, height: number) => void
+    readonly draw_error_underline: (renderer: Renderer, x: number, y: number, width: number, height: number) => void
+    readonly draw_shape: (renderer: Renderer, attr: AttrShape, x: number, y: number) => void
+    readonly draw_trapezoid: (renderer: Renderer, part: RenderPart, y1_: number, x11: number, x21: number, y2: number, x12: number, x22: number) => void
+    readonly draw_glyph: (renderer: Renderer, font: Font, glyph: Glyph, x: number, y: number) => void
+    readonly part_changed: (renderer: Renderer, part: RenderPart) => void
+    readonly begin: (renderer: Renderer) => void
+    readonly end: (renderer: Renderer) => void
+    readonly prepare_run: (renderer: Renderer, run: LayoutRun) => void
+    readonly draw_glyph_item: (renderer: Renderer, text: string | null, glyph_item: GlyphItem, x: number, y: number) => void
     static name: string
 }
 class RendererPrivate {
@@ -1713,8 +1708,8 @@ class TabArray {
     static new(initial_size: number, positions_in_pixels: boolean): TabArray
     static from_string(text: string): TabArray | null
 }
-type Glyph = number
-type GlyphUnit = number
-type LayoutRun = GlyphItem
+    type Glyph = number
+    type GlyphUnit = number
+    type LayoutRun = GlyphItem
 }
 export default Pango;

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Nautilus-3.0
  */
@@ -27,12 +33,12 @@ function file_info_create(location: Gio.File): FileInfo
 function file_info_create_for_uri(uri: string): FileInfo
 function file_info_list_copy(files: FileInfo[]): FileInfo[]
 function file_info_list_free(files: FileInfo[]): void
-function file_info_lookup(location: Gio.File): FileInfo
-function file_info_lookup_for_uri(uri: string): FileInfo
+function file_info_lookup(location: Gio.File): FileInfo | null
+function file_info_lookup_for_uri(uri: string): FileInfo | null
 function info_provider_update_complete_invoke(update_complete: Function, provider: InfoProvider, handle: OperationHandle, result: OperationResult): void
 class ColumnProvider {
     /* Methods of Nautilus-3.0.Nautilus.ColumnProvider */
-    get_columns(): Column[]
+    get_columns(): Column[] | null
     static name: string
 }
 class FileInfo {
@@ -82,8 +88,8 @@ class FileInfo {
     static create_for_uri(uri: string): FileInfo
     static list_copy(files: FileInfo[]): FileInfo[]
     static list_free(files: FileInfo[]): void
-    static lookup(location: Gio.File): FileInfo
-    static lookup_for_uri(uri: string): FileInfo
+    static lookup(location: Gio.File): FileInfo | null
+    static lookup_for_uri(uri: string): FileInfo | null
 }
 class InfoProvider {
     /* Methods of Nautilus-3.0.Nautilus.InfoProvider */
@@ -95,7 +101,7 @@ class InfoProvider {
 }
 class LocationWidgetProvider {
     /* Methods of Nautilus-3.0.Nautilus.LocationWidgetProvider */
-    get_widget(uri: string, window: Gtk.Widget): Gtk.Widget
+    get_widget(uri: string, window: Gtk.Widget): Gtk.Widget | null
     static name: string
 }
 class MenuProvider {
@@ -111,10 +117,11 @@ class MenuProvider {
 }
 class PropertyPageProvider {
     /* Methods of Nautilus-3.0.Nautilus.PropertyPageProvider */
-    get_pages(files: FileInfo[]): PropertyPage[]
+    get_pages(files: FileInfo[]): PropertyPage[] | null
     static name: string
 }
-export interface Column_ConstructProps extends GObject.Object_ConstructProps {
+interface Column_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Nautilus-3.0.Nautilus.Column */
     attribute?: string
     default_sort_order?: Gtk.SortType
     description?: string
@@ -131,7 +138,7 @@ class Column {
     label: string
     xalign: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -189,14 +196,14 @@ class Column {
     static new(name: string, attribute: string, label: string, description: string): Column
     static $gtype: GObject.Type
 }
-export interface Menu_ConstructProps extends GObject.Object_ConstructProps {
+interface Menu_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Menu {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Nautilus-3.0.Nautilus.Menu */
     append_item(item: MenuItem): void
-    get_items(): MenuItem[]
+    get_items(): MenuItem[] | null
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -242,7 +249,8 @@ class Menu {
     static new(): Menu
     static $gtype: GObject.Type
 }
-export interface MenuItem_ConstructProps extends GObject.Object_ConstructProps {
+interface MenuItem_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Nautilus-3.0.Nautilus.MenuItem */
     icon?: string
     label?: string
     menu?: Menu
@@ -259,10 +267,8 @@ class MenuItem {
     priority: boolean
     sensitive: boolean
     tip: string
-    /* Fields of Nautilus-3.0.Nautilus.MenuItem */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Nautilus-3.0.Nautilus.MenuItem */
     activate(): void
     set_submenu(menu: Menu): void
@@ -326,11 +332,12 @@ class MenuItem {
     constructor (config?: MenuItem_ConstructProps)
     _init (config?: MenuItem_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(name: string, label: string, tip: string, icon: string): MenuItem
+    static new(name: string, label: string, tip?: string | null, icon?: string | null): MenuItem
     static list_free(item_list: MenuItem[]): void
     static $gtype: GObject.Type
 }
-export interface PropertyPage_ConstructProps extends GObject.Object_ConstructProps {
+interface PropertyPage_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Nautilus-3.0.Nautilus.PropertyPage */
     label?: Gtk.Widget
     name?: string
     page?: Gtk.Widget
@@ -340,7 +347,7 @@ class PropertyPage {
     label: Gtk.Widget
     page: Gtk.Widget
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -392,12 +399,12 @@ class PropertyPage {
 }
 abstract class ColumnClass {
     /* Fields of Nautilus-3.0.Nautilus.ColumnClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ColumnProviderInterface {
     /* Fields of Nautilus-3.0.Nautilus.ColumnProviderInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 class File {
@@ -405,54 +412,54 @@ class File {
 }
 abstract class FileInfoInterface {
     /* Fields of Nautilus-3.0.Nautilus.FileInfoInterface */
-    g_iface: GObject.TypeInterface
-    is_gone: (file_info: FileInfo) => boolean
-    get_name: (file_info: FileInfo) => string
-    get_uri: (file_info: FileInfo) => string
-    get_parent_uri: (file_info: FileInfo) => string
-    get_uri_scheme: (file_info: FileInfo) => string
-    get_mime_type: (file_info: FileInfo) => string
-    is_mime_type: (file_info: FileInfo, mime_type: string) => boolean
-    is_directory: (file_info: FileInfo) => boolean
-    add_emblem: (file_info: FileInfo, emblem_name: string) => void
-    get_string_attribute: (file_info: FileInfo, attribute_name: string) => string
-    add_string_attribute: (file_info: FileInfo, attribute_name: string, value: string) => void
-    invalidate_extension_info: (file_info: FileInfo) => void
-    get_activation_uri: (file_info: FileInfo) => string
-    get_file_type: (file_info: FileInfo) => Gio.FileType
-    get_location: (file_info: FileInfo) => Gio.File
-    get_parent_location: (file_info: FileInfo) => Gio.File | null
-    get_parent_info: (file_info: FileInfo) => FileInfo | null
-    get_mount: (file_info: FileInfo) => Gio.Mount | null
-    can_write: (file_info: FileInfo) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly is_gone: (file_info: FileInfo) => boolean
+    readonly get_name: (file_info: FileInfo) => string
+    readonly get_uri: (file_info: FileInfo) => string
+    readonly get_parent_uri: (file_info: FileInfo) => string
+    readonly get_uri_scheme: (file_info: FileInfo) => string
+    readonly get_mime_type: (file_info: FileInfo) => string
+    readonly is_mime_type: (file_info: FileInfo, mime_type: string) => boolean
+    readonly is_directory: (file_info: FileInfo) => boolean
+    readonly add_emblem: (file_info: FileInfo, emblem_name: string) => void
+    readonly get_string_attribute: (file_info: FileInfo, attribute_name: string) => string
+    readonly add_string_attribute: (file_info: FileInfo, attribute_name: string, value: string) => void
+    readonly invalidate_extension_info: (file_info: FileInfo) => void
+    readonly get_activation_uri: (file_info: FileInfo) => string
+    readonly get_file_type: (file_info: FileInfo) => Gio.FileType
+    readonly get_location: (file_info: FileInfo) => Gio.File
+    readonly get_parent_location: (file_info: FileInfo) => Gio.File | null
+    readonly get_parent_info: (file_info: FileInfo) => FileInfo | null
+    readonly get_mount: (file_info: FileInfo) => Gio.Mount | null
+    readonly can_write: (file_info: FileInfo) => boolean
     static name: string
 }
 class InfoProviderInterface {
     /* Fields of Nautilus-3.0.Nautilus.InfoProviderInterface */
-    g_iface: GObject.TypeInterface
-    update_file_info: (provider: InfoProvider, file: FileInfo, update_complete: Function, handle: OperationHandle) => OperationResult
-    cancel_update: (provider: InfoProvider, handle: OperationHandle) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly update_file_info: (provider: InfoProvider, file: FileInfo, update_complete: Function, handle: OperationHandle) => OperationResult
+    readonly cancel_update: (provider: InfoProvider, handle: OperationHandle) => void
     static name: string
 }
 class LocationWidgetProviderInterface {
     /* Fields of Nautilus-3.0.Nautilus.LocationWidgetProviderInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class MenuClass {
     /* Fields of Nautilus-3.0.Nautilus.MenuClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MenuItemClass {
     /* Fields of Nautilus-3.0.Nautilus.MenuItemClass */
-    parent: GObject.ObjectClass
-    activate: (item: MenuItem) => void
+    readonly parent: GObject.ObjectClass
+    readonly activate: (item: MenuItem) => void
     static name: string
 }
 class MenuProviderInterface {
     /* Fields of Nautilus-3.0.Nautilus.MenuProviderInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 class OperationHandle {
@@ -460,18 +467,13 @@ class OperationHandle {
 }
 abstract class PropertyPageClass {
     /* Fields of Nautilus-3.0.Nautilus.PropertyPageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PropertyPageProviderInterface {
     /* Fields of Nautilus-3.0.Nautilus.PropertyPageProviderInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
-type ColumnProviderIface = ColumnProviderInterface
-type InfoProviderIface = InfoProviderInterface
-type LocationWidgetProviderIface = LocationWidgetProviderInterface
-type MenuProviderIface = MenuProviderInterface
-type PropertyPageProviderIface = PropertyPageProviderInterface
 }
 export default Nautilus;

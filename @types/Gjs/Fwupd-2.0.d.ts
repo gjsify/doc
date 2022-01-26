@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Fwupd-2.0
  */
@@ -163,156 +169,156 @@ enum TrustFlags {
     PAYLOAD,
     METADATA,
 }
-export const DBUS_INTERFACE: string
-export const DBUS_PATH: string
-export const DBUS_SERVICE: string
-export const DEVICE_FLAG_ADD_COUNTERPART_GUIDS: number
-export const DEVICE_FLAG_ANOTHER_WRITE_REQUIRED: number
-export const DEVICE_FLAG_BACKUP_BEFORE_INSTALL: number
-export const DEVICE_FLAG_CAN_VERIFY: number
-export const DEVICE_FLAG_CAN_VERIFY_IMAGE: number
-export const DEVICE_FLAG_DUAL_IMAGE: number
-export const DEVICE_FLAG_ENSURE_SEMVER: number
-export const DEVICE_FLAG_HAS_MULTIPLE_BRANCHES: number
-export const DEVICE_FLAG_HISTORICAL: number
-export const DEVICE_FLAG_IGNORE_VALIDATION: number
-export const DEVICE_FLAG_INSTALL_ALL_RELEASES: number
-export const DEVICE_FLAG_INSTALL_PARENT_FIRST: number
-export const DEVICE_FLAG_INTERNAL: number
-export const DEVICE_FLAG_IS_BOOTLOADER: number
-export const DEVICE_FLAG_LOCKED: number
-export const DEVICE_FLAG_MD_SET_ICON: number
-export const DEVICE_FLAG_MD_SET_NAME: number
-export const DEVICE_FLAG_MD_SET_NAME_CATEGORY: number
-export const DEVICE_FLAG_MD_SET_VERFMT: number
-export const DEVICE_FLAG_NEEDS_ACTIVATION: number
-export const DEVICE_FLAG_NEEDS_BOOTLOADER: number
-export const DEVICE_FLAG_NEEDS_REBOOT: number
-export const DEVICE_FLAG_NEEDS_SHUTDOWN: number
-export const DEVICE_FLAG_NONE: number
-export const DEVICE_FLAG_NOTIFIED: number
-export const DEVICE_FLAG_NO_AUTO_INSTANCE_IDS: number
-export const DEVICE_FLAG_NO_GUID_MATCHING: number
-export const DEVICE_FLAG_ONLY_OFFLINE: number
-export const DEVICE_FLAG_ONLY_SUPPORTED: number
-export const DEVICE_FLAG_REGISTERED: number
-export const DEVICE_FLAG_REPORTED: number
-export const DEVICE_FLAG_REQUIRE_AC: number
-export const DEVICE_FLAG_SELF_RECOVERY: number
-export const DEVICE_FLAG_SKIPS_RESTART: number
-export const DEVICE_FLAG_SUPPORTED: number
-export const DEVICE_FLAG_TRUSTED: number
-export const DEVICE_FLAG_UPDATABLE: number
-export const DEVICE_FLAG_UPDATABLE_HIDDEN: number
-export const DEVICE_FLAG_USABLE_DURING_UPDATE: number
-export const DEVICE_FLAG_USE_RUNTIME_VERSION: number
-export const DEVICE_FLAG_VERSION_CHECK_REQUIRED: number
-export const DEVICE_FLAG_WAIT_FOR_REPLUG: number
-export const DEVICE_FLAG_WILL_DISAPPEAR: number
-export const DEVICE_ID_ANY: string
-export const PLUGIN_FLAG_CAPSULES_UNSUPPORTED: number
-export const PLUGIN_FLAG_CLEAR_UPDATABLE: number
-export const PLUGIN_FLAG_DISABLED: number
-export const PLUGIN_FLAG_EFIVAR_NOT_MOUNTED: number
-export const PLUGIN_FLAG_ESP_NOT_FOUND: number
-export const PLUGIN_FLAG_FAILED_OPEN: number
-export const PLUGIN_FLAG_LEGACY_BIOS: number
-export const PLUGIN_FLAG_NONE: number
-export const PLUGIN_FLAG_NO_HARDWARE: number
-export const PLUGIN_FLAG_UNLOCK_REQUIRED: number
-export const PLUGIN_FLAG_USER_WARNING: number
-export const RELEASE_FLAG_BLOCKED_APPROVAL: number
-export const RELEASE_FLAG_BLOCKED_VERSION: number
-export const RELEASE_FLAG_IS_ALTERNATE_BRANCH: number
-export const RELEASE_FLAG_IS_DOWNGRADE: number
-export const RELEASE_FLAG_IS_UPGRADE: number
-export const RELEASE_FLAG_NONE: number
-export const RELEASE_FLAG_TRUSTED_METADATA: number
-export const RELEASE_FLAG_TRUSTED_PAYLOAD: number
-export const RESULT_KEY_APPSTREAM_ID: string
-export const RESULT_KEY_BRANCH: string
-export const RESULT_KEY_CATEGORIES: string
-export const RESULT_KEY_CHECKSUM: string
-export const RESULT_KEY_CREATED: string
-export const RESULT_KEY_DESCRIPTION: string
-export const RESULT_KEY_DETACH_CAPTION: string
-export const RESULT_KEY_DETACH_IMAGE: string
-export const RESULT_KEY_DETAILS_URL: string
-export const RESULT_KEY_DEVICE_ID: string
-export const RESULT_KEY_FILENAME: string
-export const RESULT_KEY_FLAGS: string
-export const RESULT_KEY_FLASHES_LEFT: string
-export const RESULT_KEY_GUID: string
-export const RESULT_KEY_HOMEPAGE: string
-export const RESULT_KEY_HSI_LEVEL: string
-export const RESULT_KEY_HSI_RESULT: string
-export const RESULT_KEY_ICON: string
-export const RESULT_KEY_INSTALL_DURATION: string
-export const RESULT_KEY_INSTANCE_IDS: string
-export const RESULT_KEY_ISSUES: string
-export const RESULT_KEY_LICENSE: string
-export const RESULT_KEY_LOCATIONS: string
-export const RESULT_KEY_METADATA: string
-export const RESULT_KEY_MODIFIED: string
-export const RESULT_KEY_NAME: string
-export const RESULT_KEY_NAME_VARIANT_SUFFIX: string
-export const RESULT_KEY_PARENT_DEVICE_ID: string
-export const RESULT_KEY_PLUGIN: string
-export const RESULT_KEY_PROTOCOL: string
-export const RESULT_KEY_RELEASE: string
-export const RESULT_KEY_REMOTE_ID: string
-export const RESULT_KEY_SERIAL: string
-export const RESULT_KEY_SIZE: string
-export const RESULT_KEY_SOURCE_URL: string
-export const RESULT_KEY_STATUS: string
-export const RESULT_KEY_SUMMARY: string
-export const RESULT_KEY_TRUST_FLAGS: string
-export const RESULT_KEY_UPDATE_ERROR: string
-export const RESULT_KEY_UPDATE_IMAGE: string
-export const RESULT_KEY_UPDATE_MESSAGE: string
-export const RESULT_KEY_UPDATE_STATE: string
-export const RESULT_KEY_URGENCY: string
-export const RESULT_KEY_URI: string
-export const RESULT_KEY_VENDOR: string
-export const RESULT_KEY_VENDOR_ID: string
-export const RESULT_KEY_VERSION: string
-export const RESULT_KEY_VERSION_BOOTLOADER: string
-export const RESULT_KEY_VERSION_BOOTLOADER_RAW: string
-export const RESULT_KEY_VERSION_FORMAT: string
-export const RESULT_KEY_VERSION_LOWEST: string
-export const RESULT_KEY_VERSION_LOWEST_RAW: string
-export const RESULT_KEY_VERSION_RAW: string
-export const SECURITY_ATTR_ID_ACPI_DMAR: string
-export const SECURITY_ATTR_ID_ENCRYPTED_RAM: string
-export const SECURITY_ATTR_ID_FWUPD_ATTESTATION: string
-export const SECURITY_ATTR_ID_FWUPD_PLUGINS: string
-export const SECURITY_ATTR_ID_FWUPD_UPDATES: string
-export const SECURITY_ATTR_ID_INTEL_BOOTGUARD_ACM: string
-export const SECURITY_ATTR_ID_INTEL_BOOTGUARD_ENABLED: string
-export const SECURITY_ATTR_ID_INTEL_BOOTGUARD_OTP: string
-export const SECURITY_ATTR_ID_INTEL_BOOTGUARD_POLICY: string
-export const SECURITY_ATTR_ID_INTEL_BOOTGUARD_VERIFIED: string
-export const SECURITY_ATTR_ID_INTEL_CET_ACTIVE: string
-export const SECURITY_ATTR_ID_INTEL_CET_ENABLED: string
-export const SECURITY_ATTR_ID_INTEL_DCI_ENABLED: string
-export const SECURITY_ATTR_ID_INTEL_DCI_LOCKED: string
-export const SECURITY_ATTR_ID_INTEL_SMAP: string
-export const SECURITY_ATTR_ID_IOMMU: string
-export const SECURITY_ATTR_ID_KERNEL_LOCKDOWN: string
-export const SECURITY_ATTR_ID_KERNEL_SWAP: string
-export const SECURITY_ATTR_ID_KERNEL_TAINTED: string
-export const SECURITY_ATTR_ID_MEI_MANUFACTURING_MODE: string
-export const SECURITY_ATTR_ID_MEI_OVERRIDE_STRAP: string
-export const SECURITY_ATTR_ID_MEI_VERSION: string
-export const SECURITY_ATTR_ID_SPI_BIOSWE: string
-export const SECURITY_ATTR_ID_SPI_BLE: string
-export const SECURITY_ATTR_ID_SPI_SMM_BWP: string
-export const SECURITY_ATTR_ID_SUSPEND_TO_IDLE: string
-export const SECURITY_ATTR_ID_SUSPEND_TO_RAM: string
-export const SECURITY_ATTR_ID_TPM_RECONSTRUCTION_PCR0: string
-export const SECURITY_ATTR_ID_TPM_VERSION_20: string
-export const SECURITY_ATTR_ID_UEFI_PK: string
-export const SECURITY_ATTR_ID_UEFI_SECUREBOOT: string
+const DBUS_INTERFACE: string
+const DBUS_PATH: string
+const DBUS_SERVICE: string
+const DEVICE_FLAG_ADD_COUNTERPART_GUIDS: number
+const DEVICE_FLAG_ANOTHER_WRITE_REQUIRED: number
+const DEVICE_FLAG_BACKUP_BEFORE_INSTALL: number
+const DEVICE_FLAG_CAN_VERIFY: number
+const DEVICE_FLAG_CAN_VERIFY_IMAGE: number
+const DEVICE_FLAG_DUAL_IMAGE: number
+const DEVICE_FLAG_ENSURE_SEMVER: number
+const DEVICE_FLAG_HAS_MULTIPLE_BRANCHES: number
+const DEVICE_FLAG_HISTORICAL: number
+const DEVICE_FLAG_IGNORE_VALIDATION: number
+const DEVICE_FLAG_INSTALL_ALL_RELEASES: number
+const DEVICE_FLAG_INSTALL_PARENT_FIRST: number
+const DEVICE_FLAG_INTERNAL: number
+const DEVICE_FLAG_IS_BOOTLOADER: number
+const DEVICE_FLAG_LOCKED: number
+const DEVICE_FLAG_MD_SET_ICON: number
+const DEVICE_FLAG_MD_SET_NAME: number
+const DEVICE_FLAG_MD_SET_NAME_CATEGORY: number
+const DEVICE_FLAG_MD_SET_VERFMT: number
+const DEVICE_FLAG_NEEDS_ACTIVATION: number
+const DEVICE_FLAG_NEEDS_BOOTLOADER: number
+const DEVICE_FLAG_NEEDS_REBOOT: number
+const DEVICE_FLAG_NEEDS_SHUTDOWN: number
+const DEVICE_FLAG_NONE: number
+const DEVICE_FLAG_NOTIFIED: number
+const DEVICE_FLAG_NO_AUTO_INSTANCE_IDS: number
+const DEVICE_FLAG_NO_GUID_MATCHING: number
+const DEVICE_FLAG_ONLY_OFFLINE: number
+const DEVICE_FLAG_ONLY_SUPPORTED: number
+const DEVICE_FLAG_REGISTERED: number
+const DEVICE_FLAG_REPORTED: number
+const DEVICE_FLAG_REQUIRE_AC: number
+const DEVICE_FLAG_SELF_RECOVERY: number
+const DEVICE_FLAG_SKIPS_RESTART: number
+const DEVICE_FLAG_SUPPORTED: number
+const DEVICE_FLAG_TRUSTED: number
+const DEVICE_FLAG_UPDATABLE: number
+const DEVICE_FLAG_UPDATABLE_HIDDEN: number
+const DEVICE_FLAG_USABLE_DURING_UPDATE: number
+const DEVICE_FLAG_USE_RUNTIME_VERSION: number
+const DEVICE_FLAG_VERSION_CHECK_REQUIRED: number
+const DEVICE_FLAG_WAIT_FOR_REPLUG: number
+const DEVICE_FLAG_WILL_DISAPPEAR: number
+const DEVICE_ID_ANY: string
+const PLUGIN_FLAG_CAPSULES_UNSUPPORTED: number
+const PLUGIN_FLAG_CLEAR_UPDATABLE: number
+const PLUGIN_FLAG_DISABLED: number
+const PLUGIN_FLAG_EFIVAR_NOT_MOUNTED: number
+const PLUGIN_FLAG_ESP_NOT_FOUND: number
+const PLUGIN_FLAG_FAILED_OPEN: number
+const PLUGIN_FLAG_LEGACY_BIOS: number
+const PLUGIN_FLAG_NONE: number
+const PLUGIN_FLAG_NO_HARDWARE: number
+const PLUGIN_FLAG_UNLOCK_REQUIRED: number
+const PLUGIN_FLAG_USER_WARNING: number
+const RELEASE_FLAG_BLOCKED_APPROVAL: number
+const RELEASE_FLAG_BLOCKED_VERSION: number
+const RELEASE_FLAG_IS_ALTERNATE_BRANCH: number
+const RELEASE_FLAG_IS_DOWNGRADE: number
+const RELEASE_FLAG_IS_UPGRADE: number
+const RELEASE_FLAG_NONE: number
+const RELEASE_FLAG_TRUSTED_METADATA: number
+const RELEASE_FLAG_TRUSTED_PAYLOAD: number
+const RESULT_KEY_APPSTREAM_ID: string
+const RESULT_KEY_BRANCH: string
+const RESULT_KEY_CATEGORIES: string
+const RESULT_KEY_CHECKSUM: string
+const RESULT_KEY_CREATED: string
+const RESULT_KEY_DESCRIPTION: string
+const RESULT_KEY_DETACH_CAPTION: string
+const RESULT_KEY_DETACH_IMAGE: string
+const RESULT_KEY_DETAILS_URL: string
+const RESULT_KEY_DEVICE_ID: string
+const RESULT_KEY_FILENAME: string
+const RESULT_KEY_FLAGS: string
+const RESULT_KEY_FLASHES_LEFT: string
+const RESULT_KEY_GUID: string
+const RESULT_KEY_HOMEPAGE: string
+const RESULT_KEY_HSI_LEVEL: string
+const RESULT_KEY_HSI_RESULT: string
+const RESULT_KEY_ICON: string
+const RESULT_KEY_INSTALL_DURATION: string
+const RESULT_KEY_INSTANCE_IDS: string
+const RESULT_KEY_ISSUES: string
+const RESULT_KEY_LICENSE: string
+const RESULT_KEY_LOCATIONS: string
+const RESULT_KEY_METADATA: string
+const RESULT_KEY_MODIFIED: string
+const RESULT_KEY_NAME: string
+const RESULT_KEY_NAME_VARIANT_SUFFIX: string
+const RESULT_KEY_PARENT_DEVICE_ID: string
+const RESULT_KEY_PLUGIN: string
+const RESULT_KEY_PROTOCOL: string
+const RESULT_KEY_RELEASE: string
+const RESULT_KEY_REMOTE_ID: string
+const RESULT_KEY_SERIAL: string
+const RESULT_KEY_SIZE: string
+const RESULT_KEY_SOURCE_URL: string
+const RESULT_KEY_STATUS: string
+const RESULT_KEY_SUMMARY: string
+const RESULT_KEY_TRUST_FLAGS: string
+const RESULT_KEY_UPDATE_ERROR: string
+const RESULT_KEY_UPDATE_IMAGE: string
+const RESULT_KEY_UPDATE_MESSAGE: string
+const RESULT_KEY_UPDATE_STATE: string
+const RESULT_KEY_URGENCY: string
+const RESULT_KEY_URI: string
+const RESULT_KEY_VENDOR: string
+const RESULT_KEY_VENDOR_ID: string
+const RESULT_KEY_VERSION: string
+const RESULT_KEY_VERSION_BOOTLOADER: string
+const RESULT_KEY_VERSION_BOOTLOADER_RAW: string
+const RESULT_KEY_VERSION_FORMAT: string
+const RESULT_KEY_VERSION_LOWEST: string
+const RESULT_KEY_VERSION_LOWEST_RAW: string
+const RESULT_KEY_VERSION_RAW: string
+const SECURITY_ATTR_ID_ACPI_DMAR: string
+const SECURITY_ATTR_ID_ENCRYPTED_RAM: string
+const SECURITY_ATTR_ID_FWUPD_ATTESTATION: string
+const SECURITY_ATTR_ID_FWUPD_PLUGINS: string
+const SECURITY_ATTR_ID_FWUPD_UPDATES: string
+const SECURITY_ATTR_ID_INTEL_BOOTGUARD_ACM: string
+const SECURITY_ATTR_ID_INTEL_BOOTGUARD_ENABLED: string
+const SECURITY_ATTR_ID_INTEL_BOOTGUARD_OTP: string
+const SECURITY_ATTR_ID_INTEL_BOOTGUARD_POLICY: string
+const SECURITY_ATTR_ID_INTEL_BOOTGUARD_VERIFIED: string
+const SECURITY_ATTR_ID_INTEL_CET_ACTIVE: string
+const SECURITY_ATTR_ID_INTEL_CET_ENABLED: string
+const SECURITY_ATTR_ID_INTEL_DCI_ENABLED: string
+const SECURITY_ATTR_ID_INTEL_DCI_LOCKED: string
+const SECURITY_ATTR_ID_INTEL_SMAP: string
+const SECURITY_ATTR_ID_IOMMU: string
+const SECURITY_ATTR_ID_KERNEL_LOCKDOWN: string
+const SECURITY_ATTR_ID_KERNEL_SWAP: string
+const SECURITY_ATTR_ID_KERNEL_TAINTED: string
+const SECURITY_ATTR_ID_MEI_MANUFACTURING_MODE: string
+const SECURITY_ATTR_ID_MEI_OVERRIDE_STRAP: string
+const SECURITY_ATTR_ID_MEI_VERSION: string
+const SECURITY_ATTR_ID_SPI_BIOSWE: string
+const SECURITY_ATTR_ID_SPI_BLE: string
+const SECURITY_ATTR_ID_SPI_SMM_BWP: string
+const SECURITY_ATTR_ID_SUSPEND_TO_IDLE: string
+const SECURITY_ATTR_ID_SUSPEND_TO_RAM: string
+const SECURITY_ATTR_ID_TPM_RECONSTRUCTION_PCR0: string
+const SECURITY_ATTR_ID_TPM_VERSION_20: string
+const SECURITY_ATTR_ID_UEFI_PK: string
+const SECURITY_ATTR_ID_UEFI_SECUREBOOT: string
 function build_history_report_json(devices: Device[]): string
 function build_machine_id(salt: string): string
 function build_user_agent(package_name: string, package_version: string): string
@@ -341,7 +347,8 @@ function update_state_from_string(update_state: string): UpdateState
 function update_state_to_string(update_state: UpdateState): string
 function version_format_from_string(str: string): VersionFormat
 function version_format_to_string(kind: VersionFormat): string
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Fwupd-2.0.Fwupd.Client */
     percentage?: number
     status?: number
 }
@@ -356,10 +363,8 @@ class Client {
     readonly soup_session: GObject.Object
     status: number
     readonly tainted: boolean
-    /* Fields of Fwupd-2.0.Fwupd.Client */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Fwupd-2.0.Fwupd.Client */
     activate(cancellable: Gio.Cancellable | null, device_id: string): boolean
     activate_async(device_id: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -573,7 +578,8 @@ class Client {
     static new(): Client
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends GObject.Object_ConstructProps {
+interface Device_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Fwupd-2.0.Fwupd.Device */
     flags?: number
     parent?: Device
     protocol?: string
@@ -589,10 +595,8 @@ class Device {
     status: number
     update_state: number
     version_format: number
-    /* Fields of Fwupd-2.0.Fwupd.Device */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Fwupd-2.0.Fwupd.Device */
     add_checksum(checksum: string): void
     add_child(child: Device): void
@@ -742,7 +746,8 @@ class Device {
     static id_is_valid(device_id: string): boolean
     static $gtype: GObject.Type
 }
-export interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
+interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Fwupd-2.0.Fwupd.Plugin */
     flags?: number
     name?: string
 }
@@ -750,10 +755,8 @@ class Plugin {
     /* Properties of Fwupd-2.0.Fwupd.Plugin */
     flags: number
     name: string
-    /* Fields of Fwupd-2.0.Fwupd.Plugin */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Fwupd-2.0.Fwupd.Plugin */
     add_flag(flag: PluginFlags): void
     get_flags(): number
@@ -817,13 +820,11 @@ class Plugin {
     static from_variant(value: GLib.Variant): Plugin
     static $gtype: GObject.Type
 }
-export interface Release_ConstructProps extends GObject.Object_ConstructProps {
+interface Release_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Release {
-    /* Fields of Fwupd-2.0.Fwupd.Release */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Fwupd-2.0.Fwupd.Release */
     add_category(category: string): void
     add_checksum(checksum: string): void
@@ -947,7 +948,8 @@ class Release {
     static urgency_to_string(release_urgency: ReleaseUrgency): string
     static $gtype: GObject.Type
 }
-export interface Remote_ConstructProps extends GObject.Object_ConstructProps {
+interface Remote_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Fwupd-2.0.Fwupd.Remote */
     approval_required?: boolean
     automatic_reports?: boolean
     automatic_security_reports?: boolean
@@ -961,10 +963,8 @@ class Remote {
     automatic_security_reports: boolean
     enabled: boolean
     id: string
-    /* Fields of Fwupd-2.0.Fwupd.Remote */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Fwupd-2.0.Fwupd.Remote */
     build_firmware_uri(url: string): string
     get_age(): number
@@ -1060,13 +1060,11 @@ class Remote {
     static kind_to_string(kind: RemoteKind): string
     static $gtype: GObject.Type
 }
-export interface SecurityAttr_ConstructProps extends GObject.Object_ConstructProps {
+interface SecurityAttr_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SecurityAttr {
-    /* Fields of Fwupd-2.0.Fwupd.SecurityAttr */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Fwupd-2.0.Fwupd.SecurityAttr */
     add_flag(flag: SecurityAttrFlags): void
     add_metadata(key: string, value?: string | null): void
@@ -1143,41 +1141,41 @@ class SecurityAttr {
 }
 abstract class ClientClass {
     /* Fields of Fwupd-2.0.Fwupd.ClientClass */
-    parent_class: GObject.ObjectClass
-    changed: (client: Client) => void
-    status_changed: (client: Client, status: Status) => void
-    device_added: (client: Client, result: Device) => void
-    device_removed: (client: Client, result: Device) => void
-    device_changed: (client: Client, result: Device) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (client: Client) => void
+    readonly status_changed: (client: Client, status: Status) => void
+    readonly device_added: (client: Client, result: Device) => void
+    readonly device_removed: (client: Client, result: Device) => void
+    readonly device_changed: (client: Client, result: Device) => void
     static name: string
 }
 abstract class DeviceClass {
     /* Fields of Fwupd-2.0.Fwupd.DeviceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PluginClass {
     /* Fields of Fwupd-2.0.Fwupd.PluginClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ReleaseClass {
     /* Fields of Fwupd-2.0.Fwupd.ReleaseClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RemoteClass {
     /* Fields of Fwupd-2.0.Fwupd.RemoteClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SecurityAttrClass {
     /* Fields of Fwupd-2.0.Fwupd.SecurityAttrClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
-type DeviceFlags = number
-type PluginFlags = number
-type ReleaseFlags = number
+    type DeviceFlags = number
+    type PluginFlags = number
+    type ReleaseFlags = number
 }
 export default Fwupd;

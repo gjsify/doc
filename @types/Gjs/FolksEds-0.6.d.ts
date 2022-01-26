@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * FolksEds-0.6
  */
@@ -19,7 +25,8 @@ import type Folks from './Folks-0.6';
 
 export namespace FolksEds {
 
-export interface PersonaStore_ConstructProps extends Folks.PersonaStore_ConstructProps {
+interface PersonaStore_ConstructProps extends Folks.PersonaStore_ConstructProps {
+    /* Constructor properties of FolksEds-0.6.FolksEds.PersonaStore */
     source?: EDataServer.Source
 }
 class PersonaStore {
@@ -38,7 +45,7 @@ class PersonaStore {
     is_primary_store: boolean
     is_user_set_default: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksEds-0.6.FolksEds.PersonaStore */
     get_source(): EDataServer.Source
     /* Methods of Folks-0.6.Folks.PersonaStore */
@@ -169,30 +176,48 @@ class PersonaStore {
     static remove_address_book_finish(_res_: Gio.AsyncResult): void
     static $gtype: GObject.Type
 }
-export interface Persona_ConstructProps extends Folks.Persona_ConstructProps {
+interface Persona_ConstructProps extends Folks.Persona_ConstructProps {
+    /* Constructor properties of FolksEds-0.6.FolksEds.Persona */
     contact?: EBookContacts.Contact
     contact_id?: string
     system_groups?: Gee.Set
     in_google_personal_group?: boolean
+    /* Constructor properties of Folks-0.6.Folks.AntiLinkable */
     anti_links?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.AvatarDetails */
     avatar?: Gio.LoadableIcon
+    /* Constructor properties of Folks-0.6.Folks.BirthdayDetails */
     birthday?: GLib.DateTime
     calendar_event_id?: string
+    /* Constructor properties of Folks-0.6.Folks.EmailDetails */
     email_addresses?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.FavouriteDetails */
     is_favourite?: boolean
+    /* Constructor properties of Folks-0.6.Folks.GenderDetails */
     gender?: Folks.Gender
+    /* Constructor properties of Folks-0.6.Folks.GroupDetails */
     groups?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.ImDetails */
     im_addresses?: Gee.MultiMap
+    /* Constructor properties of Folks-0.6.Folks.LocalIdDetails */
     local_ids?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.LocationDetails */
     location?: Folks.Location
+    /* Constructor properties of Folks-0.6.Folks.NameDetails */
     structured_name?: Folks.StructuredName
     full_name?: string
     nickname?: string
+    /* Constructor properties of Folks-0.6.Folks.NoteDetails */
     notes?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.PhoneDetails */
     phone_numbers?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.RoleDetails */
     roles?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.UrlDetails */
     urls?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.PostalAddressDetails */
     postal_addresses?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses?: Gee.MultiMap
 }
 class Persona {
@@ -241,7 +266,7 @@ class Persona {
     /* Properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksEds-0.6.FolksEds.Persona */
     change_system_groups(system_groups: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_system_groups_finish(_res_: Gio.AsyncResult): void

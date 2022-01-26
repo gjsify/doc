@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Geoclue-2.0
  */
@@ -123,7 +129,8 @@ class Manager {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export interface ClientProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ClientProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Geoclue-2.0.Geoclue.Client */
     active?: boolean
     desktop_id?: string
     distance_threshold?: number
@@ -144,7 +151,7 @@ class ClientProxy {
     requested_accuracy_level: number
     time_threshold: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -276,10 +283,16 @@ class ClientProxy {
     _init (config?: ClientProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ClientProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ClientProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): ClientProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ClientProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ClientProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ClientProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ClientProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ClientProxy
     static create(desktop_id: string, accuracy_level: AccuracyLevel, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static create_finish(result: Gio.AsyncResult): ClientProxy
@@ -288,6 +301,7 @@ class ClientProxy {
     static create_full_sync(desktop_id: string, accuracy_level: AccuracyLevel, flags: ClientProxyCreateFlags, cancellable?: Gio.Cancellable | null): ClientProxy
     static create_sync(desktop_id: string, accuracy_level: AccuracyLevel, cancellable?: Gio.Cancellable | null): ClientProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -295,7 +309,8 @@ class ClientProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ClientSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ClientSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Geoclue-2.0.Geoclue.Client */
     active?: boolean
     desktop_id?: string
     distance_threshold?: number
@@ -314,7 +329,7 @@ class ClientSkeleton {
     requested_accuracy_level: number
     time_threshold: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -428,7 +443,8 @@ class ClientSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface LocationProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface LocationProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Geoclue-2.0.Geoclue.Location */
     accuracy?: number
     altitude?: number
     description?: string
@@ -453,7 +469,7 @@ class LocationProxy {
     speed: number
     timestamp: GLib.Variant
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -566,12 +582,19 @@ class LocationProxy {
     _init (config?: LocationProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): LocationProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): LocationProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): LocationProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): LocationProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): LocationProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): LocationProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): LocationProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): LocationProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -579,7 +602,8 @@ class LocationProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface LocationSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface LocationSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Geoclue-2.0.Geoclue.Location */
     accuracy?: number
     altitude?: number
     description?: string
@@ -602,7 +626,7 @@ class LocationSkeleton {
     speed: number
     timestamp: GLib.Variant
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -697,7 +721,8 @@ class LocationSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Geoclue-2.0.Geoclue.Manager */
     available_accuracy_level?: number
     in_use?: boolean
 }
@@ -710,7 +735,7 @@ class ManagerProxy {
     available_accuracy_level: number
     in_use: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -845,12 +870,19 @@ class ManagerProxy {
     _init (config?: ManagerProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_finish(res: Gio.AsyncResult): ManagerProxy
+    /* Function overloads */
+    static new_finish(res: Gio.AsyncResult): ManagerProxy
+    static new_for_bus_finish(res: Gio.AsyncResult): ManagerProxy
+    /* Function overloads */
     static new_for_bus_finish(res: Gio.AsyncResult): ManagerProxy
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null): ManagerProxy
+    /* Function overloads */
     static new_for_bus_sync(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ManagerProxy
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, name: string | null, object_path: string, cancellable?: Gio.Cancellable | null): ManagerProxy
+    /* Function overloads */
     static new_sync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null): ManagerProxy
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -858,7 +890,8 @@ class ManagerProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Geoclue-2.0.Geoclue.Manager */
     available_accuracy_level?: number
     in_use?: boolean
 }
@@ -869,7 +902,7 @@ class ManagerSkeleton {
     available_accuracy_level: number
     in_use: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -986,7 +1019,8 @@ class ManagerSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface Simple_ConstructProps extends GObject.Object_ConstructProps {
+interface Simple_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Geoclue-2.0.Geoclue.Simple */
     accuracy_level?: AccuracyLevel
     desktop_id?: string
     distance_threshold?: number
@@ -996,10 +1030,8 @@ class Simple {
     /* Properties of Geoclue-2.0.Geoclue.Simple */
     readonly client: ClientProxy
     readonly location: LocationProxy
-    /* Fields of Geoclue-2.0.Geoclue.Simple */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Geoclue-2.0.Geoclue.Simple */
     get_client(): ClientProxy
     get_location(): Location
@@ -1058,6 +1090,7 @@ class Simple {
     /* Static methods and pseudo-constructors */
     static new_finish(result: Gio.AsyncResult): Simple
     static new_sync(desktop_id: string, accuracy_level: AccuracyLevel, cancellable?: Gio.Cancellable | null): Simple
+    static new_with_thresholds_finish(result: Gio.AsyncResult): Simple
     static new_with_thresholds_sync(desktop_id: string, accuracy_level: AccuracyLevel, time_threshold: number, distance_threshold: number, cancellable?: Gio.Cancellable | null): Simple
     static new_with_thresholds(desktop_id: string, accuracy_level: AccuracyLevel, time_threshold: number, distance_threshold: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1065,21 +1098,21 @@ class Simple {
 }
 abstract class ClientIface {
     /* Fields of Geoclue-2.0.Geoclue.ClientIface */
-    parent_iface: GObject.TypeInterface
-    handle_start: (object: Client, invocation: Gio.DBusMethodInvocation) => boolean
-    handle_stop: (object: Client, invocation: Gio.DBusMethodInvocation) => boolean
-    get_active: (object: Client) => boolean
-    get_desktop_id: (object: Client) => string | null
-    get_distance_threshold: (object: Client) => number
-    get_location: (object: Client) => string | null
-    get_requested_accuracy_level: (object: Client) => number
-    get_time_threshold: (object: Client) => number
-    location_updated: (object: Client, arg_old: string, arg_new: string) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_start: (object: Client, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly handle_stop: (object: Client, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly get_active: (object: Client) => boolean
+    readonly get_desktop_id: (object: Client) => string | null
+    readonly get_distance_threshold: (object: Client) => number
+    readonly get_location: (object: Client) => string | null
+    readonly get_requested_accuracy_level: (object: Client) => number
+    readonly get_time_threshold: (object: Client) => number
+    readonly location_updated: (object: Client, arg_old: string, arg_new: string) => void
     static name: string
 }
 abstract class ClientProxyClass {
     /* Fields of Geoclue-2.0.Geoclue.ClientProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ClientProxyPrivate {
@@ -1087,7 +1120,7 @@ class ClientProxyPrivate {
 }
 abstract class ClientSkeletonClass {
     /* Fields of Geoclue-2.0.Geoclue.ClientSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ClientSkeletonPrivate {
@@ -1095,20 +1128,20 @@ class ClientSkeletonPrivate {
 }
 abstract class LocationIface {
     /* Fields of Geoclue-2.0.Geoclue.LocationIface */
-    parent_iface: GObject.TypeInterface
-    get_accuracy: (object: Location) => number
-    get_altitude: (object: Location) => number
-    get_description: (object: Location) => string | null
-    get_heading: (object: Location) => number
-    get_latitude: (object: Location) => number
-    get_longitude: (object: Location) => number
-    get_speed: (object: Location) => number
-    get_timestamp: (object: Location) => GLib.Variant | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_accuracy: (object: Location) => number
+    readonly get_altitude: (object: Location) => number
+    readonly get_description: (object: Location) => string | null
+    readonly get_heading: (object: Location) => number
+    readonly get_latitude: (object: Location) => number
+    readonly get_longitude: (object: Location) => number
+    readonly get_speed: (object: Location) => number
+    readonly get_timestamp: (object: Location) => GLib.Variant | null
     static name: string
 }
 abstract class LocationProxyClass {
     /* Fields of Geoclue-2.0.Geoclue.LocationProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class LocationProxyPrivate {
@@ -1116,7 +1149,7 @@ class LocationProxyPrivate {
 }
 abstract class LocationSkeletonClass {
     /* Fields of Geoclue-2.0.Geoclue.LocationSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class LocationSkeletonPrivate {
@@ -1124,18 +1157,18 @@ class LocationSkeletonPrivate {
 }
 abstract class ManagerIface {
     /* Fields of Geoclue-2.0.Geoclue.ManagerIface */
-    parent_iface: GObject.TypeInterface
-    handle_add_agent: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_id: string) => boolean
-    handle_create_client: (object: Manager, invocation: Gio.DBusMethodInvocation) => boolean
-    handle_delete_client: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_client: string) => boolean
-    handle_get_client: (object: Manager, invocation: Gio.DBusMethodInvocation) => boolean
-    get_available_accuracy_level: (object: Manager) => number
-    get_in_use: (object: Manager) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_add_agent: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_id: string) => boolean
+    readonly handle_create_client: (object: Manager, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly handle_delete_client: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_client: string) => boolean
+    readonly handle_get_client: (object: Manager, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly get_available_accuracy_level: (object: Manager) => number
+    readonly get_in_use: (object: Manager) => boolean
     static name: string
 }
 abstract class ManagerProxyClass {
     /* Fields of Geoclue-2.0.Geoclue.ManagerProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ManagerProxyPrivate {
@@ -1143,7 +1176,7 @@ class ManagerProxyPrivate {
 }
 abstract class ManagerSkeletonClass {
     /* Fields of Geoclue-2.0.Geoclue.ManagerSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ManagerSkeletonPrivate {
@@ -1151,7 +1184,7 @@ class ManagerSkeletonPrivate {
 }
 abstract class SimpleClass {
     /* Fields of Geoclue-2.0.Geoclue.SimpleClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SimplePrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstCheck-1.0
  */
@@ -53,7 +59,8 @@ interface HarnessPrepareBufferFunc {
 interface HarnessPrepareEventFunc {
     (h: Harness, data?: object | null): Gst.Event
 }
-export interface TestClock_ConstructProps extends Gst.Clock_ConstructProps {
+interface TestClock_ConstructProps extends Gst.Clock_ConstructProps {
+    /* Constructor properties of GstCheck-1.0.GstCheck.TestClock */
     clock_type?: Gst.ClockType
     start_time?: number
 }
@@ -64,16 +71,15 @@ class TestClock {
     timeout: number
     window_size: number
     window_threshold: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Clock */
-    object: Gst.Object
+    readonly object: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstCheck-1.0.GstCheck.TestClock */
     advance_time(delta: Gst.ClockTimeDiff): void
     crank(): boolean
@@ -196,10 +202,6 @@ class TestClock {
     connect_after(sigName: "notify::window-size", callback: (($obj: TestClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::window-threshold", callback: (($obj: TestClock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::window-threshold", callback: (($obj: TestClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: TestClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TestClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TestClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TestClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -215,9 +217,9 @@ class TestClock {
 }
 class CheckABIStruct {
     /* Fields of GstCheck-1.0.GstCheck.CheckABIStruct */
-    name: string
-    size: number
-    abi_size: number
+    readonly name: string
+    readonly size: number
+    readonly abi_size: number
     static name: string
 }
 class CheckLogFilter {
@@ -225,11 +227,11 @@ class CheckLogFilter {
 }
 class Harness {
     /* Fields of GstCheck-1.0.GstCheck.Harness */
-    element: Gst.Element
-    srcpad: Gst.Pad
-    sinkpad: Gst.Pad
-    src_harness: Harness
-    sink_harness: Harness
+    readonly element: Gst.Element
+    readonly srcpad: Gst.Pad
+    readonly sinkpad: Gst.Pad
+    readonly src_harness: Harness
+    readonly sink_harness: Harness
     /* Methods of GstCheck-1.0.GstCheck.Harness */
     add_element_sink_pad(sinkpad: Gst.Pad): void
     add_element_src_pad(srcpad: Gst.Pad): void
@@ -307,7 +309,7 @@ class StreamConsistency {
 }
 abstract class TestClockClass {
     /* Fields of GstCheck-1.0.GstCheck.TestClockClass */
-    parent_class: Gst.ClockClass
+    readonly parent_class: Gst.ClockClass
     static name: string
 }
 class TestClockPrivate {

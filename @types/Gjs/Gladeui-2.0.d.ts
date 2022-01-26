@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gladeui-2.0
  */
@@ -120,171 +126,171 @@ enum VerifyFlags {
     DEPRECATIONS,
     UNRECOGNIZED,
 }
-export const DEVHELP_FALLBACK_ICON_FILE: string
-export const DEVHELP_ICON_NAME: string
-export const ENV_BUNDLED: string
-export const ENV_CATALOG_PATH: string
-export const ENV_ICON_THEME_PATH: string
-export const ENV_MODULE_PATH: string
-export const ENV_PIXMAP_DIR: string
-export const ENV_TESTING: string
-export const GTKBUILDER_VERSIONING_BASE_MAJOR: number
-export const GTKBUILDER_VERSIONING_BASE_MINOR: number
-export const PROPERTY_DEF_OBJECT_DELIMITER: string
-export const TAG_ACTION: string
-export const TAG_ACTIONS: string
-export const TAG_ACTION_ACTIVATE_FUNCTION: string
-export const TAG_ACTION_SUBMENU_FUNCTION: string
-export const TAG_ADAPTOR: string
-export const TAG_ADD_CHILD_FUNCTION: string
-export const TAG_ADD_CHILD_VERIFY_FUNCTION: string
-export const TAG_ANARCHIST: string
-export const TAG_ATK_PROPERTY: string
-export const TAG_BIND_FLAGS: string
-export const TAG_BIND_PROPERTY: string
-export const TAG_BIND_SOURCE: string
-export const TAG_BOOK: string
-export const TAG_BUILDER_SINCE: string
-export const TAG_CHILD_ACTION_ACTIVATE_FUNCTION: string
-export const TAG_CHILD_GET_PROP_FUNCTION: string
-export const TAG_CHILD_PROPERTY: string
-export const TAG_CHILD_SET_PROP_FUNCTION: string
-export const TAG_CHILD_VERIFY_FUNCTION: string
-export const TAG_COMMENT: string
-export const TAG_COMMON: string
-export const TAG_CONSTRUCTOR_FUNCTION: string
-export const TAG_CONSTRUCT_OBJECT_FUNCTION: string
-export const TAG_CONSTRUCT_ONLY: string
-export const TAG_CONTEXT: string
-export const TAG_CREATE_EDITABLE_FUNCTION: string
-export const TAG_CREATE_EPROP_FUNCTION: string
-export const TAG_CREATE_TYPE: string
-export const TAG_CREATE_WIDGET_FUNCTION: string
-export const TAG_CUSTOM_LAYOUT: string
-export const TAG_DEEP_POST_CREATE_FUNCTION: string
-export const TAG_DEFAULT: string
-export const TAG_DEFAULT_HEIGHT: string
-export const TAG_DEFAULT_PALETTE_STATE: string
-export const TAG_DEFAULT_WIDTH: string
-export const TAG_DEPENDS: string
-export const TAG_DEPENDS_FUNCTION: string
-export const TAG_DEPRECATED: string
-export const TAG_DEPRECATED_SINCE: string
-export const TAG_DESTROY_OBJECT_FUNCTION: string
-export const TAG_DISABLED: string
-export const TAG_DISPLAYABLE_VALUES: string
-export const TAG_DOMAIN: string
-export const TAG_EDITABLE: string
-export const TAG_EVENT_HANDLER_CONNECTED: string
-export const TAG_EXPANDED: string
-export const TAG_FALSE: string
-export const TAG_GENERIC_NAME: string
-export const TAG_GET_CHILDREN_FUNCTION: string
-export const TAG_GET_FUNCTION: string
-export const TAG_GET_INTERNAL_CHILD_FUNCTION: string
-export const TAG_GET_TYPE_FUNCTION: string
-export const TAG_GLADE_CATALOG: string
-export const TAG_GLADE_WIDGET_CLASS: string
-export const TAG_GLADE_WIDGET_CLASSES: string
-export const TAG_GLADE_WIDGET_CLASS_REF: string
-export const TAG_GLADE_WIDGET_GROUP: string
-export const TAG_HAS_CONTEXT: string
-export const TAG_ICON_NAME: string
-export const TAG_ICON_PREFIX: string
-export const TAG_ID: string
-export const TAG_IGNORE: string
-export const TAG_IMPORTANT: string
-export const TAG_INIT_FUNCTION: string
-export const TAG_INTERNAL_CHILDREN: string
-export const TAG_KEY: string
-export const TAG_LIBRARY: string
-export const TAG_MAX_VALUE: string
-export const TAG_MIN_VALUE: string
-export const TAG_MULTILINE: string
-export const TAG_NAME: string
-export const TAG_NEEDS_SYNC: string
-export const TAG_NICK: string
-export const TAG_NO: string
-export const TAG_OPTIONAL: string
-export const TAG_OPTIONAL_DEFAULT: string
-export const TAG_PACKING_ACTIONS: string
-export const TAG_PACKING_DEFAULTS: string
-export const TAG_PACKING_PROPERTIES: string
-export const TAG_PARENT: string
-export const TAG_PARENTLESS_WIDGET: string
-export const TAG_PARENT_CLASS: string
-export const TAG_POST_CREATE_FUNCTION: string
-export const TAG_PROPERTIES: string
-export const TAG_PROPERTY: string
-export const TAG_QUERY: string
-export const TAG_READ_CHILD_FUNCTION: string
-export const TAG_READ_WIDGET_FUNCTION: string
-export const TAG_REMOVE_CHILD_FUNCTION: string
-export const TAG_REPLACE_CHILD_FUNCTION: string
-export const TAG_RESOURCE: string
-export const TAG_SAVE: string
-export const TAG_SAVE_ALWAYS: string
-export const TAG_SET_FUNCTION: string
-export const TAG_SIGNAL: string
-export const TAG_SIGNALS: string
-export const TAG_SPEC: string
-export const TAG_SPECIAL_CHILD_TYPE: string
-export const TAG_SPECIFICATIONS: string
-export const TAG_STOCK: string
-export const TAG_STOCK_ICON: string
-export const TAG_STRING_FROM_VALUE_FUNCTION: string
-export const TAG_TARGETABLE: string
-export const TAG_TEMPLATE_PREFIX: string
-export const TAG_THEMED_ICON: string
-export const TAG_TITLE: string
-export const TAG_TOOLTIP: string
-export const TAG_TOPLEVEL: string
-export const TAG_TRANSFER_ON_PASTE: string
-export const TAG_TRANSLATABLE: string
-export const TAG_TRUE: string
-export const TAG_TYPE: string
-export const TAG_USE_PLACEHOLDERS: string
-export const TAG_VALUE: string
-export const TAG_VALUE_TYPE: string
-export const TAG_VERIFY_FUNCTION: string
-export const TAG_VERSION: string
-export const TAG_VERSION_SINCE: string
-export const TAG_VISIBLE: string
-export const TAG_WEIGHT: string
-export const TAG_WRITE_CHILD_FUNCTION: string
-export const TAG_WRITE_WIDGET_AFTER_FUNCTION: string
-export const TAG_WRITE_WIDGET_FUNCTION: string
-export const TAG_YES: string
-export const UNNAMED_PREFIX: string
-export const WIDGET_ADAPTOR_INSTANTIABLE_PREFIX: string
-export const XML_TAG_AFTER: string
-export const XML_TAG_CHILD: string
-export const XML_TAG_CLASS: string
-export const XML_TAG_FILENAME: string
-export const XML_TAG_HANDLER: string
-export const XML_TAG_I18N_TRUE: string
-export const XML_TAG_ID: string
-export const XML_TAG_INTERNAL_CHILD: string
-export const XML_TAG_LIB: string
-export const XML_TAG_NAME: string
-export const XML_TAG_OBJECT: string
-export const XML_TAG_PACKING: string
-export const XML_TAG_PLACEHOLDER: string
-export const XML_TAG_PROJECT: string
-export const XML_TAG_PROPERTY: string
-export const XML_TAG_REQUIRES: string
-export const XML_TAG_SIGNAL: string
-export const XML_TAG_SIGNAL_FALSE: string
-export const XML_TAG_SIGNAL_TRUE: string
-export const XML_TAG_SOURCE: string
-export const XML_TAG_SOURCES: string
-export const XML_TAG_STOCK_ID: string
-export const XML_TAG_SWAPPED: string
-export const XML_TAG_TEMPLATE: string
-export const XML_TAG_TYPE: string
-export const XML_TAG_TYPE_FUNC: string
-export const XML_TAG_VERSION: string
-export const XML_TAG_WIDGET: string
+const DEVHELP_FALLBACK_ICON_FILE: string
+const DEVHELP_ICON_NAME: string
+const ENV_BUNDLED: string
+const ENV_CATALOG_PATH: string
+const ENV_ICON_THEME_PATH: string
+const ENV_MODULE_PATH: string
+const ENV_PIXMAP_DIR: string
+const ENV_TESTING: string
+const GTKBUILDER_VERSIONING_BASE_MAJOR: number
+const GTKBUILDER_VERSIONING_BASE_MINOR: number
+const PROPERTY_DEF_OBJECT_DELIMITER: string
+const TAG_ACTION: string
+const TAG_ACTIONS: string
+const TAG_ACTION_ACTIVATE_FUNCTION: string
+const TAG_ACTION_SUBMENU_FUNCTION: string
+const TAG_ADAPTOR: string
+const TAG_ADD_CHILD_FUNCTION: string
+const TAG_ADD_CHILD_VERIFY_FUNCTION: string
+const TAG_ANARCHIST: string
+const TAG_ATK_PROPERTY: string
+const TAG_BIND_FLAGS: string
+const TAG_BIND_PROPERTY: string
+const TAG_BIND_SOURCE: string
+const TAG_BOOK: string
+const TAG_BUILDER_SINCE: string
+const TAG_CHILD_ACTION_ACTIVATE_FUNCTION: string
+const TAG_CHILD_GET_PROP_FUNCTION: string
+const TAG_CHILD_PROPERTY: string
+const TAG_CHILD_SET_PROP_FUNCTION: string
+const TAG_CHILD_VERIFY_FUNCTION: string
+const TAG_COMMENT: string
+const TAG_COMMON: string
+const TAG_CONSTRUCTOR_FUNCTION: string
+const TAG_CONSTRUCT_OBJECT_FUNCTION: string
+const TAG_CONSTRUCT_ONLY: string
+const TAG_CONTEXT: string
+const TAG_CREATE_EDITABLE_FUNCTION: string
+const TAG_CREATE_EPROP_FUNCTION: string
+const TAG_CREATE_TYPE: string
+const TAG_CREATE_WIDGET_FUNCTION: string
+const TAG_CUSTOM_LAYOUT: string
+const TAG_DEEP_POST_CREATE_FUNCTION: string
+const TAG_DEFAULT: string
+const TAG_DEFAULT_HEIGHT: string
+const TAG_DEFAULT_PALETTE_STATE: string
+const TAG_DEFAULT_WIDTH: string
+const TAG_DEPENDS: string
+const TAG_DEPENDS_FUNCTION: string
+const TAG_DEPRECATED: string
+const TAG_DEPRECATED_SINCE: string
+const TAG_DESTROY_OBJECT_FUNCTION: string
+const TAG_DISABLED: string
+const TAG_DISPLAYABLE_VALUES: string
+const TAG_DOMAIN: string
+const TAG_EDITABLE: string
+const TAG_EVENT_HANDLER_CONNECTED: string
+const TAG_EXPANDED: string
+const TAG_FALSE: string
+const TAG_GENERIC_NAME: string
+const TAG_GET_CHILDREN_FUNCTION: string
+const TAG_GET_FUNCTION: string
+const TAG_GET_INTERNAL_CHILD_FUNCTION: string
+const TAG_GET_TYPE_FUNCTION: string
+const TAG_GLADE_CATALOG: string
+const TAG_GLADE_WIDGET_CLASS: string
+const TAG_GLADE_WIDGET_CLASSES: string
+const TAG_GLADE_WIDGET_CLASS_REF: string
+const TAG_GLADE_WIDGET_GROUP: string
+const TAG_HAS_CONTEXT: string
+const TAG_ICON_NAME: string
+const TAG_ICON_PREFIX: string
+const TAG_ID: string
+const TAG_IGNORE: string
+const TAG_IMPORTANT: string
+const TAG_INIT_FUNCTION: string
+const TAG_INTERNAL_CHILDREN: string
+const TAG_KEY: string
+const TAG_LIBRARY: string
+const TAG_MAX_VALUE: string
+const TAG_MIN_VALUE: string
+const TAG_MULTILINE: string
+const TAG_NAME: string
+const TAG_NEEDS_SYNC: string
+const TAG_NICK: string
+const TAG_NO: string
+const TAG_OPTIONAL: string
+const TAG_OPTIONAL_DEFAULT: string
+const TAG_PACKING_ACTIONS: string
+const TAG_PACKING_DEFAULTS: string
+const TAG_PACKING_PROPERTIES: string
+const TAG_PARENT: string
+const TAG_PARENTLESS_WIDGET: string
+const TAG_PARENT_CLASS: string
+const TAG_POST_CREATE_FUNCTION: string
+const TAG_PROPERTIES: string
+const TAG_PROPERTY: string
+const TAG_QUERY: string
+const TAG_READ_CHILD_FUNCTION: string
+const TAG_READ_WIDGET_FUNCTION: string
+const TAG_REMOVE_CHILD_FUNCTION: string
+const TAG_REPLACE_CHILD_FUNCTION: string
+const TAG_RESOURCE: string
+const TAG_SAVE: string
+const TAG_SAVE_ALWAYS: string
+const TAG_SET_FUNCTION: string
+const TAG_SIGNAL: string
+const TAG_SIGNALS: string
+const TAG_SPEC: string
+const TAG_SPECIAL_CHILD_TYPE: string
+const TAG_SPECIFICATIONS: string
+const TAG_STOCK: string
+const TAG_STOCK_ICON: string
+const TAG_STRING_FROM_VALUE_FUNCTION: string
+const TAG_TARGETABLE: string
+const TAG_TEMPLATE_PREFIX: string
+const TAG_THEMED_ICON: string
+const TAG_TITLE: string
+const TAG_TOOLTIP: string
+const TAG_TOPLEVEL: string
+const TAG_TRANSFER_ON_PASTE: string
+const TAG_TRANSLATABLE: string
+const TAG_TRUE: string
+const TAG_TYPE: string
+const TAG_USE_PLACEHOLDERS: string
+const TAG_VALUE: string
+const TAG_VALUE_TYPE: string
+const TAG_VERIFY_FUNCTION: string
+const TAG_VERSION: string
+const TAG_VERSION_SINCE: string
+const TAG_VISIBLE: string
+const TAG_WEIGHT: string
+const TAG_WRITE_CHILD_FUNCTION: string
+const TAG_WRITE_WIDGET_AFTER_FUNCTION: string
+const TAG_WRITE_WIDGET_FUNCTION: string
+const TAG_YES: string
+const UNNAMED_PREFIX: string
+const WIDGET_ADAPTOR_INSTANTIABLE_PREFIX: string
+const XML_TAG_AFTER: string
+const XML_TAG_CHILD: string
+const XML_TAG_CLASS: string
+const XML_TAG_FILENAME: string
+const XML_TAG_HANDLER: string
+const XML_TAG_I18N_TRUE: string
+const XML_TAG_ID: string
+const XML_TAG_INTERNAL_CHILD: string
+const XML_TAG_LIB: string
+const XML_TAG_NAME: string
+const XML_TAG_OBJECT: string
+const XML_TAG_PACKING: string
+const XML_TAG_PLACEHOLDER: string
+const XML_TAG_PROJECT: string
+const XML_TAG_PROPERTY: string
+const XML_TAG_REQUIRES: string
+const XML_TAG_SIGNAL: string
+const XML_TAG_SIGNAL_FALSE: string
+const XML_TAG_SIGNAL_TRUE: string
+const XML_TAG_SOURCE: string
+const XML_TAG_SOURCES: string
+const XML_TAG_STOCK_ID: string
+const XML_TAG_SWAPPED: string
+const XML_TAG_TEMPLATE: string
+const XML_TAG_TYPE: string
+const XML_TAG_TYPE_FUNC: string
+const XML_TAG_VERSION: string
+const XML_TAG_WIDGET: string
 function catalog_add_path(path: string): void
 function catalog_destroy_all(): void
 function catalog_get_extra_paths(): string[]
@@ -456,7 +462,7 @@ interface VerifyPropertyFunc {
 interface WriteWidgetFunc {
     (adaptor: WidgetAdaptor, widget: Widget, context: XmlContext, node: XmlNode): void
 }
-export interface Editable_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Editable_ConstructProps extends Gtk.Widget_ConstructProps {
 }
 class Editable {
     /* Properties of Gtk-3.0.Gtk.Widget */
@@ -500,9 +506,9 @@ class Editable {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Editable */
     block(): void
     load(widget: Widget): void
@@ -1184,8 +1190,10 @@ class Editable {
     _init (config?: Editable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AdaptorChooser_ConstructProps extends Gtk.Box_ConstructProps {
+interface AdaptorChooser_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.AdaptorChooser */
     project?: Project
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class AdaptorChooser {
@@ -1242,13 +1250,13 @@ class AdaptorChooser {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.AdaptorChooser */
     get_project(): Project
     set_project(project: Project): void
@@ -1270,7 +1278,7 @@ class AdaptorChooser {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1585,6 +1593,7 @@ class AdaptorChooser {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -2029,16 +2038,15 @@ class AdaptorChooser {
     _init (config?: AdaptorChooser_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): AdaptorChooser
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): AdaptorChooser
     static $gtype: GObject.Type
 }
-export interface App_ConstructProps extends GObject.Object_ConstructProps {
+interface App_ConstructProps extends GObject.Object_ConstructProps {
 }
 class App {
-    /* Fields of Gladeui-2.0.Gladeui.App */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2118,8 +2126,10 @@ class App {
     static set_window(window: Gtk.Widget): void
     static $gtype: GObject.Type
 }
-export interface BaseEditor_ConstructProps extends Gtk.Box_ConstructProps {
+interface BaseEditor_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.BaseEditor */
     container?: GObject.Object
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class BaseEditor {
@@ -2175,12 +2185,12 @@ class BaseEditor {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gladeui-2.0.Gladeui.BaseEditor */
-    parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.BaseEditor */
     add_default_properties(gchild: Widget): void
     add_editable(gchild: Widget, page: EditorPageType): void
@@ -2205,7 +2215,7 @@ class BaseEditor {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2520,6 +2530,7 @@ class BaseEditor {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -2988,7 +2999,8 @@ class BaseEditor {
     _init (config?: BaseEditor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CellRendererIcon_ConstructProps extends Gtk.CellRendererPixbuf_ConstructProps {
+interface CellRendererIcon_ConstructProps extends Gtk.CellRendererPixbuf_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.CellRendererIcon */
     activatable?: boolean
     active?: boolean
 }
@@ -3024,12 +3036,12 @@ class CellRendererIcon {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of Gladeui-2.0.Gladeui.CellRendererIcon */
-    parent_instance: Gtk.CellRendererPixbuf
     /* Fields of Gtk-3.0.Gtk.CellRendererPixbuf */
-    parent: Gtk.CellRenderer
+    readonly parent: Gtk.CellRenderer
+    /* Fields of Gtk-3.0.Gtk.CellRenderer */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.CellRendererIcon */
     get_activatable(): boolean
     get_active(): boolean
@@ -3084,6 +3096,7 @@ class CellRendererIcon {
     watch_closure(closure: Function): void
     /* Virtual methods of Gladeui-2.0.Gladeui.CellRendererIcon */
     vfunc_activate(path: string): void
+    /* Function overloads */
     vfunc_activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     /* Virtual methods of Gtk-3.0.Gtk.CellRenderer */
     vfunc_activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
@@ -3188,15 +3201,13 @@ class CellRendererIcon {
     static new(): CellRendererIcon
     static $gtype: GObject.Type
 }
-export interface Clipboard_ConstructProps extends GObject.Object_ConstructProps {
+interface Clipboard_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Clipboard {
     /* Properties of Gladeui-2.0.Gladeui.Clipboard */
     readonly has_selection: boolean
-    /* Fields of Gladeui-2.0.Gladeui.Clipboard */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Clipboard */
     add(widgets: Widget[]): void
     clear(): void
@@ -3249,13 +3260,11 @@ class Clipboard {
     static new(): Clipboard
     static $gtype: GObject.Type
 }
-export interface Command_ConstructProps extends GObject.Object_ConstructProps {
+interface Command_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Command {
-    /* Fields of Gladeui-2.0.Gladeui.Command */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Command */
     collapse(other: Command): void
     description(): string
@@ -3335,8 +3344,10 @@ class Command {
     static unlock_widget(widget: Widget): void
     static $gtype: GObject.Type
 }
-export interface DesignView_ConstructProps extends Gtk.Box_ConstructProps {
+interface DesignView_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.DesignView */
     project?: Project
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class DesignView {
@@ -3390,14 +3401,14 @@ class DesignView {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gladeui-2.0.Gladeui.DesignView */
-    parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.DesignView */
     get_project(): Project
     /* Methods of Gtk-3.0.Gtk.Box */
@@ -3418,7 +3429,7 @@ class DesignView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3733,6 +3744,7 @@ class DesignView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -4175,11 +4187,13 @@ class DesignView {
     _init (config?: DesignView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(project: Project): DesignView
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): DesignView
     static get_from_project(project: Project): DesignView | null
     static $gtype: GObject.Type
 }
-export interface EPropBool_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropBool_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropBool {
@@ -4238,13 +4252,13 @@ class EPropBool {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -4276,7 +4290,7 @@ class EPropBool {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4597,16 +4611,28 @@ class EPropBool {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropBool */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -5060,7 +5086,8 @@ class EPropBool {
     _init (config?: EPropBool_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropCheck_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropCheck_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropCheck {
@@ -5119,13 +5146,13 @@ class EPropCheck {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -5157,7 +5184,7 @@ class EPropCheck {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5478,16 +5505,28 @@ class EPropCheck {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropCheck */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -5941,7 +5980,8 @@ class EPropCheck {
     _init (config?: EPropCheck_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropColor_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropColor_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropColor {
@@ -6000,13 +6040,13 @@ class EPropColor {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -6038,7 +6078,7 @@ class EPropColor {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6359,16 +6399,28 @@ class EPropColor {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropColor */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -6822,7 +6874,8 @@ class EPropColor {
     _init (config?: EPropColor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropEnum_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropEnum_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropEnum {
@@ -6881,13 +6934,13 @@ class EPropEnum {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -6919,7 +6972,7 @@ class EPropEnum {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7240,16 +7293,28 @@ class EPropEnum {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropEnum */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -7703,7 +7768,8 @@ class EPropEnum {
     _init (config?: EPropEnum_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropFlags_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropFlags_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropFlags {
@@ -7762,13 +7828,13 @@ class EPropFlags {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -7800,7 +7866,7 @@ class EPropFlags {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8121,16 +8187,28 @@ class EPropFlags {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropFlags */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -8584,7 +8662,8 @@ class EPropFlags {
     _init (config?: EPropFlags_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropNamedIcon_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropNamedIcon_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropNamedIcon {
@@ -8643,13 +8722,13 @@ class EPropNamedIcon {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -8681,7 +8760,7 @@ class EPropNamedIcon {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9002,16 +9081,28 @@ class EPropNamedIcon {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropNamedIcon */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -9465,7 +9556,8 @@ class EPropNamedIcon {
     _init (config?: EPropNamedIcon_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropNumeric_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropNumeric_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropNumeric {
@@ -9524,13 +9616,13 @@ class EPropNumeric {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -9562,7 +9654,7 @@ class EPropNumeric {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9883,16 +9975,28 @@ class EPropNumeric {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropNumeric */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -10346,7 +10450,8 @@ class EPropNumeric {
     _init (config?: EPropNumeric_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropObject_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropObject_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropObject {
@@ -10405,13 +10510,13 @@ class EPropObject {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -10443,7 +10548,7 @@ class EPropObject {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10764,16 +10869,28 @@ class EPropObject {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropObject */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -11227,7 +11344,8 @@ class EPropObject {
     _init (config?: EPropObject_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropObjects_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropObjects_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropObjects {
@@ -11286,13 +11404,13 @@ class EPropObjects {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -11324,7 +11442,7 @@ class EPropObjects {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -11645,16 +11763,28 @@ class EPropObjects {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropObjects */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -12108,7 +12238,8 @@ class EPropObjects {
     _init (config?: EPropObjects_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropText_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropText_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropText {
@@ -12167,13 +12298,13 @@ class EPropText {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -12205,7 +12336,7 @@ class EPropText {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -12526,16 +12657,28 @@ class EPropText {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropText */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -12989,7 +13132,8 @@ class EPropText {
     _init (config?: EPropText_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EPropUnichar_ConstructProps extends EditorProperty_ConstructProps {
+interface EPropUnichar_ConstructProps extends EditorProperty_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EPropUnichar {
@@ -13048,13 +13192,13 @@ class EPropUnichar {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
+    readonly parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -13086,7 +13230,7 @@ class EPropUnichar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -13407,16 +13551,28 @@ class EPropUnichar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EPropUnichar */
-    vfunc_load(property: Property): void
     vfunc_load(widget: Widget): void
+    vfunc_set_show_name(show_name: boolean): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.EditorProperty */
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -13870,10 +14026,12 @@ class EPropUnichar {
     _init (config?: EPropUnichar_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Editor_ConstructProps extends Gtk.Box_ConstructProps {
+interface Editor_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.Editor */
     show_boder?: boolean
     show_class_field?: boolean
     widget?: Widget
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Editor {
@@ -13934,12 +14092,12 @@ class Editor {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gladeui-2.0.Gladeui.Editor */
-    parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Editor */
     hide_class_field(): void
     hide_info(): void
@@ -13962,7 +14120,7 @@ class Editor {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -14277,6 +14435,7 @@ class Editor {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -14731,17 +14890,20 @@ class Editor {
     _init (config?: Editor_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Editor
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): Editor
     static dialog_for_widget(widget: Widget): Gtk.Widget
     static query_dialog(widget: Widget): boolean
     static reset_dialog_run(parent: Gtk.Widget, gwidget: Widget): void
     static $gtype: GObject.Type
 }
-export interface EditorProperty_ConstructProps extends Gtk.Box_ConstructProps {
+interface EditorProperty_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.EditorProperty */
     custom_text?: string
     disable_check?: boolean
     property_def?: object
     use_command?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EditorProperty {
@@ -14799,14 +14961,14 @@ class EditorProperty {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gladeui-2.0.Gladeui.EditorProperty */
-    parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorProperty */
     commit(value: any): void
     commit_no_callback(value: any): void
@@ -14838,7 +15000,7 @@ class EditorProperty {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -15159,6 +15321,7 @@ class EditorProperty {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -15166,6 +15329,7 @@ class EditorProperty {
     vfunc_changed(property: Property): object | null
     vfunc_commit(value: any): void
     vfunc_load(property: Property): void
+    /* Function overloads */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -15623,7 +15787,8 @@ class EditorProperty {
     static show_resource_dialog(project: Project, parent: Gtk.Widget, filename: string): boolean
     static $gtype: GObject.Type
 }
-export interface EditorSkeleton_ConstructProps extends Gtk.Box_ConstructProps {
+interface EditorSkeleton_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EditorSkeleton {
@@ -15677,14 +15842,14 @@ class EditorSkeleton {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gladeui-2.0.Gladeui.EditorSkeleton */
-    parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.EditorSkeleton */
     add_editor(editor: Editable): void
     /* Methods of Gtk-3.0.Gtk.Box */
@@ -15705,7 +15870,7 @@ class EditorSkeleton {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -16027,6 +16192,7 @@ class EditorSkeleton {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -16471,11 +16637,14 @@ class EditorSkeleton {
     _init (config?: EditorSkeleton_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): EditorSkeleton
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): EditorSkeleton
     static $gtype: GObject.Type
 }
-export interface EditorTable_ConstructProps extends Gtk.Grid_ConstructProps {
+interface EditorTable_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.EditorTable */
     page_type?: EditorPageType
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class EditorTable {
@@ -16531,12 +16700,12 @@ class EditorTable {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gladeui-2.0.Gladeui.EditorTable */
-    parent_instance: Gtk.Grid
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Grid */
     attach(child: Gtk.Widget, left: number, top: number, width: number, height: number): void
     attach_next_to(child: Gtk.Widget, sibling: Gtk.Widget | null, side: Gtk.PositionType, width: number, height: number): void
@@ -16562,7 +16731,7 @@ class EditorTable {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -16884,6 +17053,7 @@ class EditorTable {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -17332,11 +17502,14 @@ class EditorTable {
     _init (config?: EditorTable_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(adaptor: WidgetAdaptor, type: EditorPageType): EditorTable
+    /* Function overloads */
     static new(): EditorTable
     static $gtype: GObject.Type
 }
-export interface Inspector_ConstructProps extends Gtk.Box_ConstructProps {
+interface Inspector_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.Inspector */
     project?: Project
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Inspector {
@@ -17392,14 +17565,14 @@ class Inspector {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gladeui-2.0.Gladeui.Inspector */
-    parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Inspector */
     get_project(): Project
     get_selected_items(): Widget[]
@@ -17422,7 +17595,7 @@ class Inspector {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -17737,6 +17910,7 @@ class Inspector {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -18190,11 +18364,12 @@ class Inspector {
     _init (config?: Inspector_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Inspector
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): Inspector
     static new_with_project(project: Project): Inspector
     static $gtype: GObject.Type
 }
-export interface NamedIconChooserDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface NamedIconChooserDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
 class NamedIconChooserDialog {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -18273,18 +18448,19 @@ class NamedIconChooserDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
-    /* Fields of Gladeui-2.0.Gladeui.NamedIconChooserDialog */
-    parent_instance: Gtk.Dialog
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.NamedIconChooserDialog */
     get_context(): string
     get_icon_name(): string
@@ -18416,7 +18592,7 @@ class NamedIconChooserDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -18660,6 +18836,7 @@ class NamedIconChooserDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -18728,6 +18905,7 @@ class NamedIconChooserDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.NamedIconChooserDialog */
     vfunc_icon_activated(): void
     vfunc_selection_changed(): void
@@ -19253,8 +19431,6 @@ class NamedIconChooserDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: NamedIconChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: NamedIconChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: NamedIconChooserDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: NamedIconChooserDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: NamedIconChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -19264,14 +19440,17 @@ class NamedIconChooserDialog {
     _init (config?: NamedIconChooserDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): NamedIconChooserDialog
+    /* Function overloads */
     static new(type: Gtk.WindowType): NamedIconChooserDialog
     static $gtype: GObject.Type
 }
-export interface Palette_ConstructProps extends Gtk.Box_ConstructProps {
+interface Palette_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.Palette */
     item_appearance?: ItemAppearance
     project?: Project
     show_selector_button?: boolean
     use_small_item_icons?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Palette {
@@ -19330,15 +19509,14 @@ class Palette {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gladeui-2.0.Gladeui.Palette */
-    parent_instance: Gtk.Box
-    priv: PalettePrivate
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Palette */
     get_item_appearance(): ItemAppearance
     get_project(): Project
@@ -19367,7 +19545,7 @@ class Palette {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -19682,6 +19860,7 @@ class Palette {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -20137,16 +20316,17 @@ class Palette {
     _init (config?: Palette_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Palette
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): Palette
     static $gtype: GObject.Type
 }
 class ParamObjects {
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -20165,7 +20345,8 @@ class ParamObjects {
     vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export interface Placeholder_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Placeholder_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -20217,13 +20398,10 @@ class Placeholder {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Gladeui-2.0.Gladeui.Placeholder */
-    widget: Gtk.Widget
-    priv: PlaceholderPrivate
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Placeholder */
     get_parent(): Widget | null
     get_project(): Project | null
@@ -20518,6 +20696,7 @@ class Placeholder {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hadjustment(): Gtk.Adjustment
@@ -20940,7 +21119,8 @@ class Placeholder {
     static new(): Placeholder
     static $gtype: GObject.Type
 }
-export interface Project_ConstructProps extends GObject.Object_ConstructProps {
+interface Project_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.Project */
     css_provider_path?: string
     license?: string
     resource_path?: string
@@ -20960,11 +21140,8 @@ class Project {
     resource_path: string
     template: Widget
     translation_domain: string
-    /* Fields of Gladeui-2.0.Gladeui.Project */
-    parent_instance: GObject.Object
-    priv: ProjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Project */
     add_object(object: GObject.Object): void
     autosave(): boolean
@@ -21234,7 +21411,8 @@ class Project {
     static verify_signal(widget: Widget, signal: Signal): void
     static $gtype: GObject.Type
 }
-export interface Property_ConstructProps extends GObject.Object_ConstructProps {
+interface Property_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.Property */
     "class"?: object
     enabled?: boolean
     i18n_comment?: string
@@ -21252,11 +21430,8 @@ class Property {
     precision: number
     sensitive: boolean
     readonly state: number
-    /* Fields of Gladeui-2.0.Gladeui.Property */
-    parent_instance: GObject.Object
-    priv: PropertyPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Property */
     add_object(object: GObject.Object): void
     default(): boolean
@@ -21372,7 +21547,8 @@ class Property {
     static superuser(): boolean
     static $gtype: GObject.Type
 }
-export interface PropertyLabel_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface PropertyLabel_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.PropertyLabel */
     append_colon?: boolean
     custom_text?: string
     custom_tooltip?: string
@@ -21436,15 +21612,15 @@ class PropertyLabel {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.PropertyLabel */
     get_append_colon(): boolean
     get_custom_text(): string
@@ -21469,7 +21645,7 @@ class PropertyLabel {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -21791,6 +21967,7 @@ class PropertyLabel {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gladeui-2.0.Gladeui.PropertyLabel */
     vfunc_load(widget: Widget): void
     vfunc_set_show_name(show_name: boolean): void
@@ -22242,13 +22419,15 @@ class PropertyLabel {
     static new(): PropertyLabel
     static $gtype: GObject.Type
 }
-export interface PropertyShell_ConstructProps extends Gtk.Box_ConstructProps {
+interface PropertyShell_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.PropertyShell */
     custom_text?: string
     disable_check?: boolean
     editor_type?: string
     packing?: boolean
     property_name?: string
     use_command?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class PropertyShell {
@@ -22309,13 +22488,13 @@ class PropertyShell {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.PropertyShell */
     get_custom_text(): string
     get_disable_check(): boolean
@@ -22345,7 +22524,7 @@ class PropertyShell {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -22667,6 +22846,7 @@ class PropertyShell {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -23128,10 +23308,12 @@ class PropertyShell {
     _init (config?: PropertyShell_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PropertyShell
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): PropertyShell
     static $gtype: GObject.Type
 }
-export interface Signal_ConstructProps extends GObject.Object_ConstructProps {
+interface Signal_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.Signal */
     after?: boolean
     "class"?: object
     detail?: string
@@ -23148,11 +23330,8 @@ class Signal {
     support_warning: string
     swapped: boolean
     userdata: string
-    /* Fields of Gladeui-2.0.Gladeui.Signal */
-    object: GObject.Object
-    priv: SignalPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Signal */
     clone(): Signal
     equal(sig2: Signal): boolean
@@ -23229,8 +23408,10 @@ class Signal {
     static read(node: XmlNode, adaptor: WidgetAdaptor): Signal
     static $gtype: GObject.Type
 }
-export interface SignalEditor_ConstructProps extends Gtk.Box_ConstructProps {
+interface SignalEditor_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.SignalEditor */
     glade_widget?: Gtk.TreeModel
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class SignalEditor {
@@ -23286,14 +23467,14 @@ class SignalEditor {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Gladeui-2.0.Gladeui.SignalEditor */
-    parent_instance: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.SignalEditor */
     enable_dnd(enabled: boolean): void
     get_widget(): Widget
@@ -23316,7 +23497,7 @@ class SignalEditor {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -23631,6 +23812,7 @@ class SignalEditor {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -24085,19 +24267,18 @@ class SignalEditor {
     _init (config?: SignalEditor_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SignalEditor
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): SignalEditor
     static $gtype: GObject.Type
 }
-export interface SignalModel_ConstructProps extends GObject.Object_ConstructProps {
+interface SignalModel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.SignalModel */
     signals?: object
     widget?: Widget
 }
 class SignalModel {
-    /* Fields of Gladeui-2.0.Gladeui.SignalModel */
-    parent_instance: GObject.Object
-    priv: SignalModelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -24210,7 +24391,8 @@ class SignalModel {
     _init (config?: SignalModel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Widget_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface Widget_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.Widget */
     adaptor?: WidgetAdaptor
     anarchist?: boolean
     composite?: boolean
@@ -24239,11 +24421,8 @@ class Widget {
     toplevel_height: number
     toplevel_width: number
     readonly visible: boolean
-    /* Fields of Gladeui-2.0.Gladeui.Widget */
-    parent_instance: GObject.InitiallyUnowned
-    priv: WidgetPrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.Widget */
     adaptor_create_internal(internal_object: GObject.Object, internal_name: string, parent_name: string, anarchist: boolean, reason: CreateReason): Widget
     add_child(child: Widget, at_mouse: boolean): void
@@ -24444,7 +24623,8 @@ class Widget {
     static superuser(): boolean
     static $gtype: GObject.Type
 }
-export interface WidgetAction_ConstructProps extends GObject.Object_ConstructProps {
+interface WidgetAction_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.WidgetAction */
     definition?: object
     sensitive?: boolean
     visible?: boolean
@@ -24453,11 +24633,8 @@ class WidgetAction {
     /* Properties of Gladeui-2.0.Gladeui.WidgetAction */
     sensitive: boolean
     visible: boolean
-    /* Fields of Gladeui-2.0.Gladeui.WidgetAction */
-    parent_instance: GObject.Object
-    priv: WidgetActionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.WidgetAction */
     get_children(): WidgetActionDef[]
     get_def(): WidgetActionDef
@@ -24512,7 +24689,8 @@ class WidgetAction {
     _init (config?: WidgetAction_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WidgetAdaptor_ConstructProps extends GObject.Object_ConstructProps {
+interface WidgetAdaptor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gladeui-2.0.Gladeui.WidgetAdaptor */
     book?: string
     catalog?: string
     generic_name?: string
@@ -24528,10 +24706,8 @@ class WidgetAdaptor {
     readonly cursor: object
     query: boolean
     title: string
-    /* Fields of Gladeui-2.0.Gladeui.WidgetAdaptor */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gladeui-2.0.Gladeui.WidgetAdaptor */
     action_activate(object: GObject.Object, action_path: string): void
     action_add(action_path: string, label: string, stock: string, important: boolean): boolean
@@ -24631,6 +24807,7 @@ class WidgetAdaptor {
     vfunc_get_children(container: GObject.Object): GObject.Object[]
     vfunc_get_internal_child(object: GObject.Object, internal_name: string): GObject.Object | null
     vfunc_get_property(object: GObject.Object, property_name: string, value: any): void
+    /* Function overloads */
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_post_create(object: GObject.Object, reason: CreateReason): void
     vfunc_read_child(widget: Widget, node: XmlNode): void
@@ -24638,6 +24815,7 @@ class WidgetAdaptor {
     vfunc_remove(container: GObject.Object, child: GObject.Object): void
     vfunc_replace_child(container: GObject.Object, old_obj: GObject.Object, new_obj: GObject.Object): void
     vfunc_set_property(object: GObject.Object, property_name: string, value: any): void
+    /* Function overloads */
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_string_from_value(def: PropertyDef, value: any): string
     vfunc_verify_property(object: GObject.Object, property_name: string, value: any): boolean
@@ -24678,24 +24856,24 @@ class WidgetAdaptor {
 }
 abstract class AdaptorChooserClass {
     /* Fields of Gladeui-2.0.Gladeui.AdaptorChooserClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 abstract class AppClass {
     /* Fields of Gladeui-2.0.Gladeui.AppClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class BaseEditorClass {
     /* Fields of Gladeui-2.0.Gladeui.BaseEditorClass */
-    parent_class: Gtk.BoxClass
-    child_selected: (editor: BaseEditor, gchild: Widget) => void
-    change_type: (editor: BaseEditor, gchild: Widget, type: GObject.Type) => boolean
-    get_display_name: (editor: BaseEditor, gchild: Widget) => string
-    delete_child: (editor: BaseEditor, parent: Widget, gchild: Widget) => boolean
-    move_child: (editor: BaseEditor, gparent: Widget, gchild: Widget) => boolean
-    padding: object[]
+    readonly parent_class: Gtk.BoxClass
+    readonly child_selected: (editor: BaseEditor, gchild: Widget) => void
+    readonly change_type: (editor: BaseEditor, gchild: Widget, type: GObject.Type) => boolean
+    readonly get_display_name: (editor: BaseEditor, gchild: Widget) => string
+    readonly delete_child: (editor: BaseEditor, parent: Widget, gchild: Widget) => boolean
+    readonly move_child: (editor: BaseEditor, gparent: Widget, gchild: Widget) => boolean
+    readonly padding: object[]
     static name: string
 }
 class Catalog {
@@ -24721,47 +24899,47 @@ class Catalog {
 }
 abstract class CellRendererIconClass {
     /* Fields of Gladeui-2.0.Gladeui.CellRendererIconClass */
-    parent_class: Gtk.CellRendererPixbufClass
-    activate: (cell_renderer_icon: CellRendererIcon, path: string) => void
+    readonly parent_class: Gtk.CellRendererPixbufClass
+    readonly activate: (cell_renderer_icon: CellRendererIcon, path: string) => void
     static name: string
 }
 abstract class ClipboardClass {
     /* Fields of Gladeui-2.0.Gladeui.ClipboardClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class CommandClass {
     /* Fields of Gladeui-2.0.Gladeui.CommandClass */
-    parent_class: GObject.ObjectClass
-    execute: (command: Command) => boolean
-    undo: (command: Command) => boolean
-    unifies: (command: Command, other: Command) => boolean
-    collapse: (command: Command, other: Command) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly execute: (command: Command) => boolean
+    readonly undo: (command: Command) => boolean
+    readonly unifies: (command: Command, other: Command) => boolean
+    readonly collapse: (command: Command, other: Command) => void
+    readonly padding: object[]
     static name: string
 }
 class CommandSetPropData {
     /* Fields of Gladeui-2.0.Gladeui.CommandSetPropData */
-    property: Property
-    new_value: any
-    old_value: any
+    readonly property: Property
+    readonly new_value: any
+    readonly old_value: any
     static name: string
 }
 class Cursor {
     /* Fields of Gladeui-2.0.Gladeui.Cursor */
-    selector: Gdk.Cursor
-    add_widget: Gdk.Cursor
-    resize_top_left: Gdk.Cursor
-    resize_top_right: Gdk.Cursor
-    resize_bottom_left: Gdk.Cursor
-    resize_bottom_right: Gdk.Cursor
-    resize_left: Gdk.Cursor
-    resize_right: Gdk.Cursor
-    resize_top: Gdk.Cursor
-    resize_bottom: Gdk.Cursor
-    drag: Gdk.Cursor
-    add_widget_pixbuf: GdkPixbuf.Pixbuf
+    readonly selector: Gdk.Cursor
+    readonly add_widget: Gdk.Cursor
+    readonly resize_top_left: Gdk.Cursor
+    readonly resize_top_right: Gdk.Cursor
+    readonly resize_bottom_left: Gdk.Cursor
+    readonly resize_bottom_right: Gdk.Cursor
+    readonly resize_left: Gdk.Cursor
+    readonly resize_right: Gdk.Cursor
+    readonly resize_top: Gdk.Cursor
+    readonly resize_bottom: Gdk.Cursor
+    readonly drag: Gdk.Cursor
+    readonly add_widget_pixbuf: GdkPixbuf.Pixbuf
     static name: string
     /* Static methods and pseudo-constructors */
     static get_add_widget_pixbuf(): GdkPixbuf.Pixbuf
@@ -24770,44 +24948,44 @@ class Cursor {
 }
 abstract class DesignViewClass {
     /* Fields of Gladeui-2.0.Gladeui.DesignViewClass */
-    parent_class: Gtk.BoxClass
-    padding: object[]
+    readonly parent_class: Gtk.BoxClass
+    readonly padding: object[]
     static name: string
 }
 abstract class EditableInterface {
     /* Fields of Gladeui-2.0.Gladeui.EditableInterface */
-    g_iface: GObject.TypeInterface
-    load: (editable: Editable, widget: Widget) => void
-    set_show_name: (editable: Editable, show_name: boolean) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly load: (editable: Editable, widget: Widget) => void
+    readonly set_show_name: (editable: Editable, show_name: boolean) => void
     static name: string
 }
 abstract class EditorClass {
     /* Fields of Gladeui-2.0.Gladeui.EditorClass */
-    parent_class: Gtk.BoxClass
-    padding: object[]
+    readonly parent_class: Gtk.BoxClass
+    readonly padding: object[]
     static name: string
 }
 abstract class EditorPropertyClass {
     /* Fields of Gladeui-2.0.Gladeui.EditorPropertyClass */
-    parent_class: Gtk.BoxClass
-    load: (eprop: EditorProperty, property: Property) => void
-    commit: (eprop: EditorProperty, value: any) => void
-    changed: (eprop: EditorProperty, property: Property) => object | null
-    padding: object[]
+    readonly parent_class: Gtk.BoxClass
+    readonly load: (eprop: EditorProperty, property: Property) => void
+    readonly commit: (eprop: EditorProperty, value: any) => void
+    readonly changed: (eprop: EditorProperty, property: Property) => object | null
+    readonly padding: object[]
     static name: string
 }
 abstract class EditorSkeletonClass {
     /* Fields of Gladeui-2.0.Gladeui.EditorSkeletonClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 abstract class EditorTableClass {
     /* Fields of Gladeui-2.0.Gladeui.EditorTableClass */
-    parent: Gtk.GridClass
-    glade_reserved1: () => void
-    glade_reserved2: () => void
-    glade_reserved3: () => void
-    glade_reserved4: () => void
+    readonly parent: Gtk.GridClass
+    readonly glade_reserved1: () => void
+    readonly glade_reserved2: () => void
+    readonly glade_reserved3: () => void
+    readonly glade_reserved4: () => void
     static name: string
 }
 class IDAllocator {
@@ -24819,10 +24997,10 @@ class IDAllocator {
 }
 abstract class InspectorClass {
     /* Fields of Gladeui-2.0.Gladeui.InspectorClass */
-    parent_class: Gtk.BoxClass
-    selection_changed: (inspector: Inspector) => void
-    item_activated: (inspector: Inspector) => void
-    padding: object[]
+    readonly parent_class: Gtk.BoxClass
+    readonly selection_changed: (inspector: Inspector) => void
+    readonly item_activated: (inspector: Inspector) => void
+    readonly padding: object[]
     static name: string
 }
 class NameContext {
@@ -24837,20 +25015,20 @@ class NameContext {
 }
 abstract class NamedIconChooserDialogClass {
     /* Fields of Gladeui-2.0.Gladeui.NamedIconChooserDialogClass */
-    parent_class: Gtk.DialogClass
-    icon_activated: (dialog: NamedIconChooserDialog) => void
-    selection_changed: (dialog: NamedIconChooserDialog) => void
-    padding: object[]
+    readonly parent_class: Gtk.DialogClass
+    readonly icon_activated: (dialog: NamedIconChooserDialog) => void
+    readonly selection_changed: (dialog: NamedIconChooserDialog) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class PaletteClass {
     /* Fields of Gladeui-2.0.Gladeui.PaletteClass */
-    parent_class: Gtk.BoxClass
-    refresh: (palette: Palette) => void
-    glade_reserved1: () => void
-    glade_reserved2: () => void
-    glade_reserved3: () => void
-    glade_reserved4: () => void
+    readonly parent_class: Gtk.BoxClass
+    readonly refresh: (palette: Palette) => void
+    readonly glade_reserved1: () => void
+    readonly glade_reserved2: () => void
+    readonly glade_reserved3: () => void
+    readonly glade_reserved4: () => void
     static name: string
 }
 class PalettePrivate {
@@ -24864,11 +25042,11 @@ class ParamSpecObjects {
 }
 abstract class PlaceholderClass {
     /* Fields of Gladeui-2.0.Gladeui.PlaceholderClass */
-    parent_class: Gtk.WidgetClass
-    glade_reserved1: () => void
-    glade_reserved2: () => void
-    glade_reserved3: () => void
-    glade_reserved4: () => void
+    readonly parent_class: Gtk.WidgetClass
+    readonly glade_reserved1: () => void
+    readonly glade_reserved2: () => void
+    readonly glade_reserved3: () => void
+    readonly glade_reserved4: () => void
     static name: string
 }
 class PlaceholderPrivate {
@@ -24876,27 +25054,27 @@ class PlaceholderPrivate {
 }
 abstract class ProjectClass {
     /* Fields of Gladeui-2.0.Gladeui.ProjectClass */
-    parent_class: GObject.ObjectClass
-    add_object: (project: Project, object: Widget) => void
-    remove_object: (project: Project, object: Widget) => void
-    undo: (project: Project) => void
-    redo: (project: Project) => void
-    next_undo_item: (project: Project) => Command
-    next_redo_item: (project: Project) => Command
-    push_undo: (project: Project, cmd: Command) => void
-    changed: (project: Project, command: Command, forward: boolean) => void
-    widget_name_changed: (project: Project, widget: Widget) => void
-    selection_changed: (project: Project) => void
-    close: (project: Project) => void
-    parse_finished: (project: Project) => void
-    glade_reserved1: () => void
-    glade_reserved2: () => void
-    glade_reserved3: () => void
-    glade_reserved4: () => void
-    glade_reserved5: () => void
-    glade_reserved6: () => void
-    glade_reserved7: () => void
-    glade_reserved8: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly add_object: (project: Project, object: Widget) => void
+    readonly remove_object: (project: Project, object: Widget) => void
+    readonly undo: (project: Project) => void
+    readonly redo: (project: Project) => void
+    readonly next_undo_item: (project: Project) => Command
+    readonly next_redo_item: (project: Project) => Command
+    readonly push_undo: (project: Project, cmd: Command) => void
+    readonly changed: (project: Project, command: Command, forward: boolean) => void
+    readonly widget_name_changed: (project: Project, widget: Widget) => void
+    readonly selection_changed: (project: Project) => void
+    readonly close: (project: Project) => void
+    readonly parse_finished: (project: Project) => void
+    readonly glade_reserved1: () => void
+    readonly glade_reserved2: () => void
+    readonly glade_reserved3: () => void
+    readonly glade_reserved4: () => void
+    readonly glade_reserved5: () => void
+    readonly glade_reserved6: () => void
+    readonly glade_reserved7: () => void
+    readonly glade_reserved8: () => void
     static name: string
 }
 class ProjectPrivate {
@@ -24904,21 +25082,21 @@ class ProjectPrivate {
 }
 abstract class PropertyClass {
     /* Fields of Gladeui-2.0.Gladeui.PropertyClass */
-    parent_class: GObject.ObjectClass
-    dup: (template_prop: Property, widget: Widget) => Property
-    equals_value: (property: Property, value: any) => boolean
-    set_value: (property: Property, value: any) => boolean
-    get_value: (property: Property, value: any) => void
-    sync: (property: Property) => void
-    load: (property: Property) => void
-    value_changed: (property: Property, old_value: any, new_value: any) => void
-    tooltip_changed: (property: Property, tooltip: string, insensitive_tooltip: string, support_warning: string) => void
-    glade_reserved1: () => void
-    glade_reserved2: () => void
-    glade_reserved3: () => void
-    glade_reserved4: () => void
-    glade_reserved5: () => void
-    glade_reserved6: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly dup: (template_prop: Property, widget: Widget) => Property
+    readonly equals_value: (property: Property, value: any) => boolean
+    readonly set_value: (property: Property, value: any) => boolean
+    readonly get_value: (property: Property, value: any) => void
+    readonly sync: (property: Property) => void
+    readonly load: (property: Property) => void
+    readonly value_changed: (property: Property, old_value: any, new_value: any) => void
+    readonly tooltip_changed: (property: Property, tooltip: string, insensitive_tooltip: string, support_warning: string) => void
+    readonly glade_reserved1: () => void
+    readonly glade_reserved2: () => void
+    readonly glade_reserved3: () => void
+    readonly glade_reserved4: () => void
+    readonly glade_reserved5: () => void
+    readonly glade_reserved6: () => void
     static name: string
 }
 class PropertyDef {
@@ -24990,7 +25168,7 @@ class PropertyDef {
 }
 abstract class PropertyLabelClass {
     /* Fields of Gladeui-2.0.Gladeui.PropertyLabelClass */
-    parent_class: Gtk.EventBoxClass
+    readonly parent_class: Gtk.EventBoxClass
     static name: string
 }
 class PropertyLabelPrivate {
@@ -25001,7 +25179,7 @@ class PropertyPrivate {
 }
 abstract class PropertyShellClass {
     /* Fields of Gladeui-2.0.Gladeui.PropertyShellClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 class PropertyShellPrivate {
@@ -25009,11 +25187,11 @@ class PropertyShellPrivate {
 }
 abstract class SignalClass {
     /* Fields of Gladeui-2.0.Gladeui.SignalClass */
-    object_class: GObject.ObjectClass
-    glade_reserved1: () => void
-    glade_reserved2: () => void
-    glade_reserved3: () => void
-    glade_reserved4: () => void
+    readonly object_class: GObject.ObjectClass
+    readonly glade_reserved1: () => void
+    readonly glade_reserved2: () => void
+    readonly glade_reserved3: () => void
+    readonly glade_reserved4: () => void
     static name: string
 }
 class SignalDef {
@@ -25040,13 +25218,13 @@ class SignalDef {
 }
 abstract class SignalEditorClass {
     /* Fields of Gladeui-2.0.Gladeui.SignalEditorClass */
-    parent_class: Gtk.BoxClass
-    padding: object[]
+    readonly parent_class: Gtk.BoxClass
+    readonly padding: object[]
     static name: string
 }
 abstract class SignalModelClass {
     /* Fields of Gladeui-2.0.Gladeui.SignalModelClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SignalModelPrivate {
@@ -25057,27 +25235,27 @@ class SignalPrivate {
 }
 class TargetableVersion {
     /* Fields of Gladeui-2.0.Gladeui.TargetableVersion */
-    major: number
-    minor: number
+    readonly major: number
+    readonly minor: number
     static name: string
 }
 abstract class WidgetActionClass {
     /* Fields of Gladeui-2.0.Gladeui.WidgetActionClass */
-    parent_class: GObject.ObjectClass
-    glade_reserved1: () => void
-    glade_reserved2: () => void
-    glade_reserved3: () => void
-    glade_reserved4: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly glade_reserved1: () => void
+    readonly glade_reserved2: () => void
+    readonly glade_reserved3: () => void
+    readonly glade_reserved4: () => void
     static name: string
 }
 class WidgetActionDef {
     /* Fields of Gladeui-2.0.Gladeui.WidgetActionDef */
-    id: string
-    path: string
-    label: string
-    stock: string
-    important: boolean
-    actions: object[]
+    readonly id: string
+    readonly path: string
+    readonly label: string
+    readonly stock: string
+    readonly important: boolean
+    readonly actions: object[]
     /* Methods of Gladeui-2.0.Gladeui.WidgetActionDef */
     clone(): WidgetActionDef
     free(): void
@@ -25095,72 +25273,72 @@ class WidgetActionPrivate {
 }
 abstract class WidgetAdaptorClass {
     /* Fields of Gladeui-2.0.Gladeui.WidgetAdaptorClass */
-    parent_class: GObject.ObjectClass
-    version_since_major: number
-    version_since_minor: number
-    default_width: number
-    default_height: number
-    deprecated: number
-    toplevel: number
-    use_placeholders: number
-    construct_object: ConstructObjectFunc
-    deep_post_create: PostCreateFunc
-    post_create: PostCreateFunc
-    get_internal_child: GetInternalFunc
-    verify_property: VerifyPropertyFunc
-    set_property: SetPropertyFunc
-    get_property: GetPropertyFunc
-    add_verify: AddChildVerifyFunc
-    add: AddChildFunc
-    remove: RemoveChildFunc
-    get_children: GetChildrenFunc
-    child_verify_property: ChildVerifyPropertyFunc
-    child_set_property: ChildSetPropertyFunc
-    child_get_property: ChildGetPropertyFunc
-    replace_child: ReplaceChildFunc
-    action_activate: ActionActivateFunc
-    child_action_activate: ChildActionActivateFunc
-    action_submenu: ActionSubmenuFunc
-    depends: DependsFunc
-    read_widget: ReadWidgetFunc
-    write_widget: WriteWidgetFunc
-    read_child: ReadWidgetFunc
-    write_child: WriteWidgetFunc
-    create_eprop: CreateEPropFunc
-    string_from_value: StringFromValueFunc
-    create_editable: CreateEditableFunc
-    destroy_object: DestroyObjectFunc
-    write_widget_after: WriteWidgetFunc
-    deprecated_since_major: number
-    deprecated_since_minor: number
-    glade_reserved1: () => void
-    glade_reserved2: () => void
-    glade_reserved3: () => void
-    glade_reserved4: () => void
-    glade_reserved5: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly version_since_major: number
+    readonly version_since_minor: number
+    readonly default_width: number
+    readonly default_height: number
+    readonly deprecated: number
+    readonly toplevel: number
+    readonly use_placeholders: number
+    readonly construct_object: ConstructObjectFunc
+    readonly deep_post_create: PostCreateFunc
+    readonly post_create: PostCreateFunc
+    readonly get_internal_child: GetInternalFunc
+    readonly verify_property: VerifyPropertyFunc
+    readonly set_property: SetPropertyFunc
+    readonly get_property: GetPropertyFunc
+    readonly add_verify: AddChildVerifyFunc
+    readonly add: AddChildFunc
+    readonly remove: RemoveChildFunc
+    readonly get_children: GetChildrenFunc
+    readonly child_verify_property: ChildVerifyPropertyFunc
+    readonly child_set_property: ChildSetPropertyFunc
+    readonly child_get_property: ChildGetPropertyFunc
+    readonly replace_child: ReplaceChildFunc
+    readonly action_activate: ActionActivateFunc
+    readonly child_action_activate: ChildActionActivateFunc
+    readonly action_submenu: ActionSubmenuFunc
+    readonly depends: DependsFunc
+    readonly read_widget: ReadWidgetFunc
+    readonly write_widget: WriteWidgetFunc
+    readonly read_child: ReadWidgetFunc
+    readonly write_child: WriteWidgetFunc
+    readonly create_eprop: CreateEPropFunc
+    readonly string_from_value: StringFromValueFunc
+    readonly create_editable: CreateEditableFunc
+    readonly destroy_object: DestroyObjectFunc
+    readonly write_widget_after: WriteWidgetFunc
+    readonly deprecated_since_major: number
+    readonly deprecated_since_minor: number
+    readonly glade_reserved1: () => void
+    readonly glade_reserved2: () => void
+    readonly glade_reserved3: () => void
+    readonly glade_reserved4: () => void
+    readonly glade_reserved5: () => void
     static name: string
 }
 abstract class WidgetClass {
     /* Fields of Gladeui-2.0.Gladeui.WidgetClass */
-    parent_class: GObject.InitiallyUnownedClass
-    add_child: (parent: Widget, child: Widget, at_mouse: boolean) => void
-    remove_child: (parent: Widget, child: Widget) => void
-    replace_child: (parent: Widget, old_object: GObject.Object, new_object: GObject.Object) => void
-    add_signal_handler: (widget: Widget, signal_handler: Signal) => void
-    remove_signal_handler: (widget: Widget, signal_handler: Signal) => void
-    change_signal_handler: (widget: Widget, new_signal_handler: Signal) => void
-    button_press_event: (widget: Widget, event: Gdk.Event) => number
-    button_release_event: (widget: Widget, event: Gdk.Event) => number
-    motion_notify_event: (widget: Widget, event: Gdk.Event) => number
-    event: (gwidget: Widget, event: Gdk.Event) => boolean
-    glade_reserved1: () => void
-    glade_reserved2: () => void
-    glade_reserved3: () => void
-    glade_reserved4: () => void
-    glade_reserved5: () => void
-    glade_reserved6: () => void
-    glade_reserved7: () => void
-    glade_reserved8: () => void
+    readonly parent_class: GObject.InitiallyUnownedClass
+    readonly add_child: (parent: Widget, child: Widget, at_mouse: boolean) => void
+    readonly remove_child: (parent: Widget, child: Widget) => void
+    readonly replace_child: (parent: Widget, old_object: GObject.Object, new_object: GObject.Object) => void
+    readonly add_signal_handler: (widget: Widget, signal_handler: Signal) => void
+    readonly remove_signal_handler: (widget: Widget, signal_handler: Signal) => void
+    readonly change_signal_handler: (widget: Widget, new_signal_handler: Signal) => void
+    readonly button_press_event: (widget: Widget, event: Gdk.Event) => number
+    readonly button_release_event: (widget: Widget, event: Gdk.Event) => number
+    readonly motion_notify_event: (widget: Widget, event: Gdk.Event) => number
+    readonly event: (gwidget: Widget, event: Gdk.Event) => boolean
+    readonly glade_reserved1: () => void
+    readonly glade_reserved2: () => void
+    readonly glade_reserved3: () => void
+    readonly glade_reserved4: () => void
+    readonly glade_reserved5: () => void
+    readonly glade_reserved6: () => void
+    readonly glade_reserved7: () => void
+    readonly glade_reserved8: () => void
     static name: string
 }
 class WidgetGroup {

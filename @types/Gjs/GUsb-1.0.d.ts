@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GUsb-1.0
  */
@@ -79,24 +85,22 @@ enum DeviceClaimInterfaceFlags {
     NONE,
     BIND_KERNEL_DRIVER,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function source_error_quark(): GLib.Quark
 function strerror(error_code: number): string
 function version_string(): string
-export interface Context_ConstructProps extends GObject.Object_ConstructProps {
+interface Context_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUsb-1.0.GUsb.Context */
     debug_level?: number
 }
 class Context {
     /* Properties of GUsb-1.0.GUsb.Context */
     debug_level: number
     readonly libusb_context: object
-    /* Fields of GUsb-1.0.GUsb.Context */
-    parent: GObject.Object
-    priv: ContextPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUsb-1.0.GUsb.Context */
     enumerate(): void
     find_by_bus_address(bus: number, address: number): Device
@@ -104,10 +108,12 @@ class Context {
     find_by_vid_pid(vid: number, pid: number): Device
     get_devices(): Device[]
     get_flags(): ContextFlags
+    get_hotplug_poll_interval(): number
     get_main_context(): GLib.MainContext
     get_source(main_ctx: GLib.MainContext): Source
     set_debug(flags: GLib.LogLevelFlags): void
     set_flags(flags: ContextFlags): void
+    set_hotplug_poll_interval(hotplug_poll_interval: number): void
     set_main_context(main_ctx: GLib.MainContext): void
     wait_for_replug(device: Device, timeout_ms: number): Device
     /* Methods of GObject-2.0.GObject.Object */
@@ -174,25 +180,23 @@ class Context {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends GObject.Object_ConstructProps {
+interface Device_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUsb-1.0.GUsb.Device */
     context?: Context
     libusb_device?: object
     platform_id?: string
 }
 class Device {
-    /* Fields of GUsb-1.0.GUsb.Device */
-    parent: GObject.Object
-    priv: DevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUsb-1.0.GUsb.Device */
-    bulk_transfer(endpoint: number, data: Uint8Array[], timeout: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* actual_length */ number | null ]
-    bulk_transfer_async(endpoint: number, data: Uint8Array[], timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    bulk_transfer(endpoint: number, data: Uint8Array, timeout: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* actual_length */ number | null ]
+    bulk_transfer_async(endpoint: number, data: Uint8Array, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     bulk_transfer_finish(res: Gio.AsyncResult): number
     claim_interface(interface: number, flags: DeviceClaimInterfaceFlags): boolean
     close(): boolean
-    control_transfer(direction: DeviceDirection, request_type: DeviceRequestType, recipient: DeviceRecipient, request: number, value: number, idx: number, data: Uint8Array[], timeout: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* actual_length */ number | null ]
-    control_transfer_async(direction: DeviceDirection, request_type: DeviceRequestType, recipient: DeviceRecipient, request: number, value: number, idx: number, data: Uint8Array[], timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    control_transfer(direction: DeviceDirection, request_type: DeviceRequestType, recipient: DeviceRecipient, request: number, value: number, idx: number, data: Uint8Array, timeout: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* actual_length */ number | null ]
+    control_transfer_async(direction: DeviceDirection, request_type: DeviceRequestType, recipient: DeviceRecipient, request: number, value: number, idx: number, data: Uint8Array, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     control_transfer_finish(res: Gio.AsyncResult): number
     get_address(): number
     get_bus(): number
@@ -220,8 +224,8 @@ class Device {
     get_string_descriptor_bytes_full(desc_index: number, langid: number, length: number): GLib.Bytes
     get_vid(): number
     get_vid_as_str(): string
-    interrupt_transfer(endpoint: number, data: Uint8Array[], timeout: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* actual_length */ number | null ]
-    interrupt_transfer_async(endpoint: number, data: Uint8Array[], timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    interrupt_transfer(endpoint: number, data: Uint8Array, timeout: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* actual_length */ number | null ]
+    interrupt_transfer_async(endpoint: number, data: Uint8Array, timeout: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     interrupt_transfer_finish(res: Gio.AsyncResult): number
     open(): boolean
     release_interface(interface: number, flags: DeviceClaimInterfaceFlags): boolean
@@ -278,15 +282,13 @@ class Device {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceList_ConstructProps extends GObject.Object_ConstructProps {
+interface DeviceList_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUsb-1.0.GUsb.DeviceList */
     context?: Context
 }
 class DeviceList {
-    /* Fields of GUsb-1.0.GUsb.DeviceList */
-    parent: GObject.Object
-    priv: DeviceListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUsb-1.0.GUsb.DeviceList */
     coldplug(): void
     find_by_bus_address(bus: number, address: number): Device
@@ -347,11 +349,11 @@ class DeviceList {
     static new(context: Context): DeviceList
     static $gtype: GObject.Type
 }
-export interface Endpoint_ConstructProps extends GObject.Object_ConstructProps {
+interface Endpoint_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Endpoint {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUsb-1.0.GUsb.Endpoint */
     get_address(): number
     get_direction(): DeviceDirection
@@ -405,11 +407,11 @@ class Endpoint {
     _init (config?: Endpoint_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Interface_ConstructProps extends GObject.Object_ConstructProps {
+interface Interface_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Interface {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUsb-1.0.GUsb.Interface */
     get_alternate(): number
     get_class(): number
@@ -466,9 +468,9 @@ class Interface {
 }
 abstract class ContextClass {
     /* Fields of GUsb-1.0.GUsb.ContextClass */
-    parent_class: GObject.ObjectClass
-    device_added: (context: Context, device: Device) => void
-    device_removed: (context: Context, device: Device) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly device_added: (context: Context, device: Device) => void
+    readonly device_removed: (context: Context, device: Device) => void
     static name: string
 }
 class ContextPrivate {
@@ -476,14 +478,14 @@ class ContextPrivate {
 }
 abstract class DeviceClass {
     /* Fields of GUsb-1.0.GUsb.DeviceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DeviceListClass {
     /* Fields of GUsb-1.0.GUsb.DeviceListClass */
-    parent_class: GObject.ObjectClass
-    device_added: (list: DeviceList, device: Device) => void
-    device_removed: (list: DeviceList, device: Device) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly device_added: (list: DeviceList, device: Device) => void
+    readonly device_removed: (list: DeviceList, device: Device) => void
     static name: string
 }
 class DeviceListPrivate {
@@ -494,12 +496,12 @@ class DevicePrivate {
 }
 abstract class EndpointClass {
     /* Fields of GUsb-1.0.GUsb.EndpointClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class InterfaceClass {
     /* Fields of GUsb-1.0.GUsb.InterfaceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Source {

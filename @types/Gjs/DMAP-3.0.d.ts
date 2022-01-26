@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * DMAP-3.0
  */
@@ -216,8 +222,8 @@ enum Type {
     CONTAINER,
     POINTER,
 }
-export const HASH_SIZE: number
-export const STATUS_OK: number
+const HASH_SIZE: number
+const STATUS_OK: number
 function content_code_dmap_type(code: ContentCode): Type
 function content_code_name(code: ContentCode): string
 function content_code_read_from_buffer(buf: string): ContentCode
@@ -282,15 +288,16 @@ class Db {
 }
 class Record {
     /* Methods of DMAP-3.0.DMAP.Record */
-    set_from_blob(blob: Uint8Array[]): boolean
+    set_from_blob(blob: Uint8Array): boolean
     /* Virtual methods of DMAP-3.0.DMAP.Record */
-    vfunc_set_from_blob(blob: Uint8Array[]): boolean
+    vfunc_set_from_blob(blob: Uint8Array): boolean
     static name: string
 }
 class RecordFactory {
     static name: string
 }
-export interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of DMAP-3.0.DMAP.Connection */
     base_uri?: object
     database_id?: number
     db?: object
@@ -312,11 +319,8 @@ class Connection {
     password: string
     revision_number: number
     session_id: number
-    /* Fields of DMAP-3.0.DMAP.Connection */
-    parent: GObject.Object
-    priv: ConnectionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of DMAP-3.0.DMAP.Connection */
     authenticate_message(session: Soup.Session, message: Soup.Message, auth: Soup.Auth, password: string): void
     get_headers(uri: string): Soup.MessageHeaders
@@ -401,16 +405,13 @@ class Connection {
     _init (config?: Connection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GstInputStream_ConstructProps extends Gio.InputStream_ConstructProps {
+interface GstInputStream_ConstructProps extends Gio.InputStream_ConstructProps {
 }
 class GstInputStream {
-    /* Fields of DMAP-3.0.DMAP.GstInputStream */
-    parent: Gio.InputStream
-    priv: GstInputStreamPrivate
     /* Fields of Gio-2.0.Gio.InputStream */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.InputStream */
     clear_pending(): void
     close(cancellable?: Gio.Cancellable | null): boolean
@@ -418,11 +419,11 @@ class GstInputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -470,7 +471,7 @@ class GstInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -499,14 +500,11 @@ class GstInputStream {
     static new(transcode_mimetype: string, src_stream: Gio.InputStream): GstInputStream
     static $gtype: GObject.Type
 }
-export interface MdnsBrowser_ConstructProps extends GObject.Object_ConstructProps {
+interface MdnsBrowser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MdnsBrowser {
-    /* Fields of DMAP-3.0.DMAP.MdnsBrowser */
-    object: GObject.Object
-    priv: MdnsBrowserPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of DMAP-3.0.DMAP.MdnsBrowser */
     get_service_type(): MdnsBrowserServiceType
     start(): boolean
@@ -566,14 +564,11 @@ class MdnsBrowser {
     static new(type: MdnsBrowserServiceType): MdnsBrowser
     static $gtype: GObject.Type
 }
-export interface MdnsPublisher_ConstructProps extends GObject.Object_ConstructProps {
+interface MdnsPublisher_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MdnsPublisher {
-    /* Fields of DMAP-3.0.DMAP.MdnsPublisher */
-    object: GObject.Object
-    priv: MdnsPublisherPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of DMAP-3.0.DMAP.MdnsPublisher */
     publish(name: string, port: number, type_of_service: string, password_required: boolean, txt_records: string): boolean
     rename_at_port(port: number, name: string): boolean
@@ -633,7 +628,8 @@ class MdnsPublisher {
     static new(): MdnsPublisher
     static $gtype: GObject.Type
 }
-export interface Share_ConstructProps extends GObject.Object_ConstructProps {
+interface Share_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of DMAP-3.0.DMAP.Share */
     auth_method?: number
     container_db?: object
     db?: object
@@ -652,11 +648,8 @@ class Share {
     readonly server_ipv4: Soup.Server
     readonly server_ipv6: Soup.Server
     txt_records: string[]
-    /* Fields of DMAP-3.0.DMAP.Share */
-    parent: GObject.Object
-    priv: SharePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -731,14 +724,14 @@ class Share {
 }
 abstract class ConnectionClass {
     /* Fields of DMAP-3.0.DMAP.ConnectionClass */
-    parent: GObject.ObjectClass
-    get_protocol_version_cc: (connection: Connection) => ContentCode
-    get_query_metadata: (connection: Connection) => string
-    connected: (connection: Connection) => void
-    disconnected: (connection: Connection) => void
-    authenticate: (connection: Connection, name: string) => string
-    connecting: (connection: Connection, state: ConnectionState, progress: number) => void
-    operation_done: (connection: Connection) => void
+    readonly parent: GObject.ObjectClass
+    readonly get_protocol_version_cc: (connection: Connection) => ContentCode
+    readonly get_query_metadata: (connection: Connection) => string
+    readonly connected: (connection: Connection) => void
+    readonly disconnected: (connection: Connection) => void
+    readonly authenticate: (connection: Connection, name: string) => string
+    readonly connecting: (connection: Connection, state: ConnectionState, progress: number) => void
+    readonly operation_done: (connection: Connection) => void
     static name: string
 }
 class ConnectionPrivate {
@@ -746,49 +739,49 @@ class ConnectionPrivate {
 }
 abstract class ContainerDbIface {
     /* Fields of DMAP-3.0.DMAP.ContainerDbIface */
-    parent: GObject.TypeInterface
-    add: (db: ContainerDb, record: ContainerRecord) => void
-    count: (db: ContainerDb) => number
+    readonly parent: GObject.TypeInterface
+    readonly add: (db: ContainerDb, record: ContainerRecord) => void
+    readonly count: (db: ContainerDb) => number
     static name: string
 }
 abstract class ContainerRecordIface {
     /* Fields of DMAP-3.0.DMAP.ContainerRecordIface */
-    parent: GObject.TypeInterface
-    get_id: (record: ContainerRecord) => number
-    add_entry: (container_record: ContainerRecord, record: Record, id: number) => void
-    get_entry_count: (record: ContainerRecord) => number
+    readonly parent: GObject.TypeInterface
+    readonly get_id: (record: ContainerRecord) => number
+    readonly add_entry: (container_record: ContainerRecord, record: Record, id: number) => void
+    readonly get_entry_count: (record: ContainerRecord) => number
     static name: string
 }
 class ContentCodeDefinition {
     /* Fields of DMAP-3.0.DMAP.ContentCodeDefinition */
-    code: ContentCode
-    int_code: number
-    name: string
-    string: string
-    type: Type
+    readonly code: ContentCode
+    readonly int_code: number
+    readonly name: string
+    readonly string: string
+    readonly type: Type
     static name: string
 }
 class DbFilterDefinition {
     /* Fields of DMAP-3.0.DMAP.DbFilterDefinition */
-    key: string
-    value: string
-    negate: boolean
+    readonly key: string
+    readonly value: string
+    readonly negate: boolean
     static name: string
 }
 abstract class DbIface {
     /* Fields of DMAP-3.0.DMAP.DbIface */
-    parent: GObject.TypeInterface
-    add: (db: Db, record: Record) => number
-    add_with_id: (db: Db, record: Record, id: number) => number
-    add_path: (db: Db, path: string) => number
-    lookup_id_by_location: (db: Db, location: string) => number
-    count: (db: Db) => number
+    readonly parent: GObject.TypeInterface
+    readonly add: (db: Db, record: Record) => number
+    readonly add_with_id: (db: Db, record: Record, id: number) => number
+    readonly add_path: (db: Db, path: string) => number
+    readonly lookup_id_by_location: (db: Db, location: string) => number
+    readonly count: (db: Db) => number
     static name: string
 }
 abstract class GstInputStreamClass {
     /* Fields of DMAP-3.0.DMAP.GstInputStreamClass */
-    parent: Gio.InputStreamClass
-    kill_pipeline: (arg0: GstInputStream) => void
+    readonly parent: Gio.InputStreamClass
+    readonly kill_pipeline: (arg0: GstInputStream) => void
     static name: string
 }
 class GstInputStreamPrivate {
@@ -796,17 +789,17 @@ class GstInputStreamPrivate {
 }
 class HashContext {
     /* Fields of DMAP-3.0.DMAP.HashContext */
-    buf: number[]
-    bits: number[]
-    in_: number[]
-    version: number
+    readonly buf: number[]
+    readonly bits: number[]
+    readonly in_: number[]
+    readonly version: number
     static name: string
 }
 abstract class MdnsBrowserClass {
     /* Fields of DMAP-3.0.DMAP.MdnsBrowserClass */
-    parent_class: GObject.ObjectClass
-    service_added: (browser: MdnsBrowser, service: MdnsBrowserService) => void
-    service_removed: (browser: MdnsBrowser, service: MdnsBrowserService) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly service_added: (browser: MdnsBrowser, service: MdnsBrowserService) => void
+    readonly service_removed: (browser: MdnsBrowser, service: MdnsBrowserService) => void
     static name: string
 }
 class MdnsBrowserPrivate {
@@ -814,20 +807,20 @@ class MdnsBrowserPrivate {
 }
 class MdnsBrowserService {
     /* Fields of DMAP-3.0.DMAP.MdnsBrowserService */
-    service_name: string
-    name: string
-    host: string
-    port: number
-    password_protected: boolean
-    pair: string
-    transport_protocol: MdnsBrowserTransportProtocol
+    readonly service_name: string
+    readonly name: string
+    readonly host: string
+    readonly port: number
+    readonly password_protected: boolean
+    readonly pair: string
+    readonly transport_protocol: MdnsBrowserTransportProtocol
     static name: string
 }
 abstract class MdnsPublisherClass {
     /* Fields of DMAP-3.0.DMAP.MdnsPublisherClass */
-    parent_class: GObject.ObjectClass
-    published: (publisher: MdnsPublisher, name: string) => void
-    name_collision: (publisher: MdnsPublisher, name: string) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly published: (publisher: MdnsPublisher, name: string) => void
+    readonly name_collision: (publisher: MdnsPublisher, name: string) => void
     static name: string
 }
 class MdnsPublisherPrivate {
@@ -835,46 +828,46 @@ class MdnsPublisherPrivate {
 }
 class MetaDataMap {
     /* Fields of DMAP-3.0.DMAP.MetaDataMap */
-    tag: string
-    md: number
+    readonly tag: string
+    readonly md: number
     static name: string
 }
 class Playlist {
     /* Fields of DMAP-3.0.DMAP.Playlist */
-    name: string
-    id: number
-    uris: object[]
+    readonly name: string
+    readonly id: number
+    readonly uris: object[]
     static name: string
 }
 abstract class RecordFactoryIface {
     /* Fields of DMAP-3.0.DMAP.RecordFactoryIface */
-    parent: GObject.TypeInterface
+    readonly parent: GObject.TypeInterface
     static name: string
 }
 abstract class RecordIface {
     /* Fields of DMAP-3.0.DMAP.RecordIface */
-    parent: GObject.TypeInterface
-    set_from_blob: (record: Record, blob: Uint8Array[]) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly set_from_blob: (record: Record, blob: Uint8Array) => boolean
     static name: string
 }
 abstract class ShareClass {
     /* Fields of DMAP-3.0.DMAP.ShareClass */
-    parent: GObject.ObjectClass
-    get_desired_port: (share: Share) => number
-    get_type_of_service: (share: Share) => string
-    message_add_standard_headers: (share: Share, msg: Soup.Message) => void
-    add_entry_to_mlcl: (id: object, record: Record, mb: object) => void
-    databases_browse_xxx: (share: Share, server: Soup.Server, msg: Soup.Message, path: string, query: GLib.HashTable, context: Soup.ClientContext) => void
-    databases_items_xxx: (share: Share, server: Soup.Server, msg: Soup.Message, path: string, query: GLib.HashTable, context: Soup.ClientContext) => void
-    server_info: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
-    content_codes: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
-    login: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
-    logout: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
-    update: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
-    ctrl_int: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
-    published: (share: Share, publisher: MdnsPublisher, name: string) => void
-    name_collision: (share: Share, publisher: MdnsPublisher, name: string) => void
-    databases: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, context: Soup.ClientContext) => void
+    readonly parent: GObject.ObjectClass
+    readonly get_desired_port: (share: Share) => number
+    readonly get_type_of_service: (share: Share) => string
+    readonly message_add_standard_headers: (share: Share, msg: Soup.Message) => void
+    readonly add_entry_to_mlcl: (id: object, record: Record, mb: object) => void
+    readonly databases_browse_xxx: (share: Share, server: Soup.Server, msg: Soup.Message, path: string, query: GLib.HashTable, context: Soup.ClientContext) => void
+    readonly databases_items_xxx: (share: Share, server: Soup.Server, msg: Soup.Message, path: string, query: GLib.HashTable, context: Soup.ClientContext) => void
+    readonly server_info: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
+    readonly content_codes: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
+    readonly login: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
+    readonly logout: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
+    readonly update: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
+    readonly ctrl_int: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, ctx: Soup.ClientContext) => void
+    readonly published: (share: Share, publisher: MdnsPublisher, name: string) => void
+    readonly name_collision: (share: Share, publisher: MdnsPublisher, name: string) => void
+    readonly databases: (share: Share, server: Soup.Server, message: Soup.Message, path: string, query: GLib.HashTable, context: Soup.ClientContext) => void
     static name: string
 }
 class SharePrivate {
@@ -882,9 +875,9 @@ class SharePrivate {
 }
 class StructureItem {
     /* Fields of DMAP-3.0.DMAP.StructureItem */
-    content_code: ContentCode
-    content: any
-    size: number
+    readonly content_code: ContentCode
+    readonly content: any
+    readonly size: number
     static name: string
 }
 }

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Ggit-1.0
  */
@@ -407,15 +413,15 @@ interface TransferProgressCallback {
 interface TreeWalkCallback {
     (root: string, entry: TreeEntry): number
 }
-export interface Blame_ConstructProps extends Native_ConstructProps {
+interface Blame_ConstructProps extends Native_ConstructProps {
 }
 class Blame {
     /* Fields of Ggit-1.0.Ggit.Native */
-    parent_instance: ObjectFactoryBase
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Blame */
-    from_buffer(buffer: Uint8Array[]): Blame | null
+    from_buffer(buffer: Uint8Array): Blame | null
     get_hunk_by_index(idx: number): BlameHunk
     get_hunk_by_line(line: number): BlameHunk
     get_hunk_count(): number
@@ -465,15 +471,15 @@ class Blame {
     static set_flags(blame_options: BlameOptions, flags: BlameFlags): void
     static $gtype: GObject.Type
 }
-export interface Blob_ConstructProps extends Object_ConstructProps {
+interface Blob_ConstructProps extends Object_ConstructProps {
 }
 class Blob {
     /* Fields of Ggit-1.0.Ggit.Object */
-    parent_instance: Native
+    readonly parent_instance: Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Blob */
-    get_raw_content(): Uint8Array[] | null
+    get_raw_content(): Uint8Array | null
     is_binary(): boolean
     /* Methods of Ggit-1.0.Ggit.Object */
     get_id(): OId | null
@@ -521,14 +527,15 @@ class Blob {
     _init (config?: Blob_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BlobOutputStream_ConstructProps extends Gio.OutputStream_ConstructProps {
+interface BlobOutputStream_ConstructProps extends Gio.OutputStream_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.BlobOutputStream */
     repository?: Repository
 }
 class BlobOutputStream {
-    /* Fields of Ggit-1.0.Ggit.BlobOutputStream */
-    parent_instance: Gio.OutputStream
+    /* Fields of Gio-2.0.Gio.OutputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.BlobOutputStream */
     get_id(): OId | null
     /* Methods of Gio-2.0.Gio.OutputStream */
@@ -546,11 +553,11 @@ class BlobOutputStream {
     splice(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, cancellable?: Gio.Cancellable | null): number
     splice_async(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     splice_finish(result: Gio.AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Gio.Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Gio.Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Gio.Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_bytes_finish(result: Gio.AsyncResult): number
@@ -593,9 +600,9 @@ class BlobOutputStream {
     vfunc_splice(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, cancellable?: Gio.Cancellable | null): number
     vfunc_splice_async(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_splice_finish(result: Gio.AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_write_finish(result: Gio.AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Gio.Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Gio.Cancellable | null): number
     vfunc_writev_async(vectors: Gio.OutputVector[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_writev_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: Gio.OutputVector[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -620,13 +627,13 @@ class BlobOutputStream {
     _init (config?: BlobOutputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Branch_ConstructProps extends Ref_ConstructProps {
+interface Branch_ConstructProps extends Ref_ConstructProps {
 }
 class Branch {
-    /* Fields of Ggit-1.0.Ggit.Branch */
-    parent_instance: Ref
+    /* Fields of Ggit-1.0.Ggit.Ref */
+    readonly parent_instance: Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Branch */
     delete(): void
     get_name(): string | null
@@ -696,7 +703,8 @@ class Branch {
     _init (config?: Branch_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CheckoutOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface CheckoutOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.CheckoutOptions */
     ancestor_label?: string
     baseline?: Tree
     dir_mode?: number
@@ -722,10 +730,8 @@ class CheckoutOptions {
     strategy: CheckoutStrategy
     target_directory: string
     their_label: string
-    /* Fields of Ggit-1.0.Ggit.CheckoutOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.CheckoutOptions */
     get_ancestor_label(): string | null
     get_baseline(): Tree | null
@@ -775,6 +781,7 @@ class CheckoutOptions {
     watch_closure(closure: Function): void
     /* Virtual methods of Ggit-1.0.Ggit.CheckoutOptions */
     vfunc_notify(why: CheckoutNotifyFlags, path: string, baseline: DiffFile, target: DiffFile, workdir: DiffFile): number
+    /* Function overloads */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_progress(path: string, completed_steps: number, total_steps: number): void
     /* Virtual methods of GObject-2.0.GObject.Object */
@@ -822,7 +829,8 @@ class CheckoutOptions {
     static new(): CheckoutOptions
     static $gtype: GObject.Type
 }
-export interface CherryPickOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface CherryPickOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.CherryPickOptions */
     checkout_options?: CheckoutOptions
     mainline?: number
     merge_options?: MergeOptions
@@ -832,10 +840,8 @@ class CherryPickOptions {
     checkout_options: CheckoutOptions
     mainline: number
     merge_options: MergeOptions
-    /* Fields of Ggit-1.0.Ggit.CherryPickOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.CherryPickOptions */
     get_checkout_options(): CheckoutOptions
     get_mainline(): number
@@ -894,13 +900,11 @@ class CherryPickOptions {
     static new(): CherryPickOptions
     static $gtype: GObject.Type
 }
-export interface CloneOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface CloneOptions_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CloneOptions {
-    /* Fields of Ggit-1.0.Ggit.CloneOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.CloneOptions */
     get_checkout_branch(): string
     get_fetch_options(): FetchOptions
@@ -958,13 +962,13 @@ class CloneOptions {
     static new(): CloneOptions
     static $gtype: GObject.Type
 }
-export interface Commit_ConstructProps extends Object_ConstructProps {
+interface Commit_ConstructProps extends Object_ConstructProps {
 }
 class Commit {
-    /* Fields of Ggit-1.0.Ggit.Commit */
-    parent_instance: Object
+    /* Fields of Ggit-1.0.Ggit.Object */
+    readonly parent_instance: Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Commit */
     amend(update_ref: string | null, author: Signature, committer: Signature, message_encoding: string | null, message: string, tree: Tree): OId | null
     get_author(): Signature | null
@@ -1022,14 +1026,15 @@ class Commit {
     _init (config?: Commit_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CommitParents_ConstructProps extends GObject.Object_ConstructProps {
+interface CommitParents_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.CommitParents */
     commit?: Commit
 }
 class CommitParents {
     /* Properties of Ggit-1.0.Ggit.CommitParents */
     readonly size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.CommitParents */
     get(idx: number): Commit | null
     get_id(idx: number): OId | null
@@ -1081,13 +1086,13 @@ class CommitParents {
     static new(commit: Commit): CommitParents
     static $gtype: GObject.Type
 }
-export interface Config_ConstructProps extends Native_ConstructProps {
+interface Config_ConstructProps extends Native_ConstructProps {
 }
 class Config {
     /* Fields of Ggit-1.0.Ggit.Native */
-    parent_instance: ObjectFactoryBase
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Config */
     add_file(file: Gio.File, level: ConfigLevel, force: boolean): void
     delete_entry(name: string): boolean
@@ -1154,13 +1159,13 @@ class Config {
     static find_system(): Gio.File
     static $gtype: GObject.Type
 }
-export interface Cred_ConstructProps extends Native_ConstructProps {
+interface Cred_ConstructProps extends Native_ConstructProps {
 }
 class Cred {
-    /* Fields of Ggit-1.0.Ggit.Cred */
-    parent_instance: Native
+    /* Fields of Ggit-1.0.Ggit.Native */
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1204,15 +1209,16 @@ class Cred {
     _init (config?: Cred_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CredPlaintext_ConstructProps extends Cred_ConstructProps {
+interface CredPlaintext_ConstructProps extends Cred_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.CredPlaintext */
     password?: string
     username?: string
 }
 class CredPlaintext {
-    /* Fields of Ggit-1.0.Ggit.CredPlaintext */
-    parent_instance: Cred
+    /* Fields of Ggit-1.0.Ggit.Cred */
+    readonly parent_instance: Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.CredPlaintext */
     get_password(): string
     get_username(): string
@@ -1266,14 +1272,15 @@ class CredPlaintext {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface CredSshInteractive_ConstructProps extends Cred_ConstructProps {
+interface CredSshInteractive_ConstructProps extends Cred_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.CredSshInteractive */
     username?: string
 }
 class CredSshInteractive {
-    /* Fields of Ggit-1.0.Ggit.CredSshInteractive */
-    parent_instance: Cred
+    /* Fields of Ggit-1.0.Ggit.Cred */
+    readonly parent_instance: Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.CredSshInteractive */
     get_username(): string
     /* Methods of GObject-2.0.GObject.Object */
@@ -1327,14 +1334,15 @@ class CredSshInteractive {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface CredSshKeyFromAgent_ConstructProps extends Cred_ConstructProps {
+interface CredSshKeyFromAgent_ConstructProps extends Cred_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.CredSshKeyFromAgent */
     username?: string
 }
 class CredSshKeyFromAgent {
     /* Fields of Ggit-1.0.Ggit.Cred */
-    parent_instance: Native
+    readonly parent_instance: Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.CredSshKeyFromAgent */
     get_username(): string | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -1387,14 +1395,15 @@ class CredSshKeyFromAgent {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Diff_ConstructProps extends Native_ConstructProps {
+interface Diff_ConstructProps extends Native_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.Diff */
     repository?: Repository
 }
 class Diff {
-    /* Fields of Ggit-1.0.Ggit.Diff */
-    parent_instance: Native
+    /* Fields of Ggit-1.0.Ggit.Native */
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Diff */
     find_similar(options?: DiffFindOptions | null): boolean
     foreach(file_cb?: DiffFileCallback | null, binary_cb?: DiffBinaryCallback | null, hunk_cb?: DiffHunkCallback | null, line_cb?: DiffLineCallback | null): void
@@ -1445,16 +1454,17 @@ class Diff {
     constructor (config?: Diff_ConstructProps)
     _init (config?: Diff_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new_buffers(buffer1: Uint8Array[] | null, buffer1_as_path: string | null, buffer2: Uint8Array[] | null, buffer2_as_path?: string | null, diff_options?: DiffOptions | null): Diff
+    static new_buffers(buffer1: Uint8Array | null, buffer1_as_path: string | null, buffer2: Uint8Array | null, buffer2_as_path?: string | null, diff_options?: DiffOptions | null): Diff
     static new_index_to_workdir(repository: Repository, index?: Index | null, diff_options?: DiffOptions | null): Diff
     static new_tree_to_index(repository: Repository, old_tree?: Tree | null, index?: Index | null, diff_options?: DiffOptions | null): Diff
     static new_tree_to_tree(repository: Repository, old_tree?: Tree | null, new_tree?: Tree | null, diff_options?: DiffOptions | null): Diff
     static new_tree_to_workdir(repository: Repository, old_tree?: Tree | null, diff_options?: DiffOptions | null): Diff
-    static blob_to_buffer(old_blob: Blob | null, old_as_path: string | null, buffer: Uint8Array[] | null, buffer_as_path?: string | null, diff_options?: DiffOptions | null, file_cb?: DiffFileCallback | null, binary_cb?: DiffBinaryCallback | null, hunk_cb?: DiffHunkCallback | null, line_cb?: DiffLineCallback | null): void
+    static blob_to_buffer(old_blob: Blob | null, old_as_path: string | null, buffer: Uint8Array | null, buffer_as_path?: string | null, diff_options?: DiffOptions | null, file_cb?: DiffFileCallback | null, binary_cb?: DiffBinaryCallback | null, hunk_cb?: DiffHunkCallback | null, line_cb?: DiffLineCallback | null): void
     static blobs(old_blob?: Blob | null, old_as_path?: string | null, new_blob?: Blob | null, new_as_path?: string | null, diff_options?: DiffOptions | null, file_cb?: DiffFileCallback | null, binary_cb?: DiffBinaryCallback | null, hunk_cb?: DiffHunkCallback | null, line_cb?: DiffLineCallback | null): void
     static $gtype: GObject.Type
 }
-export interface DiffFindOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface DiffFindOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.DiffFindOptions */
     copy_threshold?: number
     flags?: DiffFindFlags
     metric?: DiffSimilarityMetric
@@ -1470,10 +1480,8 @@ class DiffFindOptions {
     rename_from_rewrite_threshold: number
     rename_limit: number
     rename_threshold: number
-    /* Fields of Ggit-1.0.Ggit.DiffFindOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.DiffFindOptions */
     get_copy_threshold(): number
     get_flags(): DiffFindFlags
@@ -1544,7 +1552,8 @@ class DiffFindOptions {
     static new(): DiffFindOptions
     static $gtype: GObject.Type
 }
-export interface DiffFormatEmailOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface DiffFormatEmailOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.DiffFormatEmailOptions */
     author?: Signature
     body?: string
     flags?: DiffFormatEmailFlags
@@ -1562,10 +1571,8 @@ class DiffFormatEmailOptions {
     patch_number: number
     summary: string
     total_patches: number
-    /* Fields of Ggit-1.0.Ggit.DiffFormatEmailOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.DiffFormatEmailOptions */
     get_author(): Signature | null
     get_body(): string | null
@@ -1640,7 +1647,8 @@ class DiffFormatEmailOptions {
     static new(): DiffFormatEmailOptions
     static $gtype: GObject.Type
 }
-export interface DiffOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface DiffOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.DiffOptions */
     flags?: DiffOption
     n_context_lines?: number
     n_interhunk_lines?: number
@@ -1656,10 +1664,8 @@ class DiffOptions {
     new_prefix: string
     old_prefix: string
     pathspec: string[]
-    /* Fields of Ggit-1.0.Ggit.DiffOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.DiffOptions */
     get_flags(): DiffOption
     get_n_context_lines(): number
@@ -1730,14 +1736,15 @@ class DiffOptions {
     static new(): DiffOptions
     static $gtype: GObject.Type
 }
-export interface Index_ConstructProps extends Native_ConstructProps {
+interface Index_ConstructProps extends Native_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.Index */
     file?: Gio.File
 }
 class Index {
     /* Fields of Ggit-1.0.Ggit.Native */
-    parent_instance: ObjectFactoryBase
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Index */
     add(entry: IndexEntry): boolean
     add_file(file: Gio.File): boolean
@@ -1801,14 +1808,15 @@ class Index {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Native_ConstructProps extends ObjectFactoryBase_ConstructProps {
+interface Native_ConstructProps extends ObjectFactoryBase_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.Native */
     native?: object
 }
 class Native {
-    /* Fields of Ggit-1.0.Ggit.Native */
-    parent_instance: ObjectFactoryBase
+    /* Fields of Ggit-1.0.Ggit.ObjectFactoryBase */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1852,13 +1860,13 @@ class Native {
     _init (config?: Native_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends Native_ConstructProps {
+interface Object_ConstructProps extends Native_ConstructProps {
 }
 class Object {
-    /* Fields of Ggit-1.0.Ggit.Object */
-    parent_instance: Native
+    /* Fields of Ggit-1.0.Ggit.Native */
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Object */
     get_id(): OId | null
     get_owner(): Repository | null
@@ -1905,11 +1913,11 @@ class Object {
     _init (config?: Object_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ObjectFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface ObjectFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ObjectFactory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.ObjectFactory */
     construct(parent_class: GObject.ObjectClass, basetype: GObject.Type, construct_properties: GObject.ObjectConstructParam[]): GObject.Object | null
     register(basetype: GObject.Type, subtype: GObject.Type): void
@@ -1959,13 +1967,11 @@ class ObjectFactory {
     static get_default(): ObjectFactory
     static $gtype: GObject.Type
 }
-export interface ObjectFactoryBase_ConstructProps extends GObject.Object_ConstructProps {
+interface ObjectFactoryBase_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ObjectFactoryBase {
-    /* Fields of Ggit-1.0.Ggit.ObjectFactoryBase */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2009,13 +2015,11 @@ class ObjectFactoryBase {
     _init (config?: ObjectFactoryBase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ProxyOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface ProxyOptions_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ProxyOptions {
-    /* Fields of Ggit-1.0.Ggit.ProxyOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2061,7 +2065,8 @@ class ProxyOptions {
     static new(): ProxyOptions
     static $gtype: GObject.Type
 }
-export interface PushOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface PushOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.PushOptions */
     callbacks?: RemoteCallbacks
     parallelism?: number
 }
@@ -2069,10 +2074,8 @@ class PushOptions {
     /* Properties of Ggit-1.0.Ggit.PushOptions */
     callbacks: RemoteCallbacks
     parallelism: number
-    /* Fields of Ggit-1.0.Ggit.PushOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.PushOptions */
     get_parallelism(): number
     get_remote_callbacks(): RemoteCallbacks | null
@@ -2127,13 +2130,13 @@ class PushOptions {
     static new(): PushOptions
     static $gtype: GObject.Type
 }
-export interface Rebase_ConstructProps extends Native_ConstructProps {
+interface Rebase_ConstructProps extends Native_ConstructProps {
 }
 class Rebase {
     /* Fields of Ggit-1.0.Ggit.Native */
-    parent_instance: ObjectFactoryBase
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Rebase */
     abort(): void
     commit(author: Signature | null, committer: Signature, message?: string | null): OId | null
@@ -2185,13 +2188,13 @@ class Rebase {
     _init (config?: Rebase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Ref_ConstructProps extends Native_ConstructProps {
+interface Ref_ConstructProps extends Native_ConstructProps {
 }
 class Ref {
-    /* Fields of Ggit-1.0.Ggit.Ref */
-    parent_instance: Native
+    /* Fields of Ggit-1.0.Ggit.Native */
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Ref */
     delete(): void
     delete_log(): void
@@ -2258,13 +2261,13 @@ class Ref {
     static is_valid_name(name: string): boolean
     static $gtype: GObject.Type
 }
-export interface Remote_ConstructProps extends Native_ConstructProps {
+interface Remote_ConstructProps extends Native_ConstructProps {
 }
 class Remote {
-    /* Fields of Ggit-1.0.Ggit.Remote */
-    parent_instance: Native
+    /* Fields of Ggit-1.0.Ggit.Native */
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Remote */
     connect(direction: Direction, callbacks: RemoteCallbacks, proxy_options?: ProxyOptions | null, custom_headers?: string | null): void
     disconnect(): void
@@ -2326,13 +2329,11 @@ class Remote {
     static new_anonymous(repository: Repository, url: string): Remote
     static $gtype: GObject.Type
 }
-export interface RemoteCallbacks_ConstructProps extends GObject.Object_ConstructProps {
+interface RemoteCallbacks_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RemoteCallbacks {
-    /* Fields of Ggit-1.0.Ggit.RemoteCallbacks */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2395,7 +2396,8 @@ class RemoteCallbacks {
     _init (config?: RemoteCallbacks_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Repository_ConstructProps extends Native_ConstructProps {
+interface Repository_ConstructProps extends Native_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.Repository */
     clone_options?: CloneOptions
     init?: boolean
     is_bare?: boolean
@@ -2408,9 +2410,9 @@ class Repository {
     readonly head: Ref
     workdir: Gio.File
     /* Fields of Ggit-1.0.Ggit.Native */
-    parent_instance: ObjectFactoryBase
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Repository */
     add_remote_fetch(remote: Remote, refspec: string): void
     add_remote_push(remote: Remote, refspec: string): void
@@ -2421,7 +2423,7 @@ class Repository {
     cherry_pick(commit: Commit, options: CherryPickOptions): boolean
     cherry_pick_commit(commit: Commit, our_commit: Commit, mainline: number, merge_options?: MergeOptions | null): Index | null
     create_blob(): BlobOutputStream | null
-    create_blob_from_buffer(buffer: Uint8Array[]): OId | null
+    create_blob_from_buffer(buffer: Uint8Array): OId | null
     create_blob_from_file(file: Gio.File): OId
     create_blob_from_path(path: string): OId | null
     create_branch(branch_name: string, target: Object, flags: CreateFlags): Branch | null
@@ -2559,16 +2561,17 @@ class Repository {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface RevisionWalker_ConstructProps extends Native_ConstructProps {
+interface RevisionWalker_ConstructProps extends Native_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.RevisionWalker */
     repository?: Repository
 }
 class RevisionWalker {
     /* Properties of Ggit-1.0.Ggit.RevisionWalker */
     repository: Repository
-    /* Fields of Ggit-1.0.Ggit.RevisionWalker */
-    parent_instance: Native
+    /* Fields of Ggit-1.0.Ggit.Native */
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.RevisionWalker */
     get_repository(): Repository | null
     hide(oid: OId): void
@@ -2635,14 +2638,15 @@ class RevisionWalker {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Signature_ConstructProps extends Native_ConstructProps {
+interface Signature_ConstructProps extends Native_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.Signature */
     encoding?: string
 }
 class Signature {
     /* Fields of Ggit-1.0.Ggit.Native */
-    parent_instance: ObjectFactoryBase
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Signature */
     copy(): Signature | null
     get_email(): string | null
@@ -2695,7 +2699,8 @@ class Signature {
     static new_now(name: string, email: string): Signature
     static $gtype: GObject.Type
 }
-export interface SubmoduleUpdateOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface SubmoduleUpdateOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Ggit-1.0.Ggit.SubmoduleUpdateOptions */
     checkout_options?: CheckoutOptions
     fetch_options?: FetchOptions
 }
@@ -2703,10 +2708,8 @@ class SubmoduleUpdateOptions {
     /* Properties of Ggit-1.0.Ggit.SubmoduleUpdateOptions */
     checkout_options: CheckoutOptions
     fetch_options: FetchOptions
-    /* Fields of Ggit-1.0.Ggit.SubmoduleUpdateOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.SubmoduleUpdateOptions */
     get_checkout_options(): CheckoutOptions | null
     get_fetch_options(): FetchOptions
@@ -2761,13 +2764,13 @@ class SubmoduleUpdateOptions {
     static new(): SubmoduleUpdateOptions
     static $gtype: GObject.Type
 }
-export interface Tag_ConstructProps extends Object_ConstructProps {
+interface Tag_ConstructProps extends Object_ConstructProps {
 }
 class Tag {
-    /* Fields of Ggit-1.0.Ggit.Tag */
-    parent_instance: Object
+    /* Fields of Ggit-1.0.Ggit.Object */
+    readonly parent_instance: Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Tag */
     get_message(): string | null
     get_name(): string | null
@@ -2822,13 +2825,13 @@ class Tag {
     _init (config?: Tag_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Tree_ConstructProps extends Object_ConstructProps {
+interface Tree_ConstructProps extends Object_ConstructProps {
 }
 class Tree {
-    /* Fields of Ggit-1.0.Ggit.Tree */
-    parent_instance: Object
+    /* Fields of Ggit-1.0.Ggit.Object */
+    readonly parent_instance: Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Tree */
     get(i: number): TreeEntry | null
     get_by_name(name: string): TreeEntry | null
@@ -2881,13 +2884,13 @@ class Tree {
     _init (config?: Tree_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TreeBuilder_ConstructProps extends Native_ConstructProps {
+interface TreeBuilder_ConstructProps extends Native_ConstructProps {
 }
 class TreeBuilder {
-    /* Fields of Ggit-1.0.Ggit.TreeBuilder */
-    parent_instance: Native
+    /* Fields of Ggit-1.0.Ggit.Native */
+    readonly parent_instance: ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.TreeBuilder */
     clear(): void
     get_entry(path: string): TreeEntry | null
@@ -2948,7 +2951,7 @@ class AnnotatedCommit {
 }
 abstract class BlameClass {
     /* Fields of Ggit-1.0.Ggit.BlameClass */
-    parent_class: NativeClass
+    readonly parent_class: NativeClass
     static name: string
 }
 class BlameHunk {
@@ -2988,7 +2991,7 @@ class BlameOptions {
 }
 abstract class BlobClass {
     /* Fields of Ggit-1.0.Ggit.BlobClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 abstract class BlobOutputStreamClass {
@@ -3008,21 +3011,21 @@ class BranchEnumerator {
 }
 abstract class CheckoutOptionsClass {
     /* Fields of Ggit-1.0.Ggit.CheckoutOptionsClass */
-    parent_class: GObject.ObjectClass
-    notify: (options: CheckoutOptions, why: CheckoutNotifyFlags, path: string, baseline: DiffFile, target: DiffFile, workdir: DiffFile) => number
-    progress: (options: CheckoutOptions, path: string, completed_steps: number, total_steps: number) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly notify: (options: CheckoutOptions, why: CheckoutNotifyFlags, path: string, baseline: DiffFile, target: DiffFile, workdir: DiffFile) => number
+    readonly progress: (options: CheckoutOptions, path: string, completed_steps: number, total_steps: number) => void
     static name: string
 }
 abstract class CherryPickOptionsClass {
     /* Fields of Ggit-1.0.Ggit.CherryPickOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CloneOptionsClass {
     /* Fields of Ggit-1.0.Ggit.CloneOptionsClass */
-    parent_class: GObject.ObjectClass
-    create_repository: (options: CloneOptions, path: string, is_bare: boolean) => Repository | null
-    create_remote: (options: CloneOptions, repository: Repository, name: string, url: string) => Remote | null
+    readonly parent_class: GObject.ObjectClass
+    readonly create_repository: (options: CloneOptions, path: string, is_bare: boolean) => Repository | null
+    readonly create_remote: (options: CloneOptions, repository: Repository, name: string, url: string) => Remote | null
     static name: string
 }
 abstract class CommitClass {
@@ -3030,12 +3033,12 @@ abstract class CommitClass {
 }
 abstract class CommitParentsClass {
     /* Fields of Ggit-1.0.Ggit.CommitParentsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ConfigClass {
     /* Fields of Ggit-1.0.Ggit.ConfigClass */
-    parent_class: NativeClass
+    readonly parent_class: NativeClass
     static name: string
 }
 class ConfigEntry {
@@ -3055,7 +3058,7 @@ abstract class CredPlaintextClass {
 }
 abstract class CredSshInteractiveClass {
     /* Fields of Ggit-1.0.Ggit.CredSshInteractiveClass */
-    prompt: (cred: CredSshInteractive, prompts: CredSshInteractivePrompt[]) => void
+    readonly prompt: (cred: CredSshInteractive, prompts: CredSshInteractivePrompt[]) => void
     static name: string
 }
 class CredSshInteractivePrompt {
@@ -3076,7 +3079,7 @@ class CredSshInteractivePrompt {
 }
 abstract class CredSshKeyFromAgentClass {
     /* Fields of Ggit-1.0.Ggit.CredSshKeyFromAgentClass */
-    parent_class: CredClass
+    readonly parent_class: CredClass
     static name: string
 }
 class DiffBinary {
@@ -3123,12 +3126,12 @@ class DiffFile {
 }
 abstract class DiffFindOptionsClass {
     /* Fields of Ggit-1.0.Ggit.DiffFindOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DiffFormatEmailOptionsClass {
     /* Fields of Ggit-1.0.Ggit.DiffFormatEmailOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DiffHunk {
@@ -3144,7 +3147,7 @@ class DiffHunk {
 }
 class DiffLine {
     /* Methods of Ggit-1.0.Ggit.DiffLine */
-    get_content(): Uint8Array[]
+    get_content(): Uint8Array
     get_content_offset(): number
     get_new_lineno(): number
     get_old_lineno(): number
@@ -3156,7 +3159,7 @@ class DiffLine {
 }
 abstract class DiffOptionsClass {
     /* Fields of Ggit-1.0.Ggit.DiffOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DiffSimilarityMetric {
@@ -3185,7 +3188,7 @@ class FetchOptions {
 }
 abstract class IndexClass {
     /* Fields of Ggit-1.0.Ggit.IndexClass */
-    parent_class: NativeClass
+    readonly parent_class: NativeClass
     static name: string
 }
 class IndexEntries {
@@ -3289,7 +3292,7 @@ class OId {
     to_string(): string | null
     static name: string
     /* Static methods and pseudo-constructors */
-    static new_from_raw(raw: Uint8Array[]): OId
+    static new_from_raw(raw: Uint8Array): OId
     static new_from_string(str: string): OId
 }
 abstract class ObjectClass {
@@ -3300,7 +3303,7 @@ abstract class ObjectFactoryBaseClass {
 }
 abstract class ObjectFactoryClass {
     /* Fields of Ggit-1.0.Ggit.ObjectFactoryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Patch {
@@ -3321,17 +3324,17 @@ class Patch {
 }
 abstract class ProxyOptionsClass {
     /* Fields of Ggit-1.0.Ggit.ProxyOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PushOptionsClass {
     /* Fields of Ggit-1.0.Ggit.PushOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RebaseClass {
     /* Fields of Ggit-1.0.Ggit.RebaseClass */
-    parent_class: NativeClass
+    readonly parent_class: NativeClass
     static name: string
 }
 class RebaseOperation {
@@ -3394,12 +3397,12 @@ class ReflogEntry {
 }
 abstract class RemoteCallbacksClass {
     /* Fields of Ggit-1.0.Ggit.RemoteCallbacksClass */
-    parent_class: GObject.ObjectClass
-    progress: (callbacks: RemoteCallbacks, message: string) => void
-    transfer_progress: (callbacks: RemoteCallbacks, stats: TransferProgress) => void
-    update_tips: (callbacks: RemoteCallbacks, refname: string, a: OId, b: OId) => void
-    completion: (callbacks: RemoteCallbacks, type: RemoteCompletionType) => void
-    credentials: (callbacks: RemoteCallbacks, url: string, username_from_url: string | null, allowed_types: Credtype) => Cred | null
+    readonly parent_class: GObject.ObjectClass
+    readonly progress: (callbacks: RemoteCallbacks, message: string) => void
+    readonly transfer_progress: (callbacks: RemoteCallbacks, stats: TransferProgress) => void
+    readonly update_tips: (callbacks: RemoteCallbacks, refname: string, a: OId, b: OId) => void
+    readonly completion: (callbacks: RemoteCallbacks, type: RemoteCompletionType) => void
+    readonly credentials: (callbacks: RemoteCallbacks, url: string, username_from_url: string | null, allowed_types: Credtype) => Cred | null
     static name: string
 }
 abstract class RemoteClass {
@@ -3433,7 +3436,7 @@ abstract class RevisionWalkerClass {
 }
 abstract class SignatureClass {
     /* Fields of Ggit-1.0.Ggit.SignatureClass */
-    parent_class: NativeClass
+    readonly parent_class: NativeClass
     static name: string
 }
 class StatusOptions {
@@ -3469,7 +3472,7 @@ class Submodule {
 }
 abstract class SubmoduleUpdateOptionsClass {
     /* Fields of Ggit-1.0.Ggit.SubmoduleUpdateOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TagClass {

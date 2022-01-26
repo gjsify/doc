@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Retro-2
  */
@@ -127,11 +133,11 @@ class Controller {
     emit(sigName: "state-changed"): void
     static name: string
 }
-export interface ControllerIterator_ConstructProps extends GObject.Object_ConstructProps {
+interface ControllerIterator_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ControllerIterator {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Retro-2.Retro.ControllerIterator */
     next(): [ /* returnType */ boolean, /* port */ number | null, /* controller */ Controller | null ]
     /* Methods of GObject-2.0.GObject.Object */
@@ -177,7 +183,8 @@ class ControllerIterator {
     _init (config?: ControllerIterator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Core_ConstructProps extends GObject.Object_ConstructProps {
+interface Core_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Retro-2.Retro.Core */
     core_assets_directory?: string
     filename?: string
     runahead?: number
@@ -200,7 +207,7 @@ class Core {
     system_directory: string
     user_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Retro-2.Retro.Core */
     boot(): void
     get_api_version(): number
@@ -324,11 +331,11 @@ class Core {
     static new(filename: string): Core
     static $gtype: GObject.Type
 }
-export interface CoreDescriptor_ConstructProps extends GObject.Object_ConstructProps {
+interface CoreDescriptor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CoreDescriptor {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Retro-2.Retro.CoreDescriptor */
     get_firmware_md5(firmware: string): string | null
     get_firmware_path(firmware: string): string | null
@@ -395,9 +402,11 @@ class CoreDescriptor {
     static new(filename: string): CoreDescriptor
     static $gtype: GObject.Type
 }
-export interface CoreView_ConstructProps extends Gtk.Widget_ConstructProps {
+interface CoreView_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Retro-2.Retro.CoreView */
     can_grab_pointer?: boolean
     snap_pointer_to_borders?: boolean
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class CoreView {
@@ -441,9 +450,9 @@ class CoreView {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Retro-2.Retro.CoreView */
     as_controller(controller_type: ControllerType): Controller
     get_can_grab_pointer(): boolean
@@ -647,7 +656,7 @@ class CoreView {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Retro-2.Retro.CoreView */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -823,11 +832,11 @@ class CoreView {
     static new(): CoreView
     static $gtype: GObject.Type
 }
-export interface KeyJoypadMapping_ConstructProps extends GObject.Object_ConstructProps {
+interface KeyJoypadMapping_ConstructProps extends GObject.Object_ConstructProps {
 }
 class KeyJoypadMapping {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Retro-2.Retro.KeyJoypadMapping */
     get_button_key(button: JoypadId): number
     set_button_key(button: JoypadId, hardware_keycode: number): void
@@ -877,11 +886,11 @@ class KeyJoypadMapping {
     static new_default(): KeyJoypadMapping
     static $gtype: GObject.Type
 }
-export interface ModuleIterator_ConstructProps extends GObject.Object_ConstructProps {
+interface ModuleIterator_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ModuleIterator {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Retro-2.Retro.ModuleIterator */
     get(): CoreDescriptor | null
     next(): boolean
@@ -930,11 +939,11 @@ class ModuleIterator {
     static new(lookup_paths: string[], recursive: boolean): ModuleIterator
     static $gtype: GObject.Type
 }
-export interface ModuleQuery_ConstructProps extends GObject.Object_ConstructProps {
+interface ModuleQuery_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ModuleQuery {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Retro-2.Retro.ModuleQuery */
     iterator(): ModuleIterator
     /* Methods of GObject-2.0.GObject.Object */
@@ -982,11 +991,11 @@ class ModuleQuery {
     static new(recursive: boolean): ModuleQuery
     static $gtype: GObject.Type
 }
-export interface Option_ConstructProps extends GObject.Object_ConstructProps {
+interface Option_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Option {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Retro-2.Retro.Option */
     get_description(): string
     get_key(): string
@@ -1040,11 +1049,11 @@ class Option {
     _init (config?: Option_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface OptionIterator_ConstructProps extends GObject.Object_ConstructProps {
+interface OptionIterator_ConstructProps extends GObject.Object_ConstructProps {
 }
 class OptionIterator {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Retro-2.Retro.OptionIterator */
     next(): [ /* returnType */ boolean, /* key */ number | null, /* option */ Option | null ]
     /* Methods of GObject-2.0.GObject.Object */
@@ -1092,57 +1101,57 @@ class OptionIterator {
 }
 abstract class ControllerInterface {
     /* Fields of Retro-2.Retro.ControllerInterface */
-    parent_iface: GObject.TypeInterface
-    get_input_state: (self: Controller, input: Input) => number
-    get_controller_type: (self: Controller) => ControllerType
-    get_capabilities: (self: Controller) => number
-    get_supports_rumble: (self: Controller) => boolean
-    set_rumble_state: (self: Controller, effect: RumbleEffect, strength: number) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_input_state: (self: Controller, input: Input) => number
+    readonly get_controller_type: (self: Controller) => ControllerType
+    readonly get_capabilities: (self: Controller) => number
+    readonly get_supports_rumble: (self: Controller) => boolean
+    readonly set_rumble_state: (self: Controller, effect: RumbleEffect, strength: number) => void
     static name: string
 }
 abstract class ControllerIteratorClass {
     /* Fields of Retro-2.Retro.ControllerIteratorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CoreClass {
     /* Fields of Retro-2.Retro.CoreClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CoreDescriptorClass {
     /* Fields of Retro-2.Retro.CoreDescriptorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CoreViewClass {
     /* Fields of Retro-2.Retro.CoreViewClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class KeyJoypadMappingClass {
     /* Fields of Retro-2.Retro.KeyJoypadMappingClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ModuleIteratorClass {
     /* Fields of Retro-2.Retro.ModuleIteratorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ModuleQueryClass {
     /* Fields of Retro-2.Retro.ModuleQueryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class OptionClass {
     /* Fields of Retro-2.Retro.OptionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class OptionIteratorClass {
     /* Fields of Retro-2.Retro.OptionIteratorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Pixdata {

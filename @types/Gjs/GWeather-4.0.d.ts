@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GWeather-4.0
  */
@@ -150,7 +156,8 @@ function wind_direction_to_string_full(wind: WindDirection, options: FormatOptio
 interface FilterFunc {
     (location: Location): boolean
 }
-export interface Info_ConstructProps extends GObject.Object_ConstructProps {
+interface Info_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GWeather-4.0.GWeather.Info */
     application_id?: string
     contact_info?: string
     enabled_providers?: Provider
@@ -163,7 +170,7 @@ class Info {
     enabled_providers: Provider
     location: Location
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GWeather-4.0.GWeather.Info */
     abort(): void
     get_apparent(): string
@@ -273,11 +280,11 @@ class Info {
     static store_cache(): void
     static $gtype: GObject.Type
 }
-export interface Location_ConstructProps extends GObject.Object_ConstructProps {
+interface Location_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Location {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GWeather-4.0.GWeather.Location */
     deserialize(serialized: GLib.Variant): Location
     detect_nearest_city(lat: number, lon: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -303,6 +310,7 @@ class Location {
     get_timezone_str(): string | null
     get_timezones(): GLib.TimeZone[]
     has_coords(): boolean
+    has_timezone(): boolean
     next_child(child?: Location | null): Location | null
     serialize(): GLib.Variant
     /* Methods of GObject-2.0.GObject.Object */
@@ -354,9 +362,9 @@ class Location {
 }
 class Conditions {
     /* Fields of GWeather-4.0.GWeather.Conditions */
-    significant: boolean
-    phenomenon: ConditionPhenomenon
-    qualifier: ConditionQualifier
+    readonly significant: boolean
+    readonly phenomenon: ConditionPhenomenon
+    readonly qualifier: ConditionQualifier
     /* Methods of GWeather-4.0.GWeather.Conditions */
     to_string(): string
     to_string_full(options: FormatOptions): string
@@ -364,15 +372,15 @@ class Conditions {
 }
 abstract class InfoClass {
     /* Fields of GWeather-4.0.GWeather.InfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class LocationClass {
     /* Fields of GWeather-4.0.GWeather.LocationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
-type MoonLatitude = number
-type MoonPhase = number
+    type MoonLatitude = number
+    type MoonPhase = number
 }
 export default GWeather;

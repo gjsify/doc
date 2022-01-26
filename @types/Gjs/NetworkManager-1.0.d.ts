@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * NetworkManager-1.0
  */
@@ -266,7 +272,7 @@ enum SettingGsmNetworkType {
     PREFER_UMTS_HSPA,
     PREFER_GPRS_EDGE,
     PREFER_4G,
-    /* 4G (invalid, starts with a number) */
+    TODO_4G,
 }
 enum SettingHashFlags {
     ALL,
@@ -496,366 +502,366 @@ enum DeviceWifiCapabilities {
     FREQ_2GHZ,
     FREQ_5GHZ,
 }
-export const CONNECTION_CHANGED: string
-export const CONNECTION_NORMALIZE_PARAM_IP6_CONFIG_METHOD: string
-export const CONNECTION_PATH: string
-export const CONNECTION_SECRETS_CLEARED: string
-export const CONNECTION_SECRETS_UPDATED: string
-export const DBUS_IFACE_SETTINGS: string
-export const DBUS_IFACE_SETTINGS_CONNECTION: string
-export const DBUS_IFACE_SETTINGS_CONNECTION_SECRETS: string
-export const DBUS_INTERFACE: string
-export const DBUS_INTERFACE_VPN: string
-export const DBUS_INTERFACE_VPN_CONNECTION: string
-export const DBUS_INVALID_VPN_CONNECTION: string
-export const DBUS_NO_ACTIVE_VPN_CONNECTION: string
-export const DBUS_NO_VPN_CONNECTIONS: string
-export const DBUS_PATH: string
-export const DBUS_PATH_AGENT_MANAGER: string
-export const DBUS_PATH_SECRET_AGENT: string
-export const DBUS_PATH_SETTINGS: string
-export const DBUS_PATH_SETTINGS_CONNECTION: string
-export const DBUS_PATH_VPN: string
-export const DBUS_PATH_VPN_CONNECTION: string
-export const DBUS_SERVICE: string
-export const DBUS_VPN_ALREADY_STARTED: string
-export const DBUS_VPN_ALREADY_STOPPED: string
-export const DBUS_VPN_BAD_ARGUMENTS: string
-export const DBUS_VPN_ERROR_PREFIX: string
-export const DBUS_VPN_INTERACTIVE_NOT_SUPPORTED: string
-export const DBUS_VPN_SIGNAL_CONNECT_FAILED: string
-export const DBUS_VPN_SIGNAL_IP4_CONFIG: string
-export const DBUS_VPN_SIGNAL_IP_CONFIG_BAD: string
-export const DBUS_VPN_SIGNAL_LAUNCH_FAILED: string
-export const DBUS_VPN_SIGNAL_LOGIN_BANNER: string
-export const DBUS_VPN_SIGNAL_LOGIN_FAILED: string
-export const DBUS_VPN_SIGNAL_STATE_CHANGE: string
-export const DBUS_VPN_SIGNAL_VPN_CONFIG_BAD: string
-export const DBUS_VPN_STARTING_IN_PROGRESS: string
-export const DBUS_VPN_STOPPING_IN_PROGRESS: string
-export const DBUS_VPN_WRONG_STATE: string
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const SETTING_802_1X_ALTSUBJECT_MATCHES: string
-export const SETTING_802_1X_ANONYMOUS_IDENTITY: string
-export const SETTING_802_1X_CA_CERT: string
-export const SETTING_802_1X_CA_PATH: string
-export const SETTING_802_1X_CLIENT_CERT: string
-export const SETTING_802_1X_EAP: string
-export const SETTING_802_1X_IDENTITY: string
-export const SETTING_802_1X_PAC_FILE: string
-export const SETTING_802_1X_PASSWORD: string
-export const SETTING_802_1X_PASSWORD_FLAGS: string
-export const SETTING_802_1X_PASSWORD_RAW: string
-export const SETTING_802_1X_PASSWORD_RAW_FLAGS: string
-export const SETTING_802_1X_PHASE1_FAST_PROVISIONING: string
-export const SETTING_802_1X_PHASE1_PEAPLABEL: string
-export const SETTING_802_1X_PHASE1_PEAPVER: string
-export const SETTING_802_1X_PHASE2_ALTSUBJECT_MATCHES: string
-export const SETTING_802_1X_PHASE2_AUTH: string
-export const SETTING_802_1X_PHASE2_AUTHEAP: string
-export const SETTING_802_1X_PHASE2_CA_CERT: string
-export const SETTING_802_1X_PHASE2_CA_PATH: string
-export const SETTING_802_1X_PHASE2_CLIENT_CERT: string
-export const SETTING_802_1X_PHASE2_PRIVATE_KEY: string
-export const SETTING_802_1X_PHASE2_PRIVATE_KEY_PASSWORD: string
-export const SETTING_802_1X_PHASE2_PRIVATE_KEY_PASSWORD_FLAGS: string
-export const SETTING_802_1X_PHASE2_SUBJECT_MATCH: string
-export const SETTING_802_1X_PIN: string
-export const SETTING_802_1X_PIN_FLAGS: string
-export const SETTING_802_1X_PRIVATE_KEY: string
-export const SETTING_802_1X_PRIVATE_KEY_PASSWORD: string
-export const SETTING_802_1X_PRIVATE_KEY_PASSWORD_FLAGS: string
-export const SETTING_802_1X_SETTING_NAME: string
-export const SETTING_802_1X_SUBJECT_MATCH: string
-export const SETTING_802_1X_SYSTEM_CA_CERTS: string
-export const SETTING_ADSL_ENCAPSULATION: string
-export const SETTING_ADSL_ENCAPSULATION_LLC: string
-export const SETTING_ADSL_ENCAPSULATION_VCMUX: string
-export const SETTING_ADSL_PASSWORD: string
-export const SETTING_ADSL_PASSWORD_FLAGS: string
-export const SETTING_ADSL_PROTOCOL: string
-export const SETTING_ADSL_PROTOCOL_IPOATM: string
-export const SETTING_ADSL_PROTOCOL_PPPOA: string
-export const SETTING_ADSL_PROTOCOL_PPPOE: string
-export const SETTING_ADSL_SETTING_NAME: string
-export const SETTING_ADSL_USERNAME: string
-export const SETTING_ADSL_VCI: string
-export const SETTING_ADSL_VPI: string
-export const SETTING_BLUETOOTH_BDADDR: string
-export const SETTING_BLUETOOTH_SETTING_NAME: string
-export const SETTING_BLUETOOTH_TYPE: string
-export const SETTING_BLUETOOTH_TYPE_DUN: string
-export const SETTING_BLUETOOTH_TYPE_PANU: string
-export const SETTING_BOND_INTERFACE_NAME: string
-export const SETTING_BOND_OPTIONS: string
-export const SETTING_BOND_OPTION_AD_SELECT: string
-export const SETTING_BOND_OPTION_ARP_INTERVAL: string
-export const SETTING_BOND_OPTION_ARP_IP_TARGET: string
-export const SETTING_BOND_OPTION_ARP_VALIDATE: string
-export const SETTING_BOND_OPTION_DOWNDELAY: string
-export const SETTING_BOND_OPTION_FAIL_OVER_MAC: string
-export const SETTING_BOND_OPTION_LACP_RATE: string
-export const SETTING_BOND_OPTION_MIIMON: string
-export const SETTING_BOND_OPTION_MODE: string
-export const SETTING_BOND_OPTION_PRIMARY: string
-export const SETTING_BOND_OPTION_PRIMARY_RESELECT: string
-export const SETTING_BOND_OPTION_RESEND_IGMP: string
-export const SETTING_BOND_OPTION_UPDELAY: string
-export const SETTING_BOND_OPTION_USE_CARRIER: string
-export const SETTING_BOND_OPTION_XMIT_HASH_POLICY: string
-export const SETTING_BOND_SETTING_NAME: string
-export const SETTING_BRIDGE_AGEING_TIME: string
-export const SETTING_BRIDGE_FORWARD_DELAY: string
-export const SETTING_BRIDGE_HELLO_TIME: string
-export const SETTING_BRIDGE_INTERFACE_NAME: string
-export const SETTING_BRIDGE_MAC_ADDRESS: string
-export const SETTING_BRIDGE_MAX_AGE: string
-export const SETTING_BRIDGE_PORT_HAIRPIN_MODE: string
-export const SETTING_BRIDGE_PORT_PATH_COST: string
-export const SETTING_BRIDGE_PORT_PRIORITY: string
-export const SETTING_BRIDGE_PORT_SETTING_NAME: string
-export const SETTING_BRIDGE_PRIORITY: string
-export const SETTING_BRIDGE_SETTING_NAME: string
-export const SETTING_BRIDGE_STP: string
-export const SETTING_CDMA_NUMBER: string
-export const SETTING_CDMA_PASSWORD: string
-export const SETTING_CDMA_PASSWORD_FLAGS: string
-export const SETTING_CDMA_SETTING_NAME: string
-export const SETTING_CDMA_USERNAME: string
-export const SETTING_CONNECTION_AUTOCONNECT: string
-export const SETTING_CONNECTION_GATEWAY_PING_TIMEOUT: string
-export const SETTING_CONNECTION_ID: string
-export const SETTING_CONNECTION_INTERFACE_NAME: string
-export const SETTING_CONNECTION_MASTER: string
-export const SETTING_CONNECTION_PERMISSIONS: string
-export const SETTING_CONNECTION_READ_ONLY: string
-export const SETTING_CONNECTION_SECONDARIES: string
-export const SETTING_CONNECTION_SETTING_NAME: string
-export const SETTING_CONNECTION_SLAVE_TYPE: string
-export const SETTING_CONNECTION_TIMESTAMP: string
-export const SETTING_CONNECTION_TYPE: string
-export const SETTING_CONNECTION_UUID: string
-export const SETTING_CONNECTION_ZONE: string
-export const SETTING_DCB_APP_FCOE_FLAGS: string
-export const SETTING_DCB_APP_FCOE_MODE: string
-export const SETTING_DCB_APP_FCOE_PRIORITY: string
-export const SETTING_DCB_APP_FIP_FLAGS: string
-export const SETTING_DCB_APP_FIP_PRIORITY: string
-export const SETTING_DCB_APP_ISCSI_FLAGS: string
-export const SETTING_DCB_APP_ISCSI_PRIORITY: string
-export const SETTING_DCB_FCOE_MODE_FABRIC: string
-export const SETTING_DCB_FCOE_MODE_VN2VN: string
-export const SETTING_DCB_PRIORITY_BANDWIDTH: string
-export const SETTING_DCB_PRIORITY_FLOW_CONTROL: string
-export const SETTING_DCB_PRIORITY_FLOW_CONTROL_FLAGS: string
-export const SETTING_DCB_PRIORITY_GROUP_BANDWIDTH: string
-export const SETTING_DCB_PRIORITY_GROUP_FLAGS: string
-export const SETTING_DCB_PRIORITY_GROUP_ID: string
-export const SETTING_DCB_PRIORITY_STRICT_BANDWIDTH: string
-export const SETTING_DCB_PRIORITY_TRAFFIC_CLASS: string
-export const SETTING_DCB_SETTING_NAME: string
-export const SETTING_GENERIC_SETTING_NAME: string
-export const SETTING_GSM_ALLOWED_BANDS: string
-export const SETTING_GSM_APN: string
-export const SETTING_GSM_BANDS_MAX: number
-export const SETTING_GSM_HOME_ONLY: string
-export const SETTING_GSM_NETWORK_ID: string
-export const SETTING_GSM_NETWORK_TYPE: string
-export const SETTING_GSM_NUMBER: string
-export const SETTING_GSM_PASSWORD: string
-export const SETTING_GSM_PASSWORD_FLAGS: string
-export const SETTING_GSM_PIN: string
-export const SETTING_GSM_PIN_FLAGS: string
-export const SETTING_GSM_SETTING_NAME: string
-export const SETTING_GSM_USERNAME: string
-export const SETTING_INFINIBAND_MAC_ADDRESS: string
-export const SETTING_INFINIBAND_MTU: string
-export const SETTING_INFINIBAND_PARENT: string
-export const SETTING_INFINIBAND_P_KEY: string
-export const SETTING_INFINIBAND_SETTING_NAME: string
-export const SETTING_INFINIBAND_TRANSPORT_MODE: string
-export const SETTING_IP4_CONFIG_ADDRESSES: string
-export const SETTING_IP4_CONFIG_DHCP_CLIENT_ID: string
-export const SETTING_IP4_CONFIG_DHCP_HOSTNAME: string
-export const SETTING_IP4_CONFIG_DHCP_SEND_HOSTNAME: string
-export const SETTING_IP4_CONFIG_DHCP_TIMEOUT: string
-export const SETTING_IP4_CONFIG_DNS: string
-export const SETTING_IP4_CONFIG_DNS_SEARCH: string
-export const SETTING_IP4_CONFIG_IGNORE_AUTO_DNS: string
-export const SETTING_IP4_CONFIG_IGNORE_AUTO_ROUTES: string
-export const SETTING_IP4_CONFIG_MAY_FAIL: string
-export const SETTING_IP4_CONFIG_METHOD: string
-export const SETTING_IP4_CONFIG_METHOD_AUTO: string
-export const SETTING_IP4_CONFIG_METHOD_DISABLED: string
-export const SETTING_IP4_CONFIG_METHOD_LINK_LOCAL: string
-export const SETTING_IP4_CONFIG_METHOD_MANUAL: string
-export const SETTING_IP4_CONFIG_METHOD_SHARED: string
-export const SETTING_IP4_CONFIG_NEVER_DEFAULT: string
-export const SETTING_IP4_CONFIG_ROUTES: string
-export const SETTING_IP4_CONFIG_ROUTE_METRIC: string
-export const SETTING_IP4_CONFIG_SETTING_NAME: string
-export const SETTING_IP6_CONFIG_ADDRESSES: string
-export const SETTING_IP6_CONFIG_DHCP_HOSTNAME: string
-export const SETTING_IP6_CONFIG_DNS: string
-export const SETTING_IP6_CONFIG_DNS_SEARCH: string
-export const SETTING_IP6_CONFIG_IGNORE_AUTO_DNS: string
-export const SETTING_IP6_CONFIG_IGNORE_AUTO_ROUTES: string
-export const SETTING_IP6_CONFIG_IP6_PRIVACY: string
-export const SETTING_IP6_CONFIG_MAY_FAIL: string
-export const SETTING_IP6_CONFIG_METHOD: string
-export const SETTING_IP6_CONFIG_METHOD_AUTO: string
-export const SETTING_IP6_CONFIG_METHOD_DHCP: string
-export const SETTING_IP6_CONFIG_METHOD_IGNORE: string
-export const SETTING_IP6_CONFIG_METHOD_LINK_LOCAL: string
-export const SETTING_IP6_CONFIG_METHOD_MANUAL: string
-export const SETTING_IP6_CONFIG_METHOD_SHARED: string
-export const SETTING_IP6_CONFIG_NEVER_DEFAULT: string
-export const SETTING_IP6_CONFIG_ROUTES: string
-export const SETTING_IP6_CONFIG_ROUTE_METRIC: string
-export const SETTING_IP6_CONFIG_SETTING_NAME: string
-export const SETTING_NAME: string
-export const SETTING_OLPC_MESH_CHANNEL: string
-export const SETTING_OLPC_MESH_DHCP_ANYCAST_ADDRESS: string
-export const SETTING_OLPC_MESH_SETTING_NAME: string
-export const SETTING_OLPC_MESH_SSID: string
-export const SETTING_PARAM_FUZZY_IGNORE: number
-export const SETTING_PARAM_REQUIRED: number
-export const SETTING_PARAM_SECRET: number
-export const SETTING_PARAM_SERIALIZE: number
-export const SETTING_PPPOE_PASSWORD: string
-export const SETTING_PPPOE_PASSWORD_FLAGS: string
-export const SETTING_PPPOE_SERVICE: string
-export const SETTING_PPPOE_SETTING_NAME: string
-export const SETTING_PPPOE_USERNAME: string
-export const SETTING_PPP_BAUD: string
-export const SETTING_PPP_CRTSCTS: string
-export const SETTING_PPP_LCP_ECHO_FAILURE: string
-export const SETTING_PPP_LCP_ECHO_INTERVAL: string
-export const SETTING_PPP_MPPE_STATEFUL: string
-export const SETTING_PPP_MRU: string
-export const SETTING_PPP_MTU: string
-export const SETTING_PPP_NOAUTH: string
-export const SETTING_PPP_NOBSDCOMP: string
-export const SETTING_PPP_NODEFLATE: string
-export const SETTING_PPP_NO_VJ_COMP: string
-export const SETTING_PPP_REFUSE_CHAP: string
-export const SETTING_PPP_REFUSE_EAP: string
-export const SETTING_PPP_REFUSE_MSCHAP: string
-export const SETTING_PPP_REFUSE_MSCHAPV2: string
-export const SETTING_PPP_REFUSE_PAP: string
-export const SETTING_PPP_REQUIRE_MPPE: string
-export const SETTING_PPP_REQUIRE_MPPE_128: string
-export const SETTING_PPP_SETTING_NAME: string
-export const SETTING_SERIAL_BAUD: string
-export const SETTING_SERIAL_BITS: string
-export const SETTING_SERIAL_PARITY: string
-export const SETTING_SERIAL_SEND_DELAY: string
-export const SETTING_SERIAL_SETTING_NAME: string
-export const SETTING_SERIAL_STOPBITS: string
-export const SETTING_TEAM_CONFIG: string
-export const SETTING_TEAM_INTERFACE_NAME: string
-export const SETTING_TEAM_PORT_CONFIG: string
-export const SETTING_TEAM_PORT_SETTING_NAME: string
-export const SETTING_TEAM_SETTING_NAME: string
-export const SETTING_VLAN_EGRESS_PRIORITY_MAP: string
-export const SETTING_VLAN_FLAGS: string
-export const SETTING_VLAN_ID: string
-export const SETTING_VLAN_INGRESS_PRIORITY_MAP: string
-export const SETTING_VLAN_INTERFACE_NAME: string
-export const SETTING_VLAN_PARENT: string
-export const SETTING_VLAN_SETTING_NAME: string
-export const SETTING_VPN_DATA: string
-export const SETTING_VPN_PERSISTENT: string
-export const SETTING_VPN_SECRETS: string
-export const SETTING_VPN_SERVICE_TYPE: string
-export const SETTING_VPN_SETTING_NAME: string
-export const SETTING_VPN_USER_NAME: string
-export const SETTING_WIMAX_MAC_ADDRESS: string
-export const SETTING_WIMAX_NETWORK_NAME: string
-export const SETTING_WIMAX_SETTING_NAME: string
-export const SETTING_WIRED_AUTO_NEGOTIATE: string
-export const SETTING_WIRED_CLONED_MAC_ADDRESS: string
-export const SETTING_WIRED_DUPLEX: string
-export const SETTING_WIRED_MAC_ADDRESS: string
-export const SETTING_WIRED_MAC_ADDRESS_BLACKLIST: string
-export const SETTING_WIRED_MTU: string
-export const SETTING_WIRED_PORT: string
-export const SETTING_WIRED_S390_NETTYPE: string
-export const SETTING_WIRED_S390_OPTIONS: string
-export const SETTING_WIRED_S390_SUBCHANNELS: string
-export const SETTING_WIRED_SETTING_NAME: string
-export const SETTING_WIRED_SPEED: string
-export const SETTING_WIRELESS_BAND: string
-export const SETTING_WIRELESS_BSSID: string
-export const SETTING_WIRELESS_CHANNEL: string
-export const SETTING_WIRELESS_CLONED_MAC_ADDRESS: string
-export const SETTING_WIRELESS_HIDDEN: string
-export const SETTING_WIRELESS_MAC_ADDRESS: string
-export const SETTING_WIRELESS_MAC_ADDRESS_BLACKLIST: string
-export const SETTING_WIRELESS_MODE: string
-export const SETTING_WIRELESS_MODE_ADHOC: string
-export const SETTING_WIRELESS_MODE_AP: string
-export const SETTING_WIRELESS_MODE_INFRA: string
-export const SETTING_WIRELESS_MTU: string
-export const SETTING_WIRELESS_POWERSAVE: string
-export const SETTING_WIRELESS_RATE: string
-export const SETTING_WIRELESS_SEC: string
-export const SETTING_WIRELESS_SECURITY_AUTH_ALG: string
-export const SETTING_WIRELESS_SECURITY_GROUP: string
-export const SETTING_WIRELESS_SECURITY_KEY_MGMT: string
-export const SETTING_WIRELESS_SECURITY_LEAP_PASSWORD: string
-export const SETTING_WIRELESS_SECURITY_LEAP_PASSWORD_FLAGS: string
-export const SETTING_WIRELESS_SECURITY_LEAP_USERNAME: string
-export const SETTING_WIRELESS_SECURITY_PAIRWISE: string
-export const SETTING_WIRELESS_SECURITY_PROTO: string
-export const SETTING_WIRELESS_SECURITY_PSK: string
-export const SETTING_WIRELESS_SECURITY_PSK_FLAGS: string
-export const SETTING_WIRELESS_SECURITY_SETTING_NAME: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY0: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY1: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY2: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY3: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY_FLAGS: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY_TYPE: string
-export const SETTING_WIRELESS_SECURITY_WEP_TX_KEYIDX: string
-export const SETTING_WIRELESS_SEEN_BSSIDS: string
-export const SETTING_WIRELESS_SETTING_NAME: string
-export const SETTING_WIRELESS_SSID: string
-export const SETTING_WIRELESS_TX_POWER: string
-export const UTILS_HWADDR_LEN_MAX: number
-export const VLAN_FLAGS_ALL: number
-export const VPN_DBUS_PLUGIN_INTERFACE: string
-export const VPN_DBUS_PLUGIN_PATH: string
-export const VPN_PLUGIN_CAN_PERSIST: string
-export const VPN_PLUGIN_CONFIG_BANNER: string
-export const VPN_PLUGIN_CONFIG_EXT_GATEWAY: string
-export const VPN_PLUGIN_CONFIG_HAS_IP4: string
-export const VPN_PLUGIN_CONFIG_HAS_IP6: string
-export const VPN_PLUGIN_CONFIG_MTU: string
-export const VPN_PLUGIN_CONFIG_TUNDEV: string
-export const VPN_PLUGIN_IP4_CONFIG_ADDRESS: string
-export const VPN_PLUGIN_IP4_CONFIG_DNS: string
-export const VPN_PLUGIN_IP4_CONFIG_DOMAIN: string
-export const VPN_PLUGIN_IP4_CONFIG_DOMAINS: string
-export const VPN_PLUGIN_IP4_CONFIG_INT_GATEWAY: string
-export const VPN_PLUGIN_IP4_CONFIG_MSS: string
-export const VPN_PLUGIN_IP4_CONFIG_NBNS: string
-export const VPN_PLUGIN_IP4_CONFIG_NEVER_DEFAULT: string
-export const VPN_PLUGIN_IP4_CONFIG_PREFIX: string
-export const VPN_PLUGIN_IP4_CONFIG_PTP: string
-export const VPN_PLUGIN_IP4_CONFIG_ROUTES: string
-export const VPN_PLUGIN_IP6_CONFIG_ADDRESS: string
-export const VPN_PLUGIN_IP6_CONFIG_DNS: string
-export const VPN_PLUGIN_IP6_CONFIG_DOMAIN: string
-export const VPN_PLUGIN_IP6_CONFIG_DOMAINS: string
-export const VPN_PLUGIN_IP6_CONFIG_INT_GATEWAY: string
-export const VPN_PLUGIN_IP6_CONFIG_MSS: string
-export const VPN_PLUGIN_IP6_CONFIG_NEVER_DEFAULT: string
-export const VPN_PLUGIN_IP6_CONFIG_PREFIX: string
-export const VPN_PLUGIN_IP6_CONFIG_PTP: string
-export const VPN_PLUGIN_IP6_CONFIG_ROUTES: string
+const CONNECTION_CHANGED: string
+const CONNECTION_NORMALIZE_PARAM_IP6_CONFIG_METHOD: string
+const CONNECTION_PATH: string
+const CONNECTION_SECRETS_CLEARED: string
+const CONNECTION_SECRETS_UPDATED: string
+const DBUS_IFACE_SETTINGS: string
+const DBUS_IFACE_SETTINGS_CONNECTION: string
+const DBUS_IFACE_SETTINGS_CONNECTION_SECRETS: string
+const DBUS_INTERFACE: string
+const DBUS_INTERFACE_VPN: string
+const DBUS_INTERFACE_VPN_CONNECTION: string
+const DBUS_INVALID_VPN_CONNECTION: string
+const DBUS_NO_ACTIVE_VPN_CONNECTION: string
+const DBUS_NO_VPN_CONNECTIONS: string
+const DBUS_PATH: string
+const DBUS_PATH_AGENT_MANAGER: string
+const DBUS_PATH_SECRET_AGENT: string
+const DBUS_PATH_SETTINGS: string
+const DBUS_PATH_SETTINGS_CONNECTION: string
+const DBUS_PATH_VPN: string
+const DBUS_PATH_VPN_CONNECTION: string
+const DBUS_SERVICE: string
+const DBUS_VPN_ALREADY_STARTED: string
+const DBUS_VPN_ALREADY_STOPPED: string
+const DBUS_VPN_BAD_ARGUMENTS: string
+const DBUS_VPN_ERROR_PREFIX: string
+const DBUS_VPN_INTERACTIVE_NOT_SUPPORTED: string
+const DBUS_VPN_SIGNAL_CONNECT_FAILED: string
+const DBUS_VPN_SIGNAL_IP4_CONFIG: string
+const DBUS_VPN_SIGNAL_IP_CONFIG_BAD: string
+const DBUS_VPN_SIGNAL_LAUNCH_FAILED: string
+const DBUS_VPN_SIGNAL_LOGIN_BANNER: string
+const DBUS_VPN_SIGNAL_LOGIN_FAILED: string
+const DBUS_VPN_SIGNAL_STATE_CHANGE: string
+const DBUS_VPN_SIGNAL_VPN_CONFIG_BAD: string
+const DBUS_VPN_STARTING_IN_PROGRESS: string
+const DBUS_VPN_STOPPING_IN_PROGRESS: string
+const DBUS_VPN_WRONG_STATE: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const SETTING_802_1X_ALTSUBJECT_MATCHES: string
+const SETTING_802_1X_ANONYMOUS_IDENTITY: string
+const SETTING_802_1X_CA_CERT: string
+const SETTING_802_1X_CA_PATH: string
+const SETTING_802_1X_CLIENT_CERT: string
+const SETTING_802_1X_EAP: string
+const SETTING_802_1X_IDENTITY: string
+const SETTING_802_1X_PAC_FILE: string
+const SETTING_802_1X_PASSWORD: string
+const SETTING_802_1X_PASSWORD_FLAGS: string
+const SETTING_802_1X_PASSWORD_RAW: string
+const SETTING_802_1X_PASSWORD_RAW_FLAGS: string
+const SETTING_802_1X_PHASE1_FAST_PROVISIONING: string
+const SETTING_802_1X_PHASE1_PEAPLABEL: string
+const SETTING_802_1X_PHASE1_PEAPVER: string
+const SETTING_802_1X_PHASE2_ALTSUBJECT_MATCHES: string
+const SETTING_802_1X_PHASE2_AUTH: string
+const SETTING_802_1X_PHASE2_AUTHEAP: string
+const SETTING_802_1X_PHASE2_CA_CERT: string
+const SETTING_802_1X_PHASE2_CA_PATH: string
+const SETTING_802_1X_PHASE2_CLIENT_CERT: string
+const SETTING_802_1X_PHASE2_PRIVATE_KEY: string
+const SETTING_802_1X_PHASE2_PRIVATE_KEY_PASSWORD: string
+const SETTING_802_1X_PHASE2_PRIVATE_KEY_PASSWORD_FLAGS: string
+const SETTING_802_1X_PHASE2_SUBJECT_MATCH: string
+const SETTING_802_1X_PIN: string
+const SETTING_802_1X_PIN_FLAGS: string
+const SETTING_802_1X_PRIVATE_KEY: string
+const SETTING_802_1X_PRIVATE_KEY_PASSWORD: string
+const SETTING_802_1X_PRIVATE_KEY_PASSWORD_FLAGS: string
+const SETTING_802_1X_SETTING_NAME: string
+const SETTING_802_1X_SUBJECT_MATCH: string
+const SETTING_802_1X_SYSTEM_CA_CERTS: string
+const SETTING_ADSL_ENCAPSULATION: string
+const SETTING_ADSL_ENCAPSULATION_LLC: string
+const SETTING_ADSL_ENCAPSULATION_VCMUX: string
+const SETTING_ADSL_PASSWORD: string
+const SETTING_ADSL_PASSWORD_FLAGS: string
+const SETTING_ADSL_PROTOCOL: string
+const SETTING_ADSL_PROTOCOL_IPOATM: string
+const SETTING_ADSL_PROTOCOL_PPPOA: string
+const SETTING_ADSL_PROTOCOL_PPPOE: string
+const SETTING_ADSL_SETTING_NAME: string
+const SETTING_ADSL_USERNAME: string
+const SETTING_ADSL_VCI: string
+const SETTING_ADSL_VPI: string
+const SETTING_BLUETOOTH_BDADDR: string
+const SETTING_BLUETOOTH_SETTING_NAME: string
+const SETTING_BLUETOOTH_TYPE: string
+const SETTING_BLUETOOTH_TYPE_DUN: string
+const SETTING_BLUETOOTH_TYPE_PANU: string
+const SETTING_BOND_INTERFACE_NAME: string
+const SETTING_BOND_OPTIONS: string
+const SETTING_BOND_OPTION_AD_SELECT: string
+const SETTING_BOND_OPTION_ARP_INTERVAL: string
+const SETTING_BOND_OPTION_ARP_IP_TARGET: string
+const SETTING_BOND_OPTION_ARP_VALIDATE: string
+const SETTING_BOND_OPTION_DOWNDELAY: string
+const SETTING_BOND_OPTION_FAIL_OVER_MAC: string
+const SETTING_BOND_OPTION_LACP_RATE: string
+const SETTING_BOND_OPTION_MIIMON: string
+const SETTING_BOND_OPTION_MODE: string
+const SETTING_BOND_OPTION_PRIMARY: string
+const SETTING_BOND_OPTION_PRIMARY_RESELECT: string
+const SETTING_BOND_OPTION_RESEND_IGMP: string
+const SETTING_BOND_OPTION_UPDELAY: string
+const SETTING_BOND_OPTION_USE_CARRIER: string
+const SETTING_BOND_OPTION_XMIT_HASH_POLICY: string
+const SETTING_BOND_SETTING_NAME: string
+const SETTING_BRIDGE_AGEING_TIME: string
+const SETTING_BRIDGE_FORWARD_DELAY: string
+const SETTING_BRIDGE_HELLO_TIME: string
+const SETTING_BRIDGE_INTERFACE_NAME: string
+const SETTING_BRIDGE_MAC_ADDRESS: string
+const SETTING_BRIDGE_MAX_AGE: string
+const SETTING_BRIDGE_PORT_HAIRPIN_MODE: string
+const SETTING_BRIDGE_PORT_PATH_COST: string
+const SETTING_BRIDGE_PORT_PRIORITY: string
+const SETTING_BRIDGE_PORT_SETTING_NAME: string
+const SETTING_BRIDGE_PRIORITY: string
+const SETTING_BRIDGE_SETTING_NAME: string
+const SETTING_BRIDGE_STP: string
+const SETTING_CDMA_NUMBER: string
+const SETTING_CDMA_PASSWORD: string
+const SETTING_CDMA_PASSWORD_FLAGS: string
+const SETTING_CDMA_SETTING_NAME: string
+const SETTING_CDMA_USERNAME: string
+const SETTING_CONNECTION_AUTOCONNECT: string
+const SETTING_CONNECTION_GATEWAY_PING_TIMEOUT: string
+const SETTING_CONNECTION_ID: string
+const SETTING_CONNECTION_INTERFACE_NAME: string
+const SETTING_CONNECTION_MASTER: string
+const SETTING_CONNECTION_PERMISSIONS: string
+const SETTING_CONNECTION_READ_ONLY: string
+const SETTING_CONNECTION_SECONDARIES: string
+const SETTING_CONNECTION_SETTING_NAME: string
+const SETTING_CONNECTION_SLAVE_TYPE: string
+const SETTING_CONNECTION_TIMESTAMP: string
+const SETTING_CONNECTION_TYPE: string
+const SETTING_CONNECTION_UUID: string
+const SETTING_CONNECTION_ZONE: string
+const SETTING_DCB_APP_FCOE_FLAGS: string
+const SETTING_DCB_APP_FCOE_MODE: string
+const SETTING_DCB_APP_FCOE_PRIORITY: string
+const SETTING_DCB_APP_FIP_FLAGS: string
+const SETTING_DCB_APP_FIP_PRIORITY: string
+const SETTING_DCB_APP_ISCSI_FLAGS: string
+const SETTING_DCB_APP_ISCSI_PRIORITY: string
+const SETTING_DCB_FCOE_MODE_FABRIC: string
+const SETTING_DCB_FCOE_MODE_VN2VN: string
+const SETTING_DCB_PRIORITY_BANDWIDTH: string
+const SETTING_DCB_PRIORITY_FLOW_CONTROL: string
+const SETTING_DCB_PRIORITY_FLOW_CONTROL_FLAGS: string
+const SETTING_DCB_PRIORITY_GROUP_BANDWIDTH: string
+const SETTING_DCB_PRIORITY_GROUP_FLAGS: string
+const SETTING_DCB_PRIORITY_GROUP_ID: string
+const SETTING_DCB_PRIORITY_STRICT_BANDWIDTH: string
+const SETTING_DCB_PRIORITY_TRAFFIC_CLASS: string
+const SETTING_DCB_SETTING_NAME: string
+const SETTING_GENERIC_SETTING_NAME: string
+const SETTING_GSM_ALLOWED_BANDS: string
+const SETTING_GSM_APN: string
+const SETTING_GSM_BANDS_MAX: number
+const SETTING_GSM_HOME_ONLY: string
+const SETTING_GSM_NETWORK_ID: string
+const SETTING_GSM_NETWORK_TYPE: string
+const SETTING_GSM_NUMBER: string
+const SETTING_GSM_PASSWORD: string
+const SETTING_GSM_PASSWORD_FLAGS: string
+const SETTING_GSM_PIN: string
+const SETTING_GSM_PIN_FLAGS: string
+const SETTING_GSM_SETTING_NAME: string
+const SETTING_GSM_USERNAME: string
+const SETTING_INFINIBAND_MAC_ADDRESS: string
+const SETTING_INFINIBAND_MTU: string
+const SETTING_INFINIBAND_PARENT: string
+const SETTING_INFINIBAND_P_KEY: string
+const SETTING_INFINIBAND_SETTING_NAME: string
+const SETTING_INFINIBAND_TRANSPORT_MODE: string
+const SETTING_IP4_CONFIG_ADDRESSES: string
+const SETTING_IP4_CONFIG_DHCP_CLIENT_ID: string
+const SETTING_IP4_CONFIG_DHCP_HOSTNAME: string
+const SETTING_IP4_CONFIG_DHCP_SEND_HOSTNAME: string
+const SETTING_IP4_CONFIG_DHCP_TIMEOUT: string
+const SETTING_IP4_CONFIG_DNS: string
+const SETTING_IP4_CONFIG_DNS_SEARCH: string
+const SETTING_IP4_CONFIG_IGNORE_AUTO_DNS: string
+const SETTING_IP4_CONFIG_IGNORE_AUTO_ROUTES: string
+const SETTING_IP4_CONFIG_MAY_FAIL: string
+const SETTING_IP4_CONFIG_METHOD: string
+const SETTING_IP4_CONFIG_METHOD_AUTO: string
+const SETTING_IP4_CONFIG_METHOD_DISABLED: string
+const SETTING_IP4_CONFIG_METHOD_LINK_LOCAL: string
+const SETTING_IP4_CONFIG_METHOD_MANUAL: string
+const SETTING_IP4_CONFIG_METHOD_SHARED: string
+const SETTING_IP4_CONFIG_NEVER_DEFAULT: string
+const SETTING_IP4_CONFIG_ROUTES: string
+const SETTING_IP4_CONFIG_ROUTE_METRIC: string
+const SETTING_IP4_CONFIG_SETTING_NAME: string
+const SETTING_IP6_CONFIG_ADDRESSES: string
+const SETTING_IP6_CONFIG_DHCP_HOSTNAME: string
+const SETTING_IP6_CONFIG_DNS: string
+const SETTING_IP6_CONFIG_DNS_SEARCH: string
+const SETTING_IP6_CONFIG_IGNORE_AUTO_DNS: string
+const SETTING_IP6_CONFIG_IGNORE_AUTO_ROUTES: string
+const SETTING_IP6_CONFIG_IP6_PRIVACY: string
+const SETTING_IP6_CONFIG_MAY_FAIL: string
+const SETTING_IP6_CONFIG_METHOD: string
+const SETTING_IP6_CONFIG_METHOD_AUTO: string
+const SETTING_IP6_CONFIG_METHOD_DHCP: string
+const SETTING_IP6_CONFIG_METHOD_IGNORE: string
+const SETTING_IP6_CONFIG_METHOD_LINK_LOCAL: string
+const SETTING_IP6_CONFIG_METHOD_MANUAL: string
+const SETTING_IP6_CONFIG_METHOD_SHARED: string
+const SETTING_IP6_CONFIG_NEVER_DEFAULT: string
+const SETTING_IP6_CONFIG_ROUTES: string
+const SETTING_IP6_CONFIG_ROUTE_METRIC: string
+const SETTING_IP6_CONFIG_SETTING_NAME: string
+const SETTING_NAME: string
+const SETTING_OLPC_MESH_CHANNEL: string
+const SETTING_OLPC_MESH_DHCP_ANYCAST_ADDRESS: string
+const SETTING_OLPC_MESH_SETTING_NAME: string
+const SETTING_OLPC_MESH_SSID: string
+const SETTING_PARAM_FUZZY_IGNORE: number
+const SETTING_PARAM_REQUIRED: number
+const SETTING_PARAM_SECRET: number
+const SETTING_PARAM_SERIALIZE: number
+const SETTING_PPPOE_PASSWORD: string
+const SETTING_PPPOE_PASSWORD_FLAGS: string
+const SETTING_PPPOE_SERVICE: string
+const SETTING_PPPOE_SETTING_NAME: string
+const SETTING_PPPOE_USERNAME: string
+const SETTING_PPP_BAUD: string
+const SETTING_PPP_CRTSCTS: string
+const SETTING_PPP_LCP_ECHO_FAILURE: string
+const SETTING_PPP_LCP_ECHO_INTERVAL: string
+const SETTING_PPP_MPPE_STATEFUL: string
+const SETTING_PPP_MRU: string
+const SETTING_PPP_MTU: string
+const SETTING_PPP_NOAUTH: string
+const SETTING_PPP_NOBSDCOMP: string
+const SETTING_PPP_NODEFLATE: string
+const SETTING_PPP_NO_VJ_COMP: string
+const SETTING_PPP_REFUSE_CHAP: string
+const SETTING_PPP_REFUSE_EAP: string
+const SETTING_PPP_REFUSE_MSCHAP: string
+const SETTING_PPP_REFUSE_MSCHAPV2: string
+const SETTING_PPP_REFUSE_PAP: string
+const SETTING_PPP_REQUIRE_MPPE: string
+const SETTING_PPP_REQUIRE_MPPE_128: string
+const SETTING_PPP_SETTING_NAME: string
+const SETTING_SERIAL_BAUD: string
+const SETTING_SERIAL_BITS: string
+const SETTING_SERIAL_PARITY: string
+const SETTING_SERIAL_SEND_DELAY: string
+const SETTING_SERIAL_SETTING_NAME: string
+const SETTING_SERIAL_STOPBITS: string
+const SETTING_TEAM_CONFIG: string
+const SETTING_TEAM_INTERFACE_NAME: string
+const SETTING_TEAM_PORT_CONFIG: string
+const SETTING_TEAM_PORT_SETTING_NAME: string
+const SETTING_TEAM_SETTING_NAME: string
+const SETTING_VLAN_EGRESS_PRIORITY_MAP: string
+const SETTING_VLAN_FLAGS: string
+const SETTING_VLAN_ID: string
+const SETTING_VLAN_INGRESS_PRIORITY_MAP: string
+const SETTING_VLAN_INTERFACE_NAME: string
+const SETTING_VLAN_PARENT: string
+const SETTING_VLAN_SETTING_NAME: string
+const SETTING_VPN_DATA: string
+const SETTING_VPN_PERSISTENT: string
+const SETTING_VPN_SECRETS: string
+const SETTING_VPN_SERVICE_TYPE: string
+const SETTING_VPN_SETTING_NAME: string
+const SETTING_VPN_USER_NAME: string
+const SETTING_WIMAX_MAC_ADDRESS: string
+const SETTING_WIMAX_NETWORK_NAME: string
+const SETTING_WIMAX_SETTING_NAME: string
+const SETTING_WIRED_AUTO_NEGOTIATE: string
+const SETTING_WIRED_CLONED_MAC_ADDRESS: string
+const SETTING_WIRED_DUPLEX: string
+const SETTING_WIRED_MAC_ADDRESS: string
+const SETTING_WIRED_MAC_ADDRESS_BLACKLIST: string
+const SETTING_WIRED_MTU: string
+const SETTING_WIRED_PORT: string
+const SETTING_WIRED_S390_NETTYPE: string
+const SETTING_WIRED_S390_OPTIONS: string
+const SETTING_WIRED_S390_SUBCHANNELS: string
+const SETTING_WIRED_SETTING_NAME: string
+const SETTING_WIRED_SPEED: string
+const SETTING_WIRELESS_BAND: string
+const SETTING_WIRELESS_BSSID: string
+const SETTING_WIRELESS_CHANNEL: string
+const SETTING_WIRELESS_CLONED_MAC_ADDRESS: string
+const SETTING_WIRELESS_HIDDEN: string
+const SETTING_WIRELESS_MAC_ADDRESS: string
+const SETTING_WIRELESS_MAC_ADDRESS_BLACKLIST: string
+const SETTING_WIRELESS_MODE: string
+const SETTING_WIRELESS_MODE_ADHOC: string
+const SETTING_WIRELESS_MODE_AP: string
+const SETTING_WIRELESS_MODE_INFRA: string
+const SETTING_WIRELESS_MTU: string
+const SETTING_WIRELESS_POWERSAVE: string
+const SETTING_WIRELESS_RATE: string
+const SETTING_WIRELESS_SEC: string
+const SETTING_WIRELESS_SECURITY_AUTH_ALG: string
+const SETTING_WIRELESS_SECURITY_GROUP: string
+const SETTING_WIRELESS_SECURITY_KEY_MGMT: string
+const SETTING_WIRELESS_SECURITY_LEAP_PASSWORD: string
+const SETTING_WIRELESS_SECURITY_LEAP_PASSWORD_FLAGS: string
+const SETTING_WIRELESS_SECURITY_LEAP_USERNAME: string
+const SETTING_WIRELESS_SECURITY_PAIRWISE: string
+const SETTING_WIRELESS_SECURITY_PROTO: string
+const SETTING_WIRELESS_SECURITY_PSK: string
+const SETTING_WIRELESS_SECURITY_PSK_FLAGS: string
+const SETTING_WIRELESS_SECURITY_SETTING_NAME: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY0: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY1: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY2: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY3: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY_FLAGS: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY_TYPE: string
+const SETTING_WIRELESS_SECURITY_WEP_TX_KEYIDX: string
+const SETTING_WIRELESS_SEEN_BSSIDS: string
+const SETTING_WIRELESS_SETTING_NAME: string
+const SETTING_WIRELESS_SSID: string
+const SETTING_WIRELESS_TX_POWER: string
+const UTILS_HWADDR_LEN_MAX: number
+const VLAN_FLAGS_ALL: number
+const VPN_DBUS_PLUGIN_INTERFACE: string
+const VPN_DBUS_PLUGIN_PATH: string
+const VPN_PLUGIN_CAN_PERSIST: string
+const VPN_PLUGIN_CONFIG_BANNER: string
+const VPN_PLUGIN_CONFIG_EXT_GATEWAY: string
+const VPN_PLUGIN_CONFIG_HAS_IP4: string
+const VPN_PLUGIN_CONFIG_HAS_IP6: string
+const VPN_PLUGIN_CONFIG_MTU: string
+const VPN_PLUGIN_CONFIG_TUNDEV: string
+const VPN_PLUGIN_IP4_CONFIG_ADDRESS: string
+const VPN_PLUGIN_IP4_CONFIG_DNS: string
+const VPN_PLUGIN_IP4_CONFIG_DOMAIN: string
+const VPN_PLUGIN_IP4_CONFIG_DOMAINS: string
+const VPN_PLUGIN_IP4_CONFIG_INT_GATEWAY: string
+const VPN_PLUGIN_IP4_CONFIG_MSS: string
+const VPN_PLUGIN_IP4_CONFIG_NBNS: string
+const VPN_PLUGIN_IP4_CONFIG_NEVER_DEFAULT: string
+const VPN_PLUGIN_IP4_CONFIG_PREFIX: string
+const VPN_PLUGIN_IP4_CONFIG_PTP: string
+const VPN_PLUGIN_IP4_CONFIG_ROUTES: string
+const VPN_PLUGIN_IP6_CONFIG_ADDRESS: string
+const VPN_PLUGIN_IP6_CONFIG_DNS: string
+const VPN_PLUGIN_IP6_CONFIG_DOMAIN: string
+const VPN_PLUGIN_IP6_CONFIG_DOMAINS: string
+const VPN_PLUGIN_IP6_CONFIG_INT_GATEWAY: string
+const VPN_PLUGIN_IP6_CONFIG_MSS: string
+const VPN_PLUGIN_IP6_CONFIG_NEVER_DEFAULT: string
+const VPN_PLUGIN_IP6_CONFIG_PREFIX: string
+const VPN_PLUGIN_IP6_CONFIG_PTP: string
+const VPN_PLUGIN_IP6_CONFIG_ROUTES: string
 function connection_error_quark(): GLib.Quark
 function setting_802_1x_error_quark(): GLib.Quark
 function setting_adsl_error_quark(): GLib.Quark
@@ -894,7 +900,7 @@ function utils_file_search_in_paths(progname: string, try_first: string | null, 
 function utils_gvalue_hash_dup(hash: GLib.HashTable): GLib.HashTable
 function utils_hex2byte(hex: string): number
 function utils_hexstr2bin(hex: string, len: number): string
-function utils_hwaddr_atoba(asc: string, type: number): Uint8Array[]
+function utils_hwaddr_atoba(asc: string, type: number): Uint8Array
 function utils_hwaddr_aton(asc: string, type: number, buffer?: object | null): number
 function utils_hwaddr_aton_len(asc: string, buffer: object | null, length: number): number
 function utils_hwaddr_len(type: number): number
@@ -917,11 +923,11 @@ function utils_ip6_routes_from_gvalue(value: any): IP6Route[]
 function utils_ip6_routes_to_gvalue(list: IP6Route[], value: any): void
 function utils_is_empty_ssid(ssid: number, len: number): boolean
 function utils_is_uuid(str: string): boolean
-function utils_rsa_key_encrypt(data: Uint8Array[], in_password?: string | null): [ /* returnType */ Uint8Array[], /* out_password */ string | null ]
-function utils_rsa_key_encrypt_aes(data: Uint8Array[], in_password?: string | null): [ /* returnType */ Uint8Array[], /* out_password */ string | null ]
-function utils_same_ssid(ssid1: Uint8Array[], ssid2: Uint8Array[], ignore_trailing_null: boolean): boolean
+function utils_rsa_key_encrypt(data: Uint8Array, in_password?: string | null): [ /* returnType */ Uint8Array, /* out_password */ string | null ]
+function utils_rsa_key_encrypt_aes(data: Uint8Array, in_password?: string | null): [ /* returnType */ Uint8Array, /* out_password */ string | null ]
+function utils_same_ssid(ssid1: Uint8Array, ssid2: Uint8Array, ignore_trailing_null: boolean): boolean
 function utils_security_valid(type: UtilsSecurityType, wifi_caps: DeviceWifiCapabilities, have_ap: boolean, adhoc: boolean, ap_flags: TODO_80211ApFlags, ap_wpa: TODO_80211ApSecurityFlags, ap_rsn: TODO_80211ApSecurityFlags): boolean
-function utils_ssid_to_utf8(ssid: Uint8Array[]): string
+function utils_ssid_to_utf8(ssid: Uint8Array): string
 function utils_uuid_generate(): string
 function utils_uuid_generate_from_string(s: string): string
 function utils_wep_key_valid(key: string, wep_type: WepKeyType): boolean
@@ -942,16 +948,15 @@ interface UtilsFileSearchInPathsPredicate {
 interface VPNIterFunc {
     (key: string, value: string): void
 }
-export interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.Connection */
     path?: string
 }
 class Connection {
     /* Properties of NetworkManager-1.0.NetworkManager.Connection */
     path: string
-    /* Fields of NetworkManager-1.0.NetworkManager.Connection */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.Connection */
     add_setting(setting: Setting): void
     clear_secrets(): void
@@ -1069,16 +1074,15 @@ class Connection {
     static lookup_setting_type_by_quark(error_quark: GLib.Quark): GObject.Type
     static $gtype: GObject.Type
 }
-export interface Setting_ConstructProps extends GObject.Object_ConstructProps {
+interface Setting_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.Setting */
     name?: string
 }
 class Setting {
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.Setting */
     clear_secrets(): void
     clear_secrets_with_flags(func: SettingClearSecretsWithFlagsFn): void
@@ -1149,7 +1153,8 @@ class Setting {
     static new_from_hash(setting_type: GObject.Type, hash: GLib.HashTable): Setting
     static $gtype: GObject.Type
 }
-export interface Setting8021x_ConstructProps extends Setting_ConstructProps {
+interface Setting8021x_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.Setting8021x */
     anonymous_identity?: string
     ca_path?: string
     identity?: string
@@ -1199,10 +1204,10 @@ class Setting8021x {
     system_ca_certs: boolean
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.Setting8021x */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.Setting8021x */
     add_altsubject_match(altsubject_match: string): boolean
     add_eap_method(eap: string): boolean
@@ -1212,11 +1217,11 @@ class Setting8021x {
     clear_phase2_altsubject_matches(): void
     get_altsubject_match(i: number): string
     get_anonymous_identity(): string
-    get_ca_cert_blob(): Uint8Array[]
+    get_ca_cert_blob(): Uint8Array
     get_ca_cert_path(): string
     get_ca_cert_scheme(): Setting8021xCKScheme
     get_ca_path(): string
-    get_client_cert_blob(): Uint8Array[]
+    get_client_cert_blob(): Uint8Array
     get_client_cert_path(): string
     get_client_cert_scheme(): Setting8021xCKScheme
     get_eap_method(i: number): string
@@ -1227,7 +1232,7 @@ class Setting8021x {
     get_pac_file(): string
     get_password(): string
     get_password_flags(): SettingSecretFlags
-    get_password_raw(): Uint8Array[]
+    get_password_raw(): Uint8Array
     get_password_raw_flags(): SettingSecretFlags
     get_phase1_fast_provisioning(): string
     get_phase1_peaplabel(): string
@@ -1235,14 +1240,14 @@ class Setting8021x {
     get_phase2_altsubject_match(i: number): string
     get_phase2_auth(): string
     get_phase2_autheap(): string
-    get_phase2_ca_cert_blob(): Uint8Array[]
+    get_phase2_ca_cert_blob(): Uint8Array
     get_phase2_ca_cert_path(): string
     get_phase2_ca_cert_scheme(): Setting8021xCKScheme
     get_phase2_ca_path(): string
-    get_phase2_client_cert_blob(): Uint8Array[]
+    get_phase2_client_cert_blob(): Uint8Array
     get_phase2_client_cert_path(): string
     get_phase2_client_cert_scheme(): Setting8021xCKScheme
-    get_phase2_private_key_blob(): Uint8Array[]
+    get_phase2_private_key_blob(): Uint8Array
     get_phase2_private_key_format(): Setting8021xCKFormat
     get_phase2_private_key_password(): string
     get_phase2_private_key_password_flags(): SettingSecretFlags
@@ -1251,7 +1256,7 @@ class Setting8021x {
     get_phase2_subject_match(): string
     get_pin(): string
     get_pin_flags(): SettingSecretFlags
-    get_private_key_blob(): Uint8Array[]
+    get_private_key_blob(): Uint8Array
     get_private_key_format(): Setting8021xCKFormat
     get_private_key_password(): string
     get_private_key_password_flags(): SettingSecretFlags
@@ -1385,7 +1390,8 @@ class Setting8021x {
     static new(): Setting8021x
     static $gtype: GObject.Type
 }
-export interface SettingAdsl_ConstructProps extends Setting_ConstructProps {
+interface SettingAdsl_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingAdsl */
     encapsulation?: string
     password?: string
     password_flags?: number
@@ -1405,10 +1411,10 @@ class SettingAdsl {
     vpi: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingAdsl */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingAdsl */
     get_encapsulation(): string
     get_password(): string
@@ -1501,7 +1507,8 @@ class SettingAdsl {
     static new(): SettingAdsl
     static $gtype: GObject.Type
 }
-export interface SettingBluetooth_ConstructProps extends Setting_ConstructProps {
+interface SettingBluetooth_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingBluetooth */
     type?: string
 }
 class SettingBluetooth {
@@ -1509,12 +1516,12 @@ class SettingBluetooth {
     type: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingBluetooth */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingBluetooth */
-    get_bdaddr(): Uint8Array[]
+    get_bdaddr(): Uint8Array
     get_connection_type(): string
     /* Methods of NetworkManager-1.0.NetworkManager.Setting */
     clear_secrets(): void
@@ -1588,7 +1595,8 @@ class SettingBluetooth {
     static new(): SettingBluetooth
     static $gtype: GObject.Type
 }
-export interface SettingBond_ConstructProps extends Setting_ConstructProps {
+interface SettingBond_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingBond */
     interface_name?: string
 }
 class SettingBond {
@@ -1596,10 +1604,10 @@ class SettingBond {
     interface_name: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingBond */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingBond */
     add_option(name: string, value: string): boolean
     get_interface_name(): string
@@ -1682,7 +1690,8 @@ class SettingBond {
     static validate_option(name: string, value: string): boolean
     static $gtype: GObject.Type
 }
-export interface SettingBridge_ConstructProps extends Setting_ConstructProps {
+interface SettingBridge_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingBridge */
     ageing_time?: number
     forward_delay?: number
     hello_time?: number
@@ -1702,16 +1711,16 @@ class SettingBridge {
     stp: boolean
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingBridge */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingBridge */
     get_ageing_time(): number
     get_forward_delay(): number
     get_hello_time(): number
     get_interface_name(): string
-    get_mac_address(): Uint8Array[]
+    get_mac_address(): Uint8Array
     get_max_age(): number
     get_priority(): number
     get_stp(): boolean
@@ -1799,7 +1808,8 @@ class SettingBridge {
     static new(): SettingBridge
     static $gtype: GObject.Type
 }
-export interface SettingBridgePort_ConstructProps extends Setting_ConstructProps {
+interface SettingBridgePort_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingBridgePort */
     hairpin_mode?: boolean
     path_cost?: number
     priority?: number
@@ -1811,10 +1821,10 @@ class SettingBridgePort {
     priority: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingBridgePort */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingBridgePort */
     get_hairpin_mode(): boolean
     get_path_cost(): number
@@ -1895,7 +1905,8 @@ class SettingBridgePort {
     static new(): SettingBridgePort
     static $gtype: GObject.Type
 }
-export interface SettingCdma_ConstructProps extends Setting_ConstructProps {
+interface SettingCdma_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingCdma */
     number?: string
     password?: string
     password_flags?: number
@@ -1909,10 +1920,10 @@ class SettingCdma {
     username: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingCdma */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingCdma */
     get_number(): string
     get_password(): string
@@ -1996,7 +2007,8 @@ class SettingCdma {
     static new(): SettingCdma
     static $gtype: GObject.Type
 }
-export interface SettingConnection_ConstructProps extends Setting_ConstructProps {
+interface SettingConnection_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingConnection */
     autoconnect?: boolean
     gateway_ping_timeout?: number
     id?: string
@@ -2024,10 +2036,10 @@ class SettingConnection {
     zone: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingConnection */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingConnection */
     add_permission(ptype: string, pitem: string, detail?: string | null): boolean
     add_secondary(sec_uuid: string): boolean
@@ -2144,7 +2156,8 @@ class SettingConnection {
     static new(): SettingConnection
     static $gtype: GObject.Type
 }
-export interface SettingDcb_ConstructProps extends Setting_ConstructProps {
+interface SettingDcb_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingDcb */
     app_fcoe_flags?: number
     app_fcoe_mode?: string
     app_fcoe_priority?: number
@@ -2168,10 +2181,10 @@ class SettingDcb {
     priority_group_flags: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingDcb */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingDcb */
     get_app_fcoe_flags(): SettingDcbFlags
     get_app_fcoe_mode(): string
@@ -2282,15 +2295,15 @@ class SettingDcb {
     static new(): SettingDcb
     static $gtype: GObject.Type
 }
-export interface SettingGeneric_ConstructProps extends Setting_ConstructProps {
+interface SettingGeneric_ConstructProps extends Setting_ConstructProps {
 }
 class SettingGeneric {
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingGeneric */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.Setting */
     clear_secrets(): void
     clear_secrets_with_flags(func: SettingClearSecretsWithFlagsFn): void
@@ -2361,7 +2374,8 @@ class SettingGeneric {
     static new(): SettingGeneric
     static $gtype: GObject.Type
 }
-export interface SettingGsm_ConstructProps extends Setting_ConstructProps {
+interface SettingGsm_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingGsm */
     allowed_bands?: number
     apn?: string
     home_only?: boolean
@@ -2389,10 +2403,10 @@ class SettingGsm {
     username: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingGsm */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingGsm */
     get_allowed_bands(): number
     get_apn(): string
@@ -2497,7 +2511,8 @@ class SettingGsm {
     static new(): SettingGsm
     static $gtype: GObject.Type
 }
-export interface SettingIP4Config_ConstructProps extends Setting_ConstructProps {
+interface SettingIP4Config_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingIP4Config */
     dhcp_client_id?: string
     dhcp_hostname?: string
     dhcp_send_hostname?: boolean
@@ -2523,10 +2538,10 @@ class SettingIP4Config {
     route_metric: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingIP4Config */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingIP4Config */
     add_address(address: IP4Address): boolean
     add_dns(dns: number): boolean
@@ -2652,7 +2667,8 @@ class SettingIP4Config {
     static new(): SettingIP4Config
     static $gtype: GObject.Type
 }
-export interface SettingIP6Config_ConstructProps extends Setting_ConstructProps {
+interface SettingIP6Config_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingIP6Config */
     dhcp_hostname?: string
     ignore_auto_dns?: boolean
     ignore_auto_routes?: boolean
@@ -2674,10 +2690,10 @@ class SettingIP6Config {
     route_metric: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingIP6Config */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingIP6Config */
     add_address(address: IP6Address): boolean
     add_dns(dns?: object | null): boolean
@@ -2797,7 +2813,8 @@ class SettingIP6Config {
     static new(): SettingIP6Config
     static $gtype: GObject.Type
 }
-export interface SettingInfiniband_ConstructProps extends Setting_ConstructProps {
+interface SettingInfiniband_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingInfiniband */
     mtu?: number
     p_key?: number
     parent?: string
@@ -2812,9 +2829,9 @@ class SettingInfiniband {
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingInfiniband */
-    get_mac_address(): Uint8Array[]
+    get_mac_address(): Uint8Array
     get_mtu(): number
     get_p_key(): number
     get_parent(): string
@@ -2897,7 +2914,8 @@ class SettingInfiniband {
     static new(): SettingInfiniband
     static $gtype: GObject.Type
 }
-export interface SettingOlpcMesh_ConstructProps extends Setting_ConstructProps {
+interface SettingOlpcMesh_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingOlpcMesh */
     channel?: number
 }
 class SettingOlpcMesh {
@@ -2905,14 +2923,14 @@ class SettingOlpcMesh {
     channel: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingOlpcMesh */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingOlpcMesh */
     get_channel(): number
-    get_dhcp_anycast_address(): Uint8Array[]
-    get_ssid(): Uint8Array[]
+    get_dhcp_anycast_address(): Uint8Array
+    get_ssid(): Uint8Array
     /* Methods of NetworkManager-1.0.NetworkManager.Setting */
     clear_secrets(): void
     clear_secrets_with_flags(func: SettingClearSecretsWithFlagsFn): void
@@ -2985,7 +3003,8 @@ class SettingOlpcMesh {
     static new(): SettingOlpcMesh
     static $gtype: GObject.Type
 }
-export interface SettingPPP_ConstructProps extends Setting_ConstructProps {
+interface SettingPPP_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingPPP */
     baud?: number
     crtscts?: boolean
     lcp_echo_failure?: number
@@ -3027,10 +3046,10 @@ class SettingPPP {
     require_mppe_128: boolean
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingPPP */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingPPP */
     get_baud(): number
     get_crtscts(): boolean
@@ -3156,7 +3175,8 @@ class SettingPPP {
     static new(): SettingPPP
     static $gtype: GObject.Type
 }
-export interface SettingPPPOE_ConstructProps extends Setting_ConstructProps {
+interface SettingPPPOE_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingPPPOE */
     password?: string
     password_flags?: number
     service?: string
@@ -3170,10 +3190,10 @@ class SettingPPPOE {
     username: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingPPPOE */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingPPPOE */
     get_password(): string
     get_password_flags(): SettingSecretFlags
@@ -3257,7 +3277,8 @@ class SettingPPPOE {
     static new(): SettingPPPOE
     static $gtype: GObject.Type
 }
-export interface SettingSerial_ConstructProps extends Setting_ConstructProps {
+interface SettingSerial_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingSerial */
     baud?: number
     bits?: number
     parity?: number
@@ -3273,10 +3294,10 @@ class SettingSerial {
     stopbits: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingSerial */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingSerial */
     get_baud(): number
     get_bits(): number
@@ -3363,7 +3384,8 @@ class SettingSerial {
     static new(): SettingSerial
     static $gtype: GObject.Type
 }
-export interface SettingTeam_ConstructProps extends Setting_ConstructProps {
+interface SettingTeam_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingTeam */
     config?: string
     interface_name?: string
 }
@@ -3373,10 +3395,10 @@ class SettingTeam {
     interface_name: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingTeam */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingTeam */
     get_config(): string
     get_interface_name(): string
@@ -3454,7 +3476,8 @@ class SettingTeam {
     static new(): SettingTeam
     static $gtype: GObject.Type
 }
-export interface SettingTeamPort_ConstructProps extends Setting_ConstructProps {
+interface SettingTeamPort_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingTeamPort */
     config?: string
 }
 class SettingTeamPort {
@@ -3462,10 +3485,10 @@ class SettingTeamPort {
     config: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingTeamPort */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingTeamPort */
     get_config(): string
     /* Methods of NetworkManager-1.0.NetworkManager.Setting */
@@ -3540,7 +3563,8 @@ class SettingTeamPort {
     static new(): SettingTeamPort
     static $gtype: GObject.Type
 }
-export interface SettingVPN_ConstructProps extends Setting_ConstructProps {
+interface SettingVPN_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingVPN */
     persistent?: boolean
     service_type?: string
     user_name?: string
@@ -3552,10 +3576,10 @@ class SettingVPN {
     user_name: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingVPN */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingVPN */
     add_data_item(key: string, item: string): void
     add_secret(key: string, secret: string): void
@@ -3646,7 +3670,8 @@ class SettingVPN {
     static new(): SettingVPN
     static $gtype: GObject.Type
 }
-export interface SettingVlan_ConstructProps extends Setting_ConstructProps {
+interface SettingVlan_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingVlan */
     flags?: number
     id?: number
     interface_name?: string
@@ -3661,7 +3686,7 @@ class SettingVlan {
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingVlan */
     add_priority(map: VlanPriorityMap, from: number, to: number): boolean
     add_priority_str(map: VlanPriorityMap, str: string): boolean
@@ -3753,7 +3778,8 @@ class SettingVlan {
     static new(): SettingVlan
     static $gtype: GObject.Type
 }
-export interface SettingWimax_ConstructProps extends Setting_ConstructProps {
+interface SettingWimax_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingWimax */
     network_name?: string
 }
 class SettingWimax {
@@ -3761,12 +3787,12 @@ class SettingWimax {
     network_name: string
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingWimax */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingWimax */
-    get_mac_address(): Uint8Array[]
+    get_mac_address(): Uint8Array
     get_network_name(): string
     /* Methods of NetworkManager-1.0.NetworkManager.Setting */
     clear_secrets(): void
@@ -3840,7 +3866,8 @@ class SettingWimax {
     static new(): SettingWimax
     static $gtype: GObject.Type
 }
-export interface SettingWired_ConstructProps extends Setting_ConstructProps {
+interface SettingWired_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingWired */
     auto_negotiate?: boolean
     duplex?: string
     mtu?: number
@@ -3858,18 +3885,18 @@ class SettingWired {
     speed: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingWired */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingWired */
     add_mac_blacklist_item(mac: string): boolean
     add_s390_option(key: string, value: string): boolean
     clear_mac_blacklist_items(): void
     get_auto_negotiate(): boolean
-    get_cloned_mac_address(): Uint8Array[]
+    get_cloned_mac_address(): Uint8Array
     get_duplex(): string
-    get_mac_address(): Uint8Array[]
+    get_mac_address(): Uint8Array
     get_mac_address_blacklist(): any[]
     get_mac_blacklist_item(idx: number): string
     get_mtu(): number
@@ -3967,7 +3994,8 @@ class SettingWired {
     static new(): SettingWired
     static $gtype: GObject.Type
 }
-export interface SettingWireless_ConstructProps extends Setting_ConstructProps {
+interface SettingWireless_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingWireless */
     band?: string
     channel?: number
     hidden?: boolean
@@ -3991,21 +4019,21 @@ class SettingWireless {
     tx_power: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingWireless */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingWireless */
     add_mac_blacklist_item(mac: string): boolean
     add_seen_bssid(bssid: string): boolean
     ap_security_compatible(s_wireless_sec: SettingWirelessSecurity, ap_flags: TODO_80211ApFlags, ap_wpa: TODO_80211ApSecurityFlags, ap_rsn: TODO_80211ApSecurityFlags, ap_mode: TODO_80211Mode): boolean
     clear_mac_blacklist_items(): void
     get_band(): string
-    get_bssid(): Uint8Array[]
+    get_bssid(): Uint8Array
     get_channel(): number
-    get_cloned_mac_address(): Uint8Array[]
+    get_cloned_mac_address(): Uint8Array
     get_hidden(): boolean
-    get_mac_address(): Uint8Array[]
+    get_mac_address(): Uint8Array
     get_mac_address_blacklist(): any[]
     get_mac_blacklist_item(idx: number): string
     get_mode(): string
@@ -4016,7 +4044,7 @@ class SettingWireless {
     get_rate(): number
     get_security(): string
     get_seen_bssid(i: number): string
-    get_ssid(): Uint8Array[]
+    get_ssid(): Uint8Array
     get_tx_power(): number
     remove_mac_blacklist_item(idx: number): void
     remove_mac_blacklist_item_by_value(mac: string): boolean
@@ -4108,7 +4136,8 @@ class SettingWireless {
     static new(): SettingWireless
     static $gtype: GObject.Type
 }
-export interface SettingWirelessSecurity_ConstructProps extends Setting_ConstructProps {
+interface SettingWirelessSecurity_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NetworkManager-1.0.NetworkManager.SettingWirelessSecurity */
     auth_alg?: string
     key_mgmt?: string
     leap_password?: string
@@ -4142,10 +4171,10 @@ class SettingWirelessSecurity {
     wep_tx_keyidx: number
     /* Properties of NetworkManager-1.0.NetworkManager.Setting */
     name: string
-    /* Fields of NetworkManager-1.0.NetworkManager.SettingWirelessSecurity */
-    parent: Setting
+    /* Fields of NetworkManager-1.0.NetworkManager.Setting */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NetworkManager-1.0.NetworkManager.SettingWirelessSecurity */
     add_group(group: string): boolean
     add_pairwise(pairwise: string): boolean
@@ -4277,8 +4306,8 @@ class SettingWirelessSecurity {
 }
 abstract class ConnectionClass {
     /* Fields of NetworkManager-1.0.NetworkManager.ConnectionClass */
-    parent: GObject.ObjectClass
-    secrets_updated: (connection: Connection, setting: string) => void
+    readonly parent: GObject.ObjectClass
+    readonly secrets_updated: (connection: Connection, setting: string) => void
     static name: string
 }
 class IP4Address {
@@ -4323,8 +4352,8 @@ class IP6Address {
     /* Methods of NetworkManager-1.0.NetworkManager.IP6Address */
     compare(other: IP6Address): boolean
     dup(): IP6Address
-    get_address(): Uint8Array[]
-    get_gateway(): Uint8Array[]
+    get_address(): Uint8Array
+    get_gateway(): Uint8Array
     get_prefix(): number
     ref(): void
     set_address(addr?: object | null): void
@@ -4341,9 +4370,9 @@ class IP6Route {
     /* Methods of NetworkManager-1.0.NetworkManager.IP6Route */
     compare(other: IP6Route): boolean
     dup(): IP6Route
-    get_dest(): Uint8Array[]
+    get_dest(): Uint8Array
     get_metric(): number
-    get_next_hop(): Uint8Array[]
+    get_next_hop(): Uint8Array
     get_prefix(): number
     ref(): void
     set_dest(dest?: object | null): void
@@ -4359,143 +4388,143 @@ class IP6Route {
 }
 abstract class Setting8021xClass {
     /* Fields of NetworkManager-1.0.NetworkManager.Setting8021xClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingAdslClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingAdslClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingBluetoothClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingBluetoothClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingBondClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingBondClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingBridgeClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingBridgeClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingBridgePortClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingBridgePortClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingCdmaClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingCdmaClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingClass */
-    parent: GObject.ObjectClass
-    need_secrets: (setting: Setting) => string[]
-    update_one_secret: (setting: Setting, key: string, value: any) => number
-    get_secret_flags: (setting: Setting, secret_name: string, verify_secret: boolean, out_flags: SettingSecretFlags) => boolean
-    set_secret_flags: (setting: Setting, secret_name: string, verify_secret: boolean, flags: SettingSecretFlags) => boolean
-    compare_property: (setting: Setting, other: Setting, prop_spec: GObject.ParamSpec, flags: SettingCompareFlags) => boolean
-    get_virtual_iface_name: (setting: Setting) => string
+    readonly parent: GObject.ObjectClass
+    readonly need_secrets: (setting: Setting) => string[]
+    readonly update_one_secret: (setting: Setting, key: string, value: any) => number
+    readonly get_secret_flags: (setting: Setting, secret_name: string, verify_secret: boolean, out_flags: SettingSecretFlags) => boolean
+    readonly set_secret_flags: (setting: Setting, secret_name: string, verify_secret: boolean, flags: SettingSecretFlags) => boolean
+    readonly compare_property: (setting: Setting, other: Setting, prop_spec: GObject.ParamSpec, flags: SettingCompareFlags) => boolean
+    readonly get_virtual_iface_name: (setting: Setting) => string
     static name: string
 }
 abstract class SettingConnectionClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingConnectionClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingDcbClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingDcbClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingGenericClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingGenericClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingGsmClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingGsmClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingIP4ConfigClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingIP4ConfigClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingIP6ConfigClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingIP6ConfigClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingInfinibandClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingInfinibandClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingOlpcMeshClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingOlpcMeshClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingPPPClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingPPPClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingPPPOEClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingPPPOEClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingSerialClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingSerialClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingTeamClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingTeamClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingTeamPortClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingTeamPortClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingVPNClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingVPNClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingVlanClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingVlanClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingWimaxClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingWimaxClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingWiredClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingWiredClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingWirelessClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingWirelessClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 abstract class SettingWirelessSecurityClass {
     /* Fields of NetworkManager-1.0.NetworkManager.SettingWirelessSecurityClass */
-    parent: SettingClass
+    readonly parent: SettingClass
     static name: string
 }
 }

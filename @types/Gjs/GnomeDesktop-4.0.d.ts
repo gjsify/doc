@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GnomeDesktop-4.0
  */
@@ -35,14 +41,11 @@ function start_systemd_scope_finish(res: Gio.AsyncResult): boolean
 interface IdleMonitorWatchFunc {
     (monitor: IdleMonitor, id: number): void
 }
-export interface DesktopThumbnailFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface DesktopThumbnailFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DesktopThumbnailFactory {
-    /* Fields of GnomeDesktop-4.0.GnomeDesktop.DesktopThumbnailFactory */
-    parent: GObject.Object
-    priv: DesktopThumbnailFactoryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeDesktop-4.0.GnomeDesktop.DesktopThumbnailFactory */
     can_thumbnail(uri: string, mime_type: string, mtime: number): boolean
     create_failed_thumbnail(uri: string, mtime: number): void
@@ -95,14 +98,11 @@ class DesktopThumbnailFactory {
     static new(size: DesktopThumbnailSize): DesktopThumbnailFactory
     static $gtype: GObject.Type
 }
-export interface IdleMonitor_ConstructProps extends GObject.Object_ConstructProps {
+interface IdleMonitor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class IdleMonitor {
-    /* Fields of GnomeDesktop-4.0.GnomeDesktop.IdleMonitor */
-    parent: GObject.Object
-    priv: IdleMonitorPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeDesktop-4.0.GnomeDesktop.IdleMonitor */
     add_idle_watch(interval_msec: number, callback: IdleMonitorWatchFunc | null): number
     add_user_active_watch(callback: IdleMonitorWatchFunc | null): number
@@ -158,14 +158,11 @@ class IdleMonitor {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface PnpIds_ConstructProps extends GObject.Object_ConstructProps {
+interface PnpIds_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PnpIds {
-    /* Fields of GnomeDesktop-4.0.GnomeDesktop.PnpIds */
-    parent: GObject.Object
-    priv: PnpIdsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeDesktop-4.0.GnomeDesktop.PnpIds */
     get_pnp_id(pnp_id: string): string
     /* Methods of GObject-2.0.GObject.Object */
@@ -213,7 +210,8 @@ class PnpIds {
     static new(): PnpIds
     static $gtype: GObject.Type
 }
-export interface WallClock_ConstructProps extends GObject.Object_ConstructProps {
+interface WallClock_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GnomeDesktop-4.0.GnomeDesktop.WallClock */
     time_only?: boolean
 }
 class WallClock {
@@ -221,11 +219,8 @@ class WallClock {
     readonly clock: string
     time_only: boolean
     readonly timezone: GLib.TimeZone
-    /* Fields of GnomeDesktop-4.0.GnomeDesktop.WallClock */
-    parent_object: GObject.Object
-    priv: WallClockPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeDesktop-4.0.GnomeDesktop.WallClock */
     get_clock(): string
     get_timezone(): GLib.TimeZone
@@ -281,14 +276,11 @@ class WallClock {
     static new(): WallClock
     static $gtype: GObject.Type
 }
-export interface XkbInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface XkbInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class XkbInfo {
-    /* Fields of GnomeDesktop-4.0.GnomeDesktop.XkbInfo */
-    parent_object: GObject.Object
-    priv: XkbInfoPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeDesktop-4.0.GnomeDesktop.XkbInfo */
     description_for_group(group_id: string): string
     description_for_option(group_id: string, id: string): string
@@ -350,7 +342,7 @@ class XkbInfo {
 }
 abstract class DesktopThumbnailFactoryClass {
     /* Fields of GnomeDesktop-4.0.GnomeDesktop.DesktopThumbnailFactoryClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class DesktopThumbnailFactoryPrivate {
@@ -358,7 +350,7 @@ class DesktopThumbnailFactoryPrivate {
 }
 abstract class IdleMonitorClass {
     /* Fields of GnomeDesktop-4.0.GnomeDesktop.IdleMonitorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class IdleMonitorPrivate {
@@ -366,7 +358,7 @@ class IdleMonitorPrivate {
 }
 abstract class PnpIdsClass {
     /* Fields of GnomeDesktop-4.0.GnomeDesktop.PnpIdsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PnpIdsPrivate {
@@ -374,7 +366,7 @@ class PnpIdsPrivate {
 }
 abstract class WallClockClass {
     /* Fields of GnomeDesktop-4.0.GnomeDesktop.WallClockClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WallClockPrivate {
@@ -382,7 +374,7 @@ class WallClockPrivate {
 }
 abstract class XkbInfoClass {
     /* Fields of GnomeDesktop-4.0.GnomeDesktop.XkbInfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class XkbInfoPrivate {

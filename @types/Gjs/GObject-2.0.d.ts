@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GObject-2.0
  */
@@ -69,21 +75,21 @@ enum TypeFundamentalFlags {
     DERIVABLE,
     DEEP_DERIVABLE,
 }
-export const PARAM_MASK: number
-export const PARAM_STATIC_STRINGS: number
-export const PARAM_USER_SHIFT: number
-export const SIGNAL_FLAGS_MASK: number
-export const SIGNAL_MATCH_MASK: number
-export const TYPE_FLAG_RESERVED_ID_BIT: GLib.Type
-export const TYPE_FUNDAMENTAL_MAX: number
-export const TYPE_FUNDAMENTAL_SHIFT: number
-export const TYPE_RESERVED_BSE_FIRST: number
-export const TYPE_RESERVED_BSE_LAST: number
-export const TYPE_RESERVED_GLIB_FIRST: number
-export const TYPE_RESERVED_GLIB_LAST: number
-export const TYPE_RESERVED_USER_FIRST: number
-export const VALUE_INTERNED_STRING: number
-export const VALUE_NOCOPY_CONTENTS: number
+const PARAM_MASK: number
+const PARAM_STATIC_STRINGS: number
+const PARAM_USER_SHIFT: number
+const SIGNAL_FLAGS_MASK: number
+const SIGNAL_MATCH_MASK: number
+const TYPE_FLAG_RESERVED_ID_BIT: GLib.Type
+const TYPE_FUNDAMENTAL_MAX: number
+const TYPE_FUNDAMENTAL_SHIFT: number
+const TYPE_RESERVED_BSE_FIRST: number
+const TYPE_RESERVED_BSE_LAST: number
+const TYPE_RESERVED_GLIB_FIRST: number
+const TYPE_RESERVED_GLIB_LAST: number
+const TYPE_RESERVED_USER_FIRST: number
+const VALUE_INTERNED_STRING: number
+const VALUE_NOCOPY_CONTENTS: number
 function boxed_copy(boxed_type: Type, src_boxed: object): object
 function boxed_free(boxed_type: Type, boxed: object): void
 function cclosure_marshal_BOOLEAN__BOXED_BOXED(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
@@ -356,7 +362,8 @@ export function registerClass(metaInfo: MetaInfo, cls: Function): Function
 export function registerClass(cls: Function): Function
 export function registerClass<T extends MetaInfo | Function>(a: T, b?: Function): Function
 
-export interface Binding_ConstructProps extends Object_ConstructProps {
+interface Binding_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of GObject-2.0.GObject.Binding */
     flags?: BindingFlags
     source?: Object
     source_property?: string
@@ -365,7 +372,7 @@ export interface Binding_ConstructProps extends Object_ConstructProps {
 }
 class Binding {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: TypeInstance
+    readonly g_type_instance: TypeInstance
     /* Methods of GObject-2.0.GObject.Binding */
     dup_source(): Object | null
     dup_target(): Object | null
@@ -418,11 +425,11 @@ class Binding {
     _init (config?: Binding_ConstructProps): void
     static $gtype: Type
 }
-export interface InitiallyUnowned_ConstructProps extends Object_ConstructProps {
+interface InitiallyUnowned_ConstructProps extends Object_ConstructProps {
 }
 class InitiallyUnowned {
-    /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: TypeInstance
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: Object, target_property: string, flags: BindingFlags): Binding
     bind_property_full(source_property: string, target: Object, target_property: string, flags: BindingFlags, transform_to: Function, transform_from: Function): Binding
@@ -466,11 +473,9 @@ class InitiallyUnowned {
     _init (config?: InitiallyUnowned_ConstructProps): void
     static $gtype: Type
 }
-export interface Object_ConstructProps  {
+interface Object_ConstructProps  {
 }
 class Object {
-    /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: Object, target_property: string, flags: BindingFlags): Binding
     bind_property_full(source_property: string, target: Object, target_property: string, flags: BindingFlags, transform_to: Function, transform_from: Function): Binding
@@ -518,20 +523,9 @@ class Object {
     static interface_find_property(g_iface: TypeInterface, property_name: string): ParamSpec
     static interface_install_property(g_iface: TypeInterface, pspec: ParamSpec): void
     static interface_list_properties(g_iface: TypeInterface): ParamSpec[]
-    static find_property(oclass: Object | Function | Type, property_name: string): ParamSpec
-    static install_properties(oclass: Object | Function | Type, pspecs: ParamSpec[]): void
-    static install_property(oclass: Object | Function | Type, property_id: number, pspec: ParamSpec): void
-    static list_properties(oclass: Object | Function | Type): ParamSpec[]
-    static override_property(oclass: Object | Function | Type, property_id: number, name: string): void
     static $gtype: Type
 }
 class ParamSpec {
-    /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -553,15 +547,12 @@ class ParamSpec {
     static is_valid_name(name: string): boolean
 }
 class ParamSpecBoolean {
-    /* Fields of GObject-2.0.GObject.ParamSpecBoolean */
-    parent_instance: ParamSpec
-    default_value: boolean
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -581,14 +572,12 @@ class ParamSpecBoolean {
     static name: string
 }
 class ParamSpecBoxed {
-    /* Fields of GObject-2.0.GObject.ParamSpecBoxed */
-    parent_instance: ParamSpec
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -608,17 +597,12 @@ class ParamSpecBoxed {
     static name: string
 }
 class ParamSpecChar {
-    /* Fields of GObject-2.0.GObject.ParamSpecChar */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -638,18 +622,12 @@ class ParamSpecChar {
     static name: string
 }
 class ParamSpecDouble {
-    /* Fields of GObject-2.0.GObject.ParamSpecDouble */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
-    epsilon: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -669,16 +647,12 @@ class ParamSpecDouble {
     static name: string
 }
 class ParamSpecEnum {
-    /* Fields of GObject-2.0.GObject.ParamSpecEnum */
-    parent_instance: ParamSpec
-    enum_class: EnumClass
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -698,16 +672,12 @@ class ParamSpecEnum {
     static name: string
 }
 class ParamSpecFlags {
-    /* Fields of GObject-2.0.GObject.ParamSpecFlags */
-    parent_instance: ParamSpec
-    flags_class: FlagsClass
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -727,18 +697,12 @@ class ParamSpecFlags {
     static name: string
 }
 class ParamSpecFloat {
-    /* Fields of GObject-2.0.GObject.ParamSpecFloat */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
-    epsilon: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -758,15 +722,12 @@ class ParamSpecFloat {
     static name: string
 }
 class ParamSpecGType {
-    /* Fields of GObject-2.0.GObject.ParamSpecGType */
-    parent_instance: ParamSpec
-    is_a_type: Type
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -786,17 +747,12 @@ class ParamSpecGType {
     static name: string
 }
 class ParamSpecInt {
-    /* Fields of GObject-2.0.GObject.ParamSpecInt */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -816,17 +772,12 @@ class ParamSpecInt {
     static name: string
 }
 class ParamSpecInt64 {
-    /* Fields of GObject-2.0.GObject.ParamSpecInt64 */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -846,17 +797,12 @@ class ParamSpecInt64 {
     static name: string
 }
 class ParamSpecLong {
-    /* Fields of GObject-2.0.GObject.ParamSpecLong */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -876,14 +822,12 @@ class ParamSpecLong {
     static name: string
 }
 class ParamSpecObject {
-    /* Fields of GObject-2.0.GObject.ParamSpecObject */
-    parent_instance: ParamSpec
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -904,11 +848,11 @@ class ParamSpecObject {
 }
 class ParamSpecOverride {
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -928,14 +872,12 @@ class ParamSpecOverride {
     static name: string
 }
 class ParamSpecParam {
-    /* Fields of GObject-2.0.GObject.ParamSpecParam */
-    parent_instance: ParamSpec
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -955,14 +897,12 @@ class ParamSpecParam {
     static name: string
 }
 class ParamSpecPointer {
-    /* Fields of GObject-2.0.GObject.ParamSpecPointer */
-    parent_instance: ParamSpec
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -982,20 +922,12 @@ class ParamSpecPointer {
     static name: string
 }
 class ParamSpecString {
-    /* Fields of GObject-2.0.GObject.ParamSpecString */
-    parent_instance: ParamSpec
-    default_value: string
-    cset_first: string
-    cset_nth: string
-    substitutor: number
-    null_fold_if_empty: number
-    ensure_non_null: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1015,17 +947,12 @@ class ParamSpecString {
     static name: string
 }
 class ParamSpecUChar {
-    /* Fields of GObject-2.0.GObject.ParamSpecUChar */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1045,17 +972,12 @@ class ParamSpecUChar {
     static name: string
 }
 class ParamSpecUInt {
-    /* Fields of GObject-2.0.GObject.ParamSpecUInt */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1075,17 +997,12 @@ class ParamSpecUInt {
     static name: string
 }
 class ParamSpecUInt64 {
-    /* Fields of GObject-2.0.GObject.ParamSpecUInt64 */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1105,17 +1022,12 @@ class ParamSpecUInt64 {
     static name: string
 }
 class ParamSpecULong {
-    /* Fields of GObject-2.0.GObject.ParamSpecULong */
-    parent_instance: ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1135,15 +1047,12 @@ class ParamSpecULong {
     static name: string
 }
 class ParamSpecUnichar {
-    /* Fields of GObject-2.0.GObject.ParamSpecUnichar */
-    parent_instance: ParamSpec
-    default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1163,16 +1072,12 @@ class ParamSpecUnichar {
     static name: string
 }
 class ParamSpecValueArray {
-    /* Fields of GObject-2.0.GObject.ParamSpecValueArray */
-    parent_instance: ParamSpec
-    element_spec: ParamSpec
-    fixed_n_elements: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1192,16 +1097,12 @@ class ParamSpecValueArray {
     static name: string
 }
 class ParamSpecVariant {
-    /* Fields of GObject-2.0.GObject.ParamSpecVariant */
-    parent_instance: ParamSpec
-    type: GLib.VariantType
-    default_value: GLib.Variant
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: TypeInstance
-    name: string
-    flags: ParamFlags
-    value_type: Type
-    owner_type: Type
+    readonly g_type_instance: TypeInstance
+    readonly name: string
+    readonly flags: ParamFlags
+    readonly value_type: Type
+    readonly owner_type: Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1220,17 +1121,11 @@ class ParamSpecVariant {
     vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export interface TypeModule_ConstructProps extends Object_ConstructProps {
+interface TypeModule_ConstructProps extends Object_ConstructProps {
 }
 class TypeModule {
-    /* Fields of GObject-2.0.GObject.TypeModule */
-    parent_instance: Object
-    use_count: number
-    type_infos: object[]
-    interface_infos: object[]
-    name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: TypeInstance
+    readonly g_type_instance: TypeInstance
     /* Methods of GObject-2.0.GObject.TypeModule */
     add_interface(instance_type: Type, interface_type: Type, interface_info: InterfaceInfo): void
     register_enum(name: string, const_static_values: EnumValue): Type
@@ -1261,10 +1156,6 @@ class TypeModule {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
-    /* Methods of GObject-2.0.GObject.TypePlugin */
-    complete_interface_info(instance_type: Type, interface_type: Type, info: InterfaceInfo): void
-    complete_type_info(g_type: Type, info: TypeInfo, value_table: TypeValueTable): void
-    use(): void
     /* Virtual methods of GObject-2.0.GObject.TypeModule */
     vfunc_load(): boolean
     vfunc_unload(): void
@@ -1291,8 +1182,8 @@ class TypeModule {
 }
 class CClosure {
     /* Fields of GObject-2.0.GObject.CClosure */
-    closure: Function
-    callback: object
+    readonly closure: Function
+    readonly callback: object
     static name: string
     /* Static methods and pseudo-constructors */
     static marshal_BOOLEAN__BOXED_BOXED(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
@@ -1321,9 +1212,9 @@ class CClosure {
 }
 class Closure {
     /* Fields of GObject-2.0.GObject.Closure */
-    in_marshal: number
-    is_invalid: number
-    marshal: (closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint: object, marshal_data: object) => void
+    readonly in_marshal: number
+    readonly is_invalid: number
+    readonly marshal: (closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint: object, marshal_data: object) => void
     /* Methods of GObject-2.0.GObject.Closure */
     invalidate(): void
     invoke(param_values: any[], invocation_hint?: object | null): /* return_value */ any | null
@@ -1337,92 +1228,92 @@ class Closure {
 }
 class ClosureNotifyData {
     /* Fields of GObject-2.0.GObject.ClosureNotifyData */
-    data: object
-    notify: ClosureNotify
+    readonly data: object
+    readonly notify: ClosureNotify
     static name: string
 }
 class EnumClass {
     /* Fields of GObject-2.0.GObject.EnumClass */
-    g_type_class: TypeClass
-    minimum: number
-    maximum: number
-    n_values: number
-    values: EnumValue
+    readonly g_type_class: TypeClass
+    readonly minimum: number
+    readonly maximum: number
+    readonly n_values: number
+    readonly values: EnumValue
     static name: string
 }
 class EnumValue {
     /* Fields of GObject-2.0.GObject.EnumValue */
-    value: number
-    value_name: string
-    value_nick: string
+    readonly value: number
+    readonly value_name: string
+    readonly value_nick: string
     static name: string
 }
 class FlagsClass {
     /* Fields of GObject-2.0.GObject.FlagsClass */
-    g_type_class: TypeClass
-    mask: number
-    n_values: number
-    values: FlagsValue
+    readonly g_type_class: TypeClass
+    readonly mask: number
+    readonly n_values: number
+    readonly values: FlagsValue
     static name: string
 }
 class FlagsValue {
     /* Fields of GObject-2.0.GObject.FlagsValue */
-    value: number
-    value_name: string
-    value_nick: string
+    readonly value: number
+    readonly value_name: string
+    readonly value_nick: string
     static name: string
 }
 abstract class InitiallyUnownedClass {
     /* Fields of GObject-2.0.GObject.InitiallyUnownedClass */
-    g_type_class: TypeClass
-    set_property: (object: Object, property_id: number, value: any, pspec: ParamSpec) => void
-    get_property: (object: Object, property_id: number, value: any, pspec: ParamSpec) => void
-    dispose: (object: Object) => void
-    finalize: (object: Object) => void
-    dispatch_properties_changed: (object: Object, n_pspecs: number, pspecs: ParamSpec) => void
-    notify: (object: Object, pspec: ParamSpec) => void
-    constructed: (object: Object) => void
+    readonly g_type_class: TypeClass
+    readonly set_property: (object: Object, property_id: number, value: any, pspec: ParamSpec) => void
+    readonly get_property: (object: Object, property_id: number, value: any, pspec: ParamSpec) => void
+    readonly dispose: (object: Object) => void
+    readonly finalize: (object: Object) => void
+    readonly dispatch_properties_changed: (object: Object, n_pspecs: number, pspecs: ParamSpec) => void
+    readonly notify: (object: Object, pspec: ParamSpec) => void
+    readonly constructed: (object: Object) => void
     static name: string
 }
 class InterfaceInfo {
     /* Fields of GObject-2.0.GObject.InterfaceInfo */
-    interface_init: InterfaceInitFunc
-    interface_finalize: InterfaceFinalizeFunc
-    interface_data: object
+    readonly interface_init: InterfaceInitFunc
+    readonly interface_finalize: InterfaceFinalizeFunc
+    readonly interface_data: object
     static name: string
 }
 abstract class ObjectClass {
     /* Fields of GObject-2.0.GObject.ObjectClass */
-    g_type_class: TypeClass
-    set_property: (object: Object, property_id: number, value: any, pspec: ParamSpec) => void
-    get_property: (object: Object, property_id: number, value: any, pspec: ParamSpec) => void
-    dispose: (object: Object) => void
-    finalize: (object: Object) => void
-    dispatch_properties_changed: (object: Object, n_pspecs: number, pspecs: ParamSpec) => void
-    notify: (object: Object, pspec: ParamSpec) => void
-    constructed: (object: Object) => void
+    readonly g_type_class: TypeClass
+    readonly set_property: (object: Object, property_id: number, value: any, pspec: ParamSpec) => void
+    readonly get_property: (object: Object, property_id: number, value: any, pspec: ParamSpec) => void
+    readonly dispose: (object: Object) => void
+    readonly finalize: (object: Object) => void
+    readonly dispatch_properties_changed: (object: Object, n_pspecs: number, pspecs: ParamSpec) => void
+    readonly notify: (object: Object, pspec: ParamSpec) => void
+    readonly constructed: (object: Object) => void
     /* Methods of GObject-2.0.GObject.ObjectClass */
-    find_property(oclass: Object | Function | Type, property_name: string): ParamSpec
-    install_properties(oclass: Object | Function | Type, pspecs: ParamSpec[]): void
-    install_property(oclass: Object | Function | Type, property_id: number, pspec: ParamSpec): void
-    list_properties(oclass: Object | Function | Type): ParamSpec[]
-    override_property(oclass: Object | Function | Type, property_id: number, name: string): void
+    static find_property(oclass: Object | Function | Type, property_name: string): ParamSpec
+    static install_properties(oclass: Object | Function | Type, pspecs: ParamSpec[]): void
+    static install_property(oclass: Object | Function | Type, property_id: number, pspec: ParamSpec): void
+    static list_properties(oclass: Object | Function | Type): ParamSpec[]
+    static override_property(oclass: Object | Function | Type, property_id: number, name: string): void
     static name: string
 }
 class ObjectConstructParam {
     /* Fields of GObject-2.0.GObject.ObjectConstructParam */
-    pspec: ParamSpec
-    value: any
+    readonly pspec: ParamSpec
+    readonly value: any
     static name: string
 }
 abstract class ParamSpecClass {
     /* Fields of GObject-2.0.GObject.ParamSpecClass */
-    g_type_class: TypeClass
-    value_type: Type
-    finalize: (pspec: ParamSpec) => void
-    value_set_default: (pspec: ParamSpec, value: any) => void
-    value_validate: (pspec: ParamSpec, value: any) => boolean
-    values_cmp: (pspec: ParamSpec, value1: any, value2: any) => number
+    readonly g_type_class: TypeClass
+    readonly value_type: Type
+    readonly finalize: (pspec: ParamSpec) => void
+    readonly value_set_default: (pspec: ParamSpec, value: any) => void
+    readonly value_validate: (pspec: ParamSpec, value: any) => boolean
+    readonly values_cmp: (pspec: ParamSpec, value1: any, value2: any) => number
     static name: string
 }
 class ParamSpecPool {
@@ -1436,38 +1327,38 @@ class ParamSpecPool {
 }
 class ParamSpecTypeInfo {
     /* Fields of GObject-2.0.GObject.ParamSpecTypeInfo */
-    instance_size: number
-    n_preallocs: number
-    instance_init: (pspec: ParamSpec) => void
-    value_type: Type
-    finalize: (pspec: ParamSpec) => void
-    value_set_default: (pspec: ParamSpec, value: any) => void
-    value_validate: (pspec: ParamSpec, value: any) => boolean
-    values_cmp: (pspec: ParamSpec, value1: any, value2: any) => number
+    readonly instance_size: number
+    readonly n_preallocs: number
+    readonly instance_init: (pspec: ParamSpec) => void
+    readonly value_type: Type
+    readonly finalize: (pspec: ParamSpec) => void
+    readonly value_set_default: (pspec: ParamSpec, value: any) => void
+    readonly value_validate: (pspec: ParamSpec, value: any) => boolean
+    readonly values_cmp: (pspec: ParamSpec, value1: any, value2: any) => number
     static name: string
 }
 class Parameter {
     /* Fields of GObject-2.0.GObject.Parameter */
-    name: string
-    value: any
+    readonly name: string
+    readonly value: any
     static name: string
 }
 class SignalInvocationHint {
     /* Fields of GObject-2.0.GObject.SignalInvocationHint */
-    signal_id: number
-    detail: GLib.Quark
-    run_type: SignalFlags
+    readonly signal_id: number
+    readonly detail: GLib.Quark
+    readonly run_type: SignalFlags
     static name: string
 }
 class SignalQuery {
     /* Fields of GObject-2.0.GObject.SignalQuery */
-    signal_id: number
-    signal_name: string
-    itype: Type
-    signal_flags: SignalFlags
-    return_type: Type
-    n_params: number
-    param_types: Type[]
+    readonly signal_id: number
+    readonly signal_name: string
+    readonly itype: Type
+    readonly signal_flags: SignalFlags
+    readonly return_type: Type
+    readonly n_params: number
+    readonly param_types: Type[]
     static name: string
 }
 class TypeClass {
@@ -1485,21 +1376,21 @@ class TypeClass {
 }
 class TypeFundamentalInfo {
     /* Fields of GObject-2.0.GObject.TypeFundamentalInfo */
-    type_flags: TypeFundamentalFlags
+    readonly type_flags: TypeFundamentalFlags
     static name: string
 }
 class TypeInfo {
     /* Fields of GObject-2.0.GObject.TypeInfo */
-    class_size: number
-    base_init: BaseInitFunc
-    base_finalize: BaseFinalizeFunc
-    class_init: ClassInitFunc
-    class_finalize: ClassFinalizeFunc
-    class_data: object
-    instance_size: number
-    n_preallocs: number
-    instance_init: InstanceInitFunc
-    value_table: TypeValueTable
+    readonly class_size: number
+    readonly base_init: BaseInitFunc
+    readonly base_finalize: BaseFinalizeFunc
+    readonly class_init: ClassInitFunc
+    readonly class_finalize: ClassFinalizeFunc
+    readonly class_data: object
+    readonly instance_size: number
+    readonly n_preallocs: number
+    readonly instance_init: InstanceInitFunc
+    readonly value_table: TypeValueTable
     static name: string
 }
 class TypeInstance {
@@ -1520,46 +1411,46 @@ class TypeInterface {
 }
 abstract class TypeModuleClass {
     /* Fields of GObject-2.0.GObject.TypeModuleClass */
-    parent_class: ObjectClass
-    load: (module: TypeModule) => boolean
-    unload: (module: TypeModule) => void
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
+    readonly parent_class: ObjectClass
+    readonly load: (module: TypeModule) => boolean
+    readonly unload: (module: TypeModule) => void
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
     static name: string
 }
 class TypePluginClass {
     /* Fields of GObject-2.0.GObject.TypePluginClass */
-    use_plugin: TypePluginUse
-    unuse_plugin: TypePluginUnuse
-    complete_type_info: TypePluginCompleteTypeInfo
-    complete_interface_info: TypePluginCompleteInterfaceInfo
+    readonly use_plugin: TypePluginUse
+    readonly unuse_plugin: TypePluginUnuse
+    readonly complete_type_info: TypePluginCompleteTypeInfo
+    readonly complete_interface_info: TypePluginCompleteInterfaceInfo
     static name: string
 }
 class TypeQuery {
     /* Fields of GObject-2.0.GObject.TypeQuery */
-    type: Type
-    type_name: string
-    class_size: number
-    instance_size: number
+    readonly type: Type
+    readonly type_name: string
+    readonly class_size: number
+    readonly instance_size: number
     static name: string
 }
 class TypeValueTable {
     /* Fields of GObject-2.0.GObject.TypeValueTable */
-    value_init: (value: any) => void
-    value_free: (value: any) => void
-    value_copy: (src_value: any, dest_value: any) => void
-    value_peek_pointer: (value: any) => object
-    collect_format: string
-    collect_value: (value: any, n_collect_values: number, collect_values: TypeCValue, collect_flags: number) => string
-    lcopy_format: string
-    lcopy_value: (value: any, n_collect_values: number, collect_values: TypeCValue, collect_flags: number) => string
+    readonly value_init: (value: any) => void
+    readonly value_free: (value: any) => void
+    readonly value_copy: (src_value: any, dest_value: any) => void
+    readonly value_peek_pointer: (value: any) => object
+    readonly collect_format: string
+    readonly collect_value: (value: any, n_collect_values: number, collect_values: TypeCValue, collect_flags: number) => string
+    readonly lcopy_format: string
+    readonly lcopy_value: (value: any, n_collect_values: number, collect_values: TypeCValue, collect_flags: number) => string
     static name: string
 }
 class Value {
     /* Fields of GObject-2.0.GObject.Value */
-    data: _Value__data__union[]
+    readonly data: _Value__data__union[]
     /* Methods of GObject-2.0.GObject.Value */
     copy(dest_value: any): void
     dup_object(): Object
@@ -1630,8 +1521,8 @@ class Value {
 }
 class ValueArray {
     /* Fields of GObject-2.0.GObject.ValueArray */
-    n_values: number
-    values: any
+    readonly n_values: number
+    readonly values: any
     /* Methods of GObject-2.0.GObject.ValueArray */
     append(value?: any | null): ValueArray
     copy(): ValueArray
@@ -1653,20 +1544,10 @@ class TypeCValue {
     static name: string
 }
 class _Value__data__union {
-    /* Fields of GObject-2.0.GObject._Value__data__union */
-    v_int: number
-    v_uint: number
-    v_long: number
-    v_ulong: number
-    v_int64: number
-    v_uint64: number
-    v_float: number
-    v_double: number
-    v_pointer: object
     static name: string
 }
-type SignalCMarshaller = ClosureMarshal
-type SignalCVaMarshaller = any
+    type SignalCMarshaller = ClosureMarshal
+    type SignalCVaMarshaller = any
 export interface Type {
     name: string
 }

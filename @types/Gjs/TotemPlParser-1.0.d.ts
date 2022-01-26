@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * TotemPlParser-1.0
  */
@@ -28,47 +34,48 @@ enum ParserType {
     XSPF,
     IRIVER_PLA,
 }
-export const PARSER_CONTENT_RATING_CLEAN: string
-export const PARSER_CONTENT_RATING_EXPLICIT: string
-export const PARSER_CONTENT_RATING_UNRATED: string
-export const PARSER_FIELD_ABSTRACT: string
-export const PARSER_FIELD_ALBUM: string
-export const PARSER_FIELD_AUDIO_TRACK: string
-export const PARSER_FIELD_AUTHOR: string
-export const PARSER_FIELD_AUTOPLAY: string
-export const PARSER_FIELD_BASE: string
-export const PARSER_FIELD_CONTACT: string
-export const PARSER_FIELD_CONTENT_RATING: string
-export const PARSER_FIELD_CONTENT_TYPE: string
-export const PARSER_FIELD_COPYRIGHT: string
-export const PARSER_FIELD_DESCRIPTION: string
-export const PARSER_FIELD_DOWNLOAD_URI: string
-export const PARSER_FIELD_DURATION: string
-export const PARSER_FIELD_DURATION_MS: string
-export const PARSER_FIELD_ENDTIME: string
-export const PARSER_FIELD_FILESIZE: string
-export const PARSER_FIELD_GENRE: string
-export const PARSER_FIELD_GENRES: string
-export const PARSER_FIELD_ID: string
-export const PARSER_FIELD_IMAGE_URI: string
-export const PARSER_FIELD_IS_PLAYLIST: string
-export const PARSER_FIELD_LANGUAGE: string
-export const PARSER_FIELD_MOREINFO: string
-export const PARSER_FIELD_PLAYING: string
-export const PARSER_FIELD_PUB_DATE: string
-export const PARSER_FIELD_SCREENSIZE: string
-export const PARSER_FIELD_STARTTIME: string
-export const PARSER_FIELD_SUBTITLE_URI: string
-export const PARSER_FIELD_TITLE: string
-export const PARSER_FIELD_UI_MODE: string
-export const PARSER_FIELD_URI: string
-export const PARSER_FIELD_VOLUME: string
-export const PARSER_VERSION_MAJOR: number
-export const PARSER_VERSION_MICRO: number
-export const PARSER_VERSION_MINOR: number
+const PARSER_CONTENT_RATING_CLEAN: string
+const PARSER_CONTENT_RATING_EXPLICIT: string
+const PARSER_CONTENT_RATING_UNRATED: string
+const PARSER_FIELD_ABSTRACT: string
+const PARSER_FIELD_ALBUM: string
+const PARSER_FIELD_AUDIO_TRACK: string
+const PARSER_FIELD_AUTHOR: string
+const PARSER_FIELD_AUTOPLAY: string
+const PARSER_FIELD_BASE: string
+const PARSER_FIELD_CONTACT: string
+const PARSER_FIELD_CONTENT_RATING: string
+const PARSER_FIELD_CONTENT_TYPE: string
+const PARSER_FIELD_COPYRIGHT: string
+const PARSER_FIELD_DESCRIPTION: string
+const PARSER_FIELD_DOWNLOAD_URI: string
+const PARSER_FIELD_DURATION: string
+const PARSER_FIELD_DURATION_MS: string
+const PARSER_FIELD_ENDTIME: string
+const PARSER_FIELD_FILESIZE: string
+const PARSER_FIELD_GENRE: string
+const PARSER_FIELD_GENRES: string
+const PARSER_FIELD_ID: string
+const PARSER_FIELD_IMAGE_URI: string
+const PARSER_FIELD_IS_PLAYLIST: string
+const PARSER_FIELD_LANGUAGE: string
+const PARSER_FIELD_MOREINFO: string
+const PARSER_FIELD_PLAYING: string
+const PARSER_FIELD_PUB_DATE: string
+const PARSER_FIELD_SCREENSIZE: string
+const PARSER_FIELD_STARTTIME: string
+const PARSER_FIELD_SUBTITLE_URI: string
+const PARSER_FIELD_TITLE: string
+const PARSER_FIELD_UI_MODE: string
+const PARSER_FIELD_URI: string
+const PARSER_FIELD_VOLUME: string
+const PARSER_VERSION_MAJOR: number
+const PARSER_VERSION_MICRO: number
+const PARSER_VERSION_MINOR: number
 function parser_error_quark(): GLib.Quark
 function parser_metadata_get_type(): GObject.Type
-export interface Parser_ConstructProps extends GObject.Object_ConstructProps {
+interface Parser_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TotemPlParser-1.0.TotemPlParser.Parser */
     debug?: boolean
     disable_unsafe?: boolean
     force?: boolean
@@ -80,11 +87,8 @@ class Parser {
     disable_unsafe: boolean
     force: boolean
     recurse: boolean
-    /* Fields of TotemPlParser-1.0.TotemPlParser.Parser */
-    parent: GObject.Object
-    priv: ParserPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TotemPlParser-1.0.TotemPlParser.Parser */
     add_ignored_glob(glob: string): void
     add_ignored_mimetype(mimetype: string): void
@@ -169,13 +173,11 @@ class Parser {
     static parse_duration(duration: string, debug: boolean): number
     static $gtype: GObject.Type
 }
-export interface Playlist_ConstructProps extends GObject.Object_ConstructProps {
+interface Playlist_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Playlist {
-    /* Fields of TotemPlParser-1.0.TotemPlParser.Playlist */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TotemPlParser-1.0.TotemPlParser.Playlist */
     append(): /* iter */ PlaylistIter
     get_value(iter: PlaylistIter, key: string, value: any): boolean
@@ -233,10 +235,10 @@ class Playlist {
 }
 abstract class ParserClass {
     /* Fields of TotemPlParser-1.0.TotemPlParser.ParserClass */
-    parent_class: GObject.ObjectClass
-    entry_parsed: (parser: Parser, uri: string, metadata: GLib.HashTable) => void
-    playlist_started: (parser: Parser, uri: string, metadata: GLib.HashTable) => void
-    playlist_ended: (parser: Parser, uri: string) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly entry_parsed: (parser: Parser, uri: string, metadata: GLib.HashTable) => void
+    readonly playlist_started: (parser: Parser, uri: string, metadata: GLib.HashTable) => void
+    readonly playlist_ended: (parser: Parser, uri: string) => void
     static name: string
 }
 class ParserPrivate {
@@ -244,7 +246,7 @@ class ParserPrivate {
 }
 abstract class PlaylistClass {
     /* Fields of TotemPlParser-1.0.TotemPlParser.PlaylistClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PlaylistIter {

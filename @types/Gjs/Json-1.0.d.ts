@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Json-1.0
  */
@@ -37,10 +43,10 @@ enum ReaderError {
     NO_VALUE,
     INVALID_TYPE,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const VERSION_S: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const VERSION_S: string
 function boxed_can_deserialize(gboxed_type: GObject.Type, node_type: NodeType): boolean
 function boxed_can_serialize(gboxed_type: GObject.Type): [ /* returnType */ boolean, /* node_type */ NodeType | null ]
 function boxed_deserialize(gboxed_type: GObject.Type, node: Node): object | null
@@ -89,16 +95,21 @@ class Serializable {
     vfunc_deserialize_property(property_name: string, pspec: GObject.ParamSpec, property_node: Node): [ /* returnType */ boolean, /* value */ any ]
     vfunc_find_property(name: string): GObject.ParamSpec | null
     vfunc_get_property(pspec: GObject.ParamSpec): /* value */ any
+    /* Function overloads */
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_serialize_property(property_name: string, value: any, pspec: GObject.ParamSpec): Node
     vfunc_set_property(pspec: GObject.ParamSpec, value: any): void
+    /* Function overloads */
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     static name: string
 }
-export interface Builder_ConstructProps extends GObject.Object_ConstructProps {
+interface Builder_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Json-1.0.Json.Builder */
     immutable?: boolean
 }
 class Builder {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Json-1.0.Json.Builder */
     add_boolean_value(value: boolean): Builder | null
     add_double_value(value: number): Builder | null
@@ -159,7 +170,8 @@ class Builder {
     static new_immutable(): Builder
     static $gtype: GObject.Type
 }
-export interface Generator_ConstructProps extends GObject.Object_ConstructProps {
+interface Generator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Json-1.0.Json.Generator */
     indent?: number
     indent_char?: number
     pretty?: boolean
@@ -172,7 +184,7 @@ class Generator {
     pretty: boolean
     root: Node
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Json-1.0.Json.Generator */
     get_indent(): number
     get_indent_char(): number
@@ -239,12 +251,13 @@ class Generator {
     static new(): Generator
     static $gtype: GObject.Type
 }
-export interface Parser_ConstructProps extends GObject.Object_ConstructProps {
+interface Parser_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Json-1.0.Json.Parser */
     immutable?: boolean
 }
 class Parser {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Json-1.0.Json.Parser */
     get_current_line(): number
     get_current_pos(): number
@@ -341,11 +354,11 @@ class Parser {
     static new_immutable(): Parser
     static $gtype: GObject.Type
 }
-export interface Path_ConstructProps extends GObject.Object_ConstructProps {
+interface Path_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Path {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Json-1.0.Json.Path */
     compile(expression: string): boolean
     match(root: Node): Node
@@ -395,14 +408,15 @@ class Path {
     static query(expression: string, root: Node): Node
     static $gtype: GObject.Type
 }
-export interface Reader_ConstructProps extends GObject.Object_ConstructProps {
+interface Reader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Json-1.0.Json.Reader */
     root?: Node
 }
 class Reader {
     /* Properties of Json-1.0.Json.Reader */
     root: Node
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Json-1.0.Json.Reader */
     count_elements(): number
     count_members(): number
@@ -620,15 +634,15 @@ class ObjectIter {
 }
 abstract class ParserClass {
     /* Fields of Json-1.0.Json.ParserClass */
-    parse_start: (parser: Parser) => void
-    object_start: (parser: Parser) => void
-    object_member: (parser: Parser, object: Object, member_name: string) => void
-    object_end: (parser: Parser, object: Object) => void
-    array_start: (parser: Parser) => void
-    array_element: (parser: Parser, array: Array, index_: number) => void
-    array_end: (parser: Parser, array: Array) => void
-    parse_end: (parser: Parser) => void
-    error: (parser: Parser, error: GLib.Error) => void
+    readonly parse_start: (parser: Parser) => void
+    readonly object_start: (parser: Parser) => void
+    readonly object_member: (parser: Parser, object: Object, member_name: string) => void
+    readonly object_end: (parser: Parser, object: Object) => void
+    readonly array_start: (parser: Parser) => void
+    readonly array_element: (parser: Parser, array: Array, index_: number) => void
+    readonly array_end: (parser: Parser, array: Array) => void
+    readonly parse_end: (parser: Parser) => void
+    readonly error: (parser: Parser, error: GLib.Error) => void
     static name: string
 }
 class ParserPrivate {
@@ -645,11 +659,11 @@ class ReaderPrivate {
 }
 abstract class SerializableIface {
     /* Fields of Json-1.0.Json.SerializableIface */
-    serialize_property: (serializable: Serializable, property_name: string, value: any, pspec: GObject.ParamSpec) => Node
-    deserialize_property: (serializable: Serializable, property_name: string, pspec: GObject.ParamSpec, property_node: Node) => [ /* returnType */ boolean, /* value */ any ]
-    find_property: (serializable: Serializable, name: string) => GObject.ParamSpec | null
-    set_property: (serializable: Serializable, pspec: GObject.ParamSpec, value: any) => void
-    get_property: (serializable: Serializable, pspec: GObject.ParamSpec) => /* value */ any
+    readonly serialize_property: (serializable: Serializable, property_name: string, value: any, pspec: GObject.ParamSpec) => Node
+    readonly deserialize_property: (serializable: Serializable, property_name: string, pspec: GObject.ParamSpec, property_node: Node) => [ /* returnType */ boolean, /* value */ any ]
+    readonly find_property: (serializable: Serializable, name: string) => GObject.ParamSpec | null
+    readonly set_property: (serializable: Serializable, pspec: GObject.ParamSpec, value: any) => void
+    readonly get_property: (serializable: Serializable, pspec: GObject.ParamSpec) => /* value */ any
     static name: string
 }
 }

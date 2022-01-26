@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstFft-1.0
  */
@@ -28,8 +34,8 @@ class FFTF32 {
 }
 class FFTF32Complex {
     /* Fields of GstFft-1.0.GstFft.FFTF32Complex */
-    r: number
-    i: number
+    readonly r: number
+    readonly i: number
     static name: string
 }
 class FFTF64 {
@@ -42,8 +48,8 @@ class FFTF64 {
 }
 class FFTF64Complex {
     /* Fields of GstFft-1.0.GstFft.FFTF64Complex */
-    r: number
-    i: number
+    readonly r: number
+    readonly i: number
     static name: string
 }
 class FFTS16 {
@@ -56,8 +62,8 @@ class FFTS16 {
 }
 class FFTS16Complex {
     /* Fields of GstFft-1.0.GstFft.FFTS16Complex */
-    r: number
-    i: number
+    readonly r: number
+    readonly i: number
     static name: string
 }
 class FFTS32 {
@@ -70,8 +76,8 @@ class FFTS32 {
 }
 class FFTS32Complex {
     /* Fields of GstFft-1.0.GstFft.FFTS32Complex */
-    r: number
-    i: number
+    readonly r: number
+    readonly i: number
     static name: string
 }
 }

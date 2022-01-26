@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Xdp-1.0
  */
@@ -146,12 +152,12 @@ enum WallpaperFlags {
     LOCKSCREEN,
     PREVIEW,
 }
-export const WALLPAPER_TARGET_BOTH: number
-export interface Portal_ConstructProps extends GObject.Object_ConstructProps {
+const WALLPAPER_TARGET_BOTH: number
+interface Portal_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Portal {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Xdp-1.0.Xdp.Portal */
     access_camera(parent: Parent | null, flags: CameraFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     access_camera_finish(result: Gio.AsyncResult): boolean
@@ -272,13 +278,16 @@ class Portal {
     _init (config?: Portal_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Portal
+    static running_under_flatpak(): boolean
+    static running_under_sandbox(): boolean
+    static running_under_snap(): boolean
     static $gtype: GObject.Type
 }
-export interface Session_ConstructProps extends GObject.Object_ConstructProps {
+interface Session_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Session {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Xdp-1.0.Xdp.Session */
     close(): void
     get_devices(): DeviceType
@@ -354,12 +363,12 @@ class Parent {
 }
 abstract class PortalClass {
     /* Fields of Xdp-1.0.Xdp.PortalClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SessionClass {
     /* Fields of Xdp-1.0.Xdp.SessionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

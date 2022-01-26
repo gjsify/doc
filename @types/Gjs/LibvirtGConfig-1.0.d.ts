@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * LibvirtGConfig-1.0
  */
@@ -288,14 +294,14 @@ enum StorageVolTargetFeatures {
 }
 function init(argv?: string[] | null): /* argv */ string[] | null
 function init_check(argv?: string[] | null): [ /* returnType */ boolean, /* argv */ string[] | null ]
-export interface Capabilities_ConstructProps extends Object_ConstructProps {
+interface Capabilities_ConstructProps extends Object_ConstructProps {
 }
 class Capabilities {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Capabilities */
-    parent: Object
-    priv: CapabilitiesPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Capabilities */
     get_guests(): CapabilitiesGuest[]
     get_host(): CapabilitiesHost
@@ -346,19 +352,21 @@ class Capabilities {
     _init (config?: Capabilities_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Capabilities
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): Capabilities
     static new_from_xml(xml: string): Capabilities
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): Capabilities
     static $gtype: GObject.Type
 }
-export interface CapabilitiesCpu_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesCpu_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesCpu {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpu */
-    parent: Object
-    priv: CapabilitiesCpuPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpu */
     add_feature(feature: CapabilitiesCpuFeature): void
     get_arch(): string
@@ -415,14 +423,14 @@ class CapabilitiesCpu {
     _init (config?: CapabilitiesCpu_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CapabilitiesCpuFeature_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesCpuFeature_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesCpuFeature {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuFeature */
-    parent: Object
-    priv: CapabilitiesCpuFeaturePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuFeature */
     get_name(): string
     set_name(name: string): void
@@ -473,14 +481,14 @@ class CapabilitiesCpuFeature {
     _init (config?: CapabilitiesCpuFeature_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CapabilitiesCpuModel_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesCpuModel_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesCpuModel {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuModel */
-    parent: Object
-    priv: CapabilitiesCpuModelPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuModel */
     get_name(): string
     set_name(name: string): void
@@ -531,19 +539,21 @@ class CapabilitiesCpuModel {
     _init (config?: CapabilitiesCpuModel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): CapabilitiesCpuModel
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): CapabilitiesCpuModel
     static new_from_xml(xml: string): CapabilitiesCpuModel
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): CapabilitiesCpuModel
     static $gtype: GObject.Type
 }
-export interface CapabilitiesCpuTopology_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesCpuTopology_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesCpuTopology {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuTopology */
-    parent: Object
-    priv: CapabilitiesCpuTopologyPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuTopology */
     get_cores(): number
     get_sockets(): number
@@ -598,19 +608,21 @@ class CapabilitiesCpuTopology {
     _init (config?: CapabilitiesCpuTopology_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): CapabilitiesCpuTopology
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): CapabilitiesCpuTopology
     static new_from_xml(xml: string): CapabilitiesCpuTopology
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): CapabilitiesCpuTopology
     static $gtype: GObject.Type
 }
-export interface CapabilitiesGuest_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesGuest_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesGuest {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuest */
-    parent: Object
-    priv: CapabilitiesGuestPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuest */
     get_arch(): CapabilitiesGuestArch
     get_features(): CapabilitiesGuestFeature[]
@@ -662,14 +674,14 @@ class CapabilitiesGuest {
     _init (config?: CapabilitiesGuest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CapabilitiesGuestArch_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesGuestArch_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesGuestArch {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestArch */
-    parent: Object
-    priv: CapabilitiesGuestArchPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestArch */
     get_domains(): CapabilitiesGuestDomain[]
     get_emulator(): string
@@ -721,14 +733,14 @@ class CapabilitiesGuestArch {
     _init (config?: CapabilitiesGuestArch_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CapabilitiesGuestDomain_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesGuestDomain_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesGuestDomain {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestDomain */
-    parent: Object
-    priv: CapabilitiesGuestDomainPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestDomain */
     get_emulator(): string
     get_virt_type(): DomainVirtType
@@ -779,14 +791,14 @@ class CapabilitiesGuestDomain {
     _init (config?: CapabilitiesGuestDomain_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CapabilitiesGuestFeature_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesGuestFeature_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesGuestFeature {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestFeature */
-    parent: Object
-    priv: CapabilitiesGuestFeaturePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestFeature */
     get_name(): string
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
@@ -836,14 +848,14 @@ class CapabilitiesGuestFeature {
     _init (config?: CapabilitiesGuestFeature_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CapabilitiesHost_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesHost_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesHost {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHost */
-    parent: Object
-    priv: CapabilitiesHostPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHost */
     get_cpu(): CapabilitiesCpu
     get_secmodels(): CapabilitiesHostSecModel[]
@@ -895,14 +907,14 @@ class CapabilitiesHost {
     _init (config?: CapabilitiesHost_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CapabilitiesHostSecModel_ConstructProps extends Object_ConstructProps {
+interface CapabilitiesHostSecModel_ConstructProps extends Object_ConstructProps {
 }
 class CapabilitiesHostSecModel {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHostSecModel */
-    parent: Object
-    priv: CapabilitiesHostSecModelPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHostSecModel */
     get_doi(): string
     get_model(): string
@@ -953,7 +965,8 @@ class CapabilitiesHostSecModel {
     _init (config?: CapabilitiesHostSecModel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Domain_ConstructProps extends Object_ConstructProps {
+interface Domain_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of LibvirtGConfig-1.0.LibvirtGConfig.Domain */
     current_memory?: number
     description?: string
     features?: string[]
@@ -973,11 +986,11 @@ class Domain {
     title: string
     uuid: string
     vcpu: number
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Domain */
-    parent: Object
-    priv: DomainPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Domain */
     add_device(device: DomainDevice): void
     get_clock(): DomainClock
@@ -1075,19 +1088,21 @@ class Domain {
     _init (config?: Domain_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Domain
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): Domain
     static new_from_xml(xml: string): Domain
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): Domain
     static $gtype: GObject.Type
 }
-export interface DomainAddress_ConstructProps extends Object_ConstructProps {
+interface DomainAddress_ConstructProps extends Object_ConstructProps {
 }
 class DomainAddress {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddress */
-    parent: Object
-    priv: DomainAddressPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -1135,14 +1150,14 @@ class DomainAddress {
     _init (config?: DomainAddress_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainAddressPci_ConstructProps extends DomainAddress_ConstructProps {
+interface DomainAddressPci_ConstructProps extends DomainAddress_ConstructProps {
 }
 class DomainAddressPci {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressPci */
-    parent: DomainAddress
-    priv: DomainAddressPciPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddress */
+    readonly parent: Object
+    readonly priv: DomainAddressPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressPci */
     get_bus(): number
     get_domain(): number
@@ -1201,19 +1216,21 @@ class DomainAddressPci {
     _init (config?: DomainAddressPci_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainAddressPci
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainAddressPci
     static new_from_xml(xml: string): DomainAddressPci
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainAddressPci
     static $gtype: GObject.Type
 }
-export interface DomainAddressUsb_ConstructProps extends DomainAddress_ConstructProps {
+interface DomainAddressUsb_ConstructProps extends DomainAddress_ConstructProps {
 }
 class DomainAddressUsb {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressUsb */
-    parent: DomainAddress
-    priv: DomainAddressUsbPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddress */
+    readonly parent: Object
+    readonly priv: DomainAddressPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressUsb */
     set_bus(bus: number): void
     set_port(port: string): void
@@ -1264,19 +1281,21 @@ class DomainAddressUsb {
     _init (config?: DomainAddressUsb_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainAddressUsb
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainAddressUsb
     static new_from_xml(xml: string): DomainAddressUsb
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainAddressUsb
     static $gtype: GObject.Type
 }
-export interface DomainCapabilities_ConstructProps extends Object_ConstructProps {
+interface DomainCapabilities_ConstructProps extends Object_ConstructProps {
 }
 class DomainCapabilities {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilities */
-    parent: Object
-    priv: DomainCapabilitiesPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilities */
     get_os(): DomainCapabilitiesOs
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
@@ -1326,19 +1345,21 @@ class DomainCapabilities {
     _init (config?: DomainCapabilities_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainCapabilities
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainCapabilities
     static new_from_xml(xml: string): DomainCapabilities
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainCapabilities
     static $gtype: GObject.Type
 }
-export interface DomainCapabilitiesOs_ConstructProps extends Object_ConstructProps {
+interface DomainCapabilitiesOs_ConstructProps extends Object_ConstructProps {
 }
 class DomainCapabilitiesOs {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilitiesOs */
-    parent: Object
-    priv: DomainCapabilitiesOsPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilitiesOs */
     get_firmwares(): DomainOsFirmware[]
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
@@ -1390,14 +1411,14 @@ class DomainCapabilitiesOs {
     _init (config?: DomainCapabilitiesOs_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainChannel_ConstructProps extends DomainChardev_ConstructProps {
+interface DomainChannel_ConstructProps extends DomainChardev_ConstructProps {
 }
 class DomainChannel {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChannel */
-    parent: DomainChardev
-    priv: DomainChannelPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
+    readonly parent: DomainDevice
+    readonly priv: DomainChardevPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChannel */
     get_target_name(): string
     get_target_type(): DomainChannelTargetType
@@ -1455,19 +1476,21 @@ class DomainChannel {
     _init (config?: DomainChannel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainChannel
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainChannel
     static new_from_xml(xml: string): DomainChannel
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainChannel
     static $gtype: GObject.Type
 }
-export interface DomainChardev_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainChardev_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainChardev {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
-    parent: DomainDevice
-    priv: DomainChardevPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     get_source(): DomainChardevSource
     set_source(source: DomainChardevSource): void
@@ -1520,14 +1543,14 @@ class DomainChardev {
     _init (config?: DomainChardev_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainChardevSource_ConstructProps extends Object_ConstructProps {
+interface DomainChardevSource_ConstructProps extends Object_ConstructProps {
 }
 class DomainChardevSource {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSource */
-    parent: Object
-    priv: DomainChardevSourcePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -1575,14 +1598,14 @@ class DomainChardevSource {
     _init (config?: DomainChardevSource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainChardevSourcePty_ConstructProps extends DomainChardevSource_ConstructProps {
+interface DomainChardevSourcePty_ConstructProps extends DomainChardevSource_ConstructProps {
 }
 class DomainChardevSourcePty {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourcePty */
-    parent: DomainChardevSource
-    priv: DomainChardevSourcePtyPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSource */
+    readonly parent: Object
+    readonly priv: DomainChardevSourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourcePty */
     get_path(): string
     set_path(path: string): void
@@ -1633,19 +1656,21 @@ class DomainChardevSourcePty {
     _init (config?: DomainChardevSourcePty_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainChardevSourcePty
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainChardevSourcePty
     static new_from_xml(xml: string): DomainChardevSourcePty
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainChardevSourcePty
     static $gtype: GObject.Type
 }
-export interface DomainChardevSourceSpicePort_ConstructProps extends DomainChardevSource_ConstructProps {
+interface DomainChardevSourceSpicePort_ConstructProps extends DomainChardevSource_ConstructProps {
 }
 class DomainChardevSourceSpicePort {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpicePort */
-    parent: DomainChardevSource
-    priv: DomainChardevSourceSpicePortPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSource */
+    readonly parent: Object
+    readonly priv: DomainChardevSourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpicePort */
     get_channel(): string
     set_channel(channel: string): void
@@ -1696,19 +1721,21 @@ class DomainChardevSourceSpicePort {
     _init (config?: DomainChardevSourceSpicePort_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainChardevSourceSpicePort
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainChardevSourceSpicePort
     static new_from_xml(xml: string): DomainChardevSourceSpicePort
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainChardevSourceSpicePort
     static $gtype: GObject.Type
 }
-export interface DomainChardevSourceSpiceVmc_ConstructProps extends DomainChardevSource_ConstructProps {
+interface DomainChardevSourceSpiceVmc_ConstructProps extends DomainChardevSource_ConstructProps {
 }
 class DomainChardevSourceSpiceVmc {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpiceVmc */
-    parent: DomainChardevSource
-    priv: DomainChardevSourceSpiceVmcPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSource */
+    readonly parent: Object
+    readonly priv: DomainChardevSourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -1756,19 +1783,21 @@ class DomainChardevSourceSpiceVmc {
     _init (config?: DomainChardevSourceSpiceVmc_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainChardevSourceSpiceVmc
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainChardevSourceSpiceVmc
     static new_from_xml(xml: string): DomainChardevSourceSpiceVmc
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainChardevSourceSpiceVmc
     static $gtype: GObject.Type
 }
-export interface DomainChardevSourceUnix_ConstructProps extends DomainChardevSource_ConstructProps {
+interface DomainChardevSourceUnix_ConstructProps extends DomainChardevSource_ConstructProps {
 }
 class DomainChardevSourceUnix {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceUnix */
-    parent: DomainChardevSource
-    priv: DomainChardevSourceUnixPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSource */
+    readonly parent: Object
+    readonly priv: DomainChardevSourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -1816,19 +1845,21 @@ class DomainChardevSourceUnix {
     _init (config?: DomainChardevSourceUnix_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainChardevSourceUnix
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainChardevSourceUnix
     static new_from_xml(xml: string): DomainChardevSourceUnix
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainChardevSourceUnix
     static $gtype: GObject.Type
 }
-export interface DomainClock_ConstructProps extends Object_ConstructProps {
+interface DomainClock_ConstructProps extends Object_ConstructProps {
 }
 class DomainClock {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainClock */
-    parent: Object
-    priv: DomainClockPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainClock */
     add_timer(timer: DomainTimer): void
     get_offset(): DomainClockOffset
@@ -1884,19 +1915,21 @@ class DomainClock {
     _init (config?: DomainClock_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainClock
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainClock
     static new_from_xml(xml: string): DomainClock
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainClock
     static $gtype: GObject.Type
 }
-export interface DomainConsole_ConstructProps extends DomainChardev_ConstructProps {
+interface DomainConsole_ConstructProps extends DomainChardev_ConstructProps {
 }
 class DomainConsole {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainConsole */
-    parent: DomainChardev
-    priv: DomainConsolePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
+    readonly parent: DomainDevice
+    readonly priv: DomainChardevPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainConsole */
     set_target_type(type: DomainConsoleTargetType): void
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
@@ -1951,19 +1984,21 @@ class DomainConsole {
     _init (config?: DomainConsole_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainConsole
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainConsole
     static new_from_xml(xml: string): DomainConsole
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainConsole
     static $gtype: GObject.Type
 }
-export interface DomainController_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainController_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainController {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainController */
-    parent: DomainDevice
-    priv: DomainControllerPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainController */
     get_index(): number
     get_ports(): number
@@ -2019,14 +2054,14 @@ class DomainController {
     _init (config?: DomainController_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainControllerUsb_ConstructProps extends DomainController_ConstructProps {
+interface DomainControllerUsb_ConstructProps extends DomainController_ConstructProps {
 }
 class DomainControllerUsb {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainControllerUsb */
-    parent: DomainController
-    priv: DomainControllerUsbPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainController */
+    readonly parent: DomainDevice
+    readonly priv: DomainControllerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainControllerUsb */
     set_master(master: DomainControllerUsb, startport: number): void
     set_model(model: DomainControllerUsbModel): void
@@ -2085,19 +2120,21 @@ class DomainControllerUsb {
     _init (config?: DomainControllerUsb_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainControllerUsb
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainControllerUsb
     static new_from_xml(xml: string): DomainControllerUsb
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainControllerUsb
     static $gtype: GObject.Type
 }
-export interface DomainCpu_ConstructProps extends CapabilitiesCpu_ConstructProps {
+interface DomainCpu_ConstructProps extends CapabilitiesCpu_ConstructProps {
 }
 class DomainCpu {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpu */
-    parent: CapabilitiesCpu
-    priv: DomainCpuPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpu */
+    readonly parent: Object
+    readonly priv: CapabilitiesCpuPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpu */
     get_match_policy(): DomainCpuMatchPolicy
     get_mode(): DomainCpuMode
@@ -2160,19 +2197,21 @@ class DomainCpu {
     _init (config?: DomainCpu_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainCpu
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainCpu
     static new_from_xml(xml: string): DomainCpu
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainCpu
     static $gtype: GObject.Type
 }
-export interface DomainCpuFeature_ConstructProps extends CapabilitiesCpuFeature_ConstructProps {
+interface DomainCpuFeature_ConstructProps extends CapabilitiesCpuFeature_ConstructProps {
 }
 class DomainCpuFeature {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuFeature */
-    parent: CapabilitiesCpu
-    priv: DomainCpuFeaturePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuFeature */
+    readonly parent: Object
+    readonly priv: CapabilitiesCpuFeaturePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuFeature */
     get_policy(): DomainCpuFeaturePolicy
     set_policy(policy: DomainCpuFeaturePolicy): void
@@ -2226,19 +2265,21 @@ class DomainCpuFeature {
     _init (config?: DomainCpuFeature_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainCpuFeature
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainCpuFeature
     static new_from_xml(xml: string): DomainCpuFeature
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainCpuFeature
     static $gtype: GObject.Type
 }
-export interface DomainCpuModel_ConstructProps extends CapabilitiesCpuModel_ConstructProps {
+interface DomainCpuModel_ConstructProps extends CapabilitiesCpuModel_ConstructProps {
 }
 class DomainCpuModel {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuModel */
-    parent: CapabilitiesCpuModel
-    priv: DomainCpuModelPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuModel */
+    readonly parent: Object
+    readonly priv: CapabilitiesCpuModelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuModel */
     get_name(): string
     set_name(name: string): void
@@ -2289,19 +2330,23 @@ class DomainCpuModel {
     _init (config?: DomainCpuModel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainCpuModel
+    /* Function overloads */
+    static new(): DomainCpuModel
     static new(type: GObject.Type, root_name: string, schema: string): DomainCpuModel
+    static new_from_xml(xml: string): DomainCpuModel
+    /* Function overloads */
     static new_from_xml(xml: string): DomainCpuModel
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainCpuModel
     static $gtype: GObject.Type
 }
-export interface DomainDevice_ConstructProps extends Object_ConstructProps {
+interface DomainDevice_ConstructProps extends Object_ConstructProps {
 }
 class DomainDevice {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
-    parent: Object
-    priv: DomainDevicePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
@@ -2351,14 +2396,14 @@ class DomainDevice {
     _init (config?: DomainDevice_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainDisk_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainDisk_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainDisk {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDisk */
-    parent: DomainDevice
-    priv: DomainDiskPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDisk */
     get_disk_type(): DomainDiskType
     get_driver(): DomainDiskDriver
@@ -2434,19 +2479,21 @@ class DomainDisk {
     _init (config?: DomainDisk_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainDisk
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainDisk
     static new_from_xml(xml: string): DomainDisk
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainDisk
     static $gtype: GObject.Type
 }
-export interface DomainDiskDriver_ConstructProps extends Object_ConstructProps {
+interface DomainDiskDriver_ConstructProps extends Object_ConstructProps {
 }
 class DomainDiskDriver {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDiskDriver */
-    parent: Object
-    priv: DomainDiskDriverPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDiskDriver */
     get_cache(): DomainDiskCacheType
     get_copy_on_read(): boolean
@@ -2509,19 +2556,21 @@ class DomainDiskDriver {
     _init (config?: DomainDiskDriver_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainDiskDriver
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainDiskDriver
     static new_from_xml(xml: string): DomainDiskDriver
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainDiskDriver
     static $gtype: GObject.Type
 }
-export interface DomainFilesys_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainFilesys_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainFilesys {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainFilesys */
-    parent: DomainDevice
-    priv: DomainFilesysPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainFilesys */
     set_access_type(type: DomainFilesysAccessType): void
     set_driver_format(format: DomainDiskFormat): void
@@ -2580,19 +2629,21 @@ class DomainFilesys {
     _init (config?: DomainFilesys_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainFilesys
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainFilesys
     static new_from_xml(xml: string): DomainFilesys
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainFilesys
     static $gtype: GObject.Type
 }
-export interface DomainGraphics_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainGraphics_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainGraphics {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphics */
-    parent: DomainDevice
-    priv: DomainGraphicsPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
@@ -2642,14 +2693,14 @@ class DomainGraphics {
     _init (config?: DomainGraphics_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainGraphicsDesktop_ConstructProps extends DomainGraphics_ConstructProps {
+interface DomainGraphicsDesktop_ConstructProps extends DomainGraphics_ConstructProps {
 }
 class DomainGraphicsDesktop {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsDesktop */
-    parent: DomainGraphics
-    priv: DomainGraphicsDesktopPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphics */
+    readonly parent: DomainDevice
+    readonly priv: DomainGraphicsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsDesktop */
     get_display(): string
     get_fullscreen(): boolean
@@ -2704,19 +2755,21 @@ class DomainGraphicsDesktop {
     _init (config?: DomainGraphicsDesktop_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainGraphicsDesktop
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainGraphicsDesktop
     static new_from_xml(xml: string): DomainGraphicsDesktop
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainGraphicsDesktop
     static $gtype: GObject.Type
 }
-export interface DomainGraphicsRdp_ConstructProps extends DomainGraphics_ConstructProps {
+interface DomainGraphicsRdp_ConstructProps extends DomainGraphics_ConstructProps {
 }
 class DomainGraphicsRdp {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsRdp */
-    parent: DomainGraphics
-    priv: DomainGraphicsRdpPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphics */
+    readonly parent: DomainDevice
+    readonly priv: DomainGraphicsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsRdp */
     get_multi_user(): boolean
     get_port(): number
@@ -2774,19 +2827,21 @@ class DomainGraphicsRdp {
     _init (config?: DomainGraphicsRdp_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainGraphicsRdp
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainGraphicsRdp
     static new_from_xml(xml: string): DomainGraphicsRdp
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainGraphicsRdp
     static $gtype: GObject.Type
 }
-export interface DomainGraphicsSdl_ConstructProps extends DomainGraphics_ConstructProps {
+interface DomainGraphicsSdl_ConstructProps extends DomainGraphics_ConstructProps {
 }
 class DomainGraphicsSdl {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSdl */
-    parent: DomainGraphics
-    priv: DomainGraphicsSdlPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphics */
+    readonly parent: DomainDevice
+    readonly priv: DomainGraphicsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSdl */
     set_display(disp: string): void
     set_fullscreen(fullscreen: boolean): void
@@ -2840,19 +2895,21 @@ class DomainGraphicsSdl {
     _init (config?: DomainGraphicsSdl_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainGraphicsSdl
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainGraphicsSdl
     static new_from_xml(xml: string): DomainGraphicsSdl
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainGraphicsSdl
     static $gtype: GObject.Type
 }
-export interface DomainGraphicsSpice_ConstructProps extends DomainGraphics_ConstructProps {
+interface DomainGraphicsSpice_ConstructProps extends DomainGraphics_ConstructProps {
 }
 class DomainGraphicsSpice {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSpice */
-    parent: DomainGraphics
-    priv: DomainGraphicsSpicePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphics */
+    readonly parent: DomainDevice
+    readonly priv: DomainGraphicsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSpice */
     get_image_compression(): DomainGraphicsSpiceImageCompression
     get_port(): number
@@ -2911,19 +2968,21 @@ class DomainGraphicsSpice {
     _init (config?: DomainGraphicsSpice_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainGraphicsSpice
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainGraphicsSpice
     static new_from_xml(xml: string): DomainGraphicsSpice
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainGraphicsSpice
     static $gtype: GObject.Type
 }
-export interface DomainGraphicsVnc_ConstructProps extends DomainGraphics_ConstructProps {
+interface DomainGraphicsVnc_ConstructProps extends DomainGraphics_ConstructProps {
 }
 class DomainGraphicsVnc {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsVnc */
-    parent: DomainGraphics
-    priv: DomainGraphicsVncPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphics */
+    readonly parent: DomainDevice
+    readonly priv: DomainGraphicsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsVnc */
     get_port(): number
     get_socket(): string
@@ -2980,19 +3039,21 @@ class DomainGraphicsVnc {
     _init (config?: DomainGraphicsVnc_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainGraphicsVnc
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainGraphicsVnc
     static new_from_xml(xml: string): DomainGraphicsVnc
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainGraphicsVnc
     static $gtype: GObject.Type
 }
-export interface DomainHostdev_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainHostdev_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainHostdev {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdev */
-    parent: DomainDevice
-    priv: DomainHostdevPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdev */
     get_boot_order(): number
     get_readonly(): boolean
@@ -3049,14 +3110,14 @@ class DomainHostdev {
     _init (config?: DomainHostdev_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainHostdevPci_ConstructProps extends DomainHostdev_ConstructProps {
+interface DomainHostdevPci_ConstructProps extends DomainHostdev_ConstructProps {
 }
 class DomainHostdevPci {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdevPci */
-    parent: DomainHostdev
-    priv: DomainHostdevPciPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdev */
+    readonly parent: DomainDevice
+    readonly priv: DomainHostdevPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdevPci */
     get_address(): DomainAddressPci
     get_managed(): boolean
@@ -3122,19 +3183,21 @@ class DomainHostdevPci {
     _init (config?: DomainHostdevPci_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainHostdevPci
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainHostdevPci
     static new_from_xml(xml: string): DomainHostdevPci
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainHostdevPci
     static $gtype: GObject.Type
 }
-export interface DomainInput_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainInput_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainInput {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInput */
-    parent: DomainDevice
-    priv: DomainInputPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInput */
     get_bus(): DomainInputBus
     get_device_type(): DomainInputDeviceType
@@ -3189,19 +3252,21 @@ class DomainInput {
     _init (config?: DomainInput_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainInput
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainInput
     static new_from_xml(xml: string): DomainInput
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainInput
     static $gtype: GObject.Type
 }
-export interface DomainInterface_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainInterface_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainInterface {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
-    parent: DomainDevice
-    priv: DomainInterfacePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
     get_filterref(): DomainInterfaceFilterref
     get_ifname(): string
@@ -3262,14 +3327,14 @@ class DomainInterface {
     _init (config?: DomainInterface_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainInterfaceBridge_ConstructProps extends DomainInterface_ConstructProps {
+interface DomainInterfaceBridge_ConstructProps extends DomainInterface_ConstructProps {
 }
 class DomainInterfaceBridge {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceBridge */
-    parent: DomainInterface
-    priv: DomainInterfaceBridgePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
+    readonly parent: DomainDevice
+    readonly priv: DomainInterfacePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceBridge */
     set_source(brname: string): void
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
@@ -3332,19 +3397,21 @@ class DomainInterfaceBridge {
     _init (config?: DomainInterfaceBridge_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainInterfaceBridge
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainInterfaceBridge
     static new_from_xml(xml: string): DomainInterfaceBridge
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainInterfaceBridge
     static $gtype: GObject.Type
 }
-export interface DomainInterfaceFilterref_ConstructProps extends Object_ConstructProps {
+interface DomainInterfaceFilterref_ConstructProps extends Object_ConstructProps {
 }
 class DomainInterfaceFilterref {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterref */
-    parent: Object
-    priv: DomainInterfaceFilterrefPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterref */
     add_parameter(parameter: DomainInterfaceFilterrefParameter): void
     get_name(): string
@@ -3397,19 +3464,21 @@ class DomainInterfaceFilterref {
     _init (config?: DomainInterfaceFilterref_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainInterfaceFilterref
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainInterfaceFilterref
     static new_from_xml(xml: string): DomainInterfaceFilterref
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainInterfaceFilterref
     static $gtype: GObject.Type
 }
-export interface DomainInterfaceFilterrefParameter_ConstructProps extends Object_ConstructProps {
+interface DomainInterfaceFilterrefParameter_ConstructProps extends Object_ConstructProps {
 }
 class DomainInterfaceFilterrefParameter {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterrefParameter */
-    parent: Object
-    priv: DomainInterfaceFilterrefParameterPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterrefParameter */
     get_name(): string
     get_value(): string
@@ -3462,19 +3531,21 @@ class DomainInterfaceFilterrefParameter {
     _init (config?: DomainInterfaceFilterrefParameter_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainInterfaceFilterrefParameter
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainInterfaceFilterrefParameter
     static new_from_xml(xml: string): DomainInterfaceFilterrefParameter
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainInterfaceFilterrefParameter
     static $gtype: GObject.Type
 }
-export interface DomainInterfaceNetwork_ConstructProps extends DomainInterface_ConstructProps {
+interface DomainInterfaceNetwork_ConstructProps extends DomainInterface_ConstructProps {
 }
 class DomainInterfaceNetwork {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceNetwork */
-    parent: DomainInterface
-    priv: DomainInterfaceNetworkPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
+    readonly parent: DomainDevice
+    readonly priv: DomainInterfacePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceNetwork */
     set_source(source: string): void
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
@@ -3537,19 +3608,21 @@ class DomainInterfaceNetwork {
     _init (config?: DomainInterfaceNetwork_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainInterfaceNetwork
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainInterfaceNetwork
     static new_from_xml(xml: string): DomainInterfaceNetwork
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainInterfaceNetwork
     static $gtype: GObject.Type
 }
-export interface DomainInterfaceUser_ConstructProps extends DomainInterface_ConstructProps {
+interface DomainInterfaceUser_ConstructProps extends DomainInterface_ConstructProps {
 }
 class DomainInterfaceUser {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceUser */
-    parent: DomainInterface
-    priv: DomainInterfaceUserPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
+    readonly parent: DomainDevice
+    readonly priv: DomainInterfacePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterface */
     get_filterref(): DomainInterfaceFilterref
     get_ifname(): string
@@ -3610,19 +3683,21 @@ class DomainInterfaceUser {
     _init (config?: DomainInterfaceUser_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainInterfaceUser
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainInterfaceUser
     static new_from_xml(xml: string): DomainInterfaceUser
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainInterfaceUser
     static $gtype: GObject.Type
 }
-export interface DomainMemballoon_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainMemballoon_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainMemballoon {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainMemballoon */
-    parent: DomainDevice
-    priv: DomainMemballoonPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainMemballoon */
     set_model(model: DomainMemballoonModel): void
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
@@ -3674,19 +3749,21 @@ class DomainMemballoon {
     _init (config?: DomainMemballoon_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainMemballoon
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainMemballoon
     static new_from_xml(xml: string): DomainMemballoon
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainMemballoon
     static $gtype: GObject.Type
 }
-export interface DomainOs_ConstructProps extends Object_ConstructProps {
+interface DomainOs_ConstructProps extends Object_ConstructProps {
 }
 class DomainOs {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainOs */
-    parent: Object
-    priv: DomainOsPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainOs */
     bios_enable_serial(enable: boolean): void
     enable_boot_menu(enable: boolean): void
@@ -3753,19 +3830,21 @@ class DomainOs {
     _init (config?: DomainOs_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainOs
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainOs
     static new_from_xml(xml: string): DomainOs
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainOs
     static $gtype: GObject.Type
 }
-export interface DomainParallel_ConstructProps extends DomainChardev_ConstructProps {
+interface DomainParallel_ConstructProps extends DomainChardev_ConstructProps {
 }
 class DomainParallel {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainParallel */
-    parent: DomainChardev
-    priv: DomainParallelPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
+    readonly parent: DomainDevice
+    readonly priv: DomainChardevPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     get_source(): DomainChardevSource
     set_source(source: DomainChardevSource): void
@@ -3818,19 +3897,21 @@ class DomainParallel {
     _init (config?: DomainParallel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainParallel
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainParallel
     static new_from_xml(xml: string): DomainParallel
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainParallel
     static $gtype: GObject.Type
 }
-export interface DomainPowerManagement_ConstructProps extends Object_ConstructProps {
+interface DomainPowerManagement_ConstructProps extends Object_ConstructProps {
 }
 class DomainPowerManagement {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainPowerManagement */
-    parent: Object
-    priv: DomainPowerManagementPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainPowerManagement */
     set_disk_suspend_enabled(enabled: boolean): void
     set_mem_suspend_enabled(enabled: boolean): void
@@ -3881,19 +3962,21 @@ class DomainPowerManagement {
     _init (config?: DomainPowerManagement_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainPowerManagement
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainPowerManagement
     static new_from_xml(xml: string): DomainPowerManagement
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainPowerManagement
     static $gtype: GObject.Type
 }
-export interface DomainRedirdev_ConstructProps extends DomainChardev_ConstructProps {
+interface DomainRedirdev_ConstructProps extends DomainChardev_ConstructProps {
 }
 class DomainRedirdev {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainRedirdev */
-    parent: DomainChardev
-    priv: DomainRedirdevPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
+    readonly parent: DomainDevice
+    readonly priv: DomainChardevPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainRedirdev */
     set_address(address?: DomainAddress | null): void
     set_bus(bus: DomainRedirdevBus): void
@@ -3949,19 +4032,21 @@ class DomainRedirdev {
     _init (config?: DomainRedirdev_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainRedirdev
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainRedirdev
     static new_from_xml(xml: string): DomainRedirdev
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainRedirdev
     static $gtype: GObject.Type
 }
-export interface DomainSeclabel_ConstructProps extends Object_ConstructProps {
+interface DomainSeclabel_ConstructProps extends Object_ConstructProps {
 }
 class DomainSeclabel {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSeclabel */
-    parent: Object
-    priv: DomainSeclabelPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSeclabel */
     set_baselabel(label?: string | null): void
     set_label(label?: string | null): void
@@ -4014,19 +4099,21 @@ class DomainSeclabel {
     _init (config?: DomainSeclabel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainSeclabel
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainSeclabel
     static new_from_xml(xml: string): DomainSeclabel
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainSeclabel
     static $gtype: GObject.Type
 }
-export interface DomainSerial_ConstructProps extends DomainChardev_ConstructProps {
+interface DomainSerial_ConstructProps extends DomainChardev_ConstructProps {
 }
 class DomainSerial {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSerial */
-    parent: DomainChardev
-    priv: DomainSerialPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
+    readonly parent: DomainDevice
+    readonly priv: DomainChardevPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardev */
     get_source(): DomainChardevSource
     set_source(source: DomainChardevSource): void
@@ -4079,19 +4166,21 @@ class DomainSerial {
     _init (config?: DomainSerial_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainSerial
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainSerial
     static new_from_xml(xml: string): DomainSerial
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainSerial
     static $gtype: GObject.Type
 }
-export interface DomainSmartcard_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainSmartcard_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainSmartcard {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcard */
-    parent: DomainDevice
-    priv: DomainSmartcardPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
@@ -4143,14 +4232,14 @@ class DomainSmartcard {
     static set_address(redirdev: DomainRedirdev, address?: DomainAddress | null): void
     static $gtype: GObject.Type
 }
-export interface DomainSmartcardHost_ConstructProps extends DomainSmartcard_ConstructProps {
+interface DomainSmartcardHost_ConstructProps extends DomainSmartcard_ConstructProps {
 }
 class DomainSmartcardHost {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHost */
-    parent: DomainSmartcard
-    priv: DomainSmartcardHostPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcard */
+    readonly parent: DomainDevice
+    readonly priv: DomainSmartcardPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
     get_alias(): string
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
@@ -4200,19 +4289,21 @@ class DomainSmartcardHost {
     _init (config?: DomainSmartcardHost_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainSmartcardHost
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainSmartcardHost
     static new_from_xml(xml: string): DomainSmartcardHost
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainSmartcardHost
     static $gtype: GObject.Type
 }
-export interface DomainSmartcardHostCertificates_ConstructProps extends DomainSmartcard_ConstructProps {
+interface DomainSmartcardHostCertificates_ConstructProps extends DomainSmartcard_ConstructProps {
 }
 class DomainSmartcardHostCertificates {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHostCertificates */
-    parent: DomainSmartcard
-    priv: DomainSmartcardHostCertificatesPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcard */
+    readonly parent: DomainDevice
+    readonly priv: DomainSmartcardPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHostCertificates */
     set_certificates(cert1?: string | null, cert2?: string | null, cert3?: string | null): void
     set_database(path?: string | null): void
@@ -4265,19 +4356,21 @@ class DomainSmartcardHostCertificates {
     _init (config?: DomainSmartcardHostCertificates_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainSmartcardHostCertificates
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainSmartcardHostCertificates
     static new_from_xml(xml: string): DomainSmartcardHostCertificates
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainSmartcardHostCertificates
     static $gtype: GObject.Type
 }
-export interface DomainSmartcardPassthrough_ConstructProps extends DomainSmartcard_ConstructProps {
+interface DomainSmartcardPassthrough_ConstructProps extends DomainSmartcard_ConstructProps {
 }
 class DomainSmartcardPassthrough {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardPassthrough */
-    parent: DomainSmartcard
-    priv: DomainSmartcardPassthroughPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcard */
+    readonly parent: DomainDevice
+    readonly priv: DomainSmartcardPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardPassthrough */
     set_source(source: DomainChardevSource): void
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
@@ -4329,19 +4422,21 @@ class DomainSmartcardPassthrough {
     _init (config?: DomainSmartcardPassthrough_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainSmartcardPassthrough
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainSmartcardPassthrough
     static new_from_xml(xml: string): DomainSmartcardPassthrough
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainSmartcardPassthrough
     static $gtype: GObject.Type
 }
-export interface DomainSnapshot_ConstructProps extends Object_ConstructProps {
+interface DomainSnapshot_ConstructProps extends Object_ConstructProps {
 }
 class DomainSnapshot {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshot */
-    parent: Object
-    priv: DomainSnapshotPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshot */
     add_disk(disk: DomainSnapshotDisk): void
     get_creation_time(): number
@@ -4405,19 +4500,21 @@ class DomainSnapshot {
     _init (config?: DomainSnapshot_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainSnapshot
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainSnapshot
     static new_from_xml(xml: string): DomainSnapshot
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainSnapshot
     static $gtype: GObject.Type
 }
-export interface DomainSnapshotDisk_ConstructProps extends Object_ConstructProps {
+interface DomainSnapshotDisk_ConstructProps extends Object_ConstructProps {
 }
 class DomainSnapshotDisk {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshotDisk */
-    parent: Object
-    priv: DomainSnapshotDiskPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshotDisk */
     get_driver_format(): DomainDiskFormat
     get_name(): string
@@ -4474,19 +4571,21 @@ class DomainSnapshotDisk {
     _init (config?: DomainSnapshotDisk_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainSnapshotDisk
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainSnapshotDisk
     static new_from_xml(xml: string): DomainSnapshotDisk
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainSnapshotDisk
     static $gtype: GObject.Type
 }
-export interface DomainSound_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainSound_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainSound {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSound */
-    parent: DomainDevice
-    priv: DomainSoundPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainSound */
     set_model(model: DomainSoundModel): void
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
@@ -4538,19 +4637,21 @@ class DomainSound {
     _init (config?: DomainSound_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainSound
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainSound
     static new_from_xml(xml: string): DomainSound
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainSound
     static $gtype: GObject.Type
 }
-export interface DomainTimer_ConstructProps extends Object_ConstructProps {
+interface DomainTimer_ConstructProps extends Object_ConstructProps {
 }
 class DomainTimer {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
-    parent: Object
-    priv: DomainTimerPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
     get_present(): boolean
     get_tick_policy(): DomainTimerTickPolicy
@@ -4603,14 +4704,14 @@ class DomainTimer {
     _init (config?: DomainTimer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainTimerHpet_ConstructProps extends DomainTimer_ConstructProps {
+interface DomainTimerHpet_ConstructProps extends DomainTimer_ConstructProps {
 }
 class DomainTimerHpet {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerHpet */
-    parent: DomainTimer
-    priv: DomainTimerHpetPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
+    readonly parent: Object
+    readonly priv: DomainTimerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
     get_present(): boolean
     get_tick_policy(): DomainTimerTickPolicy
@@ -4663,19 +4764,21 @@ class DomainTimerHpet {
     _init (config?: DomainTimerHpet_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainTimerHpet
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainTimerHpet
     static new_from_xml(xml: string): DomainTimerHpet
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainTimerHpet
     static $gtype: GObject.Type
 }
-export interface DomainTimerPit_ConstructProps extends DomainTimer_ConstructProps {
+interface DomainTimerPit_ConstructProps extends DomainTimer_ConstructProps {
 }
 class DomainTimerPit {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerPit */
-    parent: DomainTimer
-    priv: DomainTimerPitPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
+    readonly parent: Object
+    readonly priv: DomainTimerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
     get_present(): boolean
     get_tick_policy(): DomainTimerTickPolicy
@@ -4728,19 +4831,21 @@ class DomainTimerPit {
     _init (config?: DomainTimerPit_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainTimerPit
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainTimerPit
     static new_from_xml(xml: string): DomainTimerPit
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainTimerPit
     static $gtype: GObject.Type
 }
-export interface DomainTimerRtc_ConstructProps extends DomainTimer_ConstructProps {
+interface DomainTimerRtc_ConstructProps extends DomainTimer_ConstructProps {
 }
 class DomainTimerRtc {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerRtc */
-    parent: DomainTimer
-    priv: DomainTimerRtcPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
+    readonly parent: Object
+    readonly priv: DomainTimerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimer */
     get_present(): boolean
     get_tick_policy(): DomainTimerTickPolicy
@@ -4793,19 +4898,21 @@ class DomainTimerRtc {
     _init (config?: DomainTimerRtc_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainTimerRtc
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainTimerRtc
     static new_from_xml(xml: string): DomainTimerRtc
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainTimerRtc
     static $gtype: GObject.Type
 }
-export interface DomainVideo_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainVideo_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainVideo {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainVideo */
-    parent: DomainDevice
-    priv: DomainVideoPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDevice */
+    readonly parent: Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.DomainVideo */
     get_model(): DomainVideoModel
     set_accel3d(accel3d: boolean): void
@@ -4863,19 +4970,21 @@ class DomainVideo {
     _init (config?: DomainVideo_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DomainVideo
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): DomainVideo
     static new_from_xml(xml: string): DomainVideo
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): DomainVideo
     static $gtype: GObject.Type
 }
-export interface Interface_ConstructProps extends Object_ConstructProps {
+interface Interface_ConstructProps extends Object_ConstructProps {
 }
 class Interface {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Interface */
-    parent: Object
-    priv: InterfacePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -4923,19 +5032,21 @@ class Interface {
     _init (config?: Interface_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Interface
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): Interface
     static new_from_xml(xml: string): Interface
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): Interface
     static $gtype: GObject.Type
 }
-export interface Network_ConstructProps extends Object_ConstructProps {
+interface Network_ConstructProps extends Object_ConstructProps {
 }
 class Network {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Network */
-    parent: Object
-    priv: NetworkPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -4983,19 +5094,21 @@ class Network {
     _init (config?: Network_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Network
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): Network
     static new_from_xml(xml: string): Network
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): Network
     static $gtype: GObject.Type
 }
-export interface NetworkFilter_ConstructProps extends Object_ConstructProps {
+interface NetworkFilter_ConstructProps extends Object_ConstructProps {
 }
 class NetworkFilter {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NetworkFilter */
-    parent: Object
-    priv: NetworkFilterPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -5043,19 +5156,21 @@ class NetworkFilter {
     _init (config?: NetworkFilter_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): NetworkFilter
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): NetworkFilter
     static new_from_xml(xml: string): NetworkFilter
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): NetworkFilter
     static $gtype: GObject.Type
 }
-export interface NodeDevice_ConstructProps extends Object_ConstructProps {
+interface NodeDevice_ConstructProps extends Object_ConstructProps {
 }
 class NodeDevice {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NodeDevice */
-    parent: Object
-    priv: NodeDevicePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -5103,21 +5218,21 @@ class NodeDevice {
     _init (config?: NodeDevice_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): NodeDevice
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): NodeDevice
     static new_from_xml(xml: string): NodeDevice
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): NodeDevice
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+interface Object_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     node?: object
     schema?: string
 }
 class Object {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
-    parent: GObject.Object
-    priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -5169,14 +5284,14 @@ class Object {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface Secret_ConstructProps extends Object_ConstructProps {
+interface Secret_ConstructProps extends Object_ConstructProps {
 }
 class Secret {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Secret */
-    parent: Object
-    priv: SecretPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.Object */
     get_schema(): string
     to_xml(): string
@@ -5224,19 +5339,21 @@ class Secret {
     _init (config?: Secret_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Secret
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): Secret
     static new_from_xml(xml: string): Secret
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): Secret
     static $gtype: GObject.Type
 }
-export interface StoragePermissions_ConstructProps extends Object_ConstructProps {
+interface StoragePermissions_ConstructProps extends Object_ConstructProps {
 }
 class StoragePermissions {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePermissions */
-    parent: Object
-    priv: StoragePermissionsPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StoragePermissions */
     get_group(): number
     get_label(): string
@@ -5293,19 +5410,21 @@ class StoragePermissions {
     _init (config?: StoragePermissions_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): StoragePermissions
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): StoragePermissions
     static new_from_xml(xml: string): StoragePermissions
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): StoragePermissions
     static $gtype: GObject.Type
 }
-export interface StoragePool_ConstructProps extends Object_ConstructProps {
+interface StoragePool_ConstructProps extends Object_ConstructProps {
 }
 class StoragePool {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePool */
-    parent: Object
-    priv: StoragePoolPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StoragePool */
     get_allocation(): number
     get_available(): number
@@ -5370,19 +5489,21 @@ class StoragePool {
     _init (config?: StoragePool_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): StoragePool
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): StoragePool
     static new_from_xml(xml: string): StoragePool
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): StoragePool
     static $gtype: GObject.Type
 }
-export interface StoragePoolSource_ConstructProps extends Object_ConstructProps {
+interface StoragePoolSource_ConstructProps extends Object_ConstructProps {
 }
 class StoragePoolSource {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolSource */
-    parent: Object
-    priv: StoragePoolSourcePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolSource */
     get_adapter(): string
     get_device_path(): string
@@ -5447,19 +5568,21 @@ class StoragePoolSource {
     _init (config?: StoragePoolSource_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): StoragePoolSource
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): StoragePoolSource
     static new_from_xml(xml: string): StoragePoolSource
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): StoragePoolSource
     static $gtype: GObject.Type
 }
-export interface StoragePoolTarget_ConstructProps extends Object_ConstructProps {
+interface StoragePoolTarget_ConstructProps extends Object_ConstructProps {
 }
 class StoragePoolTarget {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolTarget */
-    parent: Object
-    priv: StoragePoolTargetPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolTarget */
     get_path(): string
     get_permissions(): StoragePermissions
@@ -5512,19 +5635,21 @@ class StoragePoolTarget {
     _init (config?: StoragePoolTarget_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): StoragePoolTarget
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): StoragePoolTarget
     static new_from_xml(xml: string): StoragePoolTarget
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): StoragePoolTarget
     static $gtype: GObject.Type
 }
-export interface StorageVol_ConstructProps extends Object_ConstructProps {
+interface StorageVol_ConstructProps extends Object_ConstructProps {
 }
 class StorageVol {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVol */
-    parent: Object
-    priv: StorageVolPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StorageVol */
     set_allocation(allocation: number): void
     set_backing_store(backing_store?: StorageVolBackingStore | null): void
@@ -5578,19 +5703,21 @@ class StorageVol {
     _init (config?: StorageVol_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): StorageVol
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): StorageVol
     static new_from_xml(xml: string): StorageVol
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): StorageVol
     static $gtype: GObject.Type
 }
-export interface StorageVolBackingStore_ConstructProps extends Object_ConstructProps {
+interface StorageVolBackingStore_ConstructProps extends Object_ConstructProps {
 }
 class StorageVolBackingStore {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolBackingStore */
-    parent: Object
-    priv: StorageVolBackingStorePrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolBackingStore */
     set_format(format: string): void
     set_path(path?: string | null): void
@@ -5641,19 +5768,21 @@ class StorageVolBackingStore {
     _init (config?: StorageVolBackingStore_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): StorageVolBackingStore
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): StorageVolBackingStore
     static new_from_xml(xml: string): StorageVolBackingStore
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): StorageVolBackingStore
     static $gtype: GObject.Type
 }
-export interface StorageVolTarget_ConstructProps extends Object_ConstructProps {
+interface StorageVolTarget_ConstructProps extends Object_ConstructProps {
 }
 class StorageVolTarget {
-    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolTarget */
-    parent: Object
-    priv: StorageVolTargetPrivate
+    /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.Object */
+    readonly parent: GObject.Object
+    readonly priv: ObjectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolTarget */
     set_compat(compat?: string | null): void
     set_features(features: number): void
@@ -5706,28 +5835,30 @@ class StorageVolTarget {
     _init (config?: StorageVolTarget_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): StorageVolTarget
+    /* Function overloads */
     static new(type: GObject.Type, root_name: string, schema: string): StorageVolTarget
     static new_from_xml(xml: string): StorageVolTarget
+    /* Function overloads */
     static new_from_xml(type: GObject.Type, root_name: string, schema: string, xml: string): StorageVolTarget
     static $gtype: GObject.Type
 }
 abstract class CapabilitiesClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class CapabilitiesCpuClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuClass */
-    parent_class: ObjectClass
-    get_features: (cpu: CapabilitiesCpu) => CapabilitiesCpuFeature[]
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly get_features: (cpu: CapabilitiesCpu) => CapabilitiesCpuFeature[]
+    readonly padding: object[]
     static name: string
 }
 abstract class CapabilitiesCpuFeatureClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuFeatureClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class CapabilitiesCpuFeaturePrivate {
@@ -5735,8 +5866,8 @@ class CapabilitiesCpuFeaturePrivate {
 }
 abstract class CapabilitiesCpuModelClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuModelClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class CapabilitiesCpuModelPrivate {
@@ -5747,8 +5878,8 @@ class CapabilitiesCpuPrivate {
 }
 abstract class CapabilitiesCpuTopologyClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesCpuTopologyClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class CapabilitiesCpuTopologyPrivate {
@@ -5756,8 +5887,8 @@ class CapabilitiesCpuTopologyPrivate {
 }
 abstract class CapabilitiesGuestArchClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestArchClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class CapabilitiesGuestArchPrivate {
@@ -5765,14 +5896,14 @@ class CapabilitiesGuestArchPrivate {
 }
 abstract class CapabilitiesGuestClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class CapabilitiesGuestDomainClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestDomainClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class CapabilitiesGuestDomainPrivate {
@@ -5780,8 +5911,8 @@ class CapabilitiesGuestDomainPrivate {
 }
 abstract class CapabilitiesGuestFeatureClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesGuestFeatureClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class CapabilitiesGuestFeaturePrivate {
@@ -5792,8 +5923,8 @@ class CapabilitiesGuestPrivate {
 }
 abstract class CapabilitiesHostClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHostClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class CapabilitiesHostPrivate {
@@ -5801,8 +5932,8 @@ class CapabilitiesHostPrivate {
 }
 abstract class CapabilitiesHostSecModelClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.CapabilitiesHostSecModelClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class CapabilitiesHostSecModelPrivate {
@@ -5813,14 +5944,14 @@ class CapabilitiesPrivate {
 }
 abstract class DomainAddressClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainAddressPciClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressPciClass */
-    parent_class: DomainAddressClass
-    padding: object[]
+    readonly parent_class: DomainAddressClass
+    readonly padding: object[]
     static name: string
 }
 class DomainAddressPciPrivate {
@@ -5831,8 +5962,8 @@ class DomainAddressPrivate {
 }
 abstract class DomainAddressUsbClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainAddressUsbClass */
-    parent_class: DomainAddressClass
-    padding: object[]
+    readonly parent_class: DomainAddressClass
+    readonly padding: object[]
     static name: string
 }
 class DomainAddressUsbPrivate {
@@ -5840,15 +5971,15 @@ class DomainAddressUsbPrivate {
 }
 abstract class DomainCapabilitiesClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilitiesClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainCapabilitiesOsClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCapabilitiesOsClass */
-    parent_class: ObjectClass
-    get_firmwares: (os: DomainCapabilitiesOs) => DomainOsFirmware[]
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly get_firmwares: (os: DomainCapabilitiesOs) => DomainOsFirmware[]
+    readonly padding: object[]
     static name: string
 }
 class DomainCapabilitiesOsPrivate {
@@ -5859,8 +5990,8 @@ class DomainCapabilitiesPrivate {
 }
 abstract class DomainChannelClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChannelClass */
-    parent_class: DomainChardevClass
-    padding: object[]
+    readonly parent_class: DomainChardevClass
+    readonly padding: object[]
     static name: string
 }
 class DomainChannelPrivate {
@@ -5868,8 +5999,8 @@ class DomainChannelPrivate {
 }
 abstract class DomainChardevClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainChardevPrivate {
@@ -5877,8 +6008,8 @@ class DomainChardevPrivate {
 }
 abstract class DomainChardevSourceClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainChardevSourcePrivate {
@@ -5886,8 +6017,8 @@ class DomainChardevSourcePrivate {
 }
 abstract class DomainChardevSourcePtyClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourcePtyClass */
-    parent_class: DomainChardevSourceClass
-    padding: object[]
+    readonly parent_class: DomainChardevSourceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainChardevSourcePtyPrivate {
@@ -5895,8 +6026,8 @@ class DomainChardevSourcePtyPrivate {
 }
 abstract class DomainChardevSourceSpicePortClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpicePortClass */
-    parent_class: DomainChardevSourceClass
-    padding: object[]
+    readonly parent_class: DomainChardevSourceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainChardevSourceSpicePortPrivate {
@@ -5904,8 +6035,8 @@ class DomainChardevSourceSpicePortPrivate {
 }
 abstract class DomainChardevSourceSpiceVmcClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceSpiceVmcClass */
-    parent_class: DomainChardevSourceClass
-    padding: object[]
+    readonly parent_class: DomainChardevSourceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainChardevSourceSpiceVmcPrivate {
@@ -5913,8 +6044,8 @@ class DomainChardevSourceSpiceVmcPrivate {
 }
 abstract class DomainChardevSourceUnixClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainChardevSourceUnixClass */
-    parent_class: DomainChardevSourceClass
-    padding: object[]
+    readonly parent_class: DomainChardevSourceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainChardevSourceUnixPrivate {
@@ -5922,14 +6053,14 @@ class DomainChardevSourceUnixPrivate {
 }
 abstract class DomainClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainClockClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainClockClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainClockPrivate {
@@ -5937,8 +6068,8 @@ class DomainClockPrivate {
 }
 abstract class DomainConsoleClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainConsoleClass */
-    parent_class: DomainChardevClass
-    padding: object[]
+    readonly parent_class: DomainChardevClass
+    readonly padding: object[]
     static name: string
 }
 class DomainConsolePrivate {
@@ -5946,8 +6077,8 @@ class DomainConsolePrivate {
 }
 abstract class DomainControllerClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainControllerClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainControllerPrivate {
@@ -5955,8 +6086,8 @@ class DomainControllerPrivate {
 }
 abstract class DomainControllerUsbClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainControllerUsbClass */
-    parent_class: DomainControllerClass
-    padding: object[]
+    readonly parent_class: DomainControllerClass
+    readonly padding: object[]
     static name: string
 }
 class DomainControllerUsbPrivate {
@@ -5964,14 +6095,14 @@ class DomainControllerUsbPrivate {
 }
 abstract class DomainCpuClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuClass */
-    parent_class: CapabilitiesCpuClass
-    padding: object[]
+    readonly parent_class: CapabilitiesCpuClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainCpuFeatureClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuFeatureClass */
-    parent_class: CapabilitiesCpuClass
-    padding: object[]
+    readonly parent_class: CapabilitiesCpuClass
+    readonly padding: object[]
     static name: string
 }
 class DomainCpuFeaturePrivate {
@@ -5979,8 +6110,8 @@ class DomainCpuFeaturePrivate {
 }
 abstract class DomainCpuModelClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainCpuModelClass */
-    parent_class: CapabilitiesCpuModelClass
-    padding: object[]
+    readonly parent_class: CapabilitiesCpuModelClass
+    readonly padding: object[]
     static name: string
 }
 class DomainCpuModelPrivate {
@@ -5991,8 +6122,8 @@ class DomainCpuPrivate {
 }
 abstract class DomainDeviceClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDeviceClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainDevicePrivate {
@@ -6000,14 +6131,14 @@ class DomainDevicePrivate {
 }
 abstract class DomainDiskClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDiskClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainDiskDriverClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainDiskDriverClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainDiskDriverPrivate {
@@ -6018,8 +6149,8 @@ class DomainDiskPrivate {
 }
 abstract class DomainFilesysClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainFilesysClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainFilesysPrivate {
@@ -6027,14 +6158,14 @@ class DomainFilesysPrivate {
 }
 abstract class DomainGraphicsClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainGraphicsDesktopClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsDesktopClass */
-    parent_class: DomainGraphicsClass
-    padding: object[]
+    readonly parent_class: DomainGraphicsClass
+    readonly padding: object[]
     static name: string
 }
 class DomainGraphicsDesktopPrivate {
@@ -6045,8 +6176,8 @@ class DomainGraphicsPrivate {
 }
 abstract class DomainGraphicsRdpClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsRdpClass */
-    parent_class: DomainGraphicsClass
-    padding: object[]
+    readonly parent_class: DomainGraphicsClass
+    readonly padding: object[]
     static name: string
 }
 class DomainGraphicsRdpPrivate {
@@ -6054,8 +6185,8 @@ class DomainGraphicsRdpPrivate {
 }
 abstract class DomainGraphicsSdlClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSdlClass */
-    parent_class: DomainGraphicsClass
-    padding: object[]
+    readonly parent_class: DomainGraphicsClass
+    readonly padding: object[]
     static name: string
 }
 class DomainGraphicsSdlPrivate {
@@ -6063,8 +6194,8 @@ class DomainGraphicsSdlPrivate {
 }
 abstract class DomainGraphicsSpiceClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsSpiceClass */
-    parent_class: DomainGraphicsClass
-    padding: object[]
+    readonly parent_class: DomainGraphicsClass
+    readonly padding: object[]
     static name: string
 }
 class DomainGraphicsSpicePrivate {
@@ -6072,8 +6203,8 @@ class DomainGraphicsSpicePrivate {
 }
 abstract class DomainGraphicsVncClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainGraphicsVncClass */
-    parent_class: DomainGraphicsClass
-    padding: object[]
+    readonly parent_class: DomainGraphicsClass
+    readonly padding: object[]
     static name: string
 }
 class DomainGraphicsVncPrivate {
@@ -6081,14 +6212,14 @@ class DomainGraphicsVncPrivate {
 }
 abstract class DomainHostdevClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdevClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainHostdevPciClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainHostdevPciClass */
-    parent_class: DomainHostdevClass
-    padding: object[]
+    readonly parent_class: DomainHostdevClass
+    readonly padding: object[]
     static name: string
 }
 class DomainHostdevPciPrivate {
@@ -6099,8 +6230,8 @@ class DomainHostdevPrivate {
 }
 abstract class DomainInputClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInputClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainInputPrivate {
@@ -6108,8 +6239,8 @@ class DomainInputPrivate {
 }
 abstract class DomainInterfaceBridgeClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceBridgeClass */
-    parent_class: DomainInterfaceClass
-    padding: object[]
+    readonly parent_class: DomainInterfaceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainInterfaceBridgePrivate {
@@ -6117,20 +6248,20 @@ class DomainInterfaceBridgePrivate {
 }
 abstract class DomainInterfaceClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainInterfaceFilterrefClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterrefClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainInterfaceFilterrefParameterClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceFilterrefParameterClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainInterfaceFilterrefParameterPrivate {
@@ -6141,8 +6272,8 @@ class DomainInterfaceFilterrefPrivate {
 }
 abstract class DomainInterfaceNetworkClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceNetworkClass */
-    parent_class: DomainInterfaceClass
-    padding: object[]
+    readonly parent_class: DomainInterfaceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainInterfaceNetworkPrivate {
@@ -6153,8 +6284,8 @@ class DomainInterfacePrivate {
 }
 abstract class DomainInterfaceUserClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainInterfaceUserClass */
-    parent_class: DomainInterfaceClass
-    padding: object[]
+    readonly parent_class: DomainInterfaceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainInterfaceUserPrivate {
@@ -6162,8 +6293,8 @@ class DomainInterfaceUserPrivate {
 }
 abstract class DomainMemballoonClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainMemballoonClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainMemballoonPrivate {
@@ -6171,8 +6302,8 @@ class DomainMemballoonPrivate {
 }
 abstract class DomainOsClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainOsClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainOsPrivate {
@@ -6180,8 +6311,8 @@ class DomainOsPrivate {
 }
 abstract class DomainParallelClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainParallelClass */
-    parent_class: DomainChardevClass
-    padding: object[]
+    readonly parent_class: DomainChardevClass
+    readonly padding: object[]
     static name: string
 }
 class DomainParallelPrivate {
@@ -6189,8 +6320,8 @@ class DomainParallelPrivate {
 }
 abstract class DomainPowerManagementClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainPowerManagementClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainPowerManagementPrivate {
@@ -6201,8 +6332,8 @@ class DomainPrivate {
 }
 abstract class DomainRedirdevClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainRedirdevClass */
-    parent_class: DomainChardevClass
-    padding: object[]
+    readonly parent_class: DomainChardevClass
+    readonly padding: object[]
     static name: string
 }
 class DomainRedirdevPrivate {
@@ -6210,8 +6341,8 @@ class DomainRedirdevPrivate {
 }
 abstract class DomainSeclabelClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSeclabelClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainSeclabelPrivate {
@@ -6219,8 +6350,8 @@ class DomainSeclabelPrivate {
 }
 abstract class DomainSerialClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSerialClass */
-    parent_class: DomainChardevClass
-    padding: object[]
+    readonly parent_class: DomainChardevClass
+    readonly padding: object[]
     static name: string
 }
 class DomainSerialPrivate {
@@ -6228,14 +6359,14 @@ class DomainSerialPrivate {
 }
 abstract class DomainSmartcardClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainSmartcardHostCertificatesClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHostCertificatesClass */
-    parent_class: DomainSmartcardClass
-    padding: object[]
+    readonly parent_class: DomainSmartcardClass
+    readonly padding: object[]
     static name: string
 }
 class DomainSmartcardHostCertificatesPrivate {
@@ -6243,8 +6374,8 @@ class DomainSmartcardHostCertificatesPrivate {
 }
 abstract class DomainSmartcardHostClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardHostClass */
-    parent_class: DomainSmartcardClass
-    padding: object[]
+    readonly parent_class: DomainSmartcardClass
+    readonly padding: object[]
     static name: string
 }
 class DomainSmartcardHostPrivate {
@@ -6252,8 +6383,8 @@ class DomainSmartcardHostPrivate {
 }
 abstract class DomainSmartcardPassthroughClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSmartcardPassthroughClass */
-    parent_class: DomainSmartcardClass
-    padding: object[]
+    readonly parent_class: DomainSmartcardClass
+    readonly padding: object[]
     static name: string
 }
 class DomainSmartcardPassthroughPrivate {
@@ -6264,14 +6395,14 @@ class DomainSmartcardPrivate {
 }
 abstract class DomainSnapshotClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshotClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainSnapshotDiskClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSnapshotDiskClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainSnapshotDiskPrivate {
@@ -6282,8 +6413,8 @@ class DomainSnapshotPrivate {
 }
 abstract class DomainSoundClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainSoundClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainSoundPrivate {
@@ -6291,14 +6422,14 @@ class DomainSoundPrivate {
 }
 abstract class DomainTimerClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainTimerHpetClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerHpetClass */
-    parent_class: DomainTimerClass
-    padding: object[]
+    readonly parent_class: DomainTimerClass
+    readonly padding: object[]
     static name: string
 }
 class DomainTimerHpetPrivate {
@@ -6306,8 +6437,8 @@ class DomainTimerHpetPrivate {
 }
 abstract class DomainTimerPitClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerPitClass */
-    parent_class: DomainTimerClass
-    padding: object[]
+    readonly parent_class: DomainTimerClass
+    readonly padding: object[]
     static name: string
 }
 class DomainTimerPitPrivate {
@@ -6318,8 +6449,8 @@ class DomainTimerPrivate {
 }
 abstract class DomainTimerRtcClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainTimerRtcClass */
-    parent_class: DomainTimerClass
-    padding: object[]
+    readonly parent_class: DomainTimerClass
+    readonly padding: object[]
     static name: string
 }
 class DomainTimerRtcPrivate {
@@ -6327,8 +6458,8 @@ class DomainTimerRtcPrivate {
 }
 abstract class DomainVideoClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.DomainVideoClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainVideoPrivate {
@@ -6336,8 +6467,8 @@ class DomainVideoPrivate {
 }
 abstract class InterfaceClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.InterfaceClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class InterfacePrivate {
@@ -6345,14 +6476,14 @@ class InterfacePrivate {
 }
 abstract class NetworkClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NetworkClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class NetworkFilterClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NetworkFilterClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class NetworkFilterPrivate {
@@ -6363,8 +6494,8 @@ class NetworkPrivate {
 }
 abstract class NodeDeviceClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.NodeDeviceClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class NodeDevicePrivate {
@@ -6372,8 +6503,8 @@ class NodeDevicePrivate {
 }
 abstract class ObjectClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.ObjectClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class ObjectPrivate {
@@ -6381,8 +6512,8 @@ class ObjectPrivate {
 }
 abstract class SecretClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.SecretClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class SecretPrivate {
@@ -6390,8 +6521,8 @@ class SecretPrivate {
 }
 abstract class StoragePermissionsClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePermissionsClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class StoragePermissionsPrivate {
@@ -6399,8 +6530,8 @@ class StoragePermissionsPrivate {
 }
 abstract class StoragePoolClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class StoragePoolPrivate {
@@ -6408,8 +6539,8 @@ class StoragePoolPrivate {
 }
 abstract class StoragePoolSourceClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolSourceClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class StoragePoolSourcePrivate {
@@ -6417,8 +6548,8 @@ class StoragePoolSourcePrivate {
 }
 abstract class StoragePoolTargetClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StoragePoolTargetClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class StoragePoolTargetPrivate {
@@ -6426,8 +6557,8 @@ class StoragePoolTargetPrivate {
 }
 abstract class StorageVolBackingStoreClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolBackingStoreClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class StorageVolBackingStorePrivate {
@@ -6435,8 +6566,8 @@ class StorageVolBackingStorePrivate {
 }
 abstract class StorageVolClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class StorageVolPrivate {
@@ -6444,8 +6575,8 @@ class StorageVolPrivate {
 }
 abstract class StorageVolTargetClass {
     /* Fields of LibvirtGConfig-1.0.LibvirtGConfig.StorageVolTargetClass */
-    parent_class: ObjectClass
-    padding: object[]
+    readonly parent_class: ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class StorageVolTargetPrivate {

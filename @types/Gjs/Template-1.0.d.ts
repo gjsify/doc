@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Template-1.0
  */
@@ -74,27 +80,26 @@ enum SymbolType {
     EXPR,
     VALUE,
 }
-export const ENABLE_TRACE: number
-export const LOG_LEVEL_TRACE: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const VERSION_S: string
+const ENABLE_TRACE: number
+const LOG_LEVEL_TRACE: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const VERSION_S: string
 function error_quark(): GLib.Quark
 function expr_from_string(str: string): Expr
 interface ScopeResolver {
     (scope: Scope, name: string, symbol: Symbol): boolean
 }
-export interface Template_ConstructProps extends GObject.Object_ConstructProps {
+interface Template_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Template-1.0.Template.Template */
     locator?: TemplateLocator
 }
 class Template {
     /* Properties of Template-1.0.Template.Template */
     locator: TemplateLocator
-    /* Fields of Template-1.0.Template.Template */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Template-1.0.Template.Template */
     expand(stream: Gio.OutputStream, scope?: Scope | null, cancellable?: Gio.Cancellable | null): boolean
     expand_string(scope?: Scope | null): string
@@ -152,13 +157,11 @@ class Template {
     static new(locator?: TemplateLocator | null): Template
     static $gtype: GObject.Type
 }
-export interface TemplateLocator_ConstructProps extends GObject.Object_ConstructProps {
+interface TemplateLocator_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TemplateLocator {
-    /* Fields of Template-1.0.Template.TemplateLocator */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Template-1.0.Template.TemplateLocator */
     append_search_path(path: string): void
     get_search_path(): string[]
@@ -256,13 +259,13 @@ class Symbol {
 }
 abstract class TemplateClass {
     /* Fields of Template-1.0.Template.TemplateClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TemplateLocatorClass {
     /* Fields of Template-1.0.Template.TemplateLocatorClass */
-    parent_instance: GObject.ObjectClass
-    locate: (self: TemplateLocator, path: string) => Gio.InputStream
+    readonly parent_instance: GObject.ObjectClass
+    readonly locate: (self: TemplateLocator, path: string) => Gio.InputStream
     static name: string
 }
 class Expr {

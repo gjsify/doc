@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gdm-1.0
  */
@@ -380,7 +386,7 @@ class WorkerManager {
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
 }
-export interface ChooserProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ChooserProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class ChooserProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -388,7 +394,7 @@ class ChooserProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -503,6 +509,7 @@ class ChooserProxy {
     _init (config?: ChooserProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -510,13 +517,13 @@ class ChooserProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ChooserSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ChooserSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class ChooserSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -612,11 +619,11 @@ class ChooserSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Client {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdm-1.0.Gdm.Client */
     get_chooser(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     get_chooser_finish(result: Gio.AsyncResult): Chooser
@@ -681,7 +688,7 @@ class Client {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface GreeterProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface GreeterProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class GreeterProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -689,7 +696,7 @@ class GreeterProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -858,6 +865,7 @@ class GreeterProxy {
     _init (config?: GreeterProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -865,13 +873,13 @@ class GreeterProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface GreeterSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface GreeterSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class GreeterSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1021,7 +1029,8 @@ class GreeterSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface ManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface ManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of Gdm-1.0.Gdm.Manager */
     version?: string
 }
 class ManagerProxy {
@@ -1032,7 +1041,7 @@ class ManagerProxy {
     /* Properties of Gdm-1.0.Gdm.Manager */
     version: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1169,6 +1178,7 @@ class ManagerProxy {
     _init (config?: ManagerProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -1176,7 +1186,8 @@ class ManagerProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface ManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of Gdm-1.0.Gdm.Manager */
     version?: string
 }
 class ManagerSkeleton {
@@ -1185,7 +1196,7 @@ class ManagerSkeleton {
     /* Properties of Gdm-1.0.Gdm.Manager */
     version: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1303,7 +1314,7 @@ class ManagerSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface RemoteGreeterProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface RemoteGreeterProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class RemoteGreeterProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -1311,7 +1322,7 @@ class RemoteGreeterProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1418,6 +1429,7 @@ class RemoteGreeterProxy {
     _init (config?: RemoteGreeterProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -1425,13 +1437,13 @@ class RemoteGreeterProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface RemoteGreeterSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface RemoteGreeterSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class RemoteGreeterSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1519,7 +1531,7 @@ class RemoteGreeterSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface UserVerifierChoiceListProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface UserVerifierChoiceListProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class UserVerifierChoiceListProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -1527,7 +1539,7 @@ class UserVerifierChoiceListProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1639,6 +1651,7 @@ class UserVerifierChoiceListProxy {
     _init (config?: UserVerifierChoiceListProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -1646,13 +1659,13 @@ class UserVerifierChoiceListProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface UserVerifierChoiceListSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface UserVerifierChoiceListSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class UserVerifierChoiceListSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -1745,7 +1758,7 @@ class UserVerifierChoiceListSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface UserVerifierProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface UserVerifierProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class UserVerifierProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -1753,7 +1766,7 @@ class UserVerifierProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -1947,6 +1960,7 @@ class UserVerifierProxy {
     _init (config?: UserVerifierProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -1954,13 +1968,13 @@ class UserVerifierProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface UserVerifierSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface UserVerifierSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class UserVerifierSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -2135,7 +2149,7 @@ class UserVerifierSkeleton {
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
     static $gtype: GObject.Type
 }
-export interface WorkerManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface WorkerManagerProxy_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class WorkerManagerProxy {
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -2143,7 +2157,7 @@ class WorkerManagerProxy {
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: Gio.DBusCallFlags, timeout_msec: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_finish(res: Gio.AsyncResult): GLib.Variant
@@ -2290,6 +2304,7 @@ class WorkerManagerProxy {
     _init (config?: WorkerManagerProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, name: string, object_path: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Function overloads */
     static new_for_bus(bus_type: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static interface_info(): Gio.DBusInterfaceInfo
     static override_properties(klass: GObject.ObjectClass, property_id_begin: number): number
@@ -2297,13 +2312,13 @@ class WorkerManagerProxy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface WorkerManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface WorkerManagerSkeleton_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
 }
 class WorkerManagerSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: Gio.DBusConnection, object_path: string): boolean
     flush(): void
@@ -2433,14 +2448,14 @@ class WorkerManagerSkeleton {
 }
 abstract class ChooserIface {
     /* Fields of Gdm-1.0.Gdm.ChooserIface */
-    parent_iface: GObject.TypeInterface
-    handle_disconnect: (object: Chooser, invocation: Gio.DBusMethodInvocation) => boolean
-    handle_select_hostname: (object: Chooser, invocation: Gio.DBusMethodInvocation, arg_hostname: string) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_disconnect: (object: Chooser, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly handle_select_hostname: (object: Chooser, invocation: Gio.DBusMethodInvocation, arg_hostname: string) => boolean
     static name: string
 }
 abstract class ChooserProxyClass {
     /* Fields of Gdm-1.0.Gdm.ChooserProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ChooserProxyPrivate {
@@ -2448,7 +2463,7 @@ class ChooserProxyPrivate {
 }
 abstract class ChooserSkeletonClass {
     /* Fields of Gdm-1.0.Gdm.ChooserSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ChooserSkeletonPrivate {
@@ -2456,28 +2471,28 @@ class ChooserSkeletonPrivate {
 }
 abstract class ClientClass {
     /* Fields of Gdm-1.0.Gdm.ClientClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class GreeterIface {
     /* Fields of Gdm-1.0.Gdm.GreeterIface */
-    parent_iface: GObject.TypeInterface
-    handle_begin_auto_login: (object: Greeter, invocation: Gio.DBusMethodInvocation, arg_username: string) => boolean
-    handle_get_timed_login_details: (object: Greeter, invocation: Gio.DBusMethodInvocation) => boolean
-    handle_select_session: (object: Greeter, invocation: Gio.DBusMethodInvocation, arg_session: string) => boolean
-    handle_select_user: (object: Greeter, invocation: Gio.DBusMethodInvocation, arg_username: string) => boolean
-    handle_start_session_when_ready: (object: Greeter, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_should_start_session: boolean) => boolean
-    default_language_name_changed: (object: Greeter, arg_language_name: string) => void
-    default_session_name_changed: (object: Greeter, arg_session_name: string) => void
-    reauthenticated: (object: Greeter, arg_service_name: string) => void
-    selected_user_changed: (object: Greeter, arg_username: string) => void
-    session_opened: (object: Greeter, arg_service_name: string) => void
-    timed_login_requested: (object: Greeter, arg_username: string, arg_delay: number) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_begin_auto_login: (object: Greeter, invocation: Gio.DBusMethodInvocation, arg_username: string) => boolean
+    readonly handle_get_timed_login_details: (object: Greeter, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly handle_select_session: (object: Greeter, invocation: Gio.DBusMethodInvocation, arg_session: string) => boolean
+    readonly handle_select_user: (object: Greeter, invocation: Gio.DBusMethodInvocation, arg_username: string) => boolean
+    readonly handle_start_session_when_ready: (object: Greeter, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_should_start_session: boolean) => boolean
+    readonly default_language_name_changed: (object: Greeter, arg_language_name: string) => void
+    readonly default_session_name_changed: (object: Greeter, arg_session_name: string) => void
+    readonly reauthenticated: (object: Greeter, arg_service_name: string) => void
+    readonly selected_user_changed: (object: Greeter, arg_username: string) => void
+    readonly session_opened: (object: Greeter, arg_service_name: string) => void
+    readonly timed_login_requested: (object: Greeter, arg_username: string, arg_delay: number) => void
     static name: string
 }
 abstract class GreeterProxyClass {
     /* Fields of Gdm-1.0.Gdm.GreeterProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class GreeterProxyPrivate {
@@ -2485,7 +2500,7 @@ class GreeterProxyPrivate {
 }
 abstract class GreeterSkeletonClass {
     /* Fields of Gdm-1.0.Gdm.GreeterSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class GreeterSkeletonPrivate {
@@ -2493,17 +2508,17 @@ class GreeterSkeletonPrivate {
 }
 abstract class ManagerIface {
     /* Fields of Gdm-1.0.Gdm.ManagerIface */
-    parent_iface: GObject.TypeInterface
-    handle_open_reauthentication_channel: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_username: string) => boolean
-    handle_open_session: (object: Manager, invocation: Gio.DBusMethodInvocation) => boolean
-    handle_register_display: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_details: GLib.Variant) => boolean
-    handle_register_session: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_details: GLib.Variant) => boolean
-    get_version: (object: Manager) => string
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_open_reauthentication_channel: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_username: string) => boolean
+    readonly handle_open_session: (object: Manager, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly handle_register_display: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_details: GLib.Variant) => boolean
+    readonly handle_register_session: (object: Manager, invocation: Gio.DBusMethodInvocation, arg_details: GLib.Variant) => boolean
+    readonly get_version: (object: Manager) => string
     static name: string
 }
 abstract class ManagerProxyClass {
     /* Fields of Gdm-1.0.Gdm.ManagerProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ManagerProxyPrivate {
@@ -2511,7 +2526,7 @@ class ManagerProxyPrivate {
 }
 abstract class ManagerSkeletonClass {
     /* Fields of Gdm-1.0.Gdm.ManagerSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ManagerSkeletonPrivate {
@@ -2519,13 +2534,13 @@ class ManagerSkeletonPrivate {
 }
 abstract class RemoteGreeterIface {
     /* Fields of Gdm-1.0.Gdm.RemoteGreeterIface */
-    parent_iface: GObject.TypeInterface
-    handle_disconnect: (object: RemoteGreeter, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_disconnect: (object: RemoteGreeter, invocation: Gio.DBusMethodInvocation) => boolean
     static name: string
 }
 abstract class RemoteGreeterProxyClass {
     /* Fields of Gdm-1.0.Gdm.RemoteGreeterProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class RemoteGreeterProxyPrivate {
@@ -2533,7 +2548,7 @@ class RemoteGreeterProxyPrivate {
 }
 abstract class RemoteGreeterSkeletonClass {
     /* Fields of Gdm-1.0.Gdm.RemoteGreeterSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class RemoteGreeterSkeletonPrivate {
@@ -2541,14 +2556,14 @@ class RemoteGreeterSkeletonPrivate {
 }
 abstract class UserVerifierChoiceListIface {
     /* Fields of Gdm-1.0.Gdm.UserVerifierChoiceListIface */
-    parent_iface: GObject.TypeInterface
-    handle_select_choice: (object: UserVerifierChoiceList, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_choice: string) => boolean
-    choice_query: (object: UserVerifierChoiceList, arg_service_name: string, arg_prompt_message: string, arg_list: GLib.Variant) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_select_choice: (object: UserVerifierChoiceList, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_choice: string) => boolean
+    readonly choice_query: (object: UserVerifierChoiceList, arg_service_name: string, arg_prompt_message: string, arg_list: GLib.Variant) => void
     static name: string
 }
 abstract class UserVerifierChoiceListProxyClass {
     /* Fields of Gdm-1.0.Gdm.UserVerifierChoiceListProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class UserVerifierChoiceListProxyPrivate {
@@ -2556,7 +2571,7 @@ class UserVerifierChoiceListProxyPrivate {
 }
 abstract class UserVerifierChoiceListSkeletonClass {
     /* Fields of Gdm-1.0.Gdm.UserVerifierChoiceListSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class UserVerifierChoiceListSkeletonPrivate {
@@ -2564,28 +2579,28 @@ class UserVerifierChoiceListSkeletonPrivate {
 }
 abstract class UserVerifierIface {
     /* Fields of Gdm-1.0.Gdm.UserVerifierIface */
-    parent_iface: GObject.TypeInterface
-    handle_answer_query: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_answer: string) => boolean
-    handle_begin_verification: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_service_name: string) => boolean
-    handle_begin_verification_for_user: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_username: string) => boolean
-    handle_cancel: (object: UserVerifier, invocation: Gio.DBusMethodInvocation) => boolean
-    handle_enable_extensions: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_extensions: string) => boolean
-    conversation_started: (object: UserVerifier, arg_service_name: string) => void
-    conversation_stopped: (object: UserVerifier, arg_service_name: string) => void
-    info: (object: UserVerifier, arg_service_name: string, arg_info: string) => void
-    info_query: (object: UserVerifier, arg_service_name: string, arg_query: string) => void
-    problem: (object: UserVerifier, arg_service_name: string, arg_problem: string) => void
-    reauthentication_started: (object: UserVerifier, arg_pid_of_caller: number) => void
-    reset: (object: UserVerifier) => void
-    secret_info_query: (object: UserVerifier, arg_service_name: string, arg_query: string) => void
-    service_unavailable: (object: UserVerifier, arg_service_name: string, arg_message: string) => void
-    verification_complete: (object: UserVerifier, arg_service_name: string) => void
-    verification_failed: (object: UserVerifier, arg_service_name: string) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_answer_query: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_answer: string) => boolean
+    readonly handle_begin_verification: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_service_name: string) => boolean
+    readonly handle_begin_verification_for_user: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_username: string) => boolean
+    readonly handle_cancel: (object: UserVerifier, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly handle_enable_extensions: (object: UserVerifier, invocation: Gio.DBusMethodInvocation, arg_extensions: string) => boolean
+    readonly conversation_started: (object: UserVerifier, arg_service_name: string) => void
+    readonly conversation_stopped: (object: UserVerifier, arg_service_name: string) => void
+    readonly info: (object: UserVerifier, arg_service_name: string, arg_info: string) => void
+    readonly info_query: (object: UserVerifier, arg_service_name: string, arg_query: string) => void
+    readonly problem: (object: UserVerifier, arg_service_name: string, arg_problem: string) => void
+    readonly reauthentication_started: (object: UserVerifier, arg_pid_of_caller: number) => void
+    readonly reset: (object: UserVerifier) => void
+    readonly secret_info_query: (object: UserVerifier, arg_service_name: string, arg_query: string) => void
+    readonly service_unavailable: (object: UserVerifier, arg_service_name: string, arg_message: string) => void
+    readonly verification_complete: (object: UserVerifier, arg_service_name: string) => void
+    readonly verification_failed: (object: UserVerifier, arg_service_name: string) => void
     static name: string
 }
 abstract class UserVerifierProxyClass {
     /* Fields of Gdm-1.0.Gdm.UserVerifierProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class UserVerifierProxyPrivate {
@@ -2593,7 +2608,7 @@ class UserVerifierProxyPrivate {
 }
 abstract class UserVerifierSkeletonClass {
     /* Fields of Gdm-1.0.Gdm.UserVerifierSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class UserVerifierSkeletonPrivate {
@@ -2601,18 +2616,18 @@ class UserVerifierSkeletonPrivate {
 }
 abstract class WorkerManagerIface {
     /* Fields of Gdm-1.0.Gdm.WorkerManagerIface */
-    parent_iface: GObject.TypeInterface
-    handle_choice_list_query: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant) => boolean
-    handle_hello: (object: WorkerManager, invocation: Gio.DBusMethodInvocation) => boolean
-    handle_info: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_info: string) => boolean
-    handle_info_query: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string) => boolean
-    handle_problem: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_problem: string) => boolean
-    handle_secret_info_query: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly handle_choice_list_query: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_prompt_message: string, arg_query: GLib.Variant) => boolean
+    readonly handle_hello: (object: WorkerManager, invocation: Gio.DBusMethodInvocation) => boolean
+    readonly handle_info: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_info: string) => boolean
+    readonly handle_info_query: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string) => boolean
+    readonly handle_problem: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_problem: string) => boolean
+    readonly handle_secret_info_query: (object: WorkerManager, invocation: Gio.DBusMethodInvocation, arg_service_name: string, arg_query: string) => boolean
     static name: string
 }
 abstract class WorkerManagerProxyClass {
     /* Fields of Gdm-1.0.Gdm.WorkerManagerProxyClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class WorkerManagerProxyPrivate {
@@ -2620,7 +2635,7 @@ class WorkerManagerProxyPrivate {
 }
 abstract class WorkerManagerSkeletonClass {
     /* Fields of Gdm-1.0.Gdm.WorkerManagerSkeletonClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class WorkerManagerSkeletonPrivate {

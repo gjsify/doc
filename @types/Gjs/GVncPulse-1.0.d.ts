@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GVncPulse-1.0
  */
@@ -10,14 +16,14 @@ import type GLib from './GLib-2.0';
 
 export namespace GVncPulse {
 
-export interface AudioPulse_ConstructProps extends GVnc.BaseAudio_ConstructProps {
+interface AudioPulse_ConstructProps extends GVnc.BaseAudio_ConstructProps {
 }
 class AudioPulse {
-    /* Fields of GVncPulse-1.0.GVncPulse.AudioPulse */
-    parent: GVnc.BaseAudio
-    priv: AudioPulsePrivate
+    /* Fields of GVnc-1.0.GVnc.BaseAudio */
+    readonly parent: GObject.Object
+    readonly priv: GVnc.BaseAudioPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -46,6 +52,10 @@ class AudioPulse {
     playback_stop(): void
     /* Virtual methods of GVncPulse-1.0.GVncPulse.AudioPulse */
     vfunc_playback_data(sample: GVnc.AudioSample): boolean
+    /* Function overloads */
+    vfunc_playback_data(sample: GVnc.AudioSample): boolean
+    vfunc_playback_start(format: GVnc.AudioFormat): boolean
+    /* Function overloads */
     vfunc_playback_start(format: GVnc.AudioFormat): boolean
     vfunc_playback_stop(): boolean
     /* Virtual methods of GVnc-1.0.GVnc.BaseAudio */
@@ -83,11 +93,13 @@ class AudioPulse {
     _init (config?: AudioPulse_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): AudioPulse
+    /* Function overloads */
+    static new(): AudioPulse
     static $gtype: GObject.Type
 }
 abstract class AudioPulseClass {
     /* Fields of GVncPulse-1.0.GVncPulse.AudioPulseClass */
-    parent_class: GVnc.BaseAudioClass
+    readonly parent_class: GVnc.BaseAudioClass
     static name: string
 }
 class AudioPulsePrivate {

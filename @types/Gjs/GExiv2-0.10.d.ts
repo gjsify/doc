@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GExiv2-0.10
  */
@@ -47,9 +53,9 @@ enum XmpFormatFlags {
     WRITE_ALIAS_COMMENTS,
     OMIT_ALL_FORMATTING,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function get_version(): number
 function initialize(): boolean
 function log_get_level(): LogLevel
@@ -58,13 +64,11 @@ function log_use_glib_logging(): void
 interface LogHandler {
     (level: LogLevel, msg: string): void
 }
-export interface Metadata_ConstructProps extends GObject.Object_ConstructProps {
+interface Metadata_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Metadata {
-    /* Fields of GExiv2-0.10.GExiv2.Metadata */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GExiv2-0.10.GExiv2.Metadata */
     clear(): void
     clear_comment(): void
@@ -75,14 +79,14 @@ class Metadata {
     delete_gps_info(): void
     erase_exif_thumbnail(): void
     free(): void
-    from_app1_segment(data: Uint8Array[]): boolean
+    from_app1_segment(data: Uint8Array): boolean
     from_stream(stream: Gio.InputStream): boolean
     generate_xmp_packet(xmp_format_flags: XmpFormatFlags, padding: number): string | null
     get_comment(): string | null
     get_exif_data(byte_order: ByteOrder): GLib.Bytes | null
     get_exif_tag_rational(tag: string): [ /* returnType */ boolean, /* nom */ number, /* den */ number ]
     get_exif_tags(): string[]
-    get_exif_thumbnail(): [ /* returnType */ boolean, /* buffer */ Uint8Array[] ]
+    get_exif_thumbnail(): [ /* returnType */ boolean, /* buffer */ Uint8Array ]
     get_exposure_time(): [ /* returnType */ boolean, /* nom */ number, /* den */ number ]
     get_fnumber(): number
     get_focal_length(): number
@@ -114,13 +118,13 @@ class Metadata {
     has_iptc(): boolean
     has_tag(tag: string): boolean
     has_xmp(): boolean
-    open_buf(data: Uint8Array[]): boolean
+    open_buf(data: Uint8Array): boolean
     open_path(path: string): boolean
     save_external(path: string): boolean
     save_file(path: string): boolean
     set_comment(comment: string): void
     set_exif_tag_rational(tag: string, nom: number, den: number): boolean
-    set_exif_thumbnail_from_buffer(buffer: Uint8Array[]): void
+    set_exif_thumbnail_from_buffer(buffer: Uint8Array): void
     set_exif_thumbnail_from_file(path: string): boolean
     set_gps_info(longitude: number, latitude: number, altitude: number): boolean
     set_metadata_pixel_height(height: number): void
@@ -157,7 +161,7 @@ class Metadata {
     try_has_tag(tag: string): boolean
     try_set_comment(comment: string): void
     try_set_exif_tag_rational(tag: string, nom: number, den: number): boolean
-    try_set_exif_thumbnail_from_buffer(buffer: Uint8Array[]): void
+    try_set_exif_thumbnail_from_buffer(buffer: Uint8Array): void
     try_set_gps_info(longitude: number, latitude: number, altitude: number): boolean
     try_set_metadata_pixel_height(height: number): void
     try_set_metadata_pixel_width(width: number): void
@@ -231,16 +235,14 @@ class Metadata {
     static unregister_xmp_namespace(name: string): boolean
     static $gtype: GObject.Type
 }
-export interface PreviewImage_ConstructProps extends GObject.Object_ConstructProps {
+interface PreviewImage_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PreviewImage {
-    /* Fields of GExiv2-0.10.GExiv2.PreviewImage */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GExiv2-0.10.GExiv2.PreviewImage */
     free(): void
-    get_data(): Uint8Array[]
+    get_data(): Uint8Array
     get_extension(): string
     get_height(): number
     get_mime_type(): string
@@ -290,13 +292,11 @@ class PreviewImage {
     _init (config?: PreviewImage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PreviewProperties_ConstructProps extends GObject.Object_ConstructProps {
+interface PreviewProperties_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PreviewProperties {
-    /* Fields of GExiv2-0.10.GExiv2.PreviewProperties */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GExiv2-0.10.GExiv2.PreviewProperties */
     get_extension(): string
     get_height(): number
@@ -348,7 +348,7 @@ class PreviewProperties {
 }
 abstract class MetadataClass {
     /* Fields of GExiv2-0.10.GExiv2.MetadataClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MetadataPrivate {
@@ -356,7 +356,7 @@ class MetadataPrivate {
 }
 abstract class PreviewImageClass {
     /* Fields of GExiv2-0.10.GExiv2.PreviewImageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PreviewImagePrivate {
@@ -364,7 +364,7 @@ class PreviewImagePrivate {
 }
 abstract class PreviewPropertiesClass {
     /* Fields of GExiv2-0.10.GExiv2.PreviewPropertiesClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PreviewPropertiesPrivate {

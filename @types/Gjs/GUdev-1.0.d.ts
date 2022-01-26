@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GUdev-1.0
  */
@@ -13,14 +19,13 @@ enum DeviceType {
     BLOCK,
     CHAR,
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUdev-1.0.GUdev.Client */
     subsystems?: string[]
 }
 class Client {
-    /* Fields of GUdev-1.0.GUdev.Client */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUdev-1.0.GUdev.Client */
     query_by_device_file(device_file: string): Device | null
     query_by_device_number(type: DeviceType, number: DeviceNumber): Device | null
@@ -78,13 +83,11 @@ class Client {
     static new(subsystems?: string[] | null): Client
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends GObject.Object_ConstructProps {
+interface Device_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Device {
-    /* Fields of GUdev-1.0.GUdev.Device */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUdev-1.0.GUdev.Device */
     get_action(): string
     get_device_file(): string | null
@@ -169,14 +172,13 @@ class Device {
     _init (config?: Device_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Enumerator_ConstructProps extends GObject.Object_ConstructProps {
+interface Enumerator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUdev-1.0.GUdev.Enumerator */
     client?: Client
 }
 class Enumerator {
-    /* Fields of GUdev-1.0.GUdev.Enumerator */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUdev-1.0.GUdev.Enumerator */
     add_match_is_initialized(): Enumerator
     add_match_name(name: string): Enumerator
@@ -235,16 +237,16 @@ class Enumerator {
 }
 abstract class ClientClass {
     /* Fields of GUdev-1.0.GUdev.ClientClass */
-    parent_class: GObject.ObjectClass
-    uevent: (client: Client, action: string, device: Device) => void
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
-    reserved5: () => void
-    reserved6: () => void
-    reserved7: () => void
-    reserved8: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly uevent: (client: Client, action: string, device: Device) => void
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
+    readonly reserved5: () => void
+    readonly reserved6: () => void
+    readonly reserved7: () => void
+    readonly reserved8: () => void
     static name: string
 }
 class ClientPrivate {
@@ -252,15 +254,15 @@ class ClientPrivate {
 }
 abstract class DeviceClass {
     /* Fields of GUdev-1.0.GUdev.DeviceClass */
-    parent_class: GObject.ObjectClass
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
-    reserved5: () => void
-    reserved6: () => void
-    reserved7: () => void
-    reserved8: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
+    readonly reserved5: () => void
+    readonly reserved6: () => void
+    readonly reserved7: () => void
+    readonly reserved8: () => void
     static name: string
 }
 class DevicePrivate {
@@ -268,20 +270,20 @@ class DevicePrivate {
 }
 abstract class EnumeratorClass {
     /* Fields of GUdev-1.0.GUdev.EnumeratorClass */
-    parent_class: GObject.ObjectClass
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
-    reserved5: () => void
-    reserved6: () => void
-    reserved7: () => void
-    reserved8: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
+    readonly reserved5: () => void
+    readonly reserved6: () => void
+    readonly reserved7: () => void
+    readonly reserved8: () => void
     static name: string
 }
 class EnumeratorPrivate {
     static name: string
 }
-type DeviceNumber = number
+    type DeviceNumber = number
 }
 export default GUdev;

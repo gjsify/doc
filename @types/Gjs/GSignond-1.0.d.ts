@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GSignond-1.0
  */
@@ -85,8 +91,8 @@ enum UiPolicy {
     NO_USER_INTERACTION,
     VALIDATION,
 }
-export const CONFIG_DBUS_TIMEOUTS: string
-export const CONFIG_GENERAL: string
+const CONFIG_DBUS_TIMEOUTS: string
+const CONFIG_GENERAL: string
 function error_new_from_variant(var_: GLib.Variant): GLib.Error | null
 function error_quark(): GLib.Quark
 function error_to_variant(error: GLib.Error): GLib.Variant | null
@@ -144,16 +150,13 @@ class Plugin {
     emit(sigName: "user-action-required", ui_data: SignonuiData): void
     static name: string
 }
-export interface AccessControlManager_ConstructProps extends GObject.Object_ConstructProps {
+interface AccessControlManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GSignond-1.0.GSignond.AccessControlManager */
     config?: Config
 }
 class AccessControlManager {
-    /* Fields of GSignond-1.0.GSignond.AccessControlManager */
-    parent_instance: GObject.Object
-    config: Config
-    priv: AccessControlManagerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSignond-1.0.GSignond.AccessControlManager */
     acl_is_valid(peer_ctx: SecurityContext, identity_acl: SecurityContext[]): boolean
     peer_is_allowed_to_use_identity(peer_ctx: SecurityContext, owner_ctx: SecurityContext, identity_acl: SecurityContext[]): boolean
@@ -209,11 +212,11 @@ class AccessControlManager {
     _init (config?: AccessControlManager_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Config_ConstructProps extends GObject.Object_ConstructProps {
+interface Config_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Config {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSignond-1.0.GSignond.Config */
     get_integer(key: string): number
     get_string(key: string): string | null
@@ -264,13 +267,11 @@ class Config {
     static new(): Config
     static $gtype: GObject.Type
 }
-export interface Credentials_ConstructProps extends GObject.Object_ConstructProps {
+interface Credentials_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Credentials {
-    /* Fields of GSignond-1.0.GSignond.Credentials */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSignond-1.0.GSignond.Credentials */
     equal(two: Credentials): boolean
     get_id(): number
@@ -325,13 +326,11 @@ class Credentials {
     static new(): Credentials
     static $gtype: GObject.Type
 }
-export interface Dictionary_ConstructProps extends GObject.Object_ConstructProps {
+interface Dictionary_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Dictionary {
-    /* Fields of GSignond-1.0.GSignond.Dictionary */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSignond-1.0.GSignond.Dictionary */
     contains(key: string): boolean
     copy(): Dictionary
@@ -399,13 +398,11 @@ class Dictionary {
     static new_from_variant(variant: GLib.Variant): Dictionary
     static $gtype: GObject.Type
 }
-export interface Extension_ConstructProps extends GObject.Object_ConstructProps {
+interface Extension_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Extension {
-    /* Fields of GSignond-1.0.GSignond.Extension */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSignond-1.0.GSignond.Extension */
     get_access_control_manager(config: Config): AccessControlManager
     get_name(): string
@@ -461,14 +458,13 @@ class Extension {
     _init (config?: Extension_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SecretStorage_ConstructProps extends GObject.Object_ConstructProps {
+interface SecretStorage_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GSignond-1.0.GSignond.SecretStorage */
     config?: Config
 }
 class SecretStorage {
-    /* Fields of GSignond-1.0.GSignond.SecretStorage */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSignond-1.0.GSignond.SecretStorage */
     check_credentials(creds: Credentials): boolean
     clear_db(): boolean
@@ -538,13 +534,13 @@ class SecretStorage {
     _init (config?: SecretStorage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SessionData_ConstructProps extends Dictionary_ConstructProps {
+interface SessionData_ConstructProps extends Dictionary_ConstructProps {
 }
 class SessionData {
-    /* Fields of GSignond-1.0.GSignond.SessionData */
-    parent_instance: Dictionary
+    /* Fields of GSignond-1.0.GSignond.Dictionary */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSignond-1.0.GSignond.SessionData */
     copy(): SessionData
     get_caption(): string
@@ -630,16 +626,20 @@ class SessionData {
     _init (config?: SessionData_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SessionData
+    /* Function overloads */
+    static new(): SessionData
+    static new_from_variant(variant: GLib.Variant): SessionData
+    /* Function overloads */
     static new_from_variant(variant: GLib.Variant): SessionData
     static $gtype: GObject.Type
 }
-export interface SignonuiData_ConstructProps extends Dictionary_ConstructProps {
+interface SignonuiData_ConstructProps extends Dictionary_ConstructProps {
 }
 class SignonuiData {
-    /* Fields of GSignond-1.0.GSignond.SignonuiData */
-    parent_instance: Dictionary
+    /* Fields of GSignond-1.0.GSignond.Dictionary */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSignond-1.0.GSignond.SignonuiData */
     copy(): SignonuiData
     get_captcha_response(): string | null
@@ -744,20 +744,20 @@ class SignonuiData {
     _init (config?: SignonuiData_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SignonuiData
+    /* Function overloads */
+    static new(): SignonuiData
+    static new_from_variant(variant: GLib.Variant): SignonuiData
+    /* Function overloads */
     static new_from_variant(variant: GLib.Variant): SignonuiData
     static $gtype: GObject.Type
 }
-export interface StorageManager_ConstructProps extends GObject.Object_ConstructProps {
+interface StorageManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GSignond-1.0.GSignond.StorageManager */
     config?: Config
 }
 class StorageManager {
-    /* Fields of GSignond-1.0.GSignond.StorageManager */
-    parent_instance: GObject.Object
-    config: Config
-    location: string
-    priv: StorageManagerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSignond-1.0.GSignond.StorageManager */
     delete_storage(): boolean
     filesystem_is_mounted(): boolean
@@ -817,12 +817,12 @@ class StorageManager {
 }
 abstract class AccessControlManagerClass {
     /* Fields of GSignond-1.0.GSignond.AccessControlManagerClass */
-    parent_class: GObject.ObjectClass
-    security_context_of_peer: (self: AccessControlManager, peer_ctx: SecurityContext, peer_fd: number, peer_service: string, peer_app_ctx: string) => void
-    peer_is_allowed_to_use_identity: (self: AccessControlManager, peer_ctx: SecurityContext, owner_ctx: SecurityContext, identity_acl: SecurityContext[]) => boolean
-    peer_is_owner_of_identity: (self: AccessControlManager, peer_ctx: SecurityContext, owner_ctx: SecurityContext) => boolean
-    acl_is_valid: (self: AccessControlManager, peer_ctx: SecurityContext, identity_acl: SecurityContext[]) => boolean
-    security_context_of_keychain: (self: AccessControlManager) => SecurityContext
+    readonly parent_class: GObject.ObjectClass
+    readonly security_context_of_peer: (self: AccessControlManager, peer_ctx: SecurityContext, peer_fd: number, peer_service: string, peer_app_ctx: string) => void
+    readonly peer_is_allowed_to_use_identity: (self: AccessControlManager, peer_ctx: SecurityContext, owner_ctx: SecurityContext, identity_acl: SecurityContext[]) => boolean
+    readonly peer_is_owner_of_identity: (self: AccessControlManager, peer_ctx: SecurityContext, owner_ctx: SecurityContext) => boolean
+    readonly acl_is_valid: (self: AccessControlManager, peer_ctx: SecurityContext, identity_acl: SecurityContext[]) => boolean
+    readonly security_context_of_keychain: (self: AccessControlManager) => SecurityContext
     static name: string
 }
 class AccessControlManagerPrivate {
@@ -830,7 +830,7 @@ class AccessControlManagerPrivate {
 }
 abstract class ConfigClass {
     /* Fields of GSignond-1.0.GSignond.ConfigClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CredentialsClass {
@@ -841,39 +841,39 @@ abstract class DictionaryClass {
 }
 abstract class ExtensionClass {
     /* Fields of GSignond-1.0.GSignond.ExtensionClass */
-    parent_class: GObject.ObjectClass
-    get_extension_name: (self: Extension) => string
-    get_extension_version: (self: Extension) => number
-    get_storage_manager: (self: Extension, config: Config) => StorageManager
-    get_secret_storage: (self: Extension, config: Config) => SecretStorage
-    get_access_control_manager: (self: Extension, config: Config) => AccessControlManager
+    readonly parent_class: GObject.ObjectClass
+    readonly get_extension_name: (self: Extension) => string
+    readonly get_extension_version: (self: Extension) => number
+    readonly get_storage_manager: (self: Extension, config: Config) => StorageManager
+    readonly get_secret_storage: (self: Extension, config: Config) => SecretStorage
+    readonly get_access_control_manager: (self: Extension, config: Config) => AccessControlManager
     static name: string
 }
 abstract class PluginInterface {
     /* Fields of GSignond-1.0.GSignond.PluginInterface */
-    parent: GObject.TypeInterface
-    cancel: (self: Plugin) => void
-    request_initial: (self: Plugin, session_data: SessionData, identity_method_cache: Dictionary, mechanism: string) => void
-    request: (self: Plugin, session_data: SessionData) => void
-    user_action_finished: (self: Plugin, ui_data: SignonuiData) => void
-    refresh: (self: Plugin, ui_data: SignonuiData) => void
+    readonly parent: GObject.TypeInterface
+    readonly cancel: (self: Plugin) => void
+    readonly request_initial: (self: Plugin, session_data: SessionData, identity_method_cache: Dictionary, mechanism: string) => void
+    readonly request: (self: Plugin, session_data: SessionData) => void
+    readonly user_action_finished: (self: Plugin, ui_data: SignonuiData) => void
+    readonly refresh: (self: Plugin, ui_data: SignonuiData) => void
     static name: string
 }
 abstract class SecretStorageClass {
     /* Fields of GSignond-1.0.GSignond.SecretStorageClass */
-    parent_class: GObject.ObjectClass
-    open_db: (self: SecretStorage) => boolean
-    close_db: (self: SecretStorage) => boolean
-    clear_db: (self: SecretStorage) => boolean
-    is_open_db: (self: SecretStorage) => boolean
-    load_credentials: (self: SecretStorage, id: number) => Credentials | null
-    update_credentials: (self: SecretStorage, creds: Credentials) => boolean
-    remove_credentials: (self: SecretStorage, id: number) => boolean
-    check_credentials: (self: SecretStorage, creds: Credentials) => boolean
-    load_data: (self: SecretStorage, id: number, method: number) => Dictionary
-    update_data: (self: SecretStorage, id: number, method: number, data: Dictionary) => boolean
-    remove_data: (self: SecretStorage, id: number, method: number) => boolean
-    get_last_error: (self: SecretStorage) => GLib.Error
+    readonly parent_class: GObject.ObjectClass
+    readonly open_db: (self: SecretStorage) => boolean
+    readonly close_db: (self: SecretStorage) => boolean
+    readonly clear_db: (self: SecretStorage) => boolean
+    readonly is_open_db: (self: SecretStorage) => boolean
+    readonly load_credentials: (self: SecretStorage, id: number) => Credentials | null
+    readonly update_credentials: (self: SecretStorage, creds: Credentials) => boolean
+    readonly remove_credentials: (self: SecretStorage, id: number) => boolean
+    readonly check_credentials: (self: SecretStorage, creds: Credentials) => boolean
+    readonly load_data: (self: SecretStorage, id: number, method: number) => Dictionary
+    readonly update_data: (self: SecretStorage, id: number, method: number, data: Dictionary) => boolean
+    readonly remove_data: (self: SecretStorage, id: number, method: number) => boolean
+    readonly get_last_error: (self: SecretStorage) => GLib.Error
     static name: string
 }
 class SecretStoragePrivate {
@@ -881,8 +881,8 @@ class SecretStoragePrivate {
 }
 class SecurityContext {
     /* Fields of GSignond-1.0.GSignond.SecurityContext */
-    sys_ctx: string
-    app_ctx: string
+    readonly sys_ctx: string
+    readonly app_ctx: string
     /* Methods of GSignond-1.0.GSignond.SecurityContext */
     check(test: SecurityContext): boolean
     compare(ctx2: SecurityContext): number
@@ -910,13 +910,13 @@ abstract class SignonuiDataClass {
 }
 abstract class StorageManagerClass {
     /* Fields of GSignond-1.0.GSignond.StorageManagerClass */
-    parent_class: GObject.ObjectClass
-    initialize_storage: (self: StorageManager) => boolean
-    delete_storage: (self: StorageManager) => boolean
-    storage_is_initialized: (self: StorageManager) => boolean
-    mount_filesystem: (self: StorageManager) => string
-    unmount_filesystem: (self: StorageManager) => boolean
-    filesystem_is_mounted: (self: StorageManager) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly initialize_storage: (self: StorageManager) => boolean
+    readonly delete_storage: (self: StorageManager) => boolean
+    readonly storage_is_initialized: (self: StorageManager) => boolean
+    readonly mount_filesystem: (self: StorageManager) => string
+    readonly unmount_filesystem: (self: StorageManager) => boolean
+    readonly filesystem_is_mounted: (self: StorageManager) => boolean
     static name: string
 }
 class StorageManagerPrivate {

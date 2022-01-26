@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GnomeRR-4.0
  */
@@ -50,14 +56,15 @@ enum Rotation {
     REFLECT_X,
     REFLECT_Y,
 }
-export const CONNECTOR_TYPE_PANEL: string
+const CONNECTOR_TYPE_PANEL: string
 function error_quark(): GLib.Quark
-export interface Config_ConstructProps extends GObject.Object_ConstructProps {
+interface Config_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GnomeRR-4.0.GnomeRR.Config */
     screen?: Screen
 }
 class Config {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeRR-4.0.GnomeRR.Config */
     applicable(screen: Screen): boolean
     apply(screen: Screen): boolean
@@ -115,11 +122,11 @@ class Config {
     static new_current(screen: Screen): Config
     static $gtype: GObject.Type
 }
-export interface OutputInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface OutputInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class OutputInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeRR-4.0.GnomeRR.OutputInfo */
     get_aspect_ratio(): number
     get_display_name(): string
@@ -187,17 +194,16 @@ class OutputInfo {
     _init (config?: OutputInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Screen_ConstructProps extends GObject.Object_ConstructProps {
+interface Screen_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GnomeRR-4.0.GnomeRR.Screen */
     dpms_mode?: DpmsModeType
     gdk_display?: Gdk.Display
 }
 class Screen {
     /* Properties of GnomeRR-4.0.GnomeRR.Screen */
     dpms_mode: DpmsModeType
-    /* Fields of GnomeRR-4.0.GnomeRR.Screen */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeRR-4.0.GnomeRR.Screen */
     get_crtc_by_id(id: number): Crtc
     get_dpms_mode(): [ /* returnType */ boolean, /* mode */ DpmsMode ]
@@ -289,7 +295,7 @@ class CTM {
 }
 abstract class ConfigClass {
     /* Fields of GnomeRR-4.0.GnomeRR.ConfigClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Crtc {
@@ -345,14 +351,14 @@ class Output {
 }
 abstract class OutputInfoClass {
     /* Fields of GnomeRR-4.0.GnomeRR.OutputInfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ScreenClass {
     /* Fields of GnomeRR-4.0.GnomeRR.ScreenClass */
-    changed: (screen: Screen) => void
-    output_connected: (screen: Screen, output: Output) => void
-    output_disconnected: (screen: Screen, output: Output) => void
+    readonly changed: (screen: Screen) => void
+    readonly output_connected: (screen: Screen, output: Output) => void
+    readonly output_disconnected: (screen: Screen, output: Output) => void
     static name: string
 }
 }

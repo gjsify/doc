@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gsf-1
  */
@@ -38,7 +44,7 @@ enum XMLContent {
     NO_CONTENT,
     CONTENT,
     SHARED_CONTENT,
-    /* 2ND (invalid, starts with a number) */
+    TODO_2ND,
 }
 enum ZipCompressionMethod {
     STORED,
@@ -53,65 +59,65 @@ enum ZipCompressionMethod {
     DEFLATED_BETTER,
     IMPLODED_BETTER,
 }
-export const META_NAME_BYTE_COUNT: string
-export const META_NAME_CASE_SENSITIVE: string
-export const META_NAME_CATEGORY: string
-export const META_NAME_CELL_COUNT: string
-export const META_NAME_CHARACTER_COUNT: string
-export const META_NAME_CODEPAGE: string
-export const META_NAME_COMPANY: string
-export const META_NAME_CREATOR: string
-export const META_NAME_DATE_CREATED: string
-export const META_NAME_DATE_MODIFIED: string
-export const META_NAME_DESCRIPTION: string
-export const META_NAME_DICTIONARY: string
-export const META_NAME_DOCUMENT_PARTS: string
-export const META_NAME_EDITING_DURATION: string
-export const META_NAME_GENERATOR: string
-export const META_NAME_HEADING_PAIRS: string
-export const META_NAME_HIDDEN_SLIDE_COUNT: string
-export const META_NAME_IMAGE_COUNT: string
-export const META_NAME_INITIAL_CREATOR: string
-export const META_NAME_KEYWORD: string
-export const META_NAME_KEYWORDS: string
-export const META_NAME_LANGUAGE: string
-export const META_NAME_LAST_PRINTED: string
-export const META_NAME_LAST_SAVED_BY: string
-export const META_NAME_LINE_COUNT: string
-export const META_NAME_LINKS_DIRTY: string
-export const META_NAME_LOCALE_SYSTEM_DEFAULT: string
-export const META_NAME_MANAGER: string
-export const META_NAME_MM_CLIP_COUNT: string
-export const META_NAME_MSOLE_UNKNOWN_17: string
-export const META_NAME_MSOLE_UNKNOWN_18: string
-export const META_NAME_MSOLE_UNKNOWN_19: string
-export const META_NAME_MSOLE_UNKNOWN_20: string
-export const META_NAME_MSOLE_UNKNOWN_21: string
-export const META_NAME_MSOLE_UNKNOWN_22: string
-export const META_NAME_MSOLE_UNKNOWN_23: string
-export const META_NAME_NOTE_COUNT: string
-export const META_NAME_OBJECT_COUNT: string
-export const META_NAME_PAGE_COUNT: string
-export const META_NAME_PARAGRAPH_COUNT: string
-export const META_NAME_PRESENTATION_FORMAT: string
-export const META_NAME_PRINTED_BY: string
-export const META_NAME_PRINT_DATE: string
-export const META_NAME_REVISION_COUNT: string
-export const META_NAME_SCALE: string
-export const META_NAME_SECURITY: string
-export const META_NAME_SLIDE_COUNT: string
-export const META_NAME_SPREADSHEET_COUNT: string
-export const META_NAME_SUBJECT: string
-export const META_NAME_TABLE_COUNT: string
-export const META_NAME_TEMPLATE: string
-export const META_NAME_THUMBNAIL: string
-export const META_NAME_TITLE: string
-export const META_NAME_WORD_COUNT: string
-function base64_decode_simple(data: Uint8Array[], len: number): number
-function base64_decode_step(in_: Uint8Array[], len: number, out: Uint8Array[], state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
-function base64_encode_close(in_: Uint8Array[], break_lines: boolean, out: Uint8Array[], state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
-function base64_encode_simple(data: Uint8Array[], len: number): number
-function base64_encode_step(in_: Uint8Array[], len: number, break_lines: boolean, out: Uint8Array[], state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
+const META_NAME_BYTE_COUNT: string
+const META_NAME_CASE_SENSITIVE: string
+const META_NAME_CATEGORY: string
+const META_NAME_CELL_COUNT: string
+const META_NAME_CHARACTER_COUNT: string
+const META_NAME_CODEPAGE: string
+const META_NAME_COMPANY: string
+const META_NAME_CREATOR: string
+const META_NAME_DATE_CREATED: string
+const META_NAME_DATE_MODIFIED: string
+const META_NAME_DESCRIPTION: string
+const META_NAME_DICTIONARY: string
+const META_NAME_DOCUMENT_PARTS: string
+const META_NAME_EDITING_DURATION: string
+const META_NAME_GENERATOR: string
+const META_NAME_HEADING_PAIRS: string
+const META_NAME_HIDDEN_SLIDE_COUNT: string
+const META_NAME_IMAGE_COUNT: string
+const META_NAME_INITIAL_CREATOR: string
+const META_NAME_KEYWORD: string
+const META_NAME_KEYWORDS: string
+const META_NAME_LANGUAGE: string
+const META_NAME_LAST_PRINTED: string
+const META_NAME_LAST_SAVED_BY: string
+const META_NAME_LINE_COUNT: string
+const META_NAME_LINKS_DIRTY: string
+const META_NAME_LOCALE_SYSTEM_DEFAULT: string
+const META_NAME_MANAGER: string
+const META_NAME_MM_CLIP_COUNT: string
+const META_NAME_MSOLE_UNKNOWN_17: string
+const META_NAME_MSOLE_UNKNOWN_18: string
+const META_NAME_MSOLE_UNKNOWN_19: string
+const META_NAME_MSOLE_UNKNOWN_20: string
+const META_NAME_MSOLE_UNKNOWN_21: string
+const META_NAME_MSOLE_UNKNOWN_22: string
+const META_NAME_MSOLE_UNKNOWN_23: string
+const META_NAME_NOTE_COUNT: string
+const META_NAME_OBJECT_COUNT: string
+const META_NAME_PAGE_COUNT: string
+const META_NAME_PARAGRAPH_COUNT: string
+const META_NAME_PRESENTATION_FORMAT: string
+const META_NAME_PRINTED_BY: string
+const META_NAME_PRINT_DATE: string
+const META_NAME_REVISION_COUNT: string
+const META_NAME_SCALE: string
+const META_NAME_SECURITY: string
+const META_NAME_SLIDE_COUNT: string
+const META_NAME_SPREADSHEET_COUNT: string
+const META_NAME_SUBJECT: string
+const META_NAME_TABLE_COUNT: string
+const META_NAME_TEMPLATE: string
+const META_NAME_THUMBNAIL: string
+const META_NAME_TITLE: string
+const META_NAME_WORD_COUNT: string
+function base64_decode_simple(data: Uint8Array, len: number): number
+function base64_decode_step(in_: Uint8Array, len: number, out: Uint8Array, state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
+function base64_encode_close(in_: Uint8Array, break_lines: boolean, out: Uint8Array, state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
+function base64_encode_simple(data: Uint8Array, len: number): number
+function base64_encode_step(in_: Uint8Array, len: number, break_lines: boolean, out: Uint8Array, state: number, save: number): [ /* returnType */ number, /* state */ number, /* save */ number ]
 function debug_flag(flag: string): boolean
 function doc_meta_dump(meta: DocMetaData): void
 function error_quark(): GLib.Quark
@@ -127,7 +133,7 @@ function le_set_float(p: object | null, f: number): void
 function mem_dump(ptr: number, len: number): void
 function msole_codepage_to_lid(codepage: number): number
 function msole_iconv_win_codepage(): number
-function msole_inflate(input: Input, offset: gsf_off_t): Uint8Array[]
+function msole_inflate(input: Input, offset: gsf_off_t): Uint8Array
 function msole_language_for_lid(lid: number): string
 function msole_lid_for_language(lang?: string | null): number
 function msole_lid_to_codepage(lid: number): number
@@ -164,14 +170,11 @@ interface XMLInUnknownFunc {
 interface XMLProbeFunc {
     (name: libxml2.Char, prefix: libxml2.Char, URI: libxml2.Char, nb_namespaces: number, namespaces: libxml2.Char, nb_attributes: number, nb_defaulted: number, attributes: libxml2.Char): boolean
 }
-export interface Blob_ConstructProps extends GObject.Object_ConstructProps {
+interface Blob_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Blob {
-    /* Fields of Gsf-1.Gsf.Blob */
-    object: GObject.Object
-    priv: BlobPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Blob */
     get_size(): number
     peek_data(): object | null
@@ -217,17 +220,14 @@ class Blob {
     constructor (config?: Blob_ConstructProps)
     _init (config?: Blob_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(data_to_copy: Uint8Array[]): Blob
+    static new(data_to_copy: Uint8Array): Blob
     static $gtype: GObject.Type
 }
-export interface ClipData_ConstructProps extends GObject.Object_ConstructProps {
+interface ClipData_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ClipData {
-    /* Fields of Gsf-1.Gsf.ClipData */
-    object: GObject.Object
-    priv: ClipDataPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.ClipData */
     get_data_blob(): Blob
     get_format(): ClipFormat
@@ -278,11 +278,11 @@ class ClipData {
     static new(format: ClipFormat, data_blob: Blob): ClipData
     static $gtype: GObject.Type
 }
-export interface DocMetaData_ConstructProps extends GObject.Object_ConstructProps {
+interface DocMetaData_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DocMetaData {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.DocMetaData */
     foreach(func: GLib.HFunc): void
     insert(name: string, value: any): void
@@ -341,11 +341,11 @@ class DocMetaData {
     static new(): DocMetaData
     static $gtype: GObject.Type
 }
-export interface DocPropVector_ConstructProps extends GObject.Object_ConstructProps {
+interface DocPropVector_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DocPropVector {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.DocPropVector */
     append(value: any): void
     as_string(): string
@@ -394,24 +394,22 @@ class DocPropVector {
     static new(): DocPropVector
     static $gtype: GObject.Type
 }
-export interface Infile_ConstructProps extends Input_ConstructProps {
+interface Infile_ConstructProps extends Input_ConstructProps {
 }
 class Infile {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
-    /* Fields of Gsf-1.Gsf.Infile */
-    parent: Input
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
@@ -424,7 +422,7 @@ class Infile {
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -477,20 +475,14 @@ class Infile {
     connect(sigName: "notify", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: Infile, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -500,24 +492,24 @@ class Infile {
     _init (config?: Infile_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface InfileMSOle_ConstructProps extends Infile_ConstructProps {
+interface InfileMSOle_ConstructProps extends Infile_ConstructProps {
 }
 class InfileMSOle {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Infile */
-    parent: Input
+    readonly parent: Input
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.InfileMSOle */
     get_class_id(res: number): boolean
     /* Methods of Gsf-1.Gsf.Infile */
@@ -532,7 +524,7 @@ class InfileMSOle {
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -585,20 +577,14 @@ class InfileMSOle {
     connect(sigName: "notify", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -610,24 +596,24 @@ class InfileMSOle {
     static new(source: Input): InfileMSOle
     static $gtype: GObject.Type
 }
-export interface InfileMSVBA_ConstructProps extends Infile_ConstructProps {
+interface InfileMSVBA_ConstructProps extends Infile_ConstructProps {
 }
 class InfileMSVBA {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Infile */
-    parent: Input
+    readonly parent: Input
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.InfileMSVBA */
     get_modules(): GLib.HashTable | null
     steal_modules(): GLib.HashTable | null
@@ -643,7 +629,7 @@ class InfileMSVBA {
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -696,20 +682,14 @@ class InfileMSVBA {
     connect(sigName: "notify", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InfileMSVBA, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -721,24 +701,24 @@ class InfileMSVBA {
     static new(source: Infile): InfileMSVBA
     static $gtype: GObject.Type
 }
-export interface InfileStdio_ConstructProps extends Infile_ConstructProps {
+interface InfileStdio_ConstructProps extends Infile_ConstructProps {
 }
 class InfileStdio {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Infile */
-    parent: Input
+    readonly parent: Input
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
@@ -751,7 +731,7 @@ class InfileStdio {
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -804,20 +784,14 @@ class InfileStdio {
     connect(sigName: "notify", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -829,25 +803,26 @@ class InfileStdio {
     static new(root: string): InfileStdio
     static $gtype: GObject.Type
 }
-export interface InfileTar_ConstructProps extends Infile_ConstructProps {
+interface InfileTar_ConstructProps extends Infile_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.InfileTar */
     source?: Input
 }
 class InfileTar {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Infile */
-    parent: Input
+    readonly parent: Input
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
@@ -860,7 +835,7 @@ class InfileTar {
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -913,20 +888,14 @@ class InfileTar {
     connect(sigName: "notify", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InfileTar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -938,7 +907,8 @@ class InfileTar {
     static new(source: Input): InfileTar
     static $gtype: GObject.Type
 }
-export interface InfileZip_ConstructProps extends Infile_ConstructProps {
+interface InfileZip_ConstructProps extends Infile_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.InfileZip */
     internal_parent?: InfileZip
     source?: Input
 }
@@ -947,20 +917,20 @@ class InfileZip {
     readonly compression_level: number
     readonly zip64: boolean
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Infile */
-    parent: Input
+    readonly parent: Input
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Infile */
     child_by_aname(names: string[]): Input
     child_by_index(i: number): Input
@@ -973,7 +943,7 @@ class InfileZip {
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -1030,20 +1000,14 @@ class InfileZip {
     connect_after(sigName: "notify::compression-level", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::zip64", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::zip64", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::container", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1055,7 +1019,7 @@ class InfileZip {
     static new(source: Input): InfileZip
     static $gtype: GObject.Type
 }
-export interface Input_ConstructProps extends GObject.Object_ConstructProps {
+interface Input_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Input {
     /* Properties of Gsf-1.Gsf.Input */
@@ -1066,18 +1030,15 @@ class Input {
     readonly position: number
     readonly remaining: number
     readonly size: number
-    /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -1153,32 +1114,33 @@ class Input {
     static error_id(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface InputGZip_ConstructProps extends Input_ConstructProps {
+interface InputGZip_ConstructProps extends Input_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.InputGZip */
     raw?: boolean
     source?: Input
     uncompressed_size?: number
 }
 class InputGZip {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -1228,20 +1190,14 @@ class InputGZip {
     connect(sigName: "notify", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InputGZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1253,29 +1209,29 @@ class InputGZip {
     static new(source: Input): InputGZip
     static $gtype: GObject.Type
 }
-export interface InputGio_ConstructProps extends Input_ConstructProps {
+interface InputGio_ConstructProps extends Input_ConstructProps {
 }
 class InputGio {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -1325,20 +1281,14 @@ class InputGio {
     connect(sigName: "notify", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InputGio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1352,24 +1302,25 @@ class InputGio {
     static new_for_uri(uri: string): InputGio
     static $gtype: GObject.Type
 }
-export interface InputHTTP_ConstructProps extends Input_ConstructProps {
+interface InputHTTP_ConstructProps extends Input_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.InputHTTP */
     content_type?: string
     url?: string
 }
 class InputHTTP {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.InputHTTP */
     get_content_type(): string
     get_url(): string
@@ -1379,7 +1330,7 @@ class InputHTTP {
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -1429,20 +1380,14 @@ class InputHTTP {
     connect(sigName: "notify", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InputHTTP, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1454,29 +1399,29 @@ class InputHTTP {
     static new(url: string): InputHTTP
     static $gtype: GObject.Type
 }
-export interface InputMemory_ConstructProps extends Input_ConstructProps {
+interface InputMemory_ConstructProps extends Input_ConstructProps {
 }
 class InputMemory {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -1526,20 +1471,14 @@ class InputMemory {
     connect(sigName: "notify", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InputMemory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1548,35 +1487,35 @@ class InputMemory {
     constructor (config?: InputMemory_ConstructProps)
     _init (config?: InputMemory_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(buf: Uint8Array[], needs_free: boolean): InputMemory
-    static new_clone(buf: Uint8Array[]): InputMemory
+    static new(buf: Uint8Array, needs_free: boolean): InputMemory
+    static new_clone(buf: Uint8Array): InputMemory
     static new_from_bzip(source: Input): InputMemory
     static new_from_iochannel(channel: GLib.IOChannel): InputMemory
     static $gtype: GObject.Type
 }
-export interface InputProxy_ConstructProps extends Input_ConstructProps {
+interface InputProxy_ConstructProps extends Input_ConstructProps {
 }
 class InputProxy {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -1626,20 +1565,14 @@ class InputProxy {
     connect(sigName: "notify", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InputProxy, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1652,29 +1585,29 @@ class InputProxy {
     static new_section(source: Input, offset: gsf_off_t, size: gsf_off_t): InputProxy
     static $gtype: GObject.Type
 }
-export interface InputStdio_ConstructProps extends Input_ConstructProps {
+interface InputStdio_ConstructProps extends Input_ConstructProps {
 }
 class InputStdio {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -1724,20 +1657,14 @@ class InputStdio {
     connect(sigName: "notify", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InputStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1750,32 +1677,32 @@ class InputStdio {
     static new_FILE(filename: string, file: object | null, keep_open: boolean): InputStdio
     static $gtype: GObject.Type
 }
-export interface InputTextline_ConstructProps extends Input_ConstructProps {
+interface InputTextline_ConstructProps extends Input_ConstructProps {
 }
 class InputTextline {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.InputTextline */
-    ascii_gets(): Uint8Array[] | null
-    utf8_gets(): Uint8Array[] | null
+    ascii_gets(): Uint8Array | null
+    utf8_gets(): Uint8Array | null
     /* Methods of Gsf-1.Gsf.Input */
     copy(output: Output): boolean
     dump(dump_as_hex: boolean): void
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -1825,20 +1752,14 @@ class InputTextline {
     connect(sigName: "notify", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: InputTextline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1850,24 +1771,24 @@ class InputTextline {
     static new(source: Input): InputTextline
     static $gtype: GObject.Type
 }
-export interface ODFOut_ConstructProps extends XMLOut_ConstructProps {
+interface ODFOut_ConstructProps extends XMLOut_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.ODFOut */
     odf_version?: number
 }
 class ODFOut {
     /* Properties of Gsf-1.Gsf.XMLOut */
     pretty_print: boolean
-    /* Fields of Gsf-1.Gsf.ODFOut */
-    base: XMLOut
-    priv: object
     /* Fields of Gsf-1.Gsf.XMLOut */
-    output: Output
+    readonly base: GObject.Object
+    readonly output: Output
+    readonly priv: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.ODFOut */
     get_version(): number
     get_version_string(): string
     /* Methods of Gsf-1.Gsf.XMLOut */
-    add_base64(id: string | null, data: Uint8Array[]): void
+    add_base64(id: string | null, data: Uint8Array): void
     add_bool(id: string | null, val: boolean): void
     add_color(id: string | null, r: number, g: number, b: number): void
     add_cstr(id?: string | null, val_utf8?: string | null): void
@@ -1931,27 +1852,25 @@ class ODFOut {
     _init (config?: ODFOut_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Outfile_ConstructProps extends Output_ConstructProps {
+interface Outfile_ConstructProps extends Output_ConstructProps {
 }
 class Outfile {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf-1.Gsf.Outfile */
-    parent: Output
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Outfile */
     new_child(name: string, is_dir: boolean): Output
     open_pkg_add_rel(name: string, content_type: string, parent: Outfile, type: string): Output
@@ -1966,7 +1885,7 @@ class Outfile {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1992,7 +1911,7 @@ class Outfile {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2005,12 +1924,6 @@ class Outfile {
     connect(sigName: "notify", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: Outfile, pspec: GObject.ParamSpec) => void)): number
@@ -2024,32 +1937,33 @@ class Outfile {
     _init (config?: Outfile_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface OutfileMSOle_ConstructProps extends Outfile_ConstructProps {
+interface OutfileMSOle_ConstructProps extends Outfile_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.OutfileMSOle */
     big_block_size?: number
     sink?: Output
     small_block_size?: number
 }
 class OutfileMSOle {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Outfile */
-    parent: Output
+    readonly parent: Output
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.OutfileMSOle */
-    set_class_id(clsid: Uint8Array[]): boolean
+    set_class_id(clsid: Uint8Array): boolean
     /* Methods of Gsf-1.Gsf.Outfile */
     new_child(name: string, is_dir: boolean): Output
     open_pkg_add_rel(name: string, content_type: string, parent: Outfile, type: string): Output
@@ -2064,7 +1978,7 @@ class OutfileMSOle {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2090,7 +2004,7 @@ class OutfileMSOle {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2103,12 +2017,6 @@ class OutfileMSOle {
     connect(sigName: "notify", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutfileMSOle, pspec: GObject.ParamSpec) => void)): number
@@ -2125,30 +2033,31 @@ class OutfileMSOle {
     static new_full(sink: Output, bb_size: number, sb_size: number): OutfileMSOle
     static $gtype: GObject.Type
 }
-export interface OutfileOpenPkg_ConstructProps extends Outfile_ConstructProps {
+interface OutfileOpenPkg_ConstructProps extends Outfile_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.OutfileOpenPkg */
     content_type?: string
     is_dir?: boolean
     sink?: Outfile
 }
 class OutfileOpenPkg {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Outfile */
-    parent: Output
+    readonly parent: Output
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.OutfileOpenPkg */
     add_extern_rel(target: string, content_type: string): string
     relate(parent: OutfileOpenPkg, type: string): string
@@ -2168,7 +2077,7 @@ class OutfileOpenPkg {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2194,7 +2103,7 @@ class OutfileOpenPkg {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2207,12 +2116,6 @@ class OutfileOpenPkg {
     connect(sigName: "notify", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutfileOpenPkg, pspec: GObject.ParamSpec) => void)): number
@@ -2228,27 +2131,27 @@ class OutfileOpenPkg {
     static new(sink: Outfile): OutfileOpenPkg
     static $gtype: GObject.Type
 }
-export interface OutfileStdio_ConstructProps extends Outfile_ConstructProps {
+interface OutfileStdio_ConstructProps extends Outfile_ConstructProps {
 }
 class OutfileStdio {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Outfile */
-    parent: Output
+    readonly parent: Output
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Outfile */
     new_child(name: string, is_dir: boolean): Output
     open_pkg_add_rel(name: string, content_type: string, parent: Outfile, type: string): Output
@@ -2263,7 +2166,7 @@ class OutfileStdio {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2289,7 +2192,7 @@ class OutfileStdio {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2302,12 +2205,6 @@ class OutfileStdio {
     connect(sigName: "notify", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutfileStdio, pspec: GObject.ParamSpec) => void)): number
@@ -2323,7 +2220,8 @@ class OutfileStdio {
     static new(root: string): OutfileStdio
     static $gtype: GObject.Type
 }
-export interface OutfileZip_ConstructProps extends Outfile_ConstructProps {
+interface OutfileZip_ConstructProps extends Outfile_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.OutfileZip */
     compression_level?: number
     deflate_level?: number
     entry_name?: string
@@ -2332,23 +2230,23 @@ export interface OutfileZip_ConstructProps extends Outfile_ConstructProps {
 }
 class OutfileZip {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Outfile */
-    parent: Output
+    readonly parent: Output
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.OutfileZip */
     set_compression_method(method: ZipCompressionMethod): boolean
     /* Methods of Gsf-1.Gsf.Outfile */
@@ -2365,7 +2263,7 @@ class OutfileZip {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2391,7 +2289,7 @@ class OutfileZip {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2404,12 +2302,6 @@ class OutfileZip {
     connect(sigName: "notify", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutfileZip, pspec: GObject.ParamSpec) => void)): number
@@ -2425,7 +2317,8 @@ class OutfileZip {
     static new(sink: Output): OutfileZip
     static $gtype: GObject.Type
 }
-export interface Output_ConstructProps extends GObject.Object_ConstructProps {
+interface Output_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.Output */
     container?: Outfile
     modtime?: GLib.DateTime
     name?: string
@@ -2437,16 +2330,8 @@ class Output {
     name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
@@ -2458,7 +2343,7 @@ class Output {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2484,7 +2369,7 @@ class Output {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2520,25 +2405,25 @@ class Output {
     static wrap(wrapper: GObject.Object, wrapee: Output): boolean
     static $gtype: GObject.Type
 }
-export interface OutputBzip_ConstructProps extends Output_ConstructProps {
+interface OutputBzip_ConstructProps extends Output_ConstructProps {
 }
 class OutputBzip {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
@@ -2550,7 +2435,7 @@ class OutputBzip {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2576,7 +2461,7 @@ class OutputBzip {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2589,12 +2474,6 @@ class OutputBzip {
     connect(sigName: "notify", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutputBzip, pspec: GObject.ParamSpec) => void)): number
@@ -2610,7 +2489,8 @@ class OutputBzip {
     static new(sink: Output): OutputBzip
     static $gtype: GObject.Type
 }
-export interface OutputCsv_ConstructProps extends Output_ConstructProps {
+interface OutputCsv_ConstructProps extends Output_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.OutputCsv */
     eol?: string
     quote?: string
     quoting_mode?: OutputCsvQuotingMode
@@ -2629,28 +2509,21 @@ class OutputCsv {
     separator: string
     sink: Output
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
-    /* Fields of Gsf-1.Gsf.OutputCsv */
-    output: Output
-    quote_len: number
-    eol_len: number
-    separator_len: number
-    fields_on_line: boolean
-    buf: GLib.String
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.OutputCsv */
     write_eol(): boolean
     write_field(field: string, len: number): boolean
@@ -2665,7 +2538,7 @@ class OutputCsv {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2691,7 +2564,7 @@ class OutputCsv {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2718,12 +2591,6 @@ class OutputCsv {
     connect_after(sigName: "notify::separator", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::sink", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::sink", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::container", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutputCsv, pspec: GObject.ParamSpec) => void)): number
@@ -2737,7 +2604,8 @@ class OutputCsv {
     _init (config?: OutputCsv_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface OutputGZip_ConstructProps extends Output_ConstructProps {
+interface OutputGZip_ConstructProps extends Output_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.OutputGZip */
     deflate_level?: number
     raw?: boolean
     sink?: Output
@@ -2746,21 +2614,21 @@ class OutputGZip {
     /* Properties of Gsf-1.Gsf.OutputGZip */
     deflate_level: number
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
@@ -2772,7 +2640,7 @@ class OutputGZip {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2798,7 +2666,7 @@ class OutputGZip {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2813,12 +2681,6 @@ class OutputGZip {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::deflate-level", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::deflate-level", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::container", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutputGZip, pspec: GObject.ParamSpec) => void)): number
@@ -2834,25 +2696,25 @@ class OutputGZip {
     static new(sink: Output): OutputGZip
     static $gtype: GObject.Type
 }
-export interface OutputGio_ConstructProps extends Output_ConstructProps {
+interface OutputGio_ConstructProps extends Output_ConstructProps {
 }
 class OutputGio {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
@@ -2864,7 +2726,7 @@ class OutputGio {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2890,7 +2752,7 @@ class OutputGio {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2903,12 +2765,6 @@ class OutputGio {
     connect(sigName: "notify", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutputGio, pspec: GObject.ParamSpec) => void)): number
@@ -2926,25 +2782,25 @@ class OutputGio {
     static new_for_uri(uri: string): OutputGio
     static $gtype: GObject.Type
 }
-export interface OutputIOChannel_ConstructProps extends Output_ConstructProps {
+interface OutputIOChannel_ConstructProps extends Output_ConstructProps {
 }
 class OutputIOChannel {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
@@ -2956,7 +2812,7 @@ class OutputIOChannel {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2982,7 +2838,7 @@ class OutputIOChannel {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2995,12 +2851,6 @@ class OutputIOChannel {
     connect(sigName: "notify", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutputIOChannel, pspec: GObject.ParamSpec) => void)): number
@@ -3016,7 +2866,8 @@ class OutputIOChannel {
     static new(channel: GLib.IOChannel): OutputIOChannel
     static $gtype: GObject.Type
 }
-export interface OutputIconv_ConstructProps extends Output_ConstructProps {
+interface OutputIconv_ConstructProps extends Output_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.OutputIconv */
     fallback?: string
     input_charset?: string
     output_charset?: string
@@ -3026,21 +2877,21 @@ class OutputIconv {
     /* Properties of Gsf-1.Gsf.OutputIconv */
     fallback: string
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
@@ -3052,7 +2903,7 @@ class OutputIconv {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3078,7 +2929,7 @@ class OutputIconv {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -3093,12 +2944,6 @@ class OutputIconv {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::fallback", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::fallback", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::container", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutputIconv, pspec: GObject.ParamSpec) => void)): number
@@ -3114,28 +2959,28 @@ class OutputIconv {
     static new(sink: Output, dst: string, src: string): OutputIconv
     static $gtype: GObject.Type
 }
-export interface OutputMemory_ConstructProps extends Output_ConstructProps {
+interface OutputMemory_ConstructProps extends Output_ConstructProps {
 }
 class OutputMemory {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.OutputMemory */
-    get_bytes(): Uint8Array[] | null
-    steal_bytes(): Uint8Array[] | null
+    get_bytes(): Uint8Array | null
+    steal_bytes(): Uint8Array | null
     /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
@@ -3147,7 +2992,7 @@ class OutputMemory {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3173,7 +3018,7 @@ class OutputMemory {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -3186,12 +3031,6 @@ class OutputMemory {
     connect(sigName: "notify", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutputMemory, pspec: GObject.ParamSpec) => void)): number
@@ -3207,25 +3046,25 @@ class OutputMemory {
     static new(): OutputMemory
     static $gtype: GObject.Type
 }
-export interface OutputStdio_ConstructProps extends Output_ConstructProps {
+interface OutputStdio_ConstructProps extends Output_ConstructProps {
 }
 class OutputStdio {
     /* Properties of Gsf-1.Gsf.Output */
-    container: Outfile
-    readonly is_closed: boolean
-    name: string
     readonly position: number
     readonly size: number
     /* Fields of Gsf-1.Gsf.Output */
-    g_object: GObject.Object
-    cur_size: gsf_off_t
-    cur_offset: gsf_off_t
-    wrapped_by: GObject.Object
-    err: GLib.Error
-    printf_buf: string
-    printf_buf_size: number
+    readonly g_object: GObject.Object
+    readonly cur_size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly wrapped_by: GObject.Object
+    readonly container: Outfile
+    readonly err: GLib.Error
+    readonly is_closed: boolean
+    readonly printf_buf: string
+    readonly printf_buf_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.Output */
     close(): boolean
     error(): GLib.Error | null
@@ -3237,7 +3076,7 @@ class OutputStdio {
     set_name(name?: string | null): boolean
     set_name_from_filename(filename?: string | null): boolean
     tell(): gsf_off_t
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3263,7 +3102,7 @@ class OutputStdio {
     /* Virtual methods of Gsf-1.Gsf.Output */
     vfunc_Close(): boolean
     vfunc_Seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
-    vfunc_Write(data: Uint8Array[]): boolean
+    vfunc_Write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -3276,12 +3115,6 @@ class OutputStdio {
     connect(sigName: "notify", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::is-closed", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::is-closed", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::size", callback: (($obj: OutputStdio, pspec: GObject.ParamSpec) => void)): number
@@ -3297,17 +3130,11 @@ class OutputStdio {
     static new(filename: string): OutputStdio
     static $gtype: GObject.Type
 }
-export interface SharedMemory_ConstructProps extends GObject.Object_ConstructProps {
+interface SharedMemory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SharedMemory {
-    /* Fields of Gsf-1.Gsf.SharedMemory */
-    g_object: GObject.Object
-    buf: object
-    size: gsf_off_t
-    needs_free: boolean
-    needs_unmap: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3354,24 +3181,24 @@ class SharedMemory {
     static new(buf: object | null, size: gsf_off_t, needs_free: boolean): SharedMemory
     static $gtype: GObject.Type
 }
-export interface StructuredBlob_ConstructProps extends Infile_ConstructProps {
+interface StructuredBlob_ConstructProps extends Infile_ConstructProps {
 }
 class StructuredBlob {
     /* Properties of Gsf-1.Gsf.Input */
-    readonly container: Infile
     readonly eof: boolean
     readonly modtime: GLib.DateTime
-    readonly name: string
     readonly position: number
     readonly remaining: number
-    readonly size: number
     /* Fields of Gsf-1.Gsf.Infile */
-    parent: Input
+    readonly parent: Input
     /* Fields of Gsf-1.Gsf.Input */
-    g_object: GObject.Object
-    cur_offset: gsf_off_t
+    readonly g_object: GObject.Object
+    readonly size: gsf_off_t
+    readonly cur_offset: gsf_off_t
+    readonly name: string
+    readonly container: Infile
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.StructuredBlob */
     write(container: Outfile): boolean
     /* Methods of Gsf-1.Gsf.Infile */
@@ -3386,7 +3213,7 @@ class StructuredBlob {
     dup(): Input | null
     find_vba(): InfileMSVBA | null
     get_modtime(): GLib.DateTime
-    read(num_bytes: number): Uint8Array[]
+    read(num_bytes: number): Uint8Array
     seek(offset: gsf_off_t, whence: GLib.SeekType): boolean
     seek_emulate(pos: gsf_off_t): boolean
     set_container(container?: Infile | null): boolean
@@ -3439,20 +3266,14 @@ class StructuredBlob {
     connect(sigName: "notify", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::container", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::container", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::eof", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::eof", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::modtime", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::modtime", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::remaining", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::remaining", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::size", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::size", callback: (($obj: StructuredBlob, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3464,21 +3285,18 @@ class StructuredBlob {
     static read(input: Input): StructuredBlob
     static $gtype: GObject.Type
 }
-export interface XMLOut_ConstructProps extends GObject.Object_ConstructProps {
+interface XMLOut_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gsf-1.Gsf.XMLOut */
     pretty_print?: boolean
     sink?: Output
 }
 class XMLOut {
     /* Properties of Gsf-1.Gsf.XMLOut */
     pretty_print: boolean
-    /* Fields of Gsf-1.Gsf.XMLOut */
-    base: GObject.Object
-    output: Output
-    priv: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsf-1.Gsf.XMLOut */
-    add_base64(id: string | null, data: Uint8Array[]): void
+    add_base64(id: string | null, data: Uint8Array): void
     add_bool(id: string | null, val: boolean): void
     add_color(id: string | null, r: number, g: number, b: number): void
     add_cstr(id?: string | null, val_utf8?: string | null): void
@@ -3574,18 +3392,18 @@ class DocProp {
 }
 abstract class InfileClass {
     /* Fields of Gsf-1.Gsf.InfileClass */
-    input_class: InputClass
-    num_children: (infile: Infile) => number
-    name_by_index: (infile: Infile, i: number) => string | null
+    readonly input_class: InputClass
+    readonly num_children: (infile: Infile) => number
+    readonly name_by_index: (infile: Infile, i: number) => string | null
     static name: string
 }
 abstract class InputClass {
     /* Fields of Gsf-1.Gsf.InputClass */
-    g_object_class: GObject.ObjectClass
-    Dup: (input: Input) => Input | null
-    Read: (input: Input, num_bytes: number, optional_buffer?: Uint8Array[] | null) => Uint8Array[] | null
-    Seek: (input: Input, offset: gsf_off_t, whence: GLib.SeekType) => boolean
-    OpenSibling: (input: Input, name: string) => Input
+    readonly g_object_class: GObject.ObjectClass
+    readonly Dup: (input: Input) => Input | null
+    readonly Read: (input: Input, num_bytes: number, optional_buffer?: Uint8Array | null) => Uint8Array | null
+    readonly Seek: (input: Input, offset: gsf_off_t, whence: GLib.SeekType) => boolean
+    readonly OpenSibling: (input: Input, name: string) => Input
     static name: string
 }
 class MSOleSortingKey {
@@ -3600,7 +3418,7 @@ class MSOleSortingKey {
 }
 abstract class ODFOutClass {
     /* Fields of Gsf-1.Gsf.ODFOutClass */
-    base: XMLOutClass
+    readonly base: XMLOutClass
     static name: string
 }
 class OpenPkgRel {
@@ -3615,33 +3433,33 @@ class OpenPkgRels {
 }
 abstract class OutfileClass {
     /* Fields of Gsf-1.Gsf.OutfileClass */
-    output_class: OutputClass
+    readonly output_class: OutputClass
     static name: string
 }
 abstract class OutputClass {
     /* Fields of Gsf-1.Gsf.OutputClass */
-    g_object_class: GObject.ObjectClass
-    Close: (output: Output) => boolean
-    Seek: (output: Output, offset: gsf_off_t, whence: GLib.SeekType) => boolean
-    Write: (output: Output, data: Uint8Array[]) => boolean
+    readonly g_object_class: GObject.ObjectClass
+    readonly Close: (output: Output) => boolean
+    readonly Seek: (output: Output, offset: gsf_off_t, whence: GLib.SeekType) => boolean
+    readonly Write: (output: Output, data: Uint8Array) => boolean
     static name: string
 }
 abstract class OutputCsvClass {
     /* Fields of Gsf-1.Gsf.OutputCsvClass */
-    output_class: OutputClass
+    readonly output_class: OutputClass
     static name: string
 }
 abstract class OutputIconvClass {
     /* Fields of Gsf-1.Gsf.OutputIconvClass */
-    output_class: OutputClass
+    readonly output_class: OutputClass
     static name: string
 }
 class Timestamp {
     /* Fields of Gsf-1.Gsf.Timestamp */
-    date: GLib.Date
-    seconds: number
-    time_zone: GLib.String
-    timet: number
+    readonly date: GLib.Date
+    readonly seconds: number
+    readonly time_zone: GLib.String
+    readonly timet: number
     /* Methods of Gsf-1.Gsf.Timestamp */
     as_string(): string
     copy(): Timestamp
@@ -3662,10 +3480,10 @@ class XMLBlob {
 }
 class XMLIn {
     /* Fields of Gsf-1.Gsf.XMLIn */
-    user_state: object
-    content: GLib.String
-    doc: XMLInDoc
-    node: XMLInNode
+    readonly user_state: object
+    readonly content: GLib.String
+    readonly doc: XMLInDoc
+    readonly node: XMLInNode
     /* Methods of Gsf-1.Gsf.XMLIn */
     check_ns(str: string, ns_id: number): string | null
     get_input(): Input
@@ -3688,28 +3506,28 @@ class XMLInDoc {
 }
 class XMLInNS {
     /* Fields of Gsf-1.Gsf.XMLInNS */
-    uri: string
-    ns_id: number
+    readonly uri: string
+    readonly ns_id: number
     static name: string
 }
 class XMLInNode {
     /* Fields of Gsf-1.Gsf.XMLInNode */
-    id: string
-    ns_id: number
-    name: string
-    parent_id: string
-    start: (xin: XMLIn, attrs: libxml2.Char) => void
-    end: (xin: XMLIn, unknown: XMLBlob) => void
-    has_content: XMLContent
-    check_children_for_ns: number
-    share_children_with_parent: number
+    readonly id: string
+    readonly ns_id: number
+    readonly name: string
+    readonly parent_id: string
+    readonly start: (xin: XMLIn, attrs: libxml2.Char) => void
+    readonly end: (xin: XMLIn, unknown: XMLBlob) => void
+    readonly has_content: XMLContent
+    readonly check_children_for_ns: number
+    readonly share_children_with_parent: number
     static name: string
 }
 abstract class XMLOutClass {
     /* Fields of Gsf-1.Gsf.XMLOutClass */
-    base: GObject.ObjectClass
+    readonly base: GObject.ObjectClass
     static name: string
 }
-type gsf_off_t = number
+    type gsf_off_t = number
 }
 export default Gsf;

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstVulkan-1.0
  */
@@ -65,18 +71,18 @@ enum VulkanFormatFlags {
     LE,
     COMPLEX,
 }
-export const CAPS_FEATURE_MEMORY_VULKAN_BUFFER: string
-export const CAPS_FEATURE_MEMORY_VULKAN_IMAGE: string
-export const VULKAN_BUFFER_MEMORY_ALLOCATOR_NAME: string
-export const VULKAN_DEVICE_CONTEXT_TYPE_STR: string
-export const VULKAN_DISPLAY_CONTEXT_TYPE_STR: string
-export const VULKAN_IMAGE_MEMORY_ALLOCATOR_NAME: string
-export const VULKAN_INSTANCE_CONTEXT_TYPE_STR: string
-export const VULKAN_MAX_COMPONENTS: number
-export const VULKAN_MEMORY_ALLOCATOR_NAME: string
-export const VULKAN_NON_DISPATCHABLE_HANDLE_FORMAT: string
-export const VULKAN_QUEUE_CONTEXT_TYPE_STR: string
-export const VULKAN_SWAPPER_VIDEO_FORMATS: string
+const CAPS_FEATURE_MEMORY_VULKAN_BUFFER: string
+const CAPS_FEATURE_MEMORY_VULKAN_IMAGE: string
+const VULKAN_BUFFER_MEMORY_ALLOCATOR_NAME: string
+const VULKAN_DEVICE_CONTEXT_TYPE_STR: string
+const VULKAN_DISPLAY_CONTEXT_TYPE_STR: string
+const VULKAN_IMAGE_MEMORY_ALLOCATOR_NAME: string
+const VULKAN_INSTANCE_CONTEXT_TYPE_STR: string
+const VULKAN_MAX_COMPONENTS: number
+const VULKAN_MEMORY_ALLOCATOR_NAME: string
+const VULKAN_NON_DISPATCHABLE_HANDLE_FORMAT: string
+const VULKAN_QUEUE_CONTEXT_TYPE_STR: string
+const VULKAN_SWAPPER_VIDEO_FORMATS: string
 function context_get_vulkan_device(context: Gst.Context, device: VulkanDevice): boolean
 function context_get_vulkan_display(context: Gst.Context, display: VulkanDisplay): boolean
 function context_get_vulkan_instance(context: Gst.Context, instance: VulkanInstance): boolean
@@ -135,27 +141,26 @@ interface VulkanTrashListWait {
 interface VulkanTrashNotify {
     (device: VulkanDevice): void
 }
-export interface VulkanBufferMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
+interface VulkanBufferMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
 }
 class VulkanBufferMemoryAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -227,10 +232,6 @@ class VulkanBufferMemoryAllocator {
     connect(sigName: "notify", callback: (($obj: VulkanBufferMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanBufferMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanBufferMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanBufferMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanBufferMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanBufferMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -240,23 +241,19 @@ class VulkanBufferMemoryAllocator {
     _init (config?: VulkanBufferMemoryAllocator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VulkanBufferPool_ConstructProps extends Gst.BufferPool_ConstructProps {
+interface VulkanBufferPool_ConstructProps extends Gst.BufferPool_ConstructProps {
 }
 class VulkanBufferPool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanBufferPool */
-    bufferpool: Gst.BufferPool
-    device: VulkanDevice
     /* Fields of Gst-1.0.Gst.BufferPool */
-    object: Gst.Object
-    flushing: number
+    readonly object: Gst.Object
+    readonly flushing: number
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.BufferPool */
     acquire_buffer(params?: Gst.BufferPoolAcquireParams | null): [ /* returnType */ Gst.FlowReturn, /* buffer */ Gst.Buffer ]
     get_config(): Gst.Structure
@@ -343,10 +340,6 @@ class VulkanBufferPool {
     connect(sigName: "notify", callback: (($obj: VulkanBufferPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanBufferPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanBufferPool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -356,27 +349,24 @@ class VulkanBufferPool {
     _init (config?: VulkanBufferPool_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(device: VulkanDevice): VulkanBufferPool
+    /* Function overloads */
     static new(): VulkanBufferPool
     static $gtype: GObject.Type
 }
-export interface VulkanCommandPool_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanCommandPool_ConstructProps extends Gst.Object_ConstructProps {
 }
 class VulkanCommandPool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanCommandPool */
-    queue: VulkanQueue
-    pool: Vulkan.CommandPool
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanCommandPool */
     create(): VulkanCommandBuffer
     get_queue(): VulkanQueue
+    lock(): void
     unlock(): void
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
@@ -442,10 +432,6 @@ class VulkanCommandPool {
     connect(sigName: "notify", callback: (($obj: VulkanCommandPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanCommandPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanCommandPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanCommandPool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanCommandPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanCommandPool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -455,24 +441,21 @@ class VulkanCommandPool {
     _init (config?: VulkanCommandPool_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VulkanDescriptorCache_ConstructProps extends VulkanHandlePool_ConstructProps {
+interface VulkanDescriptorCache_ConstructProps extends VulkanHandlePool_ConstructProps {
 }
 class VulkanDescriptorCache {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanDescriptorCache */
-    pool: VulkanDescriptorPool
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanHandlePool */
-    device: VulkanDevice
-    outstanding: object[]
-    available: object[]
+    readonly parent: Gst.Object
+    readonly device: VulkanDevice
+    readonly outstanding: object[]
+    readonly available: object[]
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanDescriptorCache */
     acquire(): VulkanDescriptorSet
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanHandlePool */
@@ -548,10 +531,6 @@ class VulkanDescriptorCache {
     connect(sigName: "notify", callback: (($obj: VulkanDescriptorCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanDescriptorCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanDescriptorCache, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanDescriptorCache, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanDescriptorCache, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanDescriptorCache, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -563,21 +542,17 @@ class VulkanDescriptorCache {
     static new(pool: VulkanDescriptorPool, n_layouts: number, layouts: VulkanHandle): VulkanDescriptorCache
     static $gtype: GObject.Type
 }
-export interface VulkanDescriptorPool_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanDescriptorPool_ConstructProps extends Gst.Object_ConstructProps {
 }
 class VulkanDescriptorPool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanDescriptorPool */
-    device: VulkanDevice
-    pool: Vulkan.DescriptorPool
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanDescriptorPool */
     create(n_layouts: number, layouts: VulkanHandle): VulkanDescriptorSet
     get_device(): VulkanDevice
@@ -646,10 +621,6 @@ class VulkanDescriptorPool {
     connect(sigName: "notify", callback: (($obj: VulkanDescriptorPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanDescriptorPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanDescriptorPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanDescriptorPool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanDescriptorPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanDescriptorPool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -661,24 +632,21 @@ class VulkanDescriptorPool {
     static new_wrapped(device: VulkanDevice, pool: Vulkan.DescriptorPool, max_sets: number): VulkanDescriptorPool
     static $gtype: GObject.Type
 }
-export interface VulkanDevice_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanDevice_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstVulkan-1.0.GstVulkan.VulkanDevice */
     physical_device?: VulkanPhysicalDevice
 }
 class VulkanDevice {
     /* Properties of GstVulkan-1.0.GstVulkan.VulkanDevice */
     readonly instance: VulkanInstance
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanDevice */
-    physical_device: VulkanPhysicalDevice
-    device: Vulkan.Device
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanDevice */
     create_fence(): VulkanFence
     foreach_queue(): void
@@ -752,10 +720,6 @@ class VulkanDevice {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::instance", callback: (($obj: VulkanDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::instance", callback: (($obj: VulkanDevice, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VulkanDevice, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanDevice, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanDevice, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanDevice, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -770,18 +734,17 @@ class VulkanDevice {
     static run_context_query(element: Gst.Element, device: VulkanDevice): [ /* returnType */ boolean, /* device */ VulkanDevice ]
     static $gtype: GObject.Type
 }
-export interface VulkanDisplay_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanDisplay_ConstructProps extends Gst.Object_ConstructProps {
 }
 class VulkanDisplay {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanDisplay */
     create_window(): VulkanWindow
     find_window(data: object | null, compare_func: GLib.CompareFunc): VulkanWindow
@@ -855,10 +818,6 @@ class VulkanDisplay {
     connect(sigName: "notify", callback: (($obj: VulkanDisplay, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanDisplay, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanDisplay, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanDisplay, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanDisplay, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanDisplay, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -874,22 +833,21 @@ class VulkanDisplay {
     static run_context_query(element: Gst.Element, display: VulkanDisplay): [ /* returnType */ boolean, /* display */ VulkanDisplay ]
     static $gtype: GObject.Type
 }
-export interface VulkanFenceCache_ConstructProps extends VulkanHandlePool_ConstructProps {
+interface VulkanFenceCache_ConstructProps extends VulkanHandlePool_ConstructProps {
 }
 class VulkanFenceCache {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanHandlePool */
-    device: VulkanDevice
-    outstanding: object[]
-    available: object[]
+    readonly parent: Gst.Object
+    readonly device: VulkanDevice
+    readonly outstanding: object[]
+    readonly available: object[]
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanHandlePool */
     acquire(): object | null
     alloc(): object | null
@@ -963,10 +921,6 @@ class VulkanFenceCache {
     connect(sigName: "notify", callback: (($obj: VulkanFenceCache, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanFenceCache, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanFenceCache, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanFenceCache, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanFenceCache, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanFenceCache, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -978,33 +932,17 @@ class VulkanFenceCache {
     static new(device: VulkanDevice): VulkanFenceCache
     static $gtype: GObject.Type
 }
-export interface VulkanFullScreenQuad_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanFullScreenQuad_ConstructProps extends Gst.Object_ConstructProps {
 }
 class VulkanFullScreenQuad {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanFullScreenQuad */
-    out_info: GstVideo.VideoInfo
-    in_info: GstVideo.VideoInfo
-    queue: VulkanQueue
-    render_pass: VulkanHandle
-    pipeline_layout: VulkanHandle
-    graphics_pipeline: VulkanHandle
-    descriptor_set_layout: VulkanHandle
-    descriptor_cache: VulkanDescriptorCache
-    descriptor_set: VulkanDescriptorSet
-    framebuffer: VulkanHandle
-    sampler: VulkanHandle
-    cmd_pool: VulkanCommandPool
-    trash_list: VulkanTrashList
-    last_fence: VulkanFence
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanFullScreenQuad */
     draw(): boolean
     fill_command_buffer(cmd: VulkanCommandBuffer, fence: VulkanFence): boolean
@@ -1082,10 +1020,6 @@ class VulkanFullScreenQuad {
     connect(sigName: "notify", callback: (($obj: VulkanFullScreenQuad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanFullScreenQuad, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanFullScreenQuad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanFullScreenQuad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanFullScreenQuad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanFullScreenQuad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1097,22 +1031,17 @@ class VulkanFullScreenQuad {
     static new(queue: VulkanQueue): VulkanFullScreenQuad
     static $gtype: GObject.Type
 }
-export interface VulkanHandlePool_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanHandlePool_ConstructProps extends Gst.Object_ConstructProps {
 }
 class VulkanHandlePool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanHandlePool */
-    device: VulkanDevice
-    outstanding: object[]
-    available: object[]
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanHandlePool */
     acquire(): object | null
     alloc(): object | null
@@ -1186,10 +1115,6 @@ class VulkanHandlePool {
     connect(sigName: "notify", callback: (($obj: VulkanHandlePool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanHandlePool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanHandlePool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanHandlePool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanHandlePool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanHandlePool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1199,23 +1124,19 @@ class VulkanHandlePool {
     _init (config?: VulkanHandlePool_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VulkanImageBufferPool_ConstructProps extends Gst.BufferPool_ConstructProps {
+interface VulkanImageBufferPool_ConstructProps extends Gst.BufferPool_ConstructProps {
 }
 class VulkanImageBufferPool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanImageBufferPool */
-    bufferpool: Gst.BufferPool
-    device: VulkanDevice
     /* Fields of Gst-1.0.Gst.BufferPool */
-    object: Gst.Object
-    flushing: number
+    readonly object: Gst.Object
+    readonly flushing: number
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.BufferPool */
     acquire_buffer(params?: Gst.BufferPoolAcquireParams | null): [ /* returnType */ Gst.FlowReturn, /* buffer */ Gst.Buffer ]
     get_config(): Gst.Structure
@@ -1302,10 +1223,6 @@ class VulkanImageBufferPool {
     connect(sigName: "notify", callback: (($obj: VulkanImageBufferPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanImageBufferPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanImageBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanImageBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanImageBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanImageBufferPool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1315,30 +1232,30 @@ class VulkanImageBufferPool {
     _init (config?: VulkanImageBufferPool_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(device: VulkanDevice): VulkanImageBufferPool
+    /* Function overloads */
     static new(): VulkanImageBufferPool
     static $gtype: GObject.Type
 }
-export interface VulkanImageMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
+interface VulkanImageMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
 }
 class VulkanImageMemoryAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -1410,10 +1327,6 @@ class VulkanImageMemoryAllocator {
     connect(sigName: "notify", callback: (($obj: VulkanImageMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanImageMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanImageMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanImageMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanImageMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanImageMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1423,23 +1336,17 @@ class VulkanImageMemoryAllocator {
     _init (config?: VulkanImageMemoryAllocator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VulkanInstance_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanInstance_ConstructProps extends Gst.Object_ConstructProps {
 }
 class VulkanInstance {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanInstance */
-    instance: Vulkan.Instance
-    physical_devices: Vulkan.PhysicalDevice
-    n_physical_devices: number
-    msg_callback: Vulkan.DebugReportCallbackEXT
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanInstance */
     create_device(): VulkanDevice
     get_proc_address(name: string): object | null
@@ -1512,10 +1419,6 @@ class VulkanInstance {
     connect(sigName: "notify", callback: (($obj: VulkanInstance, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanInstance, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanInstance, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanInstance, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanInstance, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanInstance, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1529,27 +1432,26 @@ class VulkanInstance {
     static run_context_query(element: Gst.Element, instance: VulkanInstance): [ /* returnType */ boolean, /* instance */ VulkanInstance ]
     static $gtype: GObject.Type
 }
-export interface VulkanMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
+interface VulkanMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
 }
 class VulkanMemoryAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -1621,10 +1523,6 @@ class VulkanMemoryAllocator {
     connect(sigName: "notify", callback: (($obj: VulkanMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1634,34 +1532,21 @@ class VulkanMemoryAllocator {
     _init (config?: VulkanMemoryAllocator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VulkanPhysicalDevice_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanPhysicalDevice_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstVulkan-1.0.GstVulkan.VulkanPhysicalDevice */
     device_index?: number
     instance?: VulkanInstance
 }
 class VulkanPhysicalDevice {
     /* Properties of GstVulkan-1.0.GstVulkan.VulkanPhysicalDevice */
     readonly name: string
-    /* Properties of Gst-1.0.Gst.Object */
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanPhysicalDevice */
-    instance: VulkanInstance
-    device_index: number
-    device: Vulkan.PhysicalDevice
-    device_layers: Vulkan.LayerProperties
-    n_device_layers: number
-    device_extensions: Vulkan.ExtensionProperties
-    n_device_extensions: number
-    properties: Vulkan.PhysicalDeviceProperties
-    features: Vulkan.PhysicalDeviceFeatures
-    memory_properties: Vulkan.PhysicalDeviceMemoryProperties
-    queue_family_props: Vulkan.QueueFamilyProperties
-    n_queue_families: number
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanPhysicalDevice */
     get_instance(): VulkanInstance
     /* Methods of Gst-1.0.Gst.Object */
@@ -1730,8 +1615,6 @@ class VulkanPhysicalDevice {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::name", callback: (($obj: VulkanPhysicalDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::name", callback: (($obj: VulkanPhysicalDevice, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanPhysicalDevice, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanPhysicalDevice, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1744,23 +1627,17 @@ class VulkanPhysicalDevice {
     static type_to_string(type: Vulkan.PhysicalDeviceType): string
     static $gtype: GObject.Type
 }
-export interface VulkanQueue_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanQueue_ConstructProps extends Gst.Object_ConstructProps {
 }
 class VulkanQueue {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanQueue */
-    device: VulkanDevice
-    queue: Vulkan.Queue
-    family: number
-    index: number
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanQueue */
     create_command_pool(): VulkanCommandPool
     get_device(): VulkanDevice
@@ -1830,10 +1707,6 @@ class VulkanQueue {
     connect(sigName: "notify", callback: (($obj: VulkanQueue, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanQueue, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanQueue, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanQueue, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanQueue, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanQueue, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1847,7 +1720,8 @@ class VulkanQueue {
     static run_context_query(element: Gst.Element, queue: VulkanQueue): [ /* returnType */ boolean, /* queue */ VulkanQueue ]
     static $gtype: GObject.Type
 }
-export interface VulkanSwapper_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanSwapper_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstVulkan-1.0.GstVulkan.VulkanSwapper */
     force_aspect_ratio?: boolean
     pixel_aspect_ratio?: Gst.Fraction
 }
@@ -1855,20 +1729,14 @@ class VulkanSwapper {
     /* Properties of GstVulkan-1.0.GstVulkan.VulkanSwapper */
     force_aspect_ratio: boolean
     pixel_aspect_ratio: Gst.Fraction
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanSwapper */
-    device: VulkanDevice
-    window: VulkanWindow
-    queue: VulkanQueue
-    cmd_pool: VulkanCommandPool
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanSwapper */
     choose_queue(available_queue: VulkanQueue): boolean
     get_supported_caps(): Gst.Caps
@@ -1943,10 +1811,6 @@ class VulkanSwapper {
     connect_after(sigName: "notify::force-aspect-ratio", callback: (($obj: VulkanSwapper, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pixel-aspect-ratio", callback: (($obj: VulkanSwapper, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pixel-aspect-ratio", callback: (($obj: VulkanSwapper, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VulkanSwapper, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanSwapper, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanSwapper, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanSwapper, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1958,22 +1822,22 @@ class VulkanSwapper {
     static new(device: VulkanDevice, window: VulkanWindow): VulkanSwapper
     static $gtype: GObject.Type
 }
-export interface VulkanTrashFenceList_ConstructProps extends VulkanTrashList_ConstructProps {
+interface VulkanTrashFenceList_ConstructProps extends VulkanTrashList_ConstructProps {
 }
 class VulkanTrashFenceList {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
+    /* Fields of GstVulkan-1.0.GstVulkan.VulkanTrashList */
+    readonly parent: VulkanHandlePool
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanHandlePool */
-    device: VulkanDevice
-    outstanding: object[]
-    available: object[]
+    readonly device: VulkanDevice
+    readonly outstanding: object[]
+    readonly available: object[]
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanTrashList */
     acquire(fence: VulkanFence, notify: VulkanTrashNotify): VulkanTrash
     add(trash: VulkanTrash): boolean
@@ -2056,10 +1920,6 @@ class VulkanTrashFenceList {
     connect(sigName: "notify", callback: (($obj: VulkanTrashFenceList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanTrashFenceList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanTrashFenceList, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanTrashFenceList, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanTrashFenceList, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanTrashFenceList, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2071,22 +1931,21 @@ class VulkanTrashFenceList {
     static new(): VulkanTrashFenceList
     static $gtype: GObject.Type
 }
-export interface VulkanTrashList_ConstructProps extends VulkanHandlePool_ConstructProps {
+interface VulkanTrashList_ConstructProps extends VulkanHandlePool_ConstructProps {
 }
 class VulkanTrashList {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanHandlePool */
-    device: VulkanDevice
-    outstanding: object[]
-    available: object[]
+    readonly parent: Gst.Object
+    readonly device: VulkanDevice
+    readonly outstanding: object[]
+    readonly available: object[]
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanTrashList */
     acquire(fence: VulkanFence, notify: VulkanTrashNotify): VulkanTrash
     add(trash: VulkanTrash): boolean
@@ -2169,10 +2028,6 @@ class VulkanTrashList {
     connect(sigName: "notify", callback: (($obj: VulkanTrashList, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VulkanTrashList, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VulkanTrashList, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanTrashList, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanTrashList, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanTrashList, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2182,56 +2037,47 @@ class VulkanTrashList {
     _init (config?: VulkanTrashList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VulkanVideoFilter_ConstructProps extends GstBase.BaseTransform_ConstructProps {
+interface VulkanVideoFilter_ConstructProps extends GstBase.BaseTransform_ConstructProps {
 }
 class VulkanVideoFilter {
     /* Properties of GstBase-1.0.GstBase.BaseTransform */
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVulkan-1.0.GstVulkan.VulkanVideoFilter */
-    instance: VulkanInstance
-    device: VulkanDevice
-    queue: VulkanQueue
-    in_caps: Gst.Caps
-    in_info: GstVideo.VideoInfo
-    out_caps: Gst.Caps
-    out_info: GstVideo.VideoInfo
     /* Fields of GstBase-1.0.GstBase.BaseTransform */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    have_segment: boolean
-    segment: Gst.Segment
-    queued_buf: Gst.Buffer
+    readonly element: Gst.Element
+    readonly sinkpad: Gst.Pad
+    readonly srcpad: Gst.Pad
+    readonly have_segment: boolean
+    readonly segment: Gst.Segment
+    readonly queued_buf: Gst.Buffer
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseTransform */
     get_allocator(): [ /* allocator */ Gst.Allocator | null, /* params */ Gst.AllocationParams | null ]
     get_buffer_pool(): Gst.BufferPool | null
@@ -2363,6 +2209,7 @@ class VulkanVideoFilter {
     watch_closure(closure: Function): void
     /* Virtual methods of GstVulkan-1.0.GstVulkan.VulkanVideoFilter */
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseTransform */
     vfunc_accept_caps(direction: Gst.PadDirection, caps: Gst.Caps): boolean
@@ -2376,6 +2223,7 @@ class VulkanVideoFilter {
     vfunc_prepare_output_buffer(input: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
     vfunc_propose_allocation(decide_query: Gst.Query, query: Gst.Query): boolean
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(incaps: Gst.Caps, outcaps: Gst.Caps): boolean
     vfunc_sink_event(event: Gst.Event): boolean
@@ -2435,10 +2283,6 @@ class VulkanVideoFilter {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::qos", callback: (($obj: VulkanVideoFilter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: VulkanVideoFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VulkanVideoFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanVideoFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanVideoFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanVideoFilter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2448,20 +2292,19 @@ class VulkanVideoFilter {
     _init (config?: VulkanVideoFilter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VulkanWindow_ConstructProps extends Gst.Object_ConstructProps {
+interface VulkanWindow_ConstructProps extends Gst.Object_ConstructProps {
 }
 class VulkanWindow {
     /* Properties of GstVulkan-1.0.GstVulkan.VulkanWindow */
     readonly display: VulkanDisplay
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanWindow */
     close(): void
     get_display(): VulkanDisplay
@@ -2563,10 +2406,6 @@ class VulkanWindow {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::display", callback: (($obj: VulkanWindow, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::display", callback: (($obj: VulkanWindow, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VulkanWindow, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VulkanWindow, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VulkanWindow, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VulkanWindow, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2580,40 +2419,40 @@ class VulkanWindow {
 }
 class VulkanBarrierBufferInfo {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanBarrierBufferInfo */
-    parent: VulkanBarrierMemoryInfo
-    offset: Vulkan.DeviceSize
-    size: Vulkan.DeviceSize
+    readonly parent: VulkanBarrierMemoryInfo
+    readonly offset: Vulkan.DeviceSize
+    readonly size: Vulkan.DeviceSize
     static name: string
 }
 class VulkanBarrierImageInfo {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanBarrierImageInfo */
-    parent: VulkanBarrierMemoryInfo
-    image_layout: Vulkan.ImageLayout
-    subresource_range: Vulkan.ImageSubresourceRange
+    readonly parent: VulkanBarrierMemoryInfo
+    readonly image_layout: Vulkan.ImageLayout
+    readonly subresource_range: Vulkan.ImageSubresourceRange
     static name: string
 }
 class VulkanBarrierMemoryInfo {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanBarrierMemoryInfo */
-    type: VulkanBarrierType
-    flags: VulkanBarrierFlags
-    queue: VulkanQueue
-    pipeline_stages: Vulkan.PipelineStageFlags
-    access_flags: Vulkan.AccessFlags
+    readonly type: VulkanBarrierType
+    readonly flags: VulkanBarrierFlags
+    readonly queue: VulkanQueue
+    readonly pipeline_stages: Vulkan.PipelineStageFlags
+    readonly access_flags: Vulkan.AccessFlags
     static name: string
 }
 class VulkanBufferMemory {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanBufferMemory */
-    parent: Gst.Memory
-    device: VulkanDevice
-    buffer: Vulkan.Buffer
-    vk_mem: VulkanMemory
-    requirements: Vulkan.MemoryRequirements
-    usage: Vulkan.BufferUsageFlags
-    barrier: VulkanBarrierBufferInfo
-    lock: GLib.Mutex
-    wrapped: boolean
-    notify: GLib.DestroyNotify
-    user_data: object
+    readonly parent: Gst.Memory
+    readonly device: VulkanDevice
+    readonly buffer: Vulkan.Buffer
+    readonly vk_mem: VulkanMemory
+    readonly requirements: Vulkan.MemoryRequirements
+    readonly usage: Vulkan.BufferUsageFlags
+    readonly barrier: VulkanBarrierBufferInfo
+    readonly lock: GLib.Mutex
+    readonly wrapped: boolean
+    readonly notify: GLib.DestroyNotify
+    readonly user_data: object
     static name: string
     /* Static methods and pseudo-constructors */
     static alloc(device: VulkanDevice, size: number, usage: Vulkan.BufferUsageFlags, mem_prop_flags: Vulkan.MemoryPropertyFlags): Gst.Memory
@@ -2622,12 +2461,12 @@ class VulkanBufferMemory {
 }
 abstract class VulkanBufferMemoryAllocatorClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanBufferMemoryAllocatorClass */
-    parent_class: Gst.AllocatorClass
+    readonly parent_class: Gst.AllocatorClass
     static name: string
 }
 abstract class VulkanBufferPoolClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanBufferPoolClass */
-    parent_class: Gst.BufferPoolClass
+    readonly parent_class: Gst.BufferPoolClass
     static name: string
 }
 class VulkanBufferPoolPrivate {
@@ -2635,18 +2474,18 @@ class VulkanBufferPoolPrivate {
 }
 class VulkanCommandBuffer {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanCommandBuffer */
-    parent: Gst.MiniObject
-    cmd: Vulkan.CommandBuffer
-    pool: VulkanCommandPool
-    level: Vulkan.CommandBufferLevel
-    lock: GLib.Mutex
+    readonly parent: Gst.MiniObject
+    readonly cmd: Vulkan.CommandBuffer
+    readonly pool: VulkanCommandPool
+    readonly level: Vulkan.CommandBufferLevel
+    readonly lock: GLib.Mutex
     static name: string
     /* Static methods and pseudo-constructors */
     static new_wrapped(cmd: Vulkan.CommandBuffer, level: Vulkan.CommandBufferLevel): VulkanCommandBuffer
 }
 abstract class VulkanCommandPoolClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanCommandPoolClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 class VulkanCommandPoolPrivate {
@@ -2654,7 +2493,7 @@ class VulkanCommandPoolPrivate {
 }
 abstract class VulkanDescriptorCacheClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanDescriptorCacheClass */
-    parent_class: VulkanHandlePoolClass
+    readonly parent_class: VulkanHandlePoolClass
     static name: string
 }
 class VulkanDescriptorCachePrivate {
@@ -2662,7 +2501,7 @@ class VulkanDescriptorCachePrivate {
 }
 abstract class VulkanDescriptorPoolClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanDescriptorPoolClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 class VulkanDescriptorPoolPrivate {
@@ -2670,13 +2509,13 @@ class VulkanDescriptorPoolPrivate {
 }
 class VulkanDescriptorSet {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanDescriptorSet */
-    parent: Gst.MiniObject
-    set: Vulkan.DescriptorSet
-    pool: VulkanDescriptorPool
-    cache: VulkanDescriptorCache
-    n_layouts: number
-    layouts: VulkanHandle
-    lock: GLib.Mutex
+    readonly parent: Gst.MiniObject
+    readonly set: Vulkan.DescriptorSet
+    readonly pool: VulkanDescriptorPool
+    readonly cache: VulkanDescriptorCache
+    readonly n_layouts: number
+    readonly layouts: VulkanHandle
+    readonly lock: GLib.Mutex
     static name: string
     /* Static methods and pseudo-constructors */
     static new_wrapped(pool: VulkanDescriptorPool, set: Vulkan.DescriptorSet, n_layouts: number, layouts: VulkanHandle): VulkanDescriptorSet
@@ -2689,7 +2528,7 @@ class VulkanDescriptorSetPrivate {
 }
 abstract class VulkanDeviceClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanDeviceClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 class VulkanDevicePrivate {
@@ -2697,9 +2536,9 @@ class VulkanDevicePrivate {
 }
 abstract class VulkanDisplayClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanDisplayClass */
-    object_class: Gst.ObjectClass
-    get_handle: (display: VulkanDisplay) => object | null
-    create_window: (display: VulkanDisplay) => VulkanWindow
+    readonly object_class: Gst.ObjectClass
+    readonly get_handle: (display: VulkanDisplay) => object | null
+    readonly create_window: (display: VulkanDisplay) => VulkanWindow
     static name: string
 }
 class VulkanDisplayPrivate {
@@ -2707,10 +2546,10 @@ class VulkanDisplayPrivate {
 }
 class VulkanFence {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanFence */
-    parent: Gst.MiniObject
-    device: VulkanDevice
-    cache: VulkanFenceCache
-    fence: Vulkan.Fence
+    readonly parent: Gst.MiniObject
+    readonly device: VulkanDevice
+    readonly cache: VulkanFenceCache
+    readonly fence: Vulkan.Fence
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanFence */
     is_signaled(): boolean
     reset(): void
@@ -2723,30 +2562,30 @@ class VulkanFence {
 }
 abstract class VulkanFenceCacheClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanFenceCacheClass */
-    parent_class: VulkanHandlePoolClass
+    readonly parent_class: VulkanHandlePoolClass
     static name: string
 }
 class VulkanFormatInfo {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanFormatInfo */
-    format: Vulkan.Format
-    name: string
-    scaling: VulkanFormatScaling
-    flags: VulkanFormatFlags
-    bits: number
-    n_components: number
-    shift: Uint8Array[]
-    depth: Uint8Array[]
-    pixel_stride: Uint8Array[]
-    n_planes: number
-    plane: Uint8Array[]
-    poffset: Uint8Array[]
-    w_sub: Uint8Array[]
-    h_sub: Uint8Array[]
+    readonly format: Vulkan.Format
+    readonly name: string
+    readonly scaling: VulkanFormatScaling
+    readonly flags: VulkanFormatFlags
+    readonly bits: number
+    readonly n_components: number
+    readonly shift: Uint8Array
+    readonly depth: Uint8Array
+    readonly pixel_stride: Uint8Array
+    readonly n_planes: number
+    readonly plane: Uint8Array
+    readonly poffset: Uint8Array
+    readonly w_sub: Uint8Array
+    readonly h_sub: Uint8Array
     static name: string
 }
 abstract class VulkanFullScreenQuadClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanFullScreenQuadClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 class VulkanFullScreenQuadPrivate {
@@ -2754,12 +2593,12 @@ class VulkanFullScreenQuadPrivate {
 }
 class VulkanHandle {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanHandle */
-    parent: Gst.MiniObject
-    device: VulkanDevice
-    type: VulkanHandleType
-    handle: VulkanHandleTypedef
-    notify: VulkanHandleDestroyNotify
-    user_data: object
+    readonly parent: Gst.MiniObject
+    readonly device: VulkanDevice
+    readonly type: VulkanHandleType
+    readonly handle: VulkanHandleTypedef
+    readonly notify: VulkanHandleDestroyNotify
+    readonly user_data: object
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanHandle */
     free_descriptor_set_layout(user_data?: object | null): void
     free_framebuffer(user_data?: object | null): void
@@ -2776,11 +2615,11 @@ class VulkanHandle {
 }
 abstract class VulkanHandlePoolClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanHandlePoolClass */
-    parent: Gst.ObjectClass
-    alloc: (pool: VulkanHandlePool) => object | null
-    acquire: (pool: VulkanHandlePool) => object | null
-    release: (pool: VulkanHandlePool, handle?: object | null) => void
-    free: (pool: VulkanHandlePool, handle?: object | null) => void
+    readonly parent: Gst.ObjectClass
+    readonly alloc: (pool: VulkanHandlePool) => object | null
+    readonly acquire: (pool: VulkanHandlePool) => object | null
+    readonly release: (pool: VulkanHandlePool, handle?: object | null) => void
+    readonly free: (pool: VulkanHandlePool, handle?: object | null) => void
     static name: string
 }
 class VulkanHandleTypedef {
@@ -2788,7 +2627,7 @@ class VulkanHandleTypedef {
 }
 abstract class VulkanImageBufferPoolClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanImageBufferPoolClass */
-    parent_class: Gst.BufferPoolClass
+    readonly parent_class: Gst.BufferPoolClass
     static name: string
 }
 class VulkanImageBufferPoolPrivate {
@@ -2796,22 +2635,22 @@ class VulkanImageBufferPoolPrivate {
 }
 class VulkanImageMemory {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanImageMemory */
-    parent: Gst.Memory
-    device: VulkanDevice
-    image: Vulkan.Image
-    vk_mem: VulkanMemory
-    create_info: Vulkan.ImageCreateInfo
-    requirements: Vulkan.MemoryRequirements
-    format_properties: Vulkan.ImageFormatProperties
-    usage: Vulkan.ImageUsageFlags
-    barrier: VulkanBarrierImageInfo
-    lock: GLib.Mutex
-    wrapped: boolean
-    notify: GLib.DestroyNotify
-    user_data: object
-    views: object[]
-    outstanding_views: object[]
-    _padding: object[]
+    readonly parent: Gst.Memory
+    readonly device: VulkanDevice
+    readonly image: Vulkan.Image
+    readonly vk_mem: VulkanMemory
+    readonly create_info: Vulkan.ImageCreateInfo
+    readonly requirements: Vulkan.MemoryRequirements
+    readonly format_properties: Vulkan.ImageFormatProperties
+    readonly usage: Vulkan.ImageUsageFlags
+    readonly barrier: VulkanBarrierImageInfo
+    readonly lock: GLib.Mutex
+    readonly wrapped: boolean
+    readonly notify: GLib.DestroyNotify
+    readonly user_data: object
+    readonly views: object[]
+    readonly outstanding_views: object[]
+    readonly _padding: object[]
     /* Methods of GstVulkan-1.0.GstVulkan.VulkanImageMemory */
     add_view(view: VulkanImageView): void
     find_view(find_func: VulkanImageMemoryFindViewFunc): VulkanImageView
@@ -2826,16 +2665,16 @@ class VulkanImageMemory {
 }
 abstract class VulkanImageMemoryAllocatorClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanImageMemoryAllocatorClass */
-    parent_class: Gst.AllocatorClass
+    readonly parent_class: Gst.AllocatorClass
     static name: string
 }
 class VulkanImageView {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanImageView */
-    parent: Gst.MiniObject
-    device: VulkanDevice
-    image: VulkanImageMemory
-    view: Vulkan.ImageView
-    create_info: Vulkan.ImageViewCreateInfo
+    readonly parent: Gst.MiniObject
+    readonly device: VulkanDevice
+    readonly image: VulkanImageMemory
+    readonly view: Vulkan.ImageView
+    readonly create_info: Vulkan.ImageViewCreateInfo
     static name: string
     static new(image: VulkanImageMemory, create_info: Vulkan.ImageViewCreateInfo): VulkanImageView
     constructor(image: VulkanImageMemory, create_info: Vulkan.ImageViewCreateInfo)
@@ -2844,7 +2683,7 @@ class VulkanImageView {
 }
 abstract class VulkanInstanceClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanInstanceClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 class VulkanInstancePrivate {
@@ -2852,11 +2691,11 @@ class VulkanInstancePrivate {
 }
 class VulkanMemory {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanMemory */
-    mem: Gst.Memory
-    device: VulkanDevice
-    mem_ptr: Vulkan.DeviceMemory
-    lock: GLib.Mutex
-    map_count: number
+    readonly mem: Gst.Memory
+    readonly device: VulkanDevice
+    readonly mem_ptr: Vulkan.DeviceMemory
+    readonly lock: GLib.Mutex
+    readonly map_count: number
     static name: string
     /* Static methods and pseudo-constructors */
     static alloc(device: VulkanDevice, memory_type_index: number, params: Gst.AllocationParams, size: number, mem_prop_flags: Vulkan.MemoryPropertyFlags): Gst.Memory
@@ -2867,12 +2706,12 @@ class VulkanMemory {
 }
 abstract class VulkanMemoryAllocatorClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanMemoryAllocatorClass */
-    parent_class: Gst.AllocatorClass
+    readonly parent_class: Gst.AllocatorClass
     static name: string
 }
 abstract class VulkanPhysicalDeviceClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanPhysicalDeviceClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 class VulkanPhysicalDevicePrivate {
@@ -2880,7 +2719,7 @@ class VulkanPhysicalDevicePrivate {
 }
 abstract class VulkanQueueClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanQueueClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 class VulkanQueuePrivate {
@@ -2888,7 +2727,7 @@ class VulkanQueuePrivate {
 }
 abstract class VulkanSwapperClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanSwapperClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 class VulkanSwapperPrivate {
@@ -2896,11 +2735,11 @@ class VulkanSwapperPrivate {
 }
 class VulkanTrash {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanTrash */
-    parent: Gst.MiniObject
-    cache: VulkanTrashList
-    fence: VulkanFence
-    notify: VulkanTrashNotify
-    user_data: object
+    readonly parent: Gst.MiniObject
+    readonly cache: VulkanTrashList
+    readonly fence: VulkanFence
+    readonly notify: VulkanTrashNotify
+    readonly user_data: object
     static name: string
     static new(fence: VulkanFence): VulkanTrash
     constructor(fence: VulkanFence)
@@ -2912,32 +2751,32 @@ class VulkanTrash {
 }
 abstract class VulkanTrashFenceListClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanTrashFenceListClass */
-    parent_class: VulkanTrashListClass
+    readonly parent_class: VulkanTrashListClass
     static name: string
 }
 abstract class VulkanTrashListClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanTrashListClass */
-    parent_class: VulkanHandlePoolClass
-    add_func: VulkanTrashListAdd
-    gc_func: VulkanTrashListGC
-    wait_func: VulkanTrashListWait
-    _padding: object[]
+    readonly parent_class: VulkanHandlePoolClass
+    readonly add_func: VulkanTrashListAdd
+    readonly gc_func: VulkanTrashListGC
+    readonly wait_func: VulkanTrashListWait
+    readonly _padding: object[]
     static name: string
 }
 abstract class VulkanVideoFilterClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanVideoFilterClass */
-    video_sink_class: GstBase.BaseTransformClass
+    readonly video_sink_class: GstBase.BaseTransformClass
     static name: string
 }
 abstract class VulkanWindowClass {
     /* Fields of GstVulkan-1.0.GstVulkan.VulkanWindowClass */
-    parent_class: Gst.ObjectClass
-    open: (window: VulkanWindow) => boolean
-    close: (window: VulkanWindow) => void
-    get_presentation_support: (window: VulkanWindow, device: VulkanDevice, queue_family_idx: number) => boolean
-    set_window_handle: (window: VulkanWindow, handle: number) => void
-    get_surface_dimensions: (window: VulkanWindow, width: number, height: number) => void
-    handle_events: (window: VulkanWindow, handle_events: boolean) => void
+    readonly parent_class: Gst.ObjectClass
+    readonly open: (window: VulkanWindow) => boolean
+    readonly close: (window: VulkanWindow) => void
+    readonly get_presentation_support: (window: VulkanWindow, device: VulkanDevice, queue_family_idx: number) => boolean
+    readonly set_window_handle: (window: VulkanWindow, handle: number) => void
+    readonly get_surface_dimensions: (window: VulkanWindow, width: number, height: number) => void
+    readonly handle_events: (window: VulkanWindow, handle_events: boolean) => void
     static name: string
 }
 class VulkanWindowPrivate {

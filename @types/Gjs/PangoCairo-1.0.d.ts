@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PangoCairo-1.0
  */
@@ -35,13 +41,13 @@ function update_layout(cr: cairo.Context, layout: Pango.Layout): void
 interface ShapeRendererFunc {
     (cr: cairo.Context, attr: Pango.AttrShape, do_path: boolean): void
 }
-export interface Font_ConstructProps extends Pango.Font_ConstructProps {
+interface Font_ConstructProps extends Pango.Font_ConstructProps {
 }
 class Font {
     /* Fields of Pango-1.0.Pango.Font */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoCairo-1.0.PangoCairo.Font */
     get_scaled_font(): cairo.ScaledFont | null
     /* Methods of Pango-1.0.Pango.Font */
@@ -108,13 +114,13 @@ class Font {
     _init (config?: Font_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FontMap_ConstructProps extends Pango.FontMap_ConstructProps {
+interface FontMap_ConstructProps extends Pango.FontMap_ConstructProps {
 }
 class FontMap {
     /* Fields of Pango-1.0.Pango.FontMap */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoCairo-1.0.PangoCairo.FontMap */
     get_font_type(): cairo.FontType
     get_resolution(): number

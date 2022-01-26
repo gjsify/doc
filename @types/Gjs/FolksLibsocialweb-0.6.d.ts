@@ -1,26 +1,39 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * FolksLibsocialweb-0.6
  */
 
 import type * as Gjs from './Gjs';
-// WARN: Dependency not found: 'SocialWebClient-0.25'
-import type Folks from './Folks-0.6';
-import type GLib from './GLib-2.0';
+import type SocialWebClient from './SocialWebClient-0.25';
 import type Gio from './Gio-2.0';
 import type GObject from './GObject-2.0';
+import type GLib from './GLib-2.0';
+import type Folks from './Folks-0.6';
 import type Gee from './Gee-0.8';
 
 export namespace FolksLibsocialweb {
 
-export interface Persona_ConstructProps extends Folks.Persona_ConstructProps {
-    lsw_contact?: any
+interface Persona_ConstructProps extends Folks.Persona_ConstructProps {
+    /* Constructor properties of FolksLibsocialweb-0.6.FolksLibsocialweb.Persona */
+    lsw_contact?: SocialWebClient.Contact
+    /* Constructor properties of Folks-0.6.Folks.AvatarDetails */
     avatar?: Gio.LoadableIcon
+    /* Constructor properties of Folks-0.6.Folks.GenderDetails */
     gender?: Folks.Gender
+    /* Constructor properties of Folks-0.6.Folks.ImDetails */
     im_addresses?: Gee.MultiMap
+    /* Constructor properties of Folks-0.6.Folks.NameDetails */
     structured_name?: Folks.StructuredName
     full_name?: string
     nickname?: string
+    /* Constructor properties of Folks-0.6.Folks.UrlDetails */
     urls?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses?: Gee.MultiMap
 }
 class Persona {
@@ -42,14 +55,11 @@ class Persona {
     urls: Gee.Set
     /* Properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses: Gee.MultiMap
-    /* Fields of FolksLibsocialweb-0.6.FolksLibsocialweb.Persona */
-    parent_instance: Folks.Persona
-    priv: PersonaPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksLibsocialweb-0.6.FolksLibsocialweb.Persona */
-    update(contact: any): void
-    get_lsw_contact(): any
+    update(contact: SocialWebClient.Contact): void
+    get_lsw_contact(): SocialWebClient.Contact
     /* Methods of Folks-0.6.Folks.Persona */
     linkable_property_to_links(prop_name: string, callback: any): void
     get_iid(): string
@@ -199,13 +209,14 @@ class Persona {
     constructor (config?: Persona_ConstructProps)
     _init (config?: Persona_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(store: PersonaStore, contact: any): Persona
-    static get_contact_id(contact: any): string | null
+    static new(store: PersonaStore, contact: SocialWebClient.Contact): Persona
+    static get_contact_id(contact: SocialWebClient.Contact): string | null
     static normalise_im_address(im_address: string, protocol: string): string
     static $gtype: GObject.Type
 }
-export interface PersonaStore_ConstructProps extends Folks.PersonaStore_ConstructProps {
-    service?: any
+interface PersonaStore_ConstructProps extends Folks.PersonaStore_ConstructProps {
+    /* Constructor properties of FolksLibsocialweb-0.6.FolksLibsocialweb.PersonaStore */
+    service?: SocialWebClient.ClientService
 }
 class PersonaStore {
     /* Properties of Folks-0.6.Folks.PersonaStore */
@@ -222,13 +233,10 @@ class PersonaStore {
     readonly always_writeable_properties: string[]
     is_primary_store: boolean
     is_user_set_default: boolean
-    /* Fields of FolksLibsocialweb-0.6.FolksLibsocialweb.PersonaStore */
-    parent_instance: Folks.PersonaStore
-    priv: PersonaStorePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksLibsocialweb-0.6.FolksLibsocialweb.PersonaStore */
-    get_service(): any
+    get_service(): SocialWebClient.ClientService
     /* Methods of Folks-0.6.Folks.PersonaStore */
     _emit_personas_changed(added: Gee.Set | null, removed: Gee.Set | null, message: string | null, actor: Folks.Persona | null, reason: Folks.GroupDetailsChangeReason): void
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
@@ -349,12 +357,12 @@ class PersonaStore {
     constructor (config?: PersonaStore_ConstructProps)
     _init (config?: PersonaStore_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(service: any): PersonaStore
+    static new(service: SocialWebClient.ClientService): PersonaStore
     static $gtype: GObject.Type
 }
 abstract class PersonaClass {
     /* Fields of FolksLibsocialweb-0.6.FolksLibsocialweb.PersonaClass */
-    parent_class: Folks.PersonaClass
+    readonly parent_class: Folks.PersonaClass
     static name: string
 }
 class PersonaPrivate {
@@ -362,7 +370,7 @@ class PersonaPrivate {
 }
 abstract class PersonaStoreClass {
     /* Fields of FolksLibsocialweb-0.6.FolksLibsocialweb.PersonaStoreClass */
-    parent_class: Folks.PersonaStoreClass
+    readonly parent_class: Folks.PersonaStoreClass
     static name: string
 }
 class PersonaStorePrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * LibvirtGObject-1.0
  */
@@ -131,16 +137,14 @@ interface StreamSinkFunc {
 interface StreamSourceFunc {
     (stream: Stream): number
 }
-export interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.Connection */
     handle?: any
     uri?: string
 }
 class Connection {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.Connection */
-    parent: GObject.Object
-    priv: ConnectionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.Connection */
     close(): void
     create_domain(conf: LibvirtGConfig.Domain): Domain
@@ -256,17 +260,15 @@ class Connection {
     static new(uri: string): Connection
     static $gtype: GObject.Type
 }
-export interface Domain_ConstructProps extends GObject.Object_ConstructProps {
+interface Domain_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.Domain */
     handle?: any
 }
 class Domain {
     /* Properties of LibvirtGObject-1.0.LibvirtGObject.Domain */
     readonly persistent: boolean
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.Domain */
-    parent: GObject.Object
-    priv: DomainPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.Domain */
     create_snapshot(custom_conf: LibvirtGConfig.DomainSnapshot | null, flags: number): DomainSnapshot
     create_snapshot_async(custom_conf: LibvirtGConfig.DomainSnapshot | null, flags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -386,16 +388,14 @@ class Domain {
     _init (config?: Domain_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainDevice_ConstructProps extends GObject.Object_ConstructProps {
+interface DomainDevice_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.DomainDevice */
     config?: LibvirtGConfig.DomainDevice
     domain?: Domain
 }
 class DomainDevice {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainDevice */
-    parent: GObject.Object
-    priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.DomainDevice */
     get_config(): LibvirtGConfig.DomainDevice
     get_domain(): Domain
@@ -442,14 +442,14 @@ class DomainDevice {
     _init (config?: DomainDevice_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainDisk_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainDisk_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainDisk {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainDisk */
-    parent: DomainDevice
-    priv: DomainDiskPrivate
+    /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainDevice */
+    readonly parent: GObject.Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.DomainDisk */
     get_stats(): DomainDiskStats
     resize(size: number, flags: number): boolean
@@ -499,14 +499,14 @@ class DomainDisk {
     _init (config?: DomainDisk_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainInterface_ConstructProps extends DomainDevice_ConstructProps {
+interface DomainInterface_ConstructProps extends DomainDevice_ConstructProps {
 }
 class DomainInterface {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainInterface */
-    parent: DomainDevice
-    priv: DomainInterfacePrivate
+    /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainDevice */
+    readonly parent: GObject.Object
+    readonly priv: DomainDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.DomainInterface */
     get_stats(): DomainInterfaceStats
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.DomainDevice */
@@ -555,15 +555,13 @@ class DomainInterface {
     _init (config?: DomainInterface_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DomainSnapshot_ConstructProps extends GObject.Object_ConstructProps {
+interface DomainSnapshot_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.DomainSnapshot */
     handle?: any
 }
 class DomainSnapshot {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainSnapshot */
-    parent: GObject.Object
-    priv: DomainSnapshotPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.DomainSnapshot */
     delete(flags: number): boolean
     delete_async(flags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -618,15 +616,13 @@ class DomainSnapshot {
     _init (config?: DomainSnapshot_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Interface_ConstructProps extends GObject.Object_ConstructProps {
+interface Interface_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.Interface */
     handle?: any
 }
 class Interface {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.Interface */
-    parent: GObject.Object
-    priv: InterfacePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.Interface */
     get_config(flags: number): LibvirtGConfig.Interface
     get_mac(): string
@@ -674,14 +670,11 @@ class Interface {
     _init (config?: Interface_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Manager_ConstructProps extends GObject.Object_ConstructProps {
+interface Manager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Manager {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.Manager */
-    parent: GObject.Object
-    priv: ManagerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.Manager */
     add_connection(conn: Connection): void
     find_connection_by_uri(uri: string): Connection | null
@@ -742,15 +735,13 @@ class Manager {
     static new(): Manager
     static $gtype: GObject.Type
 }
-export interface Network_ConstructProps extends GObject.Object_ConstructProps {
+interface Network_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.Network */
     handle?: any
 }
 class Network {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.Network */
-    parent: GObject.Object
-    priv: NetworkPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.Network */
     get_config(flags: number): LibvirtGConfig.Network
     get_dhcp_leases(mac: string | null, flags: number): NetworkDHCPLease[]
@@ -802,15 +793,13 @@ class Network {
     _init (config?: Network_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NetworkDHCPLease_ConstructProps extends GObject.Object_ConstructProps {
+interface NetworkDHCPLease_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.NetworkDHCPLease */
     handle?: object
 }
 class NetworkDHCPLease {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.NetworkDHCPLease */
-    parent: GObject.Object
-    priv: NetworkDHCPLeasePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.NetworkDHCPLease */
     get_client_id(): string
     get_expiry_time(): number
@@ -864,15 +853,13 @@ class NetworkDHCPLease {
     _init (config?: NetworkDHCPLease_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NetworkFilter_ConstructProps extends GObject.Object_ConstructProps {
+interface NetworkFilter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.NetworkFilter */
     handle?: any
 }
 class NetworkFilter {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.NetworkFilter */
-    parent: GObject.Object
-    priv: NetworkFilterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.NetworkFilter */
     get_config(flags: number): LibvirtGConfig.NetworkFilter
     get_name(): string
@@ -920,15 +907,13 @@ class NetworkFilter {
     _init (config?: NetworkFilter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NodeDevice_ConstructProps extends GObject.Object_ConstructProps {
+interface NodeDevice_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.NodeDevice */
     handle?: any
 }
 class NodeDevice {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.NodeDevice */
-    parent: GObject.Object
-    priv: NodeDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.NodeDevice */
     get_config(flags: number): LibvirtGConfig.NodeDevice
     get_name(): string
@@ -975,15 +960,13 @@ class NodeDevice {
     _init (config?: NodeDevice_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Secret_ConstructProps extends GObject.Object_ConstructProps {
+interface Secret_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.Secret */
     handle?: any
 }
 class Secret {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.Secret */
-    parent: GObject.Object
-    priv: SecretPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.Secret */
     get_config(flags: number): LibvirtGConfig.Secret
     get_name(): string
@@ -1031,15 +1014,13 @@ class Secret {
     _init (config?: Secret_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface StoragePool_ConstructProps extends GObject.Object_ConstructProps {
+interface StoragePool_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.StoragePool */
     handle?: any
 }
 class StoragePool {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.StoragePool */
-    parent: GObject.Object
-    priv: StoragePoolPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.StoragePool */
     build(flags: number): boolean
     build_async(flags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1113,16 +1094,14 @@ class StoragePool {
     _init (config?: StoragePool_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface StorageVol_ConstructProps extends GObject.Object_ConstructProps {
+interface StorageVol_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.StorageVol */
     handle?: any
     pool?: StoragePool
 }
 class StorageVol {
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.StorageVol */
-    parent: GObject.Object
-    priv: StorageVolPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.StorageVol */
     delete(flags: number): boolean
     download(stream: Stream, offset: number, length: number, flags: number): boolean
@@ -1175,7 +1154,8 @@ class StorageVol {
     _init (config?: StorageVol_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Stream_ConstructProps extends Gio.IOStream_ConstructProps {
+interface Stream_ConstructProps extends Gio.IOStream_ConstructProps {
+    /* Constructor properties of LibvirtGObject-1.0.LibvirtGObject.Stream */
     handle?: any
 }
 class Stream {
@@ -1183,14 +1163,13 @@ class Stream {
     readonly closed: boolean
     readonly input_stream: Gio.InputStream
     readonly output_stream: Gio.OutputStream
-    /* Fields of LibvirtGObject-1.0.LibvirtGObject.Stream */
-    parent_instance: Gio.IOStream
-    priv: StreamPrivate
+    /* Fields of Gio-2.0.Gio.IOStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of LibvirtGObject-1.0.LibvirtGObject.Stream */
     add_watch(priority: number, cond: StreamIOCondition, func: StreamIOFunc): number
-    receive(buffer: Uint8Array[], cancellable?: Gio.Cancellable | null): number
+    receive(buffer: Uint8Array, cancellable?: Gio.Cancellable | null): number
     receive_all(cancellable: Gio.Cancellable | null, func: StreamSinkFunc): number
     send(buffer: string, size: number, cancellable?: Gio.Cancellable | null): number
     send_all(cancellable: Gio.Cancellable | null, func: StreamSourceFunc): number
@@ -1262,12 +1241,12 @@ class Stream {
 }
 abstract class ConnectionClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.ConnectionClass */
-    parent_class: GObject.ObjectClass
-    connection_opened: (conn: Connection) => void
-    connection_closed: (conn: Connection) => void
-    domain_added: (conn: Connection, dom: Domain) => void
-    domain_removed: (conn: Connection, dom: Domain) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly connection_opened: (conn: Connection) => void
+    readonly connection_closed: (conn: Connection) => void
+    readonly domain_added: (conn: Connection, dom: Domain) => void
+    readonly domain_removed: (conn: Connection, dom: Domain) => void
+    readonly padding: object[]
     static name: string
 }
 class ConnectionPrivate {
@@ -1275,20 +1254,20 @@ class ConnectionPrivate {
 }
 abstract class DomainClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainClass */
-    parent_class: GObject.ObjectClass
-    started: (dom: Domain) => void
-    stopped: (dom: Domain) => void
-    resumed: (dom: Domain) => void
-    updated: (dom: Domain) => void
-    suspended: (dom: Domain) => void
-    pmsuspended: (dom: Domain) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly started: (dom: Domain) => void
+    readonly stopped: (dom: Domain) => void
+    readonly resumed: (dom: Domain) => void
+    readonly updated: (dom: Domain) => void
+    readonly suspended: (dom: Domain) => void
+    readonly pmsuspended: (dom: Domain) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class DomainDeviceClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainDeviceClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainDevicePrivate {
@@ -1296,8 +1275,8 @@ class DomainDevicePrivate {
 }
 abstract class DomainDiskClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainDiskClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainDiskPrivate {
@@ -1305,26 +1284,26 @@ class DomainDiskPrivate {
 }
 class DomainDiskStats {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainDiskStats */
-    rd_req: number
-    rd_bytes: number
-    wr_req: number
-    wr_bytes: number
-    errs: number
+    readonly rd_req: number
+    readonly rd_bytes: number
+    readonly wr_req: number
+    readonly wr_bytes: number
+    readonly errs: number
     static name: string
 }
 class DomainInfo {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainInfo */
-    state: DomainState
-    maxMem: number
-    memory: number
-    nrVirtCpu: number
-    cpuTime: number
+    readonly state: DomainState
+    readonly maxMem: number
+    readonly memory: number
+    readonly nrVirtCpu: number
+    readonly cpuTime: number
     static name: string
 }
 abstract class DomainInterfaceClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainInterfaceClass */
-    parent_class: DomainDeviceClass
-    padding: object[]
+    readonly parent_class: DomainDeviceClass
+    readonly padding: object[]
     static name: string
 }
 class DomainInterfacePrivate {
@@ -1332,14 +1311,14 @@ class DomainInterfacePrivate {
 }
 class DomainInterfaceStats {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainInterfaceStats */
-    rx_bytes: number
-    rx_packets: number
-    rx_errs: number
-    rx_drop: number
-    tx_bytes: number
-    tx_packets: number
-    tx_errs: number
-    tx_drop: number
+    readonly rx_bytes: number
+    readonly rx_packets: number
+    readonly rx_errs: number
+    readonly rx_drop: number
+    readonly tx_bytes: number
+    readonly tx_packets: number
+    readonly tx_errs: number
+    readonly tx_drop: number
     static name: string
 }
 class DomainPrivate {
@@ -1347,8 +1326,8 @@ class DomainPrivate {
 }
 abstract class DomainSnapshotClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.DomainSnapshotClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class DomainSnapshotPrivate {
@@ -1356,8 +1335,8 @@ class DomainSnapshotPrivate {
 }
 abstract class InterfaceClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.InterfaceClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class InterfacePrivate {
@@ -1365,10 +1344,10 @@ class InterfacePrivate {
 }
 abstract class ManagerClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.ManagerClass */
-    parent_class: GObject.ObjectClass
-    connection_added: (man: Manager, conn: Connection) => void
-    connection_removed: (man: Manager, conn: Connection) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly connection_added: (man: Manager, conn: Connection) => void
+    readonly connection_removed: (man: Manager, conn: Connection) => void
+    readonly padding: object[]
     static name: string
 }
 class ManagerPrivate {
@@ -1376,16 +1355,16 @@ class ManagerPrivate {
 }
 abstract class NetworkClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.NetworkClass */
-    parent_class: GObject.ObjectClass
-    started: (net: Network) => void
-    stopped: (net: Network) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly started: (net: Network) => void
+    readonly stopped: (net: Network) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class NetworkDHCPLeaseClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.NetworkDHCPLeaseClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class NetworkDHCPLeasePrivate {
@@ -1393,8 +1372,8 @@ class NetworkDHCPLeasePrivate {
 }
 abstract class NetworkFilterClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.NetworkFilterClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class NetworkFilterPrivate {
@@ -1405,8 +1384,8 @@ class NetworkPrivate {
 }
 abstract class NodeDeviceClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.NodeDeviceClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class NodeDevicePrivate {
@@ -1414,20 +1393,20 @@ class NodeDevicePrivate {
 }
 class NodeInfo {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.NodeInfo */
-    model: number[]
-    memory: number
-    cpus: number
-    mhz: number
-    nodes: number
-    sockets: number
-    cores: number
-    threads: number
+    readonly model: number[]
+    readonly memory: number
+    readonly cpus: number
+    readonly mhz: number
+    readonly nodes: number
+    readonly sockets: number
+    readonly cores: number
+    readonly threads: number
     static name: string
 }
 abstract class SecretClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.SecretClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class SecretPrivate {
@@ -1435,16 +1414,16 @@ class SecretPrivate {
 }
 abstract class StoragePoolClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.StoragePoolClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class StoragePoolInfo {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.StoragePoolInfo */
-    state: StoragePoolState
-    capacity: number
-    allocation: number
-    available: number
+    readonly state: StoragePoolState
+    readonly capacity: number
+    readonly allocation: number
+    readonly available: number
     static name: string
 }
 class StoragePoolPrivate {
@@ -1452,15 +1431,15 @@ class StoragePoolPrivate {
 }
 abstract class StorageVolClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.StorageVolClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class StorageVolInfo {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.StorageVolInfo */
-    type: StorageVolType
-    capacity: number
-    allocation: number
+    readonly type: StorageVolType
+    readonly capacity: number
+    readonly allocation: number
     static name: string
 }
 class StorageVolPrivate {
@@ -1468,8 +1447,8 @@ class StorageVolPrivate {
 }
 abstract class StreamClass {
     /* Fields of LibvirtGObject-1.0.LibvirtGObject.StreamClass */
-    parent_class: Gio.IOStreamClass
-    padding: object[]
+    readonly parent_class: Gio.IOStreamClass
+    readonly padding: object[]
     static name: string
 }
 class StreamPrivate {

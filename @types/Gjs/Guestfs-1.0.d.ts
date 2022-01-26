@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Guestfs-1.0
  */
@@ -26,7 +32,8 @@ enum Tristate {
     TRUE,
     NONE,
 }
-export interface AddDomain_ConstructProps extends GObject.Object_ConstructProps {
+interface AddDomain_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.AddDomain */
     allowuuid?: Tristate
     cachemode?: string
     copyonread?: Tristate
@@ -48,11 +55,8 @@ class AddDomain {
     live: Tristate
     readonly: Tristate
     readonlydisk: string
-    /* Fields of Guestfs-1.0.Guestfs.AddDomain */
-    parent: GObject.Object
-    priv: AddDomainPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -116,7 +120,8 @@ class AddDomain {
     static new(): AddDomain
     static $gtype: GObject.Type
 }
-export interface AddDrive_ConstructProps extends GObject.Object_ConstructProps {
+interface AddDrive_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.AddDrive */
     cachemode?: string
     copyonread?: Tristate
     discard?: string
@@ -142,11 +147,8 @@ class AddDrive {
     readonly: Tristate
     secret: string
     username: string
-    /* Fields of Guestfs-1.0.Guestfs.AddDrive */
-    parent: GObject.Object
-    priv: AddDrivePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -214,7 +216,8 @@ class AddDrive {
     static new(): AddDrive
     static $gtype: GObject.Type
 }
-export interface AddDriveScratch_ConstructProps extends GObject.Object_ConstructProps {
+interface AddDriveScratch_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.AddDriveScratch */
     label?: string
     name?: string
 }
@@ -222,11 +225,8 @@ class AddDriveScratch {
     /* Properties of Guestfs-1.0.Guestfs.AddDriveScratch */
     label: string
     name: string
-    /* Fields of Guestfs-1.0.Guestfs.AddDriveScratch */
-    parent: GObject.Object
-    priv: AddDriveScratchPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -276,7 +276,8 @@ class AddDriveScratch {
     static new(): AddDriveScratch
     static $gtype: GObject.Type
 }
-export interface AddLibvirtDom_ConstructProps extends GObject.Object_ConstructProps {
+interface AddLibvirtDom_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.AddLibvirtDom */
     cachemode?: string
     copyonread?: Tristate
     discard?: string
@@ -294,11 +295,8 @@ class AddLibvirtDom {
     live: Tristate
     readonly: Tristate
     readonlydisk: string
-    /* Fields of Guestfs-1.0.Guestfs.AddLibvirtDom */
-    parent: GObject.Object
-    priv: AddLibvirtDomPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -358,17 +356,15 @@ class AddLibvirtDom {
     static new(): AddLibvirtDom
     static $gtype: GObject.Type
 }
-export interface AugTransform_ConstructProps extends GObject.Object_ConstructProps {
+interface AugTransform_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.AugTransform */
     remove?: Tristate
 }
 class AugTransform {
     /* Properties of Guestfs-1.0.Guestfs.AugTransform */
     remove: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.AugTransform */
-    parent: GObject.Object
-    priv: AugTransformPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -416,7 +412,8 @@ class AugTransform {
     static new(): AugTransform
     static $gtype: GObject.Type
 }
-export interface BTRFSFilesystemDefragment_ConstructProps extends GObject.Object_ConstructProps {
+interface BTRFSFilesystemDefragment_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.BTRFSFilesystemDefragment */
     compress?: string
     flush?: Tristate
 }
@@ -424,11 +421,8 @@ class BTRFSFilesystemDefragment {
     /* Properties of Guestfs-1.0.Guestfs.BTRFSFilesystemDefragment */
     compress: string
     flush: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.BTRFSFilesystemDefragment */
-    parent: GObject.Object
-    priv: BTRFSFilesystemDefragmentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -478,17 +472,15 @@ class BTRFSFilesystemDefragment {
     static new(): BTRFSFilesystemDefragment
     static $gtype: GObject.Type
 }
-export interface BTRFSFilesystemResize_ConstructProps extends GObject.Object_ConstructProps {
+interface BTRFSFilesystemResize_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.BTRFSFilesystemResize */
     size?: number
 }
 class BTRFSFilesystemResize {
     /* Properties of Guestfs-1.0.Guestfs.BTRFSFilesystemResize */
     size: number
-    /* Fields of Guestfs-1.0.Guestfs.BTRFSFilesystemResize */
-    parent: GObject.Object
-    priv: BTRFSFilesystemResizePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -536,17 +528,15 @@ class BTRFSFilesystemResize {
     static new(): BTRFSFilesystemResize
     static $gtype: GObject.Type
 }
-export interface BTRFSImage_ConstructProps extends GObject.Object_ConstructProps {
+interface BTRFSImage_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.BTRFSImage */
     compresslevel?: number
 }
 class BTRFSImage {
     /* Properties of Guestfs-1.0.Guestfs.BTRFSImage */
     compresslevel: number
-    /* Fields of Guestfs-1.0.Guestfs.BTRFSImage */
-    parent: GObject.Object
-    priv: BTRFSImagePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -594,17 +584,15 @@ class BTRFSImage {
     static new(): BTRFSImage
     static $gtype: GObject.Type
 }
-export interface BTRFSSubvolumeCreate_ConstructProps extends GObject.Object_ConstructProps {
+interface BTRFSSubvolumeCreate_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.BTRFSSubvolumeCreate */
     qgroupid?: string
 }
 class BTRFSSubvolumeCreate {
     /* Properties of Guestfs-1.0.Guestfs.BTRFSSubvolumeCreate */
     qgroupid: string
-    /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolumeCreate */
-    parent: GObject.Object
-    priv: BTRFSSubvolumeCreatePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -652,7 +640,8 @@ class BTRFSSubvolumeCreate {
     static new(): BTRFSSubvolumeCreate
     static $gtype: GObject.Type
 }
-export interface BTRFSSubvolumeSnapshot_ConstructProps extends GObject.Object_ConstructProps {
+interface BTRFSSubvolumeSnapshot_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.BTRFSSubvolumeSnapshot */
     qgroupid?: string
     ro?: Tristate
 }
@@ -660,11 +649,8 @@ class BTRFSSubvolumeSnapshot {
     /* Properties of Guestfs-1.0.Guestfs.BTRFSSubvolumeSnapshot */
     qgroupid: string
     ro: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolumeSnapshot */
-    parent: GObject.Object
-    priv: BTRFSSubvolumeSnapshotPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -714,7 +700,8 @@ class BTRFSSubvolumeSnapshot {
     static new(): BTRFSSubvolumeSnapshot
     static $gtype: GObject.Type
 }
-export interface BtrfsFsck_ConstructProps extends GObject.Object_ConstructProps {
+interface BtrfsFsck_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.BtrfsFsck */
     repair?: Tristate
     superblock?: number
 }
@@ -722,11 +709,8 @@ class BtrfsFsck {
     /* Properties of Guestfs-1.0.Guestfs.BtrfsFsck */
     repair: Tristate
     superblock: number
-    /* Fields of Guestfs-1.0.Guestfs.BtrfsFsck */
-    parent: GObject.Object
-    priv: BtrfsFsckPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -776,17 +760,15 @@ class BtrfsFsck {
     static new(): BtrfsFsck
     static $gtype: GObject.Type
 }
-export interface CompressDeviceOut_ConstructProps extends GObject.Object_ConstructProps {
+interface CompressDeviceOut_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.CompressDeviceOut */
     level?: number
 }
 class CompressDeviceOut {
     /* Properties of Guestfs-1.0.Guestfs.CompressDeviceOut */
     level: number
-    /* Fields of Guestfs-1.0.Guestfs.CompressDeviceOut */
-    parent: GObject.Object
-    priv: CompressDeviceOutPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -834,17 +816,15 @@ class CompressDeviceOut {
     static new(): CompressDeviceOut
     static $gtype: GObject.Type
 }
-export interface CompressOut_ConstructProps extends GObject.Object_ConstructProps {
+interface CompressOut_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.CompressOut */
     level?: number
 }
 class CompressOut {
     /* Properties of Guestfs-1.0.Guestfs.CompressOut */
     level: number
-    /* Fields of Guestfs-1.0.Guestfs.CompressOut */
-    parent: GObject.Object
-    priv: CompressOutPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -892,7 +872,8 @@ class CompressOut {
     static new(): CompressOut
     static $gtype: GObject.Type
 }
-export interface CopyAttributes_ConstructProps extends GObject.Object_ConstructProps {
+interface CopyAttributes_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.CopyAttributes */
     all?: Tristate
     mode?: Tristate
     ownership?: Tristate
@@ -904,11 +885,8 @@ class CopyAttributes {
     mode: Tristate
     ownership: Tristate
     xattributes: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.CopyAttributes */
-    parent: GObject.Object
-    priv: CopyAttributesPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -962,7 +940,8 @@ class CopyAttributes {
     static new(): CopyAttributes
     static $gtype: GObject.Type
 }
-export interface CopyDeviceToDevice_ConstructProps extends GObject.Object_ConstructProps {
+interface CopyDeviceToDevice_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.CopyDeviceToDevice */
     append?: Tristate
     destoffset?: number
     size?: number
@@ -976,11 +955,8 @@ class CopyDeviceToDevice {
     size: number
     sparse: Tristate
     srcoffset: number
-    /* Fields of Guestfs-1.0.Guestfs.CopyDeviceToDevice */
-    parent: GObject.Object
-    priv: CopyDeviceToDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1036,7 +1012,8 @@ class CopyDeviceToDevice {
     static new(): CopyDeviceToDevice
     static $gtype: GObject.Type
 }
-export interface CopyDeviceToFile_ConstructProps extends GObject.Object_ConstructProps {
+interface CopyDeviceToFile_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.CopyDeviceToFile */
     append?: Tristate
     destoffset?: number
     size?: number
@@ -1050,11 +1027,8 @@ class CopyDeviceToFile {
     size: number
     sparse: Tristate
     srcoffset: number
-    /* Fields of Guestfs-1.0.Guestfs.CopyDeviceToFile */
-    parent: GObject.Object
-    priv: CopyDeviceToFilePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1110,7 +1084,8 @@ class CopyDeviceToFile {
     static new(): CopyDeviceToFile
     static $gtype: GObject.Type
 }
-export interface CopyFileToDevice_ConstructProps extends GObject.Object_ConstructProps {
+interface CopyFileToDevice_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.CopyFileToDevice */
     append?: Tristate
     destoffset?: number
     size?: number
@@ -1124,11 +1099,8 @@ class CopyFileToDevice {
     size: number
     sparse: Tristate
     srcoffset: number
-    /* Fields of Guestfs-1.0.Guestfs.CopyFileToDevice */
-    parent: GObject.Object
-    priv: CopyFileToDevicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1184,7 +1156,8 @@ class CopyFileToDevice {
     static new(): CopyFileToDevice
     static $gtype: GObject.Type
 }
-export interface CopyFileToFile_ConstructProps extends GObject.Object_ConstructProps {
+interface CopyFileToFile_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.CopyFileToFile */
     append?: Tristate
     destoffset?: number
     size?: number
@@ -1198,11 +1171,8 @@ class CopyFileToFile {
     size: number
     sparse: Tristate
     srcoffset: number
-    /* Fields of Guestfs-1.0.Guestfs.CopyFileToFile */
-    parent: GObject.Object
-    priv: CopyFileToFilePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1258,17 +1228,15 @@ class CopyFileToFile {
     static new(): CopyFileToFile
     static $gtype: GObject.Type
 }
-export interface CpioOut_ConstructProps extends GObject.Object_ConstructProps {
+interface CpioOut_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.CpioOut */
     format?: string
 }
 class CpioOut {
     /* Properties of Guestfs-1.0.Guestfs.CpioOut */
     format: string
-    /* Fields of Guestfs-1.0.Guestfs.CpioOut */
-    parent: GObject.Object
-    priv: CpioOutPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1316,7 +1284,8 @@ class CpioOut {
     static new(): CpioOut
     static $gtype: GObject.Type
 }
-export interface DiskCreate_ConstructProps extends GObject.Object_ConstructProps {
+interface DiskCreate_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.DiskCreate */
     backingfile?: string
     backingformat?: string
     clustersize?: number
@@ -1330,11 +1299,8 @@ class DiskCreate {
     clustersize: number
     compat: string
     preallocation: string
-    /* Fields of Guestfs-1.0.Guestfs.DiskCreate */
-    parent: GObject.Object
-    priv: DiskCreatePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1390,17 +1356,15 @@ class DiskCreate {
     static new(): DiskCreate
     static $gtype: GObject.Type
 }
-export interface DownloadBlocks_ConstructProps extends GObject.Object_ConstructProps {
+interface DownloadBlocks_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.DownloadBlocks */
     unallocated?: Tristate
 }
 class DownloadBlocks {
     /* Properties of Guestfs-1.0.Guestfs.DownloadBlocks */
     unallocated: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.DownloadBlocks */
-    parent: GObject.Object
-    priv: DownloadBlocksPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1448,7 +1412,8 @@ class DownloadBlocks {
     static new(): DownloadBlocks
     static $gtype: GObject.Type
 }
-export interface E2fsck_ConstructProps extends GObject.Object_ConstructProps {
+interface E2fsck_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.E2fsck */
     correct?: Tristate
     forceall?: Tristate
 }
@@ -1456,11 +1421,8 @@ class E2fsck {
     /* Properties of Guestfs-1.0.Guestfs.E2fsck */
     correct: Tristate
     forceall: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.E2fsck */
-    parent: GObject.Object
-    priv: E2fsckPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1510,7 +1472,8 @@ class E2fsck {
     static new(): E2fsck
     static $gtype: GObject.Type
 }
-export interface Fstrim_ConstructProps extends GObject.Object_ConstructProps {
+interface Fstrim_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Fstrim */
     length?: number
     minimumfreeextent?: number
     offset?: number
@@ -1520,11 +1483,8 @@ class Fstrim {
     length: number
     minimumfreeextent: number
     offset: number
-    /* Fields of Guestfs-1.0.Guestfs.Fstrim */
-    parent: GObject.Object
-    priv: FstrimPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1576,17 +1536,15 @@ class Fstrim {
     static new(): Fstrim
     static $gtype: GObject.Type
 }
-export interface GlobExpand_ConstructProps extends GObject.Object_ConstructProps {
+interface GlobExpand_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.GlobExpand */
     directoryslash?: Tristate
 }
 class GlobExpand {
     /* Properties of Guestfs-1.0.Guestfs.GlobExpand */
     directoryslash: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.GlobExpand */
-    parent: GObject.Object
-    priv: GlobExpandPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1634,7 +1592,8 @@ class GlobExpand {
     static new(): GlobExpand
     static $gtype: GObject.Type
 }
-export interface Grep_ConstructProps extends GObject.Object_ConstructProps {
+interface Grep_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Grep */
     compressed?: Tristate
     extended?: Tristate
     fixed?: Tristate
@@ -1646,11 +1605,8 @@ class Grep {
     extended: Tristate
     fixed: Tristate
     insensitive: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.Grep */
-    parent: GObject.Object
-    priv: GrepPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1704,7 +1660,8 @@ class Grep {
     static new(): Grep
     static $gtype: GObject.Type
 }
-export interface HivexOpen_ConstructProps extends GObject.Object_ConstructProps {
+interface HivexOpen_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.HivexOpen */
     debug?: Tristate
     unsafe?: Tristate
     verbose?: Tristate
@@ -1716,11 +1673,8 @@ class HivexOpen {
     unsafe: Tristate
     verbose: Tristate
     write: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.HivexOpen */
-    parent: GObject.Object
-    priv: HivexOpenPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1774,7 +1728,8 @@ class HivexOpen {
     static new(): HivexOpen
     static $gtype: GObject.Type
 }
-export interface InspectGetIcon_ConstructProps extends GObject.Object_ConstructProps {
+interface InspectGetIcon_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.InspectGetIcon */
     favicon?: Tristate
     highquality?: Tristate
 }
@@ -1782,11 +1737,8 @@ class InspectGetIcon {
     /* Properties of Guestfs-1.0.Guestfs.InspectGetIcon */
     favicon: Tristate
     highquality: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.InspectGetIcon */
-    parent: GObject.Object
-    priv: InspectGetIconPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1836,7 +1788,8 @@ class InspectGetIcon {
     static new(): InspectGetIcon
     static $gtype: GObject.Type
 }
-export interface InternalTest_ConstructProps extends GObject.Object_ConstructProps {
+interface InternalTest_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.InternalTest */
     obool?: Tristate
     oint?: number
     oint64?: number
@@ -1848,11 +1801,8 @@ class InternalTest {
     oint: number
     oint64: number
     ostring: string
-    /* Fields of Guestfs-1.0.Guestfs.InternalTest */
-    parent: GObject.Object
-    priv: InternalTestPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1906,7 +1856,8 @@ class InternalTest {
     static new(): InternalTest
     static $gtype: GObject.Type
 }
-export interface InternalTest63Optargs_ConstructProps extends GObject.Object_ConstructProps {
+interface InternalTest63Optargs_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.InternalTest63Optargs */
     opt1?: number
     opt10?: number
     opt11?: number
@@ -2036,11 +1987,8 @@ class InternalTest63Optargs {
     opt7: number
     opt8: number
     opt9: number
-    /* Fields of Guestfs-1.0.Guestfs.InternalTest63Optargs */
-    parent: GObject.Object
-    priv: InternalTest63OptargsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2212,17 +2160,15 @@ class InternalTest63Optargs {
     static new(): InternalTest63Optargs
     static $gtype: GObject.Type
 }
-export interface InternalTestOnlyOptargs_ConstructProps extends GObject.Object_ConstructProps {
+interface InternalTestOnlyOptargs_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.InternalTestOnlyOptargs */
     test?: number
 }
 class InternalTestOnlyOptargs {
     /* Properties of Guestfs-1.0.Guestfs.InternalTestOnlyOptargs */
     test: number
-    /* Fields of Guestfs-1.0.Guestfs.InternalTestOnlyOptargs */
-    parent: GObject.Object
-    priv: InternalTestOnlyOptargsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2270,17 +2216,15 @@ class InternalTestOnlyOptargs {
     static new(): InternalTestOnlyOptargs
     static $gtype: GObject.Type
 }
-export interface IsBlockdev_ConstructProps extends GObject.Object_ConstructProps {
+interface IsBlockdev_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.IsBlockdev */
     followsymlinks?: Tristate
 }
 class IsBlockdev {
     /* Properties of Guestfs-1.0.Guestfs.IsBlockdev */
     followsymlinks: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.IsBlockdev */
-    parent: GObject.Object
-    priv: IsBlockdevPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2328,17 +2272,15 @@ class IsBlockdev {
     static new(): IsBlockdev
     static $gtype: GObject.Type
 }
-export interface IsChardev_ConstructProps extends GObject.Object_ConstructProps {
+interface IsChardev_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.IsChardev */
     followsymlinks?: Tristate
 }
 class IsChardev {
     /* Properties of Guestfs-1.0.Guestfs.IsChardev */
     followsymlinks: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.IsChardev */
-    parent: GObject.Object
-    priv: IsChardevPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2386,17 +2328,15 @@ class IsChardev {
     static new(): IsChardev
     static $gtype: GObject.Type
 }
-export interface IsDir_ConstructProps extends GObject.Object_ConstructProps {
+interface IsDir_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.IsDir */
     followsymlinks?: Tristate
 }
 class IsDir {
     /* Properties of Guestfs-1.0.Guestfs.IsDir */
     followsymlinks: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.IsDir */
-    parent: GObject.Object
-    priv: IsDirPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2444,17 +2384,15 @@ class IsDir {
     static new(): IsDir
     static $gtype: GObject.Type
 }
-export interface IsFifo_ConstructProps extends GObject.Object_ConstructProps {
+interface IsFifo_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.IsFifo */
     followsymlinks?: Tristate
 }
 class IsFifo {
     /* Properties of Guestfs-1.0.Guestfs.IsFifo */
     followsymlinks: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.IsFifo */
-    parent: GObject.Object
-    priv: IsFifoPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2502,17 +2440,15 @@ class IsFifo {
     static new(): IsFifo
     static $gtype: GObject.Type
 }
-export interface IsFile_ConstructProps extends GObject.Object_ConstructProps {
+interface IsFile_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.IsFile */
     followsymlinks?: Tristate
 }
 class IsFile {
     /* Properties of Guestfs-1.0.Guestfs.IsFile */
     followsymlinks: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.IsFile */
-    parent: GObject.Object
-    priv: IsFilePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2560,17 +2496,15 @@ class IsFile {
     static new(): IsFile
     static $gtype: GObject.Type
 }
-export interface IsSocket_ConstructProps extends GObject.Object_ConstructProps {
+interface IsSocket_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.IsSocket */
     followsymlinks?: Tristate
 }
 class IsSocket {
     /* Properties of Guestfs-1.0.Guestfs.IsSocket */
     followsymlinks: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.IsSocket */
-    parent: GObject.Object
-    priv: IsSocketPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2618,7 +2552,8 @@ class IsSocket {
     static new(): IsSocket
     static $gtype: GObject.Type
 }
-export interface MDCreate_ConstructProps extends GObject.Object_ConstructProps {
+interface MDCreate_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.MDCreate */
     chunk?: number
     level?: string
     missingbitmap?: number
@@ -2632,11 +2567,8 @@ class MDCreate {
     missingbitmap: number
     nrdevices: number
     spare: number
-    /* Fields of Guestfs-1.0.Guestfs.MDCreate */
-    parent: GObject.Object
-    priv: MDCreatePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2692,7 +2624,8 @@ class MDCreate {
     static new(): MDCreate
     static $gtype: GObject.Type
 }
-export interface Mke2fs_ConstructProps extends GObject.Object_ConstructProps {
+interface Mke2fs_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Mke2fs */
     blockscount?: number
     blocksize?: number
     blockspergroup?: number
@@ -2772,11 +2705,8 @@ class Mke2fs {
     usagetype: string
     uuid: string
     writesbandgrouponly: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.Mke2fs */
-    parent: GObject.Object
-    priv: Mke2fsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2898,7 +2828,8 @@ class Mke2fs {
     static new(): Mke2fs
     static $gtype: GObject.Type
 }
-export interface Mkfs_ConstructProps extends GObject.Object_ConstructProps {
+interface Mkfs_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Mkfs */
     blocksize?: number
     features?: string
     inode?: number
@@ -2912,11 +2843,8 @@ class Mkfs {
     inode: number
     label: string
     sectorsize: number
-    /* Fields of Guestfs-1.0.Guestfs.Mkfs */
-    parent: GObject.Object
-    priv: MkfsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2972,7 +2900,8 @@ class Mkfs {
     static new(): Mkfs
     static $gtype: GObject.Type
 }
-export interface MkfsBtrfs_ConstructProps extends GObject.Object_ConstructProps {
+interface MkfsBtrfs_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.MkfsBtrfs */
     allocstart?: number
     bytecount?: number
     datatype?: string
@@ -2992,11 +2921,8 @@ class MkfsBtrfs {
     metadata: string
     nodesize: number
     sectorsize: number
-    /* Fields of Guestfs-1.0.Guestfs.MkfsBtrfs */
-    parent: GObject.Object
-    priv: MkfsBtrfsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3058,17 +2984,15 @@ class MkfsBtrfs {
     static new(): MkfsBtrfs
     static $gtype: GObject.Type
 }
-export interface Mksquashfs_ConstructProps extends GObject.Object_ConstructProps {
+interface Mksquashfs_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Mksquashfs */
     compress?: string
 }
 class Mksquashfs {
     /* Properties of Guestfs-1.0.Guestfs.Mksquashfs */
     compress: string
-    /* Fields of Guestfs-1.0.Guestfs.Mksquashfs */
-    parent: GObject.Object
-    priv: MksquashfsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3116,7 +3040,8 @@ class Mksquashfs {
     static new(): Mksquashfs
     static $gtype: GObject.Type
 }
-export interface Mkswap_ConstructProps extends GObject.Object_ConstructProps {
+interface Mkswap_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Mkswap */
     label?: string
     uuid?: string
 }
@@ -3124,11 +3049,8 @@ class Mkswap {
     /* Properties of Guestfs-1.0.Guestfs.Mkswap */
     label: string
     uuid: string
-    /* Fields of Guestfs-1.0.Guestfs.Mkswap */
-    parent: GObject.Object
-    priv: MkswapPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3178,17 +3100,15 @@ class Mkswap {
     static new(): Mkswap
     static $gtype: GObject.Type
 }
-export interface Mktemp_ConstructProps extends GObject.Object_ConstructProps {
+interface Mktemp_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Mktemp */
     suffix?: string
 }
 class Mktemp {
     /* Properties of Guestfs-1.0.Guestfs.Mktemp */
     suffix: string
-    /* Fields of Guestfs-1.0.Guestfs.Mktemp */
-    parent: GObject.Object
-    priv: MktempPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3236,17 +3156,15 @@ class Mktemp {
     static new(): Mktemp
     static $gtype: GObject.Type
 }
-export interface Mount9P_ConstructProps extends GObject.Object_ConstructProps {
+interface Mount9P_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Mount9P */
     options?: string
 }
 class Mount9P {
     /* Properties of Guestfs-1.0.Guestfs.Mount9P */
     options: string
-    /* Fields of Guestfs-1.0.Guestfs.Mount9P */
-    parent: GObject.Object
-    priv: Mount9PPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3294,7 +3212,8 @@ class Mount9P {
     static new(): Mount9P
     static $gtype: GObject.Type
 }
-export interface MountLocal_ConstructProps extends GObject.Object_ConstructProps {
+interface MountLocal_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.MountLocal */
     cachetimeout?: number
     debugcalls?: Tristate
     options?: string
@@ -3306,11 +3225,8 @@ class MountLocal {
     debugcalls: Tristate
     options: string
     readonly: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.MountLocal */
-    parent: GObject.Object
-    priv: MountLocalPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3364,7 +3280,8 @@ class MountLocal {
     static new(): MountLocal
     static $gtype: GObject.Type
 }
-export interface NTFSResizeOpts_ConstructProps extends GObject.Object_ConstructProps {
+interface NTFSResizeOpts_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.NTFSResizeOpts */
     force?: Tristate
     size?: number
 }
@@ -3372,11 +3289,8 @@ class NTFSResizeOpts {
     /* Properties of Guestfs-1.0.Guestfs.NTFSResizeOpts */
     force: Tristate
     size: number
-    /* Fields of Guestfs-1.0.Guestfs.NTFSResizeOpts */
-    parent: GObject.Object
-    priv: NTFSResizeOptsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3426,7 +3340,8 @@ class NTFSResizeOpts {
     static new(): NTFSResizeOpts
     static $gtype: GObject.Type
 }
-export interface NtfscloneOut_ConstructProps extends GObject.Object_ConstructProps {
+interface NtfscloneOut_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.NtfscloneOut */
     force?: Tristate
     ignorefscheck?: Tristate
     metadataonly?: Tristate
@@ -3440,11 +3355,8 @@ class NtfscloneOut {
     metadataonly: Tristate
     preservetimestamps: Tristate
     rescue: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.NtfscloneOut */
-    parent: GObject.Object
-    priv: NtfscloneOutPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3500,17 +3412,15 @@ class NtfscloneOut {
     static new(): NtfscloneOut
     static $gtype: GObject.Type
 }
-export interface Ntfsfix_ConstructProps extends GObject.Object_ConstructProps {
+interface Ntfsfix_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Ntfsfix */
     clearbadsectors?: Tristate
 }
 class Ntfsfix {
     /* Properties of Guestfs-1.0.Guestfs.Ntfsfix */
     clearbadsectors: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.Ntfsfix */
-    parent: GObject.Object
-    priv: NtfsfixPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3558,17 +3468,15 @@ class Ntfsfix {
     static new(): Ntfsfix
     static $gtype: GObject.Type
 }
-export interface Remount_ConstructProps extends GObject.Object_ConstructProps {
+interface Remount_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Remount */
     rw?: Tristate
 }
 class Remount {
     /* Properties of Guestfs-1.0.Guestfs.Remount */
     rw: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.Remount */
-    parent: GObject.Object
-    priv: RemountPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3616,7 +3524,8 @@ class Remount {
     static new(): Remount
     static $gtype: GObject.Type
 }
-export interface Rsync_ConstructProps extends GObject.Object_ConstructProps {
+interface Rsync_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Rsync */
     archive?: Tristate
     deletedest?: Tristate
 }
@@ -3624,11 +3533,8 @@ class Rsync {
     /* Properties of Guestfs-1.0.Guestfs.Rsync */
     archive: Tristate
     deletedest: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.Rsync */
-    parent: GObject.Object
-    priv: RsyncPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3678,7 +3584,8 @@ class Rsync {
     static new(): Rsync
     static $gtype: GObject.Type
 }
-export interface RsyncIn_ConstructProps extends GObject.Object_ConstructProps {
+interface RsyncIn_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.RsyncIn */
     archive?: Tristate
     deletedest?: Tristate
 }
@@ -3686,11 +3593,8 @@ class RsyncIn {
     /* Properties of Guestfs-1.0.Guestfs.RsyncIn */
     archive: Tristate
     deletedest: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.RsyncIn */
-    parent: GObject.Object
-    priv: RsyncInPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3740,7 +3644,8 @@ class RsyncIn {
     static new(): RsyncIn
     static $gtype: GObject.Type
 }
-export interface RsyncOut_ConstructProps extends GObject.Object_ConstructProps {
+interface RsyncOut_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.RsyncOut */
     archive?: Tristate
     deletedest?: Tristate
 }
@@ -3748,11 +3653,8 @@ class RsyncOut {
     /* Properties of Guestfs-1.0.Guestfs.RsyncOut */
     archive: Tristate
     deletedest: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.RsyncOut */
-    parent: GObject.Object
-    priv: RsyncOutPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3802,17 +3704,15 @@ class RsyncOut {
     static new(): RsyncOut
     static $gtype: GObject.Type
 }
-export interface SelinuxRelabel_ConstructProps extends GObject.Object_ConstructProps {
+interface SelinuxRelabel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.SelinuxRelabel */
     force?: Tristate
 }
 class SelinuxRelabel {
     /* Properties of Guestfs-1.0.Guestfs.SelinuxRelabel */
     force: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.SelinuxRelabel */
-    parent: GObject.Object
-    priv: SelinuxRelabelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3860,14 +3760,11 @@ class SelinuxRelabel {
     static new(): SelinuxRelabel
     static $gtype: GObject.Type
 }
-export interface Session_ConstructProps extends GObject.Object_ConstructProps {
+interface Session_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Session {
-    /* Fields of Guestfs-1.0.Guestfs.Session */
-    parent: GObject.Object
-    priv: SessionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Guestfs-1.0.Guestfs.Session */
     acl_delete_def_file(dir: string): boolean
     acl_get_file(path: string, acltype: string): string
@@ -4066,7 +3963,7 @@ class Session {
     get_umask(): number
     get_verbose(): number
     getcon(): string
-    getxattr(path: string, name: string): Uint8Array[]
+    getxattr(path: string, name: string): Uint8Array
     getxattrs(path: string): XAttr[]
     glob_expand(pattern: string, optargs?: GlobExpand | null): string[]
     grep(regex: string, path: string, optargs?: Grep | null): string[]
@@ -4084,7 +3981,7 @@ class Session {
     hivex_node_get_value(nodeh: number, key: string): number
     hivex_node_name(nodeh: number): string
     hivex_node_parent(nodeh: number): number
-    hivex_node_set_value(nodeh: number, key: string, t: number, val: Uint8Array[]): boolean
+    hivex_node_set_value(nodeh: number, key: string, t: number, val: Uint8Array): boolean
     hivex_node_values(nodeh: number): HivexValue[]
     hivex_open(filename: string, optargs?: HivexOpen | null): boolean
     hivex_root(): number
@@ -4092,8 +3989,8 @@ class Session {
     hivex_value_string(valueh: number): string
     hivex_value_type(valueh: number): number
     hivex_value_utf8(valueh: number): string
-    hivex_value_value(valueh: number): Uint8Array[]
-    initrd_cat(initrdpath: string, filename: string): Uint8Array[]
+    hivex_value_value(valueh: number): Uint8Array
+    initrd_cat(initrdpath: string, filename: string): Uint8Array
     initrd_list(path: string): string[]
     inotify_add_watch(path: string, mask: number): number
     inotify_close(): boolean
@@ -4107,7 +4004,7 @@ class Session {
     inspect_get_filesystems(root: string): string[]
     inspect_get_format(root: string): string
     inspect_get_hostname(root: string): string
-    inspect_get_icon(root: string, optargs?: InspectGetIcon | null): Uint8Array[]
+    inspect_get_icon(root: string, optargs?: InspectGetIcon | null): Uint8Array
     inspect_get_major_version(root: string): number
     inspect_get_minor_version(root: string): number
     inspect_get_mountpoints(root: string): GLib.HashTable
@@ -4129,14 +4026,14 @@ class Session {
     inspect_list_applications2(root: string): Application2[]
     inspect_os(): string[]
     internal_exit(cancellable?: Gio.Cancellable | null): boolean
-    internal_test(str: string, optstr: string | null, strlist: string[], b: boolean, integer: number, integer64: number, filein: string, fileout: string, bufferin: Uint8Array[], optargs?: InternalTest | null, cancellable?: Gio.Cancellable | null): boolean
+    internal_test(str: string, optstr: string | null, strlist: string[], b: boolean, integer: number, integer64: number, filein: string, fileout: string, bufferin: Uint8Array, optargs?: InternalTest | null, cancellable?: Gio.Cancellable | null): boolean
     internal_test_63_optargs(optargs?: InternalTest63Optargs | null, cancellable?: Gio.Cancellable | null): boolean
     internal_test_close_output(): boolean
     internal_test_only_optargs(optargs?: InternalTestOnlyOptargs | null, cancellable?: Gio.Cancellable | null): boolean
     internal_test_rbool(val: string): number
     internal_test_rboolerr(): number
-    internal_test_rbufferout(val: string): Uint8Array[]
-    internal_test_rbufferouterr(): Uint8Array[]
+    internal_test_rbufferout(val: string): Uint8Array
+    internal_test_rbufferouterr(): Uint8Array
     internal_test_rconstoptstring(val: string): string
     internal_test_rconstoptstringerr(): string
     internal_test_rconststring(val: string): string
@@ -4194,7 +4091,7 @@ class Session {
     ldmtool_volume_hint(diskgroup: string, volume: string): string
     ldmtool_volume_partitions(diskgroup: string, volume: string): string[]
     ldmtool_volume_type(diskgroup: string, volume: string): string
-    lgetxattr(path: string, name: string): Uint8Array[]
+    lgetxattr(path: string, name: string): Uint8Array
     lgetxattrs(path: string): XAttr[]
     list_9p(): string[]
     list_devices(): string[]
@@ -4323,8 +4220,8 @@ class Session {
     part_to_dev(partition: string): string
     part_to_partnum(partition: string): number
     ping_daemon(): boolean
-    pread(path: string, count: number, offset: number): Uint8Array[]
-    pread_device(device: string, count: number, offset: number): Uint8Array[]
+    pread(path: string, count: number, offset: number): Uint8Array
+    pread_device(device: string, count: number, offset: number): Uint8Array
     pvchange_uuid(device: string): boolean
     pvchange_uuid_all(): boolean
     pvcreate(device: string): boolean
@@ -4334,9 +4231,9 @@ class Session {
     pvs(): string[]
     pvs_full(): PV[]
     pvuuid(device: string): string
-    pwrite(path: string, content: Uint8Array[], offset: number): number
-    pwrite_device(device: string, content: Uint8Array[], offset: number): number
-    read_file(path: string): Uint8Array[]
+    pwrite(path: string, content: Uint8Array, offset: number): number
+    pwrite_device(device: string, content: Uint8Array, offset: number): number
+    read_file(path: string): Uint8Array
     read_lines(path: string): string[]
     readdir(dir: string): Dirent[]
     readlink(path: string): string
@@ -4376,7 +4273,7 @@ class Session {
     set_hv(hv: string): boolean
     set_identifier(identifier: string): boolean
     set_label(mountable: string, label: string): boolean
-    set_libvirt_requested_credential(index: number, cred: Uint8Array[]): boolean
+    set_libvirt_requested_credential(index: number, cred: Uint8Array): boolean
     set_libvirt_supported_credentials(creds: string[]): boolean
     set_memsize(memsize: number): boolean
     set_network(network: boolean): boolean
@@ -4452,7 +4349,7 @@ class Session {
     vgchange_uuid_all(): boolean
     vgcreate(volgroup: string, physvols: string[]): boolean
     vglvuuids(vgname: string): string[]
-    vgmeta(vgname: string): Uint8Array[]
+    vgmeta(vgname: string): Uint8Array
     vgpvuuids(vgname: string): string[]
     vgremove(vgname: string): boolean
     vgrename(volgroup: string, newvolgroup: string): boolean
@@ -4465,8 +4362,8 @@ class Session {
     wc_l(path: string): number
     wc_w(path: string): number
     wipefs(device: string): boolean
-    write(path: string, content: Uint8Array[]): boolean
-    write_append(path: string, content: Uint8Array[]): boolean
+    write(path: string, content: Uint8Array): boolean
+    write_append(path: string, content: Uint8Array): boolean
     write_file(path: string, content: string, size: number): boolean
     xfs_admin(device: string, optargs?: XfsAdmin | null): boolean
     xfs_growfs(path: string, optargs?: XfsGrowfs | null): boolean
@@ -4562,17 +4459,15 @@ class Session {
     static new(): Session
     static $gtype: GObject.Type
 }
-export interface SetE2attrs_ConstructProps extends GObject.Object_ConstructProps {
+interface SetE2attrs_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.SetE2attrs */
     clear?: Tristate
 }
 class SetE2attrs {
     /* Properties of Guestfs-1.0.Guestfs.SetE2attrs */
     clear: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.SetE2attrs */
-    parent: GObject.Object
-    priv: SetE2attrsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4620,17 +4515,15 @@ class SetE2attrs {
     static new(): SetE2attrs
     static $gtype: GObject.Type
 }
-export interface Syslinux_ConstructProps extends GObject.Object_ConstructProps {
+interface Syslinux_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Syslinux */
     directory?: string
 }
 class Syslinux {
     /* Properties of Guestfs-1.0.Guestfs.Syslinux */
     directory: string
-    /* Fields of Guestfs-1.0.Guestfs.Syslinux */
-    parent: GObject.Object
-    priv: SyslinuxPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4678,7 +4571,8 @@ class Syslinux {
     static new(): Syslinux
     static $gtype: GObject.Type
 }
-export interface TarIn_ConstructProps extends GObject.Object_ConstructProps {
+interface TarIn_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.TarIn */
     acls?: Tristate
     compress?: string
     selinux?: Tristate
@@ -4690,11 +4584,8 @@ class TarIn {
     compress: string
     selinux: Tristate
     xattrs: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.TarIn */
-    parent: GObject.Object
-    priv: TarInPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4748,7 +4639,8 @@ class TarIn {
     static new(): TarIn
     static $gtype: GObject.Type
 }
-export interface TarOut_ConstructProps extends GObject.Object_ConstructProps {
+interface TarOut_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.TarOut */
     acls?: Tristate
     compress?: string
     numericowner?: Tristate
@@ -4762,11 +4654,8 @@ class TarOut {
     numericowner: Tristate
     selinux: Tristate
     xattrs: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.TarOut */
-    parent: GObject.Object
-    priv: TarOutPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4822,7 +4711,8 @@ class TarOut {
     static new(): TarOut
     static $gtype: GObject.Type
 }
-export interface Tune2FS_ConstructProps extends GObject.Object_ConstructProps {
+interface Tune2FS_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Tune2FS */
     errorbehavior?: string
     force?: Tristate
     group?: number
@@ -4846,11 +4736,8 @@ class Tune2FS {
     reservedblockscount: number
     reservedblockspercentage: number
     user: number
-    /* Fields of Guestfs-1.0.Guestfs.Tune2FS */
-    parent: GObject.Object
-    priv: Tune2FSPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4916,7 +4803,8 @@ class Tune2FS {
     static new(): Tune2FS
     static $gtype: GObject.Type
 }
-export interface Umount_ConstructProps extends GObject.Object_ConstructProps {
+interface Umount_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.Umount */
     force?: Tristate
     lazyunmount?: Tristate
 }
@@ -4924,11 +4812,8 @@ class Umount {
     /* Properties of Guestfs-1.0.Guestfs.Umount */
     force: Tristate
     lazyunmount: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.Umount */
-    parent: GObject.Object
-    priv: UmountPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4978,17 +4863,15 @@ class Umount {
     static new(): Umount
     static $gtype: GObject.Type
 }
-export interface UmountLocal_ConstructProps extends GObject.Object_ConstructProps {
+interface UmountLocal_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.UmountLocal */
     retry?: Tristate
 }
 class UmountLocal {
     /* Properties of Guestfs-1.0.Guestfs.UmountLocal */
     retry: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.UmountLocal */
-    parent: GObject.Object
-    priv: UmountLocalPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -5036,7 +4919,8 @@ class UmountLocal {
     static new(): UmountLocal
     static $gtype: GObject.Type
 }
-export interface XfsAdmin_ConstructProps extends GObject.Object_ConstructProps {
+interface XfsAdmin_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.XfsAdmin */
     extunwritten?: Tristate
     imgfile?: Tristate
     label?: string
@@ -5054,11 +4938,8 @@ class XfsAdmin {
     projid32bit: Tristate
     uuid: string
     v2log: Tristate
-    /* Fields of Guestfs-1.0.Guestfs.XfsAdmin */
-    parent: GObject.Object
-    priv: XfsAdminPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -5118,7 +4999,8 @@ class XfsAdmin {
     static new(): XfsAdmin
     static $gtype: GObject.Type
 }
-export interface XfsGrowfs_ConstructProps extends GObject.Object_ConstructProps {
+interface XfsGrowfs_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.XfsGrowfs */
     datasec?: Tristate
     datasize?: number
     logsec?: Tristate
@@ -5138,11 +5020,8 @@ class XfsGrowfs {
     rtextsize: number
     rtsec: Tristate
     rtsize: number
-    /* Fields of Guestfs-1.0.Guestfs.XfsGrowfs */
-    parent: GObject.Object
-    priv: XfsGrowfsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -5204,7 +5083,8 @@ class XfsGrowfs {
     static new(): XfsGrowfs
     static $gtype: GObject.Type
 }
-export interface XfsRepair_ConstructProps extends GObject.Object_ConstructProps {
+interface XfsRepair_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Guestfs-1.0.Guestfs.XfsRepair */
     agstride?: number
     bhashsize?: number
     forcegeometry?: Tristate
@@ -5228,11 +5108,8 @@ class XfsRepair {
     nomodify: Tristate
     noprefetch: Tristate
     rtdev: string
-    /* Fields of Guestfs-1.0.Guestfs.XfsRepair */
-    parent: GObject.Object
-    priv: XfsRepairPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -5300,7 +5177,7 @@ class XfsRepair {
 }
 abstract class AddDomainClass {
     /* Fields of Guestfs-1.0.Guestfs.AddDomainClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AddDomainPrivate {
@@ -5308,7 +5185,7 @@ class AddDomainPrivate {
 }
 abstract class AddDriveClass {
     /* Fields of Guestfs-1.0.Guestfs.AddDriveClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AddDrivePrivate {
@@ -5316,7 +5193,7 @@ class AddDrivePrivate {
 }
 abstract class AddDriveScratchClass {
     /* Fields of Guestfs-1.0.Guestfs.AddDriveScratchClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AddDriveScratchPrivate {
@@ -5324,7 +5201,7 @@ class AddDriveScratchPrivate {
 }
 abstract class AddLibvirtDomClass {
     /* Fields of Guestfs-1.0.Guestfs.AddLibvirtDomClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AddLibvirtDomPrivate {
@@ -5332,44 +5209,44 @@ class AddLibvirtDomPrivate {
 }
 class Application {
     /* Fields of Guestfs-1.0.Guestfs.Application */
-    app_name: string
-    app_display_name: string
-    app_epoch: number
-    app_version: string
-    app_release: string
-    app_install_path: string
-    app_trans_path: string
-    app_publisher: string
-    app_url: string
-    app_source_package: string
-    app_summary: string
-    app_description: string
+    readonly app_name: string
+    readonly app_display_name: string
+    readonly app_epoch: number
+    readonly app_version: string
+    readonly app_release: string
+    readonly app_install_path: string
+    readonly app_trans_path: string
+    readonly app_publisher: string
+    readonly app_url: string
+    readonly app_source_package: string
+    readonly app_summary: string
+    readonly app_description: string
     static name: string
 }
 class Application2 {
     /* Fields of Guestfs-1.0.Guestfs.Application2 */
-    app2_name: string
-    app2_display_name: string
-    app2_epoch: number
-    app2_version: string
-    app2_release: string
-    app2_arch: string
-    app2_install_path: string
-    app2_trans_path: string
-    app2_publisher: string
-    app2_url: string
-    app2_source_package: string
-    app2_summary: string
-    app2_description: string
-    app2_spare1: string
-    app2_spare2: string
-    app2_spare3: string
-    app2_spare4: string
+    readonly app2_name: string
+    readonly app2_display_name: string
+    readonly app2_epoch: number
+    readonly app2_version: string
+    readonly app2_release: string
+    readonly app2_arch: string
+    readonly app2_install_path: string
+    readonly app2_trans_path: string
+    readonly app2_publisher: string
+    readonly app2_url: string
+    readonly app2_source_package: string
+    readonly app2_summary: string
+    readonly app2_description: string
+    readonly app2_spare1: string
+    readonly app2_spare2: string
+    readonly app2_spare3: string
+    readonly app2_spare4: string
     static name: string
 }
 abstract class AugTransformClass {
     /* Fields of Guestfs-1.0.Guestfs.AugTransformClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AugTransformPrivate {
@@ -5377,16 +5254,16 @@ class AugTransformPrivate {
 }
 class BTRFSBalance {
     /* Fields of Guestfs-1.0.Guestfs.BTRFSBalance */
-    btrfsbalance_status: string
-    btrfsbalance_total: number
-    btrfsbalance_balanced: number
-    btrfsbalance_considered: number
-    btrfsbalance_left: number
+    readonly btrfsbalance_status: string
+    readonly btrfsbalance_total: number
+    readonly btrfsbalance_balanced: number
+    readonly btrfsbalance_considered: number
+    readonly btrfsbalance_left: number
     static name: string
 }
 abstract class BTRFSFilesystemDefragmentClass {
     /* Fields of Guestfs-1.0.Guestfs.BTRFSFilesystemDefragmentClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class BTRFSFilesystemDefragmentPrivate {
@@ -5394,7 +5271,7 @@ class BTRFSFilesystemDefragmentPrivate {
 }
 abstract class BTRFSFilesystemResizeClass {
     /* Fields of Guestfs-1.0.Guestfs.BTRFSFilesystemResizeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class BTRFSFilesystemResizePrivate {
@@ -5402,7 +5279,7 @@ class BTRFSFilesystemResizePrivate {
 }
 abstract class BTRFSImageClass {
     /* Fields of Guestfs-1.0.Guestfs.BTRFSImageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class BTRFSImagePrivate {
@@ -5410,40 +5287,40 @@ class BTRFSImagePrivate {
 }
 class BTRFSQgroup {
     /* Fields of Guestfs-1.0.Guestfs.BTRFSQgroup */
-    btrfsqgroup_id: string
-    btrfsqgroup_rfer: number
-    btrfsqgroup_excl: number
+    readonly btrfsqgroup_id: string
+    readonly btrfsqgroup_rfer: number
+    readonly btrfsqgroup_excl: number
     static name: string
 }
 class BTRFSScrub {
     /* Fields of Guestfs-1.0.Guestfs.BTRFSScrub */
-    btrfsscrub_data_extents_scrubbed: number
-    btrfsscrub_tree_extents_scrubbed: number
-    btrfsscrub_data_bytes_scrubbed: number
-    btrfsscrub_tree_bytes_scrubbed: number
-    btrfsscrub_read_errors: number
-    btrfsscrub_csum_errors: number
-    btrfsscrub_verify_errors: number
-    btrfsscrub_no_csum: number
-    btrfsscrub_csum_discards: number
-    btrfsscrub_super_errors: number
-    btrfsscrub_malloc_errors: number
-    btrfsscrub_uncorrectable_errors: number
-    btrfsscrub_unverified_errors: number
-    btrfsscrub_corrected_errors: number
-    btrfsscrub_last_physical: number
+    readonly btrfsscrub_data_extents_scrubbed: number
+    readonly btrfsscrub_tree_extents_scrubbed: number
+    readonly btrfsscrub_data_bytes_scrubbed: number
+    readonly btrfsscrub_tree_bytes_scrubbed: number
+    readonly btrfsscrub_read_errors: number
+    readonly btrfsscrub_csum_errors: number
+    readonly btrfsscrub_verify_errors: number
+    readonly btrfsscrub_no_csum: number
+    readonly btrfsscrub_csum_discards: number
+    readonly btrfsscrub_super_errors: number
+    readonly btrfsscrub_malloc_errors: number
+    readonly btrfsscrub_uncorrectable_errors: number
+    readonly btrfsscrub_unverified_errors: number
+    readonly btrfsscrub_corrected_errors: number
+    readonly btrfsscrub_last_physical: number
     static name: string
 }
 class BTRFSSubvolume {
     /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolume */
-    btrfssubvolume_id: number
-    btrfssubvolume_top_level_id: number
-    btrfssubvolume_path: string
+    readonly btrfssubvolume_id: number
+    readonly btrfssubvolume_top_level_id: number
+    readonly btrfssubvolume_path: string
     static name: string
 }
 abstract class BTRFSSubvolumeCreateClass {
     /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolumeCreateClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class BTRFSSubvolumeCreatePrivate {
@@ -5451,7 +5328,7 @@ class BTRFSSubvolumeCreatePrivate {
 }
 abstract class BTRFSSubvolumeSnapshotClass {
     /* Fields of Guestfs-1.0.Guestfs.BTRFSSubvolumeSnapshotClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class BTRFSSubvolumeSnapshotPrivate {
@@ -5459,7 +5336,7 @@ class BTRFSSubvolumeSnapshotPrivate {
 }
 abstract class BtrfsFsckClass {
     /* Fields of Guestfs-1.0.Guestfs.BtrfsFsckClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class BtrfsFsckPrivate {
@@ -5467,7 +5344,7 @@ class BtrfsFsckPrivate {
 }
 abstract class CompressDeviceOutClass {
     /* Fields of Guestfs-1.0.Guestfs.CompressDeviceOutClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CompressDeviceOutPrivate {
@@ -5475,7 +5352,7 @@ class CompressDeviceOutPrivate {
 }
 abstract class CompressOutClass {
     /* Fields of Guestfs-1.0.Guestfs.CompressOutClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CompressOutPrivate {
@@ -5483,7 +5360,7 @@ class CompressOutPrivate {
 }
 abstract class CopyAttributesClass {
     /* Fields of Guestfs-1.0.Guestfs.CopyAttributesClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CopyAttributesPrivate {
@@ -5491,7 +5368,7 @@ class CopyAttributesPrivate {
 }
 abstract class CopyDeviceToDeviceClass {
     /* Fields of Guestfs-1.0.Guestfs.CopyDeviceToDeviceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CopyDeviceToDevicePrivate {
@@ -5499,7 +5376,7 @@ class CopyDeviceToDevicePrivate {
 }
 abstract class CopyDeviceToFileClass {
     /* Fields of Guestfs-1.0.Guestfs.CopyDeviceToFileClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CopyDeviceToFilePrivate {
@@ -5507,7 +5384,7 @@ class CopyDeviceToFilePrivate {
 }
 abstract class CopyFileToDeviceClass {
     /* Fields of Guestfs-1.0.Guestfs.CopyFileToDeviceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CopyFileToDevicePrivate {
@@ -5515,7 +5392,7 @@ class CopyFileToDevicePrivate {
 }
 abstract class CopyFileToFileClass {
     /* Fields of Guestfs-1.0.Guestfs.CopyFileToFileClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CopyFileToFilePrivate {
@@ -5523,7 +5400,7 @@ class CopyFileToFilePrivate {
 }
 abstract class CpioOutClass {
     /* Fields of Guestfs-1.0.Guestfs.CpioOutClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CpioOutPrivate {
@@ -5531,14 +5408,14 @@ class CpioOutPrivate {
 }
 class Dirent {
     /* Fields of Guestfs-1.0.Guestfs.Dirent */
-    ino: number
-    ftyp: number
-    name: string
+    readonly ino: number
+    readonly ftyp: number
+    readonly name: string
     static name: string
 }
 abstract class DiskCreateClass {
     /* Fields of Guestfs-1.0.Guestfs.DiskCreateClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DiskCreatePrivate {
@@ -5546,7 +5423,7 @@ class DiskCreatePrivate {
 }
 abstract class DownloadBlocksClass {
     /* Fields of Guestfs-1.0.Guestfs.DownloadBlocksClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DownloadBlocksPrivate {
@@ -5554,7 +5431,7 @@ class DownloadBlocksPrivate {
 }
 abstract class E2fsckClass {
     /* Fields of Guestfs-1.0.Guestfs.E2fsckClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class E2fsckPrivate {
@@ -5562,7 +5439,7 @@ class E2fsckPrivate {
 }
 abstract class FstrimClass {
     /* Fields of Guestfs-1.0.Guestfs.FstrimClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class FstrimPrivate {
@@ -5570,7 +5447,7 @@ class FstrimPrivate {
 }
 abstract class GlobExpandClass {
     /* Fields of Guestfs-1.0.Guestfs.GlobExpandClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class GlobExpandPrivate {
@@ -5578,7 +5455,7 @@ class GlobExpandPrivate {
 }
 abstract class GrepClass {
     /* Fields of Guestfs-1.0.Guestfs.GrepClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class GrepPrivate {
@@ -5586,12 +5463,12 @@ class GrepPrivate {
 }
 class HivexNode {
     /* Fields of Guestfs-1.0.Guestfs.HivexNode */
-    hivex_node_h: number
+    readonly hivex_node_h: number
     static name: string
 }
 abstract class HivexOpenClass {
     /* Fields of Guestfs-1.0.Guestfs.HivexOpenClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class HivexOpenPrivate {
@@ -5599,41 +5476,41 @@ class HivexOpenPrivate {
 }
 class HivexValue {
     /* Fields of Guestfs-1.0.Guestfs.HivexValue */
-    hivex_value_h: number
+    readonly hivex_value_h: number
     static name: string
 }
 class INotifyEvent {
     /* Fields of Guestfs-1.0.Guestfs.INotifyEvent */
-    in_wd: number
-    in_mask: number
-    in_cookie: number
-    in_name: string
+    readonly in_wd: number
+    readonly in_mask: number
+    readonly in_cookie: number
+    readonly in_name: string
     static name: string
 }
 class ISOInfo {
     /* Fields of Guestfs-1.0.Guestfs.ISOInfo */
-    iso_system_id: string
-    iso_volume_id: string
-    iso_volume_space_size: number
-    iso_volume_set_size: number
-    iso_volume_sequence_number: number
-    iso_logical_block_size: number
-    iso_volume_set_id: string
-    iso_publisher_id: string
-    iso_data_preparer_id: string
-    iso_application_id: string
-    iso_copyright_file_id: string
-    iso_abstract_file_id: string
-    iso_bibliographic_file_id: string
-    iso_volume_creation_t: number
-    iso_volume_modification_t: number
-    iso_volume_expiration_t: number
-    iso_volume_effective_t: number
+    readonly iso_system_id: string
+    readonly iso_volume_id: string
+    readonly iso_volume_space_size: number
+    readonly iso_volume_set_size: number
+    readonly iso_volume_sequence_number: number
+    readonly iso_logical_block_size: number
+    readonly iso_volume_set_id: string
+    readonly iso_publisher_id: string
+    readonly iso_data_preparer_id: string
+    readonly iso_application_id: string
+    readonly iso_copyright_file_id: string
+    readonly iso_abstract_file_id: string
+    readonly iso_bibliographic_file_id: string
+    readonly iso_volume_creation_t: number
+    readonly iso_volume_modification_t: number
+    readonly iso_volume_expiration_t: number
+    readonly iso_volume_effective_t: number
     static name: string
 }
 abstract class InspectGetIconClass {
     /* Fields of Guestfs-1.0.Guestfs.InspectGetIconClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class InspectGetIconPrivate {
@@ -5641,13 +5518,13 @@ class InspectGetIconPrivate {
 }
 class IntBool {
     /* Fields of Guestfs-1.0.Guestfs.IntBool */
-    i: number
-    b: number
+    readonly i: number
+    readonly b: number
     static name: string
 }
 abstract class InternalTest63OptargsClass {
     /* Fields of Guestfs-1.0.Guestfs.InternalTest63OptargsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class InternalTest63OptargsPrivate {
@@ -5655,12 +5532,12 @@ class InternalTest63OptargsPrivate {
 }
 abstract class InternalTestClass {
     /* Fields of Guestfs-1.0.Guestfs.InternalTestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class InternalTestOnlyOptargsClass {
     /* Fields of Guestfs-1.0.Guestfs.InternalTestOnlyOptargsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class InternalTestOnlyOptargsPrivate {
@@ -5671,7 +5548,7 @@ class InternalTestPrivate {
 }
 abstract class IsBlockdevClass {
     /* Fields of Guestfs-1.0.Guestfs.IsBlockdevClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class IsBlockdevPrivate {
@@ -5679,7 +5556,7 @@ class IsBlockdevPrivate {
 }
 abstract class IsChardevClass {
     /* Fields of Guestfs-1.0.Guestfs.IsChardevClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class IsChardevPrivate {
@@ -5687,7 +5564,7 @@ class IsChardevPrivate {
 }
 abstract class IsDirClass {
     /* Fields of Guestfs-1.0.Guestfs.IsDirClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class IsDirPrivate {
@@ -5695,7 +5572,7 @@ class IsDirPrivate {
 }
 abstract class IsFifoClass {
     /* Fields of Guestfs-1.0.Guestfs.IsFifoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class IsFifoPrivate {
@@ -5703,7 +5580,7 @@ class IsFifoPrivate {
 }
 abstract class IsFileClass {
     /* Fields of Guestfs-1.0.Guestfs.IsFileClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class IsFilePrivate {
@@ -5711,7 +5588,7 @@ class IsFilePrivate {
 }
 abstract class IsSocketClass {
     /* Fields of Guestfs-1.0.Guestfs.IsSocketClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class IsSocketPrivate {
@@ -5719,27 +5596,27 @@ class IsSocketPrivate {
 }
 class LV {
     /* Fields of Guestfs-1.0.Guestfs.LV */
-    lv_name: string
-    lv_uuid: number[]
-    lv_attr: string
-    lv_major: number
-    lv_minor: number
-    lv_kernel_major: number
-    lv_kernel_minor: number
-    lv_size: number
-    seg_count: number
-    origin: string
-    snap_percent: number
-    copy_percent: number
-    move_pv: string
-    lv_tags: string
-    mirror_log: string
-    modules: string
+    readonly lv_name: string
+    readonly lv_uuid: number[]
+    readonly lv_attr: string
+    readonly lv_major: number
+    readonly lv_minor: number
+    readonly lv_kernel_major: number
+    readonly lv_kernel_minor: number
+    readonly lv_size: number
+    readonly seg_count: number
+    readonly origin: string
+    readonly snap_percent: number
+    readonly copy_percent: number
+    readonly move_pv: string
+    readonly lv_tags: string
+    readonly mirror_log: string
+    readonly modules: string
     static name: string
 }
 abstract class MDCreateClass {
     /* Fields of Guestfs-1.0.Guestfs.MDCreateClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MDCreatePrivate {
@@ -5747,14 +5624,14 @@ class MDCreatePrivate {
 }
 class MDStat {
     /* Fields of Guestfs-1.0.Guestfs.MDStat */
-    mdstat_device: string
-    mdstat_index: number
-    mdstat_flags: string
+    readonly mdstat_device: string
+    readonly mdstat_index: number
+    readonly mdstat_flags: string
     static name: string
 }
 abstract class Mke2fsClass {
     /* Fields of Guestfs-1.0.Guestfs.Mke2fsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Mke2fsPrivate {
@@ -5762,7 +5639,7 @@ class Mke2fsPrivate {
 }
 abstract class MkfsBtrfsClass {
     /* Fields of Guestfs-1.0.Guestfs.MkfsBtrfsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MkfsBtrfsPrivate {
@@ -5770,7 +5647,7 @@ class MkfsBtrfsPrivate {
 }
 abstract class MkfsClass {
     /* Fields of Guestfs-1.0.Guestfs.MkfsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MkfsPrivate {
@@ -5778,7 +5655,7 @@ class MkfsPrivate {
 }
 abstract class MksquashfsClass {
     /* Fields of Guestfs-1.0.Guestfs.MksquashfsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MksquashfsPrivate {
@@ -5786,7 +5663,7 @@ class MksquashfsPrivate {
 }
 abstract class MkswapClass {
     /* Fields of Guestfs-1.0.Guestfs.MkswapClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MkswapPrivate {
@@ -5794,7 +5671,7 @@ class MkswapPrivate {
 }
 abstract class MktempClass {
     /* Fields of Guestfs-1.0.Guestfs.MktempClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MktempPrivate {
@@ -5802,7 +5679,7 @@ class MktempPrivate {
 }
 abstract class Mount9PClass {
     /* Fields of Guestfs-1.0.Guestfs.Mount9PClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Mount9PPrivate {
@@ -5810,7 +5687,7 @@ class Mount9PPrivate {
 }
 abstract class MountLocalClass {
     /* Fields of Guestfs-1.0.Guestfs.MountLocalClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MountLocalPrivate {
@@ -5818,7 +5695,7 @@ class MountLocalPrivate {
 }
 abstract class NTFSResizeOptsClass {
     /* Fields of Guestfs-1.0.Guestfs.NTFSResizeOptsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class NTFSResizeOptsPrivate {
@@ -5826,7 +5703,7 @@ class NTFSResizeOptsPrivate {
 }
 abstract class NtfscloneOutClass {
     /* Fields of Guestfs-1.0.Guestfs.NtfscloneOutClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class NtfscloneOutPrivate {
@@ -5834,7 +5711,7 @@ class NtfscloneOutPrivate {
 }
 abstract class NtfsfixClass {
     /* Fields of Guestfs-1.0.Guestfs.NtfsfixClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class NtfsfixPrivate {
@@ -5842,33 +5719,33 @@ class NtfsfixPrivate {
 }
 class PV {
     /* Fields of Guestfs-1.0.Guestfs.PV */
-    pv_name: string
-    pv_uuid: number[]
-    pv_fmt: string
-    pv_size: number
-    dev_size: number
-    pv_free: number
-    pv_used: number
-    pv_attr: string
-    pv_pe_count: number
-    pv_pe_alloc_count: number
-    pv_tags: string
-    pe_start: number
-    pv_mda_count: number
-    pv_mda_free: number
+    readonly pv_name: string
+    readonly pv_uuid: number[]
+    readonly pv_fmt: string
+    readonly pv_size: number
+    readonly dev_size: number
+    readonly pv_free: number
+    readonly pv_used: number
+    readonly pv_attr: string
+    readonly pv_pe_count: number
+    readonly pv_pe_alloc_count: number
+    readonly pv_tags: string
+    readonly pe_start: number
+    readonly pv_mda_count: number
+    readonly pv_mda_free: number
     static name: string
 }
 class Partition {
     /* Fields of Guestfs-1.0.Guestfs.Partition */
-    part_num: number
-    part_start: number
-    part_end: number
-    part_size: number
+    readonly part_num: number
+    readonly part_start: number
+    readonly part_end: number
+    readonly part_size: number
     static name: string
 }
 abstract class RemountClass {
     /* Fields of Guestfs-1.0.Guestfs.RemountClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class RemountPrivate {
@@ -5876,12 +5753,12 @@ class RemountPrivate {
 }
 abstract class RsyncClass {
     /* Fields of Guestfs-1.0.Guestfs.RsyncClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RsyncInClass {
     /* Fields of Guestfs-1.0.Guestfs.RsyncInClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class RsyncInPrivate {
@@ -5889,7 +5766,7 @@ class RsyncInPrivate {
 }
 abstract class RsyncOutClass {
     /* Fields of Guestfs-1.0.Guestfs.RsyncOutClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class RsyncOutPrivate {
@@ -5900,7 +5777,7 @@ class RsyncPrivate {
 }
 abstract class SelinuxRelabelClass {
     /* Fields of Guestfs-1.0.Guestfs.SelinuxRelabelClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SelinuxRelabelPrivate {
@@ -5908,16 +5785,16 @@ class SelinuxRelabelPrivate {
 }
 abstract class SessionClass {
     /* Fields of Guestfs-1.0.Guestfs.SessionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SessionEventParams {
     /* Fields of Guestfs-1.0.Guestfs.SessionEventParams */
-    event: SessionEvent
-    flags: number
-    buf: Uint8Array[]
-    array: number[]
-    array_len: number
+    readonly event: SessionEvent
+    readonly flags: number
+    readonly buf: Uint8Array
+    readonly array: number[]
+    readonly array_len: number
     static name: string
 }
 class SessionPrivate {
@@ -5925,7 +5802,7 @@ class SessionPrivate {
 }
 abstract class SetE2attrsClass {
     /* Fields of Guestfs-1.0.Guestfs.SetE2attrsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SetE2attrsPrivate {
@@ -5933,65 +5810,65 @@ class SetE2attrsPrivate {
 }
 class Stat {
     /* Fields of Guestfs-1.0.Guestfs.Stat */
-    dev: number
-    ino: number
-    mode: number
-    nlink: number
-    uid: number
-    gid: number
-    rdev: number
-    size: number
-    blksize: number
-    blocks: number
-    atime: number
-    mtime: number
-    ctime: number
+    readonly dev: number
+    readonly ino: number
+    readonly mode: number
+    readonly nlink: number
+    readonly uid: number
+    readonly gid: number
+    readonly rdev: number
+    readonly size: number
+    readonly blksize: number
+    readonly blocks: number
+    readonly atime: number
+    readonly mtime: number
+    readonly ctime: number
     static name: string
 }
 class StatNS {
     /* Fields of Guestfs-1.0.Guestfs.StatNS */
-    st_dev: number
-    st_ino: number
-    st_mode: number
-    st_nlink: number
-    st_uid: number
-    st_gid: number
-    st_rdev: number
-    st_size: number
-    st_blksize: number
-    st_blocks: number
-    st_atime_sec: number
-    st_atime_nsec: number
-    st_mtime_sec: number
-    st_mtime_nsec: number
-    st_ctime_sec: number
-    st_ctime_nsec: number
-    st_spare1: number
-    st_spare2: number
-    st_spare3: number
-    st_spare4: number
-    st_spare5: number
-    st_spare6: number
+    readonly st_dev: number
+    readonly st_ino: number
+    readonly st_mode: number
+    readonly st_nlink: number
+    readonly st_uid: number
+    readonly st_gid: number
+    readonly st_rdev: number
+    readonly st_size: number
+    readonly st_blksize: number
+    readonly st_blocks: number
+    readonly st_atime_sec: number
+    readonly st_atime_nsec: number
+    readonly st_mtime_sec: number
+    readonly st_mtime_nsec: number
+    readonly st_ctime_sec: number
+    readonly st_ctime_nsec: number
+    readonly st_spare1: number
+    readonly st_spare2: number
+    readonly st_spare3: number
+    readonly st_spare4: number
+    readonly st_spare5: number
+    readonly st_spare6: number
     static name: string
 }
 class StatVFS {
     /* Fields of Guestfs-1.0.Guestfs.StatVFS */
-    bsize: number
-    frsize: number
-    blocks: number
-    bfree: number
-    bavail: number
-    files: number
-    ffree: number
-    favail: number
-    fsid: number
-    flag: number
-    namemax: number
+    readonly bsize: number
+    readonly frsize: number
+    readonly blocks: number
+    readonly bfree: number
+    readonly bavail: number
+    readonly files: number
+    readonly ffree: number
+    readonly favail: number
+    readonly fsid: number
+    readonly flag: number
+    readonly namemax: number
     static name: string
 }
 abstract class SyslinuxClass {
     /* Fields of Guestfs-1.0.Guestfs.SyslinuxClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SyslinuxPrivate {
@@ -5999,27 +5876,27 @@ class SyslinuxPrivate {
 }
 class TSKDirent {
     /* Fields of Guestfs-1.0.Guestfs.TSKDirent */
-    tsk_inode: number
-    tsk_type: number
-    tsk_size: number
-    tsk_name: string
-    tsk_flags: number
-    tsk_atime_sec: number
-    tsk_atime_nsec: number
-    tsk_mtime_sec: number
-    tsk_mtime_nsec: number
-    tsk_ctime_sec: number
-    tsk_ctime_nsec: number
-    tsk_crtime_sec: number
-    tsk_crtime_nsec: number
-    tsk_nlink: number
-    tsk_link: string
-    tsk_spare1: number
+    readonly tsk_inode: number
+    readonly tsk_type: number
+    readonly tsk_size: number
+    readonly tsk_name: string
+    readonly tsk_flags: number
+    readonly tsk_atime_sec: number
+    readonly tsk_atime_nsec: number
+    readonly tsk_mtime_sec: number
+    readonly tsk_mtime_nsec: number
+    readonly tsk_ctime_sec: number
+    readonly tsk_ctime_nsec: number
+    readonly tsk_crtime_sec: number
+    readonly tsk_crtime_nsec: number
+    readonly tsk_nlink: number
+    readonly tsk_link: string
+    readonly tsk_spare1: number
     static name: string
 }
 abstract class TarInClass {
     /* Fields of Guestfs-1.0.Guestfs.TarInClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class TarInPrivate {
@@ -6027,7 +5904,7 @@ class TarInPrivate {
 }
 abstract class TarOutClass {
     /* Fields of Guestfs-1.0.Guestfs.TarOutClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class TarOutPrivate {
@@ -6035,7 +5912,7 @@ class TarOutPrivate {
 }
 abstract class Tune2FSClass {
     /* Fields of Guestfs-1.0.Guestfs.Tune2FSClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Tune2FSPrivate {
@@ -6043,20 +5920,20 @@ class Tune2FSPrivate {
 }
 class UTSName {
     /* Fields of Guestfs-1.0.Guestfs.UTSName */
-    uts_sysname: string
-    uts_release: string
-    uts_version: string
-    uts_machine: string
+    readonly uts_sysname: string
+    readonly uts_release: string
+    readonly uts_version: string
+    readonly uts_machine: string
     static name: string
 }
 abstract class UmountClass {
     /* Fields of Guestfs-1.0.Guestfs.UmountClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class UmountLocalClass {
     /* Fields of Guestfs-1.0.Guestfs.UmountLocalClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class UmountLocalPrivate {
@@ -6067,73 +5944,73 @@ class UmountPrivate {
 }
 class VG {
     /* Fields of Guestfs-1.0.Guestfs.VG */
-    vg_name: string
-    vg_uuid: number[]
-    vg_fmt: string
-    vg_attr: string
-    vg_size: number
-    vg_free: number
-    vg_sysid: string
-    vg_extent_size: number
-    vg_extent_count: number
-    vg_free_count: number
-    max_lv: number
-    max_pv: number
-    pv_count: number
-    lv_count: number
-    snap_count: number
-    vg_seqno: number
-    vg_tags: string
-    vg_mda_count: number
-    vg_mda_free: number
+    readonly vg_name: string
+    readonly vg_uuid: number[]
+    readonly vg_fmt: string
+    readonly vg_attr: string
+    readonly vg_size: number
+    readonly vg_free: number
+    readonly vg_sysid: string
+    readonly vg_extent_size: number
+    readonly vg_extent_count: number
+    readonly vg_free_count: number
+    readonly max_lv: number
+    readonly max_pv: number
+    readonly pv_count: number
+    readonly lv_count: number
+    readonly snap_count: number
+    readonly vg_seqno: number
+    readonly vg_tags: string
+    readonly vg_mda_count: number
+    readonly vg_mda_free: number
     static name: string
 }
 class Version {
     /* Fields of Guestfs-1.0.Guestfs.Version */
-    major: number
-    minor: number
-    release: number
-    extra: string
+    readonly major: number
+    readonly minor: number
+    readonly release: number
+    readonly extra: string
     static name: string
 }
 class XAttr {
     /* Fields of Guestfs-1.0.Guestfs.XAttr */
-    attrname: string
-    attrval: Uint8Array[]
+    readonly attrname: string
+    readonly attrval: Uint8Array
     static name: string
 }
 class XFSInfo {
     /* Fields of Guestfs-1.0.Guestfs.XFSInfo */
-    xfs_mntpoint: string
-    xfs_inodesize: number
-    xfs_agcount: number
-    xfs_agsize: number
-    xfs_sectsize: number
-    xfs_attr: number
-    xfs_blocksize: number
-    xfs_datablocks: number
-    xfs_imaxpct: number
-    xfs_sunit: number
-    xfs_swidth: number
-    xfs_dirversion: number
-    xfs_dirblocksize: number
-    xfs_cimode: number
-    xfs_logname: string
-    xfs_logblocksize: number
-    xfs_logblocks: number
-    xfs_logversion: number
-    xfs_logsectsize: number
-    xfs_logsunit: number
-    xfs_lazycount: number
-    xfs_rtname: string
-    xfs_rtextsize: number
-    xfs_rtblocks: number
-    xfs_rtextents: number
+    readonly xfs_mntpoint: string
+    readonly xfs_inodesize: number
+    readonly xfs_agcount: number
+    readonly xfs_agsize: number
+    readonly xfs_sectsize: number
+    readonly xfs_attr: number
+    readonly xfs_blocksize: number
+    readonly xfs_datablocks: number
+    readonly xfs_imaxpct: number
+    readonly xfs_sunit: number
+    readonly xfs_swidth: number
+    readonly xfs_dirversion: number
+    readonly xfs_dirblocksize: number
+    readonly xfs_cimode: number
+    readonly xfs_logname: string
+    readonly xfs_logblocksize: number
+    readonly xfs_logblocks: number
+    readonly xfs_logversion: number
+    readonly xfs_logsectsize: number
+    readonly xfs_logsunit: number
+    readonly xfs_lazycount: number
+    readonly xfs_rtname: string
+    readonly xfs_rtextsize: number
+    readonly xfs_rtblocks: number
+    readonly xfs_rtextents: number
     static name: string
 }
 abstract class XfsAdminClass {
     /* Fields of Guestfs-1.0.Guestfs.XfsAdminClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class XfsAdminPrivate {
@@ -6141,7 +6018,7 @@ class XfsAdminPrivate {
 }
 abstract class XfsGrowfsClass {
     /* Fields of Guestfs-1.0.Guestfs.XfsGrowfsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class XfsGrowfsPrivate {
@@ -6149,7 +6026,7 @@ class XfsGrowfsPrivate {
 }
 abstract class XfsRepairClass {
     /* Fields of Guestfs-1.0.Guestfs.XfsRepairClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class XfsRepairPrivate {
@@ -6157,8 +6034,8 @@ class XfsRepairPrivate {
 }
 class YaraDetection {
     /* Fields of Guestfs-1.0.Guestfs.YaraDetection */
-    yara_name: string
-    yara_rule: string
+    readonly yara_name: string
+    readonly yara_rule: string
     static name: string
 }
 }

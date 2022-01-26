@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GVnc-1.0
  */
@@ -94,14 +100,14 @@ enum ConnectionResizeStatus {
     INVALID_LAOUT,
     FORWARDED,
 }
-export const LEDSTATE_CAPS_LOCK: number
-export const LEDSTATE_NUM_LOCK: number
-export const LEDSTATE_SCROLL_LOCK: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const PADDING: number
-export const PADDING_LARGE: number
+const LEDSTATE_CAPS_LOCK: number
+const LEDSTATE_NUM_LOCK: number
+const LEDSTATE_SCROLL_LOCK: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const PADDING: number
+const PADDING_LARGE: number
 function util_check_version(major: number, minor: number, micro: number): boolean
 function util_get_debug(): boolean
 function util_get_version(): number
@@ -114,6 +120,10 @@ class Audio {
     playback_stop(): void
     /* Virtual methods of GVnc-1.0.GVnc.Audio */
     vfunc_playback_data(sample: AudioSample): boolean
+    /* Function overloads */
+    vfunc_playback_data(sample: AudioSample): boolean
+    vfunc_playback_start(format: AudioFormat): boolean
+    /* Function overloads */
     vfunc_playback_start(format: AudioFormat): boolean
     vfunc_playback_stop(): boolean
     static name: string
@@ -122,21 +132,21 @@ class Framebuffer {
     /* Methods of GVnc-1.0.GVnc.Framebuffer */
     blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
-    fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
-    get_buffer(): Uint8Array[]
+    fill(src: Uint8Array, x: number, y: number, width: number, height: number): void
+    get_buffer(): Uint8Array
     get_height(): number
     get_local_format(): PixelFormat
     get_remote_format(): PixelFormat
     get_rowstride(): number
     get_width(): number
     perfect_format_match(): boolean
-    rgb24_blt(src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number): void
+    rgb24_blt(src: Uint8Array, rowstride: number, x: number, y: number, width: number, height: number): void
     set_color_map(map: ColorMap): void
-    set_pixel_at(src: Uint8Array[], x: number, y: number): void
+    set_pixel_at(src: Uint8Array, x: number, y: number): void
     /* Virtual methods of GVnc-1.0.GVnc.Framebuffer */
     vfunc_blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     vfunc_copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
-    vfunc_fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
+    vfunc_fill(src: Uint8Array, x: number, y: number, width: number, height: number): void
     vfunc_get_buffer(): number
     vfunc_get_height(): number
     vfunc_get_local_format(): PixelFormat
@@ -144,19 +154,16 @@ class Framebuffer {
     vfunc_get_rowstride(): number
     vfunc_get_width(): number
     vfunc_perfect_format_match(): boolean
-    vfunc_rgb24_blt(src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number): void
+    vfunc_rgb24_blt(src: Uint8Array, rowstride: number, x: number, y: number, width: number, height: number): void
     vfunc_set_color_map(map: ColorMap): void
-    vfunc_set_pixel_at(src: Uint8Array[], x: number, y: number): void
+    vfunc_set_pixel_at(src: Uint8Array, x: number, y: number): void
     static name: string
 }
-export interface BaseAudio_ConstructProps extends GObject.Object_ConstructProps {
+interface BaseAudio_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BaseAudio {
-    /* Fields of GVnc-1.0.GVnc.BaseAudio */
-    parent: GObject.Object
-    priv: BaseAudioPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -220,7 +227,8 @@ class BaseAudio {
     static new(): BaseAudio
     static $gtype: GObject.Type
 }
-export interface BaseFramebuffer_ConstructProps extends GObject.Object_ConstructProps {
+interface BaseFramebuffer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GVnc-1.0.GVnc.BaseFramebuffer */
     buffer?: object
     color_map?: ColorMap
     height?: number
@@ -232,11 +240,8 @@ export interface BaseFramebuffer_ConstructProps extends GObject.Object_Construct
 class BaseFramebuffer {
     /* Properties of GVnc-1.0.GVnc.BaseFramebuffer */
     color_map: ColorMap
-    /* Fields of GVnc-1.0.GVnc.BaseFramebuffer */
-    parent: GObject.Object
-    priv: BaseFramebufferPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -262,21 +267,21 @@ class BaseFramebuffer {
     /* Methods of GVnc-1.0.GVnc.Framebuffer */
     blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
-    fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
-    get_buffer(): Uint8Array[]
+    fill(src: Uint8Array, x: number, y: number, width: number, height: number): void
+    get_buffer(): Uint8Array
     get_height(): number
     get_local_format(): PixelFormat
     get_remote_format(): PixelFormat
     get_rowstride(): number
     get_width(): number
     perfect_format_match(): boolean
-    rgb24_blt(src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number): void
+    rgb24_blt(src: Uint8Array, rowstride: number, x: number, y: number, width: number, height: number): void
     set_color_map(map: ColorMap): void
-    set_pixel_at(src: Uint8Array[], x: number, y: number): void
+    set_pixel_at(src: Uint8Array, x: number, y: number): void
     /* Virtual methods of GVnc-1.0.GVnc.BaseFramebuffer */
     vfunc_blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     vfunc_copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
-    vfunc_fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
+    vfunc_fill(src: Uint8Array, x: number, y: number, width: number, height: number): void
     vfunc_get_buffer(): number
     vfunc_get_height(): number
     vfunc_get_local_format(): PixelFormat
@@ -284,9 +289,9 @@ class BaseFramebuffer {
     vfunc_get_rowstride(): number
     vfunc_get_width(): number
     vfunc_perfect_format_match(): boolean
-    vfunc_rgb24_blt(src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number): void
+    vfunc_rgb24_blt(src: Uint8Array, rowstride: number, x: number, y: number, width: number, height: number): void
     vfunc_set_color_map(map: ColorMap): void
-    vfunc_set_pixel_at(src: Uint8Array[], x: number, y: number): void
+    vfunc_set_pixel_at(src: Uint8Array, x: number, y: number): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -309,20 +314,18 @@ class BaseFramebuffer {
     constructor (config?: BaseFramebuffer_ConstructProps)
     _init (config?: BaseFramebuffer_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(buffer: Uint8Array[], width: number, height: number, rowstride: number, localFormat: PixelFormat, remoteFormat: PixelFormat): BaseFramebuffer
+    static new(buffer: Uint8Array, width: number, height: number, rowstride: number, localFormat: PixelFormat, remoteFormat: PixelFormat): BaseFramebuffer
     static $gtype: GObject.Type
 }
-export interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GVnc-1.0.GVnc.Connection */
     framebuffer?: Framebuffer
 }
 class Connection {
     /* Properties of GVnc-1.0.GVnc.Connection */
     framebuffer: Framebuffer
-    /* Fields of GVnc-1.0.GVnc.Connection */
-    parent: GObject.Object
-    priv: ConnectionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GVnc-1.0.GVnc.Connection */
     audio_disable(): boolean
     audio_enable(): boolean
@@ -489,7 +492,8 @@ class Connection {
     static new(): Connection
     static $gtype: GObject.Type
 }
-export interface Cursor_ConstructProps extends GObject.Object_ConstructProps {
+interface Cursor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GVnc-1.0.GVnc.Cursor */
     data?: object
     height?: number
     hotx?: number
@@ -503,13 +507,10 @@ class Cursor {
     hotx: number
     hoty: number
     width: number
-    /* Fields of GVnc-1.0.GVnc.Cursor */
-    parent: GObject.Object
-    priv: CursorPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GVnc-1.0.GVnc.Cursor */
-    get_data(): Uint8Array[]
+    get_data(): Uint8Array
     get_height(): number
     get_hotx(): number
     get_hoty(): number
@@ -566,14 +567,14 @@ class Cursor {
     constructor (config?: Cursor_ConstructProps)
     _init (config?: Cursor_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(data: Uint8Array[], hotx: number, hoty: number, width: number, height: number): Cursor
+    static new(data: Uint8Array, hotx: number, hoty: number, width: number, height: number): Cursor
     static $gtype: GObject.Type
 }
 class AudioFormat {
     /* Fields of GVnc-1.0.GVnc.AudioFormat */
-    format: number
-    nchannels: number
-    frequency: number
+    readonly format: number
+    readonly nchannels: number
+    readonly frequency: number
     /* Methods of GVnc-1.0.GVnc.AudioFormat */
     copy(): AudioFormat
     free(): void
@@ -585,17 +586,17 @@ class AudioFormat {
 }
 abstract class AudioInterface {
     /* Fields of GVnc-1.0.GVnc.AudioInterface */
-    parent: GObject.TypeInterface
-    playback_start: (audio: Audio, format: AudioFormat) => boolean
-    playback_stop: (audio: Audio) => boolean
-    playback_data: (audio: Audio, sample: AudioSample) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly playback_start: (audio: Audio, format: AudioFormat) => boolean
+    readonly playback_stop: (audio: Audio) => boolean
+    readonly playback_data: (audio: Audio, sample: AudioSample) => boolean
     static name: string
 }
 class AudioSample {
     /* Fields of GVnc-1.0.GVnc.AudioSample */
-    data: number
-    length: number
-    capacity: number
+    readonly data: number
+    readonly length: number
+    readonly capacity: number
     /* Methods of GVnc-1.0.GVnc.AudioSample */
     copy(): AudioSample
     free(): void
@@ -607,10 +608,10 @@ class AudioSample {
 }
 abstract class BaseAudioClass {
     /* Fields of GVnc-1.0.GVnc.BaseAudioClass */
-    parent_class: GObject.ObjectClass
-    playback_start: (audio: BaseAudio, format: AudioFormat) => boolean
-    playback_stop: (audio: BaseAudio) => boolean
-    playback_data: (audio: BaseAudio, sample: AudioSample) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly playback_start: (audio: BaseAudio, format: AudioFormat) => boolean
+    readonly playback_stop: (audio: BaseAudio) => boolean
+    readonly playback_data: (audio: BaseAudio, sample: AudioSample) => boolean
     static name: string
 }
 class BaseAudioPrivate {
@@ -618,8 +619,8 @@ class BaseAudioPrivate {
 }
 abstract class BaseFramebufferClass {
     /* Fields of GVnc-1.0.GVnc.BaseFramebufferClass */
-    parent_class: GObject.ObjectClass
-    _vnc_reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly _vnc_reserved: object[]
     static name: string
 }
 class BaseFramebufferPrivate {
@@ -627,9 +628,9 @@ class BaseFramebufferPrivate {
 }
 class ColorMap {
     /* Fields of GVnc-1.0.GVnc.ColorMap */
-    offset: number
-    size: number
-    colors: ColorMapEntry
+    readonly offset: number
+    readonly size: number
+    readonly colors: ColorMapEntry
     /* Methods of GVnc-1.0.GVnc.ColorMap */
     copy(): ColorMap
     free(): void
@@ -643,35 +644,35 @@ class ColorMap {
 }
 class ColorMapEntry {
     /* Fields of GVnc-1.0.GVnc.ColorMapEntry */
-    red: number
-    green: number
-    blue: number
+    readonly red: number
+    readonly green: number
+    readonly blue: number
     static name: string
 }
 abstract class ConnectionClass {
     /* Fields of GVnc-1.0.GVnc.ConnectionClass */
-    parent_class: GObject.ObjectClass
-    vnc_cursor_changed: (conn: Connection, cursor: Cursor) => void
-    vnc_pointer_mode_changed: (conn: Connection, absPointer: boolean) => void
-    vnc_bell: (conn: Connection) => void
-    vnc_server_cut_text: (conn: Connection, text: GLib.String) => void
-    vnc_framebuffer_update: (conn: Connection, x: number, y: number, width: number, height: number) => void
-    vnc_desktop_resize: (conn: Connection, width: number, height: number) => void
-    vnc_pixel_format_changed: (conn: Connection, format: PixelFormat) => void
-    vnc_auth_failure: (conn: Connection, reason: string) => void
-    vnc_auth_unsupported: (conn: Connection, authType: number) => void
-    vnc_auth_credential: (conn: Connection, creds: GObject.ValueArray) => void
-    vnc_auth_choose_type: (conn: Connection, types: GObject.ValueArray) => void
-    vnc_auth_choose_subtype: (conn: Connection, type: number, subtypes: GObject.ValueArray) => void
-    vnc_connected: (conn: Connection) => void
-    vnc_initialized: (conn: Connection) => void
-    vnc_disconnected: (conn: Connection) => void
-    vnc_led_state: (conn: Connection) => void
-    vnc_error: (conn: Connection, message: string) => void
-    vnc_power_control_initialized: (conn: Connection) => void
-    vnc_power_control_failed: (conn: Connection) => void
-    vnc_desktop_rename: (conn: Connection, name: string) => void
-    _vnc_reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly vnc_cursor_changed: (conn: Connection, cursor: Cursor) => void
+    readonly vnc_pointer_mode_changed: (conn: Connection, absPointer: boolean) => void
+    readonly vnc_bell: (conn: Connection) => void
+    readonly vnc_server_cut_text: (conn: Connection, text: GLib.String) => void
+    readonly vnc_framebuffer_update: (conn: Connection, x: number, y: number, width: number, height: number) => void
+    readonly vnc_desktop_resize: (conn: Connection, width: number, height: number) => void
+    readonly vnc_pixel_format_changed: (conn: Connection, format: PixelFormat) => void
+    readonly vnc_auth_failure: (conn: Connection, reason: string) => void
+    readonly vnc_auth_unsupported: (conn: Connection, authType: number) => void
+    readonly vnc_auth_credential: (conn: Connection, creds: GObject.ValueArray) => void
+    readonly vnc_auth_choose_type: (conn: Connection, types: GObject.ValueArray) => void
+    readonly vnc_auth_choose_subtype: (conn: Connection, type: number, subtypes: GObject.ValueArray) => void
+    readonly vnc_connected: (conn: Connection) => void
+    readonly vnc_initialized: (conn: Connection) => void
+    readonly vnc_disconnected: (conn: Connection) => void
+    readonly vnc_led_state: (conn: Connection) => void
+    readonly vnc_error: (conn: Connection, message: string) => void
+    readonly vnc_power_control_initialized: (conn: Connection) => void
+    readonly vnc_power_control_failed: (conn: Connection) => void
+    readonly vnc_desktop_rename: (conn: Connection, name: string) => void
+    readonly _vnc_reserved: object[]
     static name: string
 }
 class ConnectionPrivate {
@@ -679,8 +680,8 @@ class ConnectionPrivate {
 }
 abstract class CursorClass {
     /* Fields of GVnc-1.0.GVnc.CursorClass */
-    parent_class: GObject.ObjectClass
-    _vnc_reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly _vnc_reserved: object[]
     static name: string
 }
 class CursorPrivate {
@@ -688,34 +689,34 @@ class CursorPrivate {
 }
 abstract class FramebufferInterface {
     /* Fields of GVnc-1.0.GVnc.FramebufferInterface */
-    parent: GObject.TypeInterface
-    get_width: (fb: Framebuffer) => number
-    get_height: (fb: Framebuffer) => number
-    get_rowstride: (fb: Framebuffer) => number
-    get_buffer: (fb: Framebuffer) => number
-    get_local_format: (fb: Framebuffer) => PixelFormat
-    get_remote_format: (fb: Framebuffer) => PixelFormat
-    perfect_format_match: (fb: Framebuffer) => boolean
-    set_pixel_at: (fb: Framebuffer, src: Uint8Array[], x: number, y: number) => void
-    fill: (fb: Framebuffer, src: Uint8Array[], x: number, y: number, width: number, height: number) => void
-    copyrect: (fb: Framebuffer, srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number) => void
-    blt: (fb: Framebuffer, src: number, rowstride: number, x: number, y: number, width: number, height: number) => void
-    rgb24_blt: (fb: Framebuffer, src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number) => void
-    set_color_map: (fb: Framebuffer, map: ColorMap) => void
+    readonly parent: GObject.TypeInterface
+    readonly get_width: (fb: Framebuffer) => number
+    readonly get_height: (fb: Framebuffer) => number
+    readonly get_rowstride: (fb: Framebuffer) => number
+    readonly get_buffer: (fb: Framebuffer) => number
+    readonly get_local_format: (fb: Framebuffer) => PixelFormat
+    readonly get_remote_format: (fb: Framebuffer) => PixelFormat
+    readonly perfect_format_match: (fb: Framebuffer) => boolean
+    readonly set_pixel_at: (fb: Framebuffer, src: Uint8Array, x: number, y: number) => void
+    readonly fill: (fb: Framebuffer, src: Uint8Array, x: number, y: number, width: number, height: number) => void
+    readonly copyrect: (fb: Framebuffer, srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number) => void
+    readonly blt: (fb: Framebuffer, src: number, rowstride: number, x: number, y: number, width: number, height: number) => void
+    readonly rgb24_blt: (fb: Framebuffer, src: Uint8Array, rowstride: number, x: number, y: number, width: number, height: number) => void
+    readonly set_color_map: (fb: Framebuffer, map: ColorMap) => void
     static name: string
 }
 class PixelFormat {
     /* Fields of GVnc-1.0.GVnc.PixelFormat */
-    bits_per_pixel: number
-    depth: number
-    byte_order: number
-    true_color_flag: number
-    red_max: number
-    green_max: number
-    blue_max: number
-    red_shift: number
-    green_shift: number
-    blue_shift: number
+    readonly bits_per_pixel: number
+    readonly depth: number
+    readonly byte_order: number
+    readonly true_color_flag: number
+    readonly red_max: number
+    readonly green_max: number
+    readonly blue_max: number
+    readonly red_shift: number
+    readonly green_shift: number
+    readonly blue_shift: number
     /* Methods of GVnc-1.0.GVnc.PixelFormat */
     copy(): PixelFormat
     free(): void

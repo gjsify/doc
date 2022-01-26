@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GLib-2.0
  */
@@ -264,7 +270,7 @@ enum SpawnError {
     ACCES,
     PERM,
     TOO_BIG,
-    /* 2BIG (invalid, starts with a number) */
+    TODO_2BIG,
     NOEXEC,
     NAMETOOLONG,
     NOENT,
@@ -843,135 +849,135 @@ enum UriParamsFlags {
     WWW_FORM,
     PARSE_RELAXED,
 }
-export const ANALYZER_ANALYZING: number
-export const ASCII_DTOSTR_BUF_SIZE: number
-export const BIG_ENDIAN: number
-export const CSET_A_2_Z: string
-export const CSET_DIGITS: string
-export const CSET_a_2_z: string
-export const DATALIST_FLAGS_MASK: number
-export const DATE_BAD_DAY: number
-export const DATE_BAD_JULIAN: number
-export const DATE_BAD_YEAR: number
-export const DIR_SEPARATOR: number
-export const DIR_SEPARATOR_S: string
-export const E: number
-export const GINT16_FORMAT: string
-export const GINT16_MODIFIER: string
-export const GINT32_FORMAT: string
-export const GINT32_MODIFIER: string
-export const GINT64_FORMAT: string
-export const GINT64_MODIFIER: string
-export const GINTPTR_FORMAT: string
-export const GINTPTR_MODIFIER: string
-export const GNUC_FUNCTION: string
-export const GNUC_PRETTY_FUNCTION: string
-export const GSIZE_FORMAT: string
-export const GSIZE_MODIFIER: string
-export const GSSIZE_FORMAT: string
-export const GSSIZE_MODIFIER: string
-export const GUINT16_FORMAT: string
-export const GUINT32_FORMAT: string
-export const GUINT64_FORMAT: string
-export const GUINTPTR_FORMAT: string
-export const HAVE_GINT64: number
-export const HAVE_GNUC_VARARGS: number
-export const HAVE_GNUC_VISIBILITY: number
-export const HAVE_GROWING_STACK: number
-export const HAVE_ISO_VARARGS: number
-export const HOOK_FLAG_USER_SHIFT: number
-export const IEEE754_DOUBLE_BIAS: number
-export const IEEE754_FLOAT_BIAS: number
-export const KEY_FILE_DESKTOP_GROUP: string
-export const KEY_FILE_DESKTOP_KEY_ACTIONS: string
-export const KEY_FILE_DESKTOP_KEY_CATEGORIES: string
-export const KEY_FILE_DESKTOP_KEY_COMMENT: string
-export const KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE: string
-export const KEY_FILE_DESKTOP_KEY_EXEC: string
-export const KEY_FILE_DESKTOP_KEY_GENERIC_NAME: string
-export const KEY_FILE_DESKTOP_KEY_HIDDEN: string
-export const KEY_FILE_DESKTOP_KEY_ICON: string
-export const KEY_FILE_DESKTOP_KEY_MIME_TYPE: string
-export const KEY_FILE_DESKTOP_KEY_NAME: string
-export const KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN: string
-export const KEY_FILE_DESKTOP_KEY_NO_DISPLAY: string
-export const KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN: string
-export const KEY_FILE_DESKTOP_KEY_PATH: string
-export const KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY: string
-export const KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS: string
-export const KEY_FILE_DESKTOP_KEY_TERMINAL: string
-export const KEY_FILE_DESKTOP_KEY_TRY_EXEC: string
-export const KEY_FILE_DESKTOP_KEY_TYPE: string
-export const KEY_FILE_DESKTOP_KEY_URL: string
-export const KEY_FILE_DESKTOP_KEY_VERSION: string
-export const KEY_FILE_DESKTOP_TYPE_APPLICATION: string
-export const KEY_FILE_DESKTOP_TYPE_DIRECTORY: string
-export const KEY_FILE_DESKTOP_TYPE_LINK: string
-export const LITTLE_ENDIAN: number
-export const LN10: number
-export const LN2: number
-export const LOG_2_BASE_10: number
-export const LOG_DOMAIN: number
-export const LOG_FATAL_MASK: number
-export const LOG_LEVEL_USER_SHIFT: number
-export const MAJOR_VERSION: number
-export const MAXINT16: number
-export const MAXINT32: number
-export const MAXINT64: number
-export const MAXINT8: number
-export const MAXUINT16: number
-export const MAXUINT32: number
-export const MAXUINT64: number
-export const MAXUINT8: number
-export const MICRO_VERSION: number
-export const MININT16: number
-export const MININT32: number
-export const MININT64: number
-export const MININT8: number
-export const MINOR_VERSION: number
-export const MODULE_SUFFIX: string
-export const OPTION_REMAINING: string
-export const PDP_ENDIAN: number
-export const PI: number
-export const PID_FORMAT: string
-export const PI_2: number
-export const PI_4: number
-export const POLLFD_FORMAT: string
-export const PRIORITY_DEFAULT: number
-export const PRIORITY_DEFAULT_IDLE: number
-export const PRIORITY_HIGH: number
-export const PRIORITY_HIGH_IDLE: number
-export const PRIORITY_LOW: number
-export const SEARCHPATH_SEPARATOR: number
-export const SEARCHPATH_SEPARATOR_S: string
-export const SIZEOF_LONG: number
-export const SIZEOF_SIZE_T: number
-export const SIZEOF_SSIZE_T: number
-export const SIZEOF_VOID_P: number
-export const SOURCE_CONTINUE: boolean
-export const SOURCE_REMOVE: boolean
-export const SQRT2: number
-export const STR_DELIMITERS: string
-export const SYSDEF_AF_INET: number
-export const SYSDEF_AF_INET6: number
-export const SYSDEF_AF_UNIX: number
-export const SYSDEF_MSG_DONTROUTE: number
-export const SYSDEF_MSG_OOB: number
-export const SYSDEF_MSG_PEEK: number
-export const TEST_OPTION_ISOLATE_DIRS: string
-export const TIME_SPAN_DAY: number
-export const TIME_SPAN_HOUR: number
-export const TIME_SPAN_MILLISECOND: number
-export const TIME_SPAN_MINUTE: number
-export const TIME_SPAN_SECOND: number
-export const UNICHAR_MAX_DECOMPOSITION_LENGTH: number
-export const URI_RESERVED_CHARS_GENERIC_DELIMITERS: string
-export const URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS: string
-export const USEC_PER_SEC: number
-export const VA_COPY_AS_ARRAY: number
-export const VERSION_MIN_REQUIRED: number
-export const WIN32_MSG_HANDLE: number
-export const macro__has_attribute___noreturn__: number
+const ANALYZER_ANALYZING: number
+const ASCII_DTOSTR_BUF_SIZE: number
+const BIG_ENDIAN: number
+const CSET_A_2_Z: string
+const CSET_DIGITS: string
+const CSET_a_2_z: string
+const DATALIST_FLAGS_MASK: number
+const DATE_BAD_DAY: number
+const DATE_BAD_JULIAN: number
+const DATE_BAD_YEAR: number
+const DIR_SEPARATOR: number
+const DIR_SEPARATOR_S: string
+const E: number
+const GINT16_FORMAT: string
+const GINT16_MODIFIER: string
+const GINT32_FORMAT: string
+const GINT32_MODIFIER: string
+const GINT64_FORMAT: string
+const GINT64_MODIFIER: string
+const GINTPTR_FORMAT: string
+const GINTPTR_MODIFIER: string
+const GNUC_FUNCTION: string
+const GNUC_PRETTY_FUNCTION: string
+const GSIZE_FORMAT: string
+const GSIZE_MODIFIER: string
+const GSSIZE_FORMAT: string
+const GSSIZE_MODIFIER: string
+const GUINT16_FORMAT: string
+const GUINT32_FORMAT: string
+const GUINT64_FORMAT: string
+const GUINTPTR_FORMAT: string
+const HAVE_GINT64: number
+const HAVE_GNUC_VARARGS: number
+const HAVE_GNUC_VISIBILITY: number
+const HAVE_GROWING_STACK: number
+const HAVE_ISO_VARARGS: number
+const HOOK_FLAG_USER_SHIFT: number
+const IEEE754_DOUBLE_BIAS: number
+const IEEE754_FLOAT_BIAS: number
+const KEY_FILE_DESKTOP_GROUP: string
+const KEY_FILE_DESKTOP_KEY_ACTIONS: string
+const KEY_FILE_DESKTOP_KEY_CATEGORIES: string
+const KEY_FILE_DESKTOP_KEY_COMMENT: string
+const KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE: string
+const KEY_FILE_DESKTOP_KEY_EXEC: string
+const KEY_FILE_DESKTOP_KEY_GENERIC_NAME: string
+const KEY_FILE_DESKTOP_KEY_HIDDEN: string
+const KEY_FILE_DESKTOP_KEY_ICON: string
+const KEY_FILE_DESKTOP_KEY_MIME_TYPE: string
+const KEY_FILE_DESKTOP_KEY_NAME: string
+const KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN: string
+const KEY_FILE_DESKTOP_KEY_NO_DISPLAY: string
+const KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN: string
+const KEY_FILE_DESKTOP_KEY_PATH: string
+const KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY: string
+const KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS: string
+const KEY_FILE_DESKTOP_KEY_TERMINAL: string
+const KEY_FILE_DESKTOP_KEY_TRY_EXEC: string
+const KEY_FILE_DESKTOP_KEY_TYPE: string
+const KEY_FILE_DESKTOP_KEY_URL: string
+const KEY_FILE_DESKTOP_KEY_VERSION: string
+const KEY_FILE_DESKTOP_TYPE_APPLICATION: string
+const KEY_FILE_DESKTOP_TYPE_DIRECTORY: string
+const KEY_FILE_DESKTOP_TYPE_LINK: string
+const LITTLE_ENDIAN: number
+const LN10: number
+const LN2: number
+const LOG_2_BASE_10: number
+const LOG_DOMAIN: number
+const LOG_FATAL_MASK: number
+const LOG_LEVEL_USER_SHIFT: number
+const MAJOR_VERSION: number
+const MAXINT16: number
+const MAXINT32: number
+const MAXINT64: number
+const MAXINT8: number
+const MAXUINT16: number
+const MAXUINT32: number
+const MAXUINT64: number
+const MAXUINT8: number
+const MICRO_VERSION: number
+const MININT16: number
+const MININT32: number
+const MININT64: number
+const MININT8: number
+const MINOR_VERSION: number
+const MODULE_SUFFIX: string
+const OPTION_REMAINING: string
+const PDP_ENDIAN: number
+const PI: number
+const PID_FORMAT: string
+const PI_2: number
+const PI_4: number
+const POLLFD_FORMAT: string
+const PRIORITY_DEFAULT: number
+const PRIORITY_DEFAULT_IDLE: number
+const PRIORITY_HIGH: number
+const PRIORITY_HIGH_IDLE: number
+const PRIORITY_LOW: number
+const SEARCHPATH_SEPARATOR: number
+const SEARCHPATH_SEPARATOR_S: string
+const SIZEOF_LONG: number
+const SIZEOF_SIZE_T: number
+const SIZEOF_SSIZE_T: number
+const SIZEOF_VOID_P: number
+const SOURCE_CONTINUE: boolean
+const SOURCE_REMOVE: boolean
+const SQRT2: number
+const STR_DELIMITERS: string
+const SYSDEF_AF_INET: number
+const SYSDEF_AF_INET6: number
+const SYSDEF_AF_UNIX: number
+const SYSDEF_MSG_DONTROUTE: number
+const SYSDEF_MSG_OOB: number
+const SYSDEF_MSG_PEEK: number
+const TEST_OPTION_ISOLATE_DIRS: string
+const TIME_SPAN_DAY: number
+const TIME_SPAN_HOUR: number
+const TIME_SPAN_MILLISECOND: number
+const TIME_SPAN_MINUTE: number
+const TIME_SPAN_SECOND: number
+const UNICHAR_MAX_DECOMPOSITION_LENGTH: number
+const URI_RESERVED_CHARS_GENERIC_DELIMITERS: string
+const URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS: string
+const USEC_PER_SEC: number
+const VA_COPY_AS_ARRAY: number
+const VERSION_MIN_REQUIRED: number
+const WIN32_MSG_HANDLE: number
+const macro__has_attribute___noreturn__: number
 function access(filename: string, mode: number): number
 function ascii_digit_value(c: number): number
 function ascii_dtostr(buffer: string, buf_len: number, d: number): string
@@ -1022,11 +1028,11 @@ function atomic_ref_count_compare(arc: number, val: number): boolean
 function atomic_ref_count_dec(arc: number): boolean
 function atomic_ref_count_inc(arc: number): void
 function atomic_ref_count_init(arc: number): void
-function base64_decode(text: string): Uint8Array[]
-function base64_decode_inplace(text: Uint8Array[]): [ /* returnType */ number, /* text */ Uint8Array[] ]
-function base64_encode(data: Uint8Array[] | null): string
-function base64_encode_close(break_lines: boolean, state: number, save: number): [ /* returnType */ number, /* out */ Uint8Array[], /* state */ number, /* save */ number ]
-function base64_encode_step(in_: Uint8Array[], break_lines: boolean, state: number, save: number): [ /* returnType */ number, /* out */ Uint8Array[], /* state */ number, /* save */ number ]
+function base64_decode(text: string): Uint8Array
+function base64_decode_inplace(text: Uint8Array): [ /* returnType */ number, /* text */ Uint8Array ]
+function base64_encode(data: Uint8Array | null): string
+function base64_encode_close(break_lines: boolean, state: number, save: number): [ /* returnType */ number, /* out */ Uint8Array, /* state */ number, /* save */ number ]
+function base64_encode_step(in_: Uint8Array, break_lines: boolean, state: number, save: number): [ /* returnType */ number, /* out */ Uint8Array, /* state */ number, /* save */ number ]
 function basename(file_name: string): string
 function bit_lock(address: number, lock_bit: number): void
 function bit_nth_lsf(mask: number, nth_bit: number): number
@@ -1037,12 +1043,12 @@ function bit_unlock(address: number, lock_bit: number): void
 function bookmark_file_error_quark(): Quark
 function build_filenamev(args: string[]): string
 function build_pathv(separator: string, args: string[]): string
-function byte_array_free(array: Uint8Array[], free_segment: boolean): number
-function byte_array_free_to_bytes(array: Uint8Array[]): Bytes
-function byte_array_new(): Uint8Array[]
-function byte_array_new_take(data: Uint8Array[]): Uint8Array[]
-function byte_array_steal(array: Uint8Array[]): [ /* returnType */ number, /* len */ number | null ]
-function byte_array_unref(array: Uint8Array[]): void
+function byte_array_free(array: Uint8Array, free_segment: boolean): number
+function byte_array_free_to_bytes(array: Uint8Array): Bytes
+function byte_array_new(): Uint8Array
+function byte_array_new_take(data: Uint8Array): Uint8Array
+function byte_array_steal(array: Uint8Array): [ /* returnType */ number, /* len */ number | null ]
+function byte_array_unref(array: Uint8Array): void
 function canonicalize_filename(filename: string, relative_to?: string | null): string
 function chdir(path: string): number
 function check_version(required_major: number, required_minor: number, required_micro: number): string | null
@@ -1052,14 +1058,14 @@ function child_watch_source_new(pid: Pid): Source
 function clear_error(): void
 function close(fd: number): boolean
 function compute_checksum_for_bytes(checksum_type: ChecksumType, data: Bytes): string | null
-function compute_checksum_for_data(checksum_type: ChecksumType, data: Uint8Array[]): string | null
+function compute_checksum_for_data(checksum_type: ChecksumType, data: Uint8Array): string | null
 function compute_checksum_for_string(checksum_type: ChecksumType, str: string, length: number): string | null
 function compute_hmac_for_bytes(digest_type: ChecksumType, key: Bytes, data: Bytes): string
-function compute_hmac_for_data(digest_type: ChecksumType, key: Uint8Array[], data: Uint8Array[]): string
-function compute_hmac_for_string(digest_type: ChecksumType, key: Uint8Array[], str: string, length: number): string
-function convert(str: Uint8Array[], to_codeset: string, from_codeset: string): [ /* returnType */ Uint8Array[], /* bytes_read */ number | null ]
+function compute_hmac_for_data(digest_type: ChecksumType, key: Uint8Array, data: Uint8Array): string
+function compute_hmac_for_string(digest_type: ChecksumType, key: Uint8Array, str: string, length: number): string
+function convert(str: Uint8Array, to_codeset: string, from_codeset: string): [ /* returnType */ Uint8Array, /* bytes_read */ number | null ]
 function convert_error_quark(): Quark
-function convert_with_fallback(str: Uint8Array[], to_codeset: string, from_codeset: string, fallback: string): [ /* returnType */ Uint8Array[], /* bytes_read */ number | null ]
+function convert_with_fallback(str: Uint8Array, to_codeset: string, from_codeset: string, fallback: string): [ /* returnType */ Uint8Array, /* bytes_read */ number | null ]
 function datalist_foreach(datalist: Data, func: DataForeachFunc): void
 function datalist_get_data(datalist: Data, key: string): object | null
 function datalist_get_flags(datalist: Data): number
@@ -1095,11 +1101,11 @@ function environ_setenv(envp: string[] | null, variable: string, value: string, 
 function environ_unsetenv(envp: string[] | null, variable: string): string[]
 function file_error_from_errno(err_no: number): FileError
 function file_error_quark(): Quark
-function file_get_contents(filename: string): [ /* returnType */ boolean, /* contents */ Uint8Array[] ]
+function file_get_contents(filename: string): [ /* returnType */ boolean, /* contents */ Uint8Array ]
 function file_open_tmp(tmpl?: string | null): [ /* returnType */ number, /* name_used */ string ]
 function file_read_link(filename: string): string
-function file_set_contents(filename: string, contents: Uint8Array[]): boolean
-function file_set_contents_full(filename: string, contents: Uint8Array[], flags: FileSetContentsFlags, mode: number): boolean
+function file_set_contents(filename: string, contents: Uint8Array): boolean
+function file_set_contents_full(filename: string, contents: Uint8Array, flags: FileSetContentsFlags, mode: number): boolean
 function file_test(filename: string, test: FileTest): boolean
 function filename_display_basename(filename: string): string
 function filename_display_name(filename: string): string
@@ -1140,6 +1146,7 @@ function get_user_data_dir(): string
 function get_user_name(): string
 function get_user_runtime_dir(): string
 function get_user_special_dir(directory: UserDirectory): string | null
+function get_user_state_dir(): string
 function getenv(variable: string): string | null
 function hash_table_add(hash_table: HashTable, key?: object | null): boolean
 function hash_table_contains(hash_table: HashTable, key?: object | null): boolean
@@ -1181,8 +1188,8 @@ function io_channel_error_quark(): Quark
 function io_create_watch(channel: IOChannel, condition: IOCondition): Source
 function key_file_error_quark(): Quark
 function listenv(): string[]
-function locale_from_utf8(utf8string: string, len: number): [ /* returnType */ Uint8Array[], /* bytes_read */ number | null ]
-function locale_to_utf8(opsysstring: Uint8Array[]): [ /* returnType */ string, /* bytes_read */ number | null, /* bytes_written */ number | null ]
+function locale_from_utf8(utf8string: string, len: number): [ /* returnType */ Uint8Array, /* bytes_read */ number | null ]
+function locale_to_utf8(opsysstring: Uint8Array): [ /* returnType */ string, /* bytes_read */ number | null, /* bytes_written */ number | null ]
 function log_default_handler(log_domain: string | null, log_level: LogLevelFlags, message?: string | null, unused_data?: object | null): void
 function log_remove_handler(log_domain: string, handler_id: number): void
 function log_set_always_fatal(fatal_mask: LogLevelFlags): LogLevelFlags
@@ -1309,10 +1316,10 @@ function spawn_check_exit_status(wait_status: number): boolean
 function spawn_check_wait_status(wait_status: number): boolean
 function spawn_close_pid(pid: Pid): void
 function spawn_command_line_async(command_line: string): boolean
-function spawn_command_line_sync(command_line: string): [ /* returnType */ boolean, /* standard_output */ Uint8Array[] | null, /* standard_error */ Uint8Array[] | null, /* wait_status */ number | null ]
+function spawn_command_line_sync(command_line: string): [ /* returnType */ boolean, /* standard_output */ Uint8Array | null, /* standard_error */ Uint8Array | null, /* wait_status */ number | null ]
 function spawn_error_quark(): Quark
 function spawn_exit_error_quark(): Quark
-function spawn_sync(working_directory: string | null, argv: string[], envp: string[] | null, flags: SpawnFlags, child_setup?: SpawnChildSetupFunc | null): [ /* returnType */ boolean, /* standard_output */ Uint8Array[] | null, /* standard_error */ Uint8Array[] | null, /* wait_status */ number | null ]
+function spawn_sync(working_directory: string | null, argv: string[], envp: string[] | null, flags: SpawnFlags, child_setup?: SpawnChildSetupFunc | null): [ /* returnType */ boolean, /* standard_output */ Uint8Array | null, /* standard_error */ Uint8Array | null, /* wait_status */ number | null ]
 function stpcpy(dest: string, src: string): string
 function str_equal(v1: object, v2: object): boolean
 function str_has_prefix(str: string, prefix: string): boolean
@@ -1461,7 +1468,7 @@ function unsetenv(variable: string): void
 function uri_build(flags: UriFlags, scheme: string, userinfo: string | null, host: string | null, port: number, path: string, query?: string | null, fragment?: string | null): Uri
 function uri_build_with_user(flags: UriFlags, scheme: string, user: string | null, password: string | null, auth_params: string | null, host: string | null, port: number, path: string, query?: string | null, fragment?: string | null): Uri
 function uri_error_quark(): Quark
-function uri_escape_bytes(unescaped: Uint8Array[], reserved_chars_allowed?: string | null): string
+function uri_escape_bytes(unescaped: Uint8Array, reserved_chars_allowed?: string | null): string
 function uri_escape_string(unescaped: string, reserved_chars_allowed: string | null, allow_utf8: boolean): string
 function uri_is_valid(uri_string: string, flags: UriFlags): boolean
 function uri_join(flags: UriFlags, scheme: string | null, userinfo: string | null, host: string | null, port: number, path: string, query?: string | null, fragment?: string | null): string
@@ -1505,8 +1512,8 @@ function utf8_substring(str: string, start_pos: number, end_pos: number): string
 function utf8_to_ucs4(str: string, len: number): [ /* returnType */ number, /* items_read */ number | null, /* items_written */ number | null ]
 function utf8_to_ucs4_fast(str: string, len: number): [ /* returnType */ number, /* items_written */ number | null ]
 function utf8_to_utf16(str: string, len: number): [ /* returnType */ number, /* items_read */ number | null, /* items_written */ number | null ]
-function utf8_validate(str: Uint8Array[]): [ /* returnType */ boolean, /* end */ string | null ]
-function utf8_validate_len(str: Uint8Array[]): [ /* returnType */ boolean, /* end */ string | null ]
+function utf8_validate(str: Uint8Array): [ /* returnType */ boolean, /* end */ string | null ]
+function utf8_validate_len(str: Uint8Array): [ /* returnType */ boolean, /* end */ string | null ]
 function uuid_string_is_valid(str: string): boolean
 function uuid_string_random(): string
 function variant_get_gtype(): GObject.Type
@@ -1675,8 +1682,8 @@ interface VoidFunc {
 }
 class Array {
     /* Fields of GLib-2.0.GLib.Array */
-    data: string
-    len: number
+    readonly data: string
+    readonly len: number
     static name: string
 }
 class AsyncQueue {
@@ -1729,7 +1736,7 @@ class BookmarkFile {
     has_application(uri: string, name: string): boolean
     has_group(uri: string, group: string): boolean
     has_item(uri: string): boolean
-    load_from_data(data: Uint8Array[]): boolean
+    load_from_data(data: Uint8Array): boolean
     load_from_data_dirs(file: string): [ /* returnType */ boolean, /* full_path */ string | null ]
     load_from_file(filename: string): boolean
     move_item(old_uri: string, new_uri?: string | null): boolean
@@ -1750,7 +1757,7 @@ class BookmarkFile {
     set_title(uri: string | null, title: string): void
     set_visited(uri: string, visited: number): void
     set_visited_date_time(uri: string, visited: DateTime): void
-    to_data(): Uint8Array[]
+    to_data(): Uint8Array
     to_file(filename: string): boolean
     static name: string
     /* Static methods and pseudo-constructors */
@@ -1758,35 +1765,35 @@ class BookmarkFile {
 }
 class ByteArray {
     /* Fields of GLib-2.0.GLib.ByteArray */
-    data: number
-    len: number
+    readonly data: number
+    readonly len: number
     static name: string
     /* Static methods and pseudo-constructors */
-    static free(array: Uint8Array[], free_segment: boolean): number
-    static free_to_bytes(array: Uint8Array[]): Bytes
-    static new_take(data: Uint8Array[]): Uint8Array[]
-    static steal(array: Uint8Array[]): [ /* returnType */ number, /* len */ number | null ]
-    static unref(array: Uint8Array[]): void
+    static free(array: Uint8Array, free_segment: boolean): number
+    static free_to_bytes(array: Uint8Array): Bytes
+    static new_take(data: Uint8Array): Uint8Array
+    static steal(array: Uint8Array): [ /* returnType */ number, /* len */ number | null ]
+    static unref(array: Uint8Array): void
 }
 class Bytes {
     /* Methods of GLib-2.0.GLib.Bytes */
     compare(bytes2: Bytes): number
     equal(bytes2: Bytes): boolean
-    get_data(): Uint8Array[] | null
+    get_data(): Uint8Array | null
     get_region(element_size: number, offset: number, n_elements: number): object | null
     get_size(): number
     hash(): number
     new_from_bytes(offset: number, length: number): Bytes
     ref(): Bytes
     unref(): void
-    unref_to_array(): Uint8Array[]
-    unref_to_data(): Uint8Array[]
+    unref_to_array(): Uint8Array
+    unref_to_data(): Uint8Array
     static name: string
-    static new(data: Uint8Array[] | null): Bytes
-    constructor(data: Uint8Array[] | null)
+    static new(data: Uint8Array | null): Bytes
+    constructor(data: Uint8Array | null)
     /* Static methods and pseudo-constructors */
-    static new(data: Uint8Array[] | null): Bytes
-    static new_take(data: Uint8Array[] | null): Bytes
+    static new(data: Uint8Array | null): Bytes
+    static new_take(data: Uint8Array | null): Bytes
 }
 class Checksum {
     /* Methods of GLib-2.0.GLib.Checksum */
@@ -1794,7 +1801,7 @@ class Checksum {
     free(): void
     get_string(): string
     reset(): void
-    update(data: Uint8Array[]): void
+    update(data: Uint8Array): void
     static name: string
     static new(checksum_type: ChecksumType): Checksum
     constructor(checksum_type: ChecksumType)
@@ -1817,12 +1824,12 @@ class Data {
 }
 class Date {
     /* Fields of GLib-2.0.GLib.Date */
-    julian_days: number
-    julian: number
-    dmy: number
-    day: number
-    month: number
-    year: number
+    readonly julian_days: number
+    readonly julian: number
+    readonly dmy: number
+    readonly day: number
+    readonly month: number
+    readonly year: number
     /* Methods of GLib-2.0.GLib.Date */
     add_days(n_days: number): void
     add_months(n_months: number): void
@@ -1937,8 +1944,8 @@ class DateTime {
 }
 class DebugKey {
     /* Fields of GLib-2.0.GLib.DebugKey */
-    key: string
-    value: number
+    readonly key: string
+    readonly value: number
     static name: string
 }
 class Dir {
@@ -1952,9 +1959,9 @@ class Dir {
 }
 class Error {
     /* Fields of GLib-2.0.GLib.Error */
-    domain: Quark
-    code: number
-    message: string
+    readonly domain: Quark
+    readonly code: number
+    readonly message: string
     /* Methods of GLib-2.0.GLib.Error */
     copy(): Error
     free(): void
@@ -1992,22 +1999,22 @@ class HashTableIter {
 }
 class Hmac {
     /* Methods of GLib-2.0.GLib.Hmac */
-    get_digest(buffer: Uint8Array[]): void
+    get_digest(buffer: Uint8Array): void
     get_string(): string
     unref(): void
-    update(data: Uint8Array[]): void
+    update(data: Uint8Array): void
     static name: string
 }
 class Hook {
     /* Fields of GLib-2.0.GLib.Hook */
-    data: object
-    next: Hook
-    prev: Hook
-    ref_count: number
-    hook_id: number
-    flags: number
-    func: object
-    destroy: DestroyNotify
+    readonly data: object
+    readonly next: Hook
+    readonly prev: Hook
+    readonly ref_count: number
+    readonly hook_id: number
+    readonly flags: number
+    readonly func: object
+    readonly destroy: DestroyNotify
     /* Methods of GLib-2.0.GLib.Hook */
     compare_ids(sibling: Hook): number
     static name: string
@@ -2021,13 +2028,13 @@ class Hook {
 }
 class HookList {
     /* Fields of GLib-2.0.GLib.HookList */
-    seq_id: number
-    hook_size: number
-    is_setup: number
-    hooks: Hook
-    dummy3: object
-    finalize_hook: HookFinalizeFunc
-    dummy: object[]
+    readonly seq_id: number
+    readonly hook_size: number
+    readonly is_setup: number
+    readonly hooks: Hook
+    readonly dummy3: object
+    readonly finalize_hook: HookFinalizeFunc
+    readonly dummy: object[]
     /* Methods of GLib-2.0.GLib.HookList */
     clear(): void
     init(hook_size: number): void
@@ -2051,10 +2058,10 @@ class IOChannel {
     get_line_term(length: number): string
     init(): void
     read(buf: string, count: number, bytes_read: number): IOError
-    read_chars(): [ /* returnType */ IOStatus, /* buf */ Uint8Array[], /* bytes_read */ number | null ]
+    read_chars(): [ /* returnType */ IOStatus, /* buf */ Uint8Array, /* bytes_read */ number | null ]
     read_line(): [ /* returnType */ IOStatus, /* str_return */ string, /* length */ number | null, /* terminator_pos */ number | null ]
     read_line_string(buffer: String, terminator_pos?: number | null): IOStatus
-    read_to_end(): [ /* returnType */ IOStatus, /* str_return */ Uint8Array[] ]
+    read_to_end(): [ /* returnType */ IOStatus, /* str_return */ Uint8Array ]
     read_unichar(): [ /* returnType */ IOStatus, /* thechar */ number ]
     ref(): IOChannel
     seek(offset: number, type: SeekType): IOError
@@ -2069,7 +2076,7 @@ class IOChannel {
     unix_get_fd(): number
     unref(): void
     write(buf: string, count: number, bytes_written: number): IOError
-    write_chars(buf: Uint8Array[], count: number): [ /* returnType */ IOStatus, /* bytes_written */ number ]
+    write_chars(buf: Uint8Array, count: number): [ /* returnType */ IOStatus, /* bytes_written */ number ]
     write_unichar(thechar: number): IOStatus
     static name: string
     /* Static methods and pseudo-constructors */
@@ -2080,14 +2087,14 @@ class IOChannel {
 }
 class IOFuncs {
     /* Fields of GLib-2.0.GLib.IOFuncs */
-    io_read: (channel: IOChannel, buf: string, count: number, bytes_read: number) => IOStatus
-    io_write: (channel: IOChannel, buf: string, count: number, bytes_written: number) => IOStatus
-    io_seek: (channel: IOChannel, offset: number, type: SeekType) => IOStatus
-    io_close: (channel: IOChannel) => IOStatus
-    io_create_watch: (channel: IOChannel, condition: IOCondition) => Source
-    io_free: (channel: IOChannel) => void
-    io_set_flags: (channel: IOChannel, flags: IOFlags) => IOStatus
-    io_get_flags: (channel: IOChannel) => IOFlags
+    readonly io_read: (channel: IOChannel, buf: string, count: number, bytes_read: number) => IOStatus
+    readonly io_write: (channel: IOChannel, buf: string, count: number, bytes_written: number) => IOStatus
+    readonly io_seek: (channel: IOChannel, offset: number, type: SeekType) => IOStatus
+    readonly io_close: (channel: IOChannel) => IOStatus
+    readonly io_create_watch: (channel: IOChannel, condition: IOCondition) => Source
+    readonly io_free: (channel: IOChannel) => void
+    readonly io_set_flags: (channel: IOChannel, flags: IOFlags) => IOStatus
+    readonly io_get_flags: (channel: IOChannel) => IOFlags
     static name: string
 }
 class KeyFile {
@@ -2146,16 +2153,16 @@ class KeyFile {
 }
 class List {
     /* Fields of GLib-2.0.GLib.List */
-    data: object
-    next: object[]
-    prev: object[]
+    readonly data: object
+    readonly next: object[]
+    readonly prev: object[]
     static name: string
 }
 class LogField {
     /* Fields of GLib-2.0.GLib.LogField */
-    key: string
-    value: object
-    length: number
+    readonly key: string
+    readonly value: object
+    readonly length: number
     static name: string
 }
 class MainContext {
@@ -2240,11 +2247,11 @@ class MarkupParseContext {
 }
 class MarkupParser {
     /* Fields of GLib-2.0.GLib.MarkupParser */
-    start_element: (context: MarkupParseContext, element_name: string, attribute_names: string, attribute_values: string) => void
-    end_element: (context: MarkupParseContext, element_name: string) => void
-    text: (context: MarkupParseContext, text: string, text_len: number) => void
-    passthrough: (context: MarkupParseContext, passthrough_text: string, text_len: number) => void
-    error: (context: MarkupParseContext, error: Error) => void
+    readonly start_element: (context: MarkupParseContext, element_name: string, attribute_names: string, attribute_values: string) => void
+    readonly end_element: (context: MarkupParseContext, element_name: string) => void
+    readonly text: (context: MarkupParseContext, text: string, text_len: number) => void
+    readonly passthrough: (context: MarkupParseContext, passthrough_text: string, text_len: number) => void
+    readonly error: (context: MarkupParseContext, error: Error) => void
     static name: string
 }
 class MatchInfo {
@@ -2268,21 +2275,21 @@ class MatchInfo {
 }
 class MemVTable {
     /* Fields of GLib-2.0.GLib.MemVTable */
-    malloc: (n_bytes: number) => object
-    realloc: (mem: object, n_bytes: number) => object
-    free: (mem: object) => void
-    calloc: (n_blocks: number, n_block_bytes: number) => object
-    try_malloc: (n_bytes: number) => object
-    try_realloc: (mem: object, n_bytes: number) => object
+    readonly malloc: (n_bytes: number) => object
+    readonly realloc: (mem: object, n_bytes: number) => object
+    readonly free: (mem: object) => void
+    readonly calloc: (n_blocks: number, n_block_bytes: number) => object
+    readonly try_malloc: (n_bytes: number) => object
+    readonly try_realloc: (mem: object, n_bytes: number) => object
     static name: string
 }
 class Node {
     /* Fields of GLib-2.0.GLib.Node */
-    data: object
-    next: Node
-    prev: Node
-    parent: Node
-    children: Node
+    readonly data: object
+    readonly next: Node
+    readonly prev: Node
+    readonly parent: Node
+    readonly children: Node
     /* Methods of GLib-2.0.GLib.Node */
     child_index(data?: object | null): number
     child_position(child: Node): number
@@ -2298,8 +2305,8 @@ class Node {
 }
 class Once {
     /* Fields of GLib-2.0.GLib.Once */
-    status: OnceStatus
-    retval: object
+    readonly status: OnceStatus
+    readonly retval: object
     static name: string
     /* Static methods and pseudo-constructors */
     static init_enter(location: object): boolean
@@ -2331,13 +2338,13 @@ class OptionContext {
 }
 class OptionEntry {
     /* Fields of GLib-2.0.GLib.OptionEntry */
-    long_name: string
-    short_name: number
-    flags: number
-    arg: OptionArg
-    arg_data: object
-    description: string
-    arg_description: string
+    readonly long_name: string
+    readonly short_name: number
+    readonly flags: number
+    readonly arg: OptionArg
+    readonly arg_data: object
+    readonly description: string
+    readonly arg_description: string
     static name: string
 }
 class OptionGroup {
@@ -2369,9 +2376,9 @@ class PatternSpec {
 }
 class PollFD {
     /* Fields of GLib-2.0.GLib.PollFD */
-    fd: number
-    events: number
-    revents: number
+    readonly fd: number
+    readonly events: number
+    readonly revents: number
     static name: string
 }
 class Private {
@@ -2383,15 +2390,15 @@ class Private {
 }
 class PtrArray {
     /* Fields of GLib-2.0.GLib.PtrArray */
-    pdata: object
-    len: number
+    readonly pdata: object
+    readonly len: number
     static name: string
 }
 class Queue {
     /* Fields of GLib-2.0.GLib.Queue */
-    head: object[]
-    tail: object[]
-    length: number
+    readonly head: object[]
+    readonly tail: object[]
+    readonly length: number
     /* Methods of GLib-2.0.GLib.Queue */
     clear(): void
     clear_full(free_func?: DestroyNotify | null): void
@@ -2481,27 +2488,27 @@ class Regex {
 }
 class SList {
     /* Fields of GLib-2.0.GLib.SList */
-    data: object
-    next: object[]
+    readonly data: object
+    readonly next: object[]
     static name: string
 }
 class Scanner {
     /* Fields of GLib-2.0.GLib.Scanner */
-    user_data: object
-    max_parse_errors: number
-    parse_errors: number
-    input_name: string
-    qdata: Data
-    config: ScannerConfig
-    token: TokenType
-    value: TokenValue
-    line: number
-    position: number
-    next_token: TokenType
-    next_value: TokenValue
-    next_line: number
-    next_position: number
-    msg_handler: ScannerMsgFunc
+    readonly user_data: object
+    readonly max_parse_errors: number
+    readonly parse_errors: number
+    readonly input_name: string
+    readonly qdata: Data
+    readonly config: ScannerConfig
+    readonly token: TokenType
+    readonly value: TokenValue
+    readonly line: number
+    readonly position: number
+    readonly next_token: TokenType
+    readonly next_value: TokenValue
+    readonly next_line: number
+    readonly next_position: number
+    readonly msg_handler: ScannerMsgFunc
     /* Methods of GLib-2.0.GLib.Scanner */
     cur_line(): number
     cur_position(): number
@@ -2523,32 +2530,32 @@ class Scanner {
 }
 class ScannerConfig {
     /* Fields of GLib-2.0.GLib.ScannerConfig */
-    cset_skip_characters: string
-    cset_identifier_first: string
-    cset_identifier_nth: string
-    cpair_comment_single: string
-    case_sensitive: number
-    skip_comment_multi: number
-    skip_comment_single: number
-    scan_comment_multi: number
-    scan_identifier: number
-    scan_identifier_1char: number
-    scan_identifier_NULL: number
-    scan_symbols: number
-    scan_binary: number
-    scan_octal: number
-    scan_float: number
-    scan_hex: number
-    scan_hex_dollar: number
-    scan_string_sq: number
-    scan_string_dq: number
-    numbers_2_int: number
-    int_2_float: number
-    identifier_2_string: number
-    char_2_token: number
-    symbol_2_token: number
-    scope_0_fallback: number
-    store_int64: number
+    readonly cset_skip_characters: string
+    readonly cset_identifier_first: string
+    readonly cset_identifier_nth: string
+    readonly cpair_comment_single: string
+    readonly case_sensitive: number
+    readonly skip_comment_multi: number
+    readonly skip_comment_single: number
+    readonly scan_comment_multi: number
+    readonly scan_identifier: number
+    readonly scan_identifier_1char: number
+    readonly scan_identifier_NULL: number
+    readonly scan_symbols: number
+    readonly scan_binary: number
+    readonly scan_octal: number
+    readonly scan_float: number
+    readonly scan_hex: number
+    readonly scan_hex_dollar: number
+    readonly scan_string_sq: number
+    readonly scan_string_dq: number
+    readonly numbers_2_int: number
+    readonly int_2_float: number
+    readonly identifier_2_string: number
+    readonly char_2_token: number
+    readonly symbol_2_token: number
+    readonly scope_0_fallback: number
+    readonly store_int64: number
     static name: string
 }
 class Sequence {
@@ -2628,15 +2635,15 @@ class Source {
 }
 class SourceCallbackFuncs {
     /* Fields of GLib-2.0.GLib.SourceCallbackFuncs */
-    ref: (cb_data: object) => void
-    unref: (cb_data: object) => void
+    readonly ref: (cb_data: object) => void
+    readonly unref: (cb_data: object) => void
     static name: string
 }
 class SourceFuncs {
     /* Fields of GLib-2.0.GLib.SourceFuncs */
-    prepare: (source: Source, timeout_: number) => boolean
-    check: (source: Source) => boolean
-    finalize: (source: Source) => void
+    readonly prepare: (source: Source, timeout_: number) => boolean
+    readonly check: (source: Source) => boolean
+    readonly finalize: (source: Source) => void
     static name: string
 }
 class SourcePrivate {
@@ -2647,9 +2654,9 @@ class StatBuf {
 }
 class String {
     /* Fields of GLib-2.0.GLib.String */
-    str: string
-    len: number
-    allocated_len: number
+    readonly str: string
+    readonly len: number
+    readonly allocated_len: number
     /* Methods of GLib-2.0.GLib.String */
     append(val: string): String
     append_c(c: number): String
@@ -2711,12 +2718,12 @@ class TestCase {
 }
 class TestConfig {
     /* Fields of GLib-2.0.GLib.TestConfig */
-    test_initialized: boolean
-    test_quick: boolean
-    test_perf: boolean
-    test_verbose: boolean
-    test_quiet: boolean
-    test_undefined: boolean
+    readonly test_initialized: boolean
+    readonly test_quick: boolean
+    readonly test_perf: boolean
+    readonly test_verbose: boolean
+    readonly test_quiet: boolean
+    readonly test_undefined: boolean
     static name: string
 }
 class TestLogBuffer {
@@ -2727,10 +2734,10 @@ class TestLogBuffer {
 }
 class TestLogMsg {
     /* Fields of GLib-2.0.GLib.TestLogMsg */
-    log_type: TestLogType
-    n_strings: number
-    strings: string
-    n_nums: number
+    readonly log_type: TestLogType
+    readonly n_strings: number
+    readonly strings: string
+    readonly n_nums: number
     /* Methods of GLib-2.0.GLib.TestLogMsg */
     free(): void
     static name: string
@@ -2760,9 +2767,9 @@ class Thread {
 }
 class ThreadPool {
     /* Fields of GLib-2.0.GLib.ThreadPool */
-    func: Func
-    user_data: object
-    exclusive: boolean
+    readonly func: Func
+    readonly user_data: object
+    readonly exclusive: boolean
     /* Methods of GLib-2.0.GLib.ThreadPool */
     free(immediate: boolean, wait_: boolean): void
     get_max_threads(): number
@@ -2782,8 +2789,8 @@ class ThreadPool {
 }
 class TimeVal {
     /* Fields of GLib-2.0.GLib.TimeVal */
-    tv_sec: number
-    tv_usec: number
+    readonly tv_sec: number
+    readonly tv_usec: number
     /* Methods of GLib-2.0.GLib.TimeVal */
     add(microseconds: number): void
     to_iso8601(): string | null
@@ -2824,7 +2831,7 @@ class Timer {
 }
 class TrashStack {
     /* Fields of GLib-2.0.GLib.TrashStack */
-    next: TrashStack
+    readonly next: TrashStack
     static name: string
     /* Static methods and pseudo-constructors */
     static height(stack_p: TrashStack): number
@@ -2886,7 +2893,7 @@ class Uri {
     static build(flags: UriFlags, scheme: string, userinfo: string | null, host: string | null, port: number, path: string, query?: string | null, fragment?: string | null): Uri
     static build_with_user(flags: UriFlags, scheme: string, user: string | null, password: string | null, auth_params: string | null, host: string | null, port: number, path: string, query?: string | null, fragment?: string | null): Uri
     static error_quark(): Quark
-    static escape_bytes(unescaped: Uint8Array[], reserved_chars_allowed?: string | null): string
+    static escape_bytes(unescaped: Uint8Array, reserved_chars_allowed?: string | null): string
     static escape_string(unescaped: string, reserved_chars_allowed: string | null, allow_utf8: boolean): string
     static is_valid(uri_string: string, flags: UriFlags): boolean
     static join(flags: UriFlags, scheme: string | null, userinfo: string | null, host: string | null, port: number, path: string, query?: string | null, fragment?: string | null): string
@@ -2916,7 +2923,7 @@ class Variant {
     check_format_string(format_string: string, copy_only: boolean): boolean
     classify(): VariantClass
     compare(two: Variant): number
-    dup_bytestring(): Uint8Array[]
+    dup_bytestring(): Uint8Array
     dup_bytestring_array(): string[]
     dup_objv(): string[]
     dup_string(): [ /* returnType */ string, /* length */ number ]
@@ -2924,7 +2931,7 @@ class Variant {
     equal(two: Variant): boolean
     get_boolean(): boolean
     get_byte(): number
-    get_bytestring(): Uint8Array[]
+    get_bytestring(): Uint8Array
     get_bytestring_array(): string[]
     get_child_value(index_: number): Variant
     get_data(): object | null
@@ -2964,13 +2971,13 @@ class Variant {
     static new_array(child_type: VariantType | null, children: Variant[] | null): Variant
     static new_boolean(value: boolean): Variant
     static new_byte(value: number): Variant
-    static new_bytestring(string: Uint8Array[]): Variant
+    static new_bytestring(string: Uint8Array): Variant
     static new_bytestring_array(strv: string[]): Variant
     static new_dict_entry(key: Variant, value: Variant): Variant
     static new_double(value: number): Variant
     static new_fixed_array(element_type: VariantType, elements: object | null, n_elements: number, element_size: number): Variant
     static new_from_bytes(type: VariantType, bytes: Bytes, trusted: boolean): Variant
-    static new_from_data(type: VariantType, data: Uint8Array[], trusted: boolean, notify: DestroyNotify, user_data?: object | null): Variant
+    static new_from_data(type: VariantType, data: Uint8Array, trusted: boolean, notify: DestroyNotify, user_data?: object | null): Variant
     static new_handle(value: number): Variant
     static new_int16(value: number): Variant
     static new_int32(value: number): Variant
@@ -3068,13 +3075,9 @@ class VariantType {
     static string_scan(string: string, limit?: string | null): [ /* returnType */ boolean, /* endptr */ string | null ]
 }
 class DoubleIEEE754 {
-    /* Fields of GLib-2.0.GLib.DoubleIEEE754 */
-    v_double: number
     static name: string
 }
 class FloatIEEE754 {
-    /* Fields of GLib-2.0.GLib.FloatIEEE754 */
-    v_float: number
     static name: string
 }
 class Mutex {
@@ -3087,34 +3090,21 @@ class Mutex {
     static name: string
 }
 class TokenValue {
-    /* Fields of GLib-2.0.GLib.TokenValue */
-    v_symbol: object
-    v_identifier: string
-    v_binary: number
-    v_octal: number
-    v_int: number
-    v_int64: number
-    v_float: number
-    v_hex: number
-    v_string: string
-    v_comment: string
-    v_char: number
-    v_error: number
     static name: string
 }
-type DateDay = number
-type DateYear = number
-type MainContextPusher = void
-type MutexLocker = void
-type Pid = number
-type Quark = number
-type RWLockReaderLocker = void
-type RWLockWriterLocker = void
-type RecMutexLocker = void
-type RefString = number
-type Strv = string
-type Time = number
-type TimeSpan = number
-type Type = number
+    type DateDay = number
+    type DateYear = number
+    type MainContextPusher = void
+    type MutexLocker = void
+    type Pid = number
+    type Quark = number
+    type RWLockReaderLocker = void
+    type RWLockWriterLocker = void
+    type RecMutexLocker = void
+    type RefString = number
+    type Strv = string
+    type Time = number
+    type TimeSpan = number
+    type Type = number
 }
 export default GLib;

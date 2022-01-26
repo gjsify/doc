@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GitgExt-1.0
  */
@@ -39,7 +45,9 @@ interface MessageCallback {
 interface RefNameEditingDone {
     (new_name: string, cancelled: boolean): void
 }
-export interface Action_ConstructProps extends UIElement_ConstructProps {
+interface Action_ConstructProps extends UIElement_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.UIElement */
+    application?: Application
 }
 class Action {
     /* Properties of GitgExt-1.0.GitgExt.UIElement */
@@ -48,7 +56,7 @@ class Action {
     readonly display_name: string
     readonly description: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Action */
     populate_menu(menu: Gtk.Menu): void
     /* Methods of GitgExt-1.0.GitgExt.UIElement */
@@ -149,11 +157,18 @@ class Action {
     _init (config?: Action_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Activity_ConstructProps extends GObject.Object_ConstructProps {
+interface Activity_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.UIElement */
+    application?: Application
 }
 class Activity {
+    /* Properties of GitgExt-1.0.GitgExt.UIElement */
+    application: Application
+    readonly id: string
+    readonly display_name: string
+    readonly description: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Activity */
     is_default_for(action: string): boolean
     on_key_pressed(event: Gdk.EventKey): boolean
@@ -179,9 +194,33 @@ class Activity {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GitgExt-1.0.GitgExt.UIElement */
+    negotiate_order(other: UIElement): number
+    get_application(): Application | null
+    set_application(value?: Application | null): void
+    get_id(): string
+    get_display_name(): string
+    get_description(): string
+    get_icon(): string | null
+    get_widget(): Gtk.Widget | null
+    get_shortcut(): number | null
+    get_available(): boolean
+    get_enabled(): boolean
     /* Virtual methods of GitgExt-1.0.GitgExt.Activity */
     vfunc_is_default_for(action: string): boolean
     vfunc_on_key_pressed(event: Gdk.EventKey): boolean
+    vfunc_negotiate_order(other: UIElement): number
+    vfunc_get_application(): Application | null
+    vfunc_set_application(value?: Application | null): void
+    vfunc_get_id(): string
+    vfunc_get_display_name(): string
+    vfunc_get_description(): string
+    vfunc_get_icon(): string | null
+    vfunc_get_widget(): Gtk.Widget | null
+    vfunc_get_shortcut(): number | null
+    vfunc_get_available(): boolean
+    vfunc_get_enabled(): boolean
+    vfunc_activate(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -194,6 +233,18 @@ class Activity {
     connect(sigName: "notify", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    /* Signals of GitgExt-1.0.GitgExt.UIElement */
+    connect(sigName: "activate", callback: (($obj: Activity) => void)): number
+    connect_after(sigName: "activate", callback: (($obj: Activity) => void)): number
+    emit(sigName: "activate"): void
+    connect(sigName: "notify::application", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::application", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::id", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::id", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::display-name", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::display-name", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::description", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::description", callback: (($obj: Activity, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -203,7 +254,8 @@ class Activity {
     _init (config?: Activity_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Application_ConstructProps extends GObject.Object_ConstructProps {
+interface Application_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.Application */
     repository?: Gitg.Repository
     busy?: boolean
 }
@@ -217,7 +269,7 @@ class Application {
     busy: boolean
     readonly remote_lookup: RemoteLookup
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Application */
     get_verified_committer(): Ggit.Signature | null
     get_activity_by_id(id: string): Activity | null
@@ -320,11 +372,11 @@ class Application {
     _init (config?: Application_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CommandLine_ConstructProps extends GObject.Object_ConstructProps {
+interface CommandLine_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CommandLine {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.CommandLine */
     get_option_group(): GLib.OptionGroup
     parse_finished(): void
@@ -376,9 +428,12 @@ class CommandLine {
     _init (config?: CommandLine_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CommitAction_ConstructProps extends Action_ConstructProps {
+interface CommitAction_ConstructProps extends Action_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.CommitAction */
     action_interface?: RefActionInterface
     commit?: Gitg.Commit
+    /* Constructor properties of GitgExt-1.0.GitgExt.UIElement */
+    application?: Application
 }
 class CommitAction {
     /* Properties of GitgExt-1.0.GitgExt.CommitAction */
@@ -390,7 +445,7 @@ class CommitAction {
     readonly display_name: string
     readonly description: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.CommitAction */
     get_action_interface(): RefActionInterface
     set_action_interface(value: RefActionInterface): void
@@ -510,14 +565,22 @@ class CommitAction {
     _init (config?: CommitAction_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface HistoryPanel_ConstructProps extends GObject.Object_ConstructProps {
+interface HistoryPanel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.HistoryPanel */
     history?: History
+    /* Constructor properties of GitgExt-1.0.GitgExt.UIElement */
+    application?: Application
 }
 class HistoryPanel {
     /* Properties of GitgExt-1.0.GitgExt.HistoryPanel */
     history: History
+    /* Properties of GitgExt-1.0.GitgExt.UIElement */
+    application: Application
+    readonly id: string
+    readonly display_name: string
+    readonly description: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.HistoryPanel */
     get_history(): History | null
     set_history(value?: History | null): void
@@ -543,9 +606,33 @@ class HistoryPanel {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GitgExt-1.0.GitgExt.UIElement */
+    negotiate_order(other: UIElement): number
+    get_application(): Application | null
+    set_application(value?: Application | null): void
+    get_id(): string
+    get_display_name(): string
+    get_description(): string
+    get_icon(): string | null
+    get_widget(): Gtk.Widget | null
+    get_shortcut(): number | null
+    get_available(): boolean
+    get_enabled(): boolean
     /* Virtual methods of GitgExt-1.0.GitgExt.HistoryPanel */
     vfunc_get_history(): History | null
     vfunc_set_history(value?: History | null): void
+    vfunc_negotiate_order(other: UIElement): number
+    vfunc_get_application(): Application | null
+    vfunc_set_application(value?: Application | null): void
+    vfunc_get_id(): string
+    vfunc_get_display_name(): string
+    vfunc_get_description(): string
+    vfunc_get_icon(): string | null
+    vfunc_get_widget(): Gtk.Widget | null
+    vfunc_get_shortcut(): number | null
+    vfunc_get_available(): boolean
+    vfunc_get_enabled(): boolean
+    vfunc_activate(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -558,8 +645,20 @@ class HistoryPanel {
     connect(sigName: "notify", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    /* Signals of GitgExt-1.0.GitgExt.UIElement */
+    connect(sigName: "activate", callback: (($obj: HistoryPanel) => void)): number
+    connect_after(sigName: "activate", callback: (($obj: HistoryPanel) => void)): number
+    emit(sigName: "activate"): void
     connect(sigName: "notify::history", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::history", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::application", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::application", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::id", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::id", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::display-name", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::display-name", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::description", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::description", callback: (($obj: HistoryPanel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -569,11 +668,18 @@ class HistoryPanel {
     _init (config?: HistoryPanel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface History_ConstructProps extends GObject.Object_ConstructProps {
+interface History_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.UIElement */
+    application?: Application
 }
 class History {
+    /* Properties of GitgExt-1.0.GitgExt.UIElement */
+    application: Application
+    readonly id: string
+    readonly display_name: string
+    readonly description: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.History */
     foreach_selected(func: ForeachCommitSelectionFunc): void
     select(commit: Gitg.Commit): void
@@ -599,9 +705,38 @@ class History {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GitgExt-1.0.GitgExt.Activity */
+    is_default_for(action: string): boolean
+    on_key_pressed(event: Gdk.EventKey): boolean
+    /* Methods of GitgExt-1.0.GitgExt.UIElement */
+    negotiate_order(other: UIElement): number
+    get_application(): Application | null
+    set_application(value?: Application | null): void
+    get_id(): string
+    get_display_name(): string
+    get_description(): string
+    get_icon(): string | null
+    get_widget(): Gtk.Widget | null
+    get_shortcut(): number | null
+    get_available(): boolean
+    get_enabled(): boolean
     /* Virtual methods of GitgExt-1.0.GitgExt.History */
     vfunc_foreach_selected(func: ForeachCommitSelectionFunc): void
     vfunc_select(commit: Gitg.Commit): void
+    vfunc_is_default_for(action: string): boolean
+    vfunc_on_key_pressed(event: Gdk.EventKey): boolean
+    vfunc_negotiate_order(other: UIElement): number
+    vfunc_get_application(): Application | null
+    vfunc_set_application(value?: Application | null): void
+    vfunc_get_id(): string
+    vfunc_get_display_name(): string
+    vfunc_get_description(): string
+    vfunc_get_icon(): string | null
+    vfunc_get_widget(): Gtk.Widget | null
+    vfunc_get_shortcut(): number | null
+    vfunc_get_available(): boolean
+    vfunc_get_enabled(): boolean
+    vfunc_activate(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -618,6 +753,18 @@ class History {
     connect(sigName: "notify", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    /* Signals of GitgExt-1.0.GitgExt.UIElement */
+    connect(sigName: "activate", callback: (($obj: History) => void)): number
+    connect_after(sigName: "activate", callback: (($obj: History) => void)): number
+    emit(sigName: "activate"): void
+    connect(sigName: "notify::application", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::application", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::id", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::id", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::display-name", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::display-name", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::description", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::description", callback: (($obj: History, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -627,13 +774,13 @@ class History {
     _init (config?: History_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Notification_ConstructProps extends GObject.Object_ConstructProps {
+interface Notification_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Notification {
     /* Properties of GitgExt-1.0.GitgExt.Notification */
     readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Notification */
     get_widget(): Gtk.Widget | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -687,11 +834,11 @@ class Notification {
     _init (config?: Notification_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Notifications_ConstructProps extends GObject.Object_ConstructProps {
+interface Notifications_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Notifications {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Notifications */
     add(notification: Notification): void
     remove(notification: Notification, delay: number): void
@@ -741,7 +888,7 @@ class Notifications {
     _init (config?: Notifications_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Preferences_ConstructProps extends GObject.Object_ConstructProps {
+interface Preferences_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Preferences {
     /* Properties of GitgExt-1.0.GitgExt.Preferences */
@@ -749,7 +896,7 @@ class Preferences {
     readonly display_name: string
     readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Preferences */
     get_id(): string
     get_display_name(): string
@@ -807,7 +954,8 @@ class Preferences {
     _init (config?: Preferences_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RefActionInterface_ConstructProps extends GObject.Object_ConstructProps {
+interface RefActionInterface_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.RefActionInterface */
     application?: Application
 }
 class RefActionInterface {
@@ -815,7 +963,7 @@ class RefActionInterface {
     application: Application
     readonly references: Gee.List
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.RefActionInterface */
     add_ref(reference: Gitg.Ref): void
     remove_ref(reference: Gitg.Ref): void
@@ -883,9 +1031,12 @@ class RefActionInterface {
     _init (config?: RefActionInterface_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RefAction_ConstructProps extends Action_ConstructProps {
+interface RefAction_ConstructProps extends Action_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.RefAction */
     action_interface?: RefActionInterface
     reference?: Gitg.Ref
+    /* Constructor properties of GitgExt-1.0.GitgExt.UIElement */
+    application?: Application
 }
 class RefAction {
     /* Properties of GitgExt-1.0.GitgExt.RefAction */
@@ -897,7 +1048,7 @@ class RefAction {
     readonly display_name: string
     readonly description: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.RefAction */
     get_action_interface(): RefActionInterface
     set_action_interface(value: RefActionInterface): void
@@ -1013,11 +1164,11 @@ class RefAction {
     _init (config?: RefAction_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RemoteLookup_ConstructProps extends GObject.Object_ConstructProps {
+interface RemoteLookup_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RemoteLookup {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.RemoteLookup */
     lookup(name: string): Gitg.Remote | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -1065,10 +1216,13 @@ class RemoteLookup {
     _init (config?: RemoteLookup_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Searchable_ConstructProps extends GObject.Object_ConstructProps {
+interface Searchable_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.Searchable */
     search_text?: string
     search_visible?: boolean
     search_entry?: Gtk.Entry
+    /* Constructor properties of GitgExt-1.0.GitgExt.UIElement */
+    application?: Application
 }
 class Searchable {
     /* Properties of GitgExt-1.0.GitgExt.Searchable */
@@ -1076,8 +1230,13 @@ class Searchable {
     search_visible: boolean
     readonly search_available: boolean
     search_entry: Gtk.Entry
+    /* Properties of GitgExt-1.0.GitgExt.UIElement */
+    application: Application
+    readonly id: string
+    readonly display_name: string
+    readonly description: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Searchable */
     get_search_text(): string
     set_search_text(value: string): void
@@ -1107,6 +1266,21 @@ class Searchable {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GitgExt-1.0.GitgExt.Activity */
+    is_default_for(action: string): boolean
+    on_key_pressed(event: Gdk.EventKey): boolean
+    /* Methods of GitgExt-1.0.GitgExt.UIElement */
+    negotiate_order(other: UIElement): number
+    get_application(): Application | null
+    set_application(value?: Application | null): void
+    get_id(): string
+    get_display_name(): string
+    get_description(): string
+    get_icon(): string | null
+    get_widget(): Gtk.Widget | null
+    get_shortcut(): number | null
+    get_available(): boolean
+    get_enabled(): boolean
     /* Virtual methods of GitgExt-1.0.GitgExt.Searchable */
     vfunc_get_search_text(): string
     vfunc_set_search_text(value: string): void
@@ -1114,6 +1288,20 @@ class Searchable {
     vfunc_set_search_visible(value: boolean): void
     vfunc_get_search_available(): boolean
     vfunc_set_search_entry(value?: Gtk.Entry | null): void
+    vfunc_is_default_for(action: string): boolean
+    vfunc_on_key_pressed(event: Gdk.EventKey): boolean
+    vfunc_negotiate_order(other: UIElement): number
+    vfunc_get_application(): Application | null
+    vfunc_set_application(value?: Application | null): void
+    vfunc_get_id(): string
+    vfunc_get_display_name(): string
+    vfunc_get_description(): string
+    vfunc_get_icon(): string | null
+    vfunc_get_widget(): Gtk.Widget | null
+    vfunc_get_shortcut(): number | null
+    vfunc_get_available(): boolean
+    vfunc_get_enabled(): boolean
+    vfunc_activate(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1126,6 +1314,10 @@ class Searchable {
     connect(sigName: "notify", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    /* Signals of GitgExt-1.0.GitgExt.UIElement */
+    connect(sigName: "activate", callback: (($obj: Searchable) => void)): number
+    connect_after(sigName: "activate", callback: (($obj: Searchable) => void)): number
+    emit(sigName: "activate"): void
     connect(sigName: "notify::search-text", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::search-text", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::search-visible", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
@@ -1134,6 +1326,14 @@ class Searchable {
     connect_after(sigName: "notify::search-available", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::search-entry", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::search-entry", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::application", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::application", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::id", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::id", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::display-name", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::display-name", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::description", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::description", callback: (($obj: Searchable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1143,8 +1343,11 @@ class Searchable {
     _init (config?: Searchable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Selectable_ConstructProps extends GObject.Object_ConstructProps {
+interface Selectable_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.Selectable */
     selectable_mode?: SelectionMode
+    /* Constructor properties of GitgExt-1.0.GitgExt.UIElement */
+    application?: Application
 }
 class Selectable {
     /* Properties of GitgExt-1.0.GitgExt.Selectable */
@@ -1152,8 +1355,13 @@ class Selectable {
     readonly selectable_available: boolean
     readonly selectable_mode_tooltip: string
     readonly action_widget: Gtk.Widget
+    /* Properties of GitgExt-1.0.GitgExt.UIElement */
+    application: Application
+    readonly id: string
+    readonly display_name: string
+    readonly description: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Selectable */
     get_selectable_mode(): SelectionMode
     set_selectable_mode(value: SelectionMode): void
@@ -1182,12 +1390,41 @@ class Selectable {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GitgExt-1.0.GitgExt.Activity */
+    is_default_for(action: string): boolean
+    on_key_pressed(event: Gdk.EventKey): boolean
+    /* Methods of GitgExt-1.0.GitgExt.UIElement */
+    negotiate_order(other: UIElement): number
+    get_application(): Application | null
+    set_application(value?: Application | null): void
+    get_id(): string
+    get_display_name(): string
+    get_description(): string
+    get_icon(): string | null
+    get_widget(): Gtk.Widget | null
+    get_shortcut(): number | null
+    get_available(): boolean
+    get_enabled(): boolean
     /* Virtual methods of GitgExt-1.0.GitgExt.Selectable */
     vfunc_get_selectable_mode(): SelectionMode
     vfunc_set_selectable_mode(value: SelectionMode): void
     vfunc_get_selectable_available(): boolean
     vfunc_get_selectable_mode_tooltip(): string
     vfunc_get_action_widget(): Gtk.Widget | null
+    vfunc_is_default_for(action: string): boolean
+    vfunc_on_key_pressed(event: Gdk.EventKey): boolean
+    vfunc_negotiate_order(other: UIElement): number
+    vfunc_get_application(): Application | null
+    vfunc_set_application(value?: Application | null): void
+    vfunc_get_id(): string
+    vfunc_get_display_name(): string
+    vfunc_get_description(): string
+    vfunc_get_icon(): string | null
+    vfunc_get_widget(): Gtk.Widget | null
+    vfunc_get_shortcut(): number | null
+    vfunc_get_available(): boolean
+    vfunc_get_enabled(): boolean
+    vfunc_activate(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1200,6 +1437,10 @@ class Selectable {
     connect(sigName: "notify", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    /* Signals of GitgExt-1.0.GitgExt.UIElement */
+    connect(sigName: "activate", callback: (($obj: Selectable) => void)): number
+    connect_after(sigName: "activate", callback: (($obj: Selectable) => void)): number
+    emit(sigName: "activate"): void
     connect(sigName: "notify::selectable-mode", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::selectable-mode", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::selectable-available", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
@@ -1208,6 +1449,14 @@ class Selectable {
     connect_after(sigName: "notify::selectable-mode-tooltip", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::action-widget", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::action-widget", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::application", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::application", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::id", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::id", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::display-name", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::display-name", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::description", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::description", callback: (($obj: Selectable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1217,7 +1466,8 @@ class Selectable {
     _init (config?: Selectable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UIElement_ConstructProps extends GObject.Object_ConstructProps {
+interface UIElement_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.UIElement */
     application?: Application
 }
 class UIElement {
@@ -1227,7 +1477,7 @@ class UIElement {
     readonly display_name: string
     readonly description: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.UIElement */
     negotiate_order(other: UIElement): number
     get_application(): Application | null
@@ -1308,11 +1558,11 @@ class UIElement {
     _init (config?: UIElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CommandLines_ConstructProps extends GObject.Object_ConstructProps {
+interface CommandLines_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CommandLines {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.CommandLines */
     get_for(t_type: GObject.Type, t_dup_func: GObject.BoxedCopyFunc, t_destroy_func: GLib.DestroyNotify): object | null
     parse_finished(): void
@@ -1362,11 +1612,11 @@ class CommandLines {
     static new(command_lines: CommandLine[]): CommandLines
     static $gtype: GObject.Type
 }
-export interface MessageBus_ConstructProps extends GObject.Object_ConstructProps {
+interface MessageBus_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MessageBus {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.MessageBus */
     lookup(id: MessageId): GObject.Type
     register(message_type: GObject.Type, id: MessageId): void
@@ -1436,7 +1686,8 @@ class MessageBus {
     static get_default(): MessageBus
     static $gtype: GObject.Type
 }
-export interface MessageId_ConstructProps extends GObject.Object_ConstructProps {
+interface MessageId_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.MessageId */
     object_path?: string
     method?: string
 }
@@ -1446,7 +1697,7 @@ class MessageId {
     method: string
     readonly id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.MessageId */
     hash(): number
     equal(other: MessageId): boolean
@@ -1508,14 +1759,15 @@ class MessageId {
     static valid_object_path(path: string): boolean
     static $gtype: GObject.Type
 }
-export interface Message_ConstructProps extends GObject.Object_ConstructProps {
+interface Message_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.Message */
     id?: MessageId
 }
 class Message {
     /* Properties of GitgExt-1.0.GitgExt.Message */
     id: MessageId
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Message */
     has(propname: string): boolean
     get_id(): MessageId
@@ -1569,22 +1821,17 @@ class Message {
     static $gtype: GObject.Type
 }
 class UI {
-    /* Fields of GitgExt-1.0.GitgExt.UI */
-    ref_count: number
     static name: string
     static new(): UI
     constructor()
     /* Static methods and pseudo-constructors */
     static new(): UI
 }
-export interface UserQueryResponse_ConstructProps extends GObject.Object_ConstructProps {
+interface UserQueryResponse_ConstructProps extends GObject.Object_ConstructProps {
 }
 class UserQueryResponse {
-    /* Fields of GitgExt-1.0.GitgExt.UserQueryResponse */
-    text: string
-    response_type: Gtk.ResponseType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1630,7 +1877,8 @@ class UserQueryResponse {
     static new(text: string, response_type: Gtk.ResponseType): UserQueryResponse
     static $gtype: GObject.Type
 }
-export interface UserQuery_ConstructProps extends GObject.Object_ConstructProps {
+interface UserQuery_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GitgExt-1.0.GitgExt.UserQuery */
     title?: string
     message?: string
     message_type?: Gtk.MessageType
@@ -1646,11 +1894,8 @@ class UserQuery {
     default_response: Gtk.ResponseType
     default_is_destructive: boolean
     message_use_markup: boolean
-    /* Fields of GitgExt-1.0.GitgExt.UserQuery */
-    _responses: UserQueryResponse[]
-    _responses_length1: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.UserQuery */
     get_responses(): UserQueryResponse[]
     set_responses(value: UserQueryResponse[]): void
@@ -1738,7 +1983,7 @@ class CommandLinesPrivate {
 }
 abstract class MessageBusClass {
     /* Fields of GitgExt-1.0.GitgExt.MessageBusClass */
-    dispatch: (self: MessageBus, message: Message) => void
+    readonly dispatch: (self: MessageBus, message: Message) => void
     static name: string
 }
 class MessageBusPrivate {
@@ -1776,140 +2021,140 @@ class UserQueryPrivate {
 }
 abstract class ActionIface {
     /* Fields of GitgExt-1.0.GitgExt.ActionIface */
-    populate_menu: (self: Action, menu: Gtk.Menu) => void
+    readonly populate_menu: (self: Action, menu: Gtk.Menu) => void
     static name: string
 }
 abstract class ActivityIface {
     /* Fields of GitgExt-1.0.GitgExt.ActivityIface */
-    is_default_for: (self: Activity, action: string) => boolean
-    on_key_pressed: (self: Activity, event: Gdk.EventKey) => boolean
+    readonly is_default_for: (self: Activity, action: string) => boolean
+    readonly on_key_pressed: (self: Activity, event: Gdk.EventKey) => boolean
     static name: string
 }
 abstract class ApplicationIface {
     /* Fields of GitgExt-1.0.GitgExt.ApplicationIface */
-    get_verified_committer: (self: Application) => Ggit.Signature | null
-    get_activity_by_id: (self: Application, id: string) => Activity | null
-    set_activity_by_id: (self: Application, id: string) => Activity | null
-    user_query: (self: Application, query: UserQuery) => void
-    user_query_async: (self: Application, query: UserQuery, _callback_?: Gio.AsyncReadyCallback | null) => void
-    user_query_finish: (self: Application, _res_: Gio.AsyncResult) => Gtk.ResponseType
-    show_infobar: (self: Application, primary_msg: string, secondary_msg: string, type: Gtk.MessageType) => void
-    open_new: (self: Application, repository: Ggit.Repository, hint?: string | null) => Application
-    open_repository: (self: Application, path: Gio.File) => void
-    get_repository: (self: Application) => Gitg.Repository | null
-    set_repository: (self: Application, value?: Gitg.Repository | null) => void
-    get_message_bus: (self: Application) => MessageBus
-    get_current_activity: (self: Application) => Activity | null
-    get_environment: (self: Application) => Gee.Map
-    get_notifications: (self: Application) => Notifications
-    get_busy: (self: Application) => boolean
-    set_busy: (self: Application, value: boolean) => void
-    get_remote_lookup: (self: Application) => RemoteLookup
+    readonly get_verified_committer: (self: Application) => Ggit.Signature | null
+    readonly get_activity_by_id: (self: Application, id: string) => Activity | null
+    readonly set_activity_by_id: (self: Application, id: string) => Activity | null
+    readonly user_query: (self: Application, query: UserQuery) => void
+    readonly user_query_async: (self: Application, query: UserQuery, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly user_query_finish: (self: Application, _res_: Gio.AsyncResult) => Gtk.ResponseType
+    readonly show_infobar: (self: Application, primary_msg: string, secondary_msg: string, type: Gtk.MessageType) => void
+    readonly open_new: (self: Application, repository: Ggit.Repository, hint?: string | null) => Application
+    readonly open_repository: (self: Application, path: Gio.File) => void
+    readonly get_repository: (self: Application) => Gitg.Repository | null
+    readonly set_repository: (self: Application, value?: Gitg.Repository | null) => void
+    readonly get_message_bus: (self: Application) => MessageBus
+    readonly get_current_activity: (self: Application) => Activity | null
+    readonly get_environment: (self: Application) => Gee.Map
+    readonly get_notifications: (self: Application) => Notifications
+    readonly get_busy: (self: Application) => boolean
+    readonly set_busy: (self: Application, value: boolean) => void
+    readonly get_remote_lookup: (self: Application) => RemoteLookup
     static name: string
 }
 abstract class CommandLineIface {
     /* Fields of GitgExt-1.0.GitgExt.CommandLineIface */
-    get_option_group: (self: CommandLine) => GLib.OptionGroup
-    parse_finished: (self: CommandLine) => void
-    apply: (self: CommandLine, application: Application) => void
+    readonly get_option_group: (self: CommandLine) => GLib.OptionGroup
+    readonly parse_finished: (self: CommandLine) => void
+    readonly apply: (self: CommandLine, application: Application) => void
     static name: string
 }
 abstract class CommitActionIface {
     /* Fields of GitgExt-1.0.GitgExt.CommitActionIface */
-    get_action_interface: (self: CommitAction) => RefActionInterface
-    set_action_interface: (self: CommitAction, value: RefActionInterface) => void
-    get_commit: (self: CommitAction) => Gitg.Commit
-    set_commit: (self: CommitAction, value: Gitg.Commit) => void
+    readonly get_action_interface: (self: CommitAction) => RefActionInterface
+    readonly set_action_interface: (self: CommitAction, value: RefActionInterface) => void
+    readonly get_commit: (self: CommitAction) => Gitg.Commit
+    readonly set_commit: (self: CommitAction, value: Gitg.Commit) => void
     static name: string
 }
 abstract class HistoryPanelIface {
     /* Fields of GitgExt-1.0.GitgExt.HistoryPanelIface */
-    get_history: (self: HistoryPanel) => History | null
-    set_history: (self: HistoryPanel, value?: History | null) => void
+    readonly get_history: (self: HistoryPanel) => History | null
+    readonly set_history: (self: HistoryPanel, value?: History | null) => void
     static name: string
 }
 abstract class HistoryIface {
     /* Fields of GitgExt-1.0.GitgExt.HistoryIface */
-    foreach_selected: (self: History, func: ForeachCommitSelectionFunc) => void
-    select: (self: History, commit: Gitg.Commit) => void
+    readonly foreach_selected: (self: History, func: ForeachCommitSelectionFunc) => void
+    readonly select: (self: History, commit: Gitg.Commit) => void
     static name: string
 }
 abstract class NotificationIface {
     /* Fields of GitgExt-1.0.GitgExt.NotificationIface */
-    get_widget: (self: Notification) => Gtk.Widget | null
+    readonly get_widget: (self: Notification) => Gtk.Widget | null
     static name: string
 }
 abstract class NotificationsIface {
     /* Fields of GitgExt-1.0.GitgExt.NotificationsIface */
-    add: (self: Notifications, notification: Notification) => void
-    remove: (self: Notifications, notification: Notification, delay: number) => void
+    readonly add: (self: Notifications, notification: Notification) => void
+    readonly remove: (self: Notifications, notification: Notification, delay: number) => void
     static name: string
 }
 abstract class PreferencesIface {
     /* Fields of GitgExt-1.0.GitgExt.PreferencesIface */
-    get_id: (self: Preferences) => string
-    get_display_name: (self: Preferences) => string
-    get_widget: (self: Preferences) => Gtk.Widget
+    readonly get_id: (self: Preferences) => string
+    readonly get_display_name: (self: Preferences) => string
+    readonly get_widget: (self: Preferences) => Gtk.Widget
     static name: string
 }
 abstract class RefActionInterfaceIface {
     /* Fields of GitgExt-1.0.GitgExt.RefActionInterfaceIface */
-    add_ref: (self: RefActionInterface, reference: Gitg.Ref) => void
-    remove_ref: (self: RefActionInterface, reference: Gitg.Ref) => void
-    replace_ref: (self: RefActionInterface, old_ref: Gitg.Ref, new_ref: Gitg.Ref) => void
-    set_busy: (self: RefActionInterface, reference: Gitg.Ref, busy: boolean) => void
-    edit_ref_name: (self: RefActionInterface, reference: Gitg.Ref, callback: RefNameEditingDone) => void
-    refresh: (self: RefActionInterface) => void
-    get_application: (self: RefActionInterface) => Application
-    set_application: (self: RefActionInterface, value: Application) => void
-    get_references: (self: RefActionInterface) => Gee.List
+    readonly add_ref: (self: RefActionInterface, reference: Gitg.Ref) => void
+    readonly remove_ref: (self: RefActionInterface, reference: Gitg.Ref) => void
+    readonly replace_ref: (self: RefActionInterface, old_ref: Gitg.Ref, new_ref: Gitg.Ref) => void
+    readonly set_busy: (self: RefActionInterface, reference: Gitg.Ref, busy: boolean) => void
+    readonly edit_ref_name: (self: RefActionInterface, reference: Gitg.Ref, callback: RefNameEditingDone) => void
+    readonly refresh: (self: RefActionInterface) => void
+    readonly get_application: (self: RefActionInterface) => Application
+    readonly set_application: (self: RefActionInterface, value: Application) => void
+    readonly get_references: (self: RefActionInterface) => Gee.List
     static name: string
 }
 abstract class RefActionIface {
     /* Fields of GitgExt-1.0.GitgExt.RefActionIface */
-    get_action_interface: (self: RefAction) => RefActionInterface
-    set_action_interface: (self: RefAction, value: RefActionInterface) => void
-    get_reference: (self: RefAction) => Gitg.Ref
-    set_reference: (self: RefAction, value: Gitg.Ref) => void
+    readonly get_action_interface: (self: RefAction) => RefActionInterface
+    readonly set_action_interface: (self: RefAction, value: RefActionInterface) => void
+    readonly get_reference: (self: RefAction) => Gitg.Ref
+    readonly set_reference: (self: RefAction, value: Gitg.Ref) => void
     static name: string
 }
 abstract class RemoteLookupIface {
     /* Fields of GitgExt-1.0.GitgExt.RemoteLookupIface */
-    lookup: (self: RemoteLookup, name: string) => Gitg.Remote | null
+    readonly lookup: (self: RemoteLookup, name: string) => Gitg.Remote | null
     static name: string
 }
 abstract class SearchableIface {
     /* Fields of GitgExt-1.0.GitgExt.SearchableIface */
-    get_search_text: (self: Searchable) => string
-    set_search_text: (self: Searchable, value: string) => void
-    get_search_visible: (self: Searchable) => boolean
-    set_search_visible: (self: Searchable, value: boolean) => void
-    get_search_available: (self: Searchable) => boolean
-    set_search_entry: (self: Searchable, value?: Gtk.Entry | null) => void
+    readonly get_search_text: (self: Searchable) => string
+    readonly set_search_text: (self: Searchable, value: string) => void
+    readonly get_search_visible: (self: Searchable) => boolean
+    readonly set_search_visible: (self: Searchable, value: boolean) => void
+    readonly get_search_available: (self: Searchable) => boolean
+    readonly set_search_entry: (self: Searchable, value?: Gtk.Entry | null) => void
     static name: string
 }
 abstract class SelectableIface {
     /* Fields of GitgExt-1.0.GitgExt.SelectableIface */
-    get_selectable_mode: (self: Selectable) => SelectionMode
-    set_selectable_mode: (self: Selectable, value: SelectionMode) => void
-    get_selectable_available: (self: Selectable) => boolean
-    get_selectable_mode_tooltip: (self: Selectable) => string
-    get_action_widget: (self: Selectable) => Gtk.Widget | null
+    readonly get_selectable_mode: (self: Selectable) => SelectionMode
+    readonly set_selectable_mode: (self: Selectable, value: SelectionMode) => void
+    readonly get_selectable_available: (self: Selectable) => boolean
+    readonly get_selectable_mode_tooltip: (self: Selectable) => string
+    readonly get_action_widget: (self: Selectable) => Gtk.Widget | null
     static name: string
 }
 abstract class UIElementIface {
     /* Fields of GitgExt-1.0.GitgExt.UIElementIface */
-    negotiate_order: (self: UIElement, other: UIElement) => number
-    get_application: (self: UIElement) => Application | null
-    set_application: (self: UIElement, value?: Application | null) => void
-    get_id: (self: UIElement) => string
-    get_display_name: (self: UIElement) => string
-    get_description: (self: UIElement) => string
-    get_icon: (self: UIElement) => string | null
-    get_widget: (self: UIElement) => Gtk.Widget | null
-    get_shortcut: (self: UIElement) => number | null
-    get_available: (self: UIElement) => boolean
-    get_enabled: (self: UIElement) => boolean
+    readonly negotiate_order: (self: UIElement, other: UIElement) => number
+    readonly get_application: (self: UIElement) => Application | null
+    readonly set_application: (self: UIElement, value?: Application | null) => void
+    readonly get_id: (self: UIElement) => string
+    readonly get_display_name: (self: UIElement) => string
+    readonly get_description: (self: UIElement) => string
+    readonly get_icon: (self: UIElement) => string | null
+    readonly get_widget: (self: UIElement) => Gtk.Widget | null
+    readonly get_shortcut: (self: UIElement) => number | null
+    readonly get_available: (self: UIElement) => boolean
+    readonly get_enabled: (self: UIElement) => boolean
     static name: string
 }
 }

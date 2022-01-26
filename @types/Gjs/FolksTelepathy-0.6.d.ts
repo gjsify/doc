@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * FolksTelepathy-0.6
  */
@@ -12,7 +18,8 @@ import type Folks from './Folks-0.6';
 
 export namespace FolksTelepathy {
 
-export interface PersonaStore_ConstructProps extends Folks.PersonaStore_ConstructProps {
+interface PersonaStore_ConstructProps extends Folks.PersonaStore_ConstructProps {
+    /* Constructor properties of FolksTelepathy-0.6.FolksTelepathy.PersonaStore */
     account?: TelepathyGLib.Account
 }
 class PersonaStore {
@@ -31,7 +38,7 @@ class PersonaStore {
     is_primary_store: boolean
     is_user_set_default: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksTelepathy-0.6.FolksTelepathy.PersonaStore */
     get_account(): TelepathyGLib.Account
     /* Methods of Folks-0.6.Folks.PersonaStore */
@@ -159,25 +166,37 @@ class PersonaStore {
     static dup_for_account(account: TelepathyGLib.Account): PersonaStore
     static $gtype: GObject.Type
 }
-export interface Persona_ConstructProps extends Folks.Persona_ConstructProps {
+interface Persona_ConstructProps extends Folks.Persona_ConstructProps {
+    /* Constructor properties of FolksTelepathy-0.6.FolksTelepathy.Persona */
     is_in_contact_list?: boolean
     contact?: TelepathyGLib.Contact
+    /* Constructor properties of Folks-0.6.Folks.AliasDetails */
     alias?: string
+    /* Constructor properties of Folks-0.6.Folks.AvatarDetails */
     avatar?: Gio.LoadableIcon
+    /* Constructor properties of Folks-0.6.Folks.BirthdayDetails */
     birthday?: GLib.DateTime
     calendar_event_id?: string
+    /* Constructor properties of Folks-0.6.Folks.EmailDetails */
     email_addresses?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.FavouriteDetails */
     is_favourite?: boolean
+    /* Constructor properties of Folks-0.6.Folks.GroupDetails */
     groups?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.ImDetails */
     im_addresses?: Gee.MultiMap
+    /* Constructor properties of Folks-0.6.Folks.NameDetails */
     structured_name?: Folks.StructuredName
     full_name?: string
     nickname?: string
+    /* Constructor properties of Folks-0.6.Folks.PhoneDetails */
     phone_numbers?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.PresenceDetails */
     presence_type?: Folks.PresenceType
     presence_message?: string
     client_types?: string[]
     presence_status?: string
+    /* Constructor properties of Folks-0.6.Folks.UrlDetails */
     urls?: Gee.Set
 }
 class Persona {
@@ -220,11 +239,8 @@ class Persona {
     presence_status: string
     /* Properties of Folks-0.6.Folks.UrlDetails */
     urls: Gee.Set
-    /* Fields of FolksTelepathy-0.6.FolksTelepathy.Persona */
-    _last_im_interaction_datetime: GLib.DateTime | null
-    _last_call_interaction_datetime: GLib.DateTime | null
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of FolksTelepathy-0.6.FolksTelepathy.Persona */
     get_is_in_contact_list(): boolean
     set_is_in_contact_list(value: boolean): void

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Snapd-1
  */
@@ -88,7 +94,7 @@ enum MarkdownNodeType {
     URL,
 }
 enum MarkdownVersion {
-    /* 0 (invalid, starts with a number) */
+    TODO_0,
 }
 enum PublisherValidation {
     UNKNOWN,
@@ -167,7 +173,8 @@ function login_sync(username: string, password: string, otp?: string | null, can
 interface ProgressCallback {
     (client: Client, change: Change, deprecated?: object | null): void
 }
-export interface Alias_ConstructProps extends GObject.Object_ConstructProps {
+interface Alias_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Alias */
     app_auto?: string
     app_manual?: string
     command?: string
@@ -177,7 +184,7 @@ export interface Alias_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Alias {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Alias */
     get_app(): string | null
     get_app_auto(): string | null
@@ -229,7 +236,8 @@ class Alias {
     _init (config?: Alias_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface App_ConstructProps extends GObject.Object_ConstructProps {
+interface App_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.App */
     active?: boolean
     aliases?: string[]
     common_id?: string
@@ -241,7 +249,7 @@ export interface App_ConstructProps extends GObject.Object_ConstructProps {
 }
 class App {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.App */
     get_active(): boolean
     get_aliases(): string[]
@@ -294,12 +302,13 @@ class App {
     _init (config?: App_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Assertion_ConstructProps extends GObject.Object_ConstructProps {
+interface Assertion_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Assertion */
     content?: string
 }
 class Assertion {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Assertion */
     get_body(): string | null
     get_header(name: string): string | null
@@ -350,7 +359,8 @@ class Assertion {
     static new(content: string): Assertion
     static $gtype: GObject.Type
 }
-export interface AuthData_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthData_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.AuthData */
     discharges?: string[]
     macaroon?: string
 }
@@ -359,7 +369,7 @@ class AuthData {
     discharges: string[]
     macaroon: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.AuthData */
     get_discharges(): string[]
     get_macaroon(): string
@@ -412,7 +422,8 @@ class AuthData {
     static new(macaroon: string, discharges: string[]): AuthData
     static $gtype: GObject.Type
 }
-export interface Change_ConstructProps extends GObject.Object_ConstructProps {
+interface Change_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Change */
     error?: string
     id?: string
     kind?: string
@@ -425,7 +436,7 @@ export interface Change_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Change {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Change */
     get_error(): string | null
     get_id(): string
@@ -479,7 +490,8 @@ class Change {
     _init (config?: Change_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Channel_ConstructProps extends GObject.Object_ConstructProps {
+interface Channel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Channel */
     confinement?: Confinement
     epoch?: string
     name?: string
@@ -490,7 +502,7 @@ export interface Channel_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Channel {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Channel */
     get_branch(): string | null
     get_confinement(): Confinement
@@ -545,13 +557,11 @@ class Channel {
     _init (config?: Channel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Client {
-    /* Fields of Snapd-1.Snapd.Client */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Client */
     abort_change_async(id: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     abort_change_finish(result: Gio.AsyncResult): Change
@@ -770,7 +780,8 @@ class Client {
     static new_from_socket(socket: Gio.Socket): Client
     static $gtype: GObject.Type
 }
-export interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Connection */
     gadget?: boolean
     interface?: string
     manual?: boolean
@@ -783,7 +794,7 @@ export interface Connection_ConstructProps extends GObject.Object_ConstructProps
 }
 class Connection {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Connection */
     get_gadget(): boolean
     get_interface(): string
@@ -841,13 +852,14 @@ class Connection {
     _init (config?: Connection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Icon_ConstructProps extends GObject.Object_ConstructProps {
+interface Icon_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Icon */
     data?: GLib.Bytes
     mime_type?: string
 }
 class Icon {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Icon */
     get_data(): GLib.Bytes
     get_mime_type(): string
@@ -894,7 +906,8 @@ class Icon {
     _init (config?: Icon_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Interface_ConstructProps extends GObject.Object_ConstructProps {
+interface Interface_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Interface */
     doc_url?: string
     name?: string
     plugs?: object[]
@@ -903,7 +916,7 @@ export interface Interface_ConstructProps extends GObject.Object_ConstructProps 
 }
 class Interface {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Interface */
     get_doc_url(): string
     get_name(): string
@@ -954,13 +967,14 @@ class Interface {
     _init (config?: Interface_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Maintenance_ConstructProps extends GObject.Object_ConstructProps {
+interface Maintenance_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Maintenance */
     kind?: MaintenanceKind
     message?: string
 }
 class Maintenance {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Maintenance */
     get_kind(): MaintenanceKind
     get_message(): string
@@ -1007,14 +1021,15 @@ class Maintenance {
     _init (config?: Maintenance_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MarkdownNode_ConstructProps extends GObject.Object_ConstructProps {
+interface MarkdownNode_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.MarkdownNode */
     children?: object[]
     node_type?: MarkdownNodeType
     text?: string
 }
 class MarkdownNode {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.MarkdownNode */
     get_children(): MarkdownNode[]
     get_node_type(): MarkdownNodeType
@@ -1062,11 +1077,11 @@ class MarkdownNode {
     _init (config?: MarkdownNode_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MarkdownParser_ConstructProps extends GObject.Object_ConstructProps {
+interface MarkdownParser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MarkdownParser {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.MarkdownParser */
     get_preserve_whitespace(): boolean
     parse(text: string): MarkdownNode[]
@@ -1116,7 +1131,8 @@ class MarkdownParser {
     static new(version: MarkdownVersion): MarkdownParser
     static $gtype: GObject.Type
 }
-export interface Media_ConstructProps extends GObject.Object_ConstructProps {
+interface Media_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Media */
     height?: number
     type?: string
     url?: string
@@ -1124,7 +1140,7 @@ export interface Media_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Media {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Media */
     get_height(): number
     get_media_type(): string
@@ -1173,7 +1189,8 @@ class Media {
     _init (config?: Media_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Plug_ConstructProps extends GObject.Object_ConstructProps {
+interface Plug_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Plug */
     attributes?: GLib.HashTable
     connections?: object[]
     interface?: string
@@ -1183,7 +1200,7 @@ export interface Plug_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Plug {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Plug */
     get_attribute(name: string): GLib.Variant | null
     get_attribute_names(): [ /* returnType */ string[], /* length */ number | null ]
@@ -1237,13 +1254,14 @@ class Plug {
     _init (config?: Plug_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlugRef_ConstructProps extends GObject.Object_ConstructProps {
+interface PlugRef_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.PlugRef */
     plug?: string
     snap?: string
 }
 class PlugRef {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.PlugRef */
     get_plug(): string
     get_snap(): string
@@ -1290,13 +1308,14 @@ class PlugRef {
     _init (config?: PlugRef_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Price_ConstructProps extends GObject.Object_ConstructProps {
+interface Price_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Price */
     amount?: number
     currency?: string
 }
 class Price {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Price */
     get_amount(): number
     get_currency(): string
@@ -1343,14 +1362,15 @@ class Price {
     _init (config?: Price_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Screenshot_ConstructProps extends GObject.Object_ConstructProps {
+interface Screenshot_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Screenshot */
     height?: number
     url?: string
     width?: number
 }
 class Screenshot {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Screenshot */
     get_height(): number
     get_url(): string
@@ -1398,7 +1418,8 @@ class Screenshot {
     _init (config?: Screenshot_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Slot_ConstructProps extends GObject.Object_ConstructProps {
+interface Slot_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Slot */
     attributes?: GLib.HashTable
     connections?: object[]
     interface?: string
@@ -1408,7 +1429,7 @@ export interface Slot_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Slot {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Slot */
     get_attribute(name: string): GLib.Variant | null
     get_attribute_names(): [ /* returnType */ string[], /* length */ number | null ]
@@ -1462,13 +1483,14 @@ class Slot {
     _init (config?: Slot_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SlotRef_ConstructProps extends GObject.Object_ConstructProps {
+interface SlotRef_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.SlotRef */
     slot?: string
     snap?: string
 }
 class SlotRef {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.SlotRef */
     get_slot(): string
     get_snap(): string
@@ -1515,7 +1537,8 @@ class SlotRef {
     _init (config?: SlotRef_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Snap_ConstructProps extends GObject.Object_ConstructProps {
+interface Snap_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Snap */
     apps?: object[]
     base?: string
     broken?: string
@@ -1557,7 +1580,7 @@ export interface Snap_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Snap {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Snap */
     get_apps(): App[]
     get_base(): string | null
@@ -1641,7 +1664,8 @@ class Snap {
     _init (config?: Snap_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SystemInformation_ConstructProps extends GObject.Object_ConstructProps {
+interface SystemInformation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.SystemInformation */
     binaries_directory?: string
     build_id?: string
     confinement?: SystemConfinement
@@ -1663,7 +1687,7 @@ export interface SystemInformation_ConstructProps extends GObject.Object_Constru
 }
 class SystemInformation {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.SystemInformation */
     get_binaries_directory(): string
     get_build_id(): string
@@ -1726,7 +1750,8 @@ class SystemInformation {
     _init (config?: SystemInformation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Task_ConstructProps extends GObject.Object_ConstructProps {
+interface Task_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.Task */
     id?: string
     kind?: string
     progress_done?: number
@@ -1740,7 +1765,7 @@ export interface Task_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Task {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.Task */
     get_id(): string
     get_kind(): string
@@ -1795,7 +1820,8 @@ class Task {
     _init (config?: Task_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UserInformation_ConstructProps extends GObject.Object_ConstructProps {
+interface UserInformation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Snapd-1.Snapd.UserInformation */
     auth_data?: AuthData
     email?: string
     id?: number
@@ -1804,7 +1830,7 @@ export interface UserInformation_ConstructProps extends GObject.Object_Construct
 }
 class UserInformation {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Snapd-1.Snapd.UserInformation */
     get_auth_data(): AuthData | null
     get_email(): string
@@ -1856,32 +1882,32 @@ class UserInformation {
 }
 abstract class AliasClass {
     /* Fields of Snapd-1.Snapd.AliasClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class AppClass {
     /* Fields of Snapd-1.Snapd.AppClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class AssertionClass {
     /* Fields of Snapd-1.Snapd.AssertionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class AuthDataClass {
     /* Fields of Snapd-1.Snapd.AuthDataClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ChangeClass {
     /* Fields of Snapd-1.Snapd.ChangeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ChannelClass {
     /* Fields of Snapd-1.Snapd.ChannelClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ClientClass {
@@ -1889,87 +1915,87 @@ abstract class ClientClass {
 }
 abstract class ConnectionClass {
     /* Fields of Snapd-1.Snapd.ConnectionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class IconClass {
     /* Fields of Snapd-1.Snapd.IconClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class InterfaceClass {
     /* Fields of Snapd-1.Snapd.InterfaceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MaintenanceClass {
     /* Fields of Snapd-1.Snapd.MaintenanceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MarkdownNodeClass {
     /* Fields of Snapd-1.Snapd.MarkdownNodeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MarkdownParserClass {
     /* Fields of Snapd-1.Snapd.MarkdownParserClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MediaClass {
     /* Fields of Snapd-1.Snapd.MediaClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PlugClass {
     /* Fields of Snapd-1.Snapd.PlugClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PlugRefClass {
     /* Fields of Snapd-1.Snapd.PlugRefClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PriceClass {
     /* Fields of Snapd-1.Snapd.PriceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ScreenshotClass {
     /* Fields of Snapd-1.Snapd.ScreenshotClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SlotClass {
     /* Fields of Snapd-1.Snapd.SlotClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SlotRefClass {
     /* Fields of Snapd-1.Snapd.SlotRefClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SnapClass {
     /* Fields of Snapd-1.Snapd.SnapClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SystemInformationClass {
     /* Fields of Snapd-1.Snapd.SystemInformationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TaskClass {
     /* Fields of Snapd-1.Snapd.TaskClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class UserInformationClass {
     /* Fields of Snapd-1.Snapd.UserInformationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstCodecs-1.0
  */
@@ -46,43 +52,43 @@ enum Vp9TxMode {
     SELECT,
 }
 enum Vp9TxSize {
-    /* 4X4 (invalid, starts with a number) */
-    /* 8X8 (invalid, starts with a number) */
-    /* 16X16 (invalid, starts with a number) */
-    /* 32X32 (invalid, starts with a number) */
+    TODO_4X4,
+    TODO_8X8,
+    TODO_16X16,
+    TODO_32X32,
 }
-export const H264_DPB_MAX_SIZE: number
-export const H265_DPB_MAX_SIZE: number
-export const VP9_BLOCK_SIZE_GROUPS: number
-export const VP9_CLASS0_SIZE: number
-export const VP9_COMP_MODE_CONTEXTS: number
-export const VP9_INTERP_FILTER_CONTEXTS: number
-export const VP9_INTER_MODES: number
-export const VP9_INTER_MODE_CONTEXTS: number
-export const VP9_INTRA_MODES: number
-export const VP9_IS_INTER_CONTEXTS: number
-export const VP9_MV_CLASSES: number
-export const VP9_MV_FR_SIZE: number
-export const VP9_MV_JOINTS: number
-export const VP9_MV_OFFSET_BITS: number
-export const VP9_PARTITION_CONTEXTS: number
-export const VP9_PARTITION_TYPES: number
-export const VP9_REF_CONTEXTS: number
-export const VP9_SEG_LVL_ALT_L: number
-export const VP9_SEG_LVL_ALT_Q: number
-export const VP9_SEG_LVL_MAX: number
-export const VP9_SEG_LVL_REF_FRAME: number
-export const VP9_SEG_SEG_LVL_SKIP: number
-export const VP9_SKIP_CONTEXTS: number
-export const VP9_SWITCHABLE_FILTERS: number
-export const VP9_TX_MODES: number
-export const VP9_TX_SIZES: number
-export const VP9_TX_SIZE_CONTEXTS: number
+const H264_DPB_MAX_SIZE: number
+const H265_DPB_MAX_SIZE: number
+const VP9_BLOCK_SIZE_GROUPS: number
+const VP9_CLASS0_SIZE: number
+const VP9_COMP_MODE_CONTEXTS: number
+const VP9_INTERP_FILTER_CONTEXTS: number
+const VP9_INTER_MODES: number
+const VP9_INTER_MODE_CONTEXTS: number
+const VP9_INTRA_MODES: number
+const VP9_IS_INTER_CONTEXTS: number
+const VP9_MV_CLASSES: number
+const VP9_MV_FR_SIZE: number
+const VP9_MV_JOINTS: number
+const VP9_MV_OFFSET_BITS: number
+const VP9_PARTITION_CONTEXTS: number
+const VP9_PARTITION_TYPES: number
+const VP9_REF_CONTEXTS: number
+const VP9_SEG_LVL_ALT_L: number
+const VP9_SEG_LVL_ALT_Q: number
+const VP9_SEG_LVL_MAX: number
+const VP9_SEG_LVL_REF_FRAME: number
+const VP9_SEG_SEG_LVL_SKIP: number
+const VP9_SKIP_CONTEXTS: number
+const VP9_SWITCHABLE_FILTERS: number
+const VP9_TX_MODES: number
+const VP9_TX_SIZES: number
+const VP9_TX_SIZE_CONTEXTS: number
 function vp9_get_ac_quant(qindex: number, delta_q_ac: number, bit_depth: number): number
 function vp9_get_dc_quant(qindex: number, delta_q_dc: number, bit_depth: number): number
 function vp9_get_qindex(segmentation_params: Vp9SegmentationParams, quantization_params: Vp9QuantizationParams, segment_id: number): number
 function vp9_seg_feature_active(params: Vp9SegmentationParams, segment_id: number, feature: number): boolean
-export interface AV1Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
+interface AV1Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
 }
 class AV1Decoder {
     /* Properties of GstVideo-1.0.GstVideo.VideoDecoder */
@@ -92,36 +98,35 @@ class AV1Decoder {
     max_errors: number
     min_force_key_unit_interval: number
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVideo-1.0.GstVideo.VideoDecoder */
     add_to_frame(n_bytes: number): void
     allocate_output_buffer(): Gst.Buffer
@@ -365,10 +370,6 @@ class AV1Decoder {
     connect_after(sigName: "notify::min-force-key-unit-interval", callback: (($obj: AV1Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: AV1Decoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: AV1Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AV1Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AV1Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AV1Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AV1Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -378,7 +379,8 @@ class AV1Decoder {
     _init (config?: AV1Decoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface H264Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
+interface H264Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
+    /* Constructor properties of GstCodecs-1.0.GstCodecs.H264Decoder */
     compliance?: H264DecoderCompliance
 }
 class H264Decoder {
@@ -391,36 +393,35 @@ class H264Decoder {
     max_errors: number
     min_force_key_unit_interval: number
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstCodecs-1.0.GstCodecs.H264Decoder */
     get_picture(system_frame_number: number): H264Picture
     set_process_ref_pic_lists(process: boolean): void
@@ -670,10 +671,6 @@ class H264Decoder {
     connect_after(sigName: "notify::min-force-key-unit-interval", callback: (($obj: H264Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: H264Decoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: H264Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: H264Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: H264Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: H264Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: H264Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -683,7 +680,7 @@ class H264Decoder {
     _init (config?: H264Decoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface H265Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
+interface H265Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
 }
 class H265Decoder {
     /* Properties of GstVideo-1.0.GstVideo.VideoDecoder */
@@ -693,36 +690,35 @@ class H265Decoder {
     max_errors: number
     min_force_key_unit_interval: number
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstCodecs-1.0.GstCodecs.H265Decoder */
     get_picture(system_frame_number: number): H265Picture
     set_process_ref_pic_lists(process: boolean): void
@@ -967,10 +963,6 @@ class H265Decoder {
     connect_after(sigName: "notify::min-force-key-unit-interval", callback: (($obj: H265Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: H265Decoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: H265Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: H265Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: H265Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: H265Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: H265Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -980,7 +972,7 @@ class H265Decoder {
     _init (config?: H265Decoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Mpeg2Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
+interface Mpeg2Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
 }
 class Mpeg2Decoder {
     /* Properties of GstVideo-1.0.GstVideo.VideoDecoder */
@@ -990,36 +982,35 @@ class Mpeg2Decoder {
     max_errors: number
     min_force_key_unit_interval: number
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVideo-1.0.GstVideo.VideoDecoder */
     add_to_frame(n_bytes: number): void
     allocate_output_buffer(): Gst.Buffer
@@ -1264,10 +1255,6 @@ class Mpeg2Decoder {
     connect_after(sigName: "notify::min-force-key-unit-interval", callback: (($obj: Mpeg2Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: Mpeg2Decoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: Mpeg2Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Mpeg2Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Mpeg2Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Mpeg2Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Mpeg2Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1277,7 +1264,7 @@ class Mpeg2Decoder {
     _init (config?: Mpeg2Decoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Vp8Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
+interface Vp8Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
 }
 class Vp8Decoder {
     /* Properties of GstVideo-1.0.GstVideo.VideoDecoder */
@@ -1287,36 +1274,35 @@ class Vp8Decoder {
     max_errors: number
     min_force_key_unit_interval: number
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVideo-1.0.GstVideo.VideoDecoder */
     add_to_frame(n_bytes: number): void
     allocate_output_buffer(): Gst.Buffer
@@ -1559,10 +1545,6 @@ class Vp8Decoder {
     connect_after(sigName: "notify::min-force-key-unit-interval", callback: (($obj: Vp8Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: Vp8Decoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: Vp8Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Vp8Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Vp8Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Vp8Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Vp8Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1572,7 +1554,7 @@ class Vp8Decoder {
     _init (config?: Vp8Decoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Vp9Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
+interface Vp9Decoder_ConstructProps extends GstVideo.VideoDecoder_ConstructProps {
 }
 class Vp9Decoder {
     /* Properties of GstVideo-1.0.GstVideo.VideoDecoder */
@@ -1582,36 +1564,35 @@ class Vp9Decoder {
     max_errors: number
     min_force_key_unit_interval: number
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstCodecs-1.0.GstCodecs.Vp9Decoder */
     set_non_keyframe_format_change_support(support: boolean): void
     /* Methods of GstVideo-1.0.GstVideo.VideoDecoder */
@@ -1859,10 +1840,6 @@ class Vp9Decoder {
     connect_after(sigName: "notify::min-force-key-unit-interval", callback: (($obj: Vp9Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: Vp9Decoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: Vp9Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Vp9Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Vp9Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Vp9Decoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Vp9Decoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1874,13 +1851,13 @@ class Vp9Decoder {
 }
 abstract class AV1DecoderClass {
     /* Fields of GstCodecs-1.0.GstCodecs.AV1DecoderClass */
-    parent_class: GstVideo.VideoDecoderClass
-    new_picture: (decoder: AV1Decoder, frame: GstVideo.VideoCodecFrame, picture: AV1Picture) => Gst.FlowReturn
-    duplicate_picture: (decoder: AV1Decoder, picture: AV1Picture) => AV1Picture
-    start_picture: (decoder: AV1Decoder, picture: AV1Picture, dpb: AV1Dpb) => Gst.FlowReturn
-    decode_tile: (decoder: AV1Decoder, picture: AV1Picture, tile: AV1Tile) => Gst.FlowReturn
-    end_picture: (decoder: AV1Decoder, picture: AV1Picture) => Gst.FlowReturn
-    output_picture: (decoder: AV1Decoder, frame: GstVideo.VideoCodecFrame, picture: AV1Picture) => Gst.FlowReturn
+    readonly parent_class: GstVideo.VideoDecoderClass
+    readonly new_picture: (decoder: AV1Decoder, frame: GstVideo.VideoCodecFrame, picture: AV1Picture) => Gst.FlowReturn
+    readonly duplicate_picture: (decoder: AV1Decoder, picture: AV1Picture) => AV1Picture
+    readonly start_picture: (decoder: AV1Decoder, picture: AV1Picture, dpb: AV1Dpb) => Gst.FlowReturn
+    readonly decode_tile: (decoder: AV1Decoder, picture: AV1Picture, tile: AV1Tile) => Gst.FlowReturn
+    readonly end_picture: (decoder: AV1Decoder, picture: AV1Picture) => Gst.FlowReturn
+    readonly output_picture: (decoder: AV1Decoder, frame: GstVideo.VideoCodecFrame, picture: AV1Picture) => Gst.FlowReturn
     static name: string
 }
 class AV1DecoderPrivate {
@@ -1888,7 +1865,7 @@ class AV1DecoderPrivate {
 }
 class AV1Dpb {
     /* Fields of GstCodecs-1.0.GstCodecs.AV1Dpb */
-    pic_list: AV1Picture[]
+    readonly pic_list: AV1Picture[]
     /* Methods of GstCodecs-1.0.GstCodecs.AV1Dpb */
     add(picture: AV1Picture): void
     clear(): void
@@ -1897,14 +1874,14 @@ class AV1Dpb {
 }
 class AV1Picture {
     /* Fields of GstCodecs-1.0.GstCodecs.AV1Picture */
-    parent: Gst.MiniObject
-    system_frame_number: number
-    display_frame_id: number
-    show_frame: boolean
-    showable_frame: boolean
-    apply_grain: boolean
-    user_data: object
-    notify: GLib.DestroyNotify
+    readonly parent: Gst.MiniObject
+    readonly system_frame_number: number
+    readonly display_frame_id: number
+    readonly show_frame: boolean
+    readonly showable_frame: boolean
+    readonly apply_grain: boolean
+    readonly user_data: object
+    readonly notify: GLib.DestroyNotify
     /* Methods of GstCodecs-1.0.GstCodecs.AV1Picture */
     get_user_data(): object | null
     set_user_data(notify: GLib.DestroyNotify): void
@@ -1919,13 +1896,13 @@ class AV1Tile {
 }
 abstract class H264DecoderClass {
     /* Fields of GstCodecs-1.0.GstCodecs.H264DecoderClass */
-    new_picture: (decoder: H264Decoder, frame: GstVideo.VideoCodecFrame, picture: H264Picture) => Gst.FlowReturn
-    new_field_picture: (decoder: H264Decoder, first_field: H264Picture, second_field: H264Picture) => Gst.FlowReturn
-    start_picture: (decoder: H264Decoder, picture: H264Picture, slice: H264Slice, dpb: H264Dpb) => Gst.FlowReturn
-    decode_slice: (decoder: H264Decoder, picture: H264Picture, slice: H264Slice, ref_pic_list0: H264Picture[], ref_pic_list1: H264Picture[]) => Gst.FlowReturn
-    end_picture: (decoder: H264Decoder, picture: H264Picture) => Gst.FlowReturn
-    output_picture: (decoder: H264Decoder, frame: GstVideo.VideoCodecFrame, picture: H264Picture) => Gst.FlowReturn
-    get_preferred_output_delay: (decoder: H264Decoder, live: boolean) => number
+    readonly new_picture: (decoder: H264Decoder, frame: GstVideo.VideoCodecFrame, picture: H264Picture) => Gst.FlowReturn
+    readonly new_field_picture: (decoder: H264Decoder, first_field: H264Picture, second_field: H264Picture) => Gst.FlowReturn
+    readonly start_picture: (decoder: H264Decoder, picture: H264Picture, slice: H264Slice, dpb: H264Dpb) => Gst.FlowReturn
+    readonly decode_slice: (decoder: H264Decoder, picture: H264Picture, slice: H264Slice, ref_pic_list0: H264Picture[], ref_pic_list1: H264Picture[]) => Gst.FlowReturn
+    readonly end_picture: (decoder: H264Decoder, picture: H264Picture) => Gst.FlowReturn
+    readonly output_picture: (decoder: H264Decoder, frame: GstVideo.VideoCodecFrame, picture: H264Picture) => Gst.FlowReturn
+    readonly get_preferred_output_delay: (decoder: H264Decoder, live: boolean) => number
     static name: string
 }
 class H264DecoderPrivate {
@@ -1974,11 +1951,11 @@ class H264Slice {
 }
 abstract class H265DecoderClass {
     /* Fields of GstCodecs-1.0.GstCodecs.H265DecoderClass */
-    parent_class: GstVideo.VideoDecoderClass
-    new_picture: (decoder: H265Decoder, frame: GstVideo.VideoCodecFrame, picture: H265Picture) => Gst.FlowReturn
-    start_picture: (decoder: H265Decoder, picture: H265Picture, slice: H265Slice, dpb: H265Dpb) => Gst.FlowReturn
-    end_picture: (decoder: H265Decoder, picture: H265Picture) => Gst.FlowReturn
-    output_picture: (decoder: H265Decoder, frame: GstVideo.VideoCodecFrame, picture: H265Picture) => Gst.FlowReturn
+    readonly parent_class: GstVideo.VideoDecoderClass
+    readonly new_picture: (decoder: H265Decoder, frame: GstVideo.VideoCodecFrame, picture: H265Picture) => Gst.FlowReturn
+    readonly start_picture: (decoder: H265Decoder, picture: H265Picture, slice: H265Slice, dpb: H265Dpb) => Gst.FlowReturn
+    readonly end_picture: (decoder: H265Decoder, picture: H265Picture) => Gst.FlowReturn
+    readonly output_picture: (decoder: H265Decoder, frame: GstVideo.VideoCodecFrame, picture: H265Picture) => Gst.FlowReturn
     static name: string
 }
 class H265DecoderPrivate {
@@ -2020,14 +1997,14 @@ class H265Slice {
 }
 abstract class Mpeg2DecoderClass {
     /* Fields of GstCodecs-1.0.GstCodecs.Mpeg2DecoderClass */
-    parent_class: GstVideo.VideoDecoderClass
-    new_picture: (decoder: Mpeg2Decoder, frame: GstVideo.VideoCodecFrame, picture: Mpeg2Picture) => Gst.FlowReturn
-    new_field_picture: (decoder: Mpeg2Decoder, first_field: Mpeg2Picture, second_field: Mpeg2Picture) => Gst.FlowReturn
-    start_picture: (decoder: Mpeg2Decoder, picture: Mpeg2Picture, slice: Mpeg2Slice, prev_picture: Mpeg2Picture, next_picture: Mpeg2Picture) => Gst.FlowReturn
-    decode_slice: (decoder: Mpeg2Decoder, picture: Mpeg2Picture, slice: Mpeg2Slice) => Gst.FlowReturn
-    end_picture: (decoder: Mpeg2Decoder, picture: Mpeg2Picture) => Gst.FlowReturn
-    output_picture: (decoder: Mpeg2Decoder, frame: GstVideo.VideoCodecFrame, picture: Mpeg2Picture) => Gst.FlowReturn
-    get_preferred_output_delay: (decoder: Mpeg2Decoder, is_live: boolean) => number
+    readonly parent_class: GstVideo.VideoDecoderClass
+    readonly new_picture: (decoder: Mpeg2Decoder, frame: GstVideo.VideoCodecFrame, picture: Mpeg2Picture) => Gst.FlowReturn
+    readonly new_field_picture: (decoder: Mpeg2Decoder, first_field: Mpeg2Picture, second_field: Mpeg2Picture) => Gst.FlowReturn
+    readonly start_picture: (decoder: Mpeg2Decoder, picture: Mpeg2Picture, slice: Mpeg2Slice, prev_picture: Mpeg2Picture, next_picture: Mpeg2Picture) => Gst.FlowReturn
+    readonly decode_slice: (decoder: Mpeg2Decoder, picture: Mpeg2Picture, slice: Mpeg2Slice) => Gst.FlowReturn
+    readonly end_picture: (decoder: Mpeg2Decoder, picture: Mpeg2Picture) => Gst.FlowReturn
+    readonly output_picture: (decoder: Mpeg2Decoder, frame: GstVideo.VideoCodecFrame, picture: Mpeg2Picture) => Gst.FlowReturn
+    readonly get_preferred_output_delay: (decoder: Mpeg2Decoder, is_live: boolean) => number
     static name: string
 }
 class Mpeg2DecoderPrivate {
@@ -2058,12 +2035,12 @@ class Mpeg2Slice {
 }
 abstract class Vp8DecoderClass {
     /* Fields of GstCodecs-1.0.GstCodecs.Vp8DecoderClass */
-    parent_class: GstVideo.VideoDecoderClass
-    new_picture: (decoder: Vp8Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp8Picture) => Gst.FlowReturn
-    start_picture: (decoder: Vp8Decoder, picture: Vp8Picture) => Gst.FlowReturn
-    end_picture: (decoder: Vp8Decoder, picture: Vp8Picture) => Gst.FlowReturn
-    output_picture: (decoder: Vp8Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp8Picture) => Gst.FlowReturn
-    get_preferred_output_delay: (decoder: Vp8Decoder, is_live: boolean) => number
+    readonly parent_class: GstVideo.VideoDecoderClass
+    readonly new_picture: (decoder: Vp8Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp8Picture) => Gst.FlowReturn
+    readonly start_picture: (decoder: Vp8Decoder, picture: Vp8Picture) => Gst.FlowReturn
+    readonly end_picture: (decoder: Vp8Decoder, picture: Vp8Picture) => Gst.FlowReturn
+    readonly output_picture: (decoder: Vp8Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp8Picture) => Gst.FlowReturn
+    readonly get_preferred_output_delay: (decoder: Vp8Decoder, is_live: boolean) => number
     static name: string
 }
 class Vp8DecoderPrivate {
@@ -2071,13 +2048,13 @@ class Vp8DecoderPrivate {
 }
 class Vp8Picture {
     /* Fields of GstCodecs-1.0.GstCodecs.Vp8Picture */
-    parent: Gst.MiniObject
-    pts: Gst.ClockTime
-    system_frame_number: number
-    data: number
-    size: number
-    user_data: object
-    notify: GLib.DestroyNotify
+    readonly parent: Gst.MiniObject
+    readonly pts: Gst.ClockTime
+    readonly system_frame_number: number
+    readonly data: number
+    readonly size: number
+    readonly user_data: object
+    readonly notify: GLib.DestroyNotify
     /* Methods of GstCodecs-1.0.GstCodecs.Vp8Picture */
     get_user_data(): object | null
     set_user_data(notify: GLib.DestroyNotify): void
@@ -2089,15 +2066,15 @@ class Vp8Picture {
 }
 abstract class Vp9DecoderClass {
     /* Fields of GstCodecs-1.0.GstCodecs.Vp9DecoderClass */
-    parent_class: GstVideo.VideoDecoderClass
-    new_sequence: (decoder: Vp9Decoder, frame_hdr: Vp9FrameHeader) => Gst.FlowReturn
-    new_picture: (decoder: Vp9Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp9Picture) => Gst.FlowReturn
-    duplicate_picture: (decoder: Vp9Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp9Picture) => Vp9Picture
-    start_picture: (decoder: Vp9Decoder, picture: Vp9Picture) => Gst.FlowReturn
-    decode_picture: (decoder: Vp9Decoder, picture: Vp9Picture, dpb: Vp9Dpb) => Gst.FlowReturn
-    end_picture: (decoder: Vp9Decoder, picture: Vp9Picture) => Gst.FlowReturn
-    output_picture: (decoder: Vp9Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp9Picture) => Gst.FlowReturn
-    get_preferred_output_delay: (decoder: Vp9Decoder, is_live: boolean) => number
+    readonly parent_class: GstVideo.VideoDecoderClass
+    readonly new_sequence: (decoder: Vp9Decoder, frame_hdr: Vp9FrameHeader) => Gst.FlowReturn
+    readonly new_picture: (decoder: Vp9Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp9Picture) => Gst.FlowReturn
+    readonly duplicate_picture: (decoder: Vp9Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp9Picture) => Vp9Picture
+    readonly start_picture: (decoder: Vp9Decoder, picture: Vp9Picture) => Gst.FlowReturn
+    readonly decode_picture: (decoder: Vp9Decoder, picture: Vp9Picture, dpb: Vp9Dpb) => Gst.FlowReturn
+    readonly end_picture: (decoder: Vp9Decoder, picture: Vp9Picture) => Gst.FlowReturn
+    readonly output_picture: (decoder: Vp9Decoder, frame: GstVideo.VideoCodecFrame, picture: Vp9Picture) => Gst.FlowReturn
+    readonly get_preferred_output_delay: (decoder: Vp9Decoder, is_live: boolean) => number
     static name: string
 }
 class Vp9DecoderPrivate {
@@ -2108,7 +2085,7 @@ class Vp9DeltaProbabilities {
 }
 class Vp9Dpb {
     /* Fields of GstCodecs-1.0.GstCodecs.Vp9Dpb */
-    pic_list: Vp9Picture[]
+    readonly pic_list: Vp9Picture[]
     /* Methods of GstCodecs-1.0.GstCodecs.Vp9Dpb */
     add(picture: Vp9Picture): void
     clear(): void
@@ -2117,55 +2094,55 @@ class Vp9Dpb {
 }
 class Vp9FrameHeader {
     /* Fields of GstCodecs-1.0.GstCodecs.Vp9FrameHeader */
-    profile: number
-    bit_depth: number
-    subsampling_x: number
-    subsampling_y: number
-    color_space: number
-    color_range: number
-    show_existing_frame: number
-    frame_to_show_map_idx: number
-    frame_type: number
-    show_frame: number
-    error_resilient_mode: number
-    width: number
-    height: number
-    render_and_frame_size_different: number
-    render_width: number
-    render_height: number
-    intra_only: number
-    reset_frame_context: number
-    refresh_frame_flags: number
-    ref_frame_idx: Uint8Array[]
-    ref_frame_sign_bias: Uint8Array[]
-    allow_high_precision_mv: number
-    interpolation_filter: number
-    refresh_frame_context: number
-    frame_parallel_decoding_mode: number
-    frame_context_idx: number
-    loop_filter_params: Vp9LoopFilterParams
-    quantization_params: Vp9QuantizationParams
-    segmentation_params: Vp9SegmentationParams
-    tile_cols_log2: number
-    tile_rows_log2: number
-    header_size_in_bytes: number
-    tx_mode: Vp9TxMode
-    reference_mode: Vp9ReferenceMode
-    delta_probabilities: Vp9DeltaProbabilities
-    lossless_flag: number
-    frame_header_length_in_bytes: number
+    readonly profile: number
+    readonly bit_depth: number
+    readonly subsampling_x: number
+    readonly subsampling_y: number
+    readonly color_space: number
+    readonly color_range: number
+    readonly show_existing_frame: number
+    readonly frame_to_show_map_idx: number
+    readonly frame_type: number
+    readonly show_frame: number
+    readonly error_resilient_mode: number
+    readonly width: number
+    readonly height: number
+    readonly render_and_frame_size_different: number
+    readonly render_width: number
+    readonly render_height: number
+    readonly intra_only: number
+    readonly reset_frame_context: number
+    readonly refresh_frame_flags: number
+    readonly ref_frame_idx: Uint8Array
+    readonly ref_frame_sign_bias: Uint8Array
+    readonly allow_high_precision_mv: number
+    readonly interpolation_filter: number
+    readonly refresh_frame_context: number
+    readonly frame_parallel_decoding_mode: number
+    readonly frame_context_idx: number
+    readonly loop_filter_params: Vp9LoopFilterParams
+    readonly quantization_params: Vp9QuantizationParams
+    readonly segmentation_params: Vp9SegmentationParams
+    readonly tile_cols_log2: number
+    readonly tile_rows_log2: number
+    readonly header_size_in_bytes: number
+    readonly tx_mode: Vp9TxMode
+    readonly reference_mode: Vp9ReferenceMode
+    readonly delta_probabilities: Vp9DeltaProbabilities
+    readonly lossless_flag: number
+    readonly frame_header_length_in_bytes: number
     static name: string
 }
 class Vp9LoopFilterParams {
     /* Fields of GstCodecs-1.0.GstCodecs.Vp9LoopFilterParams */
-    loop_filter_level: number
-    loop_filter_sharpness: number
-    loop_filter_delta_enabled: number
-    loop_filter_delta_update: number
-    update_ref_delta: Uint8Array[]
-    loop_filter_ref_deltas: Uint8Array[]
-    update_mode_delta: Uint8Array[]
-    loop_filter_mode_deltas: Uint8Array[]
+    readonly loop_filter_level: number
+    readonly loop_filter_sharpness: number
+    readonly loop_filter_delta_enabled: number
+    readonly loop_filter_delta_update: number
+    readonly update_ref_delta: Uint8Array
+    readonly loop_filter_ref_deltas: Uint8Array
+    readonly update_mode_delta: Uint8Array
+    readonly loop_filter_mode_deltas: Uint8Array
     static name: string
 }
 class Vp9MvDeltaProbs {
@@ -2183,28 +2160,28 @@ class Vp9Picture {
 }
 class Vp9QuantizationParams {
     /* Fields of GstCodecs-1.0.GstCodecs.Vp9QuantizationParams */
-    base_q_idx: number
-    delta_q_y_dc: number
-    delta_q_uv_dc: number
-    delta_q_uv_ac: number
+    readonly base_q_idx: number
+    readonly delta_q_y_dc: number
+    readonly delta_q_uv_dc: number
+    readonly delta_q_uv_ac: number
     static name: string
 }
 class Vp9SegmentationParams {
     /* Fields of GstCodecs-1.0.GstCodecs.Vp9SegmentationParams */
-    segmentation_enabled: number
-    segmentation_update_map: number
-    segmentation_tree_probs: Uint8Array[]
-    segmentation_pred_prob: Uint8Array[]
-    segmentation_temporal_update: number
-    segmentation_update_data: number
-    segmentation_abs_or_delta_update: number
-    feature_enabled: Uint8Array[]
-    feature_data: number[]
+    readonly segmentation_enabled: number
+    readonly segmentation_update_map: number
+    readonly segmentation_tree_probs: Uint8Array
+    readonly segmentation_pred_prob: Uint8Array
+    readonly segmentation_temporal_update: number
+    readonly segmentation_update_data: number
+    readonly segmentation_abs_or_delta_update: number
+    readonly feature_enabled: Uint8Array
+    readonly feature_data: number[]
     static name: string
 }
 class Vp9StatefulParser {
     /* Fields of GstCodecs-1.0.GstCodecs.Vp9StatefulParser */
-    reference: object[]
+    readonly reference: object[]
     /* Methods of GstCodecs-1.0.GstCodecs.Vp9StatefulParser */
     free(): void
     static name: string

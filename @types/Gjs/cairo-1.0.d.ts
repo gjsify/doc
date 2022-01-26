@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * cairo-1.0
  */
@@ -258,18 +264,18 @@ class Path {
 }
 class Rectangle {
     /* Fields of cairo-1.0.cairo.Rectangle */
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     static name: string
 }
 class RectangleInt {
     /* Fields of cairo-1.0.cairo.RectangleInt */
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     static name: string
 }
 }

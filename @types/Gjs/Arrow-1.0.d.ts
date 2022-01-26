@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Arrow-1.0
  */
@@ -121,10 +127,10 @@ enum Type {
     LARGE_BINARY,
     LARGE_LIST,
 }
-export const VERSION_MAJOR: number
-export const VERSION_MICRO: number
-export const VERSION_MINOR: number
-export const VERSION_TAG: string
+const VERSION_MAJOR: number
+const VERSION_MICRO: number
+const VERSION_MINOR: number
+const VERSION_TAG: string
 function error_quark(): GLib.Quark
 class File {
     /* Methods of Arrow-1.0.Arrow.File */
@@ -146,15 +152,16 @@ class Readable {
 class Writable {
     /* Methods of Arrow-1.0.Arrow.Writable */
     flush(): boolean
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     static name: string
 }
 class WritableFile {
     /* Methods of Arrow-1.0.Arrow.WritableFile */
-    write_at(position: number, data: Uint8Array[]): boolean
+    write_at(position: number, data: Uint8Array): boolean
     static name: string
 }
-export interface Array_ConstructProps extends GObject.Object_ConstructProps {
+interface Array_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Array */
     array?: object
     buffer1?: Buffer
     buffer2?: Buffer
@@ -163,10 +170,8 @@ export interface Array_ConstructProps extends GObject.Object_ConstructProps {
     value_data_type?: DataType
 }
 class Array {
-    /* Fields of Arrow-1.0.Arrow.Array */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Array */
     cast(target_data_type: DataType, options?: CastOptions | null): Array | null
     count(options?: CountOptions | null): number
@@ -238,14 +243,13 @@ class Array {
     _init (config?: Array_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ArrayBuilder_ConstructProps extends GObject.Object_ConstructProps {
+interface ArrayBuilder_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ArrayBuilder */
     array_builder?: object
 }
 class ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ArrayBuilder */
     append_empty_value(): boolean
     append_empty_values(n: number): boolean
@@ -303,14 +307,15 @@ class ArrayBuilder {
     _init (config?: ArrayBuilder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ArrayDatum_ConstructProps extends Datum_ConstructProps {
+interface ArrayDatum_ConstructProps extends Datum_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ArrayDatum */
     value?: Array
 }
 class ArrayDatum {
-    /* Fields of Arrow-1.0.Arrow.ArrayDatum */
-    parent_instance: Datum
+    /* Fields of Arrow-1.0.Arrow.Datum */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Datum */
     equal(other_datum: Datum): boolean
     is_array(): boolean
@@ -361,16 +366,15 @@ class ArrayDatum {
     static new(value: Array): ArrayDatum
     static $gtype: GObject.Type
 }
-export interface ArraySortOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface ArraySortOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ArraySortOptions */
     order?: SortOrder
 }
 class ArraySortOptions {
     /* Properties of Arrow-1.0.Arrow.ArraySortOptions */
     order: SortOrder
-    /* Fields of Arrow-1.0.Arrow.ArraySortOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ArraySortOptions */
     equal(other_options: ArraySortOptions): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -420,13 +424,13 @@ class ArraySortOptions {
     static new(order: SortOrder): ArraySortOptions
     static $gtype: GObject.Type
 }
-export interface BinaryArray_ConstructProps extends Array_ConstructProps {
+interface BinaryArray_ConstructProps extends Array_ConstructProps {
 }
 class BinaryArray {
-    /* Fields of Arrow-1.0.Arrow.BinaryArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.BinaryArray */
     get_buffer(): Buffer
     get_data_buffer(): Buffer
@@ -505,16 +509,16 @@ class BinaryArray {
     static new(length: number, value_offsets: Buffer, value_data: Buffer, null_bitmap: Buffer | null, n_nulls: number): BinaryArray
     static $gtype: GObject.Type
 }
-export interface BinaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface BinaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class BinaryArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.BinaryArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.BinaryArrayBuilder */
-    append(value: Uint8Array[]): boolean
-    append_value(value: Uint8Array[]): boolean
+    append(value: Uint8Array): boolean
+    append_value(value: Uint8Array): boolean
     append_value_bytes(value: GLib.Bytes): boolean
     append_values(values: GLib.Bytes[], is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.ArrayBuilder */
@@ -576,13 +580,13 @@ class BinaryArrayBuilder {
     static new(): BinaryArrayBuilder
     static $gtype: GObject.Type
 }
-export interface BinaryDataType_ConstructProps extends DataType_ConstructProps {
+interface BinaryDataType_ConstructProps extends DataType_ConstructProps {
 }
 class BinaryDataType {
-    /* Fields of Arrow-1.0.Arrow.BinaryDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -633,17 +637,17 @@ class BinaryDataType {
     static new(): BinaryDataType
     static $gtype: GObject.Type
 }
-export interface BinaryDictionaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface BinaryDictionaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class BinaryDictionaryArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.BinaryDictionaryArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.BinaryDictionaryArrayBuilder */
     append_array(array: BinaryArray): boolean
     append_indices(values: number[], is_valids: boolean[] | null): boolean
-    append_value(value: Uint8Array[]): boolean
+    append_value(value: Uint8Array): boolean
     append_value_bytes(value: GLib.Bytes): boolean
     finish_delta(): [ /* returnType */ boolean, /* out_indices */ Array, /* out_delta */ Array ]
     get_dictionary_length(): number
@@ -708,13 +712,13 @@ class BinaryDictionaryArrayBuilder {
     static new(): BinaryDictionaryArrayBuilder
     static $gtype: GObject.Type
 }
-export interface BooleanArray_ConstructProps extends PrimitiveArray_ConstructProps {
+interface BooleanArray_ConstructProps extends PrimitiveArray_ConstructProps {
 }
 class BooleanArray {
-    /* Fields of Arrow-1.0.Arrow.BooleanArray */
-    parent_instance: PrimitiveArray
+    /* Fields of Arrow-1.0.Arrow.PrimitiveArray */
+    readonly parent_instance: Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.BooleanArray */
     and(right: BooleanArray): BooleanArray
     get_value(i: number): boolean
@@ -798,13 +802,13 @@ class BooleanArray {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): BooleanArray
     static $gtype: GObject.Type
 }
-export interface BooleanArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface BooleanArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class BooleanArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.BooleanArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.BooleanArrayBuilder */
     append(value: boolean): boolean
     append_value(value: boolean): boolean
@@ -868,13 +872,13 @@ class BooleanArrayBuilder {
     static new(): BooleanArrayBuilder
     static $gtype: GObject.Type
 }
-export interface BooleanDataType_ConstructProps extends FixedWidthDataType_ConstructProps {
+interface BooleanDataType_ConstructProps extends FixedWidthDataType_ConstructProps {
 }
 class BooleanDataType {
-    /* Fields of Arrow-1.0.Arrow.BooleanDataType */
-    parent_instance: FixedWidthDataType
+    /* Fields of Arrow-1.0.Arrow.FixedWidthDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
     get_bit_width(): number
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -927,16 +931,15 @@ class BooleanDataType {
     static new(): BooleanDataType
     static $gtype: GObject.Type
 }
-export interface Buffer_ConstructProps extends GObject.Object_ConstructProps {
+interface Buffer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Buffer */
     buffer?: object
     data?: GLib.Bytes
     parent?: Buffer
 }
 class Buffer {
-    /* Fields of Arrow-1.0.Arrow.Buffer */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Buffer */
     copy(start: number, size: number): Buffer | null
     equal(other_buffer: Buffer): boolean
@@ -990,18 +993,19 @@ class Buffer {
     constructor (config?: Buffer_ConstructProps)
     _init (config?: Buffer_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(data: Uint8Array[]): Buffer
+    static new(data: Uint8Array): Buffer
     static new_bytes(data: GLib.Bytes): Buffer
     static $gtype: GObject.Type
 }
-export interface BufferInputStream_ConstructProps extends SeekableInputStream_ConstructProps {
+interface BufferInputStream_ConstructProps extends SeekableInputStream_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.BufferInputStream */
     buffer?: Buffer
 }
 class BufferInputStream {
-    /* Fields of Arrow-1.0.Arrow.BufferInputStream */
-    parent_instance: SeekableInputStream
+    /* Fields of Arrow-1.0.Arrow.SeekableInputStream */
+    readonly parent_instance: InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.BufferInputStream */
     get_buffer(): Buffer
     /* Methods of Arrow-1.0.Arrow.SeekableInputStream */
@@ -1022,11 +1026,11 @@ class BufferInputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -1068,7 +1072,7 @@ class BufferInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -1097,13 +1101,13 @@ class BufferInputStream {
     static new(buffer: Buffer): BufferInputStream
     static $gtype: GObject.Type
 }
-export interface BufferOutputStream_ConstructProps extends OutputStream_ConstructProps {
+interface BufferOutputStream_ConstructProps extends OutputStream_ConstructProps {
 }
 class BufferOutputStream {
     /* Fields of Arrow-1.0.Arrow.OutputStream */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.OutputStream */
     align(alignment: number): boolean
     write_record_batch(record_batch: RecordBatch, options?: WriteOptions | null): number
@@ -1137,7 +1141,7 @@ class BufferOutputStream {
     tell(): number
     /* Methods of Arrow-1.0.Arrow.Writable */
     flush(): boolean
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1161,7 +1165,8 @@ class BufferOutputStream {
     static new(buffer: ResizableBuffer): BufferOutputStream
     static $gtype: GObject.Type
 }
-export interface CSVReadOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface CSVReadOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.CSVReadOptions */
     allow_newlines_in_values?: boolean
     allow_null_strings?: boolean
     block_size?: number
@@ -1193,10 +1198,8 @@ class CSVReadOptions {
     n_skip_rows: number
     quote_character: number
     use_threads: boolean
-    /* Fields of Arrow-1.0.Arrow.CSVReadOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.CSVReadOptions */
     add_column_name(column_name: string): void
     add_column_type(name: string, data_type: DataType): void
@@ -1286,14 +1289,13 @@ class CSVReadOptions {
     static new(): CSVReadOptions
     static $gtype: GObject.Type
 }
-export interface CSVReader_ConstructProps extends GObject.Object_ConstructProps {
+interface CSVReader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.CSVReader */
     csv_table_reader?: object
 }
 class CSVReader {
-    /* Fields of Arrow-1.0.Arrow.CSVReader */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.CSVReader */
     read(): Table | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -1341,7 +1343,8 @@ class CSVReader {
     static new(input: InputStream, options?: CSVReadOptions | null): CSVReader
     static $gtype: GObject.Type
 }
-export interface CastOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface CastOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.CastOptions */
     allow_decimal_truncate?: boolean
     allow_float_truncate?: boolean
     allow_int_overflow?: boolean
@@ -1359,10 +1362,8 @@ class CastOptions {
     allow_time_overflow: boolean
     allow_time_truncate: boolean
     to_data_type: DataType
-    /* Fields of Arrow-1.0.Arrow.CastOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1422,14 +1423,13 @@ class CastOptions {
     static new(): CastOptions
     static $gtype: GObject.Type
 }
-export interface ChunkedArray_ConstructProps extends GObject.Object_ConstructProps {
+interface ChunkedArray_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ChunkedArray */
     chunked_array?: object
 }
 class ChunkedArray {
-    /* Fields of Arrow-1.0.Arrow.ChunkedArray */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ChunkedArray */
     equal(other_chunked_array: ChunkedArray): boolean
     filter(filter: BooleanArray, options?: FilterOptions | null): ChunkedArray | null
@@ -1492,14 +1492,15 @@ class ChunkedArray {
     static new(chunks: Array[]): ChunkedArray
     static $gtype: GObject.Type
 }
-export interface ChunkedArrayDatum_ConstructProps extends Datum_ConstructProps {
+interface ChunkedArrayDatum_ConstructProps extends Datum_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ChunkedArrayDatum */
     value?: ChunkedArray
 }
 class ChunkedArrayDatum {
-    /* Fields of Arrow-1.0.Arrow.ChunkedArrayDatum */
-    parent_instance: Datum
+    /* Fields of Arrow-1.0.Arrow.Datum */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Datum */
     equal(other_datum: Datum): boolean
     is_array(): boolean
@@ -1550,14 +1551,13 @@ class ChunkedArrayDatum {
     static new(value: ChunkedArray): ChunkedArrayDatum
     static $gtype: GObject.Type
 }
-export interface Codec_ConstructProps extends GObject.Object_ConstructProps {
+interface Codec_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Codec */
     codec?: object
 }
 class Codec {
-    /* Fields of Arrow-1.0.Arrow.Codec */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Codec */
     get_compression_level(): number
     get_compression_type(): CompressionType
@@ -1607,16 +1607,15 @@ class Codec {
     static new(type: CompressionType): Codec
     static $gtype: GObject.Type
 }
-export interface CompareOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface CompareOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.CompareOptions */
     operator?: CompareOperator
 }
 class CompareOptions {
     /* Properties of Arrow-1.0.Arrow.CompareOptions */
     operator: CompareOperator
-    /* Fields of Arrow-1.0.Arrow.CompareOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1664,15 +1663,16 @@ class CompareOptions {
     static new(): CompareOptions
     static $gtype: GObject.Type
 }
-export interface CompressedInputStream_ConstructProps extends InputStream_ConstructProps {
+interface CompressedInputStream_ConstructProps extends InputStream_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.CompressedInputStream */
     codec?: Codec
     raw?: InputStream
 }
 class CompressedInputStream {
-    /* Fields of Arrow-1.0.Arrow.CompressedInputStream */
-    parent_instance: InputStream
+    /* Fields of Arrow-1.0.Arrow.InputStream */
+    readonly parent_instance: Gio.InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.InputStream */
     advance(n_bytes: number): boolean
     align(alignment: number): boolean
@@ -1685,11 +1685,11 @@ class CompressedInputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -1731,7 +1731,7 @@ class CompressedInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -1760,15 +1760,16 @@ class CompressedInputStream {
     static new(codec: Codec, raw: InputStream): CompressedInputStream
     static $gtype: GObject.Type
 }
-export interface CompressedOutputStream_ConstructProps extends OutputStream_ConstructProps {
+interface CompressedOutputStream_ConstructProps extends OutputStream_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.CompressedOutputStream */
     codec?: Codec
     raw?: OutputStream
 }
 class CompressedOutputStream {
-    /* Fields of Arrow-1.0.Arrow.CompressedOutputStream */
-    parent_instance: OutputStream
+    /* Fields of Arrow-1.0.Arrow.OutputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.OutputStream */
     align(alignment: number): boolean
     write_record_batch(record_batch: RecordBatch, options?: WriteOptions | null): number
@@ -1802,7 +1803,7 @@ class CompressedOutputStream {
     tell(): number
     /* Methods of Arrow-1.0.Arrow.Writable */
     flush(): boolean
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1826,16 +1827,15 @@ class CompressedOutputStream {
     static new(codec: Codec, raw: OutputStream): CompressedOutputStream
     static $gtype: GObject.Type
 }
-export interface CountOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface CountOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.CountOptions */
     mode?: CountMode
 }
 class CountOptions {
     /* Properties of Arrow-1.0.Arrow.CountOptions */
     mode: CountMode
-    /* Fields of Arrow-1.0.Arrow.CountOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1883,14 +1883,13 @@ class CountOptions {
     static new(): CountOptions
     static $gtype: GObject.Type
 }
-export interface DataType_ConstructProps extends GObject.Object_ConstructProps {
+interface DataType_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.DataType */
     data_type?: object
 }
 class DataType {
-    /* Fields of Arrow-1.0.Arrow.DataType */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -1939,13 +1938,13 @@ class DataType {
     _init (config?: DataType_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Date32Array_ConstructProps extends NumericArray_ConstructProps {
+interface Date32Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class Date32Array {
-    /* Fields of Arrow-1.0.Arrow.Date32Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Date32Array */
     get_value(i: number): number
     get_values(): number[]
@@ -2027,13 +2026,13 @@ class Date32Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): Date32Array
     static $gtype: GObject.Type
 }
-export interface Date32ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface Date32ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class Date32ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Date32ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Date32ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -2097,13 +2096,13 @@ class Date32ArrayBuilder {
     static new(): Date32ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Date32DataType_ConstructProps extends DataType_ConstructProps {
+interface Date32DataType_ConstructProps extends DataType_ConstructProps {
 }
 class Date32DataType {
-    /* Fields of Arrow-1.0.Arrow.Date32DataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -2154,13 +2153,13 @@ class Date32DataType {
     static new(): Date32DataType
     static $gtype: GObject.Type
 }
-export interface Date64Array_ConstructProps extends NumericArray_ConstructProps {
+interface Date64Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class Date64Array {
-    /* Fields of Arrow-1.0.Arrow.Date64Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Date64Array */
     get_value(i: number): number
     get_values(): number[]
@@ -2242,13 +2241,13 @@ class Date64Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): Date64Array
     static $gtype: GObject.Type
 }
-export interface Date64ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface Date64ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class Date64ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Date64ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Date64ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -2312,13 +2311,13 @@ class Date64ArrayBuilder {
     static new(): Date64ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Date64DataType_ConstructProps extends DataType_ConstructProps {
+interface Date64DataType_ConstructProps extends DataType_ConstructProps {
 }
 class Date64DataType {
-    /* Fields of Arrow-1.0.Arrow.Date64DataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -2369,14 +2368,13 @@ class Date64DataType {
     static new(): Date64DataType
     static $gtype: GObject.Type
 }
-export interface Datum_ConstructProps extends GObject.Object_ConstructProps {
+interface Datum_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Datum */
     datum?: object
 }
 class Datum {
-    /* Fields of Arrow-1.0.Arrow.Datum */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Datum */
     equal(other_datum: Datum): boolean
     is_array(): boolean
@@ -2425,14 +2423,13 @@ class Datum {
     _init (config?: Datum_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Decimal128_ConstructProps extends GObject.Object_ConstructProps {
+interface Decimal128_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Decimal128 */
     decimal128?: object
 }
 class Decimal128 {
-    /* Fields of Arrow-1.0.Arrow.Decimal128 */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Decimal128 */
     abs(): void
     copy(): Decimal128
@@ -2498,13 +2495,13 @@ class Decimal128 {
     static new_string(data: string): Decimal128
     static $gtype: GObject.Type
 }
-export interface Decimal128Array_ConstructProps extends FixedSizeBinaryArray_ConstructProps {
+interface Decimal128Array_ConstructProps extends FixedSizeBinaryArray_ConstructProps {
 }
 class Decimal128Array {
-    /* Fields of Arrow-1.0.Arrow.Decimal128Array */
-    parent_instance: FixedSizeBinaryArray
+    /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Decimal128Array */
     format_value(i: number): string
     get_value(i: number): Decimal128
@@ -2586,19 +2583,19 @@ class Decimal128Array {
     _init (config?: Decimal128Array_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Decimal128ArrayBuilder_ConstructProps extends FixedSizeBinaryArrayBuilder_ConstructProps {
+interface Decimal128ArrayBuilder_ConstructProps extends FixedSizeBinaryArrayBuilder_ConstructProps {
 }
 class Decimal128ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Decimal128ArrayBuilder */
-    parent_instance: FixedSizeBinaryArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryArrayBuilder */
+    readonly parent_instance: ArrayBuilder
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Decimal128ArrayBuilder */
     append(value: Decimal128): boolean
     append_value(value?: Decimal128 | null): boolean
     append_values(values: Decimal128[], is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.FixedSizeBinaryArrayBuilder */
-    append_value(value: Uint8Array[] | null): boolean
+    append_value(value: Uint8Array | null): boolean
     append_value_bytes(value: GLib.Bytes): boolean
     append_values(values: GLib.Bytes[], is_valids: boolean[] | null): boolean
     append_values_packed(values: GLib.Bytes, is_valids: boolean[] | null): boolean
@@ -2659,16 +2656,17 @@ class Decimal128ArrayBuilder {
     _init (config?: Decimal128ArrayBuilder_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(data_type: Decimal128DataType): Decimal128ArrayBuilder
+    /* Function overloads */
     static new(data_type: FixedSizeBinaryDataType): Decimal128ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Decimal128DataType_ConstructProps extends DecimalDataType_ConstructProps {
+interface Decimal128DataType_ConstructProps extends DecimalDataType_ConstructProps {
 }
 class Decimal128DataType {
-    /* Fields of Arrow-1.0.Arrow.Decimal128DataType */
-    parent_instance: DecimalDataType
+    /* Fields of Arrow-1.0.Arrow.DecimalDataType */
+    readonly parent_instance: FixedSizeBinaryDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DecimalDataType */
     get_precision(): number
     get_scale(): number
@@ -2724,18 +2722,19 @@ class Decimal128DataType {
     _init (config?: Decimal128DataType_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(precision: number, scale: number): Decimal128DataType
+    /* Function overloads */
+    static new(precision: number, scale: number): Decimal128DataType
     static new(byte_width: number): Decimal128DataType
     static max_precision(): number
     static $gtype: GObject.Type
 }
-export interface Decimal256_ConstructProps extends GObject.Object_ConstructProps {
+interface Decimal256_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Decimal256 */
     decimal256?: object
 }
 class Decimal256 {
-    /* Fields of Arrow-1.0.Arrow.Decimal256 */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Decimal256 */
     abs(): void
     copy(): Decimal256
@@ -2799,13 +2798,13 @@ class Decimal256 {
     static new_string(data: string): Decimal256
     static $gtype: GObject.Type
 }
-export interface Decimal256Array_ConstructProps extends FixedSizeBinaryArray_ConstructProps {
+interface Decimal256Array_ConstructProps extends FixedSizeBinaryArray_ConstructProps {
 }
 class Decimal256Array {
-    /* Fields of Arrow-1.0.Arrow.Decimal256Array */
-    parent_instance: FixedSizeBinaryArray
+    /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Decimal256Array */
     format_value(i: number): string
     get_value(i: number): Decimal256
@@ -2887,18 +2886,18 @@ class Decimal256Array {
     _init (config?: Decimal256Array_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Decimal256ArrayBuilder_ConstructProps extends FixedSizeBinaryArrayBuilder_ConstructProps {
+interface Decimal256ArrayBuilder_ConstructProps extends FixedSizeBinaryArrayBuilder_ConstructProps {
 }
 class Decimal256ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Decimal256ArrayBuilder */
-    parent_instance: FixedSizeBinaryArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryArrayBuilder */
+    readonly parent_instance: ArrayBuilder
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Decimal256ArrayBuilder */
     append_value(value?: Decimal256 | null): boolean
     append_values(values: Decimal256[], is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.FixedSizeBinaryArrayBuilder */
-    append_value(value: Uint8Array[] | null): boolean
+    append_value(value: Uint8Array | null): boolean
     append_value_bytes(value: GLib.Bytes): boolean
     append_values(values: GLib.Bytes[], is_valids: boolean[] | null): boolean
     append_values_packed(values: GLib.Bytes, is_valids: boolean[] | null): boolean
@@ -2959,16 +2958,17 @@ class Decimal256ArrayBuilder {
     _init (config?: Decimal256ArrayBuilder_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(data_type: Decimal256DataType): Decimal256ArrayBuilder
+    /* Function overloads */
     static new(data_type: FixedSizeBinaryDataType): Decimal256ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Decimal256DataType_ConstructProps extends DecimalDataType_ConstructProps {
+interface Decimal256DataType_ConstructProps extends DecimalDataType_ConstructProps {
 }
 class Decimal256DataType {
-    /* Fields of Arrow-1.0.Arrow.Decimal256DataType */
-    parent_instance: DecimalDataType
+    /* Fields of Arrow-1.0.Arrow.DecimalDataType */
+    readonly parent_instance: FixedSizeBinaryDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DecimalDataType */
     get_precision(): number
     get_scale(): number
@@ -3024,17 +3024,19 @@ class Decimal256DataType {
     _init (config?: Decimal256DataType_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(precision: number, scale: number): Decimal256DataType
+    /* Function overloads */
+    static new(precision: number, scale: number): Decimal256DataType
     static new(byte_width: number): Decimal256DataType
     static max_precision(): number
     static $gtype: GObject.Type
 }
-export interface DecimalDataType_ConstructProps extends FixedSizeBinaryDataType_ConstructProps {
+interface DecimalDataType_ConstructProps extends FixedSizeBinaryDataType_ConstructProps {
 }
 class DecimalDataType {
-    /* Fields of Arrow-1.0.Arrow.DecimalDataType */
-    parent_instance: FixedSizeBinaryDataType
+    /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DecimalDataType */
     get_precision(): number
     get_scale(): number
@@ -3090,17 +3092,19 @@ class DecimalDataType {
     _init (config?: DecimalDataType_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(precision: number, scale: number): DecimalDataType
+    /* Function overloads */
     static new(byte_width: number): DecimalDataType
     static $gtype: GObject.Type
 }
-export interface DenseUnionArray_ConstructProps extends UnionArray_ConstructProps {
+interface DenseUnionArray_ConstructProps extends UnionArray_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.DenseUnionArray */
     value_offsets?: Int32Array
 }
 class DenseUnionArray {
-    /* Fields of Arrow-1.0.Arrow.DenseUnionArray */
-    parent_instance: UnionArray
+    /* Fields of Arrow-1.0.Arrow.UnionArray */
+    readonly parent_instance: Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UnionArray */
     get_field(i: number): Array | null
     /* Methods of Arrow-1.0.Arrow.Array */
@@ -3177,18 +3181,18 @@ class DenseUnionArray {
     static new_data_type(data_type: DenseUnionDataType, type_ids: Int8Array, value_offsets: Int32Array, fields: Array[]): DenseUnionArray
     static $gtype: GObject.Type
 }
-export interface DenseUnionDataType_ConstructProps extends UnionDataType_ConstructProps {
+interface DenseUnionDataType_ConstructProps extends UnionDataType_ConstructProps {
 }
 class DenseUnionDataType {
-    /* Fields of Arrow-1.0.Arrow.DenseUnionDataType */
-    parent_instance: UnionDataType
+    /* Fields of Arrow-1.0.Arrow.UnionDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UnionDataType */
     get_field(i: number): Field | null
     get_fields(): Field[]
     get_n_fields(): number
-    get_type_codes(): Uint8Array[]
+    get_type_codes(): Uint8Array
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -3236,18 +3240,19 @@ class DenseUnionDataType {
     constructor (config?: DenseUnionDataType_ConstructProps)
     _init (config?: DenseUnionDataType_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(fields: Field[], type_codes: Uint8Array[]): DenseUnionDataType
+    static new(fields: Field[], type_codes: Uint8Array): DenseUnionDataType
     static $gtype: GObject.Type
 }
-export interface DictionaryArray_ConstructProps extends Array_ConstructProps {
+interface DictionaryArray_ConstructProps extends Array_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.DictionaryArray */
     dictionary?: Array
     indices?: Array
 }
 class DictionaryArray {
-    /* Fields of Arrow-1.0.Arrow.DictionaryArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DictionaryArray */
     get_dictionary(): Array
     get_dictionary_data_type(): DictionaryDataType
@@ -3325,13 +3330,13 @@ class DictionaryArray {
     static new(data_type: DataType, indices: Array, dictionary: Array): DictionaryArray
     static $gtype: GObject.Type
 }
-export interface DictionaryDataType_ConstructProps extends FixedWidthDataType_ConstructProps {
+interface DictionaryDataType_ConstructProps extends FixedWidthDataType_ConstructProps {
 }
 class DictionaryDataType {
-    /* Fields of Arrow-1.0.Arrow.DictionaryDataType */
-    parent_instance: FixedWidthDataType
+    /* Fields of Arrow-1.0.Arrow.FixedWidthDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DictionaryDataType */
     get_index_data_type(): DataType
     get_value_data_type(): DataType
@@ -3388,13 +3393,13 @@ class DictionaryDataType {
     static new(index_data_type: DataType, value_data_type: DataType, ordered: boolean): DictionaryDataType
     static $gtype: GObject.Type
 }
-export interface DoubleArray_ConstructProps extends NumericArray_ConstructProps {
+interface DoubleArray_ConstructProps extends NumericArray_ConstructProps {
 }
 class DoubleArray {
-    /* Fields of Arrow-1.0.Arrow.DoubleArray */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DoubleArray */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
@@ -3478,13 +3483,13 @@ class DoubleArray {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): DoubleArray
     static $gtype: GObject.Type
 }
-export interface DoubleArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface DoubleArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class DoubleArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.DoubleArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DoubleArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -3548,13 +3553,13 @@ class DoubleArrayBuilder {
     static new(): DoubleArrayBuilder
     static $gtype: GObject.Type
 }
-export interface DoubleDataType_ConstructProps extends FloatingPointDataType_ConstructProps {
+interface DoubleDataType_ConstructProps extends FloatingPointDataType_ConstructProps {
 }
 class DoubleDataType {
-    /* Fields of Arrow-1.0.Arrow.DoubleDataType */
-    parent_instance: FloatingPointDataType
+    /* Fields of Arrow-1.0.Arrow.FloatingPointDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
     get_bit_width(): number
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -3607,13 +3612,11 @@ class DoubleDataType {
     static new(): DoubleDataType
     static $gtype: GObject.Type
 }
-export interface ExecuteContext_ConstructProps extends GObject.Object_ConstructProps {
+interface ExecuteContext_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ExecuteContext {
-    /* Fields of Arrow-1.0.Arrow.ExecuteContext */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3659,14 +3662,15 @@ class ExecuteContext {
     static new(): ExecuteContext
     static $gtype: GObject.Type
 }
-export interface ExtensionArray_ConstructProps extends Array_ConstructProps {
+interface ExtensionArray_ConstructProps extends Array_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ExtensionArray */
     storage?: Array
 }
 class ExtensionArray {
-    /* Fields of Arrow-1.0.Arrow.ExtensionArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ExtensionArray */
     get_storage(): Array
     /* Methods of Arrow-1.0.Arrow.Array */
@@ -3740,14 +3744,15 @@ class ExtensionArray {
     _init (config?: ExtensionArray_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ExtensionDataType_ConstructProps extends DataType_ConstructProps {
+interface ExtensionDataType_ConstructProps extends DataType_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ExtensionDataType */
     storage_data_type?: DataType
 }
 class ExtensionDataType {
-    /* Fields of Arrow-1.0.Arrow.ExtensionDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ExtensionDataType */
     get_extension_name(): string
     wrap_array(storage: Array): ExtensionArray
@@ -3805,14 +3810,13 @@ class ExtensionDataType {
     _init (config?: ExtensionDataType_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ExtensionDataTypeRegistry_ConstructProps extends GObject.Object_ConstructProps {
+interface ExtensionDataTypeRegistry_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ExtensionDataTypeRegistry */
     registry?: object
 }
 class ExtensionDataTypeRegistry {
-    /* Fields of Arrow-1.0.Arrow.ExtensionDataTypeRegistry */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ExtensionDataTypeRegistry */
     lookup(name: string): ExtensionDataType
     register(data_type: ExtensionDataType): boolean
@@ -3862,14 +3866,13 @@ class ExtensionDataTypeRegistry {
     static default(): ExtensionDataTypeRegistry
     static $gtype: GObject.Type
 }
-export interface FeatherFileReader_ConstructProps extends GObject.Object_ConstructProps {
+interface FeatherFileReader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.FeatherFileReader */
     feather_reader?: object
 }
 class FeatherFileReader {
-    /* Fields of Arrow-1.0.Arrow.FeatherFileReader */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FeatherFileReader */
     get_version(): number
     read(): Table
@@ -3920,16 +3923,15 @@ class FeatherFileReader {
     static new(file: SeekableInputStream): FeatherFileReader
     static $gtype: GObject.Type
 }
-export interface FeatherWriteProperties_ConstructProps extends GObject.Object_ConstructProps {
+interface FeatherWriteProperties_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.FeatherWriteProperties */
     compression?: CompressionType
 }
 class FeatherWriteProperties {
     /* Properties of Arrow-1.0.Arrow.FeatherWriteProperties */
     compression: CompressionType
-    /* Fields of Arrow-1.0.Arrow.FeatherWriteProperties */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3977,15 +3979,14 @@ class FeatherWriteProperties {
     static new(): FeatherWriteProperties
     static $gtype: GObject.Type
 }
-export interface Field_ConstructProps extends GObject.Object_ConstructProps {
+interface Field_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Field */
     data_type?: DataType
     field?: object
 }
 class Field {
-    /* Fields of Arrow-1.0.Arrow.Field */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Field */
     equal(other_field: Field): boolean
     get_data_type(): DataType
@@ -4044,7 +4045,8 @@ class Field {
     static new_full(name: string, data_type: DataType, nullable: boolean): Field
     static $gtype: GObject.Type
 }
-export interface FileInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface FileInfo_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.FileInfo */
     mtime?: number
     path?: string
     size?: number
@@ -4059,10 +4061,8 @@ class FileInfo {
     path: string
     size: number
     type: FileType
-    /* Fields of Arrow-1.0.Arrow.FileInfo */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FileInfo */
     equal(other_file_info: FileInfo): boolean
     is_dir(): boolean
@@ -4127,13 +4127,13 @@ class FileInfo {
     static new(): FileInfo
     static $gtype: GObject.Type
 }
-export interface FileOutputStream_ConstructProps extends OutputStream_ConstructProps {
+interface FileOutputStream_ConstructProps extends OutputStream_ConstructProps {
 }
 class FileOutputStream {
     /* Fields of Arrow-1.0.Arrow.OutputStream */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.OutputStream */
     align(alignment: number): boolean
     write_record_batch(record_batch: RecordBatch, options?: WriteOptions | null): number
@@ -4167,7 +4167,7 @@ class FileOutputStream {
     tell(): number
     /* Methods of Arrow-1.0.Arrow.Writable */
     flush(): boolean
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4191,7 +4191,8 @@ class FileOutputStream {
     static new(path: string, append: boolean): FileOutputStream
     static $gtype: GObject.Type
 }
-export interface FileSelector_ConstructProps extends GObject.Object_ConstructProps {
+interface FileSelector_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.FileSelector */
     allow_not_found?: boolean
     base_dir?: string
     max_recursion?: number
@@ -4203,10 +4204,8 @@ class FileSelector {
     base_dir: string
     max_recursion: number
     recursive: boolean
-    /* Fields of Arrow-1.0.Arrow.FileSelector */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4258,14 +4257,13 @@ class FileSelector {
     _init (config?: FileSelector_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FileSystem_ConstructProps extends GObject.Object_ConstructProps {
+interface FileSystem_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.FileSystem */
     file_system?: object
 }
 class FileSystem {
-    /* Fields of Arrow-1.0.Arrow.FileSystem */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FileSystem */
     copy_file(src: string, dest: string): boolean
     create_dir(path: string, recursive: boolean): boolean
@@ -4327,16 +4325,15 @@ class FileSystem {
     static create(uri: string): FileSystem | null
     static $gtype: GObject.Type
 }
-export interface FilterOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface FilterOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.FilterOptions */
     null_selection_behavior?: FilterNullSelectionBehavior
 }
 class FilterOptions {
     /* Properties of Arrow-1.0.Arrow.FilterOptions */
     null_selection_behavior: FilterNullSelectionBehavior
-    /* Fields of Arrow-1.0.Arrow.FilterOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4384,13 +4381,13 @@ class FilterOptions {
     static new(): FilterOptions
     static $gtype: GObject.Type
 }
-export interface FixedSizeBinaryArray_ConstructProps extends PrimitiveArray_ConstructProps {
+interface FixedSizeBinaryArray_ConstructProps extends PrimitiveArray_ConstructProps {
 }
 class FixedSizeBinaryArray {
-    /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryArray */
-    parent_instance: PrimitiveArray
+    /* Fields of Arrow-1.0.Arrow.PrimitiveArray */
+    readonly parent_instance: Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FixedSizeBinaryArray */
     get_byte_width(): number
     get_value(i: number): GLib.Bytes
@@ -4471,15 +4468,15 @@ class FixedSizeBinaryArray {
     static new(data_type: FixedSizeBinaryDataType, length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): FixedSizeBinaryArray
     static $gtype: GObject.Type
 }
-export interface FixedSizeBinaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface FixedSizeBinaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class FixedSizeBinaryArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FixedSizeBinaryArrayBuilder */
-    append_value(value: Uint8Array[] | null): boolean
+    append_value(value: Uint8Array | null): boolean
     append_value_bytes(value: GLib.Bytes): boolean
     append_values(values: GLib.Bytes[], is_valids: boolean[] | null): boolean
     append_values_packed(values: GLib.Bytes, is_valids: boolean[] | null): boolean
@@ -4542,13 +4539,13 @@ class FixedSizeBinaryArrayBuilder {
     static new(data_type: FixedSizeBinaryDataType): FixedSizeBinaryArrayBuilder
     static $gtype: GObject.Type
 }
-export interface FixedSizeBinaryDataType_ConstructProps extends FixedWidthDataType_ConstructProps {
+interface FixedSizeBinaryDataType_ConstructProps extends FixedWidthDataType_ConstructProps {
 }
 class FixedSizeBinaryDataType {
-    /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.FixedWidthDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FixedSizeBinaryDataType */
     get_byte_width(): number
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -4603,13 +4600,13 @@ class FixedSizeBinaryDataType {
     static new(byte_width: number): FixedSizeBinaryDataType
     static $gtype: GObject.Type
 }
-export interface FixedWidthDataType_ConstructProps extends DataType_ConstructProps {
+interface FixedWidthDataType_ConstructProps extends DataType_ConstructProps {
 }
 class FixedWidthDataType {
-    /* Fields of Arrow-1.0.Arrow.FixedWidthDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
     get_bit_width(): number
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -4660,13 +4657,13 @@ class FixedWidthDataType {
     _init (config?: FixedWidthDataType_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FloatArray_ConstructProps extends NumericArray_ConstructProps {
+interface FloatArray_ConstructProps extends NumericArray_ConstructProps {
 }
 class FloatArray {
-    /* Fields of Arrow-1.0.Arrow.FloatArray */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FloatArray */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
@@ -4750,13 +4747,13 @@ class FloatArray {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): FloatArray
     static $gtype: GObject.Type
 }
-export interface FloatArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface FloatArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class FloatArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.FloatArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FloatArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -4820,13 +4817,13 @@ class FloatArrayBuilder {
     static new(): FloatArrayBuilder
     static $gtype: GObject.Type
 }
-export interface FloatDataType_ConstructProps extends FloatingPointDataType_ConstructProps {
+interface FloatDataType_ConstructProps extends FloatingPointDataType_ConstructProps {
 }
 class FloatDataType {
-    /* Fields of Arrow-1.0.Arrow.FloatDataType */
-    parent_instance: FloatingPointDataType
+    /* Fields of Arrow-1.0.Arrow.FloatingPointDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
     get_bit_width(): number
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -4879,13 +4876,13 @@ class FloatDataType {
     static new(): FloatDataType
     static $gtype: GObject.Type
 }
-export interface FloatingPointDataType_ConstructProps extends NumericDataType_ConstructProps {
+interface FloatingPointDataType_ConstructProps extends NumericDataType_ConstructProps {
 }
 class FloatingPointDataType {
-    /* Fields of Arrow-1.0.Arrow.FloatingPointDataType */
-    parent_instance: NumericDataType
+    /* Fields of Arrow-1.0.Arrow.NumericDataType */
+    readonly parent_instance: FixedWidthDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
     get_bit_width(): number
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -4936,14 +4933,13 @@ class FloatingPointDataType {
     _init (config?: FloatingPointDataType_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Function_ConstructProps extends GObject.Object_ConstructProps {
+interface Function_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Function */
     "function"?: object
 }
 class Function {
-    /* Fields of Arrow-1.0.Arrow.Function */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Function */
     execute(args: Datum[], options?: FunctionOptions | null, context?: ExecuteContext | null): Datum | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -4991,14 +4987,15 @@ class Function {
     static find(name: string): Function
     static $gtype: GObject.Type
 }
-export interface GIOInputStream_ConstructProps extends SeekableInputStream_ConstructProps {
+interface GIOInputStream_ConstructProps extends SeekableInputStream_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.GIOInputStream */
     raw?: Gio.InputStream
 }
 class GIOInputStream {
     /* Fields of Arrow-1.0.Arrow.SeekableInputStream */
-    parent_instance: InputStream
+    readonly parent_instance: InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.GIOInputStream */
     get_raw(): Gio.InputStream
     /* Methods of Arrow-1.0.Arrow.SeekableInputStream */
@@ -5019,11 +5016,11 @@ class GIOInputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -5065,7 +5062,7 @@ class GIOInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -5094,14 +5091,15 @@ class GIOInputStream {
     static new(gio_input_stream: Gio.InputStream): GIOInputStream
     static $gtype: GObject.Type
 }
-export interface GIOOutputStream_ConstructProps extends OutputStream_ConstructProps {
+interface GIOOutputStream_ConstructProps extends OutputStream_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.GIOOutputStream */
     raw?: Gio.OutputStream
 }
 class GIOOutputStream {
     /* Fields of Arrow-1.0.Arrow.OutputStream */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.GIOOutputStream */
     get_raw(): Gio.OutputStream
     /* Methods of Arrow-1.0.Arrow.OutputStream */
@@ -5137,7 +5135,7 @@ class GIOOutputStream {
     tell(): number
     /* Methods of Arrow-1.0.Arrow.Writable */
     flush(): boolean
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -5161,13 +5159,13 @@ class GIOOutputStream {
     static new(gio_output_stream: Gio.OutputStream): GIOOutputStream
     static $gtype: GObject.Type
 }
-export interface HDFSFileSystem_ConstructProps extends FileSystem_ConstructProps {
+interface HDFSFileSystem_ConstructProps extends FileSystem_ConstructProps {
 }
 class HDFSFileSystem {
-    /* Fields of Arrow-1.0.Arrow.HDFSFileSystem */
-    parent_instance: FileSystem
+    /* Fields of Arrow-1.0.Arrow.FileSystem */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FileSystem */
     copy_file(src: string, dest: string): boolean
     create_dir(path: string, recursive: boolean): boolean
@@ -5227,14 +5225,15 @@ class HDFSFileSystem {
     _init (config?: HDFSFileSystem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface InputStream_ConstructProps extends Gio.InputStream_ConstructProps {
+interface InputStream_ConstructProps extends Gio.InputStream_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.InputStream */
     input_stream?: object
 }
 class InputStream {
-    /* Fields of Arrow-1.0.Arrow.InputStream */
-    parent_instance: Gio.InputStream
+    /* Fields of Gio-2.0.Gio.InputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.InputStream */
     advance(n_bytes: number): boolean
     align(alignment: number): boolean
@@ -5247,11 +5246,11 @@ class InputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -5293,7 +5292,7 @@ class InputStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -5320,13 +5319,13 @@ class InputStream {
     _init (config?: InputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Int16Array_ConstructProps extends NumericArray_ConstructProps {
+interface Int16Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class Int16Array {
-    /* Fields of Arrow-1.0.Arrow.Int16Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Int16Array */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
@@ -5410,13 +5409,13 @@ class Int16Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): Int16Array
     static $gtype: GObject.Type
 }
-export interface Int16ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface Int16ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class Int16ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Int16ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Int16ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -5480,13 +5479,13 @@ class Int16ArrayBuilder {
     static new(): Int16ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Int16DataType_ConstructProps extends IntegerDataType_ConstructProps {
+interface Int16DataType_ConstructProps extends IntegerDataType_ConstructProps {
 }
 class Int16DataType {
-    /* Fields of Arrow-1.0.Arrow.Int16DataType */
-    parent_instance: IntegerDataType
+    /* Fields of Arrow-1.0.Arrow.IntegerDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntegerDataType */
     is_signed(): boolean
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -5541,13 +5540,13 @@ class Int16DataType {
     static new(): Int16DataType
     static $gtype: GObject.Type
 }
-export interface Int32Array_ConstructProps extends NumericArray_ConstructProps {
+interface Int32Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class Int32Array {
-    /* Fields of Arrow-1.0.Arrow.Int32Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Int32Array */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
@@ -5631,13 +5630,13 @@ class Int32Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): Int32Array
     static $gtype: GObject.Type
 }
-export interface Int32ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface Int32ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class Int32ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Int32ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Int32ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -5701,13 +5700,13 @@ class Int32ArrayBuilder {
     static new(): Int32ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Int32DataType_ConstructProps extends IntegerDataType_ConstructProps {
+interface Int32DataType_ConstructProps extends IntegerDataType_ConstructProps {
 }
 class Int32DataType {
-    /* Fields of Arrow-1.0.Arrow.Int32DataType */
-    parent_instance: IntegerDataType
+    /* Fields of Arrow-1.0.Arrow.IntegerDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntegerDataType */
     is_signed(): boolean
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -5762,13 +5761,13 @@ class Int32DataType {
     static new(): Int32DataType
     static $gtype: GObject.Type
 }
-export interface Int64Array_ConstructProps extends NumericArray_ConstructProps {
+interface Int64Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class Int64Array {
-    /* Fields of Arrow-1.0.Arrow.Int64Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Int64Array */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
@@ -5852,13 +5851,13 @@ class Int64Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): Int64Array
     static $gtype: GObject.Type
 }
-export interface Int64ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface Int64ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class Int64ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Int64ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Int64ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -5922,13 +5921,13 @@ class Int64ArrayBuilder {
     static new(): Int64ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Int64DataType_ConstructProps extends IntegerDataType_ConstructProps {
+interface Int64DataType_ConstructProps extends IntegerDataType_ConstructProps {
 }
 class Int64DataType {
-    /* Fields of Arrow-1.0.Arrow.Int64DataType */
-    parent_instance: IntegerDataType
+    /* Fields of Arrow-1.0.Arrow.IntegerDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntegerDataType */
     is_signed(): boolean
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -5983,17 +5982,17 @@ class Int64DataType {
     static new(): Int64DataType
     static $gtype: GObject.Type
 }
-export interface Int8Array_ConstructProps extends NumericArray_ConstructProps {
+interface Int8Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class Int8Array {
-    /* Fields of Arrow-1.0.Arrow.Int8Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Int8Array */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
-    get_values(): Uint8Array[]
+    get_values(): Uint8Array
     sum(): number
     /* Methods of Arrow-1.0.Arrow.NumericArray */
     mean(): number
@@ -6073,17 +6072,17 @@ class Int8Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): Int8Array
     static $gtype: GObject.Type
 }
-export interface Int8ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface Int8ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class Int8ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Int8ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Int8ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
-    append_values(values: Uint8Array[], is_valids: boolean[] | null): boolean
+    append_values(values: Uint8Array, is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.ArrayBuilder */
     append_empty_value(): boolean
     append_empty_values(n: number): boolean
@@ -6143,13 +6142,13 @@ class Int8ArrayBuilder {
     static new(): Int8ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Int8DataType_ConstructProps extends IntegerDataType_ConstructProps {
+interface Int8DataType_ConstructProps extends IntegerDataType_ConstructProps {
 }
 class Int8DataType {
-    /* Fields of Arrow-1.0.Arrow.Int8DataType */
-    parent_instance: IntegerDataType
+    /* Fields of Arrow-1.0.Arrow.IntegerDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntegerDataType */
     is_signed(): boolean
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -6204,13 +6203,13 @@ class Int8DataType {
     static new(): Int8DataType
     static $gtype: GObject.Type
 }
-export interface IntArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface IntArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class IntArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.IntArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -6274,13 +6273,13 @@ class IntArrayBuilder {
     static new(): IntArrayBuilder
     static $gtype: GObject.Type
 }
-export interface IntegerDataType_ConstructProps extends NumericDataType_ConstructProps {
+interface IntegerDataType_ConstructProps extends NumericDataType_ConstructProps {
 }
 class IntegerDataType {
-    /* Fields of Arrow-1.0.Arrow.IntegerDataType */
-    parent_instance: NumericDataType
+    /* Fields of Arrow-1.0.Arrow.NumericDataType */
+    readonly parent_instance: FixedWidthDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntegerDataType */
     is_signed(): boolean
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -6333,7 +6332,8 @@ class IntegerDataType {
     _init (config?: IntegerDataType_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface JSONReadOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface JSONReadOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.JSONReadOptions */
     allow_newlines_in_values?: boolean
     block_size?: number
     schema?: Schema
@@ -6347,10 +6347,8 @@ class JSONReadOptions {
     schema: Schema
     unexpected_field_behavior: JSONReadUnexpectedFieldBehavior
     use_threads: boolean
-    /* Fields of Arrow-1.0.Arrow.JSONReadOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -6406,14 +6404,13 @@ class JSONReadOptions {
     static new(): JSONReadOptions
     static $gtype: GObject.Type
 }
-export interface JSONReader_ConstructProps extends GObject.Object_ConstructProps {
+interface JSONReader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.JSONReader */
     json_table_reader?: object
 }
 class JSONReader {
-    /* Fields of Arrow-1.0.Arrow.JSONReader */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.JSONReader */
     read(): Table | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -6461,13 +6458,13 @@ class JSONReader {
     static new(input: InputStream, options?: JSONReadOptions | null): JSONReader
     static $gtype: GObject.Type
 }
-export interface LargeBinaryArray_ConstructProps extends Array_ConstructProps {
+interface LargeBinaryArray_ConstructProps extends Array_ConstructProps {
 }
 class LargeBinaryArray {
-    /* Fields of Arrow-1.0.Arrow.LargeBinaryArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.LargeBinaryArray */
     get_buffer(): Buffer
     get_data_buffer(): Buffer
@@ -6546,15 +6543,15 @@ class LargeBinaryArray {
     static new(length: number, value_offsets: Buffer, value_data: Buffer, null_bitmap: Buffer | null, n_nulls: number): LargeBinaryArray
     static $gtype: GObject.Type
 }
-export interface LargeBinaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface LargeBinaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class LargeBinaryArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.LargeBinaryArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.LargeBinaryArrayBuilder */
-    append_value(value: Uint8Array[]): boolean
+    append_value(value: Uint8Array): boolean
     append_value_bytes(value: GLib.Bytes): boolean
     append_values(values: GLib.Bytes[], is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.ArrayBuilder */
@@ -6616,13 +6613,13 @@ class LargeBinaryArrayBuilder {
     static new(): LargeBinaryArrayBuilder
     static $gtype: GObject.Type
 }
-export interface LargeBinaryDataType_ConstructProps extends DataType_ConstructProps {
+interface LargeBinaryDataType_ConstructProps extends DataType_ConstructProps {
 }
 class LargeBinaryDataType {
-    /* Fields of Arrow-1.0.Arrow.LargeBinaryDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -6673,14 +6670,15 @@ class LargeBinaryDataType {
     static new(): LargeBinaryDataType
     static $gtype: GObject.Type
 }
-export interface LargeListArray_ConstructProps extends Array_ConstructProps {
+interface LargeListArray_ConstructProps extends Array_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.LargeListArray */
     raw_values?: Array
 }
 class LargeListArray {
-    /* Fields of Arrow-1.0.Arrow.LargeListArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.LargeListArray */
     get_value(i: number): Array
     get_value_length(i: number): number
@@ -6761,13 +6759,13 @@ class LargeListArray {
     static new(data_type: DataType, length: number, value_offsets: Buffer, values: Array, null_bitmap: Buffer | null, n_nulls: number): LargeListArray
     static $gtype: GObject.Type
 }
-export interface LargeListArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface LargeListArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class LargeListArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.LargeListArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.LargeListArrayBuilder */
     append_value(): boolean
     get_value_builder(): ArrayBuilder
@@ -6830,13 +6828,13 @@ class LargeListArrayBuilder {
     static new(data_type: LargeListDataType): LargeListArrayBuilder
     static $gtype: GObject.Type
 }
-export interface LargeListDataType_ConstructProps extends DataType_ConstructProps {
+interface LargeListDataType_ConstructProps extends DataType_ConstructProps {
 }
 class LargeListDataType {
-    /* Fields of Arrow-1.0.Arrow.LargeListDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.LargeListDataType */
     get_field(): Field
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -6889,13 +6887,13 @@ class LargeListDataType {
     static new(field: Field): LargeListDataType
     static $gtype: GObject.Type
 }
-export interface LargeStringArray_ConstructProps extends LargeBinaryArray_ConstructProps {
+interface LargeStringArray_ConstructProps extends LargeBinaryArray_ConstructProps {
 }
 class LargeStringArray {
-    /* Fields of Arrow-1.0.Arrow.LargeStringArray */
-    parent_instance: LargeBinaryArray
+    /* Fields of Arrow-1.0.Arrow.LargeBinaryArray */
+    readonly parent_instance: Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.LargeStringArray */
     get_string(i: number): string
     /* Methods of Arrow-1.0.Arrow.LargeBinaryArray */
@@ -6974,20 +6972,22 @@ class LargeStringArray {
     _init (config?: LargeStringArray_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(length: number, value_offsets: Buffer, value_data: Buffer, null_bitmap: Buffer | null, n_nulls: number): LargeStringArray
+    /* Function overloads */
+    static new(length: number, value_offsets: Buffer, value_data: Buffer, null_bitmap: Buffer | null, n_nulls: number): LargeStringArray
     static $gtype: GObject.Type
 }
-export interface LargeStringArrayBuilder_ConstructProps extends LargeBinaryArrayBuilder_ConstructProps {
+interface LargeStringArrayBuilder_ConstructProps extends LargeBinaryArrayBuilder_ConstructProps {
 }
 class LargeStringArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.LargeStringArrayBuilder */
-    parent_instance: LargeBinaryArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.LargeBinaryArrayBuilder */
+    readonly parent_instance: ArrayBuilder
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.LargeStringArrayBuilder */
     append_string(value: string): boolean
     append_strings(values: string[], is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.LargeBinaryArrayBuilder */
-    append_value(value: Uint8Array[]): boolean
+    append_value(value: Uint8Array): boolean
     append_value_bytes(value: GLib.Bytes): boolean
     append_values(values: GLib.Bytes[], is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.ArrayBuilder */
@@ -7047,15 +7047,17 @@ class LargeStringArrayBuilder {
     _init (config?: LargeStringArrayBuilder_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): LargeStringArrayBuilder
+    /* Function overloads */
+    static new(): LargeStringArrayBuilder
     static $gtype: GObject.Type
 }
-export interface LargeStringDataType_ConstructProps extends DataType_ConstructProps {
+interface LargeStringDataType_ConstructProps extends DataType_ConstructProps {
 }
 class LargeStringDataType {
-    /* Fields of Arrow-1.0.Arrow.LargeStringDataType */
-    parent_instance: LargeBinaryDataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -7106,14 +7108,15 @@ class LargeStringDataType {
     static new(): LargeStringDataType
     static $gtype: GObject.Type
 }
-export interface ListArray_ConstructProps extends Array_ConstructProps {
+interface ListArray_ConstructProps extends Array_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ListArray */
     raw_values?: Array
 }
 class ListArray {
-    /* Fields of Arrow-1.0.Arrow.ListArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ListArray */
     get_value(i: number): Array
     get_value_length(i: number): number
@@ -7194,13 +7197,13 @@ class ListArray {
     static new(data_type: DataType, length: number, value_offsets: Buffer, values: Array, null_bitmap: Buffer | null, n_nulls: number): ListArray
     static $gtype: GObject.Type
 }
-export interface ListArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface ListArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class ListArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.ListArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ListArrayBuilder */
     append(): boolean
     append_value(): boolean
@@ -7264,13 +7267,13 @@ class ListArrayBuilder {
     static new(data_type: ListDataType): ListArrayBuilder
     static $gtype: GObject.Type
 }
-export interface ListDataType_ConstructProps extends DataType_ConstructProps {
+interface ListDataType_ConstructProps extends DataType_ConstructProps {
 }
 class ListDataType {
-    /* Fields of Arrow-1.0.Arrow.ListDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ListDataType */
     get_field(): Field
     get_value_field(): Field
@@ -7324,13 +7327,13 @@ class ListDataType {
     static new(field: Field): ListDataType
     static $gtype: GObject.Type
 }
-export interface LocalFileSystem_ConstructProps extends FileSystem_ConstructProps {
+interface LocalFileSystem_ConstructProps extends FileSystem_ConstructProps {
 }
 class LocalFileSystem {
-    /* Fields of Arrow-1.0.Arrow.LocalFileSystem */
-    parent_instance: FileSystem
+    /* Fields of Arrow-1.0.Arrow.FileSystem */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FileSystem */
     copy_file(src: string, dest: string): boolean
     create_dir(path: string, recursive: boolean): boolean
@@ -7392,16 +7395,15 @@ class LocalFileSystem {
     static new(options?: LocalFileSystemOptions | null): LocalFileSystem
     static $gtype: GObject.Type
 }
-export interface LocalFileSystemOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface LocalFileSystemOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.LocalFileSystemOptions */
     use_mmap?: boolean
 }
 class LocalFileSystemOptions {
     /* Properties of Arrow-1.0.Arrow.LocalFileSystemOptions */
     use_mmap: boolean
-    /* Fields of Arrow-1.0.Arrow.LocalFileSystemOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -7449,16 +7451,17 @@ class LocalFileSystemOptions {
     static new(): LocalFileSystemOptions
     static $gtype: GObject.Type
 }
-export interface MapArray_ConstructProps extends ListArray_ConstructProps {
+interface MapArray_ConstructProps extends ListArray_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.MapArray */
     items?: Array
     keys?: Array
     offsets?: Array
 }
 class MapArray {
-    /* Fields of Arrow-1.0.Arrow.MapArray */
-    parent_instance: ListArray
+    /* Fields of Arrow-1.0.Arrow.ListArray */
+    readonly parent_instance: Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.MapArray */
     get_items(): Array
     get_keys(): Array
@@ -7540,16 +7543,17 @@ class MapArray {
     _init (config?: MapArray_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(offsets: Array, keys: Array, items: Array): MapArray
+    /* Function overloads */
     static new(data_type: DataType, length: number, value_offsets: Buffer, values: Array, null_bitmap: Buffer | null, n_nulls: number): MapArray
     static $gtype: GObject.Type
 }
-export interface MapArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface MapArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class MapArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.MapArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.MapArrayBuilder */
     append_value(): boolean
     append_values(offsets: number[], is_valids: boolean[] | null): boolean
@@ -7615,13 +7619,13 @@ class MapArrayBuilder {
     static new(data_type: MapDataType): MapArrayBuilder
     static $gtype: GObject.Type
 }
-export interface MapDataType_ConstructProps extends ListDataType_ConstructProps {
+interface MapDataType_ConstructProps extends ListDataType_ConstructProps {
 }
 class MapDataType {
-    /* Fields of Arrow-1.0.Arrow.MapDataType */
-    parent_instance: ListDataType
+    /* Fields of Arrow-1.0.Arrow.ListDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.MapDataType */
     get_item_type(): DataType
     get_key_type(): DataType
@@ -7676,16 +7680,17 @@ class MapDataType {
     _init (config?: MapDataType_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(key_type: DataType, item_type: DataType): MapDataType
+    /* Function overloads */
     static new(field: Field): MapDataType
     static $gtype: GObject.Type
 }
-export interface MemoryMappedInputStream_ConstructProps extends SeekableInputStream_ConstructProps {
+interface MemoryMappedInputStream_ConstructProps extends SeekableInputStream_ConstructProps {
 }
 class MemoryMappedInputStream {
     /* Fields of Arrow-1.0.Arrow.SeekableInputStream */
-    parent_instance: InputStream
+    readonly parent_instance: InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.SeekableInputStream */
     get_size(): number
     get_support_zero_copy(): boolean
@@ -7704,11 +7709,11 @@ class MemoryMappedInputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -7750,7 +7755,7 @@ class MemoryMappedInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -7779,13 +7784,13 @@ class MemoryMappedInputStream {
     static new(path: string): MemoryMappedInputStream
     static $gtype: GObject.Type
 }
-export interface MockFileSystem_ConstructProps extends FileSystem_ConstructProps {
+interface MockFileSystem_ConstructProps extends FileSystem_ConstructProps {
 }
 class MockFileSystem {
-    /* Fields of Arrow-1.0.Arrow.MockFileSystem */
-    parent_instance: FileSystem
+    /* Fields of Arrow-1.0.Arrow.FileSystem */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FileSystem */
     copy_file(src: string, dest: string): boolean
     create_dir(path: string, recursive: boolean): boolean
@@ -7845,15 +7850,15 @@ class MockFileSystem {
     _init (config?: MockFileSystem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MutableBuffer_ConstructProps extends Buffer_ConstructProps {
+interface MutableBuffer_ConstructProps extends Buffer_ConstructProps {
 }
 class MutableBuffer {
-    /* Fields of Arrow-1.0.Arrow.MutableBuffer */
-    parent_instance: Buffer
+    /* Fields of Arrow-1.0.Arrow.Buffer */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.MutableBuffer */
-    set_data(offset: number, data: Uint8Array[]): boolean
+    set_data(offset: number, data: Uint8Array): boolean
     slice(offset: number, size: number): MutableBuffer
     /* Methods of Arrow-1.0.Arrow.Buffer */
     copy(start: number, size: number): Buffer | null
@@ -7908,17 +7913,21 @@ class MutableBuffer {
     constructor (config?: MutableBuffer_ConstructProps)
     _init (config?: MutableBuffer_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(data: Uint8Array[]): MutableBuffer
+    static new(data: Uint8Array): MutableBuffer
+    /* Function overloads */
+    static new(data: Uint8Array): MutableBuffer
+    static new_bytes(data: GLib.Bytes): MutableBuffer
+    /* Function overloads */
     static new_bytes(data: GLib.Bytes): MutableBuffer
     static $gtype: GObject.Type
 }
-export interface NullArray_ConstructProps extends Array_ConstructProps {
+interface NullArray_ConstructProps extends Array_ConstructProps {
 }
 class NullArray {
-    /* Fields of Arrow-1.0.Arrow.NullArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Array */
     cast(target_data_type: DataType, options?: CastOptions | null): Array | null
     count(options?: CountOptions | null): number
@@ -7992,13 +8001,13 @@ class NullArray {
     static new(length: number): NullArray
     static $gtype: GObject.Type
 }
-export interface NullArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface NullArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class NullArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.NullArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ArrayBuilder */
     append_empty_value(): boolean
     append_empty_values(n: number): boolean
@@ -8058,13 +8067,13 @@ class NullArrayBuilder {
     static new(): NullArrayBuilder
     static $gtype: GObject.Type
 }
-export interface NullDataType_ConstructProps extends DataType_ConstructProps {
+interface NullDataType_ConstructProps extends DataType_ConstructProps {
 }
 class NullDataType {
-    /* Fields of Arrow-1.0.Arrow.NullDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -8115,13 +8124,13 @@ class NullDataType {
     static new(): NullDataType
     static $gtype: GObject.Type
 }
-export interface NumericArray_ConstructProps extends PrimitiveArray_ConstructProps {
+interface NumericArray_ConstructProps extends PrimitiveArray_ConstructProps {
 }
 class NumericArray {
-    /* Fields of Arrow-1.0.Arrow.NumericArray */
-    parent_instance: PrimitiveArray
+    /* Fields of Arrow-1.0.Arrow.PrimitiveArray */
+    readonly parent_instance: Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.NumericArray */
     mean(): number
     /* Methods of Arrow-1.0.Arrow.PrimitiveArray */
@@ -8198,13 +8207,13 @@ class NumericArray {
     _init (config?: NumericArray_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NumericDataType_ConstructProps extends FixedWidthDataType_ConstructProps {
+interface NumericDataType_ConstructProps extends FixedWidthDataType_ConstructProps {
 }
 class NumericDataType {
-    /* Fields of Arrow-1.0.Arrow.NumericDataType */
-    parent_instance: FixedWidthDataType
+    /* Fields of Arrow-1.0.Arrow.FixedWidthDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
     get_bit_width(): number
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -8255,15 +8264,14 @@ class NumericDataType {
     _init (config?: NumericDataType_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ORCFileReader_ConstructProps extends GObject.Object_ConstructProps {
+interface ORCFileReader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ORCFileReader */
     input?: SeekableInputStream
     orc_file_reader?: object
 }
 class ORCFileReader {
-    /* Fields of Arrow-1.0.Arrow.ORCFileReader */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ORCFileReader */
     get_field_indexes(): number[] | null
     get_field_indices(): number[] | null
@@ -8319,14 +8327,13 @@ class ORCFileReader {
     static new(file: SeekableInputStream): ORCFileReader
     static $gtype: GObject.Type
 }
-export interface OutputStream_ConstructProps extends GObject.Object_ConstructProps {
+interface OutputStream_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.OutputStream */
     output_stream?: object
 }
 class OutputStream {
-    /* Fields of Arrow-1.0.Arrow.OutputStream */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.OutputStream */
     align(alignment: number): boolean
     write_record_batch(record_batch: RecordBatch, options?: WriteOptions | null): number
@@ -8360,7 +8367,7 @@ class OutputStream {
     tell(): number
     /* Methods of Arrow-1.0.Arrow.Writable */
     flush(): boolean
-    write(data: Uint8Array[]): boolean
+    write(data: Uint8Array): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -8382,13 +8389,13 @@ class OutputStream {
     _init (config?: OutputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PrimitiveArray_ConstructProps extends Array_ConstructProps {
+interface PrimitiveArray_ConstructProps extends Array_ConstructProps {
 }
 class PrimitiveArray {
-    /* Fields of Arrow-1.0.Arrow.PrimitiveArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.PrimitiveArray */
     get_buffer(): Buffer
     get_data_buffer(): Buffer
@@ -8463,7 +8470,8 @@ class PrimitiveArray {
     _init (config?: PrimitiveArray_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ReadOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface ReadOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.ReadOptions */
     max_recursion_depth?: number
     use_threads?: boolean
 }
@@ -8471,10 +8479,8 @@ class ReadOptions {
     /* Properties of Arrow-1.0.Arrow.ReadOptions */
     max_recursion_depth: number
     use_threads: boolean
-    /* Fields of Arrow-1.0.Arrow.ReadOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ReadOptions */
     get_included_fields(): number[]
     set_included_fields(fields: number[]): void
@@ -8527,14 +8533,13 @@ class ReadOptions {
     static new(): ReadOptions
     static $gtype: GObject.Type
 }
-export interface RecordBatch_ConstructProps extends GObject.Object_ConstructProps {
+interface RecordBatch_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.RecordBatch */
     record_batch?: object
 }
 class RecordBatch {
-    /* Fields of Arrow-1.0.Arrow.RecordBatch */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatch */
     add_column(i: number, field: Field, column: Array): RecordBatch | null
     equal(other_record_batch: RecordBatch): boolean
@@ -8596,14 +8601,13 @@ class RecordBatch {
     static new(schema: Schema, n_rows: number, columns: Array[]): RecordBatch
     static $gtype: GObject.Type
 }
-export interface RecordBatchBuilder_ConstructProps extends GObject.Object_ConstructProps {
+interface RecordBatchBuilder_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.RecordBatchBuilder */
     record_batch_builder?: object
 }
 class RecordBatchBuilder {
-    /* Fields of Arrow-1.0.Arrow.RecordBatchBuilder */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatchBuilder */
     flush(): RecordBatch
     get_column_builder(i: number): ArrayBuilder | null
@@ -8658,14 +8662,15 @@ class RecordBatchBuilder {
     static new(schema: Schema): RecordBatchBuilder
     static $gtype: GObject.Type
 }
-export interface RecordBatchDatum_ConstructProps extends Datum_ConstructProps {
+interface RecordBatchDatum_ConstructProps extends Datum_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.RecordBatchDatum */
     value?: RecordBatch
 }
 class RecordBatchDatum {
-    /* Fields of Arrow-1.0.Arrow.RecordBatchDatum */
-    parent_instance: Datum
+    /* Fields of Arrow-1.0.Arrow.Datum */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Datum */
     equal(other_datum: Datum): boolean
     is_array(): boolean
@@ -8716,12 +8721,13 @@ class RecordBatchDatum {
     static new(value: RecordBatch): RecordBatchDatum
     static $gtype: GObject.Type
 }
-export interface RecordBatchFileReader_ConstructProps extends GObject.Object_ConstructProps {
+interface RecordBatchFileReader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.RecordBatchFileReader */
     record_batch_file_reader?: object
 }
 class RecordBatchFileReader {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatchFileReader */
     get_n_record_batches(): number
     get_record_batch(i: number): RecordBatch | null
@@ -8773,11 +8779,11 @@ class RecordBatchFileReader {
     static new(file: SeekableInputStream): RecordBatchFileReader
     static $gtype: GObject.Type
 }
-export interface RecordBatchFileWriter_ConstructProps extends RecordBatchStreamWriter_ConstructProps {
+interface RecordBatchFileWriter_ConstructProps extends RecordBatchStreamWriter_ConstructProps {
 }
 class RecordBatchFileWriter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatchWriter */
     close(): boolean
     write_record_batch(record_batch: RecordBatch): boolean
@@ -8825,16 +8831,17 @@ class RecordBatchFileWriter {
     _init (config?: RecordBatchFileWriter_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(sink: OutputStream, schema: Schema): RecordBatchFileWriter
+    /* Function overloads */
+    static new(sink: OutputStream, schema: Schema): RecordBatchFileWriter
     static $gtype: GObject.Type
 }
-export interface RecordBatchIterator_ConstructProps extends GObject.Object_ConstructProps {
+interface RecordBatchIterator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.RecordBatchIterator */
     iterator?: object
 }
 class RecordBatchIterator {
-    /* Fields of Arrow-1.0.Arrow.RecordBatchIterator */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatchIterator */
     equal(other_iterator: RecordBatchIterator): boolean
     next(): RecordBatch | null
@@ -8884,14 +8891,13 @@ class RecordBatchIterator {
     static new(record_batches: RecordBatch[]): RecordBatchIterator
     static $gtype: GObject.Type
 }
-export interface RecordBatchReader_ConstructProps extends GObject.Object_ConstructProps {
+interface RecordBatchReader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.RecordBatchReader */
     record_batch_reader?: object
 }
 class RecordBatchReader {
-    /* Fields of Arrow-1.0.Arrow.RecordBatchReader */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatchReader */
     get_next_record_batch(): RecordBatch | null
     get_schema(): Schema
@@ -8940,13 +8946,13 @@ class RecordBatchReader {
     _init (config?: RecordBatchReader_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RecordBatchStreamReader_ConstructProps extends RecordBatchReader_ConstructProps {
+interface RecordBatchStreamReader_ConstructProps extends RecordBatchReader_ConstructProps {
 }
 class RecordBatchStreamReader {
     /* Fields of Arrow-1.0.Arrow.RecordBatchReader */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatchReader */
     get_next_record_batch(): RecordBatch | null
     get_schema(): Schema
@@ -8997,11 +9003,11 @@ class RecordBatchStreamReader {
     static new(stream: InputStream): RecordBatchStreamReader
     static $gtype: GObject.Type
 }
-export interface RecordBatchStreamWriter_ConstructProps extends RecordBatchWriter_ConstructProps {
+interface RecordBatchStreamWriter_ConstructProps extends RecordBatchWriter_ConstructProps {
 }
 class RecordBatchStreamWriter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatchWriter */
     close(): boolean
     write_record_batch(record_batch: RecordBatch): boolean
@@ -9051,12 +9057,13 @@ class RecordBatchStreamWriter {
     static new(sink: OutputStream, schema: Schema): RecordBatchStreamWriter
     static $gtype: GObject.Type
 }
-export interface RecordBatchWriter_ConstructProps extends GObject.Object_ConstructProps {
+interface RecordBatchWriter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.RecordBatchWriter */
     record_batch_writer?: object
 }
 class RecordBatchWriter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatchWriter */
     close(): boolean
     write_record_batch(record_batch: RecordBatch): boolean
@@ -9104,18 +9111,18 @@ class RecordBatchWriter {
     _init (config?: RecordBatchWriter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ResizableBuffer_ConstructProps extends MutableBuffer_ConstructProps {
+interface ResizableBuffer_ConstructProps extends MutableBuffer_ConstructProps {
 }
 class ResizableBuffer {
-    /* Fields of Arrow-1.0.Arrow.ResizableBuffer */
-    parent_instance: MutableBuffer
+    /* Fields of Arrow-1.0.Arrow.MutableBuffer */
+    readonly parent_instance: Buffer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.ResizableBuffer */
     reserve(new_capacity: number): boolean
     resize(new_size: number): boolean
     /* Methods of Arrow-1.0.Arrow.MutableBuffer */
-    set_data(offset: number, data: Uint8Array[]): boolean
+    set_data(offset: number, data: Uint8Array): boolean
     slice(offset: number, size: number): MutableBuffer
     /* Methods of Arrow-1.0.Arrow.Buffer */
     copy(start: number, size: number): Buffer | null
@@ -9171,16 +9178,21 @@ class ResizableBuffer {
     _init (config?: ResizableBuffer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(initial_size: number): ResizableBuffer
-    static new(data: Uint8Array[]): ResizableBuffer
+    /* Function overloads */
+    static new(data: Uint8Array): ResizableBuffer
+    static new(data: Uint8Array): ResizableBuffer
+    static new_bytes(data: GLib.Bytes): ResizableBuffer
+    /* Function overloads */
+    static new_bytes(data: GLib.Bytes): ResizableBuffer
     static $gtype: GObject.Type
 }
-export interface S3FileSystem_ConstructProps extends FileSystem_ConstructProps {
+interface S3FileSystem_ConstructProps extends FileSystem_ConstructProps {
 }
 class S3FileSystem {
-    /* Fields of Arrow-1.0.Arrow.S3FileSystem */
-    parent_instance: FileSystem
+    /* Fields of Arrow-1.0.Arrow.FileSystem */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FileSystem */
     copy_file(src: string, dest: string): boolean
     create_dir(path: string, recursive: boolean): boolean
@@ -9240,14 +9252,13 @@ class S3FileSystem {
     _init (config?: S3FileSystem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Schema_ConstructProps extends GObject.Object_ConstructProps {
+interface Schema_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Schema */
     schema?: object
 }
 class Schema {
-    /* Fields of Arrow-1.0.Arrow.Schema */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Schema */
     add_field(i: number, field: Field): Schema | null
     equal(other_schema: Schema): boolean
@@ -9308,13 +9319,13 @@ class Schema {
     static new(fields: Field[]): Schema
     static $gtype: GObject.Type
 }
-export interface SeekableInputStream_ConstructProps extends InputStream_ConstructProps {
+interface SeekableInputStream_ConstructProps extends InputStream_ConstructProps {
 }
 class SeekableInputStream {
-    /* Fields of Arrow-1.0.Arrow.SeekableInputStream */
-    parent_instance: InputStream
+    /* Fields of Arrow-1.0.Arrow.InputStream */
+    readonly parent_instance: Gio.InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.SeekableInputStream */
     get_size(): number
     get_support_zero_copy(): boolean
@@ -9333,11 +9344,11 @@ class SeekableInputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -9379,7 +9390,7 @@ class SeekableInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -9406,14 +9417,15 @@ class SeekableInputStream {
     _init (config?: SeekableInputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SlowFileSystem_ConstructProps extends FileSystem_ConstructProps {
+interface SlowFileSystem_ConstructProps extends FileSystem_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.SlowFileSystem */
     base_file_system?: FileSystem
 }
 class SlowFileSystem {
-    /* Fields of Arrow-1.0.Arrow.SlowFileSystem */
-    parent_instance: FileSystem
+    /* Fields of Arrow-1.0.Arrow.FileSystem */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FileSystem */
     copy_file(src: string, dest: string): boolean
     create_dir(path: string, recursive: boolean): boolean
@@ -9476,7 +9488,8 @@ class SlowFileSystem {
     static new_average_latency_and_seed(base_file_system: FileSystem, average_latency: number, seed: number): SlowFileSystem
     static $gtype: GObject.Type
 }
-export interface SortKey_ConstructProps extends GObject.Object_ConstructProps {
+interface SortKey_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.SortKey */
     name?: string
     order?: SortOrder
 }
@@ -9484,10 +9497,8 @@ class SortKey {
     /* Properties of Arrow-1.0.Arrow.SortKey */
     name: string
     order: SortOrder
-    /* Fields of Arrow-1.0.Arrow.SortKey */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.SortKey */
     equal(other_sort_key: SortKey): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -9539,13 +9550,11 @@ class SortKey {
     static new(name: string, order: SortOrder): SortKey
     static $gtype: GObject.Type
 }
-export interface SortOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface SortOptions_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SortOptions {
-    /* Fields of Arrow-1.0.Arrow.SortOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.SortOptions */
     add_sort_key(sort_key: SortKey): void
     equal(other_options: SortOptions): boolean
@@ -9596,13 +9605,13 @@ class SortOptions {
     static new(sort_keys?: SortKey[] | null): SortOptions
     static $gtype: GObject.Type
 }
-export interface SparseUnionArray_ConstructProps extends UnionArray_ConstructProps {
+interface SparseUnionArray_ConstructProps extends UnionArray_ConstructProps {
 }
 class SparseUnionArray {
-    /* Fields of Arrow-1.0.Arrow.SparseUnionArray */
-    parent_instance: UnionArray
+    /* Fields of Arrow-1.0.Arrow.UnionArray */
+    readonly parent_instance: Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UnionArray */
     get_field(i: number): Array | null
     /* Methods of Arrow-1.0.Arrow.Array */
@@ -9679,18 +9688,18 @@ class SparseUnionArray {
     static new_data_type(data_type: SparseUnionDataType, type_ids: Int8Array, fields: Array[]): SparseUnionArray
     static $gtype: GObject.Type
 }
-export interface SparseUnionDataType_ConstructProps extends UnionDataType_ConstructProps {
+interface SparseUnionDataType_ConstructProps extends UnionDataType_ConstructProps {
 }
 class SparseUnionDataType {
-    /* Fields of Arrow-1.0.Arrow.SparseUnionDataType */
-    parent_instance: UnionDataType
+    /* Fields of Arrow-1.0.Arrow.UnionDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UnionDataType */
     get_field(i: number): Field | null
     get_fields(): Field[]
     get_n_fields(): number
-    get_type_codes(): Uint8Array[]
+    get_type_codes(): Uint8Array
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -9738,16 +9747,16 @@ class SparseUnionDataType {
     constructor (config?: SparseUnionDataType_ConstructProps)
     _init (config?: SparseUnionDataType_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(fields: Field[], type_codes: Uint8Array[]): SparseUnionDataType
+    static new(fields: Field[], type_codes: Uint8Array): SparseUnionDataType
     static $gtype: GObject.Type
 }
-export interface StringArray_ConstructProps extends BinaryArray_ConstructProps {
+interface StringArray_ConstructProps extends BinaryArray_ConstructProps {
 }
 class StringArray {
-    /* Fields of Arrow-1.0.Arrow.StringArray */
-    parent_instance: BinaryArray
+    /* Fields of Arrow-1.0.Arrow.BinaryArray */
+    readonly parent_instance: Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.StringArray */
     get_string(i: number): string
     /* Methods of Arrow-1.0.Arrow.BinaryArray */
@@ -9826,22 +9835,24 @@ class StringArray {
     _init (config?: StringArray_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(length: number, value_offsets: Buffer, value_data: Buffer, null_bitmap: Buffer | null, n_nulls: number): StringArray
+    /* Function overloads */
+    static new(length: number, value_offsets: Buffer, value_data: Buffer, null_bitmap: Buffer | null, n_nulls: number): StringArray
     static $gtype: GObject.Type
 }
-export interface StringArrayBuilder_ConstructProps extends BinaryArrayBuilder_ConstructProps {
+interface StringArrayBuilder_ConstructProps extends BinaryArrayBuilder_ConstructProps {
 }
 class StringArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.StringArrayBuilder */
-    parent_instance: BinaryArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.BinaryArrayBuilder */
+    readonly parent_instance: ArrayBuilder
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.StringArrayBuilder */
     append(value: string): boolean
     append_string(value: string): boolean
     append_strings(values: string[], is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.BinaryArrayBuilder */
-    append(value: Uint8Array[]): boolean
-    append_value(value: Uint8Array[]): boolean
+    append(value: Uint8Array): boolean
+    append_value(value: Uint8Array): boolean
     append_value_bytes(value: GLib.Bytes): boolean
     append_values(values: GLib.Bytes[], is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.ArrayBuilder */
@@ -9901,15 +9912,17 @@ class StringArrayBuilder {
     _init (config?: StringArrayBuilder_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): StringArrayBuilder
+    /* Function overloads */
+    static new(): StringArrayBuilder
     static $gtype: GObject.Type
 }
-export interface StringDataType_ConstructProps extends DataType_ConstructProps {
+interface StringDataType_ConstructProps extends DataType_ConstructProps {
 }
 class StringDataType {
-    /* Fields of Arrow-1.0.Arrow.StringDataType */
-    parent_instance: BinaryDataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -9960,13 +9973,13 @@ class StringDataType {
     static new(): StringDataType
     static $gtype: GObject.Type
 }
-export interface StringDictionaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface StringDictionaryArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class StringDictionaryArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.StringDictionaryArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.StringDictionaryArrayBuilder */
     append_array(array: StringArray): boolean
     append_indices(values: number[], is_valids: boolean[] | null): boolean
@@ -10034,13 +10047,13 @@ class StringDictionaryArrayBuilder {
     static new(): StringDictionaryArrayBuilder
     static $gtype: GObject.Type
 }
-export interface StructArray_ConstructProps extends Array_ConstructProps {
+interface StructArray_ConstructProps extends Array_ConstructProps {
 }
 class StructArray {
-    /* Fields of Arrow-1.0.Arrow.StructArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.StructArray */
     flatten(): Array[]
     get_field(i: number): Array
@@ -10118,13 +10131,13 @@ class StructArray {
     static new(data_type: DataType, length: number, fields: Array[], null_bitmap: Buffer | null, n_nulls: number): StructArray
     static $gtype: GObject.Type
 }
-export interface StructArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface StructArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class StructArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.StructArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.StructArrayBuilder */
     append(): boolean
     append_value(): boolean
@@ -10189,13 +10202,13 @@ class StructArrayBuilder {
     static new(data_type: StructDataType): StructArrayBuilder
     static $gtype: GObject.Type
 }
-export interface StructDataType_ConstructProps extends DataType_ConstructProps {
+interface StructDataType_ConstructProps extends DataType_ConstructProps {
 }
 class StructDataType {
-    /* Fields of Arrow-1.0.Arrow.StructDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.StructDataType */
     get_field(i: number): Field | null
     get_field_by_name(name: string): Field | null
@@ -10252,14 +10265,15 @@ class StructDataType {
     static new(fields: Field[]): StructDataType
     static $gtype: GObject.Type
 }
-export interface SubTreeFileSystem_ConstructProps extends FileSystem_ConstructProps {
+interface SubTreeFileSystem_ConstructProps extends FileSystem_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.SubTreeFileSystem */
     base_file_system?: FileSystem
 }
 class SubTreeFileSystem {
-    /* Fields of Arrow-1.0.Arrow.SubTreeFileSystem */
-    parent_instance: FileSystem
+    /* Fields of Arrow-1.0.Arrow.FileSystem */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.FileSystem */
     copy_file(src: string, dest: string): boolean
     create_dir(path: string, recursive: boolean): boolean
@@ -10321,14 +10335,13 @@ class SubTreeFileSystem {
     static new(base_path: string, base_file_system: FileSystem): SubTreeFileSystem
     static $gtype: GObject.Type
 }
-export interface Table_ConstructProps extends GObject.Object_ConstructProps {
+interface Table_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Table */
     table?: object
 }
 class Table {
-    /* Fields of Arrow-1.0.Arrow.Table */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Table */
     add_column(i: number, field: Field, chunked_array: ChunkedArray): Table | null
     combine_chunks(): Table | null
@@ -10396,13 +10409,13 @@ class Table {
     static new_record_batches(schema: Schema, record_batches: RecordBatch[]): Table
     static $gtype: GObject.Type
 }
-export interface TableBatchReader_ConstructProps extends RecordBatchReader_ConstructProps {
+interface TableBatchReader_ConstructProps extends RecordBatchReader_ConstructProps {
 }
 class TableBatchReader {
-    /* Fields of Arrow-1.0.Arrow.TableBatchReader */
-    parent_instance: RecordBatchReader
+    /* Fields of Arrow-1.0.Arrow.RecordBatchReader */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.RecordBatchReader */
     get_next_record_batch(): RecordBatch | null
     get_schema(): Schema
@@ -10453,14 +10466,15 @@ class TableBatchReader {
     static new(table: Table): TableBatchReader
     static $gtype: GObject.Type
 }
-export interface TableDatum_ConstructProps extends Datum_ConstructProps {
+interface TableDatum_ConstructProps extends Datum_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.TableDatum */
     value?: Table
 }
 class TableDatum {
-    /* Fields of Arrow-1.0.Arrow.TableDatum */
-    parent_instance: Datum
+    /* Fields of Arrow-1.0.Arrow.Datum */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Datum */
     equal(other_datum: Datum): boolean
     is_array(): boolean
@@ -10511,13 +10525,11 @@ class TableDatum {
     static new(value: Table): TableDatum
     static $gtype: GObject.Type
 }
-export interface TakeOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface TakeOptions_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TakeOptions {
-    /* Fields of Arrow-1.0.Arrow.TakeOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -10563,15 +10575,14 @@ class TakeOptions {
     static new(): TakeOptions
     static $gtype: GObject.Type
 }
-export interface Tensor_ConstructProps extends GObject.Object_ConstructProps {
+interface Tensor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.Tensor */
     buffer?: Buffer
     tensor?: object
 }
 class Tensor {
-    /* Fields of Arrow-1.0.Arrow.Tensor */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Tensor */
     equal(other_tensor: Tensor): boolean
     get_buffer(): Buffer
@@ -10631,13 +10642,13 @@ class Tensor {
     static new(data_type: DataType, data: Buffer, shape: number[], strides: number[] | null, dimension_names: string[] | null): Tensor
     static $gtype: GObject.Type
 }
-export interface Time32Array_ConstructProps extends NumericArray_ConstructProps {
+interface Time32Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class Time32Array {
-    /* Fields of Arrow-1.0.Arrow.Time32Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Time32Array */
     get_value(i: number): number
     get_values(): number[]
@@ -10719,13 +10730,13 @@ class Time32Array {
     static new(data_type: Time32DataType, length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): Time32Array
     static $gtype: GObject.Type
 }
-export interface Time32ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface Time32ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class Time32ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Time32ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Time32ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -10789,13 +10800,13 @@ class Time32ArrayBuilder {
     static new(data_type: Time32DataType): Time32ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Time32DataType_ConstructProps extends TimeDataType_ConstructProps {
+interface Time32DataType_ConstructProps extends TimeDataType_ConstructProps {
 }
 class Time32DataType {
-    /* Fields of Arrow-1.0.Arrow.Time32DataType */
-    parent_instance: TimeDataType
+    /* Fields of Arrow-1.0.Arrow.TimeDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.TimeDataType */
     get_unit(): TimeUnit
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -10848,13 +10859,13 @@ class Time32DataType {
     static new(unit: TimeUnit): Time32DataType
     static $gtype: GObject.Type
 }
-export interface Time64Array_ConstructProps extends NumericArray_ConstructProps {
+interface Time64Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class Time64Array {
-    /* Fields of Arrow-1.0.Arrow.Time64Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Time64Array */
     get_value(i: number): number
     get_values(): number[]
@@ -10936,13 +10947,13 @@ class Time64Array {
     static new(data_type: Time64DataType, length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): Time64Array
     static $gtype: GObject.Type
 }
-export interface Time64ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface Time64ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class Time64ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.Time64ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.Time64ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -11006,13 +11017,13 @@ class Time64ArrayBuilder {
     static new(data_type: Time64DataType): Time64ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface Time64DataType_ConstructProps extends TimeDataType_ConstructProps {
+interface Time64DataType_ConstructProps extends TimeDataType_ConstructProps {
 }
 class Time64DataType {
-    /* Fields of Arrow-1.0.Arrow.Time64DataType */
-    parent_instance: TimeDataType
+    /* Fields of Arrow-1.0.Arrow.TimeDataType */
+    readonly parent_instance: DataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.TimeDataType */
     get_unit(): TimeUnit
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -11065,13 +11076,13 @@ class Time64DataType {
     static new(unit: TimeUnit): Time64DataType
     static $gtype: GObject.Type
 }
-export interface TimeDataType_ConstructProps extends DataType_ConstructProps {
+interface TimeDataType_ConstructProps extends DataType_ConstructProps {
 }
 class TimeDataType {
-    /* Fields of Arrow-1.0.Arrow.TimeDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.TimeDataType */
     get_unit(): TimeUnit
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -11122,13 +11133,13 @@ class TimeDataType {
     _init (config?: TimeDataType_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TimestampArray_ConstructProps extends NumericArray_ConstructProps {
+interface TimestampArray_ConstructProps extends NumericArray_ConstructProps {
 }
 class TimestampArray {
-    /* Fields of Arrow-1.0.Arrow.TimestampArray */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.TimestampArray */
     get_value(i: number): number
     get_values(): number[]
@@ -11210,13 +11221,13 @@ class TimestampArray {
     static new(data_type: TimestampDataType, length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): TimestampArray
     static $gtype: GObject.Type
 }
-export interface TimestampArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface TimestampArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class TimestampArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.TimestampArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.TimestampArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -11280,13 +11291,13 @@ class TimestampArrayBuilder {
     static new(data_type: TimestampDataType): TimestampArrayBuilder
     static $gtype: GObject.Type
 }
-export interface TimestampDataType_ConstructProps extends DataType_ConstructProps {
+interface TimestampDataType_ConstructProps extends DataType_ConstructProps {
 }
 class TimestampDataType {
-    /* Fields of Arrow-1.0.Arrow.TimestampDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.TimestampDataType */
     get_unit(): TimeUnit
     /* Methods of Arrow-1.0.Arrow.DataType */
@@ -11339,13 +11350,13 @@ class TimestampDataType {
     static new(unit: TimeUnit): TimestampDataType
     static $gtype: GObject.Type
 }
-export interface UInt16Array_ConstructProps extends NumericArray_ConstructProps {
+interface UInt16Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class UInt16Array {
-    /* Fields of Arrow-1.0.Arrow.UInt16Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UInt16Array */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
@@ -11429,13 +11440,13 @@ class UInt16Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): UInt16Array
     static $gtype: GObject.Type
 }
-export interface UInt16ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface UInt16ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class UInt16ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.UInt16ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UInt16ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -11499,13 +11510,13 @@ class UInt16ArrayBuilder {
     static new(): UInt16ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface UInt16DataType_ConstructProps extends IntegerDataType_ConstructProps {
+interface UInt16DataType_ConstructProps extends IntegerDataType_ConstructProps {
 }
 class UInt16DataType {
-    /* Fields of Arrow-1.0.Arrow.UInt16DataType */
-    parent_instance: IntegerDataType
+    /* Fields of Arrow-1.0.Arrow.IntegerDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntegerDataType */
     is_signed(): boolean
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -11560,13 +11571,13 @@ class UInt16DataType {
     static new(): UInt16DataType
     static $gtype: GObject.Type
 }
-export interface UInt32Array_ConstructProps extends NumericArray_ConstructProps {
+interface UInt32Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class UInt32Array {
-    /* Fields of Arrow-1.0.Arrow.UInt32Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UInt32Array */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
@@ -11650,13 +11661,13 @@ class UInt32Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): UInt32Array
     static $gtype: GObject.Type
 }
-export interface UInt32ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface UInt32ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class UInt32ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.UInt32ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UInt32ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -11720,13 +11731,13 @@ class UInt32ArrayBuilder {
     static new(): UInt32ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface UInt32DataType_ConstructProps extends IntegerDataType_ConstructProps {
+interface UInt32DataType_ConstructProps extends IntegerDataType_ConstructProps {
 }
 class UInt32DataType {
-    /* Fields of Arrow-1.0.Arrow.UInt32DataType */
-    parent_instance: IntegerDataType
+    /* Fields of Arrow-1.0.Arrow.IntegerDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntegerDataType */
     is_signed(): boolean
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -11781,13 +11792,13 @@ class UInt32DataType {
     static new(): UInt32DataType
     static $gtype: GObject.Type
 }
-export interface UInt64Array_ConstructProps extends NumericArray_ConstructProps {
+interface UInt64Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class UInt64Array {
-    /* Fields of Arrow-1.0.Arrow.UInt64Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UInt64Array */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
@@ -11871,13 +11882,13 @@ class UInt64Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): UInt64Array
     static $gtype: GObject.Type
 }
-export interface UInt64ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface UInt64ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class UInt64ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.UInt64ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UInt64ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -11941,13 +11952,13 @@ class UInt64ArrayBuilder {
     static new(): UInt64ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface UInt64DataType_ConstructProps extends IntegerDataType_ConstructProps {
+interface UInt64DataType_ConstructProps extends IntegerDataType_ConstructProps {
 }
 class UInt64DataType {
-    /* Fields of Arrow-1.0.Arrow.UInt64DataType */
-    parent_instance: IntegerDataType
+    /* Fields of Arrow-1.0.Arrow.IntegerDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntegerDataType */
     is_signed(): boolean
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -12002,17 +12013,17 @@ class UInt64DataType {
     static new(): UInt64DataType
     static $gtype: GObject.Type
 }
-export interface UInt8Array_ConstructProps extends NumericArray_ConstructProps {
+interface UInt8Array_ConstructProps extends NumericArray_ConstructProps {
 }
 class UInt8Array {
-    /* Fields of Arrow-1.0.Arrow.UInt8Array */
-    parent_instance: NumericArray
+    /* Fields of Arrow-1.0.Arrow.NumericArray */
+    readonly parent_instance: PrimitiveArray
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UInt8Array */
     compare(value: number, options: CompareOptions): BooleanArray | null
     get_value(i: number): number
-    get_values(): Uint8Array[]
+    get_values(): Uint8Array
     sum(): number
     /* Methods of Arrow-1.0.Arrow.NumericArray */
     mean(): number
@@ -12092,17 +12103,17 @@ class UInt8Array {
     static new(length: number, data: Buffer, null_bitmap: Buffer | null, n_nulls: number): UInt8Array
     static $gtype: GObject.Type
 }
-export interface UInt8ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface UInt8ArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class UInt8ArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.UInt8ArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UInt8ArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
-    append_values(values: Uint8Array[], is_valids: boolean[] | null): boolean
+    append_values(values: Uint8Array, is_valids: boolean[] | null): boolean
     /* Methods of Arrow-1.0.Arrow.ArrayBuilder */
     append_empty_value(): boolean
     append_empty_values(n: number): boolean
@@ -12162,13 +12173,13 @@ class UInt8ArrayBuilder {
     static new(): UInt8ArrayBuilder
     static $gtype: GObject.Type
 }
-export interface UInt8DataType_ConstructProps extends IntegerDataType_ConstructProps {
+interface UInt8DataType_ConstructProps extends IntegerDataType_ConstructProps {
 }
 class UInt8DataType {
-    /* Fields of Arrow-1.0.Arrow.UInt8DataType */
-    parent_instance: IntegerDataType
+    /* Fields of Arrow-1.0.Arrow.IntegerDataType */
+    readonly parent_instance: NumericDataType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.IntegerDataType */
     is_signed(): boolean
     /* Methods of Arrow-1.0.Arrow.FixedWidthDataType */
@@ -12223,13 +12234,13 @@ class UInt8DataType {
     static new(): UInt8DataType
     static $gtype: GObject.Type
 }
-export interface UIntArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
+interface UIntArrayBuilder_ConstructProps extends ArrayBuilder_ConstructProps {
 }
 class UIntArrayBuilder {
-    /* Fields of Arrow-1.0.Arrow.UIntArrayBuilder */
-    parent_instance: ArrayBuilder
+    /* Fields of Arrow-1.0.Arrow.ArrayBuilder */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UIntArrayBuilder */
     append(value: number): boolean
     append_value(value: number): boolean
@@ -12293,14 +12304,15 @@ class UIntArrayBuilder {
     static new(): UIntArrayBuilder
     static $gtype: GObject.Type
 }
-export interface UnionArray_ConstructProps extends Array_ConstructProps {
+interface UnionArray_ConstructProps extends Array_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.UnionArray */
     type_ids?: Int8Array
 }
 class UnionArray {
-    /* Fields of Arrow-1.0.Arrow.UnionArray */
-    parent_instance: Array
+    /* Fields of Arrow-1.0.Arrow.Array */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UnionArray */
     get_field(i: number): Array | null
     /* Methods of Arrow-1.0.Arrow.Array */
@@ -12374,18 +12386,18 @@ class UnionArray {
     _init (config?: UnionArray_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UnionDataType_ConstructProps extends DataType_ConstructProps {
+interface UnionDataType_ConstructProps extends DataType_ConstructProps {
 }
 class UnionDataType {
-    /* Fields of Arrow-1.0.Arrow.UnionDataType */
-    parent_instance: DataType
+    /* Fields of Arrow-1.0.Arrow.DataType */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Arrow-1.0.Arrow.UnionDataType */
     get_field(i: number): Field | null
     get_fields(): Field[]
     get_n_fields(): number
-    get_type_codes(): Uint8Array[]
+    get_type_codes(): Uint8Array
     /* Methods of Arrow-1.0.Arrow.DataType */
     equal(other_data_type: DataType): boolean
     get_id(): Type
@@ -12434,7 +12446,8 @@ class UnionDataType {
     _init (config?: UnionDataType_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WriteOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface WriteOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Arrow-1.0.Arrow.WriteOptions */
     alignment?: number
     allow_64bit?: boolean
     codec?: Codec
@@ -12450,10 +12463,8 @@ class WriteOptions {
     max_recursion_depth: number
     use_threads: boolean
     write_legacy_ipc_format: boolean
-    /* Fields of Arrow-1.0.Arrow.WriteOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -12513,286 +12524,286 @@ class WriteOptions {
 }
 abstract class ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.ArrayBuilderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ArrayClass {
     /* Fields of Arrow-1.0.Arrow.ArrayClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ArrayDatumClass {
     /* Fields of Arrow-1.0.Arrow.ArrayDatumClass */
-    parent_class: DatumClass
+    readonly parent_class: DatumClass
     static name: string
 }
 abstract class ArraySortOptionsClass {
     /* Fields of Arrow-1.0.Arrow.ArraySortOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class BinaryArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.BinaryArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class BinaryArrayClass {
     /* Fields of Arrow-1.0.Arrow.BinaryArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class BinaryDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.BinaryDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class BinaryDictionaryArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.BinaryDictionaryArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class BooleanArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.BooleanArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class BooleanArrayClass {
     /* Fields of Arrow-1.0.Arrow.BooleanArrayClass */
-    parent_class: PrimitiveArrayClass
+    readonly parent_class: PrimitiveArrayClass
     static name: string
 }
 abstract class BooleanDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.BooleanDataTypeClass */
-    parent_class: FixedWidthDataTypeClass
+    readonly parent_class: FixedWidthDataTypeClass
     static name: string
 }
 abstract class BufferClass {
     /* Fields of Arrow-1.0.Arrow.BufferClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class BufferInputStreamClass {
     /* Fields of Arrow-1.0.Arrow.BufferInputStreamClass */
-    parent_class: SeekableInputStreamClass
+    readonly parent_class: SeekableInputStreamClass
     static name: string
 }
 abstract class BufferOutputStreamClass {
     /* Fields of Arrow-1.0.Arrow.BufferOutputStreamClass */
-    parent_class: OutputStreamClass
+    readonly parent_class: OutputStreamClass
     static name: string
 }
 abstract class CSVReadOptionsClass {
     /* Fields of Arrow-1.0.Arrow.CSVReadOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CSVReaderClass {
     /* Fields of Arrow-1.0.Arrow.CSVReaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CastOptionsClass {
     /* Fields of Arrow-1.0.Arrow.CastOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ChunkedArrayClass {
     /* Fields of Arrow-1.0.Arrow.ChunkedArrayClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ChunkedArrayDatumClass {
     /* Fields of Arrow-1.0.Arrow.ChunkedArrayDatumClass */
-    parent_class: DatumClass
+    readonly parent_class: DatumClass
     static name: string
 }
 abstract class CodecClass {
     /* Fields of Arrow-1.0.Arrow.CodecClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CompareOptionsClass {
     /* Fields of Arrow-1.0.Arrow.CompareOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CompressedInputStreamClass {
     /* Fields of Arrow-1.0.Arrow.CompressedInputStreamClass */
-    parent_class: InputStreamClass
+    readonly parent_class: InputStreamClass
     static name: string
 }
 abstract class CompressedOutputStreamClass {
     /* Fields of Arrow-1.0.Arrow.CompressedOutputStreamClass */
-    parent_class: OutputStreamClass
+    readonly parent_class: OutputStreamClass
     static name: string
 }
 abstract class CountOptionsClass {
     /* Fields of Arrow-1.0.Arrow.CountOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.DataTypeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class Date32ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Date32ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class Date32ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Date32ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class Date32DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Date32DataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class Date64ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Date64ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class Date64ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Date64ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class Date64DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Date64DataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class DatumClass {
     /* Fields of Arrow-1.0.Arrow.DatumClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class Decimal128ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Decimal128ArrayBuilderClass */
-    parent_class: FixedSizeBinaryArrayBuilderClass
+    readonly parent_class: FixedSizeBinaryArrayBuilderClass
     static name: string
 }
 abstract class Decimal128ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Decimal128ArrayClass */
-    parent_class: FixedSizeBinaryArrayClass
+    readonly parent_class: FixedSizeBinaryArrayClass
     static name: string
 }
 abstract class Decimal128Class {
     /* Fields of Arrow-1.0.Arrow.Decimal128Class */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class Decimal128DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Decimal128DataTypeClass */
-    parent_class: DecimalDataTypeClass
+    readonly parent_class: DecimalDataTypeClass
     static name: string
 }
 abstract class Decimal256ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Decimal256ArrayBuilderClass */
-    parent_class: FixedSizeBinaryArrayBuilderClass
+    readonly parent_class: FixedSizeBinaryArrayBuilderClass
     static name: string
 }
 abstract class Decimal256ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Decimal256ArrayClass */
-    parent_class: FixedSizeBinaryArrayClass
+    readonly parent_class: FixedSizeBinaryArrayClass
     static name: string
 }
 abstract class Decimal256Class {
     /* Fields of Arrow-1.0.Arrow.Decimal256Class */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class Decimal256DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Decimal256DataTypeClass */
-    parent_class: DecimalDataTypeClass
+    readonly parent_class: DecimalDataTypeClass
     static name: string
 }
 abstract class DecimalDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.DecimalDataTypeClass */
-    parent_class: FixedSizeBinaryDataTypeClass
+    readonly parent_class: FixedSizeBinaryDataTypeClass
     static name: string
 }
 abstract class DenseUnionArrayClass {
     /* Fields of Arrow-1.0.Arrow.DenseUnionArrayClass */
-    parent_class: UnionArrayClass
+    readonly parent_class: UnionArrayClass
     static name: string
 }
 abstract class DenseUnionDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.DenseUnionDataTypeClass */
-    parent_class: UnionDataTypeClass
+    readonly parent_class: UnionDataTypeClass
     static name: string
 }
 abstract class DictionaryArrayClass {
     /* Fields of Arrow-1.0.Arrow.DictionaryArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class DictionaryDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.DictionaryDataTypeClass */
-    parent_class: FixedWidthDataTypeClass
+    readonly parent_class: FixedWidthDataTypeClass
     static name: string
 }
 abstract class DoubleArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.DoubleArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class DoubleArrayClass {
     /* Fields of Arrow-1.0.Arrow.DoubleArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class DoubleDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.DoubleDataTypeClass */
-    parent_class: FloatingPointDataTypeClass
+    readonly parent_class: FloatingPointDataTypeClass
     static name: string
 }
 abstract class ExecuteContextClass {
     /* Fields of Arrow-1.0.Arrow.ExecuteContextClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ExtensionArrayClass {
     /* Fields of Arrow-1.0.Arrow.ExtensionArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class ExtensionDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.ExtensionDataTypeClass */
-    parent_class: DataTypeClass
-    get_extension_name: (data_type: ExtensionDataType) => string
-    equal: (data_type: ExtensionDataType, other_data_type: ExtensionDataType) => boolean
-    serialize: (data_type: ExtensionDataType) => GLib.Bytes
-    get_array_gtype: (data_type: ExtensionDataType) => GObject.Type
+    readonly parent_class: DataTypeClass
+    readonly get_extension_name: (data_type: ExtensionDataType) => string
+    readonly equal: (data_type: ExtensionDataType, other_data_type: ExtensionDataType) => boolean
+    readonly serialize: (data_type: ExtensionDataType) => GLib.Bytes
+    readonly get_array_gtype: (data_type: ExtensionDataType) => GObject.Type
     static name: string
 }
 abstract class ExtensionDataTypeRegistryClass {
     /* Fields of Arrow-1.0.Arrow.ExtensionDataTypeRegistryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FeatherFileReaderClass {
     /* Fields of Arrow-1.0.Arrow.FeatherFileReaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FeatherWritePropertiesClass {
     /* Fields of Arrow-1.0.Arrow.FeatherWritePropertiesClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FieldClass {
     /* Fields of Arrow-1.0.Arrow.FieldClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FileInfoClass {
     /* Fields of Arrow-1.0.Arrow.FileInfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FileInterface {
@@ -12800,67 +12811,67 @@ abstract class FileInterface {
 }
 abstract class FileOutputStreamClass {
     /* Fields of Arrow-1.0.Arrow.FileOutputStreamClass */
-    parent_class: OutputStreamClass
+    readonly parent_class: OutputStreamClass
     static name: string
 }
 abstract class FileSelectorClass {
     /* Fields of Arrow-1.0.Arrow.FileSelectorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FileSystemClass {
     /* Fields of Arrow-1.0.Arrow.FileSystemClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FilterOptionsClass {
     /* Fields of Arrow-1.0.Arrow.FilterOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FixedSizeBinaryArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class FixedSizeBinaryArrayClass {
     /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryArrayClass */
-    parent_class: PrimitiveArrayClass
+    readonly parent_class: PrimitiveArrayClass
     static name: string
 }
 abstract class FixedSizeBinaryDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.FixedSizeBinaryDataTypeClass */
-    parent_class: FixedWidthDataTypeClass
+    readonly parent_class: FixedWidthDataTypeClass
     static name: string
 }
 abstract class FixedWidthDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.FixedWidthDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class FloatArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.FloatArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class FloatArrayClass {
     /* Fields of Arrow-1.0.Arrow.FloatArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class FloatDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.FloatDataTypeClass */
-    parent_class: FloatingPointDataTypeClass
+    readonly parent_class: FloatingPointDataTypeClass
     static name: string
 }
 abstract class FloatingPointDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.FloatingPointDataTypeClass */
-    parent_class: NumericDataTypeClass
+    readonly parent_class: NumericDataTypeClass
     static name: string
 }
 abstract class FunctionClass {
     /* Fields of Arrow-1.0.Arrow.FunctionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FunctionOptionsInterface {
@@ -12868,247 +12879,247 @@ abstract class FunctionOptionsInterface {
 }
 abstract class GIOInputStreamClass {
     /* Fields of Arrow-1.0.Arrow.GIOInputStreamClass */
-    parent_class: SeekableInputStreamClass
+    readonly parent_class: SeekableInputStreamClass
     static name: string
 }
 abstract class GIOOutputStreamClass {
     /* Fields of Arrow-1.0.Arrow.GIOOutputStreamClass */
-    parent_class: OutputStreamClass
+    readonly parent_class: OutputStreamClass
     static name: string
 }
 abstract class HDFSFileSystemClass {
     /* Fields of Arrow-1.0.Arrow.HDFSFileSystemClass */
-    parent_class: FileSystemClass
+    readonly parent_class: FileSystemClass
     static name: string
 }
 abstract class InputStreamClass {
     /* Fields of Arrow-1.0.Arrow.InputStreamClass */
-    parent_class: Gio.InputStreamClass
+    readonly parent_class: Gio.InputStreamClass
     static name: string
 }
 abstract class Int16ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Int16ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class Int16ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Int16ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class Int16DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Int16DataTypeClass */
-    parent_class: IntegerDataTypeClass
+    readonly parent_class: IntegerDataTypeClass
     static name: string
 }
 abstract class Int32ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Int32ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class Int32ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Int32ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class Int32DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Int32DataTypeClass */
-    parent_class: IntegerDataTypeClass
+    readonly parent_class: IntegerDataTypeClass
     static name: string
 }
 abstract class Int64ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Int64ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class Int64ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Int64ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class Int64DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Int64DataTypeClass */
-    parent_class: IntegerDataTypeClass
+    readonly parent_class: IntegerDataTypeClass
     static name: string
 }
 abstract class Int8ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Int8ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class Int8ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Int8ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class Int8DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Int8DataTypeClass */
-    parent_class: IntegerDataTypeClass
+    readonly parent_class: IntegerDataTypeClass
     static name: string
 }
 abstract class IntArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.IntArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class IntegerDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.IntegerDataTypeClass */
-    parent_class: NumericDataTypeClass
+    readonly parent_class: NumericDataTypeClass
     static name: string
 }
 abstract class JSONReadOptionsClass {
     /* Fields of Arrow-1.0.Arrow.JSONReadOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class JSONReaderClass {
     /* Fields of Arrow-1.0.Arrow.JSONReaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class LargeBinaryArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.LargeBinaryArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class LargeBinaryArrayClass {
     /* Fields of Arrow-1.0.Arrow.LargeBinaryArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class LargeBinaryDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.LargeBinaryDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class LargeListArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.LargeListArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class LargeListArrayClass {
     /* Fields of Arrow-1.0.Arrow.LargeListArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class LargeListDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.LargeListDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class LargeStringArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.LargeStringArrayBuilderClass */
-    parent_class: LargeBinaryArrayBuilderClass
+    readonly parent_class: LargeBinaryArrayBuilderClass
     static name: string
 }
 abstract class LargeStringArrayClass {
     /* Fields of Arrow-1.0.Arrow.LargeStringArrayClass */
-    parent_class: LargeBinaryArrayClass
+    readonly parent_class: LargeBinaryArrayClass
     static name: string
 }
 abstract class LargeStringDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.LargeStringDataTypeClass */
-    parent_class: LargeBinaryDataTypeClass
+    readonly parent_class: LargeBinaryDataTypeClass
     static name: string
 }
 abstract class ListArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.ListArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class ListArrayClass {
     /* Fields of Arrow-1.0.Arrow.ListArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class ListDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.ListDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class LocalFileSystemClass {
     /* Fields of Arrow-1.0.Arrow.LocalFileSystemClass */
-    parent_class: FileSystemClass
+    readonly parent_class: FileSystemClass
     static name: string
 }
 abstract class LocalFileSystemOptionsClass {
     /* Fields of Arrow-1.0.Arrow.LocalFileSystemOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MapArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.MapArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class MapArrayClass {
     /* Fields of Arrow-1.0.Arrow.MapArrayClass */
-    parent_class: ListArrayClass
+    readonly parent_class: ListArrayClass
     static name: string
 }
 abstract class MapDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.MapDataTypeClass */
-    parent_class: ListDataTypeClass
+    readonly parent_class: ListDataTypeClass
     static name: string
 }
 abstract class MemoryMappedInputStreamClass {
     /* Fields of Arrow-1.0.Arrow.MemoryMappedInputStreamClass */
-    parent_class: SeekableInputStreamClass
+    readonly parent_class: SeekableInputStreamClass
     static name: string
 }
 abstract class MockFileSystemClass {
     /* Fields of Arrow-1.0.Arrow.MockFileSystemClass */
-    parent_class: FileSystemClass
+    readonly parent_class: FileSystemClass
     static name: string
 }
 abstract class MutableBufferClass {
     /* Fields of Arrow-1.0.Arrow.MutableBufferClass */
-    parent_class: BufferClass
+    readonly parent_class: BufferClass
     static name: string
 }
 abstract class NullArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.NullArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class NullArrayClass {
     /* Fields of Arrow-1.0.Arrow.NullArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class NullDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.NullDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class NumericArrayClass {
     /* Fields of Arrow-1.0.Arrow.NumericArrayClass */
-    parent_class: PrimitiveArrayClass
+    readonly parent_class: PrimitiveArrayClass
     static name: string
 }
 abstract class NumericDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.NumericDataTypeClass */
-    parent_class: FixedWidthDataTypeClass
+    readonly parent_class: FixedWidthDataTypeClass
     static name: string
 }
 abstract class ORCFileReaderClass {
     /* Fields of Arrow-1.0.Arrow.ORCFileReaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class OutputStreamClass {
     /* Fields of Arrow-1.0.Arrow.OutputStreamClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PrimitiveArrayClass {
     /* Fields of Arrow-1.0.Arrow.PrimitiveArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class ReadOptionsClass {
     /* Fields of Arrow-1.0.Arrow.ReadOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ReadableInterface {
@@ -13116,287 +13127,287 @@ abstract class ReadableInterface {
 }
 abstract class RecordBatchBuilderClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchBuilderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RecordBatchClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RecordBatchDatumClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchDatumClass */
-    parent_class: DatumClass
+    readonly parent_class: DatumClass
     static name: string
 }
 abstract class RecordBatchFileReaderClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchFileReaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RecordBatchFileWriterClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchFileWriterClass */
-    parent_class: RecordBatchStreamWriterClass
+    readonly parent_class: RecordBatchStreamWriterClass
     static name: string
 }
 abstract class RecordBatchIteratorClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchIteratorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RecordBatchReaderClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchReaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RecordBatchStreamReaderClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchStreamReaderClass */
-    parent_class: RecordBatchReaderClass
+    readonly parent_class: RecordBatchReaderClass
     static name: string
 }
 abstract class RecordBatchStreamWriterClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchStreamWriterClass */
-    parent_class: RecordBatchWriterClass
+    readonly parent_class: RecordBatchWriterClass
     static name: string
 }
 abstract class RecordBatchWriterClass {
     /* Fields of Arrow-1.0.Arrow.RecordBatchWriterClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ResizableBufferClass {
     /* Fields of Arrow-1.0.Arrow.ResizableBufferClass */
-    parent_class: MutableBufferClass
+    readonly parent_class: MutableBufferClass
     static name: string
 }
 abstract class S3FileSystemClass {
     /* Fields of Arrow-1.0.Arrow.S3FileSystemClass */
-    parent_class: FileSystemClass
+    readonly parent_class: FileSystemClass
     static name: string
 }
 abstract class SchemaClass {
     /* Fields of Arrow-1.0.Arrow.SchemaClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SeekableInputStreamClass {
     /* Fields of Arrow-1.0.Arrow.SeekableInputStreamClass */
-    parent_class: InputStreamClass
+    readonly parent_class: InputStreamClass
     static name: string
 }
 abstract class SlowFileSystemClass {
     /* Fields of Arrow-1.0.Arrow.SlowFileSystemClass */
-    parent_class: FileSystemClass
+    readonly parent_class: FileSystemClass
     static name: string
 }
 abstract class SortKeyClass {
     /* Fields of Arrow-1.0.Arrow.SortKeyClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SortOptionsClass {
     /* Fields of Arrow-1.0.Arrow.SortOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SparseUnionArrayClass {
     /* Fields of Arrow-1.0.Arrow.SparseUnionArrayClass */
-    parent_class: UnionArrayClass
+    readonly parent_class: UnionArrayClass
     static name: string
 }
 abstract class SparseUnionDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.SparseUnionDataTypeClass */
-    parent_class: UnionDataTypeClass
+    readonly parent_class: UnionDataTypeClass
     static name: string
 }
 abstract class StringArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.StringArrayBuilderClass */
-    parent_class: BinaryArrayBuilderClass
+    readonly parent_class: BinaryArrayBuilderClass
     static name: string
 }
 abstract class StringArrayClass {
     /* Fields of Arrow-1.0.Arrow.StringArrayClass */
-    parent_class: BinaryArrayClass
+    readonly parent_class: BinaryArrayClass
     static name: string
 }
 abstract class StringDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.StringDataTypeClass */
-    parent_class: BinaryDataTypeClass
+    readonly parent_class: BinaryDataTypeClass
     static name: string
 }
 abstract class StringDictionaryArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.StringDictionaryArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class StructArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.StructArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class StructArrayClass {
     /* Fields of Arrow-1.0.Arrow.StructArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class StructDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.StructDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class SubTreeFileSystemClass {
     /* Fields of Arrow-1.0.Arrow.SubTreeFileSystemClass */
-    parent_class: FileSystemClass
+    readonly parent_class: FileSystemClass
     static name: string
 }
 abstract class TableBatchReaderClass {
     /* Fields of Arrow-1.0.Arrow.TableBatchReaderClass */
-    parent_class: RecordBatchReaderClass
+    readonly parent_class: RecordBatchReaderClass
     static name: string
 }
 abstract class TableClass {
     /* Fields of Arrow-1.0.Arrow.TableClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TableDatumClass {
     /* Fields of Arrow-1.0.Arrow.TableDatumClass */
-    parent_class: DatumClass
+    readonly parent_class: DatumClass
     static name: string
 }
 abstract class TakeOptionsClass {
     /* Fields of Arrow-1.0.Arrow.TakeOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TensorClass {
     /* Fields of Arrow-1.0.Arrow.TensorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class Time32ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Time32ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class Time32ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Time32ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class Time32DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Time32DataTypeClass */
-    parent_class: TimeDataTypeClass
+    readonly parent_class: TimeDataTypeClass
     static name: string
 }
 abstract class Time64ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.Time64ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class Time64ArrayClass {
     /* Fields of Arrow-1.0.Arrow.Time64ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class Time64DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.Time64DataTypeClass */
-    parent_class: TimeDataTypeClass
+    readonly parent_class: TimeDataTypeClass
     static name: string
 }
 abstract class TimeDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.TimeDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class TimestampArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.TimestampArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class TimestampArrayClass {
     /* Fields of Arrow-1.0.Arrow.TimestampArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class TimestampDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.TimestampDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class UInt16ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.UInt16ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class UInt16ArrayClass {
     /* Fields of Arrow-1.0.Arrow.UInt16ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class UInt16DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.UInt16DataTypeClass */
-    parent_class: IntegerDataTypeClass
+    readonly parent_class: IntegerDataTypeClass
     static name: string
 }
 abstract class UInt32ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.UInt32ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class UInt32ArrayClass {
     /* Fields of Arrow-1.0.Arrow.UInt32ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class UInt32DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.UInt32DataTypeClass */
-    parent_class: IntegerDataTypeClass
+    readonly parent_class: IntegerDataTypeClass
     static name: string
 }
 abstract class UInt64ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.UInt64ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class UInt64ArrayClass {
     /* Fields of Arrow-1.0.Arrow.UInt64ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class UInt64DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.UInt64DataTypeClass */
-    parent_class: IntegerDataTypeClass
+    readonly parent_class: IntegerDataTypeClass
     static name: string
 }
 abstract class UInt8ArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.UInt8ArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class UInt8ArrayClass {
     /* Fields of Arrow-1.0.Arrow.UInt8ArrayClass */
-    parent_class: NumericArrayClass
+    readonly parent_class: NumericArrayClass
     static name: string
 }
 abstract class UInt8DataTypeClass {
     /* Fields of Arrow-1.0.Arrow.UInt8DataTypeClass */
-    parent_class: IntegerDataTypeClass
+    readonly parent_class: IntegerDataTypeClass
     static name: string
 }
 abstract class UIntArrayBuilderClass {
     /* Fields of Arrow-1.0.Arrow.UIntArrayBuilderClass */
-    parent_class: ArrayBuilderClass
+    readonly parent_class: ArrayBuilderClass
     static name: string
 }
 abstract class UnionArrayClass {
     /* Fields of Arrow-1.0.Arrow.UnionArrayClass */
-    parent_class: ArrayClass
+    readonly parent_class: ArrayClass
     static name: string
 }
 abstract class UnionDataTypeClass {
     /* Fields of Arrow-1.0.Arrow.UnionDataTypeClass */
-    parent_class: DataTypeClass
+    readonly parent_class: DataTypeClass
     static name: string
 }
 abstract class WritableFileInterface {
@@ -13407,9 +13418,9 @@ abstract class WritableInterface {
 }
 abstract class WriteOptionsClass {
     /* Fields of Arrow-1.0.Arrow.WriteOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
-type TimePoint = number
+    type TimePoint = number
 }
 export default Arrow;

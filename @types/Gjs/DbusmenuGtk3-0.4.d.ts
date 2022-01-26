@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * DbusmenuGtk3-0.4
  */
@@ -19,7 +25,7 @@ import type Dbusmenu from './Dbusmenu-0.4';
 
 export namespace DbusmenuGtk3 {
 
-export const GTK_MENUITEM_H__: number
+const GTK_MENUITEM_H__: number
 function gtk_parse_get_cached_item(widget: Gtk.Widget): Dbusmenu.Menuitem
 function gtk_parse_menu_structure(widget: Gtk.Widget): Dbusmenu.Menuitem
 function menuitem_property_get_image(menuitem: Dbusmenu.Menuitem, property: string): GdkPixbuf.Pixbuf
@@ -28,13 +34,13 @@ function menuitem_property_set_image(menuitem: Dbusmenu.Menuitem, property: stri
 function menuitem_property_set_shortcut(menuitem: Dbusmenu.Menuitem, key: number, modifier: Gdk.ModifierType): boolean
 function menuitem_property_set_shortcut_menuitem(menuitem: Dbusmenu.Menuitem, gmi: Gtk.MenuItem): boolean
 function menuitem_property_set_shortcut_string(menuitem: Dbusmenu.Menuitem, shortcut: string): boolean
-export interface Client_ConstructProps extends Dbusmenu.Client_ConstructProps {
+interface Client_ConstructProps extends Dbusmenu.Client_ConstructProps {
 }
 class Client {
     /* Properties of Dbusmenu-0.4.Dbusmenu.Client */
     group_events: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of DbusmenuGtk3-0.4.DbusmenuGtk3.Client */
     get_accel_group(): Gtk.AccelGroup
     menuitem_get(item: Dbusmenu.Menuitem): Gtk.MenuItem
@@ -112,9 +118,12 @@ class Client {
     _init (config?: Client_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(dbus_name: string, dbus_object: string): Client
+    /* Function overloads */
+    static new(name: string, object: string): Client
     static $gtype: GObject.Type
 }
-export interface Menu_ConstructProps extends Gtk.Menu_ConstructProps {
+interface Menu_ConstructProps extends Gtk.Menu_ConstructProps {
+    /* Constructor properties of DbusmenuGtk3-0.4.DbusmenuGtk3.Menu */
     dbus_name?: string
     dbus_object?: string
 }
@@ -178,18 +187,16 @@ class Menu {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of DbusmenuGtk3-0.4.DbusmenuGtk3.Menu */
-    priv: MenuPrivate
     /* Fields of Gtk-3.0.Gtk.Menu */
-    menu_shell: Gtk.MenuShell
+    readonly menu_shell: Gtk.MenuShell
     /* Fields of Gtk-3.0.Gtk.MenuShell */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of DbusmenuGtk3-0.4.DbusmenuGtk3.Menu */
     get_client(): Client
     /* Methods of Gtk-3.0.Gtk.Menu */
@@ -240,7 +247,7 @@ class Menu {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -555,6 +562,7 @@ class Menu {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of DbusmenuGtk3-0.4.DbusmenuGtk3.Menu */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1054,19 +1062,20 @@ class Menu {
     _init (config?: Menu_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(dbus_name: string, dbus_object: string): Menu
+    /* Function overloads */
     static new(): Menu
     static $gtype: GObject.Type
 }
 abstract class ClientClass {
     /* Fields of DbusmenuGtk3-0.4.DbusmenuGtk3.ClientClass */
-    parent_class: Dbusmenu.ClientClass
-    root_changed: (newroot: Dbusmenu.Menuitem) => void
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
-    reserved5: () => void
-    reserved6: () => void
+    readonly parent_class: Dbusmenu.ClientClass
+    readonly root_changed: (newroot: Dbusmenu.Menuitem) => void
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
+    readonly reserved5: () => void
+    readonly reserved6: () => void
     static name: string
 }
 class ClientPrivate {
@@ -1074,13 +1083,13 @@ class ClientPrivate {
 }
 abstract class MenuClass {
     /* Fields of DbusmenuGtk3-0.4.DbusmenuGtk3.MenuClass */
-    parent_class: Gtk.MenuClass
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
-    reserved5: () => void
-    reserved6: () => void
+    readonly parent_class: Gtk.MenuClass
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
+    readonly reserved5: () => void
+    readonly reserved6: () => void
     static name: string
 }
 class MenuPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Farstream-0.2
  */
@@ -23,16 +29,16 @@ enum ComponentType {
     RTCP,
 }
 enum DTMFEvent {
-    /* 0 (invalid, starts with a number) */
-    /* 1 (invalid, starts with a number) */
-    /* 2 (invalid, starts with a number) */
-    /* 3 (invalid, starts with a number) */
-    /* 4 (invalid, starts with a number) */
-    /* 5 (invalid, starts with a number) */
-    /* 6 (invalid, starts with a number) */
-    /* 7 (invalid, starts with a number) */
-    /* 8 (invalid, starts with a number) */
-    /* 9 (invalid, starts with a number) */
+    TODO_0,
+    TODO_1,
+    TODO_2,
+    TODO_3,
+    TODO_4,
+    TODO_5,
+    TODO_6,
+    TODO_7,
+    TODO_8,
+    TODO_9,
     STAR,
     POUND,
     A,
@@ -85,10 +91,10 @@ enum StreamDirection {
     RECV,
     BOTH,
 }
-export const CODEC_FORMAT: string
-export const CODEC_ID_ANY: number
-export const CODEC_ID_DISABLE: number
-export const RTP_HEADER_EXTENSION_FORMAT: string
+const CODEC_FORMAT: string
+const CODEC_ID_ANY: number
+const CODEC_ID_DISABLE: number
+const RTP_HEADER_EXTENSION_FORMAT: string
 function candidate_list_copy(candidate_list: Codec[]): Codec[]
 function codec_list_are_equal(list1?: Codec[] | null, list2?: Codec[] | null): boolean
 function codec_list_copy(codec_list: Codec[]): Codec[]
@@ -102,54 +108,53 @@ function utils_get_default_codec_preferences(element: Gst.Element): Codec[]
 function utils_get_default_rtp_header_extension_preferences(element: Gst.Element, media_type: MediaType): Codec[]
 function utils_set_bitrate(element: Gst.Element, bitrate: number): void
 function value_set_candidate_list(value: any, candidates?: Candidate[] | null): void
-export interface Conference_ConstructProps extends Gst.Bin_ConstructProps {
+interface Conference_ConstructProps extends Gst.Bin_ConstructProps {
 }
 class Conference {
     /* Properties of Gst-1.0.Gst.Bin */
     async_handling: boolean
     message_forward: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Bin */
-    element: Gst.Element
-    numchildren: number
-    children: Gst.Element[]
-    children_cookie: number
-    child_bus: Gst.Bus
-    messages: Gst.Message[]
-    polling: boolean
-    state_dirty: boolean
-    clock_dirty: boolean
-    provided_clock: Gst.Clock
-    clock_provider: Gst.Element
+    readonly element: Gst.Element
+    readonly numchildren: number
+    readonly children: Gst.Element[]
+    readonly children_cookie: number
+    readonly child_bus: Gst.Bus
+    readonly messages: Gst.Message[]
+    readonly polling: boolean
+    readonly state_dirty: boolean
+    readonly clock_dirty: boolean
+    readonly provided_clock: Gst.Clock
+    readonly clock_provider: Gst.Element
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Farstream-0.2.Farstream.Conference */
     new_participant(): Participant
     new_session(media_type: MediaType): Session
@@ -382,10 +387,6 @@ class Conference {
     connect_after(sigName: "notify::async-handling", callback: (($obj: Conference, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::message-forward", callback: (($obj: Conference, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::message-forward", callback: (($obj: Conference, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Conference, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Conference, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Conference, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Conference, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -395,13 +396,11 @@ class Conference {
     _init (config?: Conference_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ElementAddedNotifier_ConstructProps extends GObject.Object_ConstructProps {
+interface ElementAddedNotifier_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ElementAddedNotifier {
-    /* Fields of Farstream-0.2.Farstream.ElementAddedNotifier */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Farstream-0.2.Farstream.ElementAddedNotifier */
     add(bin: Gst.Bin): void
     remove(bin: Gst.Bin): boolean
@@ -457,13 +456,11 @@ class ElementAddedNotifier {
     static new(): ElementAddedNotifier
     static $gtype: GObject.Type
 }
-export interface Participant_ConstructProps extends GObject.Object_ConstructProps {
+interface Participant_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Participant {
-    /* Fields of Farstream-0.2.Farstream.Participant */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -507,19 +504,17 @@ class Participant {
     _init (config?: Participant_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Plugin_ConstructProps extends GObject.TypeModule_ConstructProps {
+interface Plugin_ConstructProps extends GObject.TypeModule_ConstructProps {
 }
 class Plugin {
-    /* Fields of Farstream-0.2.Farstream.Plugin */
-    parent: GObject.TypeModule
     /* Fields of GObject-2.0.GObject.TypeModule */
-    parent_instance: GObject.Object
-    use_count: number
-    type_infos: object[]
-    interface_infos: object[]
-    name: string
+    readonly parent_instance: GObject.Object
+    readonly use_count: number
+    readonly type_infos: object[]
+    readonly interface_infos: object[]
+    readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.TypeModule */
     add_interface(instance_type: GObject.Type, interface_type: GObject.Type, interface_info: GObject.InterfaceInfo): void
     register_enum(name: string, const_static_values: GObject.EnumValue): GObject.Type
@@ -580,7 +575,8 @@ class Plugin {
     static list_available(type_suffix: string): string[]
     static $gtype: GObject.Type
 }
-export interface Session_ConstructProps extends GObject.Object_ConstructProps {
+interface Session_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Farstream-0.2.Farstream.Session */
     conference?: Conference
     id?: number
     media_type?: MediaType
@@ -597,10 +593,8 @@ class Session {
     readonly encryption_parameters: Gst.Structure
     readonly sink_pad: Gst.Pad
     tos: number
-    /* Fields of Farstream-0.2.Farstream.Session */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Farstream-0.2.Farstream.Session */
     codecs_need_resend(old_codecs?: Codec[] | null, new_codecs?: Codec[] | null): Codec[]
     destroy(): void
@@ -694,7 +688,8 @@ class Session {
     _init (config?: Session_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Stream_ConstructProps extends GObject.Object_ConstructProps {
+interface Stream_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Farstream-0.2.Farstream.Stream */
     direction?: StreamDirection
     participant?: Participant
     session?: Session
@@ -706,10 +701,8 @@ class Stream {
     direction: StreamDirection
     readonly negotiated_codecs: Codec[]
     readonly remote_codecs: Codec[]
-    /* Fields of Farstream-0.2.Farstream.Stream */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Farstream-0.2.Farstream.Stream */
     add_id(id: number): void
     add_remote_candidates(candidates: Candidate[]): boolean
@@ -794,7 +787,8 @@ class Stream {
     _init (config?: Stream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface StreamTransmitter_ConstructProps extends GObject.Object_ConstructProps {
+interface StreamTransmitter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Farstream-0.2.Farstream.StreamTransmitter */
     associate_on_source?: boolean
     preferred_local_candidates?: any
     sending?: boolean
@@ -802,10 +796,8 @@ export interface StreamTransmitter_ConstructProps extends GObject.Object_Constru
 class StreamTransmitter {
     /* Properties of Farstream-0.2.Farstream.StreamTransmitter */
     sending: boolean
-    /* Fields of Farstream-0.2.Farstream.StreamTransmitter */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Farstream-0.2.Farstream.StreamTransmitter */
     add_remote_candidates(candidates: Candidate[]): boolean
     emit_error(error_no: number, error_msg: string): void
@@ -881,7 +873,8 @@ class StreamTransmitter {
     _init (config?: StreamTransmitter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Transmitter_ConstructProps extends GObject.Object_ConstructProps {
+interface Transmitter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Farstream-0.2.Farstream.Transmitter */
     components?: number
     do_timestamp?: boolean
     tos?: number
@@ -892,10 +885,8 @@ class Transmitter {
     readonly gst_sink: Gst.Element
     readonly gst_src: Gst.Element
     tos: number
-    /* Fields of Farstream-0.2.Farstream.Transmitter */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Farstream-0.2.Farstream.Transmitter */
     emit_error(error_no: number, error_msg: string): void
     get_stream_transmitter_type(): GObject.Type
@@ -963,18 +954,18 @@ class Transmitter {
 }
 class Candidate {
     /* Fields of Farstream-0.2.Farstream.Candidate */
-    foundation: string
-    component_id: number
-    ip: string
-    port: number
-    base_ip: string
-    base_port: number
-    proto: NetworkProtocol
-    priority: number
-    type: CandidateType
-    username: string
-    password: string
-    ttl: number
+    readonly foundation: string
+    readonly component_id: number
+    readonly ip: string
+    readonly port: number
+    readonly base_ip: string
+    readonly base_port: number
+    readonly proto: NetworkProtocol
+    readonly priority: number
+    readonly type: CandidateType
+    readonly username: string
+    readonly password: string
+    readonly ttl: number
     /* Methods of Farstream-0.2.Farstream.Candidate */
     copy(): Candidate
     static name: string
@@ -986,14 +977,14 @@ class Candidate {
 }
 class Codec {
     /* Fields of Farstream-0.2.Farstream.Codec */
-    id: number
-    encoding_name: string
-    media_type: MediaType
-    clock_rate: number
-    channels: number
-    minimum_reporting_interval: number
-    optional_params: CodecParameter[]
-    feedback_params: FeedbackParameter[]
+    readonly id: number
+    readonly encoding_name: string
+    readonly media_type: MediaType
+    readonly clock_rate: number
+    readonly channels: number
+    readonly minimum_reporting_interval: number
+    readonly optional_params: CodecParameter[]
+    readonly feedback_params: FeedbackParameter[]
     /* Methods of Farstream-0.2.Farstream.Codec */
     add_feedback_parameter(type: string, subtype: string, extra_params: string): void
     add_optional_parameter(name: string, value: string): void
@@ -1012,8 +1003,8 @@ class Codec {
 }
 class CodecParameter {
     /* Fields of Farstream-0.2.Farstream.CodecParameter */
-    name: string
-    value: string
+    readonly name: string
+    readonly value: string
     /* Methods of Farstream-0.2.Farstream.CodecParameter */
     copy(): CodecParameter
     free(): void
@@ -1021,14 +1012,14 @@ class CodecParameter {
 }
 abstract class ConferenceClass {
     /* Fields of Farstream-0.2.Farstream.ConferenceClass */
-    parent: Gst.BinClass
-    new_session: (conference: Conference, media_type: MediaType) => Session
-    new_participant: (conference: Conference) => Participant
+    readonly parent: Gst.BinClass
+    readonly new_session: (conference: Conference, media_type: MediaType) => Session
+    readonly new_participant: (conference: Conference) => Participant
     static name: string
 }
 abstract class ElementAddedNotifierClass {
     /* Fields of Farstream-0.2.Farstream.ElementAddedNotifierClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ElementAddedNotifierPrivate {
@@ -1036,9 +1027,9 @@ class ElementAddedNotifierPrivate {
 }
 class FeedbackParameter {
     /* Fields of Farstream-0.2.Farstream.FeedbackParameter */
-    type: string
-    subtype: string
-    extra_params: string
+    readonly type: string
+    readonly subtype: string
+    readonly extra_params: string
     /* Methods of Farstream-0.2.Farstream.FeedbackParameter */
     copy(): FeedbackParameter
     free(): void
@@ -1046,7 +1037,7 @@ class FeedbackParameter {
 }
 abstract class ParticipantClass {
     /* Fields of Farstream-0.2.Farstream.ParticipantClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ParticipantPrivate {
@@ -1054,7 +1045,7 @@ class ParticipantPrivate {
 }
 abstract class PluginClass {
     /* Fields of Farstream-0.2.Farstream.PluginClass */
-    parent_class: GObject.TypeModuleClass
+    readonly parent_class: GObject.TypeModuleClass
     static name: string
 }
 class PluginPrivate {
@@ -1062,9 +1053,9 @@ class PluginPrivate {
 }
 class RtpHeaderExtension {
     /* Fields of Farstream-0.2.Farstream.RtpHeaderExtension */
-    id: number
-    direction: StreamDirection
-    uri: string
+    readonly id: number
+    readonly direction: StreamDirection
+    readonly uri: string
     /* Methods of Farstream-0.2.Farstream.RtpHeaderExtension */
     are_equal(extension2: RtpHeaderExtension): boolean
     static name: string
@@ -1075,17 +1066,17 @@ class RtpHeaderExtension {
 }
 abstract class SessionClass {
     /* Fields of Farstream-0.2.Farstream.SessionClass */
-    parent_class: GObject.ObjectClass
-    new_stream: (session: Session, participant: Participant, direction: StreamDirection) => Stream
-    start_telephony_event: (session: Session, event: number, volume: number) => boolean
-    stop_telephony_event: (session: Session) => boolean
-    set_send_codec: (session: Session, send_codec: Codec) => boolean
-    set_codec_preferences: (session: Session, codec_preferences?: Codec[] | null) => boolean
-    list_transmitters: (session: Session) => string[]
-    get_stream_transmitter_type: (session: Session, transmitter: string) => GObject.Type
-    codecs_need_resend: (session: Session, old_codecs?: Codec[] | null, new_codecs?: Codec[] | null) => Codec[]
-    set_allowed_caps: (session: Session, sink_caps?: Gst.Caps | null, src_caps?: Gst.Caps | null) => boolean
-    set_encryption_parameters: (session: Session, parameters?: Gst.Structure | null) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly new_stream: (session: Session, participant: Participant, direction: StreamDirection) => Stream
+    readonly start_telephony_event: (session: Session, event: number, volume: number) => boolean
+    readonly stop_telephony_event: (session: Session) => boolean
+    readonly set_send_codec: (session: Session, send_codec: Codec) => boolean
+    readonly set_codec_preferences: (session: Session, codec_preferences?: Codec[] | null) => boolean
+    readonly list_transmitters: (session: Session) => string[]
+    readonly get_stream_transmitter_type: (session: Session, transmitter: string) => GObject.Type
+    readonly codecs_need_resend: (session: Session, old_codecs?: Codec[] | null, new_codecs?: Codec[] | null) => Codec[]
+    readonly set_allowed_caps: (session: Session, sink_caps?: Gst.Caps | null, src_caps?: Gst.Caps | null) => boolean
+    readonly set_encryption_parameters: (session: Session, parameters?: Gst.Structure | null) => boolean
     static name: string
 }
 class SessionPrivate {
@@ -1093,13 +1084,13 @@ class SessionPrivate {
 }
 abstract class StreamClass {
     /* Fields of Farstream-0.2.Farstream.StreamClass */
-    parent_class: GObject.ObjectClass
-    add_remote_candidates: (stream: Stream, candidates: Candidate[]) => boolean
-    force_remote_candidates: (stream: Stream, remote_candidates: Candidate[]) => boolean
-    set_remote_codecs: (stream: Stream, remote_codecs: Codec[]) => boolean
-    add_id: (stream: Stream, id: number) => void
-    set_transmitter: (stream: Stream, transmitter: string, stream_transmitter_parameters: GObject.Parameter[] | null) => boolean
-    set_decryption_parameters: (stream: Stream, parameters: Gst.Structure) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly add_remote_candidates: (stream: Stream, candidates: Candidate[]) => boolean
+    readonly force_remote_candidates: (stream: Stream, remote_candidates: Candidate[]) => boolean
+    readonly set_remote_codecs: (stream: Stream, remote_codecs: Codec[]) => boolean
+    readonly add_id: (stream: Stream, id: number) => void
+    readonly set_transmitter: (stream: Stream, transmitter: string, stream_transmitter_parameters: GObject.Parameter[] | null) => boolean
+    readonly set_decryption_parameters: (stream: Stream, parameters: Gst.Structure) => boolean
     static name: string
 }
 class StreamPrivate {
@@ -1107,11 +1098,11 @@ class StreamPrivate {
 }
 abstract class StreamTransmitterClass {
     /* Fields of Farstream-0.2.Farstream.StreamTransmitterClass */
-    parent_class: GObject.ObjectClass
-    add_remote_candidates: (streamtransmitter: StreamTransmitter, candidates: Candidate[]) => boolean
-    force_remote_candidates: (streamtransmitter: StreamTransmitter, remote_candidates: Candidate[]) => boolean
-    gather_local_candidates: (streamtransmitter: StreamTransmitter) => boolean
-    stop: (streamtransmitter: StreamTransmitter) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly add_remote_candidates: (streamtransmitter: StreamTransmitter, candidates: Candidate[]) => boolean
+    readonly force_remote_candidates: (streamtransmitter: StreamTransmitter, remote_candidates: Candidate[]) => boolean
+    readonly gather_local_candidates: (streamtransmitter: StreamTransmitter) => boolean
+    readonly stop: (streamtransmitter: StreamTransmitter) => void
     static name: string
 }
 class StreamTransmitterPrivate {
@@ -1119,9 +1110,9 @@ class StreamTransmitterPrivate {
 }
 abstract class TransmitterClass {
     /* Fields of Farstream-0.2.Farstream.TransmitterClass */
-    parent_class: GObject.ObjectClass
-    new_stream_transmitter: (transmitter: Transmitter, participant: Participant, n_parameters: number, parameters: GObject.Parameter) => StreamTransmitter
-    get_stream_transmitter_type: (transmitter: Transmitter) => GObject.Type
+    readonly parent_class: GObject.ObjectClass
+    readonly new_stream_transmitter: (transmitter: Transmitter, participant: Participant, n_parameters: number, parameters: GObject.Parameter) => StreamTransmitter
+    readonly get_stream_transmitter_type: (transmitter: Transmitter) => GObject.Type
     static name: string
 }
 class TransmitterPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Devhelp-3.0
  */
@@ -41,7 +47,7 @@ function application_window_bind_sidebar_and_notebook(sidebar: Sidebar, notebook
 function finalize(): void
 function init(): void
 function link_type_to_string(link_type: LinkType): string
-export interface AssistantView_ConstructProps extends WebKit2.WebView_ConstructProps {
+interface AssistantView_ConstructProps extends WebKit2.WebView_ConstructProps {
 }
 class AssistantView {
     /* Properties of WebKit2-4.0.WebKit2.WebView */
@@ -91,7 +97,6 @@ class AssistantView {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -104,14 +109,16 @@ class AssistantView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Devhelp-3.0.Devhelp.AssistantView */
-    parent_instance: WebKit2.WebView
+    /* Fields of WebKit2-4.0.WebKit2.WebView */
+    readonly parent: WebKit2.WebViewBase
     /* Fields of WebKit2-4.0.WebKit2.WebViewBase */
-    parentInstance: Gtk.Container
+    readonly parentInstance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.AssistantView */
     search(str: string): boolean
     set_link(link?: Link | null): boolean
@@ -199,7 +206,7 @@ class AssistantView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -514,6 +521,18 @@ class AssistantView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Virtual methods of Devhelp-3.0.Devhelp.AssistantView */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of WebKit2-4.0.WebKit2.WebView */
     vfunc_authenticate(request: WebKit2.AuthenticationRequest): boolean
     vfunc_close(): void
@@ -541,6 +560,16 @@ class AssistantView {
     vfunc_user_message_received(message: WebKit2.UserMessage): boolean
     vfunc_web_process_crashed(): boolean
     vfunc_web_process_terminated(reason: WebKit2.WebProcessTerminationReason): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of WebKit2-4.0.WebKit2.WebViewBase */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1053,8 +1082,6 @@ class AssistantView {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: AssistantView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: AssistantView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: AssistantView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AssistantView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AssistantView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: AssistantView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: AssistantView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: AssistantView, pspec: GObject.ParamSpec) => void)): number
@@ -1090,13 +1117,11 @@ class AssistantView {
     static new(): AssistantView
     static $gtype: GObject.Type
 }
-export interface Book_ConstructProps extends GObject.Object_ConstructProps {
+interface Book_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Book {
-    /* Fields of Devhelp-3.0.Devhelp.Book */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.Book */
     cmp_by_id(b: Book): number
     cmp_by_title(b: Book): number
@@ -1159,14 +1184,11 @@ class Book {
     static new(index_file: Gio.File): Book
     static $gtype: GObject.Type
 }
-export interface BookList_ConstructProps extends GObject.Object_ConstructProps {
+interface BookList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BookList {
-    /* Fields of Devhelp-3.0.Devhelp.BookList */
-    parent: GObject.Object
-    priv: BookListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.BookList */
     add_book(book: Book): void
     get_books(): Book[]
@@ -1228,14 +1250,11 @@ class BookList {
     static get_default(): BookList
     static $gtype: GObject.Type
 }
-export interface BookListBuilder_ConstructProps extends GObject.Object_ConstructProps {
+interface BookListBuilder_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BookListBuilder {
-    /* Fields of Devhelp-3.0.Devhelp.BookListBuilder */
-    parent: GObject.Object
-    priv: BookListBuilderPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.BookListBuilder */
     add_default_sub_book_lists(): void
     add_sub_book_list(sub_book_list: BookList): void
@@ -1286,15 +1305,16 @@ class BookListBuilder {
     static new(): BookListBuilder
     static $gtype: GObject.Type
 }
-export interface BookListDirectory_ConstructProps extends BookList_ConstructProps {
+interface BookListDirectory_ConstructProps extends BookList_ConstructProps {
+    /* Constructor properties of Devhelp-3.0.Devhelp.BookListDirectory */
     directory?: Gio.File
 }
 class BookListDirectory {
-    /* Fields of Devhelp-3.0.Devhelp.BookListDirectory */
-    parent: BookList
-    priv: BookListDirectoryPrivate
+    /* Fields of Devhelp-3.0.Devhelp.BookList */
+    readonly parent: GObject.Object
+    readonly priv: BookListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.BookListDirectory */
     get_directory(): Gio.File
     /* Methods of Devhelp-3.0.Devhelp.BookList */
@@ -1355,16 +1375,15 @@ class BookListDirectory {
     _init (config?: BookListDirectory_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(directory: Gio.File): BookListDirectory
+    /* Function overloads */
     static new(): BookListDirectory
     static $gtype: GObject.Type
 }
-export interface BookManager_ConstructProps extends GObject.Object_ConstructProps {
+interface BookManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BookManager {
-    /* Fields of Devhelp-3.0.Devhelp.BookManager */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.BookManager */
     populate(): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1412,8 +1431,10 @@ class BookManager {
     static new(): BookManager
     static $gtype: GObject.Type
 }
-export interface BookTree_ConstructProps extends Gtk.TreeView_ConstructProps {
+interface BookTree_ConstructProps extends Gtk.TreeView_ConstructProps {
+    /* Constructor properties of Devhelp-3.0.Devhelp.BookTree */
     profile?: Profile
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -1470,7 +1491,6 @@ class BookTree {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -1488,12 +1508,14 @@ class BookTree {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Devhelp-3.0.Devhelp.BookTree */
-    parent_instance: Gtk.TreeView
+    /* Fields of Gtk-3.0.Gtk.TreeView */
+    readonly parent: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.BookTree */
     get_profile(): Profile
     get_selected_link(): Link | null
@@ -1598,7 +1620,7 @@ class BookTree {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1913,6 +1935,7 @@ class BookTree {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hscroll_policy(): Gtk.ScrollablePolicy
@@ -2420,8 +2443,6 @@ class BookTree {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: BookTree, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: BookTree, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: BookTree, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: BookTree, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: BookTree, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: BookTree, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: BookTree, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: BookTree, pspec: GObject.ParamSpec) => void)): number
@@ -2463,17 +2484,15 @@ class BookTree {
     _init (config?: BookTree_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(profile?: Profile | null): BookTree
+    /* Function overloads */
     static new(): BookTree
     static $gtype: GObject.Type
 }
-export interface Completion_ConstructProps extends GObject.Object_ConstructProps {
+interface Completion_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Completion {
-    /* Fields of Devhelp-3.0.Devhelp.Completion */
-    parent: GObject.Object
-    priv: CompletionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.Completion */
     add_string(str: string): void
     complete(prefix: string): string | null
@@ -2524,13 +2543,11 @@ class Completion {
     static aggregate_complete(completion_objects: Completion[] | null, prefix: string): string | null
     static $gtype: GObject.Type
 }
-export interface KeywordModel_ConstructProps extends GObject.Object_ConstructProps {
+interface KeywordModel_ConstructProps extends GObject.Object_ConstructProps {
 }
 class KeywordModel {
-    /* Fields of Devhelp-3.0.Devhelp.KeywordModel */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.KeywordModel */
     filter(search_string: string, current_book_id?: string | null, profile?: Profile | null): Link | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -2640,7 +2657,8 @@ class KeywordModel {
     static new(): KeywordModel
     static $gtype: GObject.Type
 }
-export interface Notebook_ConstructProps extends Gtk.Notebook_ConstructProps {
+interface Notebook_ConstructProps extends Gtk.Notebook_ConstructProps {
+    /* Constructor properties of Devhelp-3.0.Devhelp.Notebook */
     profile?: Profile
 }
 class Notebook {
@@ -2696,14 +2714,12 @@ class Notebook {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Devhelp-3.0.Devhelp.Notebook */
-    priv: NotebookPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.Notebook */
     get_active_tab(): Tab | null
     get_active_web_view(): WebView | null
@@ -2759,7 +2775,7 @@ class Notebook {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3074,6 +3090,7 @@ class Notebook {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Devhelp-3.0.Devhelp.Notebook */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3561,17 +3578,15 @@ class Notebook {
     _init (config?: Notebook_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(profile?: Profile | null): Notebook
+    /* Function overloads */
     static new(): Notebook
     static $gtype: GObject.Type
 }
-export interface Profile_ConstructProps extends GObject.Object_ConstructProps {
+interface Profile_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Profile {
-    /* Fields of Devhelp-3.0.Devhelp.Profile */
-    parent: GObject.Object
-    priv: ProfilePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.Profile */
     get_book_list(): BookList
     get_settings(): Settings
@@ -3620,14 +3635,11 @@ class Profile {
     static get_default(): Profile
     static $gtype: GObject.Type
 }
-export interface ProfileBuilder_ConstructProps extends GObject.Object_ConstructProps {
+interface ProfileBuilder_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ProfileBuilder {
-    /* Fields of Devhelp-3.0.Devhelp.ProfileBuilder */
-    parent: GObject.Object
-    priv: ProfileBuilderPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.ProfileBuilder */
     create_object(): Profile
     set_book_list(book_list: BookList): void
@@ -3677,7 +3689,8 @@ class ProfileBuilder {
     static new(): ProfileBuilder
     static $gtype: GObject.Type
 }
-export interface SearchBar_ConstructProps extends Gtk.SearchBar_ConstructProps {
+interface SearchBar_ConstructProps extends Gtk.SearchBar_ConstructProps {
+    /* Constructor properties of Devhelp-3.0.Devhelp.SearchBar */
     notebook?: Notebook
 }
 class SearchBar {
@@ -3728,16 +3741,14 @@ class SearchBar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Devhelp-3.0.Devhelp.SearchBar */
-    priv: SearchBarPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.SearchBar */
     get_notebook(): Notebook
     grab_focus_to_search_entry(): void
@@ -3754,7 +3765,7 @@ class SearchBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4069,6 +4080,7 @@ class SearchBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Devhelp-3.0.Devhelp.SearchBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -4504,10 +4516,12 @@ class SearchBar {
     _init (config?: SearchBar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(notebook: Notebook): SearchBar
+    /* Function overloads */
     static new(): SearchBar
     static $gtype: GObject.Type
 }
-export interface Settings_ConstructProps extends GObject.Object_ConstructProps {
+interface Settings_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Devhelp-3.0.Devhelp.Settings */
     fixed_font?: string
     group_books_by_language?: boolean
     use_system_fonts?: boolean
@@ -4519,11 +4533,8 @@ class Settings {
     group_books_by_language: boolean
     use_system_fonts: boolean
     variable_font: string
-    /* Fields of Devhelp-3.0.Devhelp.Settings */
-    parent: GObject.Object
-    priv: SettingsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.Settings */
     bind_all(): void
     bind_fonts(): void
@@ -4604,14 +4615,11 @@ class Settings {
     static get_default(): Settings
     static $gtype: GObject.Type
 }
-export interface SettingsBuilder_ConstructProps extends GObject.Object_ConstructProps {
+interface SettingsBuilder_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SettingsBuilder {
-    /* Fields of Devhelp-3.0.Devhelp.SettingsBuilder */
-    parent: GObject.Object
-    priv: SettingsBuilderPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.SettingsBuilder */
     create_object(): Settings
     set_contents_path(contents_path: string): void
@@ -4661,8 +4669,10 @@ class SettingsBuilder {
     static new(): SettingsBuilder
     static $gtype: GObject.Type
 }
-export interface Sidebar_ConstructProps extends Gtk.Grid_ConstructProps {
+interface Sidebar_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Devhelp-3.0.Devhelp.Sidebar */
     profile?: Profile
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Sidebar {
@@ -4718,12 +4728,12 @@ class Sidebar {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Devhelp-3.0.Devhelp.Sidebar */
-    parent_instance: Gtk.Grid
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.Sidebar */
     get_profile(): Profile
     get_selected_link(): Link | null
@@ -4755,7 +4765,7 @@ class Sidebar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5070,6 +5080,7 @@ class Sidebar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -5521,12 +5532,15 @@ class Sidebar {
     _init (config?: Sidebar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(book_manager?: BookManager | null): Sidebar
+    /* Function overloads */
     static new(): Sidebar
     static new2(profile?: Profile | null): Sidebar
     static $gtype: GObject.Type
 }
-export interface Tab_ConstructProps extends Gtk.Grid_ConstructProps {
+interface Tab_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Devhelp-3.0.Devhelp.Tab */
     web_view?: WebView
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Tab {
@@ -5582,14 +5596,12 @@ class Tab {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Devhelp-3.0.Devhelp.Tab */
-    priv: TabPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.Tab */
     get_web_view(): WebView
     /* Methods of Gtk-3.0.Gtk.Grid */
@@ -5617,7 +5629,7 @@ class Tab {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5932,6 +5944,7 @@ class Tab {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -6378,11 +6391,14 @@ class Tab {
     _init (config?: Tab_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(web_view?: WebView | null): Tab
+    /* Function overloads */
     static new(): Tab
     static $gtype: GObject.Type
 }
-export interface TabLabel_ConstructProps extends Gtk.Grid_ConstructProps {
+interface TabLabel_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Devhelp-3.0.Devhelp.TabLabel */
     tab?: Tab
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class TabLabel {
@@ -6438,14 +6454,12 @@ class TabLabel {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Devhelp-3.0.Devhelp.TabLabel */
-    priv: TabLabelPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.TabLabel */
     get_tab(): Tab | null
     /* Methods of Gtk-3.0.Gtk.Grid */
@@ -6473,7 +6487,7 @@ class TabLabel {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6788,6 +6802,7 @@ class TabLabel {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -7234,10 +7249,12 @@ class TabLabel {
     _init (config?: TabLabel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(tab: Tab): TabLabel
+    /* Function overloads */
     static new(): TabLabel
     static $gtype: GObject.Type
 }
-export interface WebView_ConstructProps extends WebKit2.WebView_ConstructProps {
+interface WebView_ConstructProps extends WebKit2.WebView_ConstructProps {
+    /* Constructor properties of Devhelp-3.0.Devhelp.WebView */
     profile?: Profile
 }
 class WebView {
@@ -7288,7 +7305,6 @@ class WebView {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -7301,16 +7317,16 @@ class WebView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Devhelp-3.0.Devhelp.WebView */
-    priv: WebViewPrivate
+    /* Fields of WebKit2-4.0.WebKit2.WebView */
+    readonly parent: WebKit2.WebViewBase
     /* Fields of WebKit2-4.0.WebKit2.WebViewBase */
-    parentInstance: Gtk.Container
+    readonly parentInstance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Devhelp-3.0.Devhelp.WebView */
     can_reset_zoom(): boolean
     can_zoom_in(): boolean
@@ -7407,7 +7423,7 @@ class WebView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7722,8 +7738,19 @@ class WebView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Devhelp-3.0.Devhelp.WebView */
     vfunc_open_new_tab(uri: string): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of WebKit2-4.0.WebKit2.WebView */
     vfunc_authenticate(request: WebKit2.AuthenticationRequest): boolean
     vfunc_close(): void
@@ -7751,6 +7778,16 @@ class WebView {
     vfunc_user_message_received(message: WebKit2.UserMessage): boolean
     vfunc_web_process_crashed(): boolean
     vfunc_web_process_terminated(reason: WebKit2.WebProcessTerminationReason): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of WebKit2-4.0.WebKit2.WebViewBase */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -8263,8 +8300,6 @@ class WebView {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: WebView, pspec: GObject.ParamSpec) => void)): number
@@ -8298,25 +8333,26 @@ class WebView {
     _init (config?: WebView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(profile?: Profile | null): WebView
+    /* Function overloads */
     static new(): WebView
     static $gtype: GObject.Type
 }
 abstract class AssistantViewClass {
     /* Fields of Devhelp-3.0.Devhelp.AssistantViewClass */
-    parent_class: WebKit2.WebViewClass
-    padding: object[]
+    readonly parent_class: WebKit2.WebViewClass
+    readonly padding: object[]
     static name: string
 }
 abstract class BookClass {
     /* Fields of Devhelp-3.0.Devhelp.BookClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class BookListBuilderClass {
     /* Fields of Devhelp-3.0.Devhelp.BookListBuilderClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class BookListBuilderPrivate {
@@ -8324,16 +8360,16 @@ class BookListBuilderPrivate {
 }
 abstract class BookListClass {
     /* Fields of Devhelp-3.0.Devhelp.BookListClass */
-    parent_class: GObject.ObjectClass
-    add_book: (book_list: BookList, book: Book) => void
-    remove_book: (book_list: BookList, book: Book) => void
-    get_books: (book_list: BookList) => Book[]
+    readonly parent_class: GObject.ObjectClass
+    readonly add_book: (book_list: BookList, book: Book) => void
+    readonly remove_book: (book_list: BookList, book: Book) => void
+    readonly get_books: (book_list: BookList) => Book[]
     static name: string
 }
 abstract class BookListDirectoryClass {
     /* Fields of Devhelp-3.0.Devhelp.BookListDirectoryClass */
-    parent_class: BookListClass
-    padding: object[]
+    readonly parent_class: BookListClass
+    readonly padding: object[]
     static name: string
 }
 class BookListDirectoryPrivate {
@@ -8344,20 +8380,20 @@ class BookListPrivate {
 }
 abstract class BookManagerClass {
     /* Fields of Devhelp-3.0.Devhelp.BookManagerClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class BookTreeClass {
     /* Fields of Devhelp-3.0.Devhelp.BookTreeClass */
-    parent_class: Gtk.TreeViewClass
-    padding: object[]
+    readonly parent_class: Gtk.TreeViewClass
+    readonly padding: object[]
     static name: string
 }
 abstract class CompletionClass {
     /* Fields of Devhelp-3.0.Devhelp.CompletionClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class CompletionPrivate {
@@ -8365,8 +8401,8 @@ class CompletionPrivate {
 }
 abstract class KeywordModelClass {
     /* Fields of Devhelp-3.0.Devhelp.KeywordModelClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class Link {
@@ -8392,8 +8428,8 @@ class Link {
 }
 abstract class NotebookClass {
     /* Fields of Devhelp-3.0.Devhelp.NotebookClass */
-    parent_class: Gtk.NotebookClass
-    padding: object[]
+    readonly parent_class: Gtk.NotebookClass
+    readonly padding: object[]
     static name: string
 }
 class NotebookPrivate {
@@ -8401,8 +8437,8 @@ class NotebookPrivate {
 }
 abstract class ProfileBuilderClass {
     /* Fields of Devhelp-3.0.Devhelp.ProfileBuilderClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class ProfileBuilderPrivate {
@@ -8410,8 +8446,8 @@ class ProfileBuilderPrivate {
 }
 abstract class ProfileClass {
     /* Fields of Devhelp-3.0.Devhelp.ProfileClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class ProfilePrivate {
@@ -8419,8 +8455,8 @@ class ProfilePrivate {
 }
 abstract class SearchBarClass {
     /* Fields of Devhelp-3.0.Devhelp.SearchBarClass */
-    parent_class: Gtk.SearchBarClass
-    padding: object[]
+    readonly parent_class: Gtk.SearchBarClass
+    readonly padding: object[]
     static name: string
 }
 class SearchBarPrivate {
@@ -8428,8 +8464,8 @@ class SearchBarPrivate {
 }
 abstract class SettingsBuilderClass {
     /* Fields of Devhelp-3.0.Devhelp.SettingsBuilderClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class SettingsBuilderPrivate {
@@ -8437,10 +8473,10 @@ class SettingsBuilderPrivate {
 }
 abstract class SettingsClass {
     /* Fields of Devhelp-3.0.Devhelp.SettingsClass */
-    parent: GObject.ObjectClass
-    books_disabled_changed: (settings: Settings) => void
-    fonts_changed: (settings: Settings) => void
-    padding: object[]
+    readonly parent: GObject.ObjectClass
+    readonly books_disabled_changed: (settings: Settings) => void
+    readonly fonts_changed: (settings: Settings) => void
+    readonly padding: object[]
     static name: string
 }
 class SettingsPrivate {
@@ -8448,21 +8484,21 @@ class SettingsPrivate {
 }
 abstract class SidebarClass {
     /* Fields of Devhelp-3.0.Devhelp.SidebarClass */
-    parent_class: Gtk.GridClass
-    link_selected: (sidebar: Sidebar, link: Link) => void
-    padding: object[]
+    readonly parent_class: Gtk.GridClass
+    readonly link_selected: (sidebar: Sidebar, link: Link) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class TabClass {
     /* Fields of Devhelp-3.0.Devhelp.TabClass */
-    parent_class: Gtk.GridClass
-    padding: object[]
+    readonly parent_class: Gtk.GridClass
+    readonly padding: object[]
     static name: string
 }
 abstract class TabLabelClass {
     /* Fields of Devhelp-3.0.Devhelp.TabLabelClass */
-    parent_class: Gtk.GridClass
-    padding: object[]
+    readonly parent_class: Gtk.GridClass
+    readonly padding: object[]
     static name: string
 }
 class TabLabelPrivate {
@@ -8473,9 +8509,9 @@ class TabPrivate {
 }
 abstract class WebViewClass {
     /* Fields of Devhelp-3.0.Devhelp.WebViewClass */
-    parent_class: WebKit2.WebViewClass
-    open_new_tab: (view: WebView, uri: string) => void
-    padding: object[]
+    readonly parent_class: WebKit2.WebViewClass
+    readonly open_new_tab: (view: WebView, uri: string) => void
+    readonly padding: object[]
     static name: string
 }
 class WebViewPrivate {

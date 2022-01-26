@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * SpiceClientGLib-2.0
  */
@@ -56,9 +62,9 @@ enum SessionVerify {
     HOSTNAME,
     SUBJECT,
 }
-export const GTK_MAJOR_VERSION: number
-export const GTK_MICRO_VERSION: number
-export const GTK_MINOR_VERSION: number
+const GTK_MAJOR_VERSION: number
+const GTK_MICRO_VERSION: number
+const GTK_MINOR_VERSION: number
 function client_error_quark(): GLib.Quark
 function display_change_preferred_compression(channel: Channel, compression: number): void
 function display_change_preferred_video_codec_type(channel: Channel, codec_type: number): void
@@ -92,7 +98,7 @@ function main_set_display_enabled(channel: MainChannel, id: number, enabled: boo
 function main_update_display(channel: MainChannel, id: number, x: number, y: number, width: number, height: number, update: boolean): void
 function main_update_display_enabled(channel: MainChannel, id: number, enabled: boolean, update: boolean): void
 function port_event(port: PortChannel, event: number): void
-function port_write_async(port: PortChannel, buffer: Uint8Array[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+function port_write_async(port: PortChannel, buffer: Uint8Array, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
 function port_write_finish(port: PortChannel, result: Gio.AsyncResult): number
 function record_send_data(channel: RecordChannel, data: object | null, bytes: number, time: number): void
 function set_session_option(session: Session): void
@@ -103,16 +109,14 @@ function uuid_to_string(uuid: number): string
 interface msg_handler {
     (channel: Channel, in_: MsgIn): void
 }
-export interface Audio_ConstructProps extends GObject.Object_ConstructProps {
+interface Audio_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.Audio */
     main_context?: GLib.MainContext
     session?: Session
 }
 class Audio {
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Audio */
-    parent: GObject.Object
-    priv: AudioPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -165,7 +169,8 @@ class Audio {
     static get(session: Session, context?: GLib.MainContext | null): Audio
     static $gtype: GObject.Type
 }
-export interface Channel_ConstructProps extends GObject.Object_ConstructProps {
+interface Channel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     channel_id?: number
     channel_type?: number
     spice_session?: Session
@@ -174,11 +179,8 @@ class Channel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    parent: GObject.Object
-    priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     connect(): boolean
     destroy(): void
@@ -257,7 +259,7 @@ class Channel {
     static type_to_string(type: number): string
     static $gtype: GObject.Type
 }
-export interface CursorChannel_ConstructProps extends Channel_ConstructProps {
+interface CursorChannel_ConstructProps extends Channel_ConstructProps {
 }
 class CursorChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.CursorChannel */
@@ -265,12 +267,11 @@ class CursorChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.CursorChannel */
-    parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly parent: GObject.Object
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     connect(): boolean
     destroy(): void
@@ -365,7 +366,7 @@ class CursorChannel {
     _init (config?: CursorChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DisplayChannel_ConstructProps extends Channel_ConstructProps {
+interface DisplayChannel_ConstructProps extends Channel_ConstructProps {
 }
 class DisplayChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.DisplayChannel */
@@ -377,12 +378,11 @@ class DisplayChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.DisplayChannel */
-    parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly parent: GObject.Object
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.DisplayChannel */
     get_gl_scanout(): GlScanout
     gl_draw_done(): void
@@ -496,7 +496,8 @@ class DisplayChannel {
     static get_primary(channel: Channel, surface_id: number, primary: DisplayPrimary): boolean
     static $gtype: GObject.Type
 }
-export interface FileTransferTask_ConstructProps extends GObject.Object_ConstructProps {
+interface FileTransferTask_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.FileTransferTask */
     cancellable?: Gio.Cancellable
     channel?: MainChannel
     file?: Gio.File
@@ -508,7 +509,7 @@ class FileTransferTask {
     readonly total_bytes: number
     readonly transferred_bytes: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.FileTransferTask */
     cancel(): void
     get_filename(): string
@@ -568,7 +569,7 @@ class FileTransferTask {
     _init (config?: FileTransferTask_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface InputsChannel_ConstructProps extends Channel_ConstructProps {
+interface InputsChannel_ConstructProps extends Channel_ConstructProps {
 }
 class InputsChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.InputsChannel */
@@ -576,12 +577,11 @@ class InputsChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.InputsChannel */
-    parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly parent: GObject.Object
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.InputsChannel */
     button_press(button: number, button_state: number): void
     button_release(button: number, button_state: number): void
@@ -671,7 +671,8 @@ class InputsChannel {
     _init (config?: InputsChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MainChannel_ConstructProps extends Channel_ConstructProps {
+interface MainChannel_ConstructProps extends Channel_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.MainChannel */
     color_depth?: number
     disable_animation?: boolean
     disable_display_align?: boolean
@@ -695,12 +696,11 @@ class MainChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.MainChannel */
-    parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly parent: GObject.Object
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.MainChannel */
     agent_test_capability(cap: number): boolean
     clipboard_selection_grab(selection: number, types: number, ntypes: number): void
@@ -844,7 +844,8 @@ class MainChannel {
     _init (config?: MainChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlaybackChannel_ConstructProps extends Channel_ConstructProps {
+interface PlaybackChannel_ConstructProps extends Channel_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.PlaybackChannel */
     min_latency?: number
     mute?: boolean
     nchannels?: number
@@ -859,12 +860,11 @@ class PlaybackChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.PlaybackChannel */
-    parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly parent: GObject.Object
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.PlaybackChannel */
     set_delay(delay_ms: number): void
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
@@ -966,7 +966,7 @@ class PlaybackChannel {
     _init (config?: PlaybackChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PortChannel_ConstructProps extends Channel_ConstructProps {
+interface PortChannel_ConstructProps extends Channel_ConstructProps {
 }
 class PortChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.PortChannel */
@@ -975,15 +975,14 @@ class PortChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.PortChannel */
-    parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly parent: GObject.Object
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.PortChannel */
     event(event: number): void
-    write_async(buffer: Uint8Array[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_finish(result: Gio.AsyncResult): number
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     connect(): boolean
@@ -1070,14 +1069,15 @@ class PortChannel {
     _init (config?: PortChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface QmpPort_ConstructProps extends GObject.Object_ConstructProps {
+interface QmpPort_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.QmpPort */
     channel?: PortChannel
 }
 class QmpPort {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.QmpPort */
     readonly ready: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.QmpPort */
     query_status_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     query_status_finish(result: Gio.AsyncResult): QmpStatus
@@ -1134,7 +1134,8 @@ class QmpPort {
     static get(channel: PortChannel): QmpPort
     static $gtype: GObject.Type
 }
-export interface RecordChannel_ConstructProps extends Channel_ConstructProps {
+interface RecordChannel_ConstructProps extends Channel_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.RecordChannel */
     mute?: boolean
     nchannels?: number
     volume?: object
@@ -1147,12 +1148,11 @@ class RecordChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.RecordChannel */
-    parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly parent: GObject.Object
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.RecordChannel */
     send_data(data: object | null, bytes: number, time: number): void
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
@@ -1246,8 +1246,9 @@ class RecordChannel {
     _init (config?: RecordChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Session_ConstructProps extends GObject.Object_ConstructProps {
-    ca?: Uint8Array[]
+interface Session_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.Session */
+    ca?: Uint8Array
     ca_file?: string
     cache_size?: number
     cert_subject?: string
@@ -1266,7 +1267,7 @@ export interface Session_ConstructProps extends GObject.Object_ConstructProps {
     port?: string
     protocol?: number
     proxy?: string
-    pubkey?: Uint8Array[]
+    pubkey?: Uint8Array
     read_only?: boolean
     secure_channels?: string[]
     share_dir_ro?: boolean
@@ -1281,7 +1282,7 @@ export interface Session_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Session {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Session */
-    ca: Uint8Array[]
+    ca: Uint8Array
     ca_file: string
     cache_size: number
     cert_subject: string
@@ -1302,7 +1303,7 @@ class Session {
     port: string
     protocol: number
     proxy: string
-    pubkey: Uint8Array[]
+    pubkey: Uint8Array
     read_only: boolean
     secure_channels: string[]
     share_dir_ro: boolean
@@ -1315,11 +1316,8 @@ class Session {
     username: string
     readonly uuid: object
     verify: SessionVerify
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Session */
-    parent: GObject.Object
-    priv: SessionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.Session */
     connect(): boolean
     disconnect(): void
@@ -1458,18 +1456,17 @@ class Session {
     static new(): Session
     static $gtype: GObject.Type
 }
-export interface SmartcardChannel_ConstructProps extends Channel_ConstructProps {
+interface SmartcardChannel_ConstructProps extends Channel_ConstructProps {
 }
 class SmartcardChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.SmartcardChannel */
-    parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly parent: GObject.Object
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     connect(): boolean
     destroy(): void
@@ -1544,13 +1541,11 @@ class SmartcardChannel {
     _init (config?: SmartcardChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SmartcardManager_ConstructProps extends GObject.Object_ConstructProps {
+interface SmartcardManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SmartcardManager {
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.SmartcardManager */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.SmartcardManager */
     get_readers(): SmartcardReader[]
     insert_card(): boolean
@@ -1618,7 +1613,8 @@ class SmartcardManager {
     static get(): SmartcardManager
     static $gtype: GObject.Type
 }
-export interface URI_ConstructProps extends GObject.Object_ConstructProps {
+interface URI_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.URI */
     hostname?: string
     password?: string
     port?: number
@@ -1633,7 +1629,7 @@ class URI {
     scheme: string
     user: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.URI */
     get_hostname(): string
     get_password(): string
@@ -1699,7 +1695,8 @@ class URI {
     _init (config?: URI_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UsbDeviceManager_ConstructProps extends GObject.Object_ConstructProps {
+interface UsbDeviceManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of SpiceClientGLib-2.0.SpiceClientGLib.UsbDeviceManager */
     auto_connect?: boolean
     auto_connect_filter?: string
     redirect_on_connect?: string
@@ -1711,10 +1708,8 @@ class UsbDeviceManager {
     auto_connect_filter: string
     readonly free_channels: number
     redirect_on_connect: string
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.UsbDeviceManager */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.UsbDeviceManager */
     can_redirect_device(device: UsbDevice): boolean
     connect_device_async(device: UsbDevice, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1801,18 +1796,17 @@ class UsbDeviceManager {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface UsbredirChannel_ConstructProps extends Channel_ConstructProps {
+interface UsbredirChannel_ConstructProps extends Channel_ConstructProps {
 }
 class UsbredirChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.UsbredirChannel */
-    parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly parent: GObject.Object
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     connect(): boolean
     destroy(): void
@@ -1887,7 +1881,7 @@ class UsbredirChannel {
     _init (config?: UsbredirChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebdavChannel_ConstructProps extends PortChannel_ConstructProps {
+interface WebdavChannel_ConstructProps extends PortChannel_ConstructProps {
 }
 class WebdavChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.PortChannel */
@@ -1896,15 +1890,15 @@ class WebdavChannel {
     /* Properties of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     readonly socket: Gio.Socket
     readonly total_read_bytes: number
-    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.WebdavChannel */
-    parent: PortChannel
+    /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.PortChannel */
+    readonly parent: Channel
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
-    priv: ChannelPrivate
+    readonly priv: ChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.PortChannel */
     event(event: number): void
-    write_async(buffer: Uint8Array[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_finish(result: Gio.AsyncResult): number
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.Channel */
     connect(): boolean
@@ -1993,12 +1987,12 @@ class WebdavChannel {
 }
 abstract class AudioClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.AudioClass */
-    parent_class: GObject.ObjectClass
-    connect_channel: (audio: Audio, channel: Channel) => boolean
-    get_playback_volume_info_async: (audio: Audio, cancellable: Gio.Cancellable | null, main_channel: MainChannel, callback?: Gio.AsyncReadyCallback | null) => void
-    get_playback_volume_info_finish: (audio: Audio, res: Gio.AsyncResult, mute: boolean, nchannels: number, volume: number) => boolean
-    get_record_volume_info_async: (audio: Audio, cancellable: Gio.Cancellable | null, main_channel: MainChannel, callback?: Gio.AsyncReadyCallback | null) => void
-    get_record_volume_info_finish: (audio: Audio, res: Gio.AsyncResult, mute: boolean, nchannels: number, volume: number) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly connect_channel: (audio: Audio, channel: Channel) => boolean
+    readonly get_playback_volume_info_async: (audio: Audio, cancellable: Gio.Cancellable | null, main_channel: MainChannel, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly get_playback_volume_info_finish: (audio: Audio, res: Gio.AsyncResult, mute: boolean, nchannels: number, volume: number) => boolean
+    readonly get_record_volume_info_async: (audio: Audio, cancellable: Gio.Cancellable | null, main_channel: MainChannel, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly get_record_volume_info_finish: (audio: Audio, res: Gio.AsyncResult, mute: boolean, nchannels: number, volume: number) => boolean
     static name: string
 }
 class AudioPrivate {
@@ -2006,15 +2000,15 @@ class AudioPrivate {
 }
 abstract class ChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.ChannelClass */
-    parent_class: GObject.ObjectClass
-    channel_event: (channel: Channel, event: ChannelEvent) => void
-    open_fd: (channel: Channel, with_tls: number) => void
-    handle_msg: (channel: Channel, msg: MsgIn) => void
-    channel_up: (channel: Channel) => void
-    iterate_write: (channel: Channel) => void
-    iterate_read: (channel: Channel) => void
-    channel_reset: (channel: Channel, migrating: boolean) => void
-    channel_send_migration_handshake: (channel: Channel) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly channel_event: (channel: Channel, event: ChannelEvent) => void
+    readonly open_fd: (channel: Channel, with_tls: number) => void
+    readonly handle_msg: (channel: Channel, msg: MsgIn) => void
+    readonly channel_up: (channel: Channel) => void
+    readonly iterate_write: (channel: Channel) => void
+    readonly iterate_read: (channel: Channel) => void
+    readonly channel_reset: (channel: Channel, migrating: boolean) => void
+    readonly channel_send_migration_handshake: (channel: Channel) => void
     static name: string
 }
 class ChannelClassPrivate {
@@ -2025,11 +2019,11 @@ class ChannelPrivate {
 }
 abstract class CursorChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.CursorChannelClass */
-    parent_class: ChannelClass
-    cursor_set: (channel: CursorChannel, width: number, height: number, hot_x: number, hot_y: number, rgba?: object | null) => void
-    cursor_move: (channel: CursorChannel, x: number, y: number) => void
-    cursor_hide: (channel: CursorChannel) => void
-    cursor_reset: (channel: CursorChannel) => void
+    readonly parent_class: ChannelClass
+    readonly cursor_set: (channel: CursorChannel, width: number, height: number, hot_x: number, hot_y: number, rgba?: object | null) => void
+    readonly cursor_move: (channel: CursorChannel, x: number, y: number) => void
+    readonly cursor_hide: (channel: CursorChannel) => void
+    readonly cursor_reset: (channel: CursorChannel) => void
     static name: string
 }
 class CursorChannelPrivate {
@@ -2037,20 +2031,20 @@ class CursorChannelPrivate {
 }
 class CursorShape {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.CursorShape */
-    width: number
-    height: number
-    hot_spot_x: number
-    hot_spot_y: number
-    data: object
+    readonly width: number
+    readonly height: number
+    readonly hot_spot_x: number
+    readonly hot_spot_y: number
+    readonly data: object
     static name: string
 }
 abstract class DisplayChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.DisplayChannelClass */
-    parent_class: ChannelClass
-    display_primary_create: (channel: Channel, format: number, width: number, height: number, stride: number, shmid: number, data: object) => void
-    display_primary_destroy: (channel: Channel) => void
-    display_invalidate: (channel: Channel, x: number, y: number, w: number, h: number) => void
-    display_mark: (channel: Channel, mark: boolean) => void
+    readonly parent_class: ChannelClass
+    readonly display_primary_create: (channel: Channel, format: number, width: number, height: number, stride: number, shmid: number, data: object) => void
+    readonly display_primary_destroy: (channel: Channel) => void
+    readonly display_invalidate: (channel: Channel, x: number, y: number, w: number, h: number) => void
+    readonly display_mark: (channel: Channel, mark: boolean) => void
     static name: string
 }
 class DisplayChannelPrivate {
@@ -2058,23 +2052,23 @@ class DisplayChannelPrivate {
 }
 class DisplayMonitorConfig {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.DisplayMonitorConfig */
-    id: number
-    surface_id: number
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly id: number
+    readonly surface_id: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     static name: string
 }
 class DisplayPrimary {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.DisplayPrimary */
-    format: object
-    width: number
-    height: number
-    stride: number
-    shmid: number
-    data: number
-    marked: boolean
+    readonly format: object
+    readonly width: number
+    readonly height: number
+    readonly stride: number
+    readonly shmid: number
+    readonly data: number
+    readonly marked: boolean
     static name: string
 }
 abstract class FileTransferTaskClass {
@@ -2082,20 +2076,20 @@ abstract class FileTransferTaskClass {
 }
 class GlScanout {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.GlScanout */
-    fd: number
-    width: number
-    height: number
-    stride: number
-    format: number
-    y0top: boolean
+    readonly fd: number
+    readonly width: number
+    readonly height: number
+    readonly stride: number
+    readonly format: number
+    readonly y0top: boolean
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.GlScanout */
     free(): void
     static name: string
 }
 abstract class InputsChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.InputsChannelClass */
-    parent_class: ChannelClass
-    inputs_modifiers: (channel: Channel) => void
+    readonly parent_class: ChannelClass
+    readonly inputs_modifiers: (channel: Channel) => void
     static name: string
 }
 class InputsChannelPrivate {
@@ -2103,9 +2097,9 @@ class InputsChannelPrivate {
 }
 abstract class MainChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.MainChannelClass */
-    parent_class: ChannelClass
-    mouse_update: (channel: Channel) => void
-    agent_update: (channel: Channel) => void
+    readonly parent_class: ChannelClass
+    readonly mouse_update: (channel: Channel) => void
+    readonly agent_update: (channel: Channel) => void
     static name: string
 }
 class MainChannelPrivate {
@@ -2119,10 +2113,10 @@ class MsgOut {
 }
 abstract class PlaybackChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.PlaybackChannelClass */
-    parent_class: ChannelClass
-    playback_start: (channel: PlaybackChannel, format: number, channels: number, freq: number) => void
-    playback_data: (channel: PlaybackChannel, data: object | null, size: number) => void
-    playback_stop: (channel: PlaybackChannel) => void
+    readonly parent_class: ChannelClass
+    readonly playback_start: (channel: PlaybackChannel, format: number, channels: number, freq: number) => void
+    readonly playback_data: (channel: PlaybackChannel, data: object | null, size: number) => void
+    readonly playback_stop: (channel: PlaybackChannel) => void
     static name: string
 }
 class PlaybackChannelPrivate {
@@ -2130,7 +2124,7 @@ class PlaybackChannelPrivate {
 }
 abstract class PortChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.PortChannelClass */
-    parent_class: ChannelClass
+    readonly parent_class: ChannelClass
     static name: string
 }
 class PortChannelPrivate {
@@ -2141,10 +2135,10 @@ abstract class QmpPortClass {
 }
 class QmpStatus {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.QmpStatus */
-    version: number
-    running: boolean
-    singlestep: boolean
-    status: string
+    readonly version: number
+    readonly running: boolean
+    readonly singlestep: boolean
+    readonly status: string
     /* Methods of SpiceClientGLib-2.0.SpiceClientGLib.QmpStatus */
     ref(): QmpStatus
     unref(): void
@@ -2152,10 +2146,10 @@ class QmpStatus {
 }
 abstract class RecordChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.RecordChannelClass */
-    parent_class: ChannelClass
-    record_start: (channel: RecordChannel, format: number, channels: number, freq: number) => void
-    record_data: (channel: RecordChannel, data: object | null, size: number) => void
-    record_stop: (channel: RecordChannel) => void
+    readonly parent_class: ChannelClass
+    readonly record_start: (channel: RecordChannel, format: number, channels: number, freq: number) => void
+    readonly record_data: (channel: RecordChannel, data: object | null, size: number) => void
+    readonly record_stop: (channel: RecordChannel) => void
     static name: string
 }
 class RecordChannelPrivate {
@@ -2163,9 +2157,9 @@ class RecordChannelPrivate {
 }
 abstract class SessionClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.SessionClass */
-    parent_class: GObject.ObjectClass
-    channel_new: (session: Session, channel: Channel) => void
-    channel_destroy: (session: Session, channel: Channel) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly channel_new: (session: Session, channel: Channel) => void
+    readonly channel_destroy: (session: Session, channel: Channel) => void
     static name: string
 }
 class SessionPrivate {
@@ -2173,7 +2167,7 @@ class SessionPrivate {
 }
 abstract class SmartcardChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.SmartcardChannelClass */
-    parent_class: ChannelClass
+    readonly parent_class: ChannelClass
     static name: string
 }
 class SmartcardChannelPrivate {
@@ -2181,11 +2175,11 @@ class SmartcardChannelPrivate {
 }
 abstract class SmartcardManagerClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.SmartcardManagerClass */
-    parent_class: GObject.ObjectClass
-    reader_added: (manager: SmartcardManager, reader: SmartcardReader) => void
-    reader_removed: (manager: SmartcardManager, reader: SmartcardReader) => void
-    card_inserted: (manager: SmartcardManager, reader: SmartcardReader) => void
-    card_removed: (manager: SmartcardManager, reader: SmartcardReader) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly reader_added: (manager: SmartcardManager, reader: SmartcardReader) => void
+    readonly reader_removed: (manager: SmartcardManager, reader: SmartcardReader) => void
+    readonly card_inserted: (manager: SmartcardManager, reader: SmartcardReader) => void
+    readonly card_removed: (manager: SmartcardManager, reader: SmartcardReader) => void
     static name: string
 }
 class SmartcardManagerPrivate {
@@ -2212,11 +2206,11 @@ class UsbDevice {
 }
 abstract class UsbDeviceManagerClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.UsbDeviceManagerClass */
-    parent_class: GObject.ObjectClass
-    device_added: (manager: UsbDeviceManager, device: UsbDevice) => void
-    device_removed: (manager: UsbDeviceManager, device: UsbDevice) => void
-    auto_connect_failed: (manager: UsbDeviceManager, device: UsbDevice, error: GLib.Error) => void
-    device_error: (manager: UsbDeviceManager, device: UsbDevice, error: GLib.Error) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly device_added: (manager: UsbDeviceManager, device: UsbDevice) => void
+    readonly device_removed: (manager: UsbDeviceManager, device: UsbDevice) => void
+    readonly auto_connect_failed: (manager: UsbDeviceManager, device: UsbDevice, error: GLib.Error) => void
+    readonly device_error: (manager: UsbDeviceManager, device: UsbDevice, error: GLib.Error) => void
     static name: string
 }
 class UsbDeviceManagerPrivate {
@@ -2224,7 +2218,7 @@ class UsbDeviceManagerPrivate {
 }
 abstract class UsbredirChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.UsbredirChannelClass */
-    parent_class: ChannelClass
+    readonly parent_class: ChannelClass
     static name: string
 }
 class UsbredirChannelPrivate {
@@ -2232,7 +2226,7 @@ class UsbredirChannelPrivate {
 }
 abstract class WebdavChannelClass {
     /* Fields of SpiceClientGLib-2.0.SpiceClientGLib.WebdavChannelClass */
-    parent_class: PortChannelClass
+    readonly parent_class: PortChannelClass
     static name: string
 }
 class WebdavChannelPrivate {

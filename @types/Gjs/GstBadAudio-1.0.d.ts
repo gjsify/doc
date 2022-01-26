@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstBadAudio-1.0
  */
@@ -21,9 +27,10 @@ enum NonstreamAudioSubsongMode {
     ALL,
     DECODER_DEFAULT,
 }
-export const NONSTREAM_AUDIO_DECODER_SINK_NAME: string
-export const NONSTREAM_AUDIO_DECODER_SRC_NAME: string
-export interface NonstreamAudioDecoder_ConstructProps extends Gst.Element_ConstructProps {
+const NONSTREAM_AUDIO_DECODER_SINK_NAME: string
+const NONSTREAM_AUDIO_DECODER_SRC_NAME: string
+interface NonstreamAudioDecoder_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstBadAudio-1.0.GstBadAudio.NonstreamAudioDecoder */
     current_subsong?: number
     num_loops?: number
 }
@@ -31,56 +38,35 @@ class NonstreamAudioDecoder {
     /* Properties of GstBadAudio-1.0.GstBadAudio.NonstreamAudioDecoder */
     current_subsong: number
     num_loops: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstBadAudio-1.0.GstBadAudio.NonstreamAudioDecoder */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    upstream_size: number
-    loaded_mode: boolean
-    input_data_adapter: GstBase.Adapter
-    subsong_mode: NonstreamAudioSubsongMode
-    subsong_duration: Gst.ClockTime
-    output_mode: NonstreamAudioOutputMode
-    output_format_changed: boolean
-    output_audio_info: GstAudio.AudioInfo
-    cur_pos_in_samples: number
-    num_decoded_samples: number
-    cur_segment: Gst.Segment
-    discont: boolean
-    toc: Gst.Toc
-    allocator: Gst.Allocator
-    allocation_params: Gst.AllocationParams
-    mutex: GLib.Mutex
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBadAudio-1.0.GstBadAudio.NonstreamAudioDecoder */
     allocate_output_buffer(size: number): Gst.Buffer
     get_downstream_info(format: GstAudio.AudioFormat, sample_rate: number, num_channels: number): void
@@ -269,10 +255,6 @@ class NonstreamAudioDecoder {
     connect_after(sigName: "notify::current-subsong", callback: (($obj: NonstreamAudioDecoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::num-loops", callback: (($obj: NonstreamAudioDecoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::num-loops", callback: (($obj: NonstreamAudioDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: NonstreamAudioDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: NonstreamAudioDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: NonstreamAudioDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: NonstreamAudioDecoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -282,11 +264,11 @@ class NonstreamAudioDecoder {
     _init (config?: NonstreamAudioDecoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlanarAudioAdapter_ConstructProps extends GObject.Object_ConstructProps {
+interface PlanarAudioAdapter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PlanarAudioAdapter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBadAudio-1.0.GstBadAudio.PlanarAudioAdapter */
     available(): number
     clear(): void
@@ -349,27 +331,27 @@ class PlanarAudioAdapter {
 }
 abstract class NonstreamAudioDecoderClass {
     /* Fields of GstBadAudio-1.0.GstBadAudio.NonstreamAudioDecoderClass */
-    element_class: Gst.ElementClass
-    loads_from_sinkpad: boolean
-    seek: (dec: NonstreamAudioDecoder, new_position: Gst.ClockTime) => boolean
-    tell: (dec: NonstreamAudioDecoder) => Gst.ClockTime
-    load_from_buffer: (dec: NonstreamAudioDecoder, source_data: Gst.Buffer, initial_subsong: number, initial_subsong_mode: NonstreamAudioSubsongMode, initial_position: Gst.ClockTime, initial_output_mode: NonstreamAudioOutputMode, initial_num_loops: number) => boolean
-    load_from_custom: (dec: NonstreamAudioDecoder, initial_subsong: number, initial_subsong_mode: NonstreamAudioSubsongMode, initial_position: Gst.ClockTime, initial_output_mode: NonstreamAudioOutputMode, initial_num_loops: number) => boolean
-    get_main_tags: (dec: NonstreamAudioDecoder) => Gst.TagList
-    set_current_subsong: (dec: NonstreamAudioDecoder, subsong: number, initial_position: Gst.ClockTime) => boolean
-    get_current_subsong: (dec: NonstreamAudioDecoder) => number
-    get_num_subsongs: (dec: NonstreamAudioDecoder) => number
-    get_subsong_duration: (dec: NonstreamAudioDecoder, subsong: number) => Gst.ClockTime
-    get_subsong_tags: (dec: NonstreamAudioDecoder, subsong: number) => Gst.TagList
-    set_subsong_mode: (dec: NonstreamAudioDecoder, mode: NonstreamAudioSubsongMode, initial_position: Gst.ClockTime) => boolean
-    set_num_loops: (dec: NonstreamAudioDecoder, num_loops: number) => boolean
-    get_num_loops: (dec: NonstreamAudioDecoder) => number
-    get_supported_output_modes: (dec: NonstreamAudioDecoder) => number
-    set_output_mode: (dec: NonstreamAudioDecoder, mode: NonstreamAudioOutputMode, current_position: Gst.ClockTime) => boolean
-    decode: (dec: NonstreamAudioDecoder, buffer: Gst.Buffer, num_samples: number) => boolean
-    negotiate: (dec: NonstreamAudioDecoder) => boolean
-    decide_allocation: (dec: NonstreamAudioDecoder, query: Gst.Query) => boolean
-    propose_allocation: (dec: NonstreamAudioDecoder, query: Gst.Query) => boolean
+    readonly element_class: Gst.ElementClass
+    readonly loads_from_sinkpad: boolean
+    readonly seek: (dec: NonstreamAudioDecoder, new_position: Gst.ClockTime) => boolean
+    readonly tell: (dec: NonstreamAudioDecoder) => Gst.ClockTime
+    readonly load_from_buffer: (dec: NonstreamAudioDecoder, source_data: Gst.Buffer, initial_subsong: number, initial_subsong_mode: NonstreamAudioSubsongMode, initial_position: Gst.ClockTime, initial_output_mode: NonstreamAudioOutputMode, initial_num_loops: number) => boolean
+    readonly load_from_custom: (dec: NonstreamAudioDecoder, initial_subsong: number, initial_subsong_mode: NonstreamAudioSubsongMode, initial_position: Gst.ClockTime, initial_output_mode: NonstreamAudioOutputMode, initial_num_loops: number) => boolean
+    readonly get_main_tags: (dec: NonstreamAudioDecoder) => Gst.TagList
+    readonly set_current_subsong: (dec: NonstreamAudioDecoder, subsong: number, initial_position: Gst.ClockTime) => boolean
+    readonly get_current_subsong: (dec: NonstreamAudioDecoder) => number
+    readonly get_num_subsongs: (dec: NonstreamAudioDecoder) => number
+    readonly get_subsong_duration: (dec: NonstreamAudioDecoder, subsong: number) => Gst.ClockTime
+    readonly get_subsong_tags: (dec: NonstreamAudioDecoder, subsong: number) => Gst.TagList
+    readonly set_subsong_mode: (dec: NonstreamAudioDecoder, mode: NonstreamAudioSubsongMode, initial_position: Gst.ClockTime) => boolean
+    readonly set_num_loops: (dec: NonstreamAudioDecoder, num_loops: number) => boolean
+    readonly get_num_loops: (dec: NonstreamAudioDecoder) => number
+    readonly get_supported_output_modes: (dec: NonstreamAudioDecoder) => number
+    readonly set_output_mode: (dec: NonstreamAudioDecoder, mode: NonstreamAudioOutputMode, current_position: Gst.ClockTime) => boolean
+    readonly decode: (dec: NonstreamAudioDecoder, buffer: Gst.Buffer, num_samples: number) => boolean
+    readonly negotiate: (dec: NonstreamAudioDecoder) => boolean
+    readonly decide_allocation: (dec: NonstreamAudioDecoder, query: Gst.Query) => boolean
+    readonly propose_allocation: (dec: NonstreamAudioDecoder, query: Gst.Query) => boolean
     static name: string
 }
 abstract class PlanarAudioAdapterClass {

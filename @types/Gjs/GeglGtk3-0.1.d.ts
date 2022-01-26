@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GeglGtk3-0.1
  */
@@ -25,7 +31,8 @@ enum ViewAutoscale {
     WIDGET,
     CONTENT,
 }
-export interface View_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+interface View_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+    /* Constructor properties of GeglGtk3-0.1.GeglGtk3.View */
     autoscale_policy?: ViewAutoscale
     block?: boolean
     node?: GObject.Object
@@ -82,11 +89,11 @@ class View {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.DrawingArea */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GeglGtk3-0.1.GeglGtk3.View */
     get_autoscale_policy(): ViewAutoscale
     get_node(): Gegl.Node
@@ -389,6 +396,7 @@ class View {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of GeglGtk3-0.1.GeglGtk3.View */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -808,6 +816,8 @@ class View {
     constructor (config?: View_ConstructProps)
     _init (config?: View_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    static new(): View
+    /* Function overloads */
     static new(): View
     static new_for_buffer(buffer: Gegl.Buffer): View
     static new_for_node(node: Gegl.Node): View

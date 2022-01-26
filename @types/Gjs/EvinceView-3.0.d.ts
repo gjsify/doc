@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EvinceView-3.0
  */
@@ -60,30 +66,31 @@ enum JobPageDataFlags {
     MEDIA,
     ALL,
 }
-export const STOCK_ANNOT_SQUIGGLY: string
-export const STOCK_ANNOT_TEXT: string
-export const STOCK_ATTACHMENT: string
-export const STOCK_CLOSE: string
-export const STOCK_FIND_UNSUPPORTED: string
-export const STOCK_INVERTED_COLORS: string
-export const STOCK_OUTLINE: string
-export const STOCK_RESIZE_SE: string
-export const STOCK_RESIZE_SW: string
-export const STOCK_ROTATE_LEFT: string
-export const STOCK_ROTATE_RIGHT: string
-export const STOCK_RUN_PRESENTATION: string
-export const STOCK_SEND_TO: string
-export const STOCK_VIEW_CONTINUOUS: string
-export const STOCK_VIEW_DUAL: string
-export const STOCK_VIEW_SIDEBAR: string
-export const STOCK_VISIBLE: string
-export const STOCK_ZOOM: string
-export const STOCK_ZOOM_PAGE: string
-export const STOCK_ZOOM_WIDTH: string
+const STOCK_ANNOT_SQUIGGLY: string
+const STOCK_ANNOT_TEXT: string
+const STOCK_ATTACHMENT: string
+const STOCK_CLOSE: string
+const STOCK_FIND_UNSUPPORTED: string
+const STOCK_INVERTED_COLORS: string
+const STOCK_OUTLINE: string
+const STOCK_RESIZE_SE: string
+const STOCK_RESIZE_SW: string
+const STOCK_ROTATE_LEFT: string
+const STOCK_ROTATE_RIGHT: string
+const STOCK_RUN_PRESENTATION: string
+const STOCK_SEND_TO: string
+const STOCK_VIEW_CONTINUOUS: string
+const STOCK_VIEW_DUAL: string
+const STOCK_VIEW_SIDEBAR: string
+const STOCK_VISIBLE: string
+const STOCK_ZOOM: string
+const STOCK_ZOOM_PAGE: string
+const STOCK_ZOOM_WIDTH: string
 function stock_icons_init(): void
 function stock_icons_set_screen(screen: Gdk.Screen): void
 function stock_icons_shutdown(): void
-export interface DocumentModel_ConstructProps extends GObject.Object_ConstructProps {
+interface DocumentModel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EvinceView-3.0.EvinceView.DocumentModel */
     continuous?: boolean
     document?: EvinceDocument.Document
     dual_odd_left?: boolean
@@ -116,7 +123,7 @@ class DocumentModel {
     scale: number
     sizing_mode: SizingMode
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.DocumentModel */
     get_continuous(): boolean
     get_document(): EvinceDocument.Document
@@ -225,24 +232,14 @@ class DocumentModel {
     static new_with_document(document: EvinceDocument.Document): DocumentModel
     static $gtype: GObject.Type
 }
-export interface Job_ConstructProps extends GObject.Object_ConstructProps {
+interface Job_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Job {
-    /* Fields of EvinceView-3.0.EvinceView.Job */
-    parent: GObject.Object
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.Job */
     cancel(): void
+    failed(error: GLib.Error): void
     get_run_mode(): JobRunMode
     is_failed(): boolean
     is_finished(): boolean
@@ -307,24 +304,22 @@ class Job {
     static scheduler_get_running_thread_job(): Job
     static $gtype: GObject.Type
 }
-export interface JobAnnots_ConstructProps extends Job_ConstructProps {
+interface JobAnnots_ConstructProps extends Job_ConstructProps {
 }
 class JobAnnots {
-    /* Fields of EvinceView-3.0.EvinceView.JobAnnots */
-    parent: Job
-    annots: object[]
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.Job */
     cancel(): void
     get_run_mode(): JobRunMode
@@ -391,24 +386,22 @@ class JobAnnots {
     static new(document: EvinceDocument.Document): JobAnnots
     static $gtype: GObject.Type
 }
-export interface JobAttachments_ConstructProps extends Job_ConstructProps {
+interface JobAttachments_ConstructProps extends Job_ConstructProps {
 }
 class JobAttachments {
-    /* Fields of EvinceView-3.0.EvinceView.JobAttachments */
-    parent: Job
-    attachments: object[]
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.Job */
     cancel(): void
     get_run_mode(): JobRunMode
@@ -475,25 +468,22 @@ class JobAttachments {
     static new(document: EvinceDocument.Document): JobAttachments
     static $gtype: GObject.Type
 }
-export interface JobExport_ConstructProps extends Job_ConstructProps {
+interface JobExport_ConstructProps extends Job_ConstructProps {
 }
 class JobExport {
-    /* Fields of EvinceView-3.0.EvinceView.JobExport */
-    parent: Job
-    page: number
-    rc: EvinceDocument.RenderContext
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.JobExport */
     set_page(page: number): void
     /* Methods of EvinceView-3.0.EvinceView.Job */
@@ -562,35 +552,27 @@ class JobExport {
     static new(document: EvinceDocument.Document): JobExport
     static $gtype: GObject.Type
 }
-export interface JobFind_ConstructProps extends Job_ConstructProps {
+interface JobFind_ConstructProps extends Job_ConstructProps {
 }
 class JobFind {
-    /* Fields of EvinceView-3.0.EvinceView.JobFind */
-    parent: Job
-    start_page: number
-    current_page: number
-    n_pages: number
-    pages: object[]
-    text: string
-    case_sensitive: boolean
-    has_results: boolean
-    options: EvinceDocument.FindOptions
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.JobFind */
     get_n_results(pages: number): number
     get_options(): EvinceDocument.FindOptions
     get_progress(): number
+    has_results(): boolean
     set_options(options: EvinceDocument.FindOptions): void
     /* Methods of EvinceView-3.0.EvinceView.Job */
     cancel(): void
@@ -664,24 +646,22 @@ class JobFind {
     static new(document: EvinceDocument.Document, start_page: number, n_pages: number, text: string, case_sensitive: boolean): JobFind
     static $gtype: GObject.Type
 }
-export interface JobFonts_ConstructProps extends Job_ConstructProps {
+interface JobFonts_ConstructProps extends Job_ConstructProps {
 }
 class JobFonts {
-    /* Fields of EvinceView-3.0.EvinceView.JobFonts */
-    parent: Job
-    scan_completed: boolean
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.Job */
     cancel(): void
     get_run_mode(): JobRunMode
@@ -754,24 +734,22 @@ class JobFonts {
     static new(document: EvinceDocument.Document): JobFonts
     static $gtype: GObject.Type
 }
-export interface JobLayers_ConstructProps extends Job_ConstructProps {
+interface JobLayers_ConstructProps extends Job_ConstructProps {
 }
 class JobLayers {
-    /* Fields of EvinceView-3.0.EvinceView.JobLayers */
-    parent: Job
-    model: Gtk.TreeModel
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.Job */
     cancel(): void
     get_run_mode(): JobRunMode
@@ -838,24 +816,22 @@ class JobLayers {
     static new(document: EvinceDocument.Document): JobLayers
     static $gtype: GObject.Type
 }
-export interface JobLinks_ConstructProps extends Job_ConstructProps {
+interface JobLinks_ConstructProps extends Job_ConstructProps {
 }
 class JobLinks {
-    /* Fields of EvinceView-3.0.EvinceView.JobLinks */
-    parent: Job
-    model: Gtk.TreeModel
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.JobLinks */
     get_model(): Gtk.TreeModel
     /* Methods of EvinceView-3.0.EvinceView.Job */
@@ -924,25 +900,22 @@ class JobLinks {
     static new(document: EvinceDocument.Document): JobLinks
     static $gtype: GObject.Type
 }
-export interface JobLoad_ConstructProps extends Job_ConstructProps {
+interface JobLoad_ConstructProps extends Job_ConstructProps {
 }
 class JobLoad {
-    /* Fields of EvinceView-3.0.EvinceView.JobLoad */
-    parent: Job
-    uri: string
-    password: string
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.JobLoad */
     set_password(password: string): void
     set_uri(uri: string): void
@@ -1012,26 +985,111 @@ class JobLoad {
     static new(uri: string): JobLoad
     static $gtype: GObject.Type
 }
-export interface JobLoadGFile_ConstructProps extends Job_ConstructProps {
+interface JobLoadFd_ConstructProps extends Job_ConstructProps {
+}
+class JobLoadFd {
+    /* Fields of EvinceView-3.0.EvinceView.Job */
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: GObject.TypeInstance
+    /* Methods of EvinceView-3.0.EvinceView.JobLoadFd */
+    set_fd(fd: number): boolean
+    set_load_flags(flags: EvinceDocument.DocumentLoadFlags): void
+    set_mime_type(mime_type: string): void
+    set_password(password: string): void
+    take_fd(fd: number): void
+    /* Methods of EvinceView-3.0.EvinceView.Job */
+    cancel(): void
+    get_run_mode(): JobRunMode
+    is_failed(): boolean
+    is_finished(): boolean
+    run(): boolean
+    scheduler_push_job(priority: JobPriority): void
+    scheduler_update_job(priority: JobPriority): void
+    set_run_mode(run_mode: JobRunMode): void
+    succeeded(): void
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of EvinceView-3.0.EvinceView.Job */
+    vfunc_cancelled(): void
+    vfunc_finished(): void
+    vfunc_run(): boolean
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of EvinceView-3.0.EvinceView.Job */
+    connect(sigName: "cancelled", callback: (($obj: JobLoadFd) => void)): number
+    connect_after(sigName: "cancelled", callback: (($obj: JobLoadFd) => void)): number
+    emit(sigName: "cancelled"): void
+    connect(sigName: "finished", callback: (($obj: JobLoadFd) => void)): number
+    connect_after(sigName: "finished", callback: (($obj: JobLoadFd) => void)): number
+    emit(sigName: "finished"): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: JobLoadFd, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: JobLoadFd, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: JobLoadFd_ConstructProps)
+    _init (config?: JobLoadFd_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(fd: number, mime_type: string, flags: EvinceDocument.DocumentLoadFlags): JobLoadFd
+    static new_take(fd: number, mime_type: string, flags: EvinceDocument.DocumentLoadFlags): JobLoadFd
+    static $gtype: GObject.Type
+}
+interface JobLoadGFile_ConstructProps extends Job_ConstructProps {
 }
 class JobLoadGFile {
-    /* Fields of EvinceView-3.0.EvinceView.JobLoadGFile */
-    parent: Job
-    password: string
-    gfile: Gio.File
-    flags: EvinceDocument.DocumentLoadFlags
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.JobLoadGFile */
     set_gfile(gfile: Gio.File): void
     set_load_flags(flags: EvinceDocument.DocumentLoadFlags): void
@@ -1102,28 +1160,25 @@ class JobLoadGFile {
     static new(gfile: Gio.File, flags: EvinceDocument.DocumentLoadFlags): JobLoadGFile
     static $gtype: GObject.Type
 }
-export interface JobLoadStream_ConstructProps extends Job_ConstructProps {
+interface JobLoadStream_ConstructProps extends Job_ConstructProps {
 }
 class JobLoadStream {
-    /* Fields of EvinceView-3.0.EvinceView.JobLoadStream */
-    parent: Job
-    password: string
-    stream: Gio.InputStream
-    flags: EvinceDocument.DocumentLoadFlags
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.JobLoadStream */
     set_load_flags(flags: EvinceDocument.DocumentLoadFlags): void
+    set_mime_type(mime_type: string): void
     set_password(password: string): void
     set_stream(stream: Gio.InputStream): void
     /* Methods of EvinceView-3.0.EvinceView.Job */
@@ -1192,37 +1247,22 @@ class JobLoadStream {
     static new(stream: Gio.InputStream, flags: EvinceDocument.DocumentLoadFlags): JobLoadStream
     static $gtype: GObject.Type
 }
-export interface JobPageData_ConstructProps extends Job_ConstructProps {
+interface JobPageData_ConstructProps extends Job_ConstructProps {
 }
 class JobPageData {
-    /* Fields of EvinceView-3.0.EvinceView.JobPageData */
-    parent: Job
-    page: number
-    flags: JobPageDataFlags
-    link_mapping: EvinceDocument.MappingList
-    image_mapping: EvinceDocument.MappingList
-    form_field_mapping: EvinceDocument.MappingList
-    annot_mapping: EvinceDocument.MappingList
-    media_mapping: EvinceDocument.MappingList
-    text_mapping: cairo.Region
-    text: string
-    text_layout: EvinceDocument.Rectangle
-    text_layout_length: number
-    text_attrs: Pango.AttrList
-    text_log_attrs: Pango.LogAttr
-    text_log_attrs_length: number
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.Job */
     cancel(): void
     get_run_mode(): JobRunMode
@@ -1289,25 +1329,22 @@ class JobPageData {
     static new(document: EvinceDocument.Document, page: number, flags: JobPageDataFlags): JobPageData
     static $gtype: GObject.Type
 }
-export interface JobPrint_ConstructProps extends Job_ConstructProps {
+interface JobPrint_ConstructProps extends Job_ConstructProps {
 }
 class JobPrint {
-    /* Fields of EvinceView-3.0.EvinceView.JobPrint */
-    parent: Job
-    page: number
-    cr: cairo.Context
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.JobPrint */
     set_cairo(cr: cairo.Context): void
     set_page(page: number): void
@@ -1377,37 +1414,22 @@ class JobPrint {
     static new(document: EvinceDocument.Document): JobPrint
     static $gtype: GObject.Type
 }
-export interface JobRender_ConstructProps extends Job_ConstructProps {
+interface JobRender_ConstructProps extends Job_ConstructProps {
 }
 class JobRender {
-    /* Fields of EvinceView-3.0.EvinceView.JobRender */
-    parent: Job
-    page: number
-    rotation: number
-    scale: number
-    page_ready: boolean
-    target_width: number
-    target_height: number
-    surface: cairo.Surface
-    include_selection: boolean
-    selection: cairo.Surface
-    selection_region: cairo.Region
-    selection_points: EvinceDocument.Rectangle
-    selection_style: EvinceDocument.SelectionStyle
-    base: Gdk.Color
-    text: Gdk.Color
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.JobRender */
     set_selection_info(selection_points: EvinceDocument.Rectangle, selection_style: EvinceDocument.SelectionStyle, text: Gdk.Color, base: Gdk.Color): void
     /* Methods of EvinceView-3.0.EvinceView.Job */
@@ -1476,25 +1498,22 @@ class JobRender {
     static new(document: EvinceDocument.Document, page: number, rotation: number, scale: number, width: number, height: number): JobRender
     static $gtype: GObject.Type
 }
-export interface JobSave_ConstructProps extends Job_ConstructProps {
+interface JobSave_ConstructProps extends Job_ConstructProps {
 }
 class JobSave {
-    /* Fields of EvinceView-3.0.EvinceView.JobSave */
-    parent: Job
-    uri: string
-    document_uri: string
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.Job */
     cancel(): void
     get_run_mode(): JobRunMode
@@ -1561,32 +1580,22 @@ class JobSave {
     static new(document: EvinceDocument.Document, uri: string, document_uri: string): JobSave
     static $gtype: GObject.Type
 }
-export interface JobThumbnail_ConstructProps extends Job_ConstructProps {
+interface JobThumbnail_ConstructProps extends Job_ConstructProps {
 }
 class JobThumbnail {
-    /* Fields of EvinceView-3.0.EvinceView.JobThumbnail */
-    parent: Job
-    page: number
-    rotation: number
-    scale: number
-    target_width: number
-    target_height: number
-    thumbnail: GdkPixbuf.Pixbuf
-    has_frame: boolean
-    format: JobThumbnailFormat
-    thumbnail_surface: cairo.Surface
     /* Fields of EvinceView-3.0.EvinceView.Job */
-    document: EvinceDocument.Document
-    run_mode: JobRunMode
-    cancelled: number
-    finished: number
-    failed: number
-    error: GLib.Error
-    cancellable: Gio.Cancellable
-    idle_finished_id: number
-    idle_cancelled_id: number
+    readonly parent: GObject.Object
+    readonly document: EvinceDocument.Document
+    readonly run_mode: JobRunMode
+    readonly cancelled: number
+    readonly finished: number
+    readonly failed: number
+    readonly error: GLib.Error
+    readonly cancellable: Gio.Cancellable
+    readonly idle_finished_id: number
+    readonly idle_cancelled_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.JobThumbnail */
     set_has_frame(has_frame: boolean): void
     set_output_format(format: JobThumbnailFormat): void
@@ -1657,12 +1666,13 @@ class JobThumbnail {
     static new_with_target_size(document: EvinceDocument.Document, page: number, rotation: number, target_width: number, target_height: number): JobThumbnail
     static $gtype: GObject.Type
 }
-export interface PrintOperation_ConstructProps extends GObject.Object_ConstructProps {
+interface PrintOperation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EvinceView-3.0.EvinceView.PrintOperation */
     document?: EvinceDocument.Document
 }
 class PrintOperation {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.PrintOperation */
     cancel(): void
     get_default_page_setup(): Gtk.PageSetup
@@ -1734,7 +1744,8 @@ class PrintOperation {
     static exists_for_document(document: EvinceDocument.Document): boolean
     static $gtype: GObject.Type
 }
-export interface View_ConstructProps extends Gtk.Container_ConstructProps {
+interface View_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -1795,11 +1806,11 @@ class View {
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.View */
     add_text_markup_annotation_for_selected_text(): boolean
     autoscroll_start(): void
@@ -1848,7 +1859,7 @@ class View {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2163,6 +2174,7 @@ class View {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hadjustment(): Gtk.Adjustment
@@ -2661,7 +2673,8 @@ class View {
     static new(): View
     static $gtype: GObject.Type
 }
-export interface ViewPresentation_ConstructProps extends Gtk.Widget_ConstructProps {
+interface ViewPresentation_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of EvinceView-3.0.EvinceView.ViewPresentation */
     current_page?: number
     document?: EvinceDocument.Document
     inverted_colors?: boolean
@@ -2712,9 +2725,9 @@ class ViewPresentation {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EvinceView-3.0.EvinceView.ViewPresentation */
     get_current_page(): number
     get_rotation(): number
@@ -3011,6 +3024,7 @@ class ViewPresentation {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of EvinceView-3.0.EvinceView.ViewPresentation */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3430,92 +3444,97 @@ class ViewPresentation {
 }
 abstract class DocumentModelClass {
     /* Fields of EvinceView-3.0.EvinceView.DocumentModelClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class JobAnnotsClass {
     /* Fields of EvinceView-3.0.EvinceView.JobAnnotsClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobAttachmentsClass {
     /* Fields of EvinceView-3.0.EvinceView.JobAttachmentsClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobClass {
     /* Fields of EvinceView-3.0.EvinceView.JobClass */
-    parent_class: GObject.ObjectClass
-    run: (job: Job) => boolean
-    cancelled: (job: Job) => void
-    finished: (job: Job) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly run: (job: Job) => boolean
+    readonly cancelled: (job: Job) => void
+    readonly finished: (job: Job) => void
     static name: string
 }
 abstract class JobExportClass {
     /* Fields of EvinceView-3.0.EvinceView.JobExportClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobFindClass {
     /* Fields of EvinceView-3.0.EvinceView.JobFindClass */
-    parent_class: JobClass
-    updated: (job: JobFind, page: number) => void
+    readonly parent_class: JobClass
+    readonly updated: (job: JobFind, page: number) => void
     static name: string
 }
 abstract class JobFontsClass {
     /* Fields of EvinceView-3.0.EvinceView.JobFontsClass */
-    parent_class: JobClass
-    updated: (job: JobFonts, progress: number) => void
+    readonly parent_class: JobClass
+    readonly updated: (job: JobFonts, progress: number) => void
     static name: string
 }
 abstract class JobLayersClass {
     /* Fields of EvinceView-3.0.EvinceView.JobLayersClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobLinksClass {
     /* Fields of EvinceView-3.0.EvinceView.JobLinksClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobLoadClass {
     /* Fields of EvinceView-3.0.EvinceView.JobLoadClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
+    static name: string
+}
+abstract class JobLoadFdClass {
+    /* Fields of EvinceView-3.0.EvinceView.JobLoadFdClass */
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobLoadGFileClass {
     /* Fields of EvinceView-3.0.EvinceView.JobLoadGFileClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobLoadStreamClass {
     /* Fields of EvinceView-3.0.EvinceView.JobLoadStreamClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobPageDataClass {
     /* Fields of EvinceView-3.0.EvinceView.JobPageDataClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobPrintClass {
     /* Fields of EvinceView-3.0.EvinceView.JobPrintClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobRenderClass {
     /* Fields of EvinceView-3.0.EvinceView.JobRenderClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobSaveClass {
     /* Fields of EvinceView-3.0.EvinceView.JobSaveClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobThumbnailClass {
     /* Fields of EvinceView-3.0.EvinceView.JobThumbnailClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class PrintOperationClass {

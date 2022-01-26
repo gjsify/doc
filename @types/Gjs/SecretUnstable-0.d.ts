@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * SecretUnstable-0
  */
@@ -36,7 +42,8 @@ enum ServiceFlags {
     OPEN_SESSION,
     LOAD_COLLECTIONS,
 }
-export interface Collection_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface Collection_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of SecretUnstable-0.SecretUnstable.Collection */
     created?: number
     label?: string
     modified?: number
@@ -52,10 +59,8 @@ class Collection {
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of SecretUnstable-0.SecretUnstable.Collection */
-    parent: Gio.DBusProxy
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SecretUnstable-0.SecretUnstable.Collection */
     delete(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
     delete_finish(result: Gio.AsyncResult): boolean
@@ -196,7 +201,8 @@ class Collection {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Item_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface Item_ConstructProps extends Gio.DBusProxy_ConstructProps {
+    /* Constructor properties of SecretUnstable-0.SecretUnstable.Item */
     attributes?: GLib.HashTable
     created?: number
     label?: string
@@ -214,10 +220,8 @@ class Item {
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of SecretUnstable-0.SecretUnstable.Item */
-    parent_instance: Gio.DBusProxy
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SecretUnstable-0.SecretUnstable.Item */
     delete(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
     delete_finish(result: Gio.AsyncResult): boolean
@@ -362,17 +366,15 @@ class Item {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Prompt_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface Prompt_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class Prompt {
     /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of SecretUnstable-0.SecretUnstable.Prompt */
-    parent_instance: Gio.DBusProxy
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SecretUnstable-0.SecretUnstable.Prompt */
     perform(window_id: number, return_type: GLib.VariantType, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
     perform_finish(result: Gio.AsyncResult): GLib.Variant
@@ -477,17 +479,15 @@ class Prompt {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Service_ConstructProps extends Gio.DBusProxy_ConstructProps {
+interface Service_ConstructProps extends Gio.DBusProxy_ConstructProps {
 }
 class Service {
     /* Properties of Gio-2.0.Gio.DBusProxy */
     g_default_timeout: number
     g_interface_info: Gio.DBusInterfaceInfo
     readonly g_name_owner: string
-    /* Fields of SecretUnstable-0.SecretUnstable.Service */
-    parent: Gio.DBusProxy
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SecretUnstable-0.SecretUnstable.Service */
     clear(schema: Secret.Schema | null, attributes: GLib.HashTable, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
     clear_finish(result: Gio.AsyncResult): boolean
@@ -671,7 +671,7 @@ class Service {
 }
 abstract class CollectionClass {
     /* Fields of SecretUnstable-0.SecretUnstable.CollectionClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class CollectionPrivate {
@@ -679,7 +679,7 @@ class CollectionPrivate {
 }
 abstract class ItemClass {
     /* Fields of SecretUnstable-0.SecretUnstable.ItemClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class ItemPrivate {
@@ -687,7 +687,7 @@ class ItemPrivate {
 }
 abstract class PromptClass {
     /* Fields of SecretUnstable-0.SecretUnstable.PromptClass */
-    parent_class: Gio.DBusProxyClass
+    readonly parent_class: Gio.DBusProxyClass
     static name: string
 }
 class PromptPrivate {
@@ -695,14 +695,14 @@ class PromptPrivate {
 }
 abstract class ServiceClass {
     /* Fields of SecretUnstable-0.SecretUnstable.ServiceClass */
-    parent_class: Gio.DBusProxyClass
-    collection_gtype: GObject.Type
-    item_gtype: GObject.Type
-    prompt_sync: (self: Service, prompt: Prompt, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType) => GLib.Variant
-    prompt_async: (self: Service, prompt: Prompt, return_type: GLib.VariantType, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null) => void
-    prompt_finish: (self: Service, result: Gio.AsyncResult) => GLib.Variant
-    get_collection_gtype: (self: Service) => GObject.Type
-    get_item_gtype: (self: Service) => GObject.Type
+    readonly parent_class: Gio.DBusProxyClass
+    readonly collection_gtype: GObject.Type
+    readonly item_gtype: GObject.Type
+    readonly prompt_sync: (self: Service, prompt: Prompt, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType) => GLib.Variant
+    readonly prompt_async: (self: Service, prompt: Prompt, return_type: GLib.VariantType, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null) => void
+    readonly prompt_finish: (self: Service, result: Gio.AsyncResult) => GLib.Variant
+    readonly get_collection_gtype: (self: Service) => GObject.Type
+    readonly get_item_gtype: (self: Service) => GObject.Type
     static name: string
 }
 class ServicePrivate {
@@ -710,7 +710,7 @@ class ServicePrivate {
 }
 class Value {
     /* Methods of SecretUnstable-0.SecretUnstable.Value */
-    get(): Uint8Array[]
+    get(): Uint8Array
     get_content_type(): string
     get_text(): string
     ref(): Value

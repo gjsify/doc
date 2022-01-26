@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Dbusmenu-0.4
  */
@@ -17,68 +23,68 @@ enum TextDirection {
     LTR,
     RTL,
 }
-export const CLIENT_PROP_DBUS_NAME: string
-export const CLIENT_PROP_DBUS_OBJECT: string
-export const CLIENT_PROP_GROUP_EVENTS: string
-export const CLIENT_PROP_STATUS: string
-export const CLIENT_PROP_TEXT_DIRECTION: string
-export const CLIENT_SIGNAL_EVENT_RESULT: string
-export const CLIENT_SIGNAL_ICON_THEME_DIRS_CHANGED: string
-export const CLIENT_SIGNAL_ITEM_ACTIVATE: string
-export const CLIENT_SIGNAL_LAYOUT_UPDATED: string
-export const CLIENT_SIGNAL_NEW_MENUITEM: string
-export const CLIENT_SIGNAL_ROOT_CHANGED: string
-export const CLIENT_TYPES_DEFAULT: string
-export const CLIENT_TYPES_IMAGE: string
-export const CLIENT_TYPES_SEPARATOR: string
-export const MENUITEM_CHILD_DISPLAY_SUBMENU: string
-export const MENUITEM_DISPOSITION_ALERT: string
-export const MENUITEM_DISPOSITION_INFORMATIVE: string
-export const MENUITEM_DISPOSITION_NORMAL: string
-export const MENUITEM_DISPOSITION_WARNING: string
-export const MENUITEM_EVENT_ACTIVATED: string
-export const MENUITEM_EVENT_CLOSED: string
-export const MENUITEM_EVENT_OPENED: string
-export const MENUITEM_ICON_NAME_BLANK: string
-export const MENUITEM_PROP_ACCESSIBLE_DESC: string
-export const MENUITEM_PROP_CHILD_DISPLAY: string
-export const MENUITEM_PROP_DISPOSITION: string
-export const MENUITEM_PROP_ENABLED: string
-export const MENUITEM_PROP_ICON_DATA: string
-export const MENUITEM_PROP_ICON_NAME: string
-export const MENUITEM_PROP_LABEL: string
-export const MENUITEM_PROP_SHORTCUT: string
-export const MENUITEM_PROP_TOGGLE_STATE: string
-export const MENUITEM_PROP_TOGGLE_TYPE: string
-export const MENUITEM_PROP_TYPE: string
-export const MENUITEM_PROP_VISIBLE: string
-export const MENUITEM_SHORTCUT_ALT: string
-export const MENUITEM_SHORTCUT_CONTROL: string
-export const MENUITEM_SHORTCUT_SHIFT: string
-export const MENUITEM_SHORTCUT_SUPER: string
-export const MENUITEM_SIGNAL_ABOUT_TO_SHOW: string
-export const MENUITEM_SIGNAL_CHILD_ADDED: string
-export const MENUITEM_SIGNAL_CHILD_MOVED: string
-export const MENUITEM_SIGNAL_CHILD_REMOVED: string
-export const MENUITEM_SIGNAL_EVENT: string
-export const MENUITEM_SIGNAL_ITEM_ACTIVATED: string
-export const MENUITEM_SIGNAL_PROPERTY_CHANGED: string
-export const MENUITEM_SIGNAL_REALIZED: string
-export const MENUITEM_SIGNAL_SHOW_TO_USER: string
-export const MENUITEM_TOGGLE_CHECK: string
-export const MENUITEM_TOGGLE_RADIO: string
-export const MENUITEM_TOGGLE_STATE_CHECKED: number
-export const MENUITEM_TOGGLE_STATE_UNCHECKED: number
-export const MENUITEM_TOGGLE_STATE_UNKNOWN: number
-export const SERVER_PROP_DBUS_OBJECT: string
-export const SERVER_PROP_ROOT_NODE: string
-export const SERVER_PROP_STATUS: string
-export const SERVER_PROP_TEXT_DIRECTION: string
-export const SERVER_PROP_VERSION: string
-export const SERVER_SIGNAL_ID_PROP_UPDATE: string
-export const SERVER_SIGNAL_ID_UPDATE: string
-export const SERVER_SIGNAL_ITEM_ACTIVATION: string
-export const SERVER_SIGNAL_LAYOUT_UPDATED: string
+const CLIENT_PROP_DBUS_NAME: string
+const CLIENT_PROP_DBUS_OBJECT: string
+const CLIENT_PROP_GROUP_EVENTS: string
+const CLIENT_PROP_STATUS: string
+const CLIENT_PROP_TEXT_DIRECTION: string
+const CLIENT_SIGNAL_EVENT_RESULT: string
+const CLIENT_SIGNAL_ICON_THEME_DIRS_CHANGED: string
+const CLIENT_SIGNAL_ITEM_ACTIVATE: string
+const CLIENT_SIGNAL_LAYOUT_UPDATED: string
+const CLIENT_SIGNAL_NEW_MENUITEM: string
+const CLIENT_SIGNAL_ROOT_CHANGED: string
+const CLIENT_TYPES_DEFAULT: string
+const CLIENT_TYPES_IMAGE: string
+const CLIENT_TYPES_SEPARATOR: string
+const MENUITEM_CHILD_DISPLAY_SUBMENU: string
+const MENUITEM_DISPOSITION_ALERT: string
+const MENUITEM_DISPOSITION_INFORMATIVE: string
+const MENUITEM_DISPOSITION_NORMAL: string
+const MENUITEM_DISPOSITION_WARNING: string
+const MENUITEM_EVENT_ACTIVATED: string
+const MENUITEM_EVENT_CLOSED: string
+const MENUITEM_EVENT_OPENED: string
+const MENUITEM_ICON_NAME_BLANK: string
+const MENUITEM_PROP_ACCESSIBLE_DESC: string
+const MENUITEM_PROP_CHILD_DISPLAY: string
+const MENUITEM_PROP_DISPOSITION: string
+const MENUITEM_PROP_ENABLED: string
+const MENUITEM_PROP_ICON_DATA: string
+const MENUITEM_PROP_ICON_NAME: string
+const MENUITEM_PROP_LABEL: string
+const MENUITEM_PROP_SHORTCUT: string
+const MENUITEM_PROP_TOGGLE_STATE: string
+const MENUITEM_PROP_TOGGLE_TYPE: string
+const MENUITEM_PROP_TYPE: string
+const MENUITEM_PROP_VISIBLE: string
+const MENUITEM_SHORTCUT_ALT: string
+const MENUITEM_SHORTCUT_CONTROL: string
+const MENUITEM_SHORTCUT_SHIFT: string
+const MENUITEM_SHORTCUT_SUPER: string
+const MENUITEM_SIGNAL_ABOUT_TO_SHOW: string
+const MENUITEM_SIGNAL_CHILD_ADDED: string
+const MENUITEM_SIGNAL_CHILD_MOVED: string
+const MENUITEM_SIGNAL_CHILD_REMOVED: string
+const MENUITEM_SIGNAL_EVENT: string
+const MENUITEM_SIGNAL_ITEM_ACTIVATED: string
+const MENUITEM_SIGNAL_PROPERTY_CHANGED: string
+const MENUITEM_SIGNAL_REALIZED: string
+const MENUITEM_SIGNAL_SHOW_TO_USER: string
+const MENUITEM_TOGGLE_CHECK: string
+const MENUITEM_TOGGLE_RADIO: string
+const MENUITEM_TOGGLE_STATE_CHECKED: number
+const MENUITEM_TOGGLE_STATE_UNCHECKED: number
+const MENUITEM_TOGGLE_STATE_UNKNOWN: number
+const SERVER_PROP_DBUS_OBJECT: string
+const SERVER_PROP_ROOT_NODE: string
+const SERVER_PROP_STATUS: string
+const SERVER_PROP_TEXT_DIRECTION: string
+const SERVER_PROP_VERSION: string
+const SERVER_SIGNAL_ID_PROP_UPDATE: string
+const SERVER_SIGNAL_ID_UPDATE: string
+const SERVER_SIGNAL_ITEM_ACTIVATION: string
+const SERVER_SIGNAL_LAYOUT_UPDATED: string
 interface ClientTypeHandler {
     (newitem: Menuitem, parent: Menuitem, client: Client): boolean
 }
@@ -88,7 +94,8 @@ interface menuitem_about_to_show_cb {
 interface menuitem_buildvariant_slot_t {
     (mi: Menuitem, properties?: string | null): GLib.Variant
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Dbusmenu-0.4.Dbusmenu.Client */
     dbus_name?: string
     dbus_object?: string
     group_events?: boolean
@@ -97,7 +104,7 @@ class Client {
     /* Properties of Dbusmenu-0.4.Dbusmenu.Client */
     group_events: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dbusmenu-0.4.Dbusmenu.Client */
     add_type_handler(type: string, newfunc: ClientTypeHandler): boolean
     add_type_handler_full(type: string, newfunc: ClientTypeHandler): boolean
@@ -171,15 +178,13 @@ class Client {
     static new(name: string, object: string): Client
     static $gtype: GObject.Type
 }
-export interface Menuitem_ConstructProps extends GObject.Object_ConstructProps {
+interface Menuitem_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Dbusmenu-0.4.Dbusmenu.Menuitem */
     id?: number
 }
 class Menuitem {
-    /* Fields of Dbusmenu-0.4.Dbusmenu.Menuitem */
-    parent: GObject.Object
-    priv: MenuitemPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dbusmenu-0.4.Dbusmenu.Menuitem */
     child_add_position(child: Menuitem, position: number): boolean
     child_append(child: Menuitem): boolean
@@ -201,7 +206,7 @@ class Menuitem {
     property_exist(property: string): boolean
     property_get(property: string): string
     property_get_bool(property: string): boolean
-    property_get_byte_array(property: string): Uint8Array[]
+    property_get_byte_array(property: string): Uint8Array
     property_get_int(property: string): number
     property_get_variant(property: string): GLib.Variant
     property_remove(property: string): void
@@ -296,15 +301,16 @@ class Menuitem {
     static new_with_id(id: number): Menuitem
     static $gtype: GObject.Type
 }
-export interface MenuitemProxy_ConstructProps extends Menuitem_ConstructProps {
+interface MenuitemProxy_ConstructProps extends Menuitem_ConstructProps {
+    /* Constructor properties of Dbusmenu-0.4.Dbusmenu.MenuitemProxy */
     menu_item?: Menuitem
 }
 class MenuitemProxy {
     /* Fields of Dbusmenu-0.4.Dbusmenu.Menuitem */
-    parent: GObject.Object
-    priv: MenuitemPrivate
+    readonly parent: GObject.Object
+    readonly priv: MenuitemPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dbusmenu-0.4.Dbusmenu.MenuitemProxy */
     get_wrapped(): Menuitem
     /* Methods of Dbusmenu-0.4.Dbusmenu.Menuitem */
@@ -328,7 +334,7 @@ class MenuitemProxy {
     property_exist(property: string): boolean
     property_get(property: string): string
     property_get_bool(property: string): boolean
-    property_get_byte_array(property: string): Uint8Array[]
+    property_get_byte_array(property: string): Uint8Array
     property_get_int(property: string): number
     property_get_variant(property: string): GLib.Variant
     property_remove(property: string): void
@@ -420,10 +426,12 @@ class MenuitemProxy {
     _init (config?: MenuitemProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(mi: Menuitem): MenuitemProxy
+    /* Function overloads */
     static new(): MenuitemProxy
     static $gtype: GObject.Type
 }
-export interface Server_ConstructProps extends GObject.Object_ConstructProps {
+interface Server_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Dbusmenu-0.4.Dbusmenu.Server */
     dbus_object?: string
     root_node?: Menuitem
 }
@@ -432,7 +440,7 @@ class Server {
     root_node: Menuitem
     readonly version: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dbusmenu-0.4.Dbusmenu.Server */
     get_icon_paths(): string[]
     get_status(): Status
@@ -505,18 +513,18 @@ class Server {
 }
 abstract class ClientClass {
     /* Fields of Dbusmenu-0.4.Dbusmenu.ClientClass */
-    parent_class: GObject.ObjectClass
-    layout_updated: () => void
-    root_changed: (newroot: Menuitem) => void
-    new_menuitem: (newitem: Menuitem) => void
-    item_activate: (item: Menuitem, timestamp: number) => void
-    event_result: (item: Menuitem, event: string, data: GLib.Variant, timestamp: number, error: GLib.Error) => void
-    icon_theme_dirs: (item: Menuitem, theme_dirs: object, error: GLib.Error) => void
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
-    reserved5: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly layout_updated: () => void
+    readonly root_changed: (newroot: Menuitem) => void
+    readonly new_menuitem: (newitem: Menuitem) => void
+    readonly item_activate: (item: Menuitem, timestamp: number) => void
+    readonly event_result: (item: Menuitem, event: string, data: GLib.Variant, timestamp: number, error: GLib.Error) => void
+    readonly icon_theme_dirs: (item: Menuitem, theme_dirs: object, error: GLib.Error) => void
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
+    readonly reserved5: () => void
     static name: string
 }
 class ClientPrivate {
@@ -524,22 +532,22 @@ class ClientPrivate {
 }
 abstract class MenuitemClass {
     /* Fields of Dbusmenu-0.4.Dbusmenu.MenuitemClass */
-    parent_class: GObject.ObjectClass
-    property_changed: (property: string, value: GLib.Variant) => void
-    item_activated: (timestamp: number) => void
-    child_added: (child: Menuitem, position: number) => void
-    child_removed: (child: Menuitem) => void
-    child_moved: (child: Menuitem, newpos: number, oldpos: number) => void
-    realized: () => void
-    handle_event: (mi: Menuitem, name: string, variant: GLib.Variant, timestamp: number) => void
-    show_to_user: (mi: Menuitem, timestamp: number, cb_data?: object | null) => void
-    about_to_show: () => boolean
-    event: (name: string, value: GLib.Variant, timestamp: number) => void
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
-    reserved5: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly property_changed: (property: string, value: GLib.Variant) => void
+    readonly item_activated: (timestamp: number) => void
+    readonly child_added: (child: Menuitem, position: number) => void
+    readonly child_removed: (child: Menuitem) => void
+    readonly child_moved: (child: Menuitem, newpos: number, oldpos: number) => void
+    readonly realized: () => void
+    readonly handle_event: (mi: Menuitem, name: string, variant: GLib.Variant, timestamp: number) => void
+    readonly show_to_user: (mi: Menuitem, timestamp: number, cb_data?: object | null) => void
+    readonly about_to_show: () => boolean
+    readonly event: (name: string, value: GLib.Variant, timestamp: number) => void
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
+    readonly reserved5: () => void
     static name: string
 }
 class MenuitemPrivate {
@@ -547,11 +555,11 @@ class MenuitemPrivate {
 }
 abstract class MenuitemProxyClass {
     /* Fields of Dbusmenu-0.4.Dbusmenu.MenuitemProxyClass */
-    parent_class: MenuitemClass
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
+    readonly parent_class: MenuitemClass
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
     static name: string
 }
 class MenuitemProxyPrivate {
@@ -559,17 +567,17 @@ class MenuitemProxyPrivate {
 }
 abstract class ServerClass {
     /* Fields of Dbusmenu-0.4.Dbusmenu.ServerClass */
-    parent_class: GObject.ObjectClass
-    id_prop_update: (id: number, property: string, value: string) => void
-    id_update: (id: number) => void
-    layout_updated: (revision: number) => void
-    item_activation: (id: number, timestamp: number) => void
-    reserved1: () => void
-    reserved2: () => void
-    reserved3: () => void
-    reserved4: () => void
-    reserved5: () => void
-    reserved6: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly id_prop_update: (id: number, property: string, value: string) => void
+    readonly id_update: (id: number) => void
+    readonly layout_updated: (revision: number) => void
+    readonly item_activation: (id: number, timestamp: number) => void
+    readonly reserved1: () => void
+    readonly reserved2: () => void
+    readonly reserved3: () => void
+    readonly reserved4: () => void
+    readonly reserved5: () => void
+    readonly reserved6: () => void
     static name: string
 }
 class ServerPrivate {

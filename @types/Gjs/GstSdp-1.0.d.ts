@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstSdp-1.0
  */
@@ -95,13 +101,13 @@ enum SDPResult {
     OK,
     EINVAL,
 }
-export const MIKEY_VERSION: number
-export const SDP_BWTYPE_AS: string
-export const SDP_BWTYPE_CT: string
-export const SDP_BWTYPE_EXT_PREFIX: string
-export const SDP_BWTYPE_RR: string
-export const SDP_BWTYPE_RS: string
-export const SDP_BWTYPE_TIAS: string
+const MIKEY_VERSION: number
+const SDP_BWTYPE_AS: string
+const SDP_BWTYPE_CT: string
+const SDP_BWTYPE_EXT_PREFIX: string
+const SDP_BWTYPE_RR: string
+const SDP_BWTYPE_RS: string
+const SDP_BWTYPE_TIAS: string
 function sdp_address_is_multicast(nettype: string, addrtype: string, addr: string): boolean
 function sdp_make_keymgmt(uri: string, base64: string): string
 function sdp_media_new(): [ /* returnType */ SDPResult, /* media */ SDPMedia ]
@@ -109,7 +115,7 @@ function sdp_media_set_media_from_caps(caps: Gst.Caps, media: SDPMedia): SDPResu
 function sdp_message_as_uri(scheme: string, msg: SDPMessage): string
 function sdp_message_new(): [ /* returnType */ SDPResult, /* msg */ SDPMessage ]
 function sdp_message_new_from_text(text: string): [ /* returnType */ SDPResult, /* msg */ SDPMessage ]
-function sdp_message_parse_buffer(data: Uint8Array[], msg: SDPMessage): SDPResult
+function sdp_message_parse_buffer(data: Uint8Array, msg: SDPMessage): SDPResult
 function sdp_message_parse_uri(uri: string, msg: SDPMessage): SDPResult
 class MIKEYDecryptInfo {
     static name: string
@@ -119,28 +125,28 @@ class MIKEYEncryptInfo {
 }
 class MIKEYMapSRTP {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYMapSRTP */
-    policy: number
-    ssrc: number
-    roc: number
+    readonly policy: number
+    readonly ssrc: number
+    readonly roc: number
     static name: string
 }
 class MIKEYMessage {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYMessage */
-    version: number
-    type: MIKEYType
-    V: boolean
-    prf_func: MIKEYPRFFunc
-    CSB_id: number
-    map_type: MIKEYMapType
-    map_info: object[]
-    payloads: object[]
+    readonly version: number
+    readonly type: MIKEYType
+    readonly V: boolean
+    readonly prf_func: MIKEYPRFFunc
+    readonly CSB_id: number
+    readonly map_type: MIKEYMapType
+    readonly map_info: object[]
+    readonly payloads: object[]
     /* Methods of GstSdp-1.0.GstSdp.MIKEYMessage */
     add_cs_srtp(policy: number, ssrc: number, roc: number): boolean
     add_payload(payload: MIKEYPayload): boolean
-    add_pke(C: MIKEYCacheType, data: Uint8Array[]): boolean
-    add_rand(rand: Uint8Array[]): boolean
+    add_pke(C: MIKEYCacheType, data: Uint8Array): boolean
+    add_rand(rand: Uint8Array): boolean
     add_rand_len(len: number): boolean
-    add_t(type: MIKEYTSType, ts_value: Uint8Array[]): boolean
+    add_t(type: MIKEYTSType, ts_value: Uint8Array): boolean
     add_t_now_ntp_utc(): boolean
     base64_encode(): string
     find_payload(type: MIKEYPayloadType, nth: number): MIKEYPayload
@@ -164,30 +170,30 @@ class MIKEYMessage {
     static new(): MIKEYMessage
     static new_from_bytes(bytes: GLib.Bytes, info: MIKEYDecryptInfo): MIKEYMessage
     static new_from_caps(caps: Gst.Caps): MIKEYMessage
-    static new_from_data(data: Uint8Array[], info: MIKEYDecryptInfo): MIKEYMessage
+    static new_from_data(data: Uint8Array, info: MIKEYDecryptInfo): MIKEYMessage
 }
 class MIKEYPayload {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYPayload */
-    type: MIKEYPayloadType
-    len: number
+    readonly type: MIKEYPayloadType
+    readonly len: number
     /* Methods of GstSdp-1.0.GstSdp.MIKEYPayload */
     kemac_add_sub(newpay: MIKEYPayload): boolean
     kemac_get_n_sub(): number
     kemac_get_sub(idx: number): MIKEYPayload
     kemac_remove_sub(idx: number): boolean
     kemac_set(enc_alg: MIKEYEncAlg, mac_alg: MIKEYMacAlg): boolean
-    key_data_set_interval(vf_len: number, vt_data: Uint8Array[]): boolean
-    key_data_set_key(key_type: MIKEYKeyDataType, key_data: Uint8Array[]): boolean
-    key_data_set_salt(salt_data?: Uint8Array[] | null): boolean
-    key_data_set_spi(spi_data: Uint8Array[]): boolean
-    pke_set(C: MIKEYCacheType, data: Uint8Array[]): boolean
-    rand_set(rand: Uint8Array[]): boolean
-    sp_add_param(type: number, val: Uint8Array[]): boolean
+    key_data_set_interval(vf_len: number, vt_data: Uint8Array): boolean
+    key_data_set_key(key_type: MIKEYKeyDataType, key_data: Uint8Array): boolean
+    key_data_set_salt(salt_data?: Uint8Array | null): boolean
+    key_data_set_spi(spi_data: Uint8Array): boolean
+    pke_set(C: MIKEYCacheType, data: Uint8Array): boolean
+    rand_set(rand: Uint8Array): boolean
+    sp_add_param(type: number, val: Uint8Array): boolean
     sp_get_n_params(): number
     sp_get_param(idx: number): MIKEYPayloadSPParam
     sp_remove_param(idx: number): boolean
     sp_set(policy: number, proto: MIKEYSecProto): boolean
-    t_set(type: MIKEYTSType, ts_value: Uint8Array[]): boolean
+    t_set(type: MIKEYTSType, ts_value: Uint8Array): boolean
     static name: string
     static new(type: MIKEYPayloadType): MIKEYPayload
     constructor(type: MIKEYPayloadType)
@@ -196,66 +202,66 @@ class MIKEYPayload {
 }
 class MIKEYPayloadKEMAC {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadKEMAC */
-    pt: MIKEYPayload
-    enc_alg: MIKEYEncAlg
-    mac_alg: MIKEYMacAlg
-    subpayloads: object[]
+    readonly pt: MIKEYPayload
+    readonly enc_alg: MIKEYEncAlg
+    readonly mac_alg: MIKEYMacAlg
+    readonly subpayloads: object[]
     static name: string
 }
 class MIKEYPayloadKeyData {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadKeyData */
-    pt: MIKEYPayload
-    key_type: MIKEYKeyDataType
-    key_len: number
-    key_data: number
-    salt_len: number
-    salt_data: number
-    kv_type: MIKEYKVType
-    kv_len: Uint8Array[]
-    kv_data: Uint8Array[]
+    readonly pt: MIKEYPayload
+    readonly key_type: MIKEYKeyDataType
+    readonly key_len: number
+    readonly key_data: number
+    readonly salt_len: number
+    readonly salt_data: number
+    readonly kv_type: MIKEYKVType
+    readonly kv_len: Uint8Array
+    readonly kv_data: Uint8Array
     static name: string
 }
 class MIKEYPayloadPKE {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadPKE */
-    pt: MIKEYPayload
-    C: MIKEYCacheType
-    data_len: number
-    data: number
+    readonly pt: MIKEYPayload
+    readonly C: MIKEYCacheType
+    readonly data_len: number
+    readonly data: number
     static name: string
 }
 class MIKEYPayloadRAND {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadRAND */
-    pt: MIKEYPayload
-    len: number
-    rand: number
+    readonly pt: MIKEYPayload
+    readonly len: number
+    readonly rand: number
     static name: string
 }
 class MIKEYPayloadSP {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadSP */
-    pt: MIKEYPayload
-    policy: number
-    proto: MIKEYSecProto
-    params: object[]
+    readonly pt: MIKEYPayload
+    readonly policy: number
+    readonly proto: MIKEYSecProto
+    readonly params: object[]
     static name: string
 }
 class MIKEYPayloadSPParam {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadSPParam */
-    type: number
-    len: number
-    val: number
+    readonly type: number
+    readonly len: number
+    readonly val: number
     static name: string
 }
 class MIKEYPayloadT {
     /* Fields of GstSdp-1.0.GstSdp.MIKEYPayloadT */
-    pt: MIKEYPayload
-    type: MIKEYTSType
-    ts_value: number
+    readonly pt: MIKEYPayload
+    readonly type: MIKEYTSType
+    readonly ts_value: number
     static name: string
 }
 class SDPAttribute {
     /* Fields of GstSdp-1.0.GstSdp.SDPAttribute */
-    key: string
-    value: string
+    readonly key: string
+    readonly value: string
     /* Methods of GstSdp-1.0.GstSdp.SDPAttribute */
     clear(): SDPResult
     set(key: string, value?: string | null): SDPResult
@@ -263,8 +269,8 @@ class SDPAttribute {
 }
 class SDPBandwidth {
     /* Fields of GstSdp-1.0.GstSdp.SDPBandwidth */
-    bwtype: string
-    bandwidth: number
+    readonly bwtype: string
+    readonly bandwidth: number
     /* Methods of GstSdp-1.0.GstSdp.SDPBandwidth */
     clear(): SDPResult
     set(bwtype: string, bandwidth: number): SDPResult
@@ -272,11 +278,11 @@ class SDPBandwidth {
 }
 class SDPConnection {
     /* Fields of GstSdp-1.0.GstSdp.SDPConnection */
-    nettype: string
-    addrtype: string
-    address: string
-    ttl: number
-    addr_number: number
+    readonly nettype: string
+    readonly addrtype: string
+    readonly address: string
+    readonly ttl: number
+    readonly addr_number: number
     /* Methods of GstSdp-1.0.GstSdp.SDPConnection */
     clear(): SDPResult
     set(nettype: string, addrtype: string, address: string, ttl: number, addr_number: number): SDPResult
@@ -284,22 +290,22 @@ class SDPConnection {
 }
 class SDPKey {
     /* Fields of GstSdp-1.0.GstSdp.SDPKey */
-    type: string
-    data: string
+    readonly type: string
+    readonly data: string
     static name: string
 }
 class SDPMedia {
     /* Fields of GstSdp-1.0.GstSdp.SDPMedia */
-    media: string
-    port: number
-    num_ports: number
-    proto: string
-    fmts: object[]
-    information: string
-    connections: object[]
-    bandwidths: object[]
-    key: SDPKey
-    attributes: object[]
+    readonly media: string
+    readonly port: number
+    readonly num_ports: number
+    readonly proto: string
+    readonly fmts: object[]
+    readonly information: string
+    readonly connections: object[]
+    readonly bandwidths: object[]
+    readonly key: SDPKey
+    readonly attributes: object[]
     /* Methods of GstSdp-1.0.GstSdp.SDPMedia */
     add_attribute(key: string, value?: string | null): SDPResult
     add_bandwidth(bwtype: string, bandwidth: number): SDPResult
@@ -352,20 +358,20 @@ class SDPMedia {
 }
 class SDPMessage {
     /* Fields of GstSdp-1.0.GstSdp.SDPMessage */
-    version: string
-    origin: SDPOrigin
-    session_name: string
-    information: string
-    uri: string
-    emails: object[]
-    phones: object[]
-    connection: SDPConnection
-    bandwidths: object[]
-    times: object[]
-    zones: object[]
-    key: SDPKey
-    attributes: object[]
-    medias: object[]
+    readonly version: string
+    readonly origin: SDPOrigin
+    readonly session_name: string
+    readonly information: string
+    readonly uri: string
+    readonly emails: object[]
+    readonly phones: object[]
+    readonly connection: SDPConnection
+    readonly bandwidths: object[]
+    readonly times: object[]
+    readonly zones: object[]
+    readonly key: SDPKey
+    readonly attributes: object[]
+    readonly medias: object[]
     /* Methods of GstSdp-1.0.GstSdp.SDPMessage */
     add_attribute(key: string, value?: string | null): SDPResult
     add_bandwidth(bwtype: string, bandwidth: number): SDPResult
@@ -434,24 +440,24 @@ class SDPMessage {
     /* Static methods and pseudo-constructors */
     static as_uri(scheme: string, msg: SDPMessage): string
     static new_from_text(text: string): [ /* returnType */ SDPResult, /* msg */ SDPMessage ]
-    static parse_buffer(data: Uint8Array[], msg: SDPMessage): SDPResult
+    static parse_buffer(data: Uint8Array, msg: SDPMessage): SDPResult
     static parse_uri(uri: string, msg: SDPMessage): SDPResult
 }
 class SDPOrigin {
     /* Fields of GstSdp-1.0.GstSdp.SDPOrigin */
-    username: string
-    sess_id: string
-    sess_version: string
-    nettype: string
-    addrtype: string
-    addr: string
+    readonly username: string
+    readonly sess_id: string
+    readonly sess_version: string
+    readonly nettype: string
+    readonly addrtype: string
+    readonly addr: string
     static name: string
 }
 class SDPTime {
     /* Fields of GstSdp-1.0.GstSdp.SDPTime */
-    start: string
-    stop: string
-    repeat: object[]
+    readonly start: string
+    readonly stop: string
+    readonly repeat: object[]
     /* Methods of GstSdp-1.0.GstSdp.SDPTime */
     clear(): SDPResult
     set(start: string, stop: string, repeat: string[]): SDPResult
@@ -459,8 +465,8 @@ class SDPTime {
 }
 class SDPZone {
     /* Fields of GstSdp-1.0.GstSdp.SDPZone */
-    time: string
-    typed_time: string
+    readonly time: string
+    readonly typed_time: string
     /* Methods of GstSdp-1.0.GstSdp.SDPZone */
     clear(): SDPResult
     set(adj_time: string, typed_time: string): SDPResult

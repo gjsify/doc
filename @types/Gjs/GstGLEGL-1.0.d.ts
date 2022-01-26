@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstGLEGL-1.0
  */
@@ -13,8 +19,8 @@ import type GstGL from './GstGL-1.0';
 
 export namespace GstGLEGL {
 
-export const GL_DISPLAY_EGL_NAME: string
-export const GL_MEMORY_EGL_ALLOCATOR_NAME: string
+const GL_DISPLAY_EGL_NAME: string
+const GL_MEMORY_EGL_ALLOCATOR_NAME: string
 function egl_get_error_string(err: number): string
 function egl_image_from_dmabuf(context: GstGL.GLContext, dmabuf: number, in_info: GstVideo.VideoInfo, plane: number, offset: number): EGLImage
 function egl_image_from_dmabuf_direct(context: GstGL.GLContext, fd: number, offset: number, in_info: GstVideo.VideoInfo): EGLImage
@@ -25,18 +31,17 @@ function is_gl_memory_egl(mem: Gst.Memory): boolean
 interface EGLImageDestroyNotify {
     (image: EGLImage, data?: object | null): void
 }
-export interface GLDisplayEGL_ConstructProps extends GstGL.GLDisplay_ConstructProps {
+interface GLDisplayEGL_ConstructProps extends GstGL.GLDisplay_ConstructProps {
 }
 class GLDisplayEGL {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLDisplay */
     add_context(context: GstGL.GLContext): boolean
     create_context(other_context: GstGL.GLContext): [ /* returnType */ boolean, /* p_context */ GstGL.GLContext ]
@@ -122,10 +127,6 @@ class GLDisplayEGL {
     connect(sigName: "notify", callback: (($obj: GLDisplayEGL, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLDisplayEGL, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLDisplayEGL, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLDisplayEGL, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLDisplayEGL, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLDisplayEGL, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -135,26 +136,24 @@ class GLDisplayEGL {
     _init (config?: GLDisplayEGL_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): GLDisplayEGL
+    /* Function overloads */
+    static new(): GLDisplayEGL
     static new_with_egl_display(display?: object | null): GLDisplayEGL
     static from_gl_display(display: GstGL.GLDisplay): GLDisplayEGL
     static get_from_native(type: GstGL.GLDisplayType, display: number): object | null
     static $gtype: GObject.Type
 }
-export interface GLDisplayEGLDevice_ConstructProps extends GstGL.GLDisplay_ConstructProps {
+interface GLDisplayEGLDevice_ConstructProps extends GstGL.GLDisplay_ConstructProps {
 }
 class GLDisplayEGLDevice {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGLEGL-1.0.GstGLEGL.GLDisplayEGLDevice */
-    device: object
-    _padding: object[]
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLDisplay */
     add_context(context: GstGL.GLContext): boolean
     create_context(other_context: GstGL.GLContext): [ /* returnType */ boolean, /* p_context */ GstGL.GLContext ]
@@ -240,10 +239,6 @@ class GLDisplayEGLDevice {
     connect(sigName: "notify", callback: (($obj: GLDisplayEGLDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLDisplayEGLDevice, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLDisplayEGLDevice, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLDisplayEGLDevice, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLDisplayEGLDevice, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLDisplayEGLDevice, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -253,31 +248,31 @@ class GLDisplayEGLDevice {
     _init (config?: GLDisplayEGLDevice_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(device_index: number): GLDisplayEGLDevice
+    /* Function overloads */
     static new(): GLDisplayEGLDevice
     static new_with_egl_device(device?: object | null): GLDisplayEGLDevice
     static $gtype: GObject.Type
 }
-export interface GLMemoryEGLAllocator_ConstructProps extends GstGL.GLMemoryAllocator_ConstructProps {
+interface GLMemoryEGLAllocator_ConstructProps extends GstGL.GLMemoryAllocator_ConstructProps {
 }
 class GLMemoryEGLAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -330,12 +325,15 @@ class GLMemoryEGLAllocator {
     watch_closure(closure: Function): void
     /* Virtual methods of GstGLEGL-1.0.GstGLEGL.GLMemoryEGLAllocator */
     vfunc_alloc(params: GstGL.GLAllocationParams): GstGL.GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of GstGL-1.0.GstGL.GLMemoryAllocator */
     vfunc_alloc(params: GstGL.GLAllocationParams): GstGL.GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of GstGL-1.0.GstGL.GLBaseMemoryAllocator */
     vfunc_alloc(params: GstGL.GLAllocationParams): GstGL.GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of Gst-1.0.Gst.Allocator */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
@@ -358,10 +356,6 @@ class GLMemoryEGLAllocator {
     connect(sigName: "notify", callback: (($obj: GLMemoryEGLAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLMemoryEGLAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLMemoryEGLAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLMemoryEGLAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLMemoryEGLAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLMemoryEGLAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -385,14 +379,14 @@ class EGLImage {
 }
 abstract class GLDisplayEGLClass {
     /* Fields of GstGLEGL-1.0.GstGLEGL.GLDisplayEGLClass */
-    object_class: GstGL.GLDisplayClass
-    _padding: object[]
+    readonly object_class: GstGL.GLDisplayClass
+    readonly _padding: object[]
     static name: string
 }
 abstract class GLDisplayEGLDeviceClass {
     /* Fields of GstGLEGL-1.0.GstGLEGL.GLDisplayEGLDeviceClass */
-    object_class: GstGL.GLDisplayClass
-    _padding: object[]
+    readonly object_class: GstGL.GLDisplayClass
+    readonly _padding: object[]
     static name: string
 }
 class GLMemoryEGL {

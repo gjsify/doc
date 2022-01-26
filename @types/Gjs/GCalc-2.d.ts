@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GCalc-2
  */
@@ -86,11 +92,11 @@ enum MathGroupLevel {
     TWO,
     THREE,
 }
-export interface Hashable_ConstructProps extends GObject.Object_ConstructProps {
+interface Hashable_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Hashable {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Hashable */
     hash(): number
     /* Methods of GObject-2.0.GObject.Object */
@@ -138,11 +144,16 @@ class Hashable {
     _init (config?: Hashable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathAssign_ConstructProps extends GObject.Object_ConstructProps {
+interface MathAssign_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathAssign {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathAssign */
     evaluate(): MathExpression
     /* Methods of GObject-2.0.GObject.Object */
@@ -167,6 +178,18 @@ class MathAssign {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.MathAssign */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -179,6 +202,10 @@ class MathAssign {
     connect(sigName: "notify", callback: (($obj: MathAssign, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathAssign, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathAssign, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathAssign, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathAssign, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathAssign, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -188,11 +215,16 @@ class MathAssign {
     _init (config?: MathAssign_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathBinaryOperator_ConstructProps extends GObject.Object_ConstructProps {
+interface MathBinaryOperator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathBinaryOperator {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -215,6 +247,18 @@ class MathBinaryOperator {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.MathBinaryOperator */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -227,6 +271,10 @@ class MathBinaryOperator {
     connect(sigName: "notify", callback: (($obj: MathBinaryOperator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathBinaryOperator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathBinaryOperator, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathBinaryOperator, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathBinaryOperator, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathBinaryOperator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -236,11 +284,16 @@ class MathBinaryOperator {
     _init (config?: MathBinaryOperator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathConstant_ConstructProps extends GObject.Object_ConstructProps {
+interface MathConstant_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathConstant {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathConstant */
     add(c: MathConstant): MathConstant
     subtract(c: MathConstant): MathConstant
@@ -270,6 +323,12 @@ class MathConstant {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.MathConstant */
     vfunc_add(c: MathConstant): MathConstant
     vfunc_subtract(c: MathConstant): MathConstant
@@ -277,6 +336,11 @@ class MathConstant {
     vfunc_divide(c: MathConstant): MathConstant
     vfunc_neg(): MathConstant
     vfunc_pow(c: MathConstant): MathConstant
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -289,6 +353,10 @@ class MathConstant {
     connect(sigName: "notify", callback: (($obj: MathConstant, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathConstant, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathConstant, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathConstant, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathConstant, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathConstant, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -298,11 +366,16 @@ class MathConstant {
     _init (config?: MathConstant_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathConstantComplex_ConstructProps extends GObject.Object_ConstructProps {
+interface MathConstantComplex_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathConstantComplex {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathConstantComplex */
     real(): number
     imag(): number
@@ -329,10 +402,34 @@ class MathConstantComplex {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Methods of GCalc-2.GCalc.MathConstant */
+    add(c: MathConstant): MathConstant
+    subtract(c: MathConstant): MathConstant
+    multiply(c: MathConstant): MathConstant
+    divide(c: MathConstant): MathConstant
+    neg(): MathConstant
+    pow(c: MathConstant): MathConstant
     /* Virtual methods of GCalc-2.GCalc.MathConstantComplex */
     vfunc_real(): number
     vfunc_imag(): number
     vfunc_zero(): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
+    vfunc_add(c: MathConstant): MathConstant
+    vfunc_subtract(c: MathConstant): MathConstant
+    vfunc_multiply(c: MathConstant): MathConstant
+    vfunc_divide(c: MathConstant): MathConstant
+    vfunc_neg(): MathConstant
+    vfunc_pow(c: MathConstant): MathConstant
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -345,6 +442,10 @@ class MathConstantComplex {
     connect(sigName: "notify", callback: (($obj: MathConstantComplex, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathConstantComplex, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathConstantComplex, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathConstantComplex, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathConstantComplex, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathConstantComplex, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -354,11 +455,16 @@ class MathConstantComplex {
     _init (config?: MathConstantComplex_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathConstantNumber_ConstructProps extends GObject.Object_ConstructProps {
+interface MathConstantNumber_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathConstantNumber {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathConstantNumber */
     value(): number
     /* Methods of GObject-2.0.GObject.Object */
@@ -383,8 +489,32 @@ class MathConstantNumber {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Methods of GCalc-2.GCalc.MathConstant */
+    add(c: MathConstant): MathConstant
+    subtract(c: MathConstant): MathConstant
+    multiply(c: MathConstant): MathConstant
+    divide(c: MathConstant): MathConstant
+    neg(): MathConstant
+    pow(c: MathConstant): MathConstant
     /* Virtual methods of GCalc-2.GCalc.MathConstantNumber */
     vfunc_value(): number
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
+    vfunc_add(c: MathConstant): MathConstant
+    vfunc_subtract(c: MathConstant): MathConstant
+    vfunc_multiply(c: MathConstant): MathConstant
+    vfunc_divide(c: MathConstant): MathConstant
+    vfunc_neg(): MathConstant
+    vfunc_pow(c: MathConstant): MathConstant
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -397,6 +527,10 @@ class MathConstantNumber {
     connect(sigName: "notify", callback: (($obj: MathConstantNumber, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathConstantNumber, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathConstantNumber, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathConstantNumber, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathConstantNumber, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathConstantNumber, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -406,11 +540,16 @@ class MathConstantNumber {
     _init (config?: MathConstantNumber_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathDivision_ConstructProps extends GObject.Object_ConstructProps {
+interface MathDivision_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathDivision {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -433,6 +572,18 @@ class MathDivision {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.MathDivision */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -445,6 +596,10 @@ class MathDivision {
     connect(sigName: "notify", callback: (($obj: MathDivision, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathDivision, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathDivision, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathDivision, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathDivision, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathDivision, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -454,13 +609,18 @@ class MathDivision {
     _init (config?: MathDivision_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathEquation_ConstructProps extends GObject.Object_ConstructProps {
+interface MathEquation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathEquation {
     /* Properties of GCalc-2.GCalc.MathEquation */
     readonly variables: ExpressionHashMap
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathEquation */
     get_variables(): ExpressionHashMap
     /* Methods of GObject-2.0.GObject.Object */
@@ -485,8 +645,19 @@ class MathEquation {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.MathEquation */
     vfunc_get_variables(): ExpressionHashMap
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -501,6 +672,10 @@ class MathEquation {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::variables", callback: (($obj: MathEquation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::variables", callback: (($obj: MathEquation, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: MathEquation, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathEquation, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathEquation, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathEquation, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -510,14 +685,14 @@ class MathEquation {
     _init (config?: MathEquation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathEquationManager_ConstructProps extends GObject.Object_ConstructProps {
+interface MathEquationManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MathEquationManager {
     /* Properties of GCalc-2.GCalc.MathEquationManager */
     readonly equations: ExpressionContainer
     readonly functions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathEquationManager */
     find_variable(name: string): MathVariable
     get_equations(): ExpressionContainer
@@ -573,13 +748,15 @@ class MathEquationManager {
     _init (config?: MathEquationManager_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathErrorResult_ConstructProps extends GObject.Object_ConstructProps {
+interface MathErrorResult_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MathErrorResult {
     /* Properties of GCalc-2.GCalc.MathErrorResult */
     readonly message: string
+    /* Properties of GCalc-2.GCalc.MathResult */
+    readonly expression: MathExpression
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathErrorResult */
     get_message(): string
     /* Methods of GObject-2.0.GObject.Object */
@@ -604,8 +781,13 @@ class MathErrorResult {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathResult */
+    to_string(): string
+    get_expression(): MathExpression
     /* Virtual methods of GCalc-2.GCalc.MathErrorResult */
     vfunc_get_message(): string
+    vfunc_to_string(): string
+    vfunc_get_expression(): MathExpression
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -620,6 +802,8 @@ class MathErrorResult {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::message", callback: (($obj: MathErrorResult, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::message", callback: (($obj: MathErrorResult, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expression", callback: (($obj: MathErrorResult, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expression", callback: (($obj: MathErrorResult, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -629,7 +813,8 @@ class MathErrorResult {
     _init (config?: MathErrorResult_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathExpression_ConstructProps extends GObject.Object_ConstructProps {
+interface MathExpression_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
     parent?: MathExpression
 }
 class MathExpression {
@@ -637,7 +822,7 @@ class MathExpression {
     parent: MathExpression
     readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathExpression */
     to_string(): string
     solve(): MathResult
@@ -697,10 +882,13 @@ class MathExpression {
     _init (config?: MathExpression_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathFunction_ConstructProps extends GObject.Object_ConstructProps {
+interface MathFunction_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathFunction */
     name?: string
     n_params?: number
     closed?: boolean
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathFunction {
     /* Properties of GCalc-2.GCalc.MathFunction */
@@ -708,8 +896,11 @@ class MathFunction {
     name: string
     n_params: number
     closed: boolean
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathFunction */
     evaluate(): MathExpression
     verify_params(): boolean
@@ -742,6 +933,12 @@ class MathFunction {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.MathFunction */
     vfunc_evaluate(): MathExpression
     vfunc_verify_params(): boolean
@@ -752,6 +949,11 @@ class MathFunction {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -772,6 +974,10 @@ class MathFunction {
     connect_after(sigName: "notify::n-params", callback: (($obj: MathFunction, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::closed", callback: (($obj: MathFunction, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::closed", callback: (($obj: MathFunction, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: MathFunction, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathFunction, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathFunction, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathFunction, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -781,16 +987,22 @@ class MathFunction {
     _init (config?: MathFunction_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface MathGroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathGroup */
     level?: MathGroupLevel
     closed?: boolean
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathGroup {
     /* Properties of GCalc-2.GCalc.MathGroup */
     level: MathGroupLevel
     closed: boolean
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathGroup */
     evaluate(): MathExpression
     get_level(): MathGroupLevel
@@ -819,12 +1031,23 @@ class MathGroup {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.MathGroup */
     vfunc_evaluate(): MathExpression
     vfunc_get_level(): MathGroupLevel
     vfunc_set_level(value: MathGroupLevel): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -841,6 +1064,10 @@ class MathGroup {
     connect_after(sigName: "notify::level", callback: (($obj: MathGroup, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::closed", callback: (($obj: MathGroup, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::closed", callback: (($obj: MathGroup, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: MathGroup, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathGroup, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathGroup, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathGroup, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -850,11 +1077,16 @@ class MathGroup {
     _init (config?: MathGroup_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathMinus_ConstructProps extends GObject.Object_ConstructProps {
+interface MathMinus_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathMinus {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -877,6 +1109,18 @@ class MathMinus {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.MathMinus */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -889,6 +1133,10 @@ class MathMinus {
     connect(sigName: "notify", callback: (($obj: MathMinus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathMinus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathMinus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathMinus, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathMinus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathMinus, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -898,11 +1146,16 @@ class MathMinus {
     _init (config?: MathMinus_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathMultiply_ConstructProps extends GObject.Object_ConstructProps {
+interface MathMultiply_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathMultiply {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -925,6 +1178,18 @@ class MathMultiply {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.MathMultiply */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -937,6 +1202,10 @@ class MathMultiply {
     connect(sigName: "notify", callback: (($obj: MathMultiply, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathMultiply, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathMultiply, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathMultiply, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathMultiply, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathMultiply, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -946,11 +1215,16 @@ class MathMultiply {
     _init (config?: MathMultiply_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathOperator_ConstructProps extends GObject.Object_ConstructProps {
+interface MathOperator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathOperator {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -973,6 +1247,18 @@ class MathOperator {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.MathOperator */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -985,6 +1271,10 @@ class MathOperator {
     connect(sigName: "notify", callback: (($obj: MathOperator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathOperator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathOperator, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathOperator, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathOperator, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathOperator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -994,11 +1284,24 @@ class MathOperator {
     _init (config?: MathOperator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathParameter_ConstructProps extends GObject.Object_ConstructProps {
+interface MathParameter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
+    /* Constructor properties of GCalc-2.GCalc.MathVariable */
+    name?: string
+    value?: MathConstant
+    bind?: MathVariable
 }
 class MathParameter {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
+    /* Properties of GCalc-2.GCalc.MathVariable */
+    name: string
+    value: MathConstant
+    bind: MathVariable
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathParameter */
     set_value(val?: any | null): void
     get_value(): any | null
@@ -1024,9 +1327,39 @@ class MathParameter {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Methods of GCalc-2.GCalc.MathVariable */
+    evaluate(): MathExpression
+    get_name(): string
+    set_name(value: string): void
+    get_value(): MathConstant
+    set_value(value: MathConstant): void
+    get_bind(): MathVariable
+    set_bind(value: MathVariable): void
+    get_binded(): boolean
     /* Virtual methods of GCalc-2.GCalc.MathParameter */
     vfunc_set_value(val?: any | null): void
+    /* Function overloads */
+    vfunc_set_value(value: MathConstant): void
     vfunc_get_value(): any | null
+    /* Function overloads */
+    vfunc_get_value(): MathConstant
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
+    vfunc_evaluate(): MathExpression
+    vfunc_get_name(): string
+    vfunc_set_name(value: string): void
+    vfunc_get_bind(): MathVariable
+    vfunc_set_bind(value: MathVariable): void
+    vfunc_get_binded(): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1039,6 +1372,16 @@ class MathParameter {
     connect(sigName: "notify", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::name", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::name", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::value", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::value", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::bind", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::bind", callback: (($obj: MathParameter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1048,11 +1391,16 @@ class MathParameter {
     _init (config?: MathParameter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathPlus_ConstructProps extends GObject.Object_ConstructProps {
+interface MathPlus_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathPlus {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1075,6 +1423,18 @@ class MathPlus {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.MathPlus */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1087,6 +1447,10 @@ class MathPlus {
     connect(sigName: "notify", callback: (($obj: MathPlus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathPlus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathPlus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathPlus, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathPlus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathPlus, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1096,11 +1460,16 @@ class MathPlus {
     _init (config?: MathPlus_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathPolynomial_ConstructProps extends GObject.Object_ConstructProps {
+interface MathPolynomial_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathPolynomial {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathPolynomial */
     evaluate(): MathExpression
     /* Methods of GObject-2.0.GObject.Object */
@@ -1125,8 +1494,19 @@ class MathPolynomial {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.MathPolynomial */
     vfunc_evaluate(): MathExpression
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1139,6 +1519,10 @@ class MathPolynomial {
     connect(sigName: "notify", callback: (($obj: MathPolynomial, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathPolynomial, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathPolynomial, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathPolynomial, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathPolynomial, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathPolynomial, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1148,11 +1532,16 @@ class MathPolynomial {
     _init (config?: MathPolynomial_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathPow_ConstructProps extends GObject.Object_ConstructProps {
+interface MathPow_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathPow {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1175,6 +1564,18 @@ class MathPow {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.MathPow */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1187,6 +1588,10 @@ class MathPow {
     connect(sigName: "notify", callback: (($obj: MathPow, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathPow, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathPow, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathPow, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathPow, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathPow, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1196,13 +1601,13 @@ class MathPow {
     _init (config?: MathPow_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathResult_ConstructProps extends GObject.Object_ConstructProps {
+interface MathResult_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MathResult {
     /* Properties of GCalc-2.GCalc.MathResult */
     readonly expression: MathExpression
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathResult */
     to_string(): string
     get_expression(): MathExpression
@@ -1254,11 +1659,16 @@ class MathResult {
     _init (config?: MathResult_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MathTerm_ConstructProps extends GObject.Object_ConstructProps {
+interface MathTerm_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathTerm {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathTerm */
     add(t: MathTerm): MathExpression
     evaluate(): MathExpression
@@ -1284,9 +1694,20 @@ class MathTerm {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.MathTerm */
     vfunc_add(t: MathTerm): MathExpression
     vfunc_evaluate(): MathExpression
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1299,6 +1720,10 @@ class MathTerm {
     connect(sigName: "notify", callback: (($obj: MathTerm, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: MathTerm, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: MathTerm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathTerm, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathTerm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathTerm, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1310,18 +1735,24 @@ class MathTerm {
     static evaluate_constants(c1: MathConstant, c2: MathConstant, op: MathOperator): MathExpression
     static $gtype: GObject.Type
 }
-export interface MathVariable_ConstructProps extends GObject.Object_ConstructProps {
+interface MathVariable_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathVariable */
     name?: string
     value?: MathConstant
     bind?: MathVariable
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class MathVariable {
     /* Properties of GCalc-2.GCalc.MathVariable */
     name: string
     value: MathConstant
     bind: MathVariable
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.MathVariable */
     evaluate(): MathExpression
     get_name(): string
@@ -1353,6 +1784,12 @@ class MathVariable {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    to_string(): string
+    solve(): MathResult
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.MathVariable */
     vfunc_evaluate(): MathExpression
     vfunc_get_name(): string
@@ -1362,6 +1799,11 @@ class MathVariable {
     vfunc_get_bind(): MathVariable
     vfunc_set_bind(value: MathVariable): void
     vfunc_get_binded(): boolean
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1380,6 +1822,10 @@ class MathVariable {
     connect_after(sigName: "notify::value", callback: (($obj: MathVariable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::bind", callback: (($obj: MathVariable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::bind", callback: (($obj: MathVariable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: MathVariable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: MathVariable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: MathVariable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: MathVariable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1389,11 +1835,16 @@ class MathVariable {
     _init (config?: MathVariable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Assign_ConstructProps extends Expression_ConstructProps {
+interface Assign_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Assign {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -1419,8 +1870,18 @@ class Assign {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Methods of GCalc-2.GCalc.MathAssign */
     evaluate(): MathExpression
+    /* Virtual methods of GCalc-2.GCalc.Assign */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -1439,6 +1900,10 @@ class Assign {
     connect(sigName: "notify", callback: (($obj: Assign, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Assign, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Assign, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Assign, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Assign, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Assign, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1448,13 +1913,20 @@ class Assign {
     _init (config?: Assign_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Assign
+    /* Function overloads */
+    static new(): Assign
     static $gtype: GObject.Type
 }
-export interface Constant_ConstructProps extends Expression_ConstructProps {
+interface Constant_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Constant {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -1487,6 +1959,10 @@ class Constant {
     divide(c: MathConstant): MathConstant
     neg(): MathConstant
     pow(c: MathConstant): MathConstant
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Methods of GCalc-2.GCalc.MathConstantNumber */
     value(): number
     /* Methods of GCalc-2.GCalc.MathConstantComplex */
@@ -1500,6 +1976,11 @@ class Constant {
     vfunc_divide(c: MathConstant): MathConstant
     vfunc_neg(): MathConstant
     vfunc_pow(c: MathConstant): MathConstant
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_value(): number
     vfunc_real(): number
     vfunc_imag(): number
@@ -1522,6 +2003,10 @@ class Constant {
     connect(sigName: "notify", callback: (($obj: Constant, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Constant, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Constant, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Constant, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Constant, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Constant, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1535,13 +2020,20 @@ class Constant {
     static double(val: number): Constant
     static complex(real: number, imag: number): Constant
     static new(): Constant
+    /* Function overloads */
+    static new(): Constant
     static $gtype: GObject.Type
 }
-export interface Division_ConstructProps extends Expression_ConstructProps {
+interface Division_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Division {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -1567,6 +2059,16 @@ class Division {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.Division */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -1585,6 +2087,10 @@ class Division {
     connect(sigName: "notify", callback: (($obj: Division, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Division, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Division, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Division, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Division, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Division, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1594,15 +2100,22 @@ class Division {
     _init (config?: Division_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Division
+    /* Function overloads */
+    static new(): Division
     static $gtype: GObject.Type
 }
-export interface Equation_ConstructProps extends Expression_ConstructProps {
+interface Equation_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Equation {
     /* Properties of GCalc-2.GCalc.MathEquation */
     readonly variables: ExpressionHashMap
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -1630,8 +2143,17 @@ class Equation {
     watch_closure(closure: Function): void
     /* Methods of GCalc-2.GCalc.MathEquation */
     get_variables(): ExpressionHashMap
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Equation */
     vfunc_get_variables(): ExpressionHashMap
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -1652,6 +2174,10 @@ class Equation {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::variables", callback: (($obj: Equation, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::variables", callback: (($obj: Equation, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: Equation, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Equation, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Equation, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Equation, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1661,16 +2187,18 @@ class Equation {
     _init (config?: Equation_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Equation
+    /* Function overloads */
+    static new(): Equation
     static $gtype: GObject.Type
 }
-export interface EquationManager_ConstructProps extends GObject.Object_ConstructProps {
+interface EquationManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class EquationManager {
     /* Properties of GCalc-2.GCalc.MathEquationManager */
     readonly equations: ExpressionContainer
     readonly functions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1728,7 +2256,7 @@ class EquationManager {
     static new(): EquationManager
     static $gtype: GObject.Type
 }
-export interface ErrorResult_ConstructProps extends GObject.Object_ConstructProps {
+interface ErrorResult_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ErrorResult {
     /* Properties of GCalc-2.GCalc.MathResult */
@@ -1736,7 +2264,7 @@ class ErrorResult {
     /* Properties of GCalc-2.GCalc.MathErrorResult */
     readonly message: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1795,7 +2323,8 @@ class ErrorResult {
     static new(msg: string): ErrorResult
     static $gtype: GObject.Type
 }
-export interface Expression_ConstructProps extends GObject.Object_ConstructProps {
+interface Expression_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
     parent?: MathExpression
 }
 class Expression {
@@ -1803,7 +2332,7 @@ class Expression {
     parent: MathExpression
     readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -1866,11 +2395,11 @@ class Expression {
     static new(): Expression
     static $gtype: GObject.Type
 }
-export interface ErrorExpression_ConstructProps extends Expression_ConstructProps {
+interface ErrorExpression_ConstructProps extends Expression_ConstructProps {
 }
 class ErrorExpression {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -1923,9 +2452,12 @@ class ErrorExpression {
     _init (config?: ErrorExpression_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): ErrorExpression
+    /* Function overloads */
+    static new(): ErrorExpression
     static $gtype: GObject.Type
 }
-export interface ExpressionContainer_ConstructProps extends Gee.ArrayList_ConstructProps {
+interface ExpressionContainer_ConstructProps extends Gee.ArrayList_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.ExpressionContainer */
     parent?: MathExpression
 }
 class ExpressionContainer {
@@ -1937,11 +2469,11 @@ class ExpressionContainer {
     readonly size: number
     readonly read_only: boolean
     /* Fields of Gee-0.8.Gee.ArrayList */
-    _items: object[]
-    _items_length1: number
-    _size: number
+    readonly _items: object[]
+    readonly _items_length1: number
+    readonly _size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.ExpressionContainer */
     get_object(position: number): GObject.Object | null
     find(exp: MathExpression): MathExpression | null
@@ -2015,11 +2547,23 @@ class ExpressionContainer {
     vfunc_get_item_type(): GObject.Type
     vfunc_get_n_items(): number
     vfunc_get_read_only_view(): Gee.BidirList
+    /* Function overloads */
     vfunc_get_read_only_view(): Gee.List
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.List
+    /* Function overloads */
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.Collection
     vfunc_get_read_only_view(): Gee.Collection
     /* Virtual methods of Gee-0.8.Gee.ArrayList */
     vfunc_get_read_only_view(): Gee.BidirList
+    /* Function overloads */
     vfunc_get_read_only_view(): Gee.List
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.List
+    /* Function overloads */
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.Collection
     vfunc_get_read_only_view(): Gee.Collection
     /* Virtual methods of Gee-0.8.Gee.AbstractBidirList */
     vfunc_bidir_list_iterator(): Gee.BidirListIterator
@@ -2034,15 +2578,79 @@ class ExpressionContainer {
     vfunc_reserved8(): void
     vfunc_reserved9(): void
     vfunc_get_read_only_view(): Gee.BidirList
+    /* Function overloads */
     vfunc_get_read_only_view(): Gee.List
     vfunc_get_read_only_view(): Gee.Collection
-    /* Virtual methods of Gee-0.8.Gee.AbstractList */
+    vfunc_get_read_only_view(): Gee.List
+    /* Function overloads */
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.Collection
     vfunc_list_iterator(): Gee.ListIterator
     vfunc_get(index: number): object | null
     vfunc_set(index: number, item?: object | null): void
     vfunc_index_of(item?: object | null): number
     vfunc_insert(index: number, item?: object | null): void
     vfunc_remove_at(index: number): object | null
+    vfunc_slice(start: number, stop: number): Gee.List | null
+    vfunc_first(): object | null
+    vfunc_last(): object | null
+    vfunc_insert_all(index: number, collection: Gee.Collection): void
+    vfunc_sort(compare_func: GLib.CompareDataFunc | null): void
+    vfunc_contains(item?: object | null): boolean
+    vfunc_add(item?: object | null): boolean
+    vfunc_remove(item?: object | null): boolean
+    vfunc_clear(): void
+    vfunc_add_all(collection: Gee.Collection): boolean
+    vfunc_contains_all(collection: Gee.Collection): boolean
+    vfunc_remove_all(collection: Gee.Collection): boolean
+    vfunc_retain_all(collection: Gee.Collection): boolean
+    vfunc_to_array(): object[]
+    vfunc_add_all_array(array: object[]): boolean
+    vfunc_contains_all_array(array: object[]): boolean
+    vfunc_remove_all_array(array: object[]): boolean
+    vfunc_add_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_contains_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_remove_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_get_size(): number
+    vfunc_get_is_empty(): boolean
+    vfunc_get_read_only(): boolean
+    vfunc_iterator(): Gee.Iterator
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    vfunc_fold(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): object | null
+    vfunc_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.MapFunc): Gee.Iterator
+    vfunc_scan(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): Gee.Iterator
+    vfunc_filter(pred: Gee.Predicate): Gee.Iterator
+    vfunc_chop(offset: number, length: number): Gee.Iterator
+    vfunc_flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FlatMapFunc): Gee.Iterator
+    vfunc_tee(forks: number): Gee.Iterator[]
+    vfunc_first_match(pred: Gee.Predicate): object | null
+    vfunc_any_match(pred: Gee.Predicate): boolean
+    vfunc_all_match(pred: Gee.Predicate): boolean
+    vfunc_max(compare: GLib.CompareDataFunc): object | null
+    vfunc_min(compare: GLib.CompareDataFunc): object | null
+    vfunc_order_by(compare: GLib.CompareDataFunc | null): Gee.Iterator
+    vfunc_get_element_type(): GObject.Type
+    /* Virtual methods of Gee-0.8.Gee.AbstractList */
+    vfunc_list_iterator(): Gee.ListIterator
+    vfunc_get(index: number): object | null
+    /* Function overloads */
+    vfunc_get(index: number): object | null
+    vfunc_set(index: number, item?: object | null): void
+    /* Function overloads */
+    vfunc_set(index: number, item?: object | null): void
+    vfunc_index_of(item?: object | null): number
+    /* Function overloads */
+    vfunc_index_of(item?: object | null): number
+    vfunc_insert(index: number, item?: object | null): void
+    /* Function overloads */
+    vfunc_insert(index: number, item?: object | null): void
+    vfunc_remove_at(index: number): object | null
+    /* Function overloads */
+    vfunc_remove_at(index: number): object | null
+    vfunc_slice(start: number, stop: number): Gee.List | null
+    /* Function overloads */
     vfunc_slice(start: number, stop: number): Gee.List | null
     vfunc_reserved0(): void
     vfunc_reserved1(): void
@@ -2055,17 +2663,64 @@ class ExpressionContainer {
     vfunc_reserved8(): void
     vfunc_reserved9(): void
     vfunc_get_read_only_view(): Gee.List
+    /* Function overloads */
+    vfunc_get_read_only_view(): Gee.Collection
     vfunc_get_read_only_view(): Gee.Collection
     vfunc_first(): object | null
     vfunc_last(): object | null
     vfunc_insert_all(index: number, collection: Gee.Collection): void
     vfunc_sort(compare_func: GLib.CompareDataFunc | null): void
-    /* Virtual methods of Gee-0.8.Gee.AbstractCollection */
     vfunc_contains(item?: object | null): boolean
     vfunc_add(item?: object | null): boolean
     vfunc_remove(item?: object | null): boolean
     vfunc_clear(): void
+    vfunc_add_all(collection: Gee.Collection): boolean
+    vfunc_contains_all(collection: Gee.Collection): boolean
+    vfunc_remove_all(collection: Gee.Collection): boolean
+    vfunc_retain_all(collection: Gee.Collection): boolean
+    vfunc_to_array(): object[]
+    vfunc_add_all_array(array: object[]): boolean
+    vfunc_contains_all_array(array: object[]): boolean
+    vfunc_remove_all_array(array: object[]): boolean
+    vfunc_add_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_contains_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_remove_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_get_size(): number
+    vfunc_get_is_empty(): boolean
+    vfunc_get_read_only(): boolean
     vfunc_iterator(): Gee.Iterator
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    vfunc_fold(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): object | null
+    vfunc_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.MapFunc): Gee.Iterator
+    vfunc_scan(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): Gee.Iterator
+    vfunc_filter(pred: Gee.Predicate): Gee.Iterator
+    vfunc_chop(offset: number, length: number): Gee.Iterator
+    vfunc_flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FlatMapFunc): Gee.Iterator
+    vfunc_tee(forks: number): Gee.Iterator[]
+    vfunc_first_match(pred: Gee.Predicate): object | null
+    vfunc_any_match(pred: Gee.Predicate): boolean
+    vfunc_all_match(pred: Gee.Predicate): boolean
+    vfunc_max(compare: GLib.CompareDataFunc): object | null
+    vfunc_min(compare: GLib.CompareDataFunc): object | null
+    vfunc_order_by(compare: GLib.CompareDataFunc | null): Gee.Iterator
+    vfunc_get_element_type(): GObject.Type
+    /* Virtual methods of Gee-0.8.Gee.AbstractCollection */
+    vfunc_contains(item?: object | null): boolean
+    /* Function overloads */
+    vfunc_contains(item?: object | null): boolean
+    vfunc_add(item?: object | null): boolean
+    /* Function overloads */
+    vfunc_add(item?: object | null): boolean
+    vfunc_remove(item?: object | null): boolean
+    /* Function overloads */
+    vfunc_remove(item?: object | null): boolean
+    vfunc_clear(): void
+    vfunc_iterator(): Gee.Iterator
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    /* Function overloads */
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_foreach(f: Gee.ForallFunc): boolean
     vfunc_foreach(f: Gee.ForallFunc): boolean
     vfunc_reserved0(): void
     vfunc_reserved1(): void
@@ -2140,10 +2795,12 @@ class ExpressionContainer {
     _init (config?: ExpressionContainer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): ExpressionContainer
+    /* Function overloads */
     static new(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, equal_func: Gee.EqualDataFunc | null): ExpressionContainer
     static $gtype: GObject.Type
 }
-export interface ExpressionHashMap_ConstructProps extends Gee.HashMap_ConstructProps {
+interface ExpressionHashMap_ConstructProps extends Gee.HashMap_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.ExpressionHashMap */
     parent?: MathExpression
 }
 class ExpressionHashMap {
@@ -2157,7 +2814,7 @@ class ExpressionHashMap {
     readonly entries: Gee.Set
     readonly read_only_view: Gee.Map
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.ExpressionHashMap */
     add(exp: MathExpression): void
     remove(exp: MathExpression): void
@@ -2218,13 +2875,31 @@ class ExpressionHashMap {
     watch_closure(closure: Function): void
     /* Virtual methods of Gee-0.8.Gee.AbstractMap */
     vfunc_has_key(key?: object | null): boolean
+    /* Function overloads */
+    vfunc_has_key(key?: object | null): boolean
+    vfunc_has(key?: object | null, value?: object | null): boolean
+    /* Function overloads */
     vfunc_has(key?: object | null, value?: object | null): boolean
     vfunc_get(key?: object | null): object | null
+    /* Function overloads */
+    vfunc_get(key?: object | null): object | null
     vfunc_set(key?: object | null, value?: object | null): void
+    /* Function overloads */
+    vfunc_set(key?: object | null, value?: object | null): void
+    vfunc_unset(key?: object | null): [ /* returnType */ boolean, /* value */ object | null ]
+    /* Function overloads */
     vfunc_unset(key?: object | null): [ /* returnType */ boolean, /* value */ object | null ]
     vfunc_map_iterator(): Gee.MapIterator
     vfunc_clear(): void
     vfunc_foreach(f: Gee.ForallFunc): boolean
+    /* Function overloads */
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    /* Function overloads */
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
     vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
     vfunc_reserved0(): void
     vfunc_reserved1(): void
@@ -2296,13 +2971,17 @@ class ExpressionHashMap {
     _init (config?: ExpressionHashMap_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): ExpressionHashMap
+    /* Function overloads */
     static new(k_type: GObject.Type, k_dup_func: GObject.BoxedCopyFunc, k_destroy_func: GLib.DestroyNotify, v_type: GObject.Type, v_dup_func: GObject.BoxedCopyFunc, v_destroy_func: GLib.DestroyNotify, key_hash_func: Gee.HashDataFunc | null, key_equal_func: Gee.EqualDataFunc | null, value_equal_func: Gee.EqualDataFunc | null): ExpressionHashMap
     static $gtype: GObject.Type
 }
-export interface Function_ConstructProps extends Expression_ConstructProps {
+interface Function_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathFunction */
     name?: string
     n_params?: number
     closed?: boolean
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Function {
     /* Properties of GCalc-2.GCalc.MathFunction */
@@ -2310,8 +2989,11 @@ class Function {
     name: string
     n_params: number
     closed: boolean
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -2348,6 +3030,10 @@ class Function {
     set_n_params(value: number): void
     get_closed(): boolean
     set_closed(value: boolean): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Methods of GCalc-2.GCalc.Hashable */
     hash(): number
     /* Virtual methods of GCalc-2.GCalc.Function */
@@ -2360,6 +3046,11 @@ class Function {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -2387,6 +3078,10 @@ class Function {
     connect_after(sigName: "notify::n-params", callback: (($obj: Function, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::closed", callback: (($obj: Function, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::closed", callback: (($obj: Function, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: Function, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Function, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Function, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Function, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2397,13 +3092,15 @@ class Function {
     /* Static methods and pseudo-constructors */
     static with_name(name: string, nparams: number): Function
     static new(): Function
+    /* Function overloads */
+    static new(): Function
     static $gtype: GObject.Type
 }
-export interface FunctionAcos_ConstructProps extends Function_ConstructProps {
+interface FunctionAcos_ConstructProps extends Function_ConstructProps {
 }
 class FunctionAcos {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -2441,6 +3138,11 @@ class FunctionAcos {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -2469,13 +3171,16 @@ class FunctionAcos {
     _init (config?: FunctionAcos_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionAcos
+    /* Function overloads */
+    static new(): FunctionAcos
+    static new(): FunctionAcos
     static $gtype: GObject.Type
 }
-export interface FunctionAcosh_ConstructProps extends Function_ConstructProps {
+interface FunctionAcosh_ConstructProps extends Function_ConstructProps {
 }
 class FunctionAcosh {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -2513,6 +3218,11 @@ class FunctionAcosh {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -2541,13 +3251,16 @@ class FunctionAcosh {
     _init (config?: FunctionAcosh_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionAcosh
+    /* Function overloads */
+    static new(): FunctionAcosh
+    static new(): FunctionAcosh
     static $gtype: GObject.Type
 }
-export interface FunctionAsin_ConstructProps extends Function_ConstructProps {
+interface FunctionAsin_ConstructProps extends Function_ConstructProps {
 }
 class FunctionAsin {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -2585,6 +3298,11 @@ class FunctionAsin {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -2613,13 +3331,16 @@ class FunctionAsin {
     _init (config?: FunctionAsin_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionAsin
+    /* Function overloads */
+    static new(): FunctionAsin
+    static new(): FunctionAsin
     static $gtype: GObject.Type
 }
-export interface FunctionAsinh_ConstructProps extends Function_ConstructProps {
+interface FunctionAsinh_ConstructProps extends Function_ConstructProps {
 }
 class FunctionAsinh {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -2657,6 +3378,11 @@ class FunctionAsinh {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -2685,13 +3411,16 @@ class FunctionAsinh {
     _init (config?: FunctionAsinh_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionAsinh
+    /* Function overloads */
+    static new(): FunctionAsinh
+    static new(): FunctionAsinh
     static $gtype: GObject.Type
 }
-export interface FunctionAtan_ConstructProps extends Function_ConstructProps {
+interface FunctionAtan_ConstructProps extends Function_ConstructProps {
 }
 class FunctionAtan {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -2729,6 +3458,11 @@ class FunctionAtan {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -2757,13 +3491,16 @@ class FunctionAtan {
     _init (config?: FunctionAtan_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionAtan
+    /* Function overloads */
+    static new(): FunctionAtan
+    static new(): FunctionAtan
     static $gtype: GObject.Type
 }
-export interface FunctionAtanh_ConstructProps extends Function_ConstructProps {
+interface FunctionAtanh_ConstructProps extends Function_ConstructProps {
 }
 class FunctionAtanh {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -2801,6 +3538,11 @@ class FunctionAtanh {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -2829,13 +3571,16 @@ class FunctionAtanh {
     _init (config?: FunctionAtanh_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionAtanh
+    /* Function overloads */
+    static new(): FunctionAtanh
+    static new(): FunctionAtanh
     static $gtype: GObject.Type
 }
-export interface FunctionCos_ConstructProps extends Function_ConstructProps {
+interface FunctionCos_ConstructProps extends Function_ConstructProps {
 }
 class FunctionCos {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -2873,6 +3618,11 @@ class FunctionCos {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -2901,13 +3651,16 @@ class FunctionCos {
     _init (config?: FunctionCos_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionCos
+    /* Function overloads */
+    static new(): FunctionCos
+    static new(): FunctionCos
     static $gtype: GObject.Type
 }
-export interface FunctionCosh_ConstructProps extends Function_ConstructProps {
+interface FunctionCosh_ConstructProps extends Function_ConstructProps {
 }
 class FunctionCosh {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -2945,6 +3698,11 @@ class FunctionCosh {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -2973,13 +3731,16 @@ class FunctionCosh {
     _init (config?: FunctionCosh_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionCosh
+    /* Function overloads */
+    static new(): FunctionCosh
+    static new(): FunctionCosh
     static $gtype: GObject.Type
 }
-export interface FunctionExp_ConstructProps extends Function_ConstructProps {
+interface FunctionExp_ConstructProps extends Function_ConstructProps {
 }
 class FunctionExp {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -3017,6 +3778,11 @@ class FunctionExp {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -3045,13 +3811,16 @@ class FunctionExp {
     _init (config?: FunctionExp_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionExp
+    /* Function overloads */
+    static new(): FunctionExp
+    static new(): FunctionExp
     static $gtype: GObject.Type
 }
-export interface FunctionLog_ConstructProps extends Function_ConstructProps {
+interface FunctionLog_ConstructProps extends Function_ConstructProps {
 }
 class FunctionLog {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -3089,6 +3858,11 @@ class FunctionLog {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -3117,13 +3891,16 @@ class FunctionLog {
     _init (config?: FunctionLog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionLog
+    /* Function overloads */
+    static new(): FunctionLog
+    static new(): FunctionLog
     static $gtype: GObject.Type
 }
-export interface FunctionSin_ConstructProps extends Function_ConstructProps {
+interface FunctionSin_ConstructProps extends Function_ConstructProps {
 }
 class FunctionSin {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -3161,6 +3938,11 @@ class FunctionSin {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -3189,13 +3971,16 @@ class FunctionSin {
     _init (config?: FunctionSin_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionSin
+    /* Function overloads */
+    static new(): FunctionSin
+    static new(): FunctionSin
     static $gtype: GObject.Type
 }
-export interface FunctionSinh_ConstructProps extends Function_ConstructProps {
+interface FunctionSinh_ConstructProps extends Function_ConstructProps {
 }
 class FunctionSinh {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -3233,6 +4018,11 @@ class FunctionSinh {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -3261,13 +4051,16 @@ class FunctionSinh {
     _init (config?: FunctionSinh_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionSinh
+    /* Function overloads */
+    static new(): FunctionSinh
+    static new(): FunctionSinh
     static $gtype: GObject.Type
 }
-export interface FunctionSqrt_ConstructProps extends Function_ConstructProps {
+interface FunctionSqrt_ConstructProps extends Function_ConstructProps {
 }
 class FunctionSqrt {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -3305,6 +4098,11 @@ class FunctionSqrt {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -3333,13 +4131,16 @@ class FunctionSqrt {
     _init (config?: FunctionSqrt_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionSqrt
+    /* Function overloads */
+    static new(): FunctionSqrt
+    static new(): FunctionSqrt
     static $gtype: GObject.Type
 }
-export interface FunctionTan_ConstructProps extends Function_ConstructProps {
+interface FunctionTan_ConstructProps extends Function_ConstructProps {
 }
 class FunctionTan {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -3377,6 +4178,11 @@ class FunctionTan {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -3405,13 +4211,16 @@ class FunctionTan {
     _init (config?: FunctionTan_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionTan
+    /* Function overloads */
+    static new(): FunctionTan
+    static new(): FunctionTan
     static $gtype: GObject.Type
 }
-export interface FunctionTanh_ConstructProps extends Function_ConstructProps {
+interface FunctionTanh_ConstructProps extends Function_ConstructProps {
 }
 class FunctionTanh {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Function */
     evaluate(): MathExpression
     /* Methods of GCalc-2.GCalc.Expression */
@@ -3449,6 +4258,11 @@ class FunctionTanh {
     vfunc_set_n_params(value: number): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -3477,18 +4291,27 @@ class FunctionTanh {
     _init (config?: FunctionTanh_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FunctionTanh
+    /* Function overloads */
+    static new(): FunctionTanh
+    static new(): FunctionTanh
     static $gtype: GObject.Type
 }
-export interface Group_ConstructProps extends Expression_ConstructProps {
+interface Group_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathGroup */
     level?: MathGroupLevel
     closed?: boolean
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Group {
     /* Properties of GCalc-2.GCalc.MathGroup */
     level: MathGroupLevel
     closed: boolean
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -3520,12 +4343,21 @@ class Group {
     set_level(value: MathGroupLevel): void
     get_closed(): boolean
     set_closed(value: boolean): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Group */
     vfunc_evaluate(): MathExpression
     vfunc_get_level(): MathGroupLevel
     vfunc_set_level(value: MathGroupLevel): void
     vfunc_get_closed(): boolean
     vfunc_set_closed(value: boolean): void
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -3548,6 +4380,10 @@ class Group {
     connect_after(sigName: "notify::level", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::closed", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::closed", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3557,13 +4393,20 @@ class Group {
     _init (config?: Group_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Group
+    /* Function overloads */
+    static new(): Group
     static $gtype: GObject.Type
 }
-export interface Minus_ConstructProps extends Expression_ConstructProps {
+interface Minus_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Minus {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -3589,6 +4432,16 @@ class Minus {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.Minus */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -3607,6 +4460,10 @@ class Minus {
     connect(sigName: "notify", callback: (($obj: Minus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Minus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Minus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Minus, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Minus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Minus, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3616,13 +4473,20 @@ class Minus {
     _init (config?: Minus_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Minus
+    /* Function overloads */
+    static new(): Minus
     static $gtype: GObject.Type
 }
-export interface Multiply_ConstructProps extends Expression_ConstructProps {
+interface Multiply_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Multiply {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -3648,6 +4512,16 @@ class Multiply {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.Multiply */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -3666,6 +4540,10 @@ class Multiply {
     connect(sigName: "notify", callback: (($obj: Multiply, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Multiply, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Multiply, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Multiply, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Multiply, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Multiply, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3675,13 +4553,28 @@ class Multiply {
     _init (config?: Multiply_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Multiply
+    /* Function overloads */
+    static new(): Multiply
     static $gtype: GObject.Type
 }
-export interface Parameter_ConstructProps extends Variable_ConstructProps {
+interface Parameter_ConstructProps extends Variable_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
+    /* Constructor properties of GCalc-2.GCalc.MathVariable */
+    name?: string
+    value?: MathConstant
+    bind?: MathVariable
 }
 class Parameter {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
+    /* Properties of GCalc-2.GCalc.MathVariable */
+    name: string
+    value: MathConstant
+    bind: MathVariable
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -3710,11 +4603,37 @@ class Parameter {
     /* Methods of GCalc-2.GCalc.MathParameter */
     set_value(val?: any | null): void
     get_value(): any | null
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Methods of GCalc-2.GCalc.MathVariable */
+    evaluate(): MathExpression
+    get_name(): string
+    set_name(value: string): void
+    get_value(): MathConstant
+    set_value(value: MathConstant): void
+    get_bind(): MathVariable
+    set_bind(value: MathVariable): void
+    get_binded(): boolean
     /* Virtual methods of GCalc-2.GCalc.Parameter */
     vfunc_set_value(val?: any | null): void
+    /* Function overloads */
     vfunc_set_value(value: MathConstant): void
     vfunc_get_value(): any | null
+    /* Function overloads */
     vfunc_get_value(): MathConstant
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
+    vfunc_evaluate(): MathExpression
+    vfunc_get_name(): string
+    vfunc_set_name(value: string): void
+    vfunc_get_bind(): MathVariable
+    vfunc_set_bind(value: MathVariable): void
+    vfunc_get_binded(): boolean
     /* Virtual methods of GCalc-2.GCalc.Variable */
     vfunc_evaluate(): MathExpression
     vfunc_get_name(): string
@@ -3724,6 +4643,11 @@ class Parameter {
     vfunc_get_bind(): MathVariable
     vfunc_set_bind(value: MathVariable): void
     vfunc_get_binded(): boolean
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -3743,6 +4667,16 @@ class Parameter {
     connect(sigName: "notify", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::name", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::name", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::value", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::value", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::bind", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::bind", callback: (($obj: Parameter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3752,14 +4686,15 @@ class Parameter {
     _init (config?: Parameter_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(name: string): Parameter
+    /* Function overloads */
     static new(): Parameter
     static $gtype: GObject.Type
 }
-export interface Parser_ConstructProps extends GObject.Object_ConstructProps {
+interface Parser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Parser {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Parser */
     parse(str: string, eqman: MathEquationManager): void
     read_token(): ParserTokenType
@@ -3809,11 +4744,16 @@ class Parser {
     static new(): Parser
     static $gtype: GObject.Type
 }
-export interface Plus_ConstructProps extends Expression_ConstructProps {
+interface Plus_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Plus {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -3839,6 +4779,16 @@ class Plus {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.Plus */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -3857,6 +4807,10 @@ class Plus {
     connect(sigName: "notify", callback: (($obj: Plus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Plus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Plus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Plus, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Plus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Plus, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3866,13 +4820,20 @@ class Plus {
     _init (config?: Plus_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Plus
+    /* Function overloads */
+    static new(): Plus
     static $gtype: GObject.Type
 }
-export interface Polynomial_ConstructProps extends Expression_ConstructProps {
+interface Polynomial_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Polynomial {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -3900,8 +4861,17 @@ class Polynomial {
     watch_closure(closure: Function): void
     /* Methods of GCalc-2.GCalc.MathPolynomial */
     evaluate(): MathExpression
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Polynomial */
     vfunc_evaluate(): MathExpression
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -3920,6 +4890,10 @@ class Polynomial {
     connect(sigName: "notify", callback: (($obj: Polynomial, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Polynomial, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Polynomial, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Polynomial, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Polynomial, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Polynomial, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3929,13 +4903,20 @@ class Polynomial {
     _init (config?: Polynomial_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Polynomial
+    /* Function overloads */
+    static new(): Polynomial
     static $gtype: GObject.Type
 }
-export interface Pow_ConstructProps extends Expression_ConstructProps {
+interface Pow_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Pow {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -3961,6 +4942,16 @@ class Pow {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
+    /* Virtual methods of GCalc-2.GCalc.Pow */
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -3979,6 +4970,10 @@ class Pow {
     connect(sigName: "notify", callback: (($obj: Pow, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Pow, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Pow, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Pow, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Pow, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Pow, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3988,15 +4983,17 @@ class Pow {
     _init (config?: Pow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Pow
+    /* Function overloads */
+    static new(): Pow
     static $gtype: GObject.Type
 }
-export interface Result_ConstructProps extends GObject.Object_ConstructProps {
+interface Result_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Result {
     /* Properties of GCalc-2.GCalc.MathResult */
     readonly expression: MathExpression
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4050,14 +5047,15 @@ class Result {
     static new(exp: MathExpression): Result
     static $gtype: GObject.Type
 }
-export interface Solver_ConstructProps extends GObject.Object_ConstructProps {
+interface Solver_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.Solver */
     equation_manager?: MathEquationManager
 }
 class Solver {
     /* Properties of GCalc-2.GCalc.Solver */
     equation_manager: MathEquationManager
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Solver */
     add_expression(exp: string): void
     solve(str: string): MathResult
@@ -4110,11 +5108,16 @@ class Solver {
     static new(): Solver
     static $gtype: GObject.Type
 }
-export interface Term_ConstructProps extends Expression_ConstructProps {
+interface Term_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Term {
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -4143,9 +5146,18 @@ class Term {
     /* Methods of GCalc-2.GCalc.MathTerm */
     add(t: MathTerm): MathExpression
     evaluate(): MathExpression
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Term */
     vfunc_add(t: MathTerm): MathExpression
     vfunc_evaluate(): MathExpression
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
     vfunc_solve(): MathResult
@@ -4164,6 +5176,10 @@ class Term {
     connect(sigName: "notify", callback: (($obj: Term, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Term, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::parent", callback: (($obj: Term, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Term, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Term, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Term, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -4173,21 +5189,29 @@ class Term {
     _init (config?: Term_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Term
+    /* Function overloads */
+    static new(): Term
     static evaluate_constants(c1: MathConstant, c2: MathConstant, op: MathOperator): MathExpression
     static $gtype: GObject.Type
 }
-export interface Variable_ConstructProps extends Expression_ConstructProps {
+interface Variable_ConstructProps extends Expression_ConstructProps {
+    /* Constructor properties of GCalc-2.GCalc.MathVariable */
     name?: string
     value?: MathConstant
     bind?: MathVariable
+    /* Constructor properties of GCalc-2.GCalc.MathExpression */
+    parent?: MathExpression
 }
 class Variable {
     /* Properties of GCalc-2.GCalc.MathVariable */
     name: string
     value: MathConstant
     bind: MathVariable
+    /* Properties of GCalc-2.GCalc.MathExpression */
+    parent: MathExpression
+    readonly expressions: ExpressionContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCalc-2.GCalc.Expression */
     to_string(): string
     solve(): MathResult
@@ -4222,6 +5246,10 @@ class Variable {
     get_bind(): MathVariable
     set_bind(value: MathVariable): void
     get_binded(): boolean
+    /* Methods of GCalc-2.GCalc.MathExpression */
+    get_parent(): MathExpression
+    set_parent(value: MathExpression): void
+    get_expressions(): ExpressionContainer
     /* Methods of GCalc-2.GCalc.Hashable */
     hash(): number
     /* Virtual methods of GCalc-2.GCalc.Variable */
@@ -4233,6 +5261,11 @@ class Variable {
     vfunc_get_bind(): MathVariable
     vfunc_set_bind(value: MathVariable): void
     vfunc_get_binded(): boolean
+    vfunc_to_string(): string
+    vfunc_solve(): MathResult
+    vfunc_get_parent(): MathExpression
+    vfunc_set_parent(value: MathExpression): void
+    vfunc_get_expressions(): ExpressionContainer
     vfunc_hash(): number
     /* Virtual methods of GCalc-2.GCalc.Expression */
     vfunc_to_string(): string
@@ -4258,6 +5291,10 @@ class Variable {
     connect_after(sigName: "notify::value", callback: (($obj: Variable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::bind", callback: (($obj: Variable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::bind", callback: (($obj: Variable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::parent", callback: (($obj: Variable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::parent", callback: (($obj: Variable, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::expressions", callback: (($obj: Variable, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::expressions", callback: (($obj: Variable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -4305,8 +5342,8 @@ class ErrorResultPrivate {
 }
 abstract class ExpressionClass {
     /* Fields of GCalc-2.GCalc.ExpressionClass */
-    to_string: (self: Expression) => string
-    solve: (self: Expression) => MathResult
+    readonly to_string: (self: Expression) => string
+    readonly solve: (self: Expression) => MathResult
     static name: string
 }
 class ExpressionPrivate {
@@ -4332,7 +5369,7 @@ class ExpressionHashMapPrivate {
 }
 abstract class FunctionClass {
     /* Fields of GCalc-2.GCalc.FunctionClass */
-    evaluate: (self: Function) => MathExpression
+    readonly evaluate: (self: Function) => MathExpression
     static name: string
 }
 class FunctionPrivate {
@@ -4502,7 +5539,7 @@ class VariablePrivate {
 }
 abstract class HashableIface {
     /* Fields of GCalc-2.GCalc.HashableIface */
-    hash: (self: Hashable) => number
+    readonly hash: (self: Hashable) => number
     static name: string
 }
 abstract class MathAssignIface {
@@ -4513,24 +5550,24 @@ abstract class MathBinaryOperatorIface {
 }
 abstract class MathConstantIface {
     /* Fields of GCalc-2.GCalc.MathConstantIface */
-    add: (self: MathConstant, c: MathConstant) => MathConstant
-    subtract: (self: MathConstant, c: MathConstant) => MathConstant
-    multiply: (self: MathConstant, c: MathConstant) => MathConstant
-    divide: (self: MathConstant, c: MathConstant) => MathConstant
-    neg: (self: MathConstant) => MathConstant
-    pow: (self: MathConstant, c: MathConstant) => MathConstant
+    readonly add: (self: MathConstant, c: MathConstant) => MathConstant
+    readonly subtract: (self: MathConstant, c: MathConstant) => MathConstant
+    readonly multiply: (self: MathConstant, c: MathConstant) => MathConstant
+    readonly divide: (self: MathConstant, c: MathConstant) => MathConstant
+    readonly neg: (self: MathConstant) => MathConstant
+    readonly pow: (self: MathConstant, c: MathConstant) => MathConstant
     static name: string
 }
 abstract class MathConstantComplexIface {
     /* Fields of GCalc-2.GCalc.MathConstantComplexIface */
-    real: (self: MathConstantComplex) => number
-    imag: (self: MathConstantComplex) => number
-    zero: (self: MathConstantComplex) => void
+    readonly real: (self: MathConstantComplex) => number
+    readonly imag: (self: MathConstantComplex) => number
+    readonly zero: (self: MathConstantComplex) => void
     static name: string
 }
 abstract class MathConstantNumberIface {
     /* Fields of GCalc-2.GCalc.MathConstantNumberIface */
-    value: (self: MathConstantNumber) => number
+    readonly value: (self: MathConstantNumber) => number
     static name: string
 }
 abstract class MathDivisionIface {
@@ -4538,50 +5575,50 @@ abstract class MathDivisionIface {
 }
 abstract class MathEquationIface {
     /* Fields of GCalc-2.GCalc.MathEquationIface */
-    get_variables: (self: MathEquation) => ExpressionHashMap
+    readonly get_variables: (self: MathEquation) => ExpressionHashMap
     static name: string
 }
 abstract class MathEquationManagerIface {
     /* Fields of GCalc-2.GCalc.MathEquationManagerIface */
-    find_variable: (self: MathEquationManager, name: string) => MathVariable
-    get_equations: (self: MathEquationManager) => ExpressionContainer
-    get_functions: (self: MathEquationManager) => ExpressionContainer
+    readonly find_variable: (self: MathEquationManager, name: string) => MathVariable
+    readonly get_equations: (self: MathEquationManager) => ExpressionContainer
+    readonly get_functions: (self: MathEquationManager) => ExpressionContainer
     static name: string
 }
 abstract class MathErrorResultIface {
     /* Fields of GCalc-2.GCalc.MathErrorResultIface */
-    get_message: (self: MathErrorResult) => string
+    readonly get_message: (self: MathErrorResult) => string
     static name: string
 }
 abstract class MathExpressionIface {
     /* Fields of GCalc-2.GCalc.MathExpressionIface */
-    to_string: (self: MathExpression) => string
-    solve: (self: MathExpression) => MathResult
-    get_parent: (self: MathExpression) => MathExpression
-    set_parent: (self: MathExpression, value: MathExpression) => void
-    get_expressions: (self: MathExpression) => ExpressionContainer
+    readonly to_string: (self: MathExpression) => string
+    readonly solve: (self: MathExpression) => MathResult
+    readonly get_parent: (self: MathExpression) => MathExpression
+    readonly set_parent: (self: MathExpression, value: MathExpression) => void
+    readonly get_expressions: (self: MathExpression) => ExpressionContainer
     static name: string
 }
 abstract class MathFunctionIface {
     /* Fields of GCalc-2.GCalc.MathFunctionIface */
-    evaluate: (self: MathFunction) => MathExpression
-    verify_params: (self: MathFunction) => boolean
-    get_param_types: (self: MathFunction) => ExpressionContainer
-    get_name: (self: MathFunction) => string
-    set_name: (self: MathFunction, value: string) => void
-    get_n_params: (self: MathFunction) => number
-    set_n_params: (self: MathFunction, value: number) => void
-    get_closed: (self: MathFunction) => boolean
-    set_closed: (self: MathFunction, value: boolean) => void
+    readonly evaluate: (self: MathFunction) => MathExpression
+    readonly verify_params: (self: MathFunction) => boolean
+    readonly get_param_types: (self: MathFunction) => ExpressionContainer
+    readonly get_name: (self: MathFunction) => string
+    readonly set_name: (self: MathFunction, value: string) => void
+    readonly get_n_params: (self: MathFunction) => number
+    readonly set_n_params: (self: MathFunction, value: number) => void
+    readonly get_closed: (self: MathFunction) => boolean
+    readonly set_closed: (self: MathFunction, value: boolean) => void
     static name: string
 }
 abstract class MathGroupIface {
     /* Fields of GCalc-2.GCalc.MathGroupIface */
-    evaluate: (self: MathGroup) => MathExpression
-    get_level: (self: MathGroup) => MathGroupLevel
-    set_level: (self: MathGroup, value: MathGroupLevel) => void
-    get_closed: (self: MathGroup) => boolean
-    set_closed: (self: MathGroup, value: boolean) => void
+    readonly evaluate: (self: MathGroup) => MathExpression
+    readonly get_level: (self: MathGroup) => MathGroupLevel
+    readonly set_level: (self: MathGroup, value: MathGroupLevel) => void
+    readonly get_closed: (self: MathGroup) => boolean
+    readonly set_closed: (self: MathGroup, value: boolean) => void
     static name: string
 }
 abstract class MathMinusIface {
@@ -4595,8 +5632,8 @@ abstract class MathOperatorIface {
 }
 abstract class MathParameterIface {
     /* Fields of GCalc-2.GCalc.MathParameterIface */
-    set_value: (self: MathParameter, val?: any | null) => void
-    get_value: (self: MathParameter) => any | null
+    readonly set_value: (self: MathParameter, val?: any | null) => void
+    readonly get_value: (self: MathParameter) => any | null
     static name: string
 }
 abstract class MathPlusIface {
@@ -4604,7 +5641,7 @@ abstract class MathPlusIface {
 }
 abstract class MathPolynomialIface {
     /* Fields of GCalc-2.GCalc.MathPolynomialIface */
-    evaluate: (self: MathPolynomial) => MathExpression
+    readonly evaluate: (self: MathPolynomial) => MathExpression
     static name: string
 }
 abstract class MathPowIface {
@@ -4612,26 +5649,26 @@ abstract class MathPowIface {
 }
 abstract class MathResultIface {
     /* Fields of GCalc-2.GCalc.MathResultIface */
-    to_string: (self: MathResult) => string
-    get_expression: (self: MathResult) => MathExpression
+    readonly to_string: (self: MathResult) => string
+    readonly get_expression: (self: MathResult) => MathExpression
     static name: string
 }
 abstract class MathTermIface {
     /* Fields of GCalc-2.GCalc.MathTermIface */
-    add: (self: MathTerm, t: MathTerm) => MathExpression
-    evaluate: (self: MathTerm) => MathExpression
+    readonly add: (self: MathTerm, t: MathTerm) => MathExpression
+    readonly evaluate: (self: MathTerm) => MathExpression
     static name: string
 }
 abstract class MathVariableIface {
     /* Fields of GCalc-2.GCalc.MathVariableIface */
-    evaluate: (self: MathVariable) => MathExpression
-    get_name: (self: MathVariable) => string
-    set_name: (self: MathVariable, value: string) => void
-    get_value: (self: MathVariable) => MathConstant
-    set_value: (self: MathVariable, value: MathConstant) => void
-    get_bind: (self: MathVariable) => MathVariable
-    set_bind: (self: MathVariable, value: MathVariable) => void
-    get_binded: (self: MathVariable) => boolean
+    readonly evaluate: (self: MathVariable) => MathExpression
+    readonly get_name: (self: MathVariable) => string
+    readonly set_name: (self: MathVariable, value: string) => void
+    readonly get_value: (self: MathVariable) => MathConstant
+    readonly set_value: (self: MathVariable, value: MathConstant) => void
+    readonly get_bind: (self: MathVariable) => MathVariable
+    readonly set_bind: (self: MathVariable, value: MathVariable) => void
+    readonly get_binded: (self: MathVariable) => boolean
     static name: string
 }
 }

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstPlayer-1.0
  */
@@ -52,7 +58,8 @@ class PlayerSignalDispatcher {
 class PlayerVideoRenderer {
     static name: string
 }
-export interface Player_ConstructProps extends Gst.Object_ConstructProps {
+interface Player_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstPlayer-1.0.GstPlayer.Player */
     audio_video_offset?: number
     mute?: boolean
     rate?: number
@@ -83,15 +90,14 @@ class Player {
     video_multiview_mode: GstVideo.VideoMultiviewFramePacking
     readonly video_renderer: PlayerVideoRenderer
     volume: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlayer-1.0.GstPlayer.Player */
     get_audio_video_offset(): number
     get_color_balance(type: PlayerColorBalanceType): number
@@ -275,10 +281,6 @@ class Player {
     connect_after(sigName: "notify::video-renderer", callback: (($obj: Player, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::volume", callback: (($obj: Player, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::volume", callback: (($obj: Player, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Player, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Player, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Player, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Player, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -301,11 +303,11 @@ class Player {
     static visualizations_get(): PlayerVisualization[]
     static $gtype: GObject.Type
 }
-export interface PlayerAudioInfo_ConstructProps extends PlayerStreamInfo_ConstructProps {
+interface PlayerAudioInfo_ConstructProps extends PlayerStreamInfo_ConstructProps {
 }
 class PlayerAudioInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlayer-1.0.GstPlayer.PlayerAudioInfo */
     get_bitrate(): number
     get_channels(): number
@@ -361,12 +363,13 @@ class PlayerAudioInfo {
     _init (config?: PlayerAudioInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayerGMainContextSignalDispatcher_ConstructProps extends GObject.Object_ConstructProps {
+interface PlayerGMainContextSignalDispatcher_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GstPlayer-1.0.GstPlayer.PlayerGMainContextSignalDispatcher */
     application_context?: GLib.MainContext
 }
 class PlayerGMainContextSignalDispatcher {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -412,11 +415,11 @@ class PlayerGMainContextSignalDispatcher {
     _init (config?: PlayerGMainContextSignalDispatcher_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayerMediaInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface PlayerMediaInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PlayerMediaInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlayer-1.0.GstPlayer.PlayerMediaInfo */
     get_audio_streams(): PlayerAudioInfo[]
     get_container_format(): string | null
@@ -477,11 +480,11 @@ class PlayerMediaInfo {
     _init (config?: PlayerMediaInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayerStreamInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface PlayerStreamInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PlayerStreamInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlayer-1.0.GstPlayer.PlayerStreamInfo */
     get_caps(): Gst.Caps | null
     get_codec(): string | null
@@ -531,11 +534,11 @@ class PlayerStreamInfo {
     _init (config?: PlayerStreamInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayerSubtitleInfo_ConstructProps extends PlayerStreamInfo_ConstructProps {
+interface PlayerSubtitleInfo_ConstructProps extends PlayerStreamInfo_ConstructProps {
 }
 class PlayerSubtitleInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlayer-1.0.GstPlayer.PlayerSubtitleInfo */
     get_language(): string | null
     /* Methods of GstPlayer-1.0.GstPlayer.PlayerStreamInfo */
@@ -587,11 +590,11 @@ class PlayerSubtitleInfo {
     _init (config?: PlayerSubtitleInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayerVideoInfo_ConstructProps extends PlayerStreamInfo_ConstructProps {
+interface PlayerVideoInfo_ConstructProps extends PlayerStreamInfo_ConstructProps {
 }
 class PlayerVideoInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlayer-1.0.GstPlayer.PlayerVideoInfo */
     get_bitrate(): number
     get_framerate(): [ /* fps_n */ number, /* fps_d */ number ]
@@ -648,7 +651,8 @@ class PlayerVideoInfo {
     _init (config?: PlayerVideoInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayerVideoOverlayVideoRenderer_ConstructProps extends GObject.Object_ConstructProps {
+interface PlayerVideoOverlayVideoRenderer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GstPlayer-1.0.GstPlayer.PlayerVideoOverlayVideoRenderer */
     video_sink?: Gst.Element
     window_handle?: object
 }
@@ -657,7 +661,7 @@ class PlayerVideoOverlayVideoRenderer {
     video_sink: Gst.Element
     window_handle: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlayer-1.0.GstPlayer.PlayerVideoOverlayVideoRenderer */
     expose(): void
     get_render_rectangle(): [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
@@ -727,8 +731,8 @@ abstract class PlayerMediaInfoClass {
 }
 abstract class PlayerSignalDispatcherInterface {
     /* Fields of GstPlayer-1.0.GstPlayer.PlayerSignalDispatcherInterface */
-    parent_iface: GObject.TypeInterface
-    dispatch: (self: PlayerSignalDispatcher, player: Player, emitter: PlayerSignalDispatcherFunc) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly dispatch: (self: PlayerSignalDispatcher, player: Player, emitter: PlayerSignalDispatcherFunc) => void
     static name: string
 }
 abstract class PlayerStreamInfoClass {
@@ -745,13 +749,13 @@ abstract class PlayerVideoOverlayVideoRendererClass {
 }
 abstract class PlayerVideoRendererInterface {
     /* Fields of GstPlayer-1.0.GstPlayer.PlayerVideoRendererInterface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 class PlayerVisualization {
     /* Fields of GstPlayer-1.0.GstPlayer.PlayerVisualization */
-    name: string
-    description: string
+    readonly name: string
+    readonly description: string
     /* Methods of GstPlayer-1.0.GstPlayer.PlayerVisualization */
     copy(): PlayerVisualization
     free(): void

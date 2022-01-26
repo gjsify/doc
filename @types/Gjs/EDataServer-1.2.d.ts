@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EDataServer-1.2
  */
@@ -246,89 +252,89 @@ enum WebDAVResourceSupports {
     WEBDAV_NOTES,
     LAST,
 }
-export const CLIENT_BACKEND_PROPERTY_CACHE_DIR: string
-export const CLIENT_BACKEND_PROPERTY_CAPABILITIES: string
-export const CLIENT_BACKEND_PROPERTY_ONLINE: string
-export const CLIENT_BACKEND_PROPERTY_OPENED: string
-export const CLIENT_BACKEND_PROPERTY_OPENING: string
-export const CLIENT_BACKEND_PROPERTY_READONLY: string
-export const CLIENT_BACKEND_PROPERTY_REVISION: string
-export const DEBUG_LOG_DOMAIN_CAL_QUERIES: string
-export const DEBUG_LOG_DOMAIN_GLOG: string
-export const DEBUG_LOG_DOMAIN_USER: string
-export const EDS_MAJOR_VERSION: number
-export const EDS_MICRO_VERSION: number
-export const EDS_MINOR_VERSION: number
-export const NETWORK_MONITOR_ALWAYS_ONLINE_NAME: string
-export const OAUTH2_SECRET_ACCESS_TOKEN: string
-export const OAUTH2_SECRET_EXPIRES_AFTER: string
-export const OAUTH2_SECRET_REFRESH_TOKEN: string
-export const SOURCE_CREDENTIAL_PASSWORD: string
-export const SOURCE_CREDENTIAL_SSL_TRUST: string
-export const SOURCE_CREDENTIAL_USERNAME: string
-export const SOURCE_EXTENSION_ADDRESS_BOOK: string
-export const SOURCE_EXTENSION_ALARMS: string
-export const SOURCE_EXTENSION_AUTHENTICATION: string
-export const SOURCE_EXTENSION_AUTOCOMPLETE: string
-export const SOURCE_EXTENSION_AUTOCONFIG: string
-export const SOURCE_EXTENSION_CALENDAR: string
-export const SOURCE_EXTENSION_COLLECTION: string
-export const SOURCE_EXTENSION_CONTACTS_BACKEND: string
-export const SOURCE_EXTENSION_GOA: string
-export const SOURCE_EXTENSION_LDAP_BACKEND: string
-export const SOURCE_EXTENSION_LOCAL_BACKEND: string
-export const SOURCE_EXTENSION_MAIL_ACCOUNT: string
-export const SOURCE_EXTENSION_MAIL_COMPOSITION: string
-export const SOURCE_EXTENSION_MAIL_IDENTITY: string
-export const SOURCE_EXTENSION_MAIL_SIGNATURE: string
-export const SOURCE_EXTENSION_MAIL_SUBMISSION: string
-export const SOURCE_EXTENSION_MAIL_TRANSPORT: string
-export const SOURCE_EXTENSION_MDN: string
-export const SOURCE_EXTENSION_MEMO_LIST: string
-export const SOURCE_EXTENSION_OFFLINE: string
-export const SOURCE_EXTENSION_OPENPGP: string
-export const SOURCE_EXTENSION_PROXY: string
-export const SOURCE_EXTENSION_REFRESH: string
-export const SOURCE_EXTENSION_RESOURCE: string
-export const SOURCE_EXTENSION_REVISION_GUARDS: string
-export const SOURCE_EXTENSION_SECURITY: string
-export const SOURCE_EXTENSION_SMIME: string
-export const SOURCE_EXTENSION_TASK_LIST: string
-export const SOURCE_EXTENSION_UOA: string
-export const SOURCE_EXTENSION_WEATHER_BACKEND: string
-export const SOURCE_EXTENSION_WEBDAV_BACKEND: string
-export const SOURCE_EXTENSION_WEBDAV_NOTES: string
-export const SOURCE_PARAM_SETTING: number
-export const WEBDAV_CAPABILITY_ACCESS_CONTROL: string
-export const WEBDAV_CAPABILITY_ADDRESSBOOK: string
-export const WEBDAV_CAPABILITY_BIND: string
-export const WEBDAV_CAPABILITY_CALENDAR_ACCESS: string
-export const WEBDAV_CAPABILITY_CALENDAR_AUTO_SCHEDULE: string
-export const WEBDAV_CAPABILITY_CALENDAR_PROXY: string
-export const WEBDAV_CAPABILITY_CALENDAR_SCHEDULE: string
-export const WEBDAV_CAPABILITY_CLASS_1: string
-export const WEBDAV_CAPABILITY_CLASS_2: string
-export const WEBDAV_CAPABILITY_CLASS_3: string
-export const WEBDAV_CAPABILITY_EXTENDED_MKCOL: string
-export const WEBDAV_COLLATION_ASCII_CASEMAP: string
-export const WEBDAV_COLLATION_ASCII_CASEMAP_SUFFIX: string
-export const WEBDAV_COLLATION_ASCII_NUMERIC: string
-export const WEBDAV_COLLATION_ASCII_NUMERIC_SUFFIX: string
-export const WEBDAV_COLLATION_OCTET: string
-export const WEBDAV_COLLATION_OCTET_SUFFIX: string
-export const WEBDAV_COLLATION_UNICODE_CASEMAP: string
-export const WEBDAV_COLLATION_UNICODE_CASEMAP_SUFFIX: string
-export const WEBDAV_CONTENT_TYPE_CALENDAR: string
-export const WEBDAV_CONTENT_TYPE_VCARD: string
-export const WEBDAV_CONTENT_TYPE_XML: string
-export const WEBDAV_DEPTH_INFINITY: string
-export const WEBDAV_DEPTH_THIS: string
-export const WEBDAV_DEPTH_THIS_AND_CHILDREN: string
-export const WEBDAV_NS_CALDAV: string
-export const WEBDAV_NS_CALENDARSERVER: string
-export const WEBDAV_NS_CARDDAV: string
-export const WEBDAV_NS_DAV: string
-export const WEBDAV_NS_ICAL: string
+const CLIENT_BACKEND_PROPERTY_CACHE_DIR: string
+const CLIENT_BACKEND_PROPERTY_CAPABILITIES: string
+const CLIENT_BACKEND_PROPERTY_ONLINE: string
+const CLIENT_BACKEND_PROPERTY_OPENED: string
+const CLIENT_BACKEND_PROPERTY_OPENING: string
+const CLIENT_BACKEND_PROPERTY_READONLY: string
+const CLIENT_BACKEND_PROPERTY_REVISION: string
+const DEBUG_LOG_DOMAIN_CAL_QUERIES: string
+const DEBUG_LOG_DOMAIN_GLOG: string
+const DEBUG_LOG_DOMAIN_USER: string
+const EDS_MAJOR_VERSION: number
+const EDS_MICRO_VERSION: number
+const EDS_MINOR_VERSION: number
+const NETWORK_MONITOR_ALWAYS_ONLINE_NAME: string
+const OAUTH2_SECRET_ACCESS_TOKEN: string
+const OAUTH2_SECRET_EXPIRES_AFTER: string
+const OAUTH2_SECRET_REFRESH_TOKEN: string
+const SOURCE_CREDENTIAL_PASSWORD: string
+const SOURCE_CREDENTIAL_SSL_TRUST: string
+const SOURCE_CREDENTIAL_USERNAME: string
+const SOURCE_EXTENSION_ADDRESS_BOOK: string
+const SOURCE_EXTENSION_ALARMS: string
+const SOURCE_EXTENSION_AUTHENTICATION: string
+const SOURCE_EXTENSION_AUTOCOMPLETE: string
+const SOURCE_EXTENSION_AUTOCONFIG: string
+const SOURCE_EXTENSION_CALENDAR: string
+const SOURCE_EXTENSION_COLLECTION: string
+const SOURCE_EXTENSION_CONTACTS_BACKEND: string
+const SOURCE_EXTENSION_GOA: string
+const SOURCE_EXTENSION_LDAP_BACKEND: string
+const SOURCE_EXTENSION_LOCAL_BACKEND: string
+const SOURCE_EXTENSION_MAIL_ACCOUNT: string
+const SOURCE_EXTENSION_MAIL_COMPOSITION: string
+const SOURCE_EXTENSION_MAIL_IDENTITY: string
+const SOURCE_EXTENSION_MAIL_SIGNATURE: string
+const SOURCE_EXTENSION_MAIL_SUBMISSION: string
+const SOURCE_EXTENSION_MAIL_TRANSPORT: string
+const SOURCE_EXTENSION_MDN: string
+const SOURCE_EXTENSION_MEMO_LIST: string
+const SOURCE_EXTENSION_OFFLINE: string
+const SOURCE_EXTENSION_OPENPGP: string
+const SOURCE_EXTENSION_PROXY: string
+const SOURCE_EXTENSION_REFRESH: string
+const SOURCE_EXTENSION_RESOURCE: string
+const SOURCE_EXTENSION_REVISION_GUARDS: string
+const SOURCE_EXTENSION_SECURITY: string
+const SOURCE_EXTENSION_SMIME: string
+const SOURCE_EXTENSION_TASK_LIST: string
+const SOURCE_EXTENSION_UOA: string
+const SOURCE_EXTENSION_WEATHER_BACKEND: string
+const SOURCE_EXTENSION_WEBDAV_BACKEND: string
+const SOURCE_EXTENSION_WEBDAV_NOTES: string
+const SOURCE_PARAM_SETTING: number
+const WEBDAV_CAPABILITY_ACCESS_CONTROL: string
+const WEBDAV_CAPABILITY_ADDRESSBOOK: string
+const WEBDAV_CAPABILITY_BIND: string
+const WEBDAV_CAPABILITY_CALENDAR_ACCESS: string
+const WEBDAV_CAPABILITY_CALENDAR_AUTO_SCHEDULE: string
+const WEBDAV_CAPABILITY_CALENDAR_PROXY: string
+const WEBDAV_CAPABILITY_CALENDAR_SCHEDULE: string
+const WEBDAV_CAPABILITY_CLASS_1: string
+const WEBDAV_CAPABILITY_CLASS_2: string
+const WEBDAV_CAPABILITY_CLASS_3: string
+const WEBDAV_CAPABILITY_EXTENDED_MKCOL: string
+const WEBDAV_COLLATION_ASCII_CASEMAP: string
+const WEBDAV_COLLATION_ASCII_CASEMAP_SUFFIX: string
+const WEBDAV_COLLATION_ASCII_NUMERIC: string
+const WEBDAV_COLLATION_ASCII_NUMERIC_SUFFIX: string
+const WEBDAV_COLLATION_OCTET: string
+const WEBDAV_COLLATION_OCTET_SUFFIX: string
+const WEBDAV_COLLATION_UNICODE_CASEMAP: string
+const WEBDAV_COLLATION_UNICODE_CASEMAP_SUFFIX: string
+const WEBDAV_CONTENT_TYPE_CALENDAR: string
+const WEBDAV_CONTENT_TYPE_VCARD: string
+const WEBDAV_CONTENT_TYPE_XML: string
+const WEBDAV_DEPTH_INFINITY: string
+const WEBDAV_DEPTH_THIS: string
+const WEBDAV_DEPTH_THIS_AND_CHILDREN: string
+const WEBDAV_NS_CALDAV: string
+const WEBDAV_NS_CALENDARSERVER: string
+const WEBDAV_NS_CARDDAV: string
+const WEBDAV_NS_DAV: string
+const WEBDAV_NS_ICAL: string
 function binding_bind_property(source: GObject.Object, source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
 function binding_bind_property_full(source: GObject.Object, source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to?: Function | null, transform_from?: Function | null): GObject.Binding
 function binding_transform_enum_nick_to_value(binding: GObject.Binding, source_value: any, target_value: any, not_used?: object | null): boolean
@@ -518,7 +524,8 @@ class OAuth2Service {
     static util_set_to_form(form: GLib.HashTable, name: string, value?: string | null): void
     static util_take_to_form(form: GLib.HashTable, name: string, value?: string | null): void
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.Client */
     online?: boolean
     source?: Source
 }
@@ -530,7 +537,7 @@ class Client {
     readonly opened: boolean
     readonly readonly: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.Client */
     cancel_all(): void
     check_capability(capability: string): boolean
@@ -671,12 +678,13 @@ class Client {
     static util_unwrap_dbus_error(dbus_error: GLib.Error, known_errors: ClientErrorsList, known_errors_count: number, known_errors_domain: GLib.Quark, fail_when_none_matched: boolean): [ /* returnType */ boolean, /* client_error */ GLib.Error ]
     static $gtype: GObject.Type
 }
-export interface Extension_ConstructProps extends GObject.Object_ConstructProps {
+interface Extension_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.Extension */
     extensible?: Extensible
 }
 class Extension {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): Extensible
     /* Methods of GObject-2.0.GObject.Object */
@@ -722,16 +730,14 @@ class Extension {
     _init (config?: Extension_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GDataOAuth2Authorizer_ConstructProps extends GObject.Object_ConstructProps {
+interface GDataOAuth2Authorizer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.GDataOAuth2Authorizer */
     service_type?: GObject.Type
     source?: Source
 }
 class GDataOAuth2Authorizer {
-    /* Fields of EDataServer-1.2.EDataServer.GDataOAuth2Authorizer */
-    parent: GObject.Object
-    priv: GDataOAuth2AuthorizerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.GDataOAuth2Authorizer */
     clone_credentials(): NamedParameters | null
     get_service_type(): GObject.Type
@@ -796,18 +802,19 @@ class GDataOAuth2Authorizer {
     static supported(): boolean
     static $gtype: GObject.Type
 }
-export interface Module_ConstructProps extends GObject.TypeModule_ConstructProps {
+interface Module_ConstructProps extends GObject.TypeModule_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.Module */
     filename?: string
 }
 class Module {
     /* Fields of GObject-2.0.GObject.TypeModule */
-    parent_instance: GObject.Object
-    use_count: number
-    type_infos: object[]
-    interface_infos: object[]
-    name: string
+    readonly parent_instance: GObject.Object
+    readonly use_count: number
+    readonly type_infos: object[]
+    readonly interface_infos: object[]
+    readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.Module */
     get_filename(): string
     /* Methods of GObject-2.0.GObject.TypeModule */
@@ -873,7 +880,8 @@ class Module {
     static load_file(filename: string): Module
     static $gtype: GObject.Type
 }
-export interface NetworkMonitor_ConstructProps extends GObject.Object_ConstructProps {
+interface NetworkMonitor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.NetworkMonitor */
     gio_name?: string
 }
 class NetworkMonitor {
@@ -884,7 +892,7 @@ class NetworkMonitor {
     readonly network_available: boolean
     readonly network_metered: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.NetworkMonitor */
     dup_gio_name(): string
     list_gio_names(): string[]
@@ -962,13 +970,11 @@ class NetworkMonitor {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface OAuth2ServiceBase_ConstructProps extends Extension_ConstructProps {
+interface OAuth2ServiceBase_ConstructProps extends Extension_ConstructProps {
 }
 class OAuth2ServiceBase {
-    /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceBase */
-    parent: Extension
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): Extensible
     /* Methods of GObject-2.0.GObject.Object */
@@ -1014,13 +1020,13 @@ class OAuth2ServiceBase {
     _init (config?: OAuth2ServiceBase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface OAuth2ServiceGoogle_ConstructProps extends OAuth2ServiceBase_ConstructProps {
+interface OAuth2ServiceGoogle_ConstructProps extends OAuth2ServiceBase_ConstructProps {
 }
 class OAuth2ServiceGoogle {
-    /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceGoogle */
-    parent: OAuth2ServiceBase
+    /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceBase */
+    readonly parent: Extension
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): Extensible
     /* Methods of GObject-2.0.GObject.Object */
@@ -1109,13 +1115,13 @@ class OAuth2ServiceGoogle {
     static util_take_to_form(form: GLib.HashTable, name: string, value?: string | null): void
     static $gtype: GObject.Type
 }
-export interface OAuth2ServiceOutlook_ConstructProps extends OAuth2ServiceBase_ConstructProps {
+interface OAuth2ServiceOutlook_ConstructProps extends OAuth2ServiceBase_ConstructProps {
 }
 class OAuth2ServiceOutlook {
-    /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceOutlook */
-    parent: OAuth2ServiceBase
+    /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceBase */
+    readonly parent: Extension
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): Extensible
     /* Methods of GObject-2.0.GObject.Object */
@@ -1204,13 +1210,13 @@ class OAuth2ServiceOutlook {
     static util_take_to_form(form: GLib.HashTable, name: string, value?: string | null): void
     static $gtype: GObject.Type
 }
-export interface OAuth2ServiceYahoo_ConstructProps extends OAuth2ServiceBase_ConstructProps {
+interface OAuth2ServiceYahoo_ConstructProps extends OAuth2ServiceBase_ConstructProps {
 }
 class OAuth2ServiceYahoo {
-    /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceYahoo */
-    parent: OAuth2ServiceBase
+    /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceBase */
+    readonly parent: Extension
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.Extension */
     get_extensible(): Extensible
     /* Methods of GObject-2.0.GObject.Object */
@@ -1299,11 +1305,11 @@ class OAuth2ServiceYahoo {
     static util_take_to_form(form: GLib.HashTable, name: string, value?: string | null): void
     static $gtype: GObject.Type
 }
-export interface OAuth2Services_ConstructProps extends GObject.Object_ConstructProps {
+interface OAuth2Services_ConstructProps extends GObject.Object_ConstructProps {
 }
 class OAuth2Services {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.OAuth2Services */
     add(service: OAuth2Service): void
     find(source: Source): OAuth2Service | null
@@ -1361,19 +1367,19 @@ class OAuth2Services {
     static is_supported(): boolean
     static $gtype: GObject.Type
 }
-export interface SoupAuthBearer_ConstructProps extends Soup.Auth_ConstructProps {
+interface SoupAuthBearer_ConstructProps extends Soup.Auth_ConstructProps {
 }
 class SoupAuthBearer {
     /* Properties of Soup-2.4.Soup.Auth */
     host: string
     readonly is_authenticated: boolean
     is_for_proxy: boolean
-    realm: string
     readonly scheme_name: string
     /* Fields of Soup-2.4.Soup.Auth */
-    parent: GObject.Object
+    readonly parent: GObject.Object
+    readonly realm: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SoupAuthBearer */
     is_expired(): boolean
     set_access_token(access_token: string, expires_in_seconds: number): void
@@ -1440,8 +1446,6 @@ class SoupAuthBearer {
     connect_after(sigName: "notify::is-authenticated", callback: (($obj: SoupAuthBearer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::is-for-proxy", callback: (($obj: SoupAuthBearer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::is-for-proxy", callback: (($obj: SoupAuthBearer, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::realm", callback: (($obj: SoupAuthBearer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::realm", callback: (($obj: SoupAuthBearer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scheme-name", callback: (($obj: SoupAuthBearer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::scheme-name", callback: (($obj: SoupAuthBearer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
@@ -1453,7 +1457,8 @@ class SoupAuthBearer {
     _init (config?: SoupAuthBearer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SoupSession_ConstructProps extends Soup.Session_ConstructProps {
+interface SoupSession_ConstructProps extends Soup.Session_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SoupSession */
     credentials?: NamedParameters
     source?: Source
 }
@@ -1480,9 +1485,9 @@ class SoupSession {
     use_thread_context: boolean
     user_agent: string
     /* Fields of Soup-2.4.Soup.Session */
-    parent: GObject.Object
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SoupSession */
     check_result(request: Soup.RequestHTTP, read_bytes: object | null, bytes_length: number): boolean
     dup_credentials(): NamedParameters | null
@@ -1492,7 +1497,7 @@ class SoupSession {
     get_ssl_error_details(): [ /* returnType */ boolean, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     new_request(method: string, uri_string: string): Soup.RequestHTTP
     new_request_uri(method: string, uri: Soup.URI): Soup.RequestHTTP
-    send_request_simple_sync(request: Soup.RequestHTTP, cancellable?: Gio.Cancellable | null): Uint8Array[]
+    send_request_simple_sync(request: Soup.RequestHTTP, cancellable?: Gio.Cancellable | null): Uint8Array
     send_request_sync(request: Soup.RequestHTTP, cancellable?: Gio.Cancellable | null): Gio.InputStream
     set_credentials(credentials?: NamedParameters | null): void
     setup_logging(logging_level?: string | null): void
@@ -1639,12 +1644,14 @@ class SoupSession {
     _init (config?: SoupSession_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(source: Source): SoupSession
+    /* Function overloads */
     static new(): SoupSession
     static util_normalize_uri_path(suri: Soup.URI): boolean
     static util_status_to_string(status_code: number, reason_phrase?: string | null): string
     static $gtype: GObject.Type
 }
-export interface Source_ConstructProps extends GObject.Object_ConstructProps {
+interface Source_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.Source */
     display_name?: string
     enabled?: boolean
     main_context?: GLib.MainContext
@@ -1662,7 +1669,7 @@ class Source {
     readonly removable: boolean
     readonly writable: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.Source */
     camel_configure_service(service: Camel.Service): void
     changed(): void
@@ -1853,7 +1860,8 @@ class Source {
     static get_default(): Gio.ProxyResolver
     static $gtype: GObject.Type
 }
-export interface SourceAddressBook_ConstructProps extends SourceBackend_ConstructProps {
+interface SourceAddressBook_ConstructProps extends SourceBackend_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceAddressBook */
     order?: number
 }
 class SourceAddressBook {
@@ -1862,7 +1870,7 @@ class SourceAddressBook {
     /* Properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceAddressBook */
     get_order(): number
     set_order(order: number): void
@@ -1922,7 +1930,8 @@ class SourceAddressBook {
     _init (config?: SourceAddressBook_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceAlarms_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceAlarms_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceAlarms */
     include_me?: boolean
     last_notified?: string
 }
@@ -1931,7 +1940,7 @@ class SourceAlarms {
     include_me: boolean
     last_notified: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceAlarms */
     dup_last_notified(): string | null
     get_include_me(): boolean
@@ -1990,7 +1999,8 @@ class SourceAlarms {
     _init (config?: SourceAlarms_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceAuthentication_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceAuthentication_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceAuthentication */
     credential_name?: string
     host?: string
     is_external?: boolean
@@ -2012,7 +2022,7 @@ class SourceAuthentication {
     remember_password: boolean
     user: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceAuthentication */
     dup_credential_name(): string | null
     dup_host(): string | null
@@ -2103,14 +2113,15 @@ class SourceAuthentication {
     _init (config?: SourceAuthentication_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceAutocomplete_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceAutocomplete_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceAutocomplete */
     include_me?: boolean
 }
 class SourceAutocomplete {
     /* Properties of EDataServer-1.2.EDataServer.SourceAutocomplete */
     include_me: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceAutocomplete */
     get_include_me(): boolean
     set_include_me(include_me: boolean): void
@@ -2164,14 +2175,15 @@ class SourceAutocomplete {
     _init (config?: SourceAutocomplete_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceAutoconfig_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceAutoconfig_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceAutoconfig */
     revision?: string
 }
 class SourceAutoconfig {
     /* Properties of EDataServer-1.2.EDataServer.SourceAutoconfig */
     revision: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceAutoconfig */
     dup_revision(): string
     get_revision(): string
@@ -2226,14 +2238,15 @@ class SourceAutoconfig {
     _init (config?: SourceAutoconfig_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceBackend_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceBackend_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name?: string
 }
 class SourceBackend {
     /* Properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceBackend */
     dup_backend_name(): string | null
     get_backend_name(): string | null
@@ -2288,7 +2301,7 @@ class SourceBackend {
     _init (config?: SourceBackend_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceCalendar_ConstructProps extends SourceSelectable_ConstructProps {
+interface SourceCalendar_ConstructProps extends SourceSelectable_ConstructProps {
 }
 class SourceCalendar {
     /* Properties of EDataServer-1.2.EDataServer.SourceSelectable */
@@ -2298,7 +2311,7 @@ class SourceCalendar {
     /* Properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceSelectable */
     dup_color(): string | null
     get_color(): string | null
@@ -2367,13 +2380,13 @@ class SourceCalendar {
     _init (config?: SourceCalendar_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceCamel_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceCamel_ConstructProps extends SourceExtension_ConstructProps {
 }
 class SourceCamel {
     /* Properties of EDataServer-1.2.EDataServer.SourceCamel */
     readonly settings: Camel.Settings
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceCamel */
     get_settings(): Camel.Settings
     /* Methods of EDataServer-1.2.EDataServer.SourceExtension */
@@ -2431,7 +2444,8 @@ class SourceCamel {
     static register_types(): void
     static $gtype: GObject.Type
 }
-export interface SourceCollection_ConstructProps extends SourceBackend_ConstructProps {
+interface SourceCollection_ConstructProps extends SourceBackend_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceCollection */
     allow_sources_rename?: boolean
     calendar_enabled?: boolean
     calendar_url?: string
@@ -2452,7 +2466,7 @@ class SourceCollection {
     /* Properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceCollection */
     dup_calendar_url(): string | null
     dup_contacts_url(): string | null
@@ -2539,14 +2553,15 @@ class SourceCollection {
     _init (config?: SourceCollection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceContacts_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceContacts_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceContacts */
     include_me?: boolean
 }
 class SourceContacts {
     /* Properties of EDataServer-1.2.EDataServer.SourceContacts */
     include_me: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceContacts */
     get_include_me(): boolean
     set_include_me(include_me: boolean): void
@@ -2600,12 +2615,13 @@ class SourceContacts {
     _init (config?: SourceContacts_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceCredentialsProvider_ConstructProps extends GObject.Object_ConstructProps {
+interface SourceCredentialsProvider_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceCredentialsProvider */
     registry?: GObject.Object
 }
 class SourceCredentialsProvider {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceCredentialsProvider */
     can_prompt(source: Source): boolean
     can_store(source: Source): boolean
@@ -2645,9 +2661,6 @@ class SourceCredentialsProvider {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
-    /* Methods of EDataServer-1.2.EDataServer.Extensible */
-    list_extensions(extension_type: GObject.Type): Extension[]
-    load_extensions(): void
     /* Virtual methods of EDataServer-1.2.EDataServer.SourceCredentialsProvider */
     vfunc_ref_source(uid: string): Source
     /* Virtual methods of GObject-2.0.GObject.Object */
@@ -2673,11 +2686,11 @@ class SourceCredentialsProvider {
     static new(registry: SourceRegistry): SourceCredentialsProvider
     static $gtype: GObject.Type
 }
-export interface SourceCredentialsProviderImpl_ConstructProps extends Extension_ConstructProps {
+interface SourceCredentialsProviderImpl_ConstructProps extends Extension_ConstructProps {
 }
 class SourceCredentialsProviderImpl {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceCredentialsProviderImpl */
     can_process(source: Source): boolean
     can_prompt(): boolean
@@ -2738,11 +2751,11 @@ class SourceCredentialsProviderImpl {
     _init (config?: SourceCredentialsProviderImpl_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceCredentialsProviderImplOAuth2_ConstructProps extends SourceCredentialsProviderImpl_ConstructProps {
+interface SourceCredentialsProviderImplOAuth2_ConstructProps extends SourceCredentialsProviderImpl_ConstructProps {
 }
 class SourceCredentialsProviderImplOAuth2 {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceCredentialsProviderImpl */
     can_process(source: Source): boolean
     can_prompt(): boolean
@@ -2803,11 +2816,11 @@ class SourceCredentialsProviderImplOAuth2 {
     _init (config?: SourceCredentialsProviderImplOAuth2_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceCredentialsProviderImplPassword_ConstructProps extends SourceCredentialsProviderImpl_ConstructProps {
+interface SourceCredentialsProviderImplPassword_ConstructProps extends SourceCredentialsProviderImpl_ConstructProps {
 }
 class SourceCredentialsProviderImplPassword {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceCredentialsProviderImpl */
     can_process(source: Source): boolean
     can_prompt(): boolean
@@ -2868,12 +2881,13 @@ class SourceCredentialsProviderImplPassword {
     _init (config?: SourceCredentialsProviderImplPassword_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceExtension_ConstructProps extends GObject.Object_ConstructProps {
+interface SourceExtension_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceExtension */
     source?: Source
 }
 class SourceExtension {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceExtension */
     get_source(): Source
     property_lock(): void
@@ -2922,7 +2936,8 @@ class SourceExtension {
     _init (config?: SourceExtension_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceGoa_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceGoa_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceGoa */
     account_id?: string
     address?: string
     calendar_url?: string
@@ -2937,7 +2952,7 @@ class SourceGoa {
     contacts_url: string
     name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceGoa */
     dup_account_id(): string | null
     dup_address(): string | null
@@ -3012,7 +3027,8 @@ class SourceGoa {
     _init (config?: SourceGoa_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceLDAP_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceLDAP_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceLDAP */
     authentication?: SourceLDAPAuthentication
     can_browse?: boolean
     filter?: string
@@ -3031,7 +3047,7 @@ class SourceLDAP {
     scope: SourceLDAPScope
     security: SourceLDAPSecurity
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceLDAP */
     dup_filter(): string
     dup_root_dn(): string
@@ -3111,7 +3127,8 @@ class SourceLDAP {
     _init (config?: SourceLDAP_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceLocal_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceLocal_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceLocal */
     custom_file?: Gio.File
     email_address?: string
     writable?: boolean
@@ -3122,7 +3139,7 @@ class SourceLocal {
     email_address: string
     writable: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceLocal */
     dup_custom_file(): Gio.File | null
     dup_email_address(): string
@@ -3186,14 +3203,15 @@ class SourceLocal {
     _init (config?: SourceLocal_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceMDN_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceMDN_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceMDN */
     response_policy?: MdnResponsePolicy
 }
 class SourceMDN {
     /* Properties of EDataServer-1.2.EDataServer.SourceMDN */
     response_policy: MdnResponsePolicy
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceMDN */
     get_response_policy(): MdnResponsePolicy
     set_response_policy(response_policy: MdnResponsePolicy): void
@@ -3247,7 +3265,8 @@ class SourceMDN {
     _init (config?: SourceMDN_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceMailAccount_ConstructProps extends SourceBackend_ConstructProps {
+interface SourceMailAccount_ConstructProps extends SourceBackend_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceMailAccount */
     archive_folder?: string
     identity_uid?: string
     mark_seen?: ThreeState
@@ -3264,7 +3283,7 @@ class SourceMailAccount {
     /* Properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceMailAccount */
     dup_archive_folder(): string | null
     dup_identity_uid(): string | null
@@ -3342,7 +3361,8 @@ class SourceMailAccount {
     _init (config?: SourceMailAccount_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceMailComposition_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceMailComposition_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceMailComposition */
     bcc?: string[]
     cc?: string[]
     drafts_folder?: string
@@ -3365,7 +3385,7 @@ class SourceMailComposition {
     templates_folder: string
     top_signature: ThreeState
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceMailComposition */
     dup_bcc(): string[]
     dup_cc(): string[]
@@ -3456,7 +3476,8 @@ class SourceMailComposition {
     _init (config?: SourceMailComposition_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceMailIdentity_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceMailIdentity_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceMailIdentity */
     address?: string
     aliases?: string
     name?: string
@@ -3473,7 +3494,7 @@ class SourceMailIdentity {
     reply_to: string
     signature_uid: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceMailIdentity */
     dup_address(): string | null
     dup_aliases(): string | null
@@ -3554,7 +3575,8 @@ class SourceMailIdentity {
     _init (config?: SourceMailIdentity_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceMailSignature_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceMailSignature_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceMailSignature */
     mime_type?: string
 }
 class SourceMailSignature {
@@ -3562,7 +3584,7 @@ class SourceMailSignature {
     readonly file: Gio.File
     mime_type: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceMailSignature */
     dup_mime_type(): string | null
     get_file(): Gio.File
@@ -3620,7 +3642,8 @@ class SourceMailSignature {
     _init (config?: SourceMailSignature_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceMailSubmission_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceMailSubmission_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceMailSubmission */
     replies_to_origin_folder?: boolean
     sent_folder?: string
     transport_uid?: string
@@ -3633,7 +3656,7 @@ class SourceMailSubmission {
     transport_uid: string
     use_sent_folder: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceMailSubmission */
     dup_sent_folder(): string | null
     dup_transport_uid(): string | null
@@ -3701,13 +3724,13 @@ class SourceMailSubmission {
     _init (config?: SourceMailSubmission_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceMailTransport_ConstructProps extends SourceBackend_ConstructProps {
+interface SourceMailTransport_ConstructProps extends SourceBackend_ConstructProps {
 }
 class SourceMailTransport {
     /* Properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceBackend */
     dup_backend_name(): string | null
     get_backend_name(): string | null
@@ -3762,7 +3785,7 @@ class SourceMailTransport {
     _init (config?: SourceMailTransport_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceMemoList_ConstructProps extends SourceSelectable_ConstructProps {
+interface SourceMemoList_ConstructProps extends SourceSelectable_ConstructProps {
 }
 class SourceMemoList {
     /* Properties of EDataServer-1.2.EDataServer.SourceSelectable */
@@ -3772,7 +3795,7 @@ class SourceMemoList {
     /* Properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceSelectable */
     dup_color(): string | null
     get_color(): string | null
@@ -3841,14 +3864,15 @@ class SourceMemoList {
     _init (config?: SourceMemoList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceOffline_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceOffline_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceOffline */
     stay_synchronized?: boolean
 }
 class SourceOffline {
     /* Properties of EDataServer-1.2.EDataServer.SourceOffline */
     stay_synchronized: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceOffline */
     get_stay_synchronized(): boolean
     set_stay_synchronized(stay_synchronized: boolean): void
@@ -3902,7 +3926,8 @@ class SourceOffline {
     _init (config?: SourceOffline_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceOpenPGP_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceOpenPGP_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceOpenPGP */
     always_trust?: boolean
     encrypt_by_default?: boolean
     encrypt_to_self?: boolean
@@ -3921,7 +3946,7 @@ class SourceOpenPGP {
     sign_by_default: boolean
     signing_algorithm: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceOpenPGP */
     dup_key_id(): string
     dup_signing_algorithm(): string
@@ -4001,7 +4026,8 @@ class SourceOpenPGP {
     _init (config?: SourceOpenPGP_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceProxy_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceProxy_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceProxy */
     autoconfig_url?: string
     ftp_host?: string
     ftp_port?: number
@@ -4034,7 +4060,7 @@ class SourceProxy {
     socks_host: string
     socks_port: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceProxy */
     dup_autoconfig_url(): string
     dup_ftp_host(): string
@@ -4148,7 +4174,8 @@ class SourceProxy {
     _init (config?: SourceProxy_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceRefresh_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceRefresh_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceRefresh */
     enabled?: boolean
     interval_minutes?: number
 }
@@ -4157,7 +4184,7 @@ class SourceRefresh {
     enabled: boolean
     interval_minutes: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceRefresh */
     get_enabled(): boolean
     get_interval_minutes(): number
@@ -4215,7 +4242,8 @@ class SourceRefresh {
     _init (config?: SourceRefresh_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceRegistry_ConstructProps extends GObject.Object_ConstructProps {
+interface SourceRegistry_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceRegistry */
     default_address_book?: Source
     default_calendar?: Source
     default_mail_account?: Source
@@ -4232,7 +4260,7 @@ class SourceRegistry {
     default_memo_list: Source
     default_task_list: Source
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceRegistry */
     check_enabled(source: Source): boolean
     commit_source(source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4368,13 +4396,14 @@ class SourceRegistry {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SourceRegistryWatcher_ConstructProps extends GObject.Object_ConstructProps {
+interface SourceRegistryWatcher_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceRegistryWatcher */
     extension_name?: string
     registry?: SourceRegistry
 }
 class SourceRegistryWatcher {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceRegistryWatcher */
     get_extension_name(): string | null
     get_registry(): SourceRegistry
@@ -4438,14 +4467,15 @@ class SourceRegistryWatcher {
     static new(registry: SourceRegistry, extension_name?: string | null): SourceRegistryWatcher
     static $gtype: GObject.Type
 }
-export interface SourceResource_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceResource_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceResource */
     identity?: string
 }
 class SourceResource {
     /* Properties of EDataServer-1.2.EDataServer.SourceResource */
     identity: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceResource */
     dup_identity(): string | null
     get_identity(): string | null
@@ -4500,14 +4530,15 @@ class SourceResource {
     _init (config?: SourceResource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceRevisionGuards_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceRevisionGuards_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceRevisionGuards */
     enabled?: boolean
 }
 class SourceRevisionGuards {
     /* Properties of EDataServer-1.2.EDataServer.SourceRevisionGuards */
     enabled: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceRevisionGuards */
     get_enabled(): boolean
     set_enabled(enabled: boolean): void
@@ -4561,7 +4592,8 @@ class SourceRevisionGuards {
     _init (config?: SourceRevisionGuards_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceSMIME_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceSMIME_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceSMIME */
     encrypt_by_default?: boolean
     encrypt_to_self?: boolean
     encryption_certificate?: string
@@ -4578,7 +4610,7 @@ class SourceSMIME {
     signing_algorithm: string
     signing_certificate: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceSMIME */
     dup_encryption_certificate(): string | null
     dup_signing_algorithm(): string | null
@@ -4655,7 +4687,8 @@ class SourceSMIME {
     _init (config?: SourceSMIME_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceSecurity_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceSecurity_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceSecurity */
     method?: string
     secure?: boolean
 }
@@ -4664,7 +4697,7 @@ class SourceSecurity {
     method: string
     secure: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceSecurity */
     dup_method(): string
     get_method(): string
@@ -4723,7 +4756,8 @@ class SourceSecurity {
     _init (config?: SourceSecurity_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceSelectable_ConstructProps extends SourceBackend_ConstructProps {
+interface SourceSelectable_ConstructProps extends SourceBackend_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceSelectable */
     color?: string
     order?: number
     selected?: boolean
@@ -4736,7 +4770,7 @@ class SourceSelectable {
     /* Properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceSelectable */
     dup_color(): string | null
     get_color(): string | null
@@ -4805,7 +4839,7 @@ class SourceSelectable {
     _init (config?: SourceSelectable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceTaskList_ConstructProps extends SourceSelectable_ConstructProps {
+interface SourceTaskList_ConstructProps extends SourceSelectable_ConstructProps {
 }
 class SourceTaskList {
     /* Properties of EDataServer-1.2.EDataServer.SourceSelectable */
@@ -4815,7 +4849,7 @@ class SourceTaskList {
     /* Properties of EDataServer-1.2.EDataServer.SourceBackend */
     backend_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceSelectable */
     dup_color(): string | null
     get_color(): string | null
@@ -4884,14 +4918,15 @@ class SourceTaskList {
     _init (config?: SourceTaskList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceUoa_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceUoa_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceUoa */
     account_id?: number
 }
 class SourceUoa {
     /* Properties of EDataServer-1.2.EDataServer.SourceUoa */
     account_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceUoa */
     get_account_id(): number
     set_account_id(account_id: number): void
@@ -4945,7 +4980,8 @@ class SourceUoa {
     _init (config?: SourceUoa_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceWeather_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceWeather_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceWeather */
     location?: string
     units?: SourceWeatherUnits
 }
@@ -4954,7 +4990,7 @@ class SourceWeather {
     location: string
     units: SourceWeatherUnits
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceWeather */
     dup_location(): string
     get_location(): string
@@ -5013,14 +5049,15 @@ class SourceWeather {
     _init (config?: SourceWeather_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceWebDAVNotes_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceWebDAVNotes_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceWebDAVNotes */
     default_ext?: string
 }
 class SourceWebDAVNotes {
     /* Properties of EDataServer-1.2.EDataServer.SourceWebDAVNotes */
     default_ext: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceWebDAVNotes */
     dup_default_ext(): string | null
     get_default_ext(): string | null
@@ -5075,7 +5112,8 @@ class SourceWebDAVNotes {
     _init (config?: SourceWebDAVNotes_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SourceWebdav_ConstructProps extends SourceExtension_ConstructProps {
+interface SourceWebdav_ConstructProps extends SourceExtension_ConstructProps {
+    /* Constructor properties of EDataServer-1.2.EDataServer.SourceWebdav */
     avoid_ifmatch?: boolean
     calendar_auto_schedule?: boolean
     color?: string
@@ -5100,7 +5138,7 @@ class SourceWebdav {
     soup_uri: Soup.URI
     ssl_trust: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceWebdav */
     dup_color(): string | null
     dup_display_name(): string | null
@@ -5201,7 +5239,7 @@ class SourceWebdav {
     _init (config?: SourceWebdav_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebDAVSession_ConstructProps extends SoupSession_ConstructProps {
+interface WebDAVSession_ConstructProps extends SoupSession_ConstructProps {
 }
 class WebDAVSession {
     /* Properties of EDataServer-1.2.EDataServer.SoupSession */
@@ -5226,9 +5264,9 @@ class WebDAVSession {
     use_thread_context: boolean
     user_agent: string
     /* Fields of Soup-2.4.Soup.Session */
-    parent: GObject.Object
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.WebDAVSession */
     acl_sync(uri: string | null, xml: XmlDocument, cancellable?: Gio.Cancellable | null): boolean
     copy_sync(source_uri: string, destination_uri: string, depth: string, can_overwrite: boolean, cancellable?: Gio.Cancellable | null): boolean
@@ -5253,20 +5291,20 @@ class WebDAVSession {
     move_sync(source_uri: string, destination_uri: string, can_overwrite: boolean, cancellable?: Gio.Cancellable | null): boolean
     new_request(method: string, uri?: string | null): Soup.RequestHTTP
     options_sync(uri?: string | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_capabilities */ GLib.HashTable, /* out_allows */ GLib.HashTable ]
-    post_sync(uri: string | null, data: string, data_length: number, out_content_type?: string | null, out_content?: Uint8Array[] | null, cancellable?: Gio.Cancellable | null): boolean
-    post_with_content_type_sync(uri: string | null, data: string, data_length: number, in_content_type?: string | null, out_content_type?: string | null, out_content?: Uint8Array[] | null, cancellable?: Gio.Cancellable | null): boolean
+    post_sync(uri: string | null, data: string, data_length: number, out_content_type?: string | null, out_content?: Uint8Array | null, cancellable?: Gio.Cancellable | null): boolean
+    post_with_content_type_sync(uri: string | null, data: string, data_length: number, in_content_type?: string | null, out_content_type?: string | null, out_content?: Uint8Array | null, cancellable?: Gio.Cancellable | null): boolean
     principal_property_search_sync(uri: string | null, apply_to_principal_collection_set: boolean, match_ns_uri: string | null, match_property: string, match_value: string, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_principals */ WebDAVResource[] ]
     propfind_sync(uri: string | null, depth: string, xml?: XmlDocument | null, cancellable?: Gio.Cancellable | null): boolean
     proppatch_sync(uri: string | null, xml: XmlDocument, cancellable?: Gio.Cancellable | null): boolean
     put_data_sync(uri: string, etag: string | null, content_type: string, bytes: string, length: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_href */ string | null, /* out_etag */ string | null ]
     put_sync(uri: string, etag: string | null, content_type: string, stream: Gio.InputStream, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_href */ string | null, /* out_etag */ string | null ]
     refresh_lock_sync(uri: string | null, lock_token: string, lock_timeout: number, cancellable?: Gio.Cancellable | null): boolean
-    replace_with_detailed_error(request: Soup.RequestHTTP, response_data: Uint8Array[] | null, ignore_multistatus: boolean, prefix?: string | null): boolean
-    report_sync(uri: string | null, depth: string | null, xml: XmlDocument, out_content_type?: string | null, out_content?: Uint8Array[] | null, cancellable?: Gio.Cancellable | null): boolean
+    replace_with_detailed_error(request: Soup.RequestHTTP, response_data: Uint8Array | null, ignore_multistatus: boolean, prefix?: string | null): boolean
+    report_sync(uri: string | null, depth: string | null, xml: XmlDocument, out_content_type?: string | null, out_content?: Uint8Array | null, cancellable?: Gio.Cancellable | null): boolean
     set_acl_sync(uri: string | null, entries: WebDAVAccessControlEntry[], cancellable?: Gio.Cancellable | null): boolean
-    traverse_mkcalendar_response(message: Soup.Message | null, xml_data: Uint8Array[]): boolean
-    traverse_mkcol_response(message: Soup.Message | null, xml_data: Uint8Array[]): boolean
-    traverse_multistatus_response(message: Soup.Message | null, xml_data: Uint8Array[]): boolean
+    traverse_mkcalendar_response(message: Soup.Message | null, xml_data: Uint8Array): boolean
+    traverse_mkcol_response(message: Soup.Message | null, xml_data: Uint8Array): boolean
+    traverse_multistatus_response(message: Soup.Message | null, xml_data: Uint8Array): boolean
     unlock_sync(uri: string | null, lock_token: string, cancellable?: Gio.Cancellable | null): boolean
     update_properties_sync(uri: string | null, changes: WebDAVPropertyChange[], cancellable?: Gio.Cancellable | null): boolean
     /* Methods of EDataServer-1.2.EDataServer.SoupSession */
@@ -5278,7 +5316,7 @@ class WebDAVSession {
     get_ssl_error_details(): [ /* returnType */ boolean, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     new_request(method: string, uri_string: string): Soup.RequestHTTP
     new_request_uri(method: string, uri: Soup.URI): Soup.RequestHTTP
-    send_request_simple_sync(request: Soup.RequestHTTP, cancellable?: Gio.Cancellable | null): Uint8Array[]
+    send_request_simple_sync(request: Soup.RequestHTTP, cancellable?: Gio.Cancellable | null): Uint8Array
     send_request_sync(request: Soup.RequestHTTP, cancellable?: Gio.Cancellable | null): Gio.InputStream
     set_credentials(credentials?: NamedParameters | null): void
     setup_logging(logging_level?: string | null): void
@@ -5425,17 +5463,19 @@ class WebDAVSession {
     _init (config?: WebDAVSession_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(source: Source): WebDAVSession
+    /* Function overloads */
+    static new(source: Source): WebDAVSession
     static new(): WebDAVSession
     static util_free_privileges(privileges?: GLib.Node | null): void
     static util_item_href_equal(href1: string, href2: string): boolean
     static util_maybe_dequote(text?: string | null): [ /* returnType */ string, /* text */ string | null ]
     static $gtype: GObject.Type
 }
-export interface XmlDocument_ConstructProps extends GObject.Object_ConstructProps {
+interface XmlDocument_ConstructProps extends GObject.Object_ConstructProps {
 }
 class XmlDocument {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.XmlDocument */
     add_attribute(ns_href: string | null, name: string, value: string): void
     add_attribute_double(ns_href: string | null, name: string, value: number): void
@@ -5504,30 +5544,30 @@ class AsyncClosure {
 }
 abstract class ClientClass {
     /* Fields of EDataServer-1.2.EDataServer.ClientClass */
-    unwrap_dbus_error: (client: Client, dbus_error: GLib.Error) => void
-    retrieve_capabilities: (client: Client, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    retrieve_capabilities_finish: (client: Client, result: Gio.AsyncResult) => [ /* returnType */ boolean, /* capabilities */ string ]
-    retrieve_capabilities_sync: (client: Client, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* capabilities */ string ]
-    get_backend_property: (client: Client, prop_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    get_backend_property_finish: (client: Client, result: Gio.AsyncResult) => [ /* returnType */ boolean, /* prop_value */ string ]
-    get_backend_property_sync: (client: Client, prop_name: string, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* prop_value */ string ]
-    set_backend_property: (client: Client, prop_name: string, prop_value: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    set_backend_property_finish: (client: Client, result: Gio.AsyncResult) => boolean
-    set_backend_property_sync: (client: Client, prop_name: string, prop_value: string, cancellable?: Gio.Cancellable | null) => boolean
-    open: (client: Client, only_if_exists: boolean, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    open_finish: (client: Client, result: Gio.AsyncResult) => boolean
-    open_sync: (client: Client, only_if_exists: boolean, cancellable?: Gio.Cancellable | null) => boolean
-    remove: (client: Client, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    remove_finish: (client: Client, result: Gio.AsyncResult) => boolean
-    remove_sync: (client: Client, cancellable?: Gio.Cancellable | null) => boolean
-    refresh: (client: Client, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    refresh_finish: (client: Client, result: Gio.AsyncResult) => boolean
-    refresh_sync: (client: Client, cancellable?: Gio.Cancellable | null) => boolean
-    retrieve_properties_sync: (client: Client, cancellable?: Gio.Cancellable | null) => boolean
-    opened: (client: Client, error: GLib.Error) => void
-    backend_error: (client: Client, error_msg: string) => void
-    backend_died: (client: Client) => void
-    backend_property_changed: (client: Client, prop_name: string, prop_value: string) => void
+    readonly unwrap_dbus_error: (client: Client, dbus_error: GLib.Error) => void
+    readonly retrieve_capabilities: (client: Client, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly retrieve_capabilities_finish: (client: Client, result: Gio.AsyncResult) => [ /* returnType */ boolean, /* capabilities */ string ]
+    readonly retrieve_capabilities_sync: (client: Client, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* capabilities */ string ]
+    readonly get_backend_property: (client: Client, prop_name: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly get_backend_property_finish: (client: Client, result: Gio.AsyncResult) => [ /* returnType */ boolean, /* prop_value */ string ]
+    readonly get_backend_property_sync: (client: Client, prop_name: string, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* prop_value */ string ]
+    readonly set_backend_property: (client: Client, prop_name: string, prop_value: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly set_backend_property_finish: (client: Client, result: Gio.AsyncResult) => boolean
+    readonly set_backend_property_sync: (client: Client, prop_name: string, prop_value: string, cancellable?: Gio.Cancellable | null) => boolean
+    readonly open: (client: Client, only_if_exists: boolean, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly open_finish: (client: Client, result: Gio.AsyncResult) => boolean
+    readonly open_sync: (client: Client, only_if_exists: boolean, cancellable?: Gio.Cancellable | null) => boolean
+    readonly remove: (client: Client, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly remove_finish: (client: Client, result: Gio.AsyncResult) => boolean
+    readonly remove_sync: (client: Client, cancellable?: Gio.Cancellable | null) => boolean
+    readonly refresh: (client: Client, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly refresh_finish: (client: Client, result: Gio.AsyncResult) => boolean
+    readonly refresh_sync: (client: Client, cancellable?: Gio.Cancellable | null) => boolean
+    readonly retrieve_properties_sync: (client: Client, cancellable?: Gio.Cancellable | null) => boolean
+    readonly opened: (client: Client, error: GLib.Error) => void
+    readonly backend_error: (client: Client, error_msg: string) => void
+    readonly backend_died: (client: Client) => void
+    readonly backend_property_changed: (client: Client, prop_name: string, prop_value: string) => void
     static name: string
 }
 class ClientErrorsList {
@@ -5555,13 +5595,13 @@ class Collator {
 }
 abstract class ExtensibleInterface {
     /* Fields of EDataServer-1.2.EDataServer.ExtensibleInterface */
-    parent_interface: GObject.TypeInterface
+    readonly parent_interface: GObject.TypeInterface
     static name: string
 }
 abstract class ExtensionClass {
     /* Fields of EDataServer-1.2.EDataServer.ExtensionClass */
-    parent_class: GObject.ObjectClass
-    extensible_type: GObject.Type
+    readonly parent_class: GObject.ObjectClass
+    readonly extensible_type: GObject.Type
     static name: string
 }
 class ExtensionPrivate {
@@ -5572,14 +5612,14 @@ class Flag {
 }
 class FreeFormExpSymbol {
     /* Fields of EDataServer-1.2.EDataServer.FreeFormExpSymbol */
-    names: string
-    hint: string
-    build_sexp: FreeFormExpBuildSexpFunc
+    readonly names: string
+    readonly hint: string
+    readonly build_sexp: FreeFormExpBuildSexpFunc
     static name: string
 }
 abstract class GDataOAuth2AuthorizerClass {
     /* Fields of EDataServer-1.2.EDataServer.GDataOAuth2AuthorizerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class GDataOAuth2AuthorizerPrivate {
@@ -5590,7 +5630,7 @@ class MemChunk {
 }
 abstract class ModuleClass {
     /* Fields of EDataServer-1.2.EDataServer.ModuleClass */
-    parent_class: GObject.TypeModuleClass
+    readonly parent_class: GObject.TypeModuleClass
     static name: string
 }
 class ModulePrivate {
@@ -5620,7 +5660,7 @@ class NamedParameters {
 }
 abstract class NetworkMonitorClass {
     /* Fields of EDataServer-1.2.EDataServer.NetworkMonitorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class NetworkMonitorPrivate {
@@ -5628,51 +5668,51 @@ class NetworkMonitorPrivate {
 }
 abstract class OAuth2ServiceBaseClass {
     /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceBaseClass */
-    parent_class: ExtensionClass
+    readonly parent_class: ExtensionClass
     static name: string
 }
 abstract class OAuth2ServiceGoogleClass {
     /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceGoogleClass */
-    parent_class: OAuth2ServiceBaseClass
+    readonly parent_class: OAuth2ServiceBaseClass
     static name: string
 }
 abstract class OAuth2ServiceInterface {
     /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceInterface */
-    parent_interface: GObject.TypeInterface
-    can_process: (service: OAuth2Service, source: Source) => boolean
-    guess_can_process: (service: OAuth2Service, protocol?: string | null, hostname?: string | null) => boolean
-    get_flags: (service: OAuth2Service) => number
-    get_name: (service: OAuth2Service) => string
-    get_display_name: (service: OAuth2Service) => string
-    get_client_id: (service: OAuth2Service, source: Source) => string
-    get_client_secret: (service: OAuth2Service, source: Source) => string | null
-    get_authentication_uri: (service: OAuth2Service, source: Source) => string
-    get_refresh_uri: (service: OAuth2Service, source: Source) => string
-    get_redirect_uri: (service: OAuth2Service, source: Source) => string | null
-    prepare_authentication_uri_query: (service: OAuth2Service, source: Source, uri_query: GLib.HashTable) => void
-    get_authentication_policy: (service: OAuth2Service, source: Source, uri: string) => OAuth2ServiceNavigationPolicy
-    extract_authorization_code: (service: OAuth2Service, source: Source, page_title: string, page_uri: string, page_content?: string | null) => [ /* returnType */ boolean, /* out_authorization_code */ string ]
-    prepare_get_token_form: (service: OAuth2Service, source: Source, authorization_code: string, form: GLib.HashTable) => void
-    prepare_get_token_message: (service: OAuth2Service, source: Source, message: Soup.Message) => void
-    prepare_refresh_token_form: (service: OAuth2Service, source: Source, refresh_token: string, form: GLib.HashTable) => void
-    prepare_refresh_token_message: (service: OAuth2Service, source: Source, message: Soup.Message) => void
-    reserved: object[]
+    readonly parent_interface: GObject.TypeInterface
+    readonly can_process: (service: OAuth2Service, source: Source) => boolean
+    readonly guess_can_process: (service: OAuth2Service, protocol?: string | null, hostname?: string | null) => boolean
+    readonly get_flags: (service: OAuth2Service) => number
+    readonly get_name: (service: OAuth2Service) => string
+    readonly get_display_name: (service: OAuth2Service) => string
+    readonly get_client_id: (service: OAuth2Service, source: Source) => string
+    readonly get_client_secret: (service: OAuth2Service, source: Source) => string | null
+    readonly get_authentication_uri: (service: OAuth2Service, source: Source) => string
+    readonly get_refresh_uri: (service: OAuth2Service, source: Source) => string
+    readonly get_redirect_uri: (service: OAuth2Service, source: Source) => string | null
+    readonly prepare_authentication_uri_query: (service: OAuth2Service, source: Source, uri_query: GLib.HashTable) => void
+    readonly get_authentication_policy: (service: OAuth2Service, source: Source, uri: string) => OAuth2ServiceNavigationPolicy
+    readonly extract_authorization_code: (service: OAuth2Service, source: Source, page_title: string, page_uri: string, page_content?: string | null) => [ /* returnType */ boolean, /* out_authorization_code */ string ]
+    readonly prepare_get_token_form: (service: OAuth2Service, source: Source, authorization_code: string, form: GLib.HashTable) => void
+    readonly prepare_get_token_message: (service: OAuth2Service, source: Source, message: Soup.Message) => void
+    readonly prepare_refresh_token_form: (service: OAuth2Service, source: Source, refresh_token: string, form: GLib.HashTable) => void
+    readonly prepare_refresh_token_message: (service: OAuth2Service, source: Source, message: Soup.Message) => void
+    readonly reserved: object[]
     static name: string
 }
 abstract class OAuth2ServiceOutlookClass {
     /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceOutlookClass */
-    parent_class: OAuth2ServiceBaseClass
+    readonly parent_class: OAuth2ServiceBaseClass
     static name: string
 }
 abstract class OAuth2ServiceYahooClass {
     /* Fields of EDataServer-1.2.EDataServer.OAuth2ServiceYahooClass */
-    parent_class: OAuth2ServiceBaseClass
+    readonly parent_class: OAuth2ServiceBaseClass
     static name: string
 }
 abstract class OAuth2ServicesClass {
     /* Fields of EDataServer-1.2.EDataServer.OAuth2ServicesClass */
-    parent_class: GObject.ObjectClass
-    reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly reserved: object[]
     static name: string
 }
 class OAuth2ServicesPrivate {
@@ -5688,7 +5728,7 @@ class OperationPool {
 }
 abstract class SoupAuthBearerClass {
     /* Fields of EDataServer-1.2.EDataServer.SoupAuthBearerClass */
-    parent_class: Soup.AuthClass
+    readonly parent_class: Soup.AuthClass
     static name: string
 }
 class SoupAuthBearerPrivate {
@@ -5696,8 +5736,8 @@ class SoupAuthBearerPrivate {
 }
 abstract class SoupSessionClass {
     /* Fields of EDataServer-1.2.EDataServer.SoupSessionClass */
-    parent_class: Soup.SessionClass
-    reserved: object[]
+    readonly parent_class: Soup.SessionClass
+    readonly reserved: object[]
     static name: string
 }
 class SoupSessionPrivate {
@@ -5705,7 +5745,7 @@ class SoupSessionPrivate {
 }
 abstract class SourceAddressBookClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceAddressBookClass */
-    parent_class: SourceBackendClass
+    readonly parent_class: SourceBackendClass
     static name: string
 }
 class SourceAddressBookPrivate {
@@ -5713,7 +5753,7 @@ class SourceAddressBookPrivate {
 }
 abstract class SourceAlarmsClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceAlarmsClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceAlarmsPrivate {
@@ -5721,7 +5761,7 @@ class SourceAlarmsPrivate {
 }
 abstract class SourceAuthenticationClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceAuthenticationClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceAuthenticationPrivate {
@@ -5729,7 +5769,7 @@ class SourceAuthenticationPrivate {
 }
 abstract class SourceAutocompleteClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceAutocompleteClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceAutocompletePrivate {
@@ -5737,7 +5777,7 @@ class SourceAutocompletePrivate {
 }
 abstract class SourceAutoconfigClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceAutoconfigClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceAutoconfigPrivate {
@@ -5745,7 +5785,7 @@ class SourceAutoconfigPrivate {
 }
 abstract class SourceBackendClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceBackendClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceBackendPrivate {
@@ -5753,7 +5793,7 @@ class SourceBackendPrivate {
 }
 abstract class SourceCalendarClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceCalendarClass */
-    parent_class: SourceSelectableClass
+    readonly parent_class: SourceSelectableClass
     static name: string
 }
 class SourceCalendarPrivate {
@@ -5761,8 +5801,8 @@ class SourceCalendarPrivate {
 }
 abstract class SourceCamelClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceCamelClass */
-    parent_class: SourceExtensionClass
-    settings_type: GObject.Type
+    readonly parent_class: SourceExtensionClass
+    readonly settings_type: GObject.Type
     static name: string
 }
 class SourceCamelPrivate {
@@ -5770,34 +5810,34 @@ class SourceCamelPrivate {
 }
 abstract class SourceClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceClass */
-    parent_class: GObject.ObjectClass
-    changed: (source: Source) => void
-    credentials_required: (source: Source, reason: SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error: GLib.Error) => void
-    authenticate: (source: Source, credentials: NamedParameters) => void
-    remove_sync: (source: Source, cancellable?: Gio.Cancellable | null) => boolean
-    remove: (source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    remove_finish: (source: Source, result: Gio.AsyncResult) => boolean
-    write_sync: (source: Source, cancellable?: Gio.Cancellable | null) => boolean
-    write: (source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    write_finish: (source: Source, result: Gio.AsyncResult) => boolean
-    remote_create_sync: (source: Source, scratch_source: Source, cancellable?: Gio.Cancellable | null) => boolean
-    remote_create: (source: Source, scratch_source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    remote_create_finish: (source: Source, result: Gio.AsyncResult) => boolean
-    remote_delete_sync: (source: Source, cancellable?: Gio.Cancellable | null) => boolean
-    remote_delete: (source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    remote_delete_finish: (source: Source, result: Gio.AsyncResult) => boolean
-    get_oauth2_access_token_sync: (source: Source, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
-    get_oauth2_access_token: (source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    get_oauth2_access_token_finish: (source: Source, result: Gio.AsyncResult) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
-    invoke_credentials_required_impl: (source: Source, dbus_source: object | null, arg_reason: string, arg_certificate_pem: string, arg_certificate_errors: string, arg_dbus_error_name: string, arg_dbus_error_message: string, cancellable?: Gio.Cancellable | null) => boolean
-    invoke_authenticate_impl: (source: Source, dbus_source: object | null, arg_credentials: string, cancellable?: Gio.Cancellable | null) => boolean
-    unset_last_credentials_required_arguments_impl: (source: Source, cancellable?: Gio.Cancellable | null) => boolean
-    reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (source: Source) => void
+    readonly credentials_required: (source: Source, reason: SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error: GLib.Error) => void
+    readonly authenticate: (source: Source, credentials: NamedParameters) => void
+    readonly remove_sync: (source: Source, cancellable?: Gio.Cancellable | null) => boolean
+    readonly remove: (source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly remove_finish: (source: Source, result: Gio.AsyncResult) => boolean
+    readonly write_sync: (source: Source, cancellable?: Gio.Cancellable | null) => boolean
+    readonly write: (source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly write_finish: (source: Source, result: Gio.AsyncResult) => boolean
+    readonly remote_create_sync: (source: Source, scratch_source: Source, cancellable?: Gio.Cancellable | null) => boolean
+    readonly remote_create: (source: Source, scratch_source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly remote_create_finish: (source: Source, result: Gio.AsyncResult) => boolean
+    readonly remote_delete_sync: (source: Source, cancellable?: Gio.Cancellable | null) => boolean
+    readonly remote_delete: (source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly remote_delete_finish: (source: Source, result: Gio.AsyncResult) => boolean
+    readonly get_oauth2_access_token_sync: (source: Source, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
+    readonly get_oauth2_access_token: (source: Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly get_oauth2_access_token_finish: (source: Source, result: Gio.AsyncResult) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
+    readonly invoke_credentials_required_impl: (source: Source, dbus_source: object | null, arg_reason: string, arg_certificate_pem: string, arg_certificate_errors: string, arg_dbus_error_name: string, arg_dbus_error_message: string, cancellable?: Gio.Cancellable | null) => boolean
+    readonly invoke_authenticate_impl: (source: Source, dbus_source: object | null, arg_credentials: string, cancellable?: Gio.Cancellable | null) => boolean
+    readonly unset_last_credentials_required_arguments_impl: (source: Source, cancellable?: Gio.Cancellable | null) => boolean
+    readonly reserved: object[]
     static name: string
 }
 abstract class SourceCollectionClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceCollectionClass */
-    parent_class: SourceBackendClass
+    readonly parent_class: SourceBackendClass
     static name: string
 }
 class SourceCollectionPrivate {
@@ -5805,7 +5845,7 @@ class SourceCollectionPrivate {
 }
 abstract class SourceContactsClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceContactsClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceContactsPrivate {
@@ -5813,24 +5853,24 @@ class SourceContactsPrivate {
 }
 abstract class SourceCredentialsProviderClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceCredentialsProviderClass */
-    parent_class: GObject.ObjectClass
-    ref_source: (provider: SourceCredentialsProvider, uid: string) => Source
+    readonly parent_class: GObject.ObjectClass
+    readonly ref_source: (provider: SourceCredentialsProvider, uid: string) => Source
     static name: string
 }
 abstract class SourceCredentialsProviderImplClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceCredentialsProviderImplClass */
-    parent_class: ExtensionClass
-    can_process: (provider_impl: SourceCredentialsProviderImpl, source: Source) => boolean
-    can_store: (provider_impl: SourceCredentialsProviderImpl) => boolean
-    can_prompt: (provider_impl: SourceCredentialsProviderImpl) => boolean
-    lookup_sync: (provider_impl: SourceCredentialsProviderImpl, source: Source, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_credentials */ NamedParameters ]
-    store_sync: (provider_impl: SourceCredentialsProviderImpl, source: Source, credentials: NamedParameters, permanently: boolean, cancellable?: Gio.Cancellable | null) => boolean
-    delete_sync: (provider_impl: SourceCredentialsProviderImpl, source: Source, cancellable?: Gio.Cancellable | null) => boolean
+    readonly parent_class: ExtensionClass
+    readonly can_process: (provider_impl: SourceCredentialsProviderImpl, source: Source) => boolean
+    readonly can_store: (provider_impl: SourceCredentialsProviderImpl) => boolean
+    readonly can_prompt: (provider_impl: SourceCredentialsProviderImpl) => boolean
+    readonly lookup_sync: (provider_impl: SourceCredentialsProviderImpl, source: Source, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_credentials */ NamedParameters ]
+    readonly store_sync: (provider_impl: SourceCredentialsProviderImpl, source: Source, credentials: NamedParameters, permanently: boolean, cancellable?: Gio.Cancellable | null) => boolean
+    readonly delete_sync: (provider_impl: SourceCredentialsProviderImpl, source: Source, cancellable?: Gio.Cancellable | null) => boolean
     static name: string
 }
 abstract class SourceCredentialsProviderImplOAuth2Class {
     /* Fields of EDataServer-1.2.EDataServer.SourceCredentialsProviderImplOAuth2Class */
-    parent_class: SourceCredentialsProviderImplClass
+    readonly parent_class: SourceCredentialsProviderImplClass
     static name: string
 }
 class SourceCredentialsProviderImplOAuth2Private {
@@ -5838,7 +5878,7 @@ class SourceCredentialsProviderImplOAuth2Private {
 }
 abstract class SourceCredentialsProviderImplPasswordClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceCredentialsProviderImplPasswordClass */
-    parent_class: SourceCredentialsProviderImplClass
+    readonly parent_class: SourceCredentialsProviderImplClass
     static name: string
 }
 class SourceCredentialsProviderImplPasswordPrivate {
@@ -5852,8 +5892,8 @@ class SourceCredentialsProviderPrivate {
 }
 abstract class SourceExtensionClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceExtensionClass */
-    parent_class: GObject.ObjectClass
-    name: string
+    readonly parent_class: GObject.ObjectClass
+    readonly name: string
     static name: string
 }
 class SourceExtensionPrivate {
@@ -5861,7 +5901,7 @@ class SourceExtensionPrivate {
 }
 abstract class SourceGoaClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceGoaClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceGoaPrivate {
@@ -5869,7 +5909,7 @@ class SourceGoaPrivate {
 }
 abstract class SourceLDAPClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceLDAPClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceLDAPPrivate {
@@ -5877,7 +5917,7 @@ class SourceLDAPPrivate {
 }
 abstract class SourceLocalClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceLocalClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceLocalPrivate {
@@ -5885,7 +5925,7 @@ class SourceLocalPrivate {
 }
 abstract class SourceMDNClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceMDNClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceMDNPrivate {
@@ -5893,7 +5933,7 @@ class SourceMDNPrivate {
 }
 abstract class SourceMailAccountClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceMailAccountClass */
-    parent_class: SourceBackendClass
+    readonly parent_class: SourceBackendClass
     static name: string
 }
 class SourceMailAccountPrivate {
@@ -5901,7 +5941,7 @@ class SourceMailAccountPrivate {
 }
 abstract class SourceMailCompositionClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceMailCompositionClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceMailCompositionPrivate {
@@ -5909,7 +5949,7 @@ class SourceMailCompositionPrivate {
 }
 abstract class SourceMailIdentityClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceMailIdentityClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceMailIdentityPrivate {
@@ -5917,7 +5957,7 @@ class SourceMailIdentityPrivate {
 }
 abstract class SourceMailSignatureClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceMailSignatureClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceMailSignaturePrivate {
@@ -5925,7 +5965,7 @@ class SourceMailSignaturePrivate {
 }
 abstract class SourceMailSubmissionClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceMailSubmissionClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceMailSubmissionPrivate {
@@ -5933,7 +5973,7 @@ class SourceMailSubmissionPrivate {
 }
 abstract class SourceMailTransportClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceMailTransportClass */
-    parent_class: SourceBackendClass
+    readonly parent_class: SourceBackendClass
     static name: string
 }
 class SourceMailTransportPrivate {
@@ -5941,7 +5981,7 @@ class SourceMailTransportPrivate {
 }
 abstract class SourceMemoListClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceMemoListClass */
-    parent_class: SourceSelectableClass
+    readonly parent_class: SourceSelectableClass
     static name: string
 }
 class SourceMemoListPrivate {
@@ -5949,7 +5989,7 @@ class SourceMemoListPrivate {
 }
 abstract class SourceOfflineClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceOfflineClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceOfflinePrivate {
@@ -5957,7 +5997,7 @@ class SourceOfflinePrivate {
 }
 abstract class SourceOpenPGPClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceOpenPGPClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceOpenPGPPrivate {
@@ -5968,7 +6008,7 @@ class SourcePrivate {
 }
 abstract class SourceProxyClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceProxyClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceProxyPrivate {
@@ -5976,7 +6016,7 @@ class SourceProxyPrivate {
 }
 abstract class SourceRefreshClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceRefreshClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceRefreshPrivate {
@@ -5984,13 +6024,13 @@ class SourceRefreshPrivate {
 }
 abstract class SourceRegistryClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceRegistryClass */
-    parent_class: GObject.ObjectClass
-    source_added: (registry: SourceRegistry, source: Source) => void
-    source_changed: (registry: SourceRegistry, source: Source) => void
-    source_removed: (registry: SourceRegistry, source: Source) => void
-    source_enabled: (registry: SourceRegistry, source: Source) => void
-    source_disabled: (registry: SourceRegistry, source: Source) => void
-    credentials_required: (registry: SourceRegistry, source: Source, reason: SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error: GLib.Error) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly source_added: (registry: SourceRegistry, source: Source) => void
+    readonly source_changed: (registry: SourceRegistry, source: Source) => void
+    readonly source_removed: (registry: SourceRegistry, source: Source) => void
+    readonly source_enabled: (registry: SourceRegistry, source: Source) => void
+    readonly source_disabled: (registry: SourceRegistry, source: Source) => void
+    readonly credentials_required: (registry: SourceRegistry, source: Source, reason: SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error: GLib.Error) => void
     static name: string
 }
 class SourceRegistryPrivate {
@@ -5998,10 +6038,10 @@ class SourceRegistryPrivate {
 }
 abstract class SourceRegistryWatcherClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceRegistryWatcherClass */
-    parent_class: GObject.ObjectClass
-    filter: (watcher: SourceRegistryWatcher, source: Source) => boolean
-    appeared: (watcher: SourceRegistryWatcher, source: Source) => void
-    disappeared: (watcher: SourceRegistryWatcher, source: Source) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly filter: (watcher: SourceRegistryWatcher, source: Source) => boolean
+    readonly appeared: (watcher: SourceRegistryWatcher, source: Source) => void
+    readonly disappeared: (watcher: SourceRegistryWatcher, source: Source) => void
     static name: string
 }
 class SourceRegistryWatcherPrivate {
@@ -6009,7 +6049,7 @@ class SourceRegistryWatcherPrivate {
 }
 abstract class SourceResourceClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceResourceClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceResourcePrivate {
@@ -6017,7 +6057,7 @@ class SourceResourcePrivate {
 }
 abstract class SourceRevisionGuardsClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceRevisionGuardsClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceRevisionGuardsPrivate {
@@ -6025,7 +6065,7 @@ class SourceRevisionGuardsPrivate {
 }
 abstract class SourceSMIMEClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceSMIMEClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceSMIMEPrivate {
@@ -6033,7 +6073,7 @@ class SourceSMIMEPrivate {
 }
 abstract class SourceSecurityClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceSecurityClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceSecurityPrivate {
@@ -6041,7 +6081,7 @@ class SourceSecurityPrivate {
 }
 abstract class SourceSelectableClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceSelectableClass */
-    parent_class: SourceBackendClass
+    readonly parent_class: SourceBackendClass
     static name: string
 }
 class SourceSelectablePrivate {
@@ -6049,7 +6089,7 @@ class SourceSelectablePrivate {
 }
 abstract class SourceTaskListClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceTaskListClass */
-    parent_class: SourceSelectableClass
+    readonly parent_class: SourceSelectableClass
     static name: string
 }
 class SourceTaskListPrivate {
@@ -6057,7 +6097,7 @@ class SourceTaskListPrivate {
 }
 abstract class SourceUoaClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceUoaClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceUoaPrivate {
@@ -6065,7 +6105,7 @@ class SourceUoaPrivate {
 }
 abstract class SourceWeatherClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceWeatherClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceWeatherPrivate {
@@ -6073,7 +6113,7 @@ class SourceWeatherPrivate {
 }
 abstract class SourceWebDAVNotesClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceWebDAVNotesClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceWebDAVNotesPrivate {
@@ -6081,7 +6121,7 @@ class SourceWebDAVNotesPrivate {
 }
 abstract class SourceWebdavClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceWebdavClass */
-    parent_class: SourceExtensionClass
+    readonly parent_class: SourceExtensionClass
     static name: string
 }
 class SourceWebdavPrivate {
@@ -6089,11 +6129,11 @@ class SourceWebdavPrivate {
 }
 class WebDAVAccessControlEntry {
     /* Fields of EDataServer-1.2.EDataServer.WebDAVAccessControlEntry */
-    principal_kind: WebDAVACEPrincipalKind
-    principal_href: string
-    flags: number
-    inherited_href: string
-    privileges: object[]
+    readonly principal_kind: WebDAVACEPrincipalKind
+    readonly principal_href: string
+    readonly flags: number
+    readonly inherited_href: string
+    readonly privileges: object[]
     /* Methods of EDataServer-1.2.EDataServer.WebDAVAccessControlEntry */
     append_privilege(privilege: WebDAVPrivilege): void
     copy(): WebDAVAccessControlEntry
@@ -6107,12 +6147,12 @@ class WebDAVAccessControlEntry {
 }
 class WebDAVDiscoveredSource {
     /* Fields of EDataServer-1.2.EDataServer.WebDAVDiscoveredSource */
-    href: string
-    supports: number
-    display_name: string
-    description: string
-    color: string
-    order: number
+    readonly href: string
+    readonly supports: number
+    readonly display_name: string
+    readonly description: string
+    readonly color: string
+    readonly order: number
     /* Methods of EDataServer-1.2.EDataServer.WebDAVDiscoveredSource */
     copy(): WebDAVDiscoveredSource
     free(): void
@@ -6120,11 +6160,11 @@ class WebDAVDiscoveredSource {
 }
 class WebDAVPrivilege {
     /* Fields of EDataServer-1.2.EDataServer.WebDAVPrivilege */
-    ns_uri: string
-    name: string
-    description: string
-    kind: WebDAVPrivilegeKind
-    hint: WebDAVPrivilegeHint
+    readonly ns_uri: string
+    readonly name: string
+    readonly description: string
+    readonly kind: WebDAVPrivilegeKind
+    readonly hint: WebDAVPrivilegeHint
     /* Methods of EDataServer-1.2.EDataServer.WebDAVPrivilege */
     copy(): WebDAVPrivilege
     static name: string
@@ -6136,10 +6176,10 @@ class WebDAVPrivilege {
 }
 class WebDAVPropertyChange {
     /* Fields of EDataServer-1.2.EDataServer.WebDAVPropertyChange */
-    kind: WebDAVPropertyChangeKind
-    ns_uri: string
-    name: string
-    value: string
+    readonly kind: WebDAVPropertyChangeKind
+    readonly ns_uri: string
+    readonly name: string
+    readonly value: string
     /* Methods of EDataServer-1.2.EDataServer.WebDAVPropertyChange */
     copy(): WebDAVPropertyChange
     static name: string
@@ -6150,18 +6190,18 @@ class WebDAVPropertyChange {
 }
 class WebDAVResource {
     /* Fields of EDataServer-1.2.EDataServer.WebDAVResource */
-    kind: WebDAVResourceKind
-    supports: number
-    href: string
-    etag: string
-    display_name: string
-    content_type: string
-    content_length: number
-    creation_date: number
-    last_modified: number
-    description: string
-    color: string
-    order: number
+    readonly kind: WebDAVResourceKind
+    readonly supports: number
+    readonly href: string
+    readonly etag: string
+    readonly display_name: string
+    readonly content_type: string
+    readonly content_length: number
+    readonly creation_date: number
+    readonly last_modified: number
+    readonly description: string
+    readonly color: string
+    readonly order: number
     /* Methods of EDataServer-1.2.EDataServer.WebDAVResource */
     copy(): WebDAVResource
     static name: string
@@ -6173,8 +6213,8 @@ class WebDAVResource {
 }
 abstract class WebDAVSessionClass {
     /* Fields of EDataServer-1.2.EDataServer.WebDAVSessionClass */
-    parent_class: SoupSessionClass
-    reserved: object[]
+    readonly parent_class: SoupSessionClass
+    readonly reserved: object[]
     static name: string
 }
 class WebDAVSessionPrivate {
@@ -6182,8 +6222,8 @@ class WebDAVSessionPrivate {
 }
 abstract class XmlDocumentClass {
     /* Fields of EDataServer-1.2.EDataServer.XmlDocumentClass */
-    parent_class: GObject.ObjectClass
-    reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly reserved: object[]
     static name: string
 }
 class XmlDocumentPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Caribou-1.0
  */
@@ -29,7 +35,8 @@ enum ScanGrouping {
 interface KeyButtonCallback {
     (keybuttoncode: number, pressed: boolean): void
 }
-export interface IScannableItem_ConstructProps extends GObject.Object_ConstructProps {
+interface IScannableItem_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.IScannableItem */
     scan_stepping?: boolean
     scan_selected?: boolean
 }
@@ -38,7 +45,7 @@ class IScannableItem {
     scan_stepping: boolean
     scan_selected: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.IScannableItem */
     get_scan_stepping(): boolean
     set_scan_stepping(value: boolean): void
@@ -96,14 +103,15 @@ class IScannableItem {
     _init (config?: IScannableItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface IScannableGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface IScannableGroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.IScannableGroup */
     scan_grouping?: ScanGrouping
 }
 class IScannableGroup {
     /* Properties of Caribou-1.0.Caribou.IScannableGroup */
     scan_grouping: ScanGrouping
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.IScannableGroup */
     child_select(): IScannableItem | null
     scan_reset(): void
@@ -177,11 +185,11 @@ class IScannableGroup {
     _init (config?: IScannableGroup_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface IKeyboardObject_ConstructProps extends GObject.Object_ConstructProps {
+interface IKeyboardObject_ConstructProps extends GObject.Object_ConstructProps {
 }
 class IKeyboardObject {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.IKeyboardObject */
     get_children(): IKeyboardObject[]
     get_keys(): KeyModel[]
@@ -241,12 +249,13 @@ class IKeyboardObject {
     _init (config?: IKeyboardObject_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DisplayAdapter_ConstructProps extends GObject.Object_ConstructProps {
+interface DisplayAdapter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.DisplayAdapter */
     display?: Gdk.Display
 }
 class DisplayAdapter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.DisplayAdapter */
     keyval_press(keyval: number): void
     keyval_release(keyval: number): void
@@ -326,11 +335,11 @@ class DisplayAdapter {
     static get_default(): DisplayAdapter
     static $gtype: GObject.Type
 }
-export interface NullAdapter_ConstructProps extends DisplayAdapter_ConstructProps {
+interface NullAdapter_ConstructProps extends DisplayAdapter_ConstructProps {
 }
 class NullAdapter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.DisplayAdapter */
     keyval_press(keyval: number): void
     keyval_release(keyval: number): void
@@ -409,11 +418,11 @@ class NullAdapter {
     static new(): NullAdapter
     static $gtype: GObject.Type
 }
-export interface XAdapter_ConstructProps extends DisplayAdapter_ConstructProps {
+interface XAdapter_ConstructProps extends DisplayAdapter_ConstructProps {
 }
 class XAdapter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.DisplayAdapter */
     keyval_press(keyval: number): void
     keyval_release(keyval: number): void
@@ -492,7 +501,8 @@ class XAdapter {
     static new(): XAdapter
     static $gtype: GObject.Type
 }
-export interface KeyboardModel_ConstructProps extends GObject.Object_ConstructProps {
+interface KeyboardModel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.KeyboardModel */
     active_group?: string
     keyboard_type?: string
     keyboard_file?: string
@@ -501,7 +511,7 @@ class KeyboardModel {
     /* Properties of Caribou-1.0.Caribou.KeyboardModel */
     active_group: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.KeyboardModel */
     get_groups(): string[]
     get_group(group_name: string): GroupModel
@@ -578,11 +588,11 @@ class KeyboardModel {
     static new(): KeyboardModel
     static $gtype: GObject.Type
 }
-export interface KeyboardService_ConstructProps extends GObject.Object_ConstructProps {
+interface KeyboardService_ConstructProps extends GObject.Object_ConstructProps {
 }
 class KeyboardService {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.KeyboardService */
     set_cursor_location(x: number, y: number, w: number, h: number): void
     set_entry_location(x: number, y: number, w: number, h: number): void
@@ -639,17 +649,15 @@ class KeyboardService {
     _init (config?: KeyboardService_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GroupModel_ConstructProps extends GObject.Object_ConstructProps {
+interface GroupModel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.GroupModel */
     active_level?: string
 }
 class GroupModel {
     /* Properties of Caribou-1.0.Caribou.GroupModel */
     active_level: string
-    /* Fields of Caribou-1.0.Caribou.GroupModel */
-    group: string
-    variant: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.GroupModel */
     get_levels(): string[]
     get_level(level_name: string): LevelModel
@@ -718,14 +726,15 @@ class GroupModel {
     static create_group_name(group: string, variant: string): string
     static $gtype: GObject.Type
 }
-export interface LevelModel_ConstructProps extends ScannableGroup_ConstructProps {
+interface LevelModel_ConstructProps extends ScannableGroup_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.LevelModel */
     mode?: string
 }
 class LevelModel {
     /* Properties of Caribou-1.0.Caribou.LevelModel */
     mode: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.LevelModel */
     get_rows(): RowModel[]
     get_mode(): string
@@ -808,7 +817,8 @@ class LevelModel {
     static new(mode: string): LevelModel
     static $gtype: GObject.Type
 }
-export interface RowModel_ConstructProps extends ScannableGroup_ConstructProps {
+interface RowModel_ConstructProps extends ScannableGroup_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.IScannableItem */
     scan_stepping?: boolean
     scan_selected?: boolean
 }
@@ -817,7 +827,7 @@ class RowModel {
     scan_stepping: boolean
     scan_selected: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.RowModel */
     get_columns(): ColumnModel[]
     /* Methods of Caribou-1.0.Caribou.ScannableGroup */
@@ -906,7 +916,8 @@ class RowModel {
     static new(): RowModel
     static $gtype: GObject.Type
 }
-export interface KeyModel_ConstructProps extends GObject.Object_ConstructProps {
+interface KeyModel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.KeyModel */
     align?: string
     width?: number
     toggle?: string
@@ -917,6 +928,7 @@ export interface KeyModel_ConstructProps extends GObject.Object_ConstructProps {
     keyval?: number
     text?: string
     label?: string
+    /* Constructor properties of Caribou-1.0.Caribou.IScannableItem */
     scan_stepping?: boolean
     scan_selected?: boolean
 }
@@ -935,10 +947,8 @@ class KeyModel {
     /* Properties of Caribou-1.0.Caribou.IScannableItem */
     scan_stepping: boolean
     scan_selected: boolean
-    /* Fields of Caribou-1.0.Caribou.KeyModel */
-    modifier_state: ModifierState
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.KeyModel */
     press(): void
     release(): void
@@ -1061,7 +1071,8 @@ class KeyModel {
     static new(name: string, text?: string | null): KeyModel
     static $gtype: GObject.Type
 }
-export interface ColumnModel_ConstructProps extends ScannableGroup_ConstructProps {
+interface ColumnModel_ConstructProps extends ScannableGroup_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.IScannableItem */
     scan_stepping?: boolean
     scan_selected?: boolean
 }
@@ -1070,7 +1081,7 @@ class ColumnModel {
     scan_stepping: boolean
     scan_selected: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.ColumnModel */
     get_key(index: number): KeyModel
     first_key(): KeyModel
@@ -1160,7 +1171,8 @@ class ColumnModel {
     static new(): ColumnModel
     static $gtype: GObject.Type
 }
-export interface Scanner_ConstructProps extends GObject.Object_ConstructProps {
+interface Scanner_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.Scanner */
     bind_settings?: boolean
     scan_grouping?: number
     scan_enabled?: boolean
@@ -1184,7 +1196,7 @@ class Scanner {
     autorestart: boolean
     inverse_scanning: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.Scanner */
     set_keyboard(keyboard: KeyboardModel): void
     reset(): void
@@ -1270,14 +1282,15 @@ class Scanner {
     static new(): Scanner
     static $gtype: GObject.Type
 }
-export interface ScannableGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface ScannableGroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Caribou-1.0.Caribou.IScannableGroup */
     scan_grouping?: ScanGrouping
 }
 class ScannableGroup {
     /* Properties of Caribou-1.0.Caribou.IScannableGroup */
     scan_grouping: ScanGrouping
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Caribou-1.0.Caribou.ScannableGroup */
     get_scan_children(): IScannableItem[]
     child_select(): IScannableItem | null
@@ -1354,16 +1367,16 @@ class ScannableGroup {
 }
 abstract class DisplayAdapterClass {
     /* Fields of Caribou-1.0.Caribou.DisplayAdapterClass */
-    keyval_press: (keyval: number) => void
-    keyval_release: (keyval: number) => void
-    mod_lock: (mask: number) => void
-    mod_unlock: (mask: number) => void
-    mod_latch: (mask: number) => void
-    mod_unlatch: (mask: number) => void
-    get_current_group: () => [ /* returnType */ number, /* group_name */ string, /* variant_name */ string ]
-    get_groups: () => [ /* group_names */ string[], /* variant_names */ string[] ]
-    register_key_func: (keyval: number, func?: KeyButtonCallback | null) => void
-    register_button_func: (button: number, func?: KeyButtonCallback | null) => void
+    readonly keyval_press: (keyval: number) => void
+    readonly keyval_release: (keyval: number) => void
+    readonly mod_lock: (mask: number) => void
+    readonly mod_unlock: (mask: number) => void
+    readonly mod_latch: (mask: number) => void
+    readonly mod_unlatch: (mask: number) => void
+    readonly get_current_group: () => [ /* returnType */ number, /* group_name */ string, /* variant_name */ string ]
+    readonly get_groups: () => [ /* group_names */ string[], /* variant_names */ string[] ]
+    readonly register_key_func: (keyval: number, func?: KeyButtonCallback | null) => void
+    readonly register_button_func: (button: number, func?: KeyButtonCallback | null) => void
     static name: string
 }
 class DisplayAdapterPrivate {
@@ -1389,11 +1402,11 @@ class KeyboardModelPrivate {
 }
 abstract class KeyboardServiceClass {
     /* Fields of Caribou-1.0.Caribou.KeyboardServiceClass */
-    set_cursor_location: (x: number, y: number, w: number, h: number) => void
-    set_entry_location: (x: number, y: number, w: number, h: number) => void
-    show: (timestamp: number) => void
-    hide: (timestamp: number) => void
-    name_lost: (name: string) => void
+    readonly set_cursor_location: (x: number, y: number, w: number, h: number) => void
+    readonly set_entry_location: (x: number, y: number, w: number, h: number) => void
+    readonly show: (timestamp: number) => void
+    readonly hide: (timestamp: number) => void
+    readonly name_lost: (name: string) => void
     static name: string
 }
 class KeyboardServicePrivate {
@@ -1437,8 +1450,8 @@ class ScannerPrivate {
 }
 abstract class ScannableGroupClass {
     /* Fields of Caribou-1.0.Caribou.ScannableGroupClass */
-    get_scan_children: () => IScannableItem[]
-    child_select: () => IScannableItem | null
+    readonly get_scan_children: () => IScannableItem[]
+    readonly child_select: () => IScannableItem | null
     static name: string
 }
 class ScannableGroupPrivate {
@@ -1446,28 +1459,28 @@ class ScannableGroupPrivate {
 }
 abstract class IScannableItemIface {
     /* Fields of Caribou-1.0.Caribou.IScannableItemIface */
-    get_scan_stepping: () => boolean
-    set_scan_stepping: (value: boolean) => void
-    get_scan_selected: () => boolean
-    set_scan_selected: (value: boolean) => void
+    readonly get_scan_stepping: () => boolean
+    readonly set_scan_stepping: (value: boolean) => void
+    readonly get_scan_selected: () => boolean
+    readonly set_scan_selected: (value: boolean) => void
     static name: string
 }
 abstract class IScannableGroupIface {
     /* Fields of Caribou-1.0.Caribou.IScannableGroupIface */
-    child_select: () => IScannableItem | null
-    scan_reset: () => void
-    get_scan_children: () => IScannableItem[]
-    child_step: (cycles: number) => IScannableItem | null
-    get_step_path: () => IScannableItem[]
-    get_selected_path: () => IScannableItem[]
-    get_scan_grouping: () => ScanGrouping
-    set_scan_grouping: (value: ScanGrouping) => void
+    readonly child_select: () => IScannableItem | null
+    readonly scan_reset: () => void
+    readonly get_scan_children: () => IScannableItem[]
+    readonly child_step: (cycles: number) => IScannableItem | null
+    readonly get_step_path: () => IScannableItem[]
+    readonly get_selected_path: () => IScannableItem[]
+    readonly get_scan_grouping: () => ScanGrouping
+    readonly set_scan_grouping: (value: ScanGrouping) => void
     static name: string
 }
 abstract class IKeyboardObjectIface {
     /* Fields of Caribou-1.0.Caribou.IKeyboardObjectIface */
-    get_children: () => IKeyboardObject[]
-    get_keys: () => KeyModel[]
+    readonly get_children: () => IKeyboardObject[]
+    readonly get_keys: () => KeyModel[]
     static name: string
 }
 }

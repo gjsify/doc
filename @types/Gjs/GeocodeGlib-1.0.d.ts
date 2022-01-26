@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GeocodeGlib-1.0
  */
@@ -67,12 +73,12 @@ enum PlaceType {
     BAR,
     LIGHT_RAIL_STATION,
 }
-export const LOCATION_ACCURACY_CITY: number
-export const LOCATION_ACCURACY_CONTINENT: number
-export const LOCATION_ACCURACY_COUNTRY: number
-export const LOCATION_ACCURACY_REGION: number
-export const LOCATION_ACCURACY_STREET: number
-export const LOCATION_ACCURACY_UNKNOWN: number
+const LOCATION_ACCURACY_CITY: number
+const LOCATION_ACCURACY_CONTINENT: number
+const LOCATION_ACCURACY_COUNTRY: number
+const LOCATION_ACCURACY_REGION: number
+const LOCATION_ACCURACY_STREET: number
+const LOCATION_ACCURACY_UNKNOWN: number
 function error_quark(): GLib.Quark
 class Backend {
     /* Methods of GeocodeGlib-1.0.GeocodeGlib.Backend */
@@ -91,7 +97,8 @@ class Backend {
     vfunc_reverse_resolve_finish(result: Gio.AsyncResult): Place[]
     static name: string
 }
-export interface BoundingBox_ConstructProps extends GObject.Object_ConstructProps {
+interface BoundingBox_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GeocodeGlib-1.0.GeocodeGlib.BoundingBox */
     bottom?: number
     left?: number
     right?: number
@@ -99,7 +106,7 @@ export interface BoundingBox_ConstructProps extends GObject.Object_ConstructProp
 }
 class BoundingBox {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GeocodeGlib-1.0.GeocodeGlib.BoundingBox */
     equal(b: BoundingBox): boolean
     get_bottom(): number
@@ -151,7 +158,8 @@ class BoundingBox {
     static new(top: number, bottom: number, left: number, right: number): BoundingBox
     static $gtype: GObject.Type
 }
-export interface Forward_ConstructProps extends GObject.Object_ConstructProps {
+interface Forward_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GeocodeGlib-1.0.GeocodeGlib.Forward */
     answer_count?: number
     bounded?: boolean
     search_area?: BoundingBox
@@ -162,7 +170,7 @@ class Forward {
     bounded: boolean
     search_area: BoundingBox
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GeocodeGlib-1.0.GeocodeGlib.Forward */
     get_answer_count(): number
     get_bounded(): boolean
@@ -226,7 +234,8 @@ class Forward {
     static new_for_string(str: string): Forward
     static $gtype: GObject.Type
 }
-export interface Location_ConstructProps extends GObject.Object_ConstructProps {
+interface Location_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GeocodeGlib-1.0.GeocodeGlib.Location */
     accuracy?: number
     altitude?: number
     crs?: LocationCRS
@@ -243,7 +252,7 @@ class Location {
     latitude: number
     longitude: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GeocodeGlib-1.0.GeocodeGlib.Location */
     equal(b: Location): boolean
     get_accuracy(): number
@@ -313,11 +322,11 @@ class Location {
     static new_with_description(latitude: number, longitude: number, accuracy: number, description: string): Location
     static $gtype: GObject.Type
 }
-export interface MockBackend_ConstructProps extends GObject.Object_ConstructProps {
+interface MockBackend_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MockBackend {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GeocodeGlib-1.0.GeocodeGlib.MockBackend */
     add_forward_result(params: GLib.HashTable, results?: Place[] | null, error?: GLib.Error | null): void
     add_reverse_result(params: GLib.HashTable, results?: Place[] | null, error?: GLib.Error | null): void
@@ -382,7 +391,8 @@ class MockBackend {
     static new(): MockBackend
     static $gtype: GObject.Type
 }
-export interface Nominatim_ConstructProps extends GObject.Object_ConstructProps {
+interface Nominatim_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GeocodeGlib-1.0.GeocodeGlib.Nominatim */
     base_url?: string
     maintainer_email_address?: string
     user_agent?: string
@@ -390,10 +400,8 @@ export interface Nominatim_ConstructProps extends GObject.Object_ConstructProps 
 class Nominatim {
     /* Properties of GeocodeGlib-1.0.GeocodeGlib.Nominatim */
     user_agent: string
-    /* Fields of GeocodeGlib-1.0.GeocodeGlib.Nominatim */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -459,7 +467,8 @@ class Nominatim {
     static get_gnome(): Nominatim
     static $gtype: GObject.Type
 }
-export interface Place_ConstructProps extends GObject.Object_ConstructProps {
+interface Place_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GeocodeGlib-1.0.GeocodeGlib.Place */
     administrative_area?: string
     area?: string
     bounding_box?: BoundingBox
@@ -500,7 +509,7 @@ class Place {
     street_address: string
     town: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GeocodeGlib-1.0.GeocodeGlib.Place */
     equal(b: Place): boolean
     get_administrative_area(): string
@@ -619,11 +628,11 @@ class Place {
     static new_with_location(name: string, place_type: PlaceType, location: Location): Place
     static $gtype: GObject.Type
 }
-export interface Reverse_ConstructProps extends GObject.Object_ConstructProps {
+interface Reverse_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Reverse {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GeocodeGlib-1.0.GeocodeGlib.Reverse */
     resolve(): Place
     resolve_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -676,12 +685,12 @@ class Reverse {
 }
 abstract class BackendInterface {
     /* Fields of GeocodeGlib-1.0.GeocodeGlib.BackendInterface */
-    forward_search: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null) => Place[]
-    forward_search_async: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    forward_search_finish: (backend: Backend, result: Gio.AsyncResult) => Place[]
-    reverse_resolve: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null) => Place[]
-    reverse_resolve_async: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    reverse_resolve_finish: (backend: Backend, result: Gio.AsyncResult) => Place[]
+    readonly forward_search: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null) => Place[]
+    readonly forward_search_async: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly forward_search_finish: (backend: Backend, result: Gio.AsyncResult) => Place[]
+    readonly reverse_resolve: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null) => Place[]
+    readonly reverse_resolve_async: (backend: Backend, params: GLib.HashTable, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly reverse_resolve_finish: (backend: Backend, result: Gio.AsyncResult) => Place[]
     static name: string
 }
 abstract class BoundingBoxClass {
@@ -704,23 +713,23 @@ class LocationPrivate {
 }
 abstract class MockBackendClass {
     /* Fields of GeocodeGlib-1.0.GeocodeGlib.MockBackendClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MockBackendQuery {
     /* Fields of GeocodeGlib-1.0.GeocodeGlib.MockBackendQuery */
-    params: GLib.HashTable
-    is_forward: boolean
-    results: Place[]
-    error: GLib.Error
+    readonly params: GLib.HashTable
+    readonly is_forward: boolean
+    readonly results: Place[]
+    readonly error: GLib.Error
     static name: string
 }
 abstract class NominatimClass {
     /* Fields of GeocodeGlib-1.0.GeocodeGlib.NominatimClass */
-    parent_class: GObject.ObjectClass
-    query: (self: Nominatim, uri: string, cancellable?: Gio.Cancellable | null) => string
-    query_async: (self: Nominatim, uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    query_finish: (self: Nominatim, res: Gio.AsyncResult) => string
+    readonly parent_class: GObject.ObjectClass
+    readonly query: (self: Nominatim, uri: string, cancellable?: Gio.Cancellable | null) => string
+    readonly query_async: (self: Nominatim, uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly query_finish: (self: Nominatim, res: Gio.AsyncResult) => string
     static name: string
 }
 abstract class PlaceClass {

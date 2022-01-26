@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GData-0.0
  */
@@ -91,178 +97,178 @@ enum YouTubeServiceError {
 enum YouTubeStandardFeedType {
     FEED,
 }
-export const ACCESS_ROLE_NONE: string
-export const ACCESS_SCOPE_DEFAULT: string
-export const ACCESS_SCOPE_DOMAIN: string
-export const ACCESS_SCOPE_USER: string
-export const CALENDAR_ACCESS_ROLE_EDITOR: string
-export const CALENDAR_ACCESS_ROLE_FREE_BUSY: string
-export const CALENDAR_ACCESS_ROLE_OWNER: string
-export const CALENDAR_ACCESS_ROLE_READ: string
-export const CALENDAR_ACCESS_ROLE_ROOT: string
-export const CATEGORY_SCHEMA_LABELS: string
-export const DOCUMENTS_ACCESS_ROLE_OWNER: string
-export const DOCUMENTS_ACCESS_ROLE_READER: string
-export const DOCUMENTS_ACCESS_ROLE_WRITER: string
-export const DOCUMENTS_DRAWING_JPEG: string
-export const DOCUMENTS_DRAWING_PDF: string
-export const DOCUMENTS_DRAWING_PNG: string
-export const DOCUMENTS_DRAWING_SVG: string
-export const DOCUMENTS_PRESENTATION_PDF: string
-export const DOCUMENTS_PRESENTATION_PNG: string
-export const DOCUMENTS_PRESENTATION_PPT: string
-export const DOCUMENTS_PRESENTATION_TXT: string
-export const DOCUMENTS_PROPERTY_VISIBILITY_PRIVATE: string
-export const DOCUMENTS_PROPERTY_VISIBILITY_PUBLIC: string
-export const DOCUMENTS_SPREADSHEET_CSV: string
-export const DOCUMENTS_SPREADSHEET_HTML: string
-export const DOCUMENTS_SPREADSHEET_ODS: string
-export const DOCUMENTS_SPREADSHEET_PDF: string
-export const DOCUMENTS_SPREADSHEET_TSV: string
-export const DOCUMENTS_SPREADSHEET_XLS: string
-export const DOCUMENTS_TEXT_DOC: string
-export const DOCUMENTS_TEXT_HTML: string
-export const DOCUMENTS_TEXT_JPEG: string
-export const DOCUMENTS_TEXT_ODT: string
-export const DOCUMENTS_TEXT_PDF: string
-export const DOCUMENTS_TEXT_PNG: string
-export const DOCUMENTS_TEXT_RTF: string
-export const DOCUMENTS_TEXT_TXT: string
-export const DOCUMENTS_TEXT_ZIP: string
-export const GCONTACT_CALENDAR_FREE_BUSY: string
-export const GCONTACT_CALENDAR_HOME: string
-export const GCONTACT_CALENDAR_WORK: string
-export const GCONTACT_EVENT_ANNIVERSARY: string
-export const GCONTACT_EVENT_OTHER: string
-export const GCONTACT_EXTERNAL_ID_ACCOUNT: string
-export const GCONTACT_EXTERNAL_ID_CUSTOMER: string
-export const GCONTACT_EXTERNAL_ID_NETWORK: string
-export const GCONTACT_EXTERNAL_ID_ORGANIZATION: string
-export const GCONTACT_JOT_HOME: string
-export const GCONTACT_JOT_KEYWORDS: string
-export const GCONTACT_JOT_OTHER: string
-export const GCONTACT_JOT_USER: string
-export const GCONTACT_JOT_WORK: string
-export const GCONTACT_RELATION_ASSISTANT: string
-export const GCONTACT_RELATION_BROTHER: string
-export const GCONTACT_RELATION_CHILD: string
-export const GCONTACT_RELATION_DOMESTIC_PARTNER: string
-export const GCONTACT_RELATION_FATHER: string
-export const GCONTACT_RELATION_FRIEND: string
-export const GCONTACT_RELATION_MANAGER: string
-export const GCONTACT_RELATION_MOTHER: string
-export const GCONTACT_RELATION_PARENT: string
-export const GCONTACT_RELATION_PARTNER: string
-export const GCONTACT_RELATION_REFERRER: string
-export const GCONTACT_RELATION_RELATIVE: string
-export const GCONTACT_RELATION_SISTER: string
-export const GCONTACT_RELATION_SPOUSE: string
-export const GCONTACT_WEBSITE_BLOG: string
-export const GCONTACT_WEBSITE_FTP: string
-export const GCONTACT_WEBSITE_HOME: string
-export const GCONTACT_WEBSITE_HOME_PAGE: string
-export const GCONTACT_WEBSITE_OTHER: string
-export const GCONTACT_WEBSITE_PROFILE: string
-export const GCONTACT_WEBSITE_WORK: string
-export const GD_ADDRESS_USAGE_GENERAL: string
-export const GD_ADDRESS_USAGE_LOCAL: string
-export const GD_EMAIL_ADDRESS_HOME: string
-export const GD_EMAIL_ADDRESS_OTHER: string
-export const GD_EMAIL_ADDRESS_WORK: string
-export const GD_EVENT_STATUS_CANCELED: string
-export const GD_EVENT_STATUS_CONFIRMED: string
-export const GD_EVENT_STATUS_TENTATIVE: string
-export const GD_EVENT_TRANSPARENCY_OPAQUE: string
-export const GD_EVENT_TRANSPARENCY_TRANSPARENT: string
-export const GD_EVENT_VISIBILITY_CONFIDENTIAL: string
-export const GD_EVENT_VISIBILITY_DEFAULT: string
-export const GD_EVENT_VISIBILITY_PRIVATE: string
-export const GD_EVENT_VISIBILITY_PUBLIC: string
-export const GD_IM_ADDRESS_HOME: string
-export const GD_IM_ADDRESS_NETMEETING: string
-export const GD_IM_ADDRESS_OTHER: string
-export const GD_IM_ADDRESS_WORK: string
-export const GD_IM_PROTOCOL_AIM: string
-export const GD_IM_PROTOCOL_GOOGLE_TALK: string
-export const GD_IM_PROTOCOL_ICQ: string
-export const GD_IM_PROTOCOL_JABBER: string
-export const GD_IM_PROTOCOL_LIVE_MESSENGER: string
-export const GD_IM_PROTOCOL_QQ: string
-export const GD_IM_PROTOCOL_SKYPE: string
-export const GD_IM_PROTOCOL_YAHOO_MESSENGER: string
-export const GD_MAIL_CLASS_BOTH: string
-export const GD_MAIL_CLASS_LETTERS: string
-export const GD_MAIL_CLASS_NEITHER: string
-export const GD_MAIL_CLASS_PARCELS: string
-export const GD_ORGANIZATION_OTHER: string
-export const GD_ORGANIZATION_WORK: string
-export const GD_PHONE_NUMBER_ASSISTANT: string
-export const GD_PHONE_NUMBER_CALLBACK: string
-export const GD_PHONE_NUMBER_CAR: string
-export const GD_PHONE_NUMBER_COMPANY_MAIN: string
-export const GD_PHONE_NUMBER_FAX: string
-export const GD_PHONE_NUMBER_HOME: string
-export const GD_PHONE_NUMBER_HOME_FAX: string
-export const GD_PHONE_NUMBER_ISDN: string
-export const GD_PHONE_NUMBER_MAIN: string
-export const GD_PHONE_NUMBER_MOBILE: string
-export const GD_PHONE_NUMBER_OTHER: string
-export const GD_PHONE_NUMBER_OTHER_FAX: string
-export const GD_PHONE_NUMBER_PAGER: string
-export const GD_PHONE_NUMBER_RADIO: string
-export const GD_PHONE_NUMBER_TELEX: string
-export const GD_PHONE_NUMBER_TTY_TDD: string
-export const GD_PHONE_NUMBER_WORK: string
-export const GD_PHONE_NUMBER_WORK_FAX: string
-export const GD_PHONE_NUMBER_WORK_MOBILE: string
-export const GD_PHONE_NUMBER_WORK_PAGER: string
-export const GD_POSTAL_ADDRESS_HOME: string
-export const GD_POSTAL_ADDRESS_OTHER: string
-export const GD_POSTAL_ADDRESS_WORK: string
-export const GD_REMINDER_ALERT: string
-export const GD_REMINDER_EMAIL: string
-export const GD_REMINDER_SMS: string
-export const GD_WHERE_EVENT: string
-export const GD_WHERE_EVENT_ALTERNATE: string
-export const GD_WHERE_EVENT_PARKING: string
-export const GD_WHO_EVENT_ATTENDEE: string
-export const GD_WHO_EVENT_ORGANIZER: string
-export const GD_WHO_EVENT_PERFORMER: string
-export const GD_WHO_EVENT_SPEAKER: string
-export const LINK_ACCESS_CONTROL_LIST: string
-export const LINK_ALTERNATE: string
-export const LINK_BATCH: string
-export const LINK_EDIT: string
-export const LINK_EDIT_MEDIA: string
-export const LINK_ENCLOSURE: string
-export const LINK_PARENT: string
-export const LINK_RELATED: string
-export const LINK_RESUMABLE_CREATE_MEDIA: string
-export const LINK_RESUMABLE_EDIT_MEDIA: string
-export const LINK_SELF: string
-export const LINK_VIA: string
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const OAUTH2_REDIRECT_URI_OOB: string
-export const OAUTH2_REDIRECT_URI_OOB_AUTO: string
-export const PICASAWEB_VIDEO_STATUS_FAILED: string
-export const PICASAWEB_VIDEO_STATUS_FINAL: string
-export const PICASAWEB_VIDEO_STATUS_PENDING: string
-export const PICASAWEB_VIDEO_STATUS_READY: string
-export const TASKS_STATUS_COMPLETED: string
-export const TASKS_STATUS_NEEDS_ACTION: string
-export const YOUTUBE_ACTION_COMMENT: string
-export const YOUTUBE_ACTION_COMMENT_VOTE: string
-export const YOUTUBE_ACTION_EMBED: string
-export const YOUTUBE_ACTION_RATE: string
-export const YOUTUBE_ACTION_SYNDICATE: string
-export const YOUTUBE_ACTION_VIDEO_RESPOND: string
-export const YOUTUBE_ASPECT_RATIO_WIDESCREEN: string
-export const YOUTUBE_LICENSE_CC: string
-export const YOUTUBE_LICENSE_STANDARD: string
-export const YOUTUBE_RATING_TYPE_MPAA: string
-export const YOUTUBE_RATING_TYPE_V_CHIP: string
+const ACCESS_ROLE_NONE: string
+const ACCESS_SCOPE_DEFAULT: string
+const ACCESS_SCOPE_DOMAIN: string
+const ACCESS_SCOPE_USER: string
+const CALENDAR_ACCESS_ROLE_EDITOR: string
+const CALENDAR_ACCESS_ROLE_FREE_BUSY: string
+const CALENDAR_ACCESS_ROLE_OWNER: string
+const CALENDAR_ACCESS_ROLE_READ: string
+const CALENDAR_ACCESS_ROLE_ROOT: string
+const CATEGORY_SCHEMA_LABELS: string
+const DOCUMENTS_ACCESS_ROLE_OWNER: string
+const DOCUMENTS_ACCESS_ROLE_READER: string
+const DOCUMENTS_ACCESS_ROLE_WRITER: string
+const DOCUMENTS_DRAWING_JPEG: string
+const DOCUMENTS_DRAWING_PDF: string
+const DOCUMENTS_DRAWING_PNG: string
+const DOCUMENTS_DRAWING_SVG: string
+const DOCUMENTS_PRESENTATION_PDF: string
+const DOCUMENTS_PRESENTATION_PNG: string
+const DOCUMENTS_PRESENTATION_PPT: string
+const DOCUMENTS_PRESENTATION_TXT: string
+const DOCUMENTS_PROPERTY_VISIBILITY_PRIVATE: string
+const DOCUMENTS_PROPERTY_VISIBILITY_PUBLIC: string
+const DOCUMENTS_SPREADSHEET_CSV: string
+const DOCUMENTS_SPREADSHEET_HTML: string
+const DOCUMENTS_SPREADSHEET_ODS: string
+const DOCUMENTS_SPREADSHEET_PDF: string
+const DOCUMENTS_SPREADSHEET_TSV: string
+const DOCUMENTS_SPREADSHEET_XLS: string
+const DOCUMENTS_TEXT_DOC: string
+const DOCUMENTS_TEXT_HTML: string
+const DOCUMENTS_TEXT_JPEG: string
+const DOCUMENTS_TEXT_ODT: string
+const DOCUMENTS_TEXT_PDF: string
+const DOCUMENTS_TEXT_PNG: string
+const DOCUMENTS_TEXT_RTF: string
+const DOCUMENTS_TEXT_TXT: string
+const DOCUMENTS_TEXT_ZIP: string
+const GCONTACT_CALENDAR_FREE_BUSY: string
+const GCONTACT_CALENDAR_HOME: string
+const GCONTACT_CALENDAR_WORK: string
+const GCONTACT_EVENT_ANNIVERSARY: string
+const GCONTACT_EVENT_OTHER: string
+const GCONTACT_EXTERNAL_ID_ACCOUNT: string
+const GCONTACT_EXTERNAL_ID_CUSTOMER: string
+const GCONTACT_EXTERNAL_ID_NETWORK: string
+const GCONTACT_EXTERNAL_ID_ORGANIZATION: string
+const GCONTACT_JOT_HOME: string
+const GCONTACT_JOT_KEYWORDS: string
+const GCONTACT_JOT_OTHER: string
+const GCONTACT_JOT_USER: string
+const GCONTACT_JOT_WORK: string
+const GCONTACT_RELATION_ASSISTANT: string
+const GCONTACT_RELATION_BROTHER: string
+const GCONTACT_RELATION_CHILD: string
+const GCONTACT_RELATION_DOMESTIC_PARTNER: string
+const GCONTACT_RELATION_FATHER: string
+const GCONTACT_RELATION_FRIEND: string
+const GCONTACT_RELATION_MANAGER: string
+const GCONTACT_RELATION_MOTHER: string
+const GCONTACT_RELATION_PARENT: string
+const GCONTACT_RELATION_PARTNER: string
+const GCONTACT_RELATION_REFERRER: string
+const GCONTACT_RELATION_RELATIVE: string
+const GCONTACT_RELATION_SISTER: string
+const GCONTACT_RELATION_SPOUSE: string
+const GCONTACT_WEBSITE_BLOG: string
+const GCONTACT_WEBSITE_FTP: string
+const GCONTACT_WEBSITE_HOME: string
+const GCONTACT_WEBSITE_HOME_PAGE: string
+const GCONTACT_WEBSITE_OTHER: string
+const GCONTACT_WEBSITE_PROFILE: string
+const GCONTACT_WEBSITE_WORK: string
+const GD_ADDRESS_USAGE_GENERAL: string
+const GD_ADDRESS_USAGE_LOCAL: string
+const GD_EMAIL_ADDRESS_HOME: string
+const GD_EMAIL_ADDRESS_OTHER: string
+const GD_EMAIL_ADDRESS_WORK: string
+const GD_EVENT_STATUS_CANCELED: string
+const GD_EVENT_STATUS_CONFIRMED: string
+const GD_EVENT_STATUS_TENTATIVE: string
+const GD_EVENT_TRANSPARENCY_OPAQUE: string
+const GD_EVENT_TRANSPARENCY_TRANSPARENT: string
+const GD_EVENT_VISIBILITY_CONFIDENTIAL: string
+const GD_EVENT_VISIBILITY_DEFAULT: string
+const GD_EVENT_VISIBILITY_PRIVATE: string
+const GD_EVENT_VISIBILITY_PUBLIC: string
+const GD_IM_ADDRESS_HOME: string
+const GD_IM_ADDRESS_NETMEETING: string
+const GD_IM_ADDRESS_OTHER: string
+const GD_IM_ADDRESS_WORK: string
+const GD_IM_PROTOCOL_AIM: string
+const GD_IM_PROTOCOL_GOOGLE_TALK: string
+const GD_IM_PROTOCOL_ICQ: string
+const GD_IM_PROTOCOL_JABBER: string
+const GD_IM_PROTOCOL_LIVE_MESSENGER: string
+const GD_IM_PROTOCOL_QQ: string
+const GD_IM_PROTOCOL_SKYPE: string
+const GD_IM_PROTOCOL_YAHOO_MESSENGER: string
+const GD_MAIL_CLASS_BOTH: string
+const GD_MAIL_CLASS_LETTERS: string
+const GD_MAIL_CLASS_NEITHER: string
+const GD_MAIL_CLASS_PARCELS: string
+const GD_ORGANIZATION_OTHER: string
+const GD_ORGANIZATION_WORK: string
+const GD_PHONE_NUMBER_ASSISTANT: string
+const GD_PHONE_NUMBER_CALLBACK: string
+const GD_PHONE_NUMBER_CAR: string
+const GD_PHONE_NUMBER_COMPANY_MAIN: string
+const GD_PHONE_NUMBER_FAX: string
+const GD_PHONE_NUMBER_HOME: string
+const GD_PHONE_NUMBER_HOME_FAX: string
+const GD_PHONE_NUMBER_ISDN: string
+const GD_PHONE_NUMBER_MAIN: string
+const GD_PHONE_NUMBER_MOBILE: string
+const GD_PHONE_NUMBER_OTHER: string
+const GD_PHONE_NUMBER_OTHER_FAX: string
+const GD_PHONE_NUMBER_PAGER: string
+const GD_PHONE_NUMBER_RADIO: string
+const GD_PHONE_NUMBER_TELEX: string
+const GD_PHONE_NUMBER_TTY_TDD: string
+const GD_PHONE_NUMBER_WORK: string
+const GD_PHONE_NUMBER_WORK_FAX: string
+const GD_PHONE_NUMBER_WORK_MOBILE: string
+const GD_PHONE_NUMBER_WORK_PAGER: string
+const GD_POSTAL_ADDRESS_HOME: string
+const GD_POSTAL_ADDRESS_OTHER: string
+const GD_POSTAL_ADDRESS_WORK: string
+const GD_REMINDER_ALERT: string
+const GD_REMINDER_EMAIL: string
+const GD_REMINDER_SMS: string
+const GD_WHERE_EVENT: string
+const GD_WHERE_EVENT_ALTERNATE: string
+const GD_WHERE_EVENT_PARKING: string
+const GD_WHO_EVENT_ATTENDEE: string
+const GD_WHO_EVENT_ORGANIZER: string
+const GD_WHO_EVENT_PERFORMER: string
+const GD_WHO_EVENT_SPEAKER: string
+const LINK_ACCESS_CONTROL_LIST: string
+const LINK_ALTERNATE: string
+const LINK_BATCH: string
+const LINK_EDIT: string
+const LINK_EDIT_MEDIA: string
+const LINK_ENCLOSURE: string
+const LINK_PARENT: string
+const LINK_RELATED: string
+const LINK_RESUMABLE_CREATE_MEDIA: string
+const LINK_RESUMABLE_EDIT_MEDIA: string
+const LINK_SELF: string
+const LINK_VIA: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const OAUTH2_REDIRECT_URI_OOB: string
+const OAUTH2_REDIRECT_URI_OOB_AUTO: string
+const PICASAWEB_VIDEO_STATUS_FAILED: string
+const PICASAWEB_VIDEO_STATUS_FINAL: string
+const PICASAWEB_VIDEO_STATUS_PENDING: string
+const PICASAWEB_VIDEO_STATUS_READY: string
+const TASKS_STATUS_COMPLETED: string
+const TASKS_STATUS_NEEDS_ACTION: string
+const YOUTUBE_ACTION_COMMENT: string
+const YOUTUBE_ACTION_COMMENT_VOTE: string
+const YOUTUBE_ACTION_EMBED: string
+const YOUTUBE_ACTION_RATE: string
+const YOUTUBE_ACTION_SYNDICATE: string
+const YOUTUBE_ACTION_VIDEO_RESPOND: string
+const YOUTUBE_ASPECT_RATIO_WIDESCREEN: string
+const YOUTUBE_LICENSE_CC: string
+const YOUTUBE_LICENSE_STANDARD: string
+const YOUTUBE_RATING_TYPE_MPAA: string
+const YOUTUBE_RATING_TYPE_V_CHIP: string
 function color_from_hexadecimal(hexadecimal: string): [ /* returnType */ boolean, /* color */ Color ]
 function documents_service_error_quark(): GLib.Quark
 function parser_error_quark(): GLib.Quark
@@ -274,7 +280,7 @@ interface BatchOperationCallback {
 interface QueryProgressCallback {
     (entry: Entry, entry_key: number, entry_count: number): void
 }
-export interface AccessHandler_ConstructProps extends Entry_ConstructProps {
+interface AccessHandler_ConstructProps extends Entry_ConstructProps {
 }
 class AccessHandler {
     /* Properties of GData-0.0.GData.Entry */
@@ -287,10 +293,10 @@ class AccessHandler {
     title: string
     readonly updated: number
     /* Fields of GData-0.0.GData.Entry */
-    parent: Parsable
-    priv: EntryPrivate
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.AccessHandler */
     get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     get_rules_async(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -407,7 +413,7 @@ class Authorizer {
     vfunc_refresh_authorization_finish(async_result: Gio.AsyncResult): boolean
     static name: string
 }
-export interface Batchable_ConstructProps extends Service_ConstructProps {
+interface Batchable_ConstructProps extends Service_ConstructProps {
 }
 class Batchable {
     /* Properties of GData-0.0.GData.Service */
@@ -416,10 +422,10 @@ class Batchable {
     proxy_resolver: Gio.ProxyResolver
     timeout: number
     /* Fields of GData-0.0.GData.Service */
-    parent: GObject.Object
-    priv: ServicePrivate
+    readonly parent: GObject.Object
+    readonly priv: ServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Batchable */
     create_operation(domain: AuthorizationDomain | null, feed_uri: string): BatchOperation
     /* Methods of GData-0.0.GData.Service */
@@ -501,7 +507,7 @@ class Batchable {
     _init (config?: Batchable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Commentable_ConstructProps extends Entry_ConstructProps {
+interface Commentable_ConstructProps extends Entry_ConstructProps {
 }
 class Commentable {
     /* Properties of GData-0.0.GData.Entry */
@@ -514,10 +520,10 @@ class Commentable {
     title: string
     readonly updated: number
     /* Fields of GData-0.0.GData.Entry */
-    parent: Parsable
-    priv: EntryPrivate
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Commentable */
     delete_comment(service: Service, comment_: Comment, cancellable?: Gio.Cancellable | null): boolean
     delete_comment_async(service: Service, comment_: Comment, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -635,16 +641,16 @@ class Comparable {
     vfunc_compare_with(other: Comparable): number
     static name: string
 }
-export interface APPCategories_ConstructProps extends Parsable_ConstructProps {
+interface APPCategories_ConstructProps extends Parsable_ConstructProps {
 }
 class APPCategories {
     /* Properties of GData-0.0.GData.APPCategories */
     readonly is_fixed: boolean
     /* Fields of GData-0.0.GData.Parsable */
-    parent: GObject.Object
-    priv: ParsablePrivate
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.APPCategories */
     get_categories(): Category[]
     /* Methods of GData-0.0.GData.Parsable */
@@ -706,7 +712,8 @@ class APPCategories {
     _init (config?: APPCategories_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AccessRule_ConstructProps extends Entry_ConstructProps {
+interface AccessRule_ConstructProps extends Entry_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.AccessRule */
     role?: string
     scope_type?: string
     scope_value?: string
@@ -727,11 +734,11 @@ class AccessRule {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.AccessRule */
-    parent: Entry
-    priv: AccessRulePrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.AccessRule */
     get_edited(): number
     get_key(): string
@@ -845,10 +852,12 @@ class AccessRule {
     _init (config?: AccessRule_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string): AccessRule
+    /* Function overloads */
     static new(id?: string | null): AccessRule
     static $gtype: GObject.Type
 }
-export interface Author_ConstructProps extends Parsable_ConstructProps {
+interface Author_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.Author */
     email_address?: string
     name?: string
     uri?: string
@@ -858,11 +867,11 @@ class Author {
     email_address: string
     name: string
     uri: string
-    /* Fields of GData-0.0.GData.Author */
-    parent: Parsable
-    priv: AuthorPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Author */
     get_email_address(): string
     get_name(): string
@@ -939,13 +948,14 @@ class Author {
     static new(name: string, uri?: string | null, email_address?: string | null): Author
     static $gtype: GObject.Type
 }
-export interface AuthorizationDomain_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthorizationDomain_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.AuthorizationDomain */
     scope?: string
     service_name?: string
 }
 class AuthorizationDomain {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.AuthorizationDomain */
     get_scope(): string
     get_service_name(): string
@@ -992,17 +1002,15 @@ class AuthorizationDomain {
     _init (config?: AuthorizationDomain_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BatchOperation_ConstructProps extends GObject.Object_ConstructProps {
+interface BatchOperation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.BatchOperation */
     authorization_domain?: AuthorizationDomain
     feed_uri?: string
     service?: Service
 }
 class BatchOperation {
-    /* Fields of GData-0.0.GData.BatchOperation */
-    parent: GObject.Object
-    priv: BatchOperationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.BatchOperation */
     add_deletion(entry: Entry, callback: BatchOperationCallback): number
     add_insertion(entry: Entry, callback: BatchOperationCallback): number
@@ -1057,7 +1065,7 @@ class BatchOperation {
     _init (config?: BatchOperation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CalendarAccessRule_ConstructProps extends AccessRule_ConstructProps {
+interface CalendarAccessRule_ConstructProps extends AccessRule_ConstructProps {
 }
 class CalendarAccessRule {
     /* Properties of GData-0.0.GData.AccessRule */
@@ -1075,12 +1083,11 @@ class CalendarAccessRule {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.CalendarAccessRule */
-    parent: AccessRule
     /* Fields of GData-0.0.GData.AccessRule */
-    priv: AccessRulePrivate
+    readonly parent: Entry
+    readonly priv: AccessRulePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.AccessRule */
     get_edited(): number
     get_key(): string
@@ -1194,10 +1201,13 @@ class CalendarAccessRule {
     _init (config?: CalendarAccessRule_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string): CalendarAccessRule
+    /* Function overloads */
+    static new(id: string): CalendarAccessRule
     static new(id?: string | null): CalendarAccessRule
     static $gtype: GObject.Type
 }
-export interface CalendarCalendar_ConstructProps extends Entry_ConstructProps {
+interface CalendarCalendar_ConstructProps extends Entry_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.CalendarCalendar */
     color?: Color
     is_hidden?: boolean
     is_selected?: boolean
@@ -1219,11 +1229,11 @@ class CalendarCalendar {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.CalendarCalendar */
-    parent: Entry
-    priv: CalendarCalendarPrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.CalendarCalendar */
     get_access_level(): string
     get_color(): /* color */ Color
@@ -1343,9 +1353,12 @@ class CalendarCalendar {
     _init (config?: CalendarCalendar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): CalendarCalendar
+    /* Function overloads */
+    static new(id?: string | null): CalendarCalendar
     static $gtype: GObject.Type
 }
-export interface CalendarEvent_ConstructProps extends Entry_ConstructProps {
+interface CalendarEvent_ConstructProps extends Entry_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.CalendarEvent */
     anyone_can_add_self?: boolean
     guests_can_invite_others?: boolean
     guests_can_modify?: boolean
@@ -1381,11 +1394,11 @@ class CalendarEvent {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.CalendarEvent */
-    parent: Entry
-    priv: CalendarEventPrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.CalendarEvent */
     add_person(who: GDWho): void
     add_place(where: GDWhere): void
@@ -1539,9 +1552,11 @@ class CalendarEvent {
     _init (config?: CalendarEvent_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): CalendarEvent
+    /* Function overloads */
+    static new(id?: string | null): CalendarEvent
     static $gtype: GObject.Type
 }
-export interface CalendarFeed_ConstructProps extends Feed_ConstructProps {
+interface CalendarFeed_ConstructProps extends Feed_ConstructProps {
 }
 class CalendarFeed {
     /* Properties of GData-0.0.GData.Feed */
@@ -1558,11 +1573,11 @@ class CalendarFeed {
     readonly title: string
     readonly total_results: number
     readonly updated: number
-    /* Fields of GData-0.0.GData.CalendarFeed */
-    parent: Feed
-    priv: CalendarFeedPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Feed */
     get_authors(): Author[]
     get_categories(): Category[]
@@ -1666,7 +1681,8 @@ class CalendarFeed {
     _init (config?: CalendarFeed_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CalendarQuery_ConstructProps extends Query_ConstructProps {
+interface CalendarQuery_ConstructProps extends Query_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.CalendarQuery */
     future_events?: boolean
     max_attendees?: number
     order_by?: string
@@ -1698,11 +1714,11 @@ class CalendarQuery {
     start_index: number
     updated_max: number
     updated_min: number
-    /* Fields of GData-0.0.GData.CalendarQuery */
-    parent: Query
-    priv: CalendarQueryPrivate
+    /* Fields of GData-0.0.GData.Query */
+    readonly parent: GObject.Object
+    readonly priv: QueryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.CalendarQuery */
     get_future_events(): boolean
     get_max_attendees(): number
@@ -1827,10 +1843,14 @@ class CalendarQuery {
     _init (config?: CalendarQuery_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(q?: string | null): CalendarQuery
+    /* Function overloads */
+    static new(q?: string | null): CalendarQuery
     static new_with_limits(q: string | null, start_min: number, start_max: number): CalendarQuery
+    /* Function overloads */
+    static new_with_limits(q: string | null, start_index: number, max_results: number): CalendarQuery
     static $gtype: GObject.Type
 }
-export interface CalendarService_ConstructProps extends Service_ConstructProps {
+interface CalendarService_ConstructProps extends Service_ConstructProps {
 }
 class CalendarService {
     /* Properties of GData-0.0.GData.Service */
@@ -1838,12 +1858,11 @@ class CalendarService {
     locale: string
     proxy_resolver: Gio.ProxyResolver
     timeout: number
-    /* Fields of GData-0.0.GData.CalendarService */
-    parent: Service
     /* Fields of GData-0.0.GData.Service */
-    priv: ServicePrivate
+    readonly parent: GObject.Object
+    readonly priv: ServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.CalendarService */
     insert_calendar_event(calendar: CalendarCalendar, event: CalendarEvent, cancellable?: Gio.Cancellable | null): CalendarEvent
     insert_calendar_event_async(calendar: CalendarCalendar, event: CalendarEvent, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1937,7 +1956,8 @@ class CalendarService {
     static get_primary_authorization_domain(): AuthorizationDomain
     static $gtype: GObject.Type
 }
-export interface Category_ConstructProps extends Parsable_ConstructProps {
+interface Category_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.Category */
     label?: string
     scheme?: string
     term?: string
@@ -1947,11 +1967,11 @@ class Category {
     label: string
     scheme: string
     term: string
-    /* Fields of GData-0.0.GData.Category */
-    parent: Parsable
-    priv: CategoryPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Category */
     get_label(): string
     get_scheme(): string
@@ -2028,7 +2048,7 @@ class Category {
     static new(term: string, scheme?: string | null, label?: string | null): Category
     static $gtype: GObject.Type
 }
-export interface Comment_ConstructProps extends Entry_ConstructProps {
+interface Comment_ConstructProps extends Entry_ConstructProps {
 }
 class Comment {
     /* Properties of GData-0.0.GData.Entry */
@@ -2040,11 +2060,11 @@ class Comment {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.Comment */
-    parent: Entry
-    priv: CommentPrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Entry */
     add_author(author: Author): void
     add_category(category: Category): void
@@ -2141,7 +2161,7 @@ class Comment {
     _init (config?: Comment_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DocumentsAccessRule_ConstructProps extends AccessRule_ConstructProps {
+interface DocumentsAccessRule_ConstructProps extends AccessRule_ConstructProps {
 }
 class DocumentsAccessRule {
     /* Properties of GData-0.0.GData.AccessRule */
@@ -2159,12 +2179,11 @@ class DocumentsAccessRule {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsAccessRule */
-    parent: AccessRule
     /* Fields of GData-0.0.GData.AccessRule */
-    priv: AccessRulePrivate
+    readonly parent: Entry
+    readonly priv: AccessRulePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.AccessRule */
     get_edited(): number
     get_key(): string
@@ -2278,10 +2297,12 @@ class DocumentsAccessRule {
     _init (config?: DocumentsAccessRule_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string): DocumentsAccessRule
+    /* Function overloads */
+    static new(id: string): DocumentsAccessRule
     static new(id?: string | null): DocumentsAccessRule
     static $gtype: GObject.Type
 }
-export interface DocumentsDocument_ConstructProps extends DocumentsEntry_ConstructProps {
+interface DocumentsDocument_ConstructProps extends DocumentsEntry_ConstructProps {
 }
 class DocumentsDocument {
     /* Properties of GData-0.0.GData.DocumentsEntry */
@@ -2303,11 +2324,11 @@ class DocumentsDocument {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsDocument */
-    parent: DocumentsEntry
-    priv: DocumentsDocumentPrivate
+    /* Fields of GData-0.0.GData.DocumentsEntry */
+    readonly parent: Entry
+    readonly priv: DocumentsEntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsDocument */
     download(service: DocumentsService, export_format: string, cancellable?: Gio.Cancellable | null): DownloadStream
     get_download_uri(export_format: string): string | null
@@ -2376,6 +2397,8 @@ class DocumentsDocument {
     /* Methods of GData-0.0.GData.AccessHandler */
     get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     get_rules_async(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Virtual methods of GData-0.0.GData.DocumentsDocument */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.DocumentsEntry */
     vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.Parsable */
@@ -2443,9 +2466,11 @@ class DocumentsDocument {
     _init (config?: DocumentsDocument_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): DocumentsDocument
+    /* Function overloads */
+    static new(id?: string | null): DocumentsDocument
     static $gtype: GObject.Type
 }
-export interface DocumentsDrawing_ConstructProps extends DocumentsDocument_ConstructProps {
+interface DocumentsDrawing_ConstructProps extends DocumentsDocument_ConstructProps {
 }
 class DocumentsDrawing {
     /* Properties of GData-0.0.GData.DocumentsEntry */
@@ -2467,11 +2492,11 @@ class DocumentsDrawing {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsDrawing */
-    parent: DocumentsDocument
-    priv: DocumentsDrawingPrivate
+    /* Fields of GData-0.0.GData.DocumentsDocument */
+    readonly parent: DocumentsEntry
+    readonly priv: DocumentsDocumentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsDocument */
     download(service: DocumentsService, export_format: string, cancellable?: Gio.Cancellable | null): DownloadStream
     get_download_uri(export_format: string): string | null
@@ -2540,6 +2565,10 @@ class DocumentsDrawing {
     /* Methods of GData-0.0.GData.AccessHandler */
     get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     get_rules_async(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Virtual methods of GData-0.0.GData.DocumentsDrawing */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
+    /* Virtual methods of GData-0.0.GData.DocumentsDocument */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.DocumentsEntry */
     vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.Parsable */
@@ -2607,9 +2636,12 @@ class DocumentsDrawing {
     _init (config?: DocumentsDrawing_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): DocumentsDrawing
+    /* Function overloads */
+    static new(id?: string | null): DocumentsDrawing
+    static new(id?: string | null): DocumentsDrawing
     static $gtype: GObject.Type
 }
-export interface DocumentsDrive_ConstructProps extends Entry_ConstructProps {
+interface DocumentsDrive_ConstructProps extends Entry_ConstructProps {
 }
 class DocumentsDrive {
     /* Properties of GData-0.0.GData.DocumentsDrive */
@@ -2623,13 +2655,11 @@ class DocumentsDrive {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsDrive */
-    parent_instance: Entry
     /* Fields of GData-0.0.GData.Entry */
-    parent: Parsable
-    priv: EntryPrivate
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsDrive */
     get_name(): string | null
     /* Methods of GData-0.0.GData.Entry */
@@ -2730,7 +2760,7 @@ class DocumentsDrive {
     _init (config?: DocumentsDrive_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DocumentsDriveQuery_ConstructProps extends Query_ConstructProps {
+interface DocumentsDriveQuery_ConstructProps extends Query_ConstructProps {
 }
 class DocumentsDriveQuery {
     /* Properties of GData-0.0.GData.Query */
@@ -2745,13 +2775,11 @@ class DocumentsDriveQuery {
     start_index: number
     updated_max: number
     updated_min: number
-    /* Fields of GData-0.0.GData.DocumentsDriveQuery */
-    parent_instance: Query
     /* Fields of GData-0.0.GData.Query */
-    parent: GObject.Object
-    priv: QueryPrivate
+    readonly parent: GObject.Object
+    readonly priv: QueryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Query */
     get_author(): string
     get_categories(): string
@@ -2844,9 +2872,12 @@ class DocumentsDriveQuery {
     _init (config?: DocumentsDriveQuery_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(q?: string | null): DocumentsDriveQuery
+    /* Function overloads */
+    static new(q?: string | null): DocumentsDriveQuery
     static $gtype: GObject.Type
 }
-export interface DocumentsEntry_ConstructProps extends Entry_ConstructProps {
+interface DocumentsEntry_ConstructProps extends Entry_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.DocumentsEntry */
     is_deleted?: boolean
     writers_can_invite?: boolean
 }
@@ -2870,11 +2901,11 @@ class DocumentsEntry {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsEntry */
-    parent: Entry
-    priv: DocumentsEntryPrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsEntry */
     add_documents_property(property: DocumentsProperty): boolean
     get_document_properties(): DocumentsProperty[]
@@ -3006,7 +3037,7 @@ class DocumentsEntry {
     _init (config?: DocumentsEntry_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DocumentsFeed_ConstructProps extends Feed_ConstructProps {
+interface DocumentsFeed_ConstructProps extends Feed_ConstructProps {
 }
 class DocumentsFeed {
     /* Properties of GData-0.0.GData.Feed */
@@ -3024,10 +3055,10 @@ class DocumentsFeed {
     readonly total_results: number
     readonly updated: number
     /* Fields of GData-0.0.GData.Parsable */
-    parent: GObject.Object
-    priv: ParsablePrivate
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Feed */
     get_authors(): Author[]
     get_categories(): Category[]
@@ -3131,7 +3162,7 @@ class DocumentsFeed {
     _init (config?: DocumentsFeed_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DocumentsFolder_ConstructProps extends DocumentsEntry_ConstructProps {
+interface DocumentsFolder_ConstructProps extends DocumentsEntry_ConstructProps {
 }
 class DocumentsFolder {
     /* Properties of GData-0.0.GData.DocumentsEntry */
@@ -3153,11 +3184,11 @@ class DocumentsFolder {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsFolder */
-    parent: DocumentsEntry
-    priv: DocumentsFolderPrivate
+    /* Fields of GData-0.0.GData.DocumentsEntry */
+    readonly parent: Entry
+    readonly priv: DocumentsEntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsEntry */
     add_documents_property(property: DocumentsProperty): boolean
     get_document_properties(): DocumentsProperty[]
@@ -3222,6 +3253,8 @@ class DocumentsFolder {
     /* Methods of GData-0.0.GData.AccessHandler */
     get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     get_rules_async(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Virtual methods of GData-0.0.GData.DocumentsFolder */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.DocumentsEntry */
     vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.Parsable */
@@ -3289,19 +3322,21 @@ class DocumentsFolder {
     _init (config?: DocumentsFolder_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): DocumentsFolder
+    /* Function overloads */
+    static new(id?: string | null): DocumentsFolder
     static $gtype: GObject.Type
 }
-export interface DocumentsMetadata_ConstructProps extends Parsable_ConstructProps {
+interface DocumentsMetadata_ConstructProps extends Parsable_ConstructProps {
 }
 class DocumentsMetadata {
     /* Properties of GData-0.0.GData.DocumentsMetadata */
     readonly quota_total: number
     readonly quota_used: number
-    /* Fields of GData-0.0.GData.DocumentsMetadata */
-    parent: Parsable
-    priv: DocumentsMetadataPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsMetadata */
     get_quota_total(): number
     get_quota_used(): number
@@ -3366,7 +3401,7 @@ class DocumentsMetadata {
     _init (config?: DocumentsMetadata_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DocumentsPdf_ConstructProps extends DocumentsDocument_ConstructProps {
+interface DocumentsPdf_ConstructProps extends DocumentsDocument_ConstructProps {
 }
 class DocumentsPdf {
     /* Properties of GData-0.0.GData.DocumentsEntry */
@@ -3388,11 +3423,11 @@ class DocumentsPdf {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsPdf */
-    parent: DocumentsDocument
-    priv: DocumentsPdfPrivate
+    /* Fields of GData-0.0.GData.DocumentsDocument */
+    readonly parent: DocumentsEntry
+    readonly priv: DocumentsDocumentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsDocument */
     download(service: DocumentsService, export_format: string, cancellable?: Gio.Cancellable | null): DownloadStream
     get_download_uri(export_format: string): string | null
@@ -3461,6 +3496,10 @@ class DocumentsPdf {
     /* Methods of GData-0.0.GData.AccessHandler */
     get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     get_rules_async(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Virtual methods of GData-0.0.GData.DocumentsPdf */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
+    /* Virtual methods of GData-0.0.GData.DocumentsDocument */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.DocumentsEntry */
     vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.Parsable */
@@ -3528,9 +3567,12 @@ class DocumentsPdf {
     _init (config?: DocumentsPdf_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): DocumentsPdf
+    /* Function overloads */
+    static new(id?: string | null): DocumentsPdf
+    static new(id?: string | null): DocumentsPdf
     static $gtype: GObject.Type
 }
-export interface DocumentsPresentation_ConstructProps extends DocumentsDocument_ConstructProps {
+interface DocumentsPresentation_ConstructProps extends DocumentsDocument_ConstructProps {
 }
 class DocumentsPresentation {
     /* Properties of GData-0.0.GData.DocumentsEntry */
@@ -3552,11 +3594,11 @@ class DocumentsPresentation {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsPresentation */
-    parent: DocumentsDocument
-    priv: DocumentsPresentationPrivate
+    /* Fields of GData-0.0.GData.DocumentsDocument */
+    readonly parent: DocumentsEntry
+    readonly priv: DocumentsDocumentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsDocument */
     download(service: DocumentsService, export_format: string, cancellable?: Gio.Cancellable | null): DownloadStream
     get_download_uri(export_format: string): string | null
@@ -3625,6 +3667,10 @@ class DocumentsPresentation {
     /* Methods of GData-0.0.GData.AccessHandler */
     get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     get_rules_async(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Virtual methods of GData-0.0.GData.DocumentsPresentation */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
+    /* Virtual methods of GData-0.0.GData.DocumentsDocument */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.DocumentsEntry */
     vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.Parsable */
@@ -3692,9 +3738,13 @@ class DocumentsPresentation {
     _init (config?: DocumentsPresentation_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): DocumentsPresentation
+    /* Function overloads */
+    static new(id?: string | null): DocumentsPresentation
+    static new(id?: string | null): DocumentsPresentation
     static $gtype: GObject.Type
 }
-export interface DocumentsProperty_ConstructProps extends Parsable_ConstructProps {
+interface DocumentsProperty_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.DocumentsProperty */
     etag?: string
     key?: string
     value?: string
@@ -3705,11 +3755,11 @@ class DocumentsProperty {
     key: string
     value: string
     visibility: string
-    /* Fields of GData-0.0.GData.DocumentsProperty */
-    parent: Parsable
-    priv: DocumentsPropertyPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsProperty */
     get_etag(): string
     get_key(): string
@@ -3786,7 +3836,8 @@ class DocumentsProperty {
     static new(key: string): DocumentsProperty
     static $gtype: GObject.Type
 }
-export interface DocumentsQuery_ConstructProps extends Query_ConstructProps {
+interface DocumentsQuery_ConstructProps extends Query_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.DocumentsQuery */
     exact_title?: boolean
     folder_id?: string
     show_deleted?: boolean
@@ -3812,11 +3863,11 @@ class DocumentsQuery {
     start_index: number
     updated_max: number
     updated_min: number
-    /* Fields of GData-0.0.GData.DocumentsQuery */
-    parent: Query
-    priv: DocumentsQueryPrivate
+    /* Fields of GData-0.0.GData.Query */
+    readonly parent: GObject.Object
+    readonly priv: QueryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsQuery */
     add_collaborator(email_address: string): void
     add_reader(email_address: string): void
@@ -3931,10 +3982,14 @@ class DocumentsQuery {
     _init (config?: DocumentsQuery_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(q?: string | null): DocumentsQuery
+    /* Function overloads */
+    static new(q?: string | null): DocumentsQuery
+    static new_with_limits(q: string | null, start_index: number, max_results: number): DocumentsQuery
+    /* Function overloads */
     static new_with_limits(q: string | null, start_index: number, max_results: number): DocumentsQuery
     static $gtype: GObject.Type
 }
-export interface DocumentsService_ConstructProps extends Service_ConstructProps {
+interface DocumentsService_ConstructProps extends Service_ConstructProps {
 }
 class DocumentsService {
     /* Properties of GData-0.0.GData.Service */
@@ -3942,11 +3997,11 @@ class DocumentsService {
     locale: string
     proxy_resolver: Gio.ProxyResolver
     timeout: number
-    /* Fields of GData-0.0.GData.DocumentsService */
-    parent: Service
-    priv: DocumentsServicePrivate
+    /* Fields of GData-0.0.GData.Service */
+    readonly parent: GObject.Object
+    readonly priv: ServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsService */
     add_entry_to_folder(entry: DocumentsEntry, folder: DocumentsFolder, cancellable?: Gio.Cancellable | null): DocumentsEntry
     add_entry_to_folder_async(entry: DocumentsEntry, folder: DocumentsFolder, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4055,7 +4110,7 @@ class DocumentsService {
     static get_upload_uri(folder?: DocumentsFolder | null): string
     static $gtype: GObject.Type
 }
-export interface DocumentsSpreadsheet_ConstructProps extends DocumentsDocument_ConstructProps {
+interface DocumentsSpreadsheet_ConstructProps extends DocumentsDocument_ConstructProps {
 }
 class DocumentsSpreadsheet {
     /* Properties of GData-0.0.GData.DocumentsEntry */
@@ -4077,11 +4132,11 @@ class DocumentsSpreadsheet {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsSpreadsheet */
-    parent: DocumentsDocument
-    priv: DocumentsSpreadsheetPrivate
+    /* Fields of GData-0.0.GData.DocumentsDocument */
+    readonly parent: DocumentsEntry
+    readonly priv: DocumentsDocumentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsSpreadsheet */
     get_download_uri(export_format: string, gid: number): string
     /* Methods of GData-0.0.GData.DocumentsDocument */
@@ -4152,6 +4207,10 @@ class DocumentsSpreadsheet {
     /* Methods of GData-0.0.GData.AccessHandler */
     get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     get_rules_async(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Virtual methods of GData-0.0.GData.DocumentsSpreadsheet */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
+    /* Virtual methods of GData-0.0.GData.DocumentsDocument */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.DocumentsEntry */
     vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.Parsable */
@@ -4219,9 +4278,12 @@ class DocumentsSpreadsheet {
     _init (config?: DocumentsSpreadsheet_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): DocumentsSpreadsheet
+    /* Function overloads */
+    static new(id?: string | null): DocumentsSpreadsheet
+    static new(id?: string | null): DocumentsSpreadsheet
     static $gtype: GObject.Type
 }
-export interface DocumentsText_ConstructProps extends DocumentsDocument_ConstructProps {
+interface DocumentsText_ConstructProps extends DocumentsDocument_ConstructProps {
 }
 class DocumentsText {
     /* Properties of GData-0.0.GData.DocumentsEntry */
@@ -4243,11 +4305,11 @@ class DocumentsText {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.DocumentsText */
-    parent: DocumentsDocument
-    priv: DocumentsTextPrivate
+    /* Fields of GData-0.0.GData.DocumentsDocument */
+    readonly parent: DocumentsEntry
+    readonly priv: DocumentsDocumentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsDocument */
     download(service: DocumentsService, export_format: string, cancellable?: Gio.Cancellable | null): DownloadStream
     get_download_uri(export_format: string): string | null
@@ -4316,6 +4378,10 @@ class DocumentsText {
     /* Methods of GData-0.0.GData.AccessHandler */
     get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     get_rules_async(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
+    /* Virtual methods of GData-0.0.GData.DocumentsText */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
+    /* Virtual methods of GData-0.0.GData.DocumentsDocument */
+    vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.DocumentsEntry */
     vfunc_get_rules(service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null): Feed
     /* Virtual methods of GData-0.0.GData.Parsable */
@@ -4383,9 +4449,13 @@ class DocumentsText {
     _init (config?: DocumentsText_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): DocumentsText
+    /* Function overloads */
+    static new(id?: string | null): DocumentsText
+    static new(id?: string | null): DocumentsText
     static $gtype: GObject.Type
 }
-export interface DocumentsUploadQuery_ConstructProps extends GObject.Object_ConstructProps {
+interface DocumentsUploadQuery_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.DocumentsUploadQuery */
     convert?: boolean
     folder?: DocumentsFolder
 }
@@ -4393,11 +4463,8 @@ class DocumentsUploadQuery {
     /* Properties of GData-0.0.GData.DocumentsUploadQuery */
     convert: boolean
     folder: DocumentsFolder
-    /* Fields of GData-0.0.GData.DocumentsUploadQuery */
-    parent: GObject.Object
-    priv: DocumentsUploadQueryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DocumentsUploadQuery */
     build_uri(): string
     get_convert(): boolean
@@ -4453,7 +4520,8 @@ class DocumentsUploadQuery {
     static new(): DocumentsUploadQuery
     static $gtype: GObject.Type
 }
-export interface DownloadStream_ConstructProps extends Gio.InputStream_ConstructProps {
+interface DownloadStream_ConstructProps extends Gio.InputStream_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.DownloadStream */
     authorization_domain?: AuthorizationDomain
     cancellable?: Gio.Cancellable
     download_uri?: string
@@ -4463,13 +4531,10 @@ class DownloadStream {
     /* Properties of GData-0.0.GData.DownloadStream */
     readonly content_length: number
     readonly content_type: string
-    /* Fields of GData-0.0.GData.DownloadStream */
-    parent: Gio.InputStream
-    priv: DownloadStreamPrivate
     /* Fields of Gio-2.0.Gio.InputStream */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.DownloadStream */
     get_authorization_domain(): AuthorizationDomain | null
     get_cancellable(): Gio.Cancellable
@@ -4484,11 +4549,11 @@ class DownloadStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -4535,7 +4600,7 @@ class DownloadStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -4568,7 +4633,8 @@ class DownloadStream {
     static new(service: Service, domain: AuthorizationDomain | null, download_uri: string, cancellable?: Gio.Cancellable | null): DownloadStream
     static $gtype: GObject.Type
 }
-export interface Entry_ConstructProps extends Parsable_ConstructProps {
+interface Entry_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.Entry */
     content?: string
     content_uri?: string
     etag?: string
@@ -4587,11 +4653,11 @@ class Entry {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.Entry */
-    parent: Parsable
-    priv: EntryPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Entry */
     add_author(author: Author): void
     add_category(category: Category): void
@@ -4690,7 +4756,7 @@ class Entry {
     static new(id?: string | null): Entry
     static $gtype: GObject.Type
 }
-export interface Feed_ConstructProps extends Parsable_ConstructProps {
+interface Feed_ConstructProps extends Parsable_ConstructProps {
 }
 class Feed {
     /* Properties of GData-0.0.GData.Feed */
@@ -4708,10 +4774,10 @@ class Feed {
     readonly total_results: number
     readonly updated: number
     /* Fields of GData-0.0.GData.Parsable */
-    parent: GObject.Object
-    priv: ParsablePrivate
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Feed */
     get_authors(): Author[]
     get_categories(): Category[]
@@ -4815,7 +4881,8 @@ class Feed {
     _init (config?: Feed_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GContactCalendar_ConstructProps extends Parsable_ConstructProps {
+interface GContactCalendar_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GContactCalendar */
     is_primary?: boolean
     label?: string
     relation_type?: string
@@ -4827,11 +4894,11 @@ class GContactCalendar {
     label: string
     relation_type: string
     uri: string
-    /* Fields of GData-0.0.GData.GContactCalendar */
-    parent: Parsable
-    priv: GContactCalendarPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GContactCalendar */
     get_label(): string
     get_relation_type(): string
@@ -4911,7 +4978,8 @@ class GContactCalendar {
     static new(uri: string, relation_type: string | null, label: string | null, is_primary: boolean): GContactCalendar
     static $gtype: GObject.Type
 }
-export interface GContactEvent_ConstructProps extends Parsable_ConstructProps {
+interface GContactEvent_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GContactEvent */
     date?: GLib.Date
     label?: string
     relation_type?: string
@@ -4921,11 +4989,11 @@ class GContactEvent {
     date: GLib.Date
     label: string
     relation_type: string
-    /* Fields of GData-0.0.GData.GContactEvent */
-    parent: Parsable
-    priv: GContactEventPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GContactEvent */
     get_date(): /* date */ GLib.Date
     get_label(): string
@@ -4998,7 +5066,8 @@ class GContactEvent {
     static new(date: GLib.Date, relation_type?: string | null, label?: string | null): GContactEvent
     static $gtype: GObject.Type
 }
-export interface GContactExternalID_ConstructProps extends Parsable_ConstructProps {
+interface GContactExternalID_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GContactExternalID */
     label?: string
     relation_type?: string
     value?: string
@@ -5008,11 +5077,11 @@ class GContactExternalID {
     label: string
     relation_type: string
     value: string
-    /* Fields of GData-0.0.GData.GContactExternalID */
-    parent: Parsable
-    priv: GContactExternalIDPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GContactExternalID */
     get_label(): string
     get_relation_type(): string
@@ -5089,7 +5158,8 @@ class GContactExternalID {
     static new(value: string, relation_type?: string | null, label?: string | null): GContactExternalID
     static $gtype: GObject.Type
 }
-export interface GContactJot_ConstructProps extends Parsable_ConstructProps {
+interface GContactJot_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GContactJot */
     content?: string
     relation_type?: string
 }
@@ -5097,11 +5167,11 @@ class GContactJot {
     /* Properties of GData-0.0.GData.GContactJot */
     content: string
     relation_type: string
-    /* Fields of GData-0.0.GData.GContactJot */
-    parent: Parsable
-    priv: GContactJotPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GContactJot */
     get_content(): string
     get_relation_type(): string
@@ -5170,7 +5240,8 @@ class GContactJot {
     static new(content: string, relation_type: string): GContactJot
     static $gtype: GObject.Type
 }
-export interface GContactLanguage_ConstructProps extends Parsable_ConstructProps {
+interface GContactLanguage_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GContactLanguage */
     code?: string
     label?: string
 }
@@ -5178,11 +5249,11 @@ class GContactLanguage {
     /* Properties of GData-0.0.GData.GContactLanguage */
     code: string
     label: string
-    /* Fields of GData-0.0.GData.GContactLanguage */
-    parent: Parsable
-    priv: GContactLanguagePrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GContactLanguage */
     get_code(): string
     get_label(): string
@@ -5255,7 +5326,8 @@ class GContactLanguage {
     static new(code?: string | null, label?: string | null): GContactLanguage
     static $gtype: GObject.Type
 }
-export interface GContactRelation_ConstructProps extends Parsable_ConstructProps {
+interface GContactRelation_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GContactRelation */
     label?: string
     name?: string
     relation_type?: string
@@ -5265,11 +5337,11 @@ class GContactRelation {
     label: string
     name: string
     relation_type: string
-    /* Fields of GData-0.0.GData.GContactRelation */
-    parent: Parsable
-    priv: GContactRelationPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GContactRelation */
     get_label(): string
     get_name(): string
@@ -5342,7 +5414,8 @@ class GContactRelation {
     static new(name: string, relation_type?: string | null, label?: string | null): GContactRelation
     static $gtype: GObject.Type
 }
-export interface GContactWebsite_ConstructProps extends Parsable_ConstructProps {
+interface GContactWebsite_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GContactWebsite */
     is_primary?: boolean
     label?: string
     relation_type?: string
@@ -5354,11 +5427,11 @@ class GContactWebsite {
     label: string
     relation_type: string
     uri: string
-    /* Fields of GData-0.0.GData.GContactWebsite */
-    parent: Parsable
-    priv: GContactWebsitePrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GContactWebsite */
     get_label(): string
     get_relation_type(): string
@@ -5438,7 +5511,8 @@ class GContactWebsite {
     static new(uri: string, relation_type: string, label: string | null, is_primary: boolean): GContactWebsite
     static $gtype: GObject.Type
 }
-export interface GDEmailAddress_ConstructProps extends Parsable_ConstructProps {
+interface GDEmailAddress_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDEmailAddress */
     address?: string
     display_name?: string
     is_primary?: boolean
@@ -5452,11 +5526,11 @@ class GDEmailAddress {
     is_primary: boolean
     label: string
     relation_type: string
-    /* Fields of GData-0.0.GData.GDEmailAddress */
-    parent: Parsable
-    priv: GDEmailAddressPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDEmailAddress */
     get_address(): string
     get_display_name(): string
@@ -5540,7 +5614,8 @@ class GDEmailAddress {
     static new(address: string, relation_type: string | null, label: string | null, is_primary: boolean): GDEmailAddress
     static $gtype: GObject.Type
 }
-export interface GDIMAddress_ConstructProps extends Parsable_ConstructProps {
+interface GDIMAddress_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDIMAddress */
     address?: string
     is_primary?: boolean
     label?: string
@@ -5554,11 +5629,11 @@ class GDIMAddress {
     label: string
     protocol: string
     relation_type: string
-    /* Fields of GData-0.0.GData.GDIMAddress */
-    parent: Parsable
-    priv: GDIMAddressPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDIMAddress */
     get_address(): string
     get_label(): string
@@ -5642,7 +5717,8 @@ class GDIMAddress {
     static new(address: string, protocol: string | null, relation_type: string | null, label: string | null, is_primary: boolean): GDIMAddress
     static $gtype: GObject.Type
 }
-export interface GDName_ConstructProps extends Parsable_ConstructProps {
+interface GDName_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDName */
     additional_name?: string
     family_name?: string
     full_name?: string
@@ -5658,11 +5734,11 @@ class GDName {
     given_name: string
     prefix: string
     suffix: string
-    /* Fields of GData-0.0.GData.GDName */
-    parent: Parsable
-    priv: GDNamePrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDName */
     get_additional_name(): string
     get_family_name(): string
@@ -5751,7 +5827,8 @@ class GDName {
     static new(given_name?: string | null, family_name?: string | null): GDName
     static $gtype: GObject.Type
 }
-export interface GDOrganization_ConstructProps extends Parsable_ConstructProps {
+interface GDOrganization_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDOrganization */
     department?: string
     is_primary?: boolean
     job_description?: string
@@ -5773,11 +5850,11 @@ class GDOrganization {
     relation_type: string
     symbol: string
     title: string
-    /* Fields of GData-0.0.GData.GDOrganization */
-    parent: Parsable
-    priv: GDOrganizationPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDOrganization */
     get_department(): string
     get_job_description(): string
@@ -5877,7 +5954,8 @@ class GDOrganization {
     static new(name: string | null, title: string | null, relation_type: string | null, label: string | null, is_primary: boolean): GDOrganization
     static $gtype: GObject.Type
 }
-export interface GDPhoneNumber_ConstructProps extends Parsable_ConstructProps {
+interface GDPhoneNumber_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDPhoneNumber */
     is_primary?: boolean
     label?: string
     number?: string
@@ -5891,11 +5969,11 @@ class GDPhoneNumber {
     number: string
     relation_type: string
     uri: string
-    /* Fields of GData-0.0.GData.GDPhoneNumber */
-    parent: Parsable
-    priv: GDPhoneNumberPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDPhoneNumber */
     get_label(): string
     get_number(): string
@@ -5979,7 +6057,8 @@ class GDPhoneNumber {
     static new(number: string, relation_type: string | null, label: string | null, uri: string | null, is_primary: boolean): GDPhoneNumber
     static $gtype: GObject.Type
 }
-export interface GDPostalAddress_ConstructProps extends Parsable_ConstructProps {
+interface GDPostalAddress_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDPostalAddress */
     address?: string
     agent?: string
     city?: string
@@ -6015,11 +6094,11 @@ class GDPostalAddress {
     street: string
     subregion: string
     usage: string
-    /* Fields of GData-0.0.GData.GDPostalAddress */
-    parent: Parsable
-    priv: GDPostalAddressPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDPostalAddress */
     get_address(): string
     get_agent(): string
@@ -6150,7 +6229,8 @@ class GDPostalAddress {
     static new(relation_type: string | null, label: string | null, is_primary: boolean): GDPostalAddress
     static $gtype: GObject.Type
 }
-export interface GDReminder_ConstructProps extends Parsable_ConstructProps {
+interface GDReminder_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDReminder */
     absolute_time?: number
     method?: string
     relative_time?: number
@@ -6161,11 +6241,11 @@ class GDReminder {
     readonly is_absolute_time: boolean
     method: string
     relative_time: number
-    /* Fields of GData-0.0.GData.GDReminder */
-    parent: Parsable
-    priv: GDReminderPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDReminder */
     get_absolute_time(): number
     get_method(): string
@@ -6244,7 +6324,8 @@ class GDReminder {
     static new(method: string | null, absolute_time: number, relative_time: number): GDReminder
     static $gtype: GObject.Type
 }
-export interface GDWhen_ConstructProps extends Parsable_ConstructProps {
+interface GDWhen_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDWhen */
     end_time?: number
     is_date?: boolean
     start_time?: number
@@ -6256,11 +6337,11 @@ class GDWhen {
     is_date: boolean
     start_time: number
     value_string: string
-    /* Fields of GData-0.0.GData.GDWhen */
-    parent: Parsable
-    priv: GDWhenPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDWhen */
     add_reminder(reminder: GDReminder): void
     get_end_time(): number
@@ -6342,7 +6423,8 @@ class GDWhen {
     static new(start_time: number, end_time: number, is_date: boolean): GDWhen
     static $gtype: GObject.Type
 }
-export interface GDWhere_ConstructProps extends Parsable_ConstructProps {
+interface GDWhere_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDWhere */
     label?: string
     relation_type?: string
     value_string?: string
@@ -6352,11 +6434,11 @@ class GDWhere {
     label: string
     relation_type: string
     value_string: string
-    /* Fields of GData-0.0.GData.GDWhere */
-    parent: Parsable
-    priv: GDWherePrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDWhere */
     get_label(): string
     get_relation_type(): string
@@ -6433,7 +6515,8 @@ class GDWhere {
     static new(relation_type?: string | null, value_string?: string | null, label?: string | null): GDWhere
     static $gtype: GObject.Type
 }
-export interface GDWho_ConstructProps extends Parsable_ConstructProps {
+interface GDWho_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GDWho */
     email_address?: string
     relation_type?: string
     value_string?: string
@@ -6443,11 +6526,11 @@ class GDWho {
     email_address: string
     relation_type: string
     value_string: string
-    /* Fields of GData-0.0.GData.GDWho */
-    parent: Parsable
-    priv: GDWhoPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GDWho */
     get_email_address(): string
     get_relation_type(): string
@@ -6524,18 +6607,18 @@ class GDWho {
     static new(relation_type?: string | null, value_string?: string | null, email_address?: string | null): GDWho
     static $gtype: GObject.Type
 }
-export interface Generator_ConstructProps extends Parsable_ConstructProps {
+interface Generator_ConstructProps extends Parsable_ConstructProps {
 }
 class Generator {
     /* Properties of GData-0.0.GData.Generator */
     readonly name: string
     readonly uri: string
     readonly version: string
-    /* Fields of GData-0.0.GData.Generator */
-    parent: Parsable
-    priv: GeneratorPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Generator */
     get_name(): string | null
     get_uri(): string | null
@@ -6607,12 +6690,13 @@ class Generator {
     _init (config?: Generator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GoaAuthorizer_ConstructProps extends GObject.Object_ConstructProps {
+interface GoaAuthorizer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.GoaAuthorizer */
     goa_object?: Goa.Object
 }
 class GoaAuthorizer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.GoaAuthorizer */
     get_goa_object(): Goa.Object
     /* Methods of GObject-2.0.GObject.Object */
@@ -6672,7 +6756,8 @@ class GoaAuthorizer {
     static new(goa_object: Goa.Object): GoaAuthorizer
     static $gtype: GObject.Type
 }
-export interface Link_ConstructProps extends Parsable_ConstructProps {
+interface Link_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.Link */
     content_type?: string
     language?: string
     length?: number
@@ -6688,11 +6773,11 @@ class Link {
     relation_type: string
     title: string
     uri: string
-    /* Fields of GData-0.0.GData.Link */
-    parent: Parsable
-    priv: LinkPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Link */
     get_content_type(): string | null
     get_language(): string | null
@@ -6781,7 +6866,8 @@ class Link {
     static new(uri: string, relation_type?: string | null): Link
     static $gtype: GObject.Type
 }
-export interface MediaCategory_ConstructProps extends Parsable_ConstructProps {
+interface MediaCategory_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.MediaCategory */
     category?: string
     label?: string
     scheme?: string
@@ -6791,11 +6877,11 @@ class MediaCategory {
     category: string
     label: string
     scheme: string
-    /* Fields of GData-0.0.GData.MediaCategory */
-    parent: Parsable
-    priv: MediaCategoryPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.MediaCategory */
     get_category(): string
     get_label(): string
@@ -6868,7 +6954,7 @@ class MediaCategory {
     static new(category: string, scheme?: string | null, label?: string | null): MediaCategory
     static $gtype: GObject.Type
 }
-export interface MediaContent_ConstructProps extends Parsable_ConstructProps {
+interface MediaContent_ConstructProps extends Parsable_ConstructProps {
 }
 class MediaContent {
     /* Properties of GData-0.0.GData.MediaContent */
@@ -6881,11 +6967,11 @@ class MediaContent {
     readonly medium: MediaMedium
     readonly uri: string
     readonly width: number
-    /* Fields of GData-0.0.GData.MediaContent */
-    parent: Parsable
-    priv: MediaContentPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.MediaContent */
     download(service: Service, cancellable?: Gio.Cancellable | null): DownloadStream
     get_content_type(): string
@@ -6970,18 +7056,18 @@ class MediaContent {
     _init (config?: MediaContent_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MediaCredit_ConstructProps extends Parsable_ConstructProps {
+interface MediaCredit_ConstructProps extends Parsable_ConstructProps {
 }
 class MediaCredit {
     /* Properties of GData-0.0.GData.MediaCredit */
     readonly credit: string
     readonly role: string
     readonly scheme: string
-    /* Fields of GData-0.0.GData.MediaCredit */
-    parent: Parsable
-    priv: MediaCreditPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.MediaCredit */
     get_credit(): string
     get_role(): string
@@ -7049,7 +7135,7 @@ class MediaCredit {
     _init (config?: MediaCredit_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MediaThumbnail_ConstructProps extends Parsable_ConstructProps {
+interface MediaThumbnail_ConstructProps extends Parsable_ConstructProps {
 }
 class MediaThumbnail {
     /* Properties of GData-0.0.GData.MediaThumbnail */
@@ -7057,11 +7143,11 @@ class MediaThumbnail {
     readonly time: number
     readonly uri: string
     readonly width: number
-    /* Fields of GData-0.0.GData.MediaThumbnail */
-    parent: Parsable
-    priv: MediaThumbnailPrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.MediaThumbnail */
     download(service: Service, cancellable?: Gio.Cancellable | null): DownloadStream
     get_height(): number
@@ -7133,7 +7219,8 @@ class MediaThumbnail {
     _init (config?: MediaThumbnail_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface OAuth2Authorizer_ConstructProps extends GObject.Object_ConstructProps {
+interface OAuth2Authorizer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.OAuth2Authorizer */
     client_id?: string
     client_secret?: string
     locale?: string
@@ -7149,7 +7236,7 @@ class OAuth2Authorizer {
     refresh_token: string
     timeout: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.OAuth2Authorizer */
     build_authentication_uri(login_hint: string | null, include_granted_scopes: boolean): string
     dup_refresh_token(): string
@@ -7232,15 +7319,13 @@ class OAuth2Authorizer {
     static new_for_authorization_domains(client_id: string, client_secret: string, redirect_uri: string, authorization_domains: AuthorizationDomain[]): OAuth2Authorizer
     static $gtype: GObject.Type
 }
-export interface Parsable_ConstructProps extends GObject.Object_ConstructProps {
+interface Parsable_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.Parsable */
     constructed_from_xml?: boolean
 }
 class Parsable {
-    /* Fields of GData-0.0.GData.Parsable */
-    parent: GObject.Object
-    priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Parsable */
     get_content_type(): string
     get_json(): string
@@ -7301,7 +7386,8 @@ class Parsable {
     static new_from_xml(parsable_type: GObject.Type, xml: string, length: number): Parsable
     static $gtype: GObject.Type
 }
-export interface PicasaWebAlbum_ConstructProps extends Entry_ConstructProps {
+interface PicasaWebAlbum_ConstructProps extends Entry_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.PicasaWebAlbum */
     album_id?: string
     is_commenting_enabled?: boolean
     latitude?: number
@@ -7336,11 +7422,11 @@ class PicasaWebAlbum {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.PicasaWebAlbum */
-    parent: Entry
-    priv: PicasaWebAlbumPrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.PicasaWebAlbum */
     get_bytes_used(): number
     get_comment_count(): number
@@ -7487,9 +7573,11 @@ class PicasaWebAlbum {
     _init (config?: PicasaWebAlbum_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): PicasaWebAlbum
+    /* Function overloads */
+    static new(id?: string | null): PicasaWebAlbum
     static $gtype: GObject.Type
 }
-export interface PicasaWebComment_ConstructProps extends Comment_ConstructProps {
+interface PicasaWebComment_ConstructProps extends Comment_ConstructProps {
 }
 class PicasaWebComment {
     /* Properties of GData-0.0.GData.Entry */
@@ -7501,11 +7589,11 @@ class PicasaWebComment {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.PicasaWebComment */
-    parent: Comment
-    priv: PicasaWebCommentPrivate
+    /* Fields of GData-0.0.GData.Comment */
+    readonly parent: Entry
+    readonly priv: CommentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Entry */
     add_author(author: Author): void
     add_category(category: Category): void
@@ -7602,10 +7690,11 @@ class PicasaWebComment {
     _init (config?: PicasaWebComment_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string): PicasaWebComment
+    /* Function overloads */
     static new(id?: string | null): PicasaWebComment
     static $gtype: GObject.Type
 }
-export interface PicasaWebFeed_ConstructProps extends Feed_ConstructProps {
+interface PicasaWebFeed_ConstructProps extends Feed_ConstructProps {
 }
 class PicasaWebFeed {
     /* Properties of GData-0.0.GData.Feed */
@@ -7622,12 +7711,11 @@ class PicasaWebFeed {
     readonly title: string
     readonly total_results: number
     readonly updated: number
-    /* Fields of GData-0.0.GData.PicasaWebFeed */
-    parent: Feed
     /* Fields of GData-0.0.GData.Parsable */
-    priv: ParsablePrivate
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Feed */
     get_authors(): Author[]
     get_categories(): Category[]
@@ -7731,7 +7819,8 @@ class PicasaWebFeed {
     _init (config?: PicasaWebFeed_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PicasaWebFile_ConstructProps extends Entry_ConstructProps {
+interface PicasaWebFile_ConstructProps extends Entry_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.PicasaWebFile */
     album_id?: string
     caption?: string
     checksum?: string
@@ -7780,11 +7869,11 @@ class PicasaWebFile {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.PicasaWebFile */
-    parent: Entry
-    priv: PicasaWebFilePrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.PicasaWebFile */
     get_album_id(): string
     get_caption(): string
@@ -7981,9 +8070,12 @@ class PicasaWebFile {
     _init (config?: PicasaWebFile_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): PicasaWebFile
+    /* Function overloads */
+    static new(id?: string | null): PicasaWebFile
     static $gtype: GObject.Type
 }
-export interface PicasaWebQuery_ConstructProps extends Query_ConstructProps {
+interface PicasaWebQuery_ConstructProps extends Query_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.PicasaWebQuery */
     image_size?: string
     location?: string
     tag?: string
@@ -8009,11 +8101,11 @@ class PicasaWebQuery {
     start_index: number
     updated_max: number
     updated_min: number
-    /* Fields of GData-0.0.GData.PicasaWebQuery */
-    parent: Query
-    priv: PicasaWebQueryPrivate
+    /* Fields of GData-0.0.GData.Query */
+    readonly parent: GObject.Object
+    readonly priv: QueryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.PicasaWebQuery */
     get_bounding_box(): [ /* north */ number | null, /* east */ number | null, /* south */ number | null, /* west */ number | null ]
     get_image_size(): string
@@ -8129,10 +8221,14 @@ class PicasaWebQuery {
     _init (config?: PicasaWebQuery_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(q?: string | null): PicasaWebQuery
+    /* Function overloads */
+    static new(q?: string | null): PicasaWebQuery
+    static new_with_limits(q: string | null, start_index: number, max_results: number): PicasaWebQuery
+    /* Function overloads */
     static new_with_limits(q: string | null, start_index: number, max_results: number): PicasaWebQuery
     static $gtype: GObject.Type
 }
-export interface PicasaWebService_ConstructProps extends Service_ConstructProps {
+interface PicasaWebService_ConstructProps extends Service_ConstructProps {
 }
 class PicasaWebService {
     /* Properties of GData-0.0.GData.Service */
@@ -8140,12 +8236,11 @@ class PicasaWebService {
     locale: string
     proxy_resolver: Gio.ProxyResolver
     timeout: number
-    /* Fields of GData-0.0.GData.PicasaWebService */
-    parent: Service
     /* Fields of GData-0.0.GData.Service */
-    priv: ServicePrivate
+    readonly parent: GObject.Object
+    readonly priv: ServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.PicasaWebService */
     finish_file_upload(upload_stream: UploadStream): PicasaWebFile
     get_user(username?: string | null, cancellable?: Gio.Cancellable | null): PicasaWebUser
@@ -8240,7 +8335,7 @@ class PicasaWebService {
     static get_primary_authorization_domain(): AuthorizationDomain
     static $gtype: GObject.Type
 }
-export interface PicasaWebUser_ConstructProps extends Entry_ConstructProps {
+interface PicasaWebUser_ConstructProps extends Entry_ConstructProps {
 }
 class PicasaWebUser {
     /* Properties of GData-0.0.GData.PicasaWebUser */
@@ -8259,11 +8354,11 @@ class PicasaWebUser {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.PicasaWebUser */
-    parent: Entry
-    priv: PicasaWebUserPrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.PicasaWebUser */
     get_max_photos_per_album(): number
     get_nickname(): string
@@ -8379,7 +8474,8 @@ class PicasaWebUser {
     _init (config?: PicasaWebUser_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Query_ConstructProps extends GObject.Object_ConstructProps {
+interface Query_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.Query */
     author?: string
     categories?: string
     etag?: string
@@ -8405,11 +8501,8 @@ class Query {
     start_index: number
     updated_max: number
     updated_min: number
-    /* Fields of GData-0.0.GData.Query */
-    parent: GObject.Object
-    priv: QueryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Query */
     get_author(): string
     get_categories(): string
@@ -8505,7 +8598,8 @@ class Query {
     static new_with_limits(q: string | null, start_index: number, max_results: number): Query
     static $gtype: GObject.Type
 }
-export interface Service_ConstructProps extends GObject.Object_ConstructProps {
+interface Service_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.Service */
     authorizer?: Authorizer
     locale?: string
     proxy_resolver?: Gio.ProxyResolver
@@ -8517,11 +8611,8 @@ class Service {
     locale: string
     proxy_resolver: Gio.ProxyResolver
     timeout: number
-    /* Fields of GData-0.0.GData.Service */
-    parent: GObject.Object
-    priv: ServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Service */
     delete_entry(domain: AuthorizationDomain | null, entry: Entry, cancellable?: Gio.Cancellable | null): boolean
     delete_entry_async(domain: AuthorizationDomain | null, entry: Entry, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -8603,7 +8694,8 @@ class Service {
     static get_authorization_domains(service_type: GObject.Type): AuthorizationDomain[]
     static $gtype: GObject.Type
 }
-export interface TasksQuery_ConstructProps extends Query_ConstructProps {
+interface TasksQuery_ConstructProps extends Query_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.TasksQuery */
     completed_max?: number
     completed_min?: number
     due_max?: number
@@ -8633,11 +8725,11 @@ class TasksQuery {
     start_index: number
     updated_max: number
     updated_min: number
-    /* Fields of GData-0.0.GData.TasksQuery */
-    parent: Query
-    priv: TasksQueryPrivate
+    /* Fields of GData-0.0.GData.Query */
+    readonly parent: GObject.Object
+    readonly priv: QueryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.TasksQuery */
     get_completed_max(): number
     get_completed_min(): number
@@ -8759,9 +8851,11 @@ class TasksQuery {
     _init (config?: TasksQuery_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(q?: string | null): TasksQuery
+    /* Function overloads */
+    static new(q?: string | null): TasksQuery
     static $gtype: GObject.Type
 }
-export interface TasksService_ConstructProps extends Service_ConstructProps {
+interface TasksService_ConstructProps extends Service_ConstructProps {
 }
 class TasksService {
     /* Properties of GData-0.0.GData.Service */
@@ -8769,12 +8863,11 @@ class TasksService {
     locale: string
     proxy_resolver: Gio.ProxyResolver
     timeout: number
-    /* Fields of GData-0.0.GData.TasksService */
-    parent: Service
     /* Fields of GData-0.0.GData.Service */
-    priv: ServicePrivate
+    readonly parent: GObject.Object
+    readonly priv: ServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.TasksService */
     delete_task(task: TasksTask, cancellable?: Gio.Cancellable | null): boolean
     delete_task_async(task: TasksTask, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -8874,7 +8967,8 @@ class TasksService {
     static get_primary_authorization_domain(): AuthorizationDomain
     static $gtype: GObject.Type
 }
-export interface TasksTask_ConstructProps extends Entry_ConstructProps {
+interface TasksTask_ConstructProps extends Entry_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.TasksTask */
     completed?: number
     due?: number
     is_deleted?: boolean
@@ -8902,10 +8996,10 @@ class TasksTask {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.TasksTask */
-    priv: TasksTaskPrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.TasksTask */
     get_completed(): number
     get_due(): number
@@ -9032,9 +9126,11 @@ class TasksTask {
     _init (config?: TasksTask_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): TasksTask
+    /* Function overloads */
+    static new(id?: string | null): TasksTask
     static $gtype: GObject.Type
 }
-export interface TasksTasklist_ConstructProps extends Entry_ConstructProps {
+interface TasksTasklist_ConstructProps extends Entry_ConstructProps {
 }
 class TasksTasklist {
     /* Properties of GData-0.0.GData.Entry */
@@ -9046,12 +9142,11 @@ class TasksTasklist {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.TasksTasklist */
-    parent: Entry
     /* Fields of GData-0.0.GData.Entry */
-    priv: EntryPrivate
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Entry */
     add_author(author: Author): void
     add_category(category: Category): void
@@ -9148,9 +9243,12 @@ class TasksTasklist {
     _init (config?: TasksTasklist_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): TasksTasklist
+    /* Function overloads */
+    static new(id?: string | null): TasksTasklist
     static $gtype: GObject.Type
 }
-export interface UploadStream_ConstructProps extends Gio.OutputStream_ConstructProps {
+interface UploadStream_ConstructProps extends Gio.OutputStream_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.UploadStream */
     authorization_domain?: AuthorizationDomain
     cancellable?: Gio.Cancellable
     content_length?: number
@@ -9162,13 +9260,10 @@ export interface UploadStream_ConstructProps extends Gio.OutputStream_ConstructP
     upload_uri?: string
 }
 class UploadStream {
-    /* Fields of GData-0.0.GData.UploadStream */
-    parent: Gio.OutputStream
-    priv: UploadStreamPrivate
     /* Fields of Gio-2.0.Gio.OutputStream */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.UploadStream */
     get_authorization_domain(): AuthorizationDomain | null
     get_cancellable(): Gio.Cancellable
@@ -9195,11 +9290,11 @@ class UploadStream {
     splice(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, cancellable?: Gio.Cancellable | null): number
     splice_async(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     splice_finish(result: Gio.AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Gio.Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Gio.Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Gio.Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_bytes_finish(result: Gio.AsyncResult): number
@@ -9242,9 +9337,9 @@ class UploadStream {
     vfunc_splice(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, cancellable?: Gio.Cancellable | null): number
     vfunc_splice_async(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_splice_finish(result: Gio.AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_write_finish(result: Gio.AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Gio.Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Gio.Cancellable | null): number
     vfunc_writev_async(vectors: Gio.OutputVector[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_writev_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: Gio.OutputVector[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -9272,7 +9367,7 @@ class UploadStream {
     static new_resumable(service: Service, domain: AuthorizationDomain | null, method: string, upload_uri: string, entry: Entry | null, slug: string, content_type: string, content_length: number, cancellable?: Gio.Cancellable | null): UploadStream
     static $gtype: GObject.Type
 }
-export interface YouTubeCategory_ConstructProps extends Category_ConstructProps {
+interface YouTubeCategory_ConstructProps extends Category_ConstructProps {
 }
 class YouTubeCategory {
     /* Properties of GData-0.0.GData.YouTubeCategory */
@@ -9282,11 +9377,11 @@ class YouTubeCategory {
     label: string
     scheme: string
     term: string
-    /* Fields of GData-0.0.GData.YouTubeCategory */
-    parent: Category
-    priv: YouTubeCategoryPrivate
+    /* Fields of GData-0.0.GData.Category */
+    readonly parent: Parsable
+    readonly priv: CategoryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.YouTubeCategory */
     is_browsable(region: string): boolean
     /* Methods of GData-0.0.GData.Category */
@@ -9324,6 +9419,8 @@ class YouTubeCategory {
     watch_closure(closure: Function): void
     /* Methods of GData-0.0.GData.Comparable */
     compare(other?: Comparable | null): number
+    /* Virtual methods of GData-0.0.GData.YouTubeCategory */
+    vfunc_compare_with(other: Comparable): number
     /* Virtual methods of GData-0.0.GData.Category */
     vfunc_compare_with(other: Comparable): number
     /* Virtual methods of GData-0.0.GData.Parsable */
@@ -9367,7 +9464,8 @@ class YouTubeCategory {
     _init (config?: YouTubeCategory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface YouTubeComment_ConstructProps extends Comment_ConstructProps {
+interface YouTubeComment_ConstructProps extends Comment_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.YouTubeComment */
     parent_comment_uri?: string
 }
 class YouTubeComment {
@@ -9382,11 +9480,11 @@ class YouTubeComment {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.YouTubeComment */
-    parent: Comment
-    priv: YouTubeCommentPrivate
+    /* Fields of GData-0.0.GData.Comment */
+    readonly parent: Entry
+    readonly priv: CommentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.YouTubeComment */
     get_parent_comment_uri(): string
     set_parent_comment_uri(parent_comment_uri: string): void
@@ -9488,10 +9586,11 @@ class YouTubeComment {
     _init (config?: YouTubeComment_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string): YouTubeComment
+    /* Function overloads */
     static new(id?: string | null): YouTubeComment
     static $gtype: GObject.Type
 }
-export interface YouTubeFeed_ConstructProps extends Feed_ConstructProps {
+interface YouTubeFeed_ConstructProps extends Feed_ConstructProps {
 }
 class YouTubeFeed {
     /* Properties of GData-0.0.GData.Feed */
@@ -9509,10 +9608,10 @@ class YouTubeFeed {
     readonly total_results: number
     readonly updated: number
     /* Fields of GData-0.0.GData.Parsable */
-    parent: GObject.Object
-    priv: ParsablePrivate
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.Feed */
     get_authors(): Author[]
     get_categories(): Category[]
@@ -9616,7 +9715,8 @@ class YouTubeFeed {
     _init (config?: YouTubeFeed_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface YouTubeQuery_ConstructProps extends Query_ConstructProps {
+interface YouTubeQuery_ConstructProps extends Query_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.YouTubeQuery */
     age?: YouTubeAge
     latitude?: number
     license?: string
@@ -9648,11 +9748,11 @@ class YouTubeQuery {
     start_index: number
     updated_max: number
     updated_min: number
-    /* Fields of GData-0.0.GData.YouTubeQuery */
-    parent: Query
-    priv: YouTubeQueryPrivate
+    /* Fields of GData-0.0.GData.Query */
+    readonly parent: GObject.Object
+    readonly priv: QueryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.YouTubeQuery */
     get_age(): YouTubeAge
     get_license(): string
@@ -9774,9 +9874,12 @@ class YouTubeQuery {
     _init (config?: YouTubeQuery_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(q?: string | null): YouTubeQuery
+    /* Function overloads */
+    static new(q?: string | null): YouTubeQuery
     static $gtype: GObject.Type
 }
-export interface YouTubeService_ConstructProps extends Service_ConstructProps {
+interface YouTubeService_ConstructProps extends Service_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.YouTubeService */
     developer_key?: string
 }
 class YouTubeService {
@@ -9785,11 +9888,11 @@ class YouTubeService {
     locale: string
     proxy_resolver: Gio.ProxyResolver
     timeout: number
-    /* Fields of GData-0.0.GData.YouTubeService */
-    parent: Service
-    priv: YouTubeServicePrivate
+    /* Fields of GData-0.0.GData.Service */
+    readonly parent: GObject.Object
+    readonly priv: ServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.YouTubeService */
     finish_video_upload(upload_stream: UploadStream): YouTubeVideo
     get_categories(cancellable?: Gio.Cancellable | null): APPCategories
@@ -9887,18 +9990,19 @@ class YouTubeService {
     static get_primary_authorization_domain(): AuthorizationDomain
     static $gtype: GObject.Type
 }
-export interface YouTubeState_ConstructProps extends Parsable_ConstructProps {
+interface YouTubeState_ConstructProps extends Parsable_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.YouTubeState */
     help_uri?: string
     message?: string
     name?: string
     reason_code?: string
 }
 class YouTubeState {
-    /* Fields of GData-0.0.GData.YouTubeState */
-    parent: Parsable
-    priv: YouTubeStatePrivate
+    /* Fields of GData-0.0.GData.Parsable */
+    readonly parent: GObject.Object
+    readonly priv: ParsablePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.YouTubeState */
     get_help_uri(): string
     get_message(): string
@@ -9961,7 +10065,8 @@ class YouTubeState {
     _init (config?: YouTubeState_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface YouTubeVideo_ConstructProps extends Entry_ConstructProps {
+interface YouTubeVideo_ConstructProps extends Entry_ConstructProps {
+    /* Constructor properties of GData-0.0.GData.YouTubeVideo */
     aspect_ratio?: string
     category?: MediaCategory
     description?: string
@@ -10002,11 +10107,11 @@ class YouTubeVideo {
     summary: string
     title: string
     readonly updated: number
-    /* Fields of GData-0.0.GData.YouTubeVideo */
-    parent: Entry
-    priv: YouTubeVideoPrivate
+    /* Fields of GData-0.0.GData.Entry */
+    readonly parent: Parsable
+    readonly priv: EntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GData-0.0.GData.YouTubeVideo */
     get_access_control(action: string): YouTubePermission
     get_aspect_ratio(): string
@@ -10183,6 +10288,8 @@ class YouTubeVideo {
     _init (config?: YouTubeVideo_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id?: string | null): YouTubeVideo
+    /* Function overloads */
+    static new(id?: string | null): YouTubeVideo
     static get_video_id_from_uri(video_uri: string): string
     static $gtype: GObject.Type
 }
@@ -10194,9 +10301,9 @@ class APPCategoriesPrivate {
 }
 abstract class AccessHandlerIface {
     /* Fields of GData-0.0.GData.AccessHandlerIface */
-    parent: GObject.TypeInterface
-    is_owner_rule: (rule: AccessRule) => boolean
-    get_rules: (self: AccessHandler, service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null) => Feed
+    readonly parent: GObject.TypeInterface
+    readonly is_owner_rule: (rule: AccessRule) => boolean
+    readonly get_rules: (self: AccessHandler, service: Service, cancellable?: Gio.Cancellable | null, progress_callback?: QueryProgressCallback | null) => Feed
     static name: string
 }
 abstract class AccessRuleClass {
@@ -10219,12 +10326,12 @@ class AuthorizationDomainPrivate {
 }
 abstract class AuthorizerInterface {
     /* Fields of GData-0.0.GData.AuthorizerInterface */
-    parent: GObject.TypeInterface
-    process_request: (self: Authorizer, domain: AuthorizationDomain | null, message: Soup.Message) => void
-    is_authorized_for_domain: (self: Authorizer | null, domain: AuthorizationDomain) => boolean
-    refresh_authorization: (self: Authorizer, cancellable?: Gio.Cancellable | null) => boolean
-    refresh_authorization_async: (self: Authorizer, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    refresh_authorization_finish: (self: Authorizer, async_result: Gio.AsyncResult) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly process_request: (self: Authorizer, domain: AuthorizationDomain | null, message: Soup.Message) => void
+    readonly is_authorized_for_domain: (self: Authorizer | null, domain: AuthorizationDomain) => boolean
+    readonly refresh_authorization: (self: Authorizer, cancellable?: Gio.Cancellable | null) => boolean
+    readonly refresh_authorization_async: (self: Authorizer, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly refresh_authorization_finish: (self: Authorizer, async_result: Gio.AsyncResult) => boolean
     static name: string
 }
 abstract class BatchOperationClass {
@@ -10235,7 +10342,7 @@ class BatchOperationPrivate {
 }
 abstract class BatchableIface {
     /* Fields of GData-0.0.GData.BatchableIface */
-    is_supported: (operation_type: BatchOperationType) => boolean
+    readonly is_supported: (operation_type: BatchOperationType) => boolean
     static name: string
 }
 abstract class CalendarAccessRuleClass {
@@ -10279,9 +10386,9 @@ class CategoryPrivate {
 }
 class Color {
     /* Fields of GData-0.0.GData.Color */
-    red: number
-    green: number
-    blue: number
+    readonly red: number
+    readonly green: number
+    readonly blue: number
     /* Methods of GData-0.0.GData.Color */
     to_hexadecimal(): string
     static name: string
@@ -10296,17 +10403,17 @@ class CommentPrivate {
 }
 abstract class CommentableInterface {
     /* Fields of GData-0.0.GData.CommentableInterface */
-    parent: GObject.TypeInterface
-    comment_type: GObject.Type
-    get_query_comments_uri: (self: Commentable) => string
-    get_insert_comment_uri: (self: Commentable, comment: Comment) => string
-    is_comment_deletable: (self: Commentable, comment: Comment) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly comment_type: GObject.Type
+    readonly get_query_comments_uri: (self: Commentable) => string
+    readonly get_insert_comment_uri: (self: Commentable, comment: Comment) => string
+    readonly is_comment_deletable: (self: Commentable, comment: Comment) => boolean
     static name: string
 }
 abstract class ComparableIface {
     /* Fields of GData-0.0.GData.ComparableIface */
-    parent: GObject.TypeInterface
-    compare_with: (self: Comparable, other: Comparable) => number
+    readonly parent: GObject.TypeInterface
+    readonly compare_with: (self: Comparable, other: Comparable) => number
     static name: string
 }
 abstract class DocumentsAccessRuleClass {
@@ -10410,9 +10517,9 @@ class DownloadStreamPrivate {
 }
 abstract class EntryClass {
     /* Fields of GData-0.0.GData.EntryClass */
-    parent: ParsableClass
-    get_entry_uri: (id: string) => string
-    kind_term: string
+    readonly parent: ParsableClass
+    readonly get_entry_uri: (id: string) => string
+    readonly kind_term: string
     static name: string
 }
 class EntryPrivate {
@@ -10576,19 +10683,19 @@ class OAuth2AuthorizerPrivate {
 }
 abstract class ParsableClass {
     /* Fields of GData-0.0.GData.ParsableClass */
-    parent: GObject.ObjectClass
-    pre_parse_xml: (parsable: Parsable, doc: libxml2.Doc, root_node: libxml2.Node) => boolean
-    parse_xml: (parsable: Parsable, doc: libxml2.Doc, node: libxml2.Node) => boolean
-    post_parse_xml: (parsable: Parsable) => boolean
-    pre_get_xml: (parsable: Parsable, xml_string: GLib.String) => void
-    get_xml: (parsable: Parsable, xml_string: GLib.String) => void
-    get_namespaces: (parsable: Parsable, namespaces: GLib.HashTable) => void
-    parse_json: (parsable: Parsable, reader: Json.Reader) => boolean
-    post_parse_json: (parsable: Parsable) => boolean
-    get_json: (parsable: Parsable, builder: Json.Builder) => void
-    get_content_type: () => string
-    element_name: string
-    element_namespace: string
+    readonly parent: GObject.ObjectClass
+    readonly pre_parse_xml: (parsable: Parsable, doc: libxml2.Doc, root_node: libxml2.Node) => boolean
+    readonly parse_xml: (parsable: Parsable, doc: libxml2.Doc, node: libxml2.Node) => boolean
+    readonly post_parse_xml: (parsable: Parsable) => boolean
+    readonly pre_get_xml: (parsable: Parsable, xml_string: GLib.String) => void
+    readonly get_xml: (parsable: Parsable, xml_string: GLib.String) => void
+    readonly get_namespaces: (parsable: Parsable, namespaces: GLib.HashTable) => void
+    readonly parse_json: (parsable: Parsable, reader: Json.Reader) => boolean
+    readonly post_parse_json: (parsable: Parsable) => boolean
+    readonly get_json: (parsable: Parsable, builder: Json.Builder) => void
+    readonly get_content_type: () => string
+    readonly element_name: string
+    readonly element_namespace: string
     static name: string
 }
 class ParsablePrivate {
@@ -10632,7 +10739,7 @@ class PicasaWebUserPrivate {
 }
 abstract class QueryClass {
     /* Fields of GData-0.0.GData.QueryClass */
-    get_query_uri: (self: Query, feed_uri: string, query_uri: GLib.String, params_started: boolean) => void
+    readonly get_query_uri: (self: Query, feed_uri: string, query_uri: GLib.String, params_started: boolean) => void
     static name: string
 }
 class QueryPrivate {
@@ -10640,11 +10747,11 @@ class QueryPrivate {
 }
 abstract class ServiceClass {
     /* Fields of GData-0.0.GData.ServiceClass */
-    parent: GObject.ObjectClass
-    api_version: string
-    feed_type: GObject.Type
-    append_query_headers: (self: Service, domain: AuthorizationDomain, message: Soup.Message) => void
-    parse_error_response: (self: Service, operation_type: OperationType, status: number, reason_phrase: string, response_body: string, length: number) => void
+    readonly parent: GObject.ObjectClass
+    readonly api_version: string
+    readonly feed_type: GObject.Type
+    readonly append_query_headers: (self: Service, domain: AuthorizationDomain, message: Soup.Message) => void
+    readonly parse_error_response: (self: Service, operation_type: OperationType, status: number, reason_phrase: string, response_body: string, length: number) => void
     static name: string
 }
 class ServicePrivate {

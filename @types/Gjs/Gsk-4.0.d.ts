@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gsk-4.0
  */
@@ -92,10 +98,10 @@ enum SerializationError {
 enum TransformCategory {
     UNKNOWN,
     ANY,
-    /* 3D (invalid, starts with a number) */
-    /* 2D (invalid, starts with a number) */
-    /* 2D_AFFINE (invalid, starts with a number) */
-    /* 2D_TRANSLATE (invalid, starts with a number) */
+    TODO_3D,
+    TODO_2D,
+    TODO_2D_AFFINE,
+    TODO_2D_TRANSLATE,
     IDENTITY,
 }
 function serialization_error_quark(): GLib.Quark
@@ -163,14 +169,14 @@ class BorderNode {
     /* Static methods and pseudo-constructors */
     static new(outline: RoundedRect, border_width: number[], border_color: Gdk.RGBA[]): BorderNode
 }
-export interface BroadwayRenderer_ConstructProps extends Renderer_ConstructProps {
+interface BroadwayRenderer_ConstructProps extends Renderer_ConstructProps {
 }
 class BroadwayRenderer {
     /* Properties of Gsk-4.0.Gsk.Renderer */
     readonly realized: boolean
     readonly surface: Gdk.Surface
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsk-4.0.Gsk.Renderer */
     get_surface(): Gdk.Surface | null
     is_realized(): boolean
@@ -245,14 +251,14 @@ class CairoNode {
     /* Static methods and pseudo-constructors */
     static new(bounds: Graphene.Rect): CairoNode
 }
-export interface CairoRenderer_ConstructProps extends Renderer_ConstructProps {
+interface CairoRenderer_ConstructProps extends Renderer_ConstructProps {
 }
 class CairoRenderer {
     /* Properties of Gsk-4.0.Gsk.Renderer */
     readonly realized: boolean
     readonly surface: Gdk.Surface
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsk-4.0.Gsk.Renderer */
     get_surface(): Gdk.Surface | null
     is_realized(): boolean
@@ -439,14 +445,14 @@ class DebugNode {
     /* Static methods and pseudo-constructors */
     static new(child: RenderNode, message: string): DebugNode
 }
-export interface GLRenderer_ConstructProps extends Renderer_ConstructProps {
+interface GLRenderer_ConstructProps extends Renderer_ConstructProps {
 }
 class GLRenderer {
     /* Properties of Gsk-4.0.Gsk.Renderer */
     readonly realized: boolean
     readonly surface: Gdk.Surface
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsk-4.0.Gsk.Renderer */
     get_surface(): Gdk.Surface | null
     is_realized(): boolean
@@ -503,13 +509,14 @@ class GLRenderer {
     static new(): GLRenderer
     static $gtype: GObject.Type
 }
-export interface GLShader_ConstructProps extends GObject.Object_ConstructProps {
+interface GLShader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gsk-4.0.Gsk.GLShader */
     resource?: string
     source?: GLib.Bytes
 }
 class GLShader {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsk-4.0.Gsk.GLShader */
     compile(renderer: Renderer): boolean
     find_uniform_by_name(name: string): number
@@ -636,14 +643,14 @@ class LinearGradientNode {
     /* Static methods and pseudo-constructors */
     static new(bounds: Graphene.Rect, start: Graphene.Point, end: Graphene.Point, color_stops: ColorStop[]): LinearGradientNode
 }
-export interface NglRenderer_ConstructProps extends Renderer_ConstructProps {
+interface NglRenderer_ConstructProps extends Renderer_ConstructProps {
 }
 class NglRenderer {
     /* Properties of Gsk-4.0.Gsk.Renderer */
     readonly realized: boolean
     readonly surface: Gdk.Surface
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsk-4.0.Gsk.Renderer */
     get_surface(): Gdk.Surface | null
     is_realized(): boolean
@@ -776,14 +783,14 @@ class RenderNode {
     /* Static methods and pseudo-constructors */
     static deserialize(bytes: GLib.Bytes): RenderNode | null
 }
-export interface Renderer_ConstructProps extends GObject.Object_ConstructProps {
+interface Renderer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Renderer {
     /* Properties of Gsk-4.0.Gsk.Renderer */
     readonly realized: boolean
     readonly surface: Gdk.Surface
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gsk-4.0.Gsk.Renderer */
     get_surface(): Gdk.Surface | null
     is_realized(): boolean
@@ -990,8 +997,8 @@ abstract class CairoRendererClass {
 }
 class ColorStop {
     /* Fields of Gsk-4.0.Gsk.ColorStop */
-    offset: number
-    color: Gdk.RGBA
+    readonly offset: number
+    readonly color: Gdk.RGBA
     static name: string
 }
 abstract class GLRendererClass {
@@ -999,16 +1006,16 @@ abstract class GLRendererClass {
 }
 abstract class GLShaderClass {
     /* Fields of Gsk-4.0.Gsk.GLShaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ParseLocation {
     /* Fields of Gsk-4.0.Gsk.ParseLocation */
-    bytes: number
-    chars: number
-    lines: number
-    line_bytes: number
-    line_chars: number
+    readonly bytes: number
+    readonly chars: number
+    readonly lines: number
+    readonly line_bytes: number
+    readonly line_chars: number
     static name: string
 }
 abstract class RendererClass {
@@ -1016,8 +1023,8 @@ abstract class RendererClass {
 }
 class RoundedRect {
     /* Fields of Gsk-4.0.Gsk.RoundedRect */
-    bounds: Graphene.Rect
-    corner: Graphene.Size[]
+    readonly bounds: Graphene.Rect
+    readonly corner: Graphene.Size[]
     /* Methods of Gsk-4.0.Gsk.RoundedRect */
     contains_point(point: Graphene.Point): boolean
     contains_rect(rect: Graphene.Rect): boolean
@@ -1051,10 +1058,10 @@ class ShaderArgsBuilder {
 }
 class Shadow {
     /* Fields of Gsk-4.0.Gsk.Shadow */
-    color: Gdk.RGBA
-    dx: number
-    dy: number
-    radius: number
+    readonly color: Gdk.RGBA
+    readonly dx: number
+    readonly dy: number
+    readonly radius: number
     static name: string
 }
 class Transform {

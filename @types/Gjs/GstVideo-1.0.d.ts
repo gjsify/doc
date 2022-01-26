@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstVideo-1.0
  */
@@ -61,16 +67,16 @@ enum VideoAFDSpec {
 }
 enum VideoAFDValue {
     UNAVAILABLE,
-    /* 16_9_TOP_ALIGNED (invalid, starts with a number) */
-    /* 14_9_TOP_ALIGNED (invalid, starts with a number) */
+    TODO_16_9_TOP_ALIGNED,
+    TODO_14_9_TOP_ALIGNED,
     GREATER_THAN_16_9,
-    /* 4_3_FULL_16_9_FULL (invalid, starts with a number) */
-    /* 4_3_FULL_4_3_PILLAR (invalid, starts with a number) */
-    /* 16_9_LETTER_16_9_FULL (invalid, starts with a number) */
-    /* 14_9_LETTER_14_9_PILLAR (invalid, starts with a number) */
-    /* 4_3_FULL_14_9_CENTER (invalid, starts with a number) */
-    /* 16_9_LETTER_14_9_CENTER (invalid, starts with a number) */
-    /* 16_9_LETTER_4_3_CENTER (invalid, starts with a number) */
+    TODO_4_3_FULL_16_9_FULL,
+    TODO_4_3_FULL_4_3_PILLAR,
+    TODO_16_9_LETTER_16_9_FULL,
+    TODO_14_9_LETTER_14_9_PILLAR,
+    TODO_4_3_FULL_14_9_CENTER,
+    TODO_16_9_LETTER_14_9_CENTER,
+    TODO_16_9_LETTER_4_3_CENTER,
 }
 enum VideoAlphaMode {
     COPY,
@@ -139,8 +145,8 @@ enum VideoColorPrimaries {
 }
 enum VideoColorRange {
     UNKNOWN,
-    /* 0_255 (invalid, starts with a number) */
-    /* 16_235 (invalid, starts with a number) */
+    TODO_0_255,
+    TODO_16_235,
 }
 enum VideoDitherMethod {
     NONE,
@@ -327,9 +333,9 @@ enum VideoMultiviewMode {
 }
 enum VideoOrientationMethod {
     IDENTITY,
-    /* 90R (invalid, starts with a number) */
-    /* 180 (invalid, starts with a number) */
-    /* 90L (invalid, starts with a number) */
+    TODO_90R,
+    TODO_180,
+    TODO_90L,
     HORIZ,
     VERT,
     UL_LR,
@@ -488,84 +494,84 @@ enum VideoTimeCodeFlags {
     DROP_FRAME,
     INTERLACED,
 }
-export const BUFFER_POOL_OPTION_VIDEO_AFFINE_TRANSFORMATION_META: string
-export const BUFFER_POOL_OPTION_VIDEO_ALIGNMENT: string
-export const BUFFER_POOL_OPTION_VIDEO_GL_TEXTURE_UPLOAD_META: string
-export const BUFFER_POOL_OPTION_VIDEO_META: string
-export const CAPS_FEATURE_FORMAT_INTERLACED: string
-export const CAPS_FEATURE_META_GST_VIDEO_AFFINE_TRANSFORMATION_META: string
-export const CAPS_FEATURE_META_GST_VIDEO_GL_TEXTURE_UPLOAD_META: string
-export const CAPS_FEATURE_META_GST_VIDEO_META: string
-export const CAPS_FEATURE_META_GST_VIDEO_OVERLAY_COMPOSITION: string
-export const META_TAG_VIDEO_COLORSPACE_STR: string
-export const META_TAG_VIDEO_ORIENTATION_STR: string
-export const META_TAG_VIDEO_SIZE_STR: string
-export const META_TAG_VIDEO_STR: string
-export const VIDEO_COLORIMETRY_BT2020: string
-export const VIDEO_COLORIMETRY_BT2020_10: string
-export const VIDEO_COLORIMETRY_BT2100_HLG: string
-export const VIDEO_COLORIMETRY_BT2100_PQ: string
-export const VIDEO_COLORIMETRY_BT601: string
-export const VIDEO_COLORIMETRY_BT709: string
-export const VIDEO_COLORIMETRY_SMPTE240M: string
-export const VIDEO_COLORIMETRY_SRGB: string
-export const VIDEO_COMP_A: number
-export const VIDEO_COMP_B: number
-export const VIDEO_COMP_G: number
-export const VIDEO_COMP_INDEX: number
-export const VIDEO_COMP_PALETTE: number
-export const VIDEO_COMP_R: number
-export const VIDEO_COMP_U: number
-export const VIDEO_COMP_V: number
-export const VIDEO_COMP_Y: number
-export const VIDEO_CONVERTER_OPT_ALPHA_MODE: string
-export const VIDEO_CONVERTER_OPT_ALPHA_VALUE: string
-export const VIDEO_CONVERTER_OPT_ASYNC_TASKS: string
-export const VIDEO_CONVERTER_OPT_BORDER_ARGB: string
-export const VIDEO_CONVERTER_OPT_CHROMA_MODE: string
-export const VIDEO_CONVERTER_OPT_CHROMA_RESAMPLER_METHOD: string
-export const VIDEO_CONVERTER_OPT_DEST_HEIGHT: string
-export const VIDEO_CONVERTER_OPT_DEST_WIDTH: string
-export const VIDEO_CONVERTER_OPT_DEST_X: string
-export const VIDEO_CONVERTER_OPT_DEST_Y: string
-export const VIDEO_CONVERTER_OPT_DITHER_METHOD: string
-export const VIDEO_CONVERTER_OPT_DITHER_QUANTIZATION: string
-export const VIDEO_CONVERTER_OPT_FILL_BORDER: string
-export const VIDEO_CONVERTER_OPT_GAMMA_MODE: string
-export const VIDEO_CONVERTER_OPT_MATRIX_MODE: string
-export const VIDEO_CONVERTER_OPT_PRIMARIES_MODE: string
-export const VIDEO_CONVERTER_OPT_RESAMPLER_METHOD: string
-export const VIDEO_CONVERTER_OPT_RESAMPLER_TAPS: string
-export const VIDEO_CONVERTER_OPT_SRC_HEIGHT: string
-export const VIDEO_CONVERTER_OPT_SRC_WIDTH: string
-export const VIDEO_CONVERTER_OPT_SRC_X: string
-export const VIDEO_CONVERTER_OPT_SRC_Y: string
-export const VIDEO_CONVERTER_OPT_THREADS: string
-export const VIDEO_DECODER_MAX_ERRORS: number
-export const VIDEO_DECODER_SINK_NAME: string
-export const VIDEO_DECODER_SRC_NAME: string
-export const VIDEO_ENCODER_SINK_NAME: string
-export const VIDEO_ENCODER_SRC_NAME: string
-export const VIDEO_FORMATS_ALL: string
-export const VIDEO_FPS_RANGE: string
-export const VIDEO_MAX_COMPONENTS: number
-export const VIDEO_MAX_PLANES: number
-export const VIDEO_RESAMPLER_OPT_CUBIC_B: string
-export const VIDEO_RESAMPLER_OPT_CUBIC_C: string
-export const VIDEO_RESAMPLER_OPT_ENVELOPE: string
-export const VIDEO_RESAMPLER_OPT_MAX_TAPS: string
-export const VIDEO_RESAMPLER_OPT_SHARPEN: string
-export const VIDEO_RESAMPLER_OPT_SHARPNESS: string
-export const VIDEO_SCALER_OPT_DITHER_METHOD: string
-export const VIDEO_SIZE_RANGE: string
-export const VIDEO_TILE_TYPE_MASK: number
-export const VIDEO_TILE_TYPE_SHIFT: number
-export const VIDEO_TILE_X_TILES_MASK: number
-export const VIDEO_TILE_Y_TILES_SHIFT: number
+const BUFFER_POOL_OPTION_VIDEO_AFFINE_TRANSFORMATION_META: string
+const BUFFER_POOL_OPTION_VIDEO_ALIGNMENT: string
+const BUFFER_POOL_OPTION_VIDEO_GL_TEXTURE_UPLOAD_META: string
+const BUFFER_POOL_OPTION_VIDEO_META: string
+const CAPS_FEATURE_FORMAT_INTERLACED: string
+const CAPS_FEATURE_META_GST_VIDEO_AFFINE_TRANSFORMATION_META: string
+const CAPS_FEATURE_META_GST_VIDEO_GL_TEXTURE_UPLOAD_META: string
+const CAPS_FEATURE_META_GST_VIDEO_META: string
+const CAPS_FEATURE_META_GST_VIDEO_OVERLAY_COMPOSITION: string
+const META_TAG_VIDEO_COLORSPACE_STR: string
+const META_TAG_VIDEO_ORIENTATION_STR: string
+const META_TAG_VIDEO_SIZE_STR: string
+const META_TAG_VIDEO_STR: string
+const VIDEO_COLORIMETRY_BT2020: string
+const VIDEO_COLORIMETRY_BT2020_10: string
+const VIDEO_COLORIMETRY_BT2100_HLG: string
+const VIDEO_COLORIMETRY_BT2100_PQ: string
+const VIDEO_COLORIMETRY_BT601: string
+const VIDEO_COLORIMETRY_BT709: string
+const VIDEO_COLORIMETRY_SMPTE240M: string
+const VIDEO_COLORIMETRY_SRGB: string
+const VIDEO_COMP_A: number
+const VIDEO_COMP_B: number
+const VIDEO_COMP_G: number
+const VIDEO_COMP_INDEX: number
+const VIDEO_COMP_PALETTE: number
+const VIDEO_COMP_R: number
+const VIDEO_COMP_U: number
+const VIDEO_COMP_V: number
+const VIDEO_COMP_Y: number
+const VIDEO_CONVERTER_OPT_ALPHA_MODE: string
+const VIDEO_CONVERTER_OPT_ALPHA_VALUE: string
+const VIDEO_CONVERTER_OPT_ASYNC_TASKS: string
+const VIDEO_CONVERTER_OPT_BORDER_ARGB: string
+const VIDEO_CONVERTER_OPT_CHROMA_MODE: string
+const VIDEO_CONVERTER_OPT_CHROMA_RESAMPLER_METHOD: string
+const VIDEO_CONVERTER_OPT_DEST_HEIGHT: string
+const VIDEO_CONVERTER_OPT_DEST_WIDTH: string
+const VIDEO_CONVERTER_OPT_DEST_X: string
+const VIDEO_CONVERTER_OPT_DEST_Y: string
+const VIDEO_CONVERTER_OPT_DITHER_METHOD: string
+const VIDEO_CONVERTER_OPT_DITHER_QUANTIZATION: string
+const VIDEO_CONVERTER_OPT_FILL_BORDER: string
+const VIDEO_CONVERTER_OPT_GAMMA_MODE: string
+const VIDEO_CONVERTER_OPT_MATRIX_MODE: string
+const VIDEO_CONVERTER_OPT_PRIMARIES_MODE: string
+const VIDEO_CONVERTER_OPT_RESAMPLER_METHOD: string
+const VIDEO_CONVERTER_OPT_RESAMPLER_TAPS: string
+const VIDEO_CONVERTER_OPT_SRC_HEIGHT: string
+const VIDEO_CONVERTER_OPT_SRC_WIDTH: string
+const VIDEO_CONVERTER_OPT_SRC_X: string
+const VIDEO_CONVERTER_OPT_SRC_Y: string
+const VIDEO_CONVERTER_OPT_THREADS: string
+const VIDEO_DECODER_MAX_ERRORS: number
+const VIDEO_DECODER_SINK_NAME: string
+const VIDEO_DECODER_SRC_NAME: string
+const VIDEO_ENCODER_SINK_NAME: string
+const VIDEO_ENCODER_SRC_NAME: string
+const VIDEO_FORMATS_ALL: string
+const VIDEO_FPS_RANGE: string
+const VIDEO_MAX_COMPONENTS: number
+const VIDEO_MAX_PLANES: number
+const VIDEO_RESAMPLER_OPT_CUBIC_B: string
+const VIDEO_RESAMPLER_OPT_CUBIC_C: string
+const VIDEO_RESAMPLER_OPT_ENVELOPE: string
+const VIDEO_RESAMPLER_OPT_MAX_TAPS: string
+const VIDEO_RESAMPLER_OPT_SHARPEN: string
+const VIDEO_RESAMPLER_OPT_SHARPNESS: string
+const VIDEO_SCALER_OPT_DITHER_METHOD: string
+const VIDEO_SIZE_RANGE: string
+const VIDEO_TILE_TYPE_MASK: number
+const VIDEO_TILE_TYPE_SHIFT: number
+const VIDEO_TILE_X_TILES_MASK: number
+const VIDEO_TILE_Y_TILES_SHIFT: number
 function buffer_add_video_afd_meta(buffer: Gst.Buffer, field: number, spec: VideoAFDSpec, afd: VideoAFDValue): VideoAFDMeta
 function buffer_add_video_affine_transformation_meta(buffer: Gst.Buffer): VideoAffineTransformationMeta
 function buffer_add_video_bar_meta(buffer: Gst.Buffer, field: number, is_letterbox: boolean, bar_data1: number, bar_data2: number): VideoBarMeta
-function buffer_add_video_caption_meta(buffer: Gst.Buffer, caption_type: VideoCaptionType, data: Uint8Array[]): VideoCaptionMeta
+function buffer_add_video_caption_meta(buffer: Gst.Buffer, caption_type: VideoCaptionType, data: Uint8Array): VideoCaptionMeta
 function buffer_add_video_codec_alpha_meta(buffer: Gst.Buffer, alpha_buffer: Gst.Buffer): VideoCodecAlphaMeta
 function buffer_add_video_gl_texture_upload_meta(buffer: Gst.Buffer, texture_orientation: VideoGLTextureOrientation, n_textures: number, texture_type: VideoGLTextureType, upload: VideoGLTextureUpload, user_data_copy: GObject.BoxedCopyFunc, user_data_free: GObject.BoxedFreeFunc): VideoGLTextureUploadMeta
 function buffer_add_video_meta(buffer: Gst.Buffer, flags: VideoFrameFlags, format: VideoFormat, width: number, height: number): VideoMeta
@@ -736,6 +742,8 @@ class Navigation {
     send_mouse_scroll_event(x: number, y: number, delta_x: number, delta_y: number): void
     /* Virtual methods of GstVideo-1.0.GstVideo.Navigation */
     vfunc_send_event(structure: Gst.Structure): void
+    /* Function overloads */
+    vfunc_send_event(event: Gst.Event): boolean
     static name: string
     /* Static methods and pseudo-constructors */
     static event_get_type(event: Gst.Event): NavigationEventType
@@ -807,16 +815,11 @@ class VideoOverlay {
     static install_properties(oclass: GObject.ObjectClass, last_prop_id: number): void
     static set_property(object: GObject.Object, last_prop_id: number, property_id: number, value: any): boolean
 }
-export interface ColorBalanceChannel_ConstructProps extends GObject.Object_ConstructProps {
+interface ColorBalanceChannel_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ColorBalanceChannel {
-    /* Fields of GstVideo-1.0.GstVideo.ColorBalanceChannel */
-    parent: GObject.Object
-    label: string
-    min_value: number
-    max_value: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -866,7 +869,7 @@ class ColorBalanceChannel {
     _init (config?: ColorBalanceChannel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VideoAggregator_ConstructProps extends GstBase.Aggregator_ConstructProps {
+interface VideoAggregator_ConstructProps extends GstBase.Aggregator_ConstructProps {
 }
 class VideoAggregator {
     /* Properties of GstBase-1.0.GstBase.Aggregator */
@@ -875,40 +878,36 @@ class VideoAggregator {
     min_upstream_latency: number
     start_time: number
     start_time_selection: GstBase.AggregatorStartTimeSelection
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVideo-1.0.GstVideo.VideoAggregator */
-    aggregator: GstBase.Aggregator
-    info: VideoInfo
     /* Fields of GstBase-1.0.GstBase.Aggregator */
-    srcpad: Gst.Pad
+    readonly parent: Gst.Element
+    readonly srcpad: Gst.Pad
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVideo-1.0.GstVideo.VideoAggregator */
     get_execution_task_pool(): Gst.TaskPool
     /* Methods of GstBase-1.0.GstBase.Aggregator */
@@ -1126,10 +1125,6 @@ class VideoAggregator {
     connect_after(sigName: "notify::start-time", callback: (($obj: VideoAggregator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::start-time-selection", callback: (($obj: VideoAggregator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::start-time-selection", callback: (($obj: VideoAggregator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VideoAggregator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoAggregator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoAggregator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoAggregator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1139,7 +1134,8 @@ class VideoAggregator {
     _init (config?: VideoAggregator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VideoAggregatorConvertPad_ConstructProps extends VideoAggregatorPad_ConstructProps {
+interface VideoAggregatorConvertPad_ConstructProps extends VideoAggregatorPad_ConstructProps {
+    /* Constructor properties of GstVideo-1.0.GstVideo.VideoAggregatorConvertPad */
     converter_config?: Gst.Structure
 }
 class VideoAggregatorConvertPad {
@@ -1155,23 +1151,22 @@ class VideoAggregatorConvertPad {
     readonly caps: Gst.Caps
     offset: number
     template: Gst.PadTemplate
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of GstVideo-1.0.GstVideo.VideoAggregatorPad */
-    info: VideoInfo
+    readonly parent: GstBase.AggregatorPad
+    readonly info: VideoInfo
     /* Fields of GstBase-1.0.GstBase.AggregatorPad */
-    segment: Gst.Segment
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Pad */
-    object: Gst.Object
-    element_private: object
-    padtemplate: Gst.PadTemplate
-    direction: Gst.PadDirection
+    readonly object: Gst.Object
+    readonly element_private: object
+    readonly padtemplate: Gst.PadTemplate
+    readonly direction: Gst.PadDirection
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVideo-1.0.GstVideo.VideoAggregatorConvertPad */
     update_conversion_info(): void
     /* Methods of GstVideo-1.0.GstVideo.VideoAggregatorPad */
@@ -1372,10 +1367,6 @@ class VideoAggregatorConvertPad {
     connect_after(sigName: "notify::offset", callback: (($obj: VideoAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::template", callback: (($obj: VideoAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::template", callback: (($obj: VideoAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VideoAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1385,7 +1376,8 @@ class VideoAggregatorConvertPad {
     _init (config?: VideoAggregatorConvertPad_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VideoAggregatorPad_ConstructProps extends GstBase.AggregatorPad_ConstructProps {
+interface VideoAggregatorPad_ConstructProps extends GstBase.AggregatorPad_ConstructProps {
+    /* Constructor properties of GstVideo-1.0.GstVideo.VideoAggregatorPad */
     max_last_buffer_repeat?: number
     repeat_after_eos?: boolean
     zorder?: number
@@ -1401,23 +1393,20 @@ class VideoAggregatorPad {
     readonly caps: Gst.Caps
     offset: number
     template: Gst.PadTemplate
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVideo-1.0.GstVideo.VideoAggregatorPad */
-    info: VideoInfo
     /* Fields of GstBase-1.0.GstBase.AggregatorPad */
-    segment: Gst.Segment
+    readonly parent: Gst.Pad
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Pad */
-    object: Gst.Object
-    element_private: object
-    padtemplate: Gst.PadTemplate
-    direction: Gst.PadDirection
+    readonly object: Gst.Object
+    readonly element_private: object
+    readonly padtemplate: Gst.PadTemplate
+    readonly direction: Gst.PadDirection
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVideo-1.0.GstVideo.VideoAggregatorPad */
     get_current_buffer(): Gst.Buffer
     get_prepared_frame(): VideoFrame
@@ -1612,10 +1601,6 @@ class VideoAggregatorPad {
     connect_after(sigName: "notify::offset", callback: (($obj: VideoAggregatorPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::template", callback: (($obj: VideoAggregatorPad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::template", callback: (($obj: VideoAggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VideoAggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoAggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoAggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoAggregatorPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1625,7 +1610,7 @@ class VideoAggregatorPad {
     _init (config?: VideoAggregatorPad_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VideoAggregatorParallelConvertPad_ConstructProps extends VideoAggregatorConvertPad_ConstructProps {
+interface VideoAggregatorParallelConvertPad_ConstructProps extends VideoAggregatorConvertPad_ConstructProps {
 }
 class VideoAggregatorParallelConvertPad {
     /* Properties of GstVideo-1.0.GstVideo.VideoAggregatorConvertPad */
@@ -1640,25 +1625,22 @@ class VideoAggregatorParallelConvertPad {
     readonly caps: Gst.Caps
     offset: number
     template: Gst.PadTemplate
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVideo-1.0.GstVideo.VideoAggregatorParallelConvertPad */
-    parent_instance: VideoAggregatorConvertPad
     /* Fields of GstVideo-1.0.GstVideo.VideoAggregatorPad */
-    info: VideoInfo
+    readonly parent: GstBase.AggregatorPad
+    readonly info: VideoInfo
     /* Fields of GstBase-1.0.GstBase.AggregatorPad */
-    segment: Gst.Segment
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Pad */
-    object: Gst.Object
-    element_private: object
-    padtemplate: Gst.PadTemplate
-    direction: Gst.PadDirection
+    readonly object: Gst.Object
+    readonly element_private: object
+    readonly padtemplate: Gst.PadTemplate
+    readonly direction: Gst.PadDirection
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVideo-1.0.GstVideo.VideoAggregatorConvertPad */
     update_conversion_info(): void
     /* Methods of GstVideo-1.0.GstVideo.VideoAggregatorPad */
@@ -1859,10 +1841,6 @@ class VideoAggregatorParallelConvertPad {
     connect_after(sigName: "notify::offset", callback: (($obj: VideoAggregatorParallelConvertPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::template", callback: (($obj: VideoAggregatorParallelConvertPad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::template", callback: (($obj: VideoAggregatorParallelConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VideoAggregatorParallelConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoAggregatorParallelConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoAggregatorParallelConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoAggregatorParallelConvertPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1872,23 +1850,19 @@ class VideoAggregatorParallelConvertPad {
     _init (config?: VideoAggregatorParallelConvertPad_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VideoBufferPool_ConstructProps extends Gst.BufferPool_ConstructProps {
+interface VideoBufferPool_ConstructProps extends Gst.BufferPool_ConstructProps {
 }
 class VideoBufferPool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVideo-1.0.GstVideo.VideoBufferPool */
-    bufferpool: Gst.BufferPool
-    priv: VideoBufferPoolPrivate
     /* Fields of Gst-1.0.Gst.BufferPool */
-    object: Gst.Object
-    flushing: number
+    readonly object: Gst.Object
+    readonly flushing: number
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.BufferPool */
     acquire_buffer(params?: Gst.BufferPoolAcquireParams | null): [ /* returnType */ Gst.FlowReturn, /* buffer */ Gst.Buffer ]
     get_config(): Gst.Structure
@@ -1975,10 +1949,6 @@ class VideoBufferPool {
     connect(sigName: "notify", callback: (($obj: VideoBufferPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: VideoBufferPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: VideoBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoBufferPool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1990,7 +1960,8 @@ class VideoBufferPool {
     static new(): VideoBufferPool
     static $gtype: GObject.Type
 }
-export interface VideoDecoder_ConstructProps extends Gst.Element_ConstructProps {
+interface VideoDecoder_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstVideo-1.0.GstVideo.VideoDecoder */
     automatic_request_sync_point_flags?: VideoDecoderRequestSyncPointFlags
     automatic_request_sync_points?: boolean
     discard_corrupted_frames?: boolean
@@ -2006,36 +1977,35 @@ class VideoDecoder {
     max_errors: number
     min_force_key_unit_interval: number
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVideo-1.0.GstVideo.VideoDecoder */
     add_to_frame(n_bytes: number): void
     allocate_output_buffer(): Gst.Buffer
@@ -2272,10 +2242,6 @@ class VideoDecoder {
     connect_after(sigName: "notify::min-force-key-unit-interval", callback: (($obj: VideoDecoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: VideoDecoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: VideoDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VideoDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoDecoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2285,7 +2251,8 @@ class VideoDecoder {
     _init (config?: VideoDecoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VideoEncoder_ConstructProps extends Gst.Element_ConstructProps {
+interface VideoEncoder_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstVideo-1.0.GstVideo.VideoEncoder */
     min_force_key_unit_interval?: number
     qos?: boolean
 }
@@ -2293,36 +2260,35 @@ class VideoEncoder {
     /* Properties of GstVideo-1.0.GstVideo.VideoEncoder */
     min_force_key_unit_interval: number
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstVideo-1.0.GstVideo.VideoEncoder */
     allocate_output_buffer(size: number): Gst.Buffer
     allocate_output_frame(frame: VideoCodecFrame, size: number): Gst.FlowReturn
@@ -2546,10 +2512,6 @@ class VideoEncoder {
     connect_after(sigName: "notify::min-force-key-unit-interval", callback: (($obj: VideoEncoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: VideoEncoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: VideoEncoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VideoEncoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoEncoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoEncoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoEncoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2562,52 +2524,47 @@ class VideoEncoder {
     static set_app_dir(app_dir: string): boolean
     static $gtype: GObject.Type
 }
-export interface VideoFilter_ConstructProps extends GstBase.BaseTransform_ConstructProps {
+interface VideoFilter_ConstructProps extends GstBase.BaseTransform_ConstructProps {
 }
 class VideoFilter {
     /* Properties of GstBase-1.0.GstBase.BaseTransform */
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVideo-1.0.GstVideo.VideoFilter */
-    element: GstBase.BaseTransform
-    negotiated: boolean
-    in_info: VideoInfo
-    out_info: VideoInfo
     /* Fields of GstBase-1.0.GstBase.BaseTransform */
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    have_segment: boolean
-    segment: Gst.Segment
-    queued_buf: Gst.Buffer
+    readonly element: Gst.Element
+    readonly sinkpad: Gst.Pad
+    readonly srcpad: Gst.Pad
+    readonly have_segment: boolean
+    readonly segment: Gst.Segment
+    readonly queued_buf: Gst.Buffer
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseTransform */
     get_allocator(): [ /* allocator */ Gst.Allocator | null, /* params */ Gst.AllocationParams | null ]
     get_buffer_pool(): Gst.BufferPool | null
@@ -2742,6 +2699,7 @@ class VideoFilter {
     vfunc_transform_frame(inframe: VideoFrame, outframe: VideoFrame): Gst.FlowReturn
     vfunc_transform_frame_ip(frame: VideoFrame): Gst.FlowReturn
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseTransform */
     vfunc_accept_caps(direction: Gst.PadDirection, caps: Gst.Caps): boolean
@@ -2755,6 +2713,7 @@ class VideoFilter {
     vfunc_prepare_output_buffer(input: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
     vfunc_propose_allocation(decide_query: Gst.Query, query: Gst.Query): boolean
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(incaps: Gst.Caps, outcaps: Gst.Caps): boolean
     vfunc_sink_event(event: Gst.Event): boolean
@@ -2814,10 +2773,6 @@ class VideoFilter {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::qos", callback: (($obj: VideoFilter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: VideoFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VideoFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoFilter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2830,7 +2785,8 @@ class VideoFilter {
 class VideoMultiviewFlagsSet {
     static name: string
 }
-export interface VideoSink_ConstructProps extends GstBase.BaseSink_ConstructProps {
+interface VideoSink_ConstructProps extends GstBase.BaseSink_ConstructProps {
+    /* Constructor properties of GstVideo-1.0.GstVideo.VideoSink */
     show_preroll_frame?: boolean
 }
 class VideoSink {
@@ -2850,54 +2806,50 @@ class VideoSink {
     sync: boolean
     throttle_time: number
     ts_offset: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstVideo-1.0.GstVideo.VideoSink */
-    element: GstBase.BaseSink
-    width: number
-    height: number
     /* Fields of GstBase-1.0.GstBase.BaseSink */
-    sinkpad: Gst.Pad
-    pad_mode: Gst.PadMode
-    offset: number
-    can_activate_pull: boolean
-    can_activate_push: boolean
-    preroll_lock: GLib.Mutex
-    preroll_cond: GLib.Cond
-    eos: boolean
-    need_preroll: boolean
-    have_preroll: boolean
-    playing_async: boolean
-    have_newsegment: boolean
-    segment: Gst.Segment
+    readonly element: Gst.Element
+    readonly sinkpad: Gst.Pad
+    readonly pad_mode: Gst.PadMode
+    readonly offset: number
+    readonly can_activate_pull: boolean
+    readonly can_activate_push: boolean
+    readonly preroll_lock: GLib.Mutex
+    readonly preroll_cond: GLib.Cond
+    readonly eos: boolean
+    readonly need_preroll: boolean
+    readonly have_preroll: boolean
+    readonly playing_async: boolean
+    readonly have_newsegment: boolean
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseSink */
     do_preroll(obj: Gst.MiniObject): Gst.FlowReturn
     get_blocksize(): number
@@ -3047,6 +2999,9 @@ class VideoSink {
     /* Virtual methods of GstVideo-1.0.GstVideo.VideoSink */
     vfunc_set_info(caps: Gst.Caps, info: VideoInfo): boolean
     vfunc_show_frame(buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSink */
     vfunc_activate_pull(active: boolean): boolean
     vfunc_event(event: Gst.Event): boolean
@@ -3057,6 +3012,8 @@ class VideoSink {
     vfunc_prepare_list(buffer_list: Gst.BufferList): Gst.FlowReturn
     vfunc_preroll(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_propose_allocation(query: Gst.Query): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_render(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_render_list(buffer_list: Gst.BufferList): Gst.FlowReturn
@@ -3139,10 +3096,6 @@ class VideoSink {
     connect_after(sigName: "notify::throttle-time", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::ts-offset", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::ts-offset", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3156,40 +3109,40 @@ class VideoSink {
 }
 abstract class ColorBalanceChannelClass {
     /* Fields of GstVideo-1.0.GstVideo.ColorBalanceChannelClass */
-    parent: GObject.ObjectClass
-    value_changed: (channel: ColorBalanceChannel, value: number) => void
+    readonly parent: GObject.ObjectClass
+    readonly value_changed: (channel: ColorBalanceChannel, value: number) => void
     static name: string
 }
 abstract class ColorBalanceInterface {
     /* Fields of GstVideo-1.0.GstVideo.ColorBalanceInterface */
-    iface: GObject.TypeInterface
-    list_channels: (balance: ColorBalance) => ColorBalanceChannel[]
-    set_value: (balance: ColorBalance, channel: ColorBalanceChannel, value: number) => void
-    get_value: (balance: ColorBalance, channel: ColorBalanceChannel) => number
-    get_balance_type: (balance: ColorBalance) => ColorBalanceType
-    value_changed: (balance: ColorBalance, channel: ColorBalanceChannel, value: number) => void
+    readonly iface: GObject.TypeInterface
+    readonly list_channels: (balance: ColorBalance) => ColorBalanceChannel[]
+    readonly set_value: (balance: ColorBalance, channel: ColorBalanceChannel, value: number) => void
+    readonly get_value: (balance: ColorBalance, channel: ColorBalanceChannel) => number
+    readonly get_balance_type: (balance: ColorBalance) => ColorBalanceType
+    readonly value_changed: (balance: ColorBalance, channel: ColorBalanceChannel, value: number) => void
     static name: string
 }
 abstract class NavigationInterface {
     /* Fields of GstVideo-1.0.GstVideo.NavigationInterface */
-    iface: GObject.TypeInterface
-    send_event: (navigation: Navigation, structure: Gst.Structure) => void
+    readonly iface: GObject.TypeInterface
+    readonly send_event: (navigation: Navigation, structure: Gst.Structure) => void
     static name: string
 }
 class VideoAFDMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoAFDMeta */
-    meta: Gst.Meta
-    field: number
-    spec: VideoAFDSpec
-    afd: VideoAFDValue
+    readonly meta: Gst.Meta
+    readonly field: number
+    readonly spec: VideoAFDSpec
+    readonly afd: VideoAFDValue
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 class VideoAffineTransformationMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoAffineTransformationMeta */
-    meta: Gst.Meta
-    matrix: number[]
+    readonly meta: Gst.Meta
+    readonly matrix: number[]
     /* Methods of GstVideo-1.0.GstVideo.VideoAffineTransformationMeta */
     apply_matrix(matrix: number[]): void
     static name: string
@@ -3198,16 +3151,16 @@ class VideoAffineTransformationMeta {
 }
 abstract class VideoAggregatorClass {
     /* Fields of GstVideo-1.0.GstVideo.VideoAggregatorClass */
-    update_caps: (videoaggregator: VideoAggregator, caps: Gst.Caps) => Gst.Caps
-    aggregate_frames: (videoaggregator: VideoAggregator, outbuffer: Gst.Buffer) => Gst.FlowReturn
-    create_output_buffer: (videoaggregator: VideoAggregator, outbuffer: Gst.Buffer) => Gst.FlowReturn
-    find_best_format: (vagg: VideoAggregator, downstream_caps: Gst.Caps, best_info: VideoInfo, at_least_one_alpha: boolean) => void
+    readonly update_caps: (videoaggregator: VideoAggregator, caps: Gst.Caps) => Gst.Caps
+    readonly aggregate_frames: (videoaggregator: VideoAggregator, outbuffer: Gst.Buffer) => Gst.FlowReturn
+    readonly create_output_buffer: (videoaggregator: VideoAggregator, outbuffer: Gst.Buffer) => Gst.FlowReturn
+    readonly find_best_format: (vagg: VideoAggregator, downstream_caps: Gst.Caps, best_info: VideoInfo, at_least_one_alpha: boolean) => void
     static name: string
 }
 abstract class VideoAggregatorConvertPadClass {
     /* Fields of GstVideo-1.0.GstVideo.VideoAggregatorConvertPadClass */
-    parent_class: VideoAggregatorPadClass
-    create_conversion_info: (pad: VideoAggregatorConvertPad, agg: VideoAggregator, conversion_info: VideoInfo) => void
+    readonly parent_class: VideoAggregatorPadClass
+    readonly create_conversion_info: (pad: VideoAggregatorConvertPad, agg: VideoAggregator, conversion_info: VideoInfo) => void
     static name: string
 }
 class VideoAggregatorConvertPadPrivate {
@@ -3215,13 +3168,13 @@ class VideoAggregatorConvertPadPrivate {
 }
 abstract class VideoAggregatorPadClass {
     /* Fields of GstVideo-1.0.GstVideo.VideoAggregatorPadClass */
-    parent_class: GstBase.AggregatorPadClass
-    update_conversion_info: (pad: VideoAggregatorPad) => void
-    prepare_frame: (pad: VideoAggregatorPad, videoaggregator: VideoAggregator, buffer: Gst.Buffer, prepared_frame: VideoFrame) => boolean
-    clean_frame: (pad: VideoAggregatorPad, videoaggregator: VideoAggregator, prepared_frame: VideoFrame) => void
-    prepare_frame_start: (pad: VideoAggregatorPad, videoaggregator: VideoAggregator, buffer: Gst.Buffer, prepared_frame: VideoFrame) => void
-    prepare_frame_finish: (pad: VideoAggregatorPad, videoaggregator: VideoAggregator, prepared_frame: VideoFrame) => void
-    _gst_reserved: object[]
+    readonly parent_class: GstBase.AggregatorPadClass
+    readonly update_conversion_info: (pad: VideoAggregatorPad) => void
+    readonly prepare_frame: (pad: VideoAggregatorPad, videoaggregator: VideoAggregator, buffer: Gst.Buffer, prepared_frame: VideoFrame) => boolean
+    readonly clean_frame: (pad: VideoAggregatorPad, videoaggregator: VideoAggregator, prepared_frame: VideoFrame) => void
+    readonly prepare_frame_start: (pad: VideoAggregatorPad, videoaggregator: VideoAggregator, buffer: Gst.Buffer, prepared_frame: VideoFrame) => void
+    readonly prepare_frame_finish: (pad: VideoAggregatorPad, videoaggregator: VideoAggregator, prepared_frame: VideoFrame) => void
+    readonly _gst_reserved: object[]
     static name: string
 }
 class VideoAggregatorPadPrivate {
@@ -3229,7 +3182,7 @@ class VideoAggregatorPadPrivate {
 }
 abstract class VideoAggregatorParallelConvertPadClass {
     /* Fields of GstVideo-1.0.GstVideo.VideoAggregatorParallelConvertPadClass */
-    parent_class: VideoAggregatorConvertPadClass
+    readonly parent_class: VideoAggregatorConvertPadClass
     static name: string
 }
 class VideoAggregatorPrivate {
@@ -3237,37 +3190,37 @@ class VideoAggregatorPrivate {
 }
 class VideoAlignment {
     /* Fields of GstVideo-1.0.GstVideo.VideoAlignment */
-    padding_top: number
-    padding_bottom: number
-    padding_left: number
-    padding_right: number
-    stride_align: number[]
+    readonly padding_top: number
+    readonly padding_bottom: number
+    readonly padding_left: number
+    readonly padding_right: number
+    readonly stride_align: number[]
     /* Methods of GstVideo-1.0.GstVideo.VideoAlignment */
     reset(): void
     static name: string
 }
 class VideoAncillary {
     /* Fields of GstVideo-1.0.GstVideo.VideoAncillary */
-    DID: number
-    SDID_block_number: number
-    data_count: number
-    data: Uint8Array[]
+    readonly DID: number
+    readonly SDID_block_number: number
+    readonly data_count: number
+    readonly data: Uint8Array
     static name: string
 }
 class VideoBarMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoBarMeta */
-    meta: Gst.Meta
-    field: number
-    is_letterbox: boolean
-    bar_data1: number
-    bar_data2: number
+    readonly meta: Gst.Meta
+    readonly field: number
+    readonly is_letterbox: boolean
+    readonly bar_data1: number
+    readonly bar_data2: number
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 abstract class VideoBufferPoolClass {
     /* Fields of GstVideo-1.0.GstVideo.VideoBufferPoolClass */
-    parent_class: Gst.BufferPoolClass
+    readonly parent_class: Gst.BufferPoolClass
     static name: string
 }
 class VideoBufferPoolPrivate {
@@ -3275,10 +3228,10 @@ class VideoBufferPoolPrivate {
 }
 class VideoCaptionMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoCaptionMeta */
-    meta: Gst.Meta
-    caption_type: VideoCaptionType
-    data: Uint8Array[]
-    size: number
+    readonly meta: Gst.Meta
+    readonly caption_type: VideoCaptionType
+    readonly data: Uint8Array
+    readonly size: number
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
@@ -3291,22 +3244,22 @@ class VideoChromaResample {
 }
 class VideoCodecAlphaMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoCodecAlphaMeta */
-    meta: Gst.Meta
-    buffer: Gst.Buffer
+    readonly meta: Gst.Meta
+    readonly buffer: Gst.Buffer
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 class VideoCodecFrame {
     /* Fields of GstVideo-1.0.GstVideo.VideoCodecFrame */
-    system_frame_number: number
-    dts: Gst.ClockTime
-    pts: Gst.ClockTime
-    duration: Gst.ClockTime
-    distance_from_sync: number
-    input_buffer: Gst.Buffer
-    output_buffer: Gst.Buffer
-    deadline: Gst.ClockTime
+    readonly system_frame_number: number
+    readonly dts: Gst.ClockTime
+    readonly pts: Gst.ClockTime
+    readonly duration: Gst.ClockTime
+    readonly distance_from_sync: number
+    readonly input_buffer: Gst.Buffer
+    readonly output_buffer: Gst.Buffer
+    readonly deadline: Gst.ClockTime
     /* Methods of GstVideo-1.0.GstVideo.VideoCodecFrame */
     get_user_data(): object | null
     ref(): VideoCodecFrame
@@ -3316,12 +3269,12 @@ class VideoCodecFrame {
 }
 class VideoCodecState {
     /* Fields of GstVideo-1.0.GstVideo.VideoCodecState */
-    info: VideoInfo
-    caps: Gst.Caps
-    codec_data: Gst.Buffer
-    allocation_caps: Gst.Caps
-    mastering_display_info: VideoMasteringDisplayInfo
-    content_light_level: VideoContentLightLevel
+    readonly info: VideoInfo
+    readonly caps: Gst.Caps
+    readonly codec_data: Gst.Buffer
+    readonly allocation_caps: Gst.Caps
+    readonly mastering_display_info: VideoMasteringDisplayInfo
+    readonly content_light_level: VideoContentLightLevel
     /* Methods of GstVideo-1.0.GstVideo.VideoCodecState */
     ref(): VideoCodecState
     unref(): void
@@ -3329,23 +3282,23 @@ class VideoCodecState {
 }
 class VideoColorPrimariesInfo {
     /* Fields of GstVideo-1.0.GstVideo.VideoColorPrimariesInfo */
-    primaries: VideoColorPrimaries
-    Wx: number
-    Wy: number
-    Rx: number
-    Ry: number
-    Gx: number
-    Gy: number
-    Bx: number
-    By: number
+    readonly primaries: VideoColorPrimaries
+    readonly Wx: number
+    readonly Wy: number
+    readonly Rx: number
+    readonly Ry: number
+    readonly Gx: number
+    readonly Gy: number
+    readonly Bx: number
+    readonly By: number
     static name: string
 }
 class VideoColorimetry {
     /* Fields of GstVideo-1.0.GstVideo.VideoColorimetry */
-    range: VideoColorRange
-    matrix: VideoColorMatrix
-    transfer: VideoTransferFunction
-    primaries: VideoColorPrimaries
+    readonly range: VideoColorRange
+    readonly matrix: VideoColorMatrix
+    readonly transfer: VideoTransferFunction
+    readonly primaries: VideoColorPrimaries
     /* Methods of GstVideo-1.0.GstVideo.VideoColorimetry */
     from_string(color: string): boolean
     is_equal(other: VideoColorimetry): boolean
@@ -3355,8 +3308,8 @@ class VideoColorimetry {
 }
 class VideoContentLightLevel {
     /* Fields of GstVideo-1.0.GstVideo.VideoContentLightLevel */
-    max_content_light_level: number
-    max_frame_average_light_level: number
+    readonly max_content_light_level: number
+    readonly max_frame_average_light_level: number
     /* Methods of GstVideo-1.0.GstVideo.VideoContentLightLevel */
     add_to_caps(caps: Gst.Caps): boolean
     from_caps(caps: Gst.Caps): boolean
@@ -3377,38 +3330,38 @@ class VideoConverter {
 }
 class VideoCropMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoCropMeta */
-    meta: Gst.Meta
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly meta: Gst.Meta
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 abstract class VideoDecoderClass {
     /* Fields of GstVideo-1.0.GstVideo.VideoDecoderClass */
-    open: (decoder: VideoDecoder) => boolean
-    close: (decoder: VideoDecoder) => boolean
-    start: (decoder: VideoDecoder) => boolean
-    stop: (decoder: VideoDecoder) => boolean
-    parse: (decoder: VideoDecoder, frame: VideoCodecFrame, adapter: GstBase.Adapter, at_eos: boolean) => Gst.FlowReturn
-    set_format: (decoder: VideoDecoder, state: VideoCodecState) => boolean
-    reset: (decoder: VideoDecoder, hard: boolean) => boolean
-    finish: (decoder: VideoDecoder) => Gst.FlowReturn
-    handle_frame: (decoder: VideoDecoder, frame: VideoCodecFrame) => Gst.FlowReturn
-    sink_event: (decoder: VideoDecoder, event: Gst.Event) => boolean
-    src_event: (decoder: VideoDecoder, event: Gst.Event) => boolean
-    negotiate: (decoder: VideoDecoder) => boolean
-    decide_allocation: (decoder: VideoDecoder, query: Gst.Query) => boolean
-    propose_allocation: (decoder: VideoDecoder, query: Gst.Query) => boolean
-    flush: (decoder: VideoDecoder) => boolean
-    sink_query: (decoder: VideoDecoder, query: Gst.Query) => boolean
-    src_query: (decoder: VideoDecoder, query: Gst.Query) => boolean
-    getcaps: (decoder: VideoDecoder, filter: Gst.Caps) => Gst.Caps
-    drain: (decoder: VideoDecoder) => Gst.FlowReturn
-    transform_meta: (decoder: VideoDecoder, frame: VideoCodecFrame, meta: Gst.Meta) => boolean
-    handle_missing_data: (decoder: VideoDecoder, timestamp: Gst.ClockTime, duration: Gst.ClockTime) => boolean
+    readonly open: (decoder: VideoDecoder) => boolean
+    readonly close: (decoder: VideoDecoder) => boolean
+    readonly start: (decoder: VideoDecoder) => boolean
+    readonly stop: (decoder: VideoDecoder) => boolean
+    readonly parse: (decoder: VideoDecoder, frame: VideoCodecFrame, adapter: GstBase.Adapter, at_eos: boolean) => Gst.FlowReturn
+    readonly set_format: (decoder: VideoDecoder, state: VideoCodecState) => boolean
+    readonly reset: (decoder: VideoDecoder, hard: boolean) => boolean
+    readonly finish: (decoder: VideoDecoder) => Gst.FlowReturn
+    readonly handle_frame: (decoder: VideoDecoder, frame: VideoCodecFrame) => Gst.FlowReturn
+    readonly sink_event: (decoder: VideoDecoder, event: Gst.Event) => boolean
+    readonly src_event: (decoder: VideoDecoder, event: Gst.Event) => boolean
+    readonly negotiate: (decoder: VideoDecoder) => boolean
+    readonly decide_allocation: (decoder: VideoDecoder, query: Gst.Query) => boolean
+    readonly propose_allocation: (decoder: VideoDecoder, query: Gst.Query) => boolean
+    readonly flush: (decoder: VideoDecoder) => boolean
+    readonly sink_query: (decoder: VideoDecoder, query: Gst.Query) => boolean
+    readonly src_query: (decoder: VideoDecoder, query: Gst.Query) => boolean
+    readonly getcaps: (decoder: VideoDecoder, filter: Gst.Caps) => Gst.Caps
+    readonly drain: (decoder: VideoDecoder) => Gst.FlowReturn
+    readonly transform_meta: (decoder: VideoDecoder, frame: VideoCodecFrame, meta: Gst.Meta) => boolean
+    readonly handle_missing_data: (decoder: VideoDecoder, timestamp: Gst.ClockTime, duration: Gst.ClockTime) => boolean
     static name: string
 }
 class VideoDecoderPrivate {
@@ -3416,7 +3369,7 @@ class VideoDecoderPrivate {
 }
 abstract class VideoDirectionInterface {
     /* Fields of GstVideo-1.0.GstVideo.VideoDirectionInterface */
-    iface: GObject.TypeInterface
+    readonly iface: GObject.TypeInterface
     static name: string
 }
 class VideoDither {
@@ -3427,25 +3380,25 @@ class VideoDither {
 }
 abstract class VideoEncoderClass {
     /* Fields of GstVideo-1.0.GstVideo.VideoEncoderClass */
-    open: (encoder: VideoEncoder) => boolean
-    close: (encoder: VideoEncoder) => boolean
-    start: (encoder: VideoEncoder) => boolean
-    stop: (encoder: VideoEncoder) => boolean
-    set_format: (encoder: VideoEncoder, state: VideoCodecState) => boolean
-    handle_frame: (encoder: VideoEncoder, frame: VideoCodecFrame) => Gst.FlowReturn
-    reset: (encoder: VideoEncoder, hard: boolean) => boolean
-    finish: (encoder: VideoEncoder) => Gst.FlowReturn
-    pre_push: (encoder: VideoEncoder, frame: VideoCodecFrame) => Gst.FlowReturn
-    getcaps: (enc: VideoEncoder, filter: Gst.Caps) => Gst.Caps
-    sink_event: (encoder: VideoEncoder, event: Gst.Event) => boolean
-    src_event: (encoder: VideoEncoder, event: Gst.Event) => boolean
-    negotiate: (encoder: VideoEncoder) => boolean
-    decide_allocation: (encoder: VideoEncoder, query: Gst.Query) => boolean
-    propose_allocation: (encoder: VideoEncoder, query: Gst.Query) => boolean
-    flush: (encoder: VideoEncoder) => boolean
-    sink_query: (encoder: VideoEncoder, query: Gst.Query) => boolean
-    src_query: (encoder: VideoEncoder, query: Gst.Query) => boolean
-    transform_meta: (encoder: VideoEncoder, frame: VideoCodecFrame, meta: Gst.Meta) => boolean
+    readonly open: (encoder: VideoEncoder) => boolean
+    readonly close: (encoder: VideoEncoder) => boolean
+    readonly start: (encoder: VideoEncoder) => boolean
+    readonly stop: (encoder: VideoEncoder) => boolean
+    readonly set_format: (encoder: VideoEncoder, state: VideoCodecState) => boolean
+    readonly handle_frame: (encoder: VideoEncoder, frame: VideoCodecFrame) => Gst.FlowReturn
+    readonly reset: (encoder: VideoEncoder, hard: boolean) => boolean
+    readonly finish: (encoder: VideoEncoder) => Gst.FlowReturn
+    readonly pre_push: (encoder: VideoEncoder, frame: VideoCodecFrame) => Gst.FlowReturn
+    readonly getcaps: (enc: VideoEncoder, filter: Gst.Caps) => Gst.Caps
+    readonly sink_event: (encoder: VideoEncoder, event: Gst.Event) => boolean
+    readonly src_event: (encoder: VideoEncoder, event: Gst.Event) => boolean
+    readonly negotiate: (encoder: VideoEncoder) => boolean
+    readonly decide_allocation: (encoder: VideoEncoder, query: Gst.Query) => boolean
+    readonly propose_allocation: (encoder: VideoEncoder, query: Gst.Query) => boolean
+    readonly flush: (encoder: VideoEncoder) => boolean
+    readonly sink_query: (encoder: VideoEncoder, query: Gst.Query) => boolean
+    readonly src_query: (encoder: VideoEncoder, query: Gst.Query) => boolean
+    readonly transform_meta: (encoder: VideoEncoder, frame: VideoCodecFrame, meta: Gst.Meta) => boolean
     static name: string
 }
 class VideoEncoderPrivate {
@@ -3453,48 +3406,48 @@ class VideoEncoderPrivate {
 }
 abstract class VideoFilterClass {
     /* Fields of GstVideo-1.0.GstVideo.VideoFilterClass */
-    parent_class: GstBase.BaseTransformClass
-    set_info: (filter: VideoFilter, incaps: Gst.Caps, in_info: VideoInfo, outcaps: Gst.Caps, out_info: VideoInfo) => boolean
-    transform_frame: (filter: VideoFilter, inframe: VideoFrame, outframe: VideoFrame) => Gst.FlowReturn
-    transform_frame_ip: (trans: VideoFilter, frame: VideoFrame) => Gst.FlowReturn
+    readonly parent_class: GstBase.BaseTransformClass
+    readonly set_info: (filter: VideoFilter, incaps: Gst.Caps, in_info: VideoInfo, outcaps: Gst.Caps, out_info: VideoInfo) => boolean
+    readonly transform_frame: (filter: VideoFilter, inframe: VideoFrame, outframe: VideoFrame) => Gst.FlowReturn
+    readonly transform_frame_ip: (trans: VideoFilter, frame: VideoFrame) => Gst.FlowReturn
     static name: string
 }
 class VideoFormatInfo {
     /* Fields of GstVideo-1.0.GstVideo.VideoFormatInfo */
-    format: VideoFormat
-    name: string
-    description: string
-    flags: VideoFormatFlags
-    bits: number
-    n_components: number
-    shift: number[]
-    depth: number[]
-    pixel_stride: number[]
-    n_planes: number
-    plane: number[]
-    poffset: number[]
-    w_sub: number[]
-    h_sub: number[]
-    unpack_format: VideoFormat
-    unpack_func: VideoFormatUnpack
-    pack_lines: number
-    pack_func: VideoFormatPack
-    tile_mode: VideoTileMode
-    tile_ws: number
-    tile_hs: number
+    readonly format: VideoFormat
+    readonly name: string
+    readonly description: string
+    readonly flags: VideoFormatFlags
+    readonly bits: number
+    readonly n_components: number
+    readonly shift: number[]
+    readonly depth: number[]
+    readonly pixel_stride: number[]
+    readonly n_planes: number
+    readonly plane: number[]
+    readonly poffset: number[]
+    readonly w_sub: number[]
+    readonly h_sub: number[]
+    readonly unpack_format: VideoFormat
+    readonly unpack_func: VideoFormatUnpack
+    readonly pack_lines: number
+    readonly pack_func: VideoFormatPack
+    readonly tile_mode: VideoTileMode
+    readonly tile_ws: number
+    readonly tile_hs: number
     /* Methods of GstVideo-1.0.GstVideo.VideoFormatInfo */
     component(plane: number): /* components */ number
     static name: string
 }
 class VideoFrame {
     /* Fields of GstVideo-1.0.GstVideo.VideoFrame */
-    info: VideoInfo
-    flags: VideoFrameFlags
-    buffer: Gst.Buffer
-    meta: object
-    id: number
-    data: object[]
-    map: Gst.MapInfo[]
+    readonly info: VideoInfo
+    readonly flags: VideoFrameFlags
+    readonly buffer: Gst.Buffer
+    readonly meta: object
+    readonly id: number
+    readonly data: object[]
+    readonly map: Gst.MapInfo[]
     /* Methods of GstVideo-1.0.GstVideo.VideoFrame */
     copy(src: VideoFrame): boolean
     copy_plane(src: VideoFrame, plane: number): boolean
@@ -3506,10 +3459,10 @@ class VideoFrame {
 }
 class VideoGLTextureUploadMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoGLTextureUploadMeta */
-    meta: Gst.Meta
-    texture_orientation: VideoGLTextureOrientation
-    n_textures: number
-    texture_type: VideoGLTextureType[]
+    readonly meta: Gst.Meta
+    readonly texture_orientation: VideoGLTextureOrientation
+    readonly n_textures: number
+    readonly texture_type: VideoGLTextureType[]
     /* Methods of GstVideo-1.0.GstVideo.VideoGLTextureUploadMeta */
     upload(texture_id: number): boolean
     static name: string
@@ -3518,21 +3471,21 @@ class VideoGLTextureUploadMeta {
 }
 class VideoInfo {
     /* Fields of GstVideo-1.0.GstVideo.VideoInfo */
-    finfo: VideoFormatInfo
-    interlace_mode: VideoInterlaceMode
-    flags: VideoFlags
-    width: number
-    height: number
-    size: number
-    views: number
-    chroma_site: VideoChromaSite
-    colorimetry: VideoColorimetry
-    par_n: number
-    par_d: number
-    fps_n: number
-    fps_d: number
-    offset: number[]
-    stride: number[]
+    readonly finfo: VideoFormatInfo
+    readonly interlace_mode: VideoInterlaceMode
+    readonly flags: VideoFlags
+    readonly width: number
+    readonly height: number
+    readonly size: number
+    readonly views: number
+    readonly chroma_site: VideoChromaSite
+    readonly colorimetry: VideoColorimetry
+    readonly par_n: number
+    readonly par_d: number
+    readonly fps_n: number
+    readonly fps_d: number
+    readonly offset: number[]
+    readonly stride: number[]
     /* Methods of GstVideo-1.0.GstVideo.VideoInfo */
     align(align: VideoAlignment): boolean
     align_full(align: VideoAlignment): [ /* returnType */ boolean, /* plane_size */ number | null ]
@@ -3553,10 +3506,10 @@ class VideoInfo {
 }
 class VideoMasteringDisplayInfo {
     /* Fields of GstVideo-1.0.GstVideo.VideoMasteringDisplayInfo */
-    display_primaries: VideoMasteringDisplayInfoCoordinates[]
-    white_point: VideoMasteringDisplayInfoCoordinates
-    max_display_mastering_luminance: number
-    min_display_mastering_luminance: number
+    readonly display_primaries: VideoMasteringDisplayInfoCoordinates[]
+    readonly white_point: VideoMasteringDisplayInfoCoordinates
+    readonly max_display_mastering_luminance: number
+    readonly min_display_mastering_luminance: number
     /* Methods of GstVideo-1.0.GstVideo.VideoMasteringDisplayInfo */
     add_to_caps(caps: Gst.Caps): boolean
     from_caps(caps: Gst.Caps): boolean
@@ -3569,25 +3522,25 @@ class VideoMasteringDisplayInfo {
 }
 class VideoMasteringDisplayInfoCoordinates {
     /* Fields of GstVideo-1.0.GstVideo.VideoMasteringDisplayInfoCoordinates */
-    x: number
-    y: number
+    readonly x: number
+    readonly y: number
     static name: string
 }
 class VideoMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoMeta */
-    meta: Gst.Meta
-    buffer: Gst.Buffer
-    flags: VideoFrameFlags
-    format: VideoFormat
-    id: number
-    width: number
-    height: number
-    n_planes: number
-    offset: number[]
-    stride: number[]
-    map: (meta: VideoMeta, plane: number, info: Gst.MapInfo, data: object, stride: number, flags: Gst.MapFlags) => boolean
-    unmap: (meta: VideoMeta, plane: number, info: Gst.MapInfo) => boolean
-    alignment: VideoAlignment
+    readonly meta: Gst.Meta
+    readonly buffer: Gst.Buffer
+    readonly flags: VideoFrameFlags
+    readonly format: VideoFormat
+    readonly id: number
+    readonly width: number
+    readonly height: number
+    readonly n_planes: number
+    readonly offset: number[]
+    readonly stride: number[]
+    readonly map: (meta: VideoMeta, plane: number, info: Gst.MapInfo, data: object, stride: number, flags: Gst.MapFlags) => boolean
+    readonly unmap: (meta: VideoMeta, plane: number, info: Gst.MapInfo) => boolean
+    readonly alignment: VideoAlignment
     /* Methods of GstVideo-1.0.GstVideo.VideoMeta */
     get_plane_height(): [ /* returnType */ boolean, /* plane_height */ number[] ]
     get_plane_size(): [ /* returnType */ boolean, /* plane_size */ number[] ]
@@ -3598,23 +3551,23 @@ class VideoMeta {
 }
 class VideoMetaTransform {
     /* Fields of GstVideo-1.0.GstVideo.VideoMetaTransform */
-    in_info: VideoInfo
-    out_info: VideoInfo
+    readonly in_info: VideoInfo
+    readonly out_info: VideoInfo
     static name: string
     /* Static methods and pseudo-constructors */
     static scale_get_quark(): GLib.Quark
 }
 abstract class VideoOrientationInterface {
     /* Fields of GstVideo-1.0.GstVideo.VideoOrientationInterface */
-    iface: GObject.TypeInterface
-    get_hflip: (video_orientation: VideoOrientation) => [ /* returnType */ boolean, /* flip */ boolean ]
-    get_vflip: (video_orientation: VideoOrientation) => [ /* returnType */ boolean, /* flip */ boolean ]
-    get_hcenter: (video_orientation: VideoOrientation) => [ /* returnType */ boolean, /* center */ number ]
-    get_vcenter: (video_orientation: VideoOrientation) => [ /* returnType */ boolean, /* center */ number ]
-    set_hflip: (video_orientation: VideoOrientation, flip: boolean) => boolean
-    set_vflip: (video_orientation: VideoOrientation, flip: boolean) => boolean
-    set_hcenter: (video_orientation: VideoOrientation, center: number) => boolean
-    set_vcenter: (video_orientation: VideoOrientation, center: number) => boolean
+    readonly iface: GObject.TypeInterface
+    readonly get_hflip: (video_orientation: VideoOrientation) => [ /* returnType */ boolean, /* flip */ boolean ]
+    readonly get_vflip: (video_orientation: VideoOrientation) => [ /* returnType */ boolean, /* flip */ boolean ]
+    readonly get_hcenter: (video_orientation: VideoOrientation) => [ /* returnType */ boolean, /* center */ number ]
+    readonly get_vcenter: (video_orientation: VideoOrientation) => [ /* returnType */ boolean, /* center */ number ]
+    readonly set_hflip: (video_orientation: VideoOrientation, flip: boolean) => boolean
+    readonly set_vflip: (video_orientation: VideoOrientation, flip: boolean) => boolean
+    readonly set_hcenter: (video_orientation: VideoOrientation, center: number) => boolean
+    readonly set_vcenter: (video_orientation: VideoOrientation, center: number) => boolean
     static name: string
 }
 class VideoOverlayComposition {
@@ -3634,19 +3587,19 @@ class VideoOverlayComposition {
 }
 class VideoOverlayCompositionMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoOverlayCompositionMeta */
-    meta: Gst.Meta
-    overlay: VideoOverlayComposition
+    readonly meta: Gst.Meta
+    readonly overlay: VideoOverlayComposition
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 abstract class VideoOverlayInterface {
     /* Fields of GstVideo-1.0.GstVideo.VideoOverlayInterface */
-    iface: GObject.TypeInterface
-    expose: (overlay: VideoOverlay) => void
-    handle_events: (overlay: VideoOverlay, handle_events: boolean) => void
-    set_render_rectangle: (overlay: VideoOverlay, x: number, y: number, width: number, height: number) => void
-    set_window_handle: (overlay: VideoOverlay, handle: number) => void
+    readonly iface: GObject.TypeInterface
+    readonly expose: (overlay: VideoOverlay) => void
+    readonly handle_events: (overlay: VideoOverlay, handle_events: boolean) => void
+    readonly set_render_rectangle: (overlay: VideoOverlay, x: number, y: number, width: number, height: number) => void
+    readonly set_window_handle: (overlay: VideoOverlay, handle: number) => void
     static name: string
 }
 class VideoOverlayRectangle {
@@ -3670,23 +3623,23 @@ class VideoOverlayRectangle {
 }
 class VideoRectangle {
     /* Fields of GstVideo-1.0.GstVideo.VideoRectangle */
-    x: number
-    y: number
-    w: number
-    h: number
+    readonly x: number
+    readonly y: number
+    readonly w: number
+    readonly h: number
     static name: string
 }
 class VideoRegionOfInterestMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoRegionOfInterestMeta */
-    meta: Gst.Meta
-    roi_type: GLib.Quark
-    id: number
-    parent_id: number
-    x: number
-    y: number
-    w: number
-    h: number
-    params: object[]
+    readonly meta: Gst.Meta
+    readonly roi_type: GLib.Quark
+    readonly id: number
+    readonly parent_id: number
+    readonly x: number
+    readonly y: number
+    readonly w: number
+    readonly h: number
+    readonly params: object[]
     /* Methods of GstVideo-1.0.GstVideo.VideoRegionOfInterestMeta */
     add_param(s: Gst.Structure): void
     get_param(name: string): Gst.Structure | null
@@ -3696,14 +3649,14 @@ class VideoRegionOfInterestMeta {
 }
 class VideoResampler {
     /* Fields of GstVideo-1.0.GstVideo.VideoResampler */
-    in_size: number
-    out_size: number
-    max_taps: number
-    n_phases: number
-    offset: number
-    phase: number
-    n_taps: number
-    taps: number
+    readonly in_size: number
+    readonly out_size: number
+    readonly max_taps: number
+    readonly n_phases: number
+    readonly offset: number
+    readonly phase: number
+    readonly n_taps: number
+    readonly taps: number
     /* Methods of GstVideo-1.0.GstVideo.VideoResampler */
     clear(): void
     init(method: VideoResamplerMethod, flags: VideoResamplerFlags, n_phases: number, n_taps: number, shift: number, in_size: number, out_size: number, options: Gst.Structure): boolean
@@ -3721,9 +3674,9 @@ class VideoScaler {
 }
 abstract class VideoSinkClass {
     /* Fields of GstVideo-1.0.GstVideo.VideoSinkClass */
-    parent_class: GstBase.BaseSinkClass
-    show_frame: (video_sink: VideoSink, buf: Gst.Buffer) => Gst.FlowReturn
-    set_info: (video_sink: VideoSink, caps: Gst.Caps, info: VideoInfo) => boolean
+    readonly parent_class: GstBase.BaseSinkClass
+    readonly show_frame: (video_sink: VideoSink, buf: Gst.Buffer) => Gst.FlowReturn
+    readonly set_info: (video_sink: VideoSink, caps: Gst.Caps, info: VideoInfo) => boolean
     static name: string
 }
 class VideoSinkPrivate {
@@ -3731,12 +3684,12 @@ class VideoSinkPrivate {
 }
 class VideoTimeCode {
     /* Fields of GstVideo-1.0.GstVideo.VideoTimeCode */
-    config: VideoTimeCodeConfig
-    hours: number
-    minutes: number
-    seconds: number
-    frames: number
-    field_count: number
+    readonly config: VideoTimeCodeConfig
+    readonly hours: number
+    readonly minutes: number
+    readonly seconds: number
+    readonly frames: number
+    readonly field_count: number
     /* Methods of GstVideo-1.0.GstVideo.VideoTimeCode */
     add_frames(frames: number): void
     add_interval(tc_inter: VideoTimeCodeInterval): VideoTimeCode | null
@@ -3765,18 +3718,18 @@ class VideoTimeCode {
 }
 class VideoTimeCodeConfig {
     /* Fields of GstVideo-1.0.GstVideo.VideoTimeCodeConfig */
-    fps_n: number
-    fps_d: number
-    flags: VideoTimeCodeFlags
-    latest_daily_jam: GLib.DateTime
+    readonly fps_n: number
+    readonly fps_d: number
+    readonly flags: VideoTimeCodeFlags
+    readonly latest_daily_jam: GLib.DateTime
     static name: string
 }
 class VideoTimeCodeInterval {
     /* Fields of GstVideo-1.0.GstVideo.VideoTimeCodeInterval */
-    hours: number
-    minutes: number
-    seconds: number
-    frames: number
+    readonly hours: number
+    readonly minutes: number
+    readonly seconds: number
+    readonly frames: number
     /* Methods of GstVideo-1.0.GstVideo.VideoTimeCodeInterval */
     clear(): void
     copy(): VideoTimeCodeInterval
@@ -3791,15 +3744,15 @@ class VideoTimeCodeInterval {
 }
 class VideoTimeCodeMeta {
     /* Fields of GstVideo-1.0.GstVideo.VideoTimeCodeMeta */
-    meta: Gst.Meta
-    tc: VideoTimeCode
+    readonly meta: Gst.Meta
+    readonly tc: VideoTimeCode
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 class VideoVBIEncoder {
     /* Methods of GstVideo-1.0.GstVideo.VideoVBIEncoder */
-    add_ancillary(composite: boolean, DID: number, SDID_block_number: number, data: Uint8Array[]): boolean
+    add_ancillary(composite: boolean, DID: number, SDID_block_number: number, data: Uint8Array): boolean
     copy(): VideoVBIEncoder
     free(): void
     write_line(data: number): void
@@ -3811,7 +3764,7 @@ class VideoVBIEncoder {
 }
 class VideoVBIParser {
     /* Methods of GstVideo-1.0.GstVideo.VideoVBIParser */
-    add_line(data: Uint8Array[]): void
+    add_line(data: Uint8Array): void
     copy(): VideoVBIParser
     free(): void
     get_ancillary(): [ /* returnType */ VideoVBIParserResult, /* anc */ VideoAncillary ]

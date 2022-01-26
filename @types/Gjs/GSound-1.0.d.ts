@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GSound-1.0
  */
@@ -29,58 +35,58 @@ enum Error {
     FORKED,
     DISCONNECTED,
 }
-export const ATTR_APPLICATION_ICON: string
-export const ATTR_APPLICATION_ICON_NAME: string
-export const ATTR_APPLICATION_ID: string
-export const ATTR_APPLICATION_LANGUAGE: string
-export const ATTR_APPLICATION_NAME: string
-export const ATTR_APPLICATION_PROCESS_BINARY: string
-export const ATTR_APPLICATION_PROCESS_HOST: string
-export const ATTR_APPLICATION_PROCESS_ID: string
-export const ATTR_APPLICATION_PROCESS_USER: string
-export const ATTR_APPLICATION_VERSION: string
-export const ATTR_CANBERRA_CACHE_CONTROL: string
-export const ATTR_CANBERRA_ENABLE: string
-export const ATTR_CANBERRA_FORCE_CHANNEL: string
-export const ATTR_CANBERRA_VOLUME: string
-export const ATTR_CANBERRA_XDG_THEME_NAME: string
-export const ATTR_CANBERRA_XDG_THEME_OUTPUT_PROFILE: string
-export const ATTR_EVENT_DESCRIPTION: string
-export const ATTR_EVENT_ID: string
-export const ATTR_EVENT_MOUSE_BUTTON: string
-export const ATTR_EVENT_MOUSE_HPOS: string
-export const ATTR_EVENT_MOUSE_VPOS: string
-export const ATTR_EVENT_MOUSE_X: string
-export const ATTR_EVENT_MOUSE_Y: string
-export const ATTR_MEDIA_ARTIST: string
-export const ATTR_MEDIA_FILENAME: string
-export const ATTR_MEDIA_ICON: string
-export const ATTR_MEDIA_ICON_NAME: string
-export const ATTR_MEDIA_LANGUAGE: string
-export const ATTR_MEDIA_NAME: string
-export const ATTR_MEDIA_ROLE: string
-export const ATTR_MEDIA_TITLE: string
-export const ATTR_WINDOW_DESKTOP: string
-export const ATTR_WINDOW_HEIGHT: string
-export const ATTR_WINDOW_HPOS: string
-export const ATTR_WINDOW_ICON: string
-export const ATTR_WINDOW_ICON_NAME: string
-export const ATTR_WINDOW_ID: string
-export const ATTR_WINDOW_NAME: string
-export const ATTR_WINDOW_VPOS: string
-export const ATTR_WINDOW_WIDTH: string
-export const ATTR_WINDOW_X: string
-export const ATTR_WINDOW_X11_DISPLAY: string
-export const ATTR_WINDOW_X11_MONITOR: string
-export const ATTR_WINDOW_X11_SCREEN: string
-export const ATTR_WINDOW_X11_XID: string
-export const ATTR_WINDOW_Y: string
+const ATTR_APPLICATION_ICON: string
+const ATTR_APPLICATION_ICON_NAME: string
+const ATTR_APPLICATION_ID: string
+const ATTR_APPLICATION_LANGUAGE: string
+const ATTR_APPLICATION_NAME: string
+const ATTR_APPLICATION_PROCESS_BINARY: string
+const ATTR_APPLICATION_PROCESS_HOST: string
+const ATTR_APPLICATION_PROCESS_ID: string
+const ATTR_APPLICATION_PROCESS_USER: string
+const ATTR_APPLICATION_VERSION: string
+const ATTR_CANBERRA_CACHE_CONTROL: string
+const ATTR_CANBERRA_ENABLE: string
+const ATTR_CANBERRA_FORCE_CHANNEL: string
+const ATTR_CANBERRA_VOLUME: string
+const ATTR_CANBERRA_XDG_THEME_NAME: string
+const ATTR_CANBERRA_XDG_THEME_OUTPUT_PROFILE: string
+const ATTR_EVENT_DESCRIPTION: string
+const ATTR_EVENT_ID: string
+const ATTR_EVENT_MOUSE_BUTTON: string
+const ATTR_EVENT_MOUSE_HPOS: string
+const ATTR_EVENT_MOUSE_VPOS: string
+const ATTR_EVENT_MOUSE_X: string
+const ATTR_EVENT_MOUSE_Y: string
+const ATTR_MEDIA_ARTIST: string
+const ATTR_MEDIA_FILENAME: string
+const ATTR_MEDIA_ICON: string
+const ATTR_MEDIA_ICON_NAME: string
+const ATTR_MEDIA_LANGUAGE: string
+const ATTR_MEDIA_NAME: string
+const ATTR_MEDIA_ROLE: string
+const ATTR_MEDIA_TITLE: string
+const ATTR_WINDOW_DESKTOP: string
+const ATTR_WINDOW_HEIGHT: string
+const ATTR_WINDOW_HPOS: string
+const ATTR_WINDOW_ICON: string
+const ATTR_WINDOW_ICON_NAME: string
+const ATTR_WINDOW_ID: string
+const ATTR_WINDOW_NAME: string
+const ATTR_WINDOW_VPOS: string
+const ATTR_WINDOW_WIDTH: string
+const ATTR_WINDOW_X: string
+const ATTR_WINDOW_X11_DISPLAY: string
+const ATTR_WINDOW_X11_MONITOR: string
+const ATTR_WINDOW_X11_SCREEN: string
+const ATTR_WINDOW_X11_XID: string
+const ATTR_WINDOW_Y: string
 function error_quark(): GLib.Quark
-export interface Context_ConstructProps extends GObject.Object_ConstructProps {
+interface Context_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Context {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GSound-1.0.GSound.Context */
     cache(attrs: GLib.HashTable): boolean
     open(): boolean

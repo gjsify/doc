@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GoVirt-1.0
  */
@@ -30,7 +36,8 @@ enum VmState {
 }
 function proxy_error_quark(): GLib.Quark
 function rest_call_error_quark(): GLib.Quark
-export interface Proxy_ConstructProps extends Rest.Proxy_ConstructProps {
+interface Proxy_ConstructProps extends Rest.Proxy_ConstructProps {
+    /* Constructor properties of GoVirt-1.0.GoVirt.Proxy */
     admin?: boolean
     ca_cert?: object[]
 }
@@ -46,15 +53,14 @@ class Proxy {
     url_format: string
     user_agent: string
     username: string
-    /* Fields of GoVirt-1.0.GoVirt.Proxy */
-    parent: Rest.Proxy
-    priv: ProxyPrivate
+    /* Fields of Rest-0.7.Rest.Proxy */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GoVirt-1.0.GoVirt.Proxy */
     fetch_ca_certificate(): boolean
     fetch_ca_certificate_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
-    fetch_ca_certificate_finish(result: Gio.AsyncResult): Uint8Array[]
+    fetch_ca_certificate_finish(result: Gio.AsyncResult): Uint8Array
     fetch_vms(): boolean
     fetch_vms_async(cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
     fetch_vms_finish(result: Gio.AsyncResult): Vm[]
@@ -133,10 +139,12 @@ class Proxy {
     _init (config?: Proxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(uri: string): Proxy
+    /* Function overloads */
     static new(url_format: string, binding_required: boolean): Proxy
     static $gtype: GObject.Type
 }
-export interface Vm_ConstructProps extends GObject.Object_ConstructProps {
+interface Vm_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GoVirt-1.0.GoVirt.Vm */
     display?: VmDisplay
     href?: string
     name?: string
@@ -150,11 +158,8 @@ class Vm {
     name: string
     state: VmState
     uuid: string
-    /* Fields of GoVirt-1.0.GoVirt.Vm */
-    parent: GObject.Object
-    priv: VmPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GoVirt-1.0.GoVirt.Vm */
     get_ticket(proxy: Proxy): boolean
     get_ticket_async(proxy: Proxy, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
@@ -220,7 +225,8 @@ class Vm {
     static new(): Vm
     static $gtype: GObject.Type
 }
-export interface VmDisplay_ConstructProps extends GObject.Object_ConstructProps {
+interface VmDisplay_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GoVirt-1.0.GoVirt.VmDisplay */
     address?: string
     expiry?: number
     monitor_count?: number
@@ -238,11 +244,8 @@ class VmDisplay {
     secure_port: number
     ticket: string
     type: VmDisplayType
-    /* Fields of GoVirt-1.0.GoVirt.VmDisplay */
-    parent: GObject.Object
-    priv: VmDisplayPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -304,7 +307,7 @@ class VmDisplay {
 }
 abstract class ProxyClass {
     /* Fields of GoVirt-1.0.GoVirt.ProxyClass */
-    parent_class: Rest.ProxyClass
+    readonly parent_class: Rest.ProxyClass
     static name: string
 }
 class ProxyPrivate {
@@ -312,14 +315,14 @@ class ProxyPrivate {
 }
 abstract class VmClass {
     /* Fields of GoVirt-1.0.GoVirt.VmClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class VmDisplayClass {
     /* Fields of GoVirt-1.0.GoVirt.VmDisplayClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class VmDisplayPrivate {

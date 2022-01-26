@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * xlib-2.0
  */
@@ -38,18 +44,18 @@ class XWindowAttributes {
 class XEvent {
     static name: string
 }
-type Atom = number
-type Colormap = number
-type Cursor = number
-type Drawable = number
-type GC = object
-type KeyCode = number
-type KeySym = number
-type Picture = number
-type Time = number
-type VisualID = number
-type Window = number
-type XID = number
-type Pixmap = number
+    type Atom = number
+    type Colormap = number
+    type Cursor = number
+    type Drawable = number
+    type GC = object
+    type KeyCode = number
+    type KeySym = number
+    type Picture = number
+    type Time = number
+    type VisualID = number
+    type Window = number
+    type XID = number
+    type Pixmap = number
 }
 export default xlib;

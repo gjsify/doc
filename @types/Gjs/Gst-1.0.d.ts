@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gst-1.0
  */
@@ -724,187 +730,195 @@ enum TracerValueFlags {
     OPTIONAL,
     AGGREGATED,
 }
-export const ALLOCATOR_SYSMEM: string
-export const BUFFER_COPY_ALL: BufferCopyFlags
-export const BUFFER_COPY_METADATA: BufferCopyFlags
-export const BUFFER_OFFSET_NONE: number
-export const CAN_INLINE: number
-export const CAPS_FEATURE_MEMORY_SYSTEM_MEMORY: string
-export const CLOCK_TIME_NONE: ClockTime
-export const DEBUG_BG_MASK: number
-export const DEBUG_FG_MASK: number
-export const DEBUG_FORMAT_MASK: number
-export const ELEMENT_FACTORY_KLASS_DECODER: string
-export const ELEMENT_FACTORY_KLASS_DECRYPTOR: string
-export const ELEMENT_FACTORY_KLASS_DEMUXER: string
-export const ELEMENT_FACTORY_KLASS_DEPAYLOADER: string
-export const ELEMENT_FACTORY_KLASS_ENCODER: string
-export const ELEMENT_FACTORY_KLASS_ENCRYPTOR: string
-export const ELEMENT_FACTORY_KLASS_FORMATTER: string
-export const ELEMENT_FACTORY_KLASS_HARDWARE: string
-export const ELEMENT_FACTORY_KLASS_MEDIA_AUDIO: string
-export const ELEMENT_FACTORY_KLASS_MEDIA_IMAGE: string
-export const ELEMENT_FACTORY_KLASS_MEDIA_METADATA: string
-export const ELEMENT_FACTORY_KLASS_MEDIA_SUBTITLE: string
-export const ELEMENT_FACTORY_KLASS_MEDIA_VIDEO: string
-export const ELEMENT_FACTORY_KLASS_MUXER: string
-export const ELEMENT_FACTORY_KLASS_PARSER: string
-export const ELEMENT_FACTORY_KLASS_PAYLOADER: string
-export const ELEMENT_FACTORY_KLASS_SINK: string
-export const ELEMENT_FACTORY_KLASS_SRC: string
-export const ELEMENT_FACTORY_TYPE_ANY: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_AUDIOVIDEO_SINKS: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_AUDIO_ENCODER: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_DECODABLE: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_DECODER: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_DECRYPTOR: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_DEMUXER: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_DEPAYLOADER: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_ENCODER: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_ENCRYPTOR: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_FORMATTER: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_HARDWARE: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_MAX_ELEMENTS: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_MEDIA_ANY: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_MEDIA_AUDIO: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_MEDIA_IMAGE: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_MEDIA_METADATA: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_MEDIA_SUBTITLE: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_MEDIA_VIDEO: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_MUXER: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_PARSER: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_PAYLOADER: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_SINK: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_SRC: ElementFactoryListType
-export const ELEMENT_FACTORY_TYPE_VIDEO_ENCODER: ElementFactoryListType
-export const ELEMENT_METADATA_AUTHOR: string
-export const ELEMENT_METADATA_DESCRIPTION: string
-export const ELEMENT_METADATA_DOC_URI: string
-export const ELEMENT_METADATA_ICON_NAME: string
-export const ELEMENT_METADATA_KLASS: string
-export const ELEMENT_METADATA_LONGNAME: string
-export const EVENT_NUM_SHIFT: number
-export const EVENT_TYPE_BOTH: EventTypeFlags
-export const FLAG_SET_MASK_EXACT: number
-export const FORMAT_PERCENT_MAX: number
-export const FORMAT_PERCENT_SCALE: number
-export const GROUP_ID_INVALID: number
-export const LICENSE_UNKNOWN: string
-export const LOCK_FLAG_READWRITE: LockFlags
-export const MAP_READWRITE: MapFlags
-export const META_TAG_MEMORY_STR: string
-export const MSECOND: ClockTimeDiff
-export const NSECOND: ClockTimeDiff
-export const PARAM_CONDITIONALLY_AVAILABLE: number
-export const PARAM_CONTROLLABLE: number
-export const PARAM_DOC_SHOW_DEFAULT: number
-export const PARAM_MUTABLE_PAUSED: number
-export const PARAM_MUTABLE_PLAYING: number
-export const PARAM_MUTABLE_READY: number
-export const PARAM_USER_SHIFT: number
-export const PROTECTION_SYSTEM_ID_CAPS_FIELD: string
-export const PROTECTION_UNSPECIFIED_SYSTEM_ID: string
-export const QUERY_NUM_SHIFT: number
-export const QUERY_TYPE_BOTH: QueryTypeFlags
-export const SECOND: ClockTimeDiff
-export const SEGMENT_INSTANT_FLAGS: number
-export const SEQNUM_INVALID: number
-export const TAG_ALBUM: string
-export const TAG_ALBUM_ARTIST: string
-export const TAG_ALBUM_ARTIST_SORTNAME: string
-export const TAG_ALBUM_GAIN: string
-export const TAG_ALBUM_PEAK: string
-export const TAG_ALBUM_SORTNAME: string
-export const TAG_ALBUM_VOLUME_COUNT: string
-export const TAG_ALBUM_VOLUME_NUMBER: string
-export const TAG_APPLICATION_DATA: string
-export const TAG_APPLICATION_NAME: string
-export const TAG_ARTIST: string
-export const TAG_ARTIST_SORTNAME: string
-export const TAG_ATTACHMENT: string
-export const TAG_AUDIO_CODEC: string
-export const TAG_BEATS_PER_MINUTE: string
-export const TAG_BITRATE: string
-export const TAG_CODEC: string
-export const TAG_COMMENT: string
-export const TAG_COMPOSER: string
-export const TAG_COMPOSER_SORTNAME: string
-export const TAG_CONDUCTOR: string
-export const TAG_CONTACT: string
-export const TAG_CONTAINER_FORMAT: string
-export const TAG_COPYRIGHT: string
-export const TAG_COPYRIGHT_URI: string
-export const TAG_DATE: string
-export const TAG_DATE_TIME: string
-export const TAG_DESCRIPTION: string
-export const TAG_DEVICE_MANUFACTURER: string
-export const TAG_DEVICE_MODEL: string
-export const TAG_DURATION: string
-export const TAG_ENCODED_BY: string
-export const TAG_ENCODER: string
-export const TAG_ENCODER_VERSION: string
-export const TAG_EXTENDED_COMMENT: string
-export const TAG_GENRE: string
-export const TAG_GEO_LOCATION_CAPTURE_DIRECTION: string
-export const TAG_GEO_LOCATION_CITY: string
-export const TAG_GEO_LOCATION_COUNTRY: string
-export const TAG_GEO_LOCATION_ELEVATION: string
-export const TAG_GEO_LOCATION_HORIZONTAL_ERROR: string
-export const TAG_GEO_LOCATION_LATITUDE: string
-export const TAG_GEO_LOCATION_LONGITUDE: string
-export const TAG_GEO_LOCATION_MOVEMENT_DIRECTION: string
-export const TAG_GEO_LOCATION_MOVEMENT_SPEED: string
-export const TAG_GEO_LOCATION_NAME: string
-export const TAG_GEO_LOCATION_SUBLOCATION: string
-export const TAG_GROUPING: string
-export const TAG_HOMEPAGE: string
-export const TAG_IMAGE: string
-export const TAG_IMAGE_ORIENTATION: string
-export const TAG_INTERPRETED_BY: string
-export const TAG_ISRC: string
-export const TAG_KEYWORDS: string
-export const TAG_LANGUAGE_CODE: string
-export const TAG_LANGUAGE_NAME: string
-export const TAG_LICENSE: string
-export const TAG_LICENSE_URI: string
-export const TAG_LOCATION: string
-export const TAG_LYRICS: string
-export const TAG_MAXIMUM_BITRATE: string
-export const TAG_MIDI_BASE_NOTE: string
-export const TAG_MINIMUM_BITRATE: string
-export const TAG_NOMINAL_BITRATE: string
-export const TAG_ORGANIZATION: string
-export const TAG_PERFORMER: string
-export const TAG_PREVIEW_IMAGE: string
-export const TAG_PRIVATE_DATA: string
-export const TAG_PUBLISHER: string
-export const TAG_REFERENCE_LEVEL: string
-export const TAG_SERIAL: string
-export const TAG_SHOW_EPISODE_NUMBER: string
-export const TAG_SHOW_NAME: string
-export const TAG_SHOW_SEASON_NUMBER: string
-export const TAG_SHOW_SORTNAME: string
-export const TAG_SUBTITLE_CODEC: string
-export const TAG_TITLE: string
-export const TAG_TITLE_SORTNAME: string
-export const TAG_TRACK_COUNT: string
-export const TAG_TRACK_GAIN: string
-export const TAG_TRACK_NUMBER: string
-export const TAG_TRACK_PEAK: string
-export const TAG_USER_RATING: string
-export const TAG_VERSION: string
-export const TAG_VIDEO_CODEC: string
-export const TOC_REPEAT_COUNT_INFINITE: number
-export const URI_NO_PORT: number
-export const USECOND: ClockTimeDiff
-export const VALUE_EQUAL: number
-export const VALUE_GREATER_THAN: number
-export const VALUE_LESS_THAN: number
-export const VALUE_UNORDERED: number
-export const VERSION_MAJOR: number
-export const VERSION_MICRO: number
-export const VERSION_MINOR: number
-export const VERSION_NANO: number
+const ALLOCATOR_SYSMEM: string
+const BUFFER_COPY_ALL: BufferCopyFlags
+const BUFFER_COPY_METADATA: BufferCopyFlags
+const BUFFER_OFFSET_NONE: number
+const CAN_INLINE: number
+const CAPS_FEATURE_MEMORY_SYSTEM_MEMORY: string
+const CLOCK_TIME_NONE: ClockTime
+const DEBUG_BG_MASK: number
+const DEBUG_FG_MASK: number
+const DEBUG_FORMAT_MASK: number
+const ELEMENT_FACTORY_KLASS_DECODER: string
+const ELEMENT_FACTORY_KLASS_DECRYPTOR: string
+const ELEMENT_FACTORY_KLASS_DEMUXER: string
+const ELEMENT_FACTORY_KLASS_DEPAYLOADER: string
+const ELEMENT_FACTORY_KLASS_ENCODER: string
+const ELEMENT_FACTORY_KLASS_ENCRYPTOR: string
+const ELEMENT_FACTORY_KLASS_FORMATTER: string
+const ELEMENT_FACTORY_KLASS_HARDWARE: string
+const ELEMENT_FACTORY_KLASS_MEDIA_AUDIO: string
+const ELEMENT_FACTORY_KLASS_MEDIA_IMAGE: string
+const ELEMENT_FACTORY_KLASS_MEDIA_METADATA: string
+const ELEMENT_FACTORY_KLASS_MEDIA_SUBTITLE: string
+const ELEMENT_FACTORY_KLASS_MEDIA_VIDEO: string
+const ELEMENT_FACTORY_KLASS_MUXER: string
+const ELEMENT_FACTORY_KLASS_PARSER: string
+const ELEMENT_FACTORY_KLASS_PAYLOADER: string
+const ELEMENT_FACTORY_KLASS_SINK: string
+const ELEMENT_FACTORY_KLASS_SRC: string
+const ELEMENT_FACTORY_TYPE_ANY: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_AUDIOVIDEO_SINKS: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_AUDIO_ENCODER: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_DECODABLE: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_DECODER: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_DECRYPTOR: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_DEMUXER: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_DEPAYLOADER: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_ENCODER: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_ENCRYPTOR: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_FORMATTER: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_HARDWARE: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_MAX_ELEMENTS: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_MEDIA_ANY: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_MEDIA_AUDIO: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_MEDIA_IMAGE: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_MEDIA_METADATA: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_MEDIA_SUBTITLE: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_MEDIA_VIDEO: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_MUXER: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_PARSER: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_PAYLOADER: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_SINK: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_SRC: ElementFactoryListType
+const ELEMENT_FACTORY_TYPE_VIDEO_ENCODER: ElementFactoryListType
+const ELEMENT_METADATA_AUTHOR: string
+const ELEMENT_METADATA_DESCRIPTION: string
+const ELEMENT_METADATA_DOC_URI: string
+const ELEMENT_METADATA_ICON_NAME: string
+const ELEMENT_METADATA_KLASS: string
+const ELEMENT_METADATA_LONGNAME: string
+
+const EVENT_NUM_SHIFT: number
+const EVENT_TYPE_BOTH: EventTypeFlags
+const FLAG_SET_MASK_EXACT: number
+const FORMAT_PERCENT_MAX: number
+const FORMAT_PERCENT_SCALE: number
+
+const GROUP_ID_INVALID: number
+const LICENSE_UNKNOWN: string
+const LOCK_FLAG_READWRITE: LockFlags
+const MAP_READWRITE: MapFlags
+const META_TAG_MEMORY_STR: string
+const MSECOND: ClockTimeDiff
+const NSECOND: ClockTimeDiff
+const PARAM_CONDITIONALLY_AVAILABLE: number
+const PARAM_CONTROLLABLE: number
+const PARAM_DOC_SHOW_DEFAULT: number
+const PARAM_MUTABLE_PAUSED: number
+const PARAM_MUTABLE_PLAYING: number
+const PARAM_MUTABLE_READY: number
+const PARAM_USER_SHIFT: number
+const PROTECTION_SYSTEM_ID_CAPS_FIELD: string
+const PROTECTION_UNSPECIFIED_SYSTEM_ID: string
+
+const QUERY_NUM_SHIFT: number
+const QUERY_TYPE_BOTH: QueryTypeFlags
+const SECOND: ClockTimeDiff
+
+const SEGMENT_INSTANT_FLAGS: number
+const SEQNUM_INVALID: number
+
+
+const TAG_ALBUM: string
+const TAG_ALBUM_ARTIST: string
+const TAG_ALBUM_ARTIST_SORTNAME: string
+const TAG_ALBUM_GAIN: string
+const TAG_ALBUM_PEAK: string
+const TAG_ALBUM_SORTNAME: string
+const TAG_ALBUM_VOLUME_COUNT: string
+const TAG_ALBUM_VOLUME_NUMBER: string
+const TAG_APPLICATION_DATA: string
+const TAG_APPLICATION_NAME: string
+const TAG_ARTIST: string
+const TAG_ARTIST_SORTNAME: string
+const TAG_ATTACHMENT: string
+const TAG_AUDIO_CODEC: string
+const TAG_BEATS_PER_MINUTE: string
+const TAG_BITRATE: string
+const TAG_CODEC: string
+const TAG_COMMENT: string
+const TAG_COMPOSER: string
+const TAG_COMPOSER_SORTNAME: string
+const TAG_CONDUCTOR: string
+const TAG_CONTACT: string
+const TAG_CONTAINER_FORMAT: string
+const TAG_COPYRIGHT: string
+const TAG_COPYRIGHT_URI: string
+const TAG_DATE: string
+const TAG_DATE_TIME: string
+const TAG_DESCRIPTION: string
+const TAG_DEVICE_MANUFACTURER: string
+const TAG_DEVICE_MODEL: string
+const TAG_DURATION: string
+const TAG_ENCODED_BY: string
+const TAG_ENCODER: string
+const TAG_ENCODER_VERSION: string
+const TAG_EXTENDED_COMMENT: string
+const TAG_GENRE: string
+const TAG_GEO_LOCATION_CAPTURE_DIRECTION: string
+const TAG_GEO_LOCATION_CITY: string
+const TAG_GEO_LOCATION_COUNTRY: string
+const TAG_GEO_LOCATION_ELEVATION: string
+const TAG_GEO_LOCATION_HORIZONTAL_ERROR: string
+const TAG_GEO_LOCATION_LATITUDE: string
+const TAG_GEO_LOCATION_LONGITUDE: string
+const TAG_GEO_LOCATION_MOVEMENT_DIRECTION: string
+const TAG_GEO_LOCATION_MOVEMENT_SPEED: string
+const TAG_GEO_LOCATION_NAME: string
+const TAG_GEO_LOCATION_SUBLOCATION: string
+const TAG_GROUPING: string
+const TAG_HOMEPAGE: string
+const TAG_IMAGE: string
+const TAG_IMAGE_ORIENTATION: string
+const TAG_INTERPRETED_BY: string
+const TAG_ISRC: string
+const TAG_KEYWORDS: string
+const TAG_LANGUAGE_CODE: string
+const TAG_LANGUAGE_NAME: string
+const TAG_LICENSE: string
+const TAG_LICENSE_URI: string
+const TAG_LOCATION: string
+const TAG_LYRICS: string
+const TAG_MAXIMUM_BITRATE: string
+const TAG_MIDI_BASE_NOTE: string
+const TAG_MINIMUM_BITRATE: string
+const TAG_NOMINAL_BITRATE: string
+const TAG_ORGANIZATION: string
+const TAG_PERFORMER: string
+const TAG_PREVIEW_IMAGE: string
+const TAG_PRIVATE_DATA: string
+const TAG_PUBLISHER: string
+const TAG_REFERENCE_LEVEL: string
+const TAG_SERIAL: string
+const TAG_SHOW_EPISODE_NUMBER: string
+const TAG_SHOW_NAME: string
+const TAG_SHOW_SEASON_NUMBER: string
+const TAG_SHOW_SORTNAME: string
+const TAG_SUBTITLE_CODEC: string
+const TAG_TITLE: string
+const TAG_TITLE_SORTNAME: string
+const TAG_TRACK_COUNT: string
+const TAG_TRACK_GAIN: string
+const TAG_TRACK_NUMBER: string
+const TAG_TRACK_PEAK: string
+const TAG_USER_RATING: string
+const TAG_VERSION: string
+const TAG_VIDEO_CODEC: string
+
+
+const TOC_REPEAT_COUNT_INFINITE: number
+const URI_NO_PORT: number
+const USECOND: ClockTimeDiff
+const VALUE_EQUAL: number
+const VALUE_GREATER_THAN: number
+const VALUE_LESS_THAN: number
+const VALUE_UNORDERED: number
+const VERSION_MAJOR: number
+const VERSION_MICRO: number
+const VERSION_MINOR: number
+const VERSION_NANO: number
 function buffer_get_max_memory(): number
 function buffer_list_replace(old_list?: BufferList | null, new_list?: BufferList | null): [ /* returnType */ boolean, /* old_list */ BufferList | null ]
 function buffer_list_take(old_list: BufferList, new_list?: BufferList | null): [ /* returnType */ boolean, /* old_list */ BufferList ]
@@ -1042,7 +1056,7 @@ function uri_protocol_is_valid(protocol: string): boolean
 function util_array_binary_search(array: object | null, num_elements: number, element_size: number, search_func: GLib.CompareDataFunc, mode: SearchMode, search_data?: object | null): object | null
 function util_double_to_fraction(src: number): [ /* dest_n */ number, /* dest_d */ number ]
 function util_dump_buffer(buf: Buffer): void
-function util_dump_mem(mem: Uint8Array[]): void
+function util_dump_mem(mem: Uint8Array): void
 function util_fraction_add(a_n: number, a_d: number, b_n: number, b_d: number): [ /* returnType */ boolean, /* res_n */ number, /* res_d */ number ]
 function util_fraction_compare(a_n: number, a_d: number, b_n: number, b_d: number): number
 function util_fraction_multiply(a_n: number, a_d: number, b_n: number, b_d: number): [ /* returnType */ boolean, /* res_n */ number, /* res_d */ number ]
@@ -1373,39 +1387,38 @@ class Preset {
     static get_app_dir(): string | null
     static set_app_dir(app_dir: string): boolean
 }
-export interface TagSetter_ConstructProps extends Element_ConstructProps {
+interface TagSetter_ConstructProps extends Element_ConstructProps {
 }
 class TagSetter {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: State
-    current_state: State
-    next_state: State
-    pending_state: State
-    last_return: StateChangeReturn
-    bus: Bus
-    clock: Clock
-    base_time: ClockTimeDiff
-    start_time: ClockTime
-    numpads: number
-    pads: Pad[]
-    numsrcpads: number
-    srcpads: Pad[]
-    numsinkpads: number
-    sinkpads: Pad[]
-    pads_cookie: number
-    contexts: Context[]
+    readonly object: Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: State
+    readonly current_state: State
+    readonly next_state: State
+    readonly pending_state: State
+    readonly last_return: StateChangeReturn
+    readonly bus: Bus
+    readonly clock: Clock
+    readonly base_time: ClockTimeDiff
+    readonly start_time: ClockTime
+    readonly numpads: number
+    readonly pads: Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.TagSetter */
     add_tag_value(mode: TagMergeMode, tag: string, value: any): void
     get_tag_list(): TagList | null
@@ -1571,10 +1584,6 @@ class TagSetter {
     connect(sigName: "notify", callback: (($obj: TagSetter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TagSetter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TagSetter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TagSetter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TagSetter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TagSetter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1584,39 +1593,38 @@ class TagSetter {
     _init (config?: TagSetter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TocSetter_ConstructProps extends Element_ConstructProps {
+interface TocSetter_ConstructProps extends Element_ConstructProps {
 }
 class TocSetter {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: State
-    current_state: State
-    next_state: State
-    pending_state: State
-    last_return: StateChangeReturn
-    bus: Bus
-    clock: Clock
-    base_time: ClockTimeDiff
-    start_time: ClockTime
-    numpads: number
-    pads: Pad[]
-    numsrcpads: number
-    srcpads: Pad[]
-    numsinkpads: number
-    sinkpads: Pad[]
-    pads_cookie: number
-    contexts: Context[]
+    readonly object: Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: State
+    readonly current_state: State
+    readonly next_state: State
+    readonly pending_state: State
+    readonly last_return: StateChangeReturn
+    readonly bus: Bus
+    readonly clock: Clock
+    readonly base_time: ClockTimeDiff
+    readonly start_time: ClockTime
+    readonly numpads: number
+    readonly pads: Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.TocSetter */
     get_toc(): Toc | null
     reset(): void
@@ -1779,10 +1787,6 @@ class TocSetter {
     connect(sigName: "notify", callback: (($obj: TocSetter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TocSetter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TocSetter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TocSetter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TocSetter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TocSetter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1803,27 +1807,17 @@ class URIHandler {
     vfunc_set_uri(uri: string): boolean
     static name: string
 }
-export interface Allocator_ConstructProps extends Object_ConstructProps {
+interface Allocator_ConstructProps extends Object_ConstructProps {
 }
 class Allocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Allocator */
-    object: Object
-    mem_type: string
-    mem_map: MemoryMapFunction
-    mem_unmap: MemoryUnmapFunction
-    mem_copy: MemoryCopyFunction
-    mem_share: MemoryShareFunction
-    mem_is_span: MemoryIsSpanFunction
-    mem_map_full: MemoryMapFullFunction
-    mem_unmap_full: MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: AllocationParams | null): Memory | null
     free(memory: Memory): void
@@ -1895,10 +1889,6 @@ class Allocator {
     connect(sigName: "notify", callback: (($obj: Allocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Allocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: Allocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Allocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Allocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Allocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1911,7 +1901,8 @@ class Allocator {
     static register(name: string, allocator: Allocator): void
     static $gtype: GObject.Type
 }
-export interface Bin_ConstructProps extends Element_ConstructProps {
+interface Bin_ConstructProps extends Element_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.Bin */
     async_handling?: boolean
     message_forward?: boolean
 }
@@ -1919,48 +1910,35 @@ class Bin {
     /* Properties of Gst-1.0.Gst.Bin */
     async_handling: boolean
     message_forward: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Bin */
-    element: Element
-    numchildren: number
-    children: Element[]
-    children_cookie: number
-    child_bus: Bus
-    messages: Message[]
-    polling: boolean
-    state_dirty: boolean
-    clock_dirty: boolean
-    provided_clock: Clock
-    clock_provider: Element
     /* Fields of Gst-1.0.Gst.Element */
-    object: Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: State
-    current_state: State
-    next_state: State
-    pending_state: State
-    last_return: StateChangeReturn
-    bus: Bus
-    clock: Clock
-    base_time: ClockTimeDiff
-    start_time: ClockTime
-    numpads: number
-    pads: Pad[]
-    numsrcpads: number
-    srcpads: Pad[]
-    numsinkpads: number
-    sinkpads: Pad[]
-    pads_cookie: number
-    contexts: Context[]
+    readonly object: Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: State
+    readonly current_state: State
+    readonly next_state: State
+    readonly pending_state: State
+    readonly last_return: StateChangeReturn
+    readonly bus: Bus
+    readonly clock: Clock
+    readonly base_time: ClockTimeDiff
+    readonly start_time: ClockTime
+    readonly numpads: number
+    readonly pads: Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Bin */
     add(element: Element): boolean
     find_unlinked_pad(direction: PadDirection): Pad | null
@@ -2092,15 +2070,6 @@ class Bin {
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     watch_closure(closure: Function): void
-    /* Methods of Gst-1.0.Gst.ChildProxy */
-    child_added(child: GObject.Object, name: string): void
-    child_removed(child: GObject.Object, name: string): void
-    get_child_by_index(index: number): GObject.Object | null
-    get_child_by_name(name: string): GObject.Object | null
-    get_children_count(): number
-    get_property(name: string): /* value */ any
-    lookup(name: string): [ /* returnType */ boolean, /* target */ GObject.Object | null, /* pspec */ GObject.ParamSpec | null ]
-    set_property(name: string, value: any): void
     /* Virtual methods of Gst-1.0.Gst.Bin */
     vfunc_add_element(element: Element): boolean
     vfunc_deep_element_added(sub_bin: Bin, child: Element): void
@@ -2110,11 +2079,6 @@ class Bin {
     vfunc_element_removed(child: Element): void
     vfunc_handle_message(message: Message): void
     vfunc_remove_element(element: Element): boolean
-    vfunc_child_added(child: GObject.Object, name: string): void
-    vfunc_child_removed(child: GObject.Object, name: string): void
-    vfunc_get_child_by_index(index: number): GObject.Object | null
-    vfunc_get_child_by_name(name: string): GObject.Object | null
-    vfunc_get_children_count(): number
     /* Virtual methods of Gst-1.0.Gst.Element */
     vfunc_change_state(transition: StateChange): StateChangeReturn
     vfunc_get_state(timeout: ClockTime): [ /* returnType */ StateChangeReturn, /* state */ State | null, /* pending */ State | null ]
@@ -2176,21 +2140,10 @@ class Bin {
     connect(sigName: "notify", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gst-1.0.Gst.ChildProxy */
-    connect(sigName: "child-added", callback: (($obj: Bin, object: GObject.Object, name: string) => void)): number
-    connect_after(sigName: "child-added", callback: (($obj: Bin, object: GObject.Object, name: string) => void)): number
-    emit(sigName: "child-added", object: GObject.Object, name: string): void
-    connect(sigName: "child-removed", callback: (($obj: Bin, object: GObject.Object, name: string) => void)): number
-    connect_after(sigName: "child-removed", callback: (($obj: Bin, object: GObject.Object, name: string) => void)): number
-    emit(sigName: "child-removed", object: GObject.Object, name: string): void
     connect(sigName: "notify::async-handling", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::async-handling", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::message-forward", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::message-forward", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Bin, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2205,20 +2158,17 @@ class Bin {
 class Bitmask {
     static name: string
 }
-export interface BufferPool_ConstructProps extends Object_ConstructProps {
+interface BufferPool_ConstructProps extends Object_ConstructProps {
 }
 class BufferPool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.BufferPool */
-    object: Object
-    flushing: number
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.BufferPool */
     acquire_buffer(params?: BufferPoolAcquireParams | null): [ /* returnType */ FlowReturn, /* buffer */ Buffer ]
     get_config(): Structure
@@ -2305,10 +2255,6 @@ class BufferPool {
     connect(sigName: "notify", callback: (($obj: BufferPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: BufferPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: BufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: BufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: BufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: BufferPool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2329,20 +2275,19 @@ class BufferPool {
     static config_validate_params(config: Structure, caps: Caps | null, size: number, min_buffers: number, max_buffers: number): boolean
     static $gtype: GObject.Type
 }
-export interface Bus_ConstructProps extends Object_ConstructProps {
+interface Bus_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.Bus */
     enable_async?: boolean
 }
 class Bus {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Bus */
-    object: Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Bus */
     add_signal_watch(): void
     add_signal_watch_full(priority: number): void
@@ -2439,10 +2384,6 @@ class Bus {
     connect(sigName: "notify", callback: (($obj: Bus, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Bus, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: Bus, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Bus, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Bus, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Bus, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2454,7 +2395,8 @@ class Bus {
     static new(): Bus
     static $gtype: GObject.Type
 }
-export interface Clock_ConstructProps extends Object_ConstructProps {
+interface Clock_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.Clock */
     timeout?: number
     window_size?: number
     window_threshold?: number
@@ -2464,16 +2406,14 @@ class Clock {
     timeout: number
     window_size: number
     window_threshold: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Clock */
-    object: Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Clock */
     add_observation(slave: ClockTime, master: ClockTime): [ /* returnType */ boolean, /* r_squared */ number ]
     add_observation_unapplied(slave: ClockTime, master: ClockTime): [ /* returnType */ boolean, /* r_squared */ number, /* internal */ ClockTime | null, /* external */ ClockTime | null, /* rate_num */ ClockTime | null, /* rate_denom */ ClockTime | null ]
@@ -2579,10 +2519,6 @@ class Clock {
     connect_after(sigName: "notify::window-size", callback: (($obj: Clock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::window-threshold", callback: (($obj: Clock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::window-threshold", callback: (($obj: Clock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Clock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Clock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Clock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Clock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2602,22 +2538,20 @@ class Clock {
     static id_wait_async(id: ClockID, func: ClockCallback): ClockReturn
     static $gtype: GObject.Type
 }
-export interface ControlBinding_ConstructProps extends Object_ConstructProps {
+interface ControlBinding_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.ControlBinding */
     name?: string
     object?: Object
 }
 class ControlBinding {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.ControlBinding */
-    pspec: GObject.ParamSpec
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.ControlBinding */
     get_g_value_array(timestamp: ClockTime, interval: ClockTime, values: any[]): boolean
     get_value(timestamp: ClockTime): any | null
@@ -2692,10 +2626,6 @@ class ControlBinding {
     connect(sigName: "notify", callback: (($obj: ControlBinding, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ControlBinding, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: ControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: ControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ControlBinding, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ControlBinding, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2705,21 +2635,17 @@ class ControlBinding {
     _init (config?: ControlBinding_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ControlSource_ConstructProps extends Object_ConstructProps {
+interface ControlSource_ConstructProps extends Object_ConstructProps {
 }
 class ControlSource {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.ControlSource */
-    get_value: ControlSourceGetValue
-    get_value_array: ControlSourceGetValueArray
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.ControlSource */
     control_source_get_value(timestamp: ClockTime): [ /* returnType */ boolean, /* value */ number ]
     control_source_get_value_array(timestamp: ClockTime, interval: ClockTime, values: number[]): boolean
@@ -2732,6 +2658,7 @@ class ControlSource {
     get_name(): string | null
     get_parent(): Object | null
     get_path_string(): string
+    get_value(property_name: string, timestamp: ClockTime): any | null
     has_active_control_bindings(): boolean
     has_ancestor(ancestor: Object): boolean
     has_as_ancestor(ancestor: Object): boolean
@@ -2786,10 +2713,6 @@ class ControlSource {
     connect(sigName: "notify", callback: (($obj: ControlSource, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ControlSource, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: ControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: ControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ControlSource, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ControlSource, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2799,22 +2722,22 @@ class ControlSource {
     _init (config?: ControlSource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends Object_ConstructProps {
+interface Device_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.Device */
     caps?: Caps
     device_class?: string
     display_name?: string
     properties?: Structure
 }
 class Device {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Device */
     create_element(name?: string | null): Element | null
     get_caps(): Caps | null
@@ -2895,10 +2818,6 @@ class Device {
     connect(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2908,21 +2827,21 @@ class Device {
     _init (config?: Device_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceMonitor_ConstructProps extends Object_ConstructProps {
+interface DeviceMonitor_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.DeviceMonitor */
     show_all?: boolean
 }
 class DeviceMonitor {
     /* Properties of Gst-1.0.Gst.DeviceMonitor */
     show_all: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.DeviceMonitor */
     add_filter(classes?: string | null, caps?: Caps | null): number
     get_bus(): Bus
@@ -2999,10 +2918,6 @@ class DeviceMonitor {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::show-all", callback: (($obj: DeviceMonitor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::show-all", callback: (($obj: DeviceMonitor, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: DeviceMonitor, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: DeviceMonitor, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: DeviceMonitor, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: DeviceMonitor, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3014,20 +2929,17 @@ class DeviceMonitor {
     static new(): DeviceMonitor
     static $gtype: GObject.Type
 }
-export interface DeviceProvider_ConstructProps extends Object_ConstructProps {
+interface DeviceProvider_ConstructProps extends Object_ConstructProps {
 }
 class DeviceProvider {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.DeviceProvider */
-    devices: object[]
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.DeviceProvider */
     can_monitor(): boolean
     device_add(device: Device): void
@@ -3117,10 +3029,6 @@ class DeviceProvider {
     connect(sigName: "notify", callback: (($obj: DeviceProvider, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceProvider, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: DeviceProvider, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: DeviceProvider, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: DeviceProvider, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: DeviceProvider, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3137,18 +3045,17 @@ class DeviceProvider {
     static set_static_metadata(klass: DeviceProvider | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
     static $gtype: GObject.Type
 }
-export interface DeviceProviderFactory_ConstructProps extends PluginFeature_ConstructProps {
+interface DeviceProviderFactory_ConstructProps extends PluginFeature_ConstructProps {
 }
 class DeviceProviderFactory {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.DeviceProviderFactory */
     get(): DeviceProvider | null
     get_device_provider_type(): GObject.Type
@@ -3227,10 +3134,6 @@ class DeviceProviderFactory {
     connect(sigName: "notify", callback: (($obj: DeviceProviderFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DeviceProviderFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: DeviceProviderFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: DeviceProviderFactory, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: DeviceProviderFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: DeviceProviderFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3247,18 +3150,17 @@ class DeviceProviderFactory {
 class DoubleRange {
     static name: string
 }
-export interface DynamicTypeFactory_ConstructProps extends PluginFeature_ConstructProps {
+interface DynamicTypeFactory_ConstructProps extends PluginFeature_ConstructProps {
 }
 class DynamicTypeFactory {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.PluginFeature */
     check_version(min_major: number, min_minor: number, min_micro: number): boolean
     get_plugin(): Plugin | null
@@ -3330,10 +3232,6 @@ class DynamicTypeFactory {
     connect(sigName: "notify", callback: (($obj: DynamicTypeFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DynamicTypeFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: DynamicTypeFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: DynamicTypeFactory, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: DynamicTypeFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: DynamicTypeFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3345,39 +3243,17 @@ class DynamicTypeFactory {
     static load(factoryname: string): GObject.Type
     static $gtype: GObject.Type
 }
-export interface Element_ConstructProps extends Object_ConstructProps {
+interface Element_ConstructProps extends Object_ConstructProps {
 }
 class Element {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Element */
-    object: Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: State
-    current_state: State
-    next_state: State
-    pending_state: State
-    last_return: StateChangeReturn
-    bus: Bus
-    clock: Clock
-    base_time: ClockTimeDiff
-    start_time: ClockTime
-    numpads: number
-    pads: Pad[]
-    numsrcpads: number
-    srcpads: Pad[]
-    numsinkpads: number
-    sinkpads: Pad[]
-    pads_cookie: number
-    contexts: Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Element */
     abort_state(): void
     add_pad(pad: Pad): boolean
@@ -3536,10 +3412,6 @@ class Element {
     connect(sigName: "notify", callback: (($obj: Element, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Element, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: Element, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Element, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Element, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Element, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3553,30 +3425,19 @@ class Element {
     static state_change_return_get_name(state_ret: StateChangeReturn): string
     static state_get_name(state: State): string
     static type_set_skip_documentation(type: GObject.Type): void
-    static add_metadata(klass: Element | Function | GObject.Type, key: string, value: string): void
-    static add_pad_template(klass: Element | Function | GObject.Type, templ: PadTemplate): void
-    static add_static_metadata(klass: Element | Function | GObject.Type, key: string, value: string): void
-    static add_static_pad_template(klass: Element | Function | GObject.Type, static_templ: StaticPadTemplate): void
-    static add_static_pad_template_with_gtype(klass: Element | Function | GObject.Type, static_templ: StaticPadTemplate, pad_type: GObject.Type): void
-    static get_metadata(klass: Element | Function | GObject.Type, key: string): string
-    static get_pad_template(element_class: Element | Function | GObject.Type, name: string): PadTemplate | null
-    static get_pad_template_list(element_class: Element | Function | GObject.Type): PadTemplate[]
-    static set_metadata(klass: Element | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
-    static set_static_metadata(klass: Element | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
     static $gtype: GObject.Type
 }
-export interface ElementFactory_ConstructProps extends PluginFeature_ConstructProps {
+interface ElementFactory_ConstructProps extends PluginFeature_ConstructProps {
 }
 class ElementFactory {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.ElementFactory */
     can_sink_all_caps(caps: Caps): boolean
     can_sink_any_caps(caps: Caps): boolean
@@ -3665,10 +3526,6 @@ class ElementFactory {
     connect(sigName: "notify", callback: (($obj: ElementFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: ElementFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: ElementFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: ElementFactory, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ElementFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ElementFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3695,28 +3552,27 @@ class Fraction {
 class FractionRange {
     static name: string
 }
-export interface GhostPad_ConstructProps extends ProxyPad_ConstructProps {
+interface GhostPad_ConstructProps extends ProxyPad_ConstructProps {
 }
 class GhostPad {
     /* Properties of Gst-1.0.Gst.Pad */
     readonly caps: Caps
     offset: number
     template: PadTemplate
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.GhostPad */
-    pad: ProxyPad
+    /* Fields of Gst-1.0.Gst.ProxyPad */
+    readonly pad: Pad
     /* Fields of Gst-1.0.Gst.Pad */
-    object: Object
-    element_private: object
-    padtemplate: PadTemplate
-    direction: PadDirection
+    readonly object: Object
+    readonly element_private: object
+    readonly padtemplate: PadTemplate
+    readonly direction: PadDirection
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.GhostPad */
     construct(): boolean
     get_target(): Pad | null
@@ -3884,10 +3740,6 @@ class GhostPad {
     connect_after(sigName: "notify::offset", callback: (($obj: GhostPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::template", callback: (($obj: GhostPad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::template", callback: (($obj: GhostPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: GhostPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GhostPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GhostPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GhostPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3897,8 +3749,10 @@ class GhostPad {
     _init (config?: GhostPad_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(name: string | null, target: Pad): GhostPad
+    /* Function overloads */
     static new(name: string | null, direction: PadDirection): GhostPad
     static new_from_template(name: string | null, target: Pad, templ: PadTemplate): GhostPad
+    /* Function overloads */
     static new_from_template(templ: PadTemplate, name?: string | null): GhostPad
     static new_no_target(name: string | null, dir: PadDirection): GhostPad
     static new_no_target_from_template(name: string | null, templ: PadTemplate): GhostPad
@@ -3912,7 +3766,8 @@ class Int64Range {
 class IntRange {
     static name: string
 }
-export interface Object_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface Object_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.Object */
     name?: string
     parent?: Object
 }
@@ -3920,12 +3775,8 @@ class Object {
     /* Properties of Gst-1.0.Gst.Object */
     name: string
     parent: Object
-    /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
@@ -4007,7 +3858,8 @@ class Object {
     static replace(oldobj?: Object | null, newobj?: Object | null): [ /* returnType */ boolean, /* oldobj */ Object | null ]
     static $gtype: GObject.Type
 }
-export interface Pad_ConstructProps extends Object_ConstructProps {
+interface Pad_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.Pad */
     direction?: PadDirection
     offset?: number
     template?: PadTemplate
@@ -4017,19 +3869,14 @@ class Pad {
     readonly caps: Caps
     offset: number
     template: PadTemplate
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Pad */
-    object: Object
-    element_private: object
-    padtemplate: PadTemplate
-    direction: PadDirection
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Pad */
     activate_mode(mode: PadMode, active: boolean): boolean
     add_probe(mask: PadProbeType, callback: PadProbeCallback): number
@@ -4191,10 +4038,6 @@ class Pad {
     connect_after(sigName: "notify::offset", callback: (($obj: Pad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::template", callback: (($obj: Pad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::template", callback: (($obj: Pad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Pad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Pad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Pad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Pad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -4209,7 +4052,8 @@ class Pad {
     static link_get_name(ret: PadLinkReturn): string
     static $gtype: GObject.Type
 }
-export interface PadTemplate_ConstructProps extends Object_ConstructProps {
+interface PadTemplate_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.PadTemplate */
     caps?: Caps
     direction?: PadDirection
     gtype?: GObject.Type
@@ -4217,20 +4061,14 @@ export interface PadTemplate_ConstructProps extends Object_ConstructProps {
     presence?: PadPresence
 }
 class PadTemplate {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.PadTemplate */
-    object: Object
-    name_template: string
-    direction: PadDirection
-    presence: PadPresence
-    caps: Caps
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.PadTemplate */
     get_caps(): Caps
     get_documentation_caps(): Caps
@@ -4306,10 +4144,6 @@ class PadTemplate {
     connect(sigName: "notify", callback: (($obj: PadTemplate, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PadTemplate, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: PadTemplate, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: PadTemplate, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: PadTemplate, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: PadTemplate, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -4325,11 +4159,11 @@ class PadTemplate {
 }
 class ParamArray {
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -4350,11 +4184,11 @@ class ParamArray {
 }
 class ParamFraction {
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -4373,7 +4207,8 @@ class ParamFraction {
     vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export interface Pipeline_ConstructProps extends Bin_ConstructProps {
+interface Pipeline_ConstructProps extends Bin_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.Pipeline */
     auto_flush_bus?: boolean
     delay?: number
     latency?: number
@@ -4386,52 +4221,47 @@ class Pipeline {
     /* Properties of Gst-1.0.Gst.Bin */
     async_handling: boolean
     message_forward: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Pipeline */
-    bin: Bin
-    fixed_clock: Clock
-    stream_time: ClockTime
     /* Fields of Gst-1.0.Gst.Bin */
-    element: Element
-    numchildren: number
-    children: Element[]
-    children_cookie: number
-    child_bus: Bus
-    messages: Message[]
-    polling: boolean
-    state_dirty: boolean
-    clock_dirty: boolean
-    provided_clock: Clock
-    clock_provider: Element
+    readonly element: Element
+    readonly numchildren: number
+    readonly children: Element[]
+    readonly children_cookie: number
+    readonly child_bus: Bus
+    readonly messages: Message[]
+    readonly polling: boolean
+    readonly state_dirty: boolean
+    readonly clock_dirty: boolean
+    readonly provided_clock: Clock
+    readonly clock_provider: Element
     /* Fields of Gst-1.0.Gst.Element */
-    object: Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: State
-    current_state: State
-    next_state: State
-    pending_state: State
-    last_return: StateChangeReturn
-    bus: Bus
-    clock: Clock
-    base_time: ClockTimeDiff
-    start_time: ClockTime
-    numpads: number
-    pads: Pad[]
-    numsrcpads: number
-    srcpads: Pad[]
-    numsinkpads: number
-    sinkpads: Pad[]
-    pads_cookie: number
-    contexts: Context[]
+    readonly object: Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: State
+    readonly current_state: State
+    readonly next_state: State
+    readonly pending_state: State
+    readonly last_return: StateChangeReturn
+    readonly bus: Bus
+    readonly clock: Clock
+    readonly base_time: ClockTimeDiff
+    readonly start_time: ClockTime
+    readonly numpads: number
+    readonly pads: Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Pipeline */
     auto_clock(): void
     get_auto_flush_bus(): boolean
@@ -4574,15 +4404,6 @@ class Pipeline {
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
     watch_closure(closure: Function): void
-    /* Methods of Gst-1.0.Gst.ChildProxy */
-    child_added(child: GObject.Object, name: string): void
-    child_removed(child: GObject.Object, name: string): void
-    get_child_by_index(index: number): GObject.Object | null
-    get_child_by_name(name: string): GObject.Object | null
-    get_children_count(): number
-    get_property(name: string): /* value */ any
-    lookup(name: string): [ /* returnType */ boolean, /* target */ GObject.Object | null, /* pspec */ GObject.ParamSpec | null ]
-    set_property(name: string, value: any): void
     /* Virtual methods of Gst-1.0.Gst.Bin */
     vfunc_add_element(element: Element): boolean
     vfunc_deep_element_added(sub_bin: Bin, child: Element): void
@@ -4592,11 +4413,6 @@ class Pipeline {
     vfunc_element_removed(child: Element): void
     vfunc_handle_message(message: Message): void
     vfunc_remove_element(element: Element): boolean
-    vfunc_child_added(child: GObject.Object, name: string): void
-    vfunc_child_removed(child: GObject.Object, name: string): void
-    vfunc_get_child_by_index(index: number): GObject.Object | null
-    vfunc_get_child_by_name(name: string): GObject.Object | null
-    vfunc_get_children_count(): number
     /* Virtual methods of Gst-1.0.Gst.Element */
     vfunc_change_state(transition: StateChange): StateChangeReturn
     vfunc_get_state(timeout: ClockTime): [ /* returnType */ StateChangeReturn, /* state */ State | null, /* pending */ State | null ]
@@ -4658,13 +4474,6 @@ class Pipeline {
     connect(sigName: "notify", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gst-1.0.Gst.ChildProxy */
-    connect(sigName: "child-added", callback: (($obj: Pipeline, object: GObject.Object, name: string) => void)): number
-    connect_after(sigName: "child-added", callback: (($obj: Pipeline, object: GObject.Object, name: string) => void)): number
-    emit(sigName: "child-added", object: GObject.Object, name: string): void
-    connect(sigName: "child-removed", callback: (($obj: Pipeline, object: GObject.Object, name: string) => void)): number
-    connect_after(sigName: "child-removed", callback: (($obj: Pipeline, object: GObject.Object, name: string) => void)): number
-    emit(sigName: "child-removed", object: GObject.Object, name: string): void
     connect(sigName: "notify::auto-flush-bus", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::auto-flush-bus", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::delay", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
@@ -4675,10 +4484,6 @@ class Pipeline {
     connect_after(sigName: "notify::async-handling", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::message-forward", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::message-forward", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Pipeline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -4688,20 +4493,21 @@ class Pipeline {
     _init (config?: Pipeline_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(name?: string | null): Pipeline
+    /* Function overloads */
+    static new(name?: string | null): Pipeline
     static $gtype: GObject.Type
 }
-export interface Plugin_ConstructProps extends Object_ConstructProps {
+interface Plugin_ConstructProps extends Object_ConstructProps {
 }
 class Plugin {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Plugin */
     add_dependency(env_vars: string[] | null, paths: string[] | null, names: string[] | null, flags: PluginDependencyFlags): void
     add_dependency_simple(env_vars: string | null, paths: string | null, names: string | null, flags: PluginDependencyFlags): void
@@ -4782,10 +4588,6 @@ class Plugin {
     connect(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Plugin, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -4801,18 +4603,17 @@ class Plugin {
     static register_static_full(major_version: number, minor_version: number, name: string, description: string, init_full_func: PluginInitFullFunc, version: string, license: string, source: string, package: string, origin: string): boolean
     static $gtype: GObject.Type
 }
-export interface PluginFeature_ConstructProps extends Object_ConstructProps {
+interface PluginFeature_ConstructProps extends Object_ConstructProps {
 }
 class PluginFeature {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.PluginFeature */
     check_version(min_major: number, min_minor: number, min_micro: number): boolean
     get_plugin(): Plugin | null
@@ -4884,10 +4685,6 @@ class PluginFeature {
     connect(sigName: "notify", callback: (($obj: PluginFeature, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PluginFeature, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: PluginFeature, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: PluginFeature, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: PluginFeature, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: PluginFeature, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -4902,28 +4699,25 @@ class PluginFeature {
     static rank_compare_func(p1?: object | null, p2?: object | null): number
     static $gtype: GObject.Type
 }
-export interface ProxyPad_ConstructProps extends Pad_ConstructProps {
+interface ProxyPad_ConstructProps extends Pad_ConstructProps {
 }
 class ProxyPad {
     /* Properties of Gst-1.0.Gst.Pad */
     readonly caps: Caps
     offset: number
     template: PadTemplate
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.ProxyPad */
-    pad: Pad
     /* Fields of Gst-1.0.Gst.Pad */
-    object: Object
-    element_private: object
-    padtemplate: PadTemplate
-    direction: PadDirection
+    readonly object: Object
+    readonly element_private: object
+    readonly padtemplate: PadTemplate
+    readonly direction: PadDirection
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.ProxyPad */
     get_internal(): ProxyPad | null
     /* Methods of Gst-1.0.Gst.Pad */
@@ -5087,10 +4881,6 @@ class ProxyPad {
     connect_after(sigName: "notify::offset", callback: (($obj: ProxyPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::template", callback: (($obj: ProxyPad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::template", callback: (($obj: ProxyPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: ProxyPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: ProxyPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ProxyPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ProxyPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -5105,19 +4895,17 @@ class ProxyPad {
     static iterate_internal_links_default(pad: Pad, parent?: Object | null): Iterator | null
     static $gtype: GObject.Type
 }
-export interface Registry_ConstructProps extends Object_ConstructProps {
+interface Registry_ConstructProps extends Object_ConstructProps {
 }
 class Registry {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Registry */
-    object: Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Registry */
     add_feature(feature: PluginFeature): boolean
     add_plugin(plugin: Plugin): boolean
@@ -5206,10 +4994,6 @@ class Registry {
     connect(sigName: "notify", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Registry, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -5223,19 +5007,18 @@ class Registry {
     static get(): Registry
     static $gtype: GObject.Type
 }
-export interface SharedTaskPool_ConstructProps extends TaskPool_ConstructProps {
+interface SharedTaskPool_ConstructProps extends TaskPool_ConstructProps {
 }
 class SharedTaskPool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.TaskPool */
-    object: Object
+    readonly object: Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.SharedTaskPool */
     get_max_threads(): number
     set_max_threads(max_threads: number): void
@@ -5315,10 +5098,6 @@ class SharedTaskPool {
     connect(sigName: "notify", callback: (($obj: SharedTaskPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: SharedTaskPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: SharedTaskPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: SharedTaskPool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: SharedTaskPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: SharedTaskPool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -5330,7 +5109,8 @@ class SharedTaskPool {
     static new(): SharedTaskPool
     static $gtype: GObject.Type
 }
-export interface Stream_ConstructProps extends Object_ConstructProps {
+interface Stream_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.Stream */
     caps?: Caps
     stream_flags?: StreamFlags
     stream_id?: string
@@ -5343,17 +5123,14 @@ class Stream {
     stream_flags: StreamFlags
     stream_type: StreamType
     tags: TagList
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Stream */
-    stream_id: string
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Stream */
     get_caps(): Caps | null
     get_stream_flags(): StreamFlags
@@ -5436,10 +5213,6 @@ class Stream {
     connect_after(sigName: "notify::stream-type", callback: (($obj: Stream, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::tags", callback: (($obj: Stream, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::tags", callback: (($obj: Stream, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Stream, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Stream, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Stream, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Stream, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -5451,21 +5224,21 @@ class Stream {
     static new(stream_id: string | null, caps: Caps | null, type: StreamType, flags: StreamFlags): Stream
     static $gtype: GObject.Type
 }
-export interface StreamCollection_ConstructProps extends Object_ConstructProps {
+interface StreamCollection_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.StreamCollection */
     upstream_id?: string
 }
 class StreamCollection {
     /* Properties of Gst-1.0.Gst.StreamCollection */
     upstream_id: string
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.StreamCollection */
     add_stream(stream: Stream): boolean
     get_size(): number
@@ -5543,10 +5316,6 @@ class StreamCollection {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::upstream-id", callback: (($obj: StreamCollection, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::upstream-id", callback: (($obj: StreamCollection, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: StreamCollection, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: StreamCollection, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: StreamCollection, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: StreamCollection, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -5558,7 +5327,8 @@ class StreamCollection {
     static new(upstream_id?: string | null): StreamCollection
     static $gtype: GObject.Type
 }
-export interface SystemClock_ConstructProps extends Clock_ConstructProps {
+interface SystemClock_ConstructProps extends Clock_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.SystemClock */
     clock_type?: ClockType
 }
 class SystemClock {
@@ -5568,18 +5338,15 @@ class SystemClock {
     timeout: number
     window_size: number
     window_threshold: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.SystemClock */
-    clock: Clock
     /* Fields of Gst-1.0.Gst.Clock */
-    object: Object
+    readonly object: Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Clock */
     add_observation(slave: ClockTime, master: ClockTime): [ /* returnType */ boolean, /* r_squared */ number ]
     add_observation_unapplied(slave: ClockTime, master: ClockTime): [ /* returnType */ boolean, /* r_squared */ number, /* internal */ ClockTime | null, /* external */ ClockTime | null, /* rate_num */ ClockTime | null, /* rate_denom */ ClockTime | null ]
@@ -5687,10 +5454,6 @@ class SystemClock {
     connect_after(sigName: "notify::window-size", callback: (($obj: SystemClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::window-threshold", callback: (($obj: SystemClock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::window-threshold", callback: (($obj: SystemClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: SystemClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: SystemClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: SystemClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: SystemClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -5703,25 +5466,17 @@ class SystemClock {
     static set_default(new_clock?: Clock | null): void
     static $gtype: GObject.Type
 }
-export interface Task_ConstructProps extends Object_ConstructProps {
+interface Task_ConstructProps extends Object_ConstructProps {
 }
 class Task {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.Task */
-    object: Object
-    state: TaskState
-    cond: GLib.Cond
-    lock: GLib.RecMutex
-    func: TaskFunction
-    user_data: object
-    notify: GLib.DestroyNotify
-    running: boolean
     /* Fields of Gst-1.0.Gst.Object */
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Task */
     get_pool(): TaskPool
     get_state(): TaskState
@@ -5770,6 +5525,7 @@ class Task {
     get_qdata(quark: GLib.Quark): object | null
     getv(names: string[], values: any[]): void
     is_floating(): boolean
+    notify(property_name: string): void
     notify_by_pspec(pspec: GObject.ParamSpec): void
     ref(): GObject.Object
     ref_sink(): GObject.Object
@@ -5798,10 +5554,6 @@ class Task {
     connect(sigName: "notify", callback: (($obj: Task, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Task, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: Task, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Task, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Task, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Task, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -5814,19 +5566,17 @@ class Task {
     static cleanup_all(): void
     static $gtype: GObject.Type
 }
-export interface TaskPool_ConstructProps extends Object_ConstructProps {
+interface TaskPool_ConstructProps extends Object_ConstructProps {
 }
 class TaskPool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
-    /* Fields of Gst-1.0.Gst.TaskPool */
-    object: Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.TaskPool */
     cleanup(): void
     dispose_handle(id?: object | null): void
@@ -5903,10 +5653,6 @@ class TaskPool {
     connect(sigName: "notify", callback: (($obj: TaskPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TaskPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TaskPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TaskPool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TaskPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TaskPool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -5918,21 +5664,21 @@ class TaskPool {
     static new(): TaskPool
     static $gtype: GObject.Type
 }
-export interface Tracer_ConstructProps extends Object_ConstructProps {
+interface Tracer_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gst-1.0.Gst.Tracer */
     params?: string
 }
 class Tracer {
     /* Properties of Gst-1.0.Gst.Tracer */
     params: string
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
@@ -5999,10 +5745,6 @@ class Tracer {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::params", callback: (($obj: Tracer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::params", callback: (($obj: Tracer, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Tracer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Tracer, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Tracer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Tracer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -6014,18 +5756,17 @@ class Tracer {
     static register(plugin: Plugin | null, name: string, type: GObject.Type): boolean
     static $gtype: GObject.Type
 }
-export interface TracerFactory_ConstructProps extends PluginFeature_ConstructProps {
+interface TracerFactory_ConstructProps extends PluginFeature_ConstructProps {
 }
 class TracerFactory {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.TracerFactory */
     get_tracer_type(): GObject.Type
     /* Methods of Gst-1.0.Gst.PluginFeature */
@@ -6099,10 +5840,6 @@ class TracerFactory {
     connect(sigName: "notify", callback: (($obj: TracerFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TracerFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TracerFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TracerFactory, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TracerFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TracerFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -6114,18 +5851,17 @@ class TracerFactory {
     static get_list(): TracerFactory[]
     static $gtype: GObject.Type
 }
-export interface TracerRecord_ConstructProps extends Object_ConstructProps {
+interface TracerRecord_ConstructProps extends Object_ConstructProps {
 }
 class TracerRecord {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
@@ -6190,10 +5926,6 @@ class TracerRecord {
     connect(sigName: "notify", callback: (($obj: TracerRecord, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TracerRecord, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TracerRecord, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TracerRecord, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TracerRecord, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TracerRecord, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -6203,18 +5935,17 @@ class TracerRecord {
     _init (config?: TracerRecord_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TypeFindFactory_ConstructProps extends PluginFeature_ConstructProps {
+interface TypeFindFactory_ConstructProps extends PluginFeature_ConstructProps {
 }
 class TypeFindFactory {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.TypeFindFactory */
     call_function(find: TypeFind): void
     get_caps(): Caps | null
@@ -6291,10 +6022,6 @@ class TypeFindFactory {
     connect(sigName: "notify", callback: (($obj: TypeFindFactory, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: TypeFindFactory, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: TypeFindFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: TypeFindFactory, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: TypeFindFactory, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: TypeFindFactory, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -6330,10 +6057,10 @@ class ValueList {
 }
 class AllocationParams {
     /* Fields of Gst-1.0.Gst.AllocationParams */
-    flags: MemoryFlags
-    align: number
-    prefix: number
-    padding: number
+    readonly flags: MemoryFlags
+    readonly align: number
+    readonly prefix: number
+    readonly padding: number
     /* Methods of Gst-1.0.Gst.AllocationParams */
     copy(): AllocationParams | null
     free(): void
@@ -6346,9 +6073,9 @@ class AllocationParams {
 }
 abstract class AllocatorClass {
     /* Fields of Gst-1.0.Gst.AllocatorClass */
-    object_class: ObjectClass
-    alloc: (allocator: Allocator | null, size: number, params?: AllocationParams | null) => Memory | null
-    free: (allocator: Allocator, memory: Memory) => void
+    readonly object_class: ObjectClass
+    readonly alloc: (allocator: Allocator | null, size: number, params?: AllocationParams | null) => Memory | null
+    readonly free: (allocator: Allocator, memory: Memory) => void
     static name: string
 }
 class AllocatorPrivate {
@@ -6370,15 +6097,15 @@ class AtomicQueue {
 }
 abstract class BinClass {
     /* Fields of Gst-1.0.Gst.BinClass */
-    parent_class: ElementClass
-    element_added: (bin: Bin, child: Element) => void
-    element_removed: (bin: Bin, child: Element) => void
-    add_element: (bin: Bin, element: Element) => boolean
-    remove_element: (bin: Bin, element: Element) => boolean
-    handle_message: (bin: Bin, message: Message) => void
-    do_latency: (bin: Bin) => boolean
-    deep_element_added: (bin: Bin, sub_bin: Bin, child: Element) => void
-    deep_element_removed: (bin: Bin, sub_bin: Bin, child: Element) => void
+    readonly parent_class: ElementClass
+    readonly element_added: (bin: Bin, child: Element) => void
+    readonly element_removed: (bin: Bin, child: Element) => void
+    readonly add_element: (bin: Bin, element: Element) => boolean
+    readonly remove_element: (bin: Bin, element: Element) => boolean
+    readonly handle_message: (bin: Bin, message: Message) => void
+    readonly do_latency: (bin: Bin) => boolean
+    readonly deep_element_added: (bin: Bin, sub_bin: Bin, child: Element) => void
+    readonly deep_element_removed: (bin: Bin, sub_bin: Bin, child: Element) => void
     static name: string
 }
 class BinPrivate {
@@ -6386,13 +6113,13 @@ class BinPrivate {
 }
 class Buffer {
     /* Fields of Gst-1.0.Gst.Buffer */
-    mini_object: MiniObject
-    pool: BufferPool
-    pts: ClockTime
-    dts: ClockTime
-    duration: ClockTime
-    offset: number
-    offset_end: number
+    readonly mini_object: MiniObject
+    readonly pool: BufferPool
+    readonly pts: ClockTime
+    readonly dts: ClockTime
+    readonly duration: ClockTime
+    readonly offset: number
+    readonly offset_end: number
     /* Methods of Gst-1.0.Gst.Buffer */
     add_custom_meta(name: string): CustomMeta | null
     add_meta(info: MetaInfo, params?: object | null): Meta | null
@@ -6405,9 +6132,9 @@ class Buffer {
     copy_deep(): Buffer
     copy_into(src: Buffer, flags: BufferCopyFlags, offset: number, size: number): boolean
     copy_region(flags: BufferCopyFlags, offset: number, size: number): Buffer
-    extract(offset: number): [ /* returnType */ number, /* dest */ Uint8Array[] ]
-    extract_dup(offset: number, size: number): /* dest */ Uint8Array[]
-    fill(offset: number, src: Uint8Array[]): number
+    extract(offset: number): [ /* returnType */ number, /* dest */ Uint8Array ]
+    extract_dup(offset: number, size: number): /* dest */ Uint8Array
+    fill(offset: number, src: Uint8Array): number
     find_memory(offset: number, size: number): [ /* returnType */ boolean, /* idx */ number, /* length */ number, /* skip */ number ]
     foreach_meta(func: BufferForeachMetaFunc): boolean
     get_all_memory(): Memory | null
@@ -6427,7 +6154,7 @@ class Buffer {
     is_memory_range_writable(idx: number, length: number): boolean
     map(flags: MapFlags): [ /* returnType */ boolean, /* info */ MapInfo ]
     map_range(idx: number, length: number, flags: MapFlags): [ /* returnType */ boolean, /* info */ MapInfo ]
-    memcmp(offset: number, mem: Uint8Array[]): number
+    memcmp(offset: number, mem: Uint8Array): number
     memset(offset: number, val: number, size: number): number
     n_memory(): number
     peek_memory(idx: number): Memory | null
@@ -6451,10 +6178,10 @@ class Buffer {
     /* Static methods and pseudo-constructors */
     static new(): Buffer
     static new_allocate(allocator: Allocator | null, size: number, params?: AllocationParams | null): Buffer
-    static new_memdup(data: Uint8Array[]): Buffer
-    static new_wrapped(data: Uint8Array[]): Buffer
+    static new_memdup(data: Uint8Array): Buffer
+    static new_wrapped(data: Uint8Array): Buffer
     static new_wrapped_bytes(bytes: GLib.Bytes): Buffer
-    static new_wrapped_full(flags: MemoryFlags, data: Uint8Array[], maxsize: number, offset: number, notify?: GLib.DestroyNotify | null): Buffer
+    static new_wrapped_full(flags: MemoryFlags, data: Uint8Array, maxsize: number, offset: number, notify?: GLib.DestroyNotify | null): Buffer
     static get_max_memory(): number
 }
 class BufferList {
@@ -6478,26 +6205,26 @@ class BufferList {
 }
 class BufferPoolAcquireParams {
     /* Fields of Gst-1.0.Gst.BufferPoolAcquireParams */
-    format: Format
-    start: number
-    stop: number
-    flags: BufferPoolAcquireFlags
+    readonly format: Format
+    readonly start: number
+    readonly stop: number
+    readonly flags: BufferPoolAcquireFlags
     static name: string
 }
 abstract class BufferPoolClass {
     /* Fields of Gst-1.0.Gst.BufferPoolClass */
-    object_class: ObjectClass
-    get_options: (pool: BufferPool) => string[]
-    set_config: (pool: BufferPool, config: Structure) => boolean
-    start: (pool: BufferPool) => boolean
-    stop: (pool: BufferPool) => boolean
-    acquire_buffer: (pool: BufferPool, params?: BufferPoolAcquireParams | null) => [ /* returnType */ FlowReturn, /* buffer */ Buffer ]
-    alloc_buffer: (pool: BufferPool, params?: BufferPoolAcquireParams | null) => [ /* returnType */ FlowReturn, /* buffer */ Buffer ]
-    reset_buffer: (pool: BufferPool, buffer: Buffer) => void
-    release_buffer: (pool: BufferPool, buffer: Buffer) => void
-    free_buffer: (pool: BufferPool, buffer: Buffer) => void
-    flush_start: (pool: BufferPool) => void
-    flush_stop: (pool: BufferPool) => void
+    readonly object_class: ObjectClass
+    readonly get_options: (pool: BufferPool) => string[]
+    readonly set_config: (pool: BufferPool, config: Structure) => boolean
+    readonly start: (pool: BufferPool) => boolean
+    readonly stop: (pool: BufferPool) => boolean
+    readonly acquire_buffer: (pool: BufferPool, params?: BufferPoolAcquireParams | null) => [ /* returnType */ FlowReturn, /* buffer */ Buffer ]
+    readonly alloc_buffer: (pool: BufferPool, params?: BufferPoolAcquireParams | null) => [ /* returnType */ FlowReturn, /* buffer */ Buffer ]
+    readonly reset_buffer: (pool: BufferPool, buffer: Buffer) => void
+    readonly release_buffer: (pool: BufferPool, buffer: Buffer) => void
+    readonly free_buffer: (pool: BufferPool, buffer: Buffer) => void
+    readonly flush_start: (pool: BufferPool) => void
+    readonly flush_stop: (pool: BufferPool) => void
     static name: string
 }
 class BufferPoolPrivate {
@@ -6505,9 +6232,9 @@ class BufferPoolPrivate {
 }
 abstract class BusClass {
     /* Fields of Gst-1.0.Gst.BusClass */
-    parent_class: ObjectClass
-    message: (bus: Bus, message: Message) => void
-    sync_message: (bus: Bus, message: Message) => void
+    readonly parent_class: ObjectClass
+    readonly message: (bus: Bus, message: Message) => void
+    readonly sync_message: (bus: Bus, message: Message) => void
     static name: string
 }
 class BusPrivate {
@@ -6515,7 +6242,7 @@ class BusPrivate {
 }
 class Caps {
     /* Fields of Gst-1.0.Gst.Caps */
-    mini_object: MiniObject
+    readonly mini_object: MiniObject
     /* Methods of Gst-1.0.Gst.Caps */
     append(caps2: Caps): void
     append_structure(structure: Structure): void
@@ -6589,28 +6316,28 @@ class CapsFeatures {
 }
 abstract class ChildProxyInterface {
     /* Fields of Gst-1.0.Gst.ChildProxyInterface */
-    parent: GObject.TypeInterface
-    get_child_by_name: (parent: ChildProxy, name: string) => GObject.Object | null
-    get_child_by_index: (parent: ChildProxy, index: number) => GObject.Object | null
-    get_children_count: (parent: ChildProxy) => number
-    child_added: (parent: ChildProxy, child: GObject.Object, name: string) => void
-    child_removed: (parent: ChildProxy, child: GObject.Object, name: string) => void
+    readonly parent: GObject.TypeInterface
+    readonly get_child_by_name: (parent: ChildProxy, name: string) => GObject.Object | null
+    readonly get_child_by_index: (parent: ChildProxy, index: number) => GObject.Object | null
+    readonly get_children_count: (parent: ChildProxy) => number
+    readonly child_added: (parent: ChildProxy, child: GObject.Object, name: string) => void
+    readonly child_removed: (parent: ChildProxy, child: GObject.Object, name: string) => void
     static name: string
 }
 abstract class ClockClass {
     /* Fields of Gst-1.0.Gst.ClockClass */
-    parent_class: ObjectClass
-    change_resolution: (clock: Clock, old_resolution: ClockTime, new_resolution: ClockTime) => ClockTime
-    get_resolution: (clock: Clock) => ClockTime
-    get_internal_time: (clock: Clock) => ClockTime
-    wait: (clock: Clock, entry: ClockEntry) => [ /* returnType */ ClockReturn, /* jitter */ ClockTimeDiff | null ]
-    wait_async: (clock: Clock, entry: ClockEntry) => ClockReturn
-    unschedule: (clock: Clock, entry: ClockEntry) => void
+    readonly parent_class: ObjectClass
+    readonly change_resolution: (clock: Clock, old_resolution: ClockTime, new_resolution: ClockTime) => ClockTime
+    readonly get_resolution: (clock: Clock) => ClockTime
+    readonly get_internal_time: (clock: Clock) => ClockTime
+    readonly wait: (clock: Clock, entry: ClockEntry) => [ /* returnType */ ClockReturn, /* jitter */ ClockTimeDiff | null ]
+    readonly wait_async: (clock: Clock, entry: ClockEntry) => ClockReturn
+    readonly unschedule: (clock: Clock, entry: ClockEntry) => void
     static name: string
 }
 class ClockEntry {
     /* Fields of Gst-1.0.Gst.ClockEntry */
-    refcount: number
+    readonly refcount: number
     static name: string
 }
 class ClockPrivate {
@@ -6635,10 +6362,10 @@ class Context {
 }
 abstract class ControlBindingClass {
     /* Fields of Gst-1.0.Gst.ControlBindingClass */
-    parent_class: ObjectClass
-    sync_values: (binding: ControlBinding, object: Object, timestamp: ClockTime, last_sync: ClockTime) => boolean
-    get_value: (binding: ControlBinding, timestamp: ClockTime) => any | null
-    get_g_value_array: (binding: ControlBinding, timestamp: ClockTime, interval: ClockTime, values: any[]) => boolean
+    readonly parent_class: ObjectClass
+    readonly sync_values: (binding: ControlBinding, object: Object, timestamp: ClockTime, last_sync: ClockTime) => boolean
+    readonly get_value: (binding: ControlBinding, timestamp: ClockTime) => any | null
+    readonly get_g_value_array: (binding: ControlBinding, timestamp: ClockTime, interval: ClockTime, values: any[]) => boolean
     static name: string
 }
 class ControlBindingPrivate {
@@ -6646,12 +6373,12 @@ class ControlBindingPrivate {
 }
 abstract class ControlSourceClass {
     /* Fields of Gst-1.0.Gst.ControlSourceClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 class CustomMeta {
     /* Fields of Gst-1.0.Gst.CustomMeta */
-    meta: Meta
+    readonly meta: Meta
     /* Methods of Gst-1.0.Gst.CustomMeta */
     get_structure(): Structure
     has_name(name: string): boolean
@@ -6712,14 +6439,14 @@ class DebugMessage {
 }
 abstract class DeviceClass {
     /* Fields of Gst-1.0.Gst.DeviceClass */
-    parent_class: ObjectClass
-    create_element: (device: Device, name?: string | null) => Element | null
-    reconfigure_element: (device: Device, element: Element) => boolean
+    readonly parent_class: ObjectClass
+    readonly create_element: (device: Device, name?: string | null) => Element | null
+    readonly reconfigure_element: (device: Device, element: Element) => boolean
     static name: string
 }
 abstract class DeviceMonitorClass {
     /* Fields of Gst-1.0.Gst.DeviceMonitorClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 class DeviceMonitorPrivate {
@@ -6730,16 +6457,16 @@ class DevicePrivate {
 }
 abstract class DeviceProviderClass {
     /* Fields of Gst-1.0.Gst.DeviceProviderClass */
-    parent_class: ObjectClass
-    factory: DeviceProviderFactory
-    start: (provider: DeviceProvider) => boolean
-    stop: (provider: DeviceProvider) => void
+    readonly parent_class: ObjectClass
+    readonly factory: DeviceProviderFactory
+    readonly start: (provider: DeviceProvider) => boolean
+    readonly stop: (provider: DeviceProvider) => void
     /* Methods of Gst-1.0.Gst.DeviceProviderClass */
-    add_metadata(klass: DeviceProvider | Function | GObject.Type, key: string, value: string): void
-    add_static_metadata(klass: DeviceProvider | Function | GObject.Type, key: string, value: string): void
-    get_metadata(klass: DeviceProvider | Function | GObject.Type, key: string): string | null
-    set_metadata(klass: DeviceProvider | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
-    set_static_metadata(klass: DeviceProvider | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
+    static add_metadata(klass: DeviceProvider | Function | GObject.Type, key: string, value: string): void
+    static add_static_metadata(klass: DeviceProvider | Function | GObject.Type, key: string, value: string): void
+    static get_metadata(klass: DeviceProvider | Function | GObject.Type, key: string): string | null
+    static set_metadata(klass: DeviceProvider | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
+    static set_static_metadata(klass: DeviceProvider | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
     static name: string
 }
 abstract class DeviceProviderFactoryClass {
@@ -6753,39 +6480,39 @@ abstract class DynamicTypeFactoryClass {
 }
 abstract class ElementClass {
     /* Fields of Gst-1.0.Gst.ElementClass */
-    parent_class: ObjectClass
-    metadata: object
-    elementfactory: ElementFactory
-    padtemplates: object[]
-    numpadtemplates: number
-    pad_templ_cookie: number
-    pad_added: (element: Element, pad: Pad) => void
-    pad_removed: (element: Element, pad: Pad) => void
-    no_more_pads: (element: Element) => void
-    request_new_pad: (element: Element, templ: PadTemplate, name?: string | null, caps?: Caps | null) => Pad | null
-    release_pad: (element: Element, pad: Pad) => void
-    get_state: (element: Element, timeout: ClockTime) => [ /* returnType */ StateChangeReturn, /* state */ State | null, /* pending */ State | null ]
-    set_state: (element: Element, state: State) => StateChangeReturn
-    change_state: (element: Element, transition: StateChange) => StateChangeReturn
-    state_changed: (element: Element, oldstate: State, newstate: State, pending: State) => void
-    set_bus: (element: Element, bus?: Bus | null) => void
-    provide_clock: (element: Element) => Clock | null
-    set_clock: (element: Element, clock?: Clock | null) => boolean
-    send_event: (element: Element, event: Event) => boolean
-    query: (element: Element, query: Query) => boolean
-    post_message: (element: Element, message: Message) => boolean
-    set_context: (element: Element, context: Context) => void
+    readonly parent_class: ObjectClass
+    readonly metadata: object
+    readonly elementfactory: ElementFactory
+    readonly padtemplates: object[]
+    readonly numpadtemplates: number
+    readonly pad_templ_cookie: number
+    readonly pad_added: (element: Element, pad: Pad) => void
+    readonly pad_removed: (element: Element, pad: Pad) => void
+    readonly no_more_pads: (element: Element) => void
+    readonly request_new_pad: (element: Element, templ: PadTemplate, name?: string | null, caps?: Caps | null) => Pad | null
+    readonly release_pad: (element: Element, pad: Pad) => void
+    readonly get_state: (element: Element, timeout: ClockTime) => [ /* returnType */ StateChangeReturn, /* state */ State | null, /* pending */ State | null ]
+    readonly set_state: (element: Element, state: State) => StateChangeReturn
+    readonly change_state: (element: Element, transition: StateChange) => StateChangeReturn
+    readonly state_changed: (element: Element, oldstate: State, newstate: State, pending: State) => void
+    readonly set_bus: (element: Element, bus?: Bus | null) => void
+    readonly provide_clock: (element: Element) => Clock | null
+    readonly set_clock: (element: Element, clock?: Clock | null) => boolean
+    readonly send_event: (element: Element, event: Event) => boolean
+    readonly query: (element: Element, query: Query) => boolean
+    readonly post_message: (element: Element, message: Message) => boolean
+    readonly set_context: (element: Element, context: Context) => void
     /* Methods of Gst-1.0.Gst.ElementClass */
-    add_metadata(klass: Element | Function | GObject.Type, key: string, value: string): void
-    add_pad_template(klass: Element | Function | GObject.Type, templ: PadTemplate): void
-    add_static_metadata(klass: Element | Function | GObject.Type, key: string, value: string): void
-    add_static_pad_template(klass: Element | Function | GObject.Type, static_templ: StaticPadTemplate): void
-    add_static_pad_template_with_gtype(klass: Element | Function | GObject.Type, static_templ: StaticPadTemplate, pad_type: GObject.Type): void
-    get_metadata(klass: Element | Function | GObject.Type, key: string): string
-    get_pad_template(element_class: Element | Function | GObject.Type, name: string): PadTemplate | null
-    get_pad_template_list(element_class: Element | Function | GObject.Type): PadTemplate[]
-    set_metadata(klass: Element | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
-    set_static_metadata(klass: Element | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
+    static add_metadata(klass: Element | Function | GObject.Type, key: string, value: string): void
+    static add_pad_template(klass: Element | Function | GObject.Type, templ: PadTemplate): void
+    static add_static_metadata(klass: Element | Function | GObject.Type, key: string, value: string): void
+    static add_static_pad_template(klass: Element | Function | GObject.Type, static_templ: StaticPadTemplate): void
+    static add_static_pad_template_with_gtype(klass: Element | Function | GObject.Type, static_templ: StaticPadTemplate, pad_type: GObject.Type): void
+    static get_metadata(klass: Element | Function | GObject.Type, key: string): string
+    static get_pad_template(element_class: Element | Function | GObject.Type, name: string): PadTemplate | null
+    static get_pad_template_list(element_class: Element | Function | GObject.Type): PadTemplate[]
+    static set_metadata(klass: Element | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
+    static set_static_metadata(klass: Element | Function | GObject.Type, longname: string, classification: string, description: string, author: string): void
     static name: string
 }
 abstract class ElementFactoryClass {
@@ -6793,10 +6520,10 @@ abstract class ElementFactoryClass {
 }
 class Event {
     /* Fields of Gst-1.0.Gst.Event */
-    mini_object: MiniObject
-    type: EventType
-    timestamp: number
-    seqnum: number
+    readonly mini_object: MiniObject
+    readonly type: EventType
+    readonly timestamp: number
+    readonly seqnum: number
     /* Methods of Gst-1.0.Gst.Event */
     copy_segment(segment: Segment): void
     get_running_time_offset(): number
@@ -6869,15 +6596,15 @@ class Event {
 }
 class FormatDefinition {
     /* Fields of Gst-1.0.Gst.FormatDefinition */
-    value: Format
-    nick: string
-    description: string
-    quark: GLib.Quark
+    readonly value: Format
+    readonly nick: string
+    readonly description: string
+    readonly quark: GLib.Quark
     static name: string
 }
 abstract class GhostPadClass {
     /* Fields of Gst-1.0.Gst.GhostPadClass */
-    parent_class: ProxyPadClass
+    readonly parent_class: ProxyPadClass
     static name: string
 }
 class GhostPadPrivate {
@@ -6885,17 +6612,17 @@ class GhostPadPrivate {
 }
 class Iterator {
     /* Fields of Gst-1.0.Gst.Iterator */
-    copy: IteratorCopyFunction
-    next: IteratorNextFunction
-    item: IteratorItemFunction
-    resync: IteratorResyncFunction
-    free: IteratorFreeFunction
-    pushed: Iterator
-    type: GObject.Type
-    lock: GLib.Mutex
-    cookie: number
-    master_cookie: number
-    size: number
+    readonly copy: IteratorCopyFunction
+    readonly next: IteratorNextFunction
+    readonly item: IteratorItemFunction
+    readonly resync: IteratorResyncFunction
+    readonly free: IteratorFreeFunction
+    readonly pushed: Iterator
+    readonly type: GObject.Type
+    readonly lock: GLib.Mutex
+    readonly cookie: number
+    readonly master_cookie: number
+    readonly size: number
     /* Methods of Gst-1.0.Gst.Iterator */
     filter(func: GLib.CompareFunc, user_data: any): Iterator
     find_custom(func: GLib.CompareFunc): [ /* returnType */ boolean, /* elem */ any ]
@@ -6908,23 +6635,23 @@ class Iterator {
 }
 class MapInfo {
     /* Fields of Gst-1.0.Gst.MapInfo */
-    memory: Memory
-    flags: MapFlags
-    data: Uint8Array[]
-    size: number
-    maxsize: number
-    user_data: object[]
+    readonly memory: Memory
+    readonly flags: MapFlags
+    readonly data: Uint8Array
+    readonly size: number
+    readonly maxsize: number
+    readonly user_data: object[]
     static name: string
 }
 class Memory {
     /* Fields of Gst-1.0.Gst.Memory */
-    mini_object: MiniObject
-    allocator: Allocator
-    parent: Memory
-    maxsize: number
-    align: number
-    offset: number
-    size: number
+    readonly mini_object: MiniObject
+    readonly allocator: Allocator
+    readonly parent: Memory
+    readonly maxsize: number
+    readonly align: number
+    readonly offset: number
+    readonly size: number
     /* Methods of Gst-1.0.Gst.Memory */
     copy(offset: number, size: number): Memory
     get_sizes(): [ /* returnType */ number, /* offset */ number | null, /* maxsize */ number | null ]
@@ -6937,15 +6664,15 @@ class Memory {
     unmap(info: MapInfo): void
     static name: string
     /* Static methods and pseudo-constructors */
-    static new_wrapped(flags: MemoryFlags, data: Uint8Array[], maxsize: number, offset: number, notify?: GLib.DestroyNotify | null): Memory
+    static new_wrapped(flags: MemoryFlags, data: Uint8Array, maxsize: number, offset: number, notify?: GLib.DestroyNotify | null): Memory
 }
 class Message {
     /* Fields of Gst-1.0.Gst.Message */
-    mini_object: MiniObject
-    type: MessageType
-    timestamp: number
-    src: Object
-    seqnum: number
+    readonly mini_object: MiniObject
+    readonly type: MessageType
+    readonly timestamp: number
+    readonly src: Object
+    readonly seqnum: number
     /* Methods of Gst-1.0.Gst.Message */
     add_redirect_entry(location: string, tag_list?: TagList | null, entry_struct?: Structure | null): void
     get_num_redirect_entries(): number
@@ -7050,8 +6777,8 @@ class Message {
 }
 class Meta {
     /* Fields of Gst-1.0.Gst.Meta */
-    flags: MetaFlags
-    info: MetaInfo
+    readonly flags: MetaFlags
+    readonly info: MetaInfo
     /* Methods of Gst-1.0.Gst.Meta */
     compare_seqnum(meta2: Meta): number
     get_seqnum(): number
@@ -7066,32 +6793,32 @@ class Meta {
 }
 class MetaInfo {
     /* Fields of Gst-1.0.Gst.MetaInfo */
-    api: GObject.Type
-    type: GObject.Type
-    size: number
-    init_func: MetaInitFunction
-    free_func: MetaFreeFunction
-    transform_func: MetaTransformFunction
+    readonly api: GObject.Type
+    readonly type: GObject.Type
+    readonly size: number
+    readonly init_func: MetaInitFunction
+    readonly free_func: MetaFreeFunction
+    readonly transform_func: MetaTransformFunction
     /* Methods of Gst-1.0.Gst.MetaInfo */
     is_custom(): boolean
     static name: string
 }
 class MetaTransformCopy {
     /* Fields of Gst-1.0.Gst.MetaTransformCopy */
-    region: boolean
-    offset: number
-    size: number
+    readonly region: boolean
+    readonly offset: number
+    readonly size: number
     static name: string
 }
 class MiniObject {
     /* Fields of Gst-1.0.Gst.MiniObject */
-    type: GObject.Type
-    refcount: number
-    lockstate: number
-    flags: number
-    copy: MiniObjectCopyFunction
-    dispose: MiniObjectDisposeFunction
-    free: MiniObjectFreeFunction
+    readonly type: GObject.Type
+    readonly refcount: number
+    readonly lockstate: number
+    readonly flags: number
+    readonly copy: MiniObjectCopyFunction
+    readonly dispose: MiniObjectDisposeFunction
+    readonly free: MiniObjectFreeFunction
     /* Methods of Gst-1.0.Gst.MiniObject */
     add_parent(parent: MiniObject): void
     get_qdata(quark: GLib.Quark): object | null
@@ -7108,16 +6835,16 @@ class MiniObject {
 }
 abstract class ObjectClass {
     /* Fields of Gst-1.0.Gst.ObjectClass */
-    parent_class: GObject.InitiallyUnownedClass
-    path_string_separator: string
-    deep_notify: (object: Object, orig: Object, pspec: GObject.ParamSpec) => void
+    readonly parent_class: GObject.InitiallyUnownedClass
+    readonly path_string_separator: string
+    readonly deep_notify: (object: Object, orig: Object, pspec: GObject.ParamSpec) => void
     static name: string
 }
 abstract class PadClass {
     /* Fields of Gst-1.0.Gst.PadClass */
-    parent_class: ObjectClass
-    linked: (pad: Pad, peer: Pad) => void
-    unlinked: (pad: Pad, peer: Pad) => void
+    readonly parent_class: ObjectClass
+    readonly linked: (pad: Pad, peer: Pad) => void
+    readonly unlinked: (pad: Pad, peer: Pad) => void
     static name: string
 }
 class PadPrivate {
@@ -7125,11 +6852,11 @@ class PadPrivate {
 }
 class PadProbeInfo {
     /* Fields of Gst-1.0.Gst.PadProbeInfo */
-    type: PadProbeType
-    id: number
-    data: object
-    offset: number
-    size: number
+    readonly type: PadProbeType
+    readonly id: number
+    readonly data: object
+    readonly offset: number
+    readonly size: number
     /* Methods of Gst-1.0.Gst.PadProbeInfo */
     get_buffer(): Buffer | null
     get_buffer_list(): BufferList | null
@@ -7139,31 +6866,31 @@ class PadProbeInfo {
 }
 abstract class PadTemplateClass {
     /* Fields of Gst-1.0.Gst.PadTemplateClass */
-    parent_class: ObjectClass
-    pad_created: (templ: PadTemplate, pad: Pad) => void
+    readonly parent_class: ObjectClass
+    readonly pad_created: (templ: PadTemplate, pad: Pad) => void
     static name: string
 }
 class ParamSpecArray {
     /* Fields of Gst-1.0.Gst.ParamSpecArray */
-    parent_instance: GObject.ParamSpec
-    element_spec: GObject.ParamSpec
+    readonly parent_instance: GObject.ParamSpec
+    readonly element_spec: GObject.ParamSpec
     static name: string
 }
 class ParamSpecFraction {
     /* Fields of Gst-1.0.Gst.ParamSpecFraction */
-    parent_instance: GObject.ParamSpec
-    min_num: number
-    min_den: number
-    max_num: number
-    max_den: number
-    def_num: number
-    def_den: number
+    readonly parent_instance: GObject.ParamSpec
+    readonly min_num: number
+    readonly min_den: number
+    readonly max_num: number
+    readonly max_den: number
+    readonly def_num: number
+    readonly def_den: number
     static name: string
 }
 class ParentBufferMeta {
     /* Fields of Gst-1.0.Gst.ParentBufferMeta */
-    parent: Meta
-    buffer: Buffer
+    readonly parent: Meta
+    readonly buffer: Buffer
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): MetaInfo
@@ -7181,7 +6908,7 @@ class ParseContext {
 }
 abstract class PipelineClass {
     /* Fields of Gst-1.0.Gst.PipelineClass */
-    parent_class: BinClass
+    readonly parent_class: BinClass
     static name: string
 }
 class PipelinePrivate {
@@ -7192,17 +6919,17 @@ abstract class PluginClass {
 }
 class PluginDesc {
     /* Fields of Gst-1.0.Gst.PluginDesc */
-    major_version: number
-    minor_version: number
-    name: string
-    description: string
-    plugin_init: PluginInitFunc
-    version: string
-    license: string
-    source: string
-    package: string
-    origin: string
-    release_datetime: string
+    readonly major_version: number
+    readonly minor_version: number
+    readonly name: string
+    readonly description: string
+    readonly plugin_init: PluginInitFunc
+    readonly version: string
+    readonly license: string
+    readonly source: string
+    readonly package: string
+    readonly origin: string
+    readonly release_datetime: string
     static name: string
 }
 abstract class PluginFeatureClass {
@@ -7233,27 +6960,27 @@ class Poll {
 }
 class PollFD {
     /* Fields of Gst-1.0.Gst.PollFD */
-    fd: number
+    readonly fd: number
     /* Methods of Gst-1.0.Gst.PollFD */
     init(): void
     static name: string
 }
 abstract class PresetInterface {
     /* Fields of Gst-1.0.Gst.PresetInterface */
-    parent: GObject.TypeInterface
-    get_preset_names: (preset: Preset) => string[]
-    get_property_names: (preset: Preset) => string[]
-    load_preset: (preset: Preset, name: string) => boolean
-    save_preset: (preset: Preset, name: string) => boolean
-    rename_preset: (preset: Preset, old_name: string, new_name: string) => boolean
-    delete_preset: (preset: Preset, name: string) => boolean
-    set_meta: (preset: Preset, name: string, tag: string, value?: string | null) => boolean
-    get_meta: (preset: Preset, name: string, tag: string) => [ /* returnType */ boolean, /* value */ string ]
+    readonly parent: GObject.TypeInterface
+    readonly get_preset_names: (preset: Preset) => string[]
+    readonly get_property_names: (preset: Preset) => string[]
+    readonly load_preset: (preset: Preset, name: string) => boolean
+    readonly save_preset: (preset: Preset, name: string) => boolean
+    readonly rename_preset: (preset: Preset, old_name: string, new_name: string) => boolean
+    readonly delete_preset: (preset: Preset, name: string) => boolean
+    readonly set_meta: (preset: Preset, name: string, tag: string, value?: string | null) => boolean
+    readonly get_meta: (preset: Preset, name: string, tag: string) => [ /* returnType */ boolean, /* value */ string ]
     static name: string
 }
 class Promise {
     /* Fields of Gst-1.0.Gst.Promise */
-    parent: MiniObject
+    readonly parent: MiniObject
     /* Methods of Gst-1.0.Gst.Promise */
     expire(): void
     get_reply(): Structure | null
@@ -7271,15 +6998,15 @@ class Promise {
 }
 class ProtectionMeta {
     /* Fields of Gst-1.0.Gst.ProtectionMeta */
-    meta: Meta
-    info: Structure
+    readonly meta: Meta
+    readonly info: Structure
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): MetaInfo
 }
 abstract class ProxyPadClass {
     /* Fields of Gst-1.0.Gst.ProxyPadClass */
-    parent_class: PadClass
+    readonly parent_class: PadClass
     static name: string
 }
 class ProxyPadPrivate {
@@ -7287,8 +7014,8 @@ class ProxyPadPrivate {
 }
 class Query {
     /* Fields of Gst-1.0.Gst.Query */
-    mini_object: MiniObject
-    type: QueryType
+    readonly mini_object: MiniObject
+    readonly type: QueryType
     /* Methods of Gst-1.0.Gst.Query */
     add_allocation_meta(api: GObject.Type, params?: Structure | null): void
     add_allocation_param(allocator?: Allocator | null, params?: AllocationParams | null): void
@@ -7380,17 +7107,17 @@ class Query {
 }
 class ReferenceTimestampMeta {
     /* Fields of Gst-1.0.Gst.ReferenceTimestampMeta */
-    parent: Meta
-    reference: Caps
-    timestamp: ClockTime
-    duration: ClockTime
+    readonly parent: Meta
+    readonly reference: Caps
+    readonly timestamp: ClockTime
+    readonly duration: ClockTime
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): MetaInfo
 }
 abstract class RegistryClass {
     /* Fields of Gst-1.0.Gst.RegistryClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 class RegistryPrivate {
@@ -7416,17 +7143,17 @@ class Sample {
 }
 class Segment {
     /* Fields of Gst-1.0.Gst.Segment */
-    flags: SegmentFlags
-    rate: number
-    applied_rate: number
-    format: Format
-    base: number
-    offset: number
-    start: number
-    stop: number
-    time: number
-    position: number
-    duration: number
+    readonly flags: SegmentFlags
+    readonly rate: number
+    readonly applied_rate: number
+    readonly format: Format
+    readonly base: number
+    readonly offset: number
+    readonly start: number
+    readonly stop: number
+    readonly time: number
+    readonly position: number
+    readonly duration: number
     /* Methods of Gst-1.0.Gst.Segment */
     clip(format: Format, start: number, stop: number): [ /* returnType */ boolean, /* clip_start */ number | null, /* clip_stop */ number | null ]
     copy(): Segment
@@ -7454,7 +7181,7 @@ class Segment {
 }
 abstract class SharedTaskPoolClass {
     /* Fields of Gst-1.0.Gst.SharedTaskPoolClass */
-    parent_class: TaskPoolClass
+    readonly parent_class: TaskPoolClass
     static name: string
 }
 class SharedTaskPoolPrivate {
@@ -7462,8 +7189,8 @@ class SharedTaskPoolPrivate {
 }
 class StaticCaps {
     /* Fields of Gst-1.0.Gst.StaticCaps */
-    caps: Caps
-    string: string
+    readonly caps: Caps
+    readonly string: string
     /* Methods of Gst-1.0.Gst.StaticCaps */
     cleanup(): void
     get(): Caps | null
@@ -7471,10 +7198,10 @@ class StaticCaps {
 }
 class StaticPadTemplate {
     /* Fields of Gst-1.0.Gst.StaticPadTemplate */
-    name_template: string
-    direction: PadDirection
-    presence: PadPresence
-    static_caps: StaticCaps
+    readonly name_template: string
+    readonly direction: PadDirection
+    readonly presence: PadPresence
+    readonly static_caps: StaticCaps
     /* Methods of Gst-1.0.Gst.StaticPadTemplate */
     get(): PadTemplate | null
     get_caps(): Caps
@@ -7482,13 +7209,13 @@ class StaticPadTemplate {
 }
 abstract class StreamClass {
     /* Fields of Gst-1.0.Gst.StreamClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 abstract class StreamCollectionClass {
     /* Fields of Gst-1.0.Gst.StreamCollectionClass */
-    parent_class: ObjectClass
-    stream_notify: (collection: StreamCollection, stream: Stream, pspec: GObject.ParamSpec) => void
+    readonly parent_class: ObjectClass
+    readonly stream_notify: (collection: StreamCollection, stream: Stream, pspec: GObject.ParamSpec) => void
     static name: string
 }
 class StreamCollectionPrivate {
@@ -7499,7 +7226,7 @@ class StreamPrivate {
 }
 class Structure {
     /* Fields of Gst-1.0.Gst.Structure */
-    type: GObject.Type
+    readonly type: GObject.Type
     /* Methods of Gst-1.0.Gst.Structure */
     can_intersect(struct2: Structure): boolean
     copy(): Structure
@@ -7566,7 +7293,7 @@ class Structure {
 }
 abstract class SystemClockClass {
     /* Fields of Gst-1.0.Gst.SystemClockClass */
-    parent_class: ClockClass
+    readonly parent_class: ClockClass
     static name: string
 }
 class SystemClockPrivate {
@@ -7574,7 +7301,7 @@ class SystemClockPrivate {
 }
 class TagList {
     /* Fields of Gst-1.0.Gst.TagList */
-    mini_object: MiniObject
+    readonly mini_object: MiniObject
     /* Methods of Gst-1.0.Gst.TagList */
     add_value(mode: TagMergeMode, tag: string, value: any): void
     copy(): TagList
@@ -7626,22 +7353,22 @@ class TagList {
 }
 abstract class TagSetterInterface {
     /* Fields of Gst-1.0.Gst.TagSetterInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class TaskClass {
     /* Fields of Gst-1.0.Gst.TaskClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 abstract class TaskPoolClass {
     /* Fields of Gst-1.0.Gst.TaskPoolClass */
-    parent_class: ObjectClass
-    prepare: (pool: TaskPool) => void
-    cleanup: (pool: TaskPool) => void
-    push: (pool: TaskPool, func: TaskPoolFunction) => object | null
-    join: (pool: TaskPool, id?: object | null) => void
-    dispose_handle: (pool: TaskPool, id?: object | null) => void
+    readonly parent_class: ObjectClass
+    readonly prepare: (pool: TaskPool) => void
+    readonly cleanup: (pool: TaskPool) => void
+    readonly push: (pool: TaskPool, func: TaskPoolFunction) => object | null
+    readonly join: (pool: TaskPool, id?: object | null) => void
+    readonly dispose_handle: (pool: TaskPool, id?: object | null) => void
     static name: string
 }
 class TaskPrivate {
@@ -7649,8 +7376,8 @@ class TaskPrivate {
 }
 class TimedValue {
     /* Fields of Gst-1.0.Gst.TimedValue */
-    timestamp: ClockTime
-    value: number
+    readonly timestamp: ClockTime
+    readonly value: number
     static name: string
 }
 class Toc {
@@ -7694,12 +7421,12 @@ class TocEntry {
 }
 abstract class TocSetterInterface {
     /* Fields of Gst-1.0.Gst.TocSetterInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class TracerClass {
     /* Fields of Gst-1.0.Gst.TracerClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 abstract class TracerFactoryClass {
@@ -7713,10 +7440,10 @@ abstract class TracerRecordClass {
 }
 class TypeFind {
     /* Fields of Gst-1.0.Gst.TypeFind */
-    peek: (data: object, offset: number, size: number) => number
-    suggest: (data: object, probability: number, caps: Caps) => void
-    data: object
-    get_length: (data: object) => number
+    readonly peek: (data: object, offset: number, size: number) => number
+    readonly suggest: (data: object, probability: number, caps: Caps) => void
+    readonly data: object
+    readonly get_length: (data: object) => number
     /* Methods of Gst-1.0.Gst.TypeFind */
     suggest_empty_simple(probability: number, media_type: string): void
     static name: string
@@ -7728,11 +7455,11 @@ abstract class TypeFindFactoryClass {
 }
 abstract class URIHandlerInterface {
     /* Fields of Gst-1.0.Gst.URIHandlerInterface */
-    parent: GObject.TypeInterface
-    get_type: (type: GObject.Type) => URIType
-    get_protocols: (type: GObject.Type) => string[]
-    get_uri: (handler: URIHandler) => string | null
-    set_uri: (handler: URIHandler, uri: string) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly get_type: (type: GObject.Type) => URIType
+    readonly get_protocols: (type: GObject.Type) => string[]
+    readonly get_uri: (handler: URIHandler) => string | null
+    readonly set_uri: (handler: URIHandler, uri: string) => boolean
     static name: string
 }
 class Uri {
@@ -7795,16 +7522,16 @@ class Uri {
 }
 class ValueTable {
     /* Fields of Gst-1.0.Gst.ValueTable */
-    type: GObject.Type
-    compare: ValueCompareFunc
-    serialize: ValueSerializeFunc
-    deserialize: ValueDeserializeFunc
-    deserialize_with_pspec: ValueDeserializeWithPSpecFunc
+    readonly type: GObject.Type
+    readonly compare: ValueCompareFunc
+    readonly serialize: ValueSerializeFunc
+    readonly deserialize: ValueDeserializeFunc
+    readonly deserialize_with_pspec: ValueDeserializeWithPSpecFunc
     static name: string
 }
-type ClockID = object
-type ClockTime = number
-type ClockTimeDiff = number
-type ElementFactoryListType = number
+    type ClockID = object
+    type ClockTime = number
+    type ClockTimeDiff = number
+    type ElementFactoryListType = number
 }
 export default Gst;

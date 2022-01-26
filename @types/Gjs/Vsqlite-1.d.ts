@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Vsqlite-1
  */
@@ -18,7 +24,8 @@ export namespace Vsqlite {
 enum ConnectionError {
     INVALID_FILE_ERROR,
 }
-export interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+interface Connection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Vda-1.Vda.Connection */
     parameters?: Vda.ConnectionParameters
 }
 class Connection {
@@ -28,7 +35,7 @@ class Connection {
     readonly is_opened: boolean
     readonly connection_string: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Vsqlite-1.Vsqlite.Connection */
     type_to_gtype(t: number): GObject.Type
     /* Methods of GObject-2.0.GObject.Object */

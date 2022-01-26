@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstMpegts-1.0
  */
@@ -79,18 +85,18 @@ enum ContentNibbleHi {
 }
 enum DVBCodeRate {
     NONE,
-    /* 1_2 (invalid, starts with a number) */
-    /* 2_3 (invalid, starts with a number) */
-    /* 3_4 (invalid, starts with a number) */
-    /* 4_5 (invalid, starts with a number) */
-    /* 5_6 (invalid, starts with a number) */
-    /* 6_7 (invalid, starts with a number) */
-    /* 7_8 (invalid, starts with a number) */
-    /* 8_9 (invalid, starts with a number) */
+    TODO_1_2,
+    TODO_2_3,
+    TODO_3_4,
+    TODO_4_5,
+    TODO_5_6,
+    TODO_6_7,
+    TODO_7_8,
+    TODO_8_9,
     AUTO,
-    /* 3_5 (invalid, starts with a number) */
-    /* 9_10 (invalid, starts with a number) */
-    /* 2_5 (invalid, starts with a number) */
+    TODO_3_5,
+    TODO_9_10,
+    TODO_2_5,
 }
 enum DVBDescriptorType {
     NETWORK_NAME,
@@ -423,9 +429,9 @@ enum SatellitePolarizationType {
     CIRCULAR_RIGHT,
 }
 enum SatelliteRolloff {
-    /* 35 (invalid, starts with a number) */
-    /* 20 (invalid, starts with a number) */
-    /* 25 (invalid, starts with a number) */
+    TODO_35,
+    TODO_20,
+    TODO_25,
     RESERVED,
     AUTO,
 }
@@ -516,13 +522,13 @@ enum SectionTableID {
     CONDITIONAL_ACCESS,
     TS_PROGRAM_MAP,
     TS_DESCRIPTION,
-    /* 14496_SCENE_DESCRIPTION (invalid, starts with a number) */
-    /* 14496_OBJET_DESCRIPTOR (invalid, starts with a number) */
+    TODO_14496_SCENE_DESCRIPTION,
+    TODO_14496_OBJET_DESCRIPTOR,
     METADATA,
     IPMP_CONTROL_INFORMATION,
-    /* 14496_SECTION (invalid, starts with a number) */
-    /* 23001_11_SECTION (invalid, starts with a number) */
-    /* 23001_10_SECTION (invalid, starts with a number) */
+    TODO_14496_SECTION,
+    TODO_23001_11_SECTION,
+    TODO_23001_10_SECTION,
     DSM_CC_MULTIPROTO_ENCAPSULATED_DATA,
     DSM_CC_U_N_MESSAGES,
     DSM_CC_DOWNLOAD_DATA_MESSAGES,
@@ -595,38 +601,38 @@ enum StreamType {
     USER_PRIVATE_EA,
 }
 enum TerrestrialGuardInterval {
-    /* 1_32 (invalid, starts with a number) */
-    /* 1_16 (invalid, starts with a number) */
-    /* 1_8 (invalid, starts with a number) */
-    /* 1_4 (invalid, starts with a number) */
+    TODO_1_32,
+    TODO_1_16,
+    TODO_1_8,
+    TODO_1_4,
     AUTO,
-    /* 1_128 (invalid, starts with a number) */
-    /* 19_128 (invalid, starts with a number) */
-    /* 19_256 (invalid, starts with a number) */
+    TODO_1_128,
+    TODO_19_128,
+    TODO_19_256,
     PN420,
     PN595,
     PN945,
 }
 enum TerrestrialHierarchy {
     NONE,
-    /* 1 (invalid, starts with a number) */
-    /* 2 (invalid, starts with a number) */
-    /* 4 (invalid, starts with a number) */
+    TODO_1,
+    TODO_2,
+    TODO_4,
     AUTO,
 }
 enum TerrestrialTransmissionMode {
-    /* 2K (invalid, starts with a number) */
-    /* 8K (invalid, starts with a number) */
+    TODO_2K,
+    TODO_8K,
     AUTO,
-    /* 4K (invalid, starts with a number) */
-    /* 1K (invalid, starts with a number) */
-    /* 16K (invalid, starts with a number) */
-    /* 32K (invalid, starts with a number) */
+    TODO_4K,
+    TODO_1K,
+    TODO_16K,
+    TODO_32K,
     C1,
     C3780,
 }
 enum RegistrationId {
-    /* 0 (invalid, starts with a number) */
+    TODO_0,
     AC_3,
     CUEI,
     DRAC,
@@ -645,13 +651,13 @@ enum RegistrationId {
     AC_4,
     OTHER_HEVC,
 }
-function descriptor_from_custom(tag: number, data: Uint8Array[]): Descriptor
-function descriptor_from_custom_with_extension(tag: number, tag_extension: number, data: Uint8Array[]): Descriptor
+function descriptor_from_custom(tag: number, data: Uint8Array): Descriptor
+function descriptor_from_custom_with_extension(tag: number, tag_extension: number, data: Uint8Array): Descriptor
 function descriptor_from_dvb_network_name(name: string): Descriptor
 function descriptor_from_dvb_service(service_type: DVBServiceType, service_name?: string | null, service_provider?: string | null): Descriptor
 function descriptor_from_dvb_subtitling(lang: string, type: number, composition: number, ancillary: number): Descriptor
 function descriptor_from_iso_639_language(language: string): Descriptor
-function descriptor_from_registration(format_identifier: string, additional_info: Uint8Array[] | null): Descriptor
+function descriptor_from_registration(format_identifier: string, additional_info: Uint8Array | null): Descriptor
 function descriptor_parse_audio_preselection_dump(source: AudioPreselectionDescriptor): void
 function descriptor_parse_audio_preselection_free(source: AudioPreselectionDescriptor): void
 function dvb_component_descriptor_free(source: ComponentDescriptor): void
@@ -681,35 +687,35 @@ interface PacketizeFunc {
 }
 class AtscEIT {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscEIT */
-    source_id: number
-    protocol_version: number
-    events: AtscEITEvent[]
+    readonly source_id: number
+    readonly protocol_version: number
+    readonly events: AtscEITEvent[]
     static name: string
 }
 class AtscEITEvent {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscEITEvent */
-    event_id: number
-    start_time: number
-    etm_location: number
-    length_in_seconds: number
-    titles: AtscMultString[]
-    descriptors: Descriptor[]
+    readonly event_id: number
+    readonly start_time: number
+    readonly etm_location: number
+    readonly length_in_seconds: number
+    readonly titles: AtscMultString[]
+    readonly descriptors: Descriptor[]
     static name: string
 }
 class AtscETT {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscETT */
-    ett_table_id_extension: number
-    protocol_version: number
-    etm_id: number
-    messages: AtscMultString[]
+    readonly ett_table_id_extension: number
+    readonly protocol_version: number
+    readonly etm_id: number
+    readonly messages: AtscMultString[]
     static name: string
 }
 class AtscMGT {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscMGT */
-    protocol_version: number
-    tables_defined: number
-    tables: AtscMGTTable[]
-    descriptors: Descriptor[]
+    readonly protocol_version: number
+    readonly tables_defined: number
+    readonly tables: AtscMGTTable[]
+    readonly descriptors: Descriptor[]
     static name: string
     static new(): AtscMGT
     constructor()
@@ -718,26 +724,26 @@ class AtscMGT {
 }
 class AtscMGTTable {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscMGTTable */
-    table_type: number
-    pid: number
-    version_number: number
-    number_bytes: number
-    descriptors: Descriptor[]
+    readonly table_type: number
+    readonly pid: number
+    readonly version_number: number
+    readonly number_bytes: number
+    readonly descriptors: Descriptor[]
     static name: string
 }
 class AtscMultString {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscMultString */
-    iso_639_langcode: number[]
-    segments: AtscStringSegment[]
+    readonly iso_639_langcode: number[]
+    readonly segments: AtscStringSegment[]
     static name: string
 }
 class AtscRRT {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscRRT */
-    protocol_version: number
-    names: AtscMultString[]
-    dimensions_defined: number
-    dimensions: AtscRRTDimension[]
-    descriptors: object[]
+    readonly protocol_version: number
+    readonly names: AtscMultString[]
+    readonly dimensions_defined: number
+    readonly dimensions: AtscRRTDimension[]
+    readonly descriptors: object[]
     static name: string
     static new(): AtscRRT
     constructor()
@@ -746,10 +752,10 @@ class AtscRRT {
 }
 class AtscRRTDimension {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscRRTDimension */
-    names: AtscMultString[]
-    graduated_scale: boolean
-    values_defined: number
-    values: AtscRRTDimensionValue[]
+    readonly names: AtscMultString[]
+    readonly graduated_scale: boolean
+    readonly values_defined: number
+    readonly values: AtscRRTDimensionValue[]
     static name: string
     static new(): AtscRRTDimension
     constructor()
@@ -758,8 +764,8 @@ class AtscRRTDimension {
 }
 class AtscRRTDimensionValue {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscRRTDimensionValue */
-    abbrev_ratings: AtscMultString[]
-    ratings: AtscMultString[]
+    readonly abbrev_ratings: AtscMultString[]
+    readonly ratings: AtscMultString[]
     static name: string
     static new(): AtscRRTDimensionValue
     constructor()
@@ -768,14 +774,14 @@ class AtscRRTDimensionValue {
 }
 class AtscSTT {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscSTT */
-    protocol_version: number
-    system_time: number
-    gps_utc_offset: number
-    ds_status: boolean
-    ds_dayofmonth: number
-    ds_hour: number
-    descriptors: Descriptor[]
-    utc_datetime: Gst.DateTime
+    readonly protocol_version: number
+    readonly system_time: number
+    readonly gps_utc_offset: number
+    readonly ds_status: boolean
+    readonly ds_dayofmonth: number
+    readonly ds_hour: number
+    readonly descriptors: Descriptor[]
+    readonly utc_datetime: Gst.DateTime
     /* Methods of GstMpegts-1.0.GstMpegts.AtscSTT */
     get_datetime_utc(): Gst.DateTime
     static name: string
@@ -786,11 +792,11 @@ class AtscSTT {
 }
 class AtscStringSegment {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscStringSegment */
-    compression_type: number
-    mode: number
-    compressed_data_size: number
-    compressed_data: number
-    cached_string: string
+    readonly compression_type: number
+    readonly mode: number
+    readonly compressed_data_size: number
+    readonly compressed_data: number
+    readonly cached_string: string
     /* Methods of GstMpegts-1.0.GstMpegts.AtscStringSegment */
     get_string(): string
     set_string(string: string, compression_type: number, mode: number): boolean
@@ -798,96 +804,96 @@ class AtscStringSegment {
 }
 class AtscVCT {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscVCT */
-    transport_stream_id: number
-    protocol_version: number
-    sources: AtscVCTSource[]
-    descriptors: Descriptor[]
+    readonly transport_stream_id: number
+    readonly protocol_version: number
+    readonly sources: AtscVCTSource[]
+    readonly descriptors: Descriptor[]
     static name: string
 }
 class AtscVCTSource {
     /* Fields of GstMpegts-1.0.GstMpegts.AtscVCTSource */
-    short_name: string
-    major_channel_number: number
-    minor_channel_number: number
-    modulation_mode: number
-    carrier_frequency: number
-    channel_TSID: number
-    program_number: number
-    ETM_location: number
-    access_controlled: boolean
-    hidden: boolean
-    path_select: boolean
-    out_of_band: boolean
-    hide_guide: boolean
-    service_type: number
-    source_id: number
-    descriptors: Descriptor[]
+    readonly short_name: string
+    readonly major_channel_number: number
+    readonly minor_channel_number: number
+    readonly modulation_mode: number
+    readonly carrier_frequency: number
+    readonly channel_TSID: number
+    readonly program_number: number
+    readonly ETM_location: number
+    readonly access_controlled: boolean
+    readonly hidden: boolean
+    readonly path_select: boolean
+    readonly out_of_band: boolean
+    readonly hide_guide: boolean
+    readonly service_type: number
+    readonly source_id: number
+    readonly descriptors: Descriptor[]
     static name: string
 }
 class AudioPreselectionDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.AudioPreselectionDescriptor */
-    preselection_id: number
-    audio_rendering_indication: number
-    audio_description: boolean
-    spoken_subtitles: boolean
-    dialogue_enhancement: boolean
-    interactivity_enabled: boolean
-    language_code_present: boolean
-    text_label_present: boolean
-    multi_stream_info_present: boolean
-    future_extension: boolean
-    language_code: string
-    message_id: number
+    readonly preselection_id: number
+    readonly audio_rendering_indication: number
+    readonly audio_description: boolean
+    readonly spoken_subtitles: boolean
+    readonly dialogue_enhancement: boolean
+    readonly interactivity_enabled: boolean
+    readonly language_code_present: boolean
+    readonly text_label_present: boolean
+    readonly multi_stream_info_present: boolean
+    readonly future_extension: boolean
+    readonly language_code: string
+    readonly message_id: number
     static name: string
 }
 class BAT {
     /* Fields of GstMpegts-1.0.GstMpegts.BAT */
-    descriptors: Descriptor[]
-    streams: BATStream[]
+    readonly descriptors: Descriptor[]
+    readonly streams: BATStream[]
     static name: string
 }
 class BATStream {
     /* Fields of GstMpegts-1.0.GstMpegts.BATStream */
-    transport_stream_id: number
-    original_network_id: number
-    descriptors: object[]
+    readonly transport_stream_id: number
+    readonly original_network_id: number
+    readonly descriptors: object[]
     static name: string
 }
 class CableDeliverySystemDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.CableDeliverySystemDescriptor */
-    frequency: number
-    outer_fec: CableOuterFECScheme
-    modulation: ModulationType
-    symbol_rate: number
-    fec_inner: DVBCodeRate
+    readonly frequency: number
+    readonly outer_fec: CableOuterFECScheme
+    readonly modulation: ModulationType
+    readonly symbol_rate: number
+    readonly fec_inner: DVBCodeRate
     /* Methods of GstMpegts-1.0.GstMpegts.CableDeliverySystemDescriptor */
     free(): void
     static name: string
 }
 class ComponentDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.ComponentDescriptor */
-    stream_content: number
-    component_type: number
-    component_tag: number
-    language_code: string
-    text: string
+    readonly stream_content: number
+    readonly component_type: number
+    readonly component_tag: number
+    readonly language_code: string
+    readonly text: string
     static name: string
 }
 class Content {
     /* Fields of GstMpegts-1.0.GstMpegts.Content */
-    content_nibble_1: ContentNibbleHi
-    content_nibble_2: number
-    user_byte: number
+    readonly content_nibble_1: ContentNibbleHi
+    readonly content_nibble_2: number
+    readonly user_byte: number
     static name: string
 }
 class DVBLinkageDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.DVBLinkageDescriptor */
-    transport_stream_id: number
-    original_network_id: number
-    service_id: number
-    linkage_type: DVBLinkageType
-    private_data_length: number
-    private_data_bytes: number
+    readonly transport_stream_id: number
+    readonly original_network_id: number
+    readonly service_id: number
+    readonly linkage_type: DVBLinkageType
+    readonly private_data_length: number
+    readonly private_data_bytes: number
     /* Methods of GstMpegts-1.0.GstMpegts.DVBLinkageDescriptor */
     free(): void
     get_event(): DVBLinkageEvent
@@ -897,75 +903,75 @@ class DVBLinkageDescriptor {
 }
 class DVBLinkageEvent {
     /* Fields of GstMpegts-1.0.GstMpegts.DVBLinkageEvent */
-    target_event_id: number
-    target_listed: boolean
-    event_simulcast: boolean
+    readonly target_event_id: number
+    readonly target_listed: boolean
+    readonly event_simulcast: boolean
     static name: string
 }
 class DVBLinkageExtendedEvent {
     /* Fields of GstMpegts-1.0.GstMpegts.DVBLinkageExtendedEvent */
-    target_event_id: number
-    target_listed: boolean
-    event_simulcast: boolean
-    link_type: number
-    target_id_type: number
-    original_network_id_flag: boolean
-    service_id_flag: boolean
-    user_defined_id: number
-    target_transport_stream_id: number
-    target_original_network_id: number
-    target_service_id: number
+    readonly target_event_id: number
+    readonly target_listed: boolean
+    readonly event_simulcast: boolean
+    readonly link_type: number
+    readonly target_id_type: number
+    readonly original_network_id_flag: boolean
+    readonly service_id_flag: boolean
+    readonly user_defined_id: number
+    readonly target_transport_stream_id: number
+    readonly target_original_network_id: number
+    readonly target_service_id: number
     static name: string
 }
 class DVBLinkageMobileHandOver {
     /* Fields of GstMpegts-1.0.GstMpegts.DVBLinkageMobileHandOver */
-    hand_over_type: DVBLinkageHandOverType
-    origin_type: boolean
-    network_id: number
-    initial_service_id: number
+    readonly hand_over_type: DVBLinkageHandOverType
+    readonly origin_type: boolean
+    readonly network_id: number
+    readonly initial_service_id: number
     static name: string
 }
 class DVBParentalRatingItem {
     /* Fields of GstMpegts-1.0.GstMpegts.DVBParentalRatingItem */
-    country_code: string
-    rating: number
+    readonly country_code: string
+    readonly rating: number
     static name: string
 }
 class DVBServiceListItem {
     /* Fields of GstMpegts-1.0.GstMpegts.DVBServiceListItem */
-    service_id: number
-    type: DVBServiceType
+    readonly service_id: number
+    readonly type: DVBServiceType
     static name: string
 }
 class DataBroadcastDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.DataBroadcastDescriptor */
-    data_broadcast_id: number
-    component_tag: number
-    length: number
-    selector_bytes: number
-    language_code: string
-    text: string
+    readonly data_broadcast_id: number
+    readonly component_tag: number
+    readonly length: number
+    readonly selector_bytes: number
+    readonly language_code: string
+    readonly text: string
     /* Methods of GstMpegts-1.0.GstMpegts.DataBroadcastDescriptor */
     free(): void
     static name: string
 }
 class Descriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.Descriptor */
-    tag: number
-    tag_extension: number
-    length: number
-    data: number
+    readonly tag: number
+    readonly tag_extension: number
+    readonly length: number
+    readonly data: number
     /* Methods of GstMpegts-1.0.GstMpegts.Descriptor */
     free(): void
     parse_audio_preselection_list(): [ /* returnType */ boolean, /* list */ AudioPreselectionDescriptor[] ]
-    parse_ca(): [ /* returnType */ boolean, /* ca_system_id */ number, /* ca_pid */ number, /* private_data */ Uint8Array[] | null ]
+    parse_ca(): [ /* returnType */ boolean, /* ca_system_id */ number, /* ca_pid */ number, /* private_data */ Uint8Array | null ]
     parse_cable_delivery_system(): [ /* returnType */ boolean, /* res */ CableDeliverySystemDescriptor ]
     parse_dvb_bouquet_name(): [ /* returnType */ boolean, /* bouquet_name */ string | null ]
     parse_dvb_ca_identifier(): [ /* returnType */ boolean, /* list */ number[] ]
     parse_dvb_component(): [ /* returnType */ boolean, /* res */ ComponentDescriptor ]
     parse_dvb_content(): [ /* returnType */ boolean, /* content */ Content[] ]
     parse_dvb_data_broadcast(): [ /* returnType */ boolean, /* res */ DataBroadcastDescriptor ]
-    parse_dvb_data_broadcast_id(): [ /* returnType */ boolean, /* data_broadcast_id */ number, /* id_selector_bytes */ Uint8Array[] ]
+    parse_dvb_data_broadcast_id(): [ /* returnType */ boolean, /* data_broadcast_id */ number, /* id_selector_bytes */ Uint8Array ]
     parse_dvb_extended_event(): [ /* returnType */ boolean, /* res */ ExtendedEventDescriptor ]
     parse_dvb_frequency_list(): [ /* returnType */ boolean, /* offset */ boolean, /* list */ number[] ]
     parse_dvb_linkage(): [ /* returnType */ boolean, /* res */ DVBLinkageDescriptor ]
@@ -975,7 +981,7 @@ class Descriptor {
     parse_dvb_multilingual_service_name(): [ /* returnType */ boolean, /* service_name_items */ DvbMultilingualServiceNameItem[] ]
     parse_dvb_network_name(): [ /* returnType */ boolean, /* name */ string ]
     parse_dvb_parental_rating(): [ /* returnType */ boolean, /* rating */ DVBParentalRatingItem[] ]
-    parse_dvb_private_data_specifier(): [ /* returnType */ boolean, /* private_data_specifier */ number, /* private_data */ Uint8Array[] | null ]
+    parse_dvb_private_data_specifier(): [ /* returnType */ boolean, /* private_data_specifier */ number, /* private_data */ Uint8Array | null ]
     parse_dvb_scrambling(): [ /* returnType */ boolean, /* scrambling_mode */ DVBScramblingModeType ]
     parse_dvb_service(): [ /* returnType */ boolean, /* service_type */ DVBServiceType | null, /* service_name */ string | null, /* provider_name */ string | null ]
     parse_dvb_service_list(): [ /* returnType */ boolean, /* list */ DVBServiceListItem[] ]
@@ -991,112 +997,112 @@ class Descriptor {
     parse_iso_639_language_idx(idx: number): [ /* returnType */ boolean, /* lang */ string, /* audio_type */ Iso639AudioType | null ]
     parse_iso_639_language_nb(): number
     parse_logical_channel(): [ /* returnType */ boolean, /* res */ LogicalChannelDescriptor ]
-    parse_registration(): [ /* returnType */ boolean, /* registration_id */ number, /* additional_info */ Uint8Array[] | null ]
+    parse_registration(): [ /* returnType */ boolean, /* registration_id */ number, /* additional_info */ Uint8Array | null ]
     parse_satellite_delivery_system(): [ /* returnType */ boolean, /* res */ SatelliteDeliverySystemDescriptor ]
     parse_terrestrial_delivery_system(): [ /* returnType */ boolean, /* res */ TerrestrialDeliverySystemDescriptor ]
     static name: string
     /* Static methods and pseudo-constructors */
-    static from_custom(tag: number, data: Uint8Array[]): Descriptor
-    static from_custom_with_extension(tag: number, tag_extension: number, data: Uint8Array[]): Descriptor
+    static from_custom(tag: number, data: Uint8Array): Descriptor
+    static from_custom_with_extension(tag: number, tag_extension: number, data: Uint8Array): Descriptor
     static from_dvb_network_name(name: string): Descriptor
     static from_dvb_service(service_type: DVBServiceType, service_name?: string | null, service_provider?: string | null): Descriptor
     static from_dvb_subtitling(lang: string, type: number, composition: number, ancillary: number): Descriptor
     static from_iso_639_language(language: string): Descriptor
-    static from_registration(format_identifier: string, additional_info: Uint8Array[] | null): Descriptor
+    static from_registration(format_identifier: string, additional_info: Uint8Array | null): Descriptor
     static parse_audio_preselection_dump(source: AudioPreselectionDescriptor): void
     static parse_audio_preselection_free(source: AudioPreselectionDescriptor): void
 }
 class DvbMultilingualBouquetNameItem {
     /* Fields of GstMpegts-1.0.GstMpegts.DvbMultilingualBouquetNameItem */
-    language_code: string
-    bouquet_name: string
+    readonly language_code: string
+    readonly bouquet_name: string
     static name: string
 }
 class DvbMultilingualComponentItem {
     /* Fields of GstMpegts-1.0.GstMpegts.DvbMultilingualComponentItem */
-    language_code: string
-    description: string
+    readonly language_code: string
+    readonly description: string
     static name: string
 }
 class DvbMultilingualNetworkNameItem {
     /* Fields of GstMpegts-1.0.GstMpegts.DvbMultilingualNetworkNameItem */
-    language_code: string
-    network_name: string
+    readonly language_code: string
+    readonly network_name: string
     static name: string
 }
 class DvbMultilingualServiceNameItem {
     /* Fields of GstMpegts-1.0.GstMpegts.DvbMultilingualServiceNameItem */
-    language_code: string
-    provider_name: string
-    service_name: string
+    readonly language_code: string
+    readonly provider_name: string
+    readonly service_name: string
     static name: string
 }
 class EIT {
     /* Fields of GstMpegts-1.0.GstMpegts.EIT */
-    transport_stream_id: number
-    original_network_id: number
-    segment_last_section_number: number
-    last_table_id: number
-    actual_stream: boolean
-    present_following: boolean
-    events: EITEvent[]
+    readonly transport_stream_id: number
+    readonly original_network_id: number
+    readonly segment_last_section_number: number
+    readonly last_table_id: number
+    readonly actual_stream: boolean
+    readonly present_following: boolean
+    readonly events: EITEvent[]
     static name: string
 }
 class EITEvent {
     /* Fields of GstMpegts-1.0.GstMpegts.EITEvent */
-    event_id: number
-    start_time: Gst.DateTime
-    duration: number
-    running_status: RunningStatus
-    free_CA_mode: boolean
-    descriptors: Descriptor[]
+    readonly event_id: number
+    readonly start_time: Gst.DateTime
+    readonly duration: number
+    readonly running_status: RunningStatus
+    readonly free_CA_mode: boolean
+    readonly descriptors: Descriptor[]
     static name: string
 }
 class ExtendedEventDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.ExtendedEventDescriptor */
-    descriptor_number: number
-    last_descriptor_number: number
-    language_code: string
-    items: ExtendedEventItem[]
-    text: string
+    readonly descriptor_number: number
+    readonly last_descriptor_number: number
+    readonly language_code: string
+    readonly items: ExtendedEventItem[]
+    readonly text: string
     /* Methods of GstMpegts-1.0.GstMpegts.ExtendedEventDescriptor */
     free(): void
     static name: string
 }
 class ExtendedEventItem {
     /* Fields of GstMpegts-1.0.GstMpegts.ExtendedEventItem */
-    item_description: string
-    item: string
+    readonly item_description: string
+    readonly item: string
     static name: string
 }
 class ISO639LanguageDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.ISO639LanguageDescriptor */
-    nb_language: number
-    language: string[]
-    audio_type: Iso639AudioType[]
+    readonly nb_language: number
+    readonly language: string[]
+    readonly audio_type: Iso639AudioType[]
     /* Methods of GstMpegts-1.0.GstMpegts.ISO639LanguageDescriptor */
     descriptor_free(): void
     static name: string
 }
 class LogicalChannel {
     /* Fields of GstMpegts-1.0.GstMpegts.LogicalChannel */
-    service_id: number
-    visible_service: boolean
-    logical_channel_number: number
+    readonly service_id: number
+    readonly visible_service: boolean
+    readonly logical_channel_number: number
     static name: string
 }
 class LogicalChannelDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.LogicalChannelDescriptor */
-    nb_channels: number
-    channels: LogicalChannel[]
+    readonly nb_channels: number
+    readonly channels: LogicalChannel[]
     static name: string
 }
 class NIT {
     /* Fields of GstMpegts-1.0.GstMpegts.NIT */
-    actual_network: boolean
-    network_id: number
-    descriptors: Descriptor[]
-    streams: NITStream[]
+    readonly actual_network: boolean
+    readonly network_id: number
+    readonly descriptors: Descriptor[]
+    readonly streams: NITStream[]
     static name: string
     static new(): NIT
     constructor()
@@ -1105,9 +1111,9 @@ class NIT {
 }
 class NITStream {
     /* Fields of GstMpegts-1.0.GstMpegts.NITStream */
-    transport_stream_id: number
-    original_network_id: number
-    descriptors: Descriptor[]
+    readonly transport_stream_id: number
+    readonly original_network_id: number
+    readonly descriptors: Descriptor[]
     static name: string
     static new(): NITStream
     constructor()
@@ -1116,10 +1122,10 @@ class NITStream {
 }
 class PMT {
     /* Fields of GstMpegts-1.0.GstMpegts.PMT */
-    pcr_pid: number
-    program_number: number
-    descriptors: Descriptor[]
-    streams: PMTStream[]
+    readonly pcr_pid: number
+    readonly program_number: number
+    readonly descriptors: Descriptor[]
+    readonly streams: PMTStream[]
     static name: string
     static new(): PMT
     constructor()
@@ -1128,9 +1134,9 @@ class PMT {
 }
 class PMTStream {
     /* Fields of GstMpegts-1.0.GstMpegts.PMTStream */
-    stream_type: number
-    pid: number
-    descriptors: Descriptor[]
+    readonly stream_type: number
+    readonly pid: number
+    readonly descriptors: Descriptor[]
     static name: string
     static new(): PMTStream
     constructor()
@@ -1139,8 +1145,8 @@ class PMTStream {
 }
 class PatProgram {
     /* Fields of GstMpegts-1.0.GstMpegts.PatProgram */
-    program_number: number
-    network_or_program_map_PID: number
+    readonly program_number: number
+    readonly network_or_program_map_PID: number
     static name: string
     static new(): PatProgram
     constructor()
@@ -1149,19 +1155,19 @@ class PatProgram {
 }
 class SCTESIT {
     /* Fields of GstMpegts-1.0.GstMpegts.SCTESIT */
-    encrypted_packet: boolean
-    encryption_algorithm: number
-    pts_adjustment: number
-    cw_index: number
-    tier: number
-    splice_command_length: number
-    splice_command_type: SCTESpliceCommandType
-    splice_time_specified: boolean
-    splice_time: number
-    splices: object[]
-    descriptors: object[]
-    fully_parsed: boolean
-    is_running_time: boolean
+    readonly encrypted_packet: boolean
+    readonly encryption_algorithm: number
+    readonly pts_adjustment: number
+    readonly cw_index: number
+    readonly tier: number
+    readonly splice_command_length: number
+    readonly splice_command_type: SCTESpliceCommandType
+    readonly splice_time_specified: boolean
+    readonly splice_time: number
+    readonly splices: object[]
+    readonly descriptors: object[]
+    readonly fully_parsed: boolean
+    readonly is_running_time: boolean
     static name: string
     static new(): SCTESIT
     constructor()
@@ -1170,10 +1176,10 @@ class SCTESIT {
 }
 class SCTESpliceComponent {
     /* Fields of GstMpegts-1.0.GstMpegts.SCTESpliceComponent */
-    tag: number
-    splice_time_specified: boolean
-    splice_time: number
-    utc_splice_time: number
+    readonly tag: number
+    readonly splice_time_specified: boolean
+    readonly splice_time: number
+    readonly utc_splice_time: number
     static name: string
     static new(tag: number): SCTESpliceComponent
     constructor(tag: number)
@@ -1182,22 +1188,22 @@ class SCTESpliceComponent {
 }
 class SCTESpliceEvent {
     /* Fields of GstMpegts-1.0.GstMpegts.SCTESpliceEvent */
-    insert_event: boolean
-    splice_event_id: number
-    splice_event_cancel_indicator: boolean
-    out_of_network_indicator: boolean
-    program_splice_flag: boolean
-    duration_flag: boolean
-    splice_immediate_flag: boolean
-    program_splice_time_specified: boolean
-    program_splice_time: number
-    utc_splice_time: number
-    components: object[]
-    break_duration_auto_return: boolean
-    break_duration: number
-    unique_program_id: number
-    avail_num: number
-    avails_expected: number
+    readonly insert_event: boolean
+    readonly splice_event_id: number
+    readonly splice_event_cancel_indicator: boolean
+    readonly out_of_network_indicator: boolean
+    readonly program_splice_flag: boolean
+    readonly duration_flag: boolean
+    readonly splice_immediate_flag: boolean
+    readonly program_splice_time_specified: boolean
+    readonly program_splice_time: number
+    readonly utc_splice_time: number
+    readonly components: object[]
+    readonly break_duration_auto_return: boolean
+    readonly break_duration: number
+    readonly unique_program_id: number
+    readonly avail_num: number
+    readonly avails_expected: number
     static name: string
     static new(): SCTESpliceEvent
     constructor()
@@ -1206,10 +1212,10 @@ class SCTESpliceEvent {
 }
 class SDT {
     /* Fields of GstMpegts-1.0.GstMpegts.SDT */
-    original_network_id: number
-    actual_ts: boolean
-    transport_stream_id: number
-    services: SDTService[]
+    readonly original_network_id: number
+    readonly actual_ts: boolean
+    readonly transport_stream_id: number
+    readonly services: SDTService[]
     static name: string
     static new(): SDT
     constructor()
@@ -1218,12 +1224,12 @@ class SDT {
 }
 class SDTService {
     /* Fields of GstMpegts-1.0.GstMpegts.SDTService */
-    service_id: number
-    EIT_schedule_flag: boolean
-    EIT_present_following_flag: boolean
-    running_status: RunningStatus
-    free_CA_mode: boolean
-    descriptors: Descriptor[]
+    readonly service_id: number
+    readonly EIT_schedule_flag: boolean
+    readonly EIT_present_following_flag: boolean
+    readonly running_status: RunningStatus
+    readonly free_CA_mode: boolean
+    readonly descriptors: Descriptor[]
     static name: string
     static new(): SDTService
     constructor()
@@ -1232,41 +1238,41 @@ class SDTService {
 }
 class SIT {
     /* Fields of GstMpegts-1.0.GstMpegts.SIT */
-    descriptors: Descriptor[]
-    services: SITService[]
+    readonly descriptors: Descriptor[]
+    readonly services: SITService[]
     static name: string
 }
 class SITService {
     /* Fields of GstMpegts-1.0.GstMpegts.SITService */
-    service_id: number
-    running_status: RunningStatus
-    descriptors: Descriptor[]
+    readonly service_id: number
+    readonly running_status: RunningStatus
+    readonly descriptors: Descriptor[]
     static name: string
 }
 class SatelliteDeliverySystemDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.SatelliteDeliverySystemDescriptor */
-    frequency: number
-    orbital_position: number
-    west_east: boolean
-    polarization: SatellitePolarizationType
-    roll_off: SatelliteRolloff
-    modulation_system: boolean
-    modulation_type: ModulationType
-    symbol_rate: number
-    fec_inner: DVBCodeRate
+    readonly frequency: number
+    readonly orbital_position: number
+    readonly west_east: boolean
+    readonly polarization: SatellitePolarizationType
+    readonly roll_off: SatelliteRolloff
+    readonly modulation_system: boolean
+    readonly modulation_type: ModulationType
+    readonly symbol_rate: number
+    readonly fec_inner: DVBCodeRate
     static name: string
 }
 class Section {
     /* Fields of GstMpegts-1.0.GstMpegts.Section */
-    section_type: SectionType
-    pid: number
-    table_id: number
-    subtable_extension: number
-    version_number: number
-    current_next_indicator: boolean
-    section_number: number
-    last_section_number: number
-    crc: number
+    readonly section_type: SectionType
+    readonly pid: number
+    readonly table_id: number
+    readonly subtable_extension: number
+    readonly version_number: number
+    readonly current_next_indicator: boolean
+    readonly section_number: number
+    readonly last_section_number: number
+    readonly crc: number
     /* Methods of GstMpegts-1.0.GstMpegts.Section */
     get_atsc_cvct(): AtscVCT
     get_atsc_eit(): AtscEIT
@@ -1291,10 +1297,10 @@ class Section {
     packetize(): [ /* returnType */ number, /* output_size */ number ]
     send_event(element: Gst.Element): boolean
     static name: string
-    static new(pid: number, data: Uint8Array[]): Section
-    constructor(pid: number, data: Uint8Array[])
+    static new(pid: number, data: Uint8Array): Section
+    constructor(pid: number, data: Uint8Array)
     /* Static methods and pseudo-constructors */
-    static new(pid: number, data: Uint8Array[]): Section
+    static new(pid: number, data: Uint8Array): Section
     static from_atsc_mgt(mgt: AtscMGT): Section
     static from_atsc_rrt(rrt: AtscRRT): Section
     static from_atsc_stt(stt: AtscSTT): Section
@@ -1306,52 +1312,52 @@ class Section {
 }
 class T2DeliverySystemCell {
     /* Fields of GstMpegts-1.0.GstMpegts.T2DeliverySystemCell */
-    cell_id: number
-    centre_frequencies: number[]
-    sub_cells: T2DeliverySystemCellExtension[]
+    readonly cell_id: number
+    readonly centre_frequencies: number[]
+    readonly sub_cells: T2DeliverySystemCellExtension[]
     static name: string
 }
 class T2DeliverySystemCellExtension {
     /* Fields of GstMpegts-1.0.GstMpegts.T2DeliverySystemCellExtension */
-    cell_id_extension: number
-    transposer_frequency: number
+    readonly cell_id_extension: number
+    readonly transposer_frequency: number
     static name: string
 }
 class T2DeliverySystemDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.T2DeliverySystemDescriptor */
-    plp_id: number
-    t2_system_id: number
-    siso_miso: number
-    bandwidth: number
-    guard_interval: TerrestrialGuardInterval
-    transmission_mode: TerrestrialTransmissionMode
-    other_frequency: boolean
-    tfs: boolean
-    cells: T2DeliverySystemCell[]
+    readonly plp_id: number
+    readonly t2_system_id: number
+    readonly siso_miso: number
+    readonly bandwidth: number
+    readonly guard_interval: TerrestrialGuardInterval
+    readonly transmission_mode: TerrestrialTransmissionMode
+    readonly other_frequency: boolean
+    readonly tfs: boolean
+    readonly cells: T2DeliverySystemCell[]
     /* Methods of GstMpegts-1.0.GstMpegts.T2DeliverySystemDescriptor */
     free(): void
     static name: string
 }
 class TOT {
     /* Fields of GstMpegts-1.0.GstMpegts.TOT */
-    utc_time: Gst.DateTime
-    descriptors: Descriptor[]
+    readonly utc_time: Gst.DateTime
+    readonly descriptors: Descriptor[]
     static name: string
 }
 class TerrestrialDeliverySystemDescriptor {
     /* Fields of GstMpegts-1.0.GstMpegts.TerrestrialDeliverySystemDescriptor */
-    frequency: number
-    bandwidth: number
-    priority: boolean
-    time_slicing: boolean
-    mpe_fec: boolean
-    constellation: ModulationType
-    hierarchy: TerrestrialHierarchy
-    code_rate_hp: DVBCodeRate
-    code_rate_lp: DVBCodeRate
-    guard_interval: TerrestrialGuardInterval
-    transmission_mode: TerrestrialTransmissionMode
-    other_frequency: boolean
+    readonly frequency: number
+    readonly bandwidth: number
+    readonly priority: boolean
+    readonly time_slicing: boolean
+    readonly mpe_fec: boolean
+    readonly constellation: ModulationType
+    readonly hierarchy: TerrestrialHierarchy
+    readonly code_rate_hp: DVBCodeRate
+    readonly code_rate_lp: DVBCodeRate
+    readonly guard_interval: TerrestrialGuardInterval
+    readonly transmission_mode: TerrestrialTransmissionMode
+    readonly other_frequency: boolean
     static name: string
 }
 }

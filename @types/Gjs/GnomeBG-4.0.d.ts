@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GnomeBG-4.0
  */
@@ -18,11 +24,11 @@ import type HarfBuzz from './HarfBuzz-0.0';
 
 export namespace GnomeBG {
 
-export interface BG_ConstructProps extends GObject.Object_ConstructProps {
+interface BG_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BG {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeBG-4.0.GnomeBG.BG */
     changes_with_time(): boolean
     create_frame_thumbnail(factory: GnomeDesktop.DesktopThumbnailFactory, screen_area: cairo.RectangleInt, dest_width: number, dest_height: number, frame_num: number): GdkPixbuf.Pixbuf
@@ -92,7 +98,8 @@ class BG {
     static new(): BG
     static $gtype: GObject.Type
 }
-export interface BGSlideShow_ConstructProps extends GObject.Object_ConstructProps {
+interface BGSlideShow_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GnomeBG-4.0.GnomeBG.BGSlideShow */
     file?: Gio.File
 }
 class BGSlideShow {
@@ -100,11 +107,8 @@ class BGSlideShow {
     readonly has_multiple_sizes: boolean
     readonly start_time: number
     readonly total_duration: number
-    /* Fields of GnomeBG-4.0.GnomeBG.BGSlideShow */
-    parent_object: GObject.Object
-    priv: BGSlideShowPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeBG-4.0.GnomeBG.BGSlideShow */
     get_current_slide(width: number, height: number): [ /* progress */ number | null, /* duration */ number | null, /* is_fixed */ boolean | null, /* file1 */ string | null, /* file2 */ string | null ]
     get_has_multiple_sizes(): boolean
@@ -170,7 +174,7 @@ abstract class BGClass {
 }
 abstract class BGSlideShowClass {
     /* Fields of GnomeBG-4.0.GnomeBG.BGSlideShowClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class BGSlideShowPrivate {

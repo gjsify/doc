@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PackageKitGlib-1.0
  */
@@ -398,24 +404,24 @@ enum OfflineFlags {
     NONE,
     INTERACTIVE,
 }
-export const DBUS_INTERFACE: string
-export const DBUS_INTERFACE_OFFLINE: string
-export const DBUS_INTERFACE_TRANSACTION: string
-export const DBUS_PATH: string
-export const DBUS_SERVICE: string
-export const DESKTOP_DEFAULT_APPLICATION_DIR: string
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const OFFLINE_DESTDIR: string
-export const OFFLINE_RESULTS_GROUP: string
-export const PACKAGE_IDS_DELIM: string
-export const PACKAGE_ID_ARCH: number
-export const PACKAGE_ID_DATA: number
-export const PACKAGE_ID_NAME: number
-export const PACKAGE_ID_VERSION: number
-export const SYSTEM_PACKAGE_CACHE_FILENAME: string
-export const SYSTEM_PACKAGE_LIST_FILENAME: string
+const DBUS_INTERFACE: string
+const DBUS_INTERFACE_OFFLINE: string
+const DBUS_INTERFACE_TRANSACTION: string
+const DBUS_PATH: string
+const DBUS_SERVICE: string
+const DESKTOP_DEFAULT_APPLICATION_DIR: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const OFFLINE_DESTDIR: string
+const OFFLINE_RESULTS_GROUP: string
+const PACKAGE_IDS_DELIM: string
+const PACKAGE_ID_ARCH: number
+const PACKAGE_ID_DATA: number
+const PACKAGE_ID_NAME: number
+const PACKAGE_ID_VERSION: number
+const SYSTEM_PACKAGE_CACHE_FILENAME: string
+const SYSTEM_PACKAGE_LIST_FILENAME: string
 function authorize_type_enum_from_string(authorize_type: string): AuthorizeEnum
 function authorize_type_enum_to_string(authorize_type: AuthorizeEnum): string
 function client_error_quark(): GLib.Quark
@@ -510,7 +516,8 @@ interface PackageSackFilterFunc {
 interface ProgressCallback {
     (progress: Progress, type: ProgressType): void
 }
-export interface Category_ConstructProps extends Source_ConstructProps {
+interface Category_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Category */
     cat_id?: string
     icon?: string
     name?: string
@@ -527,11 +534,11 @@ class Category {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Category */
-    parent: Source
-    priv: CategoryPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Category */
     get_icon(): string
     get_id(): string
@@ -600,9 +607,12 @@ class Category {
     _init (config?: Category_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Category
+    /* Function overloads */
+    static new(): Category
     static $gtype: GObject.Type
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Client */
     background?: boolean
     cache_age?: number
     interactive?: boolean
@@ -615,11 +625,8 @@ class Client {
     readonly idle: boolean
     interactive: boolean
     locale: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Client */
-    parent: GObject.Object
-    priv: ClientPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Client */
     accept_eula(eula_id: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     accept_eula_async(eula_id: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
@@ -758,14 +765,11 @@ class Client {
     static create_helper_argv_envp(argv: string, envp_out: string): boolean
     static $gtype: GObject.Type
 }
-export interface ClientHelper_ConstructProps extends GObject.Object_ConstructProps {
+interface ClientHelper_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ClientHelper {
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.ClientHelper */
-    parent: GObject.Object
-    priv: ClientHelperPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.ClientHelper */
     is_active(): boolean
     start(socket_filename: string, argv: string, envp: string): boolean
@@ -816,7 +820,8 @@ class ClientHelper {
     static new(): ClientHelper
     static $gtype: GObject.Type
 }
-export interface Control_ConstructProps extends GObject.Object_ConstructProps {
+interface Control_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Control */
     backend_author?: string
     backend_description?: string
     backend_name?: string
@@ -847,11 +852,8 @@ class Control {
     readonly version_major: number
     readonly version_micro: number
     readonly version_minor: number
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Control */
-    parent: GObject.Object
-    priv: ControlPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Control */
     can_authorize_async(action_id: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     can_authorize_finish(res: Gio.AsyncResult): AuthorizeEnum
@@ -971,14 +973,11 @@ class Control {
     static new(): Control
     static $gtype: GObject.Type
 }
-export interface Desktop_ConstructProps extends GObject.Object_ConstructProps {
+interface Desktop_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Desktop {
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Desktop */
-    parent: GObject.Object
-    priv: DesktopPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Desktop */
     get_files_for_package(package: string): string[]
     get_package_for_file(filename: string): string
@@ -1029,7 +1028,8 @@ class Desktop {
     static new(): Desktop
     static $gtype: GObject.Type
 }
-export interface Details_ConstructProps extends Source_ConstructProps {
+interface Details_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Details */
     description?: string
     download_size?: number
     group?: GroupEnum
@@ -1052,11 +1052,11 @@ class Details {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Details */
-    parent: Source
-    priv: DetailsPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Details */
     get_description(): string
     get_download_size(): number
@@ -1129,9 +1129,12 @@ class Details {
     _init (config?: Details_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Details
+    /* Function overloads */
+    static new(): Details
     static $gtype: GObject.Type
 }
-export interface DistroUpgrade_ConstructProps extends Source_ConstructProps {
+interface DistroUpgrade_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.DistroUpgrade */
     name?: string
     state?: DistroUpgradeEnum
     summary?: string
@@ -1144,11 +1147,11 @@ class DistroUpgrade {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.DistroUpgrade */
-    parent: Source
-    priv: DistroUpgradePrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.DistroUpgrade */
     get_id(): string
     get_state(): DistroUpgradeEnum
@@ -1206,9 +1209,12 @@ class DistroUpgrade {
     _init (config?: DistroUpgrade_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DistroUpgrade
+    /* Function overloads */
+    static new(): DistroUpgrade
     static $gtype: GObject.Type
 }
-export interface Error_ConstructProps extends Source_ConstructProps {
+interface Error_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Error */
     code?: ErrorEnum
     details?: string
 }
@@ -1219,11 +1225,11 @@ class Error {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Error */
-    parent: Source
-    priv: ErrorPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Error */
     get_code(): ErrorEnum
     get_details(): string
@@ -1278,9 +1284,12 @@ class Error {
     _init (config?: Error_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Error
+    /* Function overloads */
+    static new(): Error
     static $gtype: GObject.Type
 }
-export interface EulaRequired_ConstructProps extends Source_ConstructProps {
+interface EulaRequired_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.EulaRequired */
     eula_id?: string
     license_agreement?: string
     package_id?: string
@@ -1295,11 +1304,11 @@ class EulaRequired {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.EulaRequired */
-    parent: Source
-    priv: EulaRequiredPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.EulaRequired */
     get_eula_id(): string
     get_license_agreement(): string
@@ -1360,9 +1369,12 @@ class EulaRequired {
     _init (config?: EulaRequired_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): EulaRequired
+    /* Function overloads */
+    static new(): EulaRequired
     static $gtype: GObject.Type
 }
-export interface Files_ConstructProps extends Source_ConstructProps {
+interface Files_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Files */
     files?: string[]
     package_id?: string
 }
@@ -1373,11 +1385,11 @@ class Files {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Files */
-    parent: Source
-    priv: FilesPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Files */
     get_files(): string[]
     get_package_id(): string
@@ -1432,9 +1444,12 @@ class Files {
     _init (config?: Files_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Files
+    /* Function overloads */
+    static new(): Files
     static $gtype: GObject.Type
 }
-export interface ItemProgress_ConstructProps extends Source_ConstructProps {
+interface ItemProgress_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.ItemProgress */
     package_id?: string
     percentage?: number
     status?: number
@@ -1447,11 +1462,11 @@ class ItemProgress {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.ItemProgress */
-    parent: Source
-    priv: ItemProgressPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.ItemProgress */
     get_package_id(): string
     get_percentage(): number
@@ -1509,9 +1524,12 @@ class ItemProgress {
     _init (config?: ItemProgress_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): ItemProgress
+    /* Function overloads */
+    static new(): ItemProgress
     static $gtype: GObject.Type
 }
-export interface MediaChangeRequired_ConstructProps extends Source_ConstructProps {
+interface MediaChangeRequired_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.MediaChangeRequired */
     media_id?: string
     media_text?: string
     media_type?: MediaTypeEnum
@@ -1524,11 +1542,11 @@ class MediaChangeRequired {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.MediaChangeRequired */
-    parent: Source
-    priv: MediaChangeRequiredPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1582,9 +1600,12 @@ class MediaChangeRequired {
     _init (config?: MediaChangeRequired_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): MediaChangeRequired
+    /* Function overloads */
+    static new(): MediaChangeRequired
     static $gtype: GObject.Type
 }
-export interface Package_ConstructProps extends Source_ConstructProps {
+interface Package_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Package */
     description?: string
     group?: GroupEnum
     info?: InfoEnum
@@ -1630,11 +1651,11 @@ class Package {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Package */
-    parent: Source
-    priv: PackagePrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Package */
     equal(package2: Package): boolean
     equal_id(package2: Package): boolean
@@ -1745,6 +1766,8 @@ class Package {
     _init (config?: Package_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Package
+    /* Function overloads */
+    static new(): Package
     static id_build(name: string, version: string, arch: string, data: string): string
     static id_check(package_id: string): boolean
     static id_equal_fuzzy_arch(package_id1: string, package_id2: string): boolean
@@ -1760,14 +1783,11 @@ class Package {
     static ids_to_string(package_ids: string): string
     static $gtype: GObject.Type
 }
-export interface PackageSack_ConstructProps extends GObject.Object_ConstructProps {
+interface PackageSack_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PackageSack {
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.PackageSack */
-    parent: GObject.Object
-    priv: PackageSackPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.PackageSack */
     add_package(package: Package): boolean
     add_package_by_id(package_id: string): boolean
@@ -1840,7 +1860,8 @@ class PackageSack {
     static new(): PackageSack
     static $gtype: GObject.Type
 }
-export interface Progress_ConstructProps extends GObject.Object_ConstructProps {
+interface Progress_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Progress */
     allow_cancel?: boolean
     caller_active?: boolean
     download_size_remaining?: number
@@ -1874,11 +1895,8 @@ class Progress {
     transaction_flags: number
     transaction_id: string
     uid: number
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Progress */
-    parent: GObject.Object
-    priv: ProgressPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Progress */
     get_allow_cancel(): boolean
     get_caller_active(): boolean
@@ -1985,7 +2003,8 @@ class Progress {
     static new(): Progress
     static $gtype: GObject.Type
 }
-export interface RepoDetail_ConstructProps extends Source_ConstructProps {
+interface RepoDetail_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.RepoDetail */
     description?: string
     enabled?: boolean
     repo_id?: string
@@ -1998,11 +2017,11 @@ class RepoDetail {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.RepoDetail */
-    parent: Source
-    priv: RepoDetailPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.RepoDetail */
     get_description(): string
     get_enabled(): boolean
@@ -2060,9 +2079,12 @@ class RepoDetail {
     _init (config?: RepoDetail_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): RepoDetail
+    /* Function overloads */
+    static new(): RepoDetail
     static $gtype: GObject.Type
 }
-export interface RepoSignatureRequired_ConstructProps extends Source_ConstructProps {
+interface RepoSignatureRequired_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.RepoSignatureRequired */
     key_fingerprint?: string
     key_id?: string
     key_timestamp?: string
@@ -2085,11 +2107,11 @@ class RepoSignatureRequired {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.RepoSignatureRequired */
-    parent: Source
-    priv: RepoSignatureRequiredPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2153,9 +2175,12 @@ class RepoSignatureRequired {
     _init (config?: RepoSignatureRequired_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): RepoSignatureRequired
+    /* Function overloads */
+    static new(): RepoSignatureRequired
     static $gtype: GObject.Type
 }
-export interface RequireRestart_ConstructProps extends Source_ConstructProps {
+interface RequireRestart_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.RequireRestart */
     package_id?: string
     restart?: RestartEnum
 }
@@ -2166,11 +2191,11 @@ class RequireRestart {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.RequireRestart */
-    parent: Source
-    priv: RequireRestartPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2222,9 +2247,12 @@ class RequireRestart {
     _init (config?: RequireRestart_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): RequireRestart
+    /* Function overloads */
+    static new(): RequireRestart
     static $gtype: GObject.Type
 }
-export interface Results_ConstructProps extends GObject.Object_ConstructProps {
+interface Results_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Results */
     inputs?: number
     progress?: Progress
     role?: RoleEnum
@@ -2236,11 +2264,8 @@ class Results {
     progress: Progress
     role: RoleEnum
     transaction_flags: number
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Results */
-    parent: GObject.Object
-    priv: ResultsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Results */
     add_category(item: Category): boolean
     add_details(item: Details): boolean
@@ -2328,7 +2353,8 @@ class Results {
     static new(): Results
     static $gtype: GObject.Type
 }
-export interface Source_ConstructProps extends GObject.Object_ConstructProps {
+interface Source_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role?: RoleEnum
     transaction_id?: string
 }
@@ -2336,11 +2362,8 @@ class Source {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
-    parent: GObject.Object
-    priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2390,7 +2413,8 @@ class Source {
     static new(): Source
     static $gtype: GObject.Type
 }
-export interface Task_ConstructProps extends Client_ConstructProps {
+interface Task_ConstructProps extends Client_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.Task */
     allow_downgrade?: boolean
     allow_reinstall?: boolean
     only_download?: boolean
@@ -2410,11 +2434,11 @@ class Task {
     readonly idle: boolean
     interactive: boolean
     locale: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Task */
-    parent: Client
-    priv: TaskPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Client */
+    readonly parent: GObject.Object
+    readonly priv: ClientPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.Task */
     depends_on_async(filters: Bitfield, package_ids: string[], recursive: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     depends_on_sync(filters: Bitfield, package_ids: string[], recursive: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
@@ -2483,16 +2507,22 @@ class Task {
     adopt(transaction_id: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     adopt_async(transaction_id: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     depends_on(filters: Bitfield, package_ids: string[], recursive: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    depends_on_async(filters: Bitfield, package_ids: string[], recursive: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     download_packages(package_ids: string[], directory: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    download_packages_async(package_ids: string[], directory: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
+    generic_finish(res: Gio.AsyncResult): Results
     get_background(): boolean
     get_cache_age(): number
     get_categories(cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    get_categories_async(cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_details(package_ids: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    get_details_async(package_ids: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_details_local(files: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     get_details_local_async(files: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_distro_upgrades(cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     get_distro_upgrades_async(cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_files(package_ids: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    get_files_async(package_ids: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_files_local(files: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     get_files_local_async(files: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_idle(): boolean
@@ -2501,12 +2531,16 @@ class Task {
     get_old_transactions(number: number, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     get_old_transactions_async(number: number, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_packages(filters: Bitfield, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    get_packages_async(filters: Bitfield, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_progress(transaction_id: string, cancellable?: Gio.Cancellable | null): Progress
     get_progress_async(transaction_id: string, cancellable?: Gio.Cancellable | null, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_progress_finish(res: Gio.AsyncResult): Progress
     get_repo_list(filters: Bitfield, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    get_repo_list_async(filters: Bitfield, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_update_detail(package_ids: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    get_update_detail_async(package_ids: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     get_updates(filters: Bitfield, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    get_updates_async(filters: Bitfield, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     install_files(transaction_flags: Bitfield, files: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     install_files_async(transaction_flags: Bitfield, files: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     install_packages(transaction_flags: Bitfield, package_ids: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
@@ -2514,21 +2548,29 @@ class Task {
     install_signature(type: SigTypeEnum, key_id: string, package_id: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     install_signature_async(type: SigTypeEnum, key_id: string, package_id: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     refresh_cache(force: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    refresh_cache_async(force: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     remove_packages(transaction_flags: Bitfield, package_ids: string[], allow_deps: boolean, autoremove: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     remove_packages_async(transaction_flags: Bitfield, package_ids: string[], allow_deps: boolean, autoremove: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     repair_system(transaction_flags: Bitfield, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     repair_system_async(transaction_flags: Bitfield, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     repo_enable(repo_id: string, enabled: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    repo_enable_async(repo_id: string, enabled: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     repo_remove(transaction_flags: Bitfield, repo_id: string, autoremove: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     repo_remove_async(transaction_flags: Bitfield, repo_id: string, autoremove: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     repo_set_data(repo_id: string, parameter: string, value: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     repo_set_data_async(repo_id: string, parameter: string, value: string, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     required_by(filters: Bitfield, package_ids: string[], recursive: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    required_by_async(filters: Bitfield, package_ids: string[], recursive: boolean, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     resolve(filters: Bitfield, packages: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    resolve_async(filters: Bitfield, packages: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     search_details(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    search_details_async(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     search_files(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    search_files_async(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     search_groups(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    search_groups_async(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     search_names(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    search_names_async(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     set_background(background: boolean): void
     set_cache_age(cache_age: number): void
     set_interactive(interactive: boolean): void
@@ -2538,6 +2580,7 @@ class Task {
     upgrade_system(transaction_flags: Bitfield, distro_id: string, upgrade_kind: UpgradeKindEnum, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
     upgrade_system_async(transaction_flags: Bitfield, distro_id: string, upgrade_kind: UpgradeKindEnum, cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     what_provides(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback): Results
+    what_provides_async(filters: Bitfield, values: string[], cancellable: Gio.Cancellable | null, progress_callback: ProgressCallback, callback_ready?: Gio.AsyncReadyCallback | null): void
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2610,16 +2653,15 @@ class Task {
     _init (config?: Task_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Task
+    /* Function overloads */
+    static new(): Task
     static $gtype: GObject.Type
 }
-export interface TransactionList_ConstructProps extends GObject.Object_ConstructProps {
+interface TransactionList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TransactionList {
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.TransactionList */
-    parent: GObject.Object
-    priv: TransactionListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.TransactionList */
     get_ids(): string[]
     /* Methods of GObject-2.0.GObject.Object */
@@ -2677,7 +2719,8 @@ class TransactionList {
     static new(): TransactionList
     static $gtype: GObject.Type
 }
-export interface TransactionPast_ConstructProps extends Source_ConstructProps {
+interface TransactionPast_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.TransactionPast */
     cmdline?: string
     data?: string
     duration?: number
@@ -2699,11 +2742,11 @@ class TransactionPast {
     uid: number
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.TransactionPast */
-    parent: Source
-    priv: TransactionPastPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.TransactionPast */
     get_cmdline(): string
     get_data(): string
@@ -2776,9 +2819,12 @@ class TransactionPast {
     _init (config?: TransactionPast_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): TransactionPast
+    /* Function overloads */
+    static new(): TransactionPast
     static $gtype: GObject.Type
 }
-export interface UpdateDetail_ConstructProps extends Source_ConstructProps {
+interface UpdateDetail_ConstructProps extends Source_ConstructProps {
+    /* Constructor properties of PackageKitGlib-1.0.PackageKitGlib.UpdateDetail */
     bugzilla_urls?: string[]
     changelog?: string
     cve_urls?: string[]
@@ -2809,11 +2855,11 @@ class UpdateDetail {
     /* Properties of PackageKitGlib-1.0.PackageKitGlib.Source */
     role: RoleEnum
     transaction_id: string
-    /* Fields of PackageKitGlib-1.0.PackageKitGlib.UpdateDetail */
-    parent: Source
-    priv: UpdateDetailPrivate
+    /* Fields of PackageKitGlib-1.0.PackageKitGlib.Source */
+    readonly parent: GObject.Object
+    readonly priv: SourcePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitGlib-1.0.PackageKitGlib.UpdateDetail */
     get_bugzilla_urls(): string[]
     get_changelog(): string
@@ -2898,11 +2944,13 @@ class UpdateDetail {
     _init (config?: UpdateDetail_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): UpdateDetail
+    /* Function overloads */
+    static new(): UpdateDetail
     static $gtype: GObject.Type
 }
 abstract class CategoryClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.CategoryClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class CategoryPrivate {
@@ -2910,13 +2958,13 @@ class CategoryPrivate {
 }
 abstract class ClientClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.ClientClass */
-    parent_class: GObject.ObjectClass
-    changed: (client: Client) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (client: Client) => void
     static name: string
 }
 abstract class ClientHelperClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.ClientHelperClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ClientHelperPrivate {
@@ -2927,14 +2975,14 @@ class ClientPrivate {
 }
 abstract class ControlClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.ControlClass */
-    parent_class: GObject.ObjectClass
-    transaction_list_changed: (control: Control, transaction_ids: string) => void
-    updates_changed: (control: Control) => void
-    repo_list_changed: (control: Control) => void
-    network_state_changed: (control: Control) => void
-    restart_schedule: (control: Control) => void
-    locked: (control: Control, is_locked: boolean) => void
-    connection_changed: (control: Control, connected: boolean) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly transaction_list_changed: (control: Control, transaction_ids: string) => void
+    readonly updates_changed: (control: Control) => void
+    readonly repo_list_changed: (control: Control) => void
+    readonly network_state_changed: (control: Control) => void
+    readonly restart_schedule: (control: Control) => void
+    readonly locked: (control: Control, is_locked: boolean) => void
+    readonly connection_changed: (control: Control, connected: boolean) => void
     static name: string
 }
 class ControlPrivate {
@@ -2942,7 +2990,7 @@ class ControlPrivate {
 }
 abstract class DesktopClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.DesktopClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DesktopPrivate {
@@ -2950,7 +2998,7 @@ class DesktopPrivate {
 }
 abstract class DetailsClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.DetailsClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class DetailsPrivate {
@@ -2958,7 +3006,7 @@ class DetailsPrivate {
 }
 abstract class DistroUpgradeClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.DistroUpgradeClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class DistroUpgradePrivate {
@@ -2966,13 +3014,13 @@ class DistroUpgradePrivate {
 }
 class EnumMatch {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.EnumMatch */
-    value: number
-    string: string
+    readonly value: number
+    readonly string: string
     static name: string
 }
 abstract class ErrorClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.ErrorClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class ErrorPrivate {
@@ -2980,7 +3028,7 @@ class ErrorPrivate {
 }
 abstract class EulaRequiredClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.EulaRequiredClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class EulaRequiredPrivate {
@@ -2988,7 +3036,7 @@ class EulaRequiredPrivate {
 }
 abstract class FilesClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.FilesClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class FilesPrivate {
@@ -2996,7 +3044,7 @@ class FilesPrivate {
 }
 abstract class ItemProgressClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.ItemProgressClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class ItemProgressPrivate {
@@ -3004,7 +3052,7 @@ class ItemProgressPrivate {
 }
 abstract class MediaChangeRequiredClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.MediaChangeRequiredClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class MediaChangeRequiredPrivate {
@@ -3012,8 +3060,8 @@ class MediaChangeRequiredPrivate {
 }
 abstract class PackageClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.PackageClass */
-    parent_class: SourceClass
-    changed: (package: Package) => void
+    readonly parent_class: SourceClass
+    readonly changed: (package: Package) => void
     static name: string
 }
 class PackagePrivate {
@@ -3021,8 +3069,8 @@ class PackagePrivate {
 }
 abstract class PackageSackClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.PackageSackClass */
-    parent_class: GObject.ObjectClass
-    changed: (sack: PackageSack) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (sack: PackageSack) => void
     static name: string
 }
 class PackageSackPrivate {
@@ -3033,7 +3081,7 @@ class PackageSackResults {
 }
 abstract class ProgressClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.ProgressClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ProgressPrivate {
@@ -3041,7 +3089,7 @@ class ProgressPrivate {
 }
 abstract class RepoDetailClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.RepoDetailClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class RepoDetailPrivate {
@@ -3049,7 +3097,7 @@ class RepoDetailPrivate {
 }
 abstract class RepoSignatureRequiredClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.RepoSignatureRequiredClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class RepoSignatureRequiredPrivate {
@@ -3057,7 +3105,7 @@ class RepoSignatureRequiredPrivate {
 }
 abstract class RequireRestartClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.RequireRestartClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class RequireRestartPrivate {
@@ -3065,7 +3113,7 @@ class RequireRestartPrivate {
 }
 abstract class ResultsClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.ResultsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ResultsPrivate {
@@ -3073,7 +3121,7 @@ class ResultsPrivate {
 }
 abstract class SourceClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.SourceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SourcePrivate {
@@ -3081,13 +3129,13 @@ class SourcePrivate {
 }
 abstract class TaskClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.TaskClass */
-    parent_class: ClientClass
-    untrusted_question: (task: Task, request: number, results: Results) => void
-    key_question: (task: Task, request: number, results: Results) => void
-    eula_question: (task: Task, request: number, results: Results) => void
-    media_change_question: (task: Task, request: number, results: Results) => void
-    simulate_question: (task: Task, request: number, results: Results) => void
-    repair_question: (task: Task, request: number, results: Results) => void
+    readonly parent_class: ClientClass
+    readonly untrusted_question: (task: Task, request: number, results: Results) => void
+    readonly key_question: (task: Task, request: number, results: Results) => void
+    readonly eula_question: (task: Task, request: number, results: Results) => void
+    readonly media_change_question: (task: Task, request: number, results: Results) => void
+    readonly simulate_question: (task: Task, request: number, results: Results) => void
+    readonly repair_question: (task: Task, request: number, results: Results) => void
     static name: string
 }
 class TaskPrivate {
@@ -3095,9 +3143,9 @@ class TaskPrivate {
 }
 abstract class TransactionListClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.TransactionListClass */
-    parent_class: GObject.ObjectClass
-    added: (tlist: TransactionList, tid: string) => void
-    removed: (tlist: TransactionList, tid: string) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly added: (tlist: TransactionList, tid: string) => void
+    readonly removed: (tlist: TransactionList, tid: string) => void
     static name: string
 }
 class TransactionListPrivate {
@@ -3105,7 +3153,7 @@ class TransactionListPrivate {
 }
 abstract class TransactionPastClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.TransactionPastClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class TransactionPastPrivate {
@@ -3113,12 +3161,12 @@ class TransactionPastPrivate {
 }
 abstract class UpdateDetailClass {
     /* Fields of PackageKitGlib-1.0.PackageKitGlib.UpdateDetailClass */
-    parent_class: SourceClass
+    readonly parent_class: SourceClass
     static name: string
 }
 class UpdateDetailPrivate {
     static name: string
 }
-type Bitfield = number
+    type Bitfield = number
 }
 export default PackageKitGlib;

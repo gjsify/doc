@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gspell-1
  */
@@ -40,11 +46,11 @@ class LanguageChooser {
     vfunc_set_language(language?: Language | null): void
     static name: string
 }
-export interface Navigator_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface Navigator_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
 class Navigator {
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gspell-1.Gspell.Navigator */
     change(word: string, change_to: string): void
     change_all(word: string, change_to: string): void
@@ -96,16 +102,15 @@ class Navigator {
     _init (config?: Navigator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Checker_ConstructProps extends GObject.Object_ConstructProps {
+interface Checker_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gspell-1.Gspell.Checker */
     language?: Language
 }
 class Checker {
     /* Properties of Gspell-1.Gspell.Checker */
     language: Language
-    /* Fields of Gspell-1.Gspell.Checker */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gspell-1.Gspell.Checker */
     add_word_to_personal(word: string, word_length: number): void
     add_word_to_session(word: string, word_length: number): void
@@ -176,7 +181,8 @@ class Checker {
     static new(language?: Language | null): Checker
     static $gtype: GObject.Type
 }
-export interface CheckerDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface CheckerDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+    /* Constructor properties of Gspell-1.Gspell.CheckerDialog */
     spell_navigator?: Navigator
 }
 class CheckerDialog {
@@ -256,18 +262,19 @@ class CheckerDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
-    /* Fields of Gspell-1.Gspell.CheckerDialog */
-    parent_instance: Gtk.Dialog
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gspell-1.Gspell.CheckerDialog */
     get_spell_navigator(): Navigator
     /* Methods of Gtk-3.0.Gtk.Dialog */
@@ -396,7 +403,7 @@ class CheckerDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -640,6 +647,7 @@ class CheckerDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -708,6 +716,7 @@ class CheckerDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gspell-1.Gspell.CheckerDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1224,8 +1233,6 @@ class CheckerDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: CheckerDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: CheckerDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: CheckerDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: CheckerDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: CheckerDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1235,11 +1242,13 @@ class CheckerDialog {
     _init (config?: CheckerDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(parent: Gtk.Window, navigator: Navigator): CheckerDialog
+    /* Function overloads */
     static new(): CheckerDialog
     static new(type: Gtk.WindowType): CheckerDialog
     static $gtype: GObject.Type
 }
-export interface Entry_ConstructProps extends GObject.Object_ConstructProps {
+interface Entry_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gspell-1.Gspell.Entry */
     entry?: Gtk.Entry
     inline_spell_checking?: boolean
 }
@@ -1247,7 +1256,7 @@ class Entry {
     /* Properties of Gspell-1.Gspell.Entry */
     inline_spell_checking: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gspell-1.Gspell.Entry */
     basic_setup(): void
     get_entry(): Gtk.Entry
@@ -1300,7 +1309,8 @@ class Entry {
     static get_from_gtk_entry(gtk_entry: Gtk.Entry): Entry
     static $gtype: GObject.Type
 }
-export interface EntryBuffer_ConstructProps extends GObject.Object_ConstructProps {
+interface EntryBuffer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gspell-1.Gspell.EntryBuffer */
     buffer?: Gtk.EntryBuffer
     spell_checker?: Checker
 }
@@ -1308,7 +1318,7 @@ class EntryBuffer {
     /* Properties of Gspell-1.Gspell.EntryBuffer */
     spell_checker: Checker
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gspell-1.Gspell.EntryBuffer */
     get_buffer(): Gtk.EntryBuffer
     get_spell_checker(): Checker | null
@@ -1360,11 +1370,14 @@ class EntryBuffer {
     static get_from_gtk_entry_buffer(gtk_buffer: Gtk.EntryBuffer): EntryBuffer
     static $gtype: GObject.Type
 }
-export interface LanguageChooserButton_ConstructProps extends Gtk.Button_ConstructProps {
+interface LanguageChooserButton_ConstructProps extends Gtk.Button_ConstructProps {
+    /* Constructor properties of Gspell-1.Gspell.LanguageChooser */
     language?: Language
     language_code?: string
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
+    /* Constructor properties of Gtk-3.0.Gtk.Activatable */
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
@@ -1432,14 +1445,14 @@ class LanguageChooserButton {
     /* Properties of Gtk-3.0.Gtk.Activatable */
     related_action: Gtk.Action
     use_action_appearance: boolean
-    /* Fields of Gspell-1.Gspell.LanguageChooserButton */
-    parent_instance: Gtk.Button
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Button */
     clicked(): void
     enter(): void
@@ -1471,7 +1484,7 @@ class LanguageChooserButton {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1699,6 +1712,7 @@ class LanguageChooserButton {
     set_direction(dir: Gtk.TextDirection): void
     set_double_buffered(double_buffered: boolean): void
     set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
     set_font_map(font_map?: Pango.FontMap | null): void
     set_font_options(options?: cairo.FontOptions | null): void
     set_halign(align: Gtk.Align): void
@@ -1802,6 +1816,7 @@ class LanguageChooserButton {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gspell-1.Gspell.LanguageChooserButton */
     vfunc_get_language_full(default_language: boolean): Language
     vfunc_set_language(language?: Language | null): void
@@ -2297,10 +2312,12 @@ class LanguageChooserButton {
     _init (config?: LanguageChooserButton_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(current_language?: Language | null): LanguageChooserButton
+    /* Function overloads */
     static new(): LanguageChooserButton
     static $gtype: GObject.Type
 }
-export interface LanguageChooserDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface LanguageChooserDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+    /* Constructor properties of Gspell-1.Gspell.LanguageChooser */
     language?: Language
     language_code?: string
 }
@@ -2381,21 +2398,22 @@ class LanguageChooserDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
     /* Properties of Gspell-1.Gspell.LanguageChooser */
     language: Language
     language_code: string
-    /* Fields of Gspell-1.Gspell.LanguageChooserDialog */
-    parent_instance: Gtk.Dialog
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Dialog */
     add_action_widget(child: Gtk.Widget, response_id: number): void
     add_button(button_text: string, response_id: number): Gtk.Widget
@@ -2522,7 +2540,7 @@ class LanguageChooserDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2766,6 +2784,7 @@ class LanguageChooserDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -2839,6 +2858,7 @@ class LanguageChooserDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gspell-1.Gspell.LanguageChooserDialog */
     vfunc_get_language_full(default_language: boolean): Language
     vfunc_set_language(language?: Language | null): void
@@ -3357,8 +3377,6 @@ class LanguageChooserDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::language", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::language", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::language-code", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
@@ -3372,18 +3390,18 @@ class LanguageChooserDialog {
     _init (config?: LanguageChooserDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(parent: Gtk.Window, current_language: Language | null, flags: Gtk.DialogFlags): LanguageChooserDialog
+    /* Function overloads */
     static new(): LanguageChooserDialog
     static new(type: Gtk.WindowType): LanguageChooserDialog
     static $gtype: GObject.Type
 }
-export interface NavigatorTextView_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface NavigatorTextView_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Gspell-1.Gspell.NavigatorTextView */
     view?: Gtk.TextView
 }
 class NavigatorTextView {
-    /* Fields of Gspell-1.Gspell.NavigatorTextView */
-    parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gspell-1.Gspell.NavigatorTextView */
     get_view(): Gtk.TextView
     /* Methods of GObject-2.0.GObject.Object */
@@ -3437,7 +3455,8 @@ class NavigatorTextView {
     _init (config?: NavigatorTextView_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TextBuffer_ConstructProps extends GObject.Object_ConstructProps {
+interface TextBuffer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gspell-1.Gspell.TextBuffer */
     buffer?: Gtk.TextBuffer
     spell_checker?: Checker
 }
@@ -3445,7 +3464,7 @@ class TextBuffer {
     /* Properties of Gspell-1.Gspell.TextBuffer */
     spell_checker: Checker
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gspell-1.Gspell.TextBuffer */
     get_buffer(): Gtk.TextBuffer
     get_spell_checker(): Checker | null
@@ -3497,7 +3516,8 @@ class TextBuffer {
     static get_from_gtk_text_buffer(gtk_buffer: Gtk.TextBuffer): TextBuffer
     static $gtype: GObject.Type
 }
-export interface TextView_ConstructProps extends GObject.Object_ConstructProps {
+interface TextView_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gspell-1.Gspell.TextView */
     enable_language_menu?: boolean
     inline_spell_checking?: boolean
     view?: Gtk.TextView
@@ -3506,10 +3526,8 @@ class TextView {
     /* Properties of Gspell-1.Gspell.TextView */
     enable_language_menu: boolean
     inline_spell_checking: boolean
-    /* Fields of Gspell-1.Gspell.TextView */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gspell-1.Gspell.TextView */
     basic_setup(): void
     get_enable_language_menu(): boolean
@@ -3568,27 +3586,27 @@ class TextView {
 }
 abstract class CheckerClass {
     /* Fields of Gspell-1.Gspell.CheckerClass */
-    parent_class: GObject.ObjectClass
-    word_added_to_personal: (checker: Checker, word: string) => void
-    word_added_to_session: (checker: Checker, word: string) => void
-    session_cleared: (checker: Checker) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly word_added_to_personal: (checker: Checker, word: string) => void
+    readonly word_added_to_session: (checker: Checker, word: string) => void
+    readonly session_cleared: (checker: Checker) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class CheckerDialogClass {
     /* Fields of Gspell-1.Gspell.CheckerDialogClass */
-    parent_class: Gtk.DialogClass
-    padding: object[]
+    readonly parent_class: Gtk.DialogClass
+    readonly padding: object[]
     static name: string
 }
 abstract class EntryBufferClass {
     /* Fields of Gspell-1.Gspell.EntryBufferClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class EntryClass {
     /* Fields of Gspell-1.Gspell.EntryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Language {
@@ -3606,46 +3624,46 @@ class Language {
 }
 abstract class LanguageChooserButtonClass {
     /* Fields of Gspell-1.Gspell.LanguageChooserButtonClass */
-    parent_class: Gtk.ButtonClass
-    padding: object[]
+    readonly parent_class: Gtk.ButtonClass
+    readonly padding: object[]
     static name: string
 }
 abstract class LanguageChooserDialogClass {
     /* Fields of Gspell-1.Gspell.LanguageChooserDialogClass */
-    parent_class: Gtk.DialogClass
-    padding: object[]
+    readonly parent_class: Gtk.DialogClass
+    readonly padding: object[]
     static name: string
 }
 abstract class LanguageChooserInterface {
     /* Fields of Gspell-1.Gspell.LanguageChooserInterface */
-    parent_interface: GObject.TypeInterface
-    get_language_full: (chooser: LanguageChooser, default_language: boolean) => Language
-    set_language: (chooser: LanguageChooser, language?: Language | null) => void
+    readonly parent_interface: GObject.TypeInterface
+    readonly get_language_full: (chooser: LanguageChooser, default_language: boolean) => Language
+    readonly set_language: (chooser: LanguageChooser, language?: Language | null) => void
     static name: string
 }
 abstract class NavigatorInterface {
     /* Fields of Gspell-1.Gspell.NavigatorInterface */
-    parent_interface: GObject.TypeInterface
-    goto_next: (navigator: Navigator) => [ /* returnType */ boolean, /* word */ string | null, /* spell_checker */ Checker | null ]
-    change: (navigator: Navigator, word: string, change_to: string) => void
-    change_all: (navigator: Navigator, word: string, change_to: string) => void
+    readonly parent_interface: GObject.TypeInterface
+    readonly goto_next: (navigator: Navigator) => [ /* returnType */ boolean, /* word */ string | null, /* spell_checker */ Checker | null ]
+    readonly change: (navigator: Navigator, word: string, change_to: string) => void
+    readonly change_all: (navigator: Navigator, word: string, change_to: string) => void
     static name: string
 }
 abstract class NavigatorTextViewClass {
     /* Fields of Gspell-1.Gspell.NavigatorTextViewClass */
-    parent_class: GObject.InitiallyUnownedClass
-    padding: object[]
+    readonly parent_class: GObject.InitiallyUnownedClass
+    readonly padding: object[]
     static name: string
 }
 abstract class TextBufferClass {
     /* Fields of Gspell-1.Gspell.TextBufferClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TextViewClass {
     /* Fields of Gspell-1.Gspell.TextViewClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 }

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * ECalendar-1.2
  */
@@ -213,13 +219,11 @@ function calendar_error_quark(): GLib.Quark
 interface CalRecurInstanceFn {
     (comp: CalComponent, instance_start: number, instance_end: number, data: object): boolean
 }
-export interface Cal_ConstructProps extends GObject.Object_ConstructProps {
+interface Cal_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Cal {
-    /* Fields of ECalendar-1.2.ECalendar.Cal */
-    object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ECalendar-1.2.ECalendar.Cal */
     discard_alarm(comp: CalComponent, auid: string): boolean
     get_alarm_email_address(alarm_address: string): boolean
@@ -319,7 +323,7 @@ class Cal {
     static util_priority_to_string(priority: number): string
     static $gtype: GObject.Type
 }
-export interface CalClient_ConstructProps extends EDataServer.Client_ConstructProps {
+interface CalClient_ConstructProps extends EDataServer.Client_ConstructProps {
 }
 class CalClient {
     /* Properties of EDataServer-1.2.EDataServer.Client */
@@ -328,10 +332,8 @@ class CalClient {
     online: boolean
     readonly opened: boolean
     readonly readonly: boolean
-    /* Fields of ECalendar-1.2.ECalendar.CalClient */
-    parent: EDataServer.Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ECalendar-1.2.ECalendar.CalClient */
     add_timezone_finish(result: Gio.AsyncResult): boolean
     check_one_alarm_only(): boolean
@@ -505,22 +507,23 @@ class CalClient {
     /* Static methods and pseudo-constructors */
     static new(source: EDataServer.Source, source_type: CalClientSourceType): CalClient
     static error_create(code: CalClientError, custom_msg: string): GLib.Error
+    /* Function overloads */
     static error_create(code: EDataServer.ClientError, custom_msg?: string | null): GLib.Error
     static error_quark(): GLib.Quark
     static error_to_string(code: CalClientError): string
+    /* Function overloads */
     static error_to_string(code: EDataServer.ClientError): string
     static free_ecalcomp_slist(ecalcomps: CalComponent[]): void
     static $gtype: GObject.Type
 }
-export interface CalClientView_ConstructProps extends GObject.Object_ConstructProps {
+interface CalClientView_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ECalendar-1.2.ECalendar.CalClientView */
     client?: CalClient
     view?: object
 }
 class CalClientView {
-    /* Fields of ECalendar-1.2.ECalendar.CalClientView */
-    object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ECalendar-1.2.ECalendar.CalClientView */
     get_client(): object
     is_running(): boolean
@@ -590,13 +593,11 @@ class CalClientView {
     _init (config?: CalClientView_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CalComponent_ConstructProps extends GObject.Object_ConstructProps {
+interface CalComponent_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CalComponent {
-    /* Fields of ECalendar-1.2.ECalendar.CalComponent */
-    object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ECalendar-1.2.ECalendar.CalComponent */
     abort_sequence(): void
     add_alarm(alarm: CalComponentAlarm): void
@@ -743,15 +744,14 @@ class CalComponent {
     static gen_uid(): string
     static $gtype: GObject.Type
 }
-export interface CalView_ConstructProps extends GObject.Object_ConstructProps {
+interface CalView_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ECalendar-1.2.ECalendar.CalView */
     client?: Cal
     view?: object
 }
 class CalView {
-    /* Fields of ECalendar-1.2.ECalendar.CalView */
-    object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ECalendar-1.2.ECalendar.CalView */
     start(): void
     stop(): void
@@ -823,22 +823,22 @@ class CalView {
 }
 class CalChange {
     /* Fields of ECalendar-1.2.ECalendar.CalChange */
-    comp: CalComponent
-    type: CalChangeType
+    readonly comp: CalComponent
+    readonly type: CalChangeType
     static name: string
 }
 abstract class CalClass {
     /* Fields of ECalendar-1.2.ECalendar.CalClass */
-    parent_class: GObject.ObjectClass
-    cal_opened: (ecal: Cal, status: CalendarStatus) => void
-    cal_opened_ex: (ecal: Cal, error: GLib.Error) => void
-    backend_error: (ecal: Cal, message: string) => void
-    backend_died: (ecal: Cal) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly cal_opened: (ecal: Cal, status: CalendarStatus) => void
+    readonly cal_opened_ex: (ecal: Cal, error: GLib.Error) => void
+    readonly backend_error: (ecal: Cal, message: string) => void
+    readonly backend_died: (ecal: Cal) => void
     static name: string
 }
 abstract class CalClientClass {
     /* Fields of ECalendar-1.2.ECalendar.CalClientClass */
-    parent: EDataServer.ClientClass
+    readonly parent: EDataServer.ClientClass
     static name: string
 }
 class CalClientPrivate {
@@ -846,9 +846,9 @@ class CalClientPrivate {
 }
 abstract class CalClientViewClass {
     /* Fields of ECalendar-1.2.ECalendar.CalClientViewClass */
-    parent_class: GObject.ObjectClass
-    progress: (view: CalClientView, percent: number, message: string) => void
-    complete: (view: CalClientView, error: GLib.Error) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly progress: (view: CalClientView, percent: number, message: string) => void
+    readonly complete: (view: CalClientView, error: GLib.Error) => void
     static name: string
 }
 class CalClientViewPrivate {
@@ -873,72 +873,72 @@ class CalComponentAlarm {
 }
 class CalComponentAlarmInstance {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentAlarmInstance */
-    auid: string
-    trigger: number
-    occur_start: number
-    occur_end: number
+    readonly auid: string
+    readonly trigger: number
+    readonly occur_start: number
+    readonly occur_end: number
     static name: string
 }
 class CalComponentAlarmRepeat {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentAlarmRepeat */
-    repetitions: number
-    duration: object
+    readonly repetitions: number
+    readonly duration: object
     static name: string
 }
 class CalComponentAlarmTrigger {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentAlarmTrigger */
-    type: CalComponentAlarmTriggerType
+    readonly type: CalComponentAlarmTriggerType
     static name: string
 }
 class CalComponentAlarms {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentAlarms */
-    comp: CalComponent
-    alarms: object[]
+    readonly comp: CalComponent
+    readonly alarms: object[]
     /* Methods of ECalendar-1.2.ECalendar.CalComponentAlarms */
     free(): void
     static name: string
 }
 class CalComponentAttendee {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentAttendee */
-    value: string
-    member: string
-    rsvp: boolean
-    delto: string
-    delfrom: string
-    sentby: string
-    cn: string
-    language: string
+    readonly value: string
+    readonly member: string
+    readonly rsvp: boolean
+    readonly delto: string
+    readonly delfrom: string
+    readonly sentby: string
+    readonly cn: string
+    readonly language: string
     static name: string
 }
 abstract class CalComponentClass {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CalComponentDateTime {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentDateTime */
-    value: object
-    tzid: string
+    readonly value: object
+    readonly tzid: string
     static name: string
 }
 class CalComponentId {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentId */
-    uid: string
-    rid: string
+    readonly uid: string
+    readonly rid: string
     static name: string
 }
 class CalComponentOrganizer {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentOrganizer */
-    value: string
-    sentby: string
-    cn: string
-    language: string
+    readonly value: string
+    readonly sentby: string
+    readonly cn: string
+    readonly language: string
     static name: string
 }
 class CalComponentPeriod {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentPeriod */
-    type: CalComponentPeriodType
-    start: object
+    readonly type: CalComponentPeriodType
+    readonly start: object
     static name: string
 }
 class CalComponentPrivate {
@@ -946,14 +946,14 @@ class CalComponentPrivate {
 }
 class CalComponentRange {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentRange */
-    type: CalComponentRangeType
-    datetime: CalComponentDateTime
+    readonly type: CalComponentRangeType
+    readonly datetime: CalComponentDateTime
     static name: string
 }
 class CalComponentText {
     /* Fields of ECalendar-1.2.ECalendar.CalComponentText */
-    value: string
-    altrep: string
+    readonly value: string
+    readonly altrep: string
     static name: string
 }
 class CalPrivate {
@@ -961,10 +961,10 @@ class CalPrivate {
 }
 abstract class CalViewClass {
     /* Fields of ECalendar-1.2.ECalendar.CalViewClass */
-    parent_class: GObject.ObjectClass
-    view_progress: (view: CalView, message: string, percent: number) => void
-    view_done: (view: CalView, status: CalendarStatus) => void
-    view_complete: (view: CalView, status: CalendarStatus, error_msg: string) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly view_progress: (view: CalView, message: string, percent: number) => void
+    readonly view_done: (view: CalView, status: CalendarStatus) => void
+    readonly view_complete: (view: CalView, status: CalendarStatus, error_msg: string) => void
     static name: string
 }
 class CalViewPrivate {

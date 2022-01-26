@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * ICal-3.0
  */
@@ -98,7 +104,7 @@ enum parameter_enable {
 }
 enum parameter_encoding {
     X,
-    /* 8BIT (invalid, starts with a number) */
+    TODO_8BIT,
     BASE64,
     NONE,
 }
@@ -618,44 +624,44 @@ enum recurrencetype_weekday {
 }
 enum requeststatus {
     UNKNOWN_STATUS,
-    /* 2_0_SUCCESS_STATUS (invalid, starts with a number) */
-    /* 2_1_FALLBACK_STATUS (invalid, starts with a number) */
-    /* 2_2_IGPROP_STATUS (invalid, starts with a number) */
-    /* 2_3_IGPARAM_STATUS (invalid, starts with a number) */
-    /* 2_4_IGXPROP_STATUS (invalid, starts with a number) */
-    /* 2_5_IGXPARAM_STATUS (invalid, starts with a number) */
-    /* 2_6_IGCOMP_STATUS (invalid, starts with a number) */
-    /* 2_7_FORWARD_STATUS (invalid, starts with a number) */
-    /* 2_8_ONEEVENT_STATUS (invalid, starts with a number) */
-    /* 2_9_TRUNC_STATUS (invalid, starts with a number) */
-    /* 2_10_ONETODO_STATUS (invalid, starts with a number) */
-    /* 2_11_TRUNCRRULE_STATUS (invalid, starts with a number) */
-    /* 3_0_INVPROPNAME_STATUS (invalid, starts with a number) */
-    /* 3_1_INVPROPVAL_STATUS (invalid, starts with a number) */
-    /* 3_2_INVPARAM_STATUS (invalid, starts with a number) */
-    /* 3_3_INVPARAMVAL_STATUS (invalid, starts with a number) */
-    /* 3_4_INVCOMP_STATUS (invalid, starts with a number) */
-    /* 3_5_INVTIME_STATUS (invalid, starts with a number) */
-    /* 3_6_INVRULE_STATUS (invalid, starts with a number) */
-    /* 3_7_INVCU_STATUS (invalid, starts with a number) */
-    /* 3_8_NOAUTH_STATUS (invalid, starts with a number) */
-    /* 3_9_BADVERSION_STATUS (invalid, starts with a number) */
-    /* 3_10_TOOBIG_STATUS (invalid, starts with a number) */
-    /* 3_11_MISSREQCOMP_STATUS (invalid, starts with a number) */
-    /* 3_12_UNKCOMP_STATUS (invalid, starts with a number) */
-    /* 3_13_BADCOMP_STATUS (invalid, starts with a number) */
-    /* 3_14_NOCAP_STATUS (invalid, starts with a number) */
-    /* 3_15_INVCOMMAND (invalid, starts with a number) */
-    /* 4_0_BUSY_STATUS (invalid, starts with a number) */
-    /* 4_1_STORE_ACCESS_DENIED (invalid, starts with a number) */
-    /* 4_2_STORE_FAILED (invalid, starts with a number) */
-    /* 4_3_STORE_NOT_FOUND (invalid, starts with a number) */
-    /* 5_0_MAYBE_STATUS (invalid, starts with a number) */
-    /* 5_1_UNAVAIL_STATUS (invalid, starts with a number) */
-    /* 5_2_NOSERVICE_STATUS (invalid, starts with a number) */
-    /* 5_3_NOSCHED_STATUS (invalid, starts with a number) */
-    /* 6_1_CONTAINER_NOT_FOUND (invalid, starts with a number) */
-    /* 9_0_UNRECOGNIZED_COMMAND (invalid, starts with a number) */
+    TODO_2_0_SUCCESS_STATUS,
+    TODO_2_1_FALLBACK_STATUS,
+    TODO_2_2_IGPROP_STATUS,
+    TODO_2_3_IGPARAM_STATUS,
+    TODO_2_4_IGXPROP_STATUS,
+    TODO_2_5_IGXPARAM_STATUS,
+    TODO_2_6_IGCOMP_STATUS,
+    TODO_2_7_FORWARD_STATUS,
+    TODO_2_8_ONEEVENT_STATUS,
+    TODO_2_9_TRUNC_STATUS,
+    TODO_2_10_ONETODO_STATUS,
+    TODO_2_11_TRUNCRRULE_STATUS,
+    TODO_3_0_INVPROPNAME_STATUS,
+    TODO_3_1_INVPROPVAL_STATUS,
+    TODO_3_2_INVPARAM_STATUS,
+    TODO_3_3_INVPARAMVAL_STATUS,
+    TODO_3_4_INVCOMP_STATUS,
+    TODO_3_5_INVTIME_STATUS,
+    TODO_3_6_INVRULE_STATUS,
+    TODO_3_7_INVCU_STATUS,
+    TODO_3_8_NOAUTH_STATUS,
+    TODO_3_9_BADVERSION_STATUS,
+    TODO_3_10_TOOBIG_STATUS,
+    TODO_3_11_MISSREQCOMP_STATUS,
+    TODO_3_12_UNKCOMP_STATUS,
+    TODO_3_13_BADCOMP_STATUS,
+    TODO_3_14_NOCAP_STATUS,
+    TODO_3_15_INVCOMMAND,
+    TODO_4_0_BUSY_STATUS,
+    TODO_4_1_STORE_ACCESS_DENIED,
+    TODO_4_2_STORE_FAILED,
+    TODO_4_3_STORE_NOT_FOUND,
+    TODO_5_0_MAYBE_STATUS,
+    TODO_5_1_UNAVAIL_STATUS,
+    TODO_5_2_NOSERVICE_STATUS,
+    TODO_5_3_NOSCHED_STATUS,
+    TODO_6_1_CONTAINER_NOT_FOUND,
+    TODO_9_0_UNRECOGNIZED_COMMAND,
 }
 enum restriction_kind {
     NONE,
@@ -707,27 +713,27 @@ enum value_kind {
     XLICCLASS_VALUE,
     NO_VALUE,
 }
-export const BOOLEAN_FALSE: number
-export const BOOLEAN_TRUE: number
-export const BY_DAY_SIZE: number
-export const BY_HOUR_SIZE: number
-export const BY_MINUTE_SIZE: number
-export const BY_MONTHDAY_SIZE: number
-export const BY_MONTH_SIZE: number
-export const BY_SECOND_SIZE: number
-export const BY_WEEKNO_SIZE: number
-export const BY_YEARDAY_SIZE: number
-export const ERRORS_ARE_FATAL: number
-export const ICALPARAMETER_FIRST_ENUM: number
-export const ICALPARAMETER_LAST_ENUM: number
-export const ICALPROPERTY_FIRST_ENUM: number
-export const ICALPROPERTY_LAST_ENUM: number
-export const MAJOR_VERSION: number
-export const MINOR_VERSION: number
-export const PACKAGE: string
-export const PATCH_VERSION: number
-export const VERSION: string
-export const ZONES_TAB_SYSTEM_FILENAME: string
+const BOOLEAN_FALSE: number
+const BOOLEAN_TRUE: number
+const BY_DAY_SIZE: number
+const BY_HOUR_SIZE: number
+const BY_MINUTE_SIZE: number
+const BY_MONTHDAY_SIZE: number
+const BY_MONTH_SIZE: number
+const BY_SECOND_SIZE: number
+const BY_WEEKNO_SIZE: number
+const BY_YEARDAY_SIZE: number
+const ERRORS_ARE_FATAL: number
+const ICALPARAMETER_FIRST_ENUM: number
+const ICALPARAMETER_LAST_ENUM: number
+const ICALPROPERTY_FIRST_ENUM: number
+const ICALPROPERTY_LAST_ENUM: number
+const MAJOR_VERSION: number
+const MINOR_VERSION: number
+const PACKAGE: string
+const PATCH_VERSION: number
+const VERSION: string
+const ZONES_TAB_SYSTEM_FILENAME: string
 function bt(): void
 function decode_base64(dest: string, src: string, size: number): string
 function decode_quoted_printable(dest: string, src: string, size: number): string
@@ -1469,11 +1475,11 @@ interface pvl_findf {
 }
 class array {
     /* Fields of ICal-3.0.ICal.array */
-    element_size: number
-    increment_size: number
-    num_elements: number
-    space_allocated: number
-    chunks: object
+    readonly element_size: number
+    readonly increment_size: number
+    readonly num_elements: number
+    readonly space_allocated: number
+    readonly chunks: object
     static name: string
 }
 class attach {
@@ -1481,8 +1487,8 @@ class attach {
 }
 class compiter {
     /* Fields of ICal-3.0.ICal.compiter */
-    kind: component_kind
-    iter: pvl_elem
+    readonly kind: component_kind
+    readonly iter: pvl_elem
     static name: string
 }
 class component {
@@ -1490,24 +1496,24 @@ class component {
 }
 class datetimeperiodtype {
     /* Fields of ICal-3.0.ICal.datetimeperiodtype */
-    time: object
-    period: object
+    readonly time: object
+    readonly period: object
     static name: string
 }
 class durationtype {
     /* Fields of ICal-3.0.ICal.durationtype */
-    is_neg: number
-    days: number
-    weeks: number
-    hours: number
-    minutes: number
-    seconds: number
+    readonly is_neg: number
+    readonly days: number
+    readonly weeks: number
+    readonly hours: number
+    readonly minutes: number
+    readonly seconds: number
     static name: string
 }
 class geotype {
     /* Fields of ICal-3.0.ICal.geotype */
-    lat: number
-    lon: number
+    readonly lat: number
+    readonly lon: number
     static name: string
 }
 class parameter {
@@ -1518,9 +1524,9 @@ class parser {
 }
 class periodtype {
     /* Fields of ICal-3.0.ICal.periodtype */
-    start: object
-    end: object
-    duration: object
+    readonly start: object
+    readonly end: object
+    readonly duration: object
     static name: string
 }
 class property {
@@ -1531,10 +1537,10 @@ class pvl_elem {
 }
 class pvl_elem_t {
     /* Fields of ICal-3.0.ICal.pvl_elem_t */
-    MAGIC: number
-    d: object
-    next: object
-    prior: object
+    readonly MAGIC: number
+    readonly d: object
+    readonly next: object
+    readonly prior: object
     static name: string
 }
 class pvl_list {
@@ -1545,83 +1551,83 @@ class recur_iterator {
 }
 class recurrencetype {
     /* Fields of ICal-3.0.ICal.recurrencetype */
-    freq: recurrencetype_frequency
-    until: object
-    count: number
-    interval: number
-    week_start: recurrencetype_weekday
-    by_second: number[]
-    by_minute: number[]
-    by_hour: number[]
-    by_day: number[]
-    by_month_day: number[]
-    by_year_day: number[]
-    by_week_no: number[]
-    by_month: number[]
-    by_set_pos: number[]
-    rscale: string
-    skip: recurrencetype_skip
+    readonly freq: recurrencetype_frequency
+    readonly until: object
+    readonly count: number
+    readonly interval: number
+    readonly week_start: recurrencetype_weekday
+    readonly by_second: number[]
+    readonly by_minute: number[]
+    readonly by_hour: number[]
+    readonly by_day: number[]
+    readonly by_month_day: number[]
+    readonly by_year_day: number[]
+    readonly by_week_no: number[]
+    readonly by_month: number[]
+    readonly by_set_pos: number[]
+    readonly rscale: string
+    readonly skip: recurrencetype_skip
     static name: string
 }
 class reqstattype {
     /* Fields of ICal-3.0.ICal.reqstattype */
-    code: requeststatus
-    desc: string
-    debug: string
+    readonly code: requeststatus
+    readonly desc: string
+    readonly debug: string
     static name: string
 }
 class sspm_action_map {
     /* Fields of ICal-3.0.ICal.sspm_action_map */
-    major: object
-    minor: object
-    new_part: () => object
-    add_line: (part: object, header: object, line: string, size: number) => void
-    end_part: (part: object) => object
-    free_part: (part: object) => void
+    readonly major: object
+    readonly minor: object
+    readonly new_part: () => object
+    readonly add_line: (part: object, header: object, line: string, size: number) => void
+    readonly end_part: (part: object) => object
+    readonly free_part: (part: object) => void
     static name: string
 }
 class sspm_header {
     /* Fields of ICal-3.0.ICal.sspm_header */
-    def: number
-    boundary: string
-    major: object
-    minor: object
-    minor_text: string
-    content_type_params: string
-    charset: string
-    encoding: object
-    filename: string
-    content_id: string
-    error: object
-    error_text: string
+    readonly def: number
+    readonly boundary: string
+    readonly major: object
+    readonly minor: object
+    readonly minor_text: string
+    readonly content_type_params: string
+    readonly charset: string
+    readonly encoding: object
+    readonly filename: string
+    readonly content_id: string
+    readonly error: object
+    readonly error_text: string
     static name: string
 }
 class sspm_part {
     /* Fields of ICal-3.0.ICal.sspm_part */
-    header: object
-    level: number
-    data_size: number
-    data: object
+    readonly header: object
+    readonly level: number
+    readonly data_size: number
+    readonly data: object
     static name: string
 }
 class time_span {
     /* Fields of ICal-3.0.ICal.time_span */
-    start: number
-    end: number
-    is_busy: number
+    readonly start: number
+    readonly end: number
+    readonly is_busy: number
     static name: string
 }
 class timetype {
     /* Fields of ICal-3.0.ICal.timetype */
-    year: number
-    month: number
-    day: number
-    hour: number
-    minute: number
-    second: number
-    is_date: number
-    is_daylight: number
-    zone: timezone
+    readonly year: number
+    readonly month: number
+    readonly day: number
+    readonly hour: number
+    readonly minute: number
+    readonly second: number
+    readonly is_date: number
+    readonly is_daylight: number
+    readonly zone: timezone
     static name: string
 }
 class timezone {
@@ -1629,28 +1635,28 @@ class timezone {
 }
 class timezonephase {
     /* Fields of ICal-3.0.ICal.timezonephase */
-    tzname: string
-    is_stdandard: number
-    dtstart: object
-    offsetto: number
-    tzoffsetfrom: number
-    comment: string
-    rdate: object
-    rrule: string
+    readonly tzname: string
+    readonly is_stdandard: number
+    readonly dtstart: object
+    readonly offsetto: number
+    readonly tzoffsetfrom: number
+    readonly comment: string
+    readonly rdate: object
+    readonly rrule: string
     static name: string
 }
 class timezonetype {
     /* Fields of ICal-3.0.ICal.timezonetype */
-    tzid: string
-    last_mod: object
-    tzurl: string
-    phases: object
+    readonly tzid: string
+    readonly last_mod: object
+    readonly tzurl: string
+    readonly phases: object
     static name: string
 }
 class triggertype {
     /* Fields of ICal-3.0.ICal.triggertype */
-    time: object
-    duration: object
+    readonly time: object
+    readonly duration: object
     static name: string
 }
 class value {

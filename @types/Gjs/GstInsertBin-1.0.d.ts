@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstInsertBin-1.0
  */
@@ -13,54 +19,53 @@ export namespace GstInsertBin {
 interface InsertBinCallback {
     (insertbin: InsertBin, element: Gst.Element, success: boolean): void
 }
-export interface InsertBin_ConstructProps extends Gst.Bin_ConstructProps {
+interface InsertBin_ConstructProps extends Gst.Bin_ConstructProps {
 }
 class InsertBin {
     /* Properties of Gst-1.0.Gst.Bin */
     async_handling: boolean
     message_forward: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Bin */
-    element: Gst.Element
-    numchildren: number
-    children: Gst.Element[]
-    children_cookie: number
-    child_bus: Gst.Bus
-    messages: Gst.Message[]
-    polling: boolean
-    state_dirty: boolean
-    clock_dirty: boolean
-    provided_clock: Gst.Clock
-    clock_provider: Gst.Element
+    readonly element: Gst.Element
+    readonly numchildren: number
+    readonly children: Gst.Element[]
+    readonly children_cookie: number
+    readonly child_bus: Gst.Bus
+    readonly messages: Gst.Message[]
+    readonly polling: boolean
+    readonly state_dirty: boolean
+    readonly clock_dirty: boolean
+    readonly provided_clock: Gst.Clock
+    readonly clock_provider: Gst.Element
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstInsertBin-1.0.GstInsertBin.InsertBin */
     append(element: Gst.Element, callback: InsertBinCallback): void
     insert_after(element: Gst.Element, sibling: Gst.Element, callback: InsertBinCallback): void
@@ -310,10 +315,6 @@ class InsertBin {
     connect_after(sigName: "notify::async-handling", callback: (($obj: InsertBin, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::message-forward", callback: (($obj: InsertBin, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::message-forward", callback: (($obj: InsertBin, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: InsertBin, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: InsertBin, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: InsertBin, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: InsertBin, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -323,11 +324,13 @@ class InsertBin {
     _init (config?: InsertBin_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(name?: string | null): InsertBin
+    /* Function overloads */
+    static new(name?: string | null): InsertBin
     static $gtype: GObject.Type
 }
 abstract class InsertBinClass {
     /* Fields of GstInsertBin-1.0.GstInsertBin.InsertBinClass */
-    parent_class: Gst.BinClass
+    readonly parent_class: Gst.BinClass
     static name: string
 }
 class InsertBinPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Epc-1.0
  */
@@ -27,11 +33,11 @@ enum AuthFlags {
     DEFAULT,
     PASSWORD_TEXT_NEEDED,
 }
-export const SERVICE_TYPE_HTTP: string
-export const SERVICE_TYPE_HTTPS: string
-export const TLS_SECONDS_PER_DAY: number
-export const TLS_SECONDS_PER_HOUR: number
-export const TLS_SECONDS_PER_MINUTE: number
+const SERVICE_TYPE_HTTP: string
+const SERVICE_TYPE_HTTPS: string
+const TLS_SECONDS_PER_DAY: number
+const TLS_SECONDS_PER_HOUR: number
+const TLS_SECONDS_PER_MINUTE: number
 function address_family_to_string(value: AddressFamily): string
 function auth_flags_to_string(value: AuthFlags): string
 function avahi_error_quark(): GLib.Quark
@@ -66,7 +72,8 @@ interface ContentsHandler {
 interface ContentsReadFunc {
     (contents: Contents, buffer: object, length: number): boolean
 }
-export interface Consumer_ConstructProps extends GObject.Object_ConstructProps {
+interface Consumer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Epc-1.0.Epc.Consumer */
     application?: string
     domain?: string
     hostname?: string
@@ -83,7 +90,7 @@ class Consumer {
     protocol: Protocol
     username: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Epc-1.0.Epc.Consumer */
     get_password(): string
     get_protocol(): Protocol
@@ -156,7 +163,8 @@ class Consumer {
     static new_for_name_full(name: string, application: string, domain: string): Consumer
     static $gtype: GObject.Type
 }
-export interface Dispatcher_ConstructProps extends GObject.Object_ConstructProps {
+interface Dispatcher_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Epc-1.0.Epc.Dispatcher */
     collision_handling?: CollisionHandling
     cookie?: string
     name?: string
@@ -167,7 +175,7 @@ class Dispatcher {
     cookie: string
     name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Epc-1.0.Epc.Dispatcher */
     add_service_subtype(type: string, subtype: string): void
     get_collision_handling(): CollisionHandling
@@ -229,7 +237,8 @@ class Dispatcher {
     static new(name: string): Dispatcher
     static $gtype: GObject.Type
 }
-export interface Publisher_ConstructProps extends GObject.Object_ConstructProps {
+interface Publisher_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Epc-1.0.Epc.Publisher */
     application?: string
     auth_flags?: AuthFlags
     certificate_file?: string
@@ -254,7 +263,7 @@ class Publisher {
     service_domain: string
     service_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Epc-1.0.Epc.Publisher */
     add(key: string, data: object, length: number): void
     add_bookmark(key: string, label: string): void
@@ -350,7 +359,8 @@ class Publisher {
     static expand_name(name: string): string
     static $gtype: GObject.Type
 }
-export interface ServiceMonitor_ConstructProps extends GObject.Object_ConstructProps {
+interface ServiceMonitor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Epc-1.0.Epc.ServiceMonitor */
     application?: string
     domain?: string
     service_types?: string[]
@@ -360,7 +370,7 @@ class ServiceMonitor {
     /* Properties of Epc-1.0.Epc.ServiceMonitor */
     skip_our_own: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Epc-1.0.Epc.ServiceMonitor */
     get_skip_our_own(): boolean
     set_skip_our_own(setting: boolean): void
@@ -434,8 +444,8 @@ class AuthContext {
 }
 abstract class ConsumerClass {
     /* Fields of Epc-1.0.Epc.ConsumerClass */
-    authenticate: (consumer: Consumer, realm: string) => void
-    publisher_resolved: (consumer: Consumer, protocol: Protocol, hostname: string, port: number) => void
+    readonly authenticate: (consumer: Consumer, realm: string) => void
+    readonly publisher_resolved: (consumer: Consumer, protocol: Protocol, hostname: string, port: number) => void
     static name: string
 }
 class ConsumerPrivate {
@@ -481,9 +491,9 @@ class ServiceInfo {
 }
 abstract class ServiceMonitorClass {
     /* Fields of Epc-1.0.Epc.ServiceMonitorClass */
-    service_found: (monitor: ServiceMonitor, name: string, info: ServiceInfo) => void
-    service_removed: (monitor: ServiceMonitor, name: string, type: string) => void
-    scanning_done: (monitor: ServiceMonitor, type: string) => void
+    readonly service_found: (monitor: ServiceMonitor, name: string, info: ServiceInfo) => void
+    readonly service_removed: (monitor: ServiceMonitor, name: string, type: string) => void
+    readonly scanning_done: (monitor: ServiceMonitor, type: string) => void
     static name: string
 }
 class ServiceMonitorPrivate {
@@ -491,9 +501,9 @@ class ServiceMonitorPrivate {
 }
 class ShellProgressHooks {
     /* Fields of Epc-1.0.Epc.ShellProgressHooks */
-    begin: (title: string) => void
-    update: (percentage: number, message: string) => void
-    end: () => void
+    readonly begin: (title: string) => void
+    readonly update: (percentage: number, message: string) => void
+    readonly end: () => void
     static name: string
 }
 }

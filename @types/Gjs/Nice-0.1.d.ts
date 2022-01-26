@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Nice-0.1
  */
@@ -95,10 +101,10 @@ enum AgentOption {
     SUPPORT_RENOMINATION,
     CONSENT_FRESHNESS,
 }
-export const AGENT_MAX_REMOTE_CANDIDATES: number
-export const CANDIDATE_MAX_FOUNDATION: number
-export const CANDIDATE_MAX_LOCAL_ADDRESSES: number
-export const CANDIDATE_MAX_TURN_SERVERS: number
+const AGENT_MAX_REMOTE_CANDIDATES: number
+const CANDIDATE_MAX_FOUNDATION: number
+const CANDIDATE_MAX_LOCAL_ADDRESSES: number
+const CANDIDATE_MAX_TURN_SERVERS: number
 function candidate_transport_to_string(transport: CandidateTransport): string
 function candidate_type_to_string(type: CandidateType): string
 function component_state_to_string(state: ComponentState): string
@@ -111,7 +117,8 @@ function pseudo_tcp_set_debug_level(level: PseudoTcpDebugLevel): void
 interface AgentRecvFunc {
     (agent: Agent, stream_id: number, component_id: number, len: number, buf: string): void
 }
-export interface Agent_ConstructProps extends GObject.Object_ConstructProps {
+interface Agent_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Nice-0.1.Nice.Agent */
     compatibility?: number
     consent_freshness?: boolean
     controlling_mode?: boolean
@@ -166,7 +173,7 @@ class Agent {
     upnp: boolean
     upnp_timeout: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Nice-0.1.Nice.Agent */
     add_local_address(addr: Address): boolean
     add_stream(n_components: number): number
@@ -191,10 +198,10 @@ class Agent {
     parse_remote_sdp(sdp: string): number
     parse_remote_stream_sdp(stream_id: number, sdp: string, ufrag: string, pwd: string): Candidate[]
     peer_candidate_gathering_done(stream_id: number): boolean
-    recv(stream_id: number, component_id: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buf */ Uint8Array[] ]
+    recv(stream_id: number, component_id: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buf */ Uint8Array ]
     recv_messages(stream_id: number, component_id: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* messages */ InputMessage[] ]
     recv_messages_nonblocking(stream_id: number, component_id: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* messages */ InputMessage[] ]
-    recv_nonblocking(stream_id: number, component_id: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buf */ Uint8Array[] ]
+    recv_nonblocking(stream_id: number, component_id: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buf */ Uint8Array ]
     remove_stream(stream_id: number): void
     restart(): boolean
     restart_stream(stream_id: number): boolean
@@ -337,7 +344,8 @@ class Agent {
     static new_reliable(ctx: GLib.MainContext, compat: Compatibility): Agent
     static $gtype: GObject.Type
 }
-export interface PseudoTcpSocket_ConstructProps extends GObject.Object_ConstructProps {
+interface PseudoTcpSocket_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Nice-0.1.Nice.PseudoTcpSocket */
     ack_delay?: number
     callbacks?: object
     conversation?: number
@@ -355,7 +363,7 @@ class PseudoTcpSocket {
     snd_buf: number
     readonly state: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Nice-0.1.Nice.PseudoTcpSocket */
     can_send(): boolean
     close(force: boolean): void
@@ -452,21 +460,21 @@ class Address {
 }
 abstract class AgentClass {
     /* Fields of Nice-0.1.Nice.AgentClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Candidate {
     /* Fields of Nice-0.1.Nice.Candidate */
-    type: CandidateType
-    transport: CandidateTransport
-    addr: Address
-    base_addr: Address
-    priority: number
-    stream_id: number
-    component_id: number
-    foundation: number[]
-    username: string
-    password: string
+    readonly type: CandidateType
+    readonly transport: CandidateTransport
+    readonly addr: Address
+    readonly base_addr: Address
+    readonly priority: number
+    readonly stream_id: number
+    readonly component_id: number
+    readonly foundation: number[]
+    readonly username: string
+    readonly password: string
     /* Methods of Nice-0.1.Nice.Candidate */
     copy(): Candidate
     equal_target(candidate2: Candidate): boolean
@@ -481,26 +489,26 @@ class Candidate {
 }
 class InputMessage {
     /* Fields of Nice-0.1.Nice.InputMessage */
-    buffers: Gio.InputVector[]
-    n_buffers: number
-    from: Address
-    length: number
+    readonly buffers: Gio.InputVector[]
+    readonly n_buffers: number
+    readonly from: Address
+    readonly length: number
     static name: string
 }
 class OutputMessage {
     /* Fields of Nice-0.1.Nice.OutputMessage */
-    buffers: Gio.OutputVector[]
-    n_buffers: number
+    readonly buffers: Gio.OutputVector[]
+    readonly n_buffers: number
     static name: string
 }
 class PseudoTcpCallbacks {
     /* Fields of Nice-0.1.Nice.PseudoTcpCallbacks */
-    user_data: object
-    PseudoTcpOpened: (tcp: PseudoTcpSocket, data: object) => void
-    PseudoTcpReadable: (tcp: PseudoTcpSocket, data: object) => void
-    PseudoTcpWritable: (tcp: PseudoTcpSocket, data: object) => void
-    PseudoTcpClosed: (tcp: PseudoTcpSocket, error: number, data: object) => void
-    WritePacket: (tcp: PseudoTcpSocket, buffer: string, len: number, data: object) => PseudoTcpWriteResult
+    readonly user_data: object
+    readonly PseudoTcpOpened: (tcp: PseudoTcpSocket, data: object) => void
+    readonly PseudoTcpReadable: (tcp: PseudoTcpSocket, data: object) => void
+    readonly PseudoTcpWritable: (tcp: PseudoTcpSocket, data: object) => void
+    readonly PseudoTcpClosed: (tcp: PseudoTcpSocket, error: number, data: object) => void
+    readonly WritePacket: (tcp: PseudoTcpSocket, buffer: string, len: number, data: object) => PseudoTcpWriteResult
     static name: string
 }
 abstract class PseudoTcpSocketClass {

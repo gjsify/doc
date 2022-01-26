@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * SoupGNOME-2.4
  */
@@ -10,17 +16,17 @@ import type GLib from './GLib-2.0';
 
 export namespace SoupGNOME {
 
-export const COOKIE_JAR_SQLITE_FILENAME: string
+const COOKIE_JAR_SQLITE_FILENAME: string
 function gnome_features_2_26_get_type(): GObject.Type
-export interface CookieJarSqlite_ConstructProps extends Soup.CookieJarDB_ConstructProps {
+interface CookieJarSqlite_ConstructProps extends Soup.CookieJarDB_ConstructProps {
 }
 class CookieJarSqlite {
     /* Properties of Soup-2.4.Soup.CookieJar */
     accept_policy: Soup.CookieJarAcceptPolicy
-    /* Fields of SoupGNOME-2.4.SoupGNOME.CookieJarSqlite */
-    parent: Soup.CookieJarDB
+    /* Fields of Soup-2.4.Soup.CookieJarDB */
+    readonly parent: Soup.CookieJar
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Soup-2.4.Soup.CookieJar */
     add_cookie(cookie: Soup.Cookie): void
     add_cookie_full(cookie: Soup.Cookie, uri?: Soup.URI | null, first_party?: Soup.URI | null): void
@@ -104,14 +110,16 @@ class CookieJarSqlite {
     _init (config?: CookieJarSqlite_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(filename: string, read_only: boolean): CookieJarSqlite
+    /* Function overloads */
+    static new(filename: string, read_only: boolean): CookieJarSqlite
     static new(): CookieJarSqlite
     static $gtype: GObject.Type
 }
-export interface PasswordManagerGNOME_ConstructProps extends GObject.Object_ConstructProps {
+interface PasswordManagerGNOME_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PasswordManagerGNOME {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -170,15 +178,15 @@ class PasswordManagerGNOME {
     _init (config?: PasswordManagerGNOME_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ProxyResolverGNOME_ConstructProps extends Soup.ProxyResolverDefault_ConstructProps {
+interface ProxyResolverGNOME_ConstructProps extends Soup.ProxyResolverDefault_ConstructProps {
 }
 class ProxyResolverGNOME {
     /* Properties of Soup-2.4.Soup.ProxyResolverDefault */
     gproxy_resolver: Gio.ProxyResolver
     /* Fields of Soup-2.4.Soup.ProxyResolverDefault */
-    parent: GObject.Object
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -246,7 +254,7 @@ class ProxyResolverGNOME {
 }
 abstract class CookieJarSqliteClass {
     /* Fields of SoupGNOME-2.4.SoupGNOME.CookieJarSqliteClass */
-    parent_class: Soup.CookieJarDBClass
+    readonly parent_class: Soup.CookieJarDBClass
     static name: string
 }
 }

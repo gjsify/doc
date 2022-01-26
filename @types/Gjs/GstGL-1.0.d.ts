@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstGL-1.0
  */
@@ -63,22 +69,22 @@ enum GLSLError {
 }
 enum GLSLVersion {
     NONE,
-    /* 100 (invalid, starts with a number) */
-    /* 110 (invalid, starts with a number) */
-    /* 120 (invalid, starts with a number) */
-    /* 130 (invalid, starts with a number) */
-    /* 140 (invalid, starts with a number) */
-    /* 150 (invalid, starts with a number) */
-    /* 300 (invalid, starts with a number) */
-    /* 310 (invalid, starts with a number) */
-    /* 320 (invalid, starts with a number) */
-    /* 330 (invalid, starts with a number) */
-    /* 400 (invalid, starts with a number) */
-    /* 410 (invalid, starts with a number) */
-    /* 420 (invalid, starts with a number) */
-    /* 430 (invalid, starts with a number) */
-    /* 440 (invalid, starts with a number) */
-    /* 450 (invalid, starts with a number) */
+    TODO_100,
+    TODO_110,
+    TODO_120,
+    TODO_130,
+    TODO_140,
+    TODO_150,
+    TODO_300,
+    TODO_310,
+    TODO_320,
+    TODO_330,
+    TODO_400,
+    TODO_410,
+    TODO_420,
+    TODO_430,
+    TODO_440,
+    TODO_450,
 }
 enum GLStereoDownmix {
     GREEN_MAGENTA_DUBOIS,
@@ -87,7 +93,7 @@ enum GLStereoDownmix {
 }
 enum GLTextureTarget {
     NONE,
-    /* 2D (invalid, starts with a number) */
+    TODO_2D,
     RECTANGLE,
     EXTERNAL_OES,
 }
@@ -153,41 +159,43 @@ enum GLSLProfile {
     COMPATIBILITY,
     ANY,
 }
-export const BUFFER_POOL_OPTION_GL_SYNC_META: string
-export const BUFFER_POOL_OPTION_GL_TEXTURE_TARGET_2D: string
-export const BUFFER_POOL_OPTION_GL_TEXTURE_TARGET_EXTERNAL_OES: string
-export const BUFFER_POOL_OPTION_GL_TEXTURE_TARGET_RECTANGLE: string
-export const CAPS_FEATURE_MEMORY_GL_BUFFER: string
-export const CAPS_FEATURE_MEMORY_GL_MEMORY: string
-export const GL_ALLOCATION_PARAMS_ALLOC_FLAG_ALLOC: number
-export const GL_ALLOCATION_PARAMS_ALLOC_FLAG_BUFFER: number
-export const GL_ALLOCATION_PARAMS_ALLOC_FLAG_USER: number
-export const GL_ALLOCATION_PARAMS_ALLOC_FLAG_VIDEO: number
-export const GL_ALLOCATION_PARAMS_ALLOC_FLAG_WRAP_GPU_HANDLE: number
-export const GL_ALLOCATION_PARAMS_ALLOC_FLAG_WRAP_SYSMEM: number
-export const GL_API_GLES1_NAME: string
-export const GL_API_GLES2_NAME: string
-export const GL_API_OPENGL3_NAME: string
-export const GL_API_OPENGL_NAME: string
-export const GL_BASE_MEMORY_ALLOCATOR_NAME: string
-export const GL_BUFFER_ALLOCATOR_NAME: string
-export const GL_COLOR_CONVERT_FORMATS: string
-export const GL_COLOR_CONVERT_VIDEO_CAPS: string
-export const GL_CONFIG_STRUCTURE_NAME: string
-export const GL_CONTEXT_TYPE_CGL: string
-export const GL_CONTEXT_TYPE_EAGL: string
-export const GL_CONTEXT_TYPE_EGL: string
-export const GL_CONTEXT_TYPE_GLX: string
-export const GL_CONTEXT_TYPE_WGL: string
-export const GL_DISPLAY_CONTEXT_TYPE: string
-export const GL_MEMORY_ALLOCATOR_NAME: string
-export const GL_MEMORY_PBO_ALLOCATOR_NAME: string
-export const GL_MEMORY_VIDEO_FORMATS_STR: string
-export const GL_RENDERBUFFER_ALLOCATOR_NAME: string
-export const GL_TEXTURE_TARGET_2D_STR: string
-export const GL_TEXTURE_TARGET_EXTERNAL_OES_STR: string
-export const GL_TEXTURE_TARGET_RECTANGLE_STR: string
-export const MAP_GL: number
+const BUFFER_POOL_OPTION_GL_SYNC_META: string
+const BUFFER_POOL_OPTION_GL_TEXTURE_TARGET_2D: string
+const BUFFER_POOL_OPTION_GL_TEXTURE_TARGET_EXTERNAL_OES: string
+const BUFFER_POOL_OPTION_GL_TEXTURE_TARGET_RECTANGLE: string
+const CAPS_FEATURE_MEMORY_GL_BUFFER: string
+const CAPS_FEATURE_MEMORY_GL_MEMORY: string
+const GL_ALLOCATION_PARAMS_ALLOC_FLAG_ALLOC: number
+const GL_ALLOCATION_PARAMS_ALLOC_FLAG_BUFFER: number
+const GL_ALLOCATION_PARAMS_ALLOC_FLAG_USER: number
+const GL_ALLOCATION_PARAMS_ALLOC_FLAG_VIDEO: number
+const GL_ALLOCATION_PARAMS_ALLOC_FLAG_WRAP_GPU_HANDLE: number
+const GL_ALLOCATION_PARAMS_ALLOC_FLAG_WRAP_SYSMEM: number
+const GL_API_GLES1_NAME: string
+const GL_API_GLES2_NAME: string
+const GL_API_OPENGL3_NAME: string
+const GL_API_OPENGL_NAME: string
+const GL_BASE_MEMORY_ALLOCATOR_NAME: string
+const GL_BUFFER_ALLOCATOR_NAME: string
+
+const GL_COLOR_CONVERT_FORMATS: string
+const GL_COLOR_CONVERT_VIDEO_CAPS: string
+const GL_CONFIG_STRUCTURE_NAME: string
+const GL_CONTEXT_TYPE_CGL: string
+const GL_CONTEXT_TYPE_EAGL: string
+const GL_CONTEXT_TYPE_EGL: string
+const GL_CONTEXT_TYPE_GLX: string
+const GL_CONTEXT_TYPE_WGL: string
+const GL_DISPLAY_CONTEXT_TYPE: string
+const GL_MEMORY_ALLOCATOR_NAME: string
+const GL_MEMORY_PBO_ALLOCATOR_NAME: string
+
+const GL_MEMORY_VIDEO_FORMATS_STR: string
+const GL_RENDERBUFFER_ALLOCATOR_NAME: string
+const GL_TEXTURE_TARGET_2D_STR: string
+const GL_TEXTURE_TARGET_EXTERNAL_OES_STR: string
+const GL_TEXTURE_TARGET_RECTANGLE_STR: string
+const MAP_GL: number
 function buffer_add_gl_sync_meta(context: GLContext, buffer: Gst.Buffer): GLSyncMeta
 function buffer_add_gl_sync_meta_full(context: GLContext, buffer: Gst.Buffer, data?: object | null): GLSyncMeta
 function buffer_pool_config_get_gl_allocation_params(config: Gst.Structure): GLAllocationParams
@@ -205,7 +213,7 @@ function gl_config_caveat_to_string(caveat: GLConfigCaveat): string | null
 function gl_config_surface_type_to_string(surface_type: GLConfigSurfaceType): string | null
 function gl_context_error_quark(): GLib.Quark
 function gl_element_propagate_display_context(element: Gst.Element, display: GLDisplay): void
-function gl_ensure_element_data(element: object | null, display_ptr: GLDisplay, other_context_ptr: GLContext): [ /* returnType */ boolean, /* display_ptr */ GLDisplay, /* other_context_ptr */ GLContext ]
+function gl_ensure_element_data(element: Gst.Element, display_ptr: GLDisplay, other_context_ptr: GLContext): [ /* returnType */ boolean, /* display_ptr */ GLDisplay, /* other_context_ptr */ GLContext ]
 function gl_format_from_video_info(context: GLContext, vinfo: GstVideo.VideoInfo, plane: number): GLFormat
 function gl_format_is_supported(context: GLContext, format: GLFormat): boolean
 function gl_format_type_from_sized_gl_format(format: GLFormat): [ /* unsized_format */ GLFormat, /* gl_type */ number ]
@@ -214,7 +222,7 @@ function gl_get_affine_transformation_meta_as_ndc(meta?: GstVideo.VideoAffineTra
 function gl_get_plane_data_size(info: GstVideo.VideoInfo, align: GstVideo.VideoAlignment, plane: number): number
 function gl_get_plane_start(info: GstVideo.VideoInfo, valign: GstVideo.VideoAlignment, plane: number): number
 function gl_handle_context_query(element: Gst.Element, query: Gst.Query, display?: GLDisplay | null, context?: GLContext | null, other_context?: GLContext | null): boolean
-function gl_handle_set_context(element: Gst.Element, context: Gst.Context, display: GLDisplay, other_context: GLContext): [ /* returnType */ boolean, /* display */ GLDisplay, /* other_context */ GLContext ]
+function gl_handle_set_context(element: Gst.Element, context: Gst.Context): [ /* returnType */ boolean, /* display */ GLDisplay, /* other_context */ GLContext ]
 function gl_memory_init_once(): void
 function gl_memory_pbo_init_once(): void
 function gl_multiply_matrix4(a: number[], b: number[]): /* result */ number[]
@@ -292,54 +300,49 @@ interface GLWindowCB {
 interface GLWindowResizeCB {
     (data: object | null, width: number, height: number): void
 }
-export interface GLBaseFilter_ConstructProps extends GstBase.BaseTransform_ConstructProps {
+interface GLBaseFilter_ConstructProps extends GstBase.BaseTransform_ConstructProps {
 }
 class GLBaseFilter {
     /* Properties of GstGL-1.0.GstGL.GLBaseFilter */
     readonly context: GLContext
     /* Properties of GstBase-1.0.GstBase.BaseTransform */
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGL-1.0.GstGL.GLBaseFilter */
-    display: GLDisplay
-    in_caps: Gst.Caps
-    out_caps: Gst.Caps
     /* Fields of GstBase-1.0.GstBase.BaseTransform */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    have_segment: boolean
-    segment: Gst.Segment
-    queued_buf: Gst.Buffer
+    readonly element: Gst.Element
+    readonly sinkpad: Gst.Pad
+    readonly srcpad: Gst.Pad
+    readonly have_segment: boolean
+    readonly segment: Gst.Segment
+    readonly queued_buf: Gst.Buffer
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLBaseFilter */
     find_gl_context(): boolean
     get_gl_context(): GLContext | null
@@ -477,6 +480,7 @@ class GLBaseFilter {
     vfunc_gl_start(): boolean
     vfunc_gl_stop(): void
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseTransform */
     vfunc_accept_caps(direction: Gst.PadDirection, caps: Gst.Caps): boolean
@@ -490,6 +494,7 @@ class GLBaseFilter {
     vfunc_prepare_output_buffer(input: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
     vfunc_propose_allocation(decide_query: Gst.Query, query: Gst.Query): boolean
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(incaps: Gst.Caps, outcaps: Gst.Caps): boolean
     vfunc_sink_event(event: Gst.Event): boolean
@@ -551,10 +556,6 @@ class GLBaseFilter {
     connect_after(sigName: "notify::context", callback: (($obj: GLBaseFilter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: GLBaseFilter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: GLBaseFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: GLBaseFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLBaseFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLBaseFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLBaseFilter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -564,27 +565,26 @@ class GLBaseFilter {
     _init (config?: GLBaseFilter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GLBaseMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
+interface GLBaseMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
 }
 class GLBaseMemoryAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -637,6 +637,7 @@ class GLBaseMemoryAllocator {
     watch_closure(closure: Function): void
     /* Virtual methods of GstGL-1.0.GstGL.GLBaseMemoryAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of Gst-1.0.Gst.Allocator */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
@@ -659,10 +660,6 @@ class GLBaseMemoryAllocator {
     connect(sigName: "notify", callback: (($obj: GLBaseMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLBaseMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLBaseMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLBaseMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLBaseMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLBaseMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -672,69 +669,64 @@ class GLBaseMemoryAllocator {
     _init (config?: GLBaseMemoryAllocator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GLBaseSrc_ConstructProps extends GstBase.PushSrc_ConstructProps {
+interface GLBaseSrc_ConstructProps extends GstBase.PushSrc_ConstructProps {
+    /* Constructor properties of GstGL-1.0.GstGL.GLBaseSrc */
     timestamp_offset?: number
 }
 class GLBaseSrc {
     /* Properties of GstGL-1.0.GstGL.GLBaseSrc */
     timestamp_offset: number
     /* Properties of GstBase-1.0.GstBase.BaseSrc */
-    blocksize: number
     do_timestamp: boolean
-    num_buffers: number
-    typefind: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGL-1.0.GstGL.GLBaseSrc */
-    display: GLDisplay
-    context: GLContext
-    out_info: GstVideo.VideoInfo
-    out_caps: Gst.Caps
-    running_time: Gst.ClockTime
+    /* Fields of GstBase-1.0.GstBase.PushSrc */
+    readonly parent: GstBase.BaseSrc
     /* Fields of GstBase-1.0.GstBase.BaseSrc */
-    element: Gst.Element
-    srcpad: Gst.Pad
-    live_lock: GLib.Mutex
-    live_cond: GLib.Cond
-    is_live: boolean
-    live_running: boolean
-    can_activate_push: boolean
-    random_access: boolean
-    clock_id: Gst.ClockID
-    segment: Gst.Segment
-    need_newsegment: boolean
-    num_buffers_left: number
-    running: boolean
-    pending_seek: Gst.Event
-    priv: GstBase.BaseSrcPrivate
+    readonly element: Gst.Element
+    readonly srcpad: Gst.Pad
+    readonly live_lock: GLib.Mutex
+    readonly live_cond: GLib.Cond
+    readonly is_live: boolean
+    readonly live_running: boolean
+    readonly blocksize: number
+    readonly can_activate_push: boolean
+    readonly random_access: boolean
+    readonly clock_id: Gst.ClockID
+    readonly segment: Gst.Segment
+    readonly need_newsegment: boolean
+    readonly num_buffers: number
+    readonly num_buffers_left: number
+    readonly typefind: boolean
+    readonly running: boolean
+    readonly pending_seek: Gst.Event
+    readonly priv: GstBase.BaseSrcPrivate
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseSrc */
     get_allocator(): [ /* allocator */ Gst.Allocator | null, /* params */ Gst.AllocationParams | null ]
     get_blocksize(): number
@@ -875,18 +867,30 @@ class GLBaseSrc {
     vfunc_gl_start(): boolean
     vfunc_gl_stop(): void
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.PushSrc */
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSrc */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
@@ -901,6 +905,8 @@ class GLBaseSrc {
     vfunc_is_seekable(): boolean
     vfunc_negotiate(): boolean
     vfunc_prepare_seek_segment(seek: Gst.Event, segment: Gst.Segment): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(caps: Gst.Caps): boolean
     vfunc_start(): boolean
@@ -954,18 +960,8 @@ class GLBaseSrc {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::timestamp-offset", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::timestamp-offset", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::blocksize", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::blocksize", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::do-timestamp", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::do-timestamp", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::num-buffers", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::num-buffers", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::typefind", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::typefind", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLBaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -975,27 +971,26 @@ class GLBaseSrc {
     _init (config?: GLBaseSrc_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GLBufferAllocator_ConstructProps extends GLBaseMemoryAllocator_ConstructProps {
+interface GLBufferAllocator_ConstructProps extends GLBaseMemoryAllocator_ConstructProps {
 }
 class GLBufferAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -1048,9 +1043,11 @@ class GLBufferAllocator {
     watch_closure(closure: Function): void
     /* Virtual methods of GstGL-1.0.GstGL.GLBufferAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of GstGL-1.0.GstGL.GLBaseMemoryAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of Gst-1.0.Gst.Allocator */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
@@ -1073,10 +1070,6 @@ class GLBufferAllocator {
     connect(sigName: "notify", callback: (($obj: GLBufferAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLBufferAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLBufferAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLBufferAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLBufferAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLBufferAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1086,23 +1079,19 @@ class GLBufferAllocator {
     _init (config?: GLBufferAllocator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GLBufferPool_ConstructProps extends Gst.BufferPool_ConstructProps {
+interface GLBufferPool_ConstructProps extends Gst.BufferPool_ConstructProps {
 }
 class GLBufferPool {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGL-1.0.GstGL.GLBufferPool */
-    bufferpool: Gst.BufferPool
-    context: GLContext
     /* Fields of Gst-1.0.Gst.BufferPool */
-    object: Gst.Object
-    flushing: number
+    readonly object: Gst.Object
+    readonly flushing: number
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLBufferPool */
     get_gl_allocation_params(): GLAllocationParams
     /* Methods of Gst-1.0.Gst.BufferPool */
@@ -1191,10 +1180,6 @@ class GLBufferPool {
     connect(sigName: "notify", callback: (($obj: GLBufferPool, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLBufferPool, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLBufferPool, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLBufferPool, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1204,21 +1189,21 @@ class GLBufferPool {
     _init (config?: GLBufferPool_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(context: GLContext): GLBufferPool
+    /* Function overloads */
     static new(): GLBufferPool
     static $gtype: GObject.Type
 }
-export interface GLColorConvert_ConstructProps extends Gst.Object_ConstructProps {
+interface GLColorConvert_ConstructProps extends Gst.Object_ConstructProps {
 }
 class GLColorConvert {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLColorConvert */
     decide_allocation(query: Gst.Query): boolean
     perform(inbuf: Gst.Buffer): Gst.Buffer
@@ -1287,10 +1272,6 @@ class GLColorConvert {
     connect(sigName: "notify", callback: (($obj: GLColorConvert, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLColorConvert, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLColorConvert, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLColorConvert, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLColorConvert, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLColorConvert, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1304,20 +1285,17 @@ class GLColorConvert {
     static transform_caps(context: GLContext, direction: Gst.PadDirection, caps: Gst.Caps, filter: Gst.Caps): Gst.Caps
     static $gtype: GObject.Type
 }
-export interface GLContext_ConstructProps extends Gst.Object_ConstructProps {
+interface GLContext_ConstructProps extends Gst.Object_ConstructProps {
 }
 class GLContext {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGL-1.0.GstGL.GLContext */
-    gl_vtable: GLFuncs
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLContext */
     activate(activate: boolean): boolean
     can_share(other_context: GLContext): boolean
@@ -1425,10 +1403,6 @@ class GLContext {
     connect(sigName: "notify", callback: (($obj: GLContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLContext, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLContext, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLContext, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLContext, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1446,18 +1420,17 @@ class GLContext {
     static get_proc_address_with_platform(context_type: GLPlatform, gl_api: GLAPI, name: string): object | null
     static $gtype: GObject.Type
 }
-export interface GLDisplay_ConstructProps extends Gst.Object_ConstructProps {
+interface GLDisplay_ConstructProps extends Gst.Object_ConstructProps {
 }
 class GLDisplay {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLDisplay */
     add_context(context: GLContext): boolean
     create_context(other_context: GLContext): [ /* returnType */ boolean, /* p_context */ GLContext ]
@@ -1543,10 +1516,6 @@ class GLDisplay {
     connect(sigName: "notify", callback: (($obj: GLDisplay, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLDisplay, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLDisplay, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLDisplay, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLDisplay, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLDisplay, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1559,60 +1528,52 @@ class GLDisplay {
     static new_with_type(type: GLDisplayType): GLDisplay
     static $gtype: GObject.Type
 }
-export interface GLFilter_ConstructProps extends GLBaseFilter_ConstructProps {
+interface GLFilter_ConstructProps extends GLBaseFilter_ConstructProps {
 }
 class GLFilter {
-    /* Properties of GstGL-1.0.GstGL.GLBaseFilter */
-    readonly context: GLContext
     /* Properties of GstBase-1.0.GstBase.BaseTransform */
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGL-1.0.GstGL.GLFilter */
-    in_info: GstVideo.VideoInfo
-    out_info: GstVideo.VideoInfo
-    in_texture_target: GLTextureTarget
-    out_texture_target: GLTextureTarget
-    out_caps: Gst.Caps
-    fbo: GLFramebuffer
     /* Fields of GstGL-1.0.GstGL.GLBaseFilter */
-    display: GLDisplay
-    in_caps: Gst.Caps
+    readonly parent: GstBase.BaseTransform
+    readonly display: GLDisplay
+    readonly context: GLContext
+    readonly in_caps: Gst.Caps
+    readonly out_caps: Gst.Caps
     /* Fields of GstBase-1.0.GstBase.BaseTransform */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    have_segment: boolean
-    segment: Gst.Segment
-    queued_buf: Gst.Buffer
+    readonly element: Gst.Element
+    readonly sinkpad: Gst.Pad
+    readonly srcpad: Gst.Pad
+    readonly have_segment: boolean
+    readonly segment: Gst.Segment
+    readonly queued_buf: Gst.Buffer
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLFilter */
     draw_fullscreen_quad(): void
     filter_texture(input: Gst.Buffer, output: Gst.Buffer): boolean
@@ -1755,14 +1716,18 @@ class GLFilter {
     vfunc_filter_texture(input: GLMemory, output: GLMemory): boolean
     vfunc_init_fbo(): boolean
     vfunc_set_caps(incaps: Gst.Caps, outcaps: Gst.Caps): boolean
+    /* Function overloads */
+    vfunc_set_caps(incaps: Gst.Caps, outcaps: Gst.Caps): boolean
     vfunc_transform_internal_caps(direction: Gst.PadDirection, caps: Gst.Caps, filter_caps: Gst.Caps): Gst.Caps
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstGL-1.0.GstGL.GLBaseFilter */
     vfunc_gl_set_caps(incaps: Gst.Caps, outcaps: Gst.Caps): boolean
     vfunc_gl_start(): boolean
     vfunc_gl_stop(): void
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseTransform */
     vfunc_accept_caps(direction: Gst.PadDirection, caps: Gst.Caps): boolean
@@ -1776,6 +1741,7 @@ class GLFilter {
     vfunc_prepare_output_buffer(input: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
     vfunc_propose_allocation(decide_query: Gst.Query, query: Gst.Query): boolean
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(incaps: Gst.Caps, outcaps: Gst.Caps): boolean
     vfunc_sink_event(event: Gst.Event): boolean
@@ -1833,14 +1799,8 @@ class GLFilter {
     connect(sigName: "notify", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::context", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::context", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLFilter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1852,18 +1812,17 @@ class GLFilter {
     static add_rgba_pad_templates(klass: GLFilterClass): void
     static $gtype: GObject.Type
 }
-export interface GLFramebuffer_ConstructProps extends Gst.Object_ConstructProps {
+interface GLFramebuffer_ConstructProps extends Gst.Object_ConstructProps {
 }
 class GLFramebuffer {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLFramebuffer */
     attach(attachment_point: number, mem: GLBaseMemory): void
     bind(): void
@@ -1934,10 +1893,6 @@ class GLFramebuffer {
     connect(sigName: "notify", callback: (($obj: GLFramebuffer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLFramebuffer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLFramebuffer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLFramebuffer, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLFramebuffer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLFramebuffer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1950,27 +1905,26 @@ class GLFramebuffer {
     static new_with_default_depth(context: GLContext, width: number, height: number): GLFramebuffer
     static $gtype: GObject.Type
 }
-export interface GLMemoryAllocator_ConstructProps extends GLBaseMemoryAllocator_ConstructProps {
+interface GLMemoryAllocator_ConstructProps extends GLBaseMemoryAllocator_ConstructProps {
 }
 class GLMemoryAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -2023,9 +1977,11 @@ class GLMemoryAllocator {
     watch_closure(closure: Function): void
     /* Virtual methods of GstGL-1.0.GstGL.GLMemoryAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of GstGL-1.0.GstGL.GLBaseMemoryAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of Gst-1.0.Gst.Allocator */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
@@ -2048,10 +2004,6 @@ class GLMemoryAllocator {
     connect(sigName: "notify", callback: (($obj: GLMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2063,27 +2015,26 @@ class GLMemoryAllocator {
     static get_default(context: GLContext): GLMemoryAllocator
     static $gtype: GObject.Type
 }
-export interface GLMemoryPBOAllocator_ConstructProps extends GLMemoryAllocator_ConstructProps {
+interface GLMemoryPBOAllocator_ConstructProps extends GLMemoryAllocator_ConstructProps {
 }
 class GLMemoryPBOAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -2136,12 +2087,15 @@ class GLMemoryPBOAllocator {
     watch_closure(closure: Function): void
     /* Virtual methods of GstGL-1.0.GstGL.GLMemoryPBOAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of GstGL-1.0.GstGL.GLMemoryAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of GstGL-1.0.GstGL.GLBaseMemoryAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of Gst-1.0.Gst.Allocator */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
@@ -2164,10 +2118,6 @@ class GLMemoryPBOAllocator {
     connect(sigName: "notify", callback: (($obj: GLMemoryPBOAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLMemoryPBOAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLMemoryPBOAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLMemoryPBOAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLMemoryPBOAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLMemoryPBOAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2177,21 +2127,21 @@ class GLMemoryPBOAllocator {
     _init (config?: GLMemoryPBOAllocator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GLOverlayCompositor_ConstructProps extends Gst.Object_ConstructProps {
+interface GLOverlayCompositor_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstGL-1.0.GstGL.GLOverlayCompositor */
     yinvert?: boolean
 }
 class GLOverlayCompositor {
     /* Properties of GstGL-1.0.GstGL.GLOverlayCompositor */
     yinvert: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLOverlayCompositor */
     draw_overlays(): void
     free_overlays(): void
@@ -2262,10 +2212,6 @@ class GLOverlayCompositor {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::yinvert", callback: (($obj: GLOverlayCompositor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::yinvert", callback: (($obj: GLOverlayCompositor, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: GLOverlayCompositor, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLOverlayCompositor, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLOverlayCompositor, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLOverlayCompositor, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2278,27 +2224,26 @@ class GLOverlayCompositor {
     static add_caps(caps: Gst.Caps): Gst.Caps
     static $gtype: GObject.Type
 }
-export interface GLRenderbufferAllocator_ConstructProps extends GLBaseMemoryAllocator_ConstructProps {
+interface GLRenderbufferAllocator_ConstructProps extends GLBaseMemoryAllocator_ConstructProps {
 }
 class GLRenderbufferAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -2351,9 +2296,11 @@ class GLRenderbufferAllocator {
     watch_closure(closure: Function): void
     /* Virtual methods of GstGL-1.0.GstGL.GLRenderbufferAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of GstGL-1.0.GstGL.GLBaseMemoryAllocator */
     vfunc_alloc(params: GLAllocationParams): GLBaseMemory
+    /* Function overloads */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     /* Virtual methods of Gst-1.0.Gst.Allocator */
     vfunc_alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
@@ -2376,10 +2323,6 @@ class GLRenderbufferAllocator {
     connect(sigName: "notify", callback: (($obj: GLRenderbufferAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLRenderbufferAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLRenderbufferAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLRenderbufferAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLRenderbufferAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLRenderbufferAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2389,18 +2332,17 @@ class GLRenderbufferAllocator {
     _init (config?: GLRenderbufferAllocator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GLSLStage_ConstructProps extends Gst.Object_ConstructProps {
+interface GLSLStage_ConstructProps extends Gst.Object_ConstructProps {
 }
 class GLSLStage {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLSLStage */
     compile(): boolean
     get_handle(): number
@@ -2472,10 +2414,6 @@ class GLSLStage {
     connect(sigName: "notify", callback: (($obj: GLSLStage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLSLStage, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLSLStage, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLSLStage, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLSLStage, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLSLStage, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2491,22 +2429,19 @@ class GLSLStage {
     static new_with_strings(context: GLContext, type: number, version: GLSLVersion, profile: GLSLProfile, str: string[]): GLSLStage
     static $gtype: GObject.Type
 }
-export interface GLShader_ConstructProps extends Gst.Object_ConstructProps {
+interface GLShader_ConstructProps extends Gst.Object_ConstructProps {
 }
 class GLShader {
     /* Properties of GstGL-1.0.GstGL.GLShader */
     readonly linked: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGL-1.0.GstGL.GLShader */
-    context: GLContext
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLShader */
     attach(stage: GLSLStage): boolean
     attach_unlocked(stage: GLSLStage): boolean
@@ -2613,10 +2548,6 @@ class GLShader {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::linked", callback: (($obj: GLShader, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::linked", callback: (($obj: GLShader, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: GLShader, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLShader, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLShader, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLShader, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2632,20 +2563,17 @@ class GLShader {
     static string_get_highest_precision(context: GLContext, version: GLSLVersion, profile: GLSLProfile): string
     static $gtype: GObject.Type
 }
-export interface GLUpload_ConstructProps extends Gst.Object_ConstructProps {
+interface GLUpload_ConstructProps extends Gst.Object_ConstructProps {
 }
 class GLUpload {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGL-1.0.GstGL.GLUpload */
-    context: GLContext
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLUpload */
     get_caps(): [ /* in_caps */ Gst.Caps | null, /* out_caps */ Gst.Caps | null ]
     perform_with_buffer(buffer: Gst.Buffer): [ /* returnType */ GLUploadReturn, /* outbuf_ptr */ Gst.Buffer ]
@@ -2717,10 +2645,6 @@ class GLUpload {
     connect(sigName: "notify", callback: (($obj: GLUpload, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLUpload, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLUpload, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLUpload, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLUpload, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLUpload, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2733,7 +2657,8 @@ class GLUpload {
     static get_input_template_caps(): Gst.Caps
     static $gtype: GObject.Type
 }
-export interface GLViewConvert_ConstructProps extends Gst.Object_ConstructProps {
+interface GLViewConvert_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstGL-1.0.GstGL.GLViewConvert */
     downmix_mode?: GLStereoDownmix
     input_flags_override?: GstVideo.VideoMultiviewFlags
     input_mode_override?: GstVideo.VideoMultiviewMode
@@ -2747,26 +2672,14 @@ class GLViewConvert {
     input_mode_override: GstVideo.VideoMultiviewMode
     output_flags_override: GstVideo.VideoMultiviewFlags
     output_mode_override: GstVideo.VideoMultiviewMode
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGL-1.0.GstGL.GLViewConvert */
-    object: Gst.Object
-    context: GLContext
-    shader: GLShader
-    in_info: GstVideo.VideoInfo
-    out_info: GstVideo.VideoInfo
-    from_texture_target: GLTextureTarget
-    to_texture_target: GLTextureTarget
-    caps_passthrough: boolean
-    initted: boolean
-    reconfigure: boolean
-    fbo: GLFramebuffer
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLViewConvert */
     fixate_caps(direction: Gst.PadDirection, caps: Gst.Caps, othercaps: Gst.Caps): Gst.Caps
     get_output(): [ /* returnType */ Gst.FlowReturn, /* outbuf_ptr */ Gst.Buffer ]
@@ -2850,10 +2763,6 @@ class GLViewConvert {
     connect_after(sigName: "notify::output-flags-override", callback: (($obj: GLViewConvert, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::output-mode-override", callback: (($obj: GLViewConvert, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::output-mode-override", callback: (($obj: GLViewConvert, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: GLViewConvert, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLViewConvert, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLViewConvert, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLViewConvert, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2865,18 +2774,17 @@ class GLViewConvert {
     static new(): GLViewConvert
     static $gtype: GObject.Type
 }
-export interface GLWindow_ConstructProps extends Gst.Object_ConstructProps {
+interface GLWindow_ConstructProps extends Gst.Object_ConstructProps {
 }
 class GLWindow {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLWindow */
     controls_viewport(): boolean
     draw(): void
@@ -2997,10 +2905,6 @@ class GLWindow {
     connect(sigName: "notify", callback: (($obj: GLWindow, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLWindow, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLWindow, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLWindow, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLWindow, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLWindow, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3014,17 +2918,17 @@ class GLWindow {
 }
 class GLAllocationParams {
     /* Fields of GstGL-1.0.GstGL.GLAllocationParams */
-    struct_size: number
-    copy: GLAllocationParamsCopyFunc
-    free: GLAllocationParamsFreeFunc
-    alloc_flags: number
-    alloc_size: number
-    alloc_params: Gst.AllocationParams
-    context: GLContext
-    notify: GLib.DestroyNotify
-    user_data: object
-    wrapped_data: object
-    gl_handle: object
+    readonly struct_size: number
+    readonly copy: GLAllocationParamsCopyFunc
+    readonly free: GLAllocationParamsFreeFunc
+    readonly alloc_flags: number
+    readonly alloc_size: number
+    readonly alloc_params: Gst.AllocationParams
+    readonly context: GLContext
+    readonly notify: GLib.DestroyNotify
+    readonly user_data: object
+    readonly wrapped_data: object
+    readonly gl_handle: object
     /* Methods of GstGL-1.0.GstGL.GLAllocationParams */
     copy_data(dest: GLAllocationParams): void
     free_data(): void
@@ -3042,11 +2946,11 @@ class GLAsyncDebug {
 }
 abstract class GLBaseFilterClass {
     /* Fields of GstGL-1.0.GstGL.GLBaseFilterClass */
-    parent_class: GstBase.BaseTransformClass
-    supported_gl_api: GLAPI
-    gl_start: (filter: GLBaseFilter) => boolean
-    gl_stop: (filter: GLBaseFilter) => void
-    gl_set_caps: (filter: GLBaseFilter, incaps: Gst.Caps, outcaps: Gst.Caps) => boolean
+    readonly parent_class: GstBase.BaseTransformClass
+    readonly supported_gl_api: GLAPI
+    readonly gl_start: (filter: GLBaseFilter) => boolean
+    readonly gl_stop: (filter: GLBaseFilter) => void
+    readonly gl_set_caps: (filter: GLBaseFilter, incaps: Gst.Caps, outcaps: Gst.Caps) => boolean
     static name: string
 }
 class GLBaseFilterPrivate {
@@ -3054,14 +2958,14 @@ class GLBaseFilterPrivate {
 }
 class GLBaseMemory {
     /* Fields of GstGL-1.0.GstGL.GLBaseMemory */
-    mem: Gst.Memory
-    context: GLContext
-    lock: GLib.Mutex
-    map_flags: Gst.MapFlags
-    map_count: number
-    gl_map_count: number
-    data: object
-    query: GLQuery
+    readonly mem: Gst.Memory
+    readonly context: GLContext
+    readonly lock: GLib.Mutex
+    readonly map_flags: Gst.MapFlags
+    readonly map_count: number
+    readonly gl_map_count: number
+    readonly data: object
+    readonly query: GLQuery
     /* Methods of GstGL-1.0.GstGL.GLBaseMemory */
     alloc_data(): boolean
     init(allocator: Gst.Allocator, parent: Gst.Memory | null, context: GLContext, params: Gst.AllocationParams | null, size: number, user_data?: object | null, notify?: GLib.DestroyNotify | null): void
@@ -3073,22 +2977,22 @@ class GLBaseMemory {
 }
 abstract class GLBaseMemoryAllocatorClass {
     /* Fields of GstGL-1.0.GstGL.GLBaseMemoryAllocatorClass */
-    parent_class: Gst.AllocatorClass
-    alloc: GLBaseMemoryAllocatorAllocFunction
-    create: GLBaseMemoryAllocatorCreateFunction
-    map: GLBaseMemoryAllocatorMapFunction
-    unmap: GLBaseMemoryAllocatorUnmapFunction
-    copy: GLBaseMemoryAllocatorCopyFunction
-    destroy: GLBaseMemoryAllocatorDestroyFunction
+    readonly parent_class: Gst.AllocatorClass
+    readonly alloc: GLBaseMemoryAllocatorAllocFunction
+    readonly create: GLBaseMemoryAllocatorCreateFunction
+    readonly map: GLBaseMemoryAllocatorMapFunction
+    readonly unmap: GLBaseMemoryAllocatorUnmapFunction
+    readonly copy: GLBaseMemoryAllocatorCopyFunction
+    readonly destroy: GLBaseMemoryAllocatorDestroyFunction
     static name: string
 }
 abstract class GLBaseSrcClass {
     /* Fields of GstGL-1.0.GstGL.GLBaseSrcClass */
-    parent_class: GstBase.PushSrcClass
-    supported_gl_api: GLAPI
-    gl_start: (src: GLBaseSrc) => boolean
-    gl_stop: (src: GLBaseSrc) => void
-    fill_gl_memory: (src: GLBaseSrc, mem: GLMemory) => boolean
+    readonly parent_class: GstBase.PushSrcClass
+    readonly supported_gl_api: GLAPI
+    readonly gl_start: (src: GLBaseSrc) => boolean
+    readonly gl_stop: (src: GLBaseSrc) => void
+    readonly fill_gl_memory: (src: GLBaseSrc, mem: GLMemory) => boolean
     static name: string
 }
 class GLBaseSrcPrivate {
@@ -3096,19 +3000,19 @@ class GLBaseSrcPrivate {
 }
 class GLBuffer {
     /* Fields of GstGL-1.0.GstGL.GLBuffer */
-    mem: GLBaseMemory
-    id: number
-    target: number
-    usage_hints: number
+    readonly mem: GLBaseMemory
+    readonly id: number
+    readonly target: number
+    readonly usage_hints: number
     static name: string
     /* Static methods and pseudo-constructors */
     static init_once(): void
 }
 class GLBufferAllocationParams {
     /* Fields of GstGL-1.0.GstGL.GLBufferAllocationParams */
-    parent: GLAllocationParams
-    gl_target: number
-    gl_usage: number
+    readonly parent: GLAllocationParams
+    readonly gl_target: number
+    readonly gl_usage: number
     static name: string
     static new(context: GLContext, alloc_size: number, alloc_params: Gst.AllocationParams | null, gl_target: number, gl_usage: number): GLBufferAllocationParams
     constructor(context: GLContext, alloc_size: number, alloc_params: Gst.AllocationParams | null, gl_target: number, gl_usage: number)
@@ -3117,12 +3021,12 @@ class GLBufferAllocationParams {
 }
 abstract class GLBufferAllocatorClass {
     /* Fields of GstGL-1.0.GstGL.GLBufferAllocatorClass */
-    parent_class: GLBaseMemoryAllocatorClass
+    readonly parent_class: GLBaseMemoryAllocatorClass
     static name: string
 }
 abstract class GLBufferPoolClass {
     /* Fields of GstGL-1.0.GstGL.GLBufferPoolClass */
-    parent_class: Gst.BufferPoolClass
+    readonly parent_class: Gst.BufferPoolClass
     static name: string
 }
 class GLBufferPoolPrivate {
@@ -3136,21 +3040,21 @@ class GLColorConvertPrivate {
 }
 abstract class GLContextClass {
     /* Fields of GstGL-1.0.GstGL.GLContextClass */
-    parent_class: Gst.ObjectClass
-    get_current_context: () => number
-    get_gl_context: (context: GLContext) => number
-    get_gl_api: (context: GLContext) => GLAPI
-    get_gl_platform: (context: GLContext) => GLPlatform
-    get_proc_address: (gl_api: GLAPI, name: string) => object
-    activate: (context: GLContext, activate: boolean) => boolean
-    choose_format: (context: GLContext) => boolean
-    create_context: (context: GLContext, gl_api: GLAPI, other_context: GLContext) => boolean
-    destroy_context: (context: GLContext) => void
-    swap_buffers: (context: GLContext) => void
-    check_feature: (context: GLContext, feature: string) => boolean
-    get_gl_platform_version: (context: GLContext) => [ /* major */ number, /* minor */ number ]
-    get_config: (context: GLContext) => Gst.Structure | null
-    request_config: (context: GLContext, gl_config?: Gst.Structure | null) => boolean
+    readonly parent_class: Gst.ObjectClass
+    readonly get_current_context: () => number
+    readonly get_gl_context: (context: GLContext) => number
+    readonly get_gl_api: (context: GLContext) => GLAPI
+    readonly get_gl_platform: (context: GLContext) => GLPlatform
+    readonly get_proc_address: (gl_api: GLAPI, name: string) => object
+    readonly activate: (context: GLContext, activate: boolean) => boolean
+    readonly choose_format: (context: GLContext) => boolean
+    readonly create_context: (context: GLContext, gl_api: GLAPI, other_context: GLContext) => boolean
+    readonly destroy_context: (context: GLContext) => void
+    readonly swap_buffers: (context: GLContext) => void
+    readonly check_feature: (context: GLContext, feature: string) => boolean
+    readonly get_gl_platform_version: (context: GLContext) => [ /* major */ number, /* minor */ number ]
+    readonly get_config: (context: GLContext) => Gst.Structure | null
+    readonly request_config: (context: GLContext, gl_config?: Gst.Structure | null) => boolean
     static name: string
 }
 class GLContextPrivate {
@@ -3158,9 +3062,9 @@ class GLContextPrivate {
 }
 abstract class GLDisplayClass {
     /* Fields of GstGL-1.0.GstGL.GLDisplayClass */
-    object_class: Gst.ObjectClass
-    get_handle: (display: GLDisplay) => number
-    create_window: (display: GLDisplay) => GLWindow
+    readonly object_class: Gst.ObjectClass
+    readonly get_handle: (display: GLDisplay) => number
+    readonly create_window: (display: GLDisplay) => GLWindow
     static name: string
 }
 class GLDisplayPrivate {
@@ -3168,12 +3072,12 @@ class GLDisplayPrivate {
 }
 abstract class GLFilterClass {
     /* Fields of GstGL-1.0.GstGL.GLFilterClass */
-    parent_class: GLBaseFilterClass
-    set_caps: (filter: GLFilter, incaps: Gst.Caps, outcaps: Gst.Caps) => boolean
-    filter: (filter: GLFilter, inbuf: Gst.Buffer, outbuf: Gst.Buffer) => boolean
-    filter_texture: (filter: GLFilter, input: GLMemory, output: GLMemory) => boolean
-    init_fbo: (filter: GLFilter) => boolean
-    transform_internal_caps: (filter: GLFilter, direction: Gst.PadDirection, caps: Gst.Caps, filter_caps: Gst.Caps) => Gst.Caps
+    readonly parent_class: GLBaseFilterClass
+    readonly set_caps: (filter: GLFilter, incaps: Gst.Caps, outcaps: Gst.Caps) => boolean
+    readonly filter: (filter: GLFilter, inbuf: Gst.Buffer, outbuf: Gst.Buffer) => boolean
+    readonly filter_texture: (filter: GLFilter, input: GLMemory, output: GLMemory) => boolean
+    readonly init_fbo: (filter: GLFilter) => boolean
+    readonly transform_internal_caps: (filter: GLFilter, direction: Gst.PadDirection, caps: Gst.Caps, filter_caps: Gst.Caps) => Gst.Caps
     static name: string
 }
 abstract class GLFramebufferClass {
@@ -3187,17 +3091,17 @@ class GLFuncs {
 }
 class GLMemory {
     /* Fields of GstGL-1.0.GstGL.GLMemory */
-    mem: GLBaseMemory
-    tex_id: number
-    tex_target: GLTextureTarget
-    tex_format: GLFormat
-    info: GstVideo.VideoInfo
-    valign: GstVideo.VideoAlignment
-    plane: number
-    tex_scaling: number[]
-    texture_wrapped: boolean
-    unpack_length: number
-    tex_width: number
+    readonly mem: GLBaseMemory
+    readonly tex_id: number
+    readonly tex_target: GLTextureTarget
+    readonly tex_format: GLFormat
+    readonly info: GstVideo.VideoInfo
+    readonly valign: GstVideo.VideoAlignment
+    readonly plane: number
+    readonly tex_scaling: number[]
+    readonly texture_wrapped: boolean
+    readonly unpack_length: number
+    readonly tex_width: number
     /* Methods of GstGL-1.0.GstGL.GLMemory */
     copy_into(tex_id: number, target: GLTextureTarget, tex_format: GLFormat, width: number, height: number): boolean
     copy_teximage(tex_id: number, out_target: GLTextureTarget, out_tex_format: GLFormat, out_width: number, out_height: number): boolean
@@ -3215,9 +3119,9 @@ class GLMemory {
 }
 abstract class GLMemoryAllocatorClass {
     /* Fields of GstGL-1.0.GstGL.GLMemoryAllocatorClass */
-    map: GLBaseMemoryAllocatorMapFunction
-    copy: GLBaseMemoryAllocatorCopyFunction
-    unmap: GLBaseMemoryAllocatorUnmapFunction
+    readonly map: GLBaseMemoryAllocatorMapFunction
+    readonly copy: GLBaseMemoryAllocatorCopyFunction
+    readonly unmap: GLBaseMemoryAllocatorUnmapFunction
     static name: string
 }
 class GLMemoryPBO {
@@ -3231,12 +3135,12 @@ class GLMemoryPBO {
 }
 abstract class GLMemoryPBOAllocatorClass {
     /* Fields of GstGL-1.0.GstGL.GLMemoryPBOAllocatorClass */
-    parent_class: GLMemoryAllocatorClass
+    readonly parent_class: GLMemoryAllocatorClass
     static name: string
 }
 abstract class GLOverlayCompositorClass {
     /* Fields of GstGL-1.0.GstGL.GLOverlayCompositorClass */
-    object_class: Gst.ObjectClass
+    readonly object_class: Gst.ObjectClass
     static name: string
 }
 class GLQuery {
@@ -3254,11 +3158,11 @@ class GLQuery {
 }
 class GLRenderbuffer {
     /* Fields of GstGL-1.0.GstGL.GLRenderbuffer */
-    renderbuffer_id: number
-    renderbuffer_format: GLFormat
-    width: number
-    height: number
-    renderbuffer_wrapped: boolean
+    readonly renderbuffer_id: number
+    readonly renderbuffer_format: GLFormat
+    readonly width: number
+    readonly height: number
+    readonly renderbuffer_wrapped: boolean
     /* Methods of GstGL-1.0.GstGL.GLRenderbuffer */
     get_format(): GLFormat
     get_height(): number
@@ -3270,9 +3174,9 @@ class GLRenderbuffer {
 }
 class GLRenderbufferAllocationParams {
     /* Fields of GstGL-1.0.GstGL.GLRenderbufferAllocationParams */
-    renderbuffer_format: GLFormat
-    width: number
-    height: number
+    readonly renderbuffer_format: GLFormat
+    readonly width: number
+    readonly height: number
     static name: string
     static new(context: GLContext, alloc_params: Gst.AllocationParams | null, renderbuffer_format: GLFormat, width: number, height: number): GLRenderbufferAllocationParams
     constructor(context: GLContext, alloc_params: Gst.AllocationParams | null, renderbuffer_format: GLFormat, width: number, height: number)
@@ -3282,7 +3186,7 @@ class GLRenderbufferAllocationParams {
 }
 abstract class GLRenderbufferAllocatorClass {
     /* Fields of GstGL-1.0.GstGL.GLRenderbufferAllocatorClass */
-    parent_class: GLBaseMemoryAllocatorClass
+    readonly parent_class: GLBaseMemoryAllocatorClass
     static name: string
 }
 abstract class GLSLStageClass {
@@ -3299,18 +3203,18 @@ class GLShaderPrivate {
 }
 class GLSyncMeta {
     /* Fields of GstGL-1.0.GstGL.GLSyncMeta */
-    parent: Gst.Meta
-    context: GLContext
-    data: object
-    set_sync: (sync: GLSyncMeta, context: GLContext) => void
-    set_sync_gl: (sync: GLSyncMeta, context: GLContext) => void
-    wait: (sync: GLSyncMeta, context: GLContext) => void
-    wait_gl: (sync: GLSyncMeta, context: GLContext) => void
-    wait_cpu: (sync: GLSyncMeta, context: GLContext) => void
-    wait_cpu_gl: (sync: GLSyncMeta, context: GLContext) => void
-    copy: (src: GLSyncMeta, sbuffer: Gst.Buffer, dest: GLSyncMeta, dbuffer: Gst.Buffer) => void
-    free: (sync: GLSyncMeta, context: GLContext) => void
-    free_gl: (sync: GLSyncMeta, context: GLContext) => void
+    readonly parent: Gst.Meta
+    readonly context: GLContext
+    readonly data: object
+    readonly set_sync: (sync: GLSyncMeta, context: GLContext) => void
+    readonly set_sync_gl: (sync: GLSyncMeta, context: GLContext) => void
+    readonly wait: (sync: GLSyncMeta, context: GLContext) => void
+    readonly wait_gl: (sync: GLSyncMeta, context: GLContext) => void
+    readonly wait_cpu: (sync: GLSyncMeta, context: GLContext) => void
+    readonly wait_cpu_gl: (sync: GLSyncMeta, context: GLContext) => void
+    readonly copy: (src: GLSyncMeta, sbuffer: Gst.Buffer, dest: GLSyncMeta, dbuffer: Gst.Buffer) => void
+    readonly free: (sync: GLSyncMeta, context: GLContext) => void
+    readonly free_gl: (sync: GLSyncMeta, context: GLContext) => void
     /* Methods of GstGL-1.0.GstGL.GLSyncMeta */
     set_sync_point(context: GLContext): void
     static name: string
@@ -3319,7 +3223,7 @@ class GLSyncMeta {
 }
 abstract class GLUploadClass {
     /* Fields of GstGL-1.0.GstGL.GLUploadClass */
-    object_class: Gst.ObjectClass
+    readonly object_class: Gst.ObjectClass
     static name: string
 }
 class GLUploadPrivate {
@@ -3327,12 +3231,12 @@ class GLUploadPrivate {
 }
 class GLVideoAllocationParams {
     /* Fields of GstGL-1.0.GstGL.GLVideoAllocationParams */
-    parent: GLAllocationParams
-    v_info: GstVideo.VideoInfo
-    plane: number
-    valign: GstVideo.VideoAlignment
-    target: GLTextureTarget
-    tex_format: GLFormat
+    readonly parent: GLAllocationParams
+    readonly v_info: GstVideo.VideoInfo
+    readonly plane: number
+    readonly valign: GstVideo.VideoAlignment
+    readonly target: GLTextureTarget
+    readonly tex_format: GLFormat
     /* Methods of GstGL-1.0.GstGL.GLVideoAllocationParams */
     copy_data(dest_vid: GLVideoAllocationParams): void
     free_data(): void
@@ -3353,24 +3257,24 @@ class GLViewConvertPrivate {
 }
 abstract class GLWindowClass {
     /* Fields of GstGL-1.0.GstGL.GLWindowClass */
-    parent_class: Gst.ObjectClass
-    get_display: (window: GLWindow) => number
-    set_window_handle: (window: GLWindow, handle: number) => void
-    get_window_handle: (window: GLWindow) => number
-    draw: (window: GLWindow) => void
-    run: (window: GLWindow) => void
-    quit: (window: GLWindow) => void
-    send_message: (window: GLWindow, callback: GLWindowCB) => void
-    send_message_async: (window: GLWindow, callback: GLWindowCB) => void
-    open: (window: GLWindow) => boolean
-    close: (window: GLWindow) => void
-    handle_events: (window: GLWindow, handle_events: boolean) => void
-    set_preferred_size: (window: GLWindow, width: number, height: number) => void
-    show: (window: GLWindow) => void
-    set_render_rectangle: (window: GLWindow, x: number, y: number, width: number, height: number) => boolean
-    queue_resize: (window: GLWindow) => void
-    controls_viewport: (window: GLWindow) => boolean
-    has_output_surface: (window: GLWindow) => boolean
+    readonly parent_class: Gst.ObjectClass
+    readonly get_display: (window: GLWindow) => number
+    readonly set_window_handle: (window: GLWindow, handle: number) => void
+    readonly get_window_handle: (window: GLWindow) => number
+    readonly draw: (window: GLWindow) => void
+    readonly run: (window: GLWindow) => void
+    readonly quit: (window: GLWindow) => void
+    readonly send_message: (window: GLWindow, callback: GLWindowCB) => void
+    readonly send_message_async: (window: GLWindow, callback: GLWindowCB) => void
+    readonly open: (window: GLWindow) => boolean
+    readonly close: (window: GLWindow) => void
+    readonly handle_events: (window: GLWindow, handle_events: boolean) => void
+    readonly set_preferred_size: (window: GLWindow, width: number, height: number) => void
+    readonly show: (window: GLWindow) => void
+    readonly set_render_rectangle: (window: GLWindow, x: number, y: number, width: number, height: number) => boolean
+    readonly queue_resize: (window: GLWindow) => void
+    readonly controls_viewport: (window: GLWindow) => boolean
+    readonly has_output_surface: (window: GLWindow) => boolean
     static name: string
 }
 class GLWindowPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GUPnPIgd-1.0
  */
@@ -11,15 +17,13 @@ export namespace GUPnPIgd {
 enum SimpleIgdError {
     SIMPLE_IGD_ERROR_EXTERNAL_ADDRESS,
 }
-export interface SimpleIgd_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleIgd_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SimpleIgd {
     /* Properties of GUPnPIgd-1.0.GUPnPIgd.SimpleIgd */
     readonly main_context: object
-    /* Fields of GUPnPIgd-1.0.GUPnPIgd.SimpleIgd */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPIgd-1.0.GUPnPIgd.SimpleIgd */
     add_port(protocol: string, external_port: number, local_ip: string, local_port: number, lease_duration: number, description: string): void
     delete_all_mappings(): boolean
@@ -83,15 +87,15 @@ class SimpleIgd {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface SimpleIgdThread_ConstructProps extends SimpleIgd_ConstructProps {
+interface SimpleIgdThread_ConstructProps extends SimpleIgd_ConstructProps {
 }
 class SimpleIgdThread {
     /* Properties of GUPnPIgd-1.0.GUPnPIgd.SimpleIgd */
     readonly main_context: object
-    /* Fields of GUPnPIgd-1.0.GUPnPIgd.SimpleIgdThread */
-    parent: SimpleIgd
+    /* Fields of GUPnPIgd-1.0.GUPnPIgd.SimpleIgd */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPIgd-1.0.GUPnPIgd.SimpleIgd */
     add_port(protocol: string, external_port: number, local_ip: string, local_port: number, lease_duration: number, description: string): void
     delete_all_mappings(): boolean
@@ -151,6 +155,8 @@ class SimpleIgdThread {
     constructor (config?: SimpleIgdThread_ConstructProps)
     _init (config?: SimpleIgdThread_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    static new(): SimpleIgdThread
+    /* Function overloads */
     static new(): SimpleIgdThread
     static $gtype: GObject.Type
 }

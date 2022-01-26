@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * gSignon-1.0
  */
@@ -58,15 +64,15 @@ enum IdentityType {
     WEB,
     NETWORK,
 }
-export const SESSION_DATA_CAPTION: string
-export const SESSION_DATA_PROXY: string
-export const SESSION_DATA_REALM: string
-export const SESSION_DATA_RENEW_TOKEN: string
-export const SESSION_DATA_SECRET: string
-export const SESSION_DATA_TIMEOUT: string
-export const SESSION_DATA_UI_POLICY: string
-export const SESSION_DATA_USERNAME: string
-export const SESSION_DATA_WINDOW_ID: string
+const SESSION_DATA_CAPTION: string
+const SESSION_DATA_PROXY: string
+const SESSION_DATA_REALM: string
+const SESSION_DATA_RENEW_TOKEN: string
+const SESSION_DATA_SECRET: string
+const SESSION_DATA_TIMEOUT: string
+const SESSION_DATA_UI_POLICY: string
+const SESSION_DATA_USERNAME: string
+const SESSION_DATA_WINDOW_ID: string
 function error_quark(): GLib.Quark
 function security_context_deconstruct_variant(variant: GLib.Variant): SecurityContext
 function security_context_list_build_variant(list: SecurityContext[]): GLib.Variant
@@ -104,14 +110,11 @@ interface QueryMechanismCb {
 interface QueryMethodsCb {
     (auth_service: AuthService, methods: string[], error: GLib.Error): void
 }
-export interface AuthService_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthService_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AuthService {
-    /* Fields of gSignon-1.0.gSignon.AuthService */
-    parent_instance: GObject.Object
-    priv: AuthServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of gSignon-1.0.gSignon.AuthService */
     clear(cb: ClearCb): void
     query_identities(filter: GLib.HashTable, application_context: string, cb: QueryIdentitiesCb): void
@@ -162,12 +165,13 @@ class AuthService {
     static new(): AuthService
     static $gtype: GObject.Type
 }
-export interface AuthSession_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthSession_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of gSignon-1.0.gSignon.AuthSession */
     identity?: Identity
 }
 class AuthSession {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of gSignon-1.0.gSignon.AuthSession */
     cancel(): void
     get_method(): string
@@ -225,7 +229,8 @@ class AuthSession {
     static new_for_identity(identity: Identity, method_name: string): AuthSession
     static $gtype: GObject.Type
 }
-export interface Identity_ConstructProps extends GObject.Object_ConstructProps {
+interface Identity_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of gSignon-1.0.gSignon.Identity */
     app_ctx?: string
     id?: number
 }
@@ -234,7 +239,7 @@ class Identity {
     app_ctx: string
     id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of gSignon-1.0.gSignon.Identity */
     add_reference(reference: string, cb: IdentityReferenceAddedCb): void
     create_session(method: string): AuthSession
@@ -309,7 +314,7 @@ class Identity {
 }
 abstract class AuthServiceClass {
     /* Fields of gSignon-1.0.gSignon.AuthServiceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AuthServicePrivate {
@@ -317,7 +322,7 @@ class AuthServicePrivate {
 }
 abstract class AuthSessionClass {
     /* Fields of gSignon-1.0.gSignon.AuthSessionClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class AuthSessionPrivate {
@@ -325,7 +330,7 @@ class AuthSessionPrivate {
 }
 abstract class IdentityClass {
     /* Fields of gSignon-1.0.gSignon.IdentityClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class IdentityInfo {
@@ -365,8 +370,8 @@ class IdentityPrivate {
 }
 class SecurityContext {
     /* Fields of gSignon-1.0.gSignon.SecurityContext */
-    sys_ctx: string
-    app_ctx: string
+    readonly sys_ctx: string
+    readonly app_ctx: string
     /* Methods of gSignon-1.0.gSignon.SecurityContext */
     build_variant(): GLib.Variant
     copy(): SecurityContext
@@ -387,21 +392,21 @@ class SecurityContext {
 }
 class _AuthSession {
     /* Fields of gSignon-1.0.gSignon._AuthSession */
-    parent: GObject.Object
-    priv: AuthSessionPrivate
+    readonly parent: GObject.Object
+    readonly priv: AuthSessionPrivate
     static name: string
 }
 class _Identity {
     /* Fields of gSignon-1.0.gSignon._Identity */
-    parent_instance: GObject.Object
-    priv: IdentityPrivate
+    readonly parent_instance: GObject.Object
+    readonly priv: IdentityPrivate
     static name: string
 }
-type AuthSessionQueryAvailableMethodsCb = AuthSessionQueryAvailableMechanismsCb
-type IdentityCredentialsUpdatedCb = IdentityVoidCb
-type IdentityReferenceAddedCb = IdentityVoidCb
-type IdentityReferenceRemovedCb = IdentityVoidCb
-type IdentityRemovedCb = IdentityVoidCb
-type IdentitySignedOutCb = IdentityVoidCb
+    type AuthSessionQueryAvailableMethodsCb = AuthSessionQueryAvailableMechanismsCb
+    type IdentityCredentialsUpdatedCb = IdentityVoidCb
+    type IdentityReferenceAddedCb = IdentityVoidCb
+    type IdentityReferenceRemovedCb = IdentityVoidCb
+    type IdentityRemovedCb = IdentityVoidCb
+    type IdentitySignedOutCb = IdentityVoidCb
 }
 export default gSignon;

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Folks-0.6
  */
@@ -118,14 +124,15 @@ enum GroupDetailsChangeReason {
     PERMISSION_DENIED,
     SEPARATED,
 }
-export interface AliasDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface AliasDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.AliasDetails */
     alias?: string
 }
 class AliasDetails {
     /* Properties of Folks-0.6.Folks.AliasDetails */
     alias: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AliasDetails */
     change_alias(alias: string, _callback_?: Gio.AsyncReadyCallback | null): void
     change_alias_finish(_res_: Gio.AsyncResult): void
@@ -181,7 +188,8 @@ class AliasDetails {
     _init (config?: AliasDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AntiLinkable_ConstructProps extends Persona_ConstructProps {
+interface AntiLinkable_ConstructProps extends Persona_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.AntiLinkable */
     anti_links?: Gee.Set
 }
 class AntiLinkable {
@@ -192,7 +200,7 @@ class AntiLinkable {
     readonly linkable_properties: string[]
     readonly writeable_properties: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AntiLinkable */
     change_anti_links(anti_links: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_anti_links_finish(_res_: Gio.AsyncResult): void
@@ -278,14 +286,15 @@ class AntiLinkable {
     _init (config?: AntiLinkable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AvatarDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface AvatarDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.AvatarDetails */
     avatar?: Gio.LoadableIcon
 }
 class AvatarDetails {
     /* Properties of Folks-0.6.Folks.AvatarDetails */
     avatar: Gio.LoadableIcon
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AvatarDetails */
     change_avatar(avatar?: Gio.LoadableIcon | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_avatar_finish(_res_: Gio.AsyncResult): void
@@ -341,7 +350,8 @@ class AvatarDetails {
     _init (config?: AvatarDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BirthdayDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface BirthdayDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.BirthdayDetails */
     birthday?: GLib.DateTime
     calendar_event_id?: string
 }
@@ -350,7 +360,7 @@ class BirthdayDetails {
     birthday: GLib.DateTime
     calendar_event_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.BirthdayDetails */
     change_birthday(birthday?: GLib.DateTime | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_birthday_finish(_res_: Gio.AsyncResult): void
@@ -416,14 +426,15 @@ class BirthdayDetails {
     _init (config?: BirthdayDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EmailDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface EmailDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.EmailDetails */
     email_addresses?: Gee.Set
 }
 class EmailDetails {
     /* Properties of Folks-0.6.Folks.EmailDetails */
     email_addresses: Gee.Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.EmailDetails */
     change_email_addresses(email_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_email_addresses_finish(_res_: Gio.AsyncResult): void
@@ -479,11 +490,11 @@ class EmailDetails {
     _init (config?: EmailDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ExtendedInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface ExtendedInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ExtendedInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.ExtendedInfo */
     get_extended_field(name: string): ExtendedFieldDetails | null
     change_extended_field(name: string, value: ExtendedFieldDetails, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -539,14 +550,15 @@ class ExtendedInfo {
     _init (config?: ExtendedInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FavouriteDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface FavouriteDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.FavouriteDetails */
     is_favourite?: boolean
 }
 class FavouriteDetails {
     /* Properties of Folks-0.6.Folks.FavouriteDetails */
     is_favourite: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.FavouriteDetails */
     change_is_favourite(is_favourite: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     change_is_favourite_finish(_res_: Gio.AsyncResult): void
@@ -602,14 +614,15 @@ class FavouriteDetails {
     _init (config?: FavouriteDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GenderDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface GenderDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.GenderDetails */
     gender?: Gender
 }
 class GenderDetails {
     /* Properties of Folks-0.6.Folks.GenderDetails */
     gender: Gender
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.GenderDetails */
     change_gender(gender: Gender, _callback_?: Gio.AsyncReadyCallback | null): void
     change_gender_finish(_res_: Gio.AsyncResult): void
@@ -665,14 +678,15 @@ class GenderDetails {
     _init (config?: GenderDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GroupDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface GroupDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.GroupDetails */
     groups?: Gee.Set
 }
 class GroupDetails {
     /* Properties of Folks-0.6.Folks.GroupDetails */
     groups: Gee.Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.GroupDetails */
     change_group(group: string, is_member: boolean, _callback_?: Gio.AsyncReadyCallback | null): void
     change_group_finish(_res_: Gio.AsyncResult): void
@@ -736,14 +750,15 @@ class GroupDetails {
     _init (config?: GroupDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ImDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface ImDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.ImDetails */
     im_addresses?: Gee.MultiMap
 }
 class ImDetails {
     /* Properties of Folks-0.6.Folks.ImDetails */
     im_addresses: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.ImDetails */
     change_im_addresses(im_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null): void
     change_im_addresses_finish(_res_: Gio.AsyncResult): void
@@ -801,7 +816,7 @@ class ImDetails {
     static normalise_im_address(im_address: string, protocol: string): string
     static $gtype: GObject.Type
 }
-export interface InteractionDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface InteractionDetails_ConstructProps extends GObject.Object_ConstructProps {
 }
 class InteractionDetails {
     /* Properties of Folks-0.6.Folks.InteractionDetails */
@@ -810,7 +825,7 @@ class InteractionDetails {
     readonly call_interaction_count: number
     readonly last_call_interaction_datetime: GLib.DateTime
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.InteractionDetails */
     get_im_interaction_count(): number
     get_last_im_interaction_datetime(): GLib.DateTime | null
@@ -872,14 +887,15 @@ class InteractionDetails {
     _init (config?: InteractionDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface LocalIdDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface LocalIdDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.LocalIdDetails */
     local_ids?: Gee.Set
 }
 class LocalIdDetails {
     /* Properties of Folks-0.6.Folks.LocalIdDetails */
     local_ids: Gee.Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.LocalIdDetails */
     change_local_ids(local_ids: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_local_ids_finish(_res_: Gio.AsyncResult): void
@@ -935,14 +951,15 @@ class LocalIdDetails {
     _init (config?: LocalIdDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface LocationDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface LocationDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.LocationDetails */
     location?: Location
 }
 class LocationDetails {
     /* Properties of Folks-0.6.Folks.LocationDetails */
     location: Location
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.LocationDetails */
     change_location(location?: Location | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_location_finish(_res_: Gio.AsyncResult): void
@@ -998,7 +1015,8 @@ class LocationDetails {
     _init (config?: LocationDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NameDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface NameDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.NameDetails */
     structured_name?: StructuredName
     full_name?: string
     nickname?: string
@@ -1009,7 +1027,7 @@ class NameDetails {
     full_name: string
     nickname: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.NameDetails */
     change_structured_name(name?: StructuredName | null, _callback_?: Gio.AsyncReadyCallback | null): void
     change_structured_name_finish(_res_: Gio.AsyncResult): void
@@ -1085,14 +1103,15 @@ class NameDetails {
     _init (config?: NameDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NoteDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface NoteDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.NoteDetails */
     notes?: Gee.Set
 }
 class NoteDetails {
     /* Properties of Folks-0.6.Folks.NoteDetails */
     notes: Gee.Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.NoteDetails */
     change_notes(notes: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_notes_finish(_res_: Gio.AsyncResult): void
@@ -1148,14 +1167,15 @@ class NoteDetails {
     _init (config?: NoteDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PhoneDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface PhoneDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.PhoneDetails */
     phone_numbers?: Gee.Set
 }
 class PhoneDetails {
     /* Properties of Folks-0.6.Folks.PhoneDetails */
     phone_numbers: Gee.Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.PhoneDetails */
     change_phone_numbers(phone_numbers: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_phone_numbers_finish(_res_: Gio.AsyncResult): void
@@ -1211,14 +1231,15 @@ class PhoneDetails {
     _init (config?: PhoneDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PostalAddressDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface PostalAddressDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.PostalAddressDetails */
     postal_addresses?: Gee.Set
 }
 class PostalAddressDetails {
     /* Properties of Folks-0.6.Folks.PostalAddressDetails */
     postal_addresses: Gee.Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.PostalAddressDetails */
     change_postal_addresses(postal_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_postal_addresses_finish(_res_: Gio.AsyncResult): void
@@ -1274,7 +1295,8 @@ class PostalAddressDetails {
     _init (config?: PostalAddressDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PresenceDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface PresenceDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.PresenceDetails */
     presence_type?: PresenceType
     presence_message?: string
     client_types?: string[]
@@ -1287,7 +1309,7 @@ class PresenceDetails {
     client_types: string[]
     presence_status: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.PresenceDetails */
     is_online(): boolean
     get_presence_type(): PresenceType
@@ -1361,14 +1383,15 @@ class PresenceDetails {
     static typecmp(type_a: PresenceType, type_b: PresenceType): number
     static $gtype: GObject.Type
 }
-export interface RoleDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface RoleDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.RoleDetails */
     roles?: Gee.Set
 }
 class RoleDetails {
     /* Properties of Folks-0.6.Folks.RoleDetails */
     roles: Gee.Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.RoleDetails */
     change_roles(roles: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_roles_finish(_res_: Gio.AsyncResult): void
@@ -1424,14 +1447,15 @@ class RoleDetails {
     _init (config?: RoleDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UrlDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface UrlDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.UrlDetails */
     urls?: Gee.Set
 }
 class UrlDetails {
     /* Properties of Folks-0.6.Folks.UrlDetails */
     urls: Gee.Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.UrlDetails */
     change_urls(urls: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null): void
     change_urls_finish(_res_: Gio.AsyncResult): void
@@ -1487,14 +1511,15 @@ class UrlDetails {
     _init (config?: UrlDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebServiceDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface WebServiceDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses?: Gee.MultiMap
 }
 class WebServiceDetails {
     /* Properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.WebServiceDetails */
     change_web_service_addresses(web_service_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null): void
     change_web_service_addresses_finish(_res_: Gio.AsyncResult): void
@@ -1550,7 +1575,8 @@ class WebServiceDetails {
     _init (config?: WebServiceDetails_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AbstractFieldDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface AbstractFieldDetails_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.AbstractFieldDetails */
     t_type?: GObject.Type
     t_dup_func?: GObject.BoxedCopyFunc
     t_destroy_func?: GLib.DestroyNotify
@@ -1565,7 +1591,7 @@ class AbstractFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
@@ -1648,11 +1674,11 @@ class AbstractFieldDetails {
     static hash_static(value: AbstractFieldDetails): number
     static $gtype: GObject.Type
 }
-export interface AvatarCache_ConstructProps extends GObject.Object_ConstructProps {
+interface AvatarCache_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AvatarCache {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AvatarCache */
     load_avatar(id: string, _callback_?: Gio.AsyncReadyCallback | null): void
     load_avatar_finish(_res_: Gio.AsyncResult): Gio.LoadableIcon | null
@@ -1706,7 +1732,8 @@ class AvatarCache {
     static dup(): AvatarCache
     static $gtype: GObject.Type
 }
-export interface BackendStore_ConstructProps extends GObject.Object_ConstructProps {
+interface BackendStore_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.BackendStore */
     enabled_backends?: Gee.Map
     is_prepared?: boolean
 }
@@ -1714,10 +1741,8 @@ class BackendStore {
     /* Properties of Folks-0.6.Folks.BackendStore */
     enabled_backends: Gee.Map
     is_prepared: boolean
-    /* Fields of Folks-0.6.Folks.BackendStore */
-    folks_backend_store_KEY_FILE_GROUP_ALL_OTHERS: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.BackendStore */
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     prepare_finish(_res_: Gio.AsyncResult): void
@@ -1785,7 +1810,7 @@ class BackendStore {
     static dup(): BackendStore
     static $gtype: GObject.Type
 }
-export interface Backend_ConstructProps extends GObject.Object_ConstructProps {
+interface Backend_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Backend {
     /* Properties of Folks-0.6.Folks.Backend */
@@ -1794,7 +1819,7 @@ class Backend {
     readonly name: string
     readonly persona_stores: Gee.Map
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.Backend */
     disable_persona_store(store: PersonaStore): void
     enable_persona_store(store: PersonaStore): void
@@ -1877,7 +1902,8 @@ class Backend {
     _init (config?: Backend_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Debug_ConstructProps extends GObject.Object_ConstructProps {
+interface Debug_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.Debug */
     colour_enabled?: boolean
     debug_output_enabled?: boolean
 }
@@ -1886,7 +1912,7 @@ class Debug {
     colour_enabled: boolean
     debug_output_enabled: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.Debug */
     emit_print_status(): void
     indent(): void
@@ -1949,7 +1975,7 @@ class Debug {
     static dup_with_flags(debug_flags: string | null, colour_enabled: boolean): Debug
     static $gtype: GObject.Type
 }
-export interface EmailFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+interface EmailFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
 class EmailFieldDetails {
     /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
@@ -1958,7 +1984,7 @@ class EmailFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
@@ -2040,7 +2066,7 @@ class EmailFieldDetails {
     static new(value: string, parameters?: Gee.MultiMap | null): EmailFieldDetails
     static $gtype: GObject.Type
 }
-export interface ExtendedFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+interface ExtendedFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
 class ExtendedFieldDetails {
     /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
@@ -2049,7 +2075,7 @@ class ExtendedFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
@@ -2131,7 +2157,7 @@ class ExtendedFieldDetails {
     static new(value: string, parameters?: Gee.MultiMap | null): ExtendedFieldDetails
     static $gtype: GObject.Type
 }
-export interface ImFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+interface ImFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
 class ImFieldDetails {
     /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
@@ -2140,7 +2166,7 @@ class ImFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
@@ -2222,7 +2248,8 @@ class ImFieldDetails {
     static new(value: string, parameters?: Gee.MultiMap | null): ImFieldDetails
     static $gtype: GObject.Type
 }
-export interface IndividualAggregator_ConstructProps extends GObject.Object_ConstructProps {
+interface IndividualAggregator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.IndividualAggregator */
     backend_store?: BackendStore
     individuals?: Gee.Map
     user?: Individual
@@ -2235,7 +2262,7 @@ class IndividualAggregator {
     individuals: Gee.Map
     user: Individual
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.IndividualAggregator */
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     prepare_finish(_res_: Gio.AsyncResult): void
@@ -2328,34 +2355,53 @@ class IndividualAggregator {
     static dup_with_backend_store(store: BackendStore): IndividualAggregator | null
     static $gtype: GObject.Type
 }
-export interface Individual_ConstructProps extends GObject.Object_ConstructProps {
+interface Individual_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.Individual */
     trust_level?: TrustLevel
     is_user?: boolean
     id?: string
     personas?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.AliasDetails */
     alias?: string
+    /* Constructor properties of Folks-0.6.Folks.AvatarDetails */
     avatar?: Gio.LoadableIcon
+    /* Constructor properties of Folks-0.6.Folks.BirthdayDetails */
     birthday?: GLib.DateTime
     calendar_event_id?: string
+    /* Constructor properties of Folks-0.6.Folks.EmailDetails */
     email_addresses?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.FavouriteDetails */
     is_favourite?: boolean
+    /* Constructor properties of Folks-0.6.Folks.GenderDetails */
     gender?: Gender
+    /* Constructor properties of Folks-0.6.Folks.GroupDetails */
     groups?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.ImDetails */
     im_addresses?: Gee.MultiMap
+    /* Constructor properties of Folks-0.6.Folks.LocalIdDetails */
     local_ids?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.LocationDetails */
     location?: Location
+    /* Constructor properties of Folks-0.6.Folks.NameDetails */
     structured_name?: StructuredName
     full_name?: string
     nickname?: string
+    /* Constructor properties of Folks-0.6.Folks.NoteDetails */
     notes?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.PresenceDetails */
     presence_type?: PresenceType
     presence_message?: string
     client_types?: string[]
     presence_status?: string
+    /* Constructor properties of Folks-0.6.Folks.PhoneDetails */
     phone_numbers?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.PostalAddressDetails */
     postal_addresses?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.RoleDetails */
     roles?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.UrlDetails */
     urls?: Gee.Set
+    /* Constructor properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses?: Gee.MultiMap
 }
 class Individual {
@@ -2413,7 +2459,7 @@ class Individual {
     /* Properties of Folks-0.6.Folks.WebServiceDetails */
     web_service_addresses: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.Individual */
     has_anti_link_with_persona(p: Persona): boolean
     has_anti_link_with_individual(i: Individual): boolean
@@ -2768,14 +2814,11 @@ class Individual {
     static typecmp(type_a: PresenceType, type_b: PresenceType): number
     static $gtype: GObject.Type
 }
-export interface Location_ConstructProps extends GObject.Object_ConstructProps {
+interface Location_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Location {
-    /* Fields of Folks-0.6.Folks.Location */
-    latitude: number
-    longitude: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.Location */
     equal(other: Location): boolean
     equal_coordinates(latitude: number, longitude: number): boolean
@@ -2824,7 +2867,8 @@ class Location {
     static new(latitude: number, longitude: number): Location
     static $gtype: GObject.Type
 }
-export interface StructuredName_ConstructProps extends GObject.Object_ConstructProps {
+interface StructuredName_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.StructuredName */
     family_name?: string
     given_name?: string
     additional_names?: string
@@ -2839,7 +2883,7 @@ class StructuredName {
     prefixes: string
     suffixes: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.StructuredName */
     is_empty(): boolean
     equal(other: StructuredName): boolean
@@ -2911,7 +2955,8 @@ class StructuredName {
     static simple(family_name?: string | null, given_name?: string | null): StructuredName
     static $gtype: GObject.Type
 }
-export interface NoteFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+interface NoteFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.NoteFieldDetails */
     uid?: string
 }
 class NoteFieldDetails {
@@ -2923,7 +2968,7 @@ class NoteFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.NoteFieldDetails */
     get_uid(): string
     set_uid(value: string): void
@@ -3010,7 +3055,8 @@ class NoteFieldDetails {
     static new(value: string, parameters?: Gee.MultiMap | null, uid?: string | null): NoteFieldDetails
     static $gtype: GObject.Type
 }
-export interface ObjectCache_ConstructProps extends GObject.Object_ConstructProps {
+interface ObjectCache_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.ObjectCache */
     t_type?: GObject.Type
     t_dup_func?: GObject.BoxedCopyFunc
     t_destroy_func?: GLib.DestroyNotify
@@ -3019,7 +3065,7 @@ export interface ObjectCache_ConstructProps extends GObject.Object_ConstructProp
 }
 class ObjectCache {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.ObjectCache */
     get_serialised_object_type(object_version: number): GLib.VariantType | null
     get_serialised_object_version(): number
@@ -3081,7 +3127,8 @@ class ObjectCache {
     _init (config?: ObjectCache_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PersonaStore_ConstructProps extends GObject.Object_ConstructProps {
+interface PersonaStore_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.PersonaStore */
     display_name?: string
     id?: string
     is_writeable?: boolean
@@ -3105,7 +3152,7 @@ class PersonaStore {
     is_primary_store: boolean
     is_user_set_default: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.PersonaStore */
     _emit_personas_changed(added: Gee.Set | null, removed: Gee.Set | null, message: string | null, actor: Persona | null, reason: GroupDetailsChangeReason): void
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
@@ -3229,7 +3276,8 @@ class PersonaStore {
     static detail_key(detail: PersonaDetail): string | null
     static $gtype: GObject.Type
 }
-export interface Persona_ConstructProps extends GObject.Object_ConstructProps {
+interface Persona_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.Persona */
     iid?: string
     uid?: string
     display_id?: string
@@ -3243,7 +3291,7 @@ class Persona {
     readonly linkable_properties: string[]
     readonly writeable_properties: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.Persona */
     linkable_property_to_links(prop_name: string, callback: any): void
     get_iid(): string
@@ -3310,7 +3358,7 @@ class Persona {
     static split_uid(uid: string): [ /* backend_name */ string, /* persona_store_id */ string, /* persona_id */ string ]
     static $gtype: GObject.Type
 }
-export interface PhoneFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+interface PhoneFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
 class PhoneFieldDetails {
     /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
@@ -3319,7 +3367,7 @@ class PhoneFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.PhoneFieldDetails */
     get_normalised(): string
     /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
@@ -3403,7 +3451,8 @@ class PhoneFieldDetails {
     static new(value: string, parameters?: Gee.MultiMap | null): PhoneFieldDetails
     static $gtype: GObject.Type
 }
-export interface PostalAddress_ConstructProps extends GObject.Object_ConstructProps {
+interface PostalAddress_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.PostalAddress */
     po_box?: string
     extension?: string
     street?: string
@@ -3426,7 +3475,7 @@ class PostalAddress {
     address_format: string
     uid: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.PostalAddress */
     is_empty(): boolean
     equal(with_: PostalAddress): boolean
@@ -3512,7 +3561,7 @@ class PostalAddress {
     static new(po_box?: string | null, extension?: string | null, street?: string | null, locality?: string | null, region?: string | null, postal_code?: string | null, country?: string | null, address_format?: string | null, uid?: string | null): PostalAddress
     static $gtype: GObject.Type
 }
-export interface PostalAddressFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+interface PostalAddressFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
 class PostalAddressFieldDetails {
     /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
@@ -3521,7 +3570,7 @@ class PostalAddressFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
@@ -3603,13 +3652,11 @@ class PostalAddressFieldDetails {
     static new(value: PostalAddress, parameters?: Gee.MultiMap | null): PostalAddressFieldDetails
     static $gtype: GObject.Type
 }
-export interface PotentialMatch_ConstructProps extends GObject.Object_ConstructProps {
+interface PotentialMatch_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PotentialMatch {
-    /* Fields of Folks-0.6.Folks.PotentialMatch */
-    folks_potential_match_known_email_aliases: Gee.Set
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.PotentialMatch */
     potential_match(a: Individual, b: Individual): MatchResult
     /* Methods of GObject-2.0.GObject.Object */
@@ -3657,12 +3704,13 @@ class PotentialMatch {
     static new(): PotentialMatch
     static $gtype: GObject.Type
 }
-export interface Query_ConstructProps extends GObject.Object_ConstructProps {
+interface Query_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.Query */
     match_fields?: string[]
 }
 class Query {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.Query */
     is_match(individual: Individual): number
     get_match_fields(): string[]
@@ -3712,7 +3760,8 @@ class Query {
     _init (config?: Query_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Role_ConstructProps extends GObject.Object_ConstructProps {
+interface Role_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.Role */
     organisation_name?: string
     title?: string
     role?: string
@@ -3725,7 +3774,7 @@ class Role {
     role: string
     uid: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.Role */
     is_empty(): boolean
     to_string(): string
@@ -3792,7 +3841,7 @@ class Role {
     static hash(r: Role): number
     static $gtype: GObject.Type
 }
-export interface RoleFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+interface RoleFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
 class RoleFieldDetails {
     /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
@@ -3801,7 +3850,7 @@ class RoleFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
@@ -3883,7 +3932,8 @@ class RoleFieldDetails {
     static new(value: Role, parameters?: Gee.MultiMap | null): RoleFieldDetails
     static $gtype: GObject.Type
 }
-export interface SearchView_ConstructProps extends GObject.Object_ConstructProps {
+interface SearchView_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.SearchView */
     query?: Query
 }
 class SearchView {
@@ -3894,7 +3944,7 @@ class SearchView {
     readonly is_prepared: boolean
     readonly is_quiescent: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.SearchView */
     prepare(_callback_?: Gio.AsyncReadyCallback | null): void
     prepare_finish(_res_: Gio.AsyncResult): void
@@ -3967,7 +4017,8 @@ class SearchView {
     static new(aggregator: IndividualAggregator, query: Query): SearchView
     static $gtype: GObject.Type
 }
-export interface SimpleQuery_ConstructProps extends Query_ConstructProps {
+interface SimpleQuery_ConstructProps extends Query_ConstructProps {
+    /* Constructor properties of Folks-0.6.Folks.SimpleQuery */
     query_string?: string
     query_locale?: string
 }
@@ -3976,7 +4027,7 @@ class SimpleQuery {
     query_string: string
     query_locale: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.SimpleQuery */
     get_query_string(): string
     set_query_string(value: string): void
@@ -4037,7 +4088,7 @@ class SimpleQuery {
     static new(query_string: string, match_fields: string[]): SimpleQuery
     static $gtype: GObject.Type
 }
-export interface UrlFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+interface UrlFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
 class UrlFieldDetails {
     /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
@@ -4046,7 +4097,7 @@ class UrlFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
@@ -4128,11 +4179,11 @@ class UrlFieldDetails {
     static new(value: string, parameters?: Gee.MultiMap | null): UrlFieldDetails
     static $gtype: GObject.Type
 }
-export interface Utils_ConstructProps extends GObject.Object_ConstructProps {
+interface Utils_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Utils {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4182,7 +4233,7 @@ class Utils {
     static set_string_afd_equal(a: Gee.Set, b: Gee.Set): boolean
     static $gtype: GObject.Type
 }
-export interface WebServiceFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
+interface WebServiceFieldDetails_ConstructProps extends AbstractFieldDetails_ConstructProps {
 }
 class WebServiceFieldDetails {
     /* Properties of Folks-0.6.Folks.AbstractFieldDetails */
@@ -4191,7 +4242,7 @@ class WebServiceFieldDetails {
     id: string
     parameters: Gee.MultiMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Folks-0.6.Folks.AbstractFieldDetails */
     get_parameter_values(parameter_name: string): Gee.Collection | null
     add_parameter(parameter_name: string, parameter_value: string): void
@@ -4275,10 +4326,10 @@ class WebServiceFieldDetails {
 }
 abstract class AbstractFieldDetailsClass {
     /* Fields of Folks-0.6.Folks.AbstractFieldDetailsClass */
-    equal: (that: AbstractFieldDetails) => boolean
-    parameters_equal: (that: AbstractFieldDetails) => boolean
-    values_equal: (that: AbstractFieldDetails) => boolean
-    hash: () => number
+    readonly equal: (that: AbstractFieldDetails) => boolean
+    readonly parameters_equal: (that: AbstractFieldDetails) => boolean
+    readonly values_equal: (that: AbstractFieldDetails) => boolean
+    readonly hash: () => number
     static name: string
 }
 class AbstractFieldDetailsPrivate {
@@ -4298,13 +4349,13 @@ class BackendStorePrivate {
 }
 abstract class BackendClass {
     /* Fields of Folks-0.6.Folks.BackendClass */
-    disable_persona_store: (store: PersonaStore) => void
-    enable_persona_store: (store: PersonaStore) => void
-    set_persona_stores: (storeids?: Gee.Set | null) => void
-    prepare: (_callback_?: Gio.AsyncReadyCallback | null) => void
-    prepare_finish: (_res_: Gio.AsyncResult) => void
-    unprepare: (_callback_?: Gio.AsyncReadyCallback | null) => void
-    unprepare_finish: (_res_: Gio.AsyncResult) => void
+    readonly disable_persona_store: (store: PersonaStore) => void
+    readonly enable_persona_store: (store: PersonaStore) => void
+    readonly set_persona_stores: (storeids?: Gee.Set | null) => void
+    readonly prepare: (_callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly prepare_finish: (_res_: Gio.AsyncResult) => void
+    readonly unprepare: (_callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly unprepare_finish: (_res_: Gio.AsyncResult) => void
     static name: string
 }
 class BackendPrivate {
@@ -4366,10 +4417,10 @@ class NoteFieldDetailsPrivate {
 }
 abstract class ObjectCacheClass {
     /* Fields of Folks-0.6.Folks.ObjectCacheClass */
-    get_serialised_object_type: (object_version: number) => GLib.VariantType | null
-    get_serialised_object_version: () => number
-    serialise_object: (object?: object | null) => GLib.Variant
-    deserialise_object: (variant: GLib.Variant, object_version: number) => object | null
+    readonly get_serialised_object_type: (object_version: number) => GLib.VariantType | null
+    readonly get_serialised_object_version: () => number
+    readonly serialise_object: (object?: object | null) => GLib.Variant
+    readonly deserialise_object: (variant: GLib.Variant, object_version: number) => object | null
     static name: string
 }
 class ObjectCachePrivate {
@@ -4377,14 +4428,14 @@ class ObjectCachePrivate {
 }
 abstract class PersonaStoreClass {
     /* Fields of Folks-0.6.Folks.PersonaStoreClass */
-    prepare: (_callback_?: Gio.AsyncReadyCallback | null) => void
-    prepare_finish: (_res_: Gio.AsyncResult) => void
-    flush: (_callback_?: Gio.AsyncReadyCallback | null) => void
-    flush_finish: (_res_: Gio.AsyncResult) => void
-    add_persona_from_details: (details: GLib.HashTable, _callback_?: Gio.AsyncReadyCallback | null) => void
-    add_persona_from_details_finish: (_res_: Gio.AsyncResult) => Persona | null
-    remove_persona: (persona: Persona, _callback_?: Gio.AsyncReadyCallback | null) => void
-    remove_persona_finish: (_res_: Gio.AsyncResult) => void
+    readonly prepare: (_callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly prepare_finish: (_res_: Gio.AsyncResult) => void
+    readonly flush: (_callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly flush_finish: (_res_: Gio.AsyncResult) => void
+    readonly add_persona_from_details: (details: GLib.HashTable, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly add_persona_from_details_finish: (_res_: Gio.AsyncResult) => Persona | null
+    readonly remove_persona: (persona: Persona, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly remove_persona_finish: (_res_: Gio.AsyncResult) => void
     static name: string
 }
 class PersonaStorePrivate {
@@ -4392,7 +4443,7 @@ class PersonaStorePrivate {
 }
 abstract class PersonaClass {
     /* Fields of Folks-0.6.Folks.PersonaClass */
-    linkable_property_to_links: (prop_name: string, callback: any) => void
+    readonly linkable_property_to_links: (prop_name: string, callback: any) => void
     static name: string
 }
 class PersonaPrivate {
@@ -4424,7 +4475,7 @@ class PotentialMatchPrivate {
 }
 abstract class QueryClass {
     /* Fields of Folks-0.6.Folks.QueryClass */
-    is_match: (individual: Individual) => number
+    readonly is_match: (individual: Individual) => number
     static name: string
 }
 class QueryPrivate {
@@ -4474,189 +4525,189 @@ class WebServiceFieldDetailsPrivate {
 }
 abstract class AliasDetailsIface {
     /* Fields of Folks-0.6.Folks.AliasDetailsIface */
-    change_alias: (alias: string, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_alias_finish: (_res_: Gio.AsyncResult) => void
-    get_alias: () => string
-    set_alias: (value: string) => void
+    readonly change_alias: (alias: string, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_alias_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_alias: () => string
+    readonly set_alias: (value: string) => void
     static name: string
 }
 abstract class AntiLinkableIface {
     /* Fields of Folks-0.6.Folks.AntiLinkableIface */
-    change_anti_links: (anti_links: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_anti_links_finish: (_res_: Gio.AsyncResult) => void
-    get_anti_links: () => Gee.Set
-    set_anti_links: (value: Gee.Set) => void
+    readonly change_anti_links: (anti_links: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_anti_links_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_anti_links: () => Gee.Set
+    readonly set_anti_links: (value: Gee.Set) => void
     static name: string
 }
 abstract class AvatarDetailsIface {
     /* Fields of Folks-0.6.Folks.AvatarDetailsIface */
-    change_avatar: (avatar?: Gio.LoadableIcon | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_avatar_finish: (_res_: Gio.AsyncResult) => void
-    get_avatar: () => Gio.LoadableIcon | null
-    set_avatar: (value?: Gio.LoadableIcon | null) => void
+    readonly change_avatar: (avatar?: Gio.LoadableIcon | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_avatar_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_avatar: () => Gio.LoadableIcon | null
+    readonly set_avatar: (value?: Gio.LoadableIcon | null) => void
     static name: string
 }
 abstract class BirthdayDetailsIface {
     /* Fields of Folks-0.6.Folks.BirthdayDetailsIface */
-    change_birthday: (birthday?: GLib.DateTime | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_birthday_finish: (_res_: Gio.AsyncResult) => void
-    change_calendar_event_id: (event_id?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_calendar_event_id_finish: (_res_: Gio.AsyncResult) => void
-    get_birthday: () => GLib.DateTime | null
-    set_birthday: (value?: GLib.DateTime | null) => void
-    get_calendar_event_id: () => string | null
-    set_calendar_event_id: (value?: string | null) => void
+    readonly change_birthday: (birthday?: GLib.DateTime | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_birthday_finish: (_res_: Gio.AsyncResult) => void
+    readonly change_calendar_event_id: (event_id?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_calendar_event_id_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_birthday: () => GLib.DateTime | null
+    readonly set_birthday: (value?: GLib.DateTime | null) => void
+    readonly get_calendar_event_id: () => string | null
+    readonly set_calendar_event_id: (value?: string | null) => void
     static name: string
 }
 abstract class EmailDetailsIface {
     /* Fields of Folks-0.6.Folks.EmailDetailsIface */
-    change_email_addresses: (email_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_email_addresses_finish: (_res_: Gio.AsyncResult) => void
-    get_email_addresses: () => Gee.Set
-    set_email_addresses: (value: Gee.Set) => void
+    readonly change_email_addresses: (email_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_email_addresses_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_email_addresses: () => Gee.Set
+    readonly set_email_addresses: (value: Gee.Set) => void
     static name: string
 }
 abstract class ExtendedInfoIface {
     /* Fields of Folks-0.6.Folks.ExtendedInfoIface */
-    get_extended_field: (name: string) => ExtendedFieldDetails | null
-    change_extended_field: (name: string, value: ExtendedFieldDetails, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_extended_field_finish: (_res_: Gio.AsyncResult) => void
-    remove_extended_field: (name: string, _callback_?: Gio.AsyncReadyCallback | null) => void
-    remove_extended_field_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_extended_field: (name: string) => ExtendedFieldDetails | null
+    readonly change_extended_field: (name: string, value: ExtendedFieldDetails, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_extended_field_finish: (_res_: Gio.AsyncResult) => void
+    readonly remove_extended_field: (name: string, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly remove_extended_field_finish: (_res_: Gio.AsyncResult) => void
     static name: string
 }
 abstract class FavouriteDetailsIface {
     /* Fields of Folks-0.6.Folks.FavouriteDetailsIface */
-    change_is_favourite: (is_favourite: boolean, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_is_favourite_finish: (_res_: Gio.AsyncResult) => void
-    get_is_favourite: () => boolean
-    set_is_favourite: (value: boolean) => void
+    readonly change_is_favourite: (is_favourite: boolean, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_is_favourite_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_is_favourite: () => boolean
+    readonly set_is_favourite: (value: boolean) => void
     static name: string
 }
 abstract class GenderDetailsIface {
     /* Fields of Folks-0.6.Folks.GenderDetailsIface */
-    change_gender: (gender: Gender, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_gender_finish: (_res_: Gio.AsyncResult) => void
-    get_gender: () => Gender
-    set_gender: (value: Gender) => void
+    readonly change_gender: (gender: Gender, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_gender_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_gender: () => Gender
+    readonly set_gender: (value: Gender) => void
     static name: string
 }
 abstract class GroupDetailsIface {
     /* Fields of Folks-0.6.Folks.GroupDetailsIface */
-    change_group: (group: string, is_member: boolean, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_group_finish: (_res_: Gio.AsyncResult) => void
-    change_groups: (groups: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_groups_finish: (_res_: Gio.AsyncResult) => void
-    get_groups: () => Gee.Set
-    set_groups: (value: Gee.Set) => void
+    readonly change_group: (group: string, is_member: boolean, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_group_finish: (_res_: Gio.AsyncResult) => void
+    readonly change_groups: (groups: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_groups_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_groups: () => Gee.Set
+    readonly set_groups: (value: Gee.Set) => void
     static name: string
 }
 abstract class ImDetailsIface {
     /* Fields of Folks-0.6.Folks.ImDetailsIface */
-    change_im_addresses: (im_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_im_addresses_finish: (_res_: Gio.AsyncResult) => void
-    get_im_addresses: () => Gee.MultiMap
-    set_im_addresses: (value: Gee.MultiMap) => void
+    readonly change_im_addresses: (im_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_im_addresses_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_im_addresses: () => Gee.MultiMap
+    readonly set_im_addresses: (value: Gee.MultiMap) => void
     static name: string
 }
 abstract class InteractionDetailsIface {
     /* Fields of Folks-0.6.Folks.InteractionDetailsIface */
-    get_im_interaction_count: () => number
-    get_last_im_interaction_datetime: () => GLib.DateTime | null
-    get_call_interaction_count: () => number
-    get_last_call_interaction_datetime: () => GLib.DateTime | null
+    readonly get_im_interaction_count: () => number
+    readonly get_last_im_interaction_datetime: () => GLib.DateTime | null
+    readonly get_call_interaction_count: () => number
+    readonly get_last_call_interaction_datetime: () => GLib.DateTime | null
     static name: string
 }
 abstract class LocalIdDetailsIface {
     /* Fields of Folks-0.6.Folks.LocalIdDetailsIface */
-    change_local_ids: (local_ids: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_local_ids_finish: (_res_: Gio.AsyncResult) => void
-    get_local_ids: () => Gee.Set
-    set_local_ids: (value: Gee.Set) => void
+    readonly change_local_ids: (local_ids: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_local_ids_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_local_ids: () => Gee.Set
+    readonly set_local_ids: (value: Gee.Set) => void
     static name: string
 }
 abstract class LocationDetailsIface {
     /* Fields of Folks-0.6.Folks.LocationDetailsIface */
-    change_location: (location?: Location | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_location_finish: (_res_: Gio.AsyncResult) => void
-    get_location: () => Location | null
-    set_location: (value?: Location | null) => void
+    readonly change_location: (location?: Location | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_location_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_location: () => Location | null
+    readonly set_location: (value?: Location | null) => void
     static name: string
 }
 abstract class NameDetailsIface {
     /* Fields of Folks-0.6.Folks.NameDetailsIface */
-    change_structured_name: (name?: StructuredName | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_structured_name_finish: (_res_: Gio.AsyncResult) => void
-    change_full_name: (full_name: string, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_full_name_finish: (_res_: Gio.AsyncResult) => void
-    change_nickname: (nickname: string, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_nickname_finish: (_res_: Gio.AsyncResult) => void
-    get_structured_name: () => StructuredName | null
-    set_structured_name: (value?: StructuredName | null) => void
-    get_full_name: () => string
-    set_full_name: (value: string) => void
-    get_nickname: () => string
-    set_nickname: (value: string) => void
+    readonly change_structured_name: (name?: StructuredName | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_structured_name_finish: (_res_: Gio.AsyncResult) => void
+    readonly change_full_name: (full_name: string, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_full_name_finish: (_res_: Gio.AsyncResult) => void
+    readonly change_nickname: (nickname: string, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_nickname_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_structured_name: () => StructuredName | null
+    readonly set_structured_name: (value?: StructuredName | null) => void
+    readonly get_full_name: () => string
+    readonly set_full_name: (value: string) => void
+    readonly get_nickname: () => string
+    readonly set_nickname: (value: string) => void
     static name: string
 }
 abstract class NoteDetailsIface {
     /* Fields of Folks-0.6.Folks.NoteDetailsIface */
-    change_notes: (notes: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_notes_finish: (_res_: Gio.AsyncResult) => void
-    get_notes: () => Gee.Set
-    set_notes: (value: Gee.Set) => void
+    readonly change_notes: (notes: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_notes_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_notes: () => Gee.Set
+    readonly set_notes: (value: Gee.Set) => void
     static name: string
 }
 abstract class PhoneDetailsIface {
     /* Fields of Folks-0.6.Folks.PhoneDetailsIface */
-    change_phone_numbers: (phone_numbers: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_phone_numbers_finish: (_res_: Gio.AsyncResult) => void
-    get_phone_numbers: () => Gee.Set
-    set_phone_numbers: (value: Gee.Set) => void
+    readonly change_phone_numbers: (phone_numbers: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_phone_numbers_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_phone_numbers: () => Gee.Set
+    readonly set_phone_numbers: (value: Gee.Set) => void
     static name: string
 }
 abstract class PostalAddressDetailsIface {
     /* Fields of Folks-0.6.Folks.PostalAddressDetailsIface */
-    change_postal_addresses: (postal_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_postal_addresses_finish: (_res_: Gio.AsyncResult) => void
-    get_postal_addresses: () => Gee.Set
-    set_postal_addresses: (value: Gee.Set) => void
+    readonly change_postal_addresses: (postal_addresses: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_postal_addresses_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_postal_addresses: () => Gee.Set
+    readonly set_postal_addresses: (value: Gee.Set) => void
     static name: string
 }
 abstract class PresenceDetailsIface {
     /* Fields of Folks-0.6.Folks.PresenceDetailsIface */
-    get_presence_type: () => PresenceType
-    set_presence_type: (value: PresenceType) => void
-    get_presence_message: () => string
-    set_presence_message: (value: string) => void
-    get_client_types: () => string[]
-    set_client_types: (value: string[]) => void
-    get_presence_status: () => string
-    set_presence_status: (value: string) => void
+    readonly get_presence_type: () => PresenceType
+    readonly set_presence_type: (value: PresenceType) => void
+    readonly get_presence_message: () => string
+    readonly set_presence_message: (value: string) => void
+    readonly get_client_types: () => string[]
+    readonly set_client_types: (value: string[]) => void
+    readonly get_presence_status: () => string
+    readonly set_presence_status: (value: string) => void
     static name: string
 }
 abstract class RoleDetailsIface {
     /* Fields of Folks-0.6.Folks.RoleDetailsIface */
-    change_roles: (roles: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_roles_finish: (_res_: Gio.AsyncResult) => void
-    get_roles: () => Gee.Set
-    set_roles: (value: Gee.Set) => void
+    readonly change_roles: (roles: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_roles_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_roles: () => Gee.Set
+    readonly set_roles: (value: Gee.Set) => void
     static name: string
 }
 abstract class UrlDetailsIface {
     /* Fields of Folks-0.6.Folks.UrlDetailsIface */
-    change_urls: (urls: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_urls_finish: (_res_: Gio.AsyncResult) => void
-    get_urls: () => Gee.Set
-    set_urls: (value: Gee.Set) => void
+    readonly change_urls: (urls: Gee.Set, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_urls_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_urls: () => Gee.Set
+    readonly set_urls: (value: Gee.Set) => void
     static name: string
 }
 abstract class WebServiceDetailsIface {
     /* Fields of Folks-0.6.Folks.WebServiceDetailsIface */
-    change_web_service_addresses: (web_service_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null) => void
-    change_web_service_addresses_finish: (_res_: Gio.AsyncResult) => void
-    get_web_service_addresses: () => Gee.MultiMap
-    set_web_service_addresses: (value: Gee.MultiMap) => void
+    readonly change_web_service_addresses: (web_service_addresses: Gee.MultiMap, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly change_web_service_addresses_finish: (_res_: Gio.AsyncResult) => void
+    readonly get_web_service_addresses: () => Gee.MultiMap
+    readonly set_web_service_addresses: (value: Gee.MultiMap) => void
     static name: string
 }
 }

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GrlNet-0.3
  */
@@ -21,7 +27,8 @@ enum WcError {
     PROXY_ERROR,
     CANCELLED,
 }
-export interface Wc_ConstructProps extends GObject.Object_ConstructProps {
+interface Wc_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GrlNet-0.3.GrlNet.Wc */
     cache?: boolean
     cache_size?: number
     loglevel?: number
@@ -35,14 +42,12 @@ class Wc {
     loglevel: number
     throttling: number
     user_agent: string
-    /* Fields of GrlNet-0.3.GrlNet.Wc */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GrlNet-0.3.GrlNet.Wc */
     flush_delayed_requests(): void
     request_async(uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    request_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* content */ Uint8Array[] | null ]
+    request_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* content */ Uint8Array | null ]
     request_with_headers_async(uri: string, headers?: GLib.HashTable | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_cache(use_cache: boolean): void
     set_cache_size(cache_size: number): void
@@ -106,7 +111,7 @@ class Wc {
 }
 abstract class WcClass {
     /* Fields of GrlNet-0.3.GrlNet.WcClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class WcPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * RygelRendererGst-2.6
  */
@@ -22,8 +28,10 @@ export namespace RygelRendererGst {
 enum PlaybinPlayerError {
     NO_ELEMENT,
 }
-export interface PlaybinPlayer_ConstructProps extends GObject.Object_ConstructProps {
+interface PlaybinPlayer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelRendererGst-2.6.RygelRendererGst.PlaybinPlayer */
     playbin?: Gst.Element
+    /* Constructor properties of RygelRenderer-2.6.RygelRenderer.MediaPlayer */
     playback_state?: string
     playback_speed?: string
     uri?: string
@@ -54,7 +62,7 @@ class PlaybinPlayer {
     readonly byte_position: number
     user_agent: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelRendererGst-2.6.RygelRendererGst.PlaybinPlayer */
     get_playbin(): Gst.Element
     get_supported_profiles(): RygelCore.DLNAProfile[]
@@ -197,13 +205,13 @@ class PlaybinPlayer {
     static instance(): PlaybinPlayer
     static $gtype: GObject.Type
 }
-export interface PlaybinRenderer_ConstructProps extends RygelRenderer.MediaRenderer_ConstructProps {
+interface PlaybinRenderer_ConstructProps extends RygelRenderer.MediaRenderer_ConstructProps {
 }
 class PlaybinRenderer {
     /* Properties of RygelCore-2.6.RygelCore.MediaDevice */
     plugin: RygelCore.Plugin
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelRendererGst-2.6.RygelRendererGst.PlaybinRenderer */
     get_playbin(): Gst.Element | null
     /* Methods of RygelCore-2.6.RygelCore.MediaDevice */
@@ -259,6 +267,7 @@ class PlaybinRenderer {
     _init (config?: PlaybinRenderer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(title: string): PlaybinRenderer
+    /* Function overloads */
     static new(title: string, player: RygelRenderer.MediaPlayer, capabilities: RygelCore.PluginCapabilities): PlaybinRenderer
     static $gtype: GObject.Type
 }

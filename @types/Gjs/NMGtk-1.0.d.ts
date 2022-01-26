@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * NMGtk-1.0
  */
@@ -23,7 +29,7 @@ export namespace NMGtk {
 
 enum MobileFamily {
     UNKNOWN,
-    /* 3GPP (invalid, starts with a number) */
+    TODO_3GPP,
     CDMA,
 }
 function mobile_providers_split_3gpp_mcc_mnc(mccmnc: string): [ /* returnType */ boolean, /* mcc */ string, /* mnc */ string ]
@@ -40,16 +46,14 @@ function utils_update_password_storage(passwd_entry: Gtk.Widget, secret_flags: N
 interface MobileWizardCallback {
     (self: MobileWizard, canceled: boolean, method: MobileWizardAccessMethod): void
 }
-export interface MobileProvidersDatabase_ConstructProps extends GObject.Object_ConstructProps {
+interface MobileProvidersDatabase_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NMGtk-1.0.NMGtk.MobileProvidersDatabase */
     country_codes?: string
     service_providers?: string
 }
 class MobileProvidersDatabase {
-    /* Fields of NMGtk-1.0.NMGtk.MobileProvidersDatabase */
-    parent: GObject.Object
-    priv: MobileProvidersDatabasePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMGtk-1.0.NMGtk.MobileProvidersDatabase */
     dump(): void
     get_countries(): GLib.HashTable
@@ -114,7 +118,7 @@ class MobileProvidersDatabase {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface VpnPasswordDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface VpnPasswordDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
 class VpnPasswordDialog {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -193,18 +197,19 @@ class VpnPasswordDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMGtk-1.0.NMGtk.VpnPasswordDialog */
     focus_password(): void
     focus_password_secondary(): void
@@ -348,7 +353,7 @@ class VpnPasswordDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -592,6 +597,7 @@ class VpnPasswordDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -660,6 +666,7 @@ class VpnPasswordDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of NMGtk-1.0.NMGtk.VpnPasswordDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1176,8 +1183,6 @@ class VpnPasswordDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: VpnPasswordDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: VpnPasswordDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: VpnPasswordDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: VpnPasswordDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: VpnPasswordDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1187,11 +1192,12 @@ class VpnPasswordDialog {
     _init (config?: VpnPasswordDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(title: string, message: string, password: string): VpnPasswordDialog
+    /* Function overloads */
     static new(): VpnPasswordDialog
     static new(type: Gtk.WindowType): VpnPasswordDialog
     static $gtype: GObject.Type
 }
-export interface WifiDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface WifiDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
 class WifiDialog {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -1270,18 +1276,19 @@ class WifiDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMGtk-1.0.NMGtk.WifiDialog */
     get_connection(): [ /* returnType */ NetworkManager.Connection, /* device */ NMClient.Device, /* ap */ NMClient.AccessPoint ]
     get_nag_ignored(): boolean
@@ -1413,7 +1420,7 @@ class WifiDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1657,6 +1664,7 @@ class WifiDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -1725,6 +1733,7 @@ class WifiDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of NMGtk-1.0.NMGtk.WifiDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -2241,8 +2250,6 @@ class WifiDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: WifiDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: WifiDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: WifiDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: WifiDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: WifiDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2252,6 +2259,7 @@ class WifiDialog {
     _init (config?: WifiDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(client: NMClient.Client, settings: NMClient.RemoteSettings, connection: NetworkManager.Connection, device: NMClient.Device, ap: NMClient.AccessPoint, secrets_only: boolean): WifiDialog
+    /* Function overloads */
     static new(): WifiDialog
     static new(type: Gtk.WindowType): WifiDialog
     static new_for_create(client: NMClient.Client, settings: NMClient.RemoteSettings): WifiDialog
@@ -2293,7 +2301,7 @@ class MobileProvider {
 }
 abstract class MobileProvidersDatabaseClass {
     /* Fields of NMGtk-1.0.NMGtk.MobileProvidersDatabaseClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class MobileProvidersDatabasePrivate {
@@ -2307,22 +2315,22 @@ class MobileWizard {
 }
 class MobileWizardAccessMethod {
     /* Fields of NMGtk-1.0.NMGtk.MobileWizardAccessMethod */
-    provider_name: string
-    plan_name: string
-    devtype: NetworkManager.DeviceModemCapabilities
-    username: string
-    password: string
-    gsm_apn: string
+    readonly provider_name: string
+    readonly plan_name: string
+    readonly devtype: NetworkManager.DeviceModemCapabilities
+    readonly username: string
+    readonly password: string
+    readonly gsm_apn: string
     static name: string
 }
 abstract class VpnPasswordDialogClass {
     /* Fields of NMGtk-1.0.NMGtk.VpnPasswordDialogClass */
-    parent_class: Gtk.DialogClass
+    readonly parent_class: Gtk.DialogClass
     static name: string
 }
 abstract class WifiDialogClass {
     /* Fields of NMGtk-1.0.NMGtk.WifiDialogClass */
-    parent: Gtk.DialogClass
+    readonly parent: Gtk.DialogClass
     static name: string
 }
 }

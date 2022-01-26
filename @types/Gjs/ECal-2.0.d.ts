@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * ECal-2.0
  */
@@ -103,55 +109,55 @@ enum ReminderWatcherDescribeFlags {
     NONE,
     MARKUP,
 }
-export const BACKEND_PROPERTY_ALARM_EMAIL_ADDRESS: string
-export const BACKEND_PROPERTY_CAL_EMAIL_ADDRESS: string
-export const BACKEND_PROPERTY_DEFAULT_OBJECT: string
-export const BACKEND_PROPERTY_REVISION: string
-export const EVOLUTION_ALARM_UID_PROPERTY: string
-export const EVOLUTION_ENDDATE_PARAMETER: string
-export const LIBICAL_GLIB_UNSTABLE_API: number
-export const STATIC_CAPABILITY_ALARM_DESCRIPTION: string
-export const STATIC_CAPABILITY_ALL_DAY_EVENT_AS_TIME: string
-export const STATIC_CAPABILITY_BULK_ADDS: string
-export const STATIC_CAPABILITY_BULK_MODIFIES: string
-export const STATIC_CAPABILITY_BULK_REMOVES: string
-export const STATIC_CAPABILITY_COMPONENT_COLOR: string
-export const STATIC_CAPABILITY_CREATE_MESSAGES: string
-export const STATIC_CAPABILITY_DELEGATE_SUPPORTED: string
-export const STATIC_CAPABILITY_DELEGATE_TO_MANY: string
-export const STATIC_CAPABILITY_HAS_UNACCEPTED_MEETING: string
-export const STATIC_CAPABILITY_NO_ALARM_AFTER_START: string
-export const STATIC_CAPABILITY_NO_ALARM_REPEAT: string
-export const STATIC_CAPABILITY_NO_AUDIO_ALARMS: string
-export const STATIC_CAPABILITY_NO_CONV_TO_ASSIGN_TASK: string
-export const STATIC_CAPABILITY_NO_CONV_TO_RECUR: string
-export const STATIC_CAPABILITY_NO_DISPLAY_ALARMS: string
-export const STATIC_CAPABILITY_NO_EMAIL_ALARMS: string
-export const STATIC_CAPABILITY_NO_GEN_OPTIONS: string
-export const STATIC_CAPABILITY_NO_MEMO_START_DATE: string
-export const STATIC_CAPABILITY_NO_ORGANIZER: string
-export const STATIC_CAPABILITY_NO_PROCEDURE_ALARMS: string
-export const STATIC_CAPABILITY_NO_TASK_ASSIGNMENT: string
-export const STATIC_CAPABILITY_NO_THISANDFUTURE: string
-export const STATIC_CAPABILITY_NO_THISANDPRIOR: string
-export const STATIC_CAPABILITY_NO_TRANSPARENCY: string
-export const STATIC_CAPABILITY_ONE_ALARM_ONLY: string
-export const STATIC_CAPABILITY_ORGANIZER_MUST_ACCEPT: string
-export const STATIC_CAPABILITY_ORGANIZER_MUST_ATTEND: string
-export const STATIC_CAPABILITY_ORGANIZER_NOT_EMAIL_ADDRESS: string
-export const STATIC_CAPABILITY_RECURRENCES_NO_MASTER: string
-export const STATIC_CAPABILITY_REFRESH_SUPPORTED: string
-export const STATIC_CAPABILITY_REMOVE_ALARMS: string
-export const STATIC_CAPABILITY_REMOVE_ONLY_THIS: string
-export const STATIC_CAPABILITY_REQ_SEND_OPTIONS: string
-export const STATIC_CAPABILITY_SAVE_SCHEDULES: string
-export const STATIC_CAPABILITY_SIMPLE_MEMO: string
-export const STATIC_CAPABILITY_SIMPLE_MEMO_WITH_SUMMARY: string
-export const STATIC_CAPABILITY_TASK_CAN_RECUR: string
-export const STATIC_CAPABILITY_TASK_DATE_ONLY: string
-export const STATIC_CAPABILITY_TASK_ESTIMATED_DURATION: string
-export const STATIC_CAPABILITY_TASK_HANDLE_RECUR: string
-export const STATIC_CAPABILITY_TASK_NO_ALARM: string
+const BACKEND_PROPERTY_ALARM_EMAIL_ADDRESS: string
+const BACKEND_PROPERTY_CAL_EMAIL_ADDRESS: string
+const BACKEND_PROPERTY_DEFAULT_OBJECT: string
+const BACKEND_PROPERTY_REVISION: string
+const EVOLUTION_ALARM_UID_PROPERTY: string
+const EVOLUTION_ENDDATE_PARAMETER: string
+const LIBICAL_GLIB_UNSTABLE_API: number
+const STATIC_CAPABILITY_ALARM_DESCRIPTION: string
+const STATIC_CAPABILITY_ALL_DAY_EVENT_AS_TIME: string
+const STATIC_CAPABILITY_BULK_ADDS: string
+const STATIC_CAPABILITY_BULK_MODIFIES: string
+const STATIC_CAPABILITY_BULK_REMOVES: string
+const STATIC_CAPABILITY_COMPONENT_COLOR: string
+const STATIC_CAPABILITY_CREATE_MESSAGES: string
+const STATIC_CAPABILITY_DELEGATE_SUPPORTED: string
+const STATIC_CAPABILITY_DELEGATE_TO_MANY: string
+const STATIC_CAPABILITY_HAS_UNACCEPTED_MEETING: string
+const STATIC_CAPABILITY_NO_ALARM_AFTER_START: string
+const STATIC_CAPABILITY_NO_ALARM_REPEAT: string
+const STATIC_CAPABILITY_NO_AUDIO_ALARMS: string
+const STATIC_CAPABILITY_NO_CONV_TO_ASSIGN_TASK: string
+const STATIC_CAPABILITY_NO_CONV_TO_RECUR: string
+const STATIC_CAPABILITY_NO_DISPLAY_ALARMS: string
+const STATIC_CAPABILITY_NO_EMAIL_ALARMS: string
+const STATIC_CAPABILITY_NO_GEN_OPTIONS: string
+const STATIC_CAPABILITY_NO_MEMO_START_DATE: string
+const STATIC_CAPABILITY_NO_ORGANIZER: string
+const STATIC_CAPABILITY_NO_PROCEDURE_ALARMS: string
+const STATIC_CAPABILITY_NO_TASK_ASSIGNMENT: string
+const STATIC_CAPABILITY_NO_THISANDFUTURE: string
+const STATIC_CAPABILITY_NO_THISANDPRIOR: string
+const STATIC_CAPABILITY_NO_TRANSPARENCY: string
+const STATIC_CAPABILITY_ONE_ALARM_ONLY: string
+const STATIC_CAPABILITY_ORGANIZER_MUST_ACCEPT: string
+const STATIC_CAPABILITY_ORGANIZER_MUST_ATTEND: string
+const STATIC_CAPABILITY_ORGANIZER_NOT_EMAIL_ADDRESS: string
+const STATIC_CAPABILITY_RECURRENCES_NO_MASTER: string
+const STATIC_CAPABILITY_REFRESH_SUPPORTED: string
+const STATIC_CAPABILITY_REMOVE_ALARMS: string
+const STATIC_CAPABILITY_REMOVE_ONLY_THIS: string
+const STATIC_CAPABILITY_REQ_SEND_OPTIONS: string
+const STATIC_CAPABILITY_SAVE_SCHEDULES: string
+const STATIC_CAPABILITY_SIMPLE_MEMO: string
+const STATIC_CAPABILITY_SIMPLE_MEMO_WITH_SUMMARY: string
+const STATIC_CAPABILITY_TASK_CAN_RECUR: string
+const STATIC_CAPABILITY_TASK_DATE_ONLY: string
+const STATIC_CAPABILITY_TASK_ESTIMATED_DURATION: string
+const STATIC_CAPABILITY_TASK_HANDLE_RECUR: string
+const STATIC_CAPABILITY_TASK_NO_ALARM: string
 function isodate_from_time_t(t: number): string
 function match_tzid(tzid: string): string
 function recur_describe_recurrence(icalcomp: ICalGLib.Component, week_start_day: GLib.DateWeekday, flags: number): string | null
@@ -257,7 +263,8 @@ class TimezoneCache {
     emit(sigName: "timezone-added", zone: ICalGLib.Timezone): void
     static name: string
 }
-export interface Client_ConstructProps extends EDataServer.Client_ConstructProps {
+interface Client_ConstructProps extends EDataServer.Client_ConstructProps {
+    /* Constructor properties of ECal-2.0.ECal.Client */
     default_timezone?: ICalGLib.Timezone
     source_type?: ClientSourceType
 }
@@ -271,7 +278,7 @@ class Client {
     readonly opened: boolean
     readonly readonly: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ECal-2.0.ECal.Client */
     add_timezone(zone: ICalGLib.Timezone, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     add_timezone_finish(result: Gio.AsyncResult): boolean
@@ -502,9 +509,11 @@ class Client {
     static connect_finish(result: Gio.AsyncResult): EDataServer.Client | null
     static connect_sync(source: EDataServer.Source, source_type: ClientSourceType, wait_for_connected_seconds: number, cancellable?: Gio.Cancellable | null): EDataServer.Client | null
     static error_create(code: ClientError, custom_msg?: string | null): GLib.Error
+    /* Function overloads */
     static error_create(code: EDataServer.ClientError, custom_msg?: string | null): GLib.Error
     static error_quark(): GLib.Quark
     static error_to_string(code: ClientError): string
+    /* Function overloads */
     static error_to_string(code: EDataServer.ClientError): string
     static tzlookup_cb(tzid: string, ecalclient: Client, cancellable?: Gio.Cancellable | null): ICalGLib.Timezone | null
     static tzlookup_icalcomp_cb(tzid: string, lookup_data: ClientTzlookupICalCompData, cancellable?: Gio.Cancellable | null): ICalGLib.Timezone | null
@@ -512,14 +521,15 @@ class Client {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ClientView_ConstructProps extends GObject.Object_ConstructProps {
+interface ClientView_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ECal-2.0.ECal.ClientView */
     client?: Client
     connection?: Gio.DBusConnection
     object_path?: string
 }
 class ClientView {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ECal-2.0.ECal.ClientView */
     get_connection(): Gio.DBusConnection
     get_object_path(): string
@@ -596,11 +606,11 @@ class ClientView {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Component_ConstructProps extends GObject.Object_ConstructProps {
+interface Component_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Component {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ECal-2.0.ECal.Component */
     abort_sequence(): void
     add_alarm(alarm: ComponentAlarm): void
@@ -743,7 +753,8 @@ class Component {
     static new_vtype(vtype: ComponentVType): Component
     static $gtype: GObject.Type
 }
-export interface ReminderWatcher_ConstructProps extends GObject.Object_ConstructProps {
+interface ReminderWatcher_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ECal-2.0.ECal.ReminderWatcher */
     default_zone?: ICalGLib.Timezone
     registry?: EDataServer.SourceRegistry
     timers_enabled?: boolean
@@ -753,7 +764,7 @@ class ReminderWatcher {
     default_zone: ICalGLib.Timezone
     timers_enabled: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ECal-2.0.ECal.ReminderWatcher */
     describe_data(rd: ReminderData, flags: number): string
     dismiss(rd: ReminderData, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -855,8 +866,8 @@ class ClientTzlookupICalCompData {
 }
 abstract class ClientViewClass {
     /* Fields of ECal-2.0.ECal.ClientViewClass */
-    progress: (client_view: ClientView, percent: number, message: string) => void
-    complete: (client_view: ClientView, error: GLib.Error) => void
+    readonly progress: (client_view: ClientView, percent: number, message: string) => void
+    readonly complete: (client_view: ClientView, error: GLib.Error) => void
     static name: string
 }
 class ClientViewPrivate {
@@ -1171,12 +1182,12 @@ class ReminderData {
 }
 abstract class ReminderWatcherClass {
     /* Fields of ECal-2.0.ECal.ReminderWatcherClass */
-    parent_class: GObject.ObjectClass
-    schedule_timer: (watcher: ReminderWatcher, at_time: number) => void
-    format_time: (watcher: ReminderWatcher, rd: ReminderData, itt: ICalGLib.Time, inout_buffer: string, buffer_size: number) => void
-    changed: (watcher: ReminderWatcher) => void
-    cal_client_connect: (watcher: ReminderWatcher, source: EDataServer.Source, source_type: ClientSourceType, wait_for_connected_seconds: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly schedule_timer: (watcher: ReminderWatcher, at_time: number) => void
+    readonly format_time: (watcher: ReminderWatcher, rd: ReminderData, itt: ICalGLib.Time, inout_buffer: string, buffer_size: number) => void
+    readonly changed: (watcher: ReminderWatcher) => void
+    readonly cal_client_connect: (watcher: ReminderWatcher, source: EDataServer.Source, source_type: ClientSourceType, wait_for_connected_seconds: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly reserved: object[]
     static name: string
 }
 class ReminderWatcherPrivate {
@@ -1184,9 +1195,9 @@ class ReminderWatcherPrivate {
 }
 abstract class TimezoneCacheInterface {
     /* Fields of ECal-2.0.ECal.TimezoneCacheInterface */
-    tzcache_add_timezone: (cache: TimezoneCache, zone: ICalGLib.Timezone) => void
-    timezone_added: (cache: TimezoneCache, zone: ICalGLib.Timezone) => void
-    reserved_signals: object[]
+    readonly tzcache_add_timezone: (cache: TimezoneCache, zone: ICalGLib.Timezone) => void
+    readonly timezone_added: (cache: TimezoneCache, zone: ICalGLib.Timezone) => void
+    readonly reserved_signals: object[]
     static name: string
 }
 }

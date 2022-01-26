@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EBookContacts-1.2
  */
@@ -249,8 +255,8 @@ enum PhoneNumberMatch {
     SHORT,
 }
 enum VCardFormat {
-    /* 21 (invalid, starts with a number) */
-    /* 30 (invalid, starts with a number) */
+    TODO_21,
+    TODO_30,
 }
 enum BookClientViewFlags {
     NONE,
@@ -268,82 +274,82 @@ enum BookOperationFlags {
     CONFLICT_KEEP_LOCAL,
     CONFLICT_WRITE_COPY,
 }
-export const BOOK_BACKEND_PROPERTY_REQUIRED_FIELDS: string
-export const BOOK_BACKEND_PROPERTY_REVISION: string
-export const BOOK_BACKEND_PROPERTY_SUPPORTED_FIELDS: string
-export const EVC_ADR: string
-export const EVC_BDAY: string
-export const EVC_CALURI: string
-export const EVC_CATEGORIES: string
-export const EVC_CL_UID: string
-export const EVC_CONTACT_LIST: string
-export const EVC_EMAIL: string
-export const EVC_ENCODING: string
-export const EVC_FBURL: string
-export const EVC_FN: string
-export const EVC_GEO: string
-export const EVC_ICSCALENDAR: string
-export const EVC_KEY: string
-export const EVC_LABEL: string
-export const EVC_LOGO: string
-export const EVC_MAILER: string
-export const EVC_N: string
-export const EVC_NICKNAME: string
-export const EVC_NOTE: string
-export const EVC_ORG: string
-export const EVC_PARENT_CL: string
-export const EVC_PHOTO: string
-export const EVC_PRODID: string
-export const EVC_QUOTEDPRINTABLE: string
-export const EVC_REV: string
-export const EVC_ROLE: string
-export const EVC_TEL: string
-export const EVC_TITLE: string
-export const EVC_TYPE: string
-export const EVC_UID: string
-export const EVC_URL: string
-export const EVC_VALUE: string
-export const EVC_VERSION: string
-export const EVC_X_AIM: string
-export const EVC_X_ANNIVERSARY: string
-export const EVC_X_ASSISTANT: string
-export const EVC_X_BIRTHDAY: string
-export const EVC_X_BLOG_URL: string
-export const EVC_X_BOOK_UID: string
-export const EVC_X_CALLBACK: string
-export const EVC_X_COMPANY: string
-export const EVC_X_DEST_CONTACT_UID: string
-export const EVC_X_DEST_EMAIL: string
-export const EVC_X_DEST_EMAIL_NUM: string
-export const EVC_X_DEST_HTML_MAIL: string
-export const EVC_X_DEST_NAME: string
-export const EVC_X_DEST_SOURCE_UID: string
-export const EVC_X_E164: string
-export const EVC_X_FILE_AS: string
-export const EVC_X_GADUGADU: string
-export const EVC_X_GOOGLE_TALK: string
-export const EVC_X_GROUPWISE: string
-export const EVC_X_ICQ: string
-export const EVC_X_JABBER: string
-export const EVC_X_LIST: string
-export const EVC_X_LIST_NAME: string
-export const EVC_X_LIST_SHOW_ADDRESSES: string
-export const EVC_X_MANAGER: string
-export const EVC_X_MATRIX: string
-export const EVC_X_MSN: string
-export const EVC_X_RADIO: string
-export const EVC_X_SIP: string
-export const EVC_X_SKYPE: string
-export const EVC_X_SPOUSE: string
-export const EVC_X_TELEX: string
-export const EVC_X_TTYTDD: string
-export const EVC_X_TWITTER: string
-export const EVC_X_VIDEO_URL: string
-export const EVC_X_WANTS_HTML: string
-export const EVC_X_YAHOO: string
-export const SOURCE_EXTENSION_BACKEND_SUMMARY_SETUP: string
-export const VCARD_21_VALID_PARAMETERS: string
-export const VCARD_21_VALID_PROPERTIES: string
+const BOOK_BACKEND_PROPERTY_REQUIRED_FIELDS: string
+const BOOK_BACKEND_PROPERTY_REVISION: string
+const BOOK_BACKEND_PROPERTY_SUPPORTED_FIELDS: string
+const EVC_ADR: string
+const EVC_BDAY: string
+const EVC_CALURI: string
+const EVC_CATEGORIES: string
+const EVC_CL_UID: string
+const EVC_CONTACT_LIST: string
+const EVC_EMAIL: string
+const EVC_ENCODING: string
+const EVC_FBURL: string
+const EVC_FN: string
+const EVC_GEO: string
+const EVC_ICSCALENDAR: string
+const EVC_KEY: string
+const EVC_LABEL: string
+const EVC_LOGO: string
+const EVC_MAILER: string
+const EVC_N: string
+const EVC_NICKNAME: string
+const EVC_NOTE: string
+const EVC_ORG: string
+const EVC_PARENT_CL: string
+const EVC_PHOTO: string
+const EVC_PRODID: string
+const EVC_QUOTEDPRINTABLE: string
+const EVC_REV: string
+const EVC_ROLE: string
+const EVC_TEL: string
+const EVC_TITLE: string
+const EVC_TYPE: string
+const EVC_UID: string
+const EVC_URL: string
+const EVC_VALUE: string
+const EVC_VERSION: string
+const EVC_X_AIM: string
+const EVC_X_ANNIVERSARY: string
+const EVC_X_ASSISTANT: string
+const EVC_X_BIRTHDAY: string
+const EVC_X_BLOG_URL: string
+const EVC_X_BOOK_UID: string
+const EVC_X_CALLBACK: string
+const EVC_X_COMPANY: string
+const EVC_X_DEST_CONTACT_UID: string
+const EVC_X_DEST_EMAIL: string
+const EVC_X_DEST_EMAIL_NUM: string
+const EVC_X_DEST_HTML_MAIL: string
+const EVC_X_DEST_NAME: string
+const EVC_X_DEST_SOURCE_UID: string
+const EVC_X_E164: string
+const EVC_X_FILE_AS: string
+const EVC_X_GADUGADU: string
+const EVC_X_GOOGLE_TALK: string
+const EVC_X_GROUPWISE: string
+const EVC_X_ICQ: string
+const EVC_X_JABBER: string
+const EVC_X_LIST: string
+const EVC_X_LIST_NAME: string
+const EVC_X_LIST_SHOW_ADDRESSES: string
+const EVC_X_MANAGER: string
+const EVC_X_MATRIX: string
+const EVC_X_MSN: string
+const EVC_X_RADIO: string
+const EVC_X_SIP: string
+const EVC_X_SKYPE: string
+const EVC_X_SPOUSE: string
+const EVC_X_TELEX: string
+const EVC_X_TTYTDD: string
+const EVC_X_TWITTER: string
+const EVC_X_VIDEO_URL: string
+const EVC_X_WANTS_HTML: string
+const EVC_X_YAHOO: string
+const SOURCE_EXTENSION_BACKEND_SUMMARY_SETUP: string
+const VCARD_21_VALID_PARAMETERS: string
+const VCARD_21_VALID_PROPERTIES: string
 function address_western_parse(in_address: string): AddressWestern
 function book_client_error_create(code: BookClientError, custom_msg: string): GLib.Error
 function book_client_error_quark(): GLib.Quark
@@ -371,7 +377,8 @@ function phone_number_from_string(phone_number: string, region_code?: string | n
 function phone_number_get_country_code_for_region(region_code?: string | null): number
 function phone_number_get_default_region(): string
 function phone_number_is_supported(): boolean
-export interface Contact_ConstructProps extends VCard_ConstructProps {
+interface Contact_ConstructProps extends VCard_ConstructProps {
+    /* Constructor properties of EBookContacts-1.2.EBookContacts.Contact */
     Rev?: string
     address?: any
     address_home?: ContactAddress
@@ -658,10 +665,10 @@ class Contact {
     video_url: string
     wants_html: boolean
     x509Cert: ContactCert
-    /* Fields of EBookContacts-1.2.EBookContacts.Contact */
-    parent: VCard
+    /* Fields of EBookContacts-1.2.EBookContacts.VCard */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBookContacts-1.2.EBookContacts.Contact */
     duplicate(): Contact
     get(field_id: ContactField): object | null
@@ -1016,6 +1023,8 @@ class Contact {
     _init (config?: Contact_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Contact
+    /* Function overloads */
+    static new(): Contact
     static new_from_vcard(vcard: string): Contact
     static new_from_vcard_with_uid(vcard: string, uid: string): Contact
     static field_id(field_name: string): ContactField
@@ -1027,7 +1036,8 @@ class Contact {
     static vcard_attribute(field_id: ContactField): string
     static $gtype: GObject.Type
 }
-export interface SourceBackendSummarySetup_ConstructProps extends EDataServer.SourceExtension_ConstructProps {
+interface SourceBackendSummarySetup_ConstructProps extends EDataServer.SourceExtension_ConstructProps {
+    /* Constructor properties of EBookContacts-1.2.EBookContacts.SourceBackendSummarySetup */
     indexed_fields?: string
     summary_fields?: string
 }
@@ -1036,7 +1046,7 @@ class SourceBackendSummarySetup {
     indexed_fields: string
     summary_fields: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBookContacts-1.2.EBookContacts.SourceBackendSummarySetup */
     get_indexed_fields(): [ /* returnType */ ContactField, /* types */ BookIndexType, /* n_fields */ number ]
     get_summary_fields(): [ /* returnType */ ContactField, /* n_fields */ number ]
@@ -1094,13 +1104,11 @@ class SourceBackendSummarySetup {
     _init (config?: SourceBackendSummarySetup_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VCard_ConstructProps extends GObject.Object_ConstructProps {
+interface VCard_ConstructProps extends GObject.Object_ConstructProps {
 }
 class VCard {
-    /* Fields of EBookContacts-1.2.EBookContacts.VCard */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBookContacts-1.2.EBookContacts.VCard */
     add_attribute(attr: VCardAttribute): void
     add_attribute_with_value(attr: VCardAttribute, value: string): void
@@ -1169,13 +1177,13 @@ class VCard {
 }
 class AddressWestern {
     /* Fields of EBookContacts-1.2.EBookContacts.AddressWestern */
-    po_box: string
-    extended: string
-    street: string
-    locality: string
-    region: string
-    postal_code: string
-    country: string
+    readonly po_box: string
+    readonly extended: string
+    readonly street: string
+    readonly locality: string
+    readonly region: string
+    readonly postal_code: string
+    readonly country: string
     /* Methods of EBookContacts-1.2.EBookContacts.AddressWestern */
     copy(): AddressWestern
     free(): void
@@ -1185,8 +1193,8 @@ class AddressWestern {
 }
 class BookChange {
     /* Fields of EBookContacts-1.2.EBookContacts.BookChange */
-    change_type: BookChangeType
-    contact: Contact
+    readonly change_type: BookChangeType
+    readonly contact: Contact
     static name: string
 }
 class BookQuery {
@@ -1209,14 +1217,14 @@ class BookQuery {
 }
 class ContactAddress {
     /* Fields of EBookContacts-1.2.EBookContacts.ContactAddress */
-    address_format: string
-    po: string
-    ext: string
-    street: string
-    locality: string
-    region: string
-    code: string
-    country: string
+    readonly address_format: string
+    readonly po: string
+    readonly ext: string
+    readonly street: string
+    readonly locality: string
+    readonly region: string
+    readonly code: string
+    readonly country: string
     /* Methods of EBookContacts-1.2.EBookContacts.ContactAddress */
     free(): void
     static name: string
@@ -1227,8 +1235,8 @@ class ContactAddress {
 }
 class ContactCert {
     /* Fields of EBookContacts-1.2.EBookContacts.ContactCert */
-    length: number
-    data: string
+    readonly length: number
+    readonly data: string
     /* Methods of EBookContacts-1.2.EBookContacts.ContactCert */
     free(): void
     static name: string
@@ -1239,14 +1247,14 @@ class ContactCert {
 }
 abstract class ContactClass {
     /* Fields of EBookContacts-1.2.EBookContacts.ContactClass */
-    parent_class: VCardClass
+    readonly parent_class: VCardClass
     static name: string
 }
 class ContactDate {
     /* Fields of EBookContacts-1.2.EBookContacts.ContactDate */
-    year: number
-    month: number
-    day: number
+    readonly year: number
+    readonly month: number
+    readonly day: number
     /* Methods of EBookContacts-1.2.EBookContacts.ContactDate */
     equal(dt2: ContactDate): boolean
     free(): void
@@ -1260,8 +1268,8 @@ class ContactDate {
 }
 class ContactGeo {
     /* Fields of EBookContacts-1.2.EBookContacts.ContactGeo */
-    latitude: number
-    longitude: number
+    readonly latitude: number
+    readonly longitude: number
     /* Methods of EBookContacts-1.2.EBookContacts.ContactGeo */
     free(): void
     static name: string
@@ -1272,11 +1280,11 @@ class ContactGeo {
 }
 class ContactName {
     /* Fields of EBookContacts-1.2.EBookContacts.ContactName */
-    family: string
-    given: string
-    additional: string
-    prefixes: string
-    suffixes: string
+    readonly family: string
+    readonly given: string
+    readonly additional: string
+    readonly prefixes: string
+    readonly suffixes: string
     /* Methods of EBookContacts-1.2.EBookContacts.ContactName */
     copy(): ContactName
     free(): void
@@ -1290,14 +1298,14 @@ class ContactName {
 }
 class ContactPhoto {
     /* Fields of EBookContacts-1.2.EBookContacts.ContactPhoto */
-    type: ContactPhotoType
+    readonly type: ContactPhotoType
     /* Methods of EBookContacts-1.2.EBookContacts.ContactPhoto */
     copy(): ContactPhoto
     free(): void
-    get_inlined(): Uint8Array[] | null
+    get_inlined(): Uint8Array | null
     get_mime_type(): string | null
     get_uri(): string | null
-    set_inlined(data: Uint8Array[]): void
+    set_inlined(data: Uint8Array): void
     set_mime_type(mime_type: string): void
     set_uri(uri: string): void
     static name: string
@@ -1311,13 +1319,13 @@ class ContactPrivate {
 }
 class NameWestern {
     /* Fields of EBookContacts-1.2.EBookContacts.NameWestern */
-    prefix: string
-    first: string
-    middle: string
-    nick: string
-    last: string
-    suffix: string
-    full: string
+    readonly prefix: string
+    readonly first: string
+    readonly middle: string
+    readonly nick: string
+    readonly last: string
+    readonly suffix: string
+    readonly full: string
     /* Methods of EBookContacts-1.2.EBookContacts.NameWestern */
     copy(): NameWestern
     free(): void
@@ -1345,7 +1353,7 @@ class PhoneNumber {
 }
 abstract class SourceBackendSummarySetupClass {
     /* Fields of EBookContacts-1.2.EBookContacts.SourceBackendSummarySetupClass */
-    parent_class: EDataServer.SourceBackendClass
+    readonly parent_class: EDataServer.SourceBackendClass
     static name: string
 }
 class SourceBackendSummarySetupPrivate {
@@ -1396,7 +1404,7 @@ class VCardAttributeParam {
 }
 abstract class VCardClass {
     /* Fields of EBookContacts-1.2.EBookContacts.VCardClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class VCardPrivate {

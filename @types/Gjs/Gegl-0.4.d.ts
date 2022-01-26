@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gegl-0.4
  */
@@ -113,67 +119,67 @@ enum SerializeFlag {
     INDENT,
     BAKE_ANIM,
 }
-export const AUTO_ROWSTRIDE: number
-export const CH_BACK_CENTER: number
-export const CH_BACK_LEFT: number
-export const CH_BACK_RIGHT: number
-export const CH_FRONT_CENTER: number
-export const CH_FRONT_LEFT: number
-export const CH_FRONT_LEFT_OF_CENTER: number
-export const CH_FRONT_RIGHT: number
-export const CH_FRONT_RIGHT_OF_CENTER: number
-export const CH_LAYOUT_2POINT1: number
-export const CH_LAYOUT_2_1: number
-export const CH_LAYOUT_2_2: number
-export const CH_LAYOUT_3POINT1: number
-export const CH_LAYOUT_4POINT0: number
-export const CH_LAYOUT_4POINT1: number
-export const CH_LAYOUT_5POINT0: number
-export const CH_LAYOUT_5POINT0_BACK: number
-export const CH_LAYOUT_5POINT1: number
-export const CH_LAYOUT_5POINT1_BACK: number
-export const CH_LAYOUT_6POINT0: number
-export const CH_LAYOUT_6POINT0_FRONT: number
-export const CH_LAYOUT_6POINT1: number
-export const CH_LAYOUT_6POINT1_BACK: number
-export const CH_LAYOUT_6POINT1_FRONT: number
-export const CH_LAYOUT_7POINT0: number
-export const CH_LAYOUT_7POINT0_FRONT: number
-export const CH_LAYOUT_7POINT1: number
-export const CH_LAYOUT_7POINT1_WIDE: number
-export const CH_LAYOUT_7POINT1_WIDE_BACK: number
-export const CH_LAYOUT_HEXADECAGONAL: number
-export const CH_LAYOUT_HEXAGONAL: number
-export const CH_LAYOUT_NATIVE: number
-export const CH_LAYOUT_OCTAGONAL: number
-export const CH_LAYOUT_QUAD: number
-export const CH_LAYOUT_STEREO: number
-export const CH_LAYOUT_STEREO_DOWNMIX: number
-export const CH_LAYOUT_SURROUND: number
-export const CH_LOW_FREQUENCY: number
-export const CH_LOW_FREQUENCY_2: number
-export const CH_SIDE_LEFT: number
-export const CH_SIDE_RIGHT: number
-export const CH_STEREO_LEFT: number
-export const CH_STEREO_RIGHT: number
-export const CH_SURROUND_DIRECT_LEFT: number
-export const CH_SURROUND_DIRECT_RIGHT: number
-export const CH_TOP_BACK_CENTER: number
-export const CH_TOP_BACK_LEFT: number
-export const CH_TOP_BACK_RIGHT: number
-export const CH_TOP_CENTER: number
-export const CH_TOP_FRONT_CENTER: number
-export const CH_TOP_FRONT_LEFT: number
-export const CH_TOP_FRONT_RIGHT: number
-export const CH_WIDE_LEFT: number
-export const CH_WIDE_RIGHT: number
-export const FLOAT_EPSILON: number
-export const LOOKUP_MAX_ENTRIES: number
-export const MAJOR_VERSION: number
-export const MAX_AUDIO_CHANNELS: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const PARAM_NO_VALIDATE: number
+const AUTO_ROWSTRIDE: number
+const CH_BACK_CENTER: number
+const CH_BACK_LEFT: number
+const CH_BACK_RIGHT: number
+const CH_FRONT_CENTER: number
+const CH_FRONT_LEFT: number
+const CH_FRONT_LEFT_OF_CENTER: number
+const CH_FRONT_RIGHT: number
+const CH_FRONT_RIGHT_OF_CENTER: number
+const CH_LAYOUT_2POINT1: number
+const CH_LAYOUT_2_1: number
+const CH_LAYOUT_2_2: number
+const CH_LAYOUT_3POINT1: number
+const CH_LAYOUT_4POINT0: number
+const CH_LAYOUT_4POINT1: number
+const CH_LAYOUT_5POINT0: number
+const CH_LAYOUT_5POINT0_BACK: number
+const CH_LAYOUT_5POINT1: number
+const CH_LAYOUT_5POINT1_BACK: number
+const CH_LAYOUT_6POINT0: number
+const CH_LAYOUT_6POINT0_FRONT: number
+const CH_LAYOUT_6POINT1: number
+const CH_LAYOUT_6POINT1_BACK: number
+const CH_LAYOUT_6POINT1_FRONT: number
+const CH_LAYOUT_7POINT0: number
+const CH_LAYOUT_7POINT0_FRONT: number
+const CH_LAYOUT_7POINT1: number
+const CH_LAYOUT_7POINT1_WIDE: number
+const CH_LAYOUT_7POINT1_WIDE_BACK: number
+const CH_LAYOUT_HEXADECAGONAL: number
+const CH_LAYOUT_HEXAGONAL: number
+const CH_LAYOUT_NATIVE: number
+const CH_LAYOUT_OCTAGONAL: number
+const CH_LAYOUT_QUAD: number
+const CH_LAYOUT_STEREO: number
+const CH_LAYOUT_STEREO_DOWNMIX: number
+const CH_LAYOUT_SURROUND: number
+const CH_LOW_FREQUENCY: number
+const CH_LOW_FREQUENCY_2: number
+const CH_SIDE_LEFT: number
+const CH_SIDE_RIGHT: number
+const CH_STEREO_LEFT: number
+const CH_STEREO_RIGHT: number
+const CH_SURROUND_DIRECT_LEFT: number
+const CH_SURROUND_DIRECT_RIGHT: number
+const CH_TOP_BACK_CENTER: number
+const CH_TOP_BACK_LEFT: number
+const CH_TOP_BACK_RIGHT: number
+const CH_TOP_CENTER: number
+const CH_TOP_FRONT_CENTER: number
+const CH_TOP_FRONT_LEFT: number
+const CH_TOP_FRONT_RIGHT: number
+const CH_WIDE_LEFT: number
+const CH_WIDE_RIGHT: number
+const FLOAT_EPSILON: number
+const LOOKUP_MAX_ENTRIES: number
+const MAJOR_VERSION: number
+const MAX_AUDIO_CHANNELS: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const PARAM_NO_VALIDATE: number
 function babl_variant(format: Babl.Object, variant: BablVariant): Babl.Object
 function cl_disable(): void
 function cl_init(): boolean
@@ -261,18 +267,15 @@ class Metadata {
     vfunc_set_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     static name: string
 }
-export interface AudioFragment_ConstructProps extends GObject.Object_ConstructProps {
+interface AudioFragment_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gegl-0.4.Gegl.AudioFragment */
     string?: string
 }
 class AudioFragment {
     /* Properties of Gegl-0.4.Gegl.AudioFragment */
     string: string
-    /* Fields of Gegl-0.4.Gegl.AudioFragment */
-    parent_instance: GObject.Object
-    data: number[]
-    priv: AudioFragmentPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.AudioFragment */
     get_channel_layout(): number
     get_channels(): number
@@ -333,7 +336,8 @@ class AudioFragment {
     static new(sample_rate: number, channels: number, channel_layout: number, max_samples: number): AudioFragment
     static $gtype: GObject.Type
 }
-export interface Buffer_ConstructProps extends TileHandler_ConstructProps {
+interface Buffer_ConstructProps extends TileHandler_ConstructProps {
+    /* Constructor properties of Gegl-0.4.Gegl.Buffer */
     abyss_height?: number
     abyss_width?: number
     abyss_x?: number
@@ -360,16 +364,15 @@ class Buffer {
     width: number
     x: number
     y: number
-    /* Properties of Gegl-0.4.Gegl.TileHandler */
-    source: GObject.Object
     /* Fields of Gegl-0.4.Gegl.TileHandler */
-    parent_instance: TileSource
-    priv: TileHandlerPrivate
+    readonly parent_instance: TileSource
+    readonly source: TileSource
+    readonly priv: TileHandlerPrivate
     /* Fields of Gegl-0.4.Gegl.TileSource */
-    command: TileSourceCommand
-    padding: object[]
+    readonly command: TileSourceCommand
+    readonly padding: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.Buffer */
     add_handler(handler?: object | null): void
     clear(roi: Rectangle): void
@@ -381,8 +384,8 @@ class Buffer {
     freeze_changed(): void
     get_abyss(): Rectangle
     get_extent(): Rectangle
-    get(rect: Rectangle, scale: number, format_name: string | null, repeat_mode: AbyssPolicy): Uint8Array[]
-    set(rect: Rectangle, format_name: string, src: Uint8Array[]): void
+    get(rect: Rectangle, scale: number, format_name: string | null, repeat_mode: AbyssPolicy): Uint8Array
+    set(rect: Rectangle, format_name: string, src: Uint8Array): void
     linear_close(linear?: object | null): void
     remove_handler(handler?: object | null): void
     sample_cleanup(): void
@@ -453,8 +456,6 @@ class Buffer {
     connect_after(sigName: "notify::x", callback: (($obj: Buffer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::y", callback: (($obj: Buffer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::y", callback: (($obj: Buffer, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::source", callback: (($obj: Buffer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::source", callback: (($obj: Buffer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -472,17 +473,15 @@ class Buffer {
     static swap_remove_file(path: string): void
     static $gtype: GObject.Type
 }
-export interface Color_ConstructProps extends GObject.Object_ConstructProps {
+interface Color_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gegl-0.4.Gegl.Color */
     string?: string
 }
 class Color {
     /* Properties of Gegl-0.4.Gegl.Color */
     string: string
-    /* Fields of Gegl-0.4.Gegl.Color */
-    parent_instance: GObject.Object
-    priv: ColorPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.Color */
     duplicate(): Color
     get_components(format: any): number[]
@@ -537,7 +536,8 @@ class Color {
     static new(string: string): Color
     static $gtype: GObject.Type
 }
-export interface Config_ConstructProps extends GObject.Object_ConstructProps {
+interface Config_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gegl-0.4.Gegl.Config */
     application_license?: string
     chunk_size?: number
     mipmap_rendering?: boolean
@@ -566,7 +566,7 @@ class Config {
     tile_width: number
     use_opencl: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -634,13 +634,11 @@ class Config {
     _init (config?: Config_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Curve_ConstructProps extends GObject.Object_ConstructProps {
+interface Curve_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Curve {
-    /* Fields of Gegl-0.4.Gegl.Curve */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.Curve */
     add_point(x: number, y: number): number
     calc_value(x: number): number
@@ -695,7 +693,7 @@ class Curve {
     static new_default(): Curve
     static $gtype: GObject.Type
 }
-export interface MetadataHash_ConstructProps extends MetadataStore_ConstructProps {
+interface MetadataHash_ConstructProps extends MetadataStore_ConstructProps {
 }
 class MetadataHash {
     /* Properties of Gegl-0.4.Gegl.MetadataStore */
@@ -714,9 +712,9 @@ class MetadataHash {
     title: string
     warning: string
     /* Fields of Gegl-0.4.Gegl.MetadataStore */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.MetadataStore */
     declare(pspec: GObject.ParamSpec): void
     get_artist(): string
@@ -786,6 +784,15 @@ class MetadataHash {
     register_map(file_module: string, flags: number, map: MetadataMap[]): void
     set_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     unregister_map(): void
+    /* Virtual methods of Gegl-0.4.Gegl.MetadataHash */
+    vfunc_get_resolution(unit: ResolutionUnit, x: number, y: number): boolean
+    vfunc_iter_get_value(iter: MetadataIter, value: any): boolean
+    vfunc_iter_init(iter: MetadataIter): void
+    vfunc_iter_lookup(iter: MetadataIter, key: string): boolean
+    vfunc_iter_next(iter: MetadataIter): string
+    vfunc_iter_set_value(iter: MetadataIter, value: any): boolean
+    vfunc_register_map(file_module: string, flags: number, map: MetadataMap[]): void
+    vfunc_set_resolution(unit: ResolutionUnit, x: number, y: number): boolean
     /* Virtual methods of Gegl-0.4.Gegl.MetadataStore */
     vfunc__declare(pspec: GObject.ParamSpec, shadow: boolean): void
     vfunc__get_value(name: string): any
@@ -867,7 +874,8 @@ class MetadataHash {
     static new(): MetadataHash
     static $gtype: GObject.Type
 }
-export interface MetadataStore_ConstructProps extends GObject.Object_ConstructProps {
+interface MetadataStore_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gegl-0.4.Gegl.MetadataStore */
     artist?: string
     comment?: string
     copyright?: string
@@ -898,10 +906,8 @@ class MetadataStore {
     timestamp: GLib.DateTime
     title: string
     warning: string
-    /* Fields of Gegl-0.4.Gegl.MetadataStore */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.MetadataStore */
     declare(pspec: GObject.ParamSpec): void
     get_artist(): string
@@ -1050,7 +1056,8 @@ class MetadataStore {
     _init (config?: MetadataStore_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Node_ConstructProps extends GObject.Object_ConstructProps {
+interface Node_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gegl-0.4.Gegl.Node */
     cache_policy?: CachePolicy
     dont_cache?: boolean
     gegl_operation?: Operation
@@ -1069,7 +1076,7 @@ class Node {
     passthrough: boolean
     use_opencl: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.Node */
     add_child(child: Node): Node
     blit_buffer(buffer: Buffer | null, roi: Rectangle | null, level: number, abyss_policy: AbyssPolicy): void
@@ -1120,6 +1127,7 @@ class Node {
     ref_sink(): GObject.Object
     run_dispose(): void
     set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
     steal_data(key: string): object | null
     steal_qdata(quark: GLib.Quark): object | null
     thaw_notify(): void
@@ -1175,11 +1183,11 @@ class Node {
     static new_from_xml(xmldata: string, path_root: string): Node
     static $gtype: GObject.Type
 }
-export interface Operation_ConstructProps extends GObject.Object_ConstructProps {
+interface Operation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Operation {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1233,11 +1241,11 @@ class Operation {
 }
 class ParamAudioFragment {
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1258,11 +1266,11 @@ class ParamAudioFragment {
 }
 class ParamColor {
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1283,11 +1291,11 @@ class ParamColor {
 }
 class ParamCurve {
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1308,17 +1316,17 @@ class ParamCurve {
 }
 class ParamDouble {
     /* Fields of GObject-2.0.GObject.ParamSpecDouble */
-    parent_instance: GObject.ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
-    epsilon: number
+    readonly parent_instance: GObject.ParamSpec
+    readonly minimum: number
+    readonly maximum: number
+    readonly default_value: number
+    readonly epsilon: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1339,15 +1347,15 @@ class ParamDouble {
 }
 class ParamEnum {
     /* Fields of GObject-2.0.GObject.ParamSpecEnum */
-    parent_instance: GObject.ParamSpec
-    enum_class: GObject.EnumClass
-    default_value: number
+    readonly parent_instance: GObject.ParamSpec
+    readonly enum_class: GObject.EnumClass
+    readonly default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1368,19 +1376,19 @@ class ParamEnum {
 }
 class ParamFilePath {
     /* Fields of GObject-2.0.GObject.ParamSpecString */
-    parent_instance: GObject.ParamSpec
-    default_value: string
-    cset_first: string
-    cset_nth: string
-    substitutor: number
-    null_fold_if_empty: number
-    ensure_non_null: number
+    readonly parent_instance: GObject.ParamSpec
+    readonly default_value: string
+    readonly cset_first: string
+    readonly cset_nth: string
+    readonly substitutor: number
+    readonly null_fold_if_empty: number
+    readonly ensure_non_null: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1401,13 +1409,13 @@ class ParamFilePath {
 }
 class ParamFormat {
     /* Fields of GObject-2.0.GObject.ParamSpecPointer */
-    parent_instance: GObject.ParamSpec
+    readonly parent_instance: GObject.ParamSpec
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1428,16 +1436,16 @@ class ParamFormat {
 }
 class ParamInt {
     /* Fields of GObject-2.0.GObject.ParamSpecInt */
-    parent_instance: GObject.ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
+    readonly parent_instance: GObject.ParamSpec
+    readonly minimum: number
+    readonly maximum: number
+    readonly default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1458,11 +1466,11 @@ class ParamInt {
 }
 class ParamPath {
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1483,16 +1491,16 @@ class ParamPath {
 }
 class ParamSeed {
     /* Fields of GObject-2.0.GObject.ParamSpecUInt */
-    parent_instance: GObject.ParamSpec
-    minimum: number
-    maximum: number
-    default_value: number
+    readonly parent_instance: GObject.ParamSpec
+    readonly minimum: number
+    readonly maximum: number
+    readonly default_value: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1513,19 +1521,19 @@ class ParamSeed {
 }
 class ParamString {
     /* Fields of GObject-2.0.GObject.ParamSpecString */
-    parent_instance: GObject.ParamSpec
-    default_value: string
-    cset_first: string
-    cset_nth: string
-    substitutor: number
-    null_fold_if_empty: number
-    ensure_non_null: number
+    readonly parent_instance: GObject.ParamSpec
+    readonly default_value: string
+    readonly cset_first: string
+    readonly cset_nth: string
+    readonly substitutor: number
+    readonly null_fold_if_empty: number
+    readonly ensure_non_null: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1546,19 +1554,19 @@ class ParamString {
 }
 class ParamUri {
     /* Fields of GObject-2.0.GObject.ParamSpecString */
-    parent_instance: GObject.ParamSpec
-    default_value: string
-    cset_first: string
-    cset_nth: string
-    substitutor: number
-    null_fold_if_empty: number
-    ensure_non_null: number
+    readonly parent_instance: GObject.ParamSpec
+    readonly default_value: string
+    readonly cset_first: string
+    readonly cset_nth: string
+    readonly substitutor: number
+    readonly null_fold_if_empty: number
+    readonly ensure_non_null: number
     /* Fields of GObject-2.0.GObject.ParamSpec */
-    g_type_instance: GObject.TypeInstance
-    name: string
-    flags: GObject.ParamFlags
-    value_type: GObject.Type
-    owner_type: GObject.Type
+    readonly g_type_instance: GObject.TypeInstance
+    readonly name: string
+    readonly flags: GObject.ParamFlags
+    readonly value_type: GObject.Type
+    readonly owner_type: GObject.Type
     /* Methods of GObject-2.0.GObject.ParamSpec */
     get_blurb(): string | null
     get_default_value(): any
@@ -1577,13 +1585,11 @@ class ParamUri {
     vfunc_values_cmp(value1: any, value2: any): number
     static name: string
 }
-export interface Path_ConstructProps extends GObject.Object_ConstructProps {
+interface Path_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Path {
-    /* Fields of Gegl-0.4.Gegl.Path */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.Path */
     calc(pos: number): [ /* returnType */ boolean, /* x */ number, /* y */ number ]
     calc_y_for_x(x: number): [ /* returnType */ number, /* y */ number ]
@@ -1657,7 +1663,8 @@ class Path {
     static add_type(type: number, items: number, description: string): void
     static $gtype: GObject.Type
 }
-export interface Processor_ConstructProps extends GObject.Object_ConstructProps {
+interface Processor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gegl-0.4.Gegl.Processor */
     chunksize?: number
     node?: Node
     progress?: number
@@ -1669,7 +1676,7 @@ class Processor {
     progress: number
     rectangle: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.Processor */
     get_buffer(): Buffer
     set_level(level: number): void
@@ -1725,7 +1732,7 @@ class Processor {
     _init (config?: Processor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Stats_ConstructProps extends GObject.Object_ConstructProps {
+interface Stats_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Stats {
     /* Properties of Gegl-0.4.Gegl.Stats */
@@ -1751,7 +1758,7 @@ class Stats {
     readonly tile_cache_total_uncompressed: number
     readonly zoom_total: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1837,7 +1844,8 @@ class Stats {
     _init (config?: Stats_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TileBackend_ConstructProps extends TileSource_ConstructProps {
+interface TileBackend_ConstructProps extends TileSource_ConstructProps {
+    /* Constructor properties of Gegl-0.4.Gegl.TileBackend */
     flush_on_destroy?: boolean
     format?: object
     tile_height?: number
@@ -1848,15 +1856,13 @@ class TileBackend {
     flush_on_destroy: boolean
     readonly px_size: number
     readonly tile_size: number
-    /* Fields of Gegl-0.4.Gegl.TileBackend */
-    parent_instance: TileSource
-    priv: TileBackendPrivate
     /* Fields of Gegl-0.4.Gegl.TileSource */
-    command: TileSourceCommand
-    padding: object[]
+    readonly parent_instance: GObject.Object
+    readonly padding: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.TileBackend */
+    command(command: TileCommand, x: number, y: number, z: number, data?: object | null): object | null
     get_flush_on_destroy(): boolean
     get_tile_height(): number
     get_tile_size(): number
@@ -1915,20 +1921,19 @@ class TileBackend {
     static unlink_swap(path: string): void
     static $gtype: GObject.Type
 }
-export interface TileHandler_ConstructProps extends TileSource_ConstructProps {
+interface TileHandler_ConstructProps extends TileSource_ConstructProps {
+    /* Constructor properties of Gegl-0.4.Gegl.TileHandler */
     source?: GObject.Object
 }
 class TileHandler {
     /* Properties of Gegl-0.4.Gegl.TileHandler */
     source: GObject.Object
-    /* Fields of Gegl-0.4.Gegl.TileHandler */
-    parent_instance: TileSource
-    priv: TileHandlerPrivate
     /* Fields of Gegl-0.4.Gegl.TileSource */
-    command: TileSourceCommand
-    padding: object[]
+    readonly parent_instance: GObject.Object
+    readonly command: TileSourceCommand
+    readonly padding: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gegl-0.4.Gegl.TileHandler */
     damage_rect(rect: Rectangle): void
     damage_tile(x: number, y: number, z: number, damage: number): void
@@ -1980,15 +1985,11 @@ class TileHandler {
     _init (config?: TileHandler_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TileSource_ConstructProps extends GObject.Object_ConstructProps {
+interface TileSource_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TileSource {
-    /* Fields of Gegl-0.4.Gegl.TileSource */
-    parent_instance: GObject.Object
-    command: TileSourceCommand
-    padding: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2034,7 +2035,7 @@ class TileSource {
 }
 abstract class AudioFragmentClass {
     /* Fields of Gegl-0.4.Gegl.AudioFragmentClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AudioFragmentPrivate {
@@ -2042,15 +2043,15 @@ class AudioFragmentPrivate {
 }
 class BufferIterator {
     /* Fields of Gegl-0.4.Gegl.BufferIterator */
-    length: number
-    priv: BufferIteratorPriv
-    items: BufferIteratorItem[]
+    readonly length: number
+    readonly priv: BufferIteratorPriv
+    readonly items: BufferIteratorItem[]
     static name: string
 }
 class BufferIteratorItem {
     /* Fields of Gegl-0.4.Gegl.BufferIteratorItem */
-    data: object
-    roi: Rectangle
+    readonly data: object
+    readonly roi: Rectangle
     static name: string
 }
 class BufferIteratorPriv {
@@ -2058,7 +2059,7 @@ class BufferIteratorPriv {
 }
 class BufferMatrix2 {
     /* Fields of Gegl-0.4.Gegl.BufferMatrix2 */
-    coeff: number[]
+    readonly coeff: number[]
     /* Methods of Gegl-0.4.Gegl.BufferMatrix2 */
     determinant(): number
     is_identity(): boolean
@@ -2067,7 +2068,7 @@ class BufferMatrix2 {
 }
 abstract class ColorClass {
     /* Fields of Gegl-0.4.Gegl.ColorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ColorPrivate {
@@ -2075,25 +2076,25 @@ class ColorPrivate {
 }
 abstract class CurveClass {
     /* Fields of Gegl-0.4.Gegl.CurveClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Lookup {
     /* Fields of Gegl-0.4.Gegl.Lookup */
-    function_: LookupFunction
-    data: object
-    shift: number
-    positive_min: number
-    positive_max: number
-    negative_min: number
-    negative_max: number
-    bitmask: number[]
-    table: number[]
+    readonly function_: LookupFunction
+    readonly data: object
+    readonly shift: number
+    readonly positive_min: number
+    readonly positive_max: number
+    readonly negative_min: number
+    readonly negative_max: number
+    readonly bitmask: number[]
+    readonly table: number[]
     static name: string
 }
 class Matrix3 {
     /* Fields of Gegl-0.4.Gegl.Matrix3 */
-    coeff: number[]
+    readonly coeff: number[]
     /* Methods of Gegl-0.4.Gegl.Matrix3 */
     copy(): Matrix3
     copy_into(src: Matrix3): void
@@ -2119,19 +2120,19 @@ class Matrix3 {
 }
 abstract class MetadataHashClass {
     /* Fields of Gegl-0.4.Gegl.MetadataHashClass */
-    parent_class: MetadataStoreClass
+    readonly parent_class: MetadataStoreClass
     static name: string
 }
 abstract class MetadataInterface {
     /* Fields of Gegl-0.4.Gegl.MetadataInterface */
-    register_map: (metadata: Metadata, file_module: string, flags: number, map: MetadataMap[]) => void
-    set_resolution: (metadata: Metadata, unit: ResolutionUnit, x: number, y: number) => boolean
-    get_resolution: (metadata: Metadata, unit: ResolutionUnit, x: number, y: number) => boolean
-    iter_lookup: (metadata: Metadata, iter: MetadataIter, key: string) => boolean
-    iter_init: (metadata: Metadata, iter: MetadataIter) => void
-    iter_next: (metadata: Metadata, iter: MetadataIter) => string
-    iter_set_value: (metadata: Metadata, iter: MetadataIter, value: any) => boolean
-    iter_get_value: (metadata: Metadata, iter: MetadataIter, value: any) => boolean
+    readonly register_map: (metadata: Metadata, file_module: string, flags: number, map: MetadataMap[]) => void
+    readonly set_resolution: (metadata: Metadata, unit: ResolutionUnit, x: number, y: number) => boolean
+    readonly get_resolution: (metadata: Metadata, unit: ResolutionUnit, x: number, y: number) => boolean
+    readonly iter_lookup: (metadata: Metadata, iter: MetadataIter, key: string) => boolean
+    readonly iter_init: (metadata: Metadata, iter: MetadataIter) => void
+    readonly iter_next: (metadata: Metadata, iter: MetadataIter) => string
+    readonly iter_set_value: (metadata: Metadata, iter: MetadataIter, value: any) => boolean
+    readonly iter_get_value: (metadata: Metadata, iter: MetadataIter, value: any) => boolean
     static name: string
 }
 class MetadataIter {
@@ -2139,16 +2140,16 @@ class MetadataIter {
 }
 class MetadataMap {
     /* Fields of Gegl-0.4.Gegl.MetadataMap */
-    local_name: string
-    name: string
-    transform: GObject.ValueTransform
+    readonly local_name: string
+    readonly name: string
+    readonly transform: GObject.ValueTransform
     static name: string
 }
 abstract class MetadataStoreClass {
     /* Fields of Gegl-0.4.Gegl.MetadataStoreClass */
-    set_value: (self: MetadataStore, name: string, value: any) => void
-    has_value: (self: MetadataStore, name: string) => boolean
-    register_hook: (self: MetadataStore, file_module_name: string, flags: number) => void
+    readonly set_value: (self: MetadataStore, name: string, value: any) => void
+    readonly has_value: (self: MetadataStore, name: string) => boolean
+    readonly register_hook: (self: MetadataStore, file_module_name: string, flags: number) => void
     static name: string
 }
 class OperationContext {
@@ -2156,13 +2157,13 @@ class OperationContext {
 }
 class ParamSpecDouble {
     /* Fields of Gegl-0.4.Gegl.ParamSpecDouble */
-    parent_instance: GObject.ParamSpecDouble
-    ui_minimum: number
-    ui_maximum: number
-    ui_gamma: number
-    ui_step_small: number
-    ui_step_big: number
-    ui_digits: number
+    readonly parent_instance: GObject.ParamSpecDouble
+    readonly ui_minimum: number
+    readonly ui_maximum: number
+    readonly ui_gamma: number
+    readonly ui_step_small: number
+    readonly ui_step_big: number
+    readonly ui_digits: number
     /* Methods of Gegl-0.4.Gegl.ParamSpecDouble */
     set_digits(digits: number): void
     set_steps(small_step: number, big_step: number): void
@@ -2170,55 +2171,55 @@ class ParamSpecDouble {
 }
 class ParamSpecEnum {
     /* Fields of Gegl-0.4.Gegl.ParamSpecEnum */
-    parent_instance: GObject.ParamSpecEnum
-    excluded_values: object[]
+    readonly parent_instance: GObject.ParamSpecEnum
+    readonly excluded_values: object[]
     /* Methods of Gegl-0.4.Gegl.ParamSpecEnum */
     exclude_value(value: number): void
     static name: string
 }
 class ParamSpecFilePath {
     /* Fields of Gegl-0.4.Gegl.ParamSpecFilePath */
-    parent_instance: GObject.ParamSpecString
-    no_validate: number
-    null_ok: number
+    readonly parent_instance: GObject.ParamSpecString
+    readonly no_validate: number
+    readonly null_ok: number
     static name: string
 }
 class ParamSpecFormat {
     /* Fields of Gegl-0.4.Gegl.ParamSpecFormat */
-    parent_instance: GObject.ParamSpecPointer
+    readonly parent_instance: GObject.ParamSpecPointer
     static name: string
 }
 class ParamSpecInt {
     /* Fields of Gegl-0.4.Gegl.ParamSpecInt */
-    parent_instance: GObject.ParamSpecInt
-    ui_minimum: number
-    ui_maximum: number
-    ui_gamma: number
-    ui_step_small: number
-    ui_step_big: number
+    readonly parent_instance: GObject.ParamSpecInt
+    readonly ui_minimum: number
+    readonly ui_maximum: number
+    readonly ui_gamma: number
+    readonly ui_step_small: number
+    readonly ui_step_big: number
     /* Methods of Gegl-0.4.Gegl.ParamSpecInt */
     set_steps(small_step: number, big_step: number): void
     static name: string
 }
 class ParamSpecSeed {
     /* Fields of Gegl-0.4.Gegl.ParamSpecSeed */
-    parent_instance: GObject.ParamSpecUInt
-    ui_minimum: number
-    ui_maximum: number
+    readonly parent_instance: GObject.ParamSpecUInt
+    readonly ui_minimum: number
+    readonly ui_maximum: number
     static name: string
 }
 class ParamSpecString {
     /* Fields of Gegl-0.4.Gegl.ParamSpecString */
-    parent_instance: GObject.ParamSpecString
-    no_validate: number
-    null_ok: number
+    readonly parent_instance: GObject.ParamSpecString
+    readonly no_validate: number
+    readonly null_ok: number
     static name: string
 }
 class ParamSpecUri {
     /* Fields of Gegl-0.4.Gegl.ParamSpecUri */
-    parent_instance: GObject.ParamSpecString
-    no_validate: number
-    null_ok: number
+    readonly parent_instance: GObject.ParamSpecString
+    readonly no_validate: number
+    readonly null_ok: number
     static name: string
 }
 abstract class PathClass {
@@ -2226,20 +2227,20 @@ abstract class PathClass {
 }
 class PathItem {
     /* Fields of Gegl-0.4.Gegl.PathItem */
-    type: number
-    point: PathPoint[]
+    readonly type: number
+    readonly point: PathPoint[]
     static name: string
 }
 class PathList {
     /* Fields of Gegl-0.4.Gegl.PathList */
-    next: object
-    d: PathItem
+    readonly next: object
+    readonly d: PathItem
     static name: string
 }
 class PathPoint {
     /* Fields of Gegl-0.4.Gegl.PathPoint */
-    x: number
-    y: number
+    readonly x: number
+    readonly y: number
     static name: string
 }
 class Random {
@@ -2260,10 +2261,10 @@ class Random {
 }
 class Rectangle {
     /* Fields of Gegl-0.4.Gegl.Rectangle */
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     /* Methods of Gegl-0.4.Gegl.Rectangle */
     align(rectangle: Rectangle, tile: Rectangle, alignment: RectangleAlignment): boolean
     align_to_buffer(rectangle: Rectangle, buffer: Buffer, alignment: RectangleAlignment): boolean
@@ -2299,8 +2300,8 @@ class Tile {
 }
 abstract class TileBackendClass {
     /* Fields of Gegl-0.4.Gegl.TileBackendClass */
-    parent_class: TileSourceClass
-    padding: object[]
+    readonly parent_class: TileSourceClass
+    readonly padding: object[]
     static name: string
 }
 class TileBackendPrivate {
@@ -2308,15 +2309,15 @@ class TileBackendPrivate {
 }
 class TileCopyParams {
     /* Fields of Gegl-0.4.Gegl.TileCopyParams */
-    dst_buffer: Buffer
-    dst_x: number
-    dst_y: number
-    dst_z: number
+    readonly dst_buffer: Buffer
+    readonly dst_x: number
+    readonly dst_y: number
+    readonly dst_z: number
     static name: string
 }
 abstract class TileHandlerClass {
     /* Fields of Gegl-0.4.Gegl.TileHandlerClass */
-    parent_class: TileSourceClass
+    readonly parent_class: TileSourceClass
     static name: string
 }
 class TileHandlerPrivate {
@@ -2324,8 +2325,8 @@ class TileHandlerPrivate {
 }
 abstract class TileSourceClass {
     /* Fields of Gegl-0.4.Gegl.TileSourceClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 }

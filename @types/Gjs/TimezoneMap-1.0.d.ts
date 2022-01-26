@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * TimezoneMap-1.0
  */
@@ -19,14 +25,14 @@ import type Atk from './Atk-1.0';
 
 export namespace TimezoneMap {
 
-export const TIMEZONE_COMPLETION_ADMIN1: number
-export const TIMEZONE_COMPLETION_COUNTRY: number
-export const TIMEZONE_COMPLETION_LAST: number
-export const TIMEZONE_COMPLETION_LATITUDE: number
-export const TIMEZONE_COMPLETION_LONGITUDE: number
-export const TIMEZONE_COMPLETION_NAME: number
-export const TIMEZONE_COMPLETION_ZONE: number
-export interface TimezoneCompletion_ConstructProps extends Gtk.EntryCompletion_ConstructProps {
+const TIMEZONE_COMPLETION_ADMIN1: number
+const TIMEZONE_COMPLETION_COUNTRY: number
+const TIMEZONE_COMPLETION_LAST: number
+const TIMEZONE_COMPLETION_LATITUDE: number
+const TIMEZONE_COMPLETION_LONGITUDE: number
+const TIMEZONE_COMPLETION_NAME: number
+const TIMEZONE_COMPLETION_ZONE: number
+interface TimezoneCompletion_ConstructProps extends Gtk.EntryCompletion_ConstructProps {
 }
 class TimezoneCompletion {
     /* Properties of Gtk-3.0.Gtk.EntryCompletion */
@@ -38,13 +44,10 @@ class TimezoneCompletion {
     popup_set_width: boolean
     popup_single_match: boolean
     text_column: number
-    /* Fields of TimezoneMap-1.0.TimezoneMap.TimezoneCompletion */
-    parent: Gtk.EntryCompletion
-    priv: TimezoneCompletionPrivate
     /* Fields of Gtk-3.0.Gtk.EntryCompletion */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TimezoneMap-1.0.TimezoneMap.TimezoneCompletion */
     watch_entry(entry: Gtk.Entry): void
     /* Methods of Gtk-3.0.Gtk.EntryCompletion */
@@ -195,9 +198,12 @@ class TimezoneCompletion {
     _init (config?: TimezoneCompletion_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): TimezoneCompletion
+    /* Function overloads */
+    static new(): TimezoneCompletion
     static $gtype: GObject.Type
 }
-export interface TimezoneLocation_ConstructProps extends GObject.Object_ConstructProps {
+interface TimezoneLocation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TimezoneMap-1.0.TimezoneMap.TimezoneLocation */
     Comment?: string
     country?: string
     dist?: number
@@ -213,11 +219,8 @@ class TimezoneLocation {
     latitude: number
     longitude: number
     zone: string
-    /* Fields of TimezoneMap-1.0.TimezoneMap.TimezoneLocation */
-    parent: GObject.Object
-    priv: TimezoneLocationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -275,7 +278,7 @@ class TimezoneLocation {
     static new(): TimezoneLocation
     static $gtype: GObject.Type
 }
-export interface TimezoneMap_ConstructProps extends Gtk.Widget_ConstructProps {
+interface TimezoneMap_ConstructProps extends Gtk.Widget_ConstructProps {
 }
 class TimezoneMap {
     /* Properties of Gtk-3.0.Gtk.Widget */
@@ -318,12 +321,10 @@ class TimezoneMap {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of TimezoneMap-1.0.TimezoneMap.TimezoneMap */
-    priv: TimezoneMapPrivate
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TimezoneMap-1.0.TimezoneMap.TimezoneMap */
     get_timezone_at_coords(lon: number, lat: number): string
     set_coords(lon: number, lat: number): void
@@ -619,6 +620,7 @@ class TimezoneMap {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of TimezoneMap-1.0.TimezoneMap.TimezoneMap */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1028,7 +1030,7 @@ class TimezoneMap {
 }
 abstract class TimezoneCompletionClass {
     /* Fields of TimezoneMap-1.0.TimezoneMap.TimezoneCompletionClass */
-    parent_class: Gtk.EntryCompletionClass
+    readonly parent_class: Gtk.EntryCompletionClass
     static name: string
 }
 class TimezoneCompletionPrivate {
@@ -1036,7 +1038,7 @@ class TimezoneCompletionPrivate {
 }
 abstract class TimezoneLocationClass {
     /* Fields of TimezoneMap-1.0.TimezoneMap.TimezoneLocationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class TimezoneLocationPrivate {
@@ -1044,7 +1046,7 @@ class TimezoneLocationPrivate {
 }
 abstract class TimezoneMapClass {
     /* Fields of TimezoneMap-1.0.TimezoneMap.TimezoneMapClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 class TimezoneMapPrivate {

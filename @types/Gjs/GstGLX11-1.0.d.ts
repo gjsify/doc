@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstGLX11-1.0
  */
@@ -13,18 +19,17 @@ import type GstGL from './GstGL-1.0';
 
 export namespace GstGLX11 {
 
-export interface GLDisplayX11_ConstructProps extends GstGL.GLDisplay_ConstructProps {
+interface GLDisplayX11_ConstructProps extends GstGL.GLDisplay_ConstructProps {
 }
 class GLDisplayX11 {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLDisplay */
     add_context(context: GstGL.GLContext): boolean
     create_context(other_context: GstGL.GLContext): [ /* returnType */ boolean, /* p_context */ GstGL.GLContext ]
@@ -110,10 +115,6 @@ class GLDisplayX11 {
     connect(sigName: "notify", callback: (($obj: GLDisplayX11, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLDisplayX11, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLDisplayX11, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLDisplayX11, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLDisplayX11, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLDisplayX11, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -123,13 +124,14 @@ class GLDisplayX11 {
     _init (config?: GLDisplayX11_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(name?: string | null): GLDisplayX11
+    /* Function overloads */
     static new(): GLDisplayX11
     static $gtype: GObject.Type
 }
 abstract class GLDisplayX11Class {
     /* Fields of GstGLX11-1.0.GstGLX11.GLDisplayX11Class */
-    object_class: GstGL.GLDisplayClass
-    _padding: object[]
+    readonly object_class: GstGL.GLDisplayClass
+    readonly _padding: object[]
     static name: string
 }
 }

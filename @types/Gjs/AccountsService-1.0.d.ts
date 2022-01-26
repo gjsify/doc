@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * AccountsService-1.0
  */
@@ -26,7 +32,7 @@ enum UserPasswordMode {
     NONE,
 }
 function user_manager_error_quark(): GLib.Quark
-export interface User_ConstructProps extends GObject.Object_ConstructProps {
+interface User_ConstructProps extends GObject.Object_ConstructProps {
 }
 class User {
     /* Properties of AccountsService-1.0.AccountsService.User */
@@ -53,7 +59,7 @@ class User {
     readonly user_name: string
     readonly x_session: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AccountsService-1.0.AccountsService.User */
     collate(user2: User): number
     get_account_type(): UserAccountType
@@ -196,7 +202,8 @@ class User {
     _init (config?: User_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UserManager_ConstructProps extends GObject.Object_ConstructProps {
+interface UserManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of AccountsService-1.0.AccountsService.UserManager */
     exclude_usernames_list?: object
     has_multiple_users?: boolean
     include_usernames_list?: object
@@ -207,10 +214,8 @@ class UserManager {
     has_multiple_users: boolean
     include_usernames_list: object
     readonly is_loaded: boolean
-    /* Fields of AccountsService-1.0.AccountsService.UserManager */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AccountsService-1.0.AccountsService.UserManager */
     activate_user_session(user: User): boolean
     cache_user(username: string): User
@@ -304,16 +309,16 @@ class UserManager {
 }
 abstract class UserClass {
     /* Fields of AccountsService-1.0.AccountsService.UserClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class UserManagerClass {
     /* Fields of AccountsService-1.0.AccountsService.UserManagerClass */
-    parent_class: GObject.ObjectClass
-    user_added: (user_manager: UserManager, user: User) => void
-    user_removed: (user_manager: UserManager, user: User) => void
-    user_is_logged_in_changed: (user_manager: UserManager, user: User) => void
-    user_changed: (user_manager: UserManager, user: User) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly user_added: (user_manager: UserManager, user: User) => void
+    readonly user_removed: (user_manager: UserManager, user: User) => void
+    readonly user_is_logged_in_changed: (user_manager: UserManager, user: User) => void
+    readonly user_changed: (user_manager: UserManager, user: User) => void
     static name: string
 }
 }

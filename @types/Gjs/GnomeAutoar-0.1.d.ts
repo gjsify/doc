@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GnomeAutoar-0.1
  */
@@ -31,7 +37,7 @@ enum Format {
     ZIP,
     TAR,
     CPIO,
-    /* 7ZIP (invalid, starts with a number) */
+    TODO_7ZIP,
     AR_BSD,
     AR_SVR4,
     CPIO_NEWC,
@@ -67,7 +73,8 @@ interface FilterFunc {
 interface FormatFunc {
     (a?: object | null): number
 }
-export interface Compressor_ConstructProps extends GObject.Object_ConstructProps {
+interface Compressor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GnomeAutoar-0.1.GnomeAutoar.Compressor */
     create_top_level_directory?: boolean
     notify_interval?: number
     output_file?: Gio.File
@@ -84,7 +91,7 @@ class Compressor {
     output_is_dest: boolean
     readonly size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeAutoar-0.1.GnomeAutoar.Compressor */
     get_completed_files(): number
     get_completed_size(): number
@@ -178,7 +185,8 @@ class Compressor {
     static quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface Extractor_ConstructProps extends GObject.Object_ConstructProps {
+interface Extractor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GnomeAutoar-0.1.GnomeAutoar.Extractor */
     delete_after_extraction?: boolean
     notify_interval?: number
     output_file?: Gio.File
@@ -195,7 +203,7 @@ class Extractor {
     readonly total_files: number
     readonly total_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GnomeAutoar-0.1.GnomeAutoar.Extractor */
     get_completed_files(): number
     get_completed_size(): number
@@ -298,12 +306,12 @@ class Extractor {
 }
 abstract class CompressorClass {
     /* Fields of GnomeAutoar-0.1.GnomeAutoar.CompressorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ExtractorClass {
     /* Fields of GnomeAutoar-0.1.GnomeAutoar.ExtractorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

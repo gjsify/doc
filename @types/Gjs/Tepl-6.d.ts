@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Tepl-6
  */
@@ -45,7 +51,7 @@ enum GutterRendererFoldsState {
     CONTINUE,
     END,
 }
-export const UTILS_STYLE_PROVIDER_PRIORITY_LIBRARY: number
+const UTILS_STYLE_PROVIDER_PRIORITY_LIBRARY: number
 function finalize(): void
 function init(): void
 function io_error_info_bar_cant_create_backup(location: Gio.File, error: GLib.Error): InfoBar
@@ -108,13 +114,11 @@ class TabGroup {
     vfunc_set_active_tab(tab: Tab): void
     static name: string
 }
-export interface AbstractFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface AbstractFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AbstractFactory {
-    /* Fields of Tepl-6.Tepl.AbstractFactory */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.AbstractFactory */
     create_file(): File
     create_main_window(app: Gtk.Application): Gtk.ApplicationWindow | null
@@ -173,15 +177,13 @@ class AbstractFactory {
     static get_singleton(): AbstractFactory
     static $gtype: GObject.Type
 }
-export interface Application_ConstructProps extends GObject.Object_ConstructProps {
+interface Application_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.Application */
     application?: Gtk.Application
 }
 class Application {
-    /* Fields of Tepl-6.Tepl.Application */
-    parent: GObject.Object
-    priv: ApplicationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.Application */
     get_active_main_window(): Gtk.ApplicationWindow | null
     get_app_action_info_store(): Amtk.ActionInfoStore
@@ -237,9 +239,11 @@ class Application {
     static get_from_gtk_application(gtk_app: Gtk.Application): Application
     static $gtype: GObject.Type
 }
-export interface ApplicationWindow_ConstructProps extends GObject.Object_ConstructProps {
+interface ApplicationWindow_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.ApplicationWindow */
     application_window?: Gtk.ApplicationWindow
     handle_title?: boolean
+    /* Constructor properties of Tepl-6.Tepl.TabGroup */
     active_tab?: Tab
 }
 class ApplicationWindow {
@@ -249,11 +253,8 @@ class ApplicationWindow {
     readonly active_buffer: Buffer
     active_tab: Tab
     readonly active_view: View
-    /* Fields of Tepl-6.Tepl.ApplicationWindow */
-    parent: GObject.Object
-    priv: ApplicationWindowPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.ApplicationWindow */
     get_application_window(): Gtk.ApplicationWindow
     get_handle_title(): boolean
@@ -329,7 +330,8 @@ class ApplicationWindow {
     static is_main_window(gtk_window: Gtk.ApplicationWindow): boolean
     static $gtype: GObject.Type
 }
-export interface Buffer_ConstructProps extends GtkSource.Buffer_ConstructProps {
+interface Buffer_ConstructProps extends GtkSource.Buffer_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.Buffer */
     tepl_style_scheme_id?: string
 }
 class Buffer {
@@ -353,12 +355,11 @@ class Buffer {
     readonly has_selection: boolean
     readonly paste_target_list: Gtk.TargetList
     text: string
-    /* Fields of Tepl-6.Tepl.Buffer */
-    parent_instance: GtkSource.Buffer
     /* Fields of GtkSource-4.GtkSource.Buffer */
-    priv: GtkSource.BufferPrivate
+    readonly parent_instance: Gtk.TextBuffer
+    readonly priv: GtkSource.BufferPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.Buffer */
     get_file(): File
     get_full_title(): string
@@ -419,7 +420,7 @@ class Buffer {
     delete_mark(mark: Gtk.TextMark): void
     delete_mark_by_name(name: string): void
     delete_selection(interactive: boolean, default_editable: boolean): boolean
-    deserialize(content_buffer: Gtk.TextBuffer, format: Gdk.Atom, iter: Gtk.TextIter, data: Uint8Array[]): boolean
+    deserialize(content_buffer: Gtk.TextBuffer, format: Gdk.Atom, iter: Gtk.TextIter, data: Uint8Array): boolean
     deserialize_get_can_create_tags(format: Gdk.Atom): boolean
     deserialize_set_can_create_tags(format: Gdk.Atom, can_create_tags: boolean): void
     end_user_action(): void
@@ -469,7 +470,7 @@ class Buffer {
     remove_tag(tag: Gtk.TextTag, start: Gtk.TextIter, end: Gtk.TextIter): void
     remove_tag_by_name(name: string, start: Gtk.TextIter, end: Gtk.TextIter): void
     select_range(ins: Gtk.TextIter, bound: Gtk.TextIter): void
-    serialize(content_buffer: Gtk.TextBuffer, format: Gdk.Atom, start: Gtk.TextIter, end: Gtk.TextIter): Uint8Array[]
+    serialize(content_buffer: Gtk.TextBuffer, format: Gdk.Atom, start: Gtk.TextIter, end: Gtk.TextIter): Uint8Array
     set_modified(setting: boolean): void
     set_text(text: string, len: number): void
     unregister_deserialize_format(format: Gdk.Atom): void
@@ -631,10 +632,13 @@ class Buffer {
     _init (config?: Buffer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Buffer
+    /* Function overloads */
+    static new(table?: Gtk.TextTagTable | null): Buffer
     static new(table?: Gtk.TextTagTable | null): Buffer
     static $gtype: GObject.Type
 }
-export interface File_ConstructProps extends GObject.Object_ConstructProps {
+interface File_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.File */
     location?: Gio.File
 }
 class File {
@@ -642,11 +646,8 @@ class File {
     location: Gio.File
     readonly newline_type: NewlineType
     readonly short_name: string
-    /* Fields of Tepl-6.Tepl.File */
-    parent: GObject.Object
-    priv: FilePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.File */
     add_uri_to_recent_manager(): void
     get_location(): Gio.File
@@ -707,17 +708,15 @@ class File {
     static chooser_show(chooser: Gtk.FileChooser): void
     static $gtype: GObject.Type
 }
-export interface FileLoader_ConstructProps extends GObject.Object_ConstructProps {
+interface FileLoader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.FileLoader */
     buffer?: Buffer
     file?: File
     location?: Gio.File
 }
 class FileLoader {
-    /* Fields of Tepl-6.Tepl.FileLoader */
-    parent: GObject.Object
-    priv: FileLoaderPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.FileLoader */
     get_buffer(): Buffer | null
     get_file(): File | null
@@ -769,7 +768,8 @@ class FileLoader {
     static new(buffer: Buffer, file: File): FileLoader
     static $gtype: GObject.Type
 }
-export interface FileSaver_ConstructProps extends GObject.Object_ConstructProps {
+interface FileSaver_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.FileSaver */
     buffer?: Buffer
     file?: File
     flags?: FileSaverFlags
@@ -780,11 +780,8 @@ class FileSaver {
     /* Properties of Tepl-6.Tepl.FileSaver */
     flags: FileSaverFlags
     newline_type: NewlineType
-    /* Fields of Tepl-6.Tepl.FileSaver */
-    object: GObject.Object
-    priv: FileSaverPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.FileSaver */
     get_buffer(): Buffer
     get_file(): File
@@ -845,17 +842,16 @@ class FileSaver {
     static new_with_target(buffer: Buffer, file: File, target_location: Gio.File): FileSaver
     static $gtype: GObject.Type
 }
-export interface FoldRegion_ConstructProps extends GObject.Object_ConstructProps {
+interface FoldRegion_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.FoldRegion */
     buffer?: Gtk.TextBuffer
     folded?: boolean
 }
 class FoldRegion {
     /* Properties of Tepl-6.Tepl.FoldRegion */
     folded: boolean
-    /* Fields of Tepl-6.Tepl.FoldRegion */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.FoldRegion */
     get_bounds(): [ /* returnType */ boolean, /* start */ Gtk.TextIter, /* end */ Gtk.TextIter ]
     get_buffer(): Gtk.TextBuffer | null
@@ -909,7 +905,8 @@ class FoldRegion {
     static new(buffer: Gtk.TextBuffer, start: Gtk.TextIter, end: Gtk.TextIter): FoldRegion
     static $gtype: GObject.Type
 }
-export interface GotoLineBar_ConstructProps extends Gtk.Grid_ConstructProps {
+interface GotoLineBar_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class GotoLineBar {
@@ -965,14 +962,12 @@ class GotoLineBar {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Tepl-6.Tepl.GotoLineBar */
-    priv: GotoLineBarPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.GotoLineBar */
     grab_focus_to_entry(): void
     set_view(view: View): void
@@ -1001,7 +996,7 @@ class GotoLineBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1316,6 +1311,7 @@ class GotoLineBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -1762,9 +1758,11 @@ class GotoLineBar {
     _init (config?: GotoLineBar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): GotoLineBar
+    /* Function overloads */
+    static new(): GotoLineBar
     static $gtype: GObject.Type
 }
-export interface GutterRendererFolds_ConstructProps extends GtkSource.GutterRenderer_ConstructProps {
+interface GutterRendererFolds_ConstructProps extends GtkSource.GutterRenderer_ConstructProps {
 }
 class GutterRendererFolds {
     /* Properties of GtkSource-4.GtkSource.GutterRenderer */
@@ -1779,12 +1777,10 @@ class GutterRendererFolds {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of Tepl-6.Tepl.GutterRendererFolds */
-    parent_instance: GtkSource.GutterRenderer
     /* Fields of GtkSource-4.GtkSource.GutterRenderer */
-    parent: GObject.InitiallyUnowned
+    readonly parent: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.GutterRendererFolds */
     set_state(state: GutterRendererFoldsState): void
     /* Methods of GtkSource-4.GtkSource.GutterRenderer */
@@ -1904,10 +1900,12 @@ class GutterRendererFolds {
     static new(): GutterRendererFolds
     static $gtype: GObject.Type
 }
-export interface InfoBar_ConstructProps extends Gtk.InfoBar_ConstructProps {
+interface InfoBar_ConstructProps extends Gtk.InfoBar_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.InfoBar */
     handle_close_response?: boolean
     icon_from_message_type?: boolean
     icon_name?: string
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class InfoBar {
@@ -1954,7 +1952,6 @@ class InfoBar {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -1969,16 +1966,16 @@ class InfoBar {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Tepl-6.Tepl.InfoBar */
-    priv: InfoBarPrivate
+    /* Fields of Gtk-3.0.Gtk.InfoBar */
+    readonly parent: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.InfoBar */
     add_content_widget(widget: Gtk.Widget, location: InfoBarLocation): void
     add_primary_message(primary_msg: string): void
@@ -2022,7 +2019,7 @@ class InfoBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2337,6 +2334,7 @@ class InfoBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -2764,8 +2762,6 @@ class InfoBar {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: InfoBar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: InfoBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: InfoBar, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: InfoBar, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: InfoBar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: InfoBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: InfoBar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: InfoBar, pspec: GObject.ParamSpec) => void)): number
@@ -2801,13 +2797,15 @@ class InfoBar {
     _init (config?: InfoBar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): InfoBar
+    /* Function overloads */
+    static new(): InfoBar
     static new(orientation: Gtk.Orientation, spacing: number): InfoBar
     static new_simple(msg_type: Gtk.MessageType, primary_msg: string, secondary_msg?: string | null): InfoBar
     static create_label(): Gtk.Label
     static set_buttons_orientation(info_bar: Gtk.InfoBar, buttons_orientation: Gtk.Orientation): void
     static $gtype: GObject.Type
 }
-export interface LanguageChooserDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface LanguageChooserDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
 class LanguageChooserDialog {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -2886,19 +2884,19 @@ class LanguageChooserDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
-    /* Fields of Tepl-6.Tepl.LanguageChooserDialog */
-    priv: LanguageChooserDialogPrivate
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Dialog */
     add_action_widget(child: Gtk.Widget, response_id: number): void
     add_button(button_text: string, response_id: number): Gtk.Widget
@@ -3025,7 +3023,7 @@ class LanguageChooserDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3269,6 +3267,7 @@ class LanguageChooserDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -3337,6 +3336,7 @@ class LanguageChooserDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Tepl-6.Tepl.LanguageChooser */
     select_language(language?: GtkSource.Language | null): void
     /* Virtual methods of Tepl-6.Tepl.LanguageChooserDialog */
@@ -3861,8 +3861,6 @@ class LanguageChooserDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: LanguageChooserDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3872,11 +3870,13 @@ class LanguageChooserDialog {
     _init (config?: LanguageChooserDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(parent?: Gtk.Window | null): LanguageChooserDialog
+    /* Function overloads */
     static new(): LanguageChooserDialog
     static new(type: Gtk.WindowType): LanguageChooserDialog
     static $gtype: GObject.Type
 }
-export interface LanguageChooserWidget_ConstructProps extends Gtk.Grid_ConstructProps {
+interface LanguageChooserWidget_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class LanguageChooserWidget {
@@ -3932,14 +3932,12 @@ class LanguageChooserWidget {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Tepl-6.Tepl.LanguageChooserWidget */
-    priv: LanguageChooserWidgetPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Grid */
     attach(child: Gtk.Widget, left: number, top: number, width: number, height: number): void
     attach_next_to(child: Gtk.Widget, sibling: Gtk.Widget | null, side: Gtk.PositionType, width: number, height: number): void
@@ -3965,7 +3963,7 @@ class LanguageChooserWidget {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4280,6 +4278,7 @@ class LanguageChooserWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -4734,16 +4733,15 @@ class LanguageChooserWidget {
     _init (config?: LanguageChooserWidget_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): LanguageChooserWidget
+    /* Function overloads */
+    static new(): LanguageChooserWidget
     static $gtype: GObject.Type
 }
-export interface Metadata_ConstructProps extends GObject.Object_ConstructProps {
+interface Metadata_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Metadata {
-    /* Fields of Tepl-6.Tepl.Metadata */
-    parent: GObject.Object
-    priv: MetadataPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.Metadata */
     get(key: string): string | null
     set(key: string, value?: string | null): void
@@ -4792,14 +4790,11 @@ class Metadata {
     static new(): Metadata
     static $gtype: GObject.Type
 }
-export interface MetadataManager_ConstructProps extends GObject.Object_ConstructProps {
+interface MetadataManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MetadataManager {
-    /* Fields of Tepl-6.Tepl.MetadataManager */
-    parent: GObject.Object
-    priv: MetadataManagerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.MetadataManager */
     copy_from(for_location: Gio.File, to_metadata: Metadata): void
     load_from_disk(from_file: Gio.File): boolean
@@ -4851,7 +4846,8 @@ class MetadataManager {
     static get_singleton(): MetadataManager
     static $gtype: GObject.Type
 }
-export interface Notebook_ConstructProps extends Gtk.Notebook_ConstructProps {
+interface Notebook_ConstructProps extends Gtk.Notebook_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.TabGroup */
     active_tab?: Tab
 }
 class Notebook {
@@ -4911,14 +4907,12 @@ class Notebook {
     readonly active_buffer: Buffer
     active_tab: Tab
     readonly active_view: View
-    /* Fields of Tepl-6.Tepl.Notebook */
-    priv: NotebookPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Notebook */
     append_page(child: Gtk.Widget, tab_label?: Gtk.Widget | null): number
     append_page_menu(child: Gtk.Widget, tab_label?: Gtk.Widget | null, menu_label?: Gtk.Widget | null): number
@@ -4968,7 +4962,7 @@ class Notebook {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5283,6 +5277,7 @@ class Notebook {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Tepl-6.Tepl.TabGroup */
     append_tab(tab: Tab, jump_to: boolean): void
     get_active_buffer(): Buffer | null
@@ -5791,7 +5786,8 @@ class Notebook {
     static new(): Notebook
     static $gtype: GObject.Type
 }
-export interface Panel_ConstructProps extends Gtk.Grid_ConstructProps {
+interface Panel_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Panel {
@@ -5847,14 +5843,12 @@ class Panel {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Tepl-6.Tepl.Panel */
-    priv: PanelPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.Panel */
     add_component(component: Gtk.Widget, name: string, title: string, icon_name?: string | null): void
     get_stack(): Gtk.Stack
@@ -5886,7 +5880,7 @@ class Panel {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6201,6 +6195,7 @@ class Panel {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -6647,11 +6642,15 @@ class Panel {
     _init (config?: Panel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Panel
+    /* Function overloads */
+    static new(): Panel
     static new_for_left_side_panel(): Panel
     static $gtype: GObject.Type
 }
-export interface ProgressInfoBar_ConstructProps extends InfoBar_ConstructProps {
+interface ProgressInfoBar_ConstructProps extends InfoBar_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.ProgressInfoBar */
     has_cancel_button?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class ProgressInfoBar {
@@ -6698,7 +6697,6 @@ class ProgressInfoBar {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -6713,16 +6711,17 @@ class ProgressInfoBar {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Tepl-6.Tepl.ProgressInfoBar */
-    priv: ProgressInfoBarPrivate
+    /* Fields of Tepl-6.Tepl.InfoBar */
+    readonly parent: Gtk.InfoBar
+    readonly priv: InfoBarPrivate
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.ProgressInfoBar */
     pulse(): void
     set_fraction(fraction: number): void
@@ -6771,7 +6770,7 @@ class ProgressInfoBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7086,9 +7085,21 @@ class ProgressInfoBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
+    /* Virtual methods of Tepl-6.Tepl.ProgressInfoBar */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Tepl-6.Tepl.InfoBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -7513,8 +7524,6 @@ class ProgressInfoBar {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: ProgressInfoBar, pspec: GObject.ParamSpec) => void)): number
@@ -7550,11 +7559,14 @@ class ProgressInfoBar {
     _init (config?: ProgressInfoBar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(icon_name: string | null, markup: string | null, has_cancel_button: boolean): ProgressInfoBar
+    /* Function overloads */
+    static new(): ProgressInfoBar
     static new(): ProgressInfoBar
     static new(orientation: Gtk.Orientation, spacing: number): ProgressInfoBar
     static $gtype: GObject.Type
 }
-export interface SpaceDrawerPrefs_ConstructProps extends Gtk.Grid_ConstructProps {
+interface SpaceDrawerPrefs_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class SpaceDrawerPrefs {
@@ -7610,14 +7622,12 @@ class SpaceDrawerPrefs {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Tepl-6.Tepl.SpaceDrawerPrefs */
-    priv: SpaceDrawerPrefsPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.SpaceDrawerPrefs */
     get_space_drawer(): GtkSource.SpaceDrawer
     /* Methods of Gtk-3.0.Gtk.Grid */
@@ -7645,7 +7655,7 @@ class SpaceDrawerPrefs {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7960,6 +7970,7 @@ class SpaceDrawerPrefs {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -8406,9 +8417,12 @@ class SpaceDrawerPrefs {
     _init (config?: SpaceDrawerPrefs_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SpaceDrawerPrefs
+    /* Function overloads */
+    static new(): SpaceDrawerPrefs
     static $gtype: GObject.Type
 }
-export interface Statusbar_ConstructProps extends Gtk.Statusbar_ConstructProps {
+interface Statusbar_ConstructProps extends Gtk.Statusbar_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Statusbar {
@@ -8462,18 +8476,16 @@ class Statusbar {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Tepl-6.Tepl.Statusbar */
-    priv: StatusbarPrivate
     /* Fields of Gtk-3.0.Gtk.Statusbar */
-    parent_widget: Gtk.Box
+    readonly parent_widget: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.Statusbar */
     hide_cursor_position(): void
     set_tab_group(tab_group: TabGroup): void
@@ -8503,7 +8515,7 @@ class Statusbar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8818,6 +8830,7 @@ class Statusbar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -9270,11 +9283,15 @@ class Statusbar {
     _init (config?: Statusbar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Statusbar
+    /* Function overloads */
+    static new(): Statusbar
     static new(orientation: Gtk.Orientation, spacing: number): Statusbar
     static $gtype: GObject.Type
 }
-export interface StyleSchemeChooserWidget_ConstructProps extends Gtk.Bin_ConstructProps {
+interface StyleSchemeChooserWidget_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.StyleSchemeChooserWidget */
     tepl_style_scheme_id?: string
+    /* Constructor properties of GtkSource-4.GtkSource.StyleSchemeChooser */
     style_scheme?: GtkSource.StyleScheme
 }
 class StyleSchemeChooserWidget {
@@ -9326,16 +9343,14 @@ class StyleSchemeChooserWidget {
     readonly window: Gdk.Window
     /* Properties of GtkSource-4.GtkSource.StyleSchemeChooser */
     style_scheme: GtkSource.StyleScheme
-    /* Fields of Tepl-6.Tepl.StyleSchemeChooserWidget */
-    priv: StyleSchemeChooserWidgetPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.StyleSchemeChooserWidget */
     get_style_scheme_id(): string
     set_style_scheme_id(style_scheme_id: string): void
@@ -9345,7 +9360,7 @@ class StyleSchemeChooserWidget {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9660,6 +9675,7 @@ class StyleSchemeChooserWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of GtkSource-4.GtkSource.StyleSchemeChooser */
     get_style_scheme(): GtkSource.StyleScheme
     set_style_scheme(scheme: GtkSource.StyleScheme): void
@@ -10102,9 +10118,12 @@ class StyleSchemeChooserWidget {
     static new(): StyleSchemeChooserWidget
     static $gtype: GObject.Type
 }
-export interface Tab_ConstructProps extends Gtk.Grid_ConstructProps {
+interface Tab_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.Tab */
     view?: View
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
+    /* Constructor properties of Tepl-6.Tepl.TabGroup */
     active_tab?: Tab
 }
 class Tab {
@@ -10164,14 +10183,12 @@ class Tab {
     readonly active_buffer: Buffer
     active_tab: Tab
     readonly active_view: View
-    /* Fields of Tepl-6.Tepl.Tab */
-    priv: TabPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.Tab */
     add_info_bar(info_bar: Gtk.InfoBar): void
     get_buffer(): Buffer
@@ -10209,7 +10226,7 @@ class Tab {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10524,6 +10541,7 @@ class Tab {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -10997,11 +11015,15 @@ class Tab {
     _init (config?: Tab_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Tab
+    /* Function overloads */
+    static new(): Tab
     static new_with_view(view: View): Tab
     static $gtype: GObject.Type
 }
-export interface TabLabel_ConstructProps extends Gtk.Grid_ConstructProps {
+interface TabLabel_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Tepl-6.Tepl.TabLabel */
     tab?: Tab
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class TabLabel {
@@ -11057,14 +11079,12 @@ class TabLabel {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Tepl-6.Tepl.TabLabel */
-    priv: TabLabelPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.TabLabel */
     get_tab(): Tab | null
     update_tooltip(): void
@@ -11093,7 +11113,7 @@ class TabLabel {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -11408,6 +11428,7 @@ class TabLabel {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -11855,10 +11876,12 @@ class TabLabel {
     _init (config?: TabLabel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(tab: Tab): TabLabel
+    /* Function overloads */
     static new(): TabLabel
     static $gtype: GObject.Type
 }
-export interface View_ConstructProps extends GtkSource.View_ConstructProps {
+interface View_ConstructProps extends GtkSource.View_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -11934,7 +11957,6 @@ class View {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -11952,14 +11974,15 @@ class View {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Tepl-6.Tepl.View */
-    parent_instance: GtkSource.View
     /* Fields of GtkSource-4.GtkSource.View */
-    priv: GtkSource.ViewPrivate
+    readonly parent: Gtk.TextView
+    readonly priv: GtkSource.ViewPrivate
+    /* Fields of Gtk-3.0.Gtk.TextView */
+    readonly parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tepl-6.Tepl.View */
     copy_clipboard(): void
     cut_clipboard(): void
@@ -12042,7 +12065,7 @@ class View {
     get_top_margin(): number
     get_vadjustment(): Gtk.Adjustment
     get_visible_rect(): /* visible_rect */ Gdk.Rectangle
-    /* get_window clashes with Gtk.Widget.get_window */
+    get_window(win: Gtk.TextWindowType): Gdk.Window | null
     get_window_type(window: Gdk.Window): Gtk.TextWindowType
     get_wrap_mode(): Gtk.WrapMode
     im_context_filter_keypress(event: Gdk.EventKey): boolean
@@ -12081,7 +12104,7 @@ class View {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -12396,6 +12419,7 @@ class View {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hscroll_policy(): Gtk.ScrollablePolicy
@@ -12404,6 +12428,18 @@ class View {
     set_hscroll_policy(policy: Gtk.ScrollablePolicy): void
     set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
     set_vscroll_policy(policy: Gtk.ScrollablePolicy): void
+    /* Virtual methods of Tepl-6.Tepl.View */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
+    vfunc_get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     /* Virtual methods of GtkSource-4.GtkSource.View */
     vfunc_line_mark_activated(iter: Gtk.TextIter, event: Gdk.Event): void
     vfunc_move_lines(down: boolean): void
@@ -12976,8 +13012,6 @@ class View {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: View, pspec: GObject.ParamSpec) => void)): number
@@ -13020,23 +13054,25 @@ class View {
     /* Static methods and pseudo-constructors */
     static new(): View
     static new_with_buffer(buffer: GtkSource.Buffer): View
+    /* Function overloads */
+    static new_with_buffer(buffer: GtkSource.Buffer): View
     static new_with_buffer(buffer: Gtk.TextBuffer): View
     static $gtype: GObject.Type
 }
 abstract class AbstractFactoryClass {
     /* Fields of Tepl-6.Tepl.AbstractFactoryClass */
-    parent_class: GObject.ObjectClass
-    create_main_window: (factory: AbstractFactory, app: Gtk.Application) => Gtk.ApplicationWindow | null
-    create_tab: (factory: AbstractFactory) => Tab
-    create_tab_label: (factory: AbstractFactory, tab: Tab) => Gtk.Widget | null
-    create_file: (factory: AbstractFactory) => File
-    create_metadata_manager_file: (factory: AbstractFactory) => Gio.File | null
+    readonly parent_class: GObject.ObjectClass
+    readonly create_main_window: (factory: AbstractFactory, app: Gtk.Application) => Gtk.ApplicationWindow | null
+    readonly create_tab: (factory: AbstractFactory) => Tab
+    readonly create_tab_label: (factory: AbstractFactory, tab: Tab) => Gtk.Widget | null
+    readonly create_file: (factory: AbstractFactory) => File
+    readonly create_metadata_manager_file: (factory: AbstractFactory) => Gio.File | null
     static name: string
 }
 abstract class ApplicationClass {
     /* Fields of Tepl-6.Tepl.ApplicationClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class ApplicationPrivate {
@@ -13044,8 +13080,8 @@ class ApplicationPrivate {
 }
 abstract class ApplicationWindowClass {
     /* Fields of Tepl-6.Tepl.ApplicationWindowClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class ApplicationWindowPrivate {
@@ -13053,21 +13089,21 @@ class ApplicationWindowPrivate {
 }
 abstract class BufferClass {
     /* Fields of Tepl-6.Tepl.BufferClass */
-    parent_class: GtkSource.BufferClass
-    tepl_cursor_moved: (buffer: Buffer) => void
-    padding: object[]
+    readonly parent_class: GtkSource.BufferClass
+    readonly tepl_cursor_moved: (buffer: Buffer) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class FileClass {
     /* Fields of Tepl-6.Tepl.FileClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class FileLoaderClass {
     /* Fields of Tepl-6.Tepl.FileLoaderClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class FileLoaderPrivate {
@@ -13078,8 +13114,8 @@ class FilePrivate {
 }
 abstract class FileSaverClass {
     /* Fields of Tepl-6.Tepl.FileSaverClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class FileSaverPrivate {
@@ -13087,14 +13123,14 @@ class FileSaverPrivate {
 }
 abstract class FoldRegionClass {
     /* Fields of Tepl-6.Tepl.FoldRegionClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class GotoLineBarClass {
     /* Fields of Tepl-6.Tepl.GotoLineBarClass */
-    parent_class: Gtk.GridClass
-    padding: object[]
+    readonly parent_class: Gtk.GridClass
+    readonly padding: object[]
     static name: string
 }
 class GotoLineBarPrivate {
@@ -13102,14 +13138,14 @@ class GotoLineBarPrivate {
 }
 abstract class GutterRendererFoldsClass {
     /* Fields of Tepl-6.Tepl.GutterRendererFoldsClass */
-    parent_class: GtkSource.GutterRendererClass
-    padding: object[]
+    readonly parent_class: GtkSource.GutterRendererClass
+    readonly padding: object[]
     static name: string
 }
 abstract class InfoBarClass {
     /* Fields of Tepl-6.Tepl.InfoBarClass */
-    parent_class: Gtk.InfoBarClass
-    padding: object[]
+    readonly parent_class: Gtk.InfoBarClass
+    readonly padding: object[]
     static name: string
 }
 class InfoBarPrivate {
@@ -13117,8 +13153,8 @@ class InfoBarPrivate {
 }
 abstract class LanguageChooserDialogClass {
     /* Fields of Tepl-6.Tepl.LanguageChooserDialogClass */
-    parent_class: Gtk.DialogClass
-    padding: object[]
+    readonly parent_class: Gtk.DialogClass
+    readonly padding: object[]
     static name: string
 }
 class LanguageChooserDialogPrivate {
@@ -13126,15 +13162,15 @@ class LanguageChooserDialogPrivate {
 }
 abstract class LanguageChooserInterface {
     /* Fields of Tepl-6.Tepl.LanguageChooserInterface */
-    parent_interface: GObject.TypeInterface
-    select_language: (chooser: LanguageChooser, language?: GtkSource.Language | null) => void
-    language_activated: (chooser: LanguageChooser, language: GtkSource.Language) => void
+    readonly parent_interface: GObject.TypeInterface
+    readonly select_language: (chooser: LanguageChooser, language?: GtkSource.Language | null) => void
+    readonly language_activated: (chooser: LanguageChooser, language: GtkSource.Language) => void
     static name: string
 }
 abstract class LanguageChooserWidgetClass {
     /* Fields of Tepl-6.Tepl.LanguageChooserWidgetClass */
-    parent_class: Gtk.GridClass
-    padding: object[]
+    readonly parent_class: Gtk.GridClass
+    readonly padding: object[]
     static name: string
 }
 class LanguageChooserWidgetPrivate {
@@ -13142,14 +13178,14 @@ class LanguageChooserWidgetPrivate {
 }
 abstract class MetadataClass {
     /* Fields of Tepl-6.Tepl.MetadataClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 abstract class MetadataManagerClass {
     /* Fields of Tepl-6.Tepl.MetadataManagerClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class MetadataManagerPrivate {
@@ -13160,8 +13196,8 @@ class MetadataPrivate {
 }
 abstract class NotebookClass {
     /* Fields of Tepl-6.Tepl.NotebookClass */
-    parent_class: Gtk.NotebookClass
-    padding: object[]
+    readonly parent_class: Gtk.NotebookClass
+    readonly padding: object[]
     static name: string
 }
 class NotebookPrivate {
@@ -13169,8 +13205,8 @@ class NotebookPrivate {
 }
 abstract class PanelClass {
     /* Fields of Tepl-6.Tepl.PanelClass */
-    parent_class: Gtk.GridClass
-    padding: object[]
+    readonly parent_class: Gtk.GridClass
+    readonly padding: object[]
     static name: string
 }
 class PanelPrivate {
@@ -13178,8 +13214,8 @@ class PanelPrivate {
 }
 abstract class ProgressInfoBarClass {
     /* Fields of Tepl-6.Tepl.ProgressInfoBarClass */
-    parent_class: InfoBarClass
-    padding: object[]
+    readonly parent_class: InfoBarClass
+    readonly padding: object[]
     static name: string
 }
 class ProgressInfoBarPrivate {
@@ -13190,8 +13226,8 @@ class SignalGroup {
 }
 abstract class SpaceDrawerPrefsClass {
     /* Fields of Tepl-6.Tepl.SpaceDrawerPrefsClass */
-    parent_class: Gtk.GridClass
-    padding: object[]
+    readonly parent_class: Gtk.GridClass
+    readonly padding: object[]
     static name: string
 }
 class SpaceDrawerPrefsPrivate {
@@ -13199,8 +13235,8 @@ class SpaceDrawerPrefsPrivate {
 }
 abstract class StatusbarClass {
     /* Fields of Tepl-6.Tepl.StatusbarClass */
-    parent_class: Gtk.StatusbarClass
-    padding: object[]
+    readonly parent_class: Gtk.StatusbarClass
+    readonly padding: object[]
     static name: string
 }
 class StatusbarPrivate {
@@ -13208,8 +13244,8 @@ class StatusbarPrivate {
 }
 abstract class StyleSchemeChooserWidgetClass {
     /* Fields of Tepl-6.Tepl.StyleSchemeChooserWidgetClass */
-    parent_class: Gtk.BinClass
-    padding: object[]
+    readonly parent_class: Gtk.BinClass
+    readonly padding: object[]
     static name: string
 }
 class StyleSchemeChooserWidgetPrivate {
@@ -13217,26 +13253,26 @@ class StyleSchemeChooserWidgetPrivate {
 }
 abstract class TabClass {
     /* Fields of Tepl-6.Tepl.TabClass */
-    parent_class: Gtk.GridClass
-    pack_view: (tab: Tab, view: View) => void
-    pack_info_bar: (tab: Tab, info_bar: Gtk.InfoBar) => void
-    pack_goto_line_bar: (tab: Tab, goto_line_bar: GotoLineBar) => void
-    close_request: (tab: Tab) => void
+    readonly parent_class: Gtk.GridClass
+    readonly pack_view: (tab: Tab, view: View) => void
+    readonly pack_info_bar: (tab: Tab, info_bar: Gtk.InfoBar) => void
+    readonly pack_goto_line_bar: (tab: Tab, goto_line_bar: GotoLineBar) => void
+    readonly close_request: (tab: Tab) => void
     static name: string
 }
 abstract class TabGroupInterface {
     /* Fields of Tepl-6.Tepl.TabGroupInterface */
-    parent_interface: GObject.TypeInterface
-    get_tabs: (tab_group: TabGroup) => Tab[]
-    get_active_tab: (tab_group: TabGroup) => Tab | null
-    set_active_tab: (tab_group: TabGroup, tab: Tab) => void
-    append_tab_vfunc: (tab_group: TabGroup, tab: Tab) => void
+    readonly parent_interface: GObject.TypeInterface
+    readonly get_tabs: (tab_group: TabGroup) => Tab[]
+    readonly get_active_tab: (tab_group: TabGroup) => Tab | null
+    readonly set_active_tab: (tab_group: TabGroup, tab: Tab) => void
+    readonly append_tab_vfunc: (tab_group: TabGroup, tab: Tab) => void
     static name: string
 }
 abstract class TabLabelClass {
     /* Fields of Tepl-6.Tepl.TabLabelClass */
-    parent_class: Gtk.GridClass
-    get_tooltip_markup: (tab_label: TabLabel) => string
+    readonly parent_class: Gtk.GridClass
+    readonly get_tooltip_markup: (tab_label: TabLabel) => string
     static name: string
 }
 class TabLabelPrivate {
@@ -13247,8 +13283,8 @@ class TabPrivate {
 }
 abstract class ViewClass {
     /* Fields of Tepl-6.Tepl.ViewClass */
-    parent_class: GtkSource.ViewClass
-    padding: object[]
+    readonly parent_class: GtkSource.ViewClass
+    readonly padding: object[]
     static name: string
 }
 }

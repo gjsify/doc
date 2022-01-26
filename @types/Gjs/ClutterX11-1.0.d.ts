@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * ClutterX11-1.0
  */
@@ -48,7 +54,8 @@ function untrap_x_errors(): number
 interface FilterFunc {
     (xev: xlib.XEvent, cev: Clutter.Event): FilterReturn
 }
-export interface TexturePixmap_ConstructProps extends Clutter.Texture_ConstructProps {
+interface TexturePixmap_ConstructProps extends Clutter.Texture_ConstructProps {
+    /* Constructor properties of ClutterX11-1.0.ClutterX11.TexturePixmap */
     automatic_updates?: boolean
     pixmap?: number
     window?: number
@@ -164,9 +171,9 @@ class TexturePixmap {
     y_expand: boolean
     z_position: number
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ClutterX11-1.0.ClutterX11.TexturePixmap */
     set_automatic(setting: boolean): void
     set_pixmap(pixmap: xlib.Pixmap): void
@@ -186,13 +193,13 @@ class TexturePixmap {
     get_pixel_format(): Cogl.PixelFormat
     get_repeat(): [ /* repeat_x */ boolean, /* repeat_y */ boolean ]
     get_sync_size(): boolean
-    set_area_from_rgb_data(data: Uint8Array[], has_alpha: boolean, x: number, y: number, width: number, height: number, rowstride: number, bpp: number, flags: Clutter.TextureFlags): boolean
+    set_area_from_rgb_data(data: Uint8Array, has_alpha: boolean, x: number, y: number, width: number, height: number, rowstride: number, bpp: number, flags: Clutter.TextureFlags): boolean
     set_cogl_material(cogl_material: Cogl.Handle): void
     set_cogl_texture(cogl_tex: Cogl.Handle): void
     set_filter_quality(filter_quality: Clutter.TextureQuality): void
     set_from_file(filename: string): boolean
-    set_from_rgb_data(data: Uint8Array[], has_alpha: boolean, width: number, height: number, rowstride: number, bpp: number, flags: Clutter.TextureFlags): boolean
-    set_from_yuv_data(data: Uint8Array[], width: number, height: number, flags: Clutter.TextureFlags): boolean
+    set_from_rgb_data(data: Uint8Array, has_alpha: boolean, width: number, height: number, rowstride: number, bpp: number, flags: Clutter.TextureFlags): boolean
+    set_from_yuv_data(data: Uint8Array, width: number, height: number, flags: Clutter.TextureFlags): boolean
     set_keep_aspect_ratio(keep_aspect: boolean): void
     set_load_async(load_async: boolean): void
     set_load_data_async(load_async: boolean): void
@@ -892,7 +899,7 @@ class TexturePixmap {
 }
 abstract class TexturePixmapClass {
     /* Fields of ClutterX11-1.0.ClutterX11.TexturePixmapClass */
-    update_area: (texture: TexturePixmap, x: number, y: number, width: number, height: number) => void
+    readonly update_area: (texture: TexturePixmap, x: number, y: number, width: number, height: number) => void
     static name: string
 }
 class TexturePixmapPrivate {

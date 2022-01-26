@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Mbim-1.0
  */
@@ -11,8 +17,8 @@ export namespace Mbim {
 
 enum AccessMediaType {
     UNKNOWN,
-    /* 3GPP (invalid, starts with a number) */
-    /* 3GPP_PREFERRED (invalid, starts with a number) */
+    TODO_3GPP,
+    TODO_3GPP_PREFERRED,
 }
 enum ActivationCommand {
     DEACTIVATE,
@@ -32,9 +38,9 @@ enum AtdsProviderPlmnMode {
 }
 enum AtdsRatMode {
     AUTOMATIC,
-    /* 2G_ONLY (invalid, starts with a number) */
-    /* 3G_ONLY (invalid, starts with a number) */
-    /* 4G_ONLY (invalid, starts with a number) */
+    TODO_2G_ONLY,
+    TODO_3G_ONLY,
+    TODO_4G_ONLY,
 }
 enum AuthProtocol {
     NONE,
@@ -147,6 +153,8 @@ enum CidQdu {
     UPDATE_SESSION,
     FILE_OPEN,
     FILE_WRITE,
+    QUECTEL_REBOOT,
+    QUECTEL_READ_VERSION,
 }
 enum CidQmi {
     UNKNOWN,
@@ -255,10 +263,10 @@ enum DeviceType {
 enum DrxCycle {
     NOT_SPECIFIED,
     NOT_SUPPORTED,
-    /* 32 (invalid, starts with a number) */
-    /* 64 (invalid, starts with a number) */
-    /* 128 (invalid, starts with a number) */
-    /* 256 (invalid, starts with a number) */
+    TODO_32,
+    TODO_64,
+    TODO_128,
+    TODO_256,
 }
 enum DssLinkState {
     DEACTIVATE,
@@ -446,6 +454,12 @@ enum ProtocolError {
 enum QduFileType {
     PACKAGE,
 }
+enum QduQuectelRebootType {
+    EDL,
+}
+enum QduQuectelVersionType {
+    ID,
+}
 enum QduSessionAction {
     START,
     STOP,
@@ -526,7 +540,7 @@ enum Service {
 enum SmsCdmaEncoding {
     OCTET,
     EPM,
-    /* 7BIT_ASCII (invalid, starts with a number) */
+    TODO_7BIT_ASCII,
     LA5,
     UNICODE,
     SHIFT_JIS,
@@ -755,14 +769,14 @@ enum DataClass {
     HSDPA,
     HSUPA,
     LTE,
-    /* 5G_NSA (invalid, starts with a number) */
-    /* 5G_SA (invalid, starts with a number) */
-    /* 1XRTT (invalid, starts with a number) */
-    /* 1XEVDO (invalid, starts with a number) */
-    /* 1XEVDO_REVA (invalid, starts with a number) */
-    /* 1XEVDV (invalid, starts with a number) */
-    /* 3XRTT (invalid, starts with a number) */
-    /* 1XEVDO_REVB (invalid, starts with a number) */
+    TODO_5G_NSA,
+    TODO_5G_SA,
+    TODO_1XRTT,
+    TODO_1XEVDO,
+    TODO_1XEVDO_REVA,
+    TODO_1XEVDV,
+    TODO_3XRTT,
+    TODO_1XEVDO_REVB,
     UMB,
     CUSTOM,
 }
@@ -773,23 +787,23 @@ enum DataClassV3 {
     HSDPA,
     HSUPA,
     LTE,
-    /* 5G (invalid, starts with a number) */
-    /* 1XRTT (invalid, starts with a number) */
-    /* 1XEVDO (invalid, starts with a number) */
-    /* 1XEVDO_REVA (invalid, starts with a number) */
-    /* 1XEVDV (invalid, starts with a number) */
-    /* 3XRTT (invalid, starts with a number) */
-    /* 1XEVDO_REVB (invalid, starts with a number) */
+    TODO_5G,
+    TODO_1XRTT,
+    TODO_1XEVDO,
+    TODO_1XEVDO_REVA,
+    TODO_1XEVDV,
+    TODO_3XRTT,
+    TODO_1XEVDO_REVB,
     UMB,
     CUSTOM,
 }
 enum DataSubclass {
     NONE,
-    /* 5G_ENDC (invalid, starts with a number) */
-    /* 5G_NR (invalid, starts with a number) */
-    /* 5G_NEDC (invalid, starts with a number) */
-    /* 5G_ELTE (invalid, starts with a number) */
-    /* 5G_NGENDC (invalid, starts with a number) */
+    TODO_5G_ENDC,
+    TODO_5G_NR,
+    TODO_5G_NEDC,
+    TODO_5G_ELTE,
+    TODO_5G_NGENDC,
 }
 enum DeviceOpenFlags {
     NONE,
@@ -799,8 +813,8 @@ enum DeviceOpenFlags {
 }
 enum FrequencyRange {
     UNKNOWN,
-    /* 1 (invalid, starts with a number) */
-    /* 2 (invalid, starts with a number) */
+    TODO_1,
+    TODO_2,
 }
 enum IPConfigurationAvailableFlag {
     NONE,
@@ -843,21 +857,21 @@ enum SubscriberReadyStatusFlag {
     SIM_REMOVABILITY_KNOWN,
     SIM_REMOVABLE,
 }
-export const DBUS_ERROR_PREFIX: string
-export const DEVICE_FILE: string
-export const DEVICE_IN_SESSION: string
-export const DEVICE_SESSION_ID_MAX: number
-export const DEVICE_SESSION_ID_MIN: number
-export const DEVICE_SIGNAL_ERROR: string
-export const DEVICE_SIGNAL_INDICATE_STATUS: string
-export const DEVICE_SIGNAL_REMOVED: string
-export const DEVICE_TRANSACTION_ID: string
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const PROXY_N_CLIENTS: string
-export const PROXY_N_DEVICES: string
-export const PROXY_SOCKET_PATH: string
+const DBUS_ERROR_PREFIX: string
+const DEVICE_FILE: string
+const DEVICE_IN_SESSION: string
+const DEVICE_SESSION_ID_MAX: number
+const DEVICE_SESSION_ID_MIN: number
+const DEVICE_SIGNAL_ERROR: string
+const DEVICE_SIGNAL_INDICATE_STATUS: string
+const DEVICE_SIGNAL_REMOVED: string
+const DEVICE_TRANSACTION_ID: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const PROXY_N_CLIENTS: string
+const PROXY_N_DEVICES: string
+const PROXY_SOCKET_PATH: string
 function access_media_type_get_string(val: AccessMediaType): string
 function activation_command_get_string(val: ActivationCommand): string
 function activation_state_get_string(val: ActivationState): string
@@ -925,6 +939,7 @@ function lte_attach_configuration_array_free(array: LteAttachConfigurationArray)
 function lte_attach_context_operation_get_string(val: LteAttachContextOperation): string
 function lte_attach_context_roaming_control_get_string(val: LteAttachContextRoamingControl): string
 function lte_attach_state_get_string(val: LteAttachState): string
+function lte_attach_status_free(var_: DeprecatedLteAttachStatus): void
 function message_command_type_get_string(val: MessageCommandType): string
 function message_type_get_string(val: MessageType): string
 function mico_mode_get_string(val: MicoMode): string
@@ -952,6 +967,8 @@ function provider_state_build_string_from_mask(mask: ProviderState): string
 function provisioned_context_element_array_free(array: ProvisionedContextElementArray): void
 function provisioned_context_element_v2_array_free(array: ProvisionedContextElementV2Array): void
 function qdu_file_type_get_string(val: QduFileType): string
+function qdu_quectel_reboot_type_get_string(val: QduQuectelRebootType): string
+function qdu_quectel_version_type_get_string(val: QduQuectelVersionType): string
 function qdu_session_action_get_string(val: QduSessionAction): string
 function qdu_session_result_get_string(val: QduSessionResult): string
 function qdu_session_status_get_string(val: QduSessionStatus): string
@@ -1012,7 +1029,8 @@ function visible_providers_action_get_string(val: VisibleProvidersAction): strin
 function voice_call_state_get_string(val: VoiceCallState): string
 function voice_class_get_string(val: VoiceClass): string
 function wake_type_get_string(val: WakeType): string
-export interface Device_ConstructProps extends GObject.Object_ConstructProps {
+interface Device_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Mbim-1.0.Mbim.Device */
     device_file?: Gio.File
     device_in_session?: boolean
     device_transaction_id?: number
@@ -1022,7 +1040,7 @@ class Device {
     device_in_session: boolean
     device_transaction_id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mbim-1.0.Mbim.Device */
     add_link(session_id: number, base_ifname: string, ifname_prefix: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     add_link_finish(res: Gio.AsyncResult, session_id: number): string
@@ -1116,17 +1134,14 @@ class Device {
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static $gtype: GObject.Type
 }
-export interface Proxy_ConstructProps extends GObject.Object_ConstructProps {
+interface Proxy_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Proxy {
     /* Properties of Mbim-1.0.Mbim.Proxy */
     readonly mbim_proxy_n_clients: number
     readonly mbim_proxy_n_devices: number
-    /* Fields of Mbim-1.0.Mbim.Proxy */
-    parent: GObject.Object
-    priv: ProxyPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1178,169 +1193,180 @@ class Proxy {
 }
 class AtdsProvider {
     /* Fields of Mbim-1.0.Mbim.AtdsProvider */
-    provider_id: string
-    provider_state: number
-    provider_name: string
-    plmn_mode: number
-    rssi: number
-    error_rate: number
+    readonly provider_id: string
+    readonly provider_state: number
+    readonly provider_name: string
+    readonly plmn_mode: number
+    readonly rssi: number
+    readonly error_rate: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: AtdsProviderArray): void
 }
 class CellInfoCdma {
     /* Fields of Mbim-1.0.Mbim.CellInfoCdma */
-    serving_cell_flag: number
-    nid: number
-    sid: number
-    base_station_id: number
-    base_latitude: number
-    base_longitude: number
-    ref_pn: number
-    gps_seconds: number
-    pilot_strength: number
+    readonly serving_cell_flag: number
+    readonly nid: number
+    readonly sid: number
+    readonly base_station_id: number
+    readonly base_latitude: number
+    readonly base_longitude: number
+    readonly ref_pn: number
+    readonly gps_seconds: number
+    readonly pilot_strength: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: CellInfoCdmaArray): void
 }
 class CellInfoNeighboringGsm {
     /* Fields of Mbim-1.0.Mbim.CellInfoNeighboringGsm */
-    provider_id: string
-    location_area_code: number
-    cell_id: number
-    arfcn: number
-    base_station_id: number
-    rx_level: number
+    readonly provider_id: string
+    readonly location_area_code: number
+    readonly cell_id: number
+    readonly arfcn: number
+    readonly base_station_id: number
+    readonly rx_level: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: CellInfoNeighboringGsmArray): void
 }
 class CellInfoNeighboringLte {
     /* Fields of Mbim-1.0.Mbim.CellInfoNeighboringLte */
-    provider_id: string
-    cell_id: number
-    earfcn: number
-    physical_cell_id: number
-    tac: number
-    rsrp: number
-    rsrq: number
+    readonly provider_id: string
+    readonly cell_id: number
+    readonly earfcn: number
+    readonly physical_cell_id: number
+    readonly tac: number
+    readonly rsrp: number
+    readonly rsrq: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: CellInfoNeighboringLteArray): void
 }
 class CellInfoNeighboringNr {
     /* Fields of Mbim-1.0.Mbim.CellInfoNeighboringNr */
-    system_sub_type: number
-    provider_id: string
-    cell_id: string
-    physical_cell_id: number
-    tac: number
-    rsrp: number
-    rsrq: number
-    sinr: number
+    readonly system_sub_type: number
+    readonly provider_id: string
+    readonly cell_id: string
+    readonly physical_cell_id: number
+    readonly tac: number
+    readonly rsrp: number
+    readonly rsrq: number
+    readonly sinr: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: CellInfoNeighboringNrArray): void
 }
 class CellInfoNeighboringTdscdma {
     /* Fields of Mbim-1.0.Mbim.CellInfoNeighboringTdscdma */
-    provider_id: string
-    location_area_code: number
-    cell_id: number
-    uarfcn: number
-    cell_parameter_id: number
-    timing_advance: number
-    rscp: number
-    path_loss: number
+    readonly provider_id: string
+    readonly location_area_code: number
+    readonly cell_id: number
+    readonly uarfcn: number
+    readonly cell_parameter_id: number
+    readonly timing_advance: number
+    readonly rscp: number
+    readonly path_loss: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: CellInfoNeighboringTdscdmaArray): void
 }
 class CellInfoNeighboringUmts {
     /* Fields of Mbim-1.0.Mbim.CellInfoNeighboringUmts */
-    provider_id: string
-    location_area_code: number
-    cell_id: number
-    uarfcn: number
-    primary_scrambling_code: number
-    rscp: number
-    ecno: number
-    path_loss: number
+    readonly provider_id: string
+    readonly location_area_code: number
+    readonly cell_id: number
+    readonly uarfcn: number
+    readonly primary_scrambling_code: number
+    readonly rscp: number
+    readonly ecno: number
+    readonly path_loss: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: CellInfoNeighboringUmtsArray): void
 }
 class CellInfoServingGsm {
     /* Fields of Mbim-1.0.Mbim.CellInfoServingGsm */
-    provider_id: string
-    location_area_code: number
-    cell_id: number
-    timing_advance: number
-    arfcn: number
-    base_station_id: number
-    rx_level: number
+    readonly provider_id: string
+    readonly location_area_code: number
+    readonly cell_id: number
+    readonly timing_advance: number
+    readonly arfcn: number
+    readonly base_station_id: number
+    readonly rx_level: number
     /* Methods of Mbim-1.0.Mbim.CellInfoServingGsm */
     free(): void
     static name: string
 }
 class CellInfoServingLte {
     /* Fields of Mbim-1.0.Mbim.CellInfoServingLte */
-    provider_id: string
-    cell_id: number
-    earfcn: number
-    physical_cell_id: number
-    tac: number
-    rsrp: number
-    rsrq: number
-    timing_advance: number
+    readonly provider_id: string
+    readonly cell_id: number
+    readonly earfcn: number
+    readonly physical_cell_id: number
+    readonly tac: number
+    readonly rsrp: number
+    readonly rsrq: number
+    readonly timing_advance: number
     /* Methods of Mbim-1.0.Mbim.CellInfoServingLte */
     free(): void
     static name: string
 }
 class CellInfoServingNr {
     /* Fields of Mbim-1.0.Mbim.CellInfoServingNr */
-    provider_id: string
-    nci: number
-    physical_cell_id: number
-    nrarfcn: number
-    tac: number
-    rsrp: number
-    rsrq: number
-    sinr: number
-    timing_advance: number
+    readonly provider_id: string
+    readonly nci: number
+    readonly physical_cell_id: number
+    readonly nrarfcn: number
+    readonly tac: number
+    readonly rsrp: number
+    readonly rsrq: number
+    readonly sinr: number
+    readonly timing_advance: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: CellInfoServingNrArray): void
 }
 class CellInfoServingTdscdma {
     /* Fields of Mbim-1.0.Mbim.CellInfoServingTdscdma */
-    provider_id: string
-    location_area_code: number
-    cell_id: number
-    uarfcn: number
-    cell_parameter_id: number
-    timing_advance: number
-    rscp: number
-    path_loss: number
+    readonly provider_id: string
+    readonly location_area_code: number
+    readonly cell_id: number
+    readonly uarfcn: number
+    readonly cell_parameter_id: number
+    readonly timing_advance: number
+    readonly rscp: number
+    readonly path_loss: number
     /* Methods of Mbim-1.0.Mbim.CellInfoServingTdscdma */
     free(): void
     static name: string
 }
 class CellInfoServingUmts {
     /* Fields of Mbim-1.0.Mbim.CellInfoServingUmts */
-    provider_id: string
-    location_area_code: number
-    cell_id: number
-    frequency_info_ul: number
-    frequency_info_dl: number
-    frequency_info_nt: number
-    uarfcn: number
-    primary_scrambling_code: number
-    rscp: number
-    ecno: number
-    path_loss: number
+    readonly provider_id: string
+    readonly location_area_code: number
+    readonly cell_id: number
+    readonly frequency_info_ul: number
+    readonly frequency_info_dl: number
+    readonly frequency_info_nt: number
+    readonly uarfcn: number
+    readonly primary_scrambling_code: number
+    readonly rscp: number
+    readonly ecno: number
+    readonly path_loss: number
     /* Methods of Mbim-1.0.Mbim.CellInfoServingUmts */
     free(): void
+    static name: string
+}
+class DeprecatedLteAttachStatus {
+    /* Fields of Mbim-1.0.Mbim.DeprecatedLteAttachStatus */
+    readonly lte_attach_state: number
+    readonly ip_type: number
+    readonly access_string: string
+    readonly user_name: string
+    readonly password: string
+    readonly compression: number
+    readonly auth_protocol: number
     static name: string
 }
 abstract class DeviceClass {
@@ -1351,76 +1377,63 @@ class DevicePrivate {
 }
 class DeviceServiceElement {
     /* Fields of Mbim-1.0.Mbim.DeviceServiceElement */
-    device_service_id: Uuid
-    dss_payload: number
-    max_dss_instances: number
-    cids_count: number
-    cids: number
+    readonly device_service_id: Uuid
+    readonly dss_payload: number
+    readonly max_dss_instances: number
+    readonly cids_count: number
+    readonly cids: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: DeviceServiceElementArray): void
 }
 class EventEntry {
     /* Fields of Mbim-1.0.Mbim.EventEntry */
-    device_service_id: Uuid
-    cids_count: number
-    cids: number
+    readonly device_service_id: Uuid
+    readonly cids_count: number
+    readonly cids: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: EventEntryArray): void
 }
 class IPv4 {
     /* Fields of Mbim-1.0.Mbim.IPv4 */
-    addr: Uint8Array[]
+    readonly addr: Uint8Array
     static name: string
 }
 class IPv4Element {
     /* Fields of Mbim-1.0.Mbim.IPv4Element */
-    on_link_prefix_length: number
-    ipv4_address: IPv4
+    readonly on_link_prefix_length: number
+    readonly ipv4_address: IPv4
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: IPv4ElementArray): void
 }
 class IPv6 {
     /* Fields of Mbim-1.0.Mbim.IPv6 */
-    addr: Uint8Array[]
+    readonly addr: Uint8Array
     static name: string
 }
 class IPv6Element {
     /* Fields of Mbim-1.0.Mbim.IPv6Element */
-    on_link_prefix_length: number
-    ipv6_address: IPv6
+    readonly on_link_prefix_length: number
+    readonly ipv6_address: IPv6
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: IPv6ElementArray): void
 }
 class LteAttachConfiguration {
     /* Fields of Mbim-1.0.Mbim.LteAttachConfiguration */
-    ip_type: number
-    roaming: number
-    source: number
-    access_string: string
-    user_name: string
-    password: string
-    compression: number
-    auth_protocol: number
+    readonly ip_type: number
+    readonly roaming: number
+    readonly source: number
+    readonly access_string: string
+    readonly user_name: string
+    readonly password: string
+    readonly compression: number
+    readonly auth_protocol: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: LteAttachConfigurationArray): void
-}
-class LteAttachStatus {
-    /* Fields of Mbim-1.0.Mbim.LteAttachStatus */
-    lte_attach_state: number
-    ip_type: number
-    access_string: string
-    user_name: string
-    password: string
-    compression: number
-    auth_protocol: number
-    /* Methods of Mbim-1.0.Mbim.LteAttachStatus */
-    free(): void
-    static name: string
 }
 class Message {
     /* Methods of Mbim-1.0.Mbim.Message */
@@ -1429,8 +1442,8 @@ class Message {
     atds_rat_response_parse(): [ /* returnType */ boolean, /* out_mode */ AtdsRatMode | null ]
     atds_register_state_response_parse(): [ /* returnType */ boolean, /* out_nw_error */ NwError | null, /* out_register_state */ RegisterState | null, /* out_register_mode */ RegisterMode | null, /* out_available_data_classes */ DataClass | null, /* out_current_cellular_class */ CellularClass | null, /* out_provider_id */ string | null, /* out_provider_name */ string | null, /* out_roaming_text */ string | null, /* out_registration_flag */ RegistrationFlag | null ]
     atds_signal_response_parse(): [ /* returnType */ boolean, /* out_rssi */ number | null, /* out_error_rate */ number | null, /* out_rscp */ number | null, /* out_ecno */ number | null, /* out_rsrq */ number | null, /* out_rsrp */ number | null, /* out_rssnr */ number | null ]
-    auth_aka_response_parse(): [ /* returnType */ boolean, /* out_res */ Uint8Array[] | null, /* out_res_len */ number | null, /* out_integrating_key */ Uint8Array[] | null, /* out_ciphering_key */ Uint8Array[] | null, /* out_auts */ Uint8Array[] | null ]
-    auth_akap_response_parse(): [ /* returnType */ boolean, /* out_res */ Uint8Array[] | null, /* out_res_len */ number | null, /* out_integrating_key */ Uint8Array[] | null, /* out_ciphering_key */ Uint8Array[] | null, /* out_auts */ Uint8Array[] | null ]
+    auth_aka_response_parse(): [ /* returnType */ boolean, /* out_res */ Uint8Array | null, /* out_res_len */ number | null, /* out_integrating_key */ Uint8Array | null, /* out_ciphering_key */ Uint8Array | null, /* out_auts */ Uint8Array | null ]
+    auth_akap_response_parse(): [ /* returnType */ boolean, /* out_res */ Uint8Array | null, /* out_res_len */ number | null, /* out_integrating_key */ Uint8Array | null, /* out_ciphering_key */ Uint8Array | null, /* out_auts */ Uint8Array | null ]
     auth_sim_response_parse(): [ /* returnType */ boolean, /* out_sres1 */ number | null, /* out_kc1 */ number | null, /* out_sres2 */ number | null, /* out_kc2 */ number | null, /* out_sres3 */ number | null, /* out_kc3 */ number | null, /* out_n */ number | null ]
     close_done_get_result(): boolean
     close_done_get_status_code(): StatusError
@@ -1481,8 +1494,8 @@ class Message {
     ms_basic_connect_extensions_lte_attach_configuration_response_parse(): [ /* returnType */ boolean, /* out_configuration_count */ number | null, /* out_configurations */ LteAttachConfiguration[] | null ]
     ms_basic_connect_extensions_lte_attach_info_notification_parse(): [ /* returnType */ boolean, /* out_lte_attach_state */ LteAttachState | null, /* out_ip_type */ ContextIpType | null, /* out_access_string */ string | null, /* out_user_name */ string | null, /* out_password */ string | null, /* out_compression */ Compression | null, /* out_auth_protocol */ AuthProtocol | null ]
     ms_basic_connect_extensions_lte_attach_info_response_parse(): [ /* returnType */ boolean, /* out_lte_attach_state */ LteAttachState | null, /* out_ip_type */ ContextIpType | null, /* out_access_string */ string | null, /* out_user_name */ string | null, /* out_password */ string | null, /* out_compression */ Compression | null, /* out_auth_protocol */ AuthProtocol | null ]
-    ms_basic_connect_extensions_lte_attach_status_notification_parse(): [ /* returnType */ boolean, /* out_lte_attach_status */ LteAttachStatus | null ]
-    ms_basic_connect_extensions_lte_attach_status_response_parse(): [ /* returnType */ boolean, /* out_lte_attach_status */ LteAttachStatus | null ]
+    ms_basic_connect_extensions_lte_attach_status_notification_parse(): [ /* returnType */ boolean, /* out_lte_attach_status */ DeprecatedLteAttachStatus | null ]
+    ms_basic_connect_extensions_lte_attach_status_response_parse(): [ /* returnType */ boolean, /* out_lte_attach_status */ DeprecatedLteAttachStatus | null ]
     ms_basic_connect_extensions_pco_notification_parse(): [ /* returnType */ boolean, /* out_pco_value */ PcoValue | null ]
     ms_basic_connect_extensions_pco_response_parse(): [ /* returnType */ boolean, /* out_pco_value */ PcoValue | null ]
     ms_basic_connect_extensions_provisioned_contexts_notification_parse(): [ /* returnType */ boolean, /* out_provisioned_contexts_count */ number | null, /* out_provisioned_contexts */ ProvisionedContextElementV2[] | null ]
@@ -1516,10 +1529,10 @@ class Message {
     ms_sar_config_response_parse(): [ /* returnType */ boolean, /* out_mode */ SarControlMode | null, /* out_backoff_state */ SarBackoffState | null, /* out_wifi_integration */ SarWifiHardwareState | null, /* out_config_states_count */ number | null, /* out_config_states */ SarConfigState[] | null ]
     ms_sar_transmission_status_notification_parse(): [ /* returnType */ boolean, /* out_channel_notification */ TransmissionNotificationStatus | null, /* out_transmission_status */ TransmissionState | null, /* out_hysteresis_timer */ number | null ]
     ms_sar_transmission_status_response_parse(): [ /* returnType */ boolean, /* out_channel_notification */ TransmissionNotificationStatus | null, /* out_transmission_status */ TransmissionState | null, /* out_hysteresis_timer */ number | null ]
-    ms_uicc_low_level_access_apdu_response_parse(): [ /* returnType */ boolean, /* out_status */ number | null, /* out_response */ Uint8Array[] | null ]
+    ms_uicc_low_level_access_apdu_response_parse(): [ /* returnType */ boolean, /* out_status */ number | null, /* out_response */ Uint8Array | null ]
     ms_uicc_low_level_access_atr_response_parse(): [ /* returnType */ boolean, /* out_atr */ string | null ]
     ms_uicc_low_level_access_close_channel_response_parse(): [ /* returnType */ boolean, /* out_status */ number | null ]
-    ms_uicc_low_level_access_open_channel_response_parse(): [ /* returnType */ boolean, /* out_status */ number | null, /* out_channel */ number | null, /* out_response */ Uint8Array[] | null ]
+    ms_uicc_low_level_access_open_channel_response_parse(): [ /* returnType */ boolean, /* out_status */ number | null, /* out_channel */ number | null, /* out_response */ Uint8Array | null ]
     ms_uicc_low_level_access_reset_response_parse(): [ /* returnType */ boolean, /* out_pass_through_status */ UiccPassThroughStatus | null ]
     ms_uicc_low_level_access_terminal_capability_response_parse(): [ /* returnType */ boolean, /* out_terminal_capability_count */ number | null, /* out_terminal_capability */ TerminalCapabilityInfo[] | null ]
     multicarrier_providers_notification_parse(): [ /* returnType */ boolean, /* out_providers_count */ number | null, /* out_providers */ Provider[] | null ]
@@ -1546,9 +1559,11 @@ class Message {
     proxy_control_version_notification_parse(): [ /* returnType */ boolean, /* out_mbim_version */ number | null, /* out_mbim_extended_version */ number | null ]
     qdu_file_open_response_parse(): [ /* returnType */ boolean, /* out_max_transfer_size */ number | null, /* out_max_window_size */ number | null ]
     qdu_file_write_response_parse(): boolean
+    qdu_quectel_read_version_response_parse(): [ /* returnType */ boolean, /* out_version_id */ number | null, /* out_version */ string | null ]
+    qdu_quectel_reboot_response_parse(): boolean
     qdu_update_session_response_parse(): [ /* returnType */ boolean, /* out_current_session_type */ QduSessionType | null, /* out_current_session_status */ QduSessionStatus | null, /* out_last_session_type */ QduSessionType | null, /* out_last_session_result */ QduSessionResult | null, /* out_last_session_error_offset */ number | null, /* out_last_session_error_size */ number | null ]
-    qmi_msg_notification_parse(): [ /* returnType */ boolean, /* out_qmux */ Uint8Array[] | null ]
-    qmi_msg_response_parse(): [ /* returnType */ boolean, /* out_qmux */ Uint8Array[] | null ]
+    qmi_msg_notification_parse(): [ /* returnType */ boolean, /* out_qmux */ Uint8Array | null ]
+    qmi_msg_response_parse(): [ /* returnType */ boolean, /* out_qmux */ Uint8Array | null ]
     quectel_radio_state_response_parse(): [ /* returnType */ boolean, /* out_radio_state */ QuectelRadioSwitchState | null ]
     radio_state_notification_parse(): [ /* returnType */ boolean, /* out_hw_radio_state */ RadioSwitchState | null, /* out_sw_radio_state */ RadioSwitchState | null ]
     radio_state_response_parse(): [ /* returnType */ boolean, /* out_hw_radio_state */ RadioSwitchState | null, /* out_sw_radio_state */ RadioSwitchState | null ]
@@ -1556,7 +1571,7 @@ class Message {
     register_state_notification_parse(): [ /* returnType */ boolean, /* out_nw_error */ NwError | null, /* out_register_state */ RegisterState | null, /* out_register_mode */ RegisterMode | null, /* out_available_data_classes */ DataClass | null, /* out_current_cellular_class */ CellularClass | null, /* out_provider_id */ string | null, /* out_provider_name */ string | null, /* out_roaming_text */ string | null, /* out_registration_flag */ RegistrationFlag | null ]
     register_state_response_parse(): [ /* returnType */ boolean, /* out_nw_error */ NwError | null, /* out_register_state */ RegisterState | null, /* out_register_mode */ RegisterMode | null, /* out_available_data_classes */ DataClass | null, /* out_current_cellular_class */ CellularClass | null, /* out_provider_id */ string | null, /* out_provider_name */ string | null, /* out_roaming_text */ string | null, /* out_registration_flag */ RegistrationFlag | null ]
     response_get_result(expected: MessageType): boolean
-    service_activation_response_parse(): [ /* returnType */ boolean, /* out_nw_error */ NwError | null, /* out_buffer */ Uint8Array[] | null ]
+    service_activation_response_parse(): [ /* returnType */ boolean, /* out_nw_error */ NwError | null, /* out_buffer */ Uint8Array | null ]
     set_transaction_id(transaction_id: number): void
     signal_state_notification_parse(): [ /* returnType */ boolean, /* out_rssi */ number | null, /* out_error_rate */ number | null, /* out_signal_strength_interval */ number | null, /* out_rssi_threshold */ number | null, /* out_error_rate_threshold */ number | null ]
     signal_state_response_parse(): [ /* returnType */ boolean, /* out_rssi */ number | null, /* out_error_rate */ number | null, /* out_signal_strength_interval */ number | null, /* out_rssi_threshold */ number | null, /* out_error_rate_threshold */ number | null ]
@@ -1567,15 +1582,15 @@ class Message {
     sms_read_notification_parse(): [ /* returnType */ boolean, /* out_format */ SmsFormat | null, /* out_messages_count */ number | null, /* out_pdu_messages */ SmsPduReadRecord[] | null, /* out_cdma_messages */ SmsCdmaReadRecord[] | null ]
     sms_read_response_parse(): [ /* returnType */ boolean, /* out_format */ SmsFormat | null, /* out_messages_count */ number | null, /* out_pdu_messages */ SmsPduReadRecord[] | null, /* out_cdma_messages */ SmsCdmaReadRecord[] | null ]
     sms_send_response_parse(): [ /* returnType */ boolean, /* out_message_reference */ number | null ]
-    stk_envelope_response_parse(): [ /* returnType */ boolean, /* out_envelope_support */ Uint8Array[] | null ]
-    stk_pac_notification_parse(): [ /* returnType */ boolean, /* out_pac_type */ StkPacType | null, /* out_data_buffer */ Uint8Array[] | null ]
-    stk_pac_response_parse(): [ /* returnType */ boolean, /* out_pac_support */ Uint8Array[] | null ]
-    stk_terminal_response_response_parse(): [ /* returnType */ boolean, /* out_result_data */ Uint8Array[] | null, /* out_status_words */ number | null ]
+    stk_envelope_response_parse(): [ /* returnType */ boolean, /* out_envelope_support */ Uint8Array | null ]
+    stk_pac_notification_parse(): [ /* returnType */ boolean, /* out_pac_type */ StkPacType | null, /* out_data_buffer */ Uint8Array | null ]
+    stk_pac_response_parse(): [ /* returnType */ boolean, /* out_pac_support */ Uint8Array | null ]
+    stk_terminal_response_response_parse(): [ /* returnType */ boolean, /* out_result_data */ Uint8Array | null, /* out_status_words */ number | null ]
     subscriber_ready_status_notification_parse(): [ /* returnType */ boolean, /* out_ready_state */ SubscriberReadyState | null, /* out_subscriber_id */ string | null, /* out_sim_icc_id */ string | null, /* out_ready_info */ ReadyInfoFlag | null, /* out_telephone_numbers_count */ number | null, /* out_telephone_numbers */ string[] | null ]
     subscriber_ready_status_response_parse(): [ /* returnType */ boolean, /* out_ready_state */ SubscriberReadyState | null, /* out_subscriber_id */ string | null, /* out_sim_icc_id */ string | null, /* out_ready_info */ ReadyInfoFlag | null, /* out_telephone_numbers_count */ number | null, /* out_telephone_numbers */ string[] | null ]
     unref(): void
-    ussd_notification_parse(): [ /* returnType */ boolean, /* out_response */ UssdResponse | null, /* out_session_state */ UssdSessionState | null, /* out_data_coding_scheme */ number | null, /* out_payload */ Uint8Array[] | null ]
-    ussd_response_parse(): [ /* returnType */ boolean, /* out_response */ UssdResponse | null, /* out_session_state */ UssdSessionState | null, /* out_data_coding_scheme */ number | null, /* out_payload */ Uint8Array[] | null ]
+    ussd_notification_parse(): [ /* returnType */ boolean, /* out_response */ UssdResponse | null, /* out_session_state */ UssdSessionState | null, /* out_data_coding_scheme */ number | null, /* out_payload */ Uint8Array | null ]
+    ussd_response_parse(): [ /* returnType */ boolean, /* out_response */ UssdResponse | null, /* out_session_state */ UssdSessionState | null, /* out_data_coding_scheme */ number | null, /* out_payload */ Uint8Array | null ]
     visible_providers_response_parse(): [ /* returnType */ boolean, /* out_providers_count */ number | null, /* out_providers */ Provider[] | null ]
     static name: string
     static new(data: number, data_length: number): Message
@@ -1587,9 +1602,9 @@ class Message {
     static atds_rat_set_new(mode: AtdsRatMode): Message
     static atds_register_state_query_new(): Message
     static atds_signal_query_new(): Message
-    static auth_aka_query_new(rand: Uint8Array[], autn: Uint8Array[]): Message
-    static auth_akap_query_new(rand: Uint8Array[], autn: Uint8Array[], network_name: string): Message
-    static auth_sim_query_new(rand1: Uint8Array[], rand2: Uint8Array[], rand3: Uint8Array[], n: number): Message
+    static auth_aka_query_new(rand: Uint8Array, autn: Uint8Array): Message
+    static auth_akap_query_new(rand: Uint8Array, autn: Uint8Array, network_name: string): Message
+    static auth_sim_query_new(rand1: Uint8Array, rand2: Uint8Array, rand3: Uint8Array, n: number): Message
     static close_done_new(transaction_id: number, error_status_code: StatusError): Message
     static close_new(transaction_id: number): Message
     static command_new(transaction_id: number, service: Service, cid: number, command_type: MessageCommandType): Message
@@ -1640,10 +1655,10 @@ class Message {
     static ms_sar_config_set_new(mode: SarControlMode, backoff_state: SarBackoffState, config_states_count: number, config_states: SarConfigState[]): Message
     static ms_sar_transmission_status_query_new(): Message
     static ms_sar_transmission_status_set_new(channel_notification: TransmissionNotificationStatus, hysteresis_timer: number): Message
-    static ms_uicc_low_level_access_apdu_set_new(channel: number, secure_messaging: UiccSecureMessaging, class_byte_type: UiccClassByteType, command: Uint8Array[]): Message
+    static ms_uicc_low_level_access_apdu_set_new(channel: number, secure_messaging: UiccSecureMessaging, class_byte_type: UiccClassByteType, command: Uint8Array): Message
     static ms_uicc_low_level_access_atr_query_new(): Message
     static ms_uicc_low_level_access_close_channel_set_new(channel: number, channel_group: number): Message
-    static ms_uicc_low_level_access_open_channel_set_new(app_id: Uint8Array[], select_p2_arg: number, channel_group: number): Message
+    static ms_uicc_low_level_access_open_channel_set_new(app_id: Uint8Array, select_p2_arg: number, channel_group: number): Message
     static ms_uicc_low_level_access_reset_query_new(): Message
     static ms_uicc_low_level_access_reset_set_new(pass_through_action: UiccPassThroughAction): Message
     static ms_uicc_low_level_access_terminal_capability_query_new(): Message
@@ -1672,17 +1687,19 @@ class Message {
     static proxy_control_configuration_set_new(device_path: string, timeout: number): Message
     static qdu_file_open_query_new(): Message
     static qdu_file_open_set_new(file_type: QduFileType, file_size: number): Message
-    static qdu_file_write_set_new(data_buffer: Uint8Array[]): Message
+    static qdu_file_write_set_new(data_buffer: Uint8Array): Message
+    static qdu_quectel_read_version_set_new(version_type: QduQuectelVersionType): Message
+    static qdu_quectel_reboot_set_new(reboot_type: QduQuectelRebootType): Message
     static qdu_update_session_query_new(): Message
     static qdu_update_session_set_new(session_action: QduSessionAction, session_type: QduSessionType): Message
-    static qmi_msg_set_new(qmi_msg: Uint8Array[]): Message
+    static qmi_msg_set_new(qmi_msg: Uint8Array): Message
     static quectel_radio_state_query_new(): Message
     static quectel_radio_state_set_new(radio_state: QuectelRadioSwitchState): Message
     static radio_state_query_new(): Message
     static radio_state_set_new(radio_state: RadioSwitchState): Message
     static register_state_query_new(): Message
     static register_state_set_new(provider_id: string, register_action: RegisterAction, data_class: DataClass): Message
-    static service_activation_set_new(buffer: Uint8Array[]): Message
+    static service_activation_set_new(buffer: Uint8Array): Message
     static signal_state_query_new(): Message
     static signal_state_set_new(signal_strength_interval: number, rssi_threshold: number, error_rate_threshold: number): Message
     static sms_configuration_query_new(): Message
@@ -1692,70 +1709,70 @@ class Message {
     static sms_read_query_new(format: SmsFormat, flag: SmsFlag, message_index: number): Message
     static sms_send_set_new(format: SmsFormat, pdu_message: SmsPduSendRecord, cdma_message: SmsCdmaSendRecord): Message
     static stk_envelope_query_new(): Message
-    static stk_envelope_set_new(data: Uint8Array[]): Message
+    static stk_envelope_set_new(data: Uint8Array): Message
     static stk_pac_query_new(): Message
-    static stk_pac_set_new(pac_host_control: Uint8Array[]): Message
-    static stk_terminal_response_set_new(response: Uint8Array[]): Message
+    static stk_pac_set_new(pac_host_control: Uint8Array): Message
+    static stk_terminal_response_set_new(response: Uint8Array): Message
     static subscriber_ready_status_query_new(): Message
-    static ussd_set_new(action: UssdAction, data_coding_scheme: number, payload: Uint8Array[]): Message
+    static ussd_set_new(action: UssdAction, data_coding_scheme: number, payload: Uint8Array): Message
     static visible_providers_query_new(action: VisibleProvidersAction): Message
 }
 class PacketFilter {
     /* Fields of Mbim-1.0.Mbim.PacketFilter */
-    filter_size: number
-    packet_filter: number
-    packet_mask: number
+    readonly filter_size: number
+    readonly packet_filter: number
+    readonly packet_mask: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: PacketFilterArray): void
 }
 class PacketFilterV3 {
     /* Fields of Mbim-1.0.Mbim.PacketFilterV3 */
-    filter_size: number
-    packet_filter: number
-    packet_mask: number
-    filter_id: number
+    readonly filter_size: number
+    readonly packet_filter: number
+    readonly packet_mask: number
+    readonly filter_id: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: PacketFilterV3Array): void
 }
 class PcoValue {
     /* Fields of Mbim-1.0.Mbim.PcoValue */
-    session_id: number
-    pco_data_size: number
-    pco_data_type: number
-    pco_data_buffer: number
+    readonly session_id: number
+    readonly pco_data_size: number
+    readonly pco_data_type: number
+    readonly pco_data_buffer: number
     /* Methods of Mbim-1.0.Mbim.PcoValue */
     free(): void
     static name: string
 }
 class PhonebookEntry {
     /* Fields of Mbim-1.0.Mbim.PhonebookEntry */
-    entry_index: number
-    number: string
-    name: string
+    readonly entry_index: number
+    readonly number: string
+    readonly name: string
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: PhonebookEntryArray): void
 }
 class PinDesc {
     /* Fields of Mbim-1.0.Mbim.PinDesc */
-    pin_mode: number
-    pin_format: number
-    pin_length_min: number
-    pin_length_max: number
+    readonly pin_mode: number
+    readonly pin_format: number
+    readonly pin_length_min: number
+    readonly pin_length_max: number
     /* Methods of Mbim-1.0.Mbim.PinDesc */
     free(): void
     static name: string
 }
 class Provider {
     /* Fields of Mbim-1.0.Mbim.Provider */
-    provider_id: string
-    provider_state: number
-    provider_name: string
-    cellular_class: number
-    rssi: number
-    error_rate: number
+    readonly provider_id: string
+    readonly provider_state: number
+    readonly provider_name: string
+    readonly cellular_class: number
+    readonly rssi: number
+    readonly error_rate: number
     /* Methods of Mbim-1.0.Mbim.Provider */
     free(): void
     static name: string
@@ -1764,38 +1781,38 @@ class Provider {
 }
 class ProvisionedContextElement {
     /* Fields of Mbim-1.0.Mbim.ProvisionedContextElement */
-    context_id: number
-    context_type: Uuid
-    access_string: string
-    user_name: string
-    password: string
-    compression: number
-    auth_protocol: number
+    readonly context_id: number
+    readonly context_type: Uuid
+    readonly access_string: string
+    readonly user_name: string
+    readonly password: string
+    readonly compression: number
+    readonly auth_protocol: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: ProvisionedContextElementArray): void
 }
 class ProvisionedContextElementV2 {
     /* Fields of Mbim-1.0.Mbim.ProvisionedContextElementV2 */
-    context_id: number
-    context_type: Uuid
-    ip_type: number
-    state: number
-    roaming: number
-    media_type: number
-    source: number
-    access_string: string
-    user_name: string
-    password: string
-    compression: number
-    auth_protocol: number
+    readonly context_id: number
+    readonly context_type: Uuid
+    readonly ip_type: number
+    readonly state: number
+    readonly roaming: number
+    readonly media_type: number
+    readonly source: number
+    readonly access_string: string
+    readonly user_name: string
+    readonly password: string
+    readonly compression: number
+    readonly auth_protocol: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: ProvisionedContextElementV2Array): void
 }
 abstract class ProxyClass {
     /* Fields of Mbim-1.0.Mbim.ProxyClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class ProxyPrivate {
@@ -1803,88 +1820,88 @@ class ProxyPrivate {
 }
 class RsrpSnrInfo {
     /* Fields of Mbim-1.0.Mbim.RsrpSnrInfo */
-    rsrp: number
-    snr: number
-    rsrp_threshold: number
-    snr_threshold: number
-    system_type: number
+    readonly rsrp: number
+    readonly snr: number
+    readonly rsrp_threshold: number
+    readonly snr_threshold: number
+    readonly system_type: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: RsrpSnrInfoArray): void
 }
 class SarConfigState {
     /* Fields of Mbim-1.0.Mbim.SarConfigState */
-    antenna_index: number
-    backoff_index: number
+    readonly antenna_index: number
+    readonly backoff_index: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: SarConfigStateArray): void
 }
 class Slot {
     /* Fields of Mbim-1.0.Mbim.Slot */
-    slot: number
+    readonly slot: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: SlotArray): void
 }
 class SmsCdmaReadRecord {
     /* Fields of Mbim-1.0.Mbim.SmsCdmaReadRecord */
-    message_index: number
-    message_status: number
-    address: string
-    timestamp: string
-    encoding: number
-    language: number
-    encoded_message_size: number
-    encoded_message: number
-    encoded_message_size_in_characters: number
+    readonly message_index: number
+    readonly message_status: number
+    readonly address: string
+    readonly timestamp: string
+    readonly encoding: number
+    readonly language: number
+    readonly encoded_message_size: number
+    readonly encoded_message: number
+    readonly encoded_message_size_in_characters: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: SmsCdmaReadRecordArray): void
 }
 class SmsCdmaSendRecord {
     /* Fields of Mbim-1.0.Mbim.SmsCdmaSendRecord */
-    encoding: number
-    language: number
-    address: string
-    encoded_message_size: number
-    encoded_message: number
-    encoded_message_size_in_characters: number
+    readonly encoding: number
+    readonly language: number
+    readonly address: string
+    readonly encoded_message_size: number
+    readonly encoded_message: number
+    readonly encoded_message_size_in_characters: number
     /* Methods of Mbim-1.0.Mbim.SmsCdmaSendRecord */
     free(): void
     static name: string
 }
 class SmsPduReadRecord {
     /* Fields of Mbim-1.0.Mbim.SmsPduReadRecord */
-    message_index: number
-    message_status: number
-    pdu_data_size: number
-    pdu_data: number
+    readonly message_index: number
+    readonly message_status: number
+    readonly pdu_data_size: number
+    readonly pdu_data: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: SmsPduReadRecordArray): void
 }
 class SmsPduSendRecord {
     /* Fields of Mbim-1.0.Mbim.SmsPduSendRecord */
-    pdu_data_size: number
-    pdu_data: number
+    readonly pdu_data_size: number
+    readonly pdu_data: number
     /* Methods of Mbim-1.0.Mbim.SmsPduSendRecord */
     free(): void
     static name: string
 }
 class Tai {
     /* Fields of Mbim-1.0.Mbim.Tai */
-    plmn_mcc: number
-    plmn_mnc: number
-    tac: number
+    readonly plmn_mcc: number
+    readonly plmn_mnc: number
+    readonly tac: number
     /* Methods of Mbim-1.0.Mbim.Tai */
     free(): void
     static name: string
 }
 class TerminalCapabilityInfo {
     /* Fields of Mbim-1.0.Mbim.TerminalCapabilityInfo */
-    terminal_capability_data_size: number
-    terminal_capability_data: number
+    readonly terminal_capability_data_size: number
+    readonly terminal_capability_data: number
     static name: string
     /* Static methods and pseudo-constructors */
     static array_free(array: TerminalCapabilityInfoArray): void
@@ -1910,11 +1927,11 @@ class Tlv {
 }
 class Uuid {
     /* Fields of Mbim-1.0.Mbim.Uuid */
-    a: Uint8Array[]
-    b: Uint8Array[]
-    c: Uint8Array[]
-    d: Uint8Array[]
-    e: Uint8Array[]
+    readonly a: Uint8Array
+    readonly b: Uint8Array
+    readonly c: Uint8Array
+    readonly d: Uint8Array
+    readonly e: Uint8Array
     /* Methods of Mbim-1.0.Mbim.Uuid */
     cmp(b: Uuid): boolean
     get_printable(): string
@@ -1926,34 +1943,35 @@ class Uuid {
     static from_printable(str: string, uuid: Uuid): boolean
     static from_service(service: Service): Uuid
 }
-type AtdsProviderArray = AtdsProvider
-type CellInfoCdmaArray = CellInfoCdma
-type CellInfoNeighboringGsmArray = CellInfoNeighboringGsm
-type CellInfoNeighboringLteArray = CellInfoNeighboringLte
-type CellInfoNeighboringNrArray = CellInfoNeighboringNr
-type CellInfoNeighboringTdscdmaArray = CellInfoNeighboringTdscdma
-type CellInfoNeighboringUmtsArray = CellInfoNeighboringUmts
-type CellInfoServingNrArray = CellInfoServingNr
-type DeprecatedCidBasicConnect = number
-type DeprecatedCidMsBasicConnectExtensions = number
-type DeprecatedRegistrationFlag = number
-type DeviceServiceElementArray = DeviceServiceElement
-type EventEntryArray = EventEntry
-type IPv4ElementArray = IPv4Element
-type IPv6ElementArray = IPv6Element
-type LteAttachConfigurationArray = LteAttachConfiguration
-type NwErrorDeprecated = number
-type PacketFilterArray = PacketFilter
-type PacketFilterV3Array = PacketFilterV3
-type PhonebookEntryArray = PhonebookEntry
-type ProviderArray = Provider
-type ProvisionedContextElementArray = ProvisionedContextElement
-type ProvisionedContextElementV2Array = ProvisionedContextElementV2
-type RsrpSnrInfoArray = RsrpSnrInfo
-type SarConfigStateArray = SarConfigState
-type SlotArray = Slot
-type SmsCdmaReadRecordArray = SmsCdmaReadRecord
-type SmsPduReadRecordArray = SmsPduReadRecord
-type TerminalCapabilityInfoArray = TerminalCapabilityInfo
+    type AtdsProviderArray = AtdsProvider
+    type CellInfoCdmaArray = CellInfoCdma
+    type CellInfoNeighboringGsmArray = CellInfoNeighboringGsm
+    type CellInfoNeighboringLteArray = CellInfoNeighboringLte
+    type CellInfoNeighboringNrArray = CellInfoNeighboringNr
+    type CellInfoNeighboringTdscdmaArray = CellInfoNeighboringTdscdma
+    type CellInfoNeighboringUmtsArray = CellInfoNeighboringUmts
+    type CellInfoServingNrArray = CellInfoServingNr
+    type DeprecatedCidBasicConnect = number
+    type DeprecatedCidMsBasicConnectExtensions = number
+    type DeprecatedNwError = number
+    type DeprecatedRegistrationFlag = number
+    type DeviceServiceElementArray = DeviceServiceElement
+    type EventEntryArray = EventEntry
+    type IPv4ElementArray = IPv4Element
+    type IPv6ElementArray = IPv6Element
+    type LteAttachConfigurationArray = LteAttachConfiguration
+    type LteAttachStatus = DeprecatedLteAttachStatus
+    type PacketFilterArray = PacketFilter
+    type PacketFilterV3Array = PacketFilterV3
+    type PhonebookEntryArray = PhonebookEntry
+    type ProviderArray = Provider
+    type ProvisionedContextElementArray = ProvisionedContextElement
+    type ProvisionedContextElementV2Array = ProvisionedContextElementV2
+    type RsrpSnrInfoArray = RsrpSnrInfo
+    type SarConfigStateArray = SarConfigState
+    type SlotArray = Slot
+    type SmsCdmaReadRecordArray = SmsCdmaReadRecord
+    type SmsPduReadRecordArray = SmsPduReadRecord
+    type TerminalCapabilityInfoArray = TerminalCapabilityInfo
 }
 export default Mbim;

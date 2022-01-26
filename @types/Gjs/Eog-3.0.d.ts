@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Eog-3.0
  */
@@ -161,13 +167,13 @@ enum StartupFlags {
     DISABLE_GALLERY,
     SINGLE_WINDOW,
 }
-export const FILE_FORMAT_JPEG: string
-export const IMAGE_DATA_ALL: number
-export const LIST_STORE_THUMB_SIZE: number
-export const SCROLL_VIEW_MAX_ZOOM_FACTOR: number
-export const SCROLL_VIEW_MIN_ZOOM_FACTOR: number
-export const THUMBNAIL_ORIGINAL_HEIGHT: string
-export const THUMBNAIL_ORIGINAL_WIDTH: string
+const FILE_FORMAT_JPEG: string
+const IMAGE_DATA_ALL: number
+const LIST_STORE_THUMB_SIZE: number
+const SCROLL_VIEW_MAX_ZOOM_FACTOR: number
+const SCROLL_VIEW_MIN_ZOOM_FACTOR: number
+const THUMBNAIL_ORIGINAL_HEIGHT: string
+const THUMBNAIL_ORIGINAL_WIDTH: string
 function debug(section: Debug, file: string, line: number, function_: string): void
 function debug_init(): void
 function exif_util_format_date(date: string): string
@@ -196,7 +202,7 @@ class WindowActivatable {
     vfunc_deactivate(): void
     static name: string
 }
-export interface Application_ConstructProps extends Gtk.Application_ConstructProps {
+interface Application_ConstructProps extends Gtk.Application_ConstructProps {
 }
 class Application {
     /* Properties of Gtk-3.0.Gtk.Application */
@@ -214,13 +220,10 @@ class Application {
     readonly is_registered: boolean
     readonly is_remote: boolean
     resource_base_path: string
-    /* Fields of Eog-3.0.Eog.Application */
-    base_instance: Gtk.Application
-    priv: ApplicationPrivate
     /* Fields of Gtk-3.0.Gtk.Application */
-    parent: Gio.Application
+    readonly parent: Gio.Application
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Application */
     close_all_windows(): boolean
     open_file_list(file_list: Gio.File[], timestamp: number, flags: StartupFlags): boolean
@@ -325,6 +328,24 @@ class Application {
     add_action_entries(entries: Gio.ActionEntry[], user_data?: object | null): void
     lookup_action(action_name: string): Gio.Action | null
     remove_action(action_name: string): void
+    /* Virtual methods of Eog-3.0.Eog.Application */
+    vfunc_action_added(action_name: string): void
+    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void
+    vfunc_action_removed(action_name: string): void
+    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void
+    vfunc_activate_action(action_name: string, parameter?: GLib.Variant | null): void
+    vfunc_change_action_state(action_name: string, value: GLib.Variant): void
+    vfunc_get_action_enabled(action_name: string): boolean
+    vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null
+    vfunc_get_action_state(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null
+    vfunc_has_action(action_name: string): boolean
+    vfunc_list_actions(): string[]
+    vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
+    vfunc_add_action(action: Gio.Action): void
+    vfunc_lookup_action(action_name: string): Gio.Action | null
+    vfunc_remove_action(action_name: string): void
     /* Virtual methods of Gtk-3.0.Gtk.Application */
     vfunc_window_added(window: Gtk.Window): void
     vfunc_window_removed(window: Gtk.Window): void
@@ -452,19 +473,20 @@ class Application {
     constructor (config?: Application_ConstructProps)
     _init (config?: Application_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): Application
+    /* Function overloads */
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): Application
     static get_instance(): Application
     static $gtype: GObject.Type
 }
-export interface ClipboardHandler_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface ClipboardHandler_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Eog-3.0.Eog.ClipboardHandler */
     pixbuf?: GdkPixbuf.Pixbuf
     uri?: string
 }
 class ClipboardHandler {
-    /* Fields of Eog-3.0.Eog.ClipboardHandler */
-    parent: GObject.Object
-    priv: ClipboardHandlerPrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.ClipboardHandler */
     copy_to_clipboard(clipboard: Gtk.Clipboard): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -512,7 +534,8 @@ class ClipboardHandler {
     static new(img: Image): ClipboardHandler
     static $gtype: GObject.Type
 }
-export interface FileChooser_ConstructProps extends Gtk.FileChooserDialog_ConstructProps {
+interface FileChooser_ConstructProps extends Gtk.FileChooserDialog_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.FileChooser */
     action?: Gtk.FileChooserAction
     create_folders?: boolean
     do_overwrite_confirmation?: boolean
@@ -602,7 +625,6 @@ class FileChooser {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.FileChooser */
     action: Gtk.FileChooserAction
     create_folders: boolean
@@ -615,18 +637,19 @@ class FileChooser {
     select_multiple: boolean
     show_hidden: boolean
     use_preview_label: boolean
-    /* Fields of Eog-3.0.Eog.FileChooser */
-    priv: FileChooserPrivate
     /* Fields of Gtk-3.0.Gtk.FileChooserDialog */
-    parent_instance: Gtk.Dialog
+    readonly parent_instance: Gtk.Dialog
+    readonly priv: Gtk.FileChooserDialogPrivate
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.FileChooser */
     get_format(): GdkPixbuf.PixbufFormat
     /* Methods of Gtk-3.0.Gtk.Dialog */
@@ -755,7 +778,7 @@ class FileChooser {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -999,6 +1022,7 @@ class FileChooser {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -1067,6 +1091,7 @@ class FileChooser {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.FileChooser */
     add_choice(id: string, label: string, options?: string[] | null, option_labels?: string[] | null): void
     add_filter(filter: Gtk.FileFilter): void
@@ -1131,6 +1156,17 @@ class FileChooser {
     unselect_file(file: Gio.File): void
     unselect_filename(filename: string): void
     unselect_uri(uri: string): void
+    /* Virtual methods of Eog-3.0.Eog.FileChooser */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gtk-3.0.Gtk.FileChooserDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1663,8 +1699,6 @@ class FileChooser {
     connect_after(sigName: "notify::visible", callback: (($obj: FileChooser, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: FileChooser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: FileChooser, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: FileChooser, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: FileChooser, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::action", callback: (($obj: FileChooser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::action", callback: (($obj: FileChooser, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::create-folders", callback: (($obj: FileChooser, pspec: GObject.ParamSpec) => void)): number
@@ -1696,18 +1730,16 @@ class FileChooser {
     _init (config?: FileChooser_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(action: Gtk.FileChooserAction): FileChooser
+    /* Function overloads */
     static new(): FileChooser
     static new(type: Gtk.WindowType): FileChooser
     static $gtype: GObject.Type
 }
-export interface Image_ConstructProps extends GObject.Object_ConstructProps {
+interface Image_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Image {
-    /* Fields of Eog-3.0.Eog.Image */
-    parent: GObject.Object
-    priv: ImagePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Image */
     autorotate(): void
     cancel_load(): void
@@ -1815,21 +1847,11 @@ class Image {
     static is_supported_mime_type(mime_type: string): boolean
     static $gtype: GObject.Type
 }
-export interface ImageSaveInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface ImageSaveInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ImageSaveInfo {
-    /* Fields of Eog-3.0.Eog.ImageSaveInfo */
-    parent: GObject.Object
-    file: Gio.File
-    format: string
-    exists: boolean
-    local: boolean
-    has_metadata: boolean
-    modified: boolean
-    overwrite: boolean
-    jpeg_quality: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1877,19 +1899,11 @@ class ImageSaveInfo {
     static new_from_uri(uri: string, format: GdkPixbuf.PixbufFormat): ImageSaveInfo
     static $gtype: GObject.Type
 }
-export interface Job_ConstructProps extends GObject.Object_ConstructProps {
+interface Job_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Job {
-    /* Fields of Eog-3.0.Eog.Job */
-    parent: GObject.Object
-    cancellable: Gio.Cancellable
-    error: GLib.Error
-    mutex: GLib.Mutex
-    progress: number
-    cancelled: boolean
-    finished: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Job */
     cancel(): void
     get_progress(): number
@@ -1959,23 +1973,19 @@ class Job {
     static scheduler_init(): void
     static $gtype: GObject.Type
 }
-export interface JobCopy_ConstructProps extends Job_ConstructProps {
+interface JobCopy_ConstructProps extends Job_ConstructProps {
 }
 class JobCopy {
-    /* Fields of Eog-3.0.Eog.JobCopy */
-    parent: Job
-    images: object[]
-    destination: string
-    current_position: number
     /* Fields of Eog-3.0.Eog.Job */
-    cancellable: Gio.Cancellable
-    error: GLib.Error
-    mutex: GLib.Mutex
-    progress: number
-    cancelled: boolean
-    finished: boolean
+    readonly parent: GObject.Object
+    readonly cancellable: Gio.Cancellable
+    readonly error: GLib.Error
+    readonly mutex: GLib.Mutex
+    readonly progress: number
+    readonly cancelled: boolean
+    readonly finished: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Job */
     cancel(): void
     get_progress(): number
@@ -2045,22 +2055,19 @@ class JobCopy {
     static new(images: Image[], destination: string): JobCopy
     static $gtype: GObject.Type
 }
-export interface JobLoad_ConstructProps extends Job_ConstructProps {
+interface JobLoad_ConstructProps extends Job_ConstructProps {
 }
 class JobLoad {
-    /* Fields of Eog-3.0.Eog.JobLoad */
-    parent: Job
-    image: Image
-    data: ImageData
     /* Fields of Eog-3.0.Eog.Job */
-    cancellable: Gio.Cancellable
-    error: GLib.Error
-    mutex: GLib.Mutex
-    progress: number
-    cancelled: boolean
-    finished: boolean
+    readonly parent: GObject.Object
+    readonly cancellable: Gio.Cancellable
+    readonly error: GLib.Error
+    readonly mutex: GLib.Mutex
+    readonly progress: number
+    readonly cancelled: boolean
+    readonly finished: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Job */
     cancel(): void
     get_progress(): number
@@ -2130,22 +2137,19 @@ class JobLoad {
     static new(image: Image, data: ImageData): JobLoad
     static $gtype: GObject.Type
 }
-export interface JobModel_ConstructProps extends Job_ConstructProps {
+interface JobModel_ConstructProps extends Job_ConstructProps {
 }
 class JobModel {
-    /* Fields of Eog-3.0.Eog.JobModel */
-    parent: Job
-    store: ListStore
-    file_list: object[]
     /* Fields of Eog-3.0.Eog.Job */
-    cancellable: Gio.Cancellable
-    error: GLib.Error
-    mutex: GLib.Mutex
-    progress: number
-    cancelled: boolean
-    finished: boolean
+    readonly parent: GObject.Object
+    readonly cancellable: Gio.Cancellable
+    readonly error: GLib.Error
+    readonly mutex: GLib.Mutex
+    readonly progress: number
+    readonly cancelled: boolean
+    readonly finished: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Job */
     cancel(): void
     get_progress(): number
@@ -2215,23 +2219,19 @@ class JobModel {
     static new(file_list: Gio.File[]): JobModel
     static $gtype: GObject.Type
 }
-export interface JobSave_ConstructProps extends Job_ConstructProps {
+interface JobSave_ConstructProps extends Job_ConstructProps {
 }
 class JobSave {
-    /* Fields of Eog-3.0.Eog.JobSave */
-    parent: Job
-    images: object[]
-    current_image: Image
-    current_position: number
     /* Fields of Eog-3.0.Eog.Job */
-    cancellable: Gio.Cancellable
-    error: GLib.Error
-    mutex: GLib.Mutex
-    progress: number
-    cancelled: boolean
-    finished: boolean
+    readonly parent: GObject.Object
+    readonly cancellable: Gio.Cancellable
+    readonly error: GLib.Error
+    readonly mutex: GLib.Mutex
+    readonly progress: number
+    readonly cancelled: boolean
+    readonly finished: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Job */
     cancel(): void
     get_progress(): number
@@ -2301,26 +2301,23 @@ class JobSave {
     static new(images: Image[]): JobSave
     static $gtype: GObject.Type
 }
-export interface JobSaveAs_ConstructProps extends JobSave_ConstructProps {
+interface JobSaveAs_ConstructProps extends JobSave_ConstructProps {
 }
 class JobSaveAs {
-    /* Fields of Eog-3.0.Eog.JobSaveAs */
-    parent: JobSave
-    converter: URIConverter
-    file: Gio.File
     /* Fields of Eog-3.0.Eog.JobSave */
-    images: object[]
-    current_image: Image
-    current_position: number
+    readonly parent: Job
+    readonly images: object[]
+    readonly current_image: Image
+    readonly current_position: number
     /* Fields of Eog-3.0.Eog.Job */
-    cancellable: Gio.Cancellable
-    error: GLib.Error
-    mutex: GLib.Mutex
-    progress: number
-    cancelled: boolean
-    finished: boolean
+    readonly cancellable: Gio.Cancellable
+    readonly error: GLib.Error
+    readonly mutex: GLib.Mutex
+    readonly progress: number
+    readonly cancelled: boolean
+    readonly finished: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Job */
     cancel(): void
     get_progress(): number
@@ -2388,25 +2385,23 @@ class JobSaveAs {
     _init (config?: JobSaveAs_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(images: Image[], converter: URIConverter, file: Gio.File): JobSaveAs
+    /* Function overloads */
     static new(images: Image[]): JobSaveAs
     static $gtype: GObject.Type
 }
-export interface JobThumbnail_ConstructProps extends Job_ConstructProps {
+interface JobThumbnail_ConstructProps extends Job_ConstructProps {
 }
 class JobThumbnail {
-    /* Fields of Eog-3.0.Eog.JobThumbnail */
-    parent: Job
-    image: Image
-    thumbnail: GdkPixbuf.Pixbuf
     /* Fields of Eog-3.0.Eog.Job */
-    cancellable: Gio.Cancellable
-    error: GLib.Error
-    mutex: GLib.Mutex
-    progress: number
-    cancelled: boolean
-    finished: boolean
+    readonly parent: GObject.Object
+    readonly cancellable: Gio.Cancellable
+    readonly error: GLib.Error
+    readonly mutex: GLib.Mutex
+    readonly progress: number
+    readonly cancelled: boolean
+    readonly finished: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Job */
     cancel(): void
     get_progress(): number
@@ -2476,22 +2471,19 @@ class JobThumbnail {
     static new(image: Image): JobThumbnail
     static $gtype: GObject.Type
 }
-export interface JobTransform_ConstructProps extends Job_ConstructProps {
+interface JobTransform_ConstructProps extends Job_ConstructProps {
 }
 class JobTransform {
-    /* Fields of Eog-3.0.Eog.JobTransform */
-    parent: Job
-    images: object[]
-    transform: Transform
     /* Fields of Eog-3.0.Eog.Job */
-    cancellable: Gio.Cancellable
-    error: GLib.Error
-    mutex: GLib.Mutex
-    progress: number
-    cancelled: boolean
-    finished: boolean
+    readonly parent: GObject.Object
+    readonly cancellable: Gio.Cancellable
+    readonly error: GLib.Error
+    readonly mutex: GLib.Mutex
+    readonly progress: number
+    readonly cancelled: boolean
+    readonly finished: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Job */
     cancel(): void
     get_progress(): number
@@ -2561,14 +2553,13 @@ class JobTransform {
     static new(images: Image[], transform: Transform): JobTransform
     static $gtype: GObject.Type
 }
-export interface ListStore_ConstructProps extends Gtk.ListStore_ConstructProps {
+interface ListStore_ConstructProps extends Gtk.ListStore_ConstructProps {
 }
 class ListStore {
-    /* Fields of Eog-3.0.Eog.ListStore */
-    parent: Gtk.ListStore
-    priv: ListStorePrivate
+    /* Fields of Gtk-3.0.Gtk.ListStore */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.ListStore */
     add_files(file_list: Gio.File[]): void
     append_image(image: Image): void
@@ -2753,11 +2744,13 @@ class ListStore {
     _init (config?: ListStore_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): ListStore
+    /* Function overloads */
     static new(types: GObject.Type[]): ListStore
     static new_from_glist(list: Image[]): ListStore
     static $gtype: GObject.Type
 }
-export interface PropertiesDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface PropertiesDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+    /* Constructor properties of Eog-3.0.Eog.PropertiesDialog */
     netbook_mode?: boolean
     next_action?: string
     prev_action?: string
@@ -2842,20 +2835,19 @@ class PropertiesDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
-    /* Fields of Eog-3.0.Eog.PropertiesDialog */
-    dialog: Gtk.Dialog
-    priv: PropertiesDialogPrivate
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.PropertiesDialog */
     set_netbook_mode(enable: boolean): void
     set_page(page: PropertiesDialogPage): void
@@ -2986,7 +2978,7 @@ class PropertiesDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3230,6 +3222,7 @@ class PropertiesDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -3298,6 +3291,7 @@ class PropertiesDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Eog-3.0.Eog.PropertiesDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3816,8 +3810,6 @@ class PropertiesDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: PropertiesDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: PropertiesDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: PropertiesDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: PropertiesDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: PropertiesDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3827,11 +3819,13 @@ class PropertiesDialog {
     _init (config?: PropertiesDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(parent: Gtk.Window, thumbview: ThumbView, next_image_action: string, previous_image_action: string): PropertiesDialog
+    /* Function overloads */
     static new(): PropertiesDialog
     static new(type: Gtk.WindowType): PropertiesDialog
     static $gtype: GObject.Type
 }
-export interface ScrollView_ConstructProps extends Gtk.Grid_ConstructProps {
+interface ScrollView_ConstructProps extends Gtk.Overlay_ConstructProps {
+    /* Constructor properties of Eog-3.0.Eog.ScrollView */
     antialiasing_in?: boolean
     antialiasing_out?: boolean
     background_color?: Gdk.RGBA
@@ -3842,7 +3836,11 @@ export interface ScrollView_ConstructProps extends Gtk.Grid_ConstructProps {
     use_background_color?: boolean
     zoom_mode?: ZoomMode
     zoom_multiplier?: number
-    orientation?: Gtk.Orientation
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
+    hadjustment?: Gtk.Adjustment
+    hscroll_policy?: Gtk.ScrollablePolicy
+    vadjustment?: Gtk.Adjustment
+    vscroll_policy?: Gtk.ScrollablePolicy
 }
 class ScrollView {
     /* Properties of Eog-3.0.Eog.ScrollView */
@@ -3856,12 +3854,6 @@ class ScrollView {
     use_background_color: boolean
     zoom_mode: ZoomMode
     zoom_multiplier: number
-    /* Properties of Gtk-3.0.Gtk.Grid */
-    baseline_row: number
-    column_homogeneous: boolean
-    column_spacing: number
-    row_homogeneous: boolean
-    row_spacing: number
     /* Properties of Gtk-3.0.Gtk.Container */
     border_width: number
     child: Gtk.Widget
@@ -3893,7 +3885,6 @@ class ScrollView {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -3906,17 +3897,22 @@ class ScrollView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Properties of Gtk-3.0.Gtk.Orientable */
-    orientation: Gtk.Orientation
-    /* Fields of Eog-3.0.Eog.ScrollView */
-    base_instance: Gtk.Grid
-    priv: ScrollViewPrivate
+    /* Properties of Gtk-3.0.Gtk.Scrollable */
+    hadjustment: Gtk.Adjustment
+    hscroll_policy: Gtk.ScrollablePolicy
+    vadjustment: Gtk.Adjustment
+    vscroll_policy: Gtk.ScrollablePolicy
+    /* Fields of Gtk-3.0.Gtk.Overlay */
+    readonly parent: Gtk.Bin
+    readonly priv: Gtk.OverlayPrivate
+    /* Fields of Gtk-3.0.Gtk.Bin */
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.ScrollView */
     event_is_over_image(ev: Gdk.Event): boolean
     get_image(): Image
@@ -3925,8 +3921,8 @@ class ScrollView {
     get_zoom_is_min(): boolean
     get_zoom_mode(): ZoomMode
     hide_cursor(): void
+    is_image_movable(): boolean
     override_bg_color(color: Gdk.RGBA): void
-    scrollbars_visible(): boolean
     set_antialiasing_in(state: boolean): void
     set_antialiasing_out(state: boolean): void
     set_background_color(color: Gdk.RGBA): void
@@ -3943,32 +3939,18 @@ class ScrollView {
     show_cursor(): void
     zoom_in(smooth: boolean): void
     zoom_out(smooth: boolean): void
-    /* Methods of Gtk-3.0.Gtk.Grid */
-    attach(child: Gtk.Widget, left: number, top: number, width: number, height: number): void
-    attach_next_to(child: Gtk.Widget, sibling: Gtk.Widget | null, side: Gtk.PositionType, width: number, height: number): void
-    get_baseline_row(): number
-    get_child_at(left: number, top: number): Gtk.Widget | null
-    get_column_homogeneous(): boolean
-    get_column_spacing(): number
-    get_row_baseline_position(row: number): Gtk.BaselinePosition
-    get_row_homogeneous(): boolean
-    get_row_spacing(): number
-    insert_column(position: number): void
-    insert_next_to(sibling: Gtk.Widget, side: Gtk.PositionType): void
-    insert_row(position: number): void
-    remove_column(position: number): void
-    remove_row(position: number): void
-    set_baseline_row(row: number): void
-    set_column_homogeneous(homogeneous: boolean): void
-    set_column_spacing(spacing: number): void
-    set_row_baseline_position(row: number, pos: Gtk.BaselinePosition): void
-    set_row_homogeneous(homogeneous: boolean): void
-    set_row_spacing(spacing: number): void
+    /* Methods of Gtk-3.0.Gtk.Overlay */
+    add_overlay(widget: Gtk.Widget): void
+    get_overlay_pass_through(widget: Gtk.Widget): boolean
+    reorder_overlay(child: Gtk.Widget, index_: number): void
+    set_overlay_pass_through(widget: Gtk.Widget, pass_through: boolean): void
+    /* Methods of Gtk-3.0.Gtk.Bin */
+    get_child(): Gtk.Widget | null
     /* Methods of Gtk-3.0.Gtk.Container */
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4283,9 +4265,17 @@ class ScrollView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
-    /* Methods of Gtk-3.0.Gtk.Orientable */
-    get_orientation(): Gtk.Orientation
-    set_orientation(orientation: Gtk.Orientation): void
+    set_name(name: string): void
+    /* Methods of Gtk-3.0.Gtk.Scrollable */
+    get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
+    get_hadjustment(): Gtk.Adjustment
+    get_hscroll_policy(): Gtk.ScrollablePolicy
+    get_vadjustment(): Gtk.Adjustment
+    get_vscroll_policy(): Gtk.ScrollablePolicy
+    set_hadjustment(hadjustment?: Gtk.Adjustment | null): void
+    set_hscroll_policy(policy: Gtk.ScrollablePolicy): void
+    set_vadjustment(vadjustment?: Gtk.Adjustment | null): void
+    set_vscroll_policy(policy: Gtk.ScrollablePolicy): void
     /* Virtual methods of Eog-3.0.Eog.ScrollView */
     vfunc_next_image(): void
     vfunc_previous_image(): void
@@ -4301,6 +4291,9 @@ class ScrollView {
     vfunc_parser_finished(builder: Gtk.Builder): void
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
+    vfunc_get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
+    /* Virtual methods of Gtk-3.0.Gtk.Overlay */
+    vfunc_get_child_position(widget: Gtk.Widget, allocation: Gtk.Allocation): boolean
     /* Virtual methods of Gtk-3.0.Gtk.Container */
     vfunc_add(widget: Gtk.Widget): void
     vfunc_check_resize(): void
@@ -4416,6 +4409,10 @@ class ScrollView {
     connect(sigName: "zoom-changed", callback: (($obj: ScrollView, object: number) => void)): number
     connect_after(sigName: "zoom-changed", callback: (($obj: ScrollView, object: number) => void)): number
     emit(sigName: "zoom-changed", object: number): void
+    /* Signals of Gtk-3.0.Gtk.Overlay */
+    connect(sigName: "get-child-position", callback: (($obj: ScrollView, widget: Gtk.Widget) => boolean)): number
+    connect_after(sigName: "get-child-position", callback: (($obj: ScrollView, widget: Gtk.Widget) => boolean)): number
+    emit(sigName: "get-child-position", widget: Gtk.Widget): void
     /* Signals of Gtk-3.0.Gtk.Container */
     connect(sigName: "add", callback: (($obj: ScrollView, object: Gtk.Widget) => void)): number
     connect_after(sigName: "add", callback: (($obj: ScrollView, object: Gtk.Widget) => void)): number
@@ -4661,16 +4658,6 @@ class ScrollView {
     connect_after(sigName: "notify::zoom-mode", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::zoom-multiplier", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::zoom-multiplier", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::baseline-row", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::baseline-row", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::column-homogeneous", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::column-homogeneous", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::column-spacing", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::column-spacing", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::row-homogeneous", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::row-homogeneous", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::row-spacing", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::row-spacing", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::border-width", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::border-width", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::child", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
@@ -4729,8 +4716,6 @@ class ScrollView {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
@@ -4755,8 +4740,14 @@ class ScrollView {
     connect_after(sigName: "notify::width-request", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::window", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::window", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::orientation", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::orientation", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hadjustment", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hadjustment", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::hscroll-policy", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::hscroll-policy", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vadjustment", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vadjustment", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::vscroll-policy", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::vscroll-policy", callback: (($obj: ScrollView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -4768,8 +4759,10 @@ class ScrollView {
     static new(): ScrollView
     static $gtype: GObject.Type
 }
-export interface Sidebar_ConstructProps extends Gtk.Box_ConstructProps {
+interface Sidebar_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Eog-3.0.Eog.Sidebar */
     current_page?: Gtk.Widget
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Sidebar {
@@ -4825,17 +4818,14 @@ class Sidebar {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Eog-3.0.Eog.Sidebar */
-    base_instance: Gtk.Box
-    priv: SidebarPrivate
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Sidebar */
     add_page(title: string, main_widget: Gtk.Widget): void
     get_n_pages(): number
@@ -4860,7 +4850,7 @@ class Sidebar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5175,6 +5165,7 @@ class Sidebar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -5628,10 +5619,12 @@ class Sidebar {
     _init (config?: Sidebar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Sidebar
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): Sidebar
     static $gtype: GObject.Type
 }
-export interface Statusbar_ConstructProps extends Gtk.Statusbar_ConstructProps {
+interface Statusbar_ConstructProps extends Gtk.Statusbar_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Statusbar {
@@ -5685,18 +5678,16 @@ class Statusbar {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Eog-3.0.Eog.Statusbar */
-    priv: StatusbarPrivate
     /* Fields of Gtk-3.0.Gtk.Statusbar */
-    parent_widget: Gtk.Box
+    readonly parent_widget: Gtk.Box
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Statusbar */
     set_image_number(num: number, tot: number): void
     set_progress(progress: number): void
@@ -5725,7 +5716,7 @@ class Statusbar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6040,6 +6031,7 @@ class Statusbar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -6492,13 +6484,16 @@ class Statusbar {
     _init (config?: Statusbar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Statusbar
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): Statusbar
     static $gtype: GObject.Type
 }
-export interface ThumbNav_ConstructProps extends Gtk.Box_ConstructProps {
+interface ThumbNav_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Eog-3.0.Eog.ThumbNav */
     mode?: number
     show_buttons?: boolean
     thumbview?: ThumbView
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class ThumbNav {
@@ -6555,17 +6550,14 @@ class ThumbNav {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Eog-3.0.Eog.ThumbNav */
-    base_instance: Gtk.Box
-    priv: ThumbNavPrivate
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.ThumbNav */
     get_mode(): ThumbNavMode
     get_show_buttons(): boolean
@@ -6589,7 +6581,7 @@ class ThumbNav {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6904,6 +6896,7 @@ class ThumbNav {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -7350,11 +7343,14 @@ class ThumbNav {
     _init (config?: ThumbNav_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(thumbview: Gtk.Widget, mode: ThumbNavMode, show_buttons: boolean): ThumbNav
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): ThumbNav
     static $gtype: GObject.Type
 }
-export interface ThumbView_ConstructProps extends Gtk.IconView_ConstructProps {
+interface ThumbView_ConstructProps extends Gtk.IconView_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -7408,7 +7404,6 @@ class ThumbView {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -7428,15 +7423,14 @@ class ThumbView {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Eog-3.0.Eog.ThumbView */
-    icon_view: Gtk.IconView
-    priv: ThumbViewPrivate
+    /* Fields of Gtk-3.0.Gtk.IconView */
+    readonly parent: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.ThumbView */
     get_first_selected_image(): Image
     get_n_selected(): number
@@ -7512,7 +7506,7 @@ class ThumbView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7827,6 +7821,7 @@ class ThumbView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.CellLayout */
     add_attribute(cell: Gtk.CellRenderer, attribute: string, column: number): void
     clear(): void
@@ -8320,8 +8315,6 @@ class ThumbView {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: ThumbView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: ThumbView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: ThumbView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: ThumbView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: ThumbView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: ThumbView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: ThumbView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: ThumbView, pspec: GObject.ParamSpec) => void)): number
@@ -8367,14 +8360,11 @@ class ThumbView {
     static new(): ThumbView
     static $gtype: GObject.Type
 }
-export interface Transform_ConstructProps extends GObject.Object_ConstructProps {
+interface Transform_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Transform {
-    /* Fields of Eog-3.0.Eog.Transform */
-    parent: GObject.Object
-    priv: TransformPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Transform */
     apply(pixbuf: GdkPixbuf.Pixbuf, job: Job): GdkPixbuf.Pixbuf
     compose(compose: Transform): Transform
@@ -8430,7 +8420,8 @@ class Transform {
     static rotate_new(degree: number): Transform
     static $gtype: GObject.Type
 }
-export interface URIConverter_ConstructProps extends GObject.Object_ConstructProps {
+interface URIConverter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Eog-3.0.Eog.URIConverter */
     convert_spaces?: boolean
     counter_n_digits?: number
     counter_start?: number
@@ -8444,11 +8435,8 @@ class URIConverter {
     counter_start: number
     n_images: number
     space_character: number
-    /* Fields of Eog-3.0.Eog.URIConverter */
-    parent: GObject.Object
-    priv: URIConverterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.URIConverter */
     check(img_list: Gio.File[]): boolean
     do(image: Image, file: Gio.File, format: GdkPixbuf.PixbufFormat): boolean
@@ -8510,7 +8498,8 @@ class URIConverter {
     static preview(format_str: string, img: Image, format: GdkPixbuf.PixbufFormat, counter: number, n_images: number, convert_spaces: boolean, space_char: number): string
     static $gtype: GObject.Type
 }
-export interface Window_ConstructProps extends Gtk.ApplicationWindow_ConstructProps {
+interface Window_ConstructProps extends Gtk.ApplicationWindow_ConstructProps {
+    /* Constructor properties of Eog-3.0.Eog.Window */
     gallery_position?: WindowGalleryPos
     gallery_resizable?: boolean
     startup_flags?: StartupFlags
@@ -8598,19 +8587,17 @@ class Window {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Eog-3.0.Eog.Window */
-    win: Gtk.ApplicationWindow
-    priv: WindowPrivate
     /* Fields of Gtk-3.0.Gtk.ApplicationWindow */
-    parent_instance: Gtk.Window
+    readonly parent_instance: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Eog-3.0.Eog.Window */
     close(): void
     get_gear_menu_section(id: string): Gio.Menu
@@ -8748,7 +8735,7 @@ class Window {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8992,6 +8979,7 @@ class Window {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -9080,8 +9068,26 @@ class Window {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Eog-3.0.Eog.Window */
     vfunc_prepared(): void
+    vfunc_action_added(action_name: string): void
+    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void
+    vfunc_action_removed(action_name: string): void
+    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void
+    vfunc_activate_action(action_name: string, parameter?: GLib.Variant | null): void
+    vfunc_change_action_state(action_name: string, value: GLib.Variant): void
+    vfunc_get_action_enabled(action_name: string): boolean
+    vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null
+    vfunc_get_action_state(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null
+    vfunc_has_action(action_name: string): boolean
+    vfunc_list_actions(): string[]
+    vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
+    vfunc_add_action(action: Gio.Action): void
+    vfunc_lookup_action(action_name: string): Gio.Action | null
+    vfunc_remove_action(action_name: string): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -9639,20 +9645,21 @@ class Window {
     _init (config?: Window_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(flags: StartupFlags): Window
+    /* Function overloads */
     static new(application: Gtk.Application): Window
     static new(type: Gtk.WindowType): Window
     static $gtype: GObject.Type
 }
 abstract class ApplicationActivatableInterface {
     /* Fields of Eog-3.0.Eog.ApplicationActivatableInterface */
-    g_iface: GObject.TypeInterface
-    activate: (activatable: ApplicationActivatable) => void
-    deactivate: (activatable: ApplicationActivatable) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly activate: (activatable: ApplicationActivatable) => void
+    readonly deactivate: (activatable: ApplicationActivatable) => void
     static name: string
 }
 abstract class ApplicationClass {
     /* Fields of Eog-3.0.Eog.ApplicationClass */
-    parent_class: Gtk.ApplicationClass
+    readonly parent_class: Gtk.ApplicationClass
     static name: string
 }
 class ApplicationPrivate {
@@ -9660,7 +9667,7 @@ class ApplicationPrivate {
 }
 abstract class ClipboardHandlerClass {
     /* Fields of Eog-3.0.Eog.ClipboardHandlerClass */
-    parent_klass: GObject.ObjectClass
+    readonly parent_klass: GObject.ObjectClass
     static name: string
 }
 class ClipboardHandlerPrivate {
@@ -9668,7 +9675,7 @@ class ClipboardHandlerPrivate {
 }
 abstract class FileChooserClass {
     /* Fields of Eog-3.0.Eog.FileChooserClass */
-    parent_class: Gtk.FileChooserDialogClass
+    readonly parent_class: Gtk.FileChooserDialogClass
     static name: string
 }
 class FileChooserPrivate {
@@ -9676,13 +9683,13 @@ class FileChooserPrivate {
 }
 abstract class ImageClass {
     /* Fields of Eog-3.0.Eog.ImageClass */
-    parent_class: GObject.ObjectClass
-    changed: (img: Image) => void
-    size_prepared: (img: Image, width: number, height: number) => void
-    thumbnail_changed: (img: Image) => void
-    save_progress: (img: Image, progress: number) => void
-    next_frame: (img: Image, delay: number) => void
-    file_changed: (img: Image) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (img: Image) => void
+    readonly size_prepared: (img: Image, width: number, height: number) => void
+    readonly thumbnail_changed: (img: Image) => void
+    readonly save_progress: (img: Image, progress: number) => void
+    readonly next_frame: (img: Image, delay: number) => void
+    readonly file_changed: (img: Image) => void
     static name: string
 }
 class ImagePrivate {
@@ -9690,56 +9697,56 @@ class ImagePrivate {
 }
 abstract class ImageSaveInfoClass {
     /* Fields of Eog-3.0.Eog.ImageSaveInfoClass */
-    parent_klass: GObject.ObjectClass
+    readonly parent_klass: GObject.ObjectClass
     static name: string
 }
 abstract class JobClass {
     /* Fields of Eog-3.0.Eog.JobClass */
-    parent_class: GObject.ObjectClass
-    run: (job: Job) => void
-    progress: (job: Job, progress: number) => void
-    cancelled: (job: Job) => void
-    finished: (job: Job) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly run: (job: Job) => void
+    readonly progress: (job: Job, progress: number) => void
+    readonly cancelled: (job: Job) => void
+    readonly finished: (job: Job) => void
     static name: string
 }
 abstract class JobCopyClass {
     /* Fields of Eog-3.0.Eog.JobCopyClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobLoadClass {
     /* Fields of Eog-3.0.Eog.JobLoadClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobModelClass {
     /* Fields of Eog-3.0.Eog.JobModelClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobSaveAsClass {
     /* Fields of Eog-3.0.Eog.JobSaveAsClass */
-    parent: JobSaveClass
+    readonly parent: JobSaveClass
     static name: string
 }
 abstract class JobSaveClass {
     /* Fields of Eog-3.0.Eog.JobSaveClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobThumbnailClass {
     /* Fields of Eog-3.0.Eog.JobThumbnailClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class JobTransformClass {
     /* Fields of Eog-3.0.Eog.JobTransformClass */
-    parent_class: JobClass
+    readonly parent_class: JobClass
     static name: string
 }
 abstract class ListStoreClass {
     /* Fields of Eog-3.0.Eog.ListStoreClass */
-    parent_class: Gtk.ListStoreClass
+    readonly parent_class: Gtk.ListStoreClass
     static name: string
 }
 class ListStorePrivate {
@@ -9747,7 +9754,7 @@ class ListStorePrivate {
 }
 abstract class PropertiesDialogClass {
     /* Fields of Eog-3.0.Eog.PropertiesDialogClass */
-    parent_class: Gtk.DialogClass
+    readonly parent_class: Gtk.DialogClass
     static name: string
 }
 class PropertiesDialogPrivate {
@@ -9755,11 +9762,11 @@ class PropertiesDialogPrivate {
 }
 abstract class ScrollViewClass {
     /* Fields of Eog-3.0.Eog.ScrollViewClass */
-    parent_class: Gtk.GridClass
-    zoom_changed: (view: ScrollView, zoom: number) => void
-    rotation_changed: (view: ScrollView, degrees: number) => void
-    next_image: (view: ScrollView) => void
-    previous_image: (view: ScrollView) => void
+    readonly parent_class: Gtk.OverlayClass
+    readonly zoom_changed: (view: ScrollView, zoom: number) => void
+    readonly rotation_changed: (view: ScrollView, degrees: number) => void
+    readonly next_image: (view: ScrollView) => void
+    readonly previous_image: (view: ScrollView) => void
     static name: string
 }
 class ScrollViewPrivate {
@@ -9767,9 +9774,9 @@ class ScrollViewPrivate {
 }
 abstract class SidebarClass {
     /* Fields of Eog-3.0.Eog.SidebarClass */
-    base_class: Gtk.BoxClass
-    page_added: (eog_sidebar: Sidebar, main_widget: Gtk.Widget) => void
-    page_removed: (eog_sidebar: Sidebar, main_widget: Gtk.Widget) => void
+    readonly base_class: Gtk.BoxClass
+    readonly page_added: (eog_sidebar: Sidebar, main_widget: Gtk.Widget) => void
+    readonly page_removed: (eog_sidebar: Sidebar, main_widget: Gtk.Widget) => void
     static name: string
 }
 class SidebarPrivate {
@@ -9777,7 +9784,7 @@ class SidebarPrivate {
 }
 abstract class StatusbarClass {
     /* Fields of Eog-3.0.Eog.StatusbarClass */
-    parent_class: Gtk.StatusbarClass
+    readonly parent_class: Gtk.StatusbarClass
     static name: string
 }
 class StatusbarPrivate {
@@ -9785,7 +9792,7 @@ class StatusbarPrivate {
 }
 abstract class ThumbNavClass {
     /* Fields of Eog-3.0.Eog.ThumbNavClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 class ThumbNavPrivate {
@@ -9793,7 +9800,7 @@ class ThumbNavPrivate {
 }
 abstract class ThumbViewClass {
     /* Fields of Eog-3.0.Eog.ThumbViewClass */
-    icon_view_class: Gtk.IconViewClass
+    readonly icon_view_class: Gtk.IconViewClass
     static name: string
 }
 class ThumbViewPrivate {
@@ -9801,7 +9808,7 @@ class ThumbViewPrivate {
 }
 abstract class TransformClass {
     /* Fields of Eog-3.0.Eog.TransformClass */
-    parent_klass: GObject.ObjectClass
+    readonly parent_klass: GObject.ObjectClass
     static name: string
 }
 class TransformPrivate {
@@ -9809,14 +9816,14 @@ class TransformPrivate {
 }
 class UCInfo {
     /* Fields of Eog-3.0.Eog.UCInfo */
-    description: string
-    rep: string
-    req_exif: boolean
+    readonly description: string
+    readonly rep: string
+    readonly req_exif: boolean
     static name: string
 }
 abstract class URIConverterClass {
     /* Fields of Eog-3.0.Eog.URIConverterClass */
-    parent_klass: GObject.ObjectClass
+    readonly parent_klass: GObject.ObjectClass
     static name: string
 }
 class URIConverterPrivate {
@@ -9824,15 +9831,15 @@ class URIConverterPrivate {
 }
 abstract class WindowActivatableInterface {
     /* Fields of Eog-3.0.Eog.WindowActivatableInterface */
-    g_iface: GObject.TypeInterface
-    activate: (activatable: WindowActivatable) => void
-    deactivate: (activatable: WindowActivatable) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly activate: (activatable: WindowActivatable) => void
+    readonly deactivate: (activatable: WindowActivatable) => void
     static name: string
 }
 abstract class WindowClass {
     /* Fields of Eog-3.0.Eog.WindowClass */
-    parent_class: Gtk.ApplicationWindowClass
-    prepared: (window: Window) => void
+    readonly parent_class: Gtk.ApplicationWindowClass
+    readonly prepared: (window: Window) => void
     static name: string
 }
 class WindowPrivate {

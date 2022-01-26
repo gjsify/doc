@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GFBGraph-0.3
  */
@@ -28,7 +34,7 @@ class Authorizer {
     vfunc_refresh_authorization(cancellable?: Gio.Cancellable | null): boolean
     static name: string
 }
-export interface Connectable_ConstructProps extends Node_ConstructProps {
+interface Connectable_ConstructProps extends Node_ConstructProps {
 }
 class Connectable {
     /* Properties of GFBGraph-0.3.GFBGraph.Node */
@@ -37,9 +43,9 @@ class Connectable {
     link: string
     updated_time: string
     /* Fields of GFBGraph-0.3.GFBGraph.Node */
-    parent: GObject.Object
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GFBGraph-0.3.GFBGraph.Connectable */
     default_parse_connected_data(payload: string): Node[]
     get_connection_path(node_type: GObject.Type): string
@@ -110,7 +116,8 @@ class Connectable {
     _init (config?: Connectable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Album_ConstructProps extends Node_ConstructProps {
+interface Album_ConstructProps extends Node_ConstructProps {
+    /* Constructor properties of GFBGraph-0.3.GFBGraph.Album */
     count?: number
     cover_photo?: string
     description?: string
@@ -127,10 +134,10 @@ class Album {
     id: string
     link: string
     updated_time: string
-    /* Fields of GFBGraph-0.3.GFBGraph.Album */
-    parent: Node
+    /* Fields of GFBGraph-0.3.GFBGraph.Node */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GFBGraph-0.3.GFBGraph.Album */
     get_count(): number
     get_cover_photo_id(): string
@@ -216,17 +223,18 @@ class Album {
     _init (config?: Album_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Album
+    /* Function overloads */
+    static new(): Album
     static new_from_id(authorizer: Authorizer, id: string): Album
+    /* Function overloads */
     static new_from_id(authorizer: Authorizer, id: string, node_type: GObject.Type): Album
     static $gtype: GObject.Type
 }
-export interface GoaAuthorizer_ConstructProps extends GObject.Object_ConstructProps {
+interface GoaAuthorizer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class GoaAuthorizer {
-    /* Fields of GFBGraph-0.3.GFBGraph.GoaAuthorizer */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -278,7 +286,8 @@ class GoaAuthorizer {
     _init (config?: GoaAuthorizer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Node_ConstructProps extends GObject.Object_ConstructProps {
+interface Node_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GFBGraph-0.3.GFBGraph.Node */
     created_time?: string
     id?: string
     link?: string
@@ -290,10 +299,8 @@ class Node {
     id: string
     link: string
     updated_time: string
-    /* Fields of GFBGraph-0.3.GFBGraph.Node */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GFBGraph-0.3.GFBGraph.Node */
     append_connection(connect_node: Node, authorizer: Authorizer): boolean
     get_connection_nodes(node_type: GObject.Type, authorizer: Authorizer): Node[]
@@ -359,7 +366,8 @@ class Node {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface Photo_ConstructProps extends Node_ConstructProps {
+interface Photo_ConstructProps extends Node_ConstructProps {
+    /* Constructor properties of GFBGraph-0.3.GFBGraph.Photo */
     height?: number
     images?: object
     name?: string
@@ -378,10 +386,10 @@ class Photo {
     id: string
     link: string
     updated_time: string
-    /* Fields of GFBGraph-0.3.GFBGraph.Photo */
-    parent: Node
+    /* Fields of GFBGraph-0.3.GFBGraph.Node */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GFBGraph-0.3.GFBGraph.Photo */
     download_default_size(authorizer: Authorizer): Gio.InputStream
     get_default_height(): number
@@ -445,9 +453,11 @@ class Photo {
     vfunc_deserialize_property(property_name: string, pspec: GObject.ParamSpec, property_node: Json.Node): [ /* returnType */ boolean, /* value */ any ]
     vfunc_find_property(name: string): GObject.ParamSpec | null
     vfunc_get_property(pspec: GObject.ParamSpec): /* value */ any
+    /* Function overloads */
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     vfunc_serialize_property(property_name: string, value: any, pspec: GObject.ParamSpec): Json.Node
     vfunc_set_property(pspec: GObject.ParamSpec, value: any): void
+    /* Function overloads */
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -488,20 +498,22 @@ class Photo {
     _init (config?: Photo_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Photo
+    /* Function overloads */
+    static new(): Photo
     static new_from_id(authorizer: Authorizer, id: string): Photo
+    /* Function overloads */
     static new_from_id(authorizer: Authorizer, id: string, node_type: GObject.Type): Photo
     static $gtype: GObject.Type
 }
-export interface SimpleAuthorizer_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleAuthorizer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GFBGraph-0.3.GFBGraph.SimpleAuthorizer */
     access_token?: string
 }
 class SimpleAuthorizer {
     /* Properties of GFBGraph-0.3.GFBGraph.SimpleAuthorizer */
     access_token: string
-    /* Fields of GFBGraph-0.3.GFBGraph.SimpleAuthorizer */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -557,7 +569,8 @@ class SimpleAuthorizer {
     static new(access_token: string): SimpleAuthorizer
     static $gtype: GObject.Type
 }
-export interface User_ConstructProps extends Node_ConstructProps {
+interface User_ConstructProps extends Node_ConstructProps {
+    /* Constructor properties of GFBGraph-0.3.GFBGraph.User */
     email?: string
     name?: string
 }
@@ -570,10 +583,10 @@ class User {
     id: string
     link: string
     updated_time: string
-    /* Fields of GFBGraph-0.3.GFBGraph.User */
-    parent: Node
+    /* Fields of GFBGraph-0.3.GFBGraph.Node */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GFBGraph-0.3.GFBGraph.User */
     get_albums(authorizer: Authorizer): Album[]
     get_albums_async(authorizer: Authorizer, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -645,7 +658,10 @@ class User {
     _init (config?: User_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): User
+    /* Function overloads */
+    static new(): User
     static new_from_id(authorizer: Authorizer, id: string): User
+    /* Function overloads */
     static new_from_id(authorizer: Authorizer, id: string, node_type: GObject.Type): User
     static get_me(authorizer: Authorizer): User
     static get_me_async(authorizer: Authorizer, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -654,7 +670,7 @@ class User {
 }
 abstract class AlbumClass {
     /* Fields of GFBGraph-0.3.GFBGraph.AlbumClass */
-    parent_class: NodeClass
+    readonly parent_class: NodeClass
     static name: string
 }
 class AlbumPrivate {
@@ -662,23 +678,23 @@ class AlbumPrivate {
 }
 abstract class AuthorizerInterface {
     /* Fields of GFBGraph-0.3.GFBGraph.AuthorizerInterface */
-    parent: GObject.TypeInterface
-    process_call: (iface: Authorizer, call: Rest.ProxyCall) => void
-    process_message: (iface: Authorizer, message: Soup.Message) => void
-    refresh_authorization: (iface: Authorizer, cancellable?: Gio.Cancellable | null) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly process_call: (iface: Authorizer, call: Rest.ProxyCall) => void
+    readonly process_message: (iface: Authorizer, message: Soup.Message) => void
+    readonly refresh_authorization: (iface: Authorizer, cancellable?: Gio.Cancellable | null) => boolean
     static name: string
 }
 abstract class ConnectableInterface {
     /* Fields of GFBGraph-0.3.GFBGraph.ConnectableInterface */
-    parent: GObject.TypeInterface
-    connections: GLib.HashTable
-    get_connection_post_params: (self: Connectable, node_type: GObject.Type) => GLib.HashTable
-    parse_connected_data: (self: Connectable, payload: string) => Node[]
+    readonly parent: GObject.TypeInterface
+    readonly connections: GLib.HashTable
+    readonly get_connection_post_params: (self: Connectable, node_type: GObject.Type) => GLib.HashTable
+    readonly parse_connected_data: (self: Connectable, payload: string) => Node[]
     static name: string
 }
 abstract class GoaAuthorizerClass {
     /* Fields of GFBGraph-0.3.GFBGraph.GoaAuthorizerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class GoaAuthorizerPrivate {
@@ -686,7 +702,7 @@ class GoaAuthorizerPrivate {
 }
 abstract class NodeClass {
     /* Fields of GFBGraph-0.3.GFBGraph.NodeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class NodePrivate {
@@ -694,14 +710,14 @@ class NodePrivate {
 }
 abstract class PhotoClass {
     /* Fields of GFBGraph-0.3.GFBGraph.PhotoClass */
-    parent_class: NodeClass
+    readonly parent_class: NodeClass
     static name: string
 }
 class PhotoImage {
     /* Fields of GFBGraph-0.3.GFBGraph.PhotoImage */
-    width: number
-    height: number
-    source: string
+    readonly width: number
+    readonly height: number
+    readonly source: string
     static name: string
 }
 class PhotoPrivate {
@@ -709,7 +725,7 @@ class PhotoPrivate {
 }
 abstract class SimpleAuthorizerClass {
     /* Fields of GFBGraph-0.3.GFBGraph.SimpleAuthorizerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SimpleAuthorizerPrivate {
@@ -717,7 +733,7 @@ class SimpleAuthorizerPrivate {
 }
 abstract class UserClass {
     /* Fields of GFBGraph-0.3.GFBGraph.UserClass */
-    parent_class: NodeClass
+    readonly parent_class: NodeClass
     static name: string
 }
 class UserPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Graphene-1.0
  */
@@ -46,11 +52,11 @@ enum RayIntersectionKind {
     ENTER,
     LEAVE,
 }
-export const PI: number
-export const PI_2: number
-export const VEC2_LEN: number
-export const VEC3_LEN: number
-export const VEC4_LEN: number
+const PI: number
+const PI_2: number
+const VEC2_LEN: number
+const VEC3_LEN: number
+const VEC4_LEN: number
 function box_empty(): Box
 function box_infinite(): Box
 function box_minus_one(): Box
@@ -246,8 +252,8 @@ class Plane {
 }
 class Point {
     /* Fields of Graphene-1.0.Graphene.Point */
-    x: number
-    y: number
+    readonly x: number
+    readonly y: number
     /* Methods of Graphene-1.0.Graphene.Point */
     distance(b: Point): [ /* returnType */ number, /* d_x */ number | null, /* d_y */ number | null ]
     equal(b: Point): boolean
@@ -265,9 +271,9 @@ class Point {
 }
 class Point3D {
     /* Fields of Graphene-1.0.Graphene.Point3D */
-    x: number
-    y: number
-    z: number
+    readonly x: number
+    readonly y: number
+    readonly z: number
     /* Methods of Graphene-1.0.Graphene.Point3D */
     cross(b: Point3D): /* res */ Point3D
     distance(b: Point3D): [ /* returnType */ number, /* delta */ Vec3 | null ]
@@ -356,8 +362,8 @@ class Ray {
 }
 class Rect {
     /* Fields of Graphene-1.0.Graphene.Rect */
-    origin: Point
-    size: Size
+    readonly origin: Point
+    readonly size: Size
     /* Methods of Graphene-1.0.Graphene.Rect */
     contains_point(p: Point): boolean
     contains_rect(b: Rect): boolean
@@ -403,8 +409,8 @@ class Simd4X4F {
 }
 class Size {
     /* Fields of Graphene-1.0.Graphene.Size */
-    width: number
-    height: number
+    readonly width: number
+    readonly height: number
     /* Methods of Graphene-1.0.Graphene.Size */
     equal(b: Size): boolean
     free(): void

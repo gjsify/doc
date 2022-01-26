@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Amtk-5
  */
@@ -43,14 +49,11 @@ function utils_bind_g_action_to_gtk_action(g_action_map: Gio.ActionMap, detailed
 function utils_create_gtk_action(g_action_map: Gio.ActionMap, detailed_g_action_name_with_prefix: string, gtk_action_group: Gtk.ActionGroup, gtk_action_name: string): void
 function utils_recent_chooser_menu_get_item_uri(menu: Gtk.RecentChooserMenu, item: Gtk.MenuItem): string
 function utils_remove_mnemonic(str: string): string
-export interface ActionInfoCentralStore_ConstructProps extends GObject.Object_ConstructProps {
+interface ActionInfoCentralStore_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ActionInfoCentralStore {
-    /* Fields of Amtk-5.Amtk.ActionInfoCentralStore */
-    parent: GObject.Object
-    priv: ActionInfoCentralStorePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Amtk-5.Amtk.ActionInfoCentralStore */
     lookup(action_name: string): ActionInfo
     /* Methods of GObject-2.0.GObject.Object */
@@ -98,14 +101,11 @@ class ActionInfoCentralStore {
     static get_singleton(): ActionInfoCentralStore
     static $gtype: GObject.Type
 }
-export interface ActionInfoStore_ConstructProps extends GObject.Object_ConstructProps {
+interface ActionInfoStore_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ActionInfoStore {
-    /* Fields of Amtk-5.Amtk.ActionInfoStore */
-    parent: GObject.Object
-    priv: ActionInfoStorePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Amtk-5.Amtk.ActionInfoStore */
     add(info: ActionInfo): void
     add_entries(entries: ActionInfoEntry[], translation_domain?: string | null): void
@@ -157,18 +157,16 @@ class ActionInfoStore {
     static new(): ActionInfoStore
     static $gtype: GObject.Type
 }
-export interface ApplicationWindow_ConstructProps extends GObject.Object_ConstructProps {
+interface ApplicationWindow_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Amtk-5.Amtk.ApplicationWindow */
     application_window?: Gtk.ApplicationWindow
     statusbar?: Gtk.Statusbar
 }
 class ApplicationWindow {
     /* Properties of Amtk-5.Amtk.ApplicationWindow */
     statusbar: Gtk.Statusbar
-    /* Fields of Amtk-5.Amtk.ApplicationWindow */
-    parent: GObject.Object
-    priv: ApplicationWindowPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Amtk-5.Amtk.ApplicationWindow */
     connect_menu_to_statusbar(menu_shell: Gtk.MenuShell): void
     connect_recent_chooser_menu_to_statusbar(menu: Gtk.RecentChooserMenu): void
@@ -224,18 +222,16 @@ class ApplicationWindow {
     static get_from_gtk_application_window(gtk_window: Gtk.ApplicationWindow): ApplicationWindow
     static $gtype: GObject.Type
 }
-export interface Factory_ConstructProps extends GObject.Object_ConstructProps {
+interface Factory_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Amtk-5.Amtk.Factory */
     application?: Gtk.Application
     default_flags?: FactoryFlags
 }
 class Factory {
     /* Properties of Amtk-5.Amtk.Factory */
     default_flags: FactoryFlags
-    /* Fields of Amtk-5.Amtk.Factory */
-    parent: GObject.Object
-    priv: FactoryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Amtk-5.Amtk.Factory */
     create_check_menu_item(action_name: string): Gtk.Widget
     create_check_menu_item_full(action_name: string, flags: FactoryFlags): Gtk.Widget
@@ -302,15 +298,13 @@ class Factory {
     static new_with_default_application(): Factory
     static $gtype: GObject.Type
 }
-export interface MenuShell_ConstructProps extends GObject.Object_ConstructProps {
+interface MenuShell_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Amtk-5.Amtk.MenuShell */
     menu_shell?: Gtk.MenuShell
 }
 class MenuShell {
-    /* Fields of Amtk-5.Amtk.MenuShell */
-    parent: GObject.Object
-    priv: MenuShellPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Amtk-5.Amtk.MenuShell */
     get_menu_shell(): Gtk.MenuShell
     /* Methods of GObject-2.0.GObject.Object */
@@ -394,8 +388,8 @@ class ActionInfo {
 }
 abstract class ActionInfoCentralStoreClass {
     /* Fields of Amtk-5.Amtk.ActionInfoCentralStoreClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class ActionInfoCentralStorePrivate {
@@ -403,17 +397,17 @@ class ActionInfoCentralStorePrivate {
 }
 class ActionInfoEntry {
     /* Fields of Amtk-5.Amtk.ActionInfoEntry */
-    action_name: string
-    icon_name: string
-    label: string
-    accel: string
-    tooltip: string
+    readonly action_name: string
+    readonly icon_name: string
+    readonly label: string
+    readonly accel: string
+    readonly tooltip: string
     static name: string
 }
 abstract class ActionInfoStoreClass {
     /* Fields of Amtk-5.Amtk.ActionInfoStoreClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class ActionInfoStorePrivate {
@@ -421,8 +415,8 @@ class ActionInfoStorePrivate {
 }
 abstract class ApplicationWindowClass {
     /* Fields of Amtk-5.Amtk.ApplicationWindowClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class ApplicationWindowPrivate {
@@ -430,8 +424,8 @@ class ApplicationWindowPrivate {
 }
 abstract class FactoryClass {
     /* Fields of Amtk-5.Amtk.FactoryClass */
-    parent_class: GObject.ObjectClass
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly padding: object[]
     static name: string
 }
 class FactoryPrivate {
@@ -439,10 +433,10 @@ class FactoryPrivate {
 }
 abstract class MenuShellClass {
     /* Fields of Amtk-5.Amtk.MenuShellClass */
-    parent_class: GObject.ObjectClass
-    menu_item_selected: (amtk_menu_shell: MenuShell, menu_item: Gtk.MenuItem) => void
-    menu_item_deselected: (amtk_menu_shell: MenuShell, menu_item: Gtk.MenuItem) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly menu_item_selected: (amtk_menu_shell: MenuShell, menu_item: Gtk.MenuItem) => void
+    readonly menu_item_deselected: (amtk_menu_shell: MenuShell, menu_item: Gtk.MenuItem) => void
+    readonly padding: object[]
     static name: string
 }
 class MenuShellPrivate {

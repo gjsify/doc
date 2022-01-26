@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Libmsi-1.0
  */
@@ -103,17 +109,18 @@ enum DbFlags {
     TRANSACT,
     PATCH,
 }
-export const NULL_INT: number
+const NULL_INT: number
 function db_error_quark(): GLib.Quark
 function result_error_quark(): GLib.Quark
-export interface Database_ConstructProps extends GObject.Object_ConstructProps {
+interface Database_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Libmsi-1.0.Libmsi.Database */
     flags?: DbFlags
     outpath?: string
     path?: string
 }
 class Database {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libmsi-1.0.Libmsi.Database */
     apply_transform(file: string): boolean
     commit(): boolean
@@ -168,13 +175,14 @@ class Database {
     static new(path: string, flags: number, persist?: string | null): Database
     static $gtype: GObject.Type
 }
-export interface Query_ConstructProps extends GObject.Object_ConstructProps {
+interface Query_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Libmsi-1.0.Libmsi.Query */
     database?: Database
     query?: string
 }
 class Query {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libmsi-1.0.Libmsi.Query */
     close(): boolean
     execute(rec?: Record | null): boolean
@@ -226,12 +234,13 @@ class Query {
     static new(database: Database, query: string): Query
     static $gtype: GObject.Type
 }
-export interface Record_ConstructProps extends GObject.Object_ConstructProps {
+interface Record_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Libmsi-1.0.Libmsi.Record */
     count?: number
 }
 class Record {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libmsi-1.0.Libmsi.Record */
     clear(): boolean
     get_field_count(): number
@@ -288,13 +297,14 @@ class Record {
     static new(count: number): Record
     static $gtype: GObject.Type
 }
-export interface SummaryInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface SummaryInfo_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Libmsi-1.0.Libmsi.SummaryInfo */
     database?: Database
     update_count?: number
 }
 class SummaryInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libmsi-1.0.Libmsi.SummaryInfo */
     get_filetime(prop: Property): number
     get_int(prop: Property): number
@@ -353,22 +363,22 @@ class SummaryInfo {
 }
 abstract class DatabaseClass {
     /* Fields of Libmsi-1.0.Libmsi.DatabaseClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class QueryClass {
     /* Fields of Libmsi-1.0.Libmsi.QueryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RecordClass {
     /* Fields of Libmsi-1.0.Libmsi.RecordClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SummaryInfoClass {
     /* Fields of Libmsi-1.0.Libmsi.SummaryInfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

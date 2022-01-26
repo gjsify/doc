@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PackageKitPlugin-1.0
  */
@@ -61,9 +67,9 @@ enum TransactionState {
     FINISHED,
     UNKNOWN,
 }
-export const BACKEND_PERCENTAGE_INVALID: number
-export const TRANSACTION_ALL_BACKEND_SIGNALS: number
-export const TRANSACTION_NO_BACKEND_SIGNALS: number
+const BACKEND_PERCENTAGE_INVALID: number
+const TRANSACTION_ALL_BACKEND_SIGNALS: number
+const TRANSACTION_NO_BACKEND_SIGNALS: number
 function directory_remove_contents(directory: string): boolean
 function get_resource(): Gio.Resource
 function hint_enum_from_string(hint: string): HintEnum
@@ -96,14 +102,11 @@ interface PluginGetDescFunc {
 interface PluginTransactionFunc {
     (plugin: Plugin, transaction: Transaction): void
 }
-export interface Backend_ConstructProps extends GObject.Object_ConstructProps {
+interface Backend_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Backend {
-    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.Backend */
-    parent: GObject.Object
-    priv: BackendPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitPlugin-1.0.PackageKitPlugin.Backend */
     accept_eula(eula_id: string): void
     cancel(job: BackendJob): void
@@ -206,14 +209,11 @@ class Backend {
     static initialize(conf: GLib.KeyFile, backend: Backend): void
     static $gtype: GObject.Type
 }
-export interface BackendJob_ConstructProps extends GObject.Object_ConstructProps {
+interface BackendJob_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BackendJob {
-    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.BackendJob */
-    parent: GObject.Object
-    priv: BackendJobPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitPlugin-1.0.PackageKitPlugin.BackendJob */
     category(parent_id: string, cat_id: string, name: string, summary: string, icon: string): void
     details(package_id: string, summary: string, license: string, group: PackageKitGlib.GroupEnum, description: string, url: string, size: number): void
@@ -326,14 +326,11 @@ class BackendJob {
     static new(conf: GLib.KeyFile): BackendJob
     static $gtype: GObject.Type
 }
-export interface Transaction_ConstructProps extends GObject.Object_ConstructProps {
+interface Transaction_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Transaction {
-    /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.Transaction */
-    parent: GObject.Object
-    priv: TransactionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PackageKitPlugin-1.0.PackageKitPlugin.Transaction */
     add_supported_content_type(mime_type: string): void
     cancel_bg(): void
@@ -412,12 +409,12 @@ class Transaction {
 }
 abstract class BackendClass {
     /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.BackendClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class BackendJobClass {
     /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.BackendJobClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class BackendJobPrivate {
@@ -428,9 +425,9 @@ class BackendPrivate {
 }
 class Plugin {
     /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.Plugin */
-    backend: Backend
-    job: BackendJob
-    priv: PluginPrivate
+    readonly backend: Backend
+    readonly job: BackendJob
+    readonly priv: PluginPrivate
     /* Methods of PackageKitPlugin-1.0.PackageKitPlugin.Plugin */
     destroy(): void
     initialize(): void
@@ -450,7 +447,7 @@ class PluginPrivate {
 }
 abstract class TransactionClass {
     /* Fields of PackageKitPlugin-1.0.PackageKitPlugin.TransactionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class TransactionPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Unity-7.0
  */
@@ -136,7 +142,7 @@ enum AggregatorScopeMergeMode {
     CATEGORY_ID,
     OWNER_SCOPE,
 }
-export const SCOPE_API_VERSION: number
+const SCOPE_API_VERSION: number
 function category_renderer_from_string(renderer_name: string): CategoryRenderer
 function category_renderer_to_string(val: CategoryRenderer): string
 function category_content_type_from_string(content_type: string): CategoryContentType
@@ -152,11 +158,11 @@ interface ScopeSearchBaseCallback {
 interface AbstractPreviewCallback {
     (previewer: ResultPreviewer, preview: AbstractPreview | null): void
 }
-export interface AppInfoManager_ConstructProps extends GObject.Object_ConstructProps {
+interface AppInfoManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AppInfoManager {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.AppInfoManager */
     lookup(id: string): Gio.AppInfo | null
     get_categories(id: string): string[] | null
@@ -215,7 +221,8 @@ class AppInfoManager {
     static get_default(): AppInfoManager
     static $gtype: GObject.Type
 }
-export interface AnnotatedIcon_ConstructProps extends GObject.Object_ConstructProps {
+interface AnnotatedIcon_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.AnnotatedIcon */
     icon?: Gio.Icon
     ribbon?: string
     category?: CategoryType
@@ -228,7 +235,7 @@ class AnnotatedIcon {
     category: CategoryType
     size_hint: IconSizeHint
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.AnnotatedIcon */
     set_colorize_rgba(r: number, g: number, b: number, a: number): void
     to_string(): string
@@ -293,14 +300,14 @@ class AnnotatedIcon {
     static new(base_icon: Gio.Icon): AnnotatedIcon
     static $gtype: GObject.Type
 }
-export interface Inspector_ConstructProps extends GObject.Object_ConstructProps {
+interface Inspector_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Inspector {
     /* Properties of Unity-7.0.Unity.Inspector */
     readonly unity_running: boolean
     readonly unity_bus_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.Inspector */
     get_unity_running(): boolean
     get_unity_bus_name(): string | null
@@ -353,7 +360,8 @@ class Inspector {
     static get_default(): Inspector
     static $gtype: GObject.Type
 }
-export interface LauncherEntry_ConstructProps extends GObject.Object_ConstructProps {
+interface LauncherEntry_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.LauncherEntry */
     app_uri?: string
     count?: number
     count_visible?: boolean
@@ -372,7 +380,7 @@ class LauncherEntry {
     urgent: boolean
     quicklist: Dbusmenu.Menuitem
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.LauncherEntry */
     get_app_uri(): string
     set_app_uri(value: string): void
@@ -456,11 +464,11 @@ class LauncherEntry {
     static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface LauncherFavorites_ConstructProps extends GObject.Object_ConstructProps {
+interface LauncherFavorites_ConstructProps extends GObject.Object_ConstructProps {
 }
 class LauncherFavorites {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.LauncherFavorites */
     has_app_info(appinfo: Gio.AppInfo): boolean
     has_app_id(app_id: string): boolean
@@ -516,11 +524,11 @@ class LauncherFavorites {
     static get_default(): LauncherFavorites
     static $gtype: GObject.Type
 }
-export interface MetadataProvider_ConstructProps extends GObject.Object_ConstructProps {
+interface MetadataProvider_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MetadataProvider {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -564,13 +572,14 @@ class MetadataProvider {
     _init (config?: MetadataProvider_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ProgressSourceProvider_ConstructProps extends MetadataProvider_ConstructProps {
+interface ProgressSourceProvider_ConstructProps extends MetadataProvider_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.ProgressSourceProvider */
     dbus_name?: string
     dbus_path?: string
 }
 class ProgressSourceProvider {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.ProgressSourceProvider */
     get_dbus_name(): string
     get_dbus_path(): string
@@ -619,7 +628,8 @@ class ProgressSourceProvider {
     static new(dbus_name: string, dbus_path: string): ProgressSourceProvider
     static $gtype: GObject.Type
 }
-export interface Category_ConstructProps extends GObject.Object_ConstructProps {
+interface Category_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.Category */
     id?: string
     name?: string
     icon_hint?: Gio.Icon
@@ -633,7 +643,7 @@ class Category {
     renderer_hint: string
     readonly renderer: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.Category */
     add_metadata_provider(provider: MetadataProvider): void
     get_id(): string
@@ -696,7 +706,8 @@ class Category {
     static new(id: string, name: string, icon_hint: Gio.Icon, renderer: CategoryRenderer): Category
     static $gtype: GObject.Type
 }
-export interface Filter_ConstructProps extends GObject.Object_ConstructProps {
+interface Filter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.Filter */
     id?: string
     display_name?: string
     icon_hint?: Gio.Icon
@@ -712,7 +723,7 @@ class Filter {
     collapsed: boolean
     filtering: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.Filter */
     get_id(): string
     get_display_name(): string
@@ -785,7 +796,8 @@ class Filter {
     static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface FilterOption_ConstructProps extends GObject.Object_ConstructProps {
+interface FilterOption_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.FilterOption */
     id?: string
     display_name?: string
     icon_hint?: Gio.Icon
@@ -795,7 +807,7 @@ class FilterOption {
     /* Properties of Unity-7.0.Unity.FilterOption */
     active: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.FilterOption */
     get_id(): string
     get_display_name(): string
@@ -849,7 +861,8 @@ class FilterOption {
     static new(id: string, display_name: string, icon_hint: Gio.Icon | null, active: boolean): FilterOption
     static $gtype: GObject.Type
 }
-export interface OptionsFilter_ConstructProps extends Filter_ConstructProps {
+interface OptionsFilter_ConstructProps extends Filter_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.OptionsFilter */
     sort_type?: OptionsFilterSortType
     show_all_button?: boolean
 }
@@ -862,10 +875,8 @@ class OptionsFilter {
     visible: boolean
     collapsed: boolean
     filtering: boolean
-    /* Fields of Unity-7.0.Unity.OptionsFilter */
-    options: FilterOption[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.OptionsFilter */
     add_option(id: string, display_name: string, icon_hint?: Gio.Icon | null): FilterOption
     get_option(id: string): FilterOption | null
@@ -946,7 +957,7 @@ class OptionsFilter {
     static new(): OptionsFilter
     static $gtype: GObject.Type
 }
-export interface RadioOptionFilter_ConstructProps extends OptionsFilter_ConstructProps {
+interface RadioOptionFilter_ConstructProps extends OptionsFilter_ConstructProps {
 }
 class RadioOptionFilter {
     /* Properties of Unity-7.0.Unity.OptionsFilter */
@@ -958,9 +969,9 @@ class RadioOptionFilter {
     collapsed: boolean
     filtering: boolean
     /* Fields of Unity-7.0.Unity.OptionsFilter */
-    options: FilterOption[]
+    readonly options: FilterOption[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.RadioOptionFilter */
     get_active_option(): FilterOption | null
     /* Methods of Unity-7.0.Unity.OptionsFilter */
@@ -1041,10 +1052,11 @@ class RadioOptionFilter {
     _init (config?: RadioOptionFilter_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string, display_name: string, icon_hint: Gio.Icon | null, collapsed: boolean): RadioOptionFilter
+    /* Function overloads */
     static new(): RadioOptionFilter
     static $gtype: GObject.Type
 }
-export interface CheckOptionFilter_ConstructProps extends OptionsFilter_ConstructProps {
+interface CheckOptionFilter_ConstructProps extends OptionsFilter_ConstructProps {
 }
 class CheckOptionFilter {
     /* Properties of Unity-7.0.Unity.OptionsFilter */
@@ -1056,9 +1068,9 @@ class CheckOptionFilter {
     collapsed: boolean
     filtering: boolean
     /* Fields of Unity-7.0.Unity.OptionsFilter */
-    options: FilterOption[]
+    readonly options: FilterOption[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.OptionsFilter */
     add_option(id: string, display_name: string, icon_hint?: Gio.Icon | null): FilterOption
     get_option(id: string): FilterOption | null
@@ -1137,10 +1149,11 @@ class CheckOptionFilter {
     _init (config?: CheckOptionFilter_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string, display_name: string, icon_hint: Gio.Icon | null, collapsed: boolean): CheckOptionFilter
+    /* Function overloads */
     static new(): CheckOptionFilter
     static $gtype: GObject.Type
 }
-export interface CheckOptionFilterCompact_ConstructProps extends OptionsFilter_ConstructProps {
+interface CheckOptionFilterCompact_ConstructProps extends OptionsFilter_ConstructProps {
 }
 class CheckOptionFilterCompact {
     /* Properties of Unity-7.0.Unity.OptionsFilter */
@@ -1152,9 +1165,9 @@ class CheckOptionFilterCompact {
     collapsed: boolean
     filtering: boolean
     /* Fields of Unity-7.0.Unity.OptionsFilter */
-    options: FilterOption[]
+    readonly options: FilterOption[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.OptionsFilter */
     add_option(id: string, display_name: string, icon_hint?: Gio.Icon | null): FilterOption
     get_option(id: string): FilterOption | null
@@ -1233,10 +1246,12 @@ class CheckOptionFilterCompact {
     _init (config?: CheckOptionFilterCompact_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string, display_name: string, icon_hint: Gio.Icon | null, collapsed: boolean): CheckOptionFilterCompact
+    /* Function overloads */
     static new(): CheckOptionFilterCompact
     static $gtype: GObject.Type
 }
-export interface RatingsFilter_ConstructProps extends Filter_ConstructProps {
+interface RatingsFilter_ConstructProps extends Filter_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.RatingsFilter */
     rating?: number
 }
 class RatingsFilter {
@@ -1248,7 +1263,7 @@ class RatingsFilter {
     collapsed: boolean
     filtering: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.RatingsFilter */
     get_rating(): number
     /* Methods of Unity-7.0.Unity.Filter */
@@ -1321,7 +1336,7 @@ class RatingsFilter {
     static new(id: string, display_name: string, icon_hint: Gio.Icon | null, collapsed: boolean): RatingsFilter
     static $gtype: GObject.Type
 }
-export interface MultiRangeFilter_ConstructProps extends OptionsFilter_ConstructProps {
+interface MultiRangeFilter_ConstructProps extends OptionsFilter_ConstructProps {
 }
 class MultiRangeFilter {
     /* Properties of Unity-7.0.Unity.OptionsFilter */
@@ -1333,9 +1348,9 @@ class MultiRangeFilter {
     collapsed: boolean
     filtering: boolean
     /* Fields of Unity-7.0.Unity.OptionsFilter */
-    options: FilterOption[]
+    readonly options: FilterOption[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.MultiRangeFilter */
     get_first_active(): FilterOption | null
     get_last_active(): FilterOption | null
@@ -1417,10 +1432,12 @@ class MultiRangeFilter {
     _init (config?: MultiRangeFilter_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string, display_name: string, icon_hint: Gio.Icon | null, collapsed: boolean): MultiRangeFilter
+    /* Function overloads */
     static new(): MultiRangeFilter
     static $gtype: GObject.Type
 }
-export interface PreferencesManager_ConstructProps extends GObject.Object_ConstructProps {
+interface PreferencesManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.PreferencesManager */
     remote_content_search?: PreferencesManagerRemoteContent
     always_search?: string[]
     home_lens_priority?: string[]
@@ -1435,7 +1452,7 @@ class PreferencesManager {
     home_lens_default_view: string[]
     disabled_scopes: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.PreferencesManager */
     get_remote_content_search(): PreferencesManagerRemoteContent
     set_remote_content_search(value: PreferencesManagerRemoteContent): void
@@ -1502,7 +1519,8 @@ class PreferencesManager {
     static get_default(): PreferencesManager
     static $gtype: GObject.Type
 }
-export interface DeprecatedScopeSearch_ConstructProps extends ScopeSearchBase_ConstructProps {
+interface DeprecatedScopeSearch_ConstructProps extends ScopeSearchBase_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.DeprecatedScopeSearch */
     channel_id?: string
     hints?: GLib.HashTable
     results_model?: Dee.SerializableModel
@@ -1513,9 +1531,9 @@ class DeprecatedScopeSearch {
     readonly search_string: string
     readonly search_type: SearchType
     /* Fields of Unity-7.0.Unity.ScopeSearchBase */
-    search_context: SearchContext | null
+    readonly search_context: SearchContext | null
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.DeprecatedScopeSearch */
     set_reply_hint(key: string, variant: GLib.Variant): void
     get_filter(filter_id: string): Filter | null
@@ -1585,16 +1603,16 @@ class DeprecatedScopeSearch {
     _init (config?: DeprecatedScopeSearch_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AggregatedScopeSearch_ConstructProps extends DeprecatedScopeSearch_ConstructProps {
+interface AggregatedScopeSearch_ConstructProps extends DeprecatedScopeSearch_ConstructProps {
 }
 class AggregatedScopeSearch {
     /* Properties of Unity-7.0.Unity.DeprecatedScopeSearch */
     readonly search_string: string
     readonly search_type: SearchType
     /* Fields of Unity-7.0.Unity.ScopeSearchBase */
-    search_context: SearchContext | null
+    readonly search_context: SearchContext | null
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.AggregatedScopeSearch */
     search_scope(scope_id: string, search_string: string, search_type: SearchType, hints?: GLib.HashTable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     search_scope_finish(_res_: Gio.AsyncResult): GLib.HashTable
@@ -1679,7 +1697,8 @@ class AggregatedScopeSearch {
     static new(owner: AggregatorScope, channel_id: string, hints: GLib.HashTable, results_model: Dee.SerializableModel): AggregatedScopeSearch
     static $gtype: GObject.Type
 }
-export interface Preview_ConstructProps extends AbstractPreview_ConstructProps {
+interface Preview_ConstructProps extends AbstractPreview_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.Preview */
     title?: string
     subtitle?: string
     description_markup?: string
@@ -1694,7 +1713,7 @@ class Preview {
     image_source_uri: string
     image: Gio.Icon
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.Preview */
     add_action(action: PreviewAction): void
     add_info(info_hint: InfoHint): void
@@ -1709,7 +1728,7 @@ class Preview {
     get_image(): Gio.Icon | null
     set_image(value?: Gio.Icon | null): void
     /* Methods of Unity-7.0.Unity.AbstractPreview */
-    serialize_as(serialization_type: SerializationType): Uint8Array[]
+    serialize_as(serialization_type: SerializationType): Uint8Array
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1738,7 +1757,7 @@ class Preview {
     /* Virtual methods of Unity-7.0.Unity.Preview */
     vfunc_serialize(): GLib.Variant
     /* Virtual methods of Unity-7.0.Unity.AbstractPreview */
-    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array[]
+    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1773,7 +1792,8 @@ class Preview {
     static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface PreviewAction_ConstructProps extends GObject.Object_ConstructProps {
+interface PreviewAction_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.PreviewAction */
     id?: string
     display_name?: string
     extra_text?: string
@@ -1785,7 +1805,7 @@ class PreviewAction {
     extra_text: string
     readonly hints: GLib.HashTable
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.PreviewAction */
     get_id(): string
     get_display_name(): string
@@ -1856,7 +1876,8 @@ class PreviewAction {
     static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface InfoHint_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface InfoHint_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.InfoHint */
     id?: string
     display_name?: string
     icon_hint?: Gio.Icon
@@ -1864,7 +1885,7 @@ export interface InfoHint_ConstructProps extends GObject.InitiallyUnowned_Constr
 }
 class InfoHint {
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.InfoHint */
     get_id(): string
     get_display_name(): string
@@ -1916,7 +1937,7 @@ class InfoHint {
     static with_variant(id: string, display_name: string, icon_hint: Gio.Icon | null, data: GLib.Variant): InfoHint
     static $gtype: GObject.Type
 }
-export interface GenericPreview_ConstructProps extends Preview_ConstructProps {
+interface GenericPreview_ConstructProps extends Preview_ConstructProps {
 }
 class GenericPreview {
     /* Properties of Unity-7.0.Unity.Preview */
@@ -1926,7 +1947,7 @@ class GenericPreview {
     image_source_uri: string
     image: Gio.Icon
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.Preview */
     add_action(action: PreviewAction): void
     add_info(info_hint: InfoHint): void
@@ -1941,7 +1962,7 @@ class GenericPreview {
     get_image(): Gio.Icon | null
     set_image(value?: Gio.Icon | null): void
     /* Methods of Unity-7.0.Unity.AbstractPreview */
-    serialize_as(serialization_type: SerializationType): Uint8Array[]
+    serialize_as(serialization_type: SerializationType): Uint8Array
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1967,7 +1988,7 @@ class GenericPreview {
     /* Virtual methods of Unity-7.0.Unity.Preview */
     vfunc_serialize(): GLib.Variant
     /* Virtual methods of Unity-7.0.Unity.AbstractPreview */
-    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array[]
+    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2001,7 +2022,8 @@ class GenericPreview {
     static new(title: string, description: string, image?: Gio.Icon | null): GenericPreview
     static $gtype: GObject.Type
 }
-export interface ApplicationPreview_ConstructProps extends Preview_ConstructProps {
+interface ApplicationPreview_ConstructProps extends Preview_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.ApplicationPreview */
     app_icon?: Gio.Icon
     license?: string
     copyright?: string
@@ -2020,7 +2042,7 @@ class ApplicationPreview {
     image_source_uri: string
     image: Gio.Icon
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.ApplicationPreview */
     set_rating(rating: number, num_ratings: number): void
     get_app_icon(): Gio.Icon
@@ -2045,7 +2067,7 @@ class ApplicationPreview {
     get_image(): Gio.Icon | null
     set_image(value?: Gio.Icon | null): void
     /* Methods of Unity-7.0.Unity.AbstractPreview */
-    serialize_as(serialization_type: SerializationType): Uint8Array[]
+    serialize_as(serialization_type: SerializationType): Uint8Array
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2071,7 +2093,7 @@ class ApplicationPreview {
     /* Virtual methods of Unity-7.0.Unity.Preview */
     vfunc_serialize(): GLib.Variant
     /* Virtual methods of Unity-7.0.Unity.AbstractPreview */
-    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array[]
+    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2113,7 +2135,7 @@ class ApplicationPreview {
     static new(title: string, subtitle: string, description: string, icon?: Gio.Icon | null, screenshot?: Gio.Icon | null): ApplicationPreview
     static $gtype: GObject.Type
 }
-export interface MusicPreview_ConstructProps extends Preview_ConstructProps {
+interface MusicPreview_ConstructProps extends Preview_ConstructProps {
 }
 class MusicPreview {
     /* Properties of Unity-7.0.Unity.Preview */
@@ -2123,7 +2145,7 @@ class MusicPreview {
     image_source_uri: string
     image: Gio.Icon
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.MusicPreview */
     add_track(track: TrackMetadata): void
     /* Methods of Unity-7.0.Unity.Preview */
@@ -2140,7 +2162,7 @@ class MusicPreview {
     get_image(): Gio.Icon | null
     set_image(value?: Gio.Icon | null): void
     /* Methods of Unity-7.0.Unity.AbstractPreview */
-    serialize_as(serialization_type: SerializationType): Uint8Array[]
+    serialize_as(serialization_type: SerializationType): Uint8Array
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2166,7 +2188,7 @@ class MusicPreview {
     /* Virtual methods of Unity-7.0.Unity.Preview */
     vfunc_serialize(): GLib.Variant
     /* Virtual methods of Unity-7.0.Unity.AbstractPreview */
-    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array[]
+    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2200,7 +2222,8 @@ class MusicPreview {
     static new(title: string, subtitle: string, image?: Gio.Icon | null): MusicPreview
     static $gtype: GObject.Type
 }
-export interface PaymentPreview_ConstructProps extends Preview_ConstructProps {
+interface PaymentPreview_ConstructProps extends Preview_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.PaymentPreview */
     header?: string
     email?: string
     payment_method?: string
@@ -2223,7 +2246,7 @@ class PaymentPreview {
     image_source_uri: string
     image: Gio.Icon
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.PaymentPreview */
     get_header(): string
     set_header(value: string): void
@@ -2251,7 +2274,7 @@ class PaymentPreview {
     get_image(): Gio.Icon | null
     set_image(value?: Gio.Icon | null): void
     /* Methods of Unity-7.0.Unity.AbstractPreview */
-    serialize_as(serialization_type: SerializationType): Uint8Array[]
+    serialize_as(serialization_type: SerializationType): Uint8Array
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2277,7 +2300,7 @@ class PaymentPreview {
     /* Virtual methods of Unity-7.0.Unity.Preview */
     vfunc_serialize(): GLib.Variant
     /* Virtual methods of Unity-7.0.Unity.AbstractPreview */
-    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array[]
+    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2327,7 +2350,8 @@ class PaymentPreview {
     static for_error(title: string, subtitle: string, image?: Gio.Icon | null): PaymentPreview
     static $gtype: GObject.Type
 }
-export interface MoviePreview_ConstructProps extends Preview_ConstructProps {
+interface MoviePreview_ConstructProps extends Preview_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.MoviePreview */
     year?: string
 }
 class MoviePreview {
@@ -2340,7 +2364,7 @@ class MoviePreview {
     image_source_uri: string
     image: Gio.Icon
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.MoviePreview */
     set_rating(rating: number, num_ratings: number): void
     get_year(): string
@@ -2359,7 +2383,7 @@ class MoviePreview {
     get_image(): Gio.Icon | null
     set_image(value?: Gio.Icon | null): void
     /* Methods of Unity-7.0.Unity.AbstractPreview */
-    serialize_as(serialization_type: SerializationType): Uint8Array[]
+    serialize_as(serialization_type: SerializationType): Uint8Array
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2385,7 +2409,7 @@ class MoviePreview {
     /* Virtual methods of Unity-7.0.Unity.Preview */
     vfunc_serialize(): GLib.Variant
     /* Virtual methods of Unity-7.0.Unity.AbstractPreview */
-    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array[]
+    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2421,7 +2445,8 @@ class MoviePreview {
     static new(title: string, subtitle: string, description: string, image?: Gio.Icon | null): MoviePreview
     static $gtype: GObject.Type
 }
-export interface SocialPreview_ConstructProps extends Preview_ConstructProps {
+interface SocialPreview_ConstructProps extends Preview_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.SocialPreview */
     avatar?: Gio.Icon
     content?: string
     sender?: string
@@ -2438,7 +2463,7 @@ class SocialPreview {
     image_source_uri: string
     image: Gio.Icon
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.SocialPreview */
     add_comment(comment: SocialPreviewComment): void
     get_avatar(): Gio.Icon
@@ -2461,7 +2486,7 @@ class SocialPreview {
     get_image(): Gio.Icon | null
     set_image(value?: Gio.Icon | null): void
     /* Methods of Unity-7.0.Unity.AbstractPreview */
-    serialize_as(serialization_type: SerializationType): Uint8Array[]
+    serialize_as(serialization_type: SerializationType): Uint8Array
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2487,7 +2512,7 @@ class SocialPreview {
     /* Virtual methods of Unity-7.0.Unity.Preview */
     vfunc_serialize(): GLib.Variant
     /* Virtual methods of Unity-7.0.Unity.AbstractPreview */
-    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array[]
+    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2527,7 +2552,8 @@ class SocialPreview {
     static new(sender: string, subtitle: string, content: string, avatar?: Gio.Icon | null): SocialPreview
     static $gtype: GObject.Type
 }
-export interface SocialPreviewComment_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface SocialPreviewComment_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.SocialPreviewComment */
     id?: string
     name?: string
     text?: string
@@ -2535,7 +2561,7 @@ export interface SocialPreviewComment_ConstructProps extends GObject.InitiallyUn
 }
 class SocialPreviewComment {
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.SocialPreviewComment */
     get_id(): string
     get_name(): string
@@ -2586,7 +2612,8 @@ class SocialPreviewComment {
     static new(id: string, name: string, text: string, time: string): SocialPreviewComment
     static $gtype: GObject.Type
 }
-export interface ActivationResponse_ConstructProps extends GObject.Object_ConstructProps {
+interface ActivationResponse_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.ActivationResponse */
     handled?: HandledType
     goto_uri?: string
 }
@@ -2594,7 +2621,7 @@ class ActivationResponse {
     /* Properties of Unity-7.0.Unity.ActivationResponse */
     goto_uri: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.ActivationResponse */
     get_handled(): HandledType
     get_goto_uri(): string
@@ -2648,7 +2675,8 @@ class ActivationResponse {
     static with_preview(preview: Preview): ActivationResponse
     static $gtype: GObject.Type
 }
-export interface AggregatorActivation_ConstructProps extends GObject.Object_ConstructProps {
+interface AggregatorActivation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.AggregatorActivation */
     channel_id?: string
     scope_id?: string
     action_type?: number
@@ -2663,7 +2691,7 @@ class AggregatorActivation {
     scope_result: ScopeResult
     hints: GLib.HashTable
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.AggregatorActivation */
     get_channel_id(): string
     set_channel_id(value: string): void
@@ -2729,11 +2757,11 @@ class AggregatorActivation {
     static new(channel_id: string, scope_id: string, action_type: number, result?: ScopeResult | null): AggregatorActivation
     static $gtype: GObject.Type
 }
-export interface FilterSet_ConstructProps extends GObject.Object_ConstructProps {
+interface FilterSet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FilterSet {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.FilterSet */
     add(filter: Filter): void
     get_filter_by_id(filter_id: string): Filter | null
@@ -2787,11 +2815,11 @@ class FilterSet {
     static new(): FilterSet
     static $gtype: GObject.Type
 }
-export interface CategorySet_ConstructProps extends GObject.Object_ConstructProps {
+interface CategorySet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CategorySet {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.CategorySet */
     add(category: Category): void
     get_categories(): Category[]
@@ -2843,11 +2871,11 @@ class CategorySet {
     static new(): CategorySet
     static $gtype: GObject.Type
 }
-export interface Schema_ConstructProps extends GObject.Object_ConstructProps {
+interface Schema_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Schema {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.Schema */
     add_field(name: string, schema: string, type: SchemaFieldType): void
     get_fields(): SchemaFieldInfo[]
@@ -2899,11 +2927,11 @@ class Schema {
     static new(): Schema
     static $gtype: GObject.Type
 }
-export interface Cancellable_ConstructProps extends GObject.Object_ConstructProps {
+interface Cancellable_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Cancellable {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.Cancellable */
     cancel(): void
     is_cancelled(): boolean
@@ -2957,13 +2985,11 @@ class Cancellable {
     static create(): Cancellable
     static $gtype: GObject.Type
 }
-export interface ScopeSearchBase_ConstructProps extends GObject.Object_ConstructProps {
+interface ScopeSearchBase_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ScopeSearchBase {
-    /* Fields of Unity-7.0.Unity.ScopeSearchBase */
-    search_context: SearchContext | null
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.ScopeSearchBase */
     run(): void
     run_async(async_callback: ScopeSearchBaseCallback): void
@@ -3015,13 +3041,11 @@ class ScopeSearchBase {
     _init (config?: ScopeSearchBase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ResultSet_ConstructProps extends GObject.Object_ConstructProps {
+interface ResultSet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ResultSet {
-    /* Fields of Unity-7.0.Unity.ResultSet */
-    ttl: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.ResultSet */
     add_result(result: ScopeResult): void
     add_result_from_variant(variant: GLib.Variant): void
@@ -3073,13 +3097,13 @@ class ResultSet {
     _init (config?: ResultSet_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AbstractPreview_ConstructProps extends GObject.Object_ConstructProps {
+interface AbstractPreview_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AbstractPreview {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.AbstractPreview */
-    serialize_as(serialization_type: SerializationType): Uint8Array[]
+    serialize_as(serialization_type: SerializationType): Uint8Array
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3103,7 +3127,7 @@ class AbstractPreview {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of Unity-7.0.Unity.AbstractPreview */
-    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array[]
+    vfunc_serialize_as(serialization_type: SerializationType): Uint8Array
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -3125,15 +3149,11 @@ class AbstractPreview {
     _init (config?: AbstractPreview_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ResultPreviewer_ConstructProps extends GObject.Object_ConstructProps {
+interface ResultPreviewer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ResultPreviewer {
-    /* Fields of Unity-7.0.Unity.ResultPreviewer */
-    result: ScopeResult
-    metadata: SearchMetadata
-    cancellable: Cancellable
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.ResultPreviewer */
     run(): AbstractPreview | null
     run_async(async_callback: AbstractPreviewCallback): void
@@ -3185,7 +3205,7 @@ class ResultPreviewer {
     _init (config?: ResultPreviewer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SearchMetadata_ConstructProps extends GObject.Object_ConstructProps {
+interface SearchMetadata_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SearchMetadata {
     /* Properties of Unity-7.0.Unity.SearchMetadata */
@@ -3193,7 +3213,7 @@ class SearchMetadata {
     readonly form_factor: string
     readonly location: GeoCoordinate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.SearchMetadata */
     get_locale(): string | null
     get_form_factor(): string | null
@@ -3251,15 +3271,11 @@ class SearchMetadata {
     static create_from_variant(metadata: GLib.Variant): SearchMetadata
     static $gtype: GObject.Type
 }
-export interface GeoCoordinate_ConstructProps extends GObject.Object_ConstructProps {
+interface GeoCoordinate_ConstructProps extends GObject.Object_ConstructProps {
 }
 class GeoCoordinate {
-    /* Fields of Unity-7.0.Unity.GeoCoordinate */
-    latitude: number
-    longitude: number
-    altitude: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.GeoCoordinate */
     has_valid_altitude(): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -3308,11 +3324,11 @@ class GeoCoordinate {
     static with_altitude(latitude_: number, longitude_: number, altitude_: number): GeoCoordinate
     static $gtype: GObject.Type
 }
-export interface AbstractScope_ConstructProps extends GObject.Object_ConstructProps {
+interface AbstractScope_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AbstractScope {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.AbstractScope */
     create_search_for_query(search_context: SearchContext): ScopeSearchBase
     create_previewer(result: ScopeResult, metadata: SearchMetadata): ResultPreviewer
@@ -3383,12 +3399,13 @@ class AbstractScope {
     _init (config?: AbstractScope_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ScopeDBusConnector_ConstructProps extends GObject.Object_ConstructProps {
+interface ScopeDBusConnector_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.ScopeDBusConnector */
     scope?: AbstractScope
 }
 class ScopeDBusConnector {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.ScopeDBusConnector */
     export(): void
     unexport(): void
@@ -3440,7 +3457,8 @@ class ScopeDBusConnector {
     static quit(): void
     static $gtype: GObject.Type
 }
-export interface DeprecatedScopeBase_ConstructProps extends GObject.Object_ConstructProps {
+interface DeprecatedScopeBase_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.DeprecatedScopeBase */
     id?: string
     dbus_path?: string
     search_in_global?: boolean
@@ -3462,7 +3480,7 @@ class DeprecatedScopeBase {
     filters: FilterSet
     schema: Schema
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.DeprecatedScopeBase */
     export(): void
     unexport(): void
@@ -3543,7 +3561,7 @@ class DeprecatedScopeBase {
     _init (config?: DeprecatedScopeBase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeprecatedScope_ConstructProps extends DeprecatedScopeBase_ConstructProps {
+interface DeprecatedScope_ConstructProps extends DeprecatedScopeBase_ConstructProps {
 }
 class DeprecatedScope {
     /* Properties of Unity-7.0.Unity.DeprecatedScopeBase */
@@ -3555,7 +3573,7 @@ class DeprecatedScope {
     filters: FilterSet
     schema: Schema
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.DeprecatedScope */
     preview_result(result: ScopeResult, _callback_?: Gio.AsyncReadyCallback | null): void
     preview_result_finish(_res_: Gio.AsyncResult): Preview | null
@@ -3662,7 +3680,8 @@ class DeprecatedScope {
     static new(dbus_path_: string, id_: string): DeprecatedScope
     static $gtype: GObject.Type
 }
-export interface AggregatorScope_ConstructProps extends DeprecatedScopeBase_ConstructProps {
+interface AggregatorScope_ConstructProps extends DeprecatedScopeBase_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.AggregatorScope */
     merge_mode?: AggregatorScopeMergeMode
     proxy_filter_hints?: boolean
     automatic_flushing?: boolean
@@ -3681,7 +3700,7 @@ class AggregatorScope {
     filters: FilterSet
     schema: Schema
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.AggregatorScope */
     category_index_for_scope_id(scope_id: string): number
     add_sorter(category_index: number, field: string, flags: AggregatorScopeSortFlags): void
@@ -3788,7 +3807,8 @@ class AggregatorScope {
     _init (config?: AggregatorScope_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MasterScope_ConstructProps extends AggregatorScope_ConstructProps {
+interface MasterScope_ConstructProps extends AggregatorScope_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.MasterScope */
     no_content_hint?: string
 }
 class MasterScope {
@@ -3807,7 +3827,7 @@ class MasterScope {
     filters: FilterSet
     schema: Schema
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.MasterScope */
     get_no_content_hint(): string
     set_no_content_hint(value: string): void
@@ -3921,7 +3941,8 @@ class MasterScope {
     static new(dbus_path_: string, id_: string): MasterScope
     static $gtype: GObject.Type
 }
-export interface SimpleScope_ConstructProps extends AbstractScope_ConstructProps {
+interface SimpleScope_ConstructProps extends AbstractScope_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.SimpleScope */
     filter_set?: FilterSet
     category_set?: CategorySet
     schema?: Schema
@@ -3938,7 +3959,7 @@ class SimpleScope {
     group_name: string
     unique_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.SimpleScope */
     set_search_func(func: any): void
     set_search_async_func(func: any | null): void
@@ -4037,11 +4058,11 @@ class SimpleScope {
     static new(): SimpleScope
     static $gtype: GObject.Type
 }
-export interface ScopeLoader_ConstructProps extends GObject.Object_ConstructProps {
+interface ScopeLoader_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ScopeLoader {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.ScopeLoader */
     get_scopes(module_name: string, module_type?: string | null): AbstractScope[]
     export_scopes(scopes: AbstractScope[]): void
@@ -4096,7 +4117,8 @@ class ScopeLoader {
     static new(): ScopeLoader
     static $gtype: GObject.Type
 }
-export interface TrackMetadata_ConstructProps extends GObject.Object_ConstructProps {
+interface TrackMetadata_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.TrackMetadata */
     uri?: string
     track_no?: number
     artist?: string
@@ -4117,7 +4139,7 @@ class TrackMetadata {
     art_location: Gio.File
     art_icon: Gio.Icon
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.TrackMetadata */
     get_uri(): string
     set_uri(value: string): void
@@ -4197,7 +4219,8 @@ class TrackMetadata {
     static full(uri: string, track_no: number, title: string, artist: string, album: string, length: number): TrackMetadata
     static $gtype: GObject.Type
 }
-export interface Playlist_ConstructProps extends GObject.Object_ConstructProps {
+interface Playlist_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.Playlist */
     id?: string
     name?: string
     icon?: Gio.Icon
@@ -4213,7 +4236,7 @@ class Playlist {
     modification_date: GLib.DateTime
     last_play_date: GLib.DateTime
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.Playlist */
     get_id(): string
     get_name(): string
@@ -4281,7 +4304,8 @@ class Playlist {
     static new(id: string): Playlist
     static $gtype: GObject.Type
 }
-export interface MusicPlayer_ConstructProps extends GObject.Object_ConstructProps {
+interface MusicPlayer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unity-7.0.Unity.MusicPlayer */
     app_info?: Gio.AppInfo
     desktop_file_name?: string
     is_blacklisted?: boolean
@@ -4310,7 +4334,7 @@ class MusicPlayer {
     track_menu: Dbusmenu.Menuitem
     player_menu: Dbusmenu.Menuitem
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unity-7.0.Unity.MusicPlayer */
     export(): void
     unexport(): void
@@ -4457,7 +4481,7 @@ class LauncherFavoritesPrivate {
 }
 abstract class MetadataProviderClass {
     /* Fields of Unity-7.0.Unity.MetadataProviderClass */
-    update_hints: (self: MetadataProvider, hints: GLib.HashTable) => void
+    readonly update_hints: (self: MetadataProvider, hints: GLib.HashTable) => void
     static name: string
 }
 class MetadataProviderPrivate {
@@ -4477,8 +4501,8 @@ class CategoryPrivate {
 }
 abstract class FilterClass {
     /* Fields of Unity-7.0.Unity.FilterClass */
-    get_hints: (self: Filter) => GLib.HashTable
-    update: (self: Filter, properties: GLib.Variant) => void
+    readonly get_hints: (self: Filter) => GLib.HashTable
+    readonly update: (self: Filter, properties: GLib.Variant) => void
     static name: string
 }
 class FilterPrivate {
@@ -4546,7 +4570,7 @@ class AggregatedScopeSearchPrivate {
 }
 abstract class PreviewClass {
     /* Fields of Unity-7.0.Unity.PreviewClass */
-    create_raw: (self: Preview) => GObject.Object
+    readonly create_raw: (self: Preview) => GObject.Object
     static name: string
 }
 class PreviewPrivate {
@@ -4620,9 +4644,9 @@ class AggregatorActivationPrivate {
 }
 abstract class FilterSetClass {
     /* Fields of Unity-7.0.Unity.FilterSetClass */
-    add: (self: FilterSet, filter: Filter) => void
-    get_filter_by_id: (self: FilterSet, filter_id: string) => Filter | null
-    get_filters: (self: FilterSet) => Filter[]
+    readonly add: (self: FilterSet, filter: Filter) => void
+    readonly get_filter_by_id: (self: FilterSet, filter_id: string) => Filter | null
+    readonly get_filters: (self: FilterSet) => Filter[]
     static name: string
 }
 class FilterSetPrivate {
@@ -4630,8 +4654,8 @@ class FilterSetPrivate {
 }
 abstract class CategorySetClass {
     /* Fields of Unity-7.0.Unity.CategorySetClass */
-    add: (self: CategorySet, category: Category) => void
-    get_categories: (self: CategorySet) => Category[]
+    readonly add: (self: CategorySet, category: Category) => void
+    readonly get_categories: (self: CategorySet) => Category[]
     static name: string
 }
 class CategorySetPrivate {
@@ -4639,8 +4663,8 @@ class CategorySetPrivate {
 }
 abstract class SchemaClass {
     /* Fields of Unity-7.0.Unity.SchemaClass */
-    add_field: (self: Schema, name: string, schema: string, type: SchemaFieldType) => void
-    get_fields: (self: Schema) => SchemaFieldInfo[]
+    readonly add_field: (self: Schema, name: string, schema: string, type: SchemaFieldType) => void
+    readonly get_fields: (self: Schema) => SchemaFieldInfo[]
     static name: string
 }
 class SchemaPrivate {
@@ -4648,16 +4672,16 @@ class SchemaPrivate {
 }
 class SchemaFieldInfo {
     /* Fields of Unity-7.0.Unity.SchemaFieldInfo */
-    name: string
-    schema: string
-    type: SchemaFieldType
+    readonly name: string
+    readonly schema: string
+    readonly type: SchemaFieldType
     static name: string
 }
 abstract class CancellableClass {
     /* Fields of Unity-7.0.Unity.CancellableClass */
-    cancel: (self: Cancellable) => void
-    is_cancelled: (self: Cancellable) => boolean
-    get_gcancellable: (self: Cancellable) => Gio.Cancellable | null
+    readonly cancel: (self: Cancellable) => void
+    readonly is_cancelled: (self: Cancellable) => boolean
+    readonly get_gcancellable: (self: Cancellable) => Gio.Cancellable | null
     static name: string
 }
 class CancellablePrivate {
@@ -4665,9 +4689,9 @@ class CancellablePrivate {
 }
 abstract class ScopeSearchBaseClass {
     /* Fields of Unity-7.0.Unity.ScopeSearchBaseClass */
-    run: (self: ScopeSearchBase) => void
-    run_async: (self: ScopeSearchBase, async_callback: ScopeSearchBaseCallback) => void
-    set_search_context: (self: ScopeSearchBase, ctx: SearchContext) => void
+    readonly run: (self: ScopeSearchBase) => void
+    readonly run_async: (self: ScopeSearchBase, async_callback: ScopeSearchBaseCallback) => void
+    readonly set_search_context: (self: ScopeSearchBase, ctx: SearchContext) => void
     static name: string
 }
 class ScopeSearchBasePrivate {
@@ -4675,9 +4699,9 @@ class ScopeSearchBasePrivate {
 }
 abstract class ResultSetClass {
     /* Fields of Unity-7.0.Unity.ResultSetClass */
-    add_result: (self: ResultSet, result: ScopeResult) => void
-    add_result_from_variant: (self: ResultSet, variant: GLib.Variant) => void
-    flush: (self: ResultSet) => void
+    readonly add_result: (self: ResultSet, result: ScopeResult) => void
+    readonly add_result_from_variant: (self: ResultSet, variant: GLib.Variant) => void
+    readonly flush: (self: ResultSet) => void
     static name: string
 }
 class ResultSetPrivate {
@@ -4685,7 +4709,7 @@ class ResultSetPrivate {
 }
 abstract class AbstractPreviewClass {
     /* Fields of Unity-7.0.Unity.AbstractPreviewClass */
-    serialize_as: (self: AbstractPreview, serialization_type: SerializationType) => Uint8Array[]
+    readonly serialize_as: (self: AbstractPreview, serialization_type: SerializationType) => Uint8Array
     static name: string
 }
 class AbstractPreviewPrivate {
@@ -4693,8 +4717,8 @@ class AbstractPreviewPrivate {
 }
 abstract class ResultPreviewerClass {
     /* Fields of Unity-7.0.Unity.ResultPreviewerClass */
-    run: (self: ResultPreviewer) => AbstractPreview | null
-    run_async: (self: ResultPreviewer, async_callback: AbstractPreviewCallback) => void
+    readonly run: (self: ResultPreviewer) => AbstractPreview | null
+    readonly run_async: (self: ResultPreviewer, async_callback: AbstractPreviewCallback) => void
     static name: string
 }
 class ResultPreviewerPrivate {
@@ -4714,16 +4738,16 @@ class GeoCoordinatePrivate {
 }
 abstract class AbstractScopeClass {
     /* Fields of Unity-7.0.Unity.AbstractScopeClass */
-    create_search_for_query: (self: AbstractScope, search_context: SearchContext) => ScopeSearchBase
-    create_previewer: (self: AbstractScope, result: ScopeResult, metadata: SearchMetadata) => ResultPreviewer
-    get_categories: (self: AbstractScope) => CategorySet
-    get_filters: (self: AbstractScope) => FilterSet
-    get_schema: (self: AbstractScope) => Schema
-    get_search_hint: (self: AbstractScope) => string
-    get_group_name: (self: AbstractScope) => string
-    get_unique_name: (self: AbstractScope) => string
-    activate: (self: AbstractScope, result: ScopeResult, metadata: SearchMetadata, action_id?: string | null) => ActivationResponse | null
-    normalize_search_query: (self: AbstractScope, search_query: string) => string
+    readonly create_search_for_query: (self: AbstractScope, search_context: SearchContext) => ScopeSearchBase
+    readonly create_previewer: (self: AbstractScope, result: ScopeResult, metadata: SearchMetadata) => ResultPreviewer
+    readonly get_categories: (self: AbstractScope) => CategorySet
+    readonly get_filters: (self: AbstractScope) => FilterSet
+    readonly get_schema: (self: AbstractScope) => Schema
+    readonly get_search_hint: (self: AbstractScope) => string
+    readonly get_group_name: (self: AbstractScope) => string
+    readonly get_unique_name: (self: AbstractScope) => string
+    readonly activate: (self: AbstractScope, result: ScopeResult, metadata: SearchMetadata, action_id?: string | null) => ActivationResponse | null
+    readonly normalize_search_query: (self: AbstractScope, search_query: string) => string
     static name: string
 }
 class AbstractScopePrivate {
@@ -4737,7 +4761,7 @@ class ScopeDBusConnectorPrivate {
 }
 abstract class DeprecatedScopeBaseClass {
     /* Fields of Unity-7.0.Unity.DeprecatedScopeBaseClass */
-    create_impl: (self: DeprecatedScopeBase) => GObject.Object
+    readonly create_impl: (self: DeprecatedScopeBase) => GObject.Object
     static name: string
 }
 class DeprecatedScopeBasePrivate {
@@ -4745,10 +4769,10 @@ class DeprecatedScopeBasePrivate {
 }
 abstract class DeprecatedScopeClass {
     /* Fields of Unity-7.0.Unity.DeprecatedScopeClass */
-    preview_result: (self: DeprecatedScope, result: ScopeResult, _callback_?: Gio.AsyncReadyCallback | null) => void
-    preview_result_finish: (self: DeprecatedScope, _res_: Gio.AsyncResult) => Preview | null
-    activate_result: (self: DeprecatedScope, result: ScopeResult, _callback_?: Gio.AsyncReadyCallback | null) => void
-    activate_result_finish: (self: DeprecatedScope, _res_: Gio.AsyncResult) => ActivationResponse | null
+    readonly preview_result: (self: DeprecatedScope, result: ScopeResult, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly preview_result_finish: (self: DeprecatedScope, _res_: Gio.AsyncResult) => Preview | null
+    readonly activate_result: (self: DeprecatedScope, result: ScopeResult, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly activate_result_finish: (self: DeprecatedScope, _res_: Gio.AsyncResult) => ActivationResponse | null
     static name: string
 }
 class DeprecatedScopePrivate {
@@ -4756,11 +4780,11 @@ class DeprecatedScopePrivate {
 }
 abstract class AggregatorScopeClass {
     /* Fields of Unity-7.0.Unity.AggregatorScopeClass */
-    category_index_for_scope_id: (self: AggregatorScope, scope_id: string) => number
-    search: (self: AggregatorScope, scope_search: AggregatedScopeSearch, _callback_?: Gio.AsyncReadyCallback | null) => void
-    search_finish: (self: AggregatorScope, _res_: Gio.AsyncResult) => void
-    activate: (self: AggregatorScope, activation: AggregatorActivation, _callback_?: Gio.AsyncReadyCallback | null) => void
-    activate_finish: (self: AggregatorScope, _res_: Gio.AsyncResult) => ActivationResponse | null
+    readonly category_index_for_scope_id: (self: AggregatorScope, scope_id: string) => number
+    readonly search: (self: AggregatorScope, scope_search: AggregatedScopeSearch, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly search_finish: (self: AggregatorScope, _res_: Gio.AsyncResult) => void
+    readonly activate: (self: AggregatorScope, activation: AggregatorActivation, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly activate_finish: (self: AggregatorScope, _res_: Gio.AsyncResult) => ActivationResponse | null
     static name: string
 }
 class AggregatorScopePrivate {
@@ -4780,8 +4804,8 @@ class SimpleScopePrivate {
 }
 abstract class ScopeLoaderClass {
     /* Fields of Unity-7.0.Unity.ScopeLoaderClass */
-    get_scopes: (self: ScopeLoader, module_name: string, module_type?: string | null) => AbstractScope[]
-    export_scopes: (self: ScopeLoader, scopes: AbstractScope[]) => void
+    readonly get_scopes: (self: ScopeLoader, module_name: string, module_type?: string | null) => AbstractScope[]
+    readonly export_scopes: (self: ScopeLoader, scopes: AbstractScope[]) => void
     static name: string
 }
 class ScopeLoaderPrivate {
@@ -4807,15 +4831,15 @@ class MusicPlayerPrivate {
 }
 class ScopeResult {
     /* Fields of Unity-7.0.Unity.ScopeResult */
-    uri: string
-    icon_hint: string
-    category: number
-    result_type: ResultType
-    mimetype: string
-    title: string
-    comment: string
-    dnd_uri: string
-    metadata: GLib.HashTable | null
+    readonly uri: string
+    readonly icon_hint: string
+    readonly category: number
+    readonly result_type: ResultType
+    readonly mimetype: string
+    readonly title: string
+    readonly comment: string
+    readonly dnd_uri: string
+    readonly metadata: GLib.HashTable | null
     static name: string
     /* Static methods and pseudo-constructors */
     static create(uri: string, icon_hint: string | null, category: number, result_type: ResultType, mimetype: string, title: string, comment: string, dnd_uri: string, metadata: GLib.HashTable): ScopeResult | null
@@ -4823,12 +4847,12 @@ class ScopeResult {
 }
 class SearchContext {
     /* Fields of Unity-7.0.Unity.SearchContext */
-    search_query: string
-    search_type: SearchType
-    filter_state: FilterSet
-    search_metadata: SearchMetadata
-    result_set: ResultSet
-    cancellable: Cancellable
+    readonly search_query: string
+    readonly search_type: SearchType
+    readonly filter_state: FilterSet
+    readonly search_metadata: SearchMetadata
+    readonly result_set: ResultSet
+    readonly cancellable: Cancellable
     /* Methods of Unity-7.0.Unity.SearchContext */
     set_search_metadata(metadata: SearchMetadata): void
     static name: string
@@ -4837,15 +4861,15 @@ class SearchContext {
 }
 class PlaylistDetails {
     /* Fields of Unity-7.0.Unity.PlaylistDetails */
-    id: string
-    name: string
-    icon_name: string
+    readonly id: string
+    readonly name: string
+    readonly icon_name: string
     static name: string
 }
 class ActivePlaylistContainer {
     /* Fields of Unity-7.0.Unity.ActivePlaylistContainer */
-    valid: boolean
-    details: PlaylistDetails
+    readonly valid: boolean
+    readonly details: PlaylistDetails
     static name: string
 }
 }

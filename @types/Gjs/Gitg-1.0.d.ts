@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gitg-1.0
  */
@@ -115,13 +121,23 @@ enum StageCommitOptions {
 }
 function commit_model_columns_type(): GObject.Type
 function init(): void
-export interface Branch_ConstructProps extends Ggit.Branch_ConstructProps {
+interface Branch_ConstructProps extends Ggit.Branch_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Ref */
+    d_parsed_name?: ParsedRefName
+    d_pushes?: Ref[]
+    state?: RefState
+    working?: boolean
 }
 class Branch {
+    /* Properties of Gitg-1.0.Gitg.Ref */
+    d_parsed_name: ParsedRefName
+    d_pushes: Ref[]
+    state: RefState
+    working: boolean
     /* Fields of Ggit-1.0.Ggit.Branch */
-    parent_instance: Ggit.Ref
+    readonly parent_instance: Ggit.Ref
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Branch */
     get_upstream(): Ref
     /* Methods of Ggit-1.0.Ggit.Branch */
@@ -172,8 +188,29 @@ class Branch {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of Gitg-1.0.Gitg.Ref */
+    get_owner(): Repository
+    get_d_parsed_name(): ParsedRefName
+    set_d_parsed_name(value: ParsedRefName): void
+    get_d_pushes(): Ref[] | null
+    set_d_pushes(value?: Ref[] | null): void
+    get_state(): RefState
+    set_state(value: RefState): void
+    get_working(): boolean
+    set_working(value: boolean): void
+    get_parsed_name(): ParsedRefName
+    get_pushes(): Ref[]
     /* Virtual methods of Gitg-1.0.Gitg.Branch */
     vfunc_get_upstream(): Ref
+    vfunc_get_owner(): Repository
+    vfunc_get_d_parsed_name(): ParsedRefName
+    vfunc_set_d_parsed_name(value: ParsedRefName): void
+    vfunc_get_d_pushes(): Ref[] | null
+    vfunc_set_d_pushes(value?: Ref[] | null): void
+    vfunc_get_state(): RefState
+    vfunc_set_state(value: RefState): void
+    vfunc_get_working(): boolean
+    vfunc_set_working(value: boolean): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -186,6 +223,14 @@ class Branch {
     connect(sigName: "notify", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::d-parsed-name", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::d-parsed-name", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::d-pushes", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::d-pushes", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::state", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::state", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::working", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::working", callback: (($obj: Branch, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -195,7 +240,8 @@ class Branch {
     _init (config?: Branch_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Ref_ConstructProps extends Ggit.Ref_ConstructProps {
+interface Ref_ConstructProps extends Ggit.Ref_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Ref */
     d_parsed_name?: ParsedRefName
     d_pushes?: Ref[]
     state?: RefState
@@ -208,9 +254,9 @@ class Ref {
     state: RefState
     working: boolean
     /* Fields of Ggit-1.0.Ggit.Ref */
-    parent_instance: Ggit.Native
+    readonly parent_instance: Ggit.Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Ref */
     get_owner(): Repository
     get_d_parsed_name(): ParsedRefName
@@ -305,11 +351,11 @@ class Ref {
     _init (config?: Ref_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CredentialsProvider_ConstructProps extends GObject.Object_ConstructProps {
+interface CredentialsProvider_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CredentialsProvider {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.CredentialsProvider */
     credentials(url: string, username_from_url: string | null, allowed_types: Ggit.Credtype): Ggit.Cred | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -357,14 +403,14 @@ class CredentialsProvider {
     _init (config?: CredentialsProvider_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SidebarItem_ConstructProps extends GObject.Object_ConstructProps {
+interface SidebarItem_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SidebarItem {
     /* Properties of Gitg-1.0.Gitg.SidebarItem */
     readonly text: string
     readonly icon_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.SidebarItem */
     activate(numclick: number): void
     get_text(): string
@@ -424,7 +470,7 @@ class SidebarItem {
     _init (config?: SidebarItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface StageStatusItem_ConstructProps extends GObject.Object_ConstructProps {
+interface StageStatusItem_ConstructProps extends GObject.Object_ConstructProps {
 }
 class StageStatusItem {
     /* Properties of Gitg-1.0.Gitg.StageStatusItem */
@@ -434,7 +480,7 @@ class StageStatusItem {
     readonly is_untracked: boolean
     readonly icon_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.StageStatusItem */
     get_path(): string
     get_is_staged(): boolean
@@ -501,8 +547,6 @@ class StageStatusItem {
     static $gtype: GObject.Type
 }
 class Async {
-    /* Fields of Gitg-1.0.Gitg.Async */
-    ref_count: number
     static name: string
     static new(): Async
     constructor()
@@ -513,7 +557,7 @@ class Async {
     static thread_try(func: any, _callback_?: Gio.AsyncReadyCallback | null): void
     static thread_try_finish(_res_: Gio.AsyncResult): void
 }
-export interface AuthenticationDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface AuthenticationDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
 class AuthenticationDialog {
     /* Properties of Gitg-1.0.Gitg.AuthenticationDialog */
@@ -596,18 +640,19 @@ class AuthenticationDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.AuthenticationDialog */
     get_username(): string
     get_password(): string
@@ -738,7 +783,7 @@ class AuthenticationDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -982,6 +1027,7 @@ class AuthenticationDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -1552,8 +1598,6 @@ class AuthenticationDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: AuthenticationDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: AuthenticationDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: AuthenticationDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: AuthenticationDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: AuthenticationDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1563,15 +1607,16 @@ class AuthenticationDialog {
     _init (config?: AuthenticationDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(url: string, username: string | null, failed: boolean): AuthenticationDialog
+    /* Function overloads */
     static new(): AuthenticationDialog
     static new(type: Gtk.WindowType): AuthenticationDialog
     static $gtype: GObject.Type
 }
-export interface AvatarCache_ConstructProps extends GObject.Object_ConstructProps {
+interface AvatarCache_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AvatarCache {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.AvatarCache */
     load(email: string, size: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     load_finish(_res_: Gio.AsyncResult): GdkPixbuf.Pixbuf | null
@@ -1620,7 +1665,8 @@ class AvatarCache {
     static default(): AvatarCache
     static $gtype: GObject.Type
 }
-export interface BranchBase_ConstructProps extends Ggit.Branch_ConstructProps {
+interface BranchBase_ConstructProps extends Ggit.Branch_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Ref */
     d_parsed_name?: ParsedRefName
     d_pushes?: Ref[]
     state?: RefState
@@ -1633,9 +1679,9 @@ class BranchBase {
     state: RefState
     working: boolean
     /* Fields of Ggit-1.0.Ggit.Branch */
-    parent_instance: Ggit.Ref
+    readonly parent_instance: Ggit.Ref
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Branch */
     delete(): void
     get_name(): string | null
@@ -1740,7 +1786,8 @@ class BranchBase {
     static new(): BranchBase
     static $gtype: GObject.Type
 }
-export interface CellRendererLanes_ConstructProps extends Gtk.CellRendererText_ConstructProps {
+interface CellRendererLanes_ConstructProps extends Gtk.CellRendererText_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.CellRendererLanes */
     commit?: Commit
     next_commit?: Commit
     lane_width?: number
@@ -1821,11 +1868,11 @@ class CellRendererLanes {
     yalign: number
     ypad: number
     /* Fields of Gtk-3.0.Gtk.CellRendererText */
-    parent: Gtk.CellRenderer
+    readonly parent: Gtk.CellRenderer
     /* Fields of Gtk-3.0.Gtk.CellRenderer */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.CellRendererLanes */
     get_ref_at_pos(widget: Gtk.Widget, x: number, cell_w: number): [ /* returnType */ Ref | null, /* hot_x */ number ]
     get_commit(): Commit | null
@@ -2072,19 +2119,19 @@ class CellRendererLanes {
     _init (config?: CellRendererLanes_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): CellRendererLanes
+    /* Function overloads */
+    static new(): CellRendererLanes
     static $gtype: GObject.Type
 }
-export interface Color_ConstructProps extends GObject.Object_ConstructProps {
+interface Color_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Color {
     /* Properties of Gitg-1.0.Gitg.Color */
     readonly r: number
     readonly g: number
     readonly b: number
-    /* Fields of Gitg-1.0.Gitg.Color */
-    idx: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Color */
     components(): [ /* r */ number, /* g */ number, /* b */ number ]
     next_index(): Color
@@ -2145,7 +2192,7 @@ class Color {
     static next(): Color
     static $gtype: GObject.Type
 }
-export interface CommitListView_ConstructProps extends Gtk.TreeView_ConstructProps {
+interface CommitListView_ConstructProps extends Gtk.TreeView_ConstructProps {
 }
 class CommitListView {
     /* Properties of Gtk-3.0.Gtk.TreeView */
@@ -2198,7 +2245,6 @@ class CommitListView {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -2211,12 +2257,14 @@ class CommitListView {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.TreeView */
+    readonly parent: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.CommitListView */
     find_cell_at_pos(column: Gtk.TreeViewColumn, path: Gtk.TreePath, x: number): [ /* returnType */ Gtk.CellRenderer | null, /* width */ number ]
     /* Methods of Gtk-3.0.Gtk.TreeView */
@@ -2319,7 +2367,7 @@ class CommitListView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2634,6 +2682,7 @@ class CommitListView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gitg-1.0.Gitg.CommitListView */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3128,8 +3177,6 @@ class CommitListView {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: CommitListView, pspec: GObject.ParamSpec) => void)): number
@@ -3163,11 +3210,13 @@ class CommitListView {
     _init (config?: CommitListView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(model: CommitModel): CommitListView
+    /* Function overloads */
     static new(): CommitListView
     static for_repository(repository: Repository): CommitListView
     static $gtype: GObject.Type
 }
-export interface CommitModel_ConstructProps extends GObject.Object_ConstructProps {
+interface CommitModel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.CommitModel */
     limit?: number
     sort_mode?: Ggit.SortMode
     repository?: Repository
@@ -3178,7 +3227,7 @@ class CommitModel {
     sort_mode: Ggit.SortMode
     repository: Repository
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.CommitModel */
     get_permanent_lanes(): Ggit.OId[]
     set_permanent_lanes(value: Ggit.OId[]): void
@@ -3326,7 +3375,8 @@ class CommitModel {
     static new(repository?: Repository | null): CommitModel
     static $gtype: GObject.Type
 }
-export interface Commit_ConstructProps extends Ggit.Commit_ConstructProps {
+interface Commit_ConstructProps extends Ggit.Commit_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Commit */
     tag?: LaneTag
     mylane?: number
 }
@@ -3339,9 +3389,9 @@ class Commit {
     readonly committer_date_for_display: string
     readonly author_date_for_display: string
     /* Fields of Ggit-1.0.Ggit.Commit */
-    parent_instance: Ggit.Object
+    readonly parent_instance: Ggit.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Commit */
     get_lanes(): Lane[]
     insert_lane(lane: Lane, idx: number): Lane[]
@@ -3429,8 +3479,6 @@ class Commit {
     static $gtype: GObject.Type
 }
 class CredentialsManager {
-    /* Fields of Gitg-1.0.Gitg.CredentialsManager */
-    ref_count: number
     /* Methods of Gitg-1.0.Gitg.CredentialsManager */
     credentials(url: string, username: string | null, allowed_types: Ggit.Credtype): Ggit.Cred | null
     static name: string
@@ -3439,7 +3487,8 @@ class CredentialsManager {
     /* Static methods and pseudo-constructors */
     static new(config: Ggit.Config | null, window: Gtk.Window, save_user_in_config: boolean): CredentialsManager
 }
-export interface Date_ConstructProps extends GObject.Object_ConstructProps {
+interface Date_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Date */
     date_string?: string
 }
 class Date {
@@ -3447,7 +3496,7 @@ class Date {
     date_string: string
     readonly date: GLib.DateTime
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Date */
     for_display(): string
     get_date_string(): string
@@ -3509,7 +3558,8 @@ class Date {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DiffStat_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+interface DiffStat_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.DiffStat */
     added?: number
     removed?: number
 }
@@ -3558,11 +3608,11 @@ class DiffStat {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.DrawingArea */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.DiffStat */
     get_added(): number
     set_added(value: number): void
@@ -4243,9 +4293,12 @@ class DiffStat {
     _init (config?: DiffStat_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DiffStat
+    /* Function overloads */
+    static new(): DiffStat
     static $gtype: GObject.Type
 }
-export interface DiffViewOptions_ConstructProps extends Gtk.Toolbar_ConstructProps {
+interface DiffViewOptions_ConstructProps extends Gtk.Toolbar_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.DiffViewOptions */
     context_lines?: number
     view?: DiffView
 }
@@ -4303,14 +4356,14 @@ class DiffViewOptions {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Toolbar */
-    container: Gtk.Container
-    priv: Gtk.ToolbarPrivate
+    readonly container: Gtk.Container
+    readonly priv: Gtk.ToolbarPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.DiffViewOptions */
     get_context_lines(): number
     set_context_lines(value: number): void
@@ -4336,7 +4389,7 @@ class DiffViewOptions {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -5091,10 +5144,12 @@ class DiffViewOptions {
     _init (config?: DiffViewOptions_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(view?: DiffView | null): DiffViewOptions
+    /* Function overloads */
     static new(): DiffViewOptions
     static $gtype: GObject.Type
 }
-export interface DiffView_ConstructProps extends Gtk.Grid_ConstructProps {
+interface DiffView_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.DiffView */
     has_selection?: boolean
     diff?: Ggit.Diff
     commit?: Commit
@@ -5184,11 +5239,11 @@ class DiffView {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.DiffView */
     apply_link_tags(buffer: Gtk.TextBuffer, regex: GLib.Regex, replacement: string | null, custom_color_link: Gdk.RGBA, is_custom_color: boolean, is_custom_link: boolean): void
     follow_if_link(texview: Gtk.Widget, iter: Gtk.TextIter): void
@@ -5252,7 +5307,7 @@ class DiffView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6030,13 +6085,15 @@ class DiffView {
     _init (config?: DiffView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DiffView
+    /* Function overloads */
+    static new(): DiffView
     static $gtype: GObject.Type
 }
-export interface FontManager_ConstructProps extends GObject.Object_ConstructProps {
+interface FontManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FontManager {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -6082,7 +6139,8 @@ class FontManager {
     static new(text_view: Gtk.TextView, plugin: boolean): FontManager
     static $gtype: GObject.Type
 }
-export interface Hook_ConstructProps extends GObject.Object_ConstructProps {
+interface Hook_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Hook */
     environment?: Gee.HashMap
     name?: string
     working_directory?: Gio.File
@@ -6094,7 +6152,7 @@ class Hook {
     working_directory: Gio.File
     readonly output: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Hook */
     add_argument(arg: string): void
     exists_in(repository: Ggit.Repository): boolean
@@ -6162,8 +6220,6 @@ class Hook {
     static $gtype: GObject.Type
 }
 class LabelRenderer {
-    /* Fields of Gitg-1.0.Gitg.LabelRenderer */
-    ref_count: number
     static name: string
     static new(): LabelRenderer
     constructor()
@@ -6174,7 +6230,8 @@ class LabelRenderer {
     static get_ref_at_pos(widget: Gtk.Widget, font: Pango.FontDescription, labels: Ref[], x: number): [ /* returnType */ Ref | null, /* hot_x */ number ]
     static render_ref(widget: Gtk.Widget, font: Pango.FontDescription, r: Ref, height: number, minwidth: number): GdkPixbuf.Pixbuf
 }
-export interface Lanes_ConstructProps extends GObject.Object_ConstructProps {
+interface Lanes_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Lanes */
     inactive_max?: number
     inactive_collapse?: number
     inactive_gap?: number
@@ -6189,7 +6246,7 @@ class Lanes {
     inactive_enabled: boolean
     miss_commits: Gee.LinkedList
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Lanes */
     reset(reserved: Ggit.OId[] | null, roots?: Gee.HashSet | null): void
     next(next: Commit, save_miss: boolean): [ /* returnType */ boolean, /* lanes */ Lane[], /* nextpos */ number ]
@@ -6258,16 +6315,11 @@ class Lanes {
     static new(): Lanes
     static $gtype: GObject.Type
 }
-export interface Lane_ConstructProps extends GObject.Object_ConstructProps {
+interface Lane_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Lane {
-    /* Fields of Gitg-1.0.Gitg.Lane */
-    color: Color
-    from: number[]
-    tag: LaneTag
-    boundary_id: Ggit.OId | null
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Lane */
     copy(): Lane
     dup(): Lane
@@ -6317,7 +6369,8 @@ class Lane {
     static with_color(color?: Color | null): Lane
     static $gtype: GObject.Type
 }
-export interface ProgressBin_ConstructProps extends Gtk.Bin_ConstructProps {
+interface ProgressBin_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.ProgressBin */
     fraction?: number
 }
 class ProgressBin {
@@ -6368,13 +6421,13 @@ class ProgressBin {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.ProgressBin */
     get_fraction(): number
     set_fraction(value: number): void
@@ -6384,7 +6437,7 @@ class ProgressBin {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7114,7 +7167,8 @@ class ProgressBin {
     static new(): ProgressBin
     static $gtype: GObject.Type
 }
-export interface RefBase_ConstructProps extends Ggit.Ref_ConstructProps {
+interface RefBase_ConstructProps extends Ggit.Ref_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Ref */
     d_parsed_name?: ParsedRefName
     d_pushes?: Ref[]
     state?: RefState
@@ -7127,9 +7181,9 @@ class RefBase {
     state: RefState
     working: boolean
     /* Fields of Ggit-1.0.Ggit.Ref */
-    parent_instance: Ggit.Native
+    readonly parent_instance: Ggit.Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Ggit-1.0.Ggit.Ref */
     delete(): void
     delete_log(): void
@@ -7226,7 +7280,8 @@ class RefBase {
     static new(): RefBase
     static $gtype: GObject.Type
 }
-export interface ParsedRefName_ConstructProps extends GObject.Object_ConstructProps {
+interface ParsedRefName_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.ParsedRefName */
     rtype?: RefType
 }
 class ParsedRefName {
@@ -7238,7 +7293,7 @@ class ParsedRefName {
     readonly remote_branch: string
     readonly prefix: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.ParsedRefName */
     get_rtype(): RefType
     get_name(): string
@@ -7303,7 +7358,8 @@ class ParsedRefName {
     static new(name: string): ParsedRefName
     static $gtype: GObject.Type
 }
-export interface Remote_ConstructProps extends Ggit.Remote_ConstructProps {
+interface Remote_ConstructProps extends Ggit.Remote_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Remote */
     state?: RemoteState
     fetch_specs?: string[]
     push_specs?: string[]
@@ -7317,9 +7373,9 @@ class Remote {
     push_specs: string[]
     credentials_provider: CredentialsProvider
     /* Fields of Ggit-1.0.Ggit.Remote */
-    parent_instance: Ggit.Native
+    readonly parent_instance: Ggit.Native
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Remote */
     connect(direction: Ggit.Direction, callbacks?: Ggit.RemoteCallbacks | null, _callback_?: Gio.AsyncReadyCallback | null): void
     connect_finish(_res_: Gio.AsyncResult): void
@@ -7409,10 +7465,12 @@ class Remote {
     _init (config?: Remote_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Remote
+    /* Function overloads */
     static new(repository: Ggit.Repository, name: string, url: string): Remote
     static $gtype: GObject.Type
 }
-export interface RepositoryListBox_ConstructProps extends Gtk.ListBox_ConstructProps {
+interface RepositoryListBox_ConstructProps extends Gtk.ListBox_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.RepositoryListBox */
     mode?: SelectionMode
     bookmarks_from_recent_files?: boolean
     location?: Gio.File
@@ -7471,11 +7529,11 @@ class RepositoryListBox {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.ListBox */
-    parent_instance: Gtk.Container
+    readonly parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.RepositoryListBox */
     populate_bookmarks(): void
     end_cloning(row: RepositoryListBoxRow, repository?: Repository | null): void
@@ -7522,7 +7580,7 @@ class RepositoryListBox {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8301,9 +8359,12 @@ class RepositoryListBox {
     _init (config?: RepositoryListBox_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): RepositoryListBox
+    /* Function overloads */
+    static new(): RepositoryListBox
     static $gtype: GObject.Type
 }
-export interface RepositoryListBoxRow_ConstructProps extends Gtk.ListBoxRow_ConstructProps {
+interface RepositoryListBoxRow_ConstructProps extends Gtk.ListBoxRow_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.RepositoryListBoxRow */
     mode?: SelectionMode
     selected?: boolean
     repository?: Repository
@@ -8375,13 +8436,13 @@ class RepositoryListBoxRow {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.ListBoxRow */
-    parent_instance: Gtk.Bin
+    readonly parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.RepositoryListBoxRow */
     get_mode(): SelectionMode
     set_mode(value: SelectionMode): void
@@ -8418,7 +8479,7 @@ class RepositoryListBoxRow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9178,10 +9239,11 @@ class RepositoryListBoxRow {
     _init (config?: RepositoryListBoxRow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(repository: Repository | null, dirname: string): RepositoryListBoxRow
+    /* Function overloads */
     static new(): RepositoryListBoxRow
     static $gtype: GObject.Type
 }
-export interface Repository_ConstructProps extends Ggit.Repository_ConstructProps {
+interface Repository_ConstructProps extends Ggit.Repository_ConstructProps {
 }
 class Repository {
     /* Properties of Gitg-1.0.Gitg.Repository */
@@ -9191,9 +9253,9 @@ class Repository {
     readonly head: Ggit.Ref
     workdir: Gio.File
     /* Fields of Ggit-1.0.Ggit.Native */
-    parent_instance: Ggit.ObjectFactoryBase
+    readonly parent_instance: Ggit.ObjectFactoryBase
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Repository */
     clear_refs_cache(): void
     refs_for_id(id: Ggit.OId): Ref[]
@@ -9217,7 +9279,7 @@ class Repository {
     cherry_pick(commit: Ggit.Commit, options: Ggit.CherryPickOptions): boolean
     cherry_pick_commit(commit: Ggit.Commit, our_commit: Ggit.Commit, mainline: number, merge_options?: Ggit.MergeOptions | null): Ggit.Index | null
     create_blob(): Ggit.BlobOutputStream | null
-    create_blob_from_buffer(buffer: Uint8Array[]): Ggit.OId | null
+    create_blob_from_buffer(buffer: Uint8Array): Ggit.OId | null
     create_blob_from_file(file: Gio.File): Ggit.OId
     create_blob_from_path(path: string): Ggit.OId | null
     create_branch(branch_name: string, target: Ggit.Object, flags: Ggit.CreateFlags): Ggit.Branch | null
@@ -9351,12 +9413,11 @@ class Repository {
     /* Static methods and pseudo-constructors */
     static new(location: Gio.File, workdir?: Gio.File | null): Repository
     static init_repository(location: Gio.File, is_bare: boolean): Repository
+    /* Function overloads */
     static init_repository(location: Gio.File, is_bare: boolean): Ggit.Repository | null
     static $gtype: GObject.Type
 }
 class Resource {
-    /* Fields of Gitg-1.0.Gitg.Resource */
-    ref_count: number
     static name: string
     static new(): Resource
     constructor()
@@ -9364,16 +9425,16 @@ class Resource {
     static new(): Resource
     static load_css(id: string): Gtk.CssProvider | null
 }
-export interface SidebarStore_ConstructProps extends Gtk.TreeStore_ConstructProps {
+interface SidebarStore_ConstructProps extends Gtk.TreeStore_ConstructProps {
 }
 class SidebarStore {
     /* Properties of Gitg-1.0.Gitg.SidebarStore */
     readonly clearing: boolean
     /* Fields of Gtk-3.0.Gtk.TreeStore */
-    parent: GObject.Object
-    priv: Gtk.TreeStorePrivate
+    readonly parent: GObject.Object
+    readonly priv: Gtk.TreeStorePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.SidebarStore */
     append_dummy(text: string): SidebarStore
     append(item: SidebarItem): SidebarStore
@@ -9447,17 +9508,18 @@ class SidebarStore {
     _init (config?: SidebarStore_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SidebarStore
+    /* Function overloads */
     static new(types: GObject.Type[]): SidebarStore
     static $gtype: GObject.Type
 }
-export interface SidebarStoreSidebarText_ConstructProps extends GObject.Object_ConstructProps {
+interface SidebarStoreSidebarText_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SidebarStoreSidebarText {
     /* Properties of Gitg-1.0.Gitg.SidebarItem */
     readonly text: string
     readonly icon_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -9519,13 +9581,13 @@ class SidebarStoreSidebarText {
     static new(text: string): SidebarStoreSidebarText
     static $gtype: GObject.Type
 }
-export interface SidebarStoreSidebarHeader_ConstructProps extends SidebarStoreSidebarText_ConstructProps {
+interface SidebarStoreSidebarHeader_ConstructProps extends SidebarStoreSidebarText_ConstructProps {
 }
 class SidebarStoreSidebarHeader {
     /* Properties of Gitg-1.0.Gitg.SidebarStoreSidebarHeader */
     readonly id: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.SidebarStoreSidebarHeader */
     get_id(): number
     /* Methods of GObject-2.0.GObject.Object */
@@ -9577,11 +9639,13 @@ class SidebarStoreSidebarHeader {
     _init (config?: SidebarStoreSidebarHeader_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(text: string, id: number): SidebarStoreSidebarHeader
+    /* Function overloads */
     static new(text: string): SidebarStoreSidebarHeader
     static $gtype: GObject.Type
 }
-export interface Sidebar_ConstructProps extends Gtk.TreeView_ConstructProps {
-    model?: SidebarStore
+interface Sidebar_ConstructProps extends Gtk.TreeView_ConstructProps {
+    /* Constructor properties of Gitg-1.0.Gitg.Sidebar */
+    model?: SidebarStore & Gtk.TreeModel /* Patched */
 }
 class Sidebar {
     /* Properties of Gitg-1.0.Gitg.Sidebar */
@@ -9635,7 +9699,6 @@ class Sidebar {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -9648,12 +9711,14 @@ class Sidebar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.TreeView */
+    readonly parent: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Sidebar */
     select_function(sel: Gtk.TreeSelection, model: Gtk.TreeModel, path: Gtk.TreePath, cursel: boolean): boolean
     selection_changed(sel: Gtk.TreeSelection): void
@@ -9764,7 +9829,7 @@ class Sidebar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10563,8 +10628,6 @@ class Sidebar {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: Sidebar, pspec: GObject.ParamSpec) => void)): number
@@ -10598,9 +10661,11 @@ class Sidebar {
     _init (config?: Sidebar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Sidebar
+    /* Function overloads */
+    static new(): Sidebar
     static $gtype: GObject.Type
 }
-export interface StageStatusFile_ConstructProps extends GObject.Object_ConstructProps {
+interface StageStatusFile_ConstructProps extends GObject.Object_ConstructProps {
 }
 class StageStatusFile {
     /* Properties of Gitg-1.0.Gitg.StageStatusFile */
@@ -10612,7 +10677,7 @@ class StageStatusFile {
     readonly is_untracked: boolean
     readonly icon_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.StageStatusFile */
     get_flags(): Ggit.StatusFlags
     /* Methods of GObject-2.0.GObject.Object */
@@ -10684,7 +10749,7 @@ class StageStatusFile {
     static new(path: string, flags: Ggit.StatusFlags): StageStatusFile
     static $gtype: GObject.Type
 }
-export interface StageStatusSubmodule_ConstructProps extends GObject.Object_ConstructProps {
+interface StageStatusSubmodule_ConstructProps extends GObject.Object_ConstructProps {
 }
 class StageStatusSubmodule {
     /* Properties of Gitg-1.0.Gitg.StageStatusSubmodule */
@@ -10698,7 +10763,7 @@ class StageStatusSubmodule {
     readonly is_untracked: boolean
     readonly icon_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.StageStatusSubmodule */
     get_submodule(): Ggit.Submodule
     get_is_dirty(): boolean
@@ -10776,11 +10841,11 @@ class StageStatusSubmodule {
     static new(submodule: Ggit.Submodule): StageStatusSubmodule
     static $gtype: GObject.Type
 }
-export interface StageStatusEnumerator_ConstructProps extends GObject.Object_ConstructProps {
+interface StageStatusEnumerator_ConstructProps extends GObject.Object_ConstructProps {
 }
 class StageStatusEnumerator {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.StageStatusEnumerator */
     cancel(): void
     next_items(num: number, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -10829,11 +10894,6 @@ class StageStatusEnumerator {
     static $gtype: GObject.Type
 }
 class PatchSet {
-    /* Fields of Gitg-1.0.Gitg.PatchSet */
-    ref_count: number
-    filename: string
-    patches: PatchSetPatch[]
-    patches_length1: number
     /* Methods of Gitg-1.0.Gitg.PatchSet */
     reversed(): PatchSet
     static name: string
@@ -10842,11 +10902,11 @@ class PatchSet {
     /* Static methods and pseudo-constructors */
     static new(): PatchSet
 }
-export interface Stage_ConstructProps extends GObject.Object_ConstructProps {
+interface Stage_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Stage {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Stage */
     refresh(_callback_?: Gio.AsyncReadyCallback | null): void
     refresh_finish(_res_: Gio.AsyncResult): void
@@ -10936,7 +10996,17 @@ class Stage {
     _init (config?: Stage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Theme_ConstructProps extends Gtk.Widget_ConstructProps {
+class TextConv {
+    static name: string
+    static new(): TextConv
+    constructor()
+    /* Static methods and pseudo-constructors */
+    static new(): TextConv
+    static has_textconv_command(repository: Repository, file: Ggit.DiffFile): boolean
+    static get_textconv_content(repository: Repository, file: Ggit.DiffFile): Uint8Array
+    static get_textconv_content_from_raw(repository: Repository, file: Ggit.DiffFile, raw_content: Uint8Array | null): Uint8Array
+}
+interface Theme_ConstructProps extends Gtk.Widget_ConstructProps {
 }
 class Theme {
     /* Properties of Gtk-3.0.Gtk.Widget */
@@ -10980,9 +11050,9 @@ class Theme {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gitg-1.0.Gitg.Theme */
     is_theme_dark(): boolean
     /* Methods of Gtk-3.0.Gtk.Widget */
@@ -11660,8 +11730,6 @@ class Theme {
     static $gtype: GObject.Type
 }
 class Utils {
-    /* Fields of Gitg-1.0.Gitg.Utils */
-    ref_count: number
     static name: string
     static new(): Utils
     constructor()
@@ -11671,8 +11739,6 @@ class Utils {
     static expand_home_dir(path: string): string
 }
 class WhenMapped {
-    /* Fields of Gitg-1.0.Gitg.WhenMapped */
-    ref_count: number
     /* Methods of Gitg-1.0.Gitg.WhenMapped */
     update(mapped: any, lifetime?: GObject.Object | null): void
     static name: string
@@ -11761,7 +11827,7 @@ class DiffViewOptionsPrivate {
 }
 abstract class DiffViewClass {
     /* Fields of Gitg-1.0.Gitg.DiffViewClass */
-    options_changed: (self: DiffView) => void
+    readonly options_changed: (self: DiffView) => void
     static name: string
 }
 class DiffViewPrivate {
@@ -11865,8 +11931,8 @@ class SidebarStoreSidebarHeaderPrivate {
 }
 abstract class SidebarClass {
     /* Fields of Gitg-1.0.Gitg.SidebarClass */
-    select_function: (self: Sidebar, sel: Gtk.TreeSelection, model: Gtk.TreeModel, path: Gtk.TreePath, cursel: boolean) => boolean
-    selection_changed: (self: Sidebar, sel: Gtk.TreeSelection) => void
+    readonly select_function: (self: Sidebar, sel: Gtk.TreeSelection, model: Gtk.TreeModel, path: Gtk.TreePath, cursel: boolean) => boolean
+    readonly selection_changed: (self: Sidebar, sel: Gtk.TreeSelection) => void
     static name: string
 }
 class SidebarPrivate {
@@ -11898,16 +11964,22 @@ class PatchSetPrivate {
 }
 class PatchSetPatch {
     /* Fields of Gitg-1.0.Gitg.PatchSetPatch */
-    type: PatchSetType
-    old_offset: number
-    new_offset: number
-    length: number
+    readonly type: PatchSetType
+    readonly old_offset: number
+    readonly new_offset: number
+    readonly length: number
     static name: string
 }
 abstract class StageClass {
     static name: string
 }
 class StagePrivate {
+    static name: string
+}
+abstract class TextConvClass {
+    static name: string
+}
+class TextConvPrivate {
     static name: string
 }
 abstract class ThemeClass {
@@ -11930,41 +12002,41 @@ class WhenMappedPrivate {
 }
 abstract class BranchIface {
     /* Fields of Gitg-1.0.Gitg.BranchIface */
-    get_upstream: (self: Branch) => Ref
+    readonly get_upstream: (self: Branch) => Ref
     static name: string
 }
 abstract class RefIface {
     /* Fields of Gitg-1.0.Gitg.RefIface */
-    get_owner: (self: Ref) => Repository
-    get_d_parsed_name: (self: Ref) => ParsedRefName
-    set_d_parsed_name: (self: Ref, value: ParsedRefName) => void
-    get_d_pushes: (self: Ref) => Ref[] | null
-    set_d_pushes: (self: Ref, value?: Ref[] | null) => void
-    get_state: (self: Ref) => RefState
-    set_state: (self: Ref, value: RefState) => void
-    get_working: (self: Ref) => boolean
-    set_working: (self: Ref, value: boolean) => void
+    readonly get_owner: (self: Ref) => Repository
+    readonly get_d_parsed_name: (self: Ref) => ParsedRefName
+    readonly set_d_parsed_name: (self: Ref, value: ParsedRefName) => void
+    readonly get_d_pushes: (self: Ref) => Ref[] | null
+    readonly set_d_pushes: (self: Ref, value?: Ref[] | null) => void
+    readonly get_state: (self: Ref) => RefState
+    readonly set_state: (self: Ref, value: RefState) => void
+    readonly get_working: (self: Ref) => boolean
+    readonly set_working: (self: Ref, value: boolean) => void
     static name: string
 }
 abstract class CredentialsProviderIface {
     /* Fields of Gitg-1.0.Gitg.CredentialsProviderIface */
-    credentials: (self: CredentialsProvider, url: string, username_from_url: string | null, allowed_types: Ggit.Credtype) => Ggit.Cred | null
+    readonly credentials: (self: CredentialsProvider, url: string, username_from_url: string | null, allowed_types: Ggit.Credtype) => Ggit.Cred | null
     static name: string
 }
 abstract class SidebarItemIface {
     /* Fields of Gitg-1.0.Gitg.SidebarItemIface */
-    activate: (self: SidebarItem, numclick: number) => void
-    get_text: (self: SidebarItem) => string
-    get_icon_name: (self: SidebarItem) => string | null
+    readonly activate: (self: SidebarItem, numclick: number) => void
+    readonly get_text: (self: SidebarItem) => string
+    readonly get_icon_name: (self: SidebarItem) => string | null
     static name: string
 }
 abstract class StageStatusItemIface {
     /* Fields of Gitg-1.0.Gitg.StageStatusItemIface */
-    get_path: (self: StageStatusItem) => string
-    get_is_staged: (self: StageStatusItem) => boolean
-    get_is_unstaged: (self: StageStatusItem) => boolean
-    get_is_untracked: (self: StageStatusItem) => boolean
-    get_icon_name: (self: StageStatusItem) => string | null
+    readonly get_path: (self: StageStatusItem) => string
+    readonly get_is_staged: (self: StageStatusItem) => boolean
+    readonly get_is_unstaged: (self: StageStatusItem) => boolean
+    readonly get_is_untracked: (self: StageStatusItem) => boolean
+    readonly get_icon_name: (self: StageStatusItem) => string | null
     static name: string
 }
 }

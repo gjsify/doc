@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Grl-0.3
  */
@@ -101,94 +107,94 @@ enum WriteFlags {
     NORMAL,
     FULL,
 }
-export const CONFIG_KEY_APIKEY: string
-export const CONFIG_KEY_APIKEY_BLOB: string
-export const CONFIG_KEY_APISECRET: string
-export const CONFIG_KEY_APITOKEN: string
-export const CONFIG_KEY_APITOKEN_SECRET: string
-export const CONFIG_KEY_PASSWORD: string
-export const CONFIG_KEY_PLUGIN: string
-export const CONFIG_KEY_SOURCE: string
-export const CONFIG_KEY_USERNAME: string
-export const CONFIG_PATH_VAR: string
-export const COUNT_INFINITY: number
-export const KEYID_FORMAT: string
-export const METADATA_KEY_ALBUM: number
-export const METADATA_KEY_ALBUM_ARTIST: number
-export const METADATA_KEY_ALBUM_DISC_NUMBER: number
-export const METADATA_KEY_ARTIST: number
-export const METADATA_KEY_AUDIO_TRACK: number
-export const METADATA_KEY_AUTHOR: number
-export const METADATA_KEY_BITRATE: number
-export const METADATA_KEY_CAMERA_MODEL: number
-export const METADATA_KEY_CERTIFICATE: number
-export const METADATA_KEY_CHILDCOUNT: number
-export const METADATA_KEY_CHILDCOUNT_UNKNOWN: number
-export const METADATA_KEY_COMPOSER: number
-export const METADATA_KEY_CREATION_DATE: number
-export const METADATA_KEY_DESCRIPTION: number
-export const METADATA_KEY_DIRECTOR: number
-export const METADATA_KEY_DURATION: number
-export const METADATA_KEY_EPISODE: number
-export const METADATA_KEY_EPISODE_TITLE: number
-export const METADATA_KEY_EXPOSURE_TIME: number
-export const METADATA_KEY_EXTERNAL_PLAYER: number
-export const METADATA_KEY_EXTERNAL_URL: number
-export const METADATA_KEY_FAVOURITE: number
-export const METADATA_KEY_FLASH_USED: number
-export const METADATA_KEY_FRAMERATE: number
-export const METADATA_KEY_GENRE: number
-export const METADATA_KEY_HEIGHT: number
-export const METADATA_KEY_ID: number
-export const METADATA_KEY_INVALID: number
-export const METADATA_KEY_ISO_SPEED: number
-export const METADATA_KEY_KEYWORD: number
-export const METADATA_KEY_LAST_PLAYED: number
-export const METADATA_KEY_LAST_POSITION: number
-export const METADATA_KEY_LICENSE: number
-export const METADATA_KEY_LYRICS: number
-export const METADATA_KEY_MB_ALBUM_ID: number
-export const METADATA_KEY_MB_ARTIST_ID: number
-export const METADATA_KEY_MB_RECORDING_ID: number
-export const METADATA_KEY_MB_RELEASE_GROUP_ID: number
-export const METADATA_KEY_MB_RELEASE_ID: number
-export const METADATA_KEY_MB_TRACK_ID: number
-export const METADATA_KEY_MIME: number
-export const METADATA_KEY_MODIFICATION_DATE: number
-export const METADATA_KEY_ORIENTATION: number
-export const METADATA_KEY_ORIGINAL_TITLE: number
-export const METADATA_KEY_PERFORMER: number
-export const METADATA_KEY_PLAY_COUNT: number
-export const METADATA_KEY_PRODUCER: number
-export const METADATA_KEY_PUBLICATION_DATE: number
-export const METADATA_KEY_RATING: number
-export const METADATA_KEY_REGION: number
-export const METADATA_KEY_SEASON: number
-export const METADATA_KEY_SHOW: number
-export const METADATA_KEY_SITE: number
-export const METADATA_KEY_SIZE: number
-export const METADATA_KEY_SOURCE: number
-export const METADATA_KEY_START_TIME: number
-export const METADATA_KEY_STUDIO: number
-export const METADATA_KEY_THUMBNAIL: number
-export const METADATA_KEY_THUMBNAIL_BINARY: number
-export const METADATA_KEY_TITLE: number
-export const METADATA_KEY_TITLE_FROM_FILENAME: number
-export const METADATA_KEY_TRACK_NUMBER: number
-export const METADATA_KEY_URL: number
-export const METADATA_KEY_WIDTH: number
-export const PADDING: number
-export const PADDING_SMALL: number
-export const PLUGIN_AUTHOR: string
-export const PLUGIN_DESCRIPTION: string
-export const PLUGIN_LICENSE: string
-export const PLUGIN_LIST_VAR: string
-export const PLUGIN_NAME: string
-export const PLUGIN_PATH_VAR: string
-export const PLUGIN_RANKS_VAR: string
-export const PLUGIN_SITE: string
-export const PLUGIN_VERSION: string
-export const SOURCE_REMAINING_UNKNOWN: number
+const CONFIG_KEY_APIKEY: string
+const CONFIG_KEY_APIKEY_BLOB: string
+const CONFIG_KEY_APISECRET: string
+const CONFIG_KEY_APITOKEN: string
+const CONFIG_KEY_APITOKEN_SECRET: string
+const CONFIG_KEY_PASSWORD: string
+const CONFIG_KEY_PLUGIN: string
+const CONFIG_KEY_SOURCE: string
+const CONFIG_KEY_USERNAME: string
+const CONFIG_PATH_VAR: string
+const COUNT_INFINITY: number
+const KEYID_FORMAT: string
+const METADATA_KEY_ALBUM: number
+const METADATA_KEY_ALBUM_ARTIST: number
+const METADATA_KEY_ALBUM_DISC_NUMBER: number
+const METADATA_KEY_ARTIST: number
+const METADATA_KEY_AUDIO_TRACK: number
+const METADATA_KEY_AUTHOR: number
+const METADATA_KEY_BITRATE: number
+const METADATA_KEY_CAMERA_MODEL: number
+const METADATA_KEY_CERTIFICATE: number
+const METADATA_KEY_CHILDCOUNT: number
+const METADATA_KEY_CHILDCOUNT_UNKNOWN: number
+const METADATA_KEY_COMPOSER: number
+const METADATA_KEY_CREATION_DATE: number
+const METADATA_KEY_DESCRIPTION: number
+const METADATA_KEY_DIRECTOR: number
+const METADATA_KEY_DURATION: number
+const METADATA_KEY_EPISODE: number
+const METADATA_KEY_EPISODE_TITLE: number
+const METADATA_KEY_EXPOSURE_TIME: number
+const METADATA_KEY_EXTERNAL_PLAYER: number
+const METADATA_KEY_EXTERNAL_URL: number
+const METADATA_KEY_FAVOURITE: number
+const METADATA_KEY_FLASH_USED: number
+const METADATA_KEY_FRAMERATE: number
+const METADATA_KEY_GENRE: number
+const METADATA_KEY_HEIGHT: number
+const METADATA_KEY_ID: number
+const METADATA_KEY_INVALID: number
+const METADATA_KEY_ISO_SPEED: number
+const METADATA_KEY_KEYWORD: number
+const METADATA_KEY_LAST_PLAYED: number
+const METADATA_KEY_LAST_POSITION: number
+const METADATA_KEY_LICENSE: number
+const METADATA_KEY_LYRICS: number
+const METADATA_KEY_MB_ALBUM_ID: number
+const METADATA_KEY_MB_ARTIST_ID: number
+const METADATA_KEY_MB_RECORDING_ID: number
+const METADATA_KEY_MB_RELEASE_GROUP_ID: number
+const METADATA_KEY_MB_RELEASE_ID: number
+const METADATA_KEY_MB_TRACK_ID: number
+const METADATA_KEY_MIME: number
+const METADATA_KEY_MODIFICATION_DATE: number
+const METADATA_KEY_ORIENTATION: number
+const METADATA_KEY_ORIGINAL_TITLE: number
+const METADATA_KEY_PERFORMER: number
+const METADATA_KEY_PLAY_COUNT: number
+const METADATA_KEY_PRODUCER: number
+const METADATA_KEY_PUBLICATION_DATE: number
+const METADATA_KEY_RATING: number
+const METADATA_KEY_REGION: number
+const METADATA_KEY_SEASON: number
+const METADATA_KEY_SHOW: number
+const METADATA_KEY_SITE: number
+const METADATA_KEY_SIZE: number
+const METADATA_KEY_SOURCE: number
+const METADATA_KEY_START_TIME: number
+const METADATA_KEY_STUDIO: number
+const METADATA_KEY_THUMBNAIL: number
+const METADATA_KEY_THUMBNAIL_BINARY: number
+const METADATA_KEY_TITLE: number
+const METADATA_KEY_TITLE_FROM_FILENAME: number
+const METADATA_KEY_TRACK_NUMBER: number
+const METADATA_KEY_URL: number
+const METADATA_KEY_WIDTH: number
+const PADDING: number
+const PADDING_SMALL: number
+const PLUGIN_AUTHOR: string
+const PLUGIN_DESCRIPTION: string
+const PLUGIN_LICENSE: string
+const PLUGIN_LIST_VAR: string
+const PLUGIN_NAME: string
+const PLUGIN_PATH_VAR: string
+const PLUGIN_RANKS_VAR: string
+const PLUGIN_SITE: string
+const PLUGIN_VERSION: string
+const SOURCE_REMAINING_UNKNOWN: number
 function date_time_from_iso8601(date: string): GLib.DateTime
 function deinit(): void
 function g_value_dup(value: any): any
@@ -230,13 +236,11 @@ interface SourceResultCb {
 interface SourceStoreCb {
     (source: Source, media: Media, failed_keys: KeyID[], error?: GLib.Error | null): void
 }
-export interface Caps_ConstructProps extends GObject.Object_ConstructProps {
+interface Caps_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Caps {
-    /* Fields of Grl-0.3.Grl.Caps */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grl-0.3.Grl.Caps */
     get_key_filter(): KeyID[]
     get_key_range_filter(): KeyID[]
@@ -292,15 +296,11 @@ class Caps {
     static new(): Caps
     static $gtype: GObject.Type
 }
-export interface Config_ConstructProps extends GObject.Object_ConstructProps {
+interface Config_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Config {
-    /* Fields of Grl-0.3.Grl.Config */
-    parent: GObject.Object
-    priv: ConfigPrivate
-    _grl_reserved: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grl-0.3.Grl.Config */
     get_api_key(): string
     get_api_key_blob(size: number): number
@@ -377,15 +377,11 @@ class Config {
     static new(plugin: string, source?: string | null): Config
     static $gtype: GObject.Type
 }
-export interface Data_ConstructProps extends GObject.Object_ConstructProps {
+interface Data_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Data {
-    /* Fields of Grl-0.3.Grl.Data */
-    parent: GObject.Object
-    priv: DataPrivate
-    _grl_reserved: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grl-0.3.Grl.Data */
     add_binary(key: KeyID, buf: number, size: number): void
     add_boxed(key: KeyID, boxed?: object | null): void
@@ -467,19 +463,19 @@ class Data {
     static new(): Data
     static $gtype: GObject.Type
 }
-export interface Media_ConstructProps extends Data_ConstructProps {
+interface Media_ConstructProps extends Data_ConstructProps {
+    /* Constructor properties of Grl-0.3.Grl.Media */
     media_type?: MediaType
 }
 class Media {
     /* Properties of Grl-0.3.Grl.Media */
     media_type: MediaType
-    /* Fields of Grl-0.3.Grl.Media */
-    parent: Data
     /* Fields of Grl-0.3.Grl.Data */
-    priv: DataPrivate
-    _grl_reserved: object[]
+    readonly parent: GObject.Object
+    readonly priv: DataPrivate
+    readonly _grl_reserved: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grl-0.3.Grl.Media */
     add_artist(artist: string): void
     add_author(author: string): void
@@ -725,17 +721,17 @@ class Media {
     static container_new(): Media
     static image_new(): Media
     static new(): Media
+    /* Function overloads */
+    static new(): Media
     static video_new(): Media
     static unserialize(serial: string): Media
     static $gtype: GObject.Type
 }
-export interface OperationOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface OperationOptions_ConstructProps extends GObject.Object_ConstructProps {
 }
 class OperationOptions {
-    /* Fields of Grl-0.3.Grl.OperationOptions */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grl-0.3.Grl.OperationOptions */
     copy(): OperationOptions
     get_count(): number
@@ -799,15 +795,13 @@ class OperationOptions {
     static new(caps?: Caps | null): OperationOptions
     static $gtype: GObject.Type
 }
-export interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
+interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Plugin {
     /* Properties of Grl-0.3.Grl.Plugin */
     readonly loaded: boolean
-    /* Fields of Grl-0.3.Grl.Plugin */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grl-0.3.Grl.Plugin */
     get_author(): string
     get_description(): string
@@ -864,13 +858,11 @@ class Plugin {
     _init (config?: Plugin_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Registry_ConstructProps extends GObject.Object_ConstructProps {
+interface Registry_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Registry {
-    /* Fields of Grl-0.3.Grl.Registry */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grl-0.3.Grl.Registry */
     activate_all_plugins(): boolean
     activate_plugin_by_id(plugin_id: string): boolean
@@ -952,13 +944,11 @@ class Registry {
     static get_default(): Registry
     static $gtype: GObject.Type
 }
-export interface RelatedKeys_ConstructProps extends GObject.Object_ConstructProps {
+interface RelatedKeys_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RelatedKeys {
-    /* Fields of Grl-0.3.Grl.RelatedKeys */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grl-0.3.Grl.RelatedKeys */
     dup(): RelatedKeys
     get(key: KeyID): any
@@ -1026,7 +1016,8 @@ class RelatedKeys {
     static new(): RelatedKeys
     static $gtype: GObject.Type
 }
-export interface Source_ConstructProps extends GObject.Object_ConstructProps {
+interface Source_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Grl-0.3.Grl.Source */
     auto_split_threshold?: number
     plugin?: Plugin
     rank?: number
@@ -1048,10 +1039,8 @@ class Source {
     source_name: string
     source_tags: string[]
     supported_media: SupportedMedia
-    /* Fields of Grl-0.3.Grl.Source */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grl-0.3.Grl.Source */
     browse(container: Media | null, keys: KeyID[], options: OperationOptions, callback: SourceResultCb): number
     browse_sync(container: Media | null, keys: KeyID[], options: OperationOptions): Media[]
@@ -1176,7 +1165,7 @@ class Source {
 }
 abstract class CapsClass {
     /* Fields of Grl-0.3.Grl.CapsClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class CapsPrivate {
@@ -1184,7 +1173,7 @@ class CapsPrivate {
 }
 abstract class ConfigClass {
     /* Fields of Grl-0.3.Grl.ConfigClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ConfigPrivate {
@@ -1192,7 +1181,7 @@ class ConfigPrivate {
 }
 abstract class DataClass {
     /* Fields of Grl-0.3.Grl.DataClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DataPrivate {
@@ -1205,7 +1194,7 @@ class LogDomain {
 }
 abstract class MediaClass {
     /* Fields of Grl-0.3.Grl.MediaClass */
-    parent_class: DataClass
+    readonly parent_class: DataClass
     static name: string
 }
 class MediaPrivate {
@@ -1213,7 +1202,7 @@ class MediaPrivate {
 }
 abstract class OperationOptionsClass {
     /* Fields of Grl-0.3.Grl.OperationOptionsClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class OperationOptionsPrivate {
@@ -1221,22 +1210,22 @@ class OperationOptionsPrivate {
 }
 abstract class PluginClass {
     /* Fields of Grl-0.3.Grl.PluginClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PluginDescriptor {
     /* Fields of Grl-0.3.Grl.PluginDescriptor */
-    major_version: number
-    minor_version: number
-    id: string
-    name: string
-    description: string
-    author: string
-    version: string
-    license: string
-    site: string
-    deinit: PluginDeinitFunc
-    register_keys: PluginRegisterKeysFunc
+    readonly major_version: number
+    readonly minor_version: number
+    readonly id: string
+    readonly name: string
+    readonly description: string
+    readonly author: string
+    readonly version: string
+    readonly license: string
+    readonly site: string
+    readonly deinit: PluginDeinitFunc
+    readonly register_keys: PluginRegisterKeysFunc
     static name: string
 }
 class PluginPrivate {
@@ -1244,8 +1233,8 @@ class PluginPrivate {
 }
 class RangeValue {
     /* Fields of Grl-0.3.Grl.RangeValue */
-    min: any
-    max: any
+    readonly min: any
+    readonly max: any
     /* Methods of Grl-0.3.Grl.RangeValue */
     dup(): RangeValue
     free(): void
@@ -1259,7 +1248,7 @@ class RangeValue {
 }
 abstract class RegistryClass {
     /* Fields of Grl-0.3.Grl.RegistryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class RegistryPrivate {
@@ -1267,7 +1256,7 @@ class RegistryPrivate {
 }
 abstract class RelatedKeysClass {
     /* Fields of Grl-0.3.Grl.RelatedKeysClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class RelatedKeysPrivate {
@@ -1275,47 +1264,47 @@ class RelatedKeysPrivate {
 }
 class SourceBrowseSpec {
     /* Fields of Grl-0.3.Grl.SourceBrowseSpec */
-    source: Source
-    operation_id: number
-    container: Media
-    keys: object[]
-    options: OperationOptions
-    callback: SourceResultCb
-    user_data: object
+    readonly source: Source
+    readonly operation_id: number
+    readonly container: Media
+    readonly keys: object[]
+    readonly options: OperationOptions
+    readonly callback: SourceResultCb
+    readonly user_data: object
     static name: string
 }
 abstract class SourceClass {
     /* Fields of Grl-0.3.Grl.SourceClass */
-    parent_class: GObject.ObjectClass
-    supported_operations: (source: Source) => SupportedOps
-    supported_keys: (source: Source) => KeyID[]
-    slow_keys: (source: Source) => KeyID[]
-    writable_keys: (source: Source) => KeyID[]
-    get_caps: (source: Source, operation: SupportedOps) => Caps
-    resolve: (source: Source, ms: SourceResolveSpec) => void
-    may_resolve: (source: Source, media: Media, key_id: KeyID, missing_keys: KeyID[]) => boolean
-    test_media_from_uri: (source: Source, uri: string) => boolean
-    media_from_uri: (source: Source, mfus: SourceMediaFromUriSpec) => void
-    browse: (source: Source, bs: SourceBrowseSpec) => void
-    search: (source: Source, ss: SourceSearchSpec) => void
-    query: (source: Source, qs: SourceQuerySpec) => void
-    remove: (source: Source, rs: SourceRemoveSpec) => void
-    store: (source: Source, ss: SourceStoreSpec) => void
-    store_metadata: (source: Source, sms: SourceStoreMetadataSpec) => void
-    cancel: (source: Source, operation_id: number) => void
-    notify_change_start: (source: Source) => boolean
-    notify_change_stop: (source: Source) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly supported_operations: (source: Source) => SupportedOps
+    readonly supported_keys: (source: Source) => KeyID[]
+    readonly slow_keys: (source: Source) => KeyID[]
+    readonly writable_keys: (source: Source) => KeyID[]
+    readonly get_caps: (source: Source, operation: SupportedOps) => Caps
+    readonly resolve: (source: Source, ms: SourceResolveSpec) => void
+    readonly may_resolve: (source: Source, media: Media, key_id: KeyID, missing_keys: KeyID[]) => boolean
+    readonly test_media_from_uri: (source: Source, uri: string) => boolean
+    readonly media_from_uri: (source: Source, mfus: SourceMediaFromUriSpec) => void
+    readonly browse: (source: Source, bs: SourceBrowseSpec) => void
+    readonly search: (source: Source, ss: SourceSearchSpec) => void
+    readonly query: (source: Source, qs: SourceQuerySpec) => void
+    readonly remove: (source: Source, rs: SourceRemoveSpec) => void
+    readonly store: (source: Source, ss: SourceStoreSpec) => void
+    readonly store_metadata: (source: Source, sms: SourceStoreMetadataSpec) => void
+    readonly cancel: (source: Source, operation_id: number) => void
+    readonly notify_change_start: (source: Source) => boolean
+    readonly notify_change_stop: (source: Source) => boolean
     static name: string
 }
 class SourceMediaFromUriSpec {
     /* Fields of Grl-0.3.Grl.SourceMediaFromUriSpec */
-    source: Source
-    operation_id: number
-    uri: string
-    keys: object[]
-    options: OperationOptions
-    callback: SourceResolveCb
-    user_data: object
+    readonly source: Source
+    readonly operation_id: number
+    readonly uri: string
+    readonly keys: object[]
+    readonly options: OperationOptions
+    readonly callback: SourceResolveCb
+    readonly user_data: object
     static name: string
 }
 class SourcePrivate {
@@ -1323,66 +1312,66 @@ class SourcePrivate {
 }
 class SourceQuerySpec {
     /* Fields of Grl-0.3.Grl.SourceQuerySpec */
-    source: Source
-    operation_id: number
-    query: string
-    keys: object[]
-    options: OperationOptions
-    callback: SourceResultCb
-    user_data: object
+    readonly source: Source
+    readonly operation_id: number
+    readonly query: string
+    readonly keys: object[]
+    readonly options: OperationOptions
+    readonly callback: SourceResultCb
+    readonly user_data: object
     static name: string
 }
 class SourceRemoveSpec {
     /* Fields of Grl-0.3.Grl.SourceRemoveSpec */
-    source: Source
-    media_id: string
-    media: Media
-    callback: SourceRemoveCb
-    user_data: object
+    readonly source: Source
+    readonly media_id: string
+    readonly media: Media
+    readonly callback: SourceRemoveCb
+    readonly user_data: object
     static name: string
 }
 class SourceResolveSpec {
     /* Fields of Grl-0.3.Grl.SourceResolveSpec */
-    source: Source
-    operation_id: number
-    media: Media
-    keys: object[]
-    options: OperationOptions
-    callback: SourceResolveCb
-    user_data: object
+    readonly source: Source
+    readonly operation_id: number
+    readonly media: Media
+    readonly keys: object[]
+    readonly options: OperationOptions
+    readonly callback: SourceResolveCb
+    readonly user_data: object
     static name: string
 }
 class SourceSearchSpec {
     /* Fields of Grl-0.3.Grl.SourceSearchSpec */
-    source: Source
-    operation_id: number
-    text: string
-    keys: object[]
-    options: OperationOptions
-    callback: SourceResultCb
-    user_data: object
+    readonly source: Source
+    readonly operation_id: number
+    readonly text: string
+    readonly keys: object[]
+    readonly options: OperationOptions
+    readonly callback: SourceResultCb
+    readonly user_data: object
     static name: string
 }
 class SourceStoreMetadataSpec {
     /* Fields of Grl-0.3.Grl.SourceStoreMetadataSpec */
-    source: Source
-    media: Media
-    keys: object[]
-    flags: WriteFlags
-    callback: SourceStoreCb
-    user_data: object
-    failed_keys: object[]
+    readonly source: Source
+    readonly media: Media
+    readonly keys: object[]
+    readonly flags: WriteFlags
+    readonly callback: SourceStoreCb
+    readonly user_data: object
+    readonly failed_keys: object[]
     static name: string
 }
 class SourceStoreSpec {
     /* Fields of Grl-0.3.Grl.SourceStoreSpec */
-    source: Source
-    parent: Media
-    media: Media
-    callback: SourceStoreCb
-    user_data: object
+    readonly source: Source
+    readonly parent: Media
+    readonly media: Media
+    readonly callback: SourceStoreCb
+    readonly user_data: object
     static name: string
 }
-type KeyID = number
+    type KeyID = number
 }
 export default Grl;

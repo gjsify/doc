@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gepub-0.5
  */
@@ -22,12 +28,13 @@ import type Atk from './Atk-1.0';
 
 export namespace Gepub {
 
-export const META_AUTHOR: string
-export const META_DESC: string
-export const META_ID: string
-export const META_LANG: string
-export const META_TITLE: string
-export interface Doc_ConstructProps extends GObject.Object_ConstructProps {
+const META_AUTHOR: string
+const META_DESC: string
+const META_ID: string
+const META_LANG: string
+const META_TITLE: string
+interface Doc_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gepub-0.5.Gepub.Doc */
     file?: Gio.File
     page?: number
     path?: string
@@ -36,7 +43,7 @@ class Doc {
     /* Properties of Gepub-0.5.Gepub.Doc */
     page: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gepub-0.5.Gepub.Doc */
     get_cover(): string
     get_current(): GLib.Bytes
@@ -107,7 +114,8 @@ class Doc {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Widget_ConstructProps extends WebKit2.WebView_ConstructProps {
+interface Widget_ConstructProps extends WebKit2.WebView_ConstructProps {
+    /* Constructor properties of Gepub-0.5.Gepub.Widget */
     doc?: Doc
 }
 class Widget {
@@ -160,7 +168,6 @@ class Widget {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -173,14 +180,16 @@ class Widget {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
+    /* Fields of WebKit2-4.0.WebKit2.WebView */
+    readonly parent: WebKit2.WebViewBase
     /* Fields of WebKit2-4.0.WebKit2.WebViewBase */
-    parentInstance: Gtk.Container
+    readonly parentInstance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gepub-0.5.Gepub.Widget */
     get_doc(): Doc
     set_doc(doc?: Doc | null): void
@@ -268,7 +277,7 @@ class Widget {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -583,6 +592,18 @@ class Widget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Virtual methods of Gepub-0.5.Gepub.Widget */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of WebKit2-4.0.WebKit2.WebView */
     vfunc_authenticate(request: WebKit2.AuthenticationRequest): boolean
     vfunc_close(): void
@@ -610,6 +631,16 @@ class Widget {
     vfunc_user_message_received(message: WebKit2.UserMessage): boolean
     vfunc_web_process_crashed(): boolean
     vfunc_web_process_terminated(reason: WebKit2.WebProcessTerminationReason): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of WebKit2-4.0.WebKit2.WebViewBase */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1120,8 +1151,6 @@ class Widget {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: Widget, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: Widget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: Widget, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Widget, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Widget, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: Widget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: Widget, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: Widget, pspec: GObject.ParamSpec) => void)): number

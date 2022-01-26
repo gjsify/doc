@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GjsDBus-1.0
  */
@@ -9,17 +15,15 @@ import type GLib from './GLib-2.0';
 
 export namespace GjsDBus {
 
-export interface Implementation_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+interface Implementation_ConstructProps extends Gio.DBusInterfaceSkeleton_ConstructProps {
+    /* Constructor properties of GjsDBus-1.0.GjsDBus.Implementation */
     g_interface_info?: Gio.DBusInterfaceInfo
 }
 class Implementation {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: Gio.DBusInterfaceSkeletonFlags
-    /* Fields of GjsDBus-1.0.GjsDBus.Implementation */
-    parent: Gio.DBusInterfaceSkeleton
-    priv: ImplementationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GjsDBus-1.0.GjsDBus.Implementation */
     emit_property_changed(property: string, newvalue?: GLib.Variant | null): void
     emit_signal(signal_name: string, parameters?: GLib.Variant | null): void
@@ -109,7 +113,7 @@ class Implementation {
 }
 abstract class ImplementationClass {
     /* Fields of GjsDBus-1.0.GjsDBus.ImplementationClass */
-    parent_class: Gio.DBusInterfaceSkeletonClass
+    readonly parent_class: Gio.DBusInterfaceSkeletonClass
     static name: string
 }
 class ImplementationPrivate {

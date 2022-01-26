@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Colord-1.0
  */
@@ -231,106 +237,106 @@ enum IccLoadFlags {
     CHARACTERIZATION,
     ALL,
 }
-export const CLIENT_PROPERTY_DAEMON_VERSION: string
-export const CLIENT_PROPERTY_SYSTEM_MODEL: string
-export const CLIENT_PROPERTY_SYSTEM_VENDOR: string
-export const DEVICE_METADATA_OUTPUT_EDID_MD5: string
-export const DEVICE_METADATA_OUTPUT_PRIORITY: string
-export const DEVICE_METADATA_OUTPUT_PRIORITY_PRIMARY: string
-export const DEVICE_METADATA_OUTPUT_PRIORITY_SECONDARY: string
-export const DEVICE_METADATA_OWNER_CMDLINE: string
-export const DEVICE_METADATA_XRANDR_NAME: string
-export const DEVICE_PROPERTY_COLORSPACE: string
-export const DEVICE_PROPERTY_CREATED: string
-export const DEVICE_PROPERTY_EMBEDDED: string
-export const DEVICE_PROPERTY_ENABLED: string
-export const DEVICE_PROPERTY_FORMAT: string
-export const DEVICE_PROPERTY_ID: string
-export const DEVICE_PROPERTY_KIND: string
-export const DEVICE_PROPERTY_METADATA: string
-export const DEVICE_PROPERTY_MODE: string
-export const DEVICE_PROPERTY_MODEL: string
-export const DEVICE_PROPERTY_MODIFIED: string
-export const DEVICE_PROPERTY_OWNER: string
-export const DEVICE_PROPERTY_PROFILES: string
-export const DEVICE_PROPERTY_PROFILING_INHIBITORS: string
-export const DEVICE_PROPERTY_SCOPE: string
-export const DEVICE_PROPERTY_SEAT: string
-export const DEVICE_PROPERTY_SERIAL: string
-export const DEVICE_PROPERTY_VENDOR: string
-export const PIXEL_FORMAT_ARGB32: number
-export const PIXEL_FORMAT_BGRA32: number
-export const PIXEL_FORMAT_CMYK32: number
-export const PIXEL_FORMAT_RGB24: number
-export const PIXEL_FORMAT_RGBA32: number
-export const PIXEL_FORMAT_UNKNOWN: number
-export const PROFILE_METADATA_ACCURACY_DE76_AVG: string
-export const PROFILE_METADATA_ACCURACY_DE76_MAX: string
-export const PROFILE_METADATA_ACCURACY_DE76_RMS: string
-export const PROFILE_METADATA_CMF_BINARY: string
-export const PROFILE_METADATA_CMF_PRODUCT: string
-export const PROFILE_METADATA_CMF_VERSION: string
-export const PROFILE_METADATA_CONNECTION_TYPE: string
-export const PROFILE_METADATA_CONNECTION_TYPE_DISPLAYPORT: string
-export const PROFILE_METADATA_CONNECTION_TYPE_DVI: string
-export const PROFILE_METADATA_CONNECTION_TYPE_HDMI: string
-export const PROFILE_METADATA_CONNECTION_TYPE_INTERNAL: string
-export const PROFILE_METADATA_CONNECTION_TYPE_VGA: string
-export const PROFILE_METADATA_DATA_SOURCE: string
-export const PROFILE_METADATA_DATA_SOURCE_CALIB: string
-export const PROFILE_METADATA_DATA_SOURCE_EDID: string
-export const PROFILE_METADATA_DATA_SOURCE_STANDARD: string
-export const PROFILE_METADATA_DATA_SOURCE_TEST: string
-export const PROFILE_METADATA_EDID_MD5: string
-export const PROFILE_METADATA_EDID_MNFT: string
-export const PROFILE_METADATA_EDID_MODEL: string
-export const PROFILE_METADATA_EDID_SERIAL: string
-export const PROFILE_METADATA_EDID_VENDOR: string
-export const PROFILE_METADATA_FILE_CHECKSUM: string
-export const PROFILE_METADATA_LICENSE: string
-export const PROFILE_METADATA_MAPPING_DEVICE_ID: string
-export const PROFILE_METADATA_MAPPING_FORMAT: string
-export const PROFILE_METADATA_MAPPING_QUALIFIER: string
-export const PROFILE_METADATA_MEASUREMENT_DEVICE: string
-export const PROFILE_METADATA_QUALITY: string
-export const PROFILE_METADATA_QUALITY_HIGH: string
-export const PROFILE_METADATA_QUALITY_LOW: string
-export const PROFILE_METADATA_QUALITY_MEDIUM: string
-export const PROFILE_METADATA_SCREEN_BRIGHTNESS: string
-export const PROFILE_METADATA_SCREEN_SURFACE: string
-export const PROFILE_METADATA_SCREEN_SURFACE_GLOSSY: string
-export const PROFILE_METADATA_SCREEN_SURFACE_MATTE: string
-export const PROFILE_METADATA_STANDARD_SPACE: string
-export const PROFILE_PROPERTY_COLORSPACE: string
-export const PROFILE_PROPERTY_CREATED: string
-export const PROFILE_PROPERTY_FILENAME: string
-export const PROFILE_PROPERTY_FORMAT: string
-export const PROFILE_PROPERTY_HAS_VCGT: string
-export const PROFILE_PROPERTY_ID: string
-export const PROFILE_PROPERTY_IS_SYSTEM_WIDE: string
-export const PROFILE_PROPERTY_KIND: string
-export const PROFILE_PROPERTY_METADATA: string
-export const PROFILE_PROPERTY_OWNER: string
-export const PROFILE_PROPERTY_QUALIFIER: string
-export const PROFILE_PROPERTY_SCOPE: string
-export const PROFILE_PROPERTY_TITLE: string
-export const PROFILE_PROPERTY_WARNINGS: string
-export const SENSOR_METADATA_IMAGE_ATTACH: string
-export const SENSOR_METADATA_IMAGE_CALIBRATE: string
-export const SENSOR_METADATA_IMAGE_SCREEN: string
-export const SENSOR_PROPERTY_CAPABILITIES: string
-export const SENSOR_PROPERTY_EMBEDDED: string
-export const SENSOR_PROPERTY_ID: string
-export const SENSOR_PROPERTY_KIND: string
-export const SENSOR_PROPERTY_LOCKED: string
-export const SENSOR_PROPERTY_METADATA: string
-export const SENSOR_PROPERTY_MODE: string
-export const SENSOR_PROPERTY_MODEL: string
-export const SENSOR_PROPERTY_NATIVE: string
-export const SENSOR_PROPERTY_OPTIONS: string
-export const SENSOR_PROPERTY_SERIAL: string
-export const SENSOR_PROPERTY_STATE: string
-export const SENSOR_PROPERTY_VENDOR: string
+const CLIENT_PROPERTY_DAEMON_VERSION: string
+const CLIENT_PROPERTY_SYSTEM_MODEL: string
+const CLIENT_PROPERTY_SYSTEM_VENDOR: string
+const DEVICE_METADATA_OUTPUT_EDID_MD5: string
+const DEVICE_METADATA_OUTPUT_PRIORITY: string
+const DEVICE_METADATA_OUTPUT_PRIORITY_PRIMARY: string
+const DEVICE_METADATA_OUTPUT_PRIORITY_SECONDARY: string
+const DEVICE_METADATA_OWNER_CMDLINE: string
+const DEVICE_METADATA_XRANDR_NAME: string
+const DEVICE_PROPERTY_COLORSPACE: string
+const DEVICE_PROPERTY_CREATED: string
+const DEVICE_PROPERTY_EMBEDDED: string
+const DEVICE_PROPERTY_ENABLED: string
+const DEVICE_PROPERTY_FORMAT: string
+const DEVICE_PROPERTY_ID: string
+const DEVICE_PROPERTY_KIND: string
+const DEVICE_PROPERTY_METADATA: string
+const DEVICE_PROPERTY_MODE: string
+const DEVICE_PROPERTY_MODEL: string
+const DEVICE_PROPERTY_MODIFIED: string
+const DEVICE_PROPERTY_OWNER: string
+const DEVICE_PROPERTY_PROFILES: string
+const DEVICE_PROPERTY_PROFILING_INHIBITORS: string
+const DEVICE_PROPERTY_SCOPE: string
+const DEVICE_PROPERTY_SEAT: string
+const DEVICE_PROPERTY_SERIAL: string
+const DEVICE_PROPERTY_VENDOR: string
+const PIXEL_FORMAT_ARGB32: number
+const PIXEL_FORMAT_BGRA32: number
+const PIXEL_FORMAT_CMYK32: number
+const PIXEL_FORMAT_RGB24: number
+const PIXEL_FORMAT_RGBA32: number
+const PIXEL_FORMAT_UNKNOWN: number
+const PROFILE_METADATA_ACCURACY_DE76_AVG: string
+const PROFILE_METADATA_ACCURACY_DE76_MAX: string
+const PROFILE_METADATA_ACCURACY_DE76_RMS: string
+const PROFILE_METADATA_CMF_BINARY: string
+const PROFILE_METADATA_CMF_PRODUCT: string
+const PROFILE_METADATA_CMF_VERSION: string
+const PROFILE_METADATA_CONNECTION_TYPE: string
+const PROFILE_METADATA_CONNECTION_TYPE_DISPLAYPORT: string
+const PROFILE_METADATA_CONNECTION_TYPE_DVI: string
+const PROFILE_METADATA_CONNECTION_TYPE_HDMI: string
+const PROFILE_METADATA_CONNECTION_TYPE_INTERNAL: string
+const PROFILE_METADATA_CONNECTION_TYPE_VGA: string
+const PROFILE_METADATA_DATA_SOURCE: string
+const PROFILE_METADATA_DATA_SOURCE_CALIB: string
+const PROFILE_METADATA_DATA_SOURCE_EDID: string
+const PROFILE_METADATA_DATA_SOURCE_STANDARD: string
+const PROFILE_METADATA_DATA_SOURCE_TEST: string
+const PROFILE_METADATA_EDID_MD5: string
+const PROFILE_METADATA_EDID_MNFT: string
+const PROFILE_METADATA_EDID_MODEL: string
+const PROFILE_METADATA_EDID_SERIAL: string
+const PROFILE_METADATA_EDID_VENDOR: string
+const PROFILE_METADATA_FILE_CHECKSUM: string
+const PROFILE_METADATA_LICENSE: string
+const PROFILE_METADATA_MAPPING_DEVICE_ID: string
+const PROFILE_METADATA_MAPPING_FORMAT: string
+const PROFILE_METADATA_MAPPING_QUALIFIER: string
+const PROFILE_METADATA_MEASUREMENT_DEVICE: string
+const PROFILE_METADATA_QUALITY: string
+const PROFILE_METADATA_QUALITY_HIGH: string
+const PROFILE_METADATA_QUALITY_LOW: string
+const PROFILE_METADATA_QUALITY_MEDIUM: string
+const PROFILE_METADATA_SCREEN_BRIGHTNESS: string
+const PROFILE_METADATA_SCREEN_SURFACE: string
+const PROFILE_METADATA_SCREEN_SURFACE_GLOSSY: string
+const PROFILE_METADATA_SCREEN_SURFACE_MATTE: string
+const PROFILE_METADATA_STANDARD_SPACE: string
+const PROFILE_PROPERTY_COLORSPACE: string
+const PROFILE_PROPERTY_CREATED: string
+const PROFILE_PROPERTY_FILENAME: string
+const PROFILE_PROPERTY_FORMAT: string
+const PROFILE_PROPERTY_HAS_VCGT: string
+const PROFILE_PROPERTY_ID: string
+const PROFILE_PROPERTY_IS_SYSTEM_WIDE: string
+const PROFILE_PROPERTY_KIND: string
+const PROFILE_PROPERTY_METADATA: string
+const PROFILE_PROPERTY_OWNER: string
+const PROFILE_PROPERTY_QUALIFIER: string
+const PROFILE_PROPERTY_SCOPE: string
+const PROFILE_PROPERTY_TITLE: string
+const PROFILE_PROPERTY_WARNINGS: string
+const SENSOR_METADATA_IMAGE_ATTACH: string
+const SENSOR_METADATA_IMAGE_CALIBRATE: string
+const SENSOR_METADATA_IMAGE_SCREEN: string
+const SENSOR_PROPERTY_CAPABILITIES: string
+const SENSOR_PROPERTY_EMBEDDED: string
+const SENSOR_PROPERTY_ID: string
+const SENSOR_PROPERTY_KIND: string
+const SENSOR_PROPERTY_LOCKED: string
+const SENSOR_PROPERTY_METADATA: string
+const SENSOR_PROPERTY_MODE: string
+const SENSOR_PROPERTY_MODEL: string
+const SENSOR_PROPERTY_NATIVE: string
+const SENSOR_PROPERTY_OPTIONS: string
+const SENSOR_PROPERTY_SERIAL: string
+const SENSOR_PROPERTY_STATE: string
+const SENSOR_PROPERTY_VENDOR: string
 function color_get_blackbody_rgb(temp: number, result: ColorRGB): boolean
 function color_get_blackbody_rgb_full(temp: number, result: ColorRGB, flags: ColorBlackbodyFlags): boolean
 function color_rgb8_to_rgb(src: ColorRGB8, dest: ColorRGB): void
@@ -360,7 +366,7 @@ function rendering_intent_from_string(rendering_intent: string): RenderingIntent
 function rendering_intent_to_string(rendering_intent: RenderingIntent): string
 function standard_space_from_string(standard_space: string): StandardSpace
 function standard_space_to_string(standard_space: StandardSpace): string
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Client {
     /* Properties of Colord-1.0.Colord.Client */
@@ -368,10 +374,8 @@ class Client {
     readonly daemon_version: string
     readonly system_model: string
     readonly system_vendor: string
-    /* Fields of Colord-1.0.Colord.Client */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Colord-1.0.Colord.Client */
     connect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     connect_finish(res: Gio.AsyncResult): boolean
@@ -530,7 +534,8 @@ class Client {
     static error_to_string(error_enum: ClientError): string
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends GObject.Object_ConstructProps {
+interface Device_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Colord-1.0.Colord.Device */
     object_path?: string
 }
 class Device {
@@ -553,10 +558,8 @@ class Device {
     readonly seat: string
     readonly serial: string
     readonly vendor: string
-    /* Fields of Colord-1.0.Colord.Device */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Colord-1.0.Colord.Device */
     add_profile(relation: DeviceRelation, profile: Profile, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     add_profile_finish(res: Gio.AsyncResult): boolean
@@ -717,13 +720,11 @@ class Device {
     static relation_to_string(device_relation: DeviceRelation): string
     static $gtype: GObject.Type
 }
-export interface Edid_ConstructProps extends GObject.Object_ConstructProps {
+interface Edid_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Edid {
-    /* Fields of Colord-1.0.Colord.Edid */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Colord-1.0.Colord.Edid */
     get_blue(): ColorYxy
     get_checksum(): string
@@ -786,7 +787,8 @@ class Edid {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface Icc_ConstructProps extends GObject.Object_ConstructProps {
+interface Icc_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Colord-1.0.Colord.Icc */
     colorspace?: number
     kind?: number
     version?: number
@@ -805,10 +807,8 @@ class Icc {
     readonly temperature: number
     version: number
     readonly white: ColorXYZ
-    /* Fields of Colord-1.0.Colord.Icc */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Colord-1.0.Colord.Icc */
     add_metadata(key: string, value: string): void
     create_default(): boolean
@@ -843,7 +843,7 @@ class Icc {
     get_version(): number
     get_warnings(): ProfileWarning[]
     get_white(): ColorXYZ
-    load_data(data: Uint8Array[], flags: IccLoadFlags): boolean
+    load_data(data: Uint8Array, flags: IccLoadFlags): boolean
     load_fd(fd: number, flags: IccLoadFlags): boolean
     load_file(file: Gio.File, flags: IccLoadFlags, cancellable?: Gio.Cancellable | null): boolean
     load_handle(handle: object | null, flags: IccLoadFlags): boolean
@@ -938,7 +938,8 @@ class Icc {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface It8_ConstructProps extends GObject.Object_ConstructProps {
+interface It8_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Colord-1.0.Colord.It8 */
     kind?: number
 }
 class It8 {
@@ -950,10 +951,8 @@ class It8 {
     readonly reference: string
     readonly spectral: boolean
     readonly title: string
-    /* Fields of Colord-1.0.Colord.It8 */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Colord-1.0.Colord.It8 */
     add_data(rgb: ColorRGB, xyz: ColorXYZ): void
     add_option(option: string): void
@@ -1048,7 +1047,8 @@ class It8 {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface Profile_ConstructProps extends GObject.Object_ConstructProps {
+interface Profile_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Colord-1.0.Colord.Profile */
     object_path?: string
 }
 class Profile {
@@ -1068,10 +1068,8 @@ class Profile {
     readonly scope: number
     readonly title: string
     readonly warnings: string[]
-    /* Fields of Colord-1.0.Colord.Profile */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Colord-1.0.Colord.Profile */
     connect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     connect_finish(res: Gio.AsyncResult): boolean
@@ -1196,7 +1194,8 @@ class Profile {
     static warning_to_string(kind_enum: ProfileWarning): string
     static $gtype: GObject.Type
 }
-export interface Sensor_ConstructProps extends GObject.Object_ConstructProps {
+interface Sensor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Colord-1.0.Colord.Sensor */
     object_path?: string
 }
 class Sensor {
@@ -1213,10 +1212,8 @@ class Sensor {
     readonly serial: string
     readonly state: string
     readonly vendor: string
-    /* Fields of Colord-1.0.Colord.Sensor */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Colord-1.0.Colord.Sensor */
     connect(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     connect_finish(res: Gio.AsyncResult): boolean
@@ -1344,24 +1341,24 @@ class Sensor {
 }
 abstract class ClientClass {
     /* Fields of Colord-1.0.Colord.ClientClass */
-    parent_class: GObject.ObjectClass
-    device_added: (client: Client, device: Device) => void
-    device_removed: (client: Client, device: Device) => void
-    device_changed: (client: Client, device: Device) => void
-    profile_added: (client: Client, profile: Profile) => void
-    profile_removed: (client: Client, profile: Profile) => void
-    profile_changed: (client: Client, profile: Profile) => void
-    sensor_added: (client: Client, sensor: Sensor) => void
-    sensor_removed: (client: Client, sensor: Sensor) => void
-    sensor_changed: (client: Client, sensor: Sensor) => void
-    changed: (client: Client) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly device_added: (client: Client, device: Device) => void
+    readonly device_removed: (client: Client, device: Device) => void
+    readonly device_changed: (client: Client, device: Device) => void
+    readonly profile_added: (client: Client, profile: Profile) => void
+    readonly profile_removed: (client: Client, profile: Profile) => void
+    readonly profile_changed: (client: Client, profile: Profile) => void
+    readonly sensor_added: (client: Client, sensor: Sensor) => void
+    readonly sensor_removed: (client: Client, sensor: Sensor) => void
+    readonly sensor_changed: (client: Client, sensor: Sensor) => void
+    readonly changed: (client: Client) => void
     static name: string
 }
 class ColorLab {
     /* Fields of Colord-1.0.Colord.ColorLab */
-    L: number
-    a: number
-    b: number
+    readonly L: number
+    readonly a: number
+    readonly b: number
     /* Methods of Colord-1.0.Colord.ColorLab */
     copy(dest: ColorLab): void
     delta_e76(p2: ColorLab): number
@@ -1376,9 +1373,9 @@ class ColorLab {
 }
 class ColorRGB {
     /* Fields of Colord-1.0.Colord.ColorRGB */
-    R: number
-    G: number
-    B: number
+    readonly R: number
+    readonly G: number
+    readonly B: number
     /* Methods of Colord-1.0.Colord.ColorRGB */
     copy(dest: ColorRGB): void
     dup(): ColorRGB
@@ -1398,9 +1395,9 @@ class ColorRGB {
 }
 class ColorRGB8 {
     /* Fields of Colord-1.0.Colord.ColorRGB8 */
-    R: number
-    G: number
-    B: number
+    readonly R: number
+    readonly G: number
+    readonly B: number
     static name: string
 }
 class ColorSwatch {
@@ -1419,9 +1416,9 @@ class ColorSwatch {
 }
 class ColorUVW {
     /* Fields of Colord-1.0.Colord.ColorUVW */
-    U: number
-    V: number
-    W: number
+    readonly U: number
+    readonly V: number
+    readonly W: number
     /* Methods of Colord-1.0.Colord.ColorUVW */
     copy(dest: ColorUVW): void
     dup(): ColorUVW
@@ -1437,9 +1434,9 @@ class ColorUVW {
 }
 class ColorXYZ {
     /* Fields of Colord-1.0.Colord.ColorXYZ */
-    X: number
-    Y: number
-    Z: number
+    readonly X: number
+    readonly Y: number
+    readonly Z: number
     /* Methods of Colord-1.0.Colord.ColorXYZ */
     clear(): void
     copy(dest: ColorXYZ): void
@@ -1458,9 +1455,9 @@ class ColorXYZ {
 }
 class ColorYxy {
     /* Fields of Colord-1.0.Colord.ColorYxy */
-    Y: number
-    x: number
-    y: number
+    readonly Y: number
+    readonly x: number
+    readonly y: number
     /* Methods of Colord-1.0.Colord.ColorYxy */
     copy(dest: ColorYxy): void
     dup(): ColorYxy
@@ -1476,48 +1473,48 @@ class ColorYxy {
 }
 abstract class DeviceClass {
     /* Fields of Colord-1.0.Colord.DeviceClass */
-    parent_class: GObject.ObjectClass
-    changed: (device: Device) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (device: Device) => void
     static name: string
 }
 abstract class EdidClass {
     /* Fields of Colord-1.0.Colord.EdidClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class IccClass {
     /* Fields of Colord-1.0.Colord.IccClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class It8Class {
     /* Fields of Colord-1.0.Colord.It8Class */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Mat3x3 {
     /* Fields of Colord-1.0.Colord.Mat3x3 */
-    m00: number
-    m01: number
-    m02: number
-    m10: number
-    m11: number
-    m12: number
-    m20: number
-    m21: number
-    m22: number
+    readonly m00: number
+    readonly m01: number
+    readonly m02: number
+    readonly m10: number
+    readonly m11: number
+    readonly m12: number
+    readonly m20: number
+    readonly m21: number
+    readonly m22: number
     static name: string
 }
 abstract class ProfileClass {
     /* Fields of Colord-1.0.Colord.ProfileClass */
-    parent_class: GObject.ObjectClass
-    changed: (profile: Profile) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (profile: Profile) => void
     static name: string
 }
 abstract class SensorClass {
     /* Fields of Colord-1.0.Colord.SensorClass */
-    parent_class: GObject.ObjectClass
-    button_pressed: (sensor: Sensor) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly button_pressed: (sensor: Sensor) => void
     static name: string
 }
 class Spectrum {
@@ -1567,9 +1564,9 @@ class Spectrum {
 }
 class Vec3 {
     /* Fields of Colord-1.0.Colord.Vec3 */
-    v0: number
-    v1: number
-    v2: number
+    readonly v0: number
+    readonly v1: number
+    readonly v2: number
     /* Methods of Colord-1.0.Colord.Vec3 */
     add(src2: Vec3, dest: Vec3): void
     clear(): void
@@ -1582,6 +1579,6 @@ class Vec3 {
     to_string(): string
     static name: string
 }
-type PixelFormat = number
+    type PixelFormat = number
 }
 export default Colord;

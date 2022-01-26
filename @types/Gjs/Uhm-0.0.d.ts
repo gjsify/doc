@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Uhm-0.0
  */
@@ -13,17 +19,17 @@ export namespace Uhm {
 enum ServerError {
     SERVER_ERROR_MESSAGE_MISMATCH,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export interface Resolver_ConstructProps extends Gio.Resolver_ConstructProps {
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+interface Resolver_ConstructProps extends Gio.Resolver_ConstructProps {
 }
 class Resolver {
     /* Fields of Gio-2.0.Gio.Resolver */
-    parent_instance: GObject.Object
-    priv: Gio.ResolverPrivate
+    readonly parent_instance: GObject.Object
+    readonly priv: Gio.ResolverPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Uhm-0.0.Uhm.Resolver */
     add_A(hostname: string, addr: string): boolean
     add_SRV(service: string, protocol: string, domain: string, addr: string, port: number): boolean
@@ -110,7 +116,8 @@ class Resolver {
     static new(): Resolver
     static $gtype: GObject.Type
 }
-export interface Server_ConstructProps extends GObject.Object_ConstructProps {
+interface Server_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Uhm-0.0.Uhm.Server */
     enable_logging?: boolean
     enable_online?: boolean
     tls_certificate?: Gio.TlsCertificate
@@ -126,7 +133,7 @@ class Server {
     tls_certificate: Gio.TlsCertificate
     trace_directory: Gio.File
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Uhm-0.0.Uhm.Server */
     compare_messages_remove_filter(filter_id: number): void
     end_trace(): void
@@ -233,8 +240,8 @@ class ResolverPrivate {
 }
 abstract class ServerClass {
     /* Fields of Uhm-0.0.Uhm.ServerClass */
-    handle_message: (self: Server, message: Soup.Message, client: Soup.ClientContext) => boolean
-    compare_messages: (self: Server, expected_message: Soup.Message, actual_message: Soup.Message, actual_client: Soup.ClientContext) => boolean
+    readonly handle_message: (self: Server, message: Soup.Message, client: Soup.ClientContext) => boolean
+    readonly compare_messages: (self: Server, expected_message: Soup.Message, actual_message: Soup.Message, actual_client: Soup.ClientContext) => boolean
     static name: string
 }
 class ServerPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GdkPixdata-2.0
  */
@@ -31,21 +37,21 @@ enum PixdataType {
     ENCODING_RLE,
     ENCODING_MASK,
 }
-export const PIXBUF_MAGIC_NUMBER: number
-export const PIXDATA_HEADER_LENGTH: number
+const PIXBUF_MAGIC_NUMBER: number
+const PIXDATA_HEADER_LENGTH: number
 function pixbuf_from_pixdata(pixdata: Pixdata, copy_pixels: boolean): GdkPixbuf.Pixbuf
 class Pixdata {
     /* Fields of GdkPixdata-2.0.GdkPixdata.Pixdata */
-    magic: number
-    length: number
-    pixdata_type: number
-    rowstride: number
-    width: number
-    height: number
-    pixel_data: Uint8Array[]
+    readonly magic: number
+    readonly length: number
+    readonly pixdata_type: number
+    readonly rowstride: number
+    readonly width: number
+    readonly height: number
+    readonly pixel_data: Uint8Array
     /* Methods of GdkPixdata-2.0.GdkPixdata.Pixdata */
-    deserialize(stream: Uint8Array[]): boolean
-    serialize(): Uint8Array[]
+    deserialize(stream: Uint8Array): boolean
+    serialize(): Uint8Array
     to_csource(name: string, dump_type: PixdataDumpType): GLib.String
     static name: string
 }

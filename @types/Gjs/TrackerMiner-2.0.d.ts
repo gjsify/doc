@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * TrackerMiner-2.0
  */
@@ -43,7 +49,7 @@ enum NetworkType {
     UNKNOWN,
     GPRS,
     EDGE,
-    /* 3G (invalid, starts with a number) */
+    TODO_3G,
     LAN,
 }
 enum DirectoryFlags {
@@ -57,10 +63,10 @@ enum DirectoryFlags {
     NO_STAT,
     CHECK_DELETED,
 }
-export const MINER_DBUS_INTERFACE: string
-export const MINER_DBUS_NAME_PREFIX: string
-export const MINER_DBUS_PATH_PREFIX: string
-export const MINER_ERROR_DOMAIN: string
+const MINER_DBUS_INTERFACE: string
+const MINER_DBUS_NAME_PREFIX: string
+const MINER_DBUS_PATH_PREFIX: string
+const MINER_ERROR_DOMAIN: string
 class DataProvider {
     /* Methods of TrackerMiner-2.0.TrackerMiner.DataProvider */
     begin(url: Gio.File, attributes: string, flags: DirectoryFlags, cancellable?: Gio.Cancellable | null): Gio.FileEnumerator
@@ -72,7 +78,8 @@ class DataProvider {
     vfunc_begin_finish(result: Gio.AsyncResult): Gio.FileEnumerator
     static name: string
 }
-export interface Decorator_ConstructProps extends Miner_ConstructProps {
+interface Decorator_ConstructProps extends Miner_ConstructProps {
+    /* Constructor properties of TrackerMiner-2.0.TrackerMiner.Decorator */
     class_names?: string[]
     commit_batch_size?: number
     data_source?: string
@@ -87,11 +94,11 @@ class Decorator {
     progress: number
     remaining_time: number
     status: string
-    /* Fields of TrackerMiner-2.0.TrackerMiner.Decorator */
-    parent_instance: Miner
-    priv: object
+    /* Fields of TrackerMiner-2.0.TrackerMiner.Miner */
+    readonly parent_instance: GObject.Object
+    readonly priv: MinerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TrackerMiner-2.0.TrackerMiner.Decorator */
     delete_id(id: number): void
     get_class_names(): string[]
@@ -135,6 +142,7 @@ class Decorator {
     /* Virtual methods of TrackerMiner-2.0.TrackerMiner.Decorator */
     vfunc_finished(): void
     vfunc_items_available(): void
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of TrackerMiner-2.0.TrackerMiner.Miner */
     vfunc_paused(): void
     vfunc_progress(status: string, progress: number, remaining_time: number): void
@@ -198,9 +206,10 @@ class Decorator {
     _init (config?: Decorator_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static error_quark(): GLib.Quark
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DecoratorFS_ConstructProps extends Decorator_ConstructProps {
+interface DecoratorFS_ConstructProps extends Decorator_ConstructProps {
 }
 class DecoratorFS {
     /* Properties of TrackerMiner-2.0.TrackerMiner.Decorator */
@@ -211,11 +220,11 @@ class DecoratorFS {
     progress: number
     remaining_time: number
     status: string
-    /* Fields of TrackerMiner-2.0.TrackerMiner.DecoratorFS */
-    parent_instance: Decorator
-    priv: object
+    /* Fields of TrackerMiner-2.0.TrackerMiner.Decorator */
+    readonly parent_instance: Miner
+    readonly priv: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TrackerMiner-2.0.TrackerMiner.DecoratorFS */
     prepend_file(file: Gio.File): number
     /* Methods of TrackerMiner-2.0.TrackerMiner.Decorator */
@@ -258,9 +267,12 @@ class DecoratorFS {
     watch_closure(closure: Function): void
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of TrackerMiner-2.0.TrackerMiner.DecoratorFS */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of TrackerMiner-2.0.TrackerMiner.Decorator */
     vfunc_finished(): void
     vfunc_items_available(): void
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of TrackerMiner-2.0.TrackerMiner.Miner */
     vfunc_paused(): void
     vfunc_progress(status: string, progress: number, remaining_time: number): void
@@ -322,20 +334,20 @@ class DecoratorFS {
     static name: string
     constructor (config?: DecoratorFS_ConstructProps)
     _init (config?: DecoratorFS_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface IndexingTree_ConstructProps extends GObject.Object_ConstructProps {
+interface IndexingTree_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TrackerMiner-2.0.TrackerMiner.IndexingTree */
     filter_hidden?: boolean
     root?: Gio.File
 }
 class IndexingTree {
     /* Properties of TrackerMiner-2.0.TrackerMiner.IndexingTree */
     filter_hidden: boolean
-    /* Fields of TrackerMiner-2.0.TrackerMiner.IndexingTree */
-    parent_instance: GObject.Object
-    priv: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TrackerMiner-2.0.TrackerMiner.IndexingTree */
     add(directory: Gio.File, flags: DirectoryFlags): void
     add_filter(filter: FilterType, glob_string: string): void
@@ -419,7 +431,8 @@ class IndexingTree {
     static new_with_root(root: Gio.File): IndexingTree
     static $gtype: GObject.Type
 }
-export interface Miner_ConstructProps extends GObject.Object_ConstructProps {
+interface Miner_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TrackerMiner-2.0.TrackerMiner.Miner */
     progress?: number
     remaining_time?: number
     status?: string
@@ -429,11 +442,8 @@ class Miner {
     progress: number
     remaining_time: number
     status: string
-    /* Fields of TrackerMiner-2.0.TrackerMiner.Miner */
-    parent_instance: GObject.Object
-    priv: MinerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TrackerMiner-2.0.TrackerMiner.Miner */
     is_paused(): boolean
     is_started(): boolean
@@ -518,7 +528,8 @@ class Miner {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface MinerFS_ConstructProps extends Miner_ConstructProps {
+interface MinerFS_ConstructProps extends Miner_ConstructProps {
+    /* Constructor properties of TrackerMiner-2.0.TrackerMiner.MinerFS */
     data_provider?: DataProvider
     processing_pool_ready_limit?: number
     processing_pool_wait_limit?: number
@@ -534,13 +545,11 @@ class MinerFS {
     progress: number
     remaining_time: number
     status: string
-    /* Fields of TrackerMiner-2.0.TrackerMiner.MinerFS */
-    parent: Miner
-    priv: MinerFSPrivate
     /* Fields of TrackerMiner-2.0.TrackerMiner.Miner */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
+    readonly priv: MinerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TrackerMiner-2.0.TrackerMiner.MinerFS */
     check_file(file: Gio.File, priority: number, check_parents: boolean): void
     get_data_provider(): DataProvider
@@ -591,6 +600,7 @@ class MinerFS {
     vfunc_process_file_attributes(file: Gio.File, task: Gio.Task): boolean
     vfunc_remove_children(file: Gio.File): string
     vfunc_remove_file(file: Gio.File): string
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of TrackerMiner-2.0.TrackerMiner.Miner */
     vfunc_paused(): void
     vfunc_progress(status: string, progress: number, remaining_time: number): void
@@ -669,21 +679,21 @@ class MinerFS {
     _init (config?: MinerFS_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static error_quark(): GLib.Quark
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface MinerOnline_ConstructProps extends Miner_ConstructProps {
+interface MinerOnline_ConstructProps extends Miner_ConstructProps {
 }
 class MinerOnline {
     /* Properties of TrackerMiner-2.0.TrackerMiner.Miner */
     progress: number
     remaining_time: number
     status: string
-    /* Fields of TrackerMiner-2.0.TrackerMiner.MinerOnline */
-    parent_instance: Miner
     /* Fields of TrackerMiner-2.0.TrackerMiner.Miner */
-    priv: MinerPrivate
+    readonly parent_instance: GObject.Object
+    readonly priv: MinerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TrackerMiner-2.0.TrackerMiner.MinerOnline */
     get_network_type(): NetworkType
     /* Methods of TrackerMiner-2.0.TrackerMiner.Miner */
@@ -720,6 +730,7 @@ class MinerOnline {
     /* Virtual methods of TrackerMiner-2.0.TrackerMiner.MinerOnline */
     vfunc_connected(network: NetworkType): boolean
     vfunc_disconnected(): void
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of TrackerMiner-2.0.TrackerMiner.Miner */
     vfunc_paused(): void
     vfunc_progress(status: string, progress: number, remaining_time: number): void
@@ -775,18 +786,19 @@ class MinerOnline {
     static name: string
     constructor (config?: MinerOnline_ConstructProps)
     _init (config?: MinerOnline_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface MinerProxy_ConstructProps extends GObject.Object_ConstructProps {
+interface MinerProxy_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TrackerMiner-2.0.TrackerMiner.MinerProxy */
     dbus_connection?: Gio.DBusConnection
     dbus_path?: string
     miner?: Miner
 }
 class MinerProxy {
-    /* Fields of TrackerMiner-2.0.TrackerMiner.MinerProxy */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -839,24 +851,24 @@ class MinerProxy {
 }
 abstract class DataProviderIface {
     /* Fields of TrackerMiner-2.0.TrackerMiner.DataProviderIface */
-    g_iface: GObject.TypeInterface
-    begin: (data_provider: DataProvider, url: Gio.File, attributes: string, flags: DirectoryFlags, cancellable?: Gio.Cancellable | null) => Gio.FileEnumerator
-    begin_async: (data_provider: DataProvider, url: Gio.File, attributes: string, flags: DirectoryFlags, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    begin_finish: (data_provider: DataProvider, result: Gio.AsyncResult) => Gio.FileEnumerator
+    readonly g_iface: GObject.TypeInterface
+    readonly begin: (data_provider: DataProvider, url: Gio.File, attributes: string, flags: DirectoryFlags, cancellable?: Gio.Cancellable | null) => Gio.FileEnumerator
+    readonly begin_async: (data_provider: DataProvider, url: Gio.File, attributes: string, flags: DirectoryFlags, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly begin_finish: (data_provider: DataProvider, result: Gio.AsyncResult) => Gio.FileEnumerator
     static name: string
 }
 abstract class DecoratorClass {
     /* Fields of TrackerMiner-2.0.TrackerMiner.DecoratorClass */
-    parent_class: MinerClass
-    items_available: (decorator: Decorator) => void
-    finished: (decorator: Decorator) => void
-    padding: object[]
+    readonly parent_class: MinerClass
+    readonly items_available: (decorator: Decorator) => void
+    readonly finished: (decorator: Decorator) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class DecoratorFSClass {
     /* Fields of TrackerMiner-2.0.TrackerMiner.DecoratorFSClass */
-    parent_class: DecoratorClass
-    padding: object[]
+    readonly parent_class: DecoratorClass
+    readonly padding: object[]
     static name: string
 }
 class DecoratorInfo {
@@ -873,37 +885,37 @@ class DecoratorInfo {
 }
 abstract class IndexingTreeClass {
     /* Fields of TrackerMiner-2.0.TrackerMiner.IndexingTreeClass */
-    parent_class: GObject.ObjectClass
-    directory_added: (indexing_tree: IndexingTree, directory: Gio.File) => void
-    directory_removed: (indexing_tree: IndexingTree, directory: Gio.File) => void
-    directory_updated: (indexing_tree: IndexingTree, directory: Gio.File) => void
-    child_updated: (indexing_tree: IndexingTree, root: Gio.File, child: Gio.File) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly directory_added: (indexing_tree: IndexingTree, directory: Gio.File) => void
+    readonly directory_removed: (indexing_tree: IndexingTree, directory: Gio.File) => void
+    readonly directory_updated: (indexing_tree: IndexingTree, directory: Gio.File) => void
+    readonly child_updated: (indexing_tree: IndexingTree, root: Gio.File, child: Gio.File) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class MinerClass {
     /* Fields of TrackerMiner-2.0.TrackerMiner.MinerClass */
-    parent_class: GObject.ObjectClass
-    started: (miner: Miner) => void
-    stopped: (miner: Miner) => void
-    paused: (miner: Miner) => void
-    resumed: (miner: Miner) => void
-    progress: (miner: Miner, status: string, progress: number, remaining_time: number) => void
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly started: (miner: Miner) => void
+    readonly stopped: (miner: Miner) => void
+    readonly paused: (miner: Miner) => void
+    readonly resumed: (miner: Miner) => void
+    readonly progress: (miner: Miner, status: string, progress: number, remaining_time: number) => void
+    readonly padding: object[]
     static name: string
 }
 abstract class MinerFSClass {
     /* Fields of TrackerMiner-2.0.TrackerMiner.MinerFSClass */
-    parent: MinerClass
-    process_file: (fs: MinerFS, file: Gio.File, task: Gio.Task) => boolean
-    finished: (fs: MinerFS, elapsed: number, directories_found: number, directories_ignored: number, files_found: number, files_ignored: number) => void
-    process_file_attributes: (fs: MinerFS, file: Gio.File, task: Gio.Task) => boolean
-    finished_root: (fs: MinerFS, root: Gio.File, directories_found: number, directories_ignored: number, files_found: number, files_ignored: number) => void
-    remove_file: (fs: MinerFS, file: Gio.File) => string
-    remove_children: (fs: MinerFS, file: Gio.File) => string
-    move_file: (fs: MinerFS, dest: Gio.File, source: Gio.File, recursive: boolean) => string
-    filter_event: (fs: MinerFS, type: MinerFSEventType, file: Gio.File, source_file: Gio.File) => boolean
-    padding: object[]
+    readonly parent: MinerClass
+    readonly process_file: (fs: MinerFS, file: Gio.File, task: Gio.Task) => boolean
+    readonly finished: (fs: MinerFS, elapsed: number, directories_found: number, directories_ignored: number, files_found: number, files_ignored: number) => void
+    readonly process_file_attributes: (fs: MinerFS, file: Gio.File, task: Gio.Task) => boolean
+    readonly finished_root: (fs: MinerFS, root: Gio.File, directories_found: number, directories_ignored: number, files_found: number, files_ignored: number) => void
+    readonly remove_file: (fs: MinerFS, file: Gio.File) => string
+    readonly remove_children: (fs: MinerFS, file: Gio.File) => string
+    readonly move_file: (fs: MinerFS, dest: Gio.File, source: Gio.File, recursive: boolean) => string
+    readonly filter_event: (fs: MinerFS, type: MinerFSEventType, file: Gio.File, source_file: Gio.File) => boolean
+    readonly padding: object[]
     static name: string
 }
 class MinerFSPrivate {
@@ -911,10 +923,10 @@ class MinerFSPrivate {
 }
 abstract class MinerOnlineClass {
     /* Fields of TrackerMiner-2.0.TrackerMiner.MinerOnlineClass */
-    parent_class: MinerClass
-    connected: (miner: MinerOnline, network: NetworkType) => boolean
-    disconnected: (miner: MinerOnline) => void
-    padding: object[]
+    readonly parent_class: MinerClass
+    readonly connected: (miner: MinerOnline, network: NetworkType) => boolean
+    readonly disconnected: (miner: MinerOnline) => void
+    readonly padding: object[]
     static name: string
 }
 class MinerPrivate {
@@ -922,7 +934,7 @@ class MinerPrivate {
 }
 abstract class MinerProxyClass {
     /* Fields of TrackerMiner-2.0.TrackerMiner.MinerProxyClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

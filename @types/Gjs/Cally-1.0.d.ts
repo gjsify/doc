@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Cally-1.0
  */
@@ -27,7 +33,7 @@ interface ActionCallback {
 interface ActionFunc {
     (cally_actor: Actor): void
 }
-export interface Actor_ConstructProps extends Atk.GObjectAccessible_ConstructProps {
+interface Actor_ConstructProps extends Atk.GObjectAccessible_ConstructProps {
 }
 class Actor {
     /* Properties of Atk-1.0.Atk.Object */
@@ -36,7 +42,6 @@ class Actor {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Atk.Object
     accessible_role: Atk.Role
     accessible_table_caption: string
     accessible_table_caption_object: Atk.Object
@@ -47,15 +52,16 @@ class Actor {
     accessible_table_summary: Atk.Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.GObjectAccessible */
-    parent: Atk.Object
+    readonly parent: Atk.Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Atk.Role
-    relation_set: Atk.RelationSet
-    layer: Atk.Layer
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Atk.Object
+    readonly role: Atk.Role
+    readonly relation_set: Atk.RelationSet
+    readonly layer: Atk.Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cally-1.0.Cally.Actor */
     add_action(action_name: string, action_description: string, action_keybinding: string, callback: ActionCallback): number
     remove_action(action_id: number): boolean
@@ -66,14 +72,12 @@ class Actor {
     add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     get_accessible_id(): string
     get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Atk.Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Atk.Object
     get_role(): Atk.Role
@@ -86,8 +90,7 @@ class Actor {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Atk.Object): void
     set_role(role: Atk.Role): void
@@ -138,17 +141,17 @@ class Actor {
     /* Virtual methods of Cally-1.0.Cally.Actor */
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     vfunc_bounds_changed(bounds: Atk.Rectangle): void
     vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
     vfunc_get_alpha(): number
@@ -170,14 +173,12 @@ class Actor {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Atk.Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Atk.Object
     vfunc_get_role(): Atk.Role
@@ -186,8 +187,7 @@ class Actor {
     vfunc_ref_relation_set(): Atk.RelationSet
     vfunc_ref_state_set(): Atk.StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Atk.Object): void
     vfunc_set_role(role: Atk.Role): void
@@ -238,8 +238,6 @@ class Actor {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Actor, pspec: GObject.ParamSpec) => void)): number
@@ -269,7 +267,7 @@ class Actor {
     static new(actor: Clutter.Actor): Actor
     static $gtype: GObject.Type
 }
-export interface Clone_ConstructProps extends Actor_ConstructProps {
+interface Clone_ConstructProps extends Actor_ConstructProps {
 }
 class Clone {
     /* Properties of Atk-1.0.Atk.Object */
@@ -278,7 +276,6 @@ class Clone {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Atk.Object
     accessible_role: Atk.Role
     accessible_table_caption: string
     accessible_table_caption_object: Atk.Object
@@ -289,15 +286,16 @@ class Clone {
     accessible_table_summary: Atk.Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.GObjectAccessible */
-    parent: Atk.Object
+    readonly parent: Atk.Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Atk.Role
-    relation_set: Atk.RelationSet
-    layer: Atk.Layer
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Atk.Object
+    readonly role: Atk.Role
+    readonly relation_set: Atk.RelationSet
+    readonly layer: Atk.Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cally-1.0.Cally.Actor */
     add_action(action_name: string, action_description: string, action_keybinding: string, callback: ActionCallback): number
     remove_action(action_id: number): boolean
@@ -308,14 +306,12 @@ class Clone {
     add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     get_accessible_id(): string
     get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Atk.Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Atk.Object
     get_role(): Atk.Role
@@ -328,8 +324,7 @@ class Clone {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Atk.Object): void
     set_role(role: Atk.Role): void
@@ -378,29 +373,49 @@ class Clone {
     set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
     set_size(width: number, height: number): boolean
     /* Virtual methods of Cally-1.0.Cally.Clone */
-    vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
-    vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
-    vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
-    /* Virtual methods of Cally-1.0.Cally.Actor */
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    /* Function overloads */
+    vfunc_set_description(description: string): void
+    vfunc_bounds_changed(bounds: Atk.Rectangle): void
+    vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_get_alpha(): number
+    vfunc_get_extents(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
+    vfunc_get_layer(): Atk.Layer
+    vfunc_get_mdi_zorder(): number
+    vfunc_get_position(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null ]
+    vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
+    vfunc_grab_focus(): boolean
+    vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null
+    vfunc_remove_focus_handler(handler_id: number): void
+    vfunc_scroll_to(type: Atk.ScrollType): boolean
+    vfunc_scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean
+    vfunc_set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_size(width: number, height: number): boolean
+    /* Virtual methods of Cally-1.0.Cally.Actor */
+    vfunc_do_action(i: number): boolean
+    vfunc_get_description(i: number): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
+    vfunc_get_keybinding(i: number): string | null
+    vfunc_get_localized_name(i: number): string | null
+    vfunc_get_n_actions(): number
+    vfunc_get_name(i: number): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
+    vfunc_set_description(i: number, desc: string): boolean
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     vfunc_bounds_changed(bounds: Atk.Rectangle): void
     vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
     vfunc_get_alpha(): number
@@ -422,14 +437,12 @@ class Clone {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Atk.Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Atk.Object
     vfunc_get_role(): Atk.Role
@@ -438,8 +451,7 @@ class Clone {
     vfunc_ref_relation_set(): Atk.RelationSet
     vfunc_ref_state_set(): Atk.StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Atk.Object): void
     vfunc_set_role(role: Atk.Role): void
@@ -490,8 +502,6 @@ class Clone {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Clone, pspec: GObject.ParamSpec) => void)): number
@@ -519,9 +529,11 @@ class Clone {
     _init (config?: Clone_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(actor: Clutter.Actor): Clone
+    /* Function overloads */
+    static new(actor: Clutter.Actor): Clone
     static $gtype: GObject.Type
 }
-export interface Group_ConstructProps extends Actor_ConstructProps {
+interface Group_ConstructProps extends Actor_ConstructProps {
 }
 class Group {
     /* Properties of Atk-1.0.Atk.Object */
@@ -530,7 +542,6 @@ class Group {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Atk.Object
     accessible_role: Atk.Role
     accessible_table_caption: string
     accessible_table_caption_object: Atk.Object
@@ -541,15 +552,16 @@ class Group {
     accessible_table_summary: Atk.Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.GObjectAccessible */
-    parent: Atk.Object
+    readonly parent: Atk.Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Atk.Role
-    relation_set: Atk.RelationSet
-    layer: Atk.Layer
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Atk.Object
+    readonly role: Atk.Role
+    readonly relation_set: Atk.RelationSet
+    readonly layer: Atk.Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cally-1.0.Cally.Actor */
     add_action(action_name: string, action_description: string, action_keybinding: string, callback: ActionCallback): number
     remove_action(action_id: number): boolean
@@ -560,14 +572,12 @@ class Group {
     add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     get_accessible_id(): string
     get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Atk.Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Atk.Object
     get_role(): Atk.Role
@@ -580,8 +590,7 @@ class Group {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Atk.Object): void
     set_role(role: Atk.Role): void
@@ -630,29 +639,49 @@ class Group {
     set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
     set_size(width: number, height: number): boolean
     /* Virtual methods of Cally-1.0.Cally.Group */
-    vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
-    vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
-    vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
-    /* Virtual methods of Cally-1.0.Cally.Actor */
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    /* Function overloads */
+    vfunc_set_description(description: string): void
+    vfunc_bounds_changed(bounds: Atk.Rectangle): void
+    vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_get_alpha(): number
+    vfunc_get_extents(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
+    vfunc_get_layer(): Atk.Layer
+    vfunc_get_mdi_zorder(): number
+    vfunc_get_position(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null ]
+    vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
+    vfunc_grab_focus(): boolean
+    vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null
+    vfunc_remove_focus_handler(handler_id: number): void
+    vfunc_scroll_to(type: Atk.ScrollType): boolean
+    vfunc_scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean
+    vfunc_set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_size(width: number, height: number): boolean
+    /* Virtual methods of Cally-1.0.Cally.Actor */
+    vfunc_do_action(i: number): boolean
+    vfunc_get_description(i: number): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
+    vfunc_get_keybinding(i: number): string | null
+    vfunc_get_localized_name(i: number): string | null
+    vfunc_get_n_actions(): number
+    vfunc_get_name(i: number): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
+    vfunc_set_description(i: number, desc: string): boolean
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     vfunc_bounds_changed(bounds: Atk.Rectangle): void
     vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
     vfunc_get_alpha(): number
@@ -674,14 +703,12 @@ class Group {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Atk.Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Atk.Object
     vfunc_get_role(): Atk.Role
@@ -690,8 +717,7 @@ class Group {
     vfunc_ref_relation_set(): Atk.RelationSet
     vfunc_ref_state_set(): Atk.StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Atk.Object): void
     vfunc_set_role(role: Atk.Role): void
@@ -742,8 +768,6 @@ class Group {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Group, pspec: GObject.ParamSpec) => void)): number
@@ -771,9 +795,11 @@ class Group {
     _init (config?: Group_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(actor: Clutter.Actor): Group
+    /* Function overloads */
+    static new(actor: Clutter.Actor): Group
     static $gtype: GObject.Type
 }
-export interface Rectangle_ConstructProps extends Actor_ConstructProps {
+interface Rectangle_ConstructProps extends Actor_ConstructProps {
 }
 class Rectangle {
     /* Properties of Atk-1.0.Atk.Object */
@@ -782,7 +808,6 @@ class Rectangle {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Atk.Object
     accessible_role: Atk.Role
     accessible_table_caption: string
     accessible_table_caption_object: Atk.Object
@@ -793,15 +818,16 @@ class Rectangle {
     accessible_table_summary: Atk.Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.GObjectAccessible */
-    parent: Atk.Object
+    readonly parent: Atk.Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Atk.Role
-    relation_set: Atk.RelationSet
-    layer: Atk.Layer
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Atk.Object
+    readonly role: Atk.Role
+    readonly relation_set: Atk.RelationSet
+    readonly layer: Atk.Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cally-1.0.Cally.Actor */
     add_action(action_name: string, action_description: string, action_keybinding: string, callback: ActionCallback): number
     remove_action(action_id: number): boolean
@@ -812,14 +838,12 @@ class Rectangle {
     add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     get_accessible_id(): string
     get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Atk.Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Atk.Object
     get_role(): Atk.Role
@@ -832,8 +856,7 @@ class Rectangle {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Atk.Object): void
     set_role(role: Atk.Role): void
@@ -882,29 +905,49 @@ class Rectangle {
     set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
     set_size(width: number, height: number): boolean
     /* Virtual methods of Cally-1.0.Cally.Rectangle */
-    vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
-    vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
-    vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
-    /* Virtual methods of Cally-1.0.Cally.Actor */
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    /* Function overloads */
+    vfunc_set_description(description: string): void
+    vfunc_bounds_changed(bounds: Atk.Rectangle): void
+    vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_get_alpha(): number
+    vfunc_get_extents(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
+    vfunc_get_layer(): Atk.Layer
+    vfunc_get_mdi_zorder(): number
+    vfunc_get_position(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null ]
+    vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
+    vfunc_grab_focus(): boolean
+    vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null
+    vfunc_remove_focus_handler(handler_id: number): void
+    vfunc_scroll_to(type: Atk.ScrollType): boolean
+    vfunc_scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean
+    vfunc_set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_size(width: number, height: number): boolean
+    /* Virtual methods of Cally-1.0.Cally.Actor */
+    vfunc_do_action(i: number): boolean
+    vfunc_get_description(i: number): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
+    vfunc_get_keybinding(i: number): string | null
+    vfunc_get_localized_name(i: number): string | null
+    vfunc_get_n_actions(): number
+    vfunc_get_name(i: number): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
+    vfunc_set_description(i: number, desc: string): boolean
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     vfunc_bounds_changed(bounds: Atk.Rectangle): void
     vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
     vfunc_get_alpha(): number
@@ -926,14 +969,12 @@ class Rectangle {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Atk.Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Atk.Object
     vfunc_get_role(): Atk.Role
@@ -942,8 +983,7 @@ class Rectangle {
     vfunc_ref_relation_set(): Atk.RelationSet
     vfunc_ref_state_set(): Atk.StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Atk.Object): void
     vfunc_set_role(role: Atk.Role): void
@@ -994,8 +1034,6 @@ class Rectangle {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Rectangle, pspec: GObject.ParamSpec) => void)): number
@@ -1023,9 +1061,11 @@ class Rectangle {
     _init (config?: Rectangle_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(actor: Clutter.Actor): Rectangle
+    /* Function overloads */
+    static new(actor: Clutter.Actor): Rectangle
     static $gtype: GObject.Type
 }
-export interface Root_ConstructProps extends Atk.GObjectAccessible_ConstructProps {
+interface Root_ConstructProps extends Atk.GObjectAccessible_ConstructProps {
 }
 class Root {
     /* Properties of Atk-1.0.Atk.Object */
@@ -1034,7 +1074,6 @@ class Root {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Atk.Object
     accessible_role: Atk.Role
     accessible_table_caption: string
     accessible_table_caption_object: Atk.Object
@@ -1045,29 +1084,28 @@ class Root {
     accessible_table_summary: Atk.Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.GObjectAccessible */
-    parent: Atk.Object
+    readonly parent: Atk.Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Atk.Role
-    relation_set: Atk.RelationSet
-    layer: Atk.Layer
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Atk.Object
+    readonly role: Atk.Role
+    readonly relation_set: Atk.RelationSet
+    readonly layer: Atk.Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.GObjectAccessible */
     get_object(): GObject.Object
     /* Methods of Atk-1.0.Atk.Object */
     add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     get_accessible_id(): string
     get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Atk.Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Atk.Object
     get_role(): Atk.Role
@@ -1080,8 +1118,7 @@ class Root {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Atk.Object): void
     set_role(role: Atk.Role): void
@@ -1112,14 +1149,12 @@ class Root {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Atk.Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Atk.Object
     vfunc_get_role(): Atk.Role
@@ -1128,8 +1163,7 @@ class Root {
     vfunc_ref_relation_set(): Atk.RelationSet
     vfunc_ref_state_set(): Atk.StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Atk.Object): void
     vfunc_set_role(role: Atk.Role): void
@@ -1176,8 +1210,6 @@ class Root {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Root, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Root, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Root, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Root, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Root, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Root, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Root, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Root, pspec: GObject.ParamSpec) => void)): number
@@ -1207,7 +1239,7 @@ class Root {
     static new(): Root
     static $gtype: GObject.Type
 }
-export interface Stage_ConstructProps extends Group_ConstructProps {
+interface Stage_ConstructProps extends Group_ConstructProps {
 }
 class Stage {
     /* Properties of Atk-1.0.Atk.Object */
@@ -1216,7 +1248,6 @@ class Stage {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Atk.Object
     accessible_role: Atk.Role
     accessible_table_caption: string
     accessible_table_caption_object: Atk.Object
@@ -1227,15 +1258,16 @@ class Stage {
     accessible_table_summary: Atk.Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.GObjectAccessible */
-    parent: Atk.Object
+    readonly parent: Atk.Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Atk.Role
-    relation_set: Atk.RelationSet
-    layer: Atk.Layer
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Atk.Object
+    readonly role: Atk.Role
+    readonly relation_set: Atk.RelationSet
+    readonly layer: Atk.Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cally-1.0.Cally.Actor */
     add_action(action_name: string, action_description: string, action_keybinding: string, callback: ActionCallback): number
     remove_action(action_id: number): boolean
@@ -1246,14 +1278,12 @@ class Stage {
     add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     get_accessible_id(): string
     get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Atk.Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Atk.Object
     get_role(): Atk.Role
@@ -1266,8 +1296,7 @@ class Stage {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Atk.Object): void
     set_role(role: Atk.Role): void
@@ -1316,39 +1345,79 @@ class Stage {
     set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
     set_size(width: number, height: number): boolean
     /* Virtual methods of Cally-1.0.Cally.Stage */
-    vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
-    vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
-    vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
-    /* Virtual methods of Cally-1.0.Cally.Group */
-    vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
-    vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
-    vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
-    /* Virtual methods of Cally-1.0.Cally.Actor */
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    /* Function overloads */
+    vfunc_set_description(description: string): void
+    vfunc_bounds_changed(bounds: Atk.Rectangle): void
+    vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_get_alpha(): number
+    vfunc_get_extents(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
+    vfunc_get_layer(): Atk.Layer
+    vfunc_get_mdi_zorder(): number
+    vfunc_get_position(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null ]
+    vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
+    vfunc_grab_focus(): boolean
+    vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null
+    vfunc_remove_focus_handler(handler_id: number): void
+    vfunc_scroll_to(type: Atk.ScrollType): boolean
+    vfunc_scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean
+    vfunc_set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_size(width: number, height: number): boolean
+    /* Virtual methods of Cally-1.0.Cally.Group */
+    vfunc_do_action(i: number): boolean
+    vfunc_get_description(i: number): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
+    vfunc_get_keybinding(i: number): string | null
+    vfunc_get_localized_name(i: number): string | null
+    vfunc_get_n_actions(): number
+    vfunc_get_name(i: number): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
+    vfunc_set_description(i: number, desc: string): boolean
+    /* Function overloads */
+    vfunc_set_description(description: string): void
+    vfunc_bounds_changed(bounds: Atk.Rectangle): void
+    vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_get_alpha(): number
+    vfunc_get_extents(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
+    vfunc_get_layer(): Atk.Layer
+    vfunc_get_mdi_zorder(): number
+    vfunc_get_position(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null ]
+    vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
+    vfunc_grab_focus(): boolean
+    vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null
+    vfunc_remove_focus_handler(handler_id: number): void
+    vfunc_scroll_to(type: Atk.ScrollType): boolean
+    vfunc_scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean
+    vfunc_set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_size(width: number, height: number): boolean
+    /* Virtual methods of Cally-1.0.Cally.Actor */
+    vfunc_do_action(i: number): boolean
+    vfunc_get_description(i: number): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
+    vfunc_get_keybinding(i: number): string | null
+    vfunc_get_localized_name(i: number): string | null
+    vfunc_get_n_actions(): number
+    vfunc_get_name(i: number): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
+    vfunc_set_description(i: number, desc: string): boolean
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     vfunc_bounds_changed(bounds: Atk.Rectangle): void
     vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
     vfunc_get_alpha(): number
@@ -1370,14 +1439,12 @@ class Stage {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Atk.Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Atk.Object
     vfunc_get_role(): Atk.Role
@@ -1386,8 +1453,7 @@ class Stage {
     vfunc_ref_relation_set(): Atk.RelationSet
     vfunc_ref_state_set(): Atk.StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Atk.Object): void
     vfunc_set_role(role: Atk.Role): void
@@ -1466,8 +1532,6 @@ class Stage {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Stage, pspec: GObject.ParamSpec) => void)): number
@@ -1495,9 +1559,12 @@ class Stage {
     _init (config?: Stage_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(actor: Clutter.Actor): Stage
+    /* Function overloads */
+    static new(actor: Clutter.Actor): Stage
+    static new(actor: Clutter.Actor): Stage
     static $gtype: GObject.Type
 }
-export interface Text_ConstructProps extends Actor_ConstructProps {
+interface Text_ConstructProps extends Actor_ConstructProps {
 }
 class Text {
     /* Properties of Atk-1.0.Atk.Object */
@@ -1506,7 +1573,6 @@ class Text {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Atk.Object
     accessible_role: Atk.Role
     accessible_table_caption: string
     accessible_table_caption_object: Atk.Object
@@ -1517,15 +1583,16 @@ class Text {
     accessible_table_summary: Atk.Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.GObjectAccessible */
-    parent: Atk.Object
+    readonly parent: Atk.Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Atk.Role
-    relation_set: Atk.RelationSet
-    layer: Atk.Layer
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Atk.Object
+    readonly role: Atk.Role
+    readonly relation_set: Atk.RelationSet
+    readonly layer: Atk.Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cally-1.0.Cally.Actor */
     add_action(action_name: string, action_description: string, action_keybinding: string, callback: ActionCallback): number
     remove_action(action_id: number): boolean
@@ -1536,14 +1603,12 @@ class Text {
     add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     get_accessible_id(): string
     get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Atk.Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Atk.Object
     get_role(): Atk.Role
@@ -1556,8 +1621,7 @@ class Text {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Atk.Object): void
     set_role(role: Atk.Role): void
@@ -1637,6 +1701,35 @@ class Text {
     set_caret_offset(offset: number): boolean
     set_selection(selection_num: number, start_offset: number, end_offset: number): boolean
     /* Virtual methods of Cally-1.0.Cally.Text */
+    vfunc_do_action(i: number): boolean
+    vfunc_get_description(i: number): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
+    vfunc_get_keybinding(i: number): string | null
+    vfunc_get_localized_name(i: number): string | null
+    vfunc_get_n_actions(): number
+    vfunc_get_name(i: number): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
+    vfunc_set_description(i: number, desc: string): boolean
+    /* Function overloads */
+    vfunc_set_description(description: string): void
+    vfunc_bounds_changed(bounds: Atk.Rectangle): void
+    vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_get_alpha(): number
+    vfunc_get_extents(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
+    vfunc_get_layer(): Atk.Layer
+    vfunc_get_mdi_zorder(): number
+    vfunc_get_position(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null ]
+    vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
+    vfunc_grab_focus(): boolean
+    vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null
+    vfunc_remove_focus_handler(handler_id: number): void
+    vfunc_scroll_to(type: Atk.ScrollType): boolean
+    vfunc_scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean
+    vfunc_set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_size(width: number, height: number): boolean
     vfunc_copy_text(start_pos: number, end_pos: number): void
     vfunc_cut_text(start_pos: number, end_pos: number): void
     vfunc_delete_text(start_pos: number, end_pos: number): void
@@ -1670,29 +1763,20 @@ class Text {
     vfunc_text_caret_moved(location: number): void
     vfunc_text_changed(position: number, length: number): void
     vfunc_text_selection_changed(): void
-    vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
-    vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
-    vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
     /* Virtual methods of Cally-1.0.Cally.Actor */
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     vfunc_bounds_changed(bounds: Atk.Rectangle): void
     vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
     vfunc_get_alpha(): number
@@ -1714,14 +1798,12 @@ class Text {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Atk.Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Atk.Object
     vfunc_get_role(): Atk.Role
@@ -1730,8 +1812,7 @@ class Text {
     vfunc_ref_relation_set(): Atk.RelationSet
     vfunc_ref_state_set(): Atk.StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Atk.Object): void
     vfunc_set_role(role: Atk.Role): void
@@ -1801,8 +1882,6 @@ class Text {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Text, pspec: GObject.ParamSpec) => void)): number
@@ -1830,10 +1909,12 @@ class Text {
     _init (config?: Text_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(actor: Clutter.Actor): Text
+    /* Function overloads */
+    static new(actor: Clutter.Actor): Text
     static free_ranges(ranges: Atk.TextRange[]): void
     static $gtype: GObject.Type
 }
-export interface Texture_ConstructProps extends Actor_ConstructProps {
+interface Texture_ConstructProps extends Actor_ConstructProps {
 }
 class Texture {
     /* Properties of Atk-1.0.Atk.Object */
@@ -1842,7 +1923,6 @@ class Texture {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Atk.Object
     accessible_role: Atk.Role
     accessible_table_caption: string
     accessible_table_caption_object: Atk.Object
@@ -1853,15 +1933,16 @@ class Texture {
     accessible_table_summary: Atk.Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.GObjectAccessible */
-    parent: Atk.Object
+    readonly parent: Atk.Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Atk.Role
-    relation_set: Atk.RelationSet
-    layer: Atk.Layer
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Atk.Object
+    readonly role: Atk.Role
+    readonly relation_set: Atk.RelationSet
+    readonly layer: Atk.Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cally-1.0.Cally.Actor */
     add_action(action_name: string, action_description: string, action_keybinding: string, callback: ActionCallback): number
     remove_action(action_id: number): boolean
@@ -1872,14 +1953,12 @@ class Texture {
     add_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     get_accessible_id(): string
     get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Atk.Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Atk.Object
     get_role(): Atk.Role
@@ -1892,8 +1971,7 @@ class Texture {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: Atk.RelationType, target: Atk.Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Atk.Object): void
     set_role(role: Atk.Role): void
@@ -1942,29 +2020,49 @@ class Texture {
     set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
     set_size(width: number, height: number): boolean
     /* Virtual methods of Cally-1.0.Cally.Texture */
-    vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
-    vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
-    vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
-    /* Virtual methods of Cally-1.0.Cally.Actor */
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    /* Function overloads */
+    vfunc_set_description(description: string): void
+    vfunc_bounds_changed(bounds: Atk.Rectangle): void
+    vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_get_alpha(): number
+    vfunc_get_extents(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
+    vfunc_get_layer(): Atk.Layer
+    vfunc_get_mdi_zorder(): number
+    vfunc_get_position(coord_type: Atk.CoordType): [ /* x */ number | null, /* y */ number | null ]
+    vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
+    vfunc_grab_focus(): boolean
+    vfunc_ref_accessible_at_point(x: number, y: number, coord_type: Atk.CoordType): Atk.Object | null
+    vfunc_remove_focus_handler(handler_id: number): void
+    vfunc_scroll_to(type: Atk.ScrollType): boolean
+    vfunc_scroll_to_point(coords: Atk.CoordType, x: number, y: number): boolean
+    vfunc_set_extents(x: number, y: number, width: number, height: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_position(x: number, y: number, coord_type: Atk.CoordType): boolean
+    vfunc_set_size(width: number, height: number): boolean
+    /* Virtual methods of Cally-1.0.Cally.Actor */
+    vfunc_do_action(i: number): boolean
+    vfunc_get_description(i: number): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
+    vfunc_get_keybinding(i: number): string | null
+    vfunc_get_localized_name(i: number): string | null
+    vfunc_get_n_actions(): number
+    vfunc_get_name(i: number): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
+    vfunc_set_description(i: number, desc: string): boolean
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     vfunc_bounds_changed(bounds: Atk.Rectangle): void
     vfunc_contains(x: number, y: number, coord_type: Atk.CoordType): boolean
     vfunc_get_alpha(): number
@@ -1986,14 +2084,12 @@ class Texture {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): Atk.AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Atk.Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Atk.Object
     vfunc_get_role(): Atk.Role
@@ -2002,8 +2098,7 @@ class Texture {
     vfunc_ref_relation_set(): Atk.RelationSet
     vfunc_ref_state_set(): Atk.StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Atk.Object): void
     vfunc_set_role(role: Atk.Role): void
@@ -2054,8 +2149,6 @@ class Texture {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Texture, pspec: GObject.ParamSpec) => void)): number
@@ -2083,15 +2176,17 @@ class Texture {
     _init (config?: Texture_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(actor: Clutter.Actor): Texture
+    /* Function overloads */
+    static new(actor: Clutter.Actor): Texture
     static $gtype: GObject.Type
 }
-export interface Util_ConstructProps extends Atk.Util_ConstructProps {
+interface Util_ConstructProps extends Atk.Util_ConstructProps {
 }
 class Util {
     /* Fields of Atk-1.0.Atk.Util */
-    parent: GObject.Object
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2137,10 +2232,10 @@ class Util {
 }
 abstract class ActorClass {
     /* Fields of Cally-1.0.Cally.ActorClass */
-    notify_clutter: (object: GObject.Object, pspec: GObject.ParamSpec) => void
-    focus_clutter: (actor: Clutter.Actor, data: object) => boolean
-    add_actor: (container: Clutter.Actor, actor: Clutter.Actor, data: object) => number
-    remove_actor: (container: Clutter.Actor, actor: Clutter.Actor, data: object) => number
+    readonly notify_clutter: (object: GObject.Object, pspec: GObject.ParamSpec) => void
+    readonly focus_clutter: (actor: Clutter.Actor, data: object) => boolean
+    readonly add_actor: (container: Clutter.Actor, actor: Clutter.Actor, data: object) => number
+    readonly remove_actor: (container: Clutter.Actor, actor: Clutter.Actor, data: object) => number
     static name: string
 }
 class ActorPrivate {

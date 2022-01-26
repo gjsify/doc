@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GtkVnc-2.0
  */
@@ -36,17 +42,18 @@ enum DisplayKeyEvent {
     RELEASE,
     CLICK,
 }
-export interface CairoFramebuffer_ConstructProps extends GVnc.BaseFramebuffer_ConstructProps {
+interface CairoFramebuffer_ConstructProps extends GVnc.BaseFramebuffer_ConstructProps {
+    /* Constructor properties of GtkVnc-2.0.GtkVnc.CairoFramebuffer */
     surface?: object
 }
 class CairoFramebuffer {
     /* Properties of GVnc-1.0.GVnc.BaseFramebuffer */
     color_map: GVnc.ColorMap
-    /* Fields of GtkVnc-2.0.GtkVnc.CairoFramebuffer */
-    parent: GVnc.BaseFramebuffer
-    priv: CairoFramebufferPrivate
+    /* Fields of GVnc-1.0.GVnc.BaseFramebuffer */
+    readonly parent: GObject.Object
+    readonly priv: GVnc.BaseFramebufferPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GtkVnc-2.0.GtkVnc.CairoFramebuffer */
     get_surface(): cairo.Surface
     /* Methods of GObject-2.0.GObject.Object */
@@ -74,21 +81,21 @@ class CairoFramebuffer {
     /* Methods of GVnc-1.0.GVnc.Framebuffer */
     blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
-    fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
-    get_buffer(): Uint8Array[]
+    fill(src: Uint8Array, x: number, y: number, width: number, height: number): void
+    get_buffer(): Uint8Array
     get_height(): number
     get_local_format(): GVnc.PixelFormat
     get_remote_format(): GVnc.PixelFormat
     get_rowstride(): number
     get_width(): number
     perfect_format_match(): boolean
-    rgb24_blt(src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number): void
+    rgb24_blt(src: Uint8Array, rowstride: number, x: number, y: number, width: number, height: number): void
     set_color_map(map: GVnc.ColorMap): void
-    set_pixel_at(src: Uint8Array[], x: number, y: number): void
+    set_pixel_at(src: Uint8Array, x: number, y: number): void
     /* Virtual methods of GtkVnc-2.0.GtkVnc.CairoFramebuffer */
     vfunc_blt(src: number, rowstride: number, x: number, y: number, width: number, height: number): void
     vfunc_copyrect(srcx: number, srcy: number, dstx: number, dsty: number, width: number, height: number): void
-    vfunc_fill(src: Uint8Array[], x: number, y: number, width: number, height: number): void
+    vfunc_fill(src: Uint8Array, x: number, y: number, width: number, height: number): void
     vfunc_get_buffer(): number
     vfunc_get_height(): number
     vfunc_get_local_format(): GVnc.PixelFormat
@@ -96,9 +103,9 @@ class CairoFramebuffer {
     vfunc_get_rowstride(): number
     vfunc_get_width(): number
     vfunc_perfect_format_match(): boolean
-    vfunc_rgb24_blt(src: Uint8Array[], rowstride: number, x: number, y: number, width: number, height: number): void
+    vfunc_rgb24_blt(src: Uint8Array, rowstride: number, x: number, y: number, width: number, height: number): void
     vfunc_set_color_map(map: GVnc.ColorMap): void
-    vfunc_set_pixel_at(src: Uint8Array[], x: number, y: number): void
+    vfunc_set_pixel_at(src: Uint8Array, x: number, y: number): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -122,10 +129,12 @@ class CairoFramebuffer {
     _init (config?: CairoFramebuffer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(width: number, height: number, remoteFormat: GVnc.PixelFormat): CairoFramebuffer
-    static new(buffer: Uint8Array[], width: number, height: number, rowstride: number, localFormat: GVnc.PixelFormat, remoteFormat: GVnc.PixelFormat): CairoFramebuffer
+    /* Function overloads */
+    static new(buffer: Uint8Array, width: number, height: number, rowstride: number, localFormat: GVnc.PixelFormat, remoteFormat: GVnc.PixelFormat): CairoFramebuffer
     static $gtype: GObject.Type
 }
-export interface Display_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+interface Display_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+    /* Constructor properties of GtkVnc-2.0.GtkVnc.Display */
     allow_resize?: boolean
     depth?: DisplayDepthColor
     force_size?: boolean
@@ -202,14 +211,12 @@ class Display {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of GtkVnc-2.0.GtkVnc.Display */
-    priv: DisplayPrivate
     /* Fields of Gtk-3.0.Gtk.DrawingArea */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GtkVnc-2.0.GtkVnc.Display */
     client_cut_text(text: string): void
     close(): void
@@ -549,6 +556,7 @@ class Display {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of GtkVnc-2.0.GtkVnc.Display */
     vfunc_vnc_auth_credential(credList: GObject.ValueArray): void
     vfunc_vnc_connected(): void
@@ -1048,8 +1056,8 @@ class Display {
 }
 abstract class CairoFramebufferClass {
     /* Fields of GtkVnc-2.0.GtkVnc.CairoFramebufferClass */
-    parent_class: GVnc.BaseFramebufferClass
-    _vnc_reserved: object[]
+    readonly parent_class: GVnc.BaseFramebufferClass
+    readonly _vnc_reserved: object[]
     static name: string
 }
 class CairoFramebufferPrivate {
@@ -1057,11 +1065,11 @@ class CairoFramebufferPrivate {
 }
 abstract class DisplayClass {
     /* Fields of GtkVnc-2.0.GtkVnc.DisplayClass */
-    parent_class: Gtk.DrawingAreaClass
-    vnc_connected: (display: Display) => void
-    vnc_initialized: (display: Display) => void
-    vnc_disconnected: (display: Display) => void
-    vnc_auth_credential: (display: Display, credList: GObject.ValueArray) => void
+    readonly parent_class: Gtk.DrawingAreaClass
+    readonly vnc_connected: (display: Display) => void
+    readonly vnc_initialized: (display: Display) => void
+    readonly vnc_disconnected: (display: Display) => void
+    readonly vnc_auth_credential: (display: Display, credList: GObject.ValueArray) => void
     static name: string
 }
 class DisplayPrivate {
@@ -1069,8 +1077,8 @@ class DisplayPrivate {
 }
 class GrabSequence {
     /* Fields of GtkVnc-2.0.GtkVnc.GrabSequence */
-    nkeysyms: number
-    keysyms: number
+    readonly nkeysyms: number
+    readonly keysyms: number
     /* Methods of GtkVnc-2.0.GtkVnc.GrabSequence */
     as_string(): string
     copy(): GrabSequence

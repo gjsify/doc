@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gck-1
  */
@@ -36,14 +42,14 @@ enum UriFlags {
     WITH_VERSION,
     FOR_ANY,
 }
-export const INVALID: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const URI_FOR_MODULE_WITH_VERSION: number
-export const URI_FOR_OBJECT_ON_TOKEN: number
-export const URI_FOR_OBJECT_ON_TOKEN_AND_MODULE: number
-export const VENDOR_CODE: number
+const INVALID: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const URI_FOR_MODULE_WITH_VERSION: number
+const URI_FOR_OBJECT_ON_TOKEN: number
+const URI_FOR_OBJECT_ON_TOKEN_AND_MODULE: number
+const VENDOR_CODE: number
 function builder_unref(builder?: object | null): void
 function error_get_quark(): GLib.Quark
 function list_get_boxed_type(): GObject.Type
@@ -63,21 +69,22 @@ function slots_enumerate_objects(slots: Slot[], match: Attributes, options: Sess
 function uri_build(uri_data: UriData, flags: UriFlags): string
 function uri_error_get_quark(): GLib.Quark
 function uri_parse(string: string, flags: UriFlags): UriData
-function value_to_boolean(value: Uint8Array[]): [ /* returnType */ boolean, /* result */ boolean ]
-function value_to_ulong(value: Uint8Array[]): [ /* returnType */ boolean, /* result */ number ]
+function value_to_boolean(value: Uint8Array): [ /* returnType */ boolean, /* result */ boolean ]
+function value_to_ulong(value: Uint8Array): [ /* returnType */ boolean, /* result */ number ]
 interface Allocator {
     (data: object | null, length: number): object | null
 }
-export interface ObjectCache_ConstructProps extends Object_ConstructProps {
+interface ObjectCache_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of Gck-1.Gck.ObjectCache */
     attributes?: Attributes
 }
 class ObjectCache {
     /* Properties of Gck-1.Gck.ObjectCache */
     attributes: Attributes
     /* Fields of Gck-1.Gck.Object */
-    parent: GObject.Object
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gck-1.Gck.ObjectCache */
     fill(attrs: Attributes): void
     set_attributes(attrs?: Attributes | null): void
@@ -93,9 +100,9 @@ class ObjectCache {
     destroy_finish(result: Gio.AsyncResult): boolean
     equal(object2: Object): boolean
     get_async(attr_types: number[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_data(attr_type: number, cancellable?: Gio.Cancellable | null): Uint8Array[]
+    get_data(attr_type: number, cancellable?: Gio.Cancellable | null): Uint8Array
     get_data_async(attr_type: number, allocator: Allocator, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_data_finish(result: Gio.AsyncResult): Uint8Array[]
+    get_data_finish(result: Gio.AsyncResult): Uint8Array
     get_finish(result: Gio.AsyncResult): Attributes
     get_full(attr_types: number[], cancellable?: Gio.Cancellable | null): Attributes
     get_handle(): number
@@ -158,7 +165,8 @@ class ObjectCache {
     _init (config?: ObjectCache_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Enumerator_ConstructProps extends GObject.Object_ConstructProps {
+interface Enumerator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gck-1.Gck.Enumerator */
     chained?: Enumerator
     interaction?: Gio.TlsInteraction
 }
@@ -166,10 +174,8 @@ class Enumerator {
     /* Properties of Gck-1.Gck.Enumerator */
     chained: Enumerator
     interaction: Gio.TlsInteraction
-    /* Fields of Gck-1.Gck.Enumerator */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gck-1.Gck.Enumerator */
     get_chained(): Enumerator | null
     get_interaction(): Gio.TlsInteraction | null
@@ -228,15 +234,14 @@ class Enumerator {
     _init (config?: Enumerator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Module_ConstructProps extends GObject.Object_ConstructProps {
+interface Module_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gck-1.Gck.Module */
     functions?: object
     path?: string
 }
 class Module {
-    /* Fields of Gck-1.Gck.Module */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gck-1.Gck.Module */
     equal(module2: Module): boolean
     get_info(): ModuleInfo
@@ -301,16 +306,15 @@ class Module {
     static initialize_finish(result: Gio.AsyncResult): Module | null
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+interface Object_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gck-1.Gck.Object */
     handle?: number
     module?: Module
     session?: Session
 }
 class Object {
-    /* Fields of Gck-1.Gck.Object */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gck-1.Gck.Object */
     cache_lookup(attr_types: number[], cancellable?: Gio.Cancellable | null): Attributes
     cache_lookup_async(attr_types: number[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -320,9 +324,9 @@ class Object {
     destroy_finish(result: Gio.AsyncResult): boolean
     equal(object2: Object): boolean
     get_async(attr_types: number[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_data(attr_type: number, cancellable?: Gio.Cancellable | null): Uint8Array[]
+    get_data(attr_type: number, cancellable?: Gio.Cancellable | null): Uint8Array
     get_data_async(attr_type: number, allocator: Allocator, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_data_finish(result: Gio.AsyncResult): Uint8Array[]
+    get_data_finish(result: Gio.AsyncResult): Uint8Array
     get_finish(result: Gio.AsyncResult): Attributes
     get_full(attr_types: number[], cancellable?: Gio.Cancellable | null): Attributes
     get_handle(): number
@@ -383,7 +387,8 @@ class Object {
     static from_handle(session: Session, object_handle: number): Object
     static $gtype: GObject.Type
 }
-export interface Password_ConstructProps extends Gio.TlsPassword_ConstructProps {
+interface Password_ConstructProps extends Gio.TlsPassword_ConstructProps {
+    /* Constructor properties of Gck-1.Gck.Password */
     key?: Object
     token?: Slot
 }
@@ -394,13 +399,11 @@ class Password {
     description: string
     flags: Gio.TlsPasswordFlags
     warning: string
-    /* Fields of Gck-1.Gck.Password */
-    parent: Gio.TlsPassword
     /* Fields of Gio-2.0.Gio.TlsPassword */
-    parent_instance: GObject.Object
-    priv: Gio.TlsPasswordPrivate
+    readonly parent_instance: GObject.Object
+    readonly priv: Gio.TlsPasswordPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gck-1.Gck.Password */
     get_key(): Object
     get_module(): Module
@@ -408,12 +411,12 @@ class Password {
     /* Methods of Gio-2.0.Gio.TlsPassword */
     get_description(): string
     get_flags(): Gio.TlsPasswordFlags
-    get_value(): Uint8Array[]
+    get_value(): Uint8Array
     get_warning(): string
     set_description(description: string): void
     set_flags(flags: Gio.TlsPasswordFlags): void
-    set_value(value: Uint8Array[]): void
-    set_value_full(value: Uint8Array[], destroy?: GLib.DestroyNotify | null): void
+    set_value(value: Uint8Array): void
+    set_value_full(value: Uint8Array, destroy?: GLib.DestroyNotify | null): void
     set_warning(warning: string): void
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
@@ -439,8 +442,8 @@ class Password {
     watch_closure(closure: Function): void
     /* Virtual methods of Gio-2.0.Gio.TlsPassword */
     vfunc_get_default_warning(): string
-    vfunc_get_value(): Uint8Array[]
-    vfunc_set_value(value: Uint8Array[], destroy?: GLib.DestroyNotify | null): void
+    vfunc_get_value(): Uint8Array
+    vfunc_set_value(value: Uint8Array, destroy?: GLib.DestroyNotify | null): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -470,7 +473,8 @@ class Password {
     _init (config?: Password_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Session_ConstructProps extends GObject.Object_ConstructProps {
+interface Session_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gck-1.Gck.Session */
     app_data?: object
     handle?: number
     interaction?: Gio.TlsInteraction
@@ -482,26 +486,24 @@ class Session {
     /* Properties of Gck-1.Gck.Session */
     interaction: Gio.TlsInteraction
     readonly module: Module
-    /* Fields of Gck-1.Gck.Session */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gck-1.Gck.Session */
     create_object(attrs: Attributes, cancellable?: Gio.Cancellable | null): Object
     create_object_async(attrs: Attributes, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     create_object_finish(result: Gio.AsyncResult): Object
-    decrypt(key: Object, mech_type: number, input: Uint8Array[], cancellable?: Gio.Cancellable | null): Uint8Array[]
-    decrypt_async(key: Object, mechanism: Mechanism, input: Uint8Array[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    decrypt_finish(result: Gio.AsyncResult): Uint8Array[]
-    decrypt_full(key: Object, mechanism: Mechanism, input: Uint8Array[], cancellable?: Gio.Cancellable | null): Uint8Array[]
+    decrypt(key: Object, mech_type: number, input: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    decrypt_async(key: Object, mechanism: Mechanism, input: Uint8Array, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    decrypt_finish(result: Gio.AsyncResult): Uint8Array
+    decrypt_full(key: Object, mechanism: Mechanism, input: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
     derive_key(base: Object, mech_type: number, attrs: Attributes, cancellable?: Gio.Cancellable | null): Object
     derive_key_async(base: Object, mechanism: Mechanism, attrs: Attributes, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     derive_key_finish(result: Gio.AsyncResult): Object
     derive_key_full(base: Object, mechanism: Mechanism, attrs: Attributes, cancellable?: Gio.Cancellable | null): Object
-    encrypt(key: Object, mech_type: number, input: Uint8Array[], cancellable?: Gio.Cancellable | null): Uint8Array[]
-    encrypt_async(key: Object, mechanism: Mechanism, input: Uint8Array[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    encrypt_finish(result: Gio.AsyncResult): Uint8Array[]
-    encrypt_full(key: Object, mechanism: Mechanism, input: Uint8Array[], cancellable?: Gio.Cancellable | null): Uint8Array[]
+    encrypt(key: Object, mech_type: number, input: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    encrypt_async(key: Object, mechanism: Mechanism, input: Uint8Array, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    encrypt_finish(result: Gio.AsyncResult): Uint8Array
+    encrypt_full(key: Object, mechanism: Mechanism, input: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
     enumerate_objects(match: Attributes): Enumerator
     find_handles(match: Attributes, cancellable?: Gio.Cancellable | null): number[] | null
     find_handles_async(match: Attributes, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -520,11 +522,11 @@ class Session {
     get_options(): SessionOptions
     get_slot(): Slot
     get_state(): number
-    init_pin(pin: Uint8Array[] | null, cancellable?: Gio.Cancellable | null): boolean
-    init_pin_async(pin: Uint8Array[] | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    init_pin(pin: Uint8Array | null, cancellable?: Gio.Cancellable | null): boolean
+    init_pin_async(pin: Uint8Array | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     init_pin_finish(result: Gio.AsyncResult): boolean
-    login(user_type: number, pin: Uint8Array[] | null, cancellable?: Gio.Cancellable | null): boolean
-    login_async(user_type: number, pin: Uint8Array[] | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    login(user_type: number, pin: Uint8Array | null, cancellable?: Gio.Cancellable | null): boolean
+    login_async(user_type: number, pin: Uint8Array | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     login_finish(result: Gio.AsyncResult): boolean
     login_interactive(user_type: number, interaction?: Gio.TlsInteraction | null, cancellable?: Gio.Cancellable | null): boolean
     login_interactive_async(user_type: number, interaction?: Gio.TlsInteraction | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -533,25 +535,25 @@ class Session {
     logout_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     logout_finish(result: Gio.AsyncResult): boolean
     set_interaction(interaction?: Gio.TlsInteraction | null): void
-    set_pin(old_pin: Uint8Array[] | null, new_pin: Uint8Array[] | null, cancellable?: Gio.Cancellable | null): boolean
-    set_pin_async(old_pin: Uint8Array[] | null, n_old_pin: number, new_pin: Uint8Array[] | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    set_pin(old_pin: Uint8Array | null, new_pin: Uint8Array | null, cancellable?: Gio.Cancellable | null): boolean
+    set_pin_async(old_pin: Uint8Array | null, n_old_pin: number, new_pin: Uint8Array | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     set_pin_finish(result: Gio.AsyncResult): boolean
-    sign(key: Object, mech_type: number, input: Uint8Array[], cancellable?: Gio.Cancellable | null): Uint8Array[]
-    sign_async(key: Object, mechanism: Mechanism, input: Uint8Array[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    sign_finish(result: Gio.AsyncResult): Uint8Array[]
-    sign_full(key: Object, mechanism: Mechanism, input: Uint8Array[], n_result: number, cancellable?: Gio.Cancellable | null): number
-    unwrap_key(wrapper: Object, mech_type: number, input: Uint8Array[], attrs: Attributes, cancellable?: Gio.Cancellable | null): Object
-    unwrap_key_async(wrapper: Object, mechanism: Mechanism, input: Uint8Array[], attrs: Attributes, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    sign(key: Object, mech_type: number, input: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    sign_async(key: Object, mechanism: Mechanism, input: Uint8Array, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    sign_finish(result: Gio.AsyncResult): Uint8Array
+    sign_full(key: Object, mechanism: Mechanism, input: Uint8Array, n_result: number, cancellable?: Gio.Cancellable | null): number
+    unwrap_key(wrapper: Object, mech_type: number, input: Uint8Array, attrs: Attributes, cancellable?: Gio.Cancellable | null): Object
+    unwrap_key_async(wrapper: Object, mechanism: Mechanism, input: Uint8Array, attrs: Attributes, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     unwrap_key_finish(result: Gio.AsyncResult): Object
-    unwrap_key_full(wrapper: Object, mechanism: Mechanism, input: Uint8Array[], attrs: Attributes, cancellable?: Gio.Cancellable | null): Object
-    verify(key: Object, mech_type: number, input: Uint8Array[], signature: Uint8Array[], cancellable?: Gio.Cancellable | null): boolean
-    verify_async(key: Object, mechanism: Mechanism, input: Uint8Array[], signature: Uint8Array[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    unwrap_key_full(wrapper: Object, mechanism: Mechanism, input: Uint8Array, attrs: Attributes, cancellable?: Gio.Cancellable | null): Object
+    verify(key: Object, mech_type: number, input: Uint8Array, signature: Uint8Array, cancellable?: Gio.Cancellable | null): boolean
+    verify_async(key: Object, mechanism: Mechanism, input: Uint8Array, signature: Uint8Array, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     verify_finish(result: Gio.AsyncResult): boolean
-    verify_full(key: Object, mechanism: Mechanism, input: Uint8Array[], signature: Uint8Array[], cancellable?: Gio.Cancellable | null): boolean
-    wrap_key(wrapper: Object, mech_type: number, wrapped: Object, cancellable?: Gio.Cancellable | null): Uint8Array[]
+    verify_full(key: Object, mechanism: Mechanism, input: Uint8Array, signature: Uint8Array, cancellable?: Gio.Cancellable | null): boolean
+    wrap_key(wrapper: Object, mech_type: number, wrapped: Object, cancellable?: Gio.Cancellable | null): Uint8Array
     wrap_key_async(wrapper: Object, mechanism: Mechanism, wrapped: Object, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    wrap_key_finish(result: Gio.AsyncResult): Uint8Array[]
-    wrap_key_full(wrapper: Object, mechanism: Mechanism, wrapped: Object, cancellable?: Gio.Cancellable | null): Uint8Array[]
+    wrap_key_finish(result: Gio.AsyncResult): Uint8Array
+    wrap_key_full(wrapper: Object, mechanism: Mechanism, wrapped: Object, cancellable?: Gio.Cancellable | null): Uint8Array
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -620,15 +622,14 @@ class Session {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Slot_ConstructProps extends GObject.Object_ConstructProps {
+interface Slot_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gck-1.Gck.Slot */
     handle?: number
     module?: Module
 }
 class Slot {
-    /* Fields of Gck-1.Gck.Slot */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gck-1.Gck.Slot */
     enumerate_objects(match: Attributes, options: SessionOptions): Enumerator
     equal(slot2: Slot): boolean
@@ -691,9 +692,9 @@ class Slot {
 }
 class Attribute {
     /* Fields of Gck-1.Gck.Attribute */
-    type: number
-    value: Uint8Array[]
-    length: number
+    readonly type: number
+    readonly value: Uint8Array
+    readonly length: number
     /* Methods of Gck-1.Gck.Attribute */
     clear(): void
     dump(): void
@@ -701,7 +702,7 @@ class Attribute {
     equal(attr2: Attribute): boolean
     free(): void
     get_boolean(): boolean
-    get_data(): Uint8Array[]
+    get_data(): Uint8Array
     get_date(value: GLib.Date): void
     get_string(): string | null
     get_ulong(): number
@@ -746,7 +747,7 @@ class Builder {
     add_all(attrs: Attributes): void
     add_attribute(attr: Attribute): void
     add_boolean(attr_type: number, value: boolean): void
-    add_data(attr_type: number, value: Uint8Array[] | null): void
+    add_data(attr_type: number, value: Uint8Array | null): void
     add_date(attr_type: number, value: GLib.Date): void
     add_empty(attr_type: number): void
     add_invalid(attr_type: number): void
@@ -766,14 +767,14 @@ class Builder {
     ref(): Builder
     set_all(attrs: Attributes): void
     set_boolean(attr_type: number, value: boolean): void
-    set_data(attr_type: number, value: Uint8Array[] | null): void
+    set_data(attr_type: number, value: Uint8Array | null): void
     set_date(attr_type: number, value: GLib.Date): void
     set_empty(attr_type: number): void
     set_invalid(attr_type: number): void
     set_string(attr_type: number, value: string): void
     set_ulong(attr_type: number, value: number): void
     steal(): Attributes
-    take_data(attr_type: number, value: Uint8Array[] | null): void
+    take_data(attr_type: number, value: Uint8Array | null): void
     static name: string
     static new(flags: BuilderFlags): Builder
     constructor(flags: BuilderFlags)
@@ -783,7 +784,7 @@ class Builder {
 }
 abstract class EnumeratorClass {
     /* Fields of Gck-1.Gck.EnumeratorClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class EnumeratorPrivate {
@@ -791,16 +792,16 @@ class EnumeratorPrivate {
 }
 class Mechanism {
     /* Fields of Gck-1.Gck.Mechanism */
-    type: number
-    parameter: object
-    n_parameter: number
+    readonly type: number
+    readonly parameter: object
+    readonly n_parameter: number
     static name: string
 }
 class MechanismInfo {
     /* Fields of Gck-1.Gck.MechanismInfo */
-    min_key_size: number
-    max_key_size: number
-    flags: number
+    readonly min_key_size: number
+    readonly max_key_size: number
+    readonly flags: number
     /* Methods of Gck-1.Gck.MechanismInfo */
     copy(): MechanismInfo
     free(): void
@@ -808,20 +809,20 @@ class MechanismInfo {
 }
 abstract class ModuleClass {
     /* Fields of Gck-1.Gck.ModuleClass */
-    parent: GObject.ObjectClass
-    authenticate_slot: (self: Module, slot: Slot, label: string, password: string) => boolean
-    authenticate_object: (self: Module, object: Object, label: string, password: string) => boolean
+    readonly parent: GObject.ObjectClass
+    readonly authenticate_slot: (self: Module, slot: Slot, label: string, password: string) => boolean
+    readonly authenticate_object: (self: Module, object: Object, label: string, password: string) => boolean
     static name: string
 }
 class ModuleInfo {
     /* Fields of Gck-1.Gck.ModuleInfo */
-    pkcs11_version_major: number
-    pkcs11_version_minor: number
-    manufacturer_id: string
-    flags: number
-    library_description: string
-    library_version_major: number
-    library_version_minor: number
+    readonly pkcs11_version_major: number
+    readonly pkcs11_version_minor: number
+    readonly manufacturer_id: string
+    readonly flags: number
+    readonly library_description: string
+    readonly library_version_major: number
+    readonly library_version_minor: number
     /* Methods of Gck-1.Gck.ModuleInfo */
     copy(): ModuleInfo
     free(): void
@@ -832,15 +833,15 @@ class ModulePrivate {
 }
 abstract class ObjectCacheIface {
     /* Fields of Gck-1.Gck.ObjectCacheIface */
-    interface: GObject.TypeInterface
-    default_types: number[]
-    n_default_types: number
-    fill: (object: ObjectCache, attrs: Attributes) => void
+    readonly interface: GObject.TypeInterface
+    readonly default_types: number[]
+    readonly n_default_types: number
+    readonly fill: (object: ObjectCache, attrs: Attributes) => void
     static name: string
 }
 abstract class ObjectClass {
     /* Fields of Gck-1.Gck.ObjectClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class ObjectPrivate {
@@ -848,7 +849,7 @@ class ObjectPrivate {
 }
 abstract class PasswordClass {
     /* Fields of Gck-1.Gck.PasswordClass */
-    parent: Gio.TlsPasswordClass
+    readonly parent: Gio.TlsPasswordClass
     static name: string
 }
 class PasswordPrivate {
@@ -856,15 +857,15 @@ class PasswordPrivate {
 }
 abstract class SessionClass {
     /* Fields of Gck-1.Gck.SessionClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class SessionInfo {
     /* Fields of Gck-1.Gck.SessionInfo */
-    slot_id: number
-    state: number
-    flags: number
-    device_error: number
+    readonly slot_id: number
+    readonly state: number
+    readonly flags: number
+    readonly device_error: number
     /* Methods of Gck-1.Gck.SessionInfo */
     copy(): SessionInfo
     free(): void
@@ -875,18 +876,18 @@ class SessionPrivate {
 }
 abstract class SlotClass {
     /* Fields of Gck-1.Gck.SlotClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class SlotInfo {
     /* Fields of Gck-1.Gck.SlotInfo */
-    slot_description: string
-    manufacturer_id: string
-    flags: number
-    hardware_version_major: number
-    hardware_version_minor: number
-    firmware_version_major: number
-    firmware_version_minor: number
+    readonly slot_description: string
+    readonly manufacturer_id: string
+    readonly flags: number
+    readonly hardware_version_major: number
+    readonly hardware_version_minor: number
+    readonly firmware_version_major: number
+    readonly firmware_version_minor: number
     /* Methods of Gck-1.Gck.SlotInfo */
     copy(): SlotInfo
     free(): void
@@ -897,26 +898,26 @@ class SlotPrivate {
 }
 class TokenInfo {
     /* Fields of Gck-1.Gck.TokenInfo */
-    label: string
-    manufacturer_id: string
-    model: string
-    serial_number: string
-    flags: number
-    max_session_count: number
-    session_count: number
-    max_rw_session_count: number
-    rw_session_count: number
-    max_pin_len: number
-    min_pin_len: number
-    total_public_memory: number
-    free_public_memory: number
-    total_private_memory: number
-    free_private_memory: number
-    hardware_version_major: number
-    hardware_version_minor: number
-    firmware_version_major: number
-    firmware_version_minor: number
-    utc_time: number
+    readonly label: string
+    readonly manufacturer_id: string
+    readonly model: string
+    readonly serial_number: string
+    readonly flags: number
+    readonly max_session_count: number
+    readonly session_count: number
+    readonly max_rw_session_count: number
+    readonly rw_session_count: number
+    readonly max_pin_len: number
+    readonly min_pin_len: number
+    readonly total_public_memory: number
+    readonly free_public_memory: number
+    readonly total_private_memory: number
+    readonly free_private_memory: number
+    readonly hardware_version_major: number
+    readonly hardware_version_minor: number
+    readonly firmware_version_major: number
+    readonly firmware_version_minor: number
+    readonly utc_time: number
     /* Methods of Gck-1.Gck.TokenInfo */
     copy(): TokenInfo
     free(): void
@@ -924,10 +925,10 @@ class TokenInfo {
 }
 class UriData {
     /* Fields of Gck-1.Gck.UriData */
-    any_unrecognized: boolean
-    module_info: ModuleInfo
-    token_info: TokenInfo
-    attributes: Attributes
+    readonly any_unrecognized: boolean
+    readonly module_info: ModuleInfo
+    readonly token_info: TokenInfo
+    readonly attributes: Attributes
     /* Methods of Gck-1.Gck.UriData */
     copy(): UriData
     free(): void

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Cogl-1.0
  */
@@ -141,8 +147,8 @@ enum TextureError {
     TYPE,
 }
 enum TextureType {
-    /* 2D (invalid, starts with a number) */
-    /* 3D (invalid, starts with a number) */
+    TODO_2D,
+    TODO_3D,
     RECTANGLE,
 }
 enum VerticesMode {
@@ -224,28 +230,28 @@ enum TextureFlags {
     NO_SLICING,
     NO_ATLAS,
 }
-export const AFIRST_BIT: number
-export const A_BIT: number
-export const BGR_BIT: number
-export const DEPTH_BIT: number
-export const FIXED_0_5: number
-export const FIXED_1: number
-export const FIXED_2_PI: number
-export const FIXED_BITS: number
-export const FIXED_EPSILON: number
-export const FIXED_MAX: number
-export const FIXED_MIN: number
-export const FIXED_PI: number
-export const FIXED_PI_2: number
-export const FIXED_PI_4: number
-export const FIXED_Q: number
-export const PREMULT_BIT: number
-export const RADIANS_TO_DEGREES: number
-export const SQRTI_ARG_10_PERCENT: number
-export const SQRTI_ARG_5_PERCENT: number
-export const SQRTI_ARG_MAX: number
-export const STENCIL_BIT: number
-export const TEXTURE_MAX_WASTE: number
+const AFIRST_BIT: number
+const A_BIT: number
+const BGR_BIT: number
+const DEPTH_BIT: number
+const FIXED_0_5: number
+const FIXED_1: number
+const FIXED_2_PI: number
+const FIXED_BITS: number
+const FIXED_EPSILON: number
+const FIXED_MAX: number
+const FIXED_MIN: number
+const FIXED_PI: number
+const FIXED_PI_2: number
+const FIXED_PI_4: number
+const FIXED_Q: number
+const PREMULT_BIT: number
+const RADIANS_TO_DEGREES: number
+const SQRTI_ARG_10_PERCENT: number
+const SQRTI_ARG_5_PERCENT: number
+const SQRTI_ARG_MAX: number
+const STENCIL_BIT: number
+const TEXTURE_MAX_WASTE: number
 function begin_gl(): void
 function bitmap_error_quark(): number
 function blend_string_error_quark(): number
@@ -515,22 +521,22 @@ class MaterialLayer {
 }
 class Matrix {
     /* Fields of Cogl-1.0.Cogl.Matrix */
-    xx: number
-    yx: number
-    zx: number
-    wx: number
-    xy: number
-    yy: number
-    zy: number
-    wy: number
-    xz: number
-    yz: number
-    zz: number
-    wz: number
-    xw: number
-    yw: number
-    zw: number
-    ww: number
+    readonly xx: number
+    readonly yx: number
+    readonly zx: number
+    readonly wx: number
+    readonly xy: number
+    readonly yy: number
+    readonly zy: number
+    readonly wy: number
+    readonly xz: number
+    readonly yz: number
+    readonly zz: number
+    readonly wz: number
+    readonly xw: number
+    readonly yw: number
+    readonly zw: number
+    readonly ww: number
     /* Methods of Cogl-1.0.Cogl.Matrix */
     copy(): Matrix
     free(): void
@@ -559,31 +565,31 @@ class Quaternion {
 }
 class TextureVertex {
     /* Fields of Cogl-1.0.Cogl.TextureVertex */
-    x: number
-    y: number
-    z: number
-    tx: number
-    ty: number
-    color: Color
+    readonly x: number
+    readonly y: number
+    readonly z: number
+    readonly tx: number
+    readonly ty: number
+    readonly color: Color
     static name: string
 }
 class _ColorSizeCheck {
     /* Fields of Cogl-1.0.Cogl._ColorSizeCheck */
-    compile_time_assert_CoglColor_size: number[]
+    readonly compile_time_assert_CoglColor_size: number[]
     static name: string
 }
 class _MatrixSizeCheck {
     /* Fields of Cogl-1.0.Cogl._MatrixSizeCheck */
-    compile_time_assert_CoglMatrix_size: number[]
+    readonly compile_time_assert_CoglMatrix_size: number[]
     static name: string
 }
 class _TextureVertexSizeCheck {
     /* Fields of Cogl-1.0.Cogl._TextureVertexSizeCheck */
-    compile_time_assert_CoglTextureVertex_size: number[]
+    readonly compile_time_assert_CoglTextureVertex_size: number[]
     static name: string
 }
-type Angle = number
-type Bool = number
-type Handle = object
+    type Angle = number
+    type Bool = number
+    type Handle = object
 }
 export default Cogl;

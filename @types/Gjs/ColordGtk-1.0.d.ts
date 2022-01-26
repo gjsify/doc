@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * ColordGtk-1.0
  */
@@ -23,10 +29,11 @@ enum WindowError {
     FAILED,
     LAST,
 }
-export const GTK_MAJOR_VERSION: number
-export const GTK_MICRO_VERSION: number
-export const GTK_MINOR_VERSION: number
-export interface SampleWidget_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+const GTK_MAJOR_VERSION: number
+const GTK_MICRO_VERSION: number
+const GTK_MINOR_VERSION: number
+interface SampleWidget_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+    /* Constructor properties of ColordGtk-1.0.ColordGtk.SampleWidget */
     color?: Colord.ColorRGB
 }
 class SampleWidget {
@@ -72,14 +79,12 @@ class SampleWidget {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of ColordGtk-1.0.ColordGtk.SampleWidget */
-    priv: SampleWidgetPrivate
     /* Fields of Gtk-3.0.Gtk.DrawingArea */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ColordGtk-1.0.ColordGtk.SampleWidget */
     set_color(color: Colord.ColorRGB): void
     /* Methods of Gtk-3.0.Gtk.Widget */
@@ -372,6 +377,7 @@ class SampleWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of ColordGtk-1.0.ColordGtk.SampleWidget */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -777,7 +783,7 @@ class SampleWidget {
     static new(): SampleWidget
     static $gtype: GObject.Type
 }
-export interface SampleWindow_ConstructProps extends Gtk.Window_ConstructProps {
+interface SampleWindow_ConstructProps extends Gtk.Window_ConstructProps {
 }
 class SampleWindow {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -857,18 +863,17 @@ class SampleWindow {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of ColordGtk-1.0.ColordGtk.SampleWindow */
-    priv: SampleWindowPrivate
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ColordGtk-1.0.ColordGtk.SampleWindow */
     set_color(color: Colord.ColorRGB): void
     set_fraction(fraction: number): void
@@ -985,7 +990,7 @@ class SampleWindow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1229,6 +1234,7 @@ class SampleWindow {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -1297,6 +1303,7 @@ class SampleWindow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of ColordGtk-1.0.ColordGtk.SampleWindow */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1814,19 +1821,17 @@ class SampleWindow {
     _init (config?: SampleWindow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SampleWindow
+    /* Function overloads */
     static new(type: Gtk.WindowType): SampleWindow
     static $gtype: GObject.Type
 }
-export interface Window_ConstructProps extends GObject.Object_ConstructProps {
+interface Window_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Window {
     /* Properties of ColordGtk-1.0.ColordGtk.Window */
     readonly Profile: string
-    /* Fields of ColordGtk-1.0.ColordGtk.Window */
-    parent: GObject.Object
-    priv: WindowPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ColordGtk-1.0.ColordGtk.Window */
     get_last_profile(): Colord.Profile
     get_profile(widget: Gtk.Widget, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1888,7 +1893,7 @@ class Window {
 }
 abstract class SampleWidgetClass {
     /* Fields of ColordGtk-1.0.ColordGtk.SampleWidgetClass */
-    parent_class: Gtk.DrawingAreaClass
+    readonly parent_class: Gtk.DrawingAreaClass
     static name: string
 }
 class SampleWidgetPrivate {
@@ -1896,7 +1901,7 @@ class SampleWidgetPrivate {
 }
 abstract class SampleWindowClass {
     /* Fields of ColordGtk-1.0.ColordGtk.SampleWindowClass */
-    parent_class: Gtk.WindowClass
+    readonly parent_class: Gtk.WindowClass
     static name: string
 }
 class SampleWindowPrivate {
@@ -1904,8 +1909,8 @@ class SampleWindowPrivate {
 }
 abstract class WindowClass {
     /* Fields of ColordGtk-1.0.ColordGtk.WindowClass */
-    parent_class: GObject.ObjectClass
-    changed: (window: Window, profile: Colord.Profile) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (window: Window, profile: Colord.Profile) => void
     static name: string
 }
 class WindowPrivate {

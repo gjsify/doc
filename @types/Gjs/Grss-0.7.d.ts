@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Grss-0.7
  */
@@ -11,15 +17,14 @@ import type GLib from './GLib-2.0';
 
 export namespace Grss {
 
-export interface FeedAtomFormatter_ConstructProps extends FeedFormatter_ConstructProps {
+interface FeedAtomFormatter_ConstructProps extends FeedFormatter_ConstructProps {
 }
 class FeedAtomFormatter {
-    /* Fields of Grss-0.7.Grss.FeedAtomFormatter */
-    parent: FeedFormatter
     /* Fields of Grss-0.7.Grss.FeedFormatter */
-    priv: FeedFormatterPrivate
+    readonly parent: GObject.Object
+    readonly priv: FeedFormatterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedFormatter */
     add_item(item: FeedItem): void
     add_items(items: FeedItem[]): void
@@ -75,14 +80,11 @@ class FeedAtomFormatter {
     static new(): FeedAtomFormatter
     static $gtype: GObject.Type
 }
-export interface FeedChannel_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedChannel_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedChannel {
-    /* Fields of Grss-0.7.Grss.FeedChannel */
-    parent: GObject.Object
-    priv: FeedChannelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedChannel */
     add_contributor(contributor: Person): void
     add_cookie(cookie: Soup.Cookie): void
@@ -182,14 +184,11 @@ class FeedChannel {
     static new_with_source(source: string): FeedChannel
     static $gtype: GObject.Type
 }
-export interface FeedEnclosure_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedEnclosure_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedEnclosure {
-    /* Fields of Grss-0.7.Grss.FeedEnclosure */
-    parent: GObject.Object
-    priv: FeedEnclosurePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedEnclosure */
     fetch(): Gio.File
     fetch_async(callback?: Gio.AsyncReadyCallback | null): void
@@ -244,14 +243,11 @@ class FeedEnclosure {
     static new(url: string): FeedEnclosure
     static $gtype: GObject.Type
 }
-export interface FeedFormatter_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedFormatter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedFormatter {
-    /* Fields of Grss-0.7.Grss.FeedFormatter */
-    parent: GObject.Object
-    priv: FeedFormatterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedFormatter */
     add_item(item: FeedItem): void
     add_items(items: FeedItem[]): void
@@ -305,14 +301,11 @@ class FeedFormatter {
     _init (config?: FeedFormatter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FeedItem_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedItem_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedItem {
-    /* Fields of Grss-0.7.Grss.FeedItem */
-    parent: GObject.Object
-    priv: FeedItemPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedItem */
     add_category(category: string): void
     add_contributor(contributor: Person): void
@@ -388,14 +381,11 @@ class FeedItem {
     static new(parent: FeedChannel): FeedItem
     static $gtype: GObject.Type
 }
-export interface FeedParser_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedParser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedParser {
-    /* Fields of Grss-0.7.Grss.FeedParser */
-    parent: GObject.Object
-    priv: FeedParserPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedParser */
     parse(feed: FeedChannel, doc: libxml2.DocPtr): FeedItem[]
     parse_channel(feed: FeedChannel, doc: libxml2.DocPtr): void
@@ -444,15 +434,14 @@ class FeedParser {
     static new(): FeedParser
     static $gtype: GObject.Type
 }
-export interface FeedRssFormatter_ConstructProps extends FeedFormatter_ConstructProps {
+interface FeedRssFormatter_ConstructProps extends FeedFormatter_ConstructProps {
 }
 class FeedRssFormatter {
-    /* Fields of Grss-0.7.Grss.FeedRssFormatter */
-    parent: FeedFormatter
     /* Fields of Grss-0.7.Grss.FeedFormatter */
-    priv: FeedFormatterPrivate
+    readonly parent: GObject.Object
+    readonly priv: FeedFormatterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedFormatter */
     add_item(item: FeedItem): void
     add_items(items: FeedItem[]): void
@@ -508,14 +497,11 @@ class FeedRssFormatter {
     static new(): FeedRssFormatter
     static $gtype: GObject.Type
 }
-export interface FeedsGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedsGroup_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedsGroup {
-    /* Fields of Grss-0.7.Grss.FeedsGroup */
-    parent: GObject.Object
-    priv: FeedsGroupPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedsGroup */
     export_file(channels: FeedChannel[], format: string, uri: string): boolean
     get_formats(): string[]
@@ -565,14 +551,11 @@ class FeedsGroup {
     static new(): FeedsGroup
     static $gtype: GObject.Type
 }
-export interface FeedsPool_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedsPool_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedsPool {
-    /* Fields of Grss-0.7.Grss.FeedsPool */
-    parent: GObject.Object
-    priv: FeedsPoolPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedsPool */
     get_listened(): FeedChannel[]
     get_listened_num(): number
@@ -636,14 +619,11 @@ class FeedsPool {
     static new(): FeedsPool
     static $gtype: GObject.Type
 }
-export interface FeedsPublisher_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedsPublisher_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedsPublisher {
-    /* Fields of Grss-0.7.Grss.FeedsPublisher */
-    parent: GObject.Object
-    priv: FeedsPublisherPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedsPublisher */
     format_content(channel: FeedChannel, items: FeedItem[]): string
     hub_set_port(port: number): void
@@ -706,14 +686,11 @@ class FeedsPublisher {
     static new(): FeedsPublisher
     static $gtype: GObject.Type
 }
-export interface FeedsStore_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedsStore_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedsStore {
-    /* Fields of Grss-0.7.Grss.FeedsStore */
-    parent: GObject.Object
-    priv: FeedsStorePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedsStore */
     add_item_in_channel(channel: FeedChannel, item: FeedItem): void
     get_channels(): FeedChannel[]
@@ -768,14 +745,11 @@ class FeedsStore {
     _init (config?: FeedsStore_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FeedsSubscriber_ConstructProps extends GObject.Object_ConstructProps {
+interface FeedsSubscriber_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeedsSubscriber {
-    /* Fields of Grss-0.7.Grss.FeedsSubscriber */
-    parent: GObject.Object
-    priv: FeedsSubscriberPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Grss-0.7.Grss.FeedsSubscriber */
     get_address(): Gio.InetAddress
     get_listened(): FeedChannel[]
@@ -837,7 +811,7 @@ class FeedsSubscriber {
 }
 abstract class FeedAtomFormatterClass {
     /* Fields of Grss-0.7.Grss.FeedAtomFormatterClass */
-    parent: FeedFormatterClass
+    readonly parent: FeedFormatterClass
     static name: string
 }
 class FeedAtomFormatterPrivate {
@@ -845,7 +819,7 @@ class FeedAtomFormatterPrivate {
 }
 abstract class FeedChannelClass {
     /* Fields of Grss-0.7.Grss.FeedChannelClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class FeedChannelPrivate {
@@ -853,7 +827,7 @@ class FeedChannelPrivate {
 }
 abstract class FeedEnclosureClass {
     /* Fields of Grss-0.7.Grss.FeedEnclosureClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class FeedEnclosurePrivate {
@@ -861,8 +835,8 @@ class FeedEnclosurePrivate {
 }
 abstract class FeedFormatterClass {
     /* Fields of Grss-0.7.Grss.FeedFormatterClass */
-    parent: GObject.ObjectClass
-    format: (formatter: FeedFormatter) => string
+    readonly parent: GObject.ObjectClass
+    readonly format: (formatter: FeedFormatter) => string
     static name: string
 }
 class FeedFormatterPrivate {
@@ -870,7 +844,7 @@ class FeedFormatterPrivate {
 }
 abstract class FeedItemClass {
     /* Fields of Grss-0.7.Grss.FeedItemClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class FeedItemPrivate {
@@ -878,7 +852,7 @@ class FeedItemPrivate {
 }
 abstract class FeedParserClass {
     /* Fields of Grss-0.7.Grss.FeedParserClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class FeedParserPrivate {
@@ -886,7 +860,7 @@ class FeedParserPrivate {
 }
 abstract class FeedRssFormatterClass {
     /* Fields of Grss-0.7.Grss.FeedRssFormatterClass */
-    parent: FeedFormatterClass
+    readonly parent: FeedFormatterClass
     static name: string
 }
 class FeedRssFormatterPrivate {
@@ -894,7 +868,7 @@ class FeedRssFormatterPrivate {
 }
 abstract class FeedsGroupClass {
     /* Fields of Grss-0.7.Grss.FeedsGroupClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class FeedsGroupPrivate {
@@ -902,8 +876,8 @@ class FeedsGroupPrivate {
 }
 abstract class FeedsPoolClass {
     /* Fields of Grss-0.7.Grss.FeedsPoolClass */
-    parent: GObject.ObjectClass
-    feed_fetching: (pool: FeedsPool, feed: FeedChannel) => void
+    readonly parent: GObject.ObjectClass
+    readonly feed_fetching: (pool: FeedsPool, feed: FeedChannel) => void
     static name: string
 }
 class FeedsPoolPrivate {
@@ -911,9 +885,9 @@ class FeedsPoolPrivate {
 }
 abstract class FeedsPublisherClass {
     /* Fields of Grss-0.7.Grss.FeedsPublisherClass */
-    parent: GObject.ObjectClass
-    new_subscription: (pub: FeedsPublisher, topic: FeedChannel, callback: string) => void
-    delete_subscription: (pub: FeedsPublisher, topic: FeedChannel, callback: string) => void
+    readonly parent: GObject.ObjectClass
+    readonly new_subscription: (pub: FeedsPublisher, topic: FeedChannel, callback: string) => void
+    readonly delete_subscription: (pub: FeedsPublisher, topic: FeedChannel, callback: string) => void
     static name: string
 }
 class FeedsPublisherPrivate {
@@ -921,11 +895,11 @@ class FeedsPublisherPrivate {
 }
 abstract class FeedsStoreClass {
     /* Fields of Grss-0.7.Grss.FeedsStoreClass */
-    parent: GObject.ObjectClass
-    get_channels: (store: FeedsStore) => FeedChannel[]
-    get_items_by_channel: (store: FeedsStore, channel: FeedChannel) => FeedItem[]
-    has_item: (store: FeedsStore, channel: FeedChannel, id: string) => boolean
-    add_item_in_channel: (store: FeedsStore, channel: FeedChannel, item: FeedItem) => void
+    readonly parent: GObject.ObjectClass
+    readonly get_channels: (store: FeedsStore) => FeedChannel[]
+    readonly get_items_by_channel: (store: FeedsStore, channel: FeedChannel) => FeedItem[]
+    readonly has_item: (store: FeedsStore, channel: FeedChannel, id: string) => boolean
+    readonly add_item_in_channel: (store: FeedsStore, channel: FeedChannel, item: FeedItem) => void
     static name: string
 }
 class FeedsStorePrivate {
@@ -933,8 +907,8 @@ class FeedsStorePrivate {
 }
 abstract class FeedsSubscriberClass {
     /* Fields of Grss-0.7.Grss.FeedsSubscriberClass */
-    parent: GObject.ObjectClass
-    notification_received: (sub: FeedsSubscriber, feed: FeedChannel, item: FeedItem) => void
+    readonly parent: GObject.ObjectClass
+    readonly notification_received: (sub: FeedsSubscriber, feed: FeedChannel, item: FeedItem) => void
     static name: string
 }
 class FeedsSubscriberPrivate {

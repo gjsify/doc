@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Libosinfo-1.0
  */
@@ -64,141 +70,141 @@ enum InstallScriptInjectionMethod {
 enum MediaDetectFlags {
     BOOTABLE,
 }
-export const ARCHITECTURE_ALL: string
-export const AVATAR_FORMAT_PROP_ALPHA: string
-export const AVATAR_FORMAT_PROP_HEIGHT: string
-export const AVATAR_FORMAT_PROP_MIME_TYPE: string
-export const AVATAR_FORMAT_PROP_WIDTH: string
-export const DEVICELINK_PROP_DRIVER: string
-export const DEVICELINK_PROP_SUPPORTED: string
-export const DEVICE_DRIVER_DEFAULT_PRIORITY: number
-export const DEVICE_DRIVER_PROP_ARCHITECTURE: string
-export const DEVICE_DRIVER_PROP_DEVICE: string
-export const DEVICE_DRIVER_PROP_FILE: string
-export const DEVICE_DRIVER_PROP_LOCATION: string
-export const DEVICE_DRIVER_PROP_PRE_INSTALLABLE: string
-export const DEVICE_DRIVER_PROP_PRIORITY: string
-export const DEVICE_DRIVER_PROP_SIGNED: string
-export const DEVICE_PROP_BUS_TYPE: string
-export const DEVICE_PROP_CLASS: string
-export const DEVICE_PROP_NAME: string
-export const DEVICE_PROP_PRODUCT: string
-export const DEVICE_PROP_PRODUCT_ID: string
-export const DEVICE_PROP_SUBSYSTEM: string
-export const DEVICE_PROP_VENDOR: string
-export const DEVICE_PROP_VENDOR_ID: string
-export const ENTITY_PROP_ID: string
-export const FIRMWARE_PROP_ARCHITECTURE: string
-export const FIRMWARE_PROP_SUPPORTED: string
-export const FIRMWARE_PROP_TYPE: string
-export const GIBIBYTES: number
-export const IMAGE_PROP_ARCHITECTURE: string
-export const IMAGE_PROP_CLOUD_INIT: string
-export const IMAGE_PROP_FORMAT: string
-export const IMAGE_PROP_URL: string
-export const IMAGE_PROP_VARIANT: string
-export const INSTALL_CONFIG_PARAM_PROP_DATAMAP: string
-export const INSTALL_CONFIG_PARAM_PROP_NAME: string
-export const INSTALL_CONFIG_PARAM_PROP_POLICY: string
-export const INSTALL_CONFIG_PROP_ADMIN_PASSWORD: string
-export const INSTALL_CONFIG_PROP_AVATAR_DISK: string
-export const INSTALL_CONFIG_PROP_AVATAR_LOCATION: string
-export const INSTALL_CONFIG_PROP_DRIVER_SIGNING: string
-export const INSTALL_CONFIG_PROP_HARDWARE_ARCH: string
-export const INSTALL_CONFIG_PROP_HOSTNAME: string
-export const INSTALL_CONFIG_PROP_INSTALLATION_URL: string
-export const INSTALL_CONFIG_PROP_L10N_KEYBOARD: string
-export const INSTALL_CONFIG_PROP_L10N_LANGUAGE: string
-export const INSTALL_CONFIG_PROP_L10N_TIMEZONE: string
-export const INSTALL_CONFIG_PROP_POST_INSTALL_DRIVERS_DISK: string
-export const INSTALL_CONFIG_PROP_POST_INSTALL_DRIVERS_LOCATION: string
-export const INSTALL_CONFIG_PROP_PRE_INSTALL_DRIVERS_DISK: string
-export const INSTALL_CONFIG_PROP_PRE_INSTALL_DRIVERS_LOCATION: string
-export const INSTALL_CONFIG_PROP_REG_LOGIN: string
-export const INSTALL_CONFIG_PROP_REG_PASSWORD: string
-export const INSTALL_CONFIG_PROP_REG_PRODUCTKEY: string
-export const INSTALL_CONFIG_PROP_SCRIPT_DISK: string
-export const INSTALL_CONFIG_PROP_TARGET_DISK: string
-export const INSTALL_CONFIG_PROP_USER_ADMIN: string
-export const INSTALL_CONFIG_PROP_USER_AUTOLOGIN: string
-export const INSTALL_CONFIG_PROP_USER_LOGIN: string
-export const INSTALL_CONFIG_PROP_USER_PASSWORD: string
-export const INSTALL_CONFIG_PROP_USER_REALNAME: string
-export const INSTALL_SCRIPT_PROFILE_DESKTOP: string
-export const INSTALL_SCRIPT_PROFILE_JEOS: string
-export const INSTALL_SCRIPT_PROP_CAN_POST_INSTALL_DRIVERS: string
-export const INSTALL_SCRIPT_PROP_CAN_PRE_INSTALL_DRIVERS: string
-export const INSTALL_SCRIPT_PROP_EXPECTED_FILENAME: string
-export const INSTALL_SCRIPT_PROP_INJECTION_METHOD: string
-export const INSTALL_SCRIPT_PROP_INSTALLATION_SOURCE: string
-export const INSTALL_SCRIPT_PROP_NEEDS_INTERNET: string
-export const INSTALL_SCRIPT_PROP_PATH_FORMAT: string
-export const INSTALL_SCRIPT_PROP_POST_INSTALL_DRIVERS_SIGNING_REQ: string
-export const INSTALL_SCRIPT_PROP_PREFERRED_INJECTION_METHOD: string
-export const INSTALL_SCRIPT_PROP_PRE_INSTALL_DRIVERS_SIGNING_REQ: string
-export const INSTALL_SCRIPT_PROP_PRODUCT_KEY_FORMAT: string
-export const INSTALL_SCRIPT_PROP_PROFILE: string
-export const INSTALL_SCRIPT_PROP_TEMPLATE_DATA: string
-export const INSTALL_SCRIPT_PROP_TEMPLATE_URI: string
-export const KIBIBYTES: number
-export const MAJOR_VERSION: number
-export const MEBIBYTES: number
-export const MEDIA_PROP_APPLICATION_ID: string
-export const MEDIA_PROP_ARCHITECTURE: string
-export const MEDIA_PROP_BOOTABLE: string
-export const MEDIA_PROP_EJECT_AFTER_INSTALL: string
-export const MEDIA_PROP_INITRD: string
-export const MEDIA_PROP_INSTALLER: string
-export const MEDIA_PROP_INSTALLER_REBOOTS: string
-export const MEDIA_PROP_INSTALLER_SCRIPT: string
-export const MEDIA_PROP_KERNEL: string
-export const MEDIA_PROP_LANG: string
-export const MEDIA_PROP_LANG_MAP: string
-export const MEDIA_PROP_LANG_REGEX: string
-export const MEDIA_PROP_LIVE: string
-export const MEDIA_PROP_PUBLISHER_ID: string
-export const MEDIA_PROP_SYSTEM_ID: string
-export const MEDIA_PROP_URL: string
-export const MEDIA_PROP_VARIANT: string
-export const MEDIA_PROP_VOLUME_ID: string
-export const MEDIA_PROP_VOLUME_SIZE: string
-export const MEGAHERTZ: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const OS_PROP_CLOUD_IMAGE_USERNAME: string
-export const OS_PROP_DISTRO: string
-export const OS_PROP_FAMILY: string
-export const OS_PROP_KERNEL_URL_ARGUMENT: string
-export const OS_PROP_RELEASE_STATUS: string
-export const OS_VARIANT_PROP_NAME: string
-export const PRODUCT_PROP_CODENAME: string
-export const PRODUCT_PROP_EOL_DATE: string
-export const PRODUCT_PROP_LOGO: string
-export const PRODUCT_PROP_NAME: string
-export const PRODUCT_PROP_RELEASE_DATE: string
-export const PRODUCT_PROP_SHORT_ID: string
-export const PRODUCT_PROP_VENDOR: string
-export const PRODUCT_PROP_VERSION: string
-export const RESOURCES_PROP_ARCHITECTURE: string
-export const RESOURCES_PROP_CPU: string
-export const RESOURCES_PROP_N_CPUS: string
-export const RESOURCES_PROP_RAM: string
-export const RESOURCES_PROP_STORAGE: string
-export const TREE_PROP_ARCHITECTURE: string
-export const TREE_PROP_BOOT_ISO: string
-export const TREE_PROP_HAS_TREEINFO: string
-export const TREE_PROP_INITRD: string
-export const TREE_PROP_KERNEL: string
-export const TREE_PROP_TREEINFO_ARCH: string
-export const TREE_PROP_TREEINFO_FAMILY: string
-export const TREE_PROP_TREEINFO_VARIANT: string
-export const TREE_PROP_TREEINFO_VERSION: string
-export const TREE_PROP_URL: string
-export const TREE_PROP_VARIANT: string
+const ARCHITECTURE_ALL: string
+const AVATAR_FORMAT_PROP_ALPHA: string
+const AVATAR_FORMAT_PROP_HEIGHT: string
+const AVATAR_FORMAT_PROP_MIME_TYPE: string
+const AVATAR_FORMAT_PROP_WIDTH: string
+const DEVICELINK_PROP_DRIVER: string
+const DEVICELINK_PROP_SUPPORTED: string
+const DEVICE_DRIVER_DEFAULT_PRIORITY: number
+const DEVICE_DRIVER_PROP_ARCHITECTURE: string
+const DEVICE_DRIVER_PROP_DEVICE: string
+const DEVICE_DRIVER_PROP_FILE: string
+const DEVICE_DRIVER_PROP_LOCATION: string
+const DEVICE_DRIVER_PROP_PRE_INSTALLABLE: string
+const DEVICE_DRIVER_PROP_PRIORITY: string
+const DEVICE_DRIVER_PROP_SIGNED: string
+const DEVICE_PROP_BUS_TYPE: string
+const DEVICE_PROP_CLASS: string
+const DEVICE_PROP_NAME: string
+const DEVICE_PROP_PRODUCT: string
+const DEVICE_PROP_PRODUCT_ID: string
+const DEVICE_PROP_SUBSYSTEM: string
+const DEVICE_PROP_VENDOR: string
+const DEVICE_PROP_VENDOR_ID: string
+const ENTITY_PROP_ID: string
+const FIRMWARE_PROP_ARCHITECTURE: string
+const FIRMWARE_PROP_SUPPORTED: string
+const FIRMWARE_PROP_TYPE: string
+const GIBIBYTES: number
+const IMAGE_PROP_ARCHITECTURE: string
+const IMAGE_PROP_CLOUD_INIT: string
+const IMAGE_PROP_FORMAT: string
+const IMAGE_PROP_URL: string
+const IMAGE_PROP_VARIANT: string
+const INSTALL_CONFIG_PARAM_PROP_DATAMAP: string
+const INSTALL_CONFIG_PARAM_PROP_NAME: string
+const INSTALL_CONFIG_PARAM_PROP_POLICY: string
+const INSTALL_CONFIG_PROP_ADMIN_PASSWORD: string
+const INSTALL_CONFIG_PROP_AVATAR_DISK: string
+const INSTALL_CONFIG_PROP_AVATAR_LOCATION: string
+const INSTALL_CONFIG_PROP_DRIVER_SIGNING: string
+const INSTALL_CONFIG_PROP_HARDWARE_ARCH: string
+const INSTALL_CONFIG_PROP_HOSTNAME: string
+const INSTALL_CONFIG_PROP_INSTALLATION_URL: string
+const INSTALL_CONFIG_PROP_L10N_KEYBOARD: string
+const INSTALL_CONFIG_PROP_L10N_LANGUAGE: string
+const INSTALL_CONFIG_PROP_L10N_TIMEZONE: string
+const INSTALL_CONFIG_PROP_POST_INSTALL_DRIVERS_DISK: string
+const INSTALL_CONFIG_PROP_POST_INSTALL_DRIVERS_LOCATION: string
+const INSTALL_CONFIG_PROP_PRE_INSTALL_DRIVERS_DISK: string
+const INSTALL_CONFIG_PROP_PRE_INSTALL_DRIVERS_LOCATION: string
+const INSTALL_CONFIG_PROP_REG_LOGIN: string
+const INSTALL_CONFIG_PROP_REG_PASSWORD: string
+const INSTALL_CONFIG_PROP_REG_PRODUCTKEY: string
+const INSTALL_CONFIG_PROP_SCRIPT_DISK: string
+const INSTALL_CONFIG_PROP_TARGET_DISK: string
+const INSTALL_CONFIG_PROP_USER_ADMIN: string
+const INSTALL_CONFIG_PROP_USER_AUTOLOGIN: string
+const INSTALL_CONFIG_PROP_USER_LOGIN: string
+const INSTALL_CONFIG_PROP_USER_PASSWORD: string
+const INSTALL_CONFIG_PROP_USER_REALNAME: string
+const INSTALL_SCRIPT_PROFILE_DESKTOP: string
+const INSTALL_SCRIPT_PROFILE_JEOS: string
+const INSTALL_SCRIPT_PROP_CAN_POST_INSTALL_DRIVERS: string
+const INSTALL_SCRIPT_PROP_CAN_PRE_INSTALL_DRIVERS: string
+const INSTALL_SCRIPT_PROP_EXPECTED_FILENAME: string
+const INSTALL_SCRIPT_PROP_INJECTION_METHOD: string
+const INSTALL_SCRIPT_PROP_INSTALLATION_SOURCE: string
+const INSTALL_SCRIPT_PROP_NEEDS_INTERNET: string
+const INSTALL_SCRIPT_PROP_PATH_FORMAT: string
+const INSTALL_SCRIPT_PROP_POST_INSTALL_DRIVERS_SIGNING_REQ: string
+const INSTALL_SCRIPT_PROP_PREFERRED_INJECTION_METHOD: string
+const INSTALL_SCRIPT_PROP_PRE_INSTALL_DRIVERS_SIGNING_REQ: string
+const INSTALL_SCRIPT_PROP_PRODUCT_KEY_FORMAT: string
+const INSTALL_SCRIPT_PROP_PROFILE: string
+const INSTALL_SCRIPT_PROP_TEMPLATE_DATA: string
+const INSTALL_SCRIPT_PROP_TEMPLATE_URI: string
+const KIBIBYTES: number
+const MAJOR_VERSION: number
+const MEBIBYTES: number
+const MEDIA_PROP_APPLICATION_ID: string
+const MEDIA_PROP_ARCHITECTURE: string
+const MEDIA_PROP_BOOTABLE: string
+const MEDIA_PROP_EJECT_AFTER_INSTALL: string
+const MEDIA_PROP_INITRD: string
+const MEDIA_PROP_INSTALLER: string
+const MEDIA_PROP_INSTALLER_REBOOTS: string
+const MEDIA_PROP_INSTALLER_SCRIPT: string
+const MEDIA_PROP_KERNEL: string
+const MEDIA_PROP_LANG: string
+const MEDIA_PROP_LANG_MAP: string
+const MEDIA_PROP_LANG_REGEX: string
+const MEDIA_PROP_LIVE: string
+const MEDIA_PROP_PUBLISHER_ID: string
+const MEDIA_PROP_SYSTEM_ID: string
+const MEDIA_PROP_URL: string
+const MEDIA_PROP_VARIANT: string
+const MEDIA_PROP_VOLUME_ID: string
+const MEDIA_PROP_VOLUME_SIZE: string
+const MEGAHERTZ: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const OS_PROP_CLOUD_IMAGE_USERNAME: string
+const OS_PROP_DISTRO: string
+const OS_PROP_FAMILY: string
+const OS_PROP_KERNEL_URL_ARGUMENT: string
+const OS_PROP_RELEASE_STATUS: string
+const OS_VARIANT_PROP_NAME: string
+const PRODUCT_PROP_CODENAME: string
+const PRODUCT_PROP_EOL_DATE: string
+const PRODUCT_PROP_LOGO: string
+const PRODUCT_PROP_NAME: string
+const PRODUCT_PROP_RELEASE_DATE: string
+const PRODUCT_PROP_SHORT_ID: string
+const PRODUCT_PROP_VENDOR: string
+const PRODUCT_PROP_VERSION: string
+const RESOURCES_PROP_ARCHITECTURE: string
+const RESOURCES_PROP_CPU: string
+const RESOURCES_PROP_N_CPUS: string
+const RESOURCES_PROP_RAM: string
+const RESOURCES_PROP_STORAGE: string
+const TREE_PROP_ARCHITECTURE: string
+const TREE_PROP_BOOT_ISO: string
+const TREE_PROP_HAS_TREEINFO: string
+const TREE_PROP_INITRD: string
+const TREE_PROP_KERNEL: string
+const TREE_PROP_TREEINFO_ARCH: string
+const TREE_PROP_TREEINFO_FAMILY: string
+const TREE_PROP_TREEINFO_VARIANT: string
+const TREE_PROP_TREEINFO_VERSION: string
+const TREE_PROP_URL: string
+const TREE_PROP_VARIANT: string
 function error_quark(): GLib.Quark
 function media_error_quark(): GLib.Quark
 function tree_error_quark(): GLib.Quark
-export interface AvatarFormat_ConstructProps extends Entity_ConstructProps {
+interface AvatarFormat_ConstructProps extends Entity_ConstructProps {
 }
 class AvatarFormat {
     /* Properties of Libosinfo-1.0.Libosinfo.AvatarFormat */
@@ -208,11 +214,11 @@ class AvatarFormat {
     readonly width: number
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.AvatarFormat */
-    parent_instance: Entity
-    priv: AvatarFormatPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.AvatarFormat */
     get_alpha(): boolean
     get_height(): number
@@ -289,16 +295,16 @@ class AvatarFormat {
     static new(): AvatarFormat
     static $gtype: GObject.Type
 }
-export interface Datamap_ConstructProps extends Entity_ConstructProps {
+interface Datamap_ConstructProps extends Entity_ConstructProps {
 }
 class Datamap {
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Datamap */
-    parent_instance: Entity
-    priv: DatamapPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Datamap */
     insert(inval: string, outval: string): void
     lookup(inval: string): string
@@ -366,14 +372,14 @@ class Datamap {
     static new(id: string): Datamap
     static $gtype: GObject.Type
 }
-export interface DatamapList_ConstructProps extends List_ConstructProps {
+interface DatamapList_ConstructProps extends List_ConstructProps {
 }
 class DatamapList {
-    /* Fields of Libosinfo-1.0.Libosinfo.DatamapList */
-    parent_instance: List
-    priv: DatamapListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
@@ -434,14 +440,11 @@ class DatamapList {
     static new(): DatamapList
     static $gtype: GObject.Type
 }
-export interface Db_ConstructProps extends GObject.Object_ConstructProps {
+interface Db_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Db {
-    /* Fields of Libosinfo-1.0.Libosinfo.Db */
-    parent_instance: GObject.Object
-    priv: DbPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Db */
     add_datamap(datamap: Datamap): void
     add_deployment(deployment: Deployment): void
@@ -517,18 +520,19 @@ class Db {
     static new(): Db
     static $gtype: GObject.Type
 }
-export interface Deployment_ConstructProps extends Entity_ConstructProps {
+interface Deployment_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.Deployment */
     os?: Os
     platform?: Platform
 }
 class Deployment {
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Deployment */
-    parent_instance: Entity
-    priv: DeploymentPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Deployment */
     add_device(dev: Device): DeviceLink
     get_device_links(filter?: Filter | null): DeviceLinkList
@@ -600,14 +604,14 @@ class Deployment {
     static new(id: string, os: Os, platform: Platform): Deployment
     static $gtype: GObject.Type
 }
-export interface DeploymentList_ConstructProps extends List_ConstructProps {
+interface DeploymentList_ConstructProps extends List_ConstructProps {
 }
 class DeploymentList {
-    /* Fields of Libosinfo-1.0.Libosinfo.DeploymentList */
-    parent_instance: List
-    priv: DeploymentListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.DeploymentList */
     new_copy(): DeploymentList
     new_filtered(filter: Filter): DeploymentList
@@ -673,16 +677,16 @@ class DeploymentList {
     static new(): DeploymentList
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends Entity_ConstructProps {
+interface Device_ConstructProps extends Entity_ConstructProps {
 }
 class Device {
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Device */
-    parent_instance: Entity
-    priv: DevicePrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Device */
     get_bus_type(): string
     get_class(): string
@@ -755,16 +759,16 @@ class Device {
     static new(id: string): Device
     static $gtype: GObject.Type
 }
-export interface DeviceDriver_ConstructProps extends Entity_ConstructProps {
+interface DeviceDriver_ConstructProps extends Entity_ConstructProps {
 }
 class DeviceDriver {
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.DeviceDriver */
-    parent_instance: Entity
-    priv: DeviceDriverPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.DeviceDriver */
     get_architecture(): string
     get_devices(): DeviceList
@@ -834,14 +838,14 @@ class DeviceDriver {
     _init (config?: DeviceDriver_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceDriverList_ConstructProps extends List_ConstructProps {
+interface DeviceDriverList_ConstructProps extends List_ConstructProps {
 }
 class DeviceDriverList {
-    /* Fields of Libosinfo-1.0.Libosinfo.DeviceDriverList */
-    parent_instance: List
-    priv: DeviceDriverListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
@@ -902,17 +906,18 @@ class DeviceDriverList {
     static new(): DeviceDriverList
     static $gtype: GObject.Type
 }
-export interface DeviceLink_ConstructProps extends Entity_ConstructProps {
+interface DeviceLink_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.DeviceLink */
     target?: Device
 }
 class DeviceLink {
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.DeviceLink */
-    parent_instance: Entity
-    priv: DeviceLinkPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.DeviceLink */
     get_driver(): string
     get_target(): Device
@@ -979,15 +984,16 @@ class DeviceLink {
     static new(target: Device): DeviceLink
     static $gtype: GObject.Type
 }
-export interface DeviceLinkFilter_ConstructProps extends Filter_ConstructProps {
+interface DeviceLinkFilter_ConstructProps extends Filter_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.DeviceLinkFilter */
     target_filter?: Filter
 }
 class DeviceLinkFilter {
-    /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkFilter */
-    parent_instance: Filter
-    priv: DeviceLinkFilterPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Filter */
+    readonly parent_instance: GObject.Object
+    readonly priv: FilterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.DeviceLinkFilter */
     get_target_filter(): Filter
     /* Methods of Libosinfo-1.0.Libosinfo.Filter */
@@ -1042,17 +1048,18 @@ class DeviceLinkFilter {
     _init (config?: DeviceLinkFilter_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(filter: Filter): DeviceLinkFilter
+    /* Function overloads */
     static new(): DeviceLinkFilter
     static $gtype: GObject.Type
 }
-export interface DeviceLinkList_ConstructProps extends List_ConstructProps {
+interface DeviceLinkList_ConstructProps extends List_ConstructProps {
 }
 class DeviceLinkList {
-    /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkList */
-    parent_instance: List
-    priv: DeviceLinkListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.DeviceLinkList */
     get_devices(filter?: Filter | null): DeviceList
     new_copy(): DeviceLinkList
@@ -1119,14 +1126,14 @@ class DeviceLinkList {
     static new(): DeviceLinkList
     static $gtype: GObject.Type
 }
-export interface DeviceList_ConstructProps extends List_ConstructProps {
+interface DeviceList_ConstructProps extends List_ConstructProps {
 }
 class DeviceList {
-    /* Fields of Libosinfo-1.0.Libosinfo.DeviceList */
-    parent_instance: List
-    priv: DeviceListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.DeviceList */
     new_copy(): DeviceList
     new_filtered(filter: Filter): DeviceList
@@ -1192,17 +1199,15 @@ class DeviceList {
     static new(): DeviceList
     static $gtype: GObject.Type
 }
-export interface Entity_ConstructProps extends GObject.Object_ConstructProps {
+interface Entity_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.Entity */
     id?: string
 }
 class Entity {
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
-    parent_instance: GObject.Object
-    priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Entity */
     add_param(key: string, value: string): void
     clear_param(key: string): void
@@ -1264,14 +1269,11 @@ class Entity {
     _init (config?: Entity_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Filter_ConstructProps extends GObject.Object_ConstructProps {
+interface Filter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Filter {
-    /* Fields of Libosinfo-1.0.Libosinfo.Filter */
-    parent_instance: GObject.Object
-    priv: FilterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Filter */
     add_constraint(propName: string, propVal: string): void
     clear_constraint(propName: string): void
@@ -1326,7 +1328,8 @@ class Filter {
     static new(): Filter
     static $gtype: GObject.Type
 }
-export interface Firmware_ConstructProps extends Entity_ConstructProps {
+interface Firmware_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.Firmware */
     architecture?: string
     type?: string
 }
@@ -1336,11 +1339,11 @@ class Firmware {
     type: string
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Firmware */
-    parent_instance: Entity
-    priv: FirmwarePrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Firmware */
     get_architecture(): string
     get_firmware_type(): string
@@ -1412,14 +1415,14 @@ class Firmware {
     static new(id: string, architecture: string, type: string): Firmware
     static $gtype: GObject.Type
 }
-export interface FirmwareList_ConstructProps extends List_ConstructProps {
+interface FirmwareList_ConstructProps extends List_ConstructProps {
 }
 class FirmwareList {
-    /* Fields of Libosinfo-1.0.Libosinfo.FirmwareList */
-    parent_instance: List
-    priv: FirmwareListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
@@ -1480,7 +1483,8 @@ class FirmwareList {
     static new(): FirmwareList
     static $gtype: GObject.Type
 }
-export interface Image_ConstructProps extends Entity_ConstructProps {
+interface Image_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.Image */
     architecture?: string
     cloud_init?: string
     format?: string
@@ -1494,11 +1498,11 @@ class Image {
     url: string
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Image */
-    parent_instance: Entity
-    priv: ImagePrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Image */
     get_architecture(): string
     get_cloud_init(): boolean
@@ -1578,14 +1582,14 @@ class Image {
     static new(id: string, architecture: string, format: string): Image
     static $gtype: GObject.Type
 }
-export interface ImageList_ConstructProps extends List_ConstructProps {
+interface ImageList_ConstructProps extends List_ConstructProps {
 }
 class ImageList {
-    /* Fields of Libosinfo-1.0.Libosinfo.ImageList */
-    parent_instance: List
-    priv: ImageListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
@@ -1646,16 +1650,16 @@ class ImageList {
     static new(): ImageList
     static $gtype: GObject.Type
 }
-export interface InstallConfig_ConstructProps extends Entity_ConstructProps {
+interface InstallConfig_ConstructProps extends Entity_ConstructProps {
 }
 class InstallConfig {
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.InstallConfig */
-    parent_instance: Entity
-    priv: InstallConfigPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.InstallConfig */
     get_admin_password(): string
     get_avatar_disk(): string
@@ -1768,7 +1772,8 @@ class InstallConfig {
     static new(id: string): InstallConfig
     static $gtype: GObject.Type
 }
-export interface InstallConfigParam_ConstructProps extends Entity_ConstructProps {
+interface InstallConfigParam_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.InstallConfigParam */
     name?: string
     value_map?: Datamap
 }
@@ -1778,11 +1783,11 @@ class InstallConfigParam {
     value_map: Datamap
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigParam */
-    parent_instance: Entity
-    priv: InstallConfigParamPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.InstallConfigParam */
     get_name(): string
     get_policy(): InstallConfigParamPolicy
@@ -1857,14 +1862,14 @@ class InstallConfigParam {
     static new(name: string): InstallConfigParam
     static $gtype: GObject.Type
 }
-export interface InstallConfigParamList_ConstructProps extends List_ConstructProps {
+interface InstallConfigParamList_ConstructProps extends List_ConstructProps {
 }
 class InstallConfigParamList {
-    /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigParamList */
-    parent_instance: List
-    priv: InstallConfigParamListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
@@ -1925,7 +1930,8 @@ class InstallConfigParamList {
     static new(): InstallConfigParamList
     static $gtype: GObject.Type
 }
-export interface InstallScript_ConstructProps extends Entity_ConstructProps {
+interface InstallScript_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.InstallScript */
     preferred_injection_method?: InstallScriptInjectionMethod
     profile?: string
     template_data?: string
@@ -1940,11 +1946,11 @@ class InstallScript {
     readonly product_key_format: string
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.InstallScript */
-    parent_instance: Entity
-    priv: InstallScriptPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.InstallScript */
     generate(os: Os, config: InstallConfig, cancellable?: Gio.Cancellable | null): string
     generate_async(os: Os, config: InstallConfig, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -2067,14 +2073,14 @@ class InstallScript {
     static new_uri(id: string, profile: string, templateUri: string): InstallScript
     static $gtype: GObject.Type
 }
-export interface InstallScriptList_ConstructProps extends List_ConstructProps {
+interface InstallScriptList_ConstructProps extends List_ConstructProps {
 }
 class InstallScriptList {
-    /* Fields of Libosinfo-1.0.Libosinfo.InstallScriptList */
-    parent_instance: List
-    priv: InstallScriptListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.InstallScriptList */
     new_copy(): InstallScriptList
     new_filtered(filter: Filter): InstallScriptList
@@ -2140,15 +2146,13 @@ class InstallScriptList {
     static new(): InstallScriptList
     static $gtype: GObject.Type
 }
-export interface List_ConstructProps extends GObject.Object_ConstructProps {
+interface List_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.List */
     element_type?: GObject.Type
 }
 class List {
-    /* Fields of Libosinfo-1.0.Libosinfo.List */
-    parent_instance: GObject.Object
-    priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
@@ -2207,14 +2211,11 @@ class List {
     _init (config?: List_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Loader_ConstructProps extends GObject.Object_ConstructProps {
+interface Loader_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Loader {
-    /* Fields of Libosinfo-1.0.Libosinfo.Loader */
-    parent_instance: GObject.Object
-    priv: LoaderPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Loader */
     get_db(): Db
     process_default_path(): void
@@ -2268,7 +2269,8 @@ class Loader {
     static new(): Loader
     static $gtype: GObject.Type
 }
-export interface Media_ConstructProps extends Entity_ConstructProps {
+interface Media_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.Media */
     application_id?: string
     architecture?: string
     eject_after_install?: boolean
@@ -2305,11 +2307,11 @@ class Media {
     volume_size: number
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Media */
-    parent_instance: Entity
-    priv: MediaPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Media */
     add_install_script(script: InstallScript): void
     get_application_id(): string
@@ -2432,14 +2434,14 @@ class Media {
     static create_from_location_with_flags_finish(res: Gio.AsyncResult): Media
     static $gtype: GObject.Type
 }
-export interface MediaList_ConstructProps extends List_ConstructProps {
+interface MediaList_ConstructProps extends List_ConstructProps {
 }
 class MediaList {
-    /* Fields of Libosinfo-1.0.Libosinfo.MediaList */
-    parent_instance: List
-    priv: MediaListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.MediaList */
     new_copy(): MediaList
     new_filtered(filter: Filter): MediaList
@@ -2505,7 +2507,7 @@ class MediaList {
     static new(): MediaList
     static $gtype: GObject.Type
 }
-export interface Os_ConstructProps extends Product_ConstructProps {
+interface Os_ConstructProps extends Product_ConstructProps {
 }
 class Os {
     /* Properties of Libosinfo-1.0.Libosinfo.Os */
@@ -2522,11 +2524,11 @@ class Os {
     readonly version: string
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Os */
-    parent_instance: Product
-    priv: OsPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Product */
+    readonly parent_instance: Entity
+    readonly priv: ProductPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Os */
     add_device(dev: Device): DeviceLink
     add_device_driver(driver: DeviceDriver): void
@@ -2660,14 +2662,14 @@ class Os {
     static new(id: string): Os
     static $gtype: GObject.Type
 }
-export interface OsList_ConstructProps extends ProductList_ConstructProps {
+interface OsList_ConstructProps extends ProductList_ConstructProps {
 }
 class OsList {
-    /* Fields of Libosinfo-1.0.Libosinfo.OsList */
-    parent_instance: ProductList
-    priv: OsListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.ProductList */
+    readonly parent_instance: List
+    readonly priv: ProductListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.OsList */
     new_copy(): OsList
     new_filtered(filter: Filter): OsList
@@ -2736,9 +2738,12 @@ class OsList {
     _init (config?: OsList_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): OsList
+    /* Function overloads */
+    static new(): OsList
     static $gtype: GObject.Type
 }
-export interface OsVariant_ConstructProps extends Entity_ConstructProps {
+interface OsVariant_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.OsVariant */
     name?: string
 }
 class OsVariant {
@@ -2746,11 +2751,11 @@ class OsVariant {
     name: string
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.OsVariant */
-    parent_instance: Entity
-    priv: OsVariantPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.OsVariant */
     get_name(): string
     /* Methods of Libosinfo-1.0.Libosinfo.Entity */
@@ -2818,14 +2823,14 @@ class OsVariant {
     static new(id: string): OsVariant
     static $gtype: GObject.Type
 }
-export interface OsVariantList_ConstructProps extends List_ConstructProps {
+interface OsVariantList_ConstructProps extends List_ConstructProps {
 }
 class OsVariantList {
-    /* Fields of Libosinfo-1.0.Libosinfo.OsVariantList */
-    parent_instance: List
-    priv: OsVariantListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.List */
     add(entity: Entity): void
     add_all(source: List): void
@@ -2886,7 +2891,7 @@ class OsVariantList {
     static new(): OsVariantList
     static $gtype: GObject.Type
 }
-export interface Platform_ConstructProps extends Product_ConstructProps {
+interface Platform_ConstructProps extends Product_ConstructProps {
 }
 class Platform {
     /* Properties of Libosinfo-1.0.Libosinfo.Product */
@@ -2898,11 +2903,11 @@ class Platform {
     readonly version: string
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Platform */
-    parent_instance: Product
-    priv: PlatformPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Product */
+    readonly parent_instance: Entity
+    readonly priv: ProductPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Platform */
     add_device(dev: Device): DeviceLink
     get_all_devices(filter?: Filter | null): DeviceList
@@ -2997,14 +3002,14 @@ class Platform {
     static new(id: string): Platform
     static $gtype: GObject.Type
 }
-export interface PlatformList_ConstructProps extends ProductList_ConstructProps {
+interface PlatformList_ConstructProps extends ProductList_ConstructProps {
 }
 class PlatformList {
-    /* Fields of Libosinfo-1.0.Libosinfo.PlatformList */
-    parent_instance: ProductList
-    priv: PlatformListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.ProductList */
+    readonly parent_instance: List
+    readonly priv: ProductListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.PlatformList */
     new_copy(): PlatformList
     new_filtered(filter: Filter): PlatformList
@@ -3073,9 +3078,11 @@ class PlatformList {
     _init (config?: PlatformList_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PlatformList
+    /* Function overloads */
+    static new(): PlatformList
     static $gtype: GObject.Type
 }
-export interface Product_ConstructProps extends Entity_ConstructProps {
+interface Product_ConstructProps extends Entity_ConstructProps {
 }
 class Product {
     /* Properties of Libosinfo-1.0.Libosinfo.Product */
@@ -3087,11 +3094,11 @@ class Product {
     readonly version: string
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Product */
-    parent_instance: Entity
-    priv: ProductPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Product */
     add_related(relshp: ProductRelationship, otherproduct: Product): void
     get_codename(): string
@@ -3179,14 +3186,14 @@ class Product {
     _init (config?: Product_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ProductFilter_ConstructProps extends Filter_ConstructProps {
+interface ProductFilter_ConstructProps extends Filter_ConstructProps {
 }
 class ProductFilter {
-    /* Fields of Libosinfo-1.0.Libosinfo.ProductFilter */
-    parent_instance: Filter
-    priv: ProductFilterPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Filter */
+    readonly parent_instance: GObject.Object
+    readonly priv: FilterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.ProductFilter */
     add_product_constraint(relshp: ProductRelationship, product: Product): number
     add_support_date_constraint(when: GLib.Date): void
@@ -3245,16 +3252,18 @@ class ProductFilter {
     _init (config?: ProductFilter_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): ProductFilter
+    /* Function overloads */
+    static new(): ProductFilter
     static $gtype: GObject.Type
 }
-export interface ProductList_ConstructProps extends List_ConstructProps {
+interface ProductList_ConstructProps extends List_ConstructProps {
 }
 class ProductList {
-    /* Fields of Libosinfo-1.0.Libosinfo.ProductList */
-    parent_instance: List
-    priv: ProductListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.ProductList */
     new_copy(): ProductList
     new_filtered(filter: Filter): ProductList
@@ -3320,7 +3329,8 @@ class ProductList {
     static new(): ProductList
     static $gtype: GObject.Type
 }
-export interface Resources_ConstructProps extends Entity_ConstructProps {
+interface Resources_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.Resources */
     architecture?: string
     cpu?: number
     n_cpus?: number
@@ -3335,11 +3345,11 @@ class Resources {
     storage: number
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Resources */
-    parent_instance: Entity
-    priv: ResourcesPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Resources */
     get_architecture(): string
     get_cpu(): number
@@ -3421,14 +3431,14 @@ class Resources {
     static new(id: string, architecture: string): Resources
     static $gtype: GObject.Type
 }
-export interface ResourcesList_ConstructProps extends List_ConstructProps {
+interface ResourcesList_ConstructProps extends List_ConstructProps {
 }
 class ResourcesList {
-    /* Fields of Libosinfo-1.0.Libosinfo.ResourcesList */
-    parent_instance: List
-    priv: ResourcesListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.ResourcesList */
     new_copy(): ResourcesList
     new_filtered(filter: Filter): ResourcesList
@@ -3494,7 +3504,8 @@ class ResourcesList {
     static new(): ResourcesList
     static $gtype: GObject.Type
 }
-export interface Tree_ConstructProps extends Entity_ConstructProps {
+interface Tree_ConstructProps extends Entity_ConstructProps {
+    /* Constructor properties of Libosinfo-1.0.Libosinfo.Tree */
     architecture?: string
     boot_iso_path?: string
     has_treeinfo?: boolean
@@ -3522,11 +3533,11 @@ class Tree {
     url: string
     /* Properties of Libosinfo-1.0.Libosinfo.Entity */
     id: string
-    /* Fields of Libosinfo-1.0.Libosinfo.Tree */
-    parent_instance: Entity
-    priv: TreePrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.Entity */
+    readonly parent_instance: GObject.Object
+    readonly priv: EntityPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.Tree */
     get_architecture(): string
     get_boot_iso_path(): string
@@ -3629,14 +3640,14 @@ class Tree {
     static create_from_treeinfo(treeinfo: string, location: string): Tree
     static $gtype: GObject.Type
 }
-export interface TreeList_ConstructProps extends List_ConstructProps {
+interface TreeList_ConstructProps extends List_ConstructProps {
 }
 class TreeList {
-    /* Fields of Libosinfo-1.0.Libosinfo.TreeList */
-    parent_instance: List
-    priv: TreeListPrivate
+    /* Fields of Libosinfo-1.0.Libosinfo.List */
+    readonly parent_instance: GObject.Object
+    readonly priv: ListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Libosinfo-1.0.Libosinfo.TreeList */
     new_copy(): TreeList
     new_filtered(filter: Filter): TreeList
@@ -3704,7 +3715,7 @@ class TreeList {
 }
 abstract class AvatarFormatClass {
     /* Fields of Libosinfo-1.0.Libosinfo.AvatarFormatClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 class AvatarFormatPrivate {
@@ -3712,12 +3723,12 @@ class AvatarFormatPrivate {
 }
 abstract class DatamapClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DatamapClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class DatamapListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DatamapListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class DatamapListPrivate {
@@ -3728,7 +3739,7 @@ class DatamapPrivate {
 }
 abstract class DbClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DbClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DbPrivate {
@@ -3736,12 +3747,12 @@ class DbPrivate {
 }
 abstract class DeploymentClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DeploymentClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class DeploymentListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DeploymentListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class DeploymentListPrivate {
@@ -3752,17 +3763,17 @@ class DeploymentPrivate {
 }
 abstract class DeviceClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DeviceClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class DeviceDriverClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DeviceDriverClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class DeviceDriverListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DeviceDriverListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class DeviceDriverListPrivate {
@@ -3773,12 +3784,12 @@ class DeviceDriverPrivate {
 }
 abstract class DeviceLinkClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class DeviceLinkFilterClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkFilterClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 class DeviceLinkFilterPrivate {
@@ -3786,7 +3797,7 @@ class DeviceLinkFilterPrivate {
 }
 abstract class DeviceLinkListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DeviceLinkListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class DeviceLinkListPrivate {
@@ -3797,7 +3808,7 @@ class DeviceLinkPrivate {
 }
 abstract class DeviceListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.DeviceListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class DeviceListPrivate {
@@ -3808,7 +3819,7 @@ class DevicePrivate {
 }
 abstract class EntityClass {
     /* Fields of Libosinfo-1.0.Libosinfo.EntityClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class EntityPrivate {
@@ -3816,8 +3827,8 @@ class EntityPrivate {
 }
 abstract class FilterClass {
     /* Fields of Libosinfo-1.0.Libosinfo.FilterClass */
-    parent_class: GObject.ObjectClass
-    matches: (filter: Filter, entity: Entity) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly matches: (filter: Filter, entity: Entity) => boolean
     static name: string
 }
 class FilterPrivate {
@@ -3825,12 +3836,12 @@ class FilterPrivate {
 }
 abstract class FirmwareClass {
     /* Fields of Libosinfo-1.0.Libosinfo.FirmwareClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class FirmwareListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.FirmwareListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class FirmwareListPrivate {
@@ -3841,12 +3852,12 @@ class FirmwarePrivate {
 }
 abstract class ImageClass {
     /* Fields of Libosinfo-1.0.Libosinfo.ImageClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class ImageListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.ImageListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class ImageListPrivate {
@@ -3857,17 +3868,17 @@ class ImagePrivate {
 }
 abstract class InstallConfigClass {
     /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class InstallConfigParamClass {
     /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigParamClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class InstallConfigParamListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.InstallConfigParamListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class InstallConfigParamListPrivate {
@@ -3881,12 +3892,12 @@ class InstallConfigPrivate {
 }
 abstract class InstallScriptClass {
     /* Fields of Libosinfo-1.0.Libosinfo.InstallScriptClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class InstallScriptListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.InstallScriptListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class InstallScriptListPrivate {
@@ -3897,7 +3908,7 @@ class InstallScriptPrivate {
 }
 abstract class ListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.ListClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ListPrivate {
@@ -3905,7 +3916,7 @@ class ListPrivate {
 }
 abstract class LoaderClass {
     /* Fields of Libosinfo-1.0.Libosinfo.LoaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class LoaderPrivate {
@@ -3913,12 +3924,12 @@ class LoaderPrivate {
 }
 abstract class MediaClass {
     /* Fields of Libosinfo-1.0.Libosinfo.MediaClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class MediaListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.MediaListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class MediaListPrivate {
@@ -3929,12 +3940,12 @@ class MediaPrivate {
 }
 abstract class OsClass {
     /* Fields of Libosinfo-1.0.Libosinfo.OsClass */
-    parent_class: ProductClass
+    readonly parent_class: ProductClass
     static name: string
 }
 abstract class OsListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.OsListClass */
-    parent_class: ProductListClass
+    readonly parent_class: ProductListClass
     static name: string
 }
 class OsListPrivate {
@@ -3945,12 +3956,12 @@ class OsPrivate {
 }
 abstract class OsVariantClass {
     /* Fields of Libosinfo-1.0.Libosinfo.OsVariantClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class OsVariantListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.OsVariantListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class OsVariantListPrivate {
@@ -3961,12 +3972,12 @@ class OsVariantPrivate {
 }
 abstract class PlatformClass {
     /* Fields of Libosinfo-1.0.Libosinfo.PlatformClass */
-    parent_class: ProductClass
+    readonly parent_class: ProductClass
     static name: string
 }
 abstract class PlatformListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.PlatformListClass */
-    parent_class: ProductListClass
+    readonly parent_class: ProductListClass
     static name: string
 }
 class PlatformListPrivate {
@@ -3977,12 +3988,12 @@ class PlatformPrivate {
 }
 abstract class ProductClass {
     /* Fields of Libosinfo-1.0.Libosinfo.ProductClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class ProductFilterClass {
     /* Fields of Libosinfo-1.0.Libosinfo.ProductFilterClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 class ProductFilterPrivate {
@@ -3990,7 +4001,7 @@ class ProductFilterPrivate {
 }
 abstract class ProductListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.ProductListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class ProductListPrivate {
@@ -4001,12 +4012,12 @@ class ProductPrivate {
 }
 abstract class ResourcesClass {
     /* Fields of Libosinfo-1.0.Libosinfo.ResourcesClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class ResourcesListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.ResourcesListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class ResourcesListPrivate {
@@ -4017,12 +4028,12 @@ class ResourcesPrivate {
 }
 abstract class TreeClass {
     /* Fields of Libosinfo-1.0.Libosinfo.TreeClass */
-    parent_class: EntityClass
+    readonly parent_class: EntityClass
     static name: string
 }
 abstract class TreeListClass {
     /* Fields of Libosinfo-1.0.Libosinfo.TreeListClass */
-    parent_class: ListClass
+    readonly parent_class: ListClass
     static name: string
 }
 class TreeListPrivate {

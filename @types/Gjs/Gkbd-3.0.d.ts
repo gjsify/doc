@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gkbd-3.0
  */
@@ -34,9 +40,9 @@ enum KeyboardDrawingItemType {
     KEY_EXTRA,
     DOODAD,
 }
-export const DESKTOP_SCHEMA: string
-export const KEYBOARD_DRAWING_H: number
-export const KEYBOARD_SCHEMA: string
+const DESKTOP_SCHEMA: string
+const KEYBOARD_DRAWING_H: number
+const KEYBOARD_SCHEMA: string
 function install_glib_log_appender(): void
 function keyboard_config_add_default_switch_option_if_necessary(layouts_list: string, options_list: string, was_appended: boolean): string[]
 function keyboard_config_format_full_description(layout_descr: string, variant_descr: string): string
@@ -48,14 +54,11 @@ function preview_save_position(rect: Gdk.Rectangle): void
 function strv_append(arr: string, element: string): string[]
 function strv_behead(arr: string): void
 function strv_remove(arr: string, element: string): boolean
-export interface Configuration_ConstructProps extends GObject.Object_ConstructProps {
+interface Configuration_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Configuration {
-    /* Fields of Gkbd-3.0.Gkbd.Configuration */
-    parent: GObject.Object
-    priv: ConfigurationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gkbd-3.0.Gkbd.Configuration */
     append_object(obj: GObject.Object): void
     extract_layout_name(group: number): string
@@ -137,7 +140,7 @@ class Configuration {
     static get(): Configuration
     static $gtype: GObject.Type
 }
-export interface Indicator_ConstructProps extends Gtk.Notebook_ConstructProps {
+interface Indicator_ConstructProps extends Gtk.Notebook_ConstructProps {
 }
 class Indicator {
     /* Properties of Gtk-3.0.Gtk.Notebook */
@@ -192,14 +195,12 @@ class Indicator {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Gkbd-3.0.Gkbd.Indicator */
-    priv: IndicatorPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gkbd-3.0.Gkbd.Indicator */
     reinit_ui(): void
     set_angle(angle: number): void
@@ -253,7 +254,7 @@ class Indicator {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -568,6 +569,7 @@ class Indicator {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gkbd-3.0.Gkbd.Indicator */
     vfunc_reinit_ui(): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -1066,7 +1068,7 @@ class Indicator {
     static get_xkl_engine(): Xkl.Engine
     static $gtype: GObject.Type
 }
-export interface KeyboardDrawing_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+interface KeyboardDrawing_ConstructProps extends Gtk.DrawingArea_ConstructProps {
 }
 class KeyboardDrawing {
     /* Properties of Gtk-3.0.Gtk.Widget */
@@ -1110,11 +1112,11 @@ class KeyboardDrawing {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.DrawingArea */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gkbd-3.0.Gkbd.KeyboardDrawing */
     get_compat(): string
     get_geometry(): string
@@ -1417,6 +1419,7 @@ class KeyboardDrawing {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Gkbd-3.0.Gkbd.KeyboardDrawing */
     vfunc_bad_keycode(keycode: number): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -1828,7 +1831,7 @@ class KeyboardDrawing {
     static dialog_set_layout(dialog: Gtk.Widget, registry: Xkl.ConfigRegistry, layout: string): void
     static $gtype: GObject.Type
 }
-export interface Status_ConstructProps extends Gtk.StatusIcon_ConstructProps {
+interface Status_ConstructProps extends Gtk.StatusIcon_ConstructProps {
 }
 class Status {
     /* Properties of Gtk-3.0.Gtk.StatusIcon */
@@ -1847,13 +1850,11 @@ class Status {
     tooltip_markup: string
     tooltip_text: string
     visible: boolean
-    /* Fields of Gkbd-3.0.Gkbd.Status */
-    parent: Gtk.StatusIcon
-    priv: StatusPrivate
     /* Fields of Gtk-3.0.Gtk.StatusIcon */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
+    readonly priv: Gtk.StatusIconPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gkbd-3.0.Gkbd.Status */
     reinit_ui(): void
     /* Methods of Gtk-3.0.Gtk.StatusIcon */
@@ -1994,7 +1995,7 @@ class Status {
 }
 abstract class ConfigurationClass {
     /* Fields of Gkbd-3.0.Gkbd.ConfigurationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ConfigurationPrivate {
@@ -2002,14 +2003,14 @@ class ConfigurationPrivate {
 }
 class DesktopConfig {
     /* Fields of Gkbd-3.0.Gkbd.DesktopConfig */
-    default_group: number
-    group_per_app: boolean
-    handle_indicators: boolean
-    layout_names_as_group_names: boolean
-    load_extra_items: boolean
-    settings: Gio.Settings
-    config_listener_id: number
-    engine: Xkl.Engine
+    readonly default_group: number
+    readonly group_per_app: boolean
+    readonly handle_indicators: boolean
+    readonly layout_names_as_group_names: boolean
+    readonly load_extra_items: boolean
+    readonly settings: Gio.Settings
+    readonly config_listener_id: number
+    readonly engine: Xkl.Engine
     /* Methods of Gkbd-3.0.Gkbd.DesktopConfig */
     activate(): boolean
     init(engine: Xkl.Engine): void
@@ -2026,23 +2027,23 @@ class DesktopConfig {
 }
 abstract class IndicatorClass {
     /* Fields of Gkbd-3.0.Gkbd.IndicatorClass */
-    parent_class: Gtk.NotebookClass
-    reinit_ui: (gki: Indicator) => void
+    readonly parent_class: Gtk.NotebookClass
+    readonly reinit_ui: (gki: Indicator) => void
     static name: string
 }
 class IndicatorConfig {
     /* Fields of Gkbd-3.0.Gkbd.IndicatorConfig */
-    secondary_groups_mask: number
-    show_flags: boolean
-    font_family: string
-    font_size: number
-    foreground_color: string
-    background_color: string
-    settings: Gio.Settings
-    image_filenames: object[]
-    icon_theme: Gtk.IconTheme
-    config_listener_id: number
-    engine: Xkl.Engine
+    readonly secondary_groups_mask: number
+    readonly show_flags: boolean
+    readonly font_family: string
+    readonly font_size: number
+    readonly foreground_color: string
+    readonly background_color: string
+    readonly settings: Gio.Settings
+    readonly image_filenames: object[]
+    readonly icon_theme: Gtk.IconTheme
+    readonly config_listener_id: number
+    readonly engine: Xkl.Engine
     /* Methods of Gkbd-3.0.Gkbd.IndicatorConfig */
     activate(): void
     free_image_filenames(): void
@@ -2064,12 +2065,12 @@ class IndicatorPrivate {
 }
 class KeyboardConfig {
     /* Fields of Gkbd-3.0.Gkbd.KeyboardConfig */
-    model: string
-    layouts_variants: string
-    options: string
-    settings: Gio.Settings
-    config_listener_id: number
-    engine: Xkl.Engine
+    readonly model: string
+    readonly layouts_variants: string
+    readonly options: string
+    readonly settings: Gio.Settings
+    readonly config_listener_id: number
+    readonly engine: Xkl.Engine
     /* Methods of Gkbd-3.0.Gkbd.KeyboardConfig */
     activate(): boolean
     equals(kbd_config2: KeyboardConfig): boolean
@@ -2092,8 +2093,8 @@ class KeyboardConfig {
 }
 abstract class KeyboardDrawingClass {
     /* Fields of Gkbd-3.0.Gkbd.KeyboardDrawingClass */
-    parent_class: Gtk.DrawingAreaClass
-    bad_keycode: (drawing: KeyboardDrawing, keycode: number) => void
+    readonly parent_class: Gtk.DrawingAreaClass
+    readonly bad_keycode: (drawing: KeyboardDrawing, keycode: number) => void
     static name: string
 }
 class KeyboardDrawingDoodad {
@@ -2101,8 +2102,8 @@ class KeyboardDrawingDoodad {
 }
 class KeyboardDrawingGroupLevel {
     /* Fields of Gkbd-3.0.Gkbd.KeyboardDrawingGroupLevel */
-    group: number
-    level: number
+    readonly group: number
+    readonly level: number
     static name: string
 }
 class KeyboardDrawingItem {
@@ -2113,18 +2114,18 @@ class KeyboardDrawingKey {
 }
 class KeyboardDrawingRenderContext {
     /* Fields of Gkbd-3.0.Gkbd.KeyboardDrawingRenderContext */
-    cr: cairo.Context
-    angle: number
-    layout: Pango.Layout
-    font_desc: Pango.FontDescription
-    scale_numerator: number
-    scale_denominator: number
-    dark_color: Gdk.RGBA
+    readonly cr: cairo.Context
+    readonly angle: number
+    readonly layout: Pango.Layout
+    readonly font_desc: Pango.FontDescription
+    readonly scale_numerator: number
+    readonly scale_denominator: number
+    readonly dark_color: Gdk.RGBA
     static name: string
 }
 abstract class StatusClass {
     /* Fields of Gkbd-3.0.Gkbd.StatusClass */
-    parent_class: Gtk.NotebookClass
+    readonly parent_class: Gtk.NotebookClass
     static name: string
 }
 class StatusPrivate {

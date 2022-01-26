@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Zeitgeist-2.0
  */
@@ -73,110 +79,110 @@ enum DataModelError {
     NULL_EVENT,
     TOO_MANY_RESULTS,
 }
-export const DataSourcesSIG_DATASOURCES: string
-export const TimestampSECOND: number
-export const TimestampMINUTE: number
-export const TimestampHOUR: number
-export const TimestampDAY: number
-export const TimestampWEEK: number
-export const TimestampYEAR: number
-export const NCALALARM: string
-export const NCALATTACHMENT: string
-export const NCALCALENDAR: string
-export const NCALCALENDAR_DATA_OBJECT: string
-export const NCALEVENT: string
-export const NCALFREEBUSY: string
-export const NCALJOURNAL: string
-export const NCALTIMEZONE: string
-export const NCALTODO: string
-export const NCOCONTACT: string
-export const NCOCONTACT_GROUP: string
-export const NCOCONTACT_LIST: string
-export const NCOCONTACT_LIST_DATA_OBJECT: string
-export const NCOORGANIZATION_CONTACT: string
-export const NCOPERSON_CONTACT: string
-export const NFOAPPLICATION: string
-export const NFOARCHIVE: string
-export const NFOARCHIVE_ITEM: string
-export const NFOATTACHMENT: string
-export const NFOAUDIO: string
-export const NFOBOOKMARK: string
-export const NFOBOOKMARK_FOLDER: string
-export const NFOCURSOR: string
-export const NFODATA_CONTAINER: string
-export const NFODELETED_RESOURCE: string
-export const NFODOCUMENT: string
-export const NFOEMBEDDED_FILE_DATA_OBJECT: string
-export const NFOEXECUTABLE: string
-export const NFOFILESYSTEM: string
-export const NFOFILESYSTEM_IMAGE: string
-export const NFOFILE_DATA_OBJECT: string
-export const NFOFOLDER: string
-export const NFOFONT: string
-export const NFOHARD_DISK_PARTITION: string
-export const NFOHTML_DOCUMENT: string
-export const NFOICON: string
-export const NFOIMAGE: string
-export const NFOMEDIA: string
-export const NFOMEDIA_LIST: string
-export const NFOMEDIA_STREAM: string
-export const NFOMIND_MAP: string
-export const NFOOPERATING_SYSTEM: string
-export const NFOPAGINATED_TEXT_DOCUMENT: string
-export const NFOPLAIN_TEXT_DOCUMENT: string
-export const NFOPRESENTATION: string
-export const NFORASTER_IMAGE: string
-export const NFOREMOTE_DATA_OBJECT: string
-export const NFOREMOTE_PORT_ADDRESS: string
-export const NFOSOFTWARE: string
-export const NFOSOFTWARE_ITEM: string
-export const NFOSOFTWARE_SERVICE: string
-export const NFOSOURCE_CODE: string
-export const NFOSPREADSHEET: string
-export const NFOTEXT_DOCUMENT: string
-export const NFOTRASH: string
-export const NFOVECTOR_IMAGE: string
-export const NFOVIDEO: string
-export const NFOVISUAL: string
-export const NFOWEBSITE: string
-export const NFOWEB_DATA_OBJECT: string
-export const NIEDATA_OBJECT: string
-export const NIEINFORMATION_ELEMENT: string
-export const NMMMOVIE: string
-export const NMMMUSIC_ALBUM: string
-export const NMMMUSIC_PIECE: string
-export const NMMTVSERIES: string
-export const NMMTVSHOW: string
-export const NMOEMAIL: string
-export const NMOIMMESSAGE: string
-export const NMOMAILBOX: string
-export const NMOMAILBOX_DATA_OBJECT: string
-export const NMOMESSAGE: string
-export const NMOMIME_ENTITY: string
-export const ZGACCEPT_EVENT: string
-export const ZGACCESS_EVENT: string
-export const ZGAPPLICATION_ACTION: string
-export const ZGCREATE_EVENT: string
-export const ZGDELETE_EVENT: string
-export const ZGDENY_EVENT: string
-export const ZGEVENT_INTERPRETATION: string
-export const ZGEVENT_MANIFESTATION: string
-export const ZGEXPIRE_EVENT: string
-export const ZGHEURISTIC_ACTIVITY: string
-export const ZGLEAVE_EVENT: string
-export const ZGMODIFY_EVENT: string
-export const ZGMOVE_EVENT: string
-export const ZGRECEIVE_EVENT: string
-export const ZGSCHEDULED_ACTIVITY: string
-export const ZGSEND_EVENT: string
-export const ZGSYSTEM_NOTIFICATION: string
-export const ZGUSER_ACTIVITY: string
-export const ZGWORLD_ACTIVITY: string
-export const UtilsENGINE_DBUS_NAME: string
-export const UtilsENGINE_DBUS_PATH: string
-export const UtilsSIG_EVENT: string
-export const UtilsMAX_DBUS_RESULT_SIZE: number
-export const UtilsCACHE_SIZE: number
+const DataSourcesSIG_DATASOURCES: string
+const TimestampSECOND: number
+const TimestampMINUTE: number
+const TimestampHOUR: number
+const TimestampDAY: number
+const TimestampWEEK: number
+const TimestampYEAR: number
+const NCALALARM: string
+const NCALATTACHMENT: string
+const NCALCALENDAR: string
+const NCALCALENDAR_DATA_OBJECT: string
+const NCALEVENT: string
+const NCALFREEBUSY: string
+const NCALJOURNAL: string
+const NCALTIMEZONE: string
+const NCALTODO: string
+const NCOCONTACT: string
+const NCOCONTACT_GROUP: string
+const NCOCONTACT_LIST: string
+const NCOCONTACT_LIST_DATA_OBJECT: string
+const NCOORGANIZATION_CONTACT: string
+const NCOPERSON_CONTACT: string
+const NFOAPPLICATION: string
+const NFOARCHIVE: string
+const NFOARCHIVE_ITEM: string
+const NFOATTACHMENT: string
+const NFOAUDIO: string
+const NFOBOOKMARK: string
+const NFOBOOKMARK_FOLDER: string
+const NFOCURSOR: string
+const NFODATA_CONTAINER: string
+const NFODELETED_RESOURCE: string
+const NFODOCUMENT: string
+const NFOEMBEDDED_FILE_DATA_OBJECT: string
+const NFOEXECUTABLE: string
+const NFOFILESYSTEM: string
+const NFOFILESYSTEM_IMAGE: string
+const NFOFILE_DATA_OBJECT: string
+const NFOFOLDER: string
+const NFOFONT: string
+const NFOHARD_DISK_PARTITION: string
+const NFOHTML_DOCUMENT: string
+const NFOICON: string
+const NFOIMAGE: string
+const NFOMEDIA: string
+const NFOMEDIA_LIST: string
+const NFOMEDIA_STREAM: string
+const NFOMIND_MAP: string
+const NFOOPERATING_SYSTEM: string
+const NFOPAGINATED_TEXT_DOCUMENT: string
+const NFOPLAIN_TEXT_DOCUMENT: string
+const NFOPRESENTATION: string
+const NFORASTER_IMAGE: string
+const NFOREMOTE_DATA_OBJECT: string
+const NFOREMOTE_PORT_ADDRESS: string
+const NFOSOFTWARE: string
+const NFOSOFTWARE_ITEM: string
+const NFOSOFTWARE_SERVICE: string
+const NFOSOURCE_CODE: string
+const NFOSPREADSHEET: string
+const NFOTEXT_DOCUMENT: string
+const NFOTRASH: string
+const NFOVECTOR_IMAGE: string
+const NFOVIDEO: string
+const NFOVISUAL: string
+const NFOWEBSITE: string
+const NFOWEB_DATA_OBJECT: string
+const NIEDATA_OBJECT: string
+const NIEINFORMATION_ELEMENT: string
+const NMMMOVIE: string
+const NMMMUSIC_ALBUM: string
+const NMMMUSIC_PIECE: string
+const NMMTVSERIES: string
+const NMMTVSHOW: string
+const NMOEMAIL: string
+const NMOIMMESSAGE: string
+const NMOMAILBOX: string
+const NMOMAILBOX_DATA_OBJECT: string
+const NMOMESSAGE: string
+const NMOMIME_ENTITY: string
+const ZGACCEPT_EVENT: string
+const ZGACCESS_EVENT: string
+const ZGAPPLICATION_ACTION: string
+const ZGCREATE_EVENT: string
+const ZGDELETE_EVENT: string
+const ZGDENY_EVENT: string
+const ZGEVENT_INTERPRETATION: string
+const ZGEVENT_MANIFESTATION: string
+const ZGEXPIRE_EVENT: string
+const ZGHEURISTIC_ACTIVITY: string
+const ZGLEAVE_EVENT: string
+const ZGMODIFY_EVENT: string
+const ZGMOVE_EVENT: string
+const ZGRECEIVE_EVENT: string
+const ZGSCHEDULED_ACTIVITY: string
+const ZGSEND_EVENT: string
+const ZGSYSTEM_NOTIFICATION: string
+const ZGUSER_ACTIVITY: string
+const ZGWORLD_ACTIVITY: string
+const UtilsENGINE_DBUS_NAME: string
+const UtilsENGINE_DBUS_PATH: string
+const UtilsSIG_EVENT: string
+const UtilsMAX_DBUS_RESULT_SIZE: number
+const UtilsCACHE_SIZE: number
 function data_sources_from_variant(sources_variant: GLib.Variant): DataSource[]
 function data_sources_to_variant(sources: GLib.HashTable): GLib.Variant
 function events_from_variant(vevents: GLib.Variant): Event[]
@@ -219,11 +225,11 @@ function register_mimetype_regex(mimetype_regex: string, interpretation_uri: str
 function interpretation_for_mimetype(mimetype?: string | null): string | null
 function register_uri_scheme(uri_scheme: string, manifestation_type: string): void
 function manifestation_for_uri(uri: string): string | null
-export interface RemoteRegistry_ConstructProps extends GObject.Object_ConstructProps {
+interface RemoteRegistry_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RemoteRegistry {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.RemoteRegistry */
     get_data_sources(cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     get_data_sources_finish(_res_: Gio.AsyncResult): GLib.Variant
@@ -295,11 +301,11 @@ class RemoteRegistry {
     _init (config?: RemoteRegistry_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RemoteLog_ConstructProps extends GObject.Object_ConstructProps {
+interface RemoteLog_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RemoteLog {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.RemoteLog */
     delete_events(event_ids: number[], cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null): void
     delete_events_finish(_res_: Gio.AsyncResult): GLib.Variant
@@ -387,11 +393,11 @@ class RemoteLog {
     _init (config?: RemoteLog_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RemoteMonitor_ConstructProps extends GObject.Object_ConstructProps {
+interface RemoteMonitor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RemoteMonitor {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.RemoteMonitor */
     notify_insert(time_range: GLib.Variant, events: GLib.Variant, _callback_?: Gio.AsyncReadyCallback | null): void
     notify_insert_finish(_res_: Gio.AsyncResult): void
@@ -445,11 +451,11 @@ class RemoteMonitor {
     _init (config?: RemoteMonitor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RemoteSimpleIndexer_ConstructProps extends GObject.Object_ConstructProps {
+interface RemoteSimpleIndexer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RemoteSimpleIndexer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.RemoteSimpleIndexer */
     search(query_string: string, time_range: GLib.Variant, filter_templates: GLib.Variant, offset: number, count: number, result_type: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     search_finish(_res_: Gio.AsyncResult): [ /* events */ GLib.Variant, /* matches */ number ]
@@ -503,11 +509,11 @@ class RemoteSimpleIndexer {
     _init (config?: RemoteSimpleIndexer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NetworkManagerDBus_ConstructProps extends GObject.Object_ConstructProps {
+interface NetworkManagerDBus_ConstructProps extends GObject.Object_ConstructProps {
 }
 class NetworkManagerDBus {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.NetworkManagerDBus */
     state(): number
     /* Methods of GObject-2.0.GObject.Object */
@@ -559,11 +565,11 @@ class NetworkManagerDBus {
     _init (config?: NetworkManagerDBus_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ConnmanManagerDBus_ConstructProps extends GObject.Object_ConstructProps {
+interface ConnmanManagerDBus_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ConnmanManagerDBus {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.ConnmanManagerDBus */
     get_state(): string
     /* Methods of GObject-2.0.GObject.Object */
@@ -615,11 +621,11 @@ class ConnmanManagerDBus {
     _init (config?: ConnmanManagerDBus_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ResultSet_ConstructProps extends GObject.Object_ConstructProps {
+interface ResultSet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ResultSet {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.ResultSet */
     size(): number
     estimated_matches(): number
@@ -678,14 +684,14 @@ class ResultSet {
     _init (config?: ResultSet_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DataSourceRegistry_ConstructProps extends QueuedProxyWrapper_ConstructProps {
+interface DataSourceRegistry_ConstructProps extends QueuedProxyWrapper_ConstructProps {
 }
 class DataSourceRegistry {
     /* Properties of Zeitgeist-2.0.Zeitgeist.QueuedProxyWrapper */
     proxy_created: boolean
     is_connected: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.DataSourceRegistry */
     get_data_sources(cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     get_data_sources_finish(_res_: Gio.AsyncResult): DataSource[]
@@ -768,14 +774,14 @@ class DataSourceRegistry {
     static new(): DataSourceRegistry
     static $gtype: GObject.Type
 }
-export interface Index_ConstructProps extends QueuedProxyWrapper_ConstructProps {
+interface Index_ConstructProps extends QueuedProxyWrapper_ConstructProps {
 }
 class Index {
     /* Properties of Zeitgeist-2.0.Zeitgeist.QueuedProxyWrapper */
     proxy_created: boolean
     is_connected: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.Index */
     search(query: string, time_range: TimeRange, event_templates: Event[], offset: number, num_events: number, result_type: ResultType, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     search_finish(_res_: Gio.AsyncResult): ResultSet
@@ -844,14 +850,14 @@ class Index {
     static new(): Index
     static $gtype: GObject.Type
 }
-export interface Log_ConstructProps extends QueuedProxyWrapper_ConstructProps {
+interface Log_ConstructProps extends QueuedProxyWrapper_ConstructProps {
 }
 class Log {
     /* Properties of Zeitgeist-2.0.Zeitgeist.QueuedProxyWrapper */
     proxy_created: boolean
     is_connected: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.Log */
     insert_event(event: Event, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     insert_event_finish(_res_: Gio.AsyncResult): number[]
@@ -940,7 +946,8 @@ class Log {
     static get_default(): Log
     static $gtype: GObject.Type
 }
-export interface Monitor_ConstructProps extends GObject.Object_ConstructProps {
+interface Monitor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Zeitgeist-2.0.Zeitgeist.Monitor */
     time_range?: TimeRange
     event_templates?: Event[]
 }
@@ -949,7 +956,7 @@ class Monitor {
     time_range: TimeRange
     event_templates: Event[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.Monitor */
     get_templates(): Event[]
     get_path(): string
@@ -1023,7 +1030,8 @@ class Monitor {
     static new(time_range: TimeRange, event_templates: Event[]): Monitor
     static $gtype: GObject.Type
 }
-export interface QueuedProxyWrapper_ConstructProps extends GObject.Object_ConstructProps {
+interface QueuedProxyWrapper_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Zeitgeist-2.0.Zeitgeist.QueuedProxyWrapper */
     proxy_created?: boolean
     is_connected?: boolean
 }
@@ -1032,7 +1040,7 @@ class QueuedProxyWrapper {
     proxy_created: boolean
     is_connected: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.QueuedProxyWrapper */
     proxy_acquired(proxy: GObject.Object): void
     proxy_unavailable(err: Gio.IOErrorEnum): void
@@ -1095,8 +1103,6 @@ class QueuedProxyWrapper {
     static $gtype: GObject.Type
 }
 class QueuedProxyWrapperQueuedMethod {
-    /* Fields of Zeitgeist-2.0.Zeitgeist.QueuedProxyWrapperQueuedMethod */
-    ref_count: number
     /* Methods of Zeitgeist-2.0.Zeitgeist.QueuedProxyWrapperQueuedMethod */
     get_queued_method(): [ /* returnType */ GLib.SourceFunc, /* result_target */ object | null ]
     static name: string
@@ -1105,7 +1111,8 @@ class QueuedProxyWrapperQueuedMethod {
     /* Static methods and pseudo-constructors */
     static new(callback: GLib.SourceFunc): QueuedProxyWrapperQueuedMethod
 }
-export interface DataSource_ConstructProps extends GObject.Object_ConstructProps {
+interface DataSource_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Zeitgeist-2.0.Zeitgeist.DataSource */
     unique_id?: string
     name?: string
     description?: string
@@ -1124,7 +1131,7 @@ class DataSource {
     running: boolean
     timestamp: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.DataSource */
     to_variant(): GLib.Variant
     get_unique_id(): string
@@ -1202,7 +1209,8 @@ class DataSource {
     static from_variant(variant: GLib.Variant, reset_running: boolean): DataSource
     static $gtype: GObject.Type
 }
-export interface Event_ConstructProps extends GObject.Object_ConstructProps {
+interface Event_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Zeitgeist-2.0.Zeitgeist.Event */
     id?: number
     timestamp?: number
     origin?: string
@@ -1223,7 +1231,7 @@ class Event {
     subjects: Subject[]
     payload: Uint8Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.Event */
     get_subject(index: number): Subject
     num_subjects(): number
@@ -1311,7 +1319,8 @@ class Event {
     static new(): Event
     static $gtype: GObject.Type
 }
-export interface Subject_ConstructProps extends GObject.Object_ConstructProps {
+interface Subject_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Zeitgeist-2.0.Zeitgeist.Subject */
     uri?: string
     origin?: string
     text?: string
@@ -1334,7 +1343,7 @@ class Subject {
     interpretation: string
     manifestation: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.Subject */
     to_variant(): GLib.Variant
     matches_template(template_subject: Subject): boolean
@@ -1422,7 +1431,8 @@ class Subject {
     static new(): Subject
     static $gtype: GObject.Type
 }
-export interface TimeRange_ConstructProps extends GObject.Object_ConstructProps {
+interface TimeRange_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Zeitgeist-2.0.Zeitgeist.TimeRange */
     start?: number
     end?: number
 }
@@ -1431,7 +1441,7 @@ class TimeRange {
     start: number
     end: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zeitgeist-2.0.Zeitgeist.TimeRange */
     to_variant(): GLib.Variant
     intersect(time_range: TimeRange): TimeRange | null
@@ -1490,11 +1500,11 @@ class TimeRange {
     static from_variant(variant: GLib.Variant): TimeRange
     static $gtype: GObject.Type
 }
-export interface SimpleResultSet_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleResultSet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SimpleResultSet {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1582,8 +1592,8 @@ class MonitorPrivate {
 }
 abstract class QueuedProxyWrapperClass {
     /* Fields of Zeitgeist-2.0.Zeitgeist.QueuedProxyWrapperClass */
-    on_connection_established: (self: QueuedProxyWrapper) => void
-    on_connection_lost: (self: QueuedProxyWrapper) => void
+    readonly on_connection_established: (self: QueuedProxyWrapper) => void
+    readonly on_connection_lost: (self: QueuedProxyWrapper) => void
     static name: string
 }
 class QueuedProxyWrapperPrivate {
@@ -1627,82 +1637,82 @@ class SimpleResultSetPrivate {
 }
 abstract class RemoteRegistryIface {
     /* Fields of Zeitgeist-2.0.Zeitgeist.RemoteRegistryIface */
-    get_data_sources: (self: RemoteRegistry, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    get_data_sources_finish: (self: RemoteRegistry, _res_: Gio.AsyncResult) => GLib.Variant
-    register_data_source: (self: RemoteRegistry, unique_id: string, name: string, description: string, event_templates: GLib.Variant, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    register_data_source_finish: (self: RemoteRegistry, _res_: Gio.AsyncResult) => boolean
-    set_data_source_enabled: (self: RemoteRegistry, unique_id: string, enabled: boolean, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    set_data_source_enabled_finish: (self: RemoteRegistry, _res_: Gio.AsyncResult) => void
-    get_data_source_from_id: (self: RemoteRegistry, unique_id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    get_data_source_from_id_finish: (self: RemoteRegistry, _res_: Gio.AsyncResult) => GLib.Variant
+    readonly get_data_sources: (self: RemoteRegistry, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly get_data_sources_finish: (self: RemoteRegistry, _res_: Gio.AsyncResult) => GLib.Variant
+    readonly register_data_source: (self: RemoteRegistry, unique_id: string, name: string, description: string, event_templates: GLib.Variant, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly register_data_source_finish: (self: RemoteRegistry, _res_: Gio.AsyncResult) => boolean
+    readonly set_data_source_enabled: (self: RemoteRegistry, unique_id: string, enabled: boolean, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly set_data_source_enabled_finish: (self: RemoteRegistry, _res_: Gio.AsyncResult) => void
+    readonly get_data_source_from_id: (self: RemoteRegistry, unique_id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly get_data_source_from_id_finish: (self: RemoteRegistry, _res_: Gio.AsyncResult) => GLib.Variant
     static name: string
 }
 abstract class RemoteLogIface {
     /* Fields of Zeitgeist-2.0.Zeitgeist.RemoteLogIface */
-    delete_events: (self: RemoteLog, event_ids: number[], cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    delete_events_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => GLib.Variant
-    find_event_ids: (self: RemoteLog, time_range: GLib.Variant, event_templates: GLib.Variant, storage_state: number, num_events: number, result_type: number, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    find_event_ids_finish: (self: RemoteLog) => [ /* returnType */ number[], /* result_length1 */ number ]
-    find_events: (self: RemoteLog, time_range: GLib.Variant, event_templates: GLib.Variant, storage_state: number, num_events: number, result_type: number, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    find_events_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => GLib.Variant
-    find_related_uris: (self: RemoteLog, time_range: GLib.Variant, event_templates: GLib.Variant, result_event_templates: GLib.Variant, storage_state: number, num_events: number, result_type: number, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    find_related_uris_finish: (self: RemoteLog) => [ /* returnType */ string[], /* result_length1 */ number ]
-    get_events: (self: RemoteLog, event_ids: number[], cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    get_events_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => GLib.Variant
-    insert_events: (self: RemoteLog, events: GLib.Variant, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    insert_events_finish: (self: RemoteLog) => [ /* returnType */ number[], /* result_length1 */ number ]
-    install_monitor: (self: RemoteLog, monitor_path: string, time_range: GLib.Variant, event_templates: GLib.Variant, owner?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    install_monitor_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => void
-    remove_monitor: (self: RemoteLog, monitor_path: string, owner?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    remove_monitor_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => void
-    quit: (self: RemoteLog, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    quit_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => void
-    get_extensions: () => [ /* returnType */ string[], /* result_length1 */ number ]
-    get_version: (self: RemoteLog) => /* result */ VersionStruct
-    get_datapath: (self: RemoteLog) => string
+    readonly delete_events: (self: RemoteLog, event_ids: number[], cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly delete_events_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => GLib.Variant
+    readonly find_event_ids: (self: RemoteLog, time_range: GLib.Variant, event_templates: GLib.Variant, storage_state: number, num_events: number, result_type: number, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly find_event_ids_finish: (self: RemoteLog) => [ /* returnType */ number[], /* result_length1 */ number ]
+    readonly find_events: (self: RemoteLog, time_range: GLib.Variant, event_templates: GLib.Variant, storage_state: number, num_events: number, result_type: number, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly find_events_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => GLib.Variant
+    readonly find_related_uris: (self: RemoteLog, time_range: GLib.Variant, event_templates: GLib.Variant, result_event_templates: GLib.Variant, storage_state: number, num_events: number, result_type: number, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly find_related_uris_finish: (self: RemoteLog) => [ /* returnType */ string[], /* result_length1 */ number ]
+    readonly get_events: (self: RemoteLog, event_ids: number[], cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly get_events_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => GLib.Variant
+    readonly insert_events: (self: RemoteLog, events: GLib.Variant, cancellable?: Gio.Cancellable | null, sender?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly insert_events_finish: (self: RemoteLog) => [ /* returnType */ number[], /* result_length1 */ number ]
+    readonly install_monitor: (self: RemoteLog, monitor_path: string, time_range: GLib.Variant, event_templates: GLib.Variant, owner?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly install_monitor_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => void
+    readonly remove_monitor: (self: RemoteLog, monitor_path: string, owner?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly remove_monitor_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => void
+    readonly quit: (self: RemoteLog, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly quit_finish: (self: RemoteLog, _res_: Gio.AsyncResult) => void
+    readonly get_extensions: () => [ /* returnType */ string[], /* result_length1 */ number ]
+    readonly get_version: (self: RemoteLog) => /* result */ VersionStruct
+    readonly get_datapath: (self: RemoteLog) => string
     static name: string
 }
 abstract class RemoteMonitorIface {
     /* Fields of Zeitgeist-2.0.Zeitgeist.RemoteMonitorIface */
-    notify_insert: (self: RemoteMonitor, time_range: GLib.Variant, events: GLib.Variant, _callback_?: Gio.AsyncReadyCallback | null) => void
-    notify_insert_finish: (self: RemoteMonitor, _res_: Gio.AsyncResult) => void
-    notify_delete: (self: RemoteMonitor, time_range: GLib.Variant, event_ids: number[], _callback_?: Gio.AsyncReadyCallback | null) => void
-    notify_delete_finish: (self: RemoteMonitor, _res_: Gio.AsyncResult) => void
+    readonly notify_insert: (self: RemoteMonitor, time_range: GLib.Variant, events: GLib.Variant, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly notify_insert_finish: (self: RemoteMonitor, _res_: Gio.AsyncResult) => void
+    readonly notify_delete: (self: RemoteMonitor, time_range: GLib.Variant, event_ids: number[], _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly notify_delete_finish: (self: RemoteMonitor, _res_: Gio.AsyncResult) => void
     static name: string
 }
 abstract class RemoteSimpleIndexerIface {
     /* Fields of Zeitgeist-2.0.Zeitgeist.RemoteSimpleIndexerIface */
-    search: (self: RemoteSimpleIndexer, query_string: string, time_range: GLib.Variant, filter_templates: GLib.Variant, offset: number, count: number, result_type: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    search_finish: (self: RemoteSimpleIndexer, _res_: Gio.AsyncResult) => [ /* events */ GLib.Variant, /* matches */ number ]
-    search_with_relevancies: (self: RemoteSimpleIndexer, query_string: string, time_range: GLib.Variant, filter_templates: GLib.Variant, storage_state: number, offset: number, count: number, result_type: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    search_with_relevancies_finish: (self: RemoteSimpleIndexer, _res_: Gio.AsyncResult) => [ /* events */ GLib.Variant, /* relevancies */ number[], /* matches */ number ]
+    readonly search: (self: RemoteSimpleIndexer, query_string: string, time_range: GLib.Variant, filter_templates: GLib.Variant, offset: number, count: number, result_type: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly search_finish: (self: RemoteSimpleIndexer, _res_: Gio.AsyncResult) => [ /* events */ GLib.Variant, /* matches */ number ]
+    readonly search_with_relevancies: (self: RemoteSimpleIndexer, query_string: string, time_range: GLib.Variant, filter_templates: GLib.Variant, storage_state: number, offset: number, count: number, result_type: number, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly search_with_relevancies_finish: (self: RemoteSimpleIndexer, _res_: Gio.AsyncResult) => [ /* events */ GLib.Variant, /* relevancies */ number[], /* matches */ number ]
     static name: string
 }
 abstract class NetworkManagerDBusIface {
     /* Fields of Zeitgeist-2.0.Zeitgeist.NetworkManagerDBusIface */
-    state: (self: NetworkManagerDBus) => number
+    readonly state: (self: NetworkManagerDBus) => number
     static name: string
 }
 abstract class ConnmanManagerDBusIface {
     /* Fields of Zeitgeist-2.0.Zeitgeist.ConnmanManagerDBusIface */
-    get_state: (self: ConnmanManagerDBus) => string
+    readonly get_state: (self: ConnmanManagerDBus) => string
     static name: string
 }
 abstract class ResultSetIface {
     /* Fields of Zeitgeist-2.0.Zeitgeist.ResultSetIface */
-    size: (self: ResultSet) => number
-    estimated_matches: (self: ResultSet) => number
-    next_value: (self: ResultSet) => Event | null
-    has_next: (self: ResultSet) => boolean
-    tell: (self: ResultSet) => number
-    reset: (self: ResultSet) => void
+    readonly size: (self: ResultSet) => number
+    readonly estimated_matches: (self: ResultSet) => number
+    readonly next_value: (self: ResultSet) => Event | null
+    readonly has_next: (self: ResultSet) => boolean
+    readonly tell: (self: ResultSet) => number
+    readonly reset: (self: ResultSet) => void
     static name: string
 }
 class VersionStruct {
     /* Fields of Zeitgeist-2.0.Zeitgeist.VersionStruct */
-    major: number
-    minor: number
-    micro: number
+    readonly major: number
+    readonly minor: number
+    readonly micro: number
     static name: string
 }
 }

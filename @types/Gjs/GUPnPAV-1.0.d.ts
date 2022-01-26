@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GUPnPAV-1.0
  */
@@ -81,18 +87,16 @@ enum OCMFlags {
     UPLOAD_DESTROYABLE,
     CHANGE_METADATA,
 }
-export const DIDL_LITE_WRITER_NAMESPACE_DC: string
-export const DIDL_LITE_WRITER_NAMESPACE_DLNA: string
-export const DIDL_LITE_WRITER_NAMESPACE_PV: string
-export const DIDL_LITE_WRITER_NAMESPACE_UPNP: string
+const DIDL_LITE_WRITER_NAMESPACE_DC: string
+const DIDL_LITE_WRITER_NAMESPACE_DLNA: string
+const DIDL_LITE_WRITER_NAMESPACE_PV: string
+const DIDL_LITE_WRITER_NAMESPACE_UPNP: string
 function protocol_error_quark(): GLib.Quark
-export interface CDSLastChangeParser_ConstructProps extends GObject.Object_ConstructProps {
+interface CDSLastChangeParser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CDSLastChangeParser {
-    /* Fields of GUPnPAV-1.0.GUPnPAV.CDSLastChangeParser */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.CDSLastChangeParser */
     parse(last_change: string): CDSLastChangeEntry[]
     /* Methods of GObject-2.0.GObject.Object */
@@ -140,7 +144,8 @@ class CDSLastChangeParser {
     static new(): CDSLastChangeParser
     static $gtype: GObject.Type
 }
-export interface DIDLLiteContainer_ConstructProps extends DIDLLiteObject_ConstructProps {
+interface DIDLLiteContainer_ConstructProps extends DIDLLiteObject_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteContainer */
     child_count?: number
     container_update_id?: number
     searchable?: boolean
@@ -172,10 +177,10 @@ class DIDLLiteContainer {
     update_id: number
     upnp_class: string
     write_status: string
-    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteContainer */
-    parent_instance: DIDLLiteObject
+    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteObject */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.DIDLLiteContainer */
     add_create_class(create_class: string): void
     add_create_class_full(create_class: string, include_derived: boolean): void
@@ -349,7 +354,8 @@ class DIDLLiteContainer {
     _init (config?: DIDLLiteContainer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DIDLLiteContributor_ConstructProps extends GObject.Object_ConstructProps {
+interface DIDLLiteContributor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteContributor */
     name?: string
     role?: string
     xml_node?: object
@@ -358,10 +364,8 @@ class DIDLLiteContributor {
     /* Properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteContributor */
     name: string
     role: string
-    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteContributor */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.DIDLLiteContributor */
     get_name(): string
     get_role(): string
@@ -415,7 +419,8 @@ class DIDLLiteContributor {
     _init (config?: DIDLLiteContributor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DIDLLiteCreateClass_ConstructProps extends GObject.Object_ConstructProps {
+interface DIDLLiteCreateClass_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteCreateClass */
     content?: string
     friendly_name?: string
     include_derived?: boolean
@@ -426,10 +431,8 @@ class DIDLLiteCreateClass {
     content: string
     friendly_name: string
     include_derived: boolean
-    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteCreateClass */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.DIDLLiteCreateClass */
     get_content(): string
     get_friendly_name(): string
@@ -487,7 +490,8 @@ class DIDLLiteCreateClass {
     _init (config?: DIDLLiteCreateClass_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DIDLLiteDescriptor_ConstructProps extends GObject.Object_ConstructProps {
+interface DIDLLiteDescriptor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteDescriptor */
     content?: string
     id?: string
     metadata_type?: string
@@ -500,10 +504,8 @@ class DIDLLiteDescriptor {
     id: string
     metadata_type: string
     name_space: string
-    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteDescriptor */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.DIDLLiteDescriptor */
     get_content(): string
     get_id(): string
@@ -567,7 +569,8 @@ class DIDLLiteDescriptor {
     static new(): DIDLLiteDescriptor
     static $gtype: GObject.Type
 }
-export interface DIDLLiteItem_ConstructProps extends DIDLLiteObject_ConstructProps {
+interface DIDLLiteItem_ConstructProps extends DIDLLiteObject_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteItem */
     lifetime?: number
     ref_id?: string
 }
@@ -593,10 +596,10 @@ class DIDLLiteItem {
     update_id: number
     upnp_class: string
     write_status: string
-    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteItem */
-    parent_instance: DIDLLiteObject
+    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteObject */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.DIDLLiteItem */
     get_lifetime(): number
     get_ref_id(): string
@@ -747,7 +750,8 @@ class DIDLLiteItem {
     _init (config?: DIDLLiteItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DIDLLiteObject_ConstructProps extends GObject.Object_ConstructProps {
+interface DIDLLiteObject_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteObject */
     album?: string
     album_art?: string
     artist?: string
@@ -790,10 +794,8 @@ class DIDLLiteObject {
     update_id: number
     upnp_class: string
     write_status: string
-    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteObject */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.DIDLLiteObject */
     add_artist(): DIDLLiteContributor
     add_author(): DIDLLiteContributor
@@ -935,13 +937,11 @@ class DIDLLiteObject {
     _init (config?: DIDLLiteObject_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DIDLLiteParser_ConstructProps extends GObject.Object_ConstructProps {
+interface DIDLLiteParser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DIDLLiteParser {
-    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteParser */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.DIDLLiteParser */
     parse_didl(didl: string): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -1003,7 +1003,8 @@ class DIDLLiteParser {
     static new(): DIDLLiteParser
     static $gtype: GObject.Type
 }
-export interface DIDLLiteResource_ConstructProps extends GObject.Object_ConstructProps {
+interface DIDLLiteResource_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteResource */
     audio_channels?: number
     bitrate?: number
     bits_per_sample?: number
@@ -1048,10 +1049,8 @@ class DIDLLiteResource {
     update_count: number
     uri: string
     width: number
-    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteResource */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.DIDLLiteResource */
     get_audio_channels(): number
     get_bitrate(): number
@@ -1179,16 +1178,15 @@ class DIDLLiteResource {
     _init (config?: DIDLLiteResource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DIDLLiteWriter_ConstructProps extends GObject.Object_ConstructProps {
+interface DIDLLiteWriter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteWriter */
     language?: string
 }
 class DIDLLiteWriter {
     /* Properties of GUPnPAV-1.0.GUPnPAV.DIDLLiteWriter */
     readonly xml_node: object
-    /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteWriter */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.DIDLLiteWriter */
     add_container(): DIDLLiteContainer
     add_descriptor(): DIDLLiteDescriptor
@@ -1244,16 +1242,15 @@ class DIDLLiteWriter {
     static new(language?: string | null): DIDLLiteWriter
     static $gtype: GObject.Type
 }
-export interface Feature_ConstructProps extends GObject.Object_ConstructProps {
+interface Feature_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.Feature */
     name?: string
     object_ids?: string
     version?: string
 }
 class Feature {
-    /* Fields of GUPnPAV-1.0.GUPnPAV.Feature */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.Feature */
     get_name(): string
     get_object_ids(): string
@@ -1301,11 +1298,11 @@ class Feature {
     _init (config?: Feature_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FeatureListParser_ConstructProps extends GObject.Object_ConstructProps {
+interface FeatureListParser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FeatureListParser {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.FeatureListParser */
     parse_text(text: string): Feature[] | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -1353,13 +1350,11 @@ class FeatureListParser {
     static new(): FeatureListParser
     static $gtype: GObject.Type
 }
-export interface LastChangeParser_ConstructProps extends GObject.Object_ConstructProps {
+interface LastChangeParser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class LastChangeParser {
-    /* Fields of GUPnPAV-1.0.GUPnPAV.LastChangeParser */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1405,7 +1400,8 @@ class LastChangeParser {
     static new(): LastChangeParser
     static $gtype: GObject.Type
 }
-export interface MediaCollection_ConstructProps extends GObject.Object_ConstructProps {
+interface MediaCollection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.MediaCollection */
     author?: string
     data?: string
     title?: string
@@ -1415,10 +1411,8 @@ class MediaCollection {
     author: string
     readonly mutable: boolean
     title: string
-    /* Fields of GUPnPAV-1.0.GUPnPAV.MediaCollection */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.MediaCollection */
     add_item(): DIDLLiteItem
     get_author(): string
@@ -1480,7 +1474,8 @@ class MediaCollection {
     static new_from_string(data: string): MediaCollection
     static $gtype: GObject.Type
 }
-export interface ProtocolInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface ProtocolInfo_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GUPnPAV-1.0.GUPnPAV.ProtocolInfo */
     dlna_conversion?: DLNAConversion
     dlna_flags?: DLNAFlags
     dlna_operation?: DLNAOperation
@@ -1500,10 +1495,8 @@ class ProtocolInfo {
     network: string
     play_speeds: string[]
     protocol: string
-    /* Fields of GUPnPAV-1.0.GUPnPAV.ProtocolInfo */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.ProtocolInfo */
     get_dlna_conversion(): DLNAConversion
     get_dlna_flags(): DLNAFlags
@@ -1585,13 +1578,11 @@ class ProtocolInfo {
     static new_from_string(protocol_info: string): ProtocolInfo
     static $gtype: GObject.Type
 }
-export interface SearchCriteriaParser_ConstructProps extends GObject.Object_ConstructProps {
+interface SearchCriteriaParser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SearchCriteriaParser {
-    /* Fields of GUPnPAV-1.0.GUPnPAV.SearchCriteriaParser */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnPAV-1.0.GUPnPAV.SearchCriteriaParser */
     parse_text(text: string): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -1676,37 +1667,37 @@ class CDSLastChangeEntry {
 }
 abstract class CDSLastChangeParserClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.CDSLastChangeParserClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DIDLLiteContainerClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteContainerClass */
-    parent_class: DIDLLiteObjectClass
+    readonly parent_class: DIDLLiteObjectClass
     static name: string
 }
 abstract class DIDLLiteContributorClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteContributorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DIDLLiteCreateClassClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteCreateClassClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DIDLLiteDescriptorClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteDescriptorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DIDLLiteItemClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteItemClass */
-    parent_class: DIDLLiteObjectClass
+    readonly parent_class: DIDLLiteObjectClass
     static name: string
 }
 abstract class DIDLLiteObjectClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteObjectClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DIDLLiteObjectPrivate {
@@ -1714,55 +1705,55 @@ class DIDLLiteObjectPrivate {
 }
 abstract class DIDLLiteParserClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteParserClass */
-    parent_class: GObject.ObjectClass
-    object_available: (parser: DIDLLiteParser, object: DIDLLiteObject) => void
-    item_available: (parser: DIDLLiteParser, item: DIDLLiteItem) => void
-    container_available: (parser: DIDLLiteParser, container: DIDLLiteContainer) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly object_available: (parser: DIDLLiteParser, object: DIDLLiteObject) => void
+    readonly item_available: (parser: DIDLLiteParser, item: DIDLLiteItem) => void
+    readonly container_available: (parser: DIDLLiteParser, container: DIDLLiteContainer) => void
     static name: string
 }
 abstract class DIDLLiteResourceClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteResourceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DIDLLiteWriterClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.DIDLLiteWriterClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FeatureClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.FeatureClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FeatureListParserClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.FeatureListParserClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class LastChangeParserClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.LastChangeParserClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MediaCollectionClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.MediaCollectionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ProtocolInfoClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.ProtocolInfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SearchCriteriaParserClass {
     /* Fields of GUPnPAV-1.0.GUPnPAV.SearchCriteriaParserClass */
-    parent_class: GObject.ObjectClass
-    begin_parens: (parser: SearchCriteriaParser) => void
-    end_parens: (parser: SearchCriteriaParser) => void
-    conjunction: (parser: SearchCriteriaParser) => void
-    disjunction: (parser: SearchCriteriaParser) => void
-    expression: (parser: SearchCriteriaParser, property: string, op: SearchCriteriaOp, value: string) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly begin_parens: (parser: SearchCriteriaParser) => void
+    readonly end_parens: (parser: SearchCriteriaParser) => void
+    readonly conjunction: (parser: SearchCriteriaParser) => void
+    readonly disjunction: (parser: SearchCriteriaParser) => void
+    readonly expression: (parser: SearchCriteriaParser, property: string, op: SearchCriteriaOp, value: string) => boolean
     static name: string
 }
 }

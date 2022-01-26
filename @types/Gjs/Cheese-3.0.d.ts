@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Cheese-3.0
  */
@@ -32,9 +38,10 @@ enum MediaMode {
     VIDEO,
     BURST,
 }
-export const PHOTO_NAME_SUFFIX: string
-export const VIDEO_NAME_SUFFIX: string
-export interface Camera_ConstructProps extends GObject.Object_ConstructProps {
+const PHOTO_NAME_SUFFIX: string
+const VIDEO_NAME_SUFFIX: string
+interface Camera_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Cheese-3.0.Cheese.Camera */
     device?: CameraDevice
     format?: VideoFormat
     video_texture?: object
@@ -46,7 +53,7 @@ class Camera {
     readonly num_camera_devices: number
     video_texture: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cheese-3.0.Cheese.Camera */
     connect_effect_texture(effect: Effect, texture: Clutter.Actor): void
     get_balance_property_range(property: string): [ /* returnType */ boolean, /* min */ number, /* max */ number, /* def */ number ]
@@ -139,14 +146,15 @@ class Camera {
     static new(video_texture: Clutter.Actor, name: string | null, x_resolution: number, y_resolution: number): Camera
     static $gtype: GObject.Type
 }
-export interface CameraDevice_ConstructProps extends GObject.Object_ConstructProps {
+interface CameraDevice_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Cheese-3.0.Cheese.CameraDevice */
     device?: Gst.Device
     name?: string
     path?: string
 }
 class CameraDevice {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cheese-3.0.Cheese.CameraDevice */
     get_best_format(): VideoFormat
     get_caps_for_format(format: VideoFormat): Gst.Caps
@@ -205,11 +213,11 @@ class CameraDevice {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface CameraDeviceMonitor_ConstructProps extends GObject.Object_ConstructProps {
+interface CameraDeviceMonitor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CameraDeviceMonitor {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cheese-3.0.Cheese.CameraDeviceMonitor */
     coldplug(): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -280,7 +288,8 @@ class CameraDeviceMonitor {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Effect_ConstructProps extends GObject.Object_ConstructProps {
+interface Effect_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Cheese-3.0.Cheese.Effect */
     control_valve?: Gst.Element
     name?: string
     pipeline_desc?: string
@@ -289,7 +298,7 @@ class Effect {
     /* Properties of Cheese-3.0.Cheese.Effect */
     control_valve: Gst.Element
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cheese-3.0.Cheese.Effect */
     disable_preview(): void
     enable_preview(): void
@@ -345,11 +354,11 @@ class Effect {
     static load_from_file(filename: string): Effect
     static $gtype: GObject.Type
 }
-export interface FileUtil_ConstructProps extends GObject.Object_ConstructProps {
+interface FileUtil_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FileUtil {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Cheese-3.0.Cheese.FileUtil */
     get_new_media_filename(mode: MediaMode): string
     get_photo_path(): string
@@ -402,21 +411,21 @@ class FileUtil {
 }
 abstract class CameraClass {
     /* Fields of Cheese-3.0.Cheese.CameraClass */
-    photo_saved: (camera: Camera) => void
-    photo_taken: (camera: Camera, pixbuf: GdkPixbuf.Pixbuf) => void
-    video_saved: (camera: Camera) => void
-    state_flags_changed: (camera: Camera, new_state: Gst.State) => void
+    readonly photo_saved: (camera: Camera) => void
+    readonly photo_taken: (camera: Camera, pixbuf: GdkPixbuf.Pixbuf) => void
+    readonly video_saved: (camera: Camera) => void
+    readonly state_flags_changed: (camera: Camera, new_state: Gst.State) => void
     static name: string
 }
 abstract class CameraDeviceClass {
     /* Fields of Cheese-3.0.Cheese.CameraDeviceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CameraDeviceMonitorClass {
     /* Fields of Cheese-3.0.Cheese.CameraDeviceMonitorClass */
-    added: (monitor: CameraDeviceMonitor, device: CameraDevice) => void
-    removed: (monitor: CameraDeviceMonitor, device: CameraDevice) => void
+    readonly added: (monitor: CameraDeviceMonitor, device: CameraDevice) => void
+    readonly removed: (monitor: CameraDeviceMonitor, device: CameraDevice) => void
     static name: string
 }
 class CameraDeviceMonitorPrivate {
@@ -427,18 +436,18 @@ class CameraPrivate {
 }
 abstract class EffectClass {
     /* Fields of Cheese-3.0.Cheese.EffectClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FileUtilClass {
     /* Fields of Cheese-3.0.Cheese.FileUtilClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class VideoFormat {
     /* Fields of Cheese-3.0.Cheese.VideoFormat */
-    width: number
-    height: number
+    readonly width: number
+    readonly height: number
     static name: string
 }
 }

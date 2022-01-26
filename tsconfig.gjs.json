@@ -1,5 +1,5 @@
 {
-  "compilerOptions": {
+  	"compilerOptions": {
 		// General settings for code interpretation
 		"target": "esnext",
 		"module": "esnext",
@@ -8,21 +8,13 @@
 		"experimentalDecorators": true,
 		"noEmit": true,
 		"noEmitOnError": false,
-
-		"baseUrl": "./@types",
-		"rootDir": "@types/gjs",
-
-		"paths": {
-			/* ... */
-		},
-
+		"baseUrl": "./@types/Gjs/",
+		"rootDir": "./@types/Gjs",
 		// General settings for code generation
 		"removeComments": false,
 		"inlineSourceMap": false,
 		"inlineSources": false,
 		"newLine": "LF"
-  },
-  "include": [
-	"./@types/Gjs/*.d.ts"
-]
+ 	},
+	"exclude": ["@types/Gjs/index.d.ts", "@types/Gjs/index.js", "typedoc.ts", "@types/node-gtk"]
 }

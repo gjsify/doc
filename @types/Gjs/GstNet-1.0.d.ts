@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstNet-1.0
  */
@@ -11,12 +17,12 @@ import type Gio from './Gio-2.0';
 
 export namespace GstNet {
 
-export const NET_TIME_PACKET_SIZE: number
-export const PTP_CLOCK_ID_NONE: number
-export const PTP_STATISTICS_BEST_MASTER_CLOCK_SELECTED: string
-export const PTP_STATISTICS_NEW_DOMAIN_FOUND: string
-export const PTP_STATISTICS_PATH_DELAY_MEASURED: string
-export const PTP_STATISTICS_TIME_UPDATED: string
+const NET_TIME_PACKET_SIZE: number
+const PTP_CLOCK_ID_NONE: number
+const PTP_STATISTICS_BEST_MASTER_CLOCK_SELECTED: string
+const PTP_STATISTICS_NEW_DOMAIN_FOUND: string
+const PTP_STATISTICS_PATH_DELAY_MEASURED: string
+const PTP_STATISTICS_TIME_UPDATED: string
 function buffer_add_net_address_meta(buffer: Gst.Buffer, addr: Gio.SocketAddress): NetAddressMeta
 function buffer_add_net_control_message_meta(buffer: Gst.Buffer, message: Gio.SocketControlMessage): NetControlMessageMeta
 function buffer_get_net_address_meta(buffer: Gst.Buffer): NetAddressMeta
@@ -35,7 +41,8 @@ function ptp_statistics_callback_remove(id: number): void
 interface PtpStatisticsCallback {
     (domain: number, stats: Gst.Structure): boolean
 }
-export interface NetClientClock_ConstructProps extends Gst.SystemClock_ConstructProps {
+interface NetClientClock_ConstructProps extends Gst.SystemClock_ConstructProps {
+    /* Constructor properties of GstNet-1.0.GstNet.NetClientClock */
     address?: string
     base_time?: number
     bus?: Gst.Bus
@@ -59,18 +66,17 @@ class NetClientClock {
     timeout: number
     window_size: number
     window_threshold: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstNet-1.0.GstNet.NetClientClock */
-    clock: Gst.SystemClock
+    /* Fields of Gst-1.0.Gst.SystemClock */
+    readonly clock: Gst.Clock
     /* Fields of Gst-1.0.Gst.Clock */
-    object: Gst.Object
+    readonly object: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Clock */
     add_observation(slave: Gst.ClockTime, master: Gst.ClockTime): [ /* returnType */ boolean, /* r_squared */ number ]
     add_observation_unapplied(slave: Gst.ClockTime, master: Gst.ClockTime): [ /* returnType */ boolean, /* r_squared */ number, /* internal */ Gst.ClockTime | null, /* external */ Gst.ClockTime | null, /* rate_num */ Gst.ClockTime | null, /* rate_denom */ Gst.ClockTime | null ]
@@ -192,10 +198,6 @@ class NetClientClock {
     connect_after(sigName: "notify::window-size", callback: (($obj: NetClientClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::window-threshold", callback: (($obj: NetClientClock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::window-threshold", callback: (($obj: NetClientClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: NetClientClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: NetClientClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: NetClientClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: NetClientClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -207,7 +209,8 @@ class NetClientClock {
     static new(name: string, remote_address: string, remote_port: number, base_time: Gst.ClockTime): NetClientClock
     static $gtype: GObject.Type
 }
-export interface NetTimeProvider_ConstructProps extends Gst.Object_ConstructProps {
+interface NetTimeProvider_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstNet-1.0.GstNet.NetTimeProvider */
     active?: boolean
     address?: string
     clock?: Gst.Clock
@@ -218,15 +221,14 @@ class NetTimeProvider {
     /* Properties of GstNet-1.0.GstNet.NetTimeProvider */
     active: boolean
     qos_dscp: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Object */
     add_control_binding(binding: Gst.ControlBinding): boolean
     default_error(error: GLib.Error, debug?: string | null): void
@@ -299,10 +301,6 @@ class NetTimeProvider {
     connect_after(sigName: "notify::active", callback: (($obj: NetTimeProvider, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::qos-dscp", callback: (($obj: NetTimeProvider, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos-dscp", callback: (($obj: NetTimeProvider, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: NetTimeProvider, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: NetTimeProvider, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: NetTimeProvider, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: NetTimeProvider, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -315,7 +313,7 @@ class NetTimeProvider {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface NtpClock_ConstructProps extends NetClientClock_ConstructProps {
+interface NtpClock_ConstructProps extends NetClientClock_ConstructProps {
 }
 class NtpClock {
     /* Properties of GstNet-1.0.GstNet.NetClientClock */
@@ -332,18 +330,17 @@ class NtpClock {
     timeout: number
     window_size: number
     window_threshold: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstNet-1.0.GstNet.NtpClock */
-    clock: Gst.SystemClock
+    /* Fields of GstNet-1.0.GstNet.NetClientClock */
+    readonly clock: Gst.SystemClock
     /* Fields of Gst-1.0.Gst.Clock */
-    object: Gst.Object
+    readonly object: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Clock */
     add_observation(slave: Gst.ClockTime, master: Gst.ClockTime): [ /* returnType */ boolean, /* r_squared */ number ]
     add_observation_unapplied(slave: Gst.ClockTime, master: Gst.ClockTime): [ /* returnType */ boolean, /* r_squared */ number, /* internal */ Gst.ClockTime | null, /* external */ Gst.ClockTime | null, /* rate_num */ Gst.ClockTime | null, /* rate_denom */ Gst.ClockTime | null ]
@@ -465,10 +462,6 @@ class NtpClock {
     connect_after(sigName: "notify::window-size", callback: (($obj: NtpClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::window-threshold", callback: (($obj: NtpClock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::window-threshold", callback: (($obj: NtpClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: NtpClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: NtpClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: NtpClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: NtpClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -478,9 +471,12 @@ class NtpClock {
     _init (config?: NtpClock_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(name: string, remote_address: string, remote_port: number, base_time: Gst.ClockTime): NtpClock
+    /* Function overloads */
+    static new(name: string, remote_address: string, remote_port: number, base_time: Gst.ClockTime): NtpClock
     static $gtype: GObject.Type
 }
-export interface PtpClock_ConstructProps extends Gst.SystemClock_ConstructProps {
+interface PtpClock_ConstructProps extends Gst.SystemClock_ConstructProps {
+    /* Constructor properties of GstNet-1.0.GstNet.PtpClock */
     domain?: number
 }
 class PtpClock {
@@ -494,18 +490,17 @@ class PtpClock {
     timeout: number
     window_size: number
     window_threshold: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstNet-1.0.GstNet.PtpClock */
-    clock: Gst.SystemClock
+    /* Fields of Gst-1.0.Gst.SystemClock */
+    readonly clock: Gst.Clock
     /* Fields of Gst-1.0.Gst.Clock */
-    object: Gst.Object
+    readonly object: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Clock */
     add_observation(slave: Gst.ClockTime, master: Gst.ClockTime): [ /* returnType */ boolean, /* r_squared */ number ]
     add_observation_unapplied(slave: Gst.ClockTime, master: Gst.ClockTime): [ /* returnType */ boolean, /* r_squared */ number, /* internal */ Gst.ClockTime | null, /* external */ Gst.ClockTime | null, /* rate_num */ Gst.ClockTime | null, /* rate_denom */ Gst.ClockTime | null ]
@@ -619,10 +614,6 @@ class PtpClock {
     connect_after(sigName: "notify::window-size", callback: (($obj: PtpClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::window-threshold", callback: (($obj: PtpClock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::window-threshold", callback: (($obj: PtpClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: PtpClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: PtpClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: PtpClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: PtpClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -636,15 +627,15 @@ class PtpClock {
 }
 class NetAddressMeta {
     /* Fields of GstNet-1.0.GstNet.NetAddressMeta */
-    meta: Gst.Meta
-    addr: Gio.SocketAddress
+    readonly meta: Gst.Meta
+    readonly addr: Gio.SocketAddress
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 abstract class NetClientClockClass {
     /* Fields of GstNet-1.0.GstNet.NetClientClockClass */
-    parent_class: Gst.SystemClockClass
+    readonly parent_class: Gst.SystemClockClass
     static name: string
 }
 class NetClientClockPrivate {
@@ -652,32 +643,32 @@ class NetClientClockPrivate {
 }
 class NetControlMessageMeta {
     /* Fields of GstNet-1.0.GstNet.NetControlMessageMeta */
-    meta: Gst.Meta
-    message: Gio.SocketControlMessage
+    readonly meta: Gst.Meta
+    readonly message: Gio.SocketControlMessage
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 class NetTimePacket {
     /* Fields of GstNet-1.0.GstNet.NetTimePacket */
-    local_time: Gst.ClockTime
-    remote_time: Gst.ClockTime
+    readonly local_time: Gst.ClockTime
+    readonly remote_time: Gst.ClockTime
     /* Methods of GstNet-1.0.GstNet.NetTimePacket */
     copy(): NetTimePacket
     free(): void
     send(socket: Gio.Socket, dest_address: Gio.SocketAddress): boolean
     serialize(): number
     static name: string
-    static new(buffer: Uint8Array[]): NetTimePacket
-    constructor(buffer: Uint8Array[])
+    static new(buffer: Uint8Array): NetTimePacket
+    constructor(buffer: Uint8Array)
     /* Static methods and pseudo-constructors */
-    static new(buffer: Uint8Array[]): NetTimePacket
+    static new(buffer: Uint8Array): NetTimePacket
     static receive(socket: Gio.Socket): [ /* returnType */ NetTimePacket, /* src_address */ Gio.SocketAddress ]
 }
 abstract class NetTimeProviderClass {
     /* Fields of GstNet-1.0.GstNet.NetTimeProviderClass */
-    parent_class: Gst.ObjectClass
-    _gst_reserved: object[]
+    readonly parent_class: Gst.ObjectClass
+    readonly _gst_reserved: object[]
     static name: string
 }
 class NetTimeProviderPrivate {
@@ -685,12 +676,12 @@ class NetTimeProviderPrivate {
 }
 abstract class NtpClockClass {
     /* Fields of GstNet-1.0.GstNet.NtpClockClass */
-    parent_class: Gst.SystemClockClass
+    readonly parent_class: Gst.SystemClockClass
     static name: string
 }
 abstract class PtpClockClass {
     /* Fields of GstNet-1.0.GstNet.PtpClockClass */
-    parent_class: Gst.SystemClockClass
+    readonly parent_class: Gst.SystemClockClass
     static name: string
 }
 class PtpClockPrivate {

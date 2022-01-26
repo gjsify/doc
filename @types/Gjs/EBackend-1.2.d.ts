@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EBackend-1.2
  */
@@ -73,15 +79,15 @@ enum SourcePermissionFlags {
     WRITABLE,
     REMOVABLE,
 }
-export const CACHE_COLUMN_OBJECT: string
-export const CACHE_COLUMN_REVISION: string
-export const CACHE_COLUMN_STATE: string
-export const CACHE_COLUMN_UID: string
-export const CACHE_TABLE_KEYS: string
-export const CACHE_TABLE_OBJECTS: string
-export const EDS_REGISTRY_MODULES: string
-export const SOURCE_REGISTRY_SERVER_OBJECT_PATH: string
-export const USER_PROMPTER_SERVER_OBJECT_PATH: string
+const CACHE_COLUMN_OBJECT: string
+const CACHE_COLUMN_REVISION: string
+const CACHE_COLUMN_STATE: string
+const CACHE_COLUMN_UID: string
+const CACHE_TABLE_KEYS: string
+const CACHE_TABLE_OBJECTS: string
+const EDS_REGISTRY_MODULES: string
+const SOURCE_REGISTRY_SERVER_OBJECT_PATH: string
+const USER_PROMPTER_SERVER_OBJECT_PATH: string
 function cache_column_info_free(info?: object | null): void
 function cache_offline_change_free(change?: object | null): void
 function sqlite3_vfs_init(): void
@@ -105,7 +111,8 @@ class OAuth2Support {
     vfunc_get_access_token_sync(source: EDataServer.Source, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
     static name: string
 }
-export interface Backend_ConstructProps extends GObject.Object_ConstructProps {
+interface Backend_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EBackend-1.2.EBackend.Backend */
     connectable?: Gio.SocketConnectable
     online?: boolean
     source?: EDataServer.Source
@@ -117,7 +124,7 @@ class Backend {
     online: boolean
     readonly user_prompter: UserPrompter
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.Backend */
     credentials_required(reason: EDataServer.SourceCredentialsReason, certificate_pem: string, certificate_errors: Gio.TlsCertificateFlags, op_error?: GLib.Error | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     credentials_required_finish(result: Gio.AsyncResult): boolean
@@ -194,11 +201,11 @@ class Backend {
     _init (config?: Backend_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BackendFactory_ConstructProps extends EDataServer.Extension_ConstructProps {
+interface BackendFactory_ConstructProps extends EDataServer.Extension_ConstructProps {
 }
 class BackendFactory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.BackendFactory */
     get_hash_key(): string
     get_module_filename(): string
@@ -252,11 +259,11 @@ class BackendFactory {
     _init (config?: BackendFactory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Cache_ConstructProps extends GObject.Object_ConstructProps {
+interface Cache_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Cache {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.Cache */
     change_revision(): void
     clear_offline_changes(cancellable?: Gio.Cancellable | null): boolean
@@ -359,11 +366,11 @@ class Cache {
     static sqlite_stmt_free(stmt: string): void
     static $gtype: GObject.Type
 }
-export interface CacheReaper_ConstructProps extends EDataServer.Extension_ConstructProps {
+interface CacheReaper_ConstructProps extends EDataServer.Extension_ConstructProps {
 }
 class CacheReaper {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.CacheReaper */
     add_private_directory(name: string): void
     remove_private_directory(name: string): void
@@ -417,7 +424,8 @@ class CacheReaper {
     static type_register(type_module: GObject.TypeModule): void
     static $gtype: GObject.Type
 }
-export interface CollectionBackend_ConstructProps extends Backend_ConstructProps {
+interface CollectionBackend_ConstructProps extends Backend_ConstructProps {
+    /* Constructor properties of EBackend-1.2.EBackend.CollectionBackend */
     server?: SourceRegistryServer
 }
 class CollectionBackend {
@@ -429,7 +437,7 @@ class CollectionBackend {
     online: boolean
     readonly user_prompter: UserPrompter
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.CollectionBackend */
     authenticate_children(credentials: EDataServer.NamedParameters): void
     claim_all_resources(): EDataServer.Source[]
@@ -549,11 +557,11 @@ class CollectionBackend {
     _init (config?: CollectionBackend_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CollectionBackendFactory_ConstructProps extends BackendFactory_ConstructProps {
+interface CollectionBackendFactory_ConstructProps extends BackendFactory_ConstructProps {
 }
 class CollectionBackendFactory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.CollectionBackendFactory */
     prepare_mail(mail_account_source: EDataServer.Source, mail_identity_source: EDataServer.Source, mail_transport_source: EDataServer.Source): void
     /* Methods of EBackend-1.2.EBackend.BackendFactory */
@@ -611,11 +619,11 @@ class CollectionBackendFactory {
     _init (config?: CollectionBackendFactory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DBusServer_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusServer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DBusServer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.DBusServer */
     hold(): void
     load_modules(): void
@@ -690,7 +698,8 @@ class DBusServer {
     _init (config?: DBusServer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DataFactory_ConstructProps extends DBusServer_ConstructProps {
+interface DataFactory_ConstructProps extends DBusServer_ConstructProps {
+    /* Constructor properties of EBackend-1.2.EBackend.DataFactory */
     backend_per_process?: number
     reload_supported?: boolean
 }
@@ -698,7 +707,7 @@ class DataFactory {
     /* Properties of EBackend-1.2.EBackend.DataFactory */
     readonly registry: EDataServer.SourceRegistry
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.DataFactory */
     backend_closed(backend: Backend): void
     backend_closed_by_sender(backend: Backend, sender: string): void
@@ -797,12 +806,13 @@ class DataFactory {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface FileCache_ConstructProps extends GObject.Object_ConstructProps {
+interface FileCache_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EBackend-1.2.EBackend.FileCache */
     filename?: string
 }
 class FileCache {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.FileCache */
     add_object(key: string, value: string): boolean
     clean(): boolean
@@ -860,7 +870,8 @@ class FileCache {
     static new(filename: string): FileCache
     static $gtype: GObject.Type
 }
-export interface ServerSideSource_ConstructProps extends EDataServer.Source_ConstructProps {
+interface ServerSideSource_ConstructProps extends EDataServer.Source_ConstructProps {
+    /* Constructor properties of EBackend-1.2.EBackend.ServerSideSource */
     file?: Gio.File
     oauth2_support?: OAuth2Support
     remote_creatable?: boolean
@@ -885,7 +896,7 @@ class ServerSideSource {
     enabled: boolean
     parent: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.ServerSideSource */
     get_exported(): boolean
     get_file(): Gio.File | null
@@ -1010,6 +1021,12 @@ class ServerSideSource {
     lookup(uri: string, cancellable?: Gio.Cancellable | null): string[]
     lookup_async(uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     lookup_finish(result: Gio.AsyncResult): string[]
+    /* Virtual methods of EBackend-1.2.EBackend.ServerSideSource */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
+    vfunc_is_supported(): boolean
+    vfunc_lookup(uri: string, cancellable?: Gio.Cancellable | null): string[]
+    vfunc_lookup_async(uri: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_lookup_finish(result: Gio.AsyncResult): string[]
     /* Virtual methods of EDataServer-1.2.EDataServer.Source */
     vfunc_authenticate(credentials: EDataServer.NamedParameters): void
     vfunc_changed(): void
@@ -1090,18 +1107,21 @@ class ServerSideSource {
     _init (config?: ServerSideSource_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(server: SourceRegistryServer, file: Gio.File): ServerSideSource
+    /* Function overloads */
     static new(dbus_object?: Gio.DBusObject | null, main_context?: GLib.MainContext | null): ServerSideSource
     static new_memory_only(server: SourceRegistryServer, uid: string): ServerSideSource
     static get_user_dir(): string
     static new_user_file(uid: string): Gio.File
     static uid_from_file(file: Gio.File): string
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
+    static get_default(): Gio.ProxyResolver
     static $gtype: GObject.Type
 }
-export interface ServerSideSourceCredentialsProvider_ConstructProps extends EDataServer.SourceCredentialsProvider_ConstructProps {
+interface ServerSideSourceCredentialsProvider_ConstructProps extends EDataServer.SourceCredentialsProvider_ConstructProps {
 }
 class ServerSideSourceCredentialsProvider {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServer-1.2.EDataServer.SourceCredentialsProvider */
     can_prompt(source: EDataServer.Source): boolean
     can_store(source: EDataServer.Source): boolean
@@ -1167,16 +1187,17 @@ class ServerSideSourceCredentialsProvider {
     _init (config?: ServerSideSourceCredentialsProvider_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(registry: SourceRegistryServer): ServerSideSourceCredentialsProvider
+    /* Function overloads */
     static new(registry: EDataServer.SourceRegistry): ServerSideSourceCredentialsProvider
     static $gtype: GObject.Type
 }
-export interface SourceRegistryServer_ConstructProps extends DataFactory_ConstructProps {
+interface SourceRegistryServer_ConstructProps extends DataFactory_ConstructProps {
 }
 class SourceRegistryServer {
     /* Properties of EBackend-1.2.EBackend.DataFactory */
     readonly registry: EDataServer.SourceRegistry
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.SourceRegistryServer */
     add_source(source: EDataServer.Source): void
     find_extension(source: EDataServer.Source, extension_name: string): EDataServer.Source | null
@@ -1251,6 +1272,7 @@ class SourceRegistryServer {
     vfunc_get_access_token(source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_get_access_token_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
     vfunc_get_access_token_sync(source: EDataServer.Source, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of EBackend-1.2.EBackend.DataFactory */
     vfunc_complete_open(invocation: Gio.DBusMethodInvocation, object_path: string, bus_name: string, extension_name: string): void
     vfunc_create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend
@@ -1317,15 +1339,16 @@ class SourceRegistryServer {
     _init (config?: SourceRegistryServer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SourceRegistryServer
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SubprocessFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface SubprocessFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SubprocessFactory {
     /* Properties of EBackend-1.2.EBackend.SubprocessFactory */
     readonly registry: EDataServer.SourceRegistry
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.SubprocessFactory */
     call_backends_prepare_shutdown(): void
     get_backends_list(): Backend[]
@@ -1388,11 +1411,11 @@ class SubprocessFactory {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface UserPrompter_ConstructProps extends GObject.Object_ConstructProps {
+interface UserPrompter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class UserPrompter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.UserPrompter */
     extension_prompt(dialog_name: string, in_parameters?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     extension_prompt_finish(result: Gio.AsyncResult, out_values?: EDataServer.NamedParameters | null): number
@@ -1445,11 +1468,11 @@ class UserPrompter {
     static new(): UserPrompter
     static $gtype: GObject.Type
 }
-export interface UserPrompterServer_ConstructProps extends DBusServer_ConstructProps {
+interface UserPrompterServer_ConstructProps extends DBusServer_ConstructProps {
 }
 class UserPrompterServer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.UserPrompterServer */
     register(extension: EDataServer.Extension, dialog_name: string): boolean
     response(prompt_id: number, response: number, extension_values?: EDataServer.NamedParameters | null): void
@@ -1533,11 +1556,11 @@ class UserPrompterServer {
     static new(): UserPrompterServer
     static $gtype: GObject.Type
 }
-export interface UserPrompterServerExtension_ConstructProps extends EDataServer.Extension_ConstructProps {
+interface UserPrompterServerExtension_ConstructProps extends EDataServer.Extension_ConstructProps {
 }
 class UserPrompterServerExtension {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.UserPrompterServerExtension */
     prompt(prompt_id: number, dialog_name: string, parameters?: EDataServer.NamedParameters | null): boolean
     response(prompt_id: number, response: number, values?: EDataServer.NamedParameters | null): void
@@ -1588,7 +1611,7 @@ class UserPrompterServerExtension {
     _init (config?: UserPrompterServerExtension_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WebDAVCollectionBackend_ConstructProps extends CollectionBackend_ConstructProps {
+interface WebDAVCollectionBackend_ConstructProps extends CollectionBackend_ConstructProps {
 }
 class WebDAVCollectionBackend {
     /* Properties of EBackend-1.2.EBackend.CollectionBackend */
@@ -1599,7 +1622,7 @@ class WebDAVCollectionBackend {
     online: boolean
     readonly user_prompter: UserPrompter
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.WebDAVCollectionBackend */
     discover_sync(calendar_url: string | null, contacts_url: string | null, credentials: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null): [ /* returnType */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string | null, /* out_certificate_errors */ Gio.TlsCertificateFlags | null ]
     get_resource_id(source: EDataServer.Source): string | null
@@ -1728,17 +1751,17 @@ class WebDAVCollectionBackend {
 }
 abstract class BackendClass {
     /* Fields of EBackend-1.2.EBackend.BackendClass */
-    get_destination_address: (backend: Backend) => [ /* returnType */ boolean, /* host */ string, /* port */ number ]
-    prepare_shutdown: (backend: Backend) => void
-    authenticate_sync: (backend: Backend, credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null) => EDataServer.SourceAuthenticationResult
+    readonly get_destination_address: (backend: Backend) => [ /* returnType */ boolean, /* host */ string, /* port */ number ]
+    readonly prepare_shutdown: (backend: Backend) => void
+    readonly authenticate_sync: (backend: Backend, credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null) => EDataServer.SourceAuthenticationResult
     static name: string
 }
 abstract class BackendFactoryClass {
     /* Fields of EBackend-1.2.EBackend.BackendFactoryClass */
-    get_hash_key: (factory: BackendFactory) => string
-    new_backend: (factory: BackendFactory, source: EDataServer.Source) => Backend
-    e_module: object
-    share_subprocess: boolean
+    readonly get_hash_key: (factory: BackendFactory) => string
+    readonly new_backend: (factory: BackendFactory, source: EDataServer.Source) => Backend
+    readonly e_module: object
+    readonly share_subprocess: boolean
     static name: string
 }
 class BackendFactoryPrivate {
@@ -1749,20 +1772,20 @@ class BackendPrivate {
 }
 abstract class CacheClass {
     /* Fields of EBackend-1.2.EBackend.CacheClass */
-    put_locked: (cache: Cache, uid: string, revision: string, object: string, other_columns: CacheColumnValues, offline_state: OfflineState, is_replace: boolean, cancellable?: Gio.Cancellable | null) => boolean
-    remove_locked: (cache: Cache, uid: string, cancellable?: Gio.Cancellable | null) => boolean
-    clear_offline_changes_locked: (cache: Cache, cancellable?: Gio.Cancellable | null) => boolean
-    erase: (cache: Cache) => void
-    before_put: (cache: Cache, uid: string, revision: string, object: string, other_columns: CacheColumnValues, is_replace: boolean, cancellable?: Gio.Cancellable | null) => boolean
-    before_remove: (cache: Cache, uid: string, cancellable?: Gio.Cancellable | null) => boolean
-    revision_changed: (cache: Cache) => void
+    readonly put_locked: (cache: Cache, uid: string, revision: string, object: string, other_columns: CacheColumnValues, offline_state: OfflineState, is_replace: boolean, cancellable?: Gio.Cancellable | null) => boolean
+    readonly remove_locked: (cache: Cache, uid: string, cancellable?: Gio.Cancellable | null) => boolean
+    readonly clear_offline_changes_locked: (cache: Cache, cancellable?: Gio.Cancellable | null) => boolean
+    readonly erase: (cache: Cache) => void
+    readonly before_put: (cache: Cache, uid: string, revision: string, object: string, other_columns: CacheColumnValues, is_replace: boolean, cancellable?: Gio.Cancellable | null) => boolean
+    readonly before_remove: (cache: Cache, uid: string, cancellable?: Gio.Cancellable | null) => boolean
+    readonly revision_changed: (cache: Cache) => void
     static name: string
 }
 class CacheColumnInfo {
     /* Fields of EBackend-1.2.EBackend.CacheColumnInfo */
-    name: string
-    type: string
-    index_name: string
+    readonly name: string
+    readonly type: string
+    readonly index_name: string
     /* Methods of EBackend-1.2.EBackend.CacheColumnInfo */
     copy(): CacheColumnInfo
     static name: string
@@ -1793,10 +1816,10 @@ class CacheColumnValues {
 }
 class CacheOfflineChange {
     /* Fields of EBackend-1.2.EBackend.CacheOfflineChange */
-    uid: string
-    revision: string
-    object: string
-    state: OfflineState
+    readonly uid: string
+    readonly revision: string
+    readonly object: string
+    readonly state: OfflineState
     /* Methods of EBackend-1.2.EBackend.CacheOfflineChange */
     copy(): CacheOfflineChange
     static name: string
@@ -1814,21 +1837,21 @@ abstract class CacheReaperClass {
 }
 abstract class CollectionBackendClass {
     /* Fields of EBackend-1.2.EBackend.CollectionBackendClass */
-    populate: (backend: CollectionBackend) => void
-    dup_resource_id: (backend: CollectionBackend, child_source: EDataServer.Source) => string
-    child_added: (backend: CollectionBackend, child_source: EDataServer.Source) => void
-    child_removed: (backend: CollectionBackend, child_source: EDataServer.Source) => void
-    create_resource_sync: (backend: CollectionBackend, source: EDataServer.Source, cancellable?: Gio.Cancellable | null) => boolean
-    create_resource: (backend: CollectionBackend, source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    create_resource_finish: (backend: CollectionBackend, result: Gio.AsyncResult) => boolean
-    delete_resource_sync: (backend: CollectionBackend, source: EDataServer.Source, cancellable?: Gio.Cancellable | null) => boolean
-    delete_resource: (backend: CollectionBackend, source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    delete_resource_finish: (backend: CollectionBackend, result: Gio.AsyncResult) => boolean
+    readonly populate: (backend: CollectionBackend) => void
+    readonly dup_resource_id: (backend: CollectionBackend, child_source: EDataServer.Source) => string
+    readonly child_added: (backend: CollectionBackend, child_source: EDataServer.Source) => void
+    readonly child_removed: (backend: CollectionBackend, child_source: EDataServer.Source) => void
+    readonly create_resource_sync: (backend: CollectionBackend, source: EDataServer.Source, cancellable?: Gio.Cancellable | null) => boolean
+    readonly create_resource: (backend: CollectionBackend, source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly create_resource_finish: (backend: CollectionBackend, result: Gio.AsyncResult) => boolean
+    readonly delete_resource_sync: (backend: CollectionBackend, source: EDataServer.Source, cancellable?: Gio.Cancellable | null) => boolean
+    readonly delete_resource: (backend: CollectionBackend, source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly delete_resource_finish: (backend: CollectionBackend, result: Gio.AsyncResult) => boolean
     static name: string
 }
 abstract class CollectionBackendFactoryClass {
     /* Fields of EBackend-1.2.EBackend.CollectionBackendFactoryClass */
-    prepare_mail: (factory: CollectionBackendFactory, mail_account_source: EDataServer.Source, mail_identity_source: EDataServer.Source, mail_transport_source: EDataServer.Source) => void
+    readonly prepare_mail: (factory: CollectionBackendFactory, mail_account_source: EDataServer.Source, mail_identity_source: EDataServer.Source, mail_transport_source: EDataServer.Source) => void
     static name: string
 }
 class CollectionBackendFactoryPrivate {
@@ -1839,15 +1862,15 @@ class CollectionBackendPrivate {
 }
 abstract class DBusServerClass {
     /* Fields of EBackend-1.2.EBackend.DBusServerClass */
-    parent_class: GObject.ObjectClass
-    bus_name: string
-    module_directory: string
-    bus_acquired: (server: DBusServer, connection: Gio.DBusConnection) => void
-    bus_name_acquired: (server: DBusServer, connection: Gio.DBusConnection) => void
-    bus_name_lost: (server: DBusServer, connection: Gio.DBusConnection) => void
-    run_server: (server: DBusServer) => DBusServerExitCode
-    quit_server: (server: DBusServer, code: DBusServerExitCode) => void
-    reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly bus_name: string
+    readonly module_directory: string
+    readonly bus_acquired: (server: DBusServer, connection: Gio.DBusConnection) => void
+    readonly bus_name_acquired: (server: DBusServer, connection: Gio.DBusConnection) => void
+    readonly bus_name_lost: (server: DBusServer, connection: Gio.DBusConnection) => void
+    readonly run_server: (server: DBusServer) => DBusServerExitCode
+    readonly quit_server: (server: DBusServer, code: DBusServerExitCode) => void
+    readonly reserved: object[]
     static name: string
 }
 class DBusServerPrivate {
@@ -1855,17 +1878,17 @@ class DBusServerPrivate {
 }
 abstract class DataFactoryClass {
     /* Fields of EBackend-1.2.EBackend.DataFactoryClass */
-    parent_class: DBusServerClass
-    backend_factory_type: GObject.Type
-    factory_object_path: string
-    data_object_path_prefix: string
-    subprocess_object_path_prefix: string
-    subprocess_bus_name_prefix: string
-    get_factory_name: (backend_factory: BackendFactory) => string
-    complete_open: (data_factory: DataFactory, invocation: Gio.DBusMethodInvocation, object_path: string, bus_name: string, extension_name: string) => void
-    create_backend: (data_factory: DataFactory, backend_factory: BackendFactory, source: EDataServer.Source) => Backend
-    open_backend: (data_factory: DataFactory, backend: Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null) => string
-    reserved: object[]
+    readonly parent_class: DBusServerClass
+    readonly backend_factory_type: GObject.Type
+    readonly factory_object_path: string
+    readonly data_object_path_prefix: string
+    readonly subprocess_object_path_prefix: string
+    readonly subprocess_bus_name_prefix: string
+    readonly get_factory_name: (backend_factory: BackendFactory) => string
+    readonly complete_open: (data_factory: DataFactory, invocation: Gio.DBusMethodInvocation, object_path: string, bus_name: string, extension_name: string) => void
+    readonly create_backend: (data_factory: DataFactory, backend_factory: BackendFactory, source: EDataServer.Source) => Backend
+    readonly open_backend: (data_factory: DataFactory, backend: Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null) => string
+    readonly reserved: object[]
     static name: string
 }
 class DataFactoryPrivate {
@@ -1873,7 +1896,7 @@ class DataFactoryPrivate {
 }
 abstract class FileCacheClass {
     /* Fields of EBackend-1.2.EBackend.FileCacheClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class FileCachePrivate {
@@ -1881,19 +1904,19 @@ class FileCachePrivate {
 }
 abstract class OAuth2SupportInterface {
     /* Fields of EBackend-1.2.EBackend.OAuth2SupportInterface */
-    get_access_token_sync: (support: OAuth2Support, source: EDataServer.Source, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
-    get_access_token: (support: OAuth2Support, source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    get_access_token_finish: (support: OAuth2Support, result: Gio.AsyncResult) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
+    readonly get_access_token_sync: (support: OAuth2Support, source: EDataServer.Source, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
+    readonly get_access_token: (support: OAuth2Support, source: EDataServer.Source, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly get_access_token_finish: (support: OAuth2Support, result: Gio.AsyncResult) => [ /* returnType */ boolean, /* out_access_token */ string | null, /* out_expires_in */ number | null ]
     static name: string
 }
 abstract class ServerSideSourceClass {
     /* Fields of EBackend-1.2.EBackend.ServerSideSourceClass */
-    parent_class: EDataServer.SourceClass
+    readonly parent_class: EDataServer.SourceClass
     static name: string
 }
 abstract class ServerSideSourceCredentialsProviderClass {
     /* Fields of EBackend-1.2.EBackend.ServerSideSourceCredentialsProviderClass */
-    parent_class: EDataServer.SourceCredentialsProviderClass
+    readonly parent_class: EDataServer.SourceCredentialsProviderClass
     static name: string
 }
 class ServerSideSourceCredentialsProviderPrivate {
@@ -1904,13 +1927,13 @@ class ServerSideSourcePrivate {
 }
 abstract class SourceRegistryServerClass {
     /* Fields of EBackend-1.2.EBackend.SourceRegistryServerClass */
-    parent_class: DataFactoryClass
-    load_error: (server: SourceRegistryServer, file: Gio.File, error: GLib.Error) => void
-    files_loaded: (server: SourceRegistryServer) => void
-    source_added: (server: SourceRegistryServer, source: EDataServer.Source) => void
-    source_removed: (server: SourceRegistryServer, source: EDataServer.Source) => void
-    tweak_key_file: (server: SourceRegistryServer, key_file: GLib.KeyFile, uid: string) => boolean
-    reserved: object[]
+    readonly parent_class: DataFactoryClass
+    readonly load_error: (server: SourceRegistryServer, file: Gio.File, error: GLib.Error) => void
+    readonly files_loaded: (server: SourceRegistryServer) => void
+    readonly source_added: (server: SourceRegistryServer, source: EDataServer.Source) => void
+    readonly source_removed: (server: SourceRegistryServer, source: EDataServer.Source) => void
+    readonly tweak_key_file: (server: SourceRegistryServer, key_file: GLib.KeyFile, uid: string) => boolean
+    readonly reserved: object[]
     static name: string
 }
 class SourceRegistryServerPrivate {
@@ -1918,10 +1941,10 @@ class SourceRegistryServerPrivate {
 }
 abstract class SubprocessFactoryClass {
     /* Fields of EBackend-1.2.EBackend.SubprocessFactoryClass */
-    parent_class: GObject.ObjectClass
-    open_data: (subprocess_factory: SubprocessFactory, backend: Backend, connection: Gio.DBusConnection, data?: object | null, cancellable?: Gio.Cancellable | null) => string
-    backend_created: (subprocess_factory: SubprocessFactory, backend: Backend) => void
-    backend_closed: (subprocess_factory: SubprocessFactory, backend: Backend) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly open_data: (subprocess_factory: SubprocessFactory, backend: Backend, connection: Gio.DBusConnection, data?: object | null, cancellable?: Gio.Cancellable | null) => string
+    readonly backend_created: (subprocess_factory: SubprocessFactory, backend: Backend) => void
+    readonly backend_closed: (subprocess_factory: SubprocessFactory, backend: Backend) => void
     static name: string
 }
 class SubprocessFactoryPrivate {
@@ -1929,7 +1952,7 @@ class SubprocessFactoryPrivate {
 }
 abstract class UserPrompterClass {
     /* Fields of EBackend-1.2.EBackend.UserPrompterClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class UserPrompterPrivate {
@@ -1937,14 +1960,14 @@ class UserPrompterPrivate {
 }
 abstract class UserPrompterServerClass {
     /* Fields of EBackend-1.2.EBackend.UserPrompterServerClass */
-    parent_class: DBusServerClass
+    readonly parent_class: DBusServerClass
     static name: string
 }
 abstract class UserPrompterServerExtensionClass {
     /* Fields of EBackend-1.2.EBackend.UserPrompterServerExtensionClass */
-    parent_class: EDataServer.ExtensionClass
-    register_dialogs: (extension: EDataServer.Extension, server: object) => void
-    prompt: (extension: UserPrompterServerExtension, prompt_id: number, dialog_name: string, parameters?: EDataServer.NamedParameters | null) => boolean
+    readonly parent_class: EDataServer.ExtensionClass
+    readonly register_dialogs: (extension: EDataServer.Extension, server: object) => void
+    readonly prompt: (extension: UserPrompterServerExtension, prompt_id: number, dialog_name: string, parameters?: EDataServer.NamedParameters | null) => boolean
     static name: string
 }
 class UserPrompterServerExtensionPrivate {
@@ -1955,9 +1978,9 @@ class UserPrompterServerPrivate {
 }
 abstract class WebDAVCollectionBackendClass {
     /* Fields of EBackend-1.2.EBackend.WebDAVCollectionBackendClass */
-    parent_class: CollectionBackendClass
-    get_resource_id: (webdav_backend: WebDAVCollectionBackend, source: EDataServer.Source) => string | null
-    is_custom_source: (webdav_backend: WebDAVCollectionBackend, source: EDataServer.Source) => boolean
+    readonly parent_class: CollectionBackendClass
+    readonly get_resource_id: (webdav_backend: WebDAVCollectionBackend, source: EDataServer.Source) => string | null
+    readonly is_custom_source: (webdav_backend: WebDAVCollectionBackend, source: EDataServer.Source) => boolean
     static name: string
 }
 class WebDAVCollectionBackendPrivate {

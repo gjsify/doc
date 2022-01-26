@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PangoFT2-1.0
  */
@@ -27,13 +33,13 @@ function shutdown_display(): void
 interface SubstituteFunc {
     (pattern: fontconfig.Pattern, data?: object | null): void
 }
-export interface FontMap_ConstructProps extends PangoFc.FontMap_ConstructProps {
+interface FontMap_ConstructProps extends PangoFc.FontMap_ConstructProps {
 }
 class FontMap {
     /* Fields of Pango-1.0.Pango.FontMap */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoFT2-1.0.PangoFT2.FontMap */
     set_default_substitute(func: SubstituteFunc): void
     set_resolution(dpi_x: number, dpi_y: number): void

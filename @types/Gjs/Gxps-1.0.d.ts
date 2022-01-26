@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gxps-1.0
  */
@@ -23,19 +29,18 @@ enum PageError {
     RENDER,
     INVALID_ANCHOR,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const VERSION_STRING: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const VERSION_STRING: string
 function error_quark(): GLib.Quark
-export interface CoreProperties_ConstructProps extends GObject.Object_ConstructProps {
+interface CoreProperties_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gxps-1.0.Gxps.CoreProperties */
     source?: string
 }
 class CoreProperties {
-    /* Fields of Gxps-1.0.Gxps.CoreProperties */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gxps-1.0.Gxps.CoreProperties */
     get_category(): string
     get_content_status(): string
@@ -102,14 +107,13 @@ class CoreProperties {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Document_ConstructProps extends GObject.Object_ConstructProps {
+interface Document_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gxps-1.0.Gxps.Document */
     source?: string
 }
 class Document {
-    /* Fields of Gxps-1.0.Gxps.Document */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gxps-1.0.Gxps.Document */
     get_n_pages(): number
     get_page(n_page: number): Page
@@ -165,14 +169,13 @@ class Document {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DocumentStructure_ConstructProps extends GObject.Object_ConstructProps {
+interface DocumentStructure_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gxps-1.0.Gxps.DocumentStructure */
     source?: string
 }
 class DocumentStructure {
-    /* Fields of Gxps-1.0.Gxps.DocumentStructure */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gxps-1.0.Gxps.DocumentStructure */
     has_outline(): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -220,14 +223,13 @@ class DocumentStructure {
     static outline_iter_init(iter: OutlineIter, structure: DocumentStructure): boolean
     static $gtype: GObject.Type
 }
-export interface File_ConstructProps extends GObject.Object_ConstructProps {
+interface File_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gxps-1.0.Gxps.File */
     file?: Gio.File
 }
 class File {
-    /* Fields of Gxps-1.0.Gxps.File */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gxps-1.0.Gxps.File */
     get_core_properties(): CoreProperties
     get_document(n_doc: number): Document
@@ -284,14 +286,13 @@ class File {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Page_ConstructProps extends GObject.Object_ConstructProps {
+interface Page_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gxps-1.0.Gxps.Page */
     source?: string
 }
 class Page {
-    /* Fields of Gxps-1.0.Gxps.Page */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gxps-1.0.Gxps.Page */
     get_links(): any[]
     get_size(): [ /* width */ number | null, /* height */ number | null ]
@@ -348,7 +349,7 @@ class Page {
 }
 abstract class CorePropertiesClass {
     /* Fields of Gxps-1.0.Gxps.CorePropertiesClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CorePropertiesPrivate {
@@ -356,7 +357,7 @@ class CorePropertiesPrivate {
 }
 abstract class DocumentClass {
     /* Fields of Gxps-1.0.Gxps.DocumentClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DocumentPrivate {
@@ -364,7 +365,7 @@ class DocumentPrivate {
 }
 abstract class DocumentStructureClass {
     /* Fields of Gxps-1.0.Gxps.DocumentStructureClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DocumentStructurePrivate {
@@ -372,7 +373,7 @@ class DocumentStructurePrivate {
 }
 abstract class FileClass {
     /* Fields of Gxps-1.0.Gxps.FileClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class FilePrivate {
@@ -404,7 +405,7 @@ class OutlineIter {
 }
 abstract class PageClass {
     /* Fields of Gxps-1.0.Gxps.PageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PagePrivate {

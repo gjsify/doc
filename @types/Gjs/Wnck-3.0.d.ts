@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Wnck-3.0
  */
@@ -33,8 +39,8 @@ enum PagerDisplayMode {
     CONTENT,
 }
 enum PagerScrollMode {
-    /* 2D (invalid, starts with a number) */
-    /* 1D (invalid, starts with a number) */
+    TODO_2D,
+    TODO_1D,
     NONE,
 }
 enum TasklistGroupingType {
@@ -117,18 +123,19 @@ enum WindowState {
     ABOVE,
     BELOW,
 }
-export const DEFAULT_ICON_SIZE: number
-export const DEFAULT_MINI_ICON_SIZE: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const DEFAULT_ICON_SIZE: number
+const DEFAULT_MINI_ICON_SIZE: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function pid_read_resource_usage(gdk_display: Gdk.Display, pid: number, usage: ResourceUsage): void
 function set_client_type(ewmh_sourceindication_client_type: ClientType): void
 function set_default_icon_size(size: number): void
 function set_default_mini_icon_size(size: number): void
 function shutdown(): void
 function xid_read_resource_usage(gdk_display: Gdk.Display, xid: number, usage: ResourceUsage): void
-export interface ActionMenu_ConstructProps extends Gtk.Menu_ConstructProps {
+interface ActionMenu_ConstructProps extends Gtk.Menu_ConstructProps {
+    /* Constructor properties of Wnck-3.0.Wnck.ActionMenu */
     window?: object
 }
 class ActionMenu {
@@ -191,17 +198,16 @@ class ActionMenu {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Wnck-3.0.Wnck.ActionMenu */
-    parent_instance: Gtk.Menu
-    priv: ActionMenuPrivate
     /* Fields of Gtk-3.0.Gtk.Menu */
-    menu_shell: Gtk.MenuShell
+    readonly menu_shell: Gtk.MenuShell
     /* Fields of Gtk-3.0.Gtk.MenuShell */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Menu */
     attach(child: Gtk.Widget, left_attach: number, right_attach: number, top_attach: number, bottom_attach: number): void
     attach_to_widget(attach_widget: Gtk.Widget, detacher?: Gtk.MenuDetachFunc | null): void
@@ -250,7 +256,7 @@ class ActionMenu {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -565,6 +571,7 @@ class ActionMenu {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Wnck-3.0.Wnck.ActionMenu */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1064,17 +1071,15 @@ class ActionMenu {
     _init (config?: ActionMenu_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(window: Window): ActionMenu
+    /* Function overloads */
     static new(): ActionMenu
     static $gtype: GObject.Type
 }
-export interface Application_ConstructProps extends GObject.Object_ConstructProps {
+interface Application_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Application {
-    /* Fields of Wnck-3.0.Wnck.Application */
-    parent_instance: GObject.Object
-    priv: ApplicationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Wnck-3.0.Wnck.Application */
     get_icon(): GdkPixbuf.Pixbuf
     get_icon_is_fallback(): boolean
@@ -1141,14 +1146,11 @@ class Application {
     static get(xwindow: number): Application
     static $gtype: GObject.Type
 }
-export interface ClassGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface ClassGroup_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ClassGroup {
-    /* Fields of Wnck-3.0.Wnck.ClassGroup */
-    parent_instance: GObject.Object
-    priv: ClassGroupPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Wnck-3.0.Wnck.ClassGroup */
     get_icon(): GdkPixbuf.Pixbuf
     get_id(): string
@@ -1211,9 +1213,11 @@ class ClassGroup {
     static get(id: string): ClassGroup
     static $gtype: GObject.Type
 }
-export interface ImageMenuItem_ConstructProps extends Gtk.MenuItem_ConstructProps {
+interface ImageMenuItem_ConstructProps extends Gtk.MenuItem_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
+    /* Constructor properties of Gtk-3.0.Gtk.Activatable */
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
@@ -1275,22 +1279,22 @@ class ImageMenuItem {
     related_action: Gtk.Action
     use_action_appearance: boolean
     /* Fields of Gtk-3.0.Gtk.MenuItem */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Wnck-3.0.Wnck.ImageMenuItem */
     make_label_bold(): void
     make_label_normal(): void
     set_image_from_icon_pixbuf(pixbuf: GdkPixbuf.Pixbuf): void
     set_image_from_window(window: Window): void
     /* Methods of Gtk-3.0.Gtk.MenuItem */
-    /* activate clashes with Gtk.Widget.activate */
+    activate(): void
     deselect(): void
     get_accel_path(): string | null
     get_label(): string
@@ -1313,7 +1317,7 @@ class ImageMenuItem {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1641,6 +1645,7 @@ class ImageMenuItem {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Wnck-3.0.Wnck.ImageMenuItem */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
@@ -1659,7 +1664,7 @@ class ImageMenuItem {
     vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
     vfunc_set_name(name: string): void
     /* Virtual methods of Gtk-3.0.Gtk.MenuItem */
-    /* activate clashes with Gtk.Widget.activate */
+    vfunc_activate(): void
     vfunc_activate_item(): void
     vfunc_deselect(): void
     vfunc_get_label(): string
@@ -2125,9 +2130,11 @@ class ImageMenuItem {
     /* Static methods and pseudo-constructors */
     static new(): ImageMenuItem
     static new_with_label(label: string): ImageMenuItem
+    /* Function overloads */
+    static new_with_label(label: string): ImageMenuItem
     static $gtype: GObject.Type
 }
-export interface Pager_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Pager_ConstructProps extends Gtk.Widget_ConstructProps {
 }
 class Pager {
     /* Properties of Gtk-3.0.Gtk.Widget */
@@ -2170,11 +2177,10 @@ class Pager {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Wnck-3.0.Wnck.Pager */
-    parent_instance: Gtk.Container
-    priv: PagerPrivate
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Wnck-3.0.Wnck.Pager */
     get_wrap_on_scroll(): boolean
     set_display_mode(mode: PagerDisplayMode): void
@@ -2474,6 +2480,7 @@ class Pager {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Wnck-3.0.Wnck.Pager */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -2877,14 +2884,11 @@ class Pager {
     static new(): Pager
     static $gtype: GObject.Type
 }
-export interface Screen_ConstructProps extends GObject.Object_ConstructProps {
+interface Screen_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Screen {
-    /* Fields of Wnck-3.0.Wnck.Screen */
-    parent_instance: GObject.Object
-    priv: ScreenPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Wnck-3.0.Wnck.Screen */
     calc_workspace_layout(num_workspaces: number, space_index: number, layout: WorkspaceLayout): void
     change_workspace_count(count: number): void
@@ -3018,7 +3022,7 @@ class Screen {
     static get_for_root(root_window_id: number): Screen
     static $gtype: GObject.Type
 }
-export interface Selector_ConstructProps extends Gtk.MenuBar_ConstructProps {
+interface Selector_ConstructProps extends Gtk.MenuBar_ConstructProps {
 }
 class Selector {
     /* Properties of Gtk-3.0.Gtk.MenuBar */
@@ -3070,17 +3074,16 @@ class Selector {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Wnck-3.0.Wnck.Selector */
-    parent_instance: Gtk.MenuBar
-    priv: SelectorPrivate
     /* Fields of Gtk-3.0.Gtk.MenuBar */
-    menu_shell: Gtk.MenuShell
+    readonly menu_shell: Gtk.MenuShell
     /* Fields of Gtk-3.0.Gtk.MenuShell */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.MenuBar */
     get_child_pack_direction(): Gtk.PackDirection
     get_pack_direction(): Gtk.PackDirection
@@ -3105,7 +3108,7 @@ class Selector {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3420,6 +3423,7 @@ class Selector {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Wnck-3.0.Wnck.Selector */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3894,7 +3898,7 @@ class Selector {
     static new(): Selector
     static $gtype: GObject.Type
 }
-export interface Tasklist_ConstructProps extends Gtk.Container_ConstructProps {
+interface Tasklist_ConstructProps extends Gtk.Container_ConstructProps {
 }
 class Tasklist {
     /* Properties of Gtk-3.0.Gtk.Container */
@@ -3941,13 +3945,12 @@ class Tasklist {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Wnck-3.0.Wnck.Tasklist */
-    parent_instance: Gtk.Container
-    priv: TasklistPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Wnck-3.0.Wnck.Tasklist */
     get_scroll_enabled(): boolean
     get_size_hint_list(n_elements: number): number
@@ -3963,7 +3966,7 @@ class Tasklist {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4278,6 +4281,7 @@ class Tasklist {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Wnck-3.0.Wnck.Tasklist */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -4718,14 +4722,11 @@ class Tasklist {
     static new(): Tasklist
     static $gtype: GObject.Type
 }
-export interface Window_ConstructProps extends GObject.Object_ConstructProps {
+interface Window_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Window {
-    /* Fields of Wnck-3.0.Wnck.Window */
-    parent_instance: GObject.Object
-    priv: WindowPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Wnck-3.0.Wnck.Window */
     activate(timestamp: number): void
     activate_transient(timestamp: number): void
@@ -4887,14 +4888,11 @@ class Window {
     static get(xwindow: number): Window
     static $gtype: GObject.Type
 }
-export interface Workspace_ConstructProps extends GObject.Object_ConstructProps {
+interface Workspace_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Workspace {
-    /* Fields of Wnck-3.0.Wnck.Workspace */
-    parent_instance: GObject.Object
-    priv: WorkspacePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Wnck-3.0.Wnck.Workspace */
     activate(timestamp: number): void
     change_name(name: string): void
@@ -4960,11 +4958,11 @@ class Workspace {
 }
 abstract class ActionMenuClass {
     /* Fields of Wnck-3.0.Wnck.ActionMenuClass */
-    parent_class: Gtk.MenuClass
-    pad1: () => void
-    pad2: () => void
-    pad3: () => void
-    pad4: () => void
+    readonly parent_class: Gtk.MenuClass
+    readonly pad1: () => void
+    readonly pad2: () => void
+    readonly pad3: () => void
+    readonly pad4: () => void
     static name: string
 }
 class ActionMenuPrivate {
@@ -4972,13 +4970,13 @@ class ActionMenuPrivate {
 }
 abstract class ApplicationClass {
     /* Fields of Wnck-3.0.Wnck.ApplicationClass */
-    parent_class: GObject.ObjectClass
-    name_changed: (app: Application) => void
-    icon_changed: (app: Application) => void
-    pad1: () => void
-    pad2: () => void
-    pad3: () => void
-    pad4: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly name_changed: (app: Application) => void
+    readonly icon_changed: (app: Application) => void
+    readonly pad1: () => void
+    readonly pad2: () => void
+    readonly pad3: () => void
+    readonly pad4: () => void
     static name: string
 }
 class ApplicationPrivate {
@@ -4986,13 +4984,13 @@ class ApplicationPrivate {
 }
 abstract class ClassGroupClass {
     /* Fields of Wnck-3.0.Wnck.ClassGroupClass */
-    parent_class: GObject.ObjectClass
-    name_changed: (group: ClassGroup) => void
-    icon_changed: (group: ClassGroup) => void
-    pad1: () => void
-    pad2: () => void
-    pad3: () => void
-    pad4: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly name_changed: (group: ClassGroup) => void
+    readonly icon_changed: (group: ClassGroup) => void
+    readonly pad1: () => void
+    readonly pad2: () => void
+    readonly pad3: () => void
+    readonly pad4: () => void
     static name: string
 }
 class ClassGroupPrivate {
@@ -5006,16 +5004,16 @@ class IconCache {
 }
 abstract class ImageMenuItemClass {
     /* Fields of Wnck-3.0.Wnck.ImageMenuItemClass */
-    parent_class: Gtk.MenuItemClass
+    readonly parent_class: Gtk.MenuItemClass
     static name: string
 }
 abstract class PagerClass {
     /* Fields of Wnck-3.0.Wnck.PagerClass */
-    parent_class: Gtk.ContainerClass
-    pad1: () => void
-    pad2: () => void
-    pad3: () => void
-    pad4: () => void
+    readonly parent_class: Gtk.ContainerClass
+    readonly pad1: () => void
+    readonly pad2: () => void
+    readonly pad3: () => void
+    readonly pad4: () => void
     static name: string
 }
 class PagerPrivate {
@@ -5023,43 +5021,43 @@ class PagerPrivate {
 }
 class ResourceUsage {
     /* Fields of Wnck-3.0.Wnck.ResourceUsage */
-    total_bytes_estimate: number
-    pixmap_bytes: number
-    n_pixmaps: number
-    n_windows: number
-    n_gcs: number
-    n_pictures: number
-    n_glyphsets: number
-    n_fonts: number
-    n_colormap_entries: number
-    n_passive_grabs: number
-    n_cursors: number
-    n_other: number
+    readonly total_bytes_estimate: number
+    readonly pixmap_bytes: number
+    readonly n_pixmaps: number
+    readonly n_windows: number
+    readonly n_gcs: number
+    readonly n_pictures: number
+    readonly n_glyphsets: number
+    readonly n_fonts: number
+    readonly n_colormap_entries: number
+    readonly n_passive_grabs: number
+    readonly n_cursors: number
+    readonly n_other: number
     static name: string
 }
 abstract class ScreenClass {
     /* Fields of Wnck-3.0.Wnck.ScreenClass */
-    parent_class: GObject.ObjectClass
-    active_window_changed: (screen: Screen, previous_window: Window) => void
-    active_workspace_changed: (screen: Screen, previous_workspace: Workspace) => void
-    window_stacking_changed: (screen: Screen) => void
-    window_opened: (screen: Screen, window: Window) => void
-    window_closed: (screen: Screen, window: Window) => void
-    workspace_created: (screen: Screen, space: Workspace) => void
-    workspace_destroyed: (screen: Screen, space: Workspace) => void
-    application_opened: (screen: Screen, app: Application) => void
-    application_closed: (screen: Screen, app: Application) => void
-    background_changed: (screen: Screen) => void
-    class_group_opened: (screen: Screen, class_group: ClassGroup) => void
-    class_group_closed: (screen: Screen, class_group: ClassGroup) => void
-    showing_desktop_changed: (screen: Screen) => void
-    viewports_changed: (screen: Screen) => void
-    window_manager_changed: (screen: Screen) => void
-    pad2: () => void
-    pad3: () => void
-    pad4: () => void
-    pad5: () => void
-    pad6: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly active_window_changed: (screen: Screen, previous_window: Window) => void
+    readonly active_workspace_changed: (screen: Screen, previous_workspace: Workspace) => void
+    readonly window_stacking_changed: (screen: Screen) => void
+    readonly window_opened: (screen: Screen, window: Window) => void
+    readonly window_closed: (screen: Screen, window: Window) => void
+    readonly workspace_created: (screen: Screen, space: Workspace) => void
+    readonly workspace_destroyed: (screen: Screen, space: Workspace) => void
+    readonly application_opened: (screen: Screen, app: Application) => void
+    readonly application_closed: (screen: Screen, app: Application) => void
+    readonly background_changed: (screen: Screen) => void
+    readonly class_group_opened: (screen: Screen, class_group: ClassGroup) => void
+    readonly class_group_closed: (screen: Screen, class_group: ClassGroup) => void
+    readonly showing_desktop_changed: (screen: Screen) => void
+    readonly viewports_changed: (screen: Screen) => void
+    readonly window_manager_changed: (screen: Screen) => void
+    readonly pad2: () => void
+    readonly pad3: () => void
+    readonly pad4: () => void
+    readonly pad5: () => void
+    readonly pad6: () => void
     static name: string
 }
 class ScreenPrivate {
@@ -5067,11 +5065,11 @@ class ScreenPrivate {
 }
 abstract class SelectorClass {
     /* Fields of Wnck-3.0.Wnck.SelectorClass */
-    parent_class: Gtk.MenuBarClass
-    pad1: () => void
-    pad2: () => void
-    pad3: () => void
-    pad4: () => void
+    readonly parent_class: Gtk.MenuBarClass
+    readonly pad1: () => void
+    readonly pad2: () => void
+    readonly pad3: () => void
+    readonly pad4: () => void
     static name: string
 }
 class SelectorPrivate {
@@ -5079,11 +5077,11 @@ class SelectorPrivate {
 }
 abstract class TasklistClass {
     /* Fields of Wnck-3.0.Wnck.TasklistClass */
-    parent_class: Gtk.ContainerClass
-    pad1: () => void
-    pad2: () => void
-    pad3: () => void
-    pad4: () => void
+    readonly parent_class: Gtk.ContainerClass
+    readonly pad1: () => void
+    readonly pad2: () => void
+    readonly pad3: () => void
+    readonly pad4: () => void
     static name: string
 }
 class TasklistPrivate {
@@ -5091,17 +5089,17 @@ class TasklistPrivate {
 }
 abstract class WindowClass {
     /* Fields of Wnck-3.0.Wnck.WindowClass */
-    parent_class: GObject.ObjectClass
-    name_changed: (window: Window) => void
-    state_changed: (window: Window, changed_mask: WindowState, new_state: WindowState) => void
-    workspace_changed: (window: Window) => void
-    icon_changed: (window: Window) => void
-    actions_changed: (window: Window, changed_mask: WindowActions, new_actions: WindowActions) => void
-    geometry_changed: (window: Window) => void
-    class_changed: (window: Window) => void
-    role_changed: (window: Window) => void
-    type_changed: (window: Window) => void
-    pad1: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly name_changed: (window: Window) => void
+    readonly state_changed: (window: Window, changed_mask: WindowState, new_state: WindowState) => void
+    readonly workspace_changed: (window: Window) => void
+    readonly icon_changed: (window: Window) => void
+    readonly actions_changed: (window: Window, changed_mask: WindowActions, new_actions: WindowActions) => void
+    readonly geometry_changed: (window: Window) => void
+    readonly class_changed: (window: Window) => void
+    readonly role_changed: (window: Window) => void
+    readonly type_changed: (window: Window) => void
+    readonly pad1: () => void
     static name: string
 }
 class WindowPrivate {
@@ -5109,22 +5107,22 @@ class WindowPrivate {
 }
 abstract class WorkspaceClass {
     /* Fields of Wnck-3.0.Wnck.WorkspaceClass */
-    parent_class: GObject.ObjectClass
-    name_changed: (space: Workspace) => void
-    pad1: () => void
-    pad2: () => void
-    pad3: () => void
-    pad4: () => void
+    readonly parent_class: GObject.ObjectClass
+    readonly name_changed: (space: Workspace) => void
+    readonly pad1: () => void
+    readonly pad2: () => void
+    readonly pad3: () => void
+    readonly pad4: () => void
     static name: string
 }
 class WorkspaceLayout {
     /* Fields of Wnck-3.0.Wnck.WorkspaceLayout */
-    rows: number
-    cols: number
-    grid: number
-    grid_area: number
-    current_row: number
-    current_col: number
+    readonly rows: number
+    readonly cols: number
+    readonly grid: number
+    readonly grid_area: number
+    readonly current_row: number
+    readonly current_col: number
     static name: string
 }
 class WorkspacePrivate {

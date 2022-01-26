@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GIRepository-2.0
  */
@@ -52,6 +58,7 @@ enum ScopeType {
     CALL,
     ASYNC,
     NOTIFIED,
+    FOREVER,
 }
 enum Transfer {
     NOTHING,
@@ -108,10 +115,10 @@ enum VFuncInfoFlags {
     MUST_NOT_OVERRIDE,
     THROWS,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const TYPE_TAG_N_TYPES: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const TYPE_TAG_N_TYPES: number
 function arg_info_get_closure(info: ArgInfo): number
 function arg_info_get_destroy(info: ArgInfo): number
 function arg_info_get_direction(info: ArgInfo): Direction
@@ -256,11 +263,11 @@ function vfunc_info_get_flags(info: VFuncInfo): VFuncInfoFlags
 function vfunc_info_get_invoker(info: VFuncInfo): FunctionInfo
 function vfunc_info_get_offset(info: VFuncInfo): number
 function vfunc_info_get_signal(info: VFuncInfo): SignalInfo
-export interface Repository_ConstructProps extends GObject.Object_ConstructProps {
+interface Repository_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Repository {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GIRepository-2.0.GIRepository.Repository */
     enumerate_versions(namespace_: string): string[]
     find_by_error_domain(domain: GLib.Quark): EnumInfo
@@ -364,46 +371,24 @@ class UnresolvedInfo {
     static name: string
 }
 class Argument {
-    /* Fields of GIRepository-2.0.GIRepository.Argument */
-    v_boolean: boolean
-    v_int8: number
-    v_uint8: number
-    v_int16: number
-    v_uint16: number
-    v_int32: number
-    v_uint32: number
-    v_int64: number
-    v_uint64: number
-    v_float: number
-    v_double: number
-    v_short: number
-    v_ushort: number
-    v_int: number
-    v_uint: number
-    v_long: number
-    v_ulong: number
-    v_ssize: number
-    v_size: number
-    v_string: string
-    v_pointer: object
     static name: string
 }
-type ArgInfo = BaseInfo
-type CallableInfo = BaseInfo
-type CallbackInfo = BaseInfo
-type ConstantInfo = BaseInfo
-type EnumInfo = BaseInfo
-type FieldInfo = BaseInfo
-type FunctionInfo = BaseInfo
-type InterfaceInfo = BaseInfo
-type ObjectInfo = BaseInfo
-type PropertyInfo = BaseInfo
-type RegisteredTypeInfo = BaseInfo
-type SignalInfo = BaseInfo
-type StructInfo = BaseInfo
-type TypeInfo = BaseInfo
-type UnionInfo = BaseInfo
-type VFuncInfo = BaseInfo
-type ValueInfo = BaseInfo
+    type ArgInfo = BaseInfo
+    type CallableInfo = BaseInfo
+    type CallbackInfo = BaseInfo
+    type ConstantInfo = BaseInfo
+    type EnumInfo = BaseInfo
+    type FieldInfo = BaseInfo
+    type FunctionInfo = BaseInfo
+    type InterfaceInfo = BaseInfo
+    type ObjectInfo = BaseInfo
+    type PropertyInfo = BaseInfo
+    type RegisteredTypeInfo = BaseInfo
+    type SignalInfo = BaseInfo
+    type StructInfo = BaseInfo
+    type TypeInfo = BaseInfo
+    type UnionInfo = BaseInfo
+    type VFuncInfo = BaseInfo
+    type ValueInfo = BaseInfo
 }
 export default GIRepository;

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GtkChamplain-0.12
  */
@@ -25,7 +31,7 @@ import type Champlain from './Champlain-0.12';
 
 export namespace GtkChamplain {
 
-export interface Embed_ConstructProps extends Gtk.Alignment_ConstructProps {
+interface Embed_ConstructProps extends Gtk.Alignment_ConstructProps {
 }
 class Embed {
     /* Properties of GtkChamplain-0.12.GtkChamplain.Embed */
@@ -83,17 +89,16 @@ class Embed {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of GtkChamplain-0.12.GtkChamplain.Embed */
-    bin: Gtk.Alignment
-    priv: EmbedPrivate
+    /* Fields of Gtk-3.0.Gtk.Alignment */
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GtkChamplain-0.12.GtkChamplain.Embed */
     get_view(): Champlain.View
     /* Methods of Gtk-3.0.Gtk.Alignment */
@@ -106,7 +111,7 @@ class Embed {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -421,6 +426,7 @@ class Embed {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of GtkChamplain-0.12.GtkChamplain.Embed */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -870,12 +876,13 @@ class Embed {
     _init (config?: Embed_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Embed
+    /* Function overloads */
     static new(xalign: number, yalign: number, xscale: number, yscale: number): Embed
     static $gtype: GObject.Type
 }
 abstract class EmbedClass {
     /* Fields of GtkChamplain-0.12.GtkChamplain.EmbedClass */
-    parent_class: Gtk.AlignmentClass
+    readonly parent_class: Gtk.AlignmentClass
     static name: string
 }
 class EmbedPrivate {

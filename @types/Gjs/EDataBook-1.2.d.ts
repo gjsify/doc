@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EDataBook-1.2
  */
@@ -60,11 +66,11 @@ enum bSqlCursorStepFlags {
     MOVE,
     FETCH,
 }
-export const BOOK_SQL_IS_POPULATED_KEY: string
-export const BOOK_SQL_SYNC_DATA_KEY: string
-export const EDS_ADDRESS_BOOK_MODULES: string
-export const EDS_SUBPROCESS_BOOK_PATH: string
-export const XIMIAN_VCARD: string
+const BOOK_SQL_IS_POPULATED_KEY: string
+const BOOK_SQL_SYNC_DATA_KEY: string
+const EDS_ADDRESS_BOOK_MODULES: string
+const EDS_SUBPROCESS_BOOK_PATH: string
+const XIMIAN_VCARD: string
 function book_cache_search_data_free(data?: object | null): void
 function book_meta_backend_info_free(ptr?: object | null): void
 function ebsql_get_contact_extra_unlocked(ebsql: BookSqlite, uid: string): [ /* returnType */ boolean, /* ret_extra */ string ]
@@ -103,7 +109,8 @@ interface bSqlChangeCallback {
 interface bSqlVCardCallback {
     (uid: string, extra: string): string
 }
-export interface BookBackend_ConstructProps extends EBackend.Backend_ConstructProps {
+interface BookBackend_ConstructProps extends EBackend.Backend_ConstructProps {
+    /* Constructor properties of EDataBook-1.2.EDataBook.BookBackend */
     cache_dir?: string
     registry?: EDataServer.SourceRegistry
     writable?: boolean
@@ -119,7 +126,7 @@ class BookBackend {
     online: boolean
     readonly user_prompter: EBackend.UserPrompter
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.BookBackend */
     add_view(view: DataBookView): void
     configure_direct(config: string): void
@@ -290,11 +297,11 @@ class BookBackend {
     _init (config?: BookBackend_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BookBackendFactory_ConstructProps extends EBackend.BackendFactory_ConstructProps {
+interface BookBackendFactory_ConstructProps extends EBackend.BackendFactory_ConstructProps {
 }
 class BookBackendFactory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.BackendFactory */
     get_hash_key(): string
     get_module_filename(): string
@@ -348,11 +355,11 @@ class BookBackendFactory {
     _init (config?: BookBackendFactory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BookBackendSExp_ConstructProps extends GObject.Object_ConstructProps {
+interface BookBackendSExp_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BookBackendSExp {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.BookBackendSExp */
     lock(): void
     match_contact(contact: EBookContacts.Contact): boolean
@@ -404,7 +411,7 @@ class BookBackendSExp {
     static new(text: string): BookBackendSExp
     static $gtype: GObject.Type
 }
-export interface BookBackendSync_ConstructProps extends BookBackend_ConstructProps {
+interface BookBackendSync_ConstructProps extends BookBackend_ConstructProps {
 }
 class BookBackendSync {
     /* Properties of EDataBook-1.2.EDataBook.BookBackend */
@@ -417,7 +424,7 @@ class BookBackendSync {
     online: boolean
     readonly user_prompter: EBackend.UserPrompter
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.BookBackendSync */
     contains_email(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     create_contacts(vcards: string, opflags: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_contacts */ EBookContacts.Contact[] ]
@@ -602,13 +609,13 @@ class BookBackendSync {
     _init (config?: BookBackendSync_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BookCache_ConstructProps extends EBackend.Cache_ConstructProps {
+interface BookCache_ConstructProps extends EBackend.Cache_ConstructProps {
 }
 class BookCache {
     /* Properties of EDataBook-1.2.EDataBook.BookCache */
     readonly locale: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.BookCache */
     contains_email(email_address: string, cancellable?: Gio.Cancellable | null): boolean
     cursor_calculate(cursor: BookCacheCursor, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_total */ number | null, /* out_position */ number | null ]
@@ -753,7 +760,8 @@ class BookCache {
     static new_full(filename: string, source?: EDataServer.Source | null, setup?: EBookContacts.SourceBackendSummarySetup | null, cancellable?: Gio.Cancellable | null): BookCache
     static $gtype: GObject.Type
 }
-export interface BookMetaBackend_ConstructProps extends BookBackendSync_ConstructProps {
+interface BookMetaBackend_ConstructProps extends BookBackendSync_ConstructProps {
+    /* Constructor properties of EDataBook-1.2.EDataBook.BookMetaBackend */
     cache?: BookCache
 }
 class BookMetaBackend {
@@ -769,7 +777,7 @@ class BookMetaBackend {
     online: boolean
     readonly user_prompter: EBackend.UserPrompter
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.BookMetaBackend */
     connect_sync(credentials?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_auth_result */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     disconnect_sync(cancellable?: Gio.Cancellable | null): boolean
@@ -856,6 +864,7 @@ class BookMetaBackend {
     ref_proxy_resolver(): Gio.ProxyResolver | null
     refresh(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     refresh_finish(result: Gio.AsyncResult): boolean
+    refresh_sync(cancellable?: Gio.Cancellable | null): boolean
     remove_contacts(uids: string[], opflags: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     remove_contacts_finish(result: Gio.AsyncResult): boolean
     remove_contacts_sync(uids: string, opflags: number, cancellable?: Gio.Cancellable | null): boolean
@@ -1003,11 +1012,11 @@ class BookMetaBackend {
     _init (config?: BookMetaBackend_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BookSqlite_ConstructProps extends GObject.Object_ConstructProps {
+interface BookSqlite_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BookSqlite {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.BookSqlite */
     add_contact(contact: EBookContacts.Contact, extra: string, replace: boolean, cancellable?: Gio.Cancellable | null): boolean
     add_contacts(contacts: EBookContacts.Contact[], extra: string[] | null, replace: boolean, cancellable?: Gio.Cancellable | null): boolean
@@ -1091,14 +1100,15 @@ class BookSqlite {
     static search_data_free(data: bSqlSearchData): void
     static $gtype: GObject.Type
 }
-export interface DataBook_ConstructProps extends GObject.Object_ConstructProps {
+interface DataBook_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataBook-1.2.EDataBook.DataBook */
     backend?: BookBackend
     connection?: Gio.DBusConnection
     object_path?: string
 }
 class DataBook {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.DataBook */
     get_connection(): Gio.DBusConnection
     get_object_path(): string
@@ -1166,7 +1176,8 @@ class DataBook {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DataBookCursor_ConstructProps extends GObject.Object_ConstructProps {
+interface DataBookCursor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataBook-1.2.EDataBook.DataBookCursor */
     backend?: BookBackend
 }
 class DataBookCursor {
@@ -1174,7 +1185,7 @@ class DataBookCursor {
     readonly position: number
     readonly total: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.DataBookCursor */
     contact_added(contact: EBookContacts.Contact): void
     contact_removed(contact: EBookContacts.Contact): void
@@ -1241,7 +1252,8 @@ class DataBookCursor {
     _init (config?: DataBookCursor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DataBookCursorCache_ConstructProps extends DataBookCursor_ConstructProps {
+interface DataBookCursorCache_ConstructProps extends DataBookCursor_ConstructProps {
+    /* Constructor properties of EDataBook-1.2.EDataBook.DataBookCursorCache */
     book_cache?: BookCache
     cursor?: object
 }
@@ -1250,7 +1262,7 @@ class DataBookCursorCache {
     readonly position: number
     readonly total: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.DataBookCursor */
     contact_added(contact: EBookContacts.Contact): void
     contact_removed(contact: EBookContacts.Contact): void
@@ -1319,7 +1331,8 @@ class DataBookCursorCache {
     static new(book_backend: BookBackend, book_cache: BookCache, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[]): DataBookCursorCache
     static $gtype: GObject.Type
 }
-export interface DataBookCursorSqlite_ConstructProps extends DataBookCursor_ConstructProps {
+interface DataBookCursorSqlite_ConstructProps extends DataBookCursor_ConstructProps {
+    /* Constructor properties of EDataBook-1.2.EDataBook.DataBookCursorSqlite */
     cursor?: object
     ebsql?: BookSqlite
     revision_key?: string
@@ -1329,7 +1342,7 @@ class DataBookCursorSqlite {
     readonly position: number
     readonly total: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.DataBookCursor */
     contact_added(contact: EBookContacts.Contact): void
     contact_removed(contact: EBookContacts.Contact): void
@@ -1398,14 +1411,11 @@ class DataBookCursorSqlite {
     static new(backend: BookBackend, ebsql: BookSqlite, revision_key: string, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[]): DataBookCursorSqlite
     static $gtype: GObject.Type
 }
-export interface DataBookDirect_ConstructProps extends GObject.Object_ConstructProps {
+interface DataBookDirect_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DataBookDirect {
-    /* Fields of EDataBook-1.2.EDataBook.DataBookDirect */
-    parent: GObject.Object
-    priv: DataBookDirectPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.DataBookDirect */
     register_gdbus_object(connection: Gio.DBusConnection, object_path: string): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -1453,16 +1463,13 @@ class DataBookDirect {
     static new(backend_path: string, backend_factory_name: string, config: string): DataBookDirect
     static $gtype: GObject.Type
 }
-export interface DataBookFactory_ConstructProps extends EBackend.DataFactory_ConstructProps {
+interface DataBookFactory_ConstructProps extends EBackend.DataFactory_ConstructProps {
 }
 class DataBookFactory {
     /* Properties of EBackend-1.2.EBackend.DataFactory */
     readonly registry: EDataServer.SourceRegistry
-    /* Fields of EDataBook-1.2.EDataBook.DataBookFactory */
-    parent: EBackend.DataFactory
-    priv: DataBookFactoryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.DataFactory */
     backend_closed(backend: EBackend.Backend): void
     backend_closed_by_sender(backend: EBackend.Backend, sender: string): void
@@ -1509,6 +1516,8 @@ class DataBookFactory {
     load_extensions(): void
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of EDataBook-1.2.EDataBook.DataBookFactory */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of EBackend-1.2.EBackend.DataFactory */
     vfunc_complete_open(invocation: Gio.DBusMethodInvocation, object_path: string, bus_name: string, extension_name: string): void
     vfunc_create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend
@@ -1559,20 +1568,19 @@ class DataBookFactory {
     _init (config?: DataBookFactory_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(backend_per_process: number, cancellable?: Gio.Cancellable | null): DataBookFactory
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DataBookView_ConstructProps extends GObject.Object_ConstructProps {
+interface DataBookView_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataBook-1.2.EDataBook.DataBookView */
     backend?: BookBackend
     connection?: Gio.DBusConnection
     object_path?: string
     sexp?: BookBackendSExp
 }
 class DataBookView {
-    /* Fields of EDataBook-1.2.EDataBook.DataBookView */
-    parent: GObject.Object
-    priv: DataBookViewPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.DataBookView */
     get_connection(): Gio.DBusConnection
     get_fields_of_interest(): GLib.HashTable | null
@@ -1637,16 +1645,13 @@ class DataBookView {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SubprocessBookFactory_ConstructProps extends EBackend.SubprocessFactory_ConstructProps {
+interface SubprocessBookFactory_ConstructProps extends EBackend.SubprocessFactory_ConstructProps {
 }
 class SubprocessBookFactory {
     /* Properties of EBackend-1.2.EBackend.SubprocessFactory */
     readonly registry: EDataServer.SourceRegistry
-    /* Fields of EDataBook-1.2.EDataBook.SubprocessBookFactory */
-    parent: EBackend.SubprocessFactory
-    priv: SubprocessBookFactoryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EBackend-1.2.EBackend.SubprocessFactory */
     call_backends_prepare_shutdown(): void
     get_backends_list(): EBackend.Backend[]
@@ -1678,6 +1683,8 @@ class SubprocessBookFactory {
     watch_closure(closure: Function): void
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of EDataBook-1.2.EDataBook.SubprocessBookFactory */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of EBackend-1.2.EBackend.SubprocessFactory */
     vfunc_backend_closed(backend: EBackend.Backend): void
     vfunc_backend_created(backend: EBackend.Backend): void
@@ -1706,15 +1713,16 @@ class SubprocessBookFactory {
     _init (config?: SubprocessBookFactory_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(cancellable?: Gio.Cancellable | null): SubprocessBookFactory
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SystemLocaleWatcher_ConstructProps extends GObject.Object_ConstructProps {
+interface SystemLocaleWatcher_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SystemLocaleWatcher {
     /* Properties of EDataBook-1.2.EDataBook.SystemLocaleWatcher */
     readonly locale: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataBook-1.2.EDataBook.SystemLocaleWatcher */
     dup_locale(): string | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -1766,33 +1774,33 @@ class SystemLocaleWatcher {
 }
 abstract class BookBackendClass {
     /* Fields of EDataBook-1.2.EDataBook.BookBackendClass */
-    use_serial_dispatch_queue: boolean
-    impl_get_backend_property: (backend: BookBackend, prop_name: string) => string
-    impl_open: (backend: BookBackend, book: DataBook, opid: number, cancellable?: Gio.Cancellable | null) => void
-    impl_refresh: (backend: BookBackend, book: DataBook, opid: number, cancellable?: Gio.Cancellable | null) => void
-    impl_create_contacts: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, vcards: string, opflags: number) => void
-    impl_modify_contacts: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, vcards: string, opflags: number) => void
-    impl_remove_contacts: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, uids: string, opflags: number) => void
-    impl_get_contact: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, id: string) => void
-    impl_get_contact_list: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, query: string) => void
-    impl_get_contact_list_uids: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, query: string) => void
-    impl_start_view: (backend: BookBackend, view: DataBookView) => void
-    impl_stop_view: (backend: BookBackend, view: DataBookView) => void
-    impl_notify_update: (backend: BookBackend, contact: EBookContacts.Contact) => void
-    impl_configure_direct: (backend: BookBackend, config: string) => void
-    impl_set_locale: (backend: BookBackend, locale: string, cancellable?: Gio.Cancellable | null) => boolean
-    impl_dup_locale: (backend: BookBackend) => string
-    impl_delete_cursor: (backend: BookBackend, cursor: DataBookCursor) => boolean
-    closed: (backend: BookBackend, sender: string) => void
-    shutdown: (backend: BookBackend) => void
-    impl_contains_email: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, email_address: string) => void
-    reserved_padding: object[]
+    readonly use_serial_dispatch_queue: boolean
+    readonly impl_get_backend_property: (backend: BookBackend, prop_name: string) => string
+    readonly impl_open: (backend: BookBackend, book: DataBook, opid: number, cancellable?: Gio.Cancellable | null) => void
+    readonly impl_refresh: (backend: BookBackend, book: DataBook, opid: number, cancellable?: Gio.Cancellable | null) => void
+    readonly impl_create_contacts: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, vcards: string, opflags: number) => void
+    readonly impl_modify_contacts: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, vcards: string, opflags: number) => void
+    readonly impl_remove_contacts: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, uids: string, opflags: number) => void
+    readonly impl_get_contact: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, id: string) => void
+    readonly impl_get_contact_list: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, query: string) => void
+    readonly impl_get_contact_list_uids: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, query: string) => void
+    readonly impl_start_view: (backend: BookBackend, view: DataBookView) => void
+    readonly impl_stop_view: (backend: BookBackend, view: DataBookView) => void
+    readonly impl_notify_update: (backend: BookBackend, contact: EBookContacts.Contact) => void
+    readonly impl_configure_direct: (backend: BookBackend, config: string) => void
+    readonly impl_set_locale: (backend: BookBackend, locale: string, cancellable?: Gio.Cancellable | null) => boolean
+    readonly impl_dup_locale: (backend: BookBackend) => string
+    readonly impl_delete_cursor: (backend: BookBackend, cursor: DataBookCursor) => boolean
+    readonly closed: (backend: BookBackend, sender: string) => void
+    readonly shutdown: (backend: BookBackend) => void
+    readonly impl_contains_email: (backend: BookBackend, book: DataBook, opid: number, cancellable: Gio.Cancellable | null, email_address: string) => void
+    readonly reserved_padding: object[]
     static name: string
 }
 abstract class BookBackendFactoryClass {
     /* Fields of EDataBook-1.2.EDataBook.BookBackendFactoryClass */
-    factory_name: string
-    backend_type: GObject.Type
+    readonly factory_name: string
+    readonly backend_type: GObject.Type
     static name: string
 }
 class BookBackendFactoryPrivate {
@@ -1809,10 +1817,10 @@ class BookBackendSExpPrivate {
 }
 abstract class BookBackendSyncClass {
     /* Fields of EDataBook-1.2.EDataBook.BookBackendSyncClass */
-    open_sync: (backend: BookBackendSync, cancellable?: Gio.Cancellable | null) => boolean
-    refresh_sync: (backend: BookBackendSync, cancellable?: Gio.Cancellable | null) => boolean
-    contains_email_sync: (backend: BookBackendSync, email_address: string, cancellable?: Gio.Cancellable | null) => boolean
-    reserved_padding: object[]
+    readonly open_sync: (backend: BookBackendSync, cancellable?: Gio.Cancellable | null) => boolean
+    readonly refresh_sync: (backend: BookBackendSync, cancellable?: Gio.Cancellable | null) => boolean
+    readonly contains_email_sync: (backend: BookBackendSync, email_address: string, cancellable?: Gio.Cancellable | null) => boolean
+    readonly reserved_padding: object[]
     static name: string
 }
 class BookBackendSyncPrivate {
@@ -1820,8 +1828,8 @@ class BookBackendSyncPrivate {
 }
 abstract class BookCacheClass {
     /* Fields of EDataBook-1.2.EDataBook.BookCacheClass */
-    e164_changed: (book_cache: BookCache, contact: EBookContacts.Contact, is_replace: boolean) => void
-    dup_contact_revision: (book_cache: BookCache, contact: EBookContacts.Contact) => string
+    readonly e164_changed: (book_cache: BookCache, contact: EBookContacts.Contact, is_replace: boolean) => void
+    readonly dup_contact_revision: (book_cache: BookCache, contact: EBookContacts.Contact) => string
     static name: string
 }
 class BookCacheCursor {
@@ -1836,9 +1844,9 @@ class BookCachePrivate {
 }
 class BookCacheSearchData {
     /* Fields of EDataBook-1.2.EDataBook.BookCacheSearchData */
-    uid: string
-    vcard: string
-    extra: string
+    readonly uid: string
+    readonly vcard: string
+    readonly extra: string
     /* Methods of EDataBook-1.2.EDataBook.BookCacheSearchData */
     copy(): BookCacheSearchData
     static name: string
@@ -1850,26 +1858,26 @@ class BookCacheSearchData {
 }
 abstract class BookMetaBackendClass {
     /* Fields of EDataBook-1.2.EDataBook.BookMetaBackendClass */
-    connect_sync: (meta_backend: BookMetaBackend, credentials?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_auth_result */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
-    disconnect_sync: (meta_backend: BookMetaBackend, cancellable?: Gio.Cancellable | null) => boolean
-    get_changes_sync: (meta_backend: BookMetaBackend, last_sync_tag: string | null, is_repeat: boolean, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_repeat */ boolean, /* out_created_objects */ BookMetaBackendInfo[], /* out_modified_objects */ BookMetaBackendInfo[], /* out_removed_objects */ BookMetaBackendInfo[] ]
-    list_existing_sync: (meta_backend: BookMetaBackend, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_existing_objects */ BookMetaBackendInfo[] ]
-    load_contact_sync: (meta_backend: BookMetaBackend, uid: string, extra?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_contact */ EBookContacts.Contact, /* out_extra */ string ]
-    save_contact_sync: (meta_backend: BookMetaBackend, overwrite_existing: boolean, conflict_resolution: EDataServer.ConflictResolution, contact: EBookContacts.Contact, extra: string | null, opflags: number, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_uid */ string, /* out_new_extra */ string ]
-    remove_contact_sync: (meta_backend: BookMetaBackend, conflict_resolution: EDataServer.ConflictResolution, uid: string, extra: string | null, object: string | null, opflags: number, cancellable?: Gio.Cancellable | null) => boolean
-    search_sync: (meta_backend: BookMetaBackend, expr: string | null, meta_contact: boolean, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_contacts */ EBookContacts.Contact[] ]
-    search_uids_sync: (meta_backend: BookMetaBackend, expr?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_uids */ string[] ]
-    requires_reconnect: (meta_backend: BookMetaBackend) => boolean
-    source_changed: (meta_backend: BookMetaBackend) => void
-    get_ssl_error_details: (meta_backend: BookMetaBackend) => [ /* returnType */ boolean, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
+    readonly connect_sync: (meta_backend: BookMetaBackend, credentials?: EDataServer.NamedParameters | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_auth_result */ EDataServer.SourceAuthenticationResult, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
+    readonly disconnect_sync: (meta_backend: BookMetaBackend, cancellable?: Gio.Cancellable | null) => boolean
+    readonly get_changes_sync: (meta_backend: BookMetaBackend, last_sync_tag: string | null, is_repeat: boolean, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_repeat */ boolean, /* out_created_objects */ BookMetaBackendInfo[], /* out_modified_objects */ BookMetaBackendInfo[], /* out_removed_objects */ BookMetaBackendInfo[] ]
+    readonly list_existing_sync: (meta_backend: BookMetaBackend, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_sync_tag */ string, /* out_existing_objects */ BookMetaBackendInfo[] ]
+    readonly load_contact_sync: (meta_backend: BookMetaBackend, uid: string, extra?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_contact */ EBookContacts.Contact, /* out_extra */ string ]
+    readonly save_contact_sync: (meta_backend: BookMetaBackend, overwrite_existing: boolean, conflict_resolution: EDataServer.ConflictResolution, contact: EBookContacts.Contact, extra: string | null, opflags: number, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_new_uid */ string, /* out_new_extra */ string ]
+    readonly remove_contact_sync: (meta_backend: BookMetaBackend, conflict_resolution: EDataServer.ConflictResolution, uid: string, extra: string | null, object: string | null, opflags: number, cancellable?: Gio.Cancellable | null) => boolean
+    readonly search_sync: (meta_backend: BookMetaBackend, expr: string | null, meta_contact: boolean, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_contacts */ EBookContacts.Contact[] ]
+    readonly search_uids_sync: (meta_backend: BookMetaBackend, expr?: string | null, cancellable?: Gio.Cancellable | null) => [ /* returnType */ boolean, /* out_uids */ string[] ]
+    readonly requires_reconnect: (meta_backend: BookMetaBackend) => boolean
+    readonly source_changed: (meta_backend: BookMetaBackend) => void
+    readonly get_ssl_error_details: (meta_backend: BookMetaBackend) => [ /* returnType */ boolean, /* out_certificate_pem */ string, /* out_certificate_errors */ Gio.TlsCertificateFlags ]
     static name: string
 }
 class BookMetaBackendInfo {
     /* Fields of EDataBook-1.2.EDataBook.BookMetaBackendInfo */
-    uid: string
-    revision: string
-    object: string
-    extra: string
+    readonly uid: string
+    readonly revision: string
+    readonly object: string
+    readonly extra: string
     /* Methods of EDataBook-1.2.EDataBook.BookMetaBackendInfo */
     copy(): BookMetaBackendInfo
     static name: string
@@ -1884,8 +1892,8 @@ class BookMetaBackendPrivate {
 }
 abstract class BookSqliteClass {
     /* Fields of EDataBook-1.2.EDataBook.BookSqliteClass */
-    before_insert_contact: (ebsql: BookSqlite, db: object | null, contact: EBookContacts.Contact, extra: string, replace: boolean, cancellable?: Gio.Cancellable | null) => boolean
-    before_remove_contact: (ebsql: BookSqlite, db: object | null, contact_uid: string, cancellable?: Gio.Cancellable | null) => boolean
+    readonly before_insert_contact: (ebsql: BookSqlite, db: object | null, contact: EBookContacts.Contact, extra: string, replace: boolean, cancellable?: Gio.Cancellable | null) => boolean
+    readonly before_remove_contact: (ebsql: BookSqlite, db: object | null, contact_uid: string, cancellable?: Gio.Cancellable | null) => boolean
     static name: string
 }
 class BookSqlitePrivate {
@@ -1902,12 +1910,12 @@ class DataBookCursorCachePrivate {
 }
 abstract class DataBookCursorClass {
     /* Fields of EDataBook-1.2.EDataBook.DataBookCursorClass */
-    set_sexp: DataBookCursorSetSexpFunc
-    step: DataBookCursorStepFunc
-    set_alphabetic_index: DataBookCursorSetAlphabetIndexFunc
-    get_position: DataBookCursorGetPositionFunc
-    compare_contact: DataBookCursorCompareContactFunc
-    load_locale: DataBookCursorLoadLocaleFunc
+    readonly set_sexp: DataBookCursorSetSexpFunc
+    readonly step: DataBookCursorStepFunc
+    readonly set_alphabetic_index: DataBookCursorSetAlphabetIndexFunc
+    readonly get_position: DataBookCursorGetPositionFunc
+    readonly compare_contact: DataBookCursorCompareContactFunc
+    readonly load_locale: DataBookCursorLoadLocaleFunc
     static name: string
 }
 class DataBookCursorPrivate {
@@ -1921,7 +1929,7 @@ class DataBookCursorSqlitePrivate {
 }
 abstract class DataBookDirectClass {
     /* Fields of EDataBook-1.2.EDataBook.DataBookDirectClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class DataBookDirectPrivate {
@@ -1929,7 +1937,7 @@ class DataBookDirectPrivate {
 }
 abstract class DataBookFactoryClass {
     /* Fields of EDataBook-1.2.EDataBook.DataBookFactoryClass */
-    parent_class: EBackend.DataFactoryClass
+    readonly parent_class: EBackend.DataFactoryClass
     static name: string
 }
 class DataBookFactoryPrivate {
@@ -1940,7 +1948,7 @@ class DataBookPrivate {
 }
 abstract class DataBookViewClass {
     /* Fields of EDataBook-1.2.EDataBook.DataBookViewClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class DataBookViewPrivate {
@@ -1948,7 +1956,7 @@ class DataBookViewPrivate {
 }
 abstract class SubprocessBookFactoryClass {
     /* Fields of EDataBook-1.2.EDataBook.SubprocessBookFactoryClass */
-    parent_class: EBackend.SubprocessFactoryClass
+    readonly parent_class: EBackend.SubprocessFactoryClass
     static name: string
 }
 class SubprocessBookFactoryPrivate {
@@ -1956,7 +1964,7 @@ class SubprocessBookFactoryPrivate {
 }
 abstract class SystemLocaleWatcherClass {
     /* Fields of EDataBook-1.2.EDataBook.SystemLocaleWatcherClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SystemLocaleWatcherPrivate {
@@ -1967,9 +1975,9 @@ class bSqlCursor {
 }
 class bSqlSearchData {
     /* Fields of EDataBook-1.2.EDataBook.bSqlSearchData */
-    uid: string
-    vcard: string
-    extra: string
+    readonly uid: string
+    readonly vcard: string
+    readonly extra: string
     static name: string
 }
 }

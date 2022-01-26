@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Atspi-2.0
  */
@@ -342,52 +348,52 @@ enum KeyListenerSyncType {
     CANCONSUME,
     ALL_WINDOWS,
 }
-export const COMPONENTLAYER_COUNT: number
-export const COORD_TYPE_COUNT: number
-export const DBUS_INTERFACE_ACCESSIBLE: string
-export const DBUS_INTERFACE_ACTION: string
-export const DBUS_INTERFACE_APPLICATION: string
-export const DBUS_INTERFACE_CACHE: string
-export const DBUS_INTERFACE_COLLECTION: string
-export const DBUS_INTERFACE_COMPONENT: string
-export const DBUS_INTERFACE_DEC: string
-export const DBUS_INTERFACE_DEVICE_EVENT_LISTENER: string
-export const DBUS_INTERFACE_DOCUMENT: string
-export const DBUS_INTERFACE_EDITABLE_TEXT: string
-export const DBUS_INTERFACE_EVENT_KEYBOARD: string
-export const DBUS_INTERFACE_EVENT_MOUSE: string
-export const DBUS_INTERFACE_EVENT_OBJECT: string
-export const DBUS_INTERFACE_EVENT_SCREEN_READER: string
-export const DBUS_INTERFACE_HYPERLINK: string
-export const DBUS_INTERFACE_HYPERTEXT: string
-export const DBUS_INTERFACE_IMAGE: string
-export const DBUS_INTERFACE_REGISTRY: string
-export const DBUS_INTERFACE_SELECTION: string
-export const DBUS_INTERFACE_SOCKET: string
-export const DBUS_INTERFACE_TABLE: string
-export const DBUS_INTERFACE_TABLE_CELL: string
-export const DBUS_INTERFACE_TEXT: string
-export const DBUS_INTERFACE_VALUE: string
-export const DBUS_NAME_REGISTRY: string
-export const DBUS_PATH_DEC: string
-export const DBUS_PATH_NULL: string
-export const DBUS_PATH_REGISTRY: string
-export const DBUS_PATH_ROOT: string
-export const DBUS_PATH_SCREEN_READER: string
-export const EVENTTYPE_COUNT: number
-export const KEYEVENTTYPE_COUNT: number
-export const KEYSYNTHTYPE_COUNT: number
-export const LOCALE_TYPE_COUNT: number
-export const MATCHTYPES_COUNT: number
-export const MODIFIERTYPE_COUNT: number
-export const RELATIONTYPE_COUNT: number
-export const ROLE_COUNT: number
-export const SCROLLTYPE_COUNT: number
-export const SORTORDER_COUNT: number
-export const STATETYPE_COUNT: number
-export const TEXT_BOUNDARY_TYPE_COUNT: number
-export const TEXT_CLIP_TYPE_COUNT: number
-export const TREETRAVERSALTYPE_COUNT: number
+const COMPONENTLAYER_COUNT: number
+const COORD_TYPE_COUNT: number
+const DBUS_INTERFACE_ACCESSIBLE: string
+const DBUS_INTERFACE_ACTION: string
+const DBUS_INTERFACE_APPLICATION: string
+const DBUS_INTERFACE_CACHE: string
+const DBUS_INTERFACE_COLLECTION: string
+const DBUS_INTERFACE_COMPONENT: string
+const DBUS_INTERFACE_DEC: string
+const DBUS_INTERFACE_DEVICE_EVENT_LISTENER: string
+const DBUS_INTERFACE_DOCUMENT: string
+const DBUS_INTERFACE_EDITABLE_TEXT: string
+const DBUS_INTERFACE_EVENT_KEYBOARD: string
+const DBUS_INTERFACE_EVENT_MOUSE: string
+const DBUS_INTERFACE_EVENT_OBJECT: string
+const DBUS_INTERFACE_EVENT_SCREEN_READER: string
+const DBUS_INTERFACE_HYPERLINK: string
+const DBUS_INTERFACE_HYPERTEXT: string
+const DBUS_INTERFACE_IMAGE: string
+const DBUS_INTERFACE_REGISTRY: string
+const DBUS_INTERFACE_SELECTION: string
+const DBUS_INTERFACE_SOCKET: string
+const DBUS_INTERFACE_TABLE: string
+const DBUS_INTERFACE_TABLE_CELL: string
+const DBUS_INTERFACE_TEXT: string
+const DBUS_INTERFACE_VALUE: string
+const DBUS_NAME_REGISTRY: string
+const DBUS_PATH_DEC: string
+const DBUS_PATH_NULL: string
+const DBUS_PATH_REGISTRY: string
+const DBUS_PATH_ROOT: string
+const DBUS_PATH_SCREEN_READER: string
+const EVENTTYPE_COUNT: number
+const KEYEVENTTYPE_COUNT: number
+const KEYSYNTHTYPE_COUNT: number
+const LOCALE_TYPE_COUNT: number
+const MATCHTYPES_COUNT: number
+const MODIFIERTYPE_COUNT: number
+const RELATIONTYPE_COUNT: number
+const ROLE_COUNT: number
+const SCROLLTYPE_COUNT: number
+const SORTORDER_COUNT: number
+const STATETYPE_COUNT: number
+const TEXT_BOUNDARY_TYPE_COUNT: number
+const TEXT_CLIP_TYPE_COUNT: number
+const TREETRAVERSALTYPE_COUNT: number
 function deregister_device_event_listener(listener: DeviceListener, filter?: object | null): boolean
 function deregister_keystroke_listener(listener: DeviceListener, key_set: KeyDefinition[] | null, modmask: KeyMaskType, event_types: KeyEventMask): boolean
 function event_main(): void
@@ -584,26 +590,15 @@ class Value {
     set_current_value(new_value: number): boolean
     static name: string
 }
-export interface Accessible_ConstructProps extends Object_ConstructProps {
+interface Accessible_ConstructProps extends Object_ConstructProps {
 }
 class Accessible {
-    /* Fields of Atspi-2.0.Atspi.Accessible */
-    parent: Object
-    accessible_parent: Accessible
-    children: object[]
-    role: Role
-    interfaces: number
-    name: string
-    description: string
-    states: StateSet
-    attributes: GLib.HashTable
-    cached_properties: number
-    priv: AccessiblePrivate
     /* Fields of Atspi-2.0.Atspi.Object */
-    app: Application
-    path: string
+    readonly parent: GObject.Object
+    readonly app: Application
+    readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atspi-2.0.Atspi.Accessible */
     clear_cache(): void
     get_accessible_id(): string
@@ -822,22 +817,11 @@ class Accessible {
     _init (config?: Accessible_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Application_ConstructProps extends GObject.Object_ConstructProps {
+interface Application_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Application {
-    /* Fields of Atspi-2.0.Atspi.Application */
-    parent: GObject.Object
-    hash: GLib.HashTable
-    bus_name: string
-    bus: DBus.Connection
-    root: object
-    cache: Cache
-    toolkit_name: string
-    toolkit_version: string
-    atspi_version: string
-    time_added: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -881,13 +865,11 @@ class Application {
     _init (config?: Application_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends GObject.Object_ConstructProps {
+interface Device_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Device {
-    /* Fields of Atspi-2.0.Atspi.Device */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atspi-2.0.Atspi.Device */
     add_key_grab(kd: KeyDefinition, callback: KeyCallback | null): number
     add_key_watcher(): void
@@ -954,13 +936,13 @@ class Device {
     static new(): Device
     static $gtype: GObject.Type
 }
-export interface DeviceLegacy_ConstructProps extends Device_ConstructProps {
+interface DeviceLegacy_ConstructProps extends Device_ConstructProps {
 }
 class DeviceLegacy {
-    /* Fields of Atspi-2.0.Atspi.DeviceLegacy */
-    parent: Device
+    /* Fields of Atspi-2.0.Atspi.Device */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atspi-2.0.Atspi.Device */
     add_key_grab(kd: KeyDefinition, callback: KeyCallback | null): number
     add_key_watcher(): void
@@ -1025,17 +1007,15 @@ class DeviceLegacy {
     _init (config?: DeviceLegacy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DeviceLegacy
+    /* Function overloads */
+    static new(): DeviceLegacy
     static $gtype: GObject.Type
 }
-export interface DeviceListener_ConstructProps extends GObject.Object_ConstructProps {
+interface DeviceListener_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DeviceListener {
-    /* Fields of Atspi-2.0.Atspi.DeviceListener */
-    parent: GObject.Object
-    id: number
-    callbacks: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atspi-2.0.Atspi.DeviceListener */
     add_callback(callback: DeviceListenerCB): void
     remove_callback(callback: DeviceListenerCB): void
@@ -1086,13 +1066,13 @@ class DeviceListener {
     static new(callback: DeviceListenerCB): DeviceListener
     static $gtype: GObject.Type
 }
-export interface DeviceX11_ConstructProps extends Device_ConstructProps {
+interface DeviceX11_ConstructProps extends Device_ConstructProps {
 }
 class DeviceX11 {
-    /* Fields of Atspi-2.0.Atspi.DeviceX11 */
-    parent: Device
+    /* Fields of Atspi-2.0.Atspi.Device */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atspi-2.0.Atspi.Device */
     add_key_grab(kd: KeyDefinition, callback: KeyCallback | null): number
     add_key_watcher(): void
@@ -1157,18 +1137,15 @@ class DeviceX11 {
     _init (config?: DeviceX11_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DeviceX11
+    /* Function overloads */
+    static new(): DeviceX11
     static $gtype: GObject.Type
 }
-export interface EventListener_ConstructProps extends GObject.Object_ConstructProps {
+interface EventListener_ConstructProps extends GObject.Object_ConstructProps {
 }
 class EventListener {
-    /* Fields of Atspi-2.0.Atspi.EventListener */
-    parent: GObject.Object
-    callback: EventListenerCB
-    user_data: object
-    cb_destroyed: GLib.DestroyNotify
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atspi-2.0.Atspi.EventListener */
     deregister(event_type: string): boolean
     register(event_type: string): boolean
@@ -1221,16 +1198,15 @@ class EventListener {
     static register_from_callback_full(event_type: string, properties: string[]): boolean
     static $gtype: GObject.Type
 }
-export interface Hyperlink_ConstructProps extends Object_ConstructProps {
+interface Hyperlink_ConstructProps extends Object_ConstructProps {
 }
 class Hyperlink {
-    /* Fields of Atspi-2.0.Atspi.Hyperlink */
-    parent: Object
     /* Fields of Atspi-2.0.Atspi.Object */
-    app: Application
-    path: string
+    readonly parent: GObject.Object
+    readonly app: Application
+    readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atspi-2.0.Atspi.Hyperlink */
     get_end_index(): number
     get_index_range(): Range
@@ -1282,22 +1258,11 @@ class Hyperlink {
     _init (config?: Hyperlink_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MatchRule_ConstructProps extends GObject.Object_ConstructProps {
+interface MatchRule_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MatchRule {
-    /* Fields of Atspi-2.0.Atspi.MatchRule */
-    parent: GObject.Object
-    states: StateSet
-    statematchtype: CollectionMatchType
-    attributes: GLib.HashTable
-    attributematchtype: CollectionMatchType
-    interfaces: object[]
-    interfacematchtype: CollectionMatchType
-    roles: number[]
-    rolematchtype: CollectionMatchType
-    invert: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1343,15 +1308,11 @@ class MatchRule {
     static new(states: StateSet, statematchtype: CollectionMatchType, attributes: GLib.HashTable, attributematchtype: CollectionMatchType, roles: Role[], rolematchtype: CollectionMatchType, interfaces: string[], interfacematchtype: CollectionMatchType, invert: boolean): MatchRule
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+interface Object_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Object {
-    /* Fields of Atspi-2.0.Atspi.Object */
-    parent: GObject.Object
-    app: Application
-    path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1395,15 +1356,11 @@ class Object {
     _init (config?: Object_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Relation_ConstructProps extends GObject.Object_ConstructProps {
+interface Relation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Relation {
-    /* Fields of Atspi-2.0.Atspi.Relation */
-    parent: GObject.Object
-    relation_type: RelationType
-    targets: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atspi-2.0.Atspi.Relation */
     get_n_targets(): number
     get_relation_type(): RelationType
@@ -1451,15 +1408,11 @@ class Relation {
     _init (config?: Relation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface StateSet_ConstructProps extends GObject.Object_ConstructProps {
+interface StateSet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class StateSet {
-    /* Fields of Atspi-2.0.Atspi.StateSet */
-    parent: GObject.Object
-    accessible: object
-    states: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atspi-2.0.Atspi.StateSet */
     add(state: StateType): void
     compare(set2: StateSet): StateSet
@@ -1516,9 +1469,9 @@ class StateSet {
 }
 abstract class AccessibleClass {
     /* Fields of Atspi-2.0.Atspi.AccessibleClass */
-    parent_class: ObjectClass
-    region_changed: (accessible: Accessible, current_offset: number, last_offset: number) => void
-    mode_changed: (accessible: Accessible, enabled: boolean) => void
+    readonly parent_class: ObjectClass
+    readonly region_changed: (accessible: Accessible, current_offset: number, last_offset: number) => void
+    readonly mode_changed: (accessible: Accessible, enabled: boolean) => void
     static name: string
 }
 class AccessiblePrivate {
@@ -1526,57 +1479,57 @@ class AccessiblePrivate {
 }
 abstract class ApplicationClass {
     /* Fields of Atspi-2.0.Atspi.ApplicationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DeviceClass {
     /* Fields of Atspi-2.0.Atspi.DeviceClass */
-    parent_class: GObject.ObjectClass
-    add_key_grab: (device: Device, kd: KeyDefinition) => void
-    remove_key_grab: (device: Device, id: number) => void
-    map_modifier: (device: Device, keycode: number) => number
-    unmap_modifier: (device: Device, keycode: number) => void
-    get_modifier: (device: Device, keycode: number) => number
-    grab_keyboard: (device: Device) => boolean
-    ungrab_keyboard: (device: Device) => void
-    get_locked_modifiers: (device: Device) => number
+    readonly parent_class: GObject.ObjectClass
+    readonly add_key_grab: (device: Device, kd: KeyDefinition) => void
+    readonly remove_key_grab: (device: Device, id: number) => void
+    readonly map_modifier: (device: Device, keycode: number) => number
+    readonly unmap_modifier: (device: Device, keycode: number) => void
+    readonly get_modifier: (device: Device, keycode: number) => number
+    readonly grab_keyboard: (device: Device) => boolean
+    readonly ungrab_keyboard: (device: Device) => void
+    readonly get_locked_modifiers: (device: Device) => number
     static name: string
 }
 class DeviceEvent {
     /* Fields of Atspi-2.0.Atspi.DeviceEvent */
-    type: EventType
-    id: number
-    hw_code: number
-    modifiers: number
-    timestamp: number
-    event_string: string
-    is_text: boolean
+    readonly type: EventType
+    readonly id: number
+    readonly hw_code: number
+    readonly modifiers: number
+    readonly timestamp: number
+    readonly event_string: string
+    readonly is_text: boolean
     static name: string
 }
 abstract class DeviceLegacyClass {
     /* Fields of Atspi-2.0.Atspi.DeviceLegacyClass */
-    parent_class: DeviceClass
+    readonly parent_class: DeviceClass
     static name: string
 }
 abstract class DeviceListenerClass {
     /* Fields of Atspi-2.0.Atspi.DeviceListenerClass */
-    parent_class: GObject.ObjectClass
-    device_event: (listener: DeviceListener, event: DeviceEvent) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly device_event: (listener: DeviceListener, event: DeviceEvent) => boolean
     static name: string
 }
 abstract class DeviceX11Class {
     /* Fields of Atspi-2.0.Atspi.DeviceX11Class */
-    parent_class: DeviceClass
+    readonly parent_class: DeviceClass
     static name: string
 }
 class Event {
     /* Fields of Atspi-2.0.Atspi.Event */
-    type: string
-    source: Accessible
-    detail1: number
-    detail2: number
-    any_data: any
-    sender: Accessible
+    readonly type: string
+    readonly source: Accessible
+    readonly detail1: number
+    readonly detail2: number
+    readonly any_data: any
+    readonly sender: Accessible
     static name: string
     /* Static methods and pseudo-constructors */
     static main(): void
@@ -1584,94 +1537,94 @@ class Event {
 }
 abstract class EventListenerClass {
     /* Fields of Atspi-2.0.Atspi.EventListenerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class EventListenerMode {
     /* Fields of Atspi-2.0.Atspi.EventListenerMode */
-    synchronous: boolean
-    preemptive: boolean
-    global: boolean
+    readonly synchronous: boolean
+    readonly preemptive: boolean
+    readonly global: boolean
     static name: string
 }
 abstract class HyperlinkClass {
     /* Fields of Atspi-2.0.Atspi.HyperlinkClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 class KeyDefinition {
     /* Fields of Atspi-2.0.Atspi.KeyDefinition */
-    keycode: number
-    keysym: number
-    keystring: string
-    modifiers: number
+    readonly keycode: number
+    readonly keysym: number
+    readonly keystring: string
+    readonly modifiers: number
     static name: string
 }
 class KeySet {
     /* Fields of Atspi-2.0.Atspi.KeySet */
-    keysyms: number
-    keycodes: number
-    keystrings: string
-    len: number
+    readonly keysyms: number
+    readonly keycodes: number
+    readonly keystrings: string
+    readonly len: number
     static name: string
 }
 abstract class MatchRuleClass {
     /* Fields of Atspi-2.0.Atspi.MatchRuleClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ObjectClass {
     /* Fields of Atspi-2.0.Atspi.ObjectClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Point {
     /* Fields of Atspi-2.0.Atspi.Point */
-    x: number
-    y: number
+    readonly x: number
+    readonly y: number
     /* Methods of Atspi-2.0.Atspi.Point */
     copy(): Point
     static name: string
 }
 class Range {
     /* Fields of Atspi-2.0.Atspi.Range */
-    start_offset: number
-    end_offset: number
+    readonly start_offset: number
+    readonly end_offset: number
     /* Methods of Atspi-2.0.Atspi.Range */
     copy(): Range
     static name: string
 }
 class Rect {
     /* Fields of Atspi-2.0.Atspi.Rect */
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     /* Methods of Atspi-2.0.Atspi.Rect */
     copy(): Rect
     static name: string
 }
 abstract class RelationClass {
     /* Fields of Atspi-2.0.Atspi.RelationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class StateSetClass {
     /* Fields of Atspi-2.0.Atspi.StateSetClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class TextRange {
     /* Fields of Atspi-2.0.Atspi.TextRange */
-    start_offset: number
-    end_offset: number
-    content: string
+    readonly start_offset: number
+    readonly end_offset: number
+    readonly content: string
     static name: string
 }
-type ControllerEventMask = number
-type DeviceEventMask = number
-type KeyEventMask = number
-type KeyMaskType = number
-type KeystrokeListener = void
+    type ControllerEventMask = number
+    type DeviceEventMask = number
+    type KeyEventMask = number
+    type KeyMaskType = number
+    type KeystrokeListener = void
 }
 export default Atspi;

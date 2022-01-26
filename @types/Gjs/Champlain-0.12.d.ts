@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Champlain-0.12
  */
@@ -37,31 +43,31 @@ enum Unit {
     KM,
     MILES,
 }
-export const MAJOR_VERSION: number
-export const MAP_SOURCE_MEMPHIS_LOCAL: string
-export const MAP_SOURCE_MEMPHIS_NETWORK: string
-export const MAP_SOURCE_MFF_RELIEF: string
-export const MAP_SOURCE_OAM: string
-export const MAP_SOURCE_OSM_AERIAL_MAP: string
-export const MAP_SOURCE_OSM_CYCLE_MAP: string
-export const MAP_SOURCE_OSM_MAPNIK: string
-export const MAP_SOURCE_OSM_MAPQUEST: string
-export const MAP_SOURCE_OSM_OSMARENDER: string
-export const MAP_SOURCE_OSM_TRANSPORT_MAP: string
-export const MAP_SOURCE_OWM_CLOUDS: string
-export const MAP_SOURCE_OWM_PRECIPITATION: string
-export const MAP_SOURCE_OWM_PRESSURE: string
-export const MAP_SOURCE_OWM_TEMPERATURE: string
-export const MAP_SOURCE_OWM_WIND: string
-export const MAX_LATITUDE: number
-export const MAX_LONGITUDE: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const MIN_LATITUDE: number
-export const MIN_LONGITUDE: number
-export const VERSION: number
-export const VERSION_HEX: number
-export const VERSION_S: string
+const MAJOR_VERSION: number
+const MAP_SOURCE_MEMPHIS_LOCAL: string
+const MAP_SOURCE_MEMPHIS_NETWORK: string
+const MAP_SOURCE_MFF_RELIEF: string
+const MAP_SOURCE_OAM: string
+const MAP_SOURCE_OSM_AERIAL_MAP: string
+const MAP_SOURCE_OSM_CYCLE_MAP: string
+const MAP_SOURCE_OSM_MAPNIK: string
+const MAP_SOURCE_OSM_MAPQUEST: string
+const MAP_SOURCE_OSM_OSMARENDER: string
+const MAP_SOURCE_OSM_TRANSPORT_MAP: string
+const MAP_SOURCE_OWM_CLOUDS: string
+const MAP_SOURCE_OWM_PRECIPITATION: string
+const MAP_SOURCE_OWM_PRESSURE: string
+const MAP_SOURCE_OWM_TEMPERATURE: string
+const MAP_SOURCE_OWM_WIND: string
+const MAX_LATITUDE: number
+const MAX_LONGITUDE: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const MIN_LATITUDE: number
+const MIN_LONGITUDE: number
+const VERSION: number
+const VERSION_HEX: number
+const VERSION_S: string
 class Exportable {
     /* Properties of Champlain-0.12.Champlain.Exportable */
     surface: cairo.Surface
@@ -87,7 +93,8 @@ class Location {
     vfunc_set_location(latitude: number, longitude: number): void
     static name: string
 }
-export interface Adjustment_ConstructProps extends GObject.Object_ConstructProps {
+interface Adjustment_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.Adjustment */
     lower?: number
     step_increment?: number
     upper?: number
@@ -100,7 +107,7 @@ class Adjustment {
     upper: number
     value: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Adjustment */
     clamp(interpolate: boolean, n_frames: number, fps: number): boolean
     get_value(): number
@@ -168,7 +175,8 @@ class Adjustment {
     static new(value: number, lower: number, upper: number, step_increment: number): Adjustment
     static $gtype: GObject.Type
 }
-export interface Coordinate_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface Coordinate_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.Location */
     latitude?: number
     longitude?: number
 }
@@ -176,11 +184,8 @@ class Coordinate {
     /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain-0.12.Champlain.Coordinate */
-    parent: GObject.InitiallyUnowned
-    priv: CoordinatePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -239,7 +244,8 @@ class Coordinate {
     static new_full(latitude: number, longitude: number): Coordinate
     static $gtype: GObject.Type
 }
-export interface CustomMarker_ConstructProps extends Marker_ConstructProps {
+interface CustomMarker_ConstructProps extends Marker_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.Location */
     latitude?: number
     longitude?: number
 }
@@ -334,13 +340,13 @@ class CustomMarker {
     /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain-0.12.Champlain.CustomMarker */
-    parent: Marker
-    priv: CustomMarkerPrivate
+    /* Fields of Champlain-0.12.Champlain.Marker */
+    readonly parent: Clutter.Actor
+    readonly priv: MarkerPrivate
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Marker */
     animate_in(): void
     animate_in_with_delay(delay: number): void
@@ -640,6 +646,32 @@ class CustomMarker {
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
+    /* Virtual methods of Champlain-0.12.Champlain.CustomMarker */
+    vfunc_get_latitude(): number
+    vfunc_get_longitude(): number
+    vfunc_set_location(latitude: number, longitude: number): void
+    vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
+    vfunc_find_property(property_name: string): GObject.ParamSpec
+    vfunc_get_initial_state(property_name: string, value: any): void
+    vfunc_interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
+    vfunc_set_final_state(property_name: string, value: any): void
+    vfunc_actor_added(actor: Clutter.Actor): void
+    vfunc_actor_removed(actor: Clutter.Actor): void
+    vfunc_add(actor: Clutter.Actor): void
+    vfunc_child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
+    vfunc_create_child_meta(actor: Clutter.Actor): void
+    vfunc_destroy_child_meta(actor: Clutter.Actor): void
+    vfunc_foreach(callback: Clutter.Callback): void
+    vfunc_foreach_with_internals(callback: Clutter.Callback): void
+    vfunc_get_child_meta(actor: Clutter.Actor): Clutter.ChildMeta
+    vfunc_lower(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_raise(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_remove(actor: Clutter.Actor): void
+    vfunc_sort_depth_order(): void
+    vfunc_get_id(): string
+    vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
+    vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
+    vfunc_set_id(id_: string): void
     /* Virtual methods of Champlain-0.12.Champlain.Marker */
     vfunc_get_latitude(): number
     vfunc_get_longitude(): number
@@ -999,25 +1031,27 @@ class CustomMarker {
     _init (config?: CustomMarker_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): CustomMarker
+    static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface ErrorTileRenderer_ConstructProps extends Renderer_ConstructProps {
+interface ErrorTileRenderer_ConstructProps extends Renderer_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.ErrorTileRenderer */
     tile_size?: number
 }
 class ErrorTileRenderer {
     /* Properties of Champlain-0.12.Champlain.ErrorTileRenderer */
     tile_size: number
-    /* Fields of Champlain-0.12.Champlain.ErrorTileRenderer */
-    parent: Renderer
-    priv: ErrorTileRendererPrivate
+    /* Fields of Champlain-0.12.Champlain.Renderer */
+    readonly parent: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.ErrorTileRenderer */
     get_tile_size(): number
     set_tile_size(size: number): void
     /* Methods of Champlain-0.12.Champlain.Renderer */
     render(tile: Tile): void
-    set_data(data: Uint8Array[]): void
+    set_data(data: Uint8Array): void
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1042,7 +1076,7 @@ class ErrorTileRenderer {
     watch_closure(closure: Function): void
     /* Virtual methods of Champlain-0.12.Champlain.Renderer */
     vfunc_render(tile: Tile): void
-    vfunc_set_data(data: Uint8Array[]): void
+    vfunc_set_data(data: Uint8Array): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1068,7 +1102,8 @@ class ErrorTileRenderer {
     static new(tile_size: number): ErrorTileRenderer
     static $gtype: GObject.Type
 }
-export interface FileCache_ConstructProps extends TileCache_ConstructProps {
+interface FileCache_ConstructProps extends TileCache_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.FileCache */
     cache_dir?: string
     size_limit?: number
 }
@@ -1078,11 +1113,11 @@ class FileCache {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.FileCache */
-    parent_instance: TileCache
-    priv: FileCachePrivate
+    /* Fields of Champlain-0.12.Champlain.TileCache */
+    readonly parent_instance: MapSource
+    readonly priv: TileCachePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.FileCache */
     get_cache_dir(): string
     get_size_limit(): number
@@ -1179,7 +1214,7 @@ class FileCache {
     static new_full(size_limit: number, cache_dir: string | null, renderer: Renderer): FileCache
     static $gtype: GObject.Type
 }
-export interface FileTileSource_ConstructProps extends TileSource_ConstructProps {
+interface FileTileSource_ConstructProps extends TileSource_ConstructProps {
 }
 class FileTileSource {
     /* Properties of Champlain-0.12.Champlain.TileSource */
@@ -1195,13 +1230,11 @@ class FileTileSource {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.FileTileSource */
-    parent: TileSource
     /* Fields of Champlain-0.12.Champlain.TileSource */
-    parent_instance: MapSource
-    priv: TileSourcePrivate
+    readonly parent_instance: MapSource
+    readonly priv: TileSourcePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.FileTileSource */
     load_map_data(map_path: string): void
     /* Methods of Champlain-0.12.Champlain.TileSource */
@@ -1313,17 +1346,16 @@ class FileTileSource {
     static new_full(id: string, name: string, license: string, license_uri: string, min_zoom: number, max_zoom: number, tile_size: number, projection: MapProjection, renderer: Renderer): FileTileSource
     static $gtype: GObject.Type
 }
-export interface ImageRenderer_ConstructProps extends Renderer_ConstructProps {
+interface ImageRenderer_ConstructProps extends Renderer_ConstructProps {
 }
 class ImageRenderer {
-    /* Fields of Champlain-0.12.Champlain.ImageRenderer */
-    parent: Renderer
-    priv: ImageRendererPrivate
+    /* Fields of Champlain-0.12.Champlain.Renderer */
+    readonly parent: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Renderer */
     render(tile: Tile): void
-    set_data(data: Uint8Array[]): void
+    set_data(data: Uint8Array): void
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1348,7 +1380,7 @@ class ImageRenderer {
     watch_closure(closure: Function): void
     /* Virtual methods of Champlain-0.12.Champlain.Renderer */
     vfunc_render(tile: Tile): void
-    vfunc_set_data(data: Uint8Array[]): void
+    vfunc_set_data(data: Uint8Array): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1372,7 +1404,8 @@ class ImageRenderer {
     static new(): ImageRenderer
     static $gtype: GObject.Type
 }
-export interface KineticScrollView_ConstructProps extends Clutter.Actor_ConstructProps {
+interface KineticScrollView_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.KineticScrollView */
     decel_rate?: number
     mode?: boolean
     motion_buffer?: number
@@ -1466,9 +1499,9 @@ class KineticScrollView {
     y_expand: boolean
     z_position: number
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.KineticScrollView */
     stop(): void
     /* Methods of Clutter-1.0.Clutter.Actor */
@@ -2098,12 +2131,14 @@ class KineticScrollView {
     _init (config?: KineticScrollView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(kinetic: boolean, viewport: Viewport): KineticScrollView
+    /* Function overloads */
     static new(): KineticScrollView
     static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface Label_ConstructProps extends Marker_ConstructProps {
+interface Label_ConstructProps extends Marker_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.Label */
     alignment?: Pango.Alignment
     color?: Clutter.Color
     draw_background?: boolean
@@ -2117,6 +2152,7 @@ export interface Label_ConstructProps extends Marker_ConstructProps {
     use_markup?: boolean
     wrap?: boolean
     wrap_mode?: Pango.WrapMode
+    /* Constructor properties of Champlain-0.12.Champlain.Location */
     latitude?: number
     longitude?: number
 }
@@ -2225,13 +2261,13 @@ class Label {
     /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain-0.12.Champlain.Label */
-    parent: Marker
-    priv: LabelPrivate
+    /* Fields of Champlain-0.12.Champlain.Marker */
+    readonly parent: Clutter.Actor
+    readonly priv: MarkerPrivate
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Label */
     get_alignment(): Pango.Alignment
     get_attributes(): Pango.AttrList
@@ -2560,6 +2596,32 @@ class Label {
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
+    /* Virtual methods of Champlain-0.12.Champlain.Label */
+    vfunc_get_latitude(): number
+    vfunc_get_longitude(): number
+    vfunc_set_location(latitude: number, longitude: number): void
+    vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
+    vfunc_find_property(property_name: string): GObject.ParamSpec
+    vfunc_get_initial_state(property_name: string, value: any): void
+    vfunc_interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
+    vfunc_set_final_state(property_name: string, value: any): void
+    vfunc_actor_added(actor: Clutter.Actor): void
+    vfunc_actor_removed(actor: Clutter.Actor): void
+    vfunc_add(actor: Clutter.Actor): void
+    vfunc_child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
+    vfunc_create_child_meta(actor: Clutter.Actor): void
+    vfunc_destroy_child_meta(actor: Clutter.Actor): void
+    vfunc_foreach(callback: Clutter.Callback): void
+    vfunc_foreach_with_internals(callback: Clutter.Callback): void
+    vfunc_get_child_meta(actor: Clutter.Actor): Clutter.ChildMeta
+    vfunc_lower(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_raise(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_remove(actor: Clutter.Actor): void
+    vfunc_sort_depth_order(): void
+    vfunc_get_id(): string
+    vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
+    vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
+    vfunc_set_id(id_: string): void
     /* Virtual methods of Champlain-0.12.Champlain.Marker */
     vfunc_get_latitude(): number
     vfunc_get_longitude(): number
@@ -2949,9 +3011,11 @@ class Label {
     static new_full(text: string, actor: Clutter.Actor): Label
     static new_with_image(actor: Clutter.Actor): Label
     static new_with_text(text: string, font?: string | null, text_color?: Clutter.Color | null, label_color?: Clutter.Color | null): Label
+    static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface Layer_ConstructProps extends Clutter.Actor_ConstructProps {
+interface Layer_ConstructProps extends Clutter.Actor_ConstructProps {
 }
 class Layer {
     /* Properties of Clutter-1.0.Clutter.Actor */
@@ -3037,12 +3101,10 @@ class Layer {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain-0.12.Champlain.Layer */
-    parent: Clutter.Actor
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Layer */
     get_bounding_box(): BoundingBox
     set_view(view?: View | null): void
@@ -3668,7 +3730,8 @@ class Layer {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface License_ConstructProps extends Clutter.Actor_ConstructProps {
+interface License_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.License */
     alignment?: Pango.Alignment
     extra_text?: string
 }
@@ -3759,13 +3822,10 @@ class License {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain-0.12.Champlain.License */
-    parent: Clutter.Actor
-    priv: LicensePrivate
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.License */
     connect_view(view: View): void
     disconnect_view(): void
@@ -4398,7 +4458,8 @@ class License {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface MapSource_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface MapSource_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.MapSource */
     next_source?: MapSource
     renderer?: Renderer
 }
@@ -4406,11 +4467,8 @@ class MapSource {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.MapSource */
-    parent_instance: GObject.InitiallyUnowned
-    priv: MapSourcePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.MapSource */
     fill_tile(tile: Tile): void
     get_column_count(zoom_level: number): number
@@ -4489,17 +4547,17 @@ class MapSource {
     _init (config?: MapSource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MapSourceChain_ConstructProps extends MapSource_ConstructProps {
+interface MapSourceChain_ConstructProps extends MapSource_ConstructProps {
 }
 class MapSourceChain {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.MapSourceChain */
-    parent_instance: MapSource
-    priv: MapSourceChainPrivate
+    /* Fields of Champlain-0.12.Champlain.MapSource */
+    readonly parent_instance: GObject.InitiallyUnowned
+    readonly priv: MapSourcePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.MapSourceChain */
     pop(): void
     push(map_source: MapSource): void
@@ -4583,8 +4641,9 @@ class MapSourceChain {
     static new(): MapSourceChain
     static $gtype: GObject.Type
 }
-export interface MapSourceDesc_ConstructProps extends GObject.Object_ConstructProps {
-    constructor?: object
+interface MapSourceDesc_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.MapSourceDesc */
+    "constructor"?: object
     data?: object
     id?: string
     license?: string
@@ -4597,11 +4656,8 @@ export interface MapSourceDesc_ConstructProps extends GObject.Object_ConstructPr
     uri_format?: string
 }
 class MapSourceDesc {
-    /* Fields of Champlain-0.12.Champlain.MapSourceDesc */
-    parent_instance: GObject.Object
-    priv: MapSourceDescPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.MapSourceDesc */
     get_data(): object | null
     get_id(): string
@@ -4656,14 +4712,11 @@ class MapSourceDesc {
     _init (config?: MapSourceDesc_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MapSourceFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface MapSourceFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MapSourceFactory {
-    /* Fields of Champlain-0.12.Champlain.MapSourceFactory */
-    parent: GObject.Object
-    priv: MapSourceFactoryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.MapSourceFactory */
     create(id: string): MapSource
     create_cached_source(id: string): MapSource
@@ -4716,10 +4769,12 @@ class MapSourceFactory {
     static dup_default(): MapSourceFactory
     static $gtype: GObject.Type
 }
-export interface Marker_ConstructProps extends Clutter.Actor_ConstructProps {
+interface Marker_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.Marker */
     draggable?: boolean
     selectable?: boolean
     selected?: boolean
+    /* Constructor properties of Champlain-0.12.Champlain.Location */
     latitude?: number
     longitude?: number
 }
@@ -4814,13 +4869,10 @@ class Marker {
     /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain-0.12.Champlain.Marker */
-    parent: Clutter.Actor
-    priv: MarkerPrivate
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Marker */
     animate_in(): void
     animate_in_with_delay(delay: number): void
@@ -5487,8 +5539,10 @@ class Marker {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface MarkerLayer_ConstructProps extends Layer_ConstructProps {
+interface MarkerLayer_ConstructProps extends Layer_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.MarkerLayer */
     selection_mode?: SelectionMode
+    /* Constructor properties of Champlain-0.12.Champlain.Exportable */
     surface?: cairo.Surface
 }
 class MarkerLayer {
@@ -5579,13 +5633,12 @@ class MarkerLayer {
     z_position: number
     /* Properties of Champlain-0.12.Champlain.Exportable */
     surface: cairo.Surface
-    /* Fields of Champlain-0.12.Champlain.MarkerLayer */
-    parent: Layer
-    priv: MarkerLayerPrivate
+    /* Fields of Champlain-0.12.Champlain.Layer */
+    readonly parent: Clutter.Actor
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.MarkerLayer */
     add_marker(marker: Marker): void
     animate_in_all_markers(): void
@@ -5895,6 +5948,28 @@ class MarkerLayer {
     /* Virtual methods of Champlain-0.12.Champlain.MarkerLayer */
     vfunc_get_surface(): cairo.Surface
     vfunc_set_surface(surface: cairo.Surface): void
+    vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
+    vfunc_find_property(property_name: string): GObject.ParamSpec
+    vfunc_get_initial_state(property_name: string, value: any): void
+    vfunc_interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
+    vfunc_set_final_state(property_name: string, value: any): void
+    vfunc_actor_added(actor: Clutter.Actor): void
+    vfunc_actor_removed(actor: Clutter.Actor): void
+    vfunc_add(actor: Clutter.Actor): void
+    vfunc_child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
+    vfunc_create_child_meta(actor: Clutter.Actor): void
+    vfunc_destroy_child_meta(actor: Clutter.Actor): void
+    vfunc_foreach(callback: Clutter.Callback): void
+    vfunc_foreach_with_internals(callback: Clutter.Callback): void
+    vfunc_get_child_meta(actor: Clutter.Actor): Clutter.ChildMeta
+    vfunc_lower(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_raise(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_remove(actor: Clutter.Actor): void
+    vfunc_sort_depth_order(): void
+    vfunc_get_id(): string
+    vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
+    vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
+    vfunc_set_id(id_: string): void
     /* Virtual methods of Champlain-0.12.Champlain.Layer */
     vfunc_get_bounding_box(): BoundingBox
     vfunc_set_view(view?: View | null): void
@@ -6234,10 +6309,15 @@ class MarkerLayer {
     _init (config?: MarkerLayer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): MarkerLayer
+    /* Function overloads */
+    static new(): MarkerLayer
     static new_full(mode: SelectionMode): MarkerLayer
+    static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface MemoryCache_ConstructProps extends TileCache_ConstructProps {
+interface MemoryCache_ConstructProps extends TileCache_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.MemoryCache */
     size_limit?: number
 }
 class MemoryCache {
@@ -6246,11 +6326,11 @@ class MemoryCache {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.MemoryCache */
-    parent_instance: TileCache
-    priv: MemoryCachePrivate
+    /* Fields of Champlain-0.12.Champlain.TileCache */
+    readonly parent_instance: MapSource
+    readonly priv: TileCachePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.MemoryCache */
     clean(): void
     get_size_limit(): number
@@ -6345,7 +6425,8 @@ class MemoryCache {
     static new_full(size_limit: number, renderer: Renderer): MemoryCache
     static $gtype: GObject.Type
 }
-export interface NetworkBboxTileSource_ConstructProps extends TileSource_ConstructProps {
+interface NetworkBboxTileSource_ConstructProps extends TileSource_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.NetworkBboxTileSource */
     api_uri?: string
     proxy_uri?: string
     state?: State
@@ -6370,13 +6451,11 @@ class NetworkBboxTileSource {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.NetworkBboxTileSource */
-    parent: TileSource
-    priv: NetworkBboxTileSourcePrivate
     /* Fields of Champlain-0.12.Champlain.TileSource */
-    parent_instance: MapSource
+    readonly parent_instance: MapSource
+    readonly priv: TileSourcePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.NetworkBboxTileSource */
     get_api_uri(): string
     load_map_data(bbox: BoundingBox): void
@@ -6499,7 +6578,8 @@ class NetworkBboxTileSource {
     static new_full(id: string, name: string, license: string, license_uri: string, min_zoom: number, max_zoom: number, tile_size: number, projection: MapProjection, renderer: Renderer): NetworkBboxTileSource
     static $gtype: GObject.Type
 }
-export interface NetworkTileSource_ConstructProps extends TileSource_ConstructProps {
+interface NetworkTileSource_ConstructProps extends TileSource_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.NetworkTileSource */
     max_conns?: number
     offline?: boolean
     proxy_uri?: string
@@ -6526,11 +6606,11 @@ class NetworkTileSource {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.NetworkTileSource */
-    parent_instance: TileSource
-    priv: NetworkTileSourcePrivate
+    /* Fields of Champlain-0.12.Champlain.TileSource */
+    readonly parent_instance: MapSource
+    readonly priv: TileSourcePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.NetworkTileSource */
     get_max_conns(): number
     get_offline(): boolean
@@ -6660,7 +6740,7 @@ class NetworkTileSource {
     static new_full(id: string, name: string, license: string, license_uri: string, min_zoom: number, max_zoom: number, tile_size: number, projection: MapProjection, uri_format: string, renderer: Renderer): NetworkTileSource
     static $gtype: GObject.Type
 }
-export interface NullTileSource_ConstructProps extends TileSource_ConstructProps {
+interface NullTileSource_ConstructProps extends TileSource_ConstructProps {
 }
 class NullTileSource {
     /* Properties of Champlain-0.12.Champlain.TileSource */
@@ -6676,13 +6756,11 @@ class NullTileSource {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.NullTileSource */
-    parent: TileSource
     /* Fields of Champlain-0.12.Champlain.TileSource */
-    parent_instance: MapSource
-    priv: TileSourcePrivate
+    readonly parent_instance: MapSource
+    readonly priv: TileSourcePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.TileSource */
     get_cache(): TileCache
     set_cache(cache: TileCache): void
@@ -6792,7 +6870,8 @@ class NullTileSource {
     static new_full(renderer: Renderer): NullTileSource
     static $gtype: GObject.Type
 }
-export interface PathLayer_ConstructProps extends Layer_ConstructProps {
+interface PathLayer_ConstructProps extends Layer_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.PathLayer */
     closed?: boolean
     fill?: boolean
     fill_color?: Clutter.Color
@@ -6800,6 +6879,7 @@ export interface PathLayer_ConstructProps extends Layer_ConstructProps {
     stroke_color?: Clutter.Color
     stroke_width?: number
     visible?: boolean
+    /* Constructor properties of Champlain-0.12.Champlain.Exportable */
     surface?: cairo.Surface
 }
 class PathLayer {
@@ -6895,13 +6975,12 @@ class PathLayer {
     z_position: number
     /* Properties of Champlain-0.12.Champlain.Exportable */
     surface: cairo.Surface
-    /* Fields of Champlain-0.12.Champlain.PathLayer */
-    parent: Layer
-    priv: PathLayerPrivate
+    /* Fields of Champlain-0.12.Champlain.Layer */
+    readonly parent: Clutter.Actor
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.PathLayer */
     add_node(location: Location): void
     get_closed(): boolean
@@ -7217,6 +7296,28 @@ class PathLayer {
     /* Virtual methods of Champlain-0.12.Champlain.PathLayer */
     vfunc_get_surface(): cairo.Surface
     vfunc_set_surface(surface: cairo.Surface): void
+    vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
+    vfunc_find_property(property_name: string): GObject.ParamSpec
+    vfunc_get_initial_state(property_name: string, value: any): void
+    vfunc_interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
+    vfunc_set_final_state(property_name: string, value: any): void
+    vfunc_actor_added(actor: Clutter.Actor): void
+    vfunc_actor_removed(actor: Clutter.Actor): void
+    vfunc_add(actor: Clutter.Actor): void
+    vfunc_child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
+    vfunc_create_child_meta(actor: Clutter.Actor): void
+    vfunc_destroy_child_meta(actor: Clutter.Actor): void
+    vfunc_foreach(callback: Clutter.Callback): void
+    vfunc_foreach_with_internals(callback: Clutter.Callback): void
+    vfunc_get_child_meta(actor: Clutter.Actor): Clutter.ChildMeta
+    vfunc_lower(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_raise(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_remove(actor: Clutter.Actor): void
+    vfunc_sort_depth_order(): void
+    vfunc_get_id(): string
+    vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
+    vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
+    vfunc_set_id(id_: string): void
     /* Virtual methods of Champlain-0.12.Champlain.Layer */
     vfunc_get_bounding_box(): BoundingBox
     vfunc_set_view(view?: View | null): void
@@ -7566,12 +7667,19 @@ class PathLayer {
     _init (config?: PathLayer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PathLayer
+    /* Function overloads */
+    static new(): PathLayer
+    static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface Point_ConstructProps extends Marker_ConstructProps {
+interface Point_ConstructProps extends Marker_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.Point */
     color?: Clutter.Color
-    size?: number
+    size?: number & Clutter.Size /* Patched */
+    /* Constructor properties of Champlain-0.12.Champlain.Exportable */
     surface?: cairo.Surface
+    /* Constructor properties of Champlain-0.12.Champlain.Location */
     latitude?: number
     longitude?: number
 }
@@ -7670,13 +7778,13 @@ class Point {
     /* Properties of Champlain-0.12.Champlain.Location */
     latitude: number
     longitude: number
-    /* Fields of Champlain-0.12.Champlain.Point */
-    parent: Marker
-    priv: PointPrivate
+    /* Fields of Champlain-0.12.Champlain.Marker */
+    readonly parent: Clutter.Actor
+    readonly priv: MarkerPrivate
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Point */
     get_color(): Clutter.Color
     get_size(): number
@@ -7987,6 +8095,31 @@ class Point {
     /* Virtual methods of Champlain-0.12.Champlain.Point */
     vfunc_get_surface(): cairo.Surface
     vfunc_set_surface(surface: cairo.Surface): void
+    vfunc_get_latitude(): number
+    vfunc_get_longitude(): number
+    vfunc_set_location(latitude: number, longitude: number): void
+    vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
+    vfunc_find_property(property_name: string): GObject.ParamSpec
+    vfunc_get_initial_state(property_name: string, value: any): void
+    vfunc_interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
+    vfunc_set_final_state(property_name: string, value: any): void
+    vfunc_actor_added(actor: Clutter.Actor): void
+    vfunc_actor_removed(actor: Clutter.Actor): void
+    vfunc_add(actor: Clutter.Actor): void
+    vfunc_child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
+    vfunc_create_child_meta(actor: Clutter.Actor): void
+    vfunc_destroy_child_meta(actor: Clutter.Actor): void
+    vfunc_foreach(callback: Clutter.Callback): void
+    vfunc_foreach_with_internals(callback: Clutter.Callback): void
+    vfunc_get_child_meta(actor: Clutter.Actor): Clutter.ChildMeta
+    vfunc_lower(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_raise(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_remove(actor: Clutter.Actor): void
+    vfunc_sort_depth_order(): void
+    vfunc_get_id(): string
+    vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
+    vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
+    vfunc_set_id(id_: string): void
     /* Virtual methods of Champlain-0.12.Champlain.Marker */
     vfunc_get_latitude(): number
     vfunc_get_longitude(): number
@@ -8351,18 +8484,18 @@ class Point {
     /* Static methods and pseudo-constructors */
     static new(): Point
     static new_full(size: number, color: Clutter.Color): Point
+    static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface Renderer_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface Renderer_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
 class Renderer {
-    /* Fields of Champlain-0.12.Champlain.Renderer */
-    parent: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Renderer */
     render(tile: Tile): void
-    set_data(data: Uint8Array[]): void
+    set_data(data: Uint8Array): void
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -8387,7 +8520,7 @@ class Renderer {
     watch_closure(closure: Function): void
     /* Virtual methods of Champlain-0.12.Champlain.Renderer */
     vfunc_render(tile: Tile): void
-    vfunc_set_data(data: Uint8Array[]): void
+    vfunc_set_data(data: Uint8Array): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -8409,7 +8542,8 @@ class Renderer {
     _init (config?: Renderer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Scale_ConstructProps extends Clutter.Actor_ConstructProps {
+interface Scale_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.Scale */
     max_width?: number
     unit?: Unit
 }
@@ -8500,13 +8634,10 @@ class Scale {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain-0.12.Champlain.Scale */
-    parent: Clutter.Actor
-    priv: ScalePrivate
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Scale */
     connect_view(view: View): void
     disconnect_view(): void
@@ -9139,15 +9270,17 @@ class Scale {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface Tile_ConstructProps extends Clutter.Actor_ConstructProps {
-    content?: Clutter.Actor
+interface Tile_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.Tile */
+    content?: Clutter.Actor & Clutter.Content /* Patched */
     etag?: string
     fade_in?: boolean
-    size?: number
+    size?: number & Clutter.Size /* Patched */
     state?: State
     x?: number
     y?: number
     zoom_level?: number
+    /* Constructor properties of Champlain-0.12.Champlain.Exportable */
     surface?: cairo.Surface
 }
 class Tile {
@@ -9241,13 +9374,10 @@ class Tile {
     z_position: number
     /* Properties of Champlain-0.12.Champlain.Exportable */
     surface: cairo.Surface
-    /* Fields of Champlain-0.12.Champlain.Tile */
-    parent: Clutter.Actor
-    priv: TilePrivate
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Tile */
     display_content(): void
     get_content(): Clutter.Actor
@@ -9486,8 +9616,10 @@ class Tile {
     set_transform(transform?: Clutter.Matrix | null): void
     set_translation(translate_x: number, translate_y: number, translate_z: number): void
     set_width(width: number): void
+    set_x(x: number): void
     set_x_align(x_align: Clutter.ActorAlign): void
     set_x_expand(expand: boolean): void
+    set_y(y: number): void
     set_y_align(y_align: Clutter.ActorAlign): void
     set_y_expand(expand: boolean): void
     set_z_position(z_position: number): void
@@ -9900,22 +10032,24 @@ class Tile {
     _init (config?: Tile_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Tile
+    /* Function overloads */
+    static new(): Tile
     static new_full(x: number, y: number, size: number, zoom_level: number): Tile
     static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface TileCache_ConstructProps extends MapSource_ConstructProps {
+interface TileCache_ConstructProps extends MapSource_ConstructProps {
 }
 class TileCache {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.TileCache */
-    parent_instance: MapSource
-    priv: TileCachePrivate
+    /* Fields of Champlain-0.12.Champlain.MapSource */
+    readonly parent_instance: GObject.InitiallyUnowned
+    readonly priv: MapSourcePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.TileCache */
     on_tile_filled(tile: Tile): void
     refresh_tile_time(tile: Tile): void
@@ -10002,7 +10136,8 @@ class TileCache {
     _init (config?: TileCache_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TileSource_ConstructProps extends MapSource_ConstructProps {
+interface TileSource_ConstructProps extends MapSource_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.TileSource */
     cache?: TileCache
     id?: string
     license?: string
@@ -10027,11 +10162,11 @@ class TileSource {
     /* Properties of Champlain-0.12.Champlain.MapSource */
     next_source: MapSource
     renderer: Renderer
-    /* Fields of Champlain-0.12.Champlain.TileSource */
-    parent_instance: MapSource
-    priv: TileSourcePrivate
+    /* Fields of Champlain-0.12.Champlain.MapSource */
+    readonly parent_instance: GObject.InitiallyUnowned
+    readonly priv: MapSourcePrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.TileSource */
     get_cache(): TileCache
     set_cache(cache: TileCache): void
@@ -10139,7 +10274,8 @@ class TileSource {
     _init (config?: TileSource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface View_ConstructProps extends Clutter.Actor_ConstructProps {
+interface View_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.View */
     animate_zoom?: boolean
     background_pattern?: Clutter.Actor
     deceleration?: number
@@ -10259,13 +10395,10 @@ class View {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain-0.12.Champlain.View */
-    parent: Clutter.Actor
-    priv: ViewPrivate
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.View */
     add_layer(layer: Layer): void
     add_overlay_source(map_source: MapSource, opacity: number): void
@@ -10980,7 +11113,8 @@ class View {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface Viewport_ConstructProps extends Clutter.Actor_ConstructProps {
+interface Viewport_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of Champlain-0.12.Champlain.Viewport */
     hadjustment?: Adjustment
     vadjustment?: Adjustment
     x_origin?: number
@@ -11075,13 +11209,10 @@ class Viewport {
     y_align: Clutter.ActorAlign
     y_expand: boolean
     z_position: number
-    /* Fields of Champlain-0.12.Champlain.Viewport */
-    parent: Clutter.Actor
-    priv: ViewportPrivate
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Champlain-0.12.Champlain.Viewport */
     get_adjustments(hadjustment: Adjustment, vadjustment: Adjustment): void
     get_anchor(x: number, y: number): void
@@ -11726,7 +11857,7 @@ class Viewport {
 }
 abstract class AdjustmentClass {
     /* Fields of Champlain-0.12.Champlain.AdjustmentClass */
-    changed: (adjustment: Adjustment) => void
+    readonly changed: (adjustment: Adjustment) => void
     static name: string
 }
 class AdjustmentPrivate {
@@ -11734,10 +11865,10 @@ class AdjustmentPrivate {
 }
 class BoundingBox {
     /* Fields of Champlain-0.12.Champlain.BoundingBox */
-    left: number
-    top: number
-    right: number
-    bottom: number
+    readonly left: number
+    readonly top: number
+    readonly right: number
+    readonly bottom: number
     /* Methods of Champlain-0.12.Champlain.BoundingBox */
     compose(other: BoundingBox): void
     copy(): BoundingBox
@@ -11754,7 +11885,7 @@ class BoundingBox {
 }
 abstract class CoordinateClass {
     /* Fields of Champlain-0.12.Champlain.CoordinateClass */
-    parent_class: GObject.InitiallyUnownedClass
+    readonly parent_class: GObject.InitiallyUnownedClass
     static name: string
 }
 class CoordinatePrivate {
@@ -11762,7 +11893,7 @@ class CoordinatePrivate {
 }
 abstract class CustomMarkerClass {
     /* Fields of Champlain-0.12.Champlain.CustomMarkerClass */
-    parent_class: MarkerClass
+    readonly parent_class: MarkerClass
     static name: string
 }
 class CustomMarkerPrivate {
@@ -11770,7 +11901,7 @@ class CustomMarkerPrivate {
 }
 abstract class ErrorTileRendererClass {
     /* Fields of Champlain-0.12.Champlain.ErrorTileRendererClass */
-    parent_class: RendererClass
+    readonly parent_class: RendererClass
     static name: string
 }
 class ErrorTileRendererPrivate {
@@ -11778,13 +11909,13 @@ class ErrorTileRendererPrivate {
 }
 abstract class ExportableIface {
     /* Fields of Champlain-0.12.Champlain.ExportableIface */
-    get_surface: (exportable: Exportable) => cairo.Surface
-    set_surface: (exportable: Exportable, surface: cairo.Surface) => void
+    readonly get_surface: (exportable: Exportable) => cairo.Surface
+    readonly set_surface: (exportable: Exportable, surface: cairo.Surface) => void
     static name: string
 }
 abstract class FileCacheClass {
     /* Fields of Champlain-0.12.Champlain.FileCacheClass */
-    parent_class: TileCacheClass
+    readonly parent_class: TileCacheClass
     static name: string
 }
 class FileCachePrivate {
@@ -11792,7 +11923,7 @@ class FileCachePrivate {
 }
 abstract class FileTileSourceClass {
     /* Fields of Champlain-0.12.Champlain.FileTileSourceClass */
-    parent_class: TileSourceClass
+    readonly parent_class: TileSourceClass
     static name: string
 }
 class FileTileSourcePrivate {
@@ -11800,7 +11931,7 @@ class FileTileSourcePrivate {
 }
 abstract class ImageRendererClass {
     /* Fields of Champlain-0.12.Champlain.ImageRendererClass */
-    parent_class: RendererClass
+    readonly parent_class: RendererClass
     static name: string
 }
 class ImageRendererPrivate {
@@ -11808,7 +11939,7 @@ class ImageRendererPrivate {
 }
 abstract class KineticScrollViewClass {
     /* Fields of Champlain-0.12.Champlain.KineticScrollViewClass */
-    parent_class: Clutter.ActorClass
+    readonly parent_class: Clutter.ActorClass
     static name: string
 }
 class KineticScrollViewPrivate {
@@ -11816,7 +11947,7 @@ class KineticScrollViewPrivate {
 }
 abstract class LabelClass {
     /* Fields of Champlain-0.12.Champlain.LabelClass */
-    parent_class: MarkerClass
+    readonly parent_class: MarkerClass
     static name: string
 }
 class LabelPrivate {
@@ -11824,14 +11955,14 @@ class LabelPrivate {
 }
 abstract class LayerClass {
     /* Fields of Champlain-0.12.Champlain.LayerClass */
-    parent_class: Clutter.ActorClass
-    set_view: (layer: Layer, view?: View | null) => void
-    get_bounding_box: (layer: Layer) => BoundingBox
+    readonly parent_class: Clutter.ActorClass
+    readonly set_view: (layer: Layer, view?: View | null) => void
+    readonly get_bounding_box: (layer: Layer) => BoundingBox
     static name: string
 }
 abstract class LicenseClass {
     /* Fields of Champlain-0.12.Champlain.LicenseClass */
-    parent_class: Clutter.ActorClass
+    readonly parent_class: Clutter.ActorClass
     static name: string
 }
 class LicensePrivate {
@@ -11839,14 +11970,14 @@ class LicensePrivate {
 }
 abstract class LocationIface {
     /* Fields of Champlain-0.12.Champlain.LocationIface */
-    get_latitude: (location: Location) => number
-    get_longitude: (location: Location) => number
-    set_location: (location: Location, latitude: number, longitude: number) => void
+    readonly get_latitude: (location: Location) => number
+    readonly get_longitude: (location: Location) => number
+    readonly set_location: (location: Location, latitude: number, longitude: number) => void
     static name: string
 }
 abstract class MapSourceChainClass {
     /* Fields of Champlain-0.12.Champlain.MapSourceChainClass */
-    parent_class: MapSourceClass
+    readonly parent_class: MapSourceClass
     static name: string
 }
 class MapSourceChainPrivate {
@@ -11854,21 +11985,21 @@ class MapSourceChainPrivate {
 }
 abstract class MapSourceClass {
     /* Fields of Champlain-0.12.Champlain.MapSourceClass */
-    parent_class: GObject.InitiallyUnownedClass
-    get_id: (map_source: MapSource) => string
-    get_name: (map_source: MapSource) => string
-    get_license: (map_source: MapSource) => string
-    get_license_uri: (map_source: MapSource) => string
-    get_min_zoom_level: (map_source: MapSource) => number
-    get_max_zoom_level: (map_source: MapSource) => number
-    get_tile_size: (map_source: MapSource) => number
-    get_projection: (map_source: MapSource) => MapProjection
-    fill_tile: (map_source: MapSource, tile: Tile) => void
+    readonly parent_class: GObject.InitiallyUnownedClass
+    readonly get_id: (map_source: MapSource) => string
+    readonly get_name: (map_source: MapSource) => string
+    readonly get_license: (map_source: MapSource) => string
+    readonly get_license_uri: (map_source: MapSource) => string
+    readonly get_min_zoom_level: (map_source: MapSource) => number
+    readonly get_max_zoom_level: (map_source: MapSource) => number
+    readonly get_tile_size: (map_source: MapSource) => number
+    readonly get_projection: (map_source: MapSource) => MapProjection
+    readonly fill_tile: (map_source: MapSource, tile: Tile) => void
     static name: string
 }
 abstract class MapSourceDescClass {
     /* Fields of Champlain-0.12.Champlain.MapSourceDescClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MapSourceDescPrivate {
@@ -11876,7 +12007,7 @@ class MapSourceDescPrivate {
 }
 abstract class MapSourceFactoryClass {
     /* Fields of Champlain-0.12.Champlain.MapSourceFactoryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MapSourceFactoryPrivate {
@@ -11887,12 +12018,12 @@ class MapSourcePrivate {
 }
 abstract class MarkerClass {
     /* Fields of Champlain-0.12.Champlain.MarkerClass */
-    parent_class: Clutter.ActorClass
+    readonly parent_class: Clutter.ActorClass
     static name: string
 }
 abstract class MarkerLayerClass {
     /* Fields of Champlain-0.12.Champlain.MarkerLayerClass */
-    parent_class: LayerClass
+    readonly parent_class: LayerClass
     static name: string
 }
 class MarkerLayerPrivate {
@@ -11903,7 +12034,7 @@ class MarkerPrivate {
 }
 abstract class MemoryCacheClass {
     /* Fields of Champlain-0.12.Champlain.MemoryCacheClass */
-    parent_class: TileCacheClass
+    readonly parent_class: TileCacheClass
     static name: string
 }
 class MemoryCachePrivate {
@@ -11911,7 +12042,7 @@ class MemoryCachePrivate {
 }
 abstract class NetworkBboxTileSourceClass {
     /* Fields of Champlain-0.12.Champlain.NetworkBboxTileSourceClass */
-    parent_class: TileSourceClass
+    readonly parent_class: TileSourceClass
     static name: string
 }
 class NetworkBboxTileSourcePrivate {
@@ -11919,7 +12050,7 @@ class NetworkBboxTileSourcePrivate {
 }
 abstract class NetworkTileSourceClass {
     /* Fields of Champlain-0.12.Champlain.NetworkTileSourceClass */
-    parent_class: TileSourceClass
+    readonly parent_class: TileSourceClass
     static name: string
 }
 class NetworkTileSourcePrivate {
@@ -11927,7 +12058,7 @@ class NetworkTileSourcePrivate {
 }
 abstract class NullTileSourceClass {
     /* Fields of Champlain-0.12.Champlain.NullTileSourceClass */
-    parent_class: TileSourceClass
+    readonly parent_class: TileSourceClass
     static name: string
 }
 class NullTileSourcePrivate {
@@ -11935,7 +12066,7 @@ class NullTileSourcePrivate {
 }
 abstract class PathLayerClass {
     /* Fields of Champlain-0.12.Champlain.PathLayerClass */
-    parent_class: LayerClass
+    readonly parent_class: LayerClass
     static name: string
 }
 class PathLayerPrivate {
@@ -11943,7 +12074,7 @@ class PathLayerPrivate {
 }
 abstract class PointClass {
     /* Fields of Champlain-0.12.Champlain.PointClass */
-    parent_class: MarkerClass
+    readonly parent_class: MarkerClass
     static name: string
 }
 class PointPrivate {
@@ -11951,14 +12082,14 @@ class PointPrivate {
 }
 abstract class RendererClass {
     /* Fields of Champlain-0.12.Champlain.RendererClass */
-    parent_class: GObject.InitiallyUnownedClass
-    set_data: (renderer: Renderer, data: Uint8Array[]) => void
-    render: (renderer: Renderer, tile: Tile) => void
+    readonly parent_class: GObject.InitiallyUnownedClass
+    readonly set_data: (renderer: Renderer, data: Uint8Array) => void
+    readonly render: (renderer: Renderer, tile: Tile) => void
     static name: string
 }
 abstract class ScaleClass {
     /* Fields of Champlain-0.12.Champlain.ScaleClass */
-    parent_class: Clutter.ActorClass
+    readonly parent_class: Clutter.ActorClass
     static name: string
 }
 class ScalePrivate {
@@ -11966,10 +12097,10 @@ class ScalePrivate {
 }
 abstract class TileCacheClass {
     /* Fields of Champlain-0.12.Champlain.TileCacheClass */
-    parent_class: MapSourceClass
-    store_tile: (tile_cache: TileCache, tile: Tile, contents: string, size: number) => void
-    refresh_tile_time: (tile_cache: TileCache, tile: Tile) => void
-    on_tile_filled: (tile_cache: TileCache, tile: Tile) => void
+    readonly parent_class: MapSourceClass
+    readonly store_tile: (tile_cache: TileCache, tile: Tile, contents: string, size: number) => void
+    readonly refresh_tile_time: (tile_cache: TileCache, tile: Tile) => void
+    readonly on_tile_filled: (tile_cache: TileCache, tile: Tile) => void
     static name: string
 }
 class TileCachePrivate {
@@ -11977,7 +12108,7 @@ class TileCachePrivate {
 }
 abstract class TileClass {
     /* Fields of Champlain-0.12.Champlain.TileClass */
-    parent_class: Clutter.ActorClass
+    readonly parent_class: Clutter.ActorClass
     static name: string
 }
 class TilePrivate {
@@ -11985,7 +12116,7 @@ class TilePrivate {
 }
 abstract class TileSourceClass {
     /* Fields of Champlain-0.12.Champlain.TileSourceClass */
-    parent_class: MapSourceClass
+    readonly parent_class: MapSourceClass
     static name: string
 }
 class TileSourcePrivate {
@@ -11993,7 +12124,7 @@ class TileSourcePrivate {
 }
 abstract class ViewClass {
     /* Fields of Champlain-0.12.Champlain.ViewClass */
-    parent_class: Clutter.ActorClass
+    readonly parent_class: Clutter.ActorClass
     static name: string
 }
 class ViewPrivate {
@@ -12001,7 +12132,7 @@ class ViewPrivate {
 }
 abstract class ViewportClass {
     /* Fields of Champlain-0.12.Champlain.ViewportClass */
-    parent_class: Clutter.ActorClass
+    readonly parent_class: Clutter.ActorClass
     static name: string
 }
 class ViewportPrivate {

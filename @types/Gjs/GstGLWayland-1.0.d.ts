@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstGLWayland-1.0
  */
@@ -13,24 +19,17 @@ import type GstGL from './GstGL-1.0';
 
 export namespace GstGLWayland {
 
-export interface GLDisplayWayland_ConstructProps extends GstGL.GLDisplay_ConstructProps {
+interface GLDisplayWayland_ConstructProps extends GstGL.GLDisplay_ConstructProps {
 }
 class GLDisplayWayland {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstGLWayland-1.0.GstGLWayland.GLDisplayWayland */
-    display: object
-    registry: object
-    compositor: object
-    subcompositor: object
-    shell: object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstGL-1.0.GstGL.GLDisplay */
     add_context(context: GstGL.GLContext): boolean
     create_context(other_context: GstGL.GLContext): [ /* returnType */ boolean, /* p_context */ GstGL.GLContext ]
@@ -116,10 +115,6 @@ class GLDisplayWayland {
     connect(sigName: "notify", callback: (($obj: GLDisplayWayland, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GLDisplayWayland, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: GLDisplayWayland, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: GLDisplayWayland, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: GLDisplayWayland, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: GLDisplayWayland, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -129,14 +124,15 @@ class GLDisplayWayland {
     _init (config?: GLDisplayWayland_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(name?: string | null): GLDisplayWayland
+    /* Function overloads */
     static new(): GLDisplayWayland
     static new_with_display(display?: object | null): GLDisplayWayland
     static $gtype: GObject.Type
 }
 abstract class GLDisplayWaylandClass {
     /* Fields of GstGLWayland-1.0.GstGLWayland.GLDisplayWaylandClass */
-    object_class: GstGL.GLDisplayClass
-    _padding: object[]
+    readonly object_class: GstGL.GLDisplayClass
+    readonly _padding: object[]
     static name: string
 }
 }

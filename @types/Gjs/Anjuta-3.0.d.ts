@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Anjuta-3.0
  */
@@ -200,8 +206,8 @@ enum VcsStatus {
     IGNORED,
     ALL,
 }
-export const SYSTEM_PROFILE_NAME: string
-export const VCS_DEFAULT_STATUS_CODES: number
+const SYSTEM_PROFILE_NAME: string
+const VCS_DEFAULT_STATUS_CODES: number
 function cclosure_marshal_VOID__BOXED_ENUM(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
 function cclosure_marshal_VOID__INT_INT_ULONG(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
 function cclosure_marshal_VOID__INT_OBJECT(closure: Function, return_value: any, n_param_values: number, param_values: any, invocation_hint?: object | null, marshal_data?: object | null): void
@@ -386,14 +392,14 @@ class Shell {
     emit(sigName: "value-removed", object: string): void
     static name: string
 }
-export interface AsyncCommand_ConstructProps extends Command_ConstructProps {
+interface AsyncCommand_ConstructProps extends Command_ConstructProps {
 }
 class AsyncCommand {
-    /* Fields of Anjuta-3.0.Anjuta.AsyncCommand */
-    parent_instance: Command
-    priv: AsyncCommandPriv
+    /* Fields of Anjuta-3.0.Anjuta.Command */
+    readonly parent_instance: GObject.Object
+    readonly priv: CommandPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.AsyncCommand */
     lock(): void
     unlock(): void
@@ -482,14 +488,11 @@ class AsyncCommand {
     static set_error_message(command: Command, error_message: string): void
     static $gtype: GObject.Type
 }
-export interface AsyncNotify_ConstructProps extends GObject.Object_ConstructProps {
+interface AsyncNotify_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AsyncNotify {
-    /* Fields of Anjuta-3.0.Anjuta.AsyncNotify */
-    parent_instance: GObject.Object
-    priv: AsyncNotifyPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.AsyncNotify */
     get_error(): void
     notify_finished(): void
@@ -545,11 +548,11 @@ class AsyncNotify {
     static new(): AsyncNotify
     static $gtype: GObject.Type
 }
-export interface Autogen_ConstructProps extends GObject.Object_ConstructProps {
+interface Autogen_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Autogen {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Autogen */
     clear_library_path(): void
     execute(func?: AutogenFunc | null): boolean
@@ -604,17 +607,17 @@ class Autogen {
     static new(): Autogen
     static $gtype: GObject.Type
 }
-export interface CModule_ConstructProps extends GObject.TypeModule_ConstructProps {
+interface CModule_ConstructProps extends GObject.TypeModule_ConstructProps {
 }
 class CModule {
     /* Fields of GObject-2.0.GObject.TypeModule */
-    parent_instance: GObject.Object
-    use_count: number
-    type_infos: object[]
-    interface_infos: object[]
-    name: string
+    readonly parent_instance: GObject.Object
+    readonly use_count: number
+    readonly type_infos: object[]
+    readonly interface_infos: object[]
+    readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.CModule */
     get_last_error(): boolean
     /* Methods of GObject-2.0.GObject.TypeModule */
@@ -677,11 +680,11 @@ class CModule {
     static new(path: string, name: string): CModule
     static $gtype: GObject.Type
 }
-export interface CPluginFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface CPluginFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CPluginFactory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.CPluginFactory */
     free(): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -729,7 +732,8 @@ class CPluginFactory {
     static new(): CPluginFactory
     static $gtype: GObject.Type
 }
-export interface CellRendererCaptionedImage_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+interface CellRendererCaptionedImage_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.CellRendererCaptionedImage */
     pixbuf?: GdkPixbuf.Pixbuf
     text?: string
 }
@@ -754,14 +758,10 @@ class CellRendererCaptionedImage {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of Anjuta-3.0.Anjuta.CellRendererCaptionedImage */
-    parent: Gtk.CellRenderer
-    image: Gtk.CellRenderer
-    caption: Gtk.CellRenderer
     /* Fields of Gtk-3.0.Gtk.CellRenderer */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.CellRenderer */
     activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     get_aligned_area(widget: Gtk.Widget, flags: Gtk.CellRendererState, cell_area: Gdk.Rectangle): /* aligned_area */ Gdk.Rectangle
@@ -888,7 +888,8 @@ class CellRendererCaptionedImage {
     static new(): CellRendererCaptionedImage
     static $gtype: GObject.Type
 }
-export interface CellRendererDiff_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+interface CellRendererDiff_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.CellRendererDiff */
     diff?: string
 }
 class CellRendererDiff {
@@ -911,11 +912,10 @@ class CellRendererDiff {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of Anjuta-3.0.Anjuta.CellRendererDiff */
-    parent_instance: Gtk.CellRenderer
-    priv: CellRendererDiffPrivate
+    /* Fields of Gtk-3.0.Gtk.CellRenderer */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.CellRendererDiff */
     set_diff(diff: string): void
     /* Methods of Gtk-3.0.Gtk.CellRenderer */
@@ -1042,9 +1042,11 @@ class CellRendererDiff {
     static new(): CellRendererDiff
     static $gtype: GObject.Type
 }
-export interface CloseButton_ConstructProps extends Gtk.Button_ConstructProps {
+interface CloseButton_ConstructProps extends Gtk.Button_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
+    /* Constructor properties of Gtk-3.0.Gtk.Activatable */
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
@@ -1110,13 +1112,13 @@ class CloseButton {
     related_action: Gtk.Action
     use_action_appearance: boolean
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Button */
     clicked(): void
     enter(): void
@@ -1148,7 +1150,7 @@ class CloseButton {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1376,6 +1378,7 @@ class CloseButton {
     set_direction(dir: Gtk.TextDirection): void
     set_double_buffered(double_buffered: boolean): void
     set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
     set_font_map(font_map?: Pango.FontMap | null): void
     set_font_options(options?: cairo.FontOptions | null): void
     set_halign(align: Gtk.Align): void
@@ -1474,6 +1477,7 @@ class CloseButton {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Anjuta-3.0.Anjuta.CloseButton */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
@@ -1965,7 +1969,8 @@ class CloseButton {
     static new(): CloseButton
     static $gtype: GObject.Type
 }
-export interface ColumnTextView_ConstructProps extends Gtk.Box_ConstructProps {
+interface ColumnTextView_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class ColumnTextView {
@@ -2019,15 +2024,14 @@ class ColumnTextView {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Anjuta-3.0.Anjuta.ColumnTextView */
-    parent_instance: Gtk.Box
-    priv: ColumnTextViewPriv
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.ColumnTextView */
     get_text(): string
     /* Methods of Gtk-3.0.Gtk.Box */
@@ -2048,7 +2052,7 @@ class ColumnTextView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2363,6 +2367,7 @@ class ColumnTextView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -2805,17 +2810,15 @@ class ColumnTextView {
     _init (config?: ColumnTextView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): ColumnTextView
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): ColumnTextView
     static $gtype: GObject.Type
 }
-export interface Command_ConstructProps extends GObject.Object_ConstructProps {
+interface Command_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Command {
-    /* Fields of Anjuta-3.0.Anjuta.Command */
-    parent_instance: GObject.Object
-    priv: CommandPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Command */
     cancel(): void
     get_error_message(): string | null
@@ -2898,7 +2901,8 @@ class Command {
     _init (config?: Command_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CommandBar_ConstructProps extends Gtk.Notebook_ConstructProps {
+interface CommandBar_ConstructProps extends Gtk.Notebook_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.CommandBar */
     max_text_width?: number
 }
 class CommandBar {
@@ -2954,13 +2958,12 @@ class CommandBar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Anjuta-3.0.Anjuta.CommandBar */
-    parent_instance: Gtk.Notebook
-    priv: CommandBarPriv
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.CommandBar */
     add_action_group(group_name: string, entries: CommandBarEntry[], user_data?: object | null): void
     remove_action_group(group_name: string): void
@@ -3014,7 +3017,7 @@ class CommandBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -3329,6 +3332,7 @@ class CommandBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Anjuta-3.0.Anjuta.CommandBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3818,14 +3822,11 @@ class CommandBar {
     static new(): CommandBar
     static $gtype: GObject.Type
 }
-export interface CommandQueue_ConstructProps extends GObject.Object_ConstructProps {
+interface CommandQueue_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CommandQueue {
-    /* Fields of Anjuta-3.0.Anjuta.CommandQueue */
-    parent_instance: GObject.Object
-    priv: CommandQueuePriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.CommandQueue */
     push(command: Command): void
     start(): boolean
@@ -3880,17 +3881,15 @@ class CommandQueue {
     static new(mode: CommandQueueExecuteMode): CommandQueue
     static $gtype: GObject.Type
 }
-export interface Completion_ConstructProps extends GObject.Object_ConstructProps {
+interface Completion_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.Completion */
     case_sensitive?: boolean
 }
 class Completion {
     /* Properties of Anjuta-3.0.Anjuta.Completion */
     case_sensitive: boolean
-    /* Fields of Anjuta-3.0.Anjuta.Completion */
-    parent_instance: GObject.Object
-    priv: CompletionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Completion */
     add_item(item?: object | null): void
     clear(): void
@@ -3942,7 +3941,7 @@ class Completion {
     _init (config?: Completion_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Dock_ConstructProps extends Gdl.Dock_ConstructProps {
+interface Dock_ConstructProps extends Gdl.Dock_ConstructProps {
 }
 class Dock {
     /* Properties of Gdl-3.Gdl.Dock */
@@ -4001,19 +4000,19 @@ class Dock {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Anjuta-3.0.Anjuta.Dock */
-    parent_instance: Gdl.Dock
-    priv: DockPriv
     /* Fields of Gdl-3.Gdl.Dock */
-    object: Gdl.DockObject
+    readonly object: Gdl.DockObject
+    readonly priv: Gdl.DockPrivate
     /* Fields of Gdl-3.Gdl.DockObject */
-    container: Gtk.Container
-    deprecated_flags: Gdl.DockObjectFlags
-    deprecated_master: GObject.Object
+    readonly container: Gtk.Container
+    readonly deprecated_flags: Gdl.DockObjectFlags
+    readonly deprecated_master: GObject.Object
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Dock */
     add_pane(pane_name: string, pane_label: string, stock_icon: string, pane: DockPane, placement: Gdl.DockPlacement, entries: CommandBarEntry[] | null, user_data?: object | null): boolean
     add_pane_full(pane_name: string, pane_label: string, stock_icon: string, pane: DockPane, placement: Gdl.DockPlacement, entries: CommandBarEntry[] | null, user_data: object | null, behavior: Gdl.DockItemBehavior): boolean
@@ -4072,7 +4071,7 @@ class Dock {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4315,6 +4314,7 @@ class Dock {
     set_margin_right(margin: number): void
     set_margin_start(margin: number): void
     set_margin_top(margin: number): void
+    set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
     set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
@@ -4385,8 +4385,30 @@ class Dock {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.Dock */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.Dock */
     vfunc_layout_changed(): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Gdl-3.Gdl.DockObject */
     vfunc_child_placement(child: Gdl.DockObject, placement?: Gdl.DockPlacement | null): boolean
     vfunc_detach(recursive: boolean): void
@@ -4858,17 +4880,15 @@ class Dock {
     static new(): Dock
     static $gtype: GObject.Type
 }
-export interface DockPane_ConstructProps extends GObject.Object_ConstructProps {
+interface DockPane_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.DockPane */
     plugin?: Plugin
 }
 class DockPane {
     /* Properties of Anjuta-3.0.Anjuta.DockPane */
     plugin: Plugin
-    /* Fields of Anjuta-3.0.Anjuta.DockPane */
-    parent_instance: GObject.Object
-    priv: DockPanePriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.DockPane */
     notify_multiple_selection_changed(): void
     notify_single_selection_changed(): void
@@ -4929,7 +4949,8 @@ class DockPane {
     _init (config?: DockPane_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DropEntry_ConstructProps extends Entry_ConstructProps {
+interface DropEntry_ConstructProps extends Entry_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled?: boolean
 }
 class DropEntry {
@@ -5029,12 +5050,11 @@ class DropEntry {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
-    /* Fields of Anjuta-3.0.Anjuta.DropEntry */
-    parent_instance: Entry
     /* Fields of Anjuta-3.0.Anjuta.Entry */
-    priv: EntryPriv
+    readonly parent_instance: Gtk.Entry
+    readonly priv: EntryPriv
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Entry */
     dup_text(): string
     get_text(): string
@@ -5109,6 +5129,7 @@ class DropEntry {
     set_progress_fraction(fraction: number): void
     set_progress_pulse_step(fraction: number): void
     set_tabs(tabs: Pango.TabArray): void
+    set_text(text: string): void
     set_visibility(visible: boolean): void
     set_width_chars(n_chars: number): void
     text_index_to_layout_index(text_index: number): number
@@ -5403,6 +5424,7 @@ class DropEntry {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
@@ -5421,6 +5443,30 @@ class DropEntry {
     select_region(start_pos: number, end_pos: number): void
     set_editable(is_editable: boolean): void
     set_position(position: number): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.DropEntry */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
+    vfunc_editing_done(): void
+    vfunc_remove_widget(): void
+    vfunc_start_editing(event?: Gdk.Event | null): void
+    vfunc_changed(): void
+    vfunc_delete_text(start_pos: number, end_pos: number): void
+    vfunc_do_delete_text(start_pos: number, end_pos: number): void
+    vfunc_do_insert_text(new_text: string, new_text_length: number, position: number): /* position */ number
+    vfunc_get_chars(start_pos: number, end_pos: number): string
+    vfunc_get_position(): number
+    vfunc_get_selection_bounds(): [ /* returnType */ boolean, /* start_pos */ number | null, /* end_pos */ number | null ]
+    vfunc_insert_text(new_text: string, new_text_length: number, position: number): /* position */ number
+    vfunc_set_position(position: number): void
+    vfunc_set_selection_bounds(start_pos: number, end_pos: number): void
     /* Virtual methods of Anjuta-3.0.Anjuta.Entry */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -6017,8 +6063,10 @@ class DropEntry {
     static new(): DropEntry
     static $gtype: GObject.Type
 }
-export interface Entry_ConstructProps extends Gtk.Entry_ConstructProps {
+interface Entry_ConstructProps extends Gtk.Entry_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.Entry */
     help_text?: string
+    /* Constructor properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled?: boolean
 }
 class Entry {
@@ -6118,11 +6166,10 @@ class Entry {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
-    /* Fields of Anjuta-3.0.Anjuta.Entry */
-    parent_instance: Gtk.Entry
-    priv: EntryPriv
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Entry */
     dup_text(): string
     get_text(): string
@@ -6197,6 +6244,7 @@ class Entry {
     set_progress_fraction(fraction: number): void
     set_progress_pulse_step(fraction: number): void
     set_tabs(tabs: Pango.TabArray): void
+    set_text(text: string): void
     set_visibility(visible: boolean): void
     set_width_chars(n_chars: number): void
     text_index_to_layout_index(text_index: number): number
@@ -6491,6 +6539,7 @@ class Entry {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
@@ -7105,7 +7154,7 @@ class Entry {
     static new(): Entry
     static $gtype: GObject.Type
 }
-export interface EnvironmentEditor_ConstructProps extends Gtk.Bin_ConstructProps {
+interface EnvironmentEditor_ConstructProps extends Gtk.Bin_ConstructProps {
 }
 class EnvironmentEditor {
     /* Properties of Gtk-3.0.Gtk.Container */
@@ -7153,13 +7202,13 @@ class EnvironmentEditor {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.EnvironmentEditor */
     reset(): void
     set_variable(variable: string): void
@@ -7169,7 +7218,7 @@ class EnvironmentEditor {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7484,6 +7533,7 @@ class EnvironmentEditor {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Anjuta-3.0.Anjuta.EnvironmentEditor */
     vfunc_changed(): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -7922,8 +7972,10 @@ class EnvironmentEditor {
     static new(): EnvironmentEditor
     static $gtype: GObject.Type
 }
-export interface FileDropEntry_ConstructProps extends DropEntry_ConstructProps {
+interface FileDropEntry_ConstructProps extends DropEntry_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.FileDropEntry */
     relative_path?: string
+    /* Constructor properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled?: boolean
 }
 class FileDropEntry {
@@ -8025,11 +8077,12 @@ class FileDropEntry {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
-    /* Fields of Anjuta-3.0.Anjuta.FileDropEntry */
-    parent_instance: DropEntry
-    priv: FileDropEntryPriv
+    /* Fields of Anjuta-3.0.Anjuta.DropEntry */
+    readonly parent_instance: Entry
+    /* Fields of Anjuta-3.0.Anjuta.Entry */
+    readonly priv: EntryPriv
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.FileDropEntry */
     set_relative_path(path: string): void
     /* Methods of Anjuta-3.0.Anjuta.Entry */
@@ -8106,6 +8159,7 @@ class FileDropEntry {
     set_progress_fraction(fraction: number): void
     set_progress_pulse_step(fraction: number): void
     set_tabs(tabs: Pango.TabArray): void
+    set_text(text: string): void
     set_visibility(visible: boolean): void
     set_width_chars(n_chars: number): void
     text_index_to_layout_index(text_index: number): number
@@ -8400,6 +8454,7 @@ class FileDropEntry {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
@@ -8418,6 +8473,54 @@ class FileDropEntry {
     select_region(start_pos: number, end_pos: number): void
     set_editable(is_editable: boolean): void
     set_position(position: number): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.FileDropEntry */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
+    vfunc_editing_done(): void
+    vfunc_remove_widget(): void
+    vfunc_start_editing(event?: Gdk.Event | null): void
+    vfunc_changed(): void
+    vfunc_delete_text(start_pos: number, end_pos: number): void
+    vfunc_do_delete_text(start_pos: number, end_pos: number): void
+    vfunc_do_insert_text(new_text: string, new_text_length: number, position: number): /* position */ number
+    vfunc_get_chars(start_pos: number, end_pos: number): string
+    vfunc_get_position(): number
+    vfunc_get_selection_bounds(): [ /* returnType */ boolean, /* start_pos */ number | null, /* end_pos */ number | null ]
+    vfunc_insert_text(new_text: string, new_text_length: number, position: number): /* position */ number
+    vfunc_set_position(position: number): void
+    vfunc_set_selection_bounds(start_pos: number, end_pos: number): void
+    /* Virtual methods of Anjuta-3.0.Anjuta.DropEntry */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
+    vfunc_editing_done(): void
+    vfunc_remove_widget(): void
+    vfunc_start_editing(event?: Gdk.Event | null): void
+    vfunc_changed(): void
+    vfunc_delete_text(start_pos: number, end_pos: number): void
+    vfunc_do_delete_text(start_pos: number, end_pos: number): void
+    vfunc_do_insert_text(new_text: string, new_text_length: number, position: number): /* position */ number
+    vfunc_get_chars(start_pos: number, end_pos: number): string
+    vfunc_get_position(): number
+    vfunc_get_selection_bounds(): [ /* returnType */ boolean, /* start_pos */ number | null, /* end_pos */ number | null ]
+    vfunc_insert_text(new_text: string, new_text_length: number, position: number): /* position */ number
+    vfunc_set_position(position: number): void
+    vfunc_set_selection_bounds(start_pos: number, end_pos: number): void
     /* Virtual methods of Anjuta-3.0.Anjuta.Entry */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -9016,9 +9119,11 @@ class FileDropEntry {
     static new(): FileDropEntry
     static $gtype: GObject.Type
 }
-export interface FileList_ConstructProps extends Gtk.Box_ConstructProps {
+interface FileList_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.FileList */
     relative_path?: string
     show_add_button?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class FileList {
@@ -9075,15 +9180,14 @@ class FileList {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Anjuta-3.0.Anjuta.FileList */
-    parent_instance: Gtk.Box
-    priv: FileListPriv
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.FileList */
     clear(): void
     set_relative_path(path: string): void
@@ -9105,7 +9209,7 @@ class FileList {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9420,6 +9524,7 @@ class FileList {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -9866,17 +9971,15 @@ class FileList {
     _init (config?: FileList_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): FileList
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): FileList
     static $gtype: GObject.Type
 }
-export interface LanguageProvider_ConstructProps extends GObject.Object_ConstructProps {
+interface LanguageProvider_ConstructProps extends GObject.Object_ConstructProps {
 }
 class LanguageProvider {
-    /* Fields of Anjuta-3.0.Anjuta.LanguageProvider */
-    parent: GObject.Object
-    priv: LanguageProviderPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.LanguageProvider */
     activate(iprov: GObject.Object, iter: GObject.Object, data?: object | null): void
     get_calltip_context(itip: GObject.Object, iter: GObject.Object, scope_context_ch: string): string
@@ -9926,14 +10029,11 @@ class LanguageProvider {
     _init (config?: LanguageProvider_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Launcher_ConstructProps extends GObject.Object_ConstructProps {
+interface Launcher_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Launcher {
-    /* Fields of Anjuta-3.0.Anjuta.Launcher */
-    parent: GObject.Object
-    priv: LauncherPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Launcher */
     get_child_pid(): number
     is_busy(): boolean
@@ -10002,7 +10102,8 @@ class Launcher {
     static new(): Launcher
     static $gtype: GObject.Type
 }
-export interface PkgConfigChooser_ConstructProps extends Gtk.TreeView_ConstructProps {
+interface PkgConfigChooser_ConstructProps extends Gtk.TreeView_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -10059,7 +10160,6 @@ class PkgConfigChooser {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -10077,13 +10177,14 @@ class PkgConfigChooser {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Anjuta-3.0.Anjuta.PkgConfigChooser */
-    parent_instance: Gtk.TreeView
-    priv: PkgConfigChooserPrivate
+    /* Fields of Gtk-3.0.Gtk.TreeView */
+    readonly parent: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.PkgConfigChooser */
     get_selected_package(): string
     show_active_column(show_column: boolean): void
@@ -10188,7 +10289,7 @@ class PkgConfigChooser {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10503,6 +10604,7 @@ class PkgConfigChooser {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hscroll_policy(): Gtk.ScrollablePolicy
@@ -11015,8 +11117,6 @@ class PkgConfigChooser {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: PkgConfigChooser, pspec: GObject.ParamSpec) => void)): number
@@ -11060,7 +11160,8 @@ class PkgConfigChooser {
     static new(): PkgConfigChooser
     static $gtype: GObject.Type
 }
-export interface PkgScanner_ConstructProps extends AsyncCommand_ConstructProps {
+interface PkgScanner_ConstructProps extends AsyncCommand_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.PkgScanner */
     package?: string
     version?: string
 }
@@ -11068,11 +11169,11 @@ class PkgScanner {
     /* Properties of Anjuta-3.0.Anjuta.PkgScanner */
     package: string
     version: string
-    /* Fields of Anjuta-3.0.Anjuta.PkgScanner */
-    parent_instance: AsyncCommand
-    priv: PkgScannerPrivate
+    /* Fields of Anjuta-3.0.Anjuta.AsyncCommand */
+    readonly parent_instance: Command
+    readonly priv: AsyncCommandPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.PkgScanner */
     get_package(): string
     get_version(): string
@@ -11167,16 +11268,15 @@ class PkgScanner {
     static new(package: string, version: string): PkgScanner
     static $gtype: GObject.Type
 }
-export interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
+interface Plugin_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.Plugin */
     shell?: Shell
 }
 class Plugin {
     /* Properties of Anjuta-3.0.Anjuta.Plugin */
     shell: Shell
-    /* Fields of Anjuta-3.0.Anjuta.Plugin */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Plugin */
     activate(): boolean
     add_watch(name: string, added: PluginValueAdded, removed: PluginValueRemoved): number
@@ -11241,7 +11341,7 @@ class Plugin {
     _init (config?: Plugin_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PluginHandle_ConstructProps extends GObject.Object_ConstructProps {
+interface PluginHandle_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PluginHandle {
     /* Properties of Anjuta-3.0.Anjuta.PluginHandle */
@@ -11262,11 +11362,8 @@ class PluginHandle {
     readonly resident: boolean
     readonly resolve_pass: number
     readonly user_activatable: boolean
-    /* Fields of Anjuta-3.0.Anjuta.PluginHandle */
-    parent_instance: GObject.Object
-    priv: PluginHandlePriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.PluginHandle */
     get_about(): string
     get_can_load(): boolean
@@ -11365,7 +11462,8 @@ class PluginHandle {
     static new(plugin_desc_path: string): PluginHandle
     static $gtype: GObject.Type
 }
-export interface PluginManager_ConstructProps extends GObject.Object_ConstructProps {
+interface PluginManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.PluginManager */
     shell?: GObject.Object
     status?: Status
 }
@@ -11376,11 +11474,8 @@ class PluginManager {
     readonly profiles: object
     shell: GObject.Object
     status: Status
-    /* Fields of Anjuta-3.0.Anjuta.PluginManager */
-    parent_instance: GObject.Object
-    priv: PluginManagerPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.PluginManager */
     get_remembered_plugins(): string
     is_active_plugin(iface_name: string): boolean
@@ -11451,13 +11546,11 @@ class PluginManager {
     _init (config?: PluginManager_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Preferences_ConstructProps extends GObject.Object_ConstructProps {
+interface Preferences_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Preferences {
-    /* Fields of Anjuta-3.0.Anjuta.Preferences */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Preferences */
     add_from_builder(builder: Gtk.Builder, settings: Gio.Settings, glade_widget_name: string, stitle: string, icon_filename: string): void
     is_dialog_created(): boolean
@@ -11509,7 +11602,7 @@ class Preferences {
     static new(plugin_manager: PluginManager, common_schema_id: string): Preferences
     static $gtype: GObject.Type
 }
-export interface PreferencesDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface PreferencesDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
 class PreferencesDialog {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -11588,19 +11681,19 @@ class PreferencesDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
-    /* Fields of Anjuta-3.0.Anjuta.PreferencesDialog */
-    priv: PreferencesDialogPrivate
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.PreferencesDialog */
     add_page(name: string, title: string, icon: GdkPixbuf.Pixbuf, page: Gtk.Widget): void
     remove_page(title: string): void
@@ -11730,7 +11823,7 @@ class PreferencesDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -11974,6 +12067,7 @@ class PreferencesDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -12042,6 +12136,7 @@ class PreferencesDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Anjuta-3.0.Anjuta.PreferencesDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -12558,8 +12653,6 @@ class PreferencesDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: PreferencesDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: PreferencesDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: PreferencesDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: PreferencesDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: PreferencesDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -12569,10 +12662,12 @@ class PreferencesDialog {
     _init (config?: PreferencesDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PreferencesDialog
+    /* Function overloads */
     static new(type: Gtk.WindowType): PreferencesDialog
     static $gtype: GObject.Type
 }
-export interface Profile_ConstructProps extends GObject.Object_ConstructProps {
+interface Profile_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.Profile */
     plugin_manager?: PluginManager
     profile_name?: string
     sync_file?: Gio.File
@@ -12582,11 +12677,8 @@ class Profile {
     plugin_manager: PluginManager
     profile_name: string
     sync_file: Gio.File
-    /* Fields of Anjuta-3.0.Anjuta.Profile */
-    parent_instance: GObject.Object
-    priv: ProfilePriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Profile */
     add_plugin(plugin: PluginHandle): void
     add_plugins_from_xml(profile_xml_file: Gio.File, exclude_from_sync: boolean): boolean
@@ -12670,17 +12762,15 @@ class Profile {
     static new(name: string, plugin_manager: PluginManager): Profile
     static $gtype: GObject.Type
 }
-export interface ProfileManager_ConstructProps extends GObject.Object_ConstructProps {
+interface ProfileManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.ProfileManager */
     plugin_manager?: PluginManager
 }
 class ProfileManager {
     /* Properties of Anjuta-3.0.Anjuta.ProfileManager */
     plugin_manager: PluginManager
-    /* Fields of Anjuta-3.0.Anjuta.ProfileManager */
-    parent_instance: GObject.Object
-    priv: ProfileManagerPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.ProfileManager */
     close(): void
     freeze(): void
@@ -12745,7 +12835,8 @@ class ProfileManager {
     static new(plugin_manager: PluginManager): ProfileManager
     static $gtype: GObject.Type
 }
-export interface ProjectNode_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface ProjectNode_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.ProjectNode */
     file?: Gio.File
     name?: string
     state?: ProjectNodeState
@@ -12757,10 +12848,8 @@ class ProjectNode {
     name: string
     state: ProjectNodeState
     type: ProjectNodeType
-    /* Fields of Anjuta-3.0.Anjuta.ProjectNode */
-    parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.ProjectNode */
     append(node: ProjectNode): ProjectNode
     check(): void
@@ -12856,7 +12945,7 @@ class ProjectNode {
     _init (config?: ProjectNode_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SavePrompt_ConstructProps extends Gtk.MessageDialog_ConstructProps {
+interface SavePrompt_ConstructProps extends Gtk.MessageDialog_ConstructProps {
 }
 class SavePrompt {
     /* Properties of Gtk-3.0.Gtk.MessageDialog */
@@ -12943,19 +13032,19 @@ class SavePrompt {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
-    /* Fields of Anjuta-3.0.Anjuta.SavePrompt */
-    priv: SavePromptPrivate
     /* Fields of Gtk-3.0.Gtk.MessageDialog */
-    parent_instance: Gtk.Dialog
+    readonly parent_instance: Gtk.Dialog
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.SavePrompt */
     get_items_count(): number
     /* Methods of Gtk-3.0.Gtk.MessageDialog */
@@ -13089,7 +13178,7 @@ class SavePrompt {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -13333,6 +13422,7 @@ class SavePrompt {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -13401,6 +13491,7 @@ class SavePrompt {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Anjuta-3.0.Anjuta.SavePrompt */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -13931,8 +14022,6 @@ class SavePrompt {
     connect_after(sigName: "notify::visible", callback: (($obj: SavePrompt, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: SavePrompt, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: SavePrompt, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: SavePrompt, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: SavePrompt, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -13942,20 +14031,19 @@ class SavePrompt {
     _init (config?: SavePrompt_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(parent: Gtk.Window): SavePrompt
+    /* Function overloads */
     static new(): SavePrompt
     static new(type: Gtk.WindowType): SavePrompt
     static $gtype: GObject.Type
 }
-export interface Serializer_ConstructProps extends GObject.Object_ConstructProps {
+interface Serializer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.Serializer */
     filepath?: string
     mode?: SerializerMode
 }
 class Serializer {
-    /* Fields of Anjuta-3.0.Anjuta.Serializer */
-    parent: GObject.Object
-    priv: SerializerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Serializer */
     read_float(name: string, value: number): boolean
     read_int(name: string, value: number): boolean
@@ -14008,14 +14096,11 @@ class Serializer {
     static new(filepath: string, mode: SerializerMode): Serializer
     static $gtype: GObject.Type
 }
-export interface Session_ConstructProps extends GObject.Object_ConstructProps {
+interface Session_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Session {
-    /* Fields of Anjuta-3.0.Anjuta.Session */
-    parent: GObject.Object
-    priv: SessionPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Session */
     clear(): void
     clear_section(section: string): void
@@ -14075,7 +14160,8 @@ class Session {
     static new(session_directory: string): Session
     static $gtype: GObject.Type
 }
-export interface Status_ConstructProps extends Gtk.Box_ConstructProps {
+interface Status_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Status {
@@ -14129,16 +14215,14 @@ class Status {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Anjuta-3.0.Anjuta.Status */
-    priv: StatusPriv
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Status */
     add_widget(widget: Gtk.Widget): void
     busy_pop(): void
@@ -14172,7 +14256,7 @@ class Status {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -14487,6 +14571,7 @@ class Status {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -14934,18 +15019,18 @@ class Status {
     _init (config?: Status_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Status
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): Status
     static $gtype: GObject.Type
 }
-export interface SyncCommand_ConstructProps extends Command_ConstructProps {
+interface SyncCommand_ConstructProps extends Command_ConstructProps {
 }
 class SyncCommand {
-    /* Fields of Anjuta-3.0.Anjuta.SyncCommand */
-    parent_instance: Command
     /* Fields of Anjuta-3.0.Anjuta.Command */
-    priv: CommandPriv
+    readonly parent_instance: GObject.Object
+    readonly priv: CommandPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Command */
     cancel(): void
     get_error_message(): string | null
@@ -15028,7 +15113,8 @@ class SyncCommand {
     _init (config?: SyncCommand_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Tabber_ConstructProps extends Gtk.Container_ConstructProps {
+interface Tabber_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.Tabber */
     notebook?: GObject.Object
 }
 class Tabber {
@@ -15076,13 +15162,12 @@ class Tabber {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Anjuta-3.0.Anjuta.Tabber */
-    parent_instance: Gtk.Container
-    priv: TabberPriv
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.Tabber */
     add_tab(tab_label: Gtk.Widget): void
     prepend_tab(tab_label: Gtk.Widget): void
@@ -15090,7 +15175,7 @@ class Tabber {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -15405,6 +15490,7 @@ class Tabber {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Anjuta-3.0.Anjuta.Tabber */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -15838,11 +15924,11 @@ class Tabber {
     static new(notebook: Gtk.Notebook): Tabber
     static $gtype: GObject.Type
 }
-export interface TokenFile_ConstructProps extends GObject.Object_ConstructProps {
+interface TokenFile_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TokenFile {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.TokenFile */
     free(): void
     get_token_location(location: TokenFileLocation, token: Token): boolean
@@ -15897,10 +15983,13 @@ class TokenFile {
     static new(file: Gio.File): TokenFile
     static $gtype: GObject.Type
 }
-export interface TreeComboBox_ConstructProps extends Gtk.ToggleButton_ConstructProps {
+interface TreeComboBox_ConstructProps extends Gtk.ToggleButton_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.TreeComboBox */
     model?: Gtk.TreeModel
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
+    /* Constructor properties of Gtk-3.0.Gtk.Activatable */
     related_action?: Gtk.Action
     use_action_appearance?: boolean
 }
@@ -15972,13 +16061,13 @@ class TreeComboBox {
     related_action: Gtk.Action
     use_action_appearance: boolean
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.TreeComboBox */
     get_active_iter(iter: Gtk.TreeIter): boolean
     set_active(index: number): void
@@ -16025,7 +16114,7 @@ class TreeComboBox {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -16253,6 +16342,7 @@ class TreeComboBox {
     set_direction(dir: Gtk.TextDirection): void
     set_double_buffered(double_buffered: boolean): void
     set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
     set_font_map(font_map?: Pango.FontMap | null): void
     set_font_options(options?: cairo.FontOptions | null): void
     set_halign(align: Gtk.Align): void
@@ -16351,6 +16441,7 @@ class TreeComboBox {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.CellLayout */
     add_attribute(cell: Gtk.CellRenderer, attribute: string, column: number): void
     clear(): void
@@ -16884,19 +16975,24 @@ class TreeComboBox {
     _init (config?: TreeComboBox_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): TreeComboBox
+    static new_with_label(label: string): TreeComboBox
+    /* Function overloads */
+    static new_with_label(label: string): TreeComboBox
+    static new_with_mnemonic(label: string): TreeComboBox
+    /* Function overloads */
+    static new_with_mnemonic(label: string): TreeComboBox
     static $gtype: GObject.Type
 }
-export interface UI_ConstructProps extends Gtk.UIManager_ConstructProps {
+interface UI_ConstructProps extends Gtk.UIManager_ConstructProps {
 }
 class UI {
     /* Properties of Gtk-3.0.Gtk.UIManager */
     add_tearoffs: boolean
     readonly ui: string
-    /* Fields of Anjuta-3.0.Anjuta.UI */
-    parent: Gtk.UIManager
-    priv: UIPrivate
+    /* Fields of Gtk-3.0.Gtk.UIManager */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.UI */
     activate_action_by_group(action_group: Gtk.ActionGroup, action_name: string): void
     activate_action_by_path(action_path: string): void
@@ -16926,6 +17022,7 @@ class UI {
     get_widget(path: string): Gtk.Widget
     insert_action_group(action_group: Gtk.ActionGroup, pos: number): void
     new_merge_id(): number
+    remove_action_group(action_group: Gtk.ActionGroup): void
     remove_ui(merge_id: number): void
     set_add_tearoffs(add_tearoffs: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -17025,14 +17122,18 @@ class UI {
     _init (config?: UI_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): UI
+    /* Function overloads */
+    static new(): UI
     static load_accels(filename: string): void
     static save_accels(filename: string): void
     static $gtype: GObject.Type
 }
-export interface VcsStatusTreeView_ConstructProps extends Gtk.TreeView_ConstructProps {
+interface VcsStatusTreeView_ConstructProps extends Gtk.TreeView_ConstructProps {
+    /* Constructor properties of Anjuta-3.0.Anjuta.VcsStatusTreeView */
     conflicted_selectable?: boolean
     show_status?: boolean
     status_codes?: VcsStatus
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -17091,7 +17192,6 @@ class VcsStatusTreeView {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -17109,13 +17209,14 @@ class VcsStatusTreeView {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of Anjuta-3.0.Anjuta.VcsStatusTreeView */
-    parent_instance: Gtk.TreeView
-    priv: VcsStatusTreeViewPriv
+    /* Fields of Gtk-3.0.Gtk.TreeView */
+    readonly parent: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Anjuta-3.0.Anjuta.VcsStatusTreeView */
     add(path: string, status: VcsStatus, selected: boolean): void
     destroy(): void
@@ -17221,7 +17322,7 @@ class VcsStatusTreeView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -17535,6 +17636,7 @@ class VcsStatusTreeView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hscroll_policy(): Gtk.ScrollablePolicy
@@ -18040,8 +18142,6 @@ class VcsStatusTreeView {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: VcsStatusTreeView, pspec: GObject.ParamSpec) => void)): number
@@ -18087,7 +18187,7 @@ class VcsStatusTreeView {
 }
 abstract class AsyncCommandClass {
     /* Fields of Anjuta-3.0.Anjuta.AsyncCommandClass */
-    parent_class: CommandClass
+    readonly parent_class: CommandClass
     static name: string
 }
 class AsyncCommandPriv {
@@ -18095,8 +18195,8 @@ class AsyncCommandPriv {
 }
 abstract class AsyncNotifyClass {
     /* Fields of Anjuta-3.0.Anjuta.AsyncNotifyClass */
-    parent_class: GObject.ObjectClass
-    finished: (self: AsyncNotify) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly finished: (self: AsyncNotify) => void
     static name: string
 }
 class AsyncNotifyPriv {
@@ -18113,12 +18213,12 @@ abstract class CPluginFactoryClass {
 }
 abstract class CellRendererCaptionedImageClass {
     /* Fields of Anjuta-3.0.Anjuta.CellRendererCaptionedImageClass */
-    parent_class: Gtk.CellRendererClass
+    readonly parent_class: Gtk.CellRendererClass
     static name: string
 }
 abstract class CellRendererDiffClass {
     /* Fields of Anjuta-3.0.Anjuta.CellRendererDiffClass */
-    parent_class: Gtk.CellRendererClass
+    readonly parent_class: Gtk.CellRendererClass
     static name: string
 }
 class CellRendererDiffPrivate {
@@ -18126,8 +18226,8 @@ class CellRendererDiffPrivate {
 }
 abstract class CloseButtonClass {
     /* Fields of Anjuta-3.0.Anjuta.CloseButtonClass */
-    parent_class: Gtk.ButtonClass
-    priv: CloseButtonClassPrivate
+    readonly parent_class: Gtk.ButtonClass
+    readonly priv: CloseButtonClassPrivate
     static name: string
 }
 class CloseButtonClassPrivate {
@@ -18135,7 +18235,7 @@ class CloseButtonClassPrivate {
 }
 abstract class ColumnTextViewClass {
     /* Fields of Anjuta-3.0.Anjuta.ColumnTextViewClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 class ColumnTextViewPriv {
@@ -18143,17 +18243,17 @@ class ColumnTextViewPriv {
 }
 abstract class CommandBarClass {
     /* Fields of Anjuta-3.0.Anjuta.CommandBarClass */
-    parent_class: Gtk.NotebookClass
+    readonly parent_class: Gtk.NotebookClass
     static name: string
 }
 class CommandBarEntry {
     /* Fields of Anjuta-3.0.Anjuta.CommandBarEntry */
-    type: CommandBarEntryType
-    action_name: string
-    label: string
-    tooltip: string
-    stock_icon: string
-    callback: GObject.Callback
+    readonly type: CommandBarEntryType
+    readonly action_name: string
+    readonly label: string
+    readonly tooltip: string
+    readonly stock_icon: string
+    readonly callback: GObject.Callback
     static name: string
 }
 class CommandBarPriv {
@@ -18161,21 +18261,21 @@ class CommandBarPriv {
 }
 abstract class CommandClass {
     /* Fields of Anjuta-3.0.Anjuta.CommandClass */
-    parent_class: GObject.ObjectClass
-    run: (self: Command) => number
-    start: (self: Command) => void
-    cancel: (self: Command) => void
-    notify_data_arrived: (self: Command) => void
-    notify_complete: (self: Command, return_code: number) => void
-    notify_progress: (self: Command, progress: number) => void
-    set_error_message: (self: Command, error_message: string) => void
-    get_error_message: (self: Command) => string | null
-    start_automatic_monitor: (self: Command) => boolean
-    stop_automatic_monitor: (self: Command) => void
-    data_arrived: (command: Command) => void
-    command_started: (command: Command) => void
-    command_finished: (command: Command, return_code: number) => void
-    progress: (command: Command, progress: number) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly run: (self: Command) => number
+    readonly start: (self: Command) => void
+    readonly cancel: (self: Command) => void
+    readonly notify_data_arrived: (self: Command) => void
+    readonly notify_complete: (self: Command, return_code: number) => void
+    readonly notify_progress: (self: Command, progress: number) => void
+    readonly set_error_message: (self: Command, error_message: string) => void
+    readonly get_error_message: (self: Command) => string | null
+    readonly start_automatic_monitor: (self: Command) => boolean
+    readonly stop_automatic_monitor: (self: Command) => void
+    readonly data_arrived: (command: Command) => void
+    readonly command_started: (command: Command) => void
+    readonly command_finished: (command: Command, return_code: number) => void
+    readonly progress: (command: Command, progress: number) => void
     static name: string
 }
 class CommandPriv {
@@ -18183,8 +18283,8 @@ class CommandPriv {
 }
 abstract class CommandQueueClass {
     /* Fields of Anjuta-3.0.Anjuta.CommandQueueClass */
-    parent_class: GObject.ObjectClass
-    finished: (queue: CommandQueue) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly finished: (queue: CommandQueue) => void
     static name: string
 }
 class CommandQueuePriv {
@@ -18192,7 +18292,7 @@ class CommandQueuePriv {
 }
 abstract class CompletionClass {
     /* Fields of Anjuta-3.0.Anjuta.CompletionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CompletionPrivate {
@@ -18200,15 +18300,15 @@ class CompletionPrivate {
 }
 abstract class DockClass {
     /* Fields of Anjuta-3.0.Anjuta.DockClass */
-    parent_class: Gdl.DockClass
+    readonly parent_class: Gdl.DockClass
     static name: string
 }
 abstract class DockPaneClass {
     /* Fields of Anjuta-3.0.Anjuta.DockPaneClass */
-    parent_class: GObject.ObjectClass
-    refresh: (self: DockPane) => void
-    single_selection_changed: (self: DockPane) => void
-    multiple_selection_changed: (self: DockPane) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly refresh: (self: DockPane) => void
+    readonly single_selection_changed: (self: DockPane) => void
+    readonly multiple_selection_changed: (self: DockPane) => void
     static name: string
 }
 class DockPanePriv {
@@ -18219,7 +18319,7 @@ class DockPriv {
 }
 abstract class DropEntryClass {
     /* Fields of Anjuta-3.0.Anjuta.DropEntryClass */
-    parent_class: EntryClass
+    readonly parent_class: EntryClass
     static name: string
 }
 class Encoding {
@@ -18238,7 +18338,7 @@ class Encoding {
 }
 abstract class EntryClass {
     /* Fields of Anjuta-3.0.Anjuta.EntryClass */
-    parent_class: Gtk.EntryClass
+    readonly parent_class: Gtk.EntryClass
     static name: string
 }
 class EntryPriv {
@@ -18246,13 +18346,13 @@ class EntryPriv {
 }
 abstract class EnvironmentEditorClass {
     /* Fields of Anjuta-3.0.Anjuta.EnvironmentEditorClass */
-    parent_class: Gtk.BinClass
-    changed: (self: EnvironmentEditor) => void
+    readonly parent_class: Gtk.BinClass
+    readonly changed: (self: EnvironmentEditor) => void
     static name: string
 }
 abstract class FileDropEntryClass {
     /* Fields of Anjuta-3.0.Anjuta.FileDropEntryClass */
-    parent_class: DropEntryClass
+    readonly parent_class: DropEntryClass
     static name: string
 }
 class FileDropEntryPriv {
@@ -18260,7 +18360,7 @@ class FileDropEntryPriv {
 }
 abstract class FileListClass {
     /* Fields of Anjuta-3.0.Anjuta.FileListClass */
-    parent_class: Gtk.BoxClass
+    readonly parent_class: Gtk.BoxClass
     static name: string
 }
 class FileListPriv {
@@ -18268,10 +18368,10 @@ class FileListPriv {
 }
 class LanguageProposalData {
     /* Fields of Anjuta-3.0.Anjuta.LanguageProposalData */
-    name: string
-    info: string
-    is_func: boolean
-    has_para: boolean
+    readonly name: string
+    readonly info: string
+    readonly is_func: boolean
+    readonly has_para: boolean
     /* Methods of Anjuta-3.0.Anjuta.LanguageProposalData */
     free(): void
     static name: string
@@ -18282,7 +18382,7 @@ class LanguageProposalData {
 }
 abstract class LanguageProviderClass {
     /* Fields of Anjuta-3.0.Anjuta.LanguageProviderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class LanguageProviderPriv {
@@ -18290,9 +18390,9 @@ class LanguageProviderPriv {
 }
 abstract class LauncherClass {
     /* Fields of Anjuta-3.0.Anjuta.LauncherClass */
-    parent_class: GObject.ObjectClass
-    child_exited: (launcher: Launcher, child_pid: number, exit_status: number, time_taken_in_seconds: number) => void
-    busy: (launcher: Launcher, busy_flag: boolean) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly child_exited: (launcher: Launcher, child_pid: number, exit_status: number, time_taken_in_seconds: number) => void
+    readonly busy: (launcher: Launcher, busy_flag: boolean) => void
     static name: string
 }
 class LauncherPriv {
@@ -18300,9 +18400,9 @@ class LauncherPriv {
 }
 abstract class PkgConfigChooserClass {
     /* Fields of Anjuta-3.0.Anjuta.PkgConfigChooserClass */
-    parent_class: Gtk.TreeViewClass
-    package_activated: (self: PkgConfigChooser, package: string) => void
-    package_deactivated: (self: PkgConfigChooser, package: string) => void
+    readonly parent_class: Gtk.TreeViewClass
+    readonly package_activated: (self: PkgConfigChooser, package: string) => void
+    readonly package_deactivated: (self: PkgConfigChooser, package: string) => void
     static name: string
 }
 class PkgConfigChooserPrivate {
@@ -18310,7 +18410,7 @@ class PkgConfigChooserPrivate {
 }
 abstract class PkgScannerClass {
     /* Fields of Anjuta-3.0.Anjuta.PkgScannerClass */
-    parent_class: AsyncCommandClass
+    readonly parent_class: AsyncCommandClass
     static name: string
 }
 class PkgScannerPrivate {
@@ -18318,11 +18418,11 @@ class PkgScannerPrivate {
 }
 abstract class PluginClass {
     /* Fields of Anjuta-3.0.Anjuta.PluginClass */
-    parent_class: GObject.ObjectClass
-    activated: (plugin: Plugin) => void
-    deactivated: (plugin: Plugin) => void
-    activate: (plugin: Plugin) => boolean
-    deactivate: (plugin: Plugin) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly activated: (plugin: Plugin) => void
+    readonly deactivated: (plugin: Plugin) => void
+    readonly activate: (plugin: Plugin) => boolean
+    readonly deactivate: (plugin: Plugin) => boolean
     static name: string
 }
 class PluginDescription {
@@ -18346,7 +18446,7 @@ class PluginDescription {
 }
 abstract class PluginHandleClass {
     /* Fields of Anjuta-3.0.Anjuta.PluginHandleClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class PluginHandlePriv {
@@ -18354,9 +18454,9 @@ class PluginHandlePriv {
 }
 abstract class PluginManagerClass {
     /* Fields of Anjuta-3.0.Anjuta.PluginManagerClass */
-    parent_class: GObject.ObjectClass
-    plugin_activated: (self: PluginManager, handle: PluginHandle, plugin: GObject.Object) => void
-    plugin_deactivated: (self: PluginManager, handle: PluginHandle, plugin: GObject.Object) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly plugin_activated: (self: PluginManager, handle: PluginHandle, plugin: GObject.Object) => void
+    readonly plugin_deactivated: (self: PluginManager, handle: PluginHandle, plugin: GObject.Object) => void
     static name: string
 }
 class PluginManagerPriv {
@@ -18367,12 +18467,12 @@ class PluginPrivate {
 }
 abstract class PreferencesClass {
     /* Fields of Anjuta-3.0.Anjuta.PreferencesClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 abstract class PreferencesDialogClass {
     /* Fields of Anjuta-3.0.Anjuta.PreferencesDialogClass */
-    parent: Gtk.DialogClass
+    readonly parent: Gtk.DialogClass
     static name: string
 }
 class PreferencesDialogPrivate {
@@ -18383,19 +18483,19 @@ class PreferencesPriv {
 }
 abstract class ProfileClass {
     /* Fields of Anjuta-3.0.Anjuta.ProfileClass */
-    parent_class: GObject.ObjectClass
-    plugin_added: (self: Profile, plugin: PluginHandle) => void
-    plugin_removed: (self: Profile, plugin: PluginHandle) => void
-    changed: (self: Profile) => void
-    descoped: (self: Profile) => void
-    scoped: (self: Profile) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly plugin_added: (self: Profile, plugin: PluginHandle) => void
+    readonly plugin_removed: (self: Profile, plugin: PluginHandle) => void
+    readonly changed: (self: Profile) => void
+    readonly descoped: (self: Profile) => void
+    readonly scoped: (self: Profile) => void
     static name: string
 }
 abstract class ProfileManagerClass {
     /* Fields of Anjuta-3.0.Anjuta.ProfileManagerClass */
-    parent_class: GObject.ObjectClass
-    profile_pushed: (self: ProfileManager, profile: Profile) => void
-    profile_popped: (self: ProfileManager, profile: Profile) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly profile_pushed: (self: ProfileManager, profile: Profile) => void
+    readonly profile_popped: (self: ProfileManager, profile: Profile) => void
     static name: string
 }
 class ProfileManagerPriv {
@@ -18406,17 +18506,17 @@ class ProfilePriv {
 }
 abstract class ProjectNodeClass {
     /* Fields of Anjuta-3.0.Anjuta.ProjectNodeClass */
-    parent_class: GObject.InitiallyUnownedClass
-    updated: (error: GLib.Error) => void
-    loaded: (error: GLib.Error) => void
+    readonly parent_class: GObject.InitiallyUnownedClass
+    readonly updated: (error: GLib.Error) => void
+    readonly loaded: (error: GLib.Error) => void
     static name: string
 }
 class ProjectNodeInfo {
     /* Fields of Anjuta-3.0.Anjuta.ProjectNodeInfo */
-    type: ProjectNodeType
-    name: string
-    mime_type: string
-    property_help_id: string
+    readonly type: ProjectNodeType
+    readonly name: string
+    readonly mime_type: string
+    readonly property_help_id: string
     /* Methods of Anjuta-3.0.Anjuta.ProjectNodeInfo */
     copy(): ProjectNodeInfo
     free(): void
@@ -18429,10 +18529,10 @@ class ProjectNodeInfo {
 }
 class ProjectProperty {
     /* Fields of Anjuta-3.0.Anjuta.ProjectProperty */
-    name: string
-    value: string
-    info: ProjectPropertyInfo
-    user_data: object
+    readonly name: string
+    readonly value: string
+    readonly info: ProjectPropertyInfo
+    readonly user_data: object
     /* Methods of Anjuta-3.0.Anjuta.ProjectProperty */
     copy(): ProjectProperty
     free(): void
@@ -18444,13 +18544,13 @@ class ProjectProperty {
 }
 class ProjectPropertyInfo {
     /* Fields of Anjuta-3.0.Anjuta.ProjectPropertyInfo */
-    id: string
-    name: string
-    type: ProjectValueType
-    flags: ProjectPropertyFlags
-    description: string
-    default_value: ProjectProperty
-    user_data: object
+    readonly id: string
+    readonly name: string
+    readonly type: ProjectValueType
+    readonly flags: ProjectPropertyFlags
+    readonly description: string
+    readonly default_value: ProjectProperty
+    readonly user_data: object
     /* Methods of Anjuta-3.0.Anjuta.ProjectPropertyInfo */
     copy(): ProjectPropertyInfo
     free(): void
@@ -18465,7 +18565,7 @@ class Property {
 }
 abstract class SavePromptClass {
     /* Fields of Anjuta-3.0.Anjuta.SavePromptClass */
-    parent_class: Gtk.MessageDialogClass
+    readonly parent_class: Gtk.MessageDialogClass
     static name: string
 }
 class SavePromptPrivate {
@@ -18473,7 +18573,7 @@ class SavePromptPrivate {
 }
 abstract class SerializerClass {
     /* Fields of Anjuta-3.0.Anjuta.SerializerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SerializerPrivate {
@@ -18481,7 +18581,7 @@ class SerializerPrivate {
 }
 abstract class SessionClass {
     /* Fields of Anjuta-3.0.Anjuta.SessionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SessionPriv {
@@ -18489,38 +18589,38 @@ class SessionPriv {
 }
 abstract class ShellIface {
     /* Fields of Anjuta-3.0.Anjuta.ShellIface */
-    g_iface: GObject.TypeInterface
-    value_added: (shell: Shell, name: string, value: any) => void
-    value_removed: (shell: Shell, name: string) => void
-    save_session: (shell: Shell, phase: SessionPhase, session: Session) => void
-    load_session: (shell: Shell, phase: SessionPhase, session: Session) => void
-    save_prompt: (shell: Shell, save_prompt: SavePrompt) => void
-    get_status: (shell: Shell) => Status
-    get_ui: (shell: Shell) => UI
-    get_preferences: (shell: Shell) => Preferences
-    get_plugin_manager: (shell: Shell) => PluginManager
-    get_profile_manager: (shell: Shell) => ProfileManager
-    add_widget_full: (shell: Shell, widget: Gtk.Widget, name: string, title: string, stock_id: string, placement: ShellPlacement, locked: boolean) => void
-    add_widget_custom: (shell: Shell, widget: Gtk.Widget, name: string, title: string, stock_id: string, label: Gtk.Widget, placement: ShellPlacement) => void
-    remove_widget: (shell: Shell, widget: Gtk.Widget) => void
-    present_widget: (shell: Shell, widget: Gtk.Widget) => void
-    iconify_dockable_widget: (shell: Shell, widget: Gtk.Widget) => void
-    hide_dockable_widget: (shell: Shell, widget: Gtk.Widget) => void
-    show_dockable_widget: (shell: Shell, widget: Gtk.Widget) => void
-    maximize_widget: (shell: Shell, widget_name: string) => void
-    unmaximize: (shell: Shell) => void
-    add_value: (shell: Shell, name: string, value: any) => void
-    get_value: (shell: Shell, name: string, value: any) => void
-    remove_value: (shell: Shell, name: string) => void
-    saving_push: (shell: Shell) => void
-    saving_pop: (shell: Shell) => void
-    get_object: (shell: Shell, iface_name: string) => GObject.Object
+    readonly g_iface: GObject.TypeInterface
+    readonly value_added: (shell: Shell, name: string, value: any) => void
+    readonly value_removed: (shell: Shell, name: string) => void
+    readonly save_session: (shell: Shell, phase: SessionPhase, session: Session) => void
+    readonly load_session: (shell: Shell, phase: SessionPhase, session: Session) => void
+    readonly save_prompt: (shell: Shell, save_prompt: SavePrompt) => void
+    readonly get_status: (shell: Shell) => Status
+    readonly get_ui: (shell: Shell) => UI
+    readonly get_preferences: (shell: Shell) => Preferences
+    readonly get_plugin_manager: (shell: Shell) => PluginManager
+    readonly get_profile_manager: (shell: Shell) => ProfileManager
+    readonly add_widget_full: (shell: Shell, widget: Gtk.Widget, name: string, title: string, stock_id: string, placement: ShellPlacement, locked: boolean) => void
+    readonly add_widget_custom: (shell: Shell, widget: Gtk.Widget, name: string, title: string, stock_id: string, label: Gtk.Widget, placement: ShellPlacement) => void
+    readonly remove_widget: (shell: Shell, widget: Gtk.Widget) => void
+    readonly present_widget: (shell: Shell, widget: Gtk.Widget) => void
+    readonly iconify_dockable_widget: (shell: Shell, widget: Gtk.Widget) => void
+    readonly hide_dockable_widget: (shell: Shell, widget: Gtk.Widget) => void
+    readonly show_dockable_widget: (shell: Shell, widget: Gtk.Widget) => void
+    readonly maximize_widget: (shell: Shell, widget_name: string) => void
+    readonly unmaximize: (shell: Shell) => void
+    readonly add_value: (shell: Shell, name: string, value: any) => void
+    readonly get_value: (shell: Shell, name: string, value: any) => void
+    readonly remove_value: (shell: Shell, name: string) => void
+    readonly saving_push: (shell: Shell) => void
+    readonly saving_pop: (shell: Shell) => void
+    readonly get_object: (shell: Shell, iface_name: string) => GObject.Object
     static name: string
 }
 abstract class StatusClass {
     /* Fields of Anjuta-3.0.Anjuta.StatusClass */
-    parent_class: Gtk.BoxClass
-    busy: (status: Status, state: boolean) => void
+    readonly parent_class: Gtk.BoxClass
+    readonly busy: (status: Status, state: boolean) => void
     static name: string
 }
 class StatusPriv {
@@ -18528,12 +18628,12 @@ class StatusPriv {
 }
 abstract class SyncCommandClass {
     /* Fields of Anjuta-3.0.Anjuta.SyncCommandClass */
-    parent_class: CommandClass
+    readonly parent_class: CommandClass
     static name: string
 }
 abstract class TabberClass {
     /* Fields of Anjuta-3.0.Anjuta.TabberClass */
-    parent_class: Gtk.ContainerClass
+    readonly parent_class: Gtk.ContainerClass
     static name: string
 }
 class TabberPriv {
@@ -18565,9 +18665,9 @@ abstract class TokenFileClass {
 }
 class TokenFileLocation {
     /* Fields of Anjuta-3.0.Anjuta.TokenFileLocation */
-    filename: string
-    line: number
-    column: number
+    readonly filename: string
+    readonly line: number
+    readonly column: number
     static name: string
 }
 class TokenStream {
@@ -18590,7 +18690,7 @@ class TokenStyle {
 }
 abstract class TreeComboBoxClass {
     /* Fields of Anjuta-3.0.Anjuta.TreeComboBoxClass */
-    changed: (combo: TreeComboBox) => void
+    readonly changed: (combo: TreeComboBox) => void
     static name: string
 }
 class TreeComboBoxPrivate {
@@ -18598,7 +18698,7 @@ class TreeComboBoxPrivate {
 }
 abstract class UIClass {
     /* Fields of Anjuta-3.0.Anjuta.UIClass */
-    parent: Gtk.UIManagerClass
+    readonly parent: Gtk.UIManagerClass
     static name: string
 }
 class UIPrivate {
@@ -18606,18 +18706,18 @@ class UIPrivate {
 }
 class UtilStringMap {
     /* Fields of Anjuta-3.0.Anjuta.UtilStringMap */
-    type: number
-    name: string
+    readonly type: number
+    readonly name: string
     static name: string
 }
 abstract class VcsStatusTreeViewClass {
     /* Fields of Anjuta-3.0.Anjuta.VcsStatusTreeViewClass */
-    parent_class: Gtk.TreeViewClass
+    readonly parent_class: Gtk.TreeViewClass
     static name: string
 }
 class VcsStatusTreeViewPriv {
     static name: string
 }
-type GluePlugin = GObject.TypeModule
+    type GluePlugin = GObject.TypeModule
 }
 export default Anjuta;

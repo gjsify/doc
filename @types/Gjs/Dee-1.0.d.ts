@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Dee-1.0
  */
@@ -33,9 +39,9 @@ enum TermMatchFlag {
     EXACT,
     PREFIX,
 }
-export const PEER_DBUS_IFACE: string
-export const SEQUENCE_MODEL_DBUS_IFACE: string
-export const SHARED_MODEL_DBUS_IFACE: string
+const PEER_DBUS_IFACE: string
+const SEQUENCE_MODEL_DBUS_IFACE: string
+const SHARED_MODEL_DBUS_IFACE: string
 function filter_new(map_func: FilterMapFunc, map_notify: FilterMapNotify): /* out_filter */ Filter
 function filter_new_collator(column: number): /* out_filter */ Filter
 function filter_new_collator_desc(column: number): /* out_filter */ Filter
@@ -238,11 +244,11 @@ class Serializable {
     static parse(data: GLib.Variant, type: GObject.Type): GObject.Object
     static parse_external(data: GLib.Variant): GObject.Object
 }
-export interface Analyzer_ConstructProps extends GObject.Object_ConstructProps {
+interface Analyzer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Analyzer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.Analyzer */
     add_term_filter(filter_func: TermFilterFunc): void
     analyze(data: string, terms_out?: TermList | null, colkeys_out?: TermList | null): void
@@ -301,7 +307,8 @@ class Analyzer {
     static collate_cmp_func(key1: string, key2: string, analyzer?: object | null): number
     static $gtype: GObject.Type
 }
-export interface Client_ConstructProps extends Peer_ConstructProps {
+interface Client_ConstructProps extends Peer_ConstructProps {
+    /* Constructor properties of Dee-1.0.Dee.Client */
     bus_address?: string
 }
 class Client {
@@ -309,7 +316,7 @@ class Client {
     readonly swarm_leader: string
     swarm_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.Peer */
     get_connections(): Gio.DBusConnection[]
     get_swarm_leader(): string
@@ -386,17 +393,18 @@ class Client {
     _init (config?: Client_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(swarm_name: string): Client
+    /* Function overloads */
+    static new(swarm_name: string): Client
     static new_for_address(swarm_name: string, bus_address: string): Client
     static $gtype: GObject.Type
 }
-export interface FileResourceManager_ConstructProps extends GObject.Object_ConstructProps {
+interface FileResourceManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Dee-1.0.Dee.FileResourceManager */
     primary_path?: string
 }
 class FileResourceManager {
-    /* Fields of Dee-1.0.Dee.FileResourceManager */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.FileResourceManager */
     add_search_path(path: string): void
     get_primary_path(): string
@@ -452,12 +460,13 @@ class FileResourceManager {
     static get_default(): ResourceManager
     static $gtype: GObject.Type
 }
-export interface FilterModel_ConstructProps extends ProxyModel_ConstructProps {
+interface FilterModel_ConstructProps extends ProxyModel_ConstructProps {
+    /* Constructor properties of Dee-1.0.Dee.FilterModel */
     filter?: Filter
 }
 class FilterModel {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.FilterModel */
     append_iter(iter: ModelIter): ModelIter
     contains(iter: ModelIter): boolean
@@ -543,6 +552,110 @@ class FilterModel {
     /* Methods of Dee-1.0.Dee.Serializable */
     externalize(): GLib.Variant
     serialize(): GLib.Variant
+    /* Virtual methods of Dee-1.0.Dee.FilterModel */
+    vfunc_append_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_begin_changeset(): void
+    vfunc_changeset_finished(): void
+    vfunc_changeset_started(): void
+    vfunc_clear(): void
+    vfunc_end_changeset(): void
+    vfunc_find_row_sorted(row_spec: GLib.Variant[], cmp_func: CompareRowFunc): [ /* returnType */ ModelIter, /* out_was_found */ boolean ]
+    vfunc_get_bool(iter: ModelIter, column: number): boolean
+    vfunc_get_column_index(column_name: string): number
+    vfunc_get_column_names(): string[]
+    vfunc_get_column_schema(column: number): string
+    vfunc_get_double(iter: ModelIter, column: number): number
+    vfunc_get_field_schema(field_name: string): [ /* returnType */ string, /* out_column */ number ]
+    vfunc_get_first_iter(): ModelIter
+    vfunc_get_int32(iter: ModelIter, column: number): number
+    vfunc_get_int64(iter: ModelIter, column: number): number
+    vfunc_get_iter_at_row(row: number): ModelIter
+    vfunc_get_last_iter(): ModelIter
+    vfunc_get_n_columns(): number
+    vfunc_get_n_rows(): number
+    vfunc_get_position(iter: ModelIter): number
+    vfunc_get_row(iter: ModelIter, out_row_members: GLib.Variant): GLib.Variant
+    vfunc_get_schema(): string[]
+    vfunc_get_string(iter: ModelIter, column: number): string
+    vfunc_get_tag(iter: ModelIter, tag: ModelTag): object | null
+    vfunc_get_uchar(iter: ModelIter, column: number): number
+    vfunc_get_uint32(iter: ModelIter, column: number): number
+    vfunc_get_uint64(iter: ModelIter, column: number): number
+    vfunc_get_value(iter: ModelIter, column: number): GLib.Variant
+    vfunc_get_value_by_name(iter: ModelIter, column_name: string): GLib.Variant
+    vfunc_get_vardict_schema(num_column: number): GLib.HashTable
+    vfunc_insert_row(pos: number, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_before(iter: ModelIter, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_sorted(row_members: GLib.Variant[], cmp_func: CompareRowFunc): ModelIter
+    vfunc_is_first(iter: ModelIter): boolean
+    vfunc_is_last(iter: ModelIter): boolean
+    vfunc_next(iter: ModelIter): ModelIter
+    vfunc_prepend_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_prev(iter: ModelIter): ModelIter
+    vfunc_register_tag(tag_destroy: GLib.DestroyNotify): ModelTag
+    vfunc_register_vardict_schema(num_column: number, schemas: GLib.HashTable): void
+    vfunc_remove(iter: ModelIter): void
+    vfunc_row_added(iter: ModelIter): void
+    vfunc_row_changed(iter: ModelIter): void
+    vfunc_row_removed(iter: ModelIter): void
+    vfunc_set_column_names_full(column_names: string[]): void
+    vfunc_set_row(iter: ModelIter, row_members: GLib.Variant[]): void
+    vfunc_set_schema_full(column_schemas: string[]): void
+    vfunc_set_tag(iter: ModelIter, tag: ModelTag, value?: object | null): void
+    vfunc_set_value(iter: ModelIter, column: number, value: GLib.Variant): void
+    vfunc_serialize(): GLib.Variant
+    /* Virtual methods of Dee-1.0.Dee.ProxyModel */
+    vfunc_append_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_begin_changeset(): void
+    vfunc_changeset_finished(): void
+    vfunc_changeset_started(): void
+    vfunc_clear(): void
+    vfunc_end_changeset(): void
+    vfunc_find_row_sorted(row_spec: GLib.Variant[], cmp_func: CompareRowFunc): [ /* returnType */ ModelIter, /* out_was_found */ boolean ]
+    vfunc_get_bool(iter: ModelIter, column: number): boolean
+    vfunc_get_column_index(column_name: string): number
+    vfunc_get_column_names(): string[]
+    vfunc_get_column_schema(column: number): string
+    vfunc_get_double(iter: ModelIter, column: number): number
+    vfunc_get_field_schema(field_name: string): [ /* returnType */ string, /* out_column */ number ]
+    vfunc_get_first_iter(): ModelIter
+    vfunc_get_int32(iter: ModelIter, column: number): number
+    vfunc_get_int64(iter: ModelIter, column: number): number
+    vfunc_get_iter_at_row(row: number): ModelIter
+    vfunc_get_last_iter(): ModelIter
+    vfunc_get_n_columns(): number
+    vfunc_get_n_rows(): number
+    vfunc_get_position(iter: ModelIter): number
+    vfunc_get_row(iter: ModelIter, out_row_members: GLib.Variant): GLib.Variant
+    vfunc_get_schema(): string[]
+    vfunc_get_string(iter: ModelIter, column: number): string
+    vfunc_get_tag(iter: ModelIter, tag: ModelTag): object | null
+    vfunc_get_uchar(iter: ModelIter, column: number): number
+    vfunc_get_uint32(iter: ModelIter, column: number): number
+    vfunc_get_uint64(iter: ModelIter, column: number): number
+    vfunc_get_value(iter: ModelIter, column: number): GLib.Variant
+    vfunc_get_value_by_name(iter: ModelIter, column_name: string): GLib.Variant
+    vfunc_get_vardict_schema(num_column: number): GLib.HashTable
+    vfunc_insert_row(pos: number, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_before(iter: ModelIter, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_sorted(row_members: GLib.Variant[], cmp_func: CompareRowFunc): ModelIter
+    vfunc_is_first(iter: ModelIter): boolean
+    vfunc_is_last(iter: ModelIter): boolean
+    vfunc_next(iter: ModelIter): ModelIter
+    vfunc_prepend_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_prev(iter: ModelIter): ModelIter
+    vfunc_register_tag(tag_destroy: GLib.DestroyNotify): ModelTag
+    vfunc_register_vardict_schema(num_column: number, schemas: GLib.HashTable): void
+    vfunc_remove(iter: ModelIter): void
+    vfunc_row_added(iter: ModelIter): void
+    vfunc_row_changed(iter: ModelIter): void
+    vfunc_row_removed(iter: ModelIter): void
+    vfunc_set_column_names_full(column_names: string[]): void
+    vfunc_set_row(iter: ModelIter, row_members: GLib.Variant[]): void
+    vfunc_set_schema_full(column_schemas: string[]): void
+    vfunc_set_tag(iter: ModelIter, tag: ModelTag, value?: object | null): void
+    vfunc_set_value(iter: ModelIter, column: number, value: GLib.Variant): void
+    vfunc_serialize(): GLib.Variant
     /* Virtual methods of Dee-1.0.Dee.SerializableModel */
     vfunc_append_row(row_members: GLib.Variant[]): ModelIter
     vfunc_begin_changeset(): void
@@ -632,15 +745,15 @@ class FilterModel {
     _init (config?: FilterModel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(orig_model: Model, filter: Filter): FilterModel
+    static parse(data: GLib.Variant, type: GObject.Type): GObject.Object
+    static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface GListResultSet_ConstructProps extends GObject.Object_ConstructProps {
+interface GListResultSet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class GListResultSet {
-    /* Fields of Dee-1.0.Dee.GListResultSet */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -700,11 +813,11 @@ class GListResultSet {
     _init (config?: GListResultSet_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface HashIndex_ConstructProps extends Index_ConstructProps {
+interface HashIndex_ConstructProps extends Index_ConstructProps {
 }
 class HashIndex {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.Index */
     foreach(start_term: string, func: IndexIterFunc): void
     get_analyzer(): Analyzer
@@ -768,14 +881,15 @@ class HashIndex {
     static new(model: Model, analyzer: Analyzer, reader: ModelReader): HashIndex
     static $gtype: GObject.Type
 }
-export interface Index_ConstructProps extends GObject.Object_ConstructProps {
+interface Index_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Dee-1.0.Dee.Index */
     analyzer?: Analyzer
     model?: Model
     reader?: ModelReader
 }
 class Index {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.Index */
     foreach(start_term: string, func: IndexIterFunc): void
     get_analyzer(): Analyzer
@@ -837,7 +951,8 @@ class Index {
     _init (config?: Index_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Peer_ConstructProps extends GObject.Object_ConstructProps {
+interface Peer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Dee-1.0.Dee.Peer */
     swarm_name?: string
     swarm_owner?: boolean
 }
@@ -846,7 +961,7 @@ class Peer {
     readonly swarm_leader: string
     swarm_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.Peer */
     get_connections(): Gio.DBusConnection[]
     get_swarm_leader(): string
@@ -925,14 +1040,15 @@ class Peer {
     static new(swarm_name: string): Peer
     static $gtype: GObject.Type
 }
-export interface ProxyModel_ConstructProps extends SerializableModel_ConstructProps {
+interface ProxyModel_ConstructProps extends SerializableModel_ConstructProps {
+    /* Constructor properties of Dee-1.0.Dee.ProxyModel */
     back_end?: Model
     inherit_seqnums?: boolean
     proxy_signals?: boolean
 }
 class ProxyModel {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.SerializableModel */
     get_seqnum(): number
     inc_seqnum(): number
@@ -1011,6 +1127,58 @@ class ProxyModel {
     /* Methods of Dee-1.0.Dee.Serializable */
     externalize(): GLib.Variant
     serialize(): GLib.Variant
+    /* Virtual methods of Dee-1.0.Dee.ProxyModel */
+    vfunc_append_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_begin_changeset(): void
+    vfunc_changeset_finished(): void
+    vfunc_changeset_started(): void
+    vfunc_clear(): void
+    vfunc_end_changeset(): void
+    vfunc_find_row_sorted(row_spec: GLib.Variant[], cmp_func: CompareRowFunc): [ /* returnType */ ModelIter, /* out_was_found */ boolean ]
+    vfunc_get_bool(iter: ModelIter, column: number): boolean
+    vfunc_get_column_index(column_name: string): number
+    vfunc_get_column_names(): string[]
+    vfunc_get_column_schema(column: number): string
+    vfunc_get_double(iter: ModelIter, column: number): number
+    vfunc_get_field_schema(field_name: string): [ /* returnType */ string, /* out_column */ number ]
+    vfunc_get_first_iter(): ModelIter
+    vfunc_get_int32(iter: ModelIter, column: number): number
+    vfunc_get_int64(iter: ModelIter, column: number): number
+    vfunc_get_iter_at_row(row: number): ModelIter
+    vfunc_get_last_iter(): ModelIter
+    vfunc_get_n_columns(): number
+    vfunc_get_n_rows(): number
+    vfunc_get_position(iter: ModelIter): number
+    vfunc_get_row(iter: ModelIter, out_row_members: GLib.Variant): GLib.Variant
+    vfunc_get_schema(): string[]
+    vfunc_get_string(iter: ModelIter, column: number): string
+    vfunc_get_tag(iter: ModelIter, tag: ModelTag): object | null
+    vfunc_get_uchar(iter: ModelIter, column: number): number
+    vfunc_get_uint32(iter: ModelIter, column: number): number
+    vfunc_get_uint64(iter: ModelIter, column: number): number
+    vfunc_get_value(iter: ModelIter, column: number): GLib.Variant
+    vfunc_get_value_by_name(iter: ModelIter, column_name: string): GLib.Variant
+    vfunc_get_vardict_schema(num_column: number): GLib.HashTable
+    vfunc_insert_row(pos: number, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_before(iter: ModelIter, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_sorted(row_members: GLib.Variant[], cmp_func: CompareRowFunc): ModelIter
+    vfunc_is_first(iter: ModelIter): boolean
+    vfunc_is_last(iter: ModelIter): boolean
+    vfunc_next(iter: ModelIter): ModelIter
+    vfunc_prepend_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_prev(iter: ModelIter): ModelIter
+    vfunc_register_tag(tag_destroy: GLib.DestroyNotify): ModelTag
+    vfunc_register_vardict_schema(num_column: number, schemas: GLib.HashTable): void
+    vfunc_remove(iter: ModelIter): void
+    vfunc_row_added(iter: ModelIter): void
+    vfunc_row_changed(iter: ModelIter): void
+    vfunc_row_removed(iter: ModelIter): void
+    vfunc_set_column_names_full(column_names: string[]): void
+    vfunc_set_row(iter: ModelIter, row_members: GLib.Variant[]): void
+    vfunc_set_schema_full(column_schemas: string[]): void
+    vfunc_set_tag(iter: ModelIter, tag: ModelTag, value?: object | null): void
+    vfunc_set_value(iter: ModelIter, column: number, value: GLib.Variant): void
+    vfunc_serialize(): GLib.Variant
     /* Virtual methods of Dee-1.0.Dee.SerializableModel */
     vfunc_append_row(row_members: GLib.Variant[]): ModelIter
     vfunc_begin_changeset(): void
@@ -1098,13 +1266,16 @@ class ProxyModel {
     static name: string
     constructor (config?: ProxyModel_ConstructProps)
     _init (config?: ProxyModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static parse(data: GLib.Variant, type: GObject.Type): GObject.Object
+    static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SequenceModel_ConstructProps extends SerializableModel_ConstructProps {
+interface SequenceModel_ConstructProps extends SerializableModel_ConstructProps {
 }
 class SequenceModel {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.SerializableModel */
     get_seqnum(): number
     inc_seqnum(): number
@@ -1183,6 +1354,58 @@ class SequenceModel {
     /* Methods of Dee-1.0.Dee.Serializable */
     externalize(): GLib.Variant
     serialize(): GLib.Variant
+    /* Virtual methods of Dee-1.0.Dee.SequenceModel */
+    vfunc_append_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_begin_changeset(): void
+    vfunc_changeset_finished(): void
+    vfunc_changeset_started(): void
+    vfunc_clear(): void
+    vfunc_end_changeset(): void
+    vfunc_find_row_sorted(row_spec: GLib.Variant[], cmp_func: CompareRowFunc): [ /* returnType */ ModelIter, /* out_was_found */ boolean ]
+    vfunc_get_bool(iter: ModelIter, column: number): boolean
+    vfunc_get_column_index(column_name: string): number
+    vfunc_get_column_names(): string[]
+    vfunc_get_column_schema(column: number): string
+    vfunc_get_double(iter: ModelIter, column: number): number
+    vfunc_get_field_schema(field_name: string): [ /* returnType */ string, /* out_column */ number ]
+    vfunc_get_first_iter(): ModelIter
+    vfunc_get_int32(iter: ModelIter, column: number): number
+    vfunc_get_int64(iter: ModelIter, column: number): number
+    vfunc_get_iter_at_row(row: number): ModelIter
+    vfunc_get_last_iter(): ModelIter
+    vfunc_get_n_columns(): number
+    vfunc_get_n_rows(): number
+    vfunc_get_position(iter: ModelIter): number
+    vfunc_get_row(iter: ModelIter, out_row_members: GLib.Variant): GLib.Variant
+    vfunc_get_schema(): string[]
+    vfunc_get_string(iter: ModelIter, column: number): string
+    vfunc_get_tag(iter: ModelIter, tag: ModelTag): object | null
+    vfunc_get_uchar(iter: ModelIter, column: number): number
+    vfunc_get_uint32(iter: ModelIter, column: number): number
+    vfunc_get_uint64(iter: ModelIter, column: number): number
+    vfunc_get_value(iter: ModelIter, column: number): GLib.Variant
+    vfunc_get_value_by_name(iter: ModelIter, column_name: string): GLib.Variant
+    vfunc_get_vardict_schema(num_column: number): GLib.HashTable
+    vfunc_insert_row(pos: number, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_before(iter: ModelIter, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_sorted(row_members: GLib.Variant[], cmp_func: CompareRowFunc): ModelIter
+    vfunc_is_first(iter: ModelIter): boolean
+    vfunc_is_last(iter: ModelIter): boolean
+    vfunc_next(iter: ModelIter): ModelIter
+    vfunc_prepend_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_prev(iter: ModelIter): ModelIter
+    vfunc_register_tag(tag_destroy: GLib.DestroyNotify): ModelTag
+    vfunc_register_vardict_schema(num_column: number, schemas: GLib.HashTable): void
+    vfunc_remove(iter: ModelIter): void
+    vfunc_row_added(iter: ModelIter): void
+    vfunc_row_changed(iter: ModelIter): void
+    vfunc_row_removed(iter: ModelIter): void
+    vfunc_set_column_names_full(column_names: string[]): void
+    vfunc_set_row(iter: ModelIter, row_members: GLib.Variant[]): void
+    vfunc_set_schema_full(column_schemas: string[]): void
+    vfunc_set_tag(iter: ModelIter, tag: ModelTag, value?: object | null): void
+    vfunc_set_value(iter: ModelIter, column: number, value: GLib.Variant): void
+    vfunc_serialize(): GLib.Variant
     /* Virtual methods of Dee-1.0.Dee.SerializableModel */
     vfunc_append_row(row_members: GLib.Variant[]): ModelIter
     vfunc_begin_changeset(): void
@@ -1272,13 +1495,15 @@ class SequenceModel {
     _init (config?: SequenceModel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SequenceModel
+    static parse(data: GLib.Variant, type: GObject.Type): GObject.Object
+    static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SerializableModel_ConstructProps extends GObject.Object_ConstructProps {
+interface SerializableModel_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SerializableModel {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.SerializableModel */
     get_seqnum(): number
     inc_seqnum(): number
@@ -1449,7 +1674,8 @@ class SerializableModel {
     static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Server_ConstructProps extends Peer_ConstructProps {
+interface Server_ConstructProps extends Peer_ConstructProps {
+    /* Constructor properties of Dee-1.0.Dee.Server */
     bus_address?: string
     same_user_only?: boolean
 }
@@ -1458,7 +1684,7 @@ class Server {
     readonly swarm_leader: string
     swarm_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.Server */
     get_client_address(): string
     /* Methods of Dee-1.0.Dee.Peer */
@@ -1537,11 +1763,14 @@ class Server {
     _init (config?: Server_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(swarm_name: string): Server
+    /* Function overloads */
+    static new(swarm_name: string): Server
     static new_for_address(swarm_name: string, bus_address: string): Server
     static bus_address_for_name(name: string, include_username: boolean): string
     static $gtype: GObject.Type
 }
-export interface SharedModel_ConstructProps extends ProxyModel_ConstructProps {
+interface SharedModel_ConstructProps extends ProxyModel_ConstructProps {
+    /* Constructor properties of Dee-1.0.Dee.SharedModel */
     access_mode?: SharedModelAccessMode
     flush_mode?: SharedModelFlushMode
     peer?: Peer
@@ -1551,7 +1780,7 @@ class SharedModel {
     flush_mode: SharedModelFlushMode
     readonly synchronized: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.SharedModel */
     flush_revision_queue(): number
     flush_revision_queue_sync(): number
@@ -1639,6 +1868,110 @@ class SharedModel {
     /* Methods of Dee-1.0.Dee.Serializable */
     externalize(): GLib.Variant
     serialize(): GLib.Variant
+    /* Virtual methods of Dee-1.0.Dee.SharedModel */
+    vfunc_append_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_begin_changeset(): void
+    vfunc_changeset_finished(): void
+    vfunc_changeset_started(): void
+    vfunc_clear(): void
+    vfunc_end_changeset(): void
+    vfunc_find_row_sorted(row_spec: GLib.Variant[], cmp_func: CompareRowFunc): [ /* returnType */ ModelIter, /* out_was_found */ boolean ]
+    vfunc_get_bool(iter: ModelIter, column: number): boolean
+    vfunc_get_column_index(column_name: string): number
+    vfunc_get_column_names(): string[]
+    vfunc_get_column_schema(column: number): string
+    vfunc_get_double(iter: ModelIter, column: number): number
+    vfunc_get_field_schema(field_name: string): [ /* returnType */ string, /* out_column */ number ]
+    vfunc_get_first_iter(): ModelIter
+    vfunc_get_int32(iter: ModelIter, column: number): number
+    vfunc_get_int64(iter: ModelIter, column: number): number
+    vfunc_get_iter_at_row(row: number): ModelIter
+    vfunc_get_last_iter(): ModelIter
+    vfunc_get_n_columns(): number
+    vfunc_get_n_rows(): number
+    vfunc_get_position(iter: ModelIter): number
+    vfunc_get_row(iter: ModelIter, out_row_members: GLib.Variant): GLib.Variant
+    vfunc_get_schema(): string[]
+    vfunc_get_string(iter: ModelIter, column: number): string
+    vfunc_get_tag(iter: ModelIter, tag: ModelTag): object | null
+    vfunc_get_uchar(iter: ModelIter, column: number): number
+    vfunc_get_uint32(iter: ModelIter, column: number): number
+    vfunc_get_uint64(iter: ModelIter, column: number): number
+    vfunc_get_value(iter: ModelIter, column: number): GLib.Variant
+    vfunc_get_value_by_name(iter: ModelIter, column_name: string): GLib.Variant
+    vfunc_get_vardict_schema(num_column: number): GLib.HashTable
+    vfunc_insert_row(pos: number, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_before(iter: ModelIter, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_sorted(row_members: GLib.Variant[], cmp_func: CompareRowFunc): ModelIter
+    vfunc_is_first(iter: ModelIter): boolean
+    vfunc_is_last(iter: ModelIter): boolean
+    vfunc_next(iter: ModelIter): ModelIter
+    vfunc_prepend_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_prev(iter: ModelIter): ModelIter
+    vfunc_register_tag(tag_destroy: GLib.DestroyNotify): ModelTag
+    vfunc_register_vardict_schema(num_column: number, schemas: GLib.HashTable): void
+    vfunc_remove(iter: ModelIter): void
+    vfunc_row_added(iter: ModelIter): void
+    vfunc_row_changed(iter: ModelIter): void
+    vfunc_row_removed(iter: ModelIter): void
+    vfunc_set_column_names_full(column_names: string[]): void
+    vfunc_set_row(iter: ModelIter, row_members: GLib.Variant[]): void
+    vfunc_set_schema_full(column_schemas: string[]): void
+    vfunc_set_tag(iter: ModelIter, tag: ModelTag, value?: object | null): void
+    vfunc_set_value(iter: ModelIter, column: number, value: GLib.Variant): void
+    vfunc_serialize(): GLib.Variant
+    /* Virtual methods of Dee-1.0.Dee.ProxyModel */
+    vfunc_append_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_begin_changeset(): void
+    vfunc_changeset_finished(): void
+    vfunc_changeset_started(): void
+    vfunc_clear(): void
+    vfunc_end_changeset(): void
+    vfunc_find_row_sorted(row_spec: GLib.Variant[], cmp_func: CompareRowFunc): [ /* returnType */ ModelIter, /* out_was_found */ boolean ]
+    vfunc_get_bool(iter: ModelIter, column: number): boolean
+    vfunc_get_column_index(column_name: string): number
+    vfunc_get_column_names(): string[]
+    vfunc_get_column_schema(column: number): string
+    vfunc_get_double(iter: ModelIter, column: number): number
+    vfunc_get_field_schema(field_name: string): [ /* returnType */ string, /* out_column */ number ]
+    vfunc_get_first_iter(): ModelIter
+    vfunc_get_int32(iter: ModelIter, column: number): number
+    vfunc_get_int64(iter: ModelIter, column: number): number
+    vfunc_get_iter_at_row(row: number): ModelIter
+    vfunc_get_last_iter(): ModelIter
+    vfunc_get_n_columns(): number
+    vfunc_get_n_rows(): number
+    vfunc_get_position(iter: ModelIter): number
+    vfunc_get_row(iter: ModelIter, out_row_members: GLib.Variant): GLib.Variant
+    vfunc_get_schema(): string[]
+    vfunc_get_string(iter: ModelIter, column: number): string
+    vfunc_get_tag(iter: ModelIter, tag: ModelTag): object | null
+    vfunc_get_uchar(iter: ModelIter, column: number): number
+    vfunc_get_uint32(iter: ModelIter, column: number): number
+    vfunc_get_uint64(iter: ModelIter, column: number): number
+    vfunc_get_value(iter: ModelIter, column: number): GLib.Variant
+    vfunc_get_value_by_name(iter: ModelIter, column_name: string): GLib.Variant
+    vfunc_get_vardict_schema(num_column: number): GLib.HashTable
+    vfunc_insert_row(pos: number, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_before(iter: ModelIter, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_sorted(row_members: GLib.Variant[], cmp_func: CompareRowFunc): ModelIter
+    vfunc_is_first(iter: ModelIter): boolean
+    vfunc_is_last(iter: ModelIter): boolean
+    vfunc_next(iter: ModelIter): ModelIter
+    vfunc_prepend_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_prev(iter: ModelIter): ModelIter
+    vfunc_register_tag(tag_destroy: GLib.DestroyNotify): ModelTag
+    vfunc_register_vardict_schema(num_column: number, schemas: GLib.HashTable): void
+    vfunc_remove(iter: ModelIter): void
+    vfunc_row_added(iter: ModelIter): void
+    vfunc_row_changed(iter: ModelIter): void
+    vfunc_row_removed(iter: ModelIter): void
+    vfunc_set_column_names_full(column_names: string[]): void
+    vfunc_set_row(iter: ModelIter, row_members: GLib.Variant[]): void
+    vfunc_set_schema_full(column_schemas: string[]): void
+    vfunc_set_tag(iter: ModelIter, tag: ModelTag, value?: object | null): void
+    vfunc_set_value(iter: ModelIter, column: number, value: GLib.Variant): void
+    vfunc_serialize(): GLib.Variant
     /* Virtual methods of Dee-1.0.Dee.SerializableModel */
     vfunc_append_row(row_members: GLib.Variant[]): ModelIter
     vfunc_begin_changeset(): void
@@ -1741,13 +2074,15 @@ class SharedModel {
     static new(name: string): SharedModel
     static new_for_peer(peer: Peer): SharedModel
     static new_with_back_end(name: string, back_end: Model): SharedModel
+    static parse(data: GLib.Variant, type: GObject.Type): GObject.Object
+    static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface TermList_ConstructProps extends GObject.Object_ConstructProps {
+interface TermList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TermList {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.TermList */
     add_term(term: string): TermList
     clear(): TermList
@@ -1803,11 +2138,11 @@ class TermList {
     _init (config?: TermList_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TextAnalyzer_ConstructProps extends Analyzer_ConstructProps {
+interface TextAnalyzer_ConstructProps extends Analyzer_ConstructProps {
 }
 class TextAnalyzer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.Analyzer */
     add_term_filter(filter_func: TermFilterFunc): void
     analyze(data: string, terms_out?: TermList | null, colkeys_out?: TermList | null): void
@@ -1863,14 +2198,17 @@ class TextAnalyzer {
     _init (config?: TextAnalyzer_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): TextAnalyzer
+    /* Function overloads */
+    static new(): TextAnalyzer
     static $gtype: GObject.Type
 }
-export interface Transaction_ConstructProps extends SerializableModel_ConstructProps {
+interface Transaction_ConstructProps extends SerializableModel_ConstructProps {
+    /* Constructor properties of Dee-1.0.Dee.Transaction */
     target?: Model
 }
 class Transaction {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.Transaction */
     commit(): boolean
     get_target(): Model
@@ -1953,6 +2291,58 @@ class Transaction {
     /* Methods of Dee-1.0.Dee.Serializable */
     externalize(): GLib.Variant
     serialize(): GLib.Variant
+    /* Virtual methods of Dee-1.0.Dee.Transaction */
+    vfunc_append_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_begin_changeset(): void
+    vfunc_changeset_finished(): void
+    vfunc_changeset_started(): void
+    vfunc_clear(): void
+    vfunc_end_changeset(): void
+    vfunc_find_row_sorted(row_spec: GLib.Variant[], cmp_func: CompareRowFunc): [ /* returnType */ ModelIter, /* out_was_found */ boolean ]
+    vfunc_get_bool(iter: ModelIter, column: number): boolean
+    vfunc_get_column_index(column_name: string): number
+    vfunc_get_column_names(): string[]
+    vfunc_get_column_schema(column: number): string
+    vfunc_get_double(iter: ModelIter, column: number): number
+    vfunc_get_field_schema(field_name: string): [ /* returnType */ string, /* out_column */ number ]
+    vfunc_get_first_iter(): ModelIter
+    vfunc_get_int32(iter: ModelIter, column: number): number
+    vfunc_get_int64(iter: ModelIter, column: number): number
+    vfunc_get_iter_at_row(row: number): ModelIter
+    vfunc_get_last_iter(): ModelIter
+    vfunc_get_n_columns(): number
+    vfunc_get_n_rows(): number
+    vfunc_get_position(iter: ModelIter): number
+    vfunc_get_row(iter: ModelIter, out_row_members: GLib.Variant): GLib.Variant
+    vfunc_get_schema(): string[]
+    vfunc_get_string(iter: ModelIter, column: number): string
+    vfunc_get_tag(iter: ModelIter, tag: ModelTag): object | null
+    vfunc_get_uchar(iter: ModelIter, column: number): number
+    vfunc_get_uint32(iter: ModelIter, column: number): number
+    vfunc_get_uint64(iter: ModelIter, column: number): number
+    vfunc_get_value(iter: ModelIter, column: number): GLib.Variant
+    vfunc_get_value_by_name(iter: ModelIter, column_name: string): GLib.Variant
+    vfunc_get_vardict_schema(num_column: number): GLib.HashTable
+    vfunc_insert_row(pos: number, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_before(iter: ModelIter, row_members: GLib.Variant[]): ModelIter
+    vfunc_insert_row_sorted(row_members: GLib.Variant[], cmp_func: CompareRowFunc): ModelIter
+    vfunc_is_first(iter: ModelIter): boolean
+    vfunc_is_last(iter: ModelIter): boolean
+    vfunc_next(iter: ModelIter): ModelIter
+    vfunc_prepend_row(row_members: GLib.Variant[]): ModelIter
+    vfunc_prev(iter: ModelIter): ModelIter
+    vfunc_register_tag(tag_destroy: GLib.DestroyNotify): ModelTag
+    vfunc_register_vardict_schema(num_column: number, schemas: GLib.HashTable): void
+    vfunc_remove(iter: ModelIter): void
+    vfunc_row_added(iter: ModelIter): void
+    vfunc_row_changed(iter: ModelIter): void
+    vfunc_row_removed(iter: ModelIter): void
+    vfunc_set_column_names_full(column_names: string[]): void
+    vfunc_set_row(iter: ModelIter, row_members: GLib.Variant[]): void
+    vfunc_set_schema_full(column_schemas: string[]): void
+    vfunc_set_tag(iter: ModelIter, tag: ModelTag, value?: object | null): void
+    vfunc_set_value(iter: ModelIter, column: number, value: GLib.Variant): void
+    vfunc_serialize(): GLib.Variant
     /* Virtual methods of Dee-1.0.Dee.SerializableModel */
     vfunc_append_row(row_members: GLib.Variant[]): ModelIter
     vfunc_begin_changeset(): void
@@ -2043,13 +2433,15 @@ class Transaction {
     /* Static methods and pseudo-constructors */
     static new(target: Model): Transaction
     static error_quark(): GLib.Quark
+    static parse(data: GLib.Variant, type: GObject.Type): GObject.Object
+    static parse_external(data: GLib.Variant): GObject.Object
     static $gtype: GObject.Type
 }
-export interface TreeIndex_ConstructProps extends Index_ConstructProps {
+interface TreeIndex_ConstructProps extends Index_ConstructProps {
 }
 class TreeIndex {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Dee-1.0.Dee.Index */
     foreach(start_term: string, func: IndexIterFunc): void
     get_analyzer(): Analyzer
@@ -2115,11 +2507,11 @@ class TreeIndex {
 }
 abstract class AnalyzerClass {
     /* Fields of Dee-1.0.Dee.AnalyzerClass */
-    analyze: (self: Analyzer, data: string, terms_out?: TermList | null, colkeys_out?: TermList | null) => void
-    tokenize: (self: Analyzer, data: string, terms_out: TermList) => void
-    add_term_filter: (self: Analyzer, filter_func: TermFilterFunc) => void
-    collate_key: (self: Analyzer, data: string) => string
-    collate_cmp: (self: Analyzer, key1: string, key2: string) => number
+    readonly analyze: (self: Analyzer, data: string, terms_out?: TermList | null, colkeys_out?: TermList | null) => void
+    readonly tokenize: (self: Analyzer, data: string, terms_out: TermList) => void
+    readonly add_term_filter: (self: Analyzer, filter_func: TermFilterFunc) => void
+    readonly collate_key: (self: Analyzer, data: string) => string
+    readonly collate_cmp: (self: Analyzer, key1: string, key2: string) => number
     static name: string
 }
 class AnalyzerPrivate {
@@ -2133,15 +2525,15 @@ class ClientPrivate {
 }
 abstract class FileResourceManagerClass {
     /* Fields of Dee-1.0.Dee.FileResourceManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Filter {
     /* Fields of Dee-1.0.Dee.Filter */
-    map_func: FilterMapFunc
-    map_notify: FilterMapNotify
-    destroy: GLib.DestroyNotify
-    userdata: object
+    readonly map_func: FilterMapFunc
+    readonly map_notify: FilterMapNotify
+    readonly destroy: GLib.DestroyNotify
+    readonly userdata: object
     /* Methods of Dee-1.0.Dee.Filter */
     map(orig_model: Model, filter_model: FilterModel): void
     notify(orig_iter: ModelIter, orig_model: Model, filter_model: FilterModel): boolean
@@ -2162,12 +2554,12 @@ class FilterModelPrivate {
 }
 abstract class GListResultSetClass {
     /* Fields of Dee-1.0.Dee.GListResultSetClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HashIndexClass {
     /* Fields of Dee-1.0.Dee.HashIndexClass */
-    parent_class: IndexClass
+    readonly parent_class: IndexClass
     static name: string
 }
 class HashIndexPrivate {
@@ -2181,13 +2573,13 @@ class ICUTermFilter {
 }
 abstract class IndexClass {
     /* Fields of Dee-1.0.Dee.IndexClass */
-    parent_class: GObject.ObjectClass
-    lookup: (self: Index, term: string, flags: TermMatchFlag) => ResultSet
-    foreach: (self: Index, start_term: string, func: IndexIterFunc) => void
-    get_n_terms: (self: Index) => number
-    get_n_rows: (self: Index) => number
-    get_n_rows_for_term: (self: Index, term: string) => number
-    get_supported_term_match_flags: (self: Index) => number
+    readonly parent_class: GObject.ObjectClass
+    readonly lookup: (self: Index, term: string, flags: TermMatchFlag) => ResultSet
+    readonly foreach: (self: Index, start_term: string, func: IndexIterFunc) => void
+    readonly get_n_terms: (self: Index) => number
+    readonly get_n_rows: (self: Index) => number
+    readonly get_n_rows_for_term: (self: Index, term: string) => number
+    readonly get_supported_term_match_flags: (self: Index) => number
     static name: string
 }
 class IndexPrivate {
@@ -2195,57 +2587,57 @@ class IndexPrivate {
 }
 abstract class ModelIface {
     /* Fields of Dee-1.0.Dee.ModelIface */
-    g_iface: GObject.TypeInterface
-    row_added: (self: Model, iter: ModelIter) => void
-    row_removed: (self: Model, iter: ModelIter) => void
-    row_changed: (self: Model, iter: ModelIter) => void
-    set_schema_full: (self: Model, column_schemas: string[]) => void
-    get_schema: (self: Model) => string[]
-    get_column_schema: (self: Model, column: number) => string
-    get_field_schema: (self: Model, field_name: string) => [ /* returnType */ string, /* out_column */ number ]
-    get_column_index: (self: Model, column_name: string) => number
-    set_column_names_full: (self: Model, column_names: string[]) => void
-    get_column_names: (self: Model) => string[]
-    register_vardict_schema: (self: Model, num_column: number, schemas: GLib.HashTable) => void
-    get_vardict_schema: (self: Model, num_column: number) => GLib.HashTable
-    get_n_columns: (self: Model) => number
-    get_n_rows: (self: Model) => number
-    append_row: (self: Model, row_members: GLib.Variant[]) => ModelIter
-    prepend_row: (self: Model, row_members: GLib.Variant[]) => ModelIter
-    insert_row: (self: Model, pos: number, row_members: GLib.Variant[]) => ModelIter
-    insert_row_before: (self: Model, iter: ModelIter, row_members: GLib.Variant[]) => ModelIter
-    insert_row_sorted: (self: Model, row_members: GLib.Variant[], cmp_func: CompareRowFunc) => ModelIter
-    find_row_sorted: (self: Model, row_spec: GLib.Variant[], cmp_func: CompareRowFunc) => [ /* returnType */ ModelIter, /* out_was_found */ boolean ]
-    remove: (self: Model, iter: ModelIter) => void
-    clear: (self: Model) => void
-    set_value: (self: Model, iter: ModelIter, column: number, value: GLib.Variant) => void
-    set_row: (self: Model, iter: ModelIter, row_members: GLib.Variant[]) => void
-    get_value: (self: Model, iter: ModelIter, column: number) => GLib.Variant
-    get_value_by_name: (self: Model, iter: ModelIter, column_name: string) => GLib.Variant
-    get_first_iter: (self: Model) => ModelIter
-    get_last_iter: (self: Model) => ModelIter
-    get_iter_at_row: (self: Model, row: number) => ModelIter
-    get_bool: (self: Model, iter: ModelIter, column: number) => boolean
-    get_uchar: (self: Model, iter: ModelIter, column: number) => number
-    get_int32: (self: Model, iter: ModelIter, column: number) => number
-    get_uint32: (self: Model, iter: ModelIter, column: number) => number
-    get_int64: (self: Model, iter: ModelIter, column: number) => number
-    get_uint64: (self: Model, iter: ModelIter, column: number) => number
-    get_double: (self: Model, iter: ModelIter, column: number) => number
-    get_string: (self: Model, iter: ModelIter, column: number) => string
-    next: (self: Model, iter: ModelIter) => ModelIter
-    prev: (self: Model, iter: ModelIter) => ModelIter
-    is_first: (self: Model, iter: ModelIter) => boolean
-    is_last: (self: Model, iter: ModelIter) => boolean
-    get_position: (self: Model, iter: ModelIter) => number
-    register_tag: (self: Model, tag_destroy: GLib.DestroyNotify) => ModelTag
-    get_tag: (self: Model, iter: ModelIter, tag: ModelTag) => object | null
-    set_tag: (self: Model, iter: ModelIter, tag: ModelTag, value?: object | null) => void
-    get_row: (self: Model, iter: ModelIter, out_row_members: GLib.Variant) => GLib.Variant
-    begin_changeset: (self: Model) => void
-    end_changeset: (self: Model) => void
-    changeset_started: (self: Model) => void
-    changeset_finished: (self: Model) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly row_added: (self: Model, iter: ModelIter) => void
+    readonly row_removed: (self: Model, iter: ModelIter) => void
+    readonly row_changed: (self: Model, iter: ModelIter) => void
+    readonly set_schema_full: (self: Model, column_schemas: string[]) => void
+    readonly get_schema: (self: Model) => string[]
+    readonly get_column_schema: (self: Model, column: number) => string
+    readonly get_field_schema: (self: Model, field_name: string) => [ /* returnType */ string, /* out_column */ number ]
+    readonly get_column_index: (self: Model, column_name: string) => number
+    readonly set_column_names_full: (self: Model, column_names: string[]) => void
+    readonly get_column_names: (self: Model) => string[]
+    readonly register_vardict_schema: (self: Model, num_column: number, schemas: GLib.HashTable) => void
+    readonly get_vardict_schema: (self: Model, num_column: number) => GLib.HashTable
+    readonly get_n_columns: (self: Model) => number
+    readonly get_n_rows: (self: Model) => number
+    readonly append_row: (self: Model, row_members: GLib.Variant[]) => ModelIter
+    readonly prepend_row: (self: Model, row_members: GLib.Variant[]) => ModelIter
+    readonly insert_row: (self: Model, pos: number, row_members: GLib.Variant[]) => ModelIter
+    readonly insert_row_before: (self: Model, iter: ModelIter, row_members: GLib.Variant[]) => ModelIter
+    readonly insert_row_sorted: (self: Model, row_members: GLib.Variant[], cmp_func: CompareRowFunc) => ModelIter
+    readonly find_row_sorted: (self: Model, row_spec: GLib.Variant[], cmp_func: CompareRowFunc) => [ /* returnType */ ModelIter, /* out_was_found */ boolean ]
+    readonly remove: (self: Model, iter: ModelIter) => void
+    readonly clear: (self: Model) => void
+    readonly set_value: (self: Model, iter: ModelIter, column: number, value: GLib.Variant) => void
+    readonly set_row: (self: Model, iter: ModelIter, row_members: GLib.Variant[]) => void
+    readonly get_value: (self: Model, iter: ModelIter, column: number) => GLib.Variant
+    readonly get_value_by_name: (self: Model, iter: ModelIter, column_name: string) => GLib.Variant
+    readonly get_first_iter: (self: Model) => ModelIter
+    readonly get_last_iter: (self: Model) => ModelIter
+    readonly get_iter_at_row: (self: Model, row: number) => ModelIter
+    readonly get_bool: (self: Model, iter: ModelIter, column: number) => boolean
+    readonly get_uchar: (self: Model, iter: ModelIter, column: number) => number
+    readonly get_int32: (self: Model, iter: ModelIter, column: number) => number
+    readonly get_uint32: (self: Model, iter: ModelIter, column: number) => number
+    readonly get_int64: (self: Model, iter: ModelIter, column: number) => number
+    readonly get_uint64: (self: Model, iter: ModelIter, column: number) => number
+    readonly get_double: (self: Model, iter: ModelIter, column: number) => number
+    readonly get_string: (self: Model, iter: ModelIter, column: number) => string
+    readonly next: (self: Model, iter: ModelIter) => ModelIter
+    readonly prev: (self: Model, iter: ModelIter) => ModelIter
+    readonly is_first: (self: Model, iter: ModelIter) => boolean
+    readonly is_last: (self: Model, iter: ModelIter) => boolean
+    readonly get_position: (self: Model, iter: ModelIter) => number
+    readonly register_tag: (self: Model, tag_destroy: GLib.DestroyNotify) => ModelTag
+    readonly get_tag: (self: Model, iter: ModelIter, tag: ModelTag) => object | null
+    readonly set_tag: (self: Model, iter: ModelIter, tag: ModelTag, value?: object | null) => void
+    readonly get_row: (self: Model, iter: ModelIter, out_row_members: GLib.Variant) => GLib.Variant
+    readonly begin_changeset: (self: Model) => void
+    readonly end_changeset: (self: Model) => void
+    readonly changeset_started: (self: Model) => void
+    readonly changeset_finished: (self: Model) => void
     static name: string
 }
 class ModelIter {
@@ -2253,9 +2645,9 @@ class ModelIter {
 }
 class ModelReader {
     /* Fields of Dee-1.0.Dee.ModelReader */
-    reader_func: ModelReaderFunc
-    userdata: object
-    destroy: GLib.DestroyNotify
+    readonly reader_func: ModelReaderFunc
+    readonly userdata: object
+    readonly destroy: GLib.DestroyNotify
     /* Methods of Dee-1.0.Dee.ModelReader */
     read(model: Model, iter: ModelIter): string
     static name: string
@@ -2269,14 +2661,14 @@ class ModelTag {
 }
 abstract class PeerClass {
     /* Fields of Dee-1.0.Dee.PeerClass */
-    peer_found: (self: Peer, name: string) => void
-    peer_lost: (self: Peer, name: string) => void
-    connection_acquired: (self: Peer, connection: Gio.DBusConnection) => void
-    connection_closed: (self: Peer, connection: Gio.DBusConnection) => void
-    get_swarm_leader: (self: Peer) => string
-    is_swarm_leader: (self: Peer) => boolean
-    get_connections: (self: Peer) => Gio.DBusConnection[]
-    list_peers: (self: Peer) => string[]
+    readonly peer_found: (self: Peer, name: string) => void
+    readonly peer_lost: (self: Peer, name: string) => void
+    readonly connection_acquired: (self: Peer, connection: Gio.DBusConnection) => void
+    readonly connection_closed: (self: Peer, connection: Gio.DBusConnection) => void
+    readonly get_swarm_leader: (self: Peer) => string
+    readonly is_swarm_leader: (self: Peer) => boolean
+    readonly get_connections: (self: Peer) => Gio.DBusConnection[]
+    readonly list_peers: (self: Peer) => string[]
     static name: string
 }
 class PeerPrivate {
@@ -2290,21 +2682,21 @@ class ProxyModelPrivate {
 }
 abstract class ResourceManagerIface {
     /* Fields of Dee-1.0.Dee.ResourceManagerIface */
-    g_iface: GObject.TypeInterface
-    store: (self: ResourceManager, resource: Serializable, resource_name: string) => boolean
-    load: (self: ResourceManager, resource_name: string) => GObject.Object
+    readonly g_iface: GObject.TypeInterface
+    readonly store: (self: ResourceManager, resource: Serializable, resource_name: string) => boolean
+    readonly load: (self: ResourceManager, resource_name: string) => GObject.Object
     static name: string
 }
 abstract class ResultSetIface {
     /* Fields of Dee-1.0.Dee.ResultSetIface */
-    g_iface: GObject.TypeInterface
-    get_n_rows: (self: ResultSet) => number
-    next: (self: ResultSet) => ModelIter
-    has_next: (self: ResultSet) => boolean
-    peek: (self: ResultSet) => ModelIter
-    seek: (self: ResultSet, pos: number) => void
-    tell: (self: ResultSet) => number
-    get_model: (self: ResultSet) => Model
+    readonly g_iface: GObject.TypeInterface
+    readonly get_n_rows: (self: ResultSet) => number
+    readonly next: (self: ResultSet) => ModelIter
+    readonly has_next: (self: ResultSet) => boolean
+    readonly peek: (self: ResultSet) => ModelIter
+    readonly seek: (self: ResultSet, pos: number) => void
+    readonly tell: (self: ResultSet) => number
+    readonly get_model: (self: ResultSet) => Model
     static name: string
 }
 abstract class SequenceModelClass {
@@ -2315,15 +2707,15 @@ class SequenceModelPrivate {
 }
 abstract class SerializableIface {
     /* Fields of Dee-1.0.Dee.SerializableIface */
-    g_iface: GObject.TypeInterface
-    serialize: (self: Serializable) => GLib.Variant
+    readonly g_iface: GObject.TypeInterface
+    readonly serialize: (self: Serializable) => GLib.Variant
     static name: string
 }
 abstract class SerializableModelClass {
     /* Fields of Dee-1.0.Dee.SerializableModelClass */
-    get_seqnum: (self: Model) => number
-    set_seqnum: (self: Model, seqnum: number) => void
-    inc_seqnum: (self: Model) => number
+    readonly get_seqnum: (self: Model) => number
+    readonly set_seqnum: (self: Model, seqnum: number) => void
+    readonly inc_seqnum: (self: Model) => number
     static name: string
 }
 class SerializableModelPrivate {
@@ -2343,12 +2735,12 @@ class SharedModelPrivate {
 }
 abstract class TermListClass {
     /* Fields of Dee-1.0.Dee.TermListClass */
-    parent_class: GObject.ObjectClass
-    get_term: (self: TermList, n: number) => string
-    add_term: (self: TermList, term: string) => TermList
-    num_terms: (self: TermList) => number
-    clear: (self: TermList) => TermList
-    clone: (self: TermList) => TermList
+    readonly parent_class: GObject.ObjectClass
+    readonly get_term: (self: TermList, n: number) => string
+    readonly add_term: (self: TermList, term: string) => TermList
+    readonly num_terms: (self: TermList) => number
+    readonly clear: (self: TermList) => TermList
+    readonly clone: (self: TermList) => TermList
     static name: string
 }
 class TermListPrivate {
@@ -2368,7 +2760,7 @@ class TransactionPrivate {
 }
 abstract class TreeIndexClass {
     /* Fields of Dee-1.0.Dee.TreeIndexClass */
-    parent_class: IndexClass
+    readonly parent_class: IndexClass
     static name: string
 }
 class TreeIndexPrivate {

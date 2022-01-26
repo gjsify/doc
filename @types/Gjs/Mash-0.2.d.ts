@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Mash-0.2
  */
@@ -36,11 +42,11 @@ enum DataFlags {
     NEGATE_Y,
     NEGATE_Z,
 }
-export interface Data_ConstructProps extends GObject.Object_ConstructProps {
+interface Data_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Data {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mash-0.2.Mash.Data */
     get_extents(min_vertex: Clutter.Vertex, max_vertex: Clutter.Vertex): void
     load(flags: DataFlags, filename: string): boolean
@@ -91,11 +97,11 @@ class Data {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface DataLoader_ConstructProps extends GObject.Object_ConstructProps {
+interface DataLoader_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DataLoader {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mash-0.2.Mash.DataLoader */
     get_data(loader_data: DataLoaderData): void
     load(flags: DataFlags, filename: string): boolean
@@ -145,7 +151,7 @@ class DataLoader {
     _init (config?: DataLoader_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DirectionalLight_ConstructProps extends Light_ConstructProps {
+interface DirectionalLight_ConstructProps extends Light_ConstructProps {
 }
 class DirectionalLight {
     /* Properties of Mash-0.2.Mash.Light */
@@ -236,9 +242,9 @@ class DirectionalLight {
     y_expand: boolean
     z_position: number
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mash-0.2.Mash.Light */
     append_shader(shader_source: GLib.String, snippet: string): void
     generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
@@ -536,6 +542,29 @@ class DirectionalLight {
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
+    /* Virtual methods of Mash-0.2.Mash.DirectionalLight */
+    vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
+    vfunc_find_property(property_name: string): GObject.ParamSpec
+    vfunc_get_initial_state(property_name: string, value: any): void
+    vfunc_interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
+    vfunc_set_final_state(property_name: string, value: any): void
+    vfunc_actor_added(actor: Clutter.Actor): void
+    vfunc_actor_removed(actor: Clutter.Actor): void
+    vfunc_add(actor: Clutter.Actor): void
+    vfunc_child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
+    vfunc_create_child_meta(actor: Clutter.Actor): void
+    vfunc_destroy_child_meta(actor: Clutter.Actor): void
+    vfunc_foreach(callback: Clutter.Callback): void
+    vfunc_foreach_with_internals(callback: Clutter.Callback): void
+    vfunc_get_child_meta(actor: Clutter.Actor): Clutter.ChildMeta
+    vfunc_lower(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_raise(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_remove(actor: Clutter.Actor): void
+    vfunc_sort_depth_order(): void
+    vfunc_get_id(): string
+    vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
+    vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
+    vfunc_set_id(id_: string): void
     /* Virtual methods of Mash-0.2.Mash.Light */
     vfunc_generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     vfunc_update_uniforms(program: Cogl.Handle): void
@@ -877,9 +906,12 @@ class DirectionalLight {
     _init (config?: DirectionalLight_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DirectionalLight
+    static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface Light_ConstructProps extends Clutter.Actor_ConstructProps {
+interface Light_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of Mash-0.2.Mash.Light */
     ambient?: Clutter.Color
     diffuse?: Clutter.Color
     specular?: Clutter.Color
@@ -973,9 +1005,9 @@ class Light {
     y_expand: boolean
     z_position: number
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mash-0.2.Mash.Light */
     append_shader(shader_source: GLib.String, snippet: string): void
     generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
@@ -1617,11 +1649,11 @@ class Light {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface LightSet_ConstructProps extends GObject.Object_ConstructProps {
+interface LightSet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class LightSet {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mash-0.2.Mash.LightSet */
     add_light(light: Light): void
     remove_light(light: Light): void
@@ -1670,7 +1702,8 @@ class LightSet {
     static new(): LightSet
     static $gtype: GObject.Type
 }
-export interface Model_ConstructProps extends Clutter.Actor_ConstructProps {
+interface Model_ConstructProps extends Clutter.Actor_ConstructProps {
+    /* Constructor properties of Mash-0.2.Mash.Model */
     data?: Data
     fit_to_allocation?: boolean
     light_set?: LightSet
@@ -1764,9 +1797,9 @@ class Model {
     y_expand: boolean
     z_position: number
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mash-0.2.Mash.Model */
     get_fit_to_allocation(): boolean
     set_data(data: Data): void
@@ -2401,11 +2434,11 @@ class Model {
     static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface PlyLoader_ConstructProps extends Data_ConstructProps {
+interface PlyLoader_ConstructProps extends Data_ConstructProps {
 }
 class PlyLoader {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mash-0.2.Mash.Data */
     get_extents(min_vertex: Clutter.Vertex, max_vertex: Clutter.Vertex): void
     load(flags: DataFlags, filename: string): boolean
@@ -2453,7 +2486,8 @@ class PlyLoader {
     _init (config?: PlyLoader_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PointLight_ConstructProps extends Light_ConstructProps {
+interface PointLight_ConstructProps extends Light_ConstructProps {
+    /* Constructor properties of Mash-0.2.Mash.PointLight */
     constant_attenuation?: number
     linear_attenuation?: number
     quadratic_attenuation?: number
@@ -2551,9 +2585,9 @@ class PointLight {
     y_expand: boolean
     z_position: number
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mash-0.2.Mash.PointLight */
     get_constant_attenuation(): number
     get_linear_attenuation(): number
@@ -2858,6 +2892,29 @@ class PointLight {
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
+    /* Virtual methods of Mash-0.2.Mash.PointLight */
+    vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
+    vfunc_find_property(property_name: string): GObject.ParamSpec
+    vfunc_get_initial_state(property_name: string, value: any): void
+    vfunc_interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
+    vfunc_set_final_state(property_name: string, value: any): void
+    vfunc_actor_added(actor: Clutter.Actor): void
+    vfunc_actor_removed(actor: Clutter.Actor): void
+    vfunc_add(actor: Clutter.Actor): void
+    vfunc_child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
+    vfunc_create_child_meta(actor: Clutter.Actor): void
+    vfunc_destroy_child_meta(actor: Clutter.Actor): void
+    vfunc_foreach(callback: Clutter.Callback): void
+    vfunc_foreach_with_internals(callback: Clutter.Callback): void
+    vfunc_get_child_meta(actor: Clutter.Actor): Clutter.ChildMeta
+    vfunc_lower(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_raise(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_remove(actor: Clutter.Actor): void
+    vfunc_sort_depth_order(): void
+    vfunc_get_id(): string
+    vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
+    vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
+    vfunc_set_id(id_: string): void
     /* Virtual methods of Mash-0.2.Mash.Light */
     vfunc_generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     vfunc_update_uniforms(program: Cogl.Handle): void
@@ -3205,9 +3262,12 @@ class PointLight {
     _init (config?: PointLight_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PointLight
+    static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface SpotLight_ConstructProps extends PointLight_ConstructProps {
+interface SpotLight_ConstructProps extends PointLight_ConstructProps {
+    /* Constructor properties of Mash-0.2.Mash.SpotLight */
     spot_cutoff?: number
     spot_exponent?: number
 }
@@ -3307,9 +3367,9 @@ class SpotLight {
     y_expand: boolean
     z_position: number
     /* Fields of Clutter-1.0.Clutter.Actor */
-    flags: number
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Mash-0.2.Mash.SpotLight */
     get_spot_cutoff(): number
     get_spot_exponent(): number
@@ -3619,6 +3679,52 @@ class SpotLight {
     parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
     set_custom_property(script: Clutter.Script, name: string, value: any): void
     set_id(id_: string): void
+    /* Virtual methods of Mash-0.2.Mash.SpotLight */
+    vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
+    vfunc_find_property(property_name: string): GObject.ParamSpec
+    vfunc_get_initial_state(property_name: string, value: any): void
+    vfunc_interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
+    vfunc_set_final_state(property_name: string, value: any): void
+    vfunc_actor_added(actor: Clutter.Actor): void
+    vfunc_actor_removed(actor: Clutter.Actor): void
+    vfunc_add(actor: Clutter.Actor): void
+    vfunc_child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
+    vfunc_create_child_meta(actor: Clutter.Actor): void
+    vfunc_destroy_child_meta(actor: Clutter.Actor): void
+    vfunc_foreach(callback: Clutter.Callback): void
+    vfunc_foreach_with_internals(callback: Clutter.Callback): void
+    vfunc_get_child_meta(actor: Clutter.Actor): Clutter.ChildMeta
+    vfunc_lower(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_raise(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_remove(actor: Clutter.Actor): void
+    vfunc_sort_depth_order(): void
+    vfunc_get_id(): string
+    vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
+    vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
+    vfunc_set_id(id_: string): void
+    /* Virtual methods of Mash-0.2.Mash.PointLight */
+    vfunc_animate_property(animation: Clutter.Animation, property_name: string, initial_value: any, final_value: any, progress: number, value: any): boolean
+    vfunc_find_property(property_name: string): GObject.ParamSpec
+    vfunc_get_initial_state(property_name: string, value: any): void
+    vfunc_interpolate_value(property_name: string, interval: Clutter.Interval, progress: number): [ /* returnType */ boolean, /* value */ any ]
+    vfunc_set_final_state(property_name: string, value: any): void
+    vfunc_actor_added(actor: Clutter.Actor): void
+    vfunc_actor_removed(actor: Clutter.Actor): void
+    vfunc_add(actor: Clutter.Actor): void
+    vfunc_child_notify(child: Clutter.Actor, pspec: GObject.ParamSpec): void
+    vfunc_create_child_meta(actor: Clutter.Actor): void
+    vfunc_destroy_child_meta(actor: Clutter.Actor): void
+    vfunc_foreach(callback: Clutter.Callback): void
+    vfunc_foreach_with_internals(callback: Clutter.Callback): void
+    vfunc_get_child_meta(actor: Clutter.Actor): Clutter.ChildMeta
+    vfunc_lower(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_raise(actor: Clutter.Actor, sibling?: Clutter.Actor | null): void
+    vfunc_remove(actor: Clutter.Actor): void
+    vfunc_sort_depth_order(): void
+    vfunc_get_id(): string
+    vfunc_parse_custom_node(script: Clutter.Script, value: any, name: string, node: Json.Node): boolean
+    vfunc_set_custom_property(script: Clutter.Script, name: string, value: any): void
+    vfunc_set_id(id_: string): void
     /* Virtual methods of Mash-0.2.Mash.Light */
     vfunc_generate_shader(uniform_source: GLib.String, main_source: GLib.String): void
     vfunc_update_uniforms(program: Cogl.Handle): void
@@ -3970,6 +4076,8 @@ class SpotLight {
     _init (config?: SpotLight_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SpotLight
+    static class_find_child_property(klass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_list_child_properties(klass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
 abstract class DataClass {
@@ -3977,19 +4085,19 @@ abstract class DataClass {
 }
 abstract class DataLoaderClass {
     /* Fields of Mash-0.2.Mash.DataLoaderClass */
-    load: (data_loader: DataLoader, flags: DataFlags, filename: string) => boolean
-    get_data: (data_loader: DataLoader, loader_data: DataLoaderData) => void
+    readonly load: (data_loader: DataLoader, flags: DataFlags, filename: string) => boolean
+    readonly get_data: (data_loader: DataLoader, loader_data: DataLoaderData) => void
     static name: string
 }
 class DataLoaderData {
     /* Fields of Mash-0.2.Mash.DataLoaderData */
-    vertices_vbo: Cogl.Handle
-    indices: Cogl.Handle
-    min_index: number
-    max_index: number
-    n_triangles: number
-    min_vertex: Clutter.Vertex
-    max_vertex: Clutter.Vertex
+    readonly vertices_vbo: Cogl.Handle
+    readonly indices: Cogl.Handle
+    readonly min_index: number
+    readonly max_index: number
+    readonly n_triangles: number
+    readonly min_vertex: Clutter.Vertex
+    readonly max_vertex: Clutter.Vertex
     static name: string
 }
 class DataLoaderPrivate {
@@ -4006,8 +4114,8 @@ class DirectionalLightPrivate {
 }
 abstract class LightClass {
     /* Fields of Mash-0.2.Mash.LightClass */
-    generate_shader: (light: Light, uniform_source: GLib.String, main_source: GLib.String) => void
-    update_uniforms: (light: Light, program: Cogl.Handle) => void
+    readonly generate_shader: (light: Light, uniform_source: GLib.String, main_source: GLib.String) => void
+    readonly update_uniforms: (light: Light, program: Cogl.Handle) => void
     static name: string
 }
 class LightPrivate {

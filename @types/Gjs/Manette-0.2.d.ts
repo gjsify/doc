@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Manette-0.2
  */
@@ -18,11 +24,11 @@ enum EventType {
     EVENT_HAT,
 }
 function get_resource(): Gio.Resource
-export interface Device_ConstructProps extends GObject.Object_ConstructProps {
+interface Device_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Device {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Manette-0.2.Manette.Device */
     get_name(): string
     has_input(type: number, code: number): boolean
@@ -93,11 +99,11 @@ class Device {
     _init (config?: Device_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Monitor_ConstructProps extends GObject.Object_ConstructProps {
+interface Monitor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Monitor {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Manette-0.2.Manette.Monitor */
     iterate(): MonitorIter
     /* Methods of GObject-2.0.GObject.Object */
@@ -154,12 +160,12 @@ class Monitor {
 }
 abstract class DeviceClass {
     /* Fields of Manette-0.2.Manette.DeviceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MonitorClass {
     /* Fields of Manette-0.2.Manette.MonitorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MonitorIter {

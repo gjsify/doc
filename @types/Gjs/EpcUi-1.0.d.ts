@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EpcUi-1.0
  */
@@ -19,7 +25,8 @@ import type Epc from './Epc-1.0';
 
 export namespace EpcUi {
 
-export interface PasswordDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface PasswordDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+    /* Constructor properties of EpcUi-1.0.EpcUi.PasswordDialog */
     anonymous?: boolean
     anonymous_allowed?: boolean
     password?: string
@@ -109,18 +116,19 @@ class PasswordDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EpcUi-1.0.EpcUi.PasswordDialog */
     attach(consumer: Epc.Consumer): void
     get_anonymous_allowed(): boolean
@@ -259,7 +267,7 @@ class PasswordDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -503,6 +511,7 @@ class PasswordDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -571,6 +580,7 @@ class PasswordDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of EpcUi-1.0.EpcUi.PasswordDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -1097,8 +1107,6 @@ class PasswordDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: PasswordDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: PasswordDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: PasswordDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: PasswordDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: PasswordDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1108,10 +1116,12 @@ class PasswordDialog {
     _init (config?: PasswordDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PasswordDialog
+    /* Function overloads */
     static new(type: Gtk.WindowType): PasswordDialog
     static $gtype: GObject.Type
 }
-export interface ProgressWindow_ConstructProps extends Gtk.Window_ConstructProps {
+interface ProgressWindow_ConstructProps extends Gtk.Window_ConstructProps {
+    /* Constructor properties of EpcUi-1.0.EpcUi.ProgressWindow */
     message?: string
     progress?: number
     title?: string
@@ -1198,16 +1208,16 @@ class ProgressWindow {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EpcUi-1.0.EpcUi.ProgressWindow */
     update(progress: number, message: string): void
     /* Methods of Gtk-3.0.Gtk.Window */
@@ -1323,7 +1333,7 @@ class ProgressWindow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1567,6 +1577,7 @@ class ProgressWindow {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -1635,6 +1646,7 @@ class ProgressWindow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of EpcUi-1.0.EpcUi.ProgressWindow */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -2156,6 +2168,7 @@ class ProgressWindow {
     _init (config?: ProgressWindow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(title: string, parent: Gtk.Window, message: string): ProgressWindow
+    /* Function overloads */
     static new(type: Gtk.WindowType): ProgressWindow
     static install(parent: Gtk.Window): void
     static $gtype: GObject.Type

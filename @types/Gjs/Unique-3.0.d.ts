@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Unique-3.0
  */
@@ -32,7 +38,8 @@ enum Response {
     FAIL,
     PASSTHROUGH,
 }
-export interface App_ConstructProps extends GObject.Object_ConstructProps {
+interface App_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Unique-3.0.Unique.App */
     name?: string
     screen?: Gdk.Screen
     startup_id?: string
@@ -42,7 +49,7 @@ class App {
     readonly is_running: boolean
     screen: Gdk.Screen
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unique-3.0.Unique.App */
     add_command(command_name: string, command_id: number): void
     send_message(command_id: number, message_data?: MessageData | null): Response
@@ -102,13 +109,11 @@ class App {
     static new(name: string, startup_id?: string | null): App
     static $gtype: GObject.Type
 }
-export interface Backend_ConstructProps extends GObject.Object_ConstructProps {
+interface Backend_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Backend {
-    /* Fields of Unique-3.0.Unique.Backend */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Unique-3.0.Unique.Backend */
     get_name(): string
     get_screen(): Gdk.Screen
@@ -169,7 +174,7 @@ class Backend {
 }
 abstract class AppClass {
     /* Fields of Unique-3.0.Unique.AppClass */
-    message_received: (app: App, command: number, message_data: MessageData, time_: number) => Response
+    readonly message_received: (app: App, command: number, message_data: MessageData, time_: number) => Response
     static name: string
 }
 class AppPrivate {
@@ -177,8 +182,8 @@ class AppPrivate {
 }
 abstract class BackendClass {
     /* Fields of Unique-3.0.Unique.BackendClass */
-    request_name: (backend: Backend) => boolean
-    send_message: (backend: Backend, command_id: number, message_data: MessageData, time_: number) => Response
+    readonly request_name: (backend: Backend) => boolean
+    readonly send_message: (backend: Backend, command_id: number, message_data: MessageData, time_: number) => Response
     static name: string
 }
 class MessageData {

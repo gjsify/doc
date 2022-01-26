@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * AppStreamGlib-1.0
  */
@@ -565,20 +571,20 @@ enum VersionParseFlag {
     USE_TRIPLET,
     USE_BCD,
 }
-export const APP_SUBSUME_FLAG_DEDUPE: number
-export const APP_SUBSUME_FLAG_MERGE: number
-export const IMAGE_ALPHA_FLAG_BOTTOM: number
-export const IMAGE_ALPHA_FLAG_INTERNAL: number
-export const IMAGE_ALPHA_FLAG_LEFT: number
-export const IMAGE_ALPHA_FLAG_NONE: number
-export const IMAGE_ALPHA_FLAG_RIGHT: number
-export const IMAGE_ALPHA_FLAG_TOP: number
-export const IMAGE_LARGE_HEIGHT: number
-export const IMAGE_LARGE_WIDTH: number
-export const IMAGE_NORMAL_HEIGHT: number
-export const IMAGE_NORMAL_WIDTH: number
-export const IMAGE_THUMBNAIL_HEIGHT: number
-export const IMAGE_THUMBNAIL_WIDTH: number
+const APP_SUBSUME_FLAG_DEDUPE: number
+const APP_SUBSUME_FLAG_MERGE: number
+const IMAGE_ALPHA_FLAG_BOTTOM: number
+const IMAGE_ALPHA_FLAG_INTERNAL: number
+const IMAGE_ALPHA_FLAG_LEFT: number
+const IMAGE_ALPHA_FLAG_NONE: number
+const IMAGE_ALPHA_FLAG_RIGHT: number
+const IMAGE_ALPHA_FLAG_TOP: number
+const IMAGE_LARGE_HEIGHT: number
+const IMAGE_LARGE_WIDTH: number
+const IMAGE_NORMAL_HEIGHT: number
+const IMAGE_NORMAL_WIDTH: number
+const IMAGE_THUMBNAIL_HEIGHT: number
+const IMAGE_THUMBNAIL_WIDTH: number
 function id_kind_from_string(id_kind: string): IdKind
 function id_kind_to_string(id_kind: IdKind): string
 function inf_error_quark(): GLib.Quark
@@ -648,13 +654,11 @@ function utils_vercmp_full(version_a: string, version_b: string, flags: VersionC
 function utils_version_from_uint16(val: number, flags: VersionParseFlag): string
 function utils_version_from_uint32(val: number, flags: VersionParseFlag): string
 function utils_version_parse(version: string): string
-export interface Agreement_ConstructProps extends GObject.Object_ConstructProps {
+interface Agreement_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Agreement {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Agreement */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Agreement */
     add_section(agreement_section: AgreementSection): void
     get_kind(): AgreementKind
@@ -710,13 +714,11 @@ class Agreement {
     static kind_to_string(value: AgreementKind): string
     static $gtype: GObject.Type
 }
-export interface AgreementSection_ConstructProps extends GObject.Object_ConstructProps {
+interface AgreementSection_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AgreementSection {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.AgreementSection */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.AgreementSection */
     get_description(locale?: string | null): string
     get_kind(): string
@@ -769,13 +771,11 @@ class AgreementSection {
     static new(): AgreementSection
     static $gtype: GObject.Type
 }
-export interface App_ConstructProps extends GObject.Object_ConstructProps {
+interface App_ConstructProps extends GObject.Object_ConstructProps {
 }
 class App {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.App */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.App */
     add_addon(addon: App): void
     add_agreement(agreement: Agreement): void
@@ -982,13 +982,11 @@ class App {
     static state_to_string(state: AppState): string
     static $gtype: GObject.Type
 }
-export interface Bundle_ConstructProps extends GObject.Object_ConstructProps {
+interface Bundle_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Bundle {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Bundle */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Bundle */
     get_id(): string
     get_kind(): BundleKind
@@ -1045,13 +1043,11 @@ class Bundle {
     static kind_to_string(kind: BundleKind): string
     static $gtype: GObject.Type
 }
-export interface Checksum_ConstructProps extends GObject.Object_ConstructProps {
+interface Checksum_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Checksum {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Checksum */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Checksum */
     get_filename(): string
     get_kind(): GLib.ChecksumType
@@ -1108,13 +1104,11 @@ class Checksum {
     static target_to_string(target: ChecksumTarget): string
     static $gtype: GObject.Type
 }
-export interface ContentRating_ConstructProps extends GObject.Object_ConstructProps {
+interface ContentRating_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ContentRating {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.ContentRating */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.ContentRating */
     add_attribute(id: string, value: ContentRatingValue): void
     get_kind(): string
@@ -1178,13 +1172,11 @@ class ContentRating {
     static value_to_string(value: ContentRatingValue): string
     static $gtype: GObject.Type
 }
-export interface Format_ConstructProps extends GObject.Object_ConstructProps {
+interface Format_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Format {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Format */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Format */
     equal(format2: Format): boolean
     get_filename(): string
@@ -1239,13 +1231,11 @@ class Format {
     static kind_to_string(kind: FormatKind): string
     static $gtype: GObject.Type
 }
-export interface Icon_ConstructProps extends GObject.Object_ConstructProps {
+interface Icon_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Icon {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Icon */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Icon */
     convert_to_kind(kind: IconKind): boolean
     get_filename(): string
@@ -1315,13 +1305,11 @@ class Icon {
     static kind_to_string(icon_kind: IconKind): string
     static $gtype: GObject.Type
 }
-export interface Image_ConstructProps extends GObject.Object_ConstructProps {
+interface Image_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Image {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Image */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Image */
     equal(image2: Image): boolean
     get_basename(): string
@@ -1390,13 +1378,11 @@ class Image {
     static kind_to_string(kind: ImageKind): string
     static $gtype: GObject.Type
 }
-export interface Launchable_ConstructProps extends GObject.Object_ConstructProps {
+interface Launchable_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Launchable {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Launchable */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Launchable */
     get_kind(): LaunchableKind
     get_value(): string
@@ -1449,13 +1435,11 @@ class Launchable {
     static kind_to_string(kind: LaunchableKind): string
     static $gtype: GObject.Type
 }
-export interface Problem_ConstructProps extends GObject.Object_ConstructProps {
+interface Problem_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Problem {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Problem */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Problem */
     get_kind(): ProblemKind
     get_line_number(): number
@@ -1509,13 +1493,11 @@ class Problem {
     static kind_to_string(kind: ProblemKind): string
     static $gtype: GObject.Type
 }
-export interface Provide_ConstructProps extends GObject.Object_ConstructProps {
+interface Provide_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Provide {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Provide */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Provide */
     get_kind(): ProvideKind
     get_value(): string
@@ -1568,13 +1550,11 @@ class Provide {
     static kind_to_string(kind: ProvideKind): string
     static $gtype: GObject.Type
 }
-export interface Release_ConstructProps extends GObject.Object_ConstructProps {
+interface Release_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Release {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Release */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Release */
     add_checksum(checksum: Checksum): void
     add_location(location: string): void
@@ -1653,13 +1633,11 @@ class Release {
     static state_to_string(state: ReleaseState): string
     static $gtype: GObject.Type
 }
-export interface Require_ConstructProps extends GObject.Object_ConstructProps {
+interface Require_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Require {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Require */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Require */
     equal(require2: Require): boolean
     get_compare(): RequireCompare
@@ -1720,7 +1698,8 @@ class Require {
     static kind_to_string(kind: RequireKind): string
     static $gtype: GObject.Type
 }
-export interface Review_ConstructProps extends GObject.Object_ConstructProps {
+interface Review_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of AppStreamGlib-1.0.AppStreamGlib.Review */
     date?: Review
     description?: string
     flags?: number
@@ -1744,10 +1723,8 @@ class Review {
     reviewer_name: string
     summary: string
     version: string
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Review */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Review */
     add_flags(flags: ReviewFlags): void
     add_metadata(key: string, value: string): void
@@ -1840,13 +1817,11 @@ class Review {
     static new(): Review
     static $gtype: GObject.Type
 }
-export interface Screenshot_ConstructProps extends GObject.Object_ConstructProps {
+interface Screenshot_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Screenshot {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Screenshot */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Screenshot */
     add_image(image: Image): void
     equal(screenshot2: Screenshot): boolean
@@ -1908,13 +1883,11 @@ class Screenshot {
     static kind_to_string(kind: ScreenshotKind): string
     static $gtype: GObject.Type
 }
-export interface Store_ConstructProps extends GObject.Object_ConstructProps {
+interface Store_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Store {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Store */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Store */
     add_app(app: App): void
     add_apps(apps: App[]): void
@@ -2035,13 +2008,11 @@ class Store {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface Suggest_ConstructProps extends GObject.Object_ConstructProps {
+interface Suggest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Suggest {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Suggest */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Suggest */
     add_id(id: string): void
     get_ids(): string[]
@@ -2094,13 +2065,11 @@ class Suggest {
     static kind_to_string(kind: SuggestKind): string
     static $gtype: GObject.Type
 }
-export interface Translation_ConstructProps extends GObject.Object_ConstructProps {
+interface Translation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Translation {
-    /* Fields of AppStreamGlib-1.0.AppStreamGlib.Translation */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamGlib-1.0.AppStreamGlib.Translation */
     get_id(): string
     get_kind(): TranslationKind
@@ -2155,105 +2124,105 @@ class Translation {
 }
 abstract class AgreementClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.AgreementClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class AgreementSectionClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.AgreementSectionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class AppClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.AppClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class BundleClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.BundleClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ChecksumClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.ChecksumClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ContentRatingClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.ContentRatingClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FormatClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.FormatClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class IconClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.IconClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ImageClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.ImageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class LaunchableClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.LaunchableClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ProblemClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.ProblemClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ProvideClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.ProvideClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ReleaseClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.ReleaseClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RequireClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.RequireClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ReviewClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.ReviewClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ScreenshotClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.ScreenshotClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class StoreClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.StoreClass */
-    parent_class: GObject.ObjectClass
-    changed: (store: Store) => void
-    app_added: (store: Store, app: App) => void
-    app_removed: (store: Store, app: App) => void
-    app_changed: (store: Store, app: App) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (store: Store) => void
+    readonly app_added: (store: Store, app: App) => void
+    readonly app_removed: (store: Store, app: App) => void
+    readonly app_changed: (store: Store, app: App) => void
     static name: string
 }
 abstract class SuggestClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.SuggestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TranslationClass {
     /* Fields of AppStreamGlib-1.0.AppStreamGlib.TranslationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
-type AppSourceKind = FormatKind
-type ImageAlphaFlags = number
-type Node = GLib.Node
+    type AppSourceKind = FormatKind
+    type ImageAlphaFlags = number
+    type Node = GLib.Node
 }
 export default AppStreamGlib;

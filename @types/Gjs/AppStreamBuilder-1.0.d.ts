@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * AppStreamBuilder-1.0
  */
@@ -47,22 +53,22 @@ enum ContextFlags {
     USE_FALLBACKS,
     ADD_DEFAULT_ICONS,
 }
-export const PACKAGE_ENSURE_DEPS: number
-export const PACKAGE_ENSURE_FILES: number
-export const PACKAGE_ENSURE_LICENSE: number
-export const PACKAGE_ENSURE_NEVRA: number
-export const PACKAGE_ENSURE_NONE: number
-export const PACKAGE_ENSURE_RELEASES: number
-export const PACKAGE_ENSURE_SOURCE: number
-export const PACKAGE_ENSURE_URL: number
-export const PACKAGE_ENSURE_VCS: number
-export interface App_ConstructProps extends AppStreamGlib.App_ConstructProps {
+const PACKAGE_ENSURE_DEPS: number
+const PACKAGE_ENSURE_FILES: number
+const PACKAGE_ENSURE_LICENSE: number
+const PACKAGE_ENSURE_NEVRA: number
+const PACKAGE_ENSURE_NONE: number
+const PACKAGE_ENSURE_RELEASES: number
+const PACKAGE_ENSURE_SOURCE: number
+const PACKAGE_ENSURE_URL: number
+const PACKAGE_ENSURE_VCS: number
+interface App_ConstructProps extends AppStreamGlib.App_ConstructProps {
 }
 class App {
-    /* Fields of AppStreamBuilder-1.0.AppStreamBuilder.App */
-    parent_instance: GObject.Object
+    /* Fields of AppStreamGlib-1.0.AppStreamGlib.App */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamBuilder-1.0.AppStreamBuilder.App */
     get_package(): Package
     save_resources(save_flags: AppSaveFlags): boolean
@@ -261,16 +267,15 @@ class App {
     _init (config?: App_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(pkg: Package, id: string): App
+    /* Function overloads */
     static new(): App
     static $gtype: GObject.Type
 }
-export interface Context_ConstructProps extends GObject.Object_ConstructProps {
+interface Context_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Context {
-    /* Fields of AppStreamBuilder-1.0.AppStreamBuilder.Context */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamBuilder-1.0.AppStreamBuilder.Context */
     add_app(app: App): void
     add_app_ignore(pkg: Package): void
@@ -345,13 +350,11 @@ class Context {
     static new(): Context
     static $gtype: GObject.Type
 }
-export interface Package_ConstructProps extends GObject.Object_ConstructProps {
+interface Package_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Package {
-    /* Fields of AppStreamBuilder-1.0.AppStreamBuilder.Package */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamBuilder-1.0.AppStreamBuilder.Package */
     add_dep(dep: string): void
     add_release(version: string, release: AppStreamGlib.Release): void
@@ -451,13 +454,11 @@ class Package {
     static new(): Package
     static $gtype: GObject.Type
 }
-export interface Task_ConstructProps extends GObject.Object_ConstructProps {
+interface Task_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Task {
-    /* Fields of AppStreamBuilder-1.0.AppStreamBuilder.Task */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStreamBuilder-1.0.AppStreamBuilder.Task */
     process(): boolean
     set_package(pkg: Package): void
@@ -508,29 +509,29 @@ class Task {
 }
 abstract class AppClass {
     /* Fields of AppStreamBuilder-1.0.AppStreamBuilder.AppClass */
-    parent_class: AppStreamGlib.AppClass
+    readonly parent_class: AppStreamGlib.AppClass
     static name: string
 }
 abstract class ContextClass {
     /* Fields of AppStreamBuilder-1.0.AppStreamBuilder.ContextClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PackageClass {
     /* Fields of AppStreamBuilder-1.0.AppStreamBuilder.PackageClass */
-    parent_class: GObject.ObjectClass
-    open: (pkg: Package, filename: string) => boolean
-    ensure: (pkg: Package, flags: PackageEnsureFlags) => boolean
-    explode: (pkg: Package, dir: string, glob: string[]) => boolean
-    compare: (pkg1: Package, pkg2: Package) => number
-    close: (pkg: Package) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly open: (pkg: Package, filename: string) => boolean
+    readonly ensure: (pkg: Package, flags: PackageEnsureFlags) => boolean
+    readonly explode: (pkg: Package, dir: string, glob: string[]) => boolean
+    readonly compare: (pkg1: Package, pkg2: Package) => number
+    readonly close: (pkg: Package) => boolean
     static name: string
 }
 abstract class TaskClass {
     /* Fields of AppStreamBuilder-1.0.AppStreamBuilder.TaskClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
-type PackageEnsureFlags = number
+    type PackageEnsureFlags = number
 }
 export default AppStreamBuilder;

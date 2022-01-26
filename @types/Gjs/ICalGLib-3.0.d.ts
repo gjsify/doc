@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * ICalGLib-3.0
  */
@@ -83,7 +89,7 @@ enum ParameterEnable {
 }
 enum ParameterEncoding {
     X,
-    /* 8BIT (invalid, starts with a number) */
+    TODO_8BIT,
     BASE64,
     NONE,
 }
@@ -583,44 +589,44 @@ enum RecurrenceWeekday {
 }
 enum RequestStatus {
     UNKNOWN_STATUS,
-    /* 2_0_SUCCESS_STATUS (invalid, starts with a number) */
-    /* 2_1_FALLBACK_STATUS (invalid, starts with a number) */
-    /* 2_2_IGPROP_STATUS (invalid, starts with a number) */
-    /* 2_3_IGPARAM_STATUS (invalid, starts with a number) */
-    /* 2_4_IGXPROP_STATUS (invalid, starts with a number) */
-    /* 2_5_IGXPARAM_STATUS (invalid, starts with a number) */
-    /* 2_6_IGCOMP_STATUS (invalid, starts with a number) */
-    /* 2_7_FORWARD_STATUS (invalid, starts with a number) */
-    /* 2_8_ONEEVENT_STATUS (invalid, starts with a number) */
-    /* 2_9_TRUNC_STATUS (invalid, starts with a number) */
-    /* 2_10_ONETODO_STATUS (invalid, starts with a number) */
-    /* 2_11_TRUNCRRULE_STATUS (invalid, starts with a number) */
-    /* 3_0_INVPROPNAME_STATUS (invalid, starts with a number) */
-    /* 3_1_INVPROPVAL_STATUS (invalid, starts with a number) */
-    /* 3_2_INVPARAM_STATUS (invalid, starts with a number) */
-    /* 3_3_INVPARAMVAL_STATUS (invalid, starts with a number) */
-    /* 3_4_INVCOMP_STATUS (invalid, starts with a number) */
-    /* 3_5_INVTIME_STATUS (invalid, starts with a number) */
-    /* 3_6_INVRULE_STATUS (invalid, starts with a number) */
-    /* 3_7_INVCU_STATUS (invalid, starts with a number) */
-    /* 3_8_NOAUTH_STATUS (invalid, starts with a number) */
-    /* 3_9_BADVERSION_STATUS (invalid, starts with a number) */
-    /* 3_10_TOOBIG_STATUS (invalid, starts with a number) */
-    /* 3_11_MISSREQCOMP_STATUS (invalid, starts with a number) */
-    /* 3_12_UNKCOMP_STATUS (invalid, starts with a number) */
-    /* 3_13_BADCOMP_STATUS (invalid, starts with a number) */
-    /* 3_14_NOCAP_STATUS (invalid, starts with a number) */
-    /* 3_15_INVCOMMAND (invalid, starts with a number) */
-    /* 4_0_BUSY_STATUS (invalid, starts with a number) */
-    /* 4_1_STORE_ACCESS_DENIED (invalid, starts with a number) */
-    /* 4_2_STORE_FAILED (invalid, starts with a number) */
-    /* 4_3_STORE_NOT_FOUND (invalid, starts with a number) */
-    /* 5_0_MAYBE_STATUS (invalid, starts with a number) */
-    /* 5_1_UNAVAIL_STATUS (invalid, starts with a number) */
-    /* 5_2_NOSERVICE_STATUS (invalid, starts with a number) */
-    /* 5_3_NOSCHED_STATUS (invalid, starts with a number) */
-    /* 6_1_CONTAINER_NOT_FOUND (invalid, starts with a number) */
-    /* 9_0_UNRECOGNIZED_COMMAND (invalid, starts with a number) */
+    TODO_2_0_SUCCESS_STATUS,
+    TODO_2_1_FALLBACK_STATUS,
+    TODO_2_2_IGPROP_STATUS,
+    TODO_2_3_IGPARAM_STATUS,
+    TODO_2_4_IGXPROP_STATUS,
+    TODO_2_5_IGXPARAM_STATUS,
+    TODO_2_6_IGCOMP_STATUS,
+    TODO_2_7_FORWARD_STATUS,
+    TODO_2_8_ONEEVENT_STATUS,
+    TODO_2_9_TRUNC_STATUS,
+    TODO_2_10_ONETODO_STATUS,
+    TODO_2_11_TRUNCRRULE_STATUS,
+    TODO_3_0_INVPROPNAME_STATUS,
+    TODO_3_1_INVPROPVAL_STATUS,
+    TODO_3_2_INVPARAM_STATUS,
+    TODO_3_3_INVPARAMVAL_STATUS,
+    TODO_3_4_INVCOMP_STATUS,
+    TODO_3_5_INVTIME_STATUS,
+    TODO_3_6_INVRULE_STATUS,
+    TODO_3_7_INVCU_STATUS,
+    TODO_3_8_NOAUTH_STATUS,
+    TODO_3_9_BADVERSION_STATUS,
+    TODO_3_10_TOOBIG_STATUS,
+    TODO_3_11_MISSREQCOMP_STATUS,
+    TODO_3_12_UNKCOMP_STATUS,
+    TODO_3_13_BADCOMP_STATUS,
+    TODO_3_14_NOCAP_STATUS,
+    TODO_3_15_INVCOMMAND,
+    TODO_4_0_BUSY_STATUS,
+    TODO_4_1_STORE_ACCESS_DENIED,
+    TODO_4_2_STORE_FAILED,
+    TODO_4_3_STORE_NOT_FOUND,
+    TODO_5_0_MAYBE_STATUS,
+    TODO_5_1_UNAVAIL_STATUS,
+    TODO_5_2_NOSERVICE_STATUS,
+    TODO_5_3_NOSCHED_STATUS,
+    TODO_6_1_CONTAINER_NOT_FOUND,
+    TODO_9_0_UNRECOGNIZED_COMMAND,
 }
 enum RestrictionKind {
     NONE,
@@ -721,7 +727,7 @@ interface MimeParseFunc {
 interface ParserLineGenFunc {
     (bytes: number[]): string
 }
-export interface Array_ConstructProps extends Object_ConstructProps {
+interface Array_ConstructProps extends Object_ConstructProps {
 }
 class Array {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -729,7 +735,7 @@ class Array {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Array */
     copy(): Array
     remove_element_at(position: number): void
@@ -794,7 +800,7 @@ class Array {
     _init (config?: Array_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Attach_ConstructProps extends Object_ConstructProps {
+interface Attach_ConstructProps extends Object_ConstructProps {
 }
 class Attach {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -802,7 +808,7 @@ class Attach {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Attach */
     get_data(): string | null
     get_is_url(): boolean
@@ -871,7 +877,7 @@ class Attach {
     static new_from_url(url: string): Attach
     static $gtype: GObject.Type
 }
-export interface CompIter_ConstructProps extends Object_ConstructProps {
+interface CompIter_ConstructProps extends Object_ConstructProps {
 }
 class CompIter {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -879,7 +885,7 @@ class CompIter {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.CompIter */
     deref(): Component
     next(): Component
@@ -944,7 +950,7 @@ class CompIter {
     _init (config?: CompIter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Component_ConstructProps extends Object_ConstructProps {
+interface Component_ConstructProps extends Object_ConstructProps {
 }
 class Component {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -952,7 +958,7 @@ class Component {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Component */
     add_component(child: Component): void
     add_property(property: Property): void
@@ -1099,7 +1105,7 @@ class Component {
     static kind_to_string(kind: ComponentKind): string
     static $gtype: GObject.Type
 }
-export interface Datetimeperiod_ConstructProps extends Object_ConstructProps {
+interface Datetimeperiod_ConstructProps extends Object_ConstructProps {
 }
 class Datetimeperiod {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -1107,7 +1113,7 @@ class Datetimeperiod {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Datetimeperiod */
     get_period(): Period
     get_time(): Time
@@ -1175,7 +1181,7 @@ class Datetimeperiod {
     static new(): Datetimeperiod
     static $gtype: GObject.Type
 }
-export interface Duration_ConstructProps extends Object_ConstructProps {
+interface Duration_ConstructProps extends Object_ConstructProps {
 }
 class Duration {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -1183,7 +1189,7 @@ class Duration {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Duration */
     as_ical_string(): string
     as_int(): number
@@ -1266,7 +1272,7 @@ class Duration {
     static new_null_duration(): Duration
     static $gtype: GObject.Type
 }
-export interface Geo_ConstructProps extends Object_ConstructProps {
+interface Geo_ConstructProps extends Object_ConstructProps {
 }
 class Geo {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -1274,7 +1280,7 @@ class Geo {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Geo */
     clone(): Geo
     get_lat(): number
@@ -1343,7 +1349,8 @@ class Geo {
     static new(lat: number, lon: number): Geo
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+interface Object_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ICalGLib-3.0.ICalGLib.Object */
     always_destroy?: boolean
     is_global_memory?: boolean
     native?: object
@@ -1356,7 +1363,7 @@ class Object {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Object */
     add_depender(depender: GObject.Object): void
     get_always_destroy(): boolean
@@ -1419,7 +1426,7 @@ class Object {
     static free_global_objects(): void
     static $gtype: GObject.Type
 }
-export interface Parameter_ConstructProps extends Object_ConstructProps {
+interface Parameter_ConstructProps extends Object_ConstructProps {
 }
 class Parameter {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -1427,7 +1434,7 @@ class Parameter {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Parameter */
     as_ical_string(): string
     clone(): Parameter
@@ -1647,7 +1654,7 @@ class Parameter {
     static value_to_value_kind(value: ParameterValue): ValueKind
     static $gtype: GObject.Type
 }
-export interface Parser_ConstructProps extends Object_ConstructProps {
+interface Parser_ConstructProps extends Object_ConstructProps {
 }
 class Parser {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -1655,7 +1662,7 @@ class Parser {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Parser */
     add_line(str?: string | null): Component | null
     clean(): Component | null
@@ -1726,7 +1733,7 @@ class Parser {
     static parse_string(str: string): Component
     static $gtype: GObject.Type
 }
-export interface Period_ConstructProps extends Object_ConstructProps {
+interface Period_ConstructProps extends Object_ConstructProps {
 }
 class Period {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -1734,7 +1741,7 @@ class Period {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Period */
     as_ical_string(): string
     get_duration(): Duration
@@ -1808,7 +1815,7 @@ class Period {
     static new_null_period(): Period
     static $gtype: GObject.Type
 }
-export interface Property_ConstructProps extends Object_ConstructProps {
+interface Property_ConstructProps extends Object_ConstructProps {
 }
 class Property {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -1816,7 +1823,7 @@ class Property {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Property */
     add_parameter(parameter: Parameter): void
     as_ical_string(): string
@@ -2259,7 +2266,7 @@ class Property {
     static status_to_string(method: PropertyStatus): string
     static $gtype: GObject.Type
 }
-export interface RecurIterator_ConstructProps extends Object_ConstructProps {
+interface RecurIterator_ConstructProps extends Object_ConstructProps {
 }
 class RecurIterator {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -2267,7 +2274,7 @@ class RecurIterator {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.RecurIterator */
     next(): Time
     set_start(start: Time): number
@@ -2333,7 +2340,7 @@ class RecurIterator {
     static new(rule: Recurrence, dtstart: Time): RecurIterator
     static $gtype: GObject.Type
 }
-export interface Recurrence_ConstructProps extends Object_ConstructProps {
+interface Recurrence_ConstructProps extends Object_ConstructProps {
 }
 class Recurrence {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -2341,7 +2348,7 @@ class Recurrence {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Recurrence */
     clear(): void
     get_by_day(index: number): number
@@ -2466,7 +2473,7 @@ class Recurrence {
     static weekday_to_string(kind: RecurrenceWeekday): string
     static $gtype: GObject.Type
 }
-export interface Reqstat_ConstructProps extends Object_ConstructProps {
+interface Reqstat_ConstructProps extends Object_ConstructProps {
 }
 class Reqstat {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -2474,7 +2481,7 @@ class Reqstat {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Reqstat */
     get_code(): RequestStatus
     get_debug(): string
@@ -2543,7 +2550,7 @@ class Reqstat {
     static new_from_string(str: string): Reqstat
     static $gtype: GObject.Type
 }
-export interface Time_ConstructProps extends Object_ConstructProps {
+interface Time_ConstructProps extends Object_ConstructProps {
 }
 class Time {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -2551,7 +2558,7 @@ class Time {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Time */
     add(d: Duration): Time
     adjust(days: number, hours: number, minutes: number, seconds: number): void
@@ -2671,7 +2678,7 @@ class Time {
     static timezone_expand_vtimezone(comp: Component, end_year: number, changes: Array): void
     static $gtype: GObject.Type
 }
-export interface TimeSpan_ConstructProps extends Object_ConstructProps {
+interface TimeSpan_ConstructProps extends Object_ConstructProps {
 }
 class TimeSpan {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -2679,7 +2686,7 @@ class TimeSpan {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.TimeSpan */
     clone(): TimeSpan
     contains(container: TimeSpan): number
@@ -2753,7 +2760,7 @@ class TimeSpan {
     static new_timet(start: number, end: number, is_busy: boolean): TimeSpan
     static $gtype: GObject.Type
 }
-export interface Timezone_ConstructProps extends Object_ConstructProps {
+interface Timezone_ConstructProps extends Object_ConstructProps {
 }
 class Timezone {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -2761,7 +2768,7 @@ class Timezone {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Timezone */
     copy(): Timezone
     dump_changes(max_year: number, fp?: object | null): number
@@ -2854,7 +2861,7 @@ class Timezone {
     static set_zone_directory(path: string): void
     static $gtype: GObject.Type
 }
-export interface Trigger_ConstructProps extends Object_ConstructProps {
+interface Trigger_ConstructProps extends Object_ConstructProps {
 }
 class Trigger {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -2862,7 +2869,7 @@ class Trigger {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Trigger */
     get_duration(): Duration
     get_time(): Time
@@ -2933,7 +2940,7 @@ class Trigger {
     static new_from_string(str: string): Trigger
     static $gtype: GObject.Type
 }
-export interface Value_ConstructProps extends Object_ConstructProps {
+interface Value_ConstructProps extends Object_ConstructProps {
 }
 class Value {
     /* Properties of ICalGLib-3.0.ICalGLib.Object */
@@ -2941,7 +2948,7 @@ class Value {
     native_destroy_func: object
     owner: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ICalGLib-3.0.ICalGLib.Value */
     as_ical_string(): string
     clone(): Value

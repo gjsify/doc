@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gio-2.0
  */
@@ -597,118 +603,118 @@ enum TlsPasswordFlags {
     PKCS11_SECURITY_OFFICER,
     PKCS11_CONTEXT_SPECIFIC,
 }
-export const DBUS_METHOD_INVOCATION_HANDLED: boolean
-export const DBUS_METHOD_INVOCATION_UNHANDLED: boolean
-export const DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME: string
-export const DRIVE_IDENTIFIER_KIND_UNIX_DEVICE: string
-export const FILE_ATTRIBUTE_ACCESS_CAN_DELETE: string
-export const FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE: string
-export const FILE_ATTRIBUTE_ACCESS_CAN_READ: string
-export const FILE_ATTRIBUTE_ACCESS_CAN_RENAME: string
-export const FILE_ATTRIBUTE_ACCESS_CAN_TRASH: string
-export const FILE_ATTRIBUTE_ACCESS_CAN_WRITE: string
-export const FILE_ATTRIBUTE_DOS_IS_ARCHIVE: string
-export const FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT: string
-export const FILE_ATTRIBUTE_DOS_IS_SYSTEM: string
-export const FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG: string
-export const FILE_ATTRIBUTE_ETAG_VALUE: string
-export const FILE_ATTRIBUTE_FILESYSTEM_FREE: string
-export const FILE_ATTRIBUTE_FILESYSTEM_READONLY: string
-export const FILE_ATTRIBUTE_FILESYSTEM_REMOTE: string
-export const FILE_ATTRIBUTE_FILESYSTEM_SIZE: string
-export const FILE_ATTRIBUTE_FILESYSTEM_TYPE: string
-export const FILE_ATTRIBUTE_FILESYSTEM_USED: string
-export const FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW: string
-export const FILE_ATTRIBUTE_GVFS_BACKEND: string
-export const FILE_ATTRIBUTE_ID_FILE: string
-export const FILE_ATTRIBUTE_ID_FILESYSTEM: string
-export const FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT: string
-export const FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT: string
-export const FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL: string
-export const FILE_ATTRIBUTE_MOUNTABLE_CAN_START: string
-export const FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED: string
-export const FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP: string
-export const FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT: string
-export const FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI: string
-export const FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC: string
-export const FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE: string
-export const FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE: string
-export const FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE: string
-export const FILE_ATTRIBUTE_OWNER_GROUP: string
-export const FILE_ATTRIBUTE_OWNER_USER: string
-export const FILE_ATTRIBUTE_OWNER_USER_REAL: string
-export const FILE_ATTRIBUTE_PREVIEW_ICON: string
-export const FILE_ATTRIBUTE_RECENT_MODIFIED: string
-export const FILE_ATTRIBUTE_SELINUX_CONTEXT: string
-export const FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE: string
-export const FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE: string
-export const FILE_ATTRIBUTE_STANDARD_COPY_NAME: string
-export const FILE_ATTRIBUTE_STANDARD_DESCRIPTION: string
-export const FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME: string
-export const FILE_ATTRIBUTE_STANDARD_EDIT_NAME: string
-export const FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE: string
-export const FILE_ATTRIBUTE_STANDARD_ICON: string
-export const FILE_ATTRIBUTE_STANDARD_IS_BACKUP: string
-export const FILE_ATTRIBUTE_STANDARD_IS_HIDDEN: string
-export const FILE_ATTRIBUTE_STANDARD_IS_SYMLINK: string
-export const FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL: string
-export const FILE_ATTRIBUTE_STANDARD_IS_VOLATILE: string
-export const FILE_ATTRIBUTE_STANDARD_NAME: string
-export const FILE_ATTRIBUTE_STANDARD_SIZE: string
-export const FILE_ATTRIBUTE_STANDARD_SORT_ORDER: string
-export const FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON: string
-export const FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET: string
-export const FILE_ATTRIBUTE_STANDARD_TARGET_URI: string
-export const FILE_ATTRIBUTE_STANDARD_TYPE: string
-export const FILE_ATTRIBUTE_THUMBNAILING_FAILED: string
-export const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID: string
-export const FILE_ATTRIBUTE_THUMBNAIL_PATH: string
-export const FILE_ATTRIBUTE_TIME_ACCESS: string
-export const FILE_ATTRIBUTE_TIME_ACCESS_USEC: string
-export const FILE_ATTRIBUTE_TIME_CHANGED: string
-export const FILE_ATTRIBUTE_TIME_CHANGED_USEC: string
-export const FILE_ATTRIBUTE_TIME_CREATED: string
-export const FILE_ATTRIBUTE_TIME_CREATED_USEC: string
-export const FILE_ATTRIBUTE_TIME_MODIFIED: string
-export const FILE_ATTRIBUTE_TIME_MODIFIED_USEC: string
-export const FILE_ATTRIBUTE_TRASH_DELETION_DATE: string
-export const FILE_ATTRIBUTE_TRASH_ITEM_COUNT: string
-export const FILE_ATTRIBUTE_TRASH_ORIG_PATH: string
-export const FILE_ATTRIBUTE_UNIX_BLOCKS: string
-export const FILE_ATTRIBUTE_UNIX_BLOCK_SIZE: string
-export const FILE_ATTRIBUTE_UNIX_DEVICE: string
-export const FILE_ATTRIBUTE_UNIX_GID: string
-export const FILE_ATTRIBUTE_UNIX_INODE: string
-export const FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT: string
-export const FILE_ATTRIBUTE_UNIX_MODE: string
-export const FILE_ATTRIBUTE_UNIX_NLINK: string
-export const FILE_ATTRIBUTE_UNIX_RDEV: string
-export const FILE_ATTRIBUTE_UNIX_UID: string
-export const MEMORY_MONITOR_EXTENSION_POINT_NAME: string
-export const MENU_ATTRIBUTE_ACTION: string
-export const MENU_ATTRIBUTE_ACTION_NAMESPACE: string
-export const MENU_ATTRIBUTE_ICON: string
-export const MENU_ATTRIBUTE_LABEL: string
-export const MENU_ATTRIBUTE_TARGET: string
-export const MENU_LINK_SECTION: string
-export const MENU_LINK_SUBMENU: string
-export const NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME: string
-export const NETWORK_MONITOR_EXTENSION_POINT_NAME: string
-export const POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME: string
-export const PROXY_EXTENSION_POINT_NAME: string
-export const PROXY_RESOLVER_EXTENSION_POINT_NAME: string
-export const SETTINGS_BACKEND_EXTENSION_POINT_NAME: string
-export const TLS_BACKEND_EXTENSION_POINT_NAME: string
-export const TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT: string
-export const TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER: string
-export const VFS_EXTENSION_POINT_NAME: string
-export const VOLUME_IDENTIFIER_KIND_CLASS: string
-export const VOLUME_IDENTIFIER_KIND_HAL_UDI: string
-export const VOLUME_IDENTIFIER_KIND_LABEL: string
-export const VOLUME_IDENTIFIER_KIND_NFS_MOUNT: string
-export const VOLUME_IDENTIFIER_KIND_UNIX_DEVICE: string
-export const VOLUME_IDENTIFIER_KIND_UUID: string
-export const VOLUME_MONITOR_EXTENSION_POINT_NAME: string
+const DBUS_METHOD_INVOCATION_HANDLED: boolean
+const DBUS_METHOD_INVOCATION_UNHANDLED: boolean
+const DESKTOP_APP_INFO_LOOKUP_EXTENSION_POINT_NAME: string
+const DRIVE_IDENTIFIER_KIND_UNIX_DEVICE: string
+const FILE_ATTRIBUTE_ACCESS_CAN_DELETE: string
+const FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE: string
+const FILE_ATTRIBUTE_ACCESS_CAN_READ: string
+const FILE_ATTRIBUTE_ACCESS_CAN_RENAME: string
+const FILE_ATTRIBUTE_ACCESS_CAN_TRASH: string
+const FILE_ATTRIBUTE_ACCESS_CAN_WRITE: string
+const FILE_ATTRIBUTE_DOS_IS_ARCHIVE: string
+const FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT: string
+const FILE_ATTRIBUTE_DOS_IS_SYSTEM: string
+const FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG: string
+const FILE_ATTRIBUTE_ETAG_VALUE: string
+const FILE_ATTRIBUTE_FILESYSTEM_FREE: string
+const FILE_ATTRIBUTE_FILESYSTEM_READONLY: string
+const FILE_ATTRIBUTE_FILESYSTEM_REMOTE: string
+const FILE_ATTRIBUTE_FILESYSTEM_SIZE: string
+const FILE_ATTRIBUTE_FILESYSTEM_TYPE: string
+const FILE_ATTRIBUTE_FILESYSTEM_USED: string
+const FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW: string
+const FILE_ATTRIBUTE_GVFS_BACKEND: string
+const FILE_ATTRIBUTE_ID_FILE: string
+const FILE_ATTRIBUTE_ID_FILESYSTEM: string
+const FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT: string
+const FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT: string
+const FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL: string
+const FILE_ATTRIBUTE_MOUNTABLE_CAN_START: string
+const FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED: string
+const FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP: string
+const FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT: string
+const FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI: string
+const FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC: string
+const FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE: string
+const FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE: string
+const FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE: string
+const FILE_ATTRIBUTE_OWNER_GROUP: string
+const FILE_ATTRIBUTE_OWNER_USER: string
+const FILE_ATTRIBUTE_OWNER_USER_REAL: string
+const FILE_ATTRIBUTE_PREVIEW_ICON: string
+const FILE_ATTRIBUTE_RECENT_MODIFIED: string
+const FILE_ATTRIBUTE_SELINUX_CONTEXT: string
+const FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE: string
+const FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE: string
+const FILE_ATTRIBUTE_STANDARD_COPY_NAME: string
+const FILE_ATTRIBUTE_STANDARD_DESCRIPTION: string
+const FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME: string
+const FILE_ATTRIBUTE_STANDARD_EDIT_NAME: string
+const FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE: string
+const FILE_ATTRIBUTE_STANDARD_ICON: string
+const FILE_ATTRIBUTE_STANDARD_IS_BACKUP: string
+const FILE_ATTRIBUTE_STANDARD_IS_HIDDEN: string
+const FILE_ATTRIBUTE_STANDARD_IS_SYMLINK: string
+const FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL: string
+const FILE_ATTRIBUTE_STANDARD_IS_VOLATILE: string
+const FILE_ATTRIBUTE_STANDARD_NAME: string
+const FILE_ATTRIBUTE_STANDARD_SIZE: string
+const FILE_ATTRIBUTE_STANDARD_SORT_ORDER: string
+const FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON: string
+const FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET: string
+const FILE_ATTRIBUTE_STANDARD_TARGET_URI: string
+const FILE_ATTRIBUTE_STANDARD_TYPE: string
+const FILE_ATTRIBUTE_THUMBNAILING_FAILED: string
+const FILE_ATTRIBUTE_THUMBNAIL_IS_VALID: string
+const FILE_ATTRIBUTE_THUMBNAIL_PATH: string
+const FILE_ATTRIBUTE_TIME_ACCESS: string
+const FILE_ATTRIBUTE_TIME_ACCESS_USEC: string
+const FILE_ATTRIBUTE_TIME_CHANGED: string
+const FILE_ATTRIBUTE_TIME_CHANGED_USEC: string
+const FILE_ATTRIBUTE_TIME_CREATED: string
+const FILE_ATTRIBUTE_TIME_CREATED_USEC: string
+const FILE_ATTRIBUTE_TIME_MODIFIED: string
+const FILE_ATTRIBUTE_TIME_MODIFIED_USEC: string
+const FILE_ATTRIBUTE_TRASH_DELETION_DATE: string
+const FILE_ATTRIBUTE_TRASH_ITEM_COUNT: string
+const FILE_ATTRIBUTE_TRASH_ORIG_PATH: string
+const FILE_ATTRIBUTE_UNIX_BLOCKS: string
+const FILE_ATTRIBUTE_UNIX_BLOCK_SIZE: string
+const FILE_ATTRIBUTE_UNIX_DEVICE: string
+const FILE_ATTRIBUTE_UNIX_GID: string
+const FILE_ATTRIBUTE_UNIX_INODE: string
+const FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT: string
+const FILE_ATTRIBUTE_UNIX_MODE: string
+const FILE_ATTRIBUTE_UNIX_NLINK: string
+const FILE_ATTRIBUTE_UNIX_RDEV: string
+const FILE_ATTRIBUTE_UNIX_UID: string
+const MEMORY_MONITOR_EXTENSION_POINT_NAME: string
+const MENU_ATTRIBUTE_ACTION: string
+const MENU_ATTRIBUTE_ACTION_NAMESPACE: string
+const MENU_ATTRIBUTE_ICON: string
+const MENU_ATTRIBUTE_LABEL: string
+const MENU_ATTRIBUTE_TARGET: string
+const MENU_LINK_SECTION: string
+const MENU_LINK_SUBMENU: string
+const NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME: string
+const NETWORK_MONITOR_EXTENSION_POINT_NAME: string
+const POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME: string
+const PROXY_EXTENSION_POINT_NAME: string
+const PROXY_RESOLVER_EXTENSION_POINT_NAME: string
+const SETTINGS_BACKEND_EXTENSION_POINT_NAME: string
+const TLS_BACKEND_EXTENSION_POINT_NAME: string
+const TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT: string
+const TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER: string
+const VFS_EXTENSION_POINT_NAME: string
+const VOLUME_IDENTIFIER_KIND_CLASS: string
+const VOLUME_IDENTIFIER_KIND_HAL_UDI: string
+const VOLUME_IDENTIFIER_KIND_LABEL: string
+const VOLUME_IDENTIFIER_KIND_NFS_MOUNT: string
+const VOLUME_IDENTIFIER_KIND_UNIX_DEVICE: string
+const VOLUME_IDENTIFIER_KIND_UUID: string
+const VOLUME_MONITOR_EXTENSION_POINT_NAME: string
 function action_name_is_valid(action_name: string): boolean
 function action_parse_detailed_name(detailed_name: string): [ /* returnType */ boolean, /* action_name */ string, /* target_value */ GLib.Variant ]
 function action_print_detailed_name(action_name: string, target_value?: GLib.Variant | null): string
@@ -742,7 +748,7 @@ function content_type_get_icon(type: string): Icon
 function content_type_get_mime_dirs(): string[]
 function content_type_get_mime_type(type: string): string | null
 function content_type_get_symbolic_icon(type: string): Icon
-function content_type_guess(filename: string | null, data: Uint8Array[] | null): [ /* returnType */ string, /* result_uncertain */ boolean | null ]
+function content_type_guess(filename: string | null, data: Uint8Array | null): [ /* returnType */ string, /* result_uncertain */ boolean | null ]
 function content_type_guess_for_tree(root: File): string[]
 function content_type_is_a(type: string, supertype: string): boolean
 function content_type_is_mime_type(type: string, mime_type: string): boolean
@@ -765,7 +771,7 @@ function dbus_error_register_error_domain(error_domain_quark_name: string, quark
 function dbus_error_strip_remote_error(error: GLib.Error): boolean
 function dbus_error_unregister_error(error_domain: GLib.Quark, error_code: number, dbus_error_name: string): boolean
 function dbus_escape_object_path(s: string): string
-function dbus_escape_object_path_bytestring(bytes: Uint8Array[]): string
+function dbus_escape_object_path_bytestring(bytes: Uint8Array): string
 function dbus_generate_guid(): string
 function dbus_gvalue_to_gvariant(gvalue: any, type: GLib.VariantType): GLib.Variant
 function dbus_gvariant_to_gvalue(value: GLib.Variant): /* out_gvalue */ any
@@ -777,7 +783,7 @@ function dbus_is_member_name(string: string): boolean
 function dbus_is_name(string: string): boolean
 function dbus_is_supported_address(string: string): boolean
 function dbus_is_unique_name(string: string): boolean
-function dbus_unescape_object_path(s: string): Uint8Array[] | null
+function dbus_unescape_object_path(s: string): Uint8Array | null
 function dtls_client_connection_new(base_socket: DatagramBased, server_identity?: SocketConnectable | null): DtlsClientConnection
 function dtls_server_connection_new(base_socket: DatagramBased, certificate?: TlsCertificate | null): DtlsServerConnection
 function file_new_for_commandline_arg(arg: string): File
@@ -809,9 +815,9 @@ function networking_init(): void
 function null_settings_backend_new(): SettingsBackend
 function pollable_source_new(pollable_stream: GObject.Object): GLib.Source
 function pollable_source_new_full(pollable_stream: GObject.Object, child_source?: GLib.Source | null, cancellable?: Cancellable | null): GLib.Source
-function pollable_stream_read(stream: InputStream, buffer: Uint8Array[], blocking: boolean, cancellable?: Cancellable | null): number
-function pollable_stream_write(stream: OutputStream, buffer: Uint8Array[], blocking: boolean, cancellable?: Cancellable | null): number
-function pollable_stream_write_all(stream: OutputStream, buffer: Uint8Array[], blocking: boolean, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number ]
+function pollable_stream_read(stream: InputStream, buffer: Uint8Array, blocking: boolean, cancellable?: Cancellable | null): number
+function pollable_stream_write(stream: OutputStream, buffer: Uint8Array, blocking: boolean, cancellable?: Cancellable | null): number
+function pollable_stream_write_all(stream: OutputStream, buffer: Uint8Array, blocking: boolean, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number ]
 function power_profile_monitor_dup_default(): PowerProfileMonitor
 function proxy_get_default_for_protocol(protocol: string): Proxy | null
 function proxy_resolver_get_default(): ProxyResolver
@@ -1132,10 +1138,10 @@ class AsyncResult {
 }
 class Converter {
     /* Methods of Gio-2.0.Gio.Converter */
-    convert(inbuf: Uint8Array[], outbuf: Uint8Array[], flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
+    convert(inbuf: Uint8Array, outbuf: Uint8Array, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
     reset(): void
     /* Virtual methods of Gio-2.0.Gio.Converter */
-    vfunc_convert(inbuf: Uint8Array[] | null, outbuf: Uint8Array[] | null, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
+    vfunc_convert(inbuf: Uint8Array | null, outbuf: Uint8Array | null, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
     vfunc_reset(): void
     static name: string
 }
@@ -1305,6 +1311,18 @@ class DtlsClientConnection {
     readonly accepted_cas: object[]
     server_identity: SocketConnectable
     validation_flags: TlsCertificateFlags
+    /* Properties of Gio-2.0.Gio.DtlsConnection */
+    advertised_protocols: string[]
+    certificate: TlsCertificate
+    readonly ciphersuite_name: string
+    database: TlsDatabase
+    interaction: TlsInteraction
+    readonly negotiated_protocol: string
+    readonly peer_certificate: TlsCertificate
+    readonly peer_certificate_errors: TlsCertificateFlags
+    readonly protocol_version: TlsProtocolVersion
+    rehandshake_mode: TlsRehandshakeMode
+    require_close_notify: boolean
     /* Methods of Gio-2.0.Gio.DtlsClientConnection */
     get_accepted_cas(): any[]
     get_server_identity(): SocketConnectable
@@ -1317,12 +1335,55 @@ class DtlsClientConnection {
     create_source(condition: GLib.IOCondition, cancellable?: Cancellable | null): GLib.Source
     receive_messages(messages: InputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
     send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
+    /* Methods of Gio-2.0.Gio.DtlsConnection */
+    close(cancellable?: Cancellable | null): boolean
+    close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    close_finish(result: AsyncResult): boolean
+    emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
+    get_certificate(): TlsCertificate | null
+    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array | null ]
+    get_ciphersuite_name(): string | null
+    get_database(): TlsDatabase | null
+    get_interaction(): TlsInteraction | null
+    get_negotiated_protocol(): string | null
+    get_peer_certificate(): TlsCertificate | null
+    get_peer_certificate_errors(): TlsCertificateFlags
+    get_protocol_version(): TlsProtocolVersion
+    get_rehandshake_mode(): TlsRehandshakeMode
+    get_require_close_notify(): boolean
+    handshake(cancellable?: Cancellable | null): boolean
+    handshake_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    handshake_finish(result: AsyncResult): boolean
+    set_advertised_protocols(protocols?: string[] | null): void
+    set_certificate(certificate: TlsCertificate): void
+    set_database(database?: TlsDatabase | null): void
+    set_interaction(interaction?: TlsInteraction | null): void
+    set_rehandshake_mode(mode: TlsRehandshakeMode): void
+    set_require_close_notify(require_close_notify: boolean): void
+    shutdown(shutdown_read: boolean, shutdown_write: boolean, cancellable?: Cancellable | null): boolean
+    shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    shutdown_finish(result: AsyncResult): boolean
+    /* Virtual methods of Gio-2.0.Gio.DtlsClientConnection */
+    vfunc_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
+    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array): boolean
+    vfunc_get_negotiated_protocol(): string | null
+    vfunc_handshake(cancellable?: Cancellable | null): boolean
+    vfunc_handshake_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_handshake_finish(result: AsyncResult): boolean
+    vfunc_set_advertised_protocols(protocols?: string[] | null): void
+    vfunc_shutdown(shutdown_read: boolean, shutdown_write: boolean, cancellable?: Cancellable | null): boolean
+    vfunc_shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_shutdown_finish(result: AsyncResult): boolean
     /* Virtual methods of Gio-2.0.Gio.DatagramBased */
     vfunc_condition_check(condition: GLib.IOCondition): GLib.IOCondition
     vfunc_condition_wait(condition: GLib.IOCondition, timeout: number, cancellable?: Cancellable | null): boolean
     vfunc_create_source(condition: GLib.IOCondition, cancellable?: Cancellable | null): GLib.Source
     vfunc_receive_messages(messages: InputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
     vfunc_send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
+    /* Signals of Gio-2.0.Gio.DtlsConnection */
+    connect(sigName: "accept-certificate", callback: (($obj: DtlsClientConnection, peer_cert: TlsCertificate, errors: TlsCertificateFlags) => boolean)): number
+    connect_after(sigName: "accept-certificate", callback: (($obj: DtlsClientConnection, peer_cert: TlsCertificate, errors: TlsCertificateFlags) => boolean)): number
+    emit(sigName: "accept-certificate", peer_cert: TlsCertificate, errors: TlsCertificateFlags): void
     static name: string
 }
 class DtlsConnection {
@@ -1344,7 +1405,7 @@ class DtlsConnection {
     close_finish(result: AsyncResult): boolean
     emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
     get_certificate(): TlsCertificate | null
-    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array[] | null ]
+    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array | null ]
     get_ciphersuite_name(): string | null
     get_database(): TlsDatabase | null
     get_interaction(): TlsInteraction | null
@@ -1374,7 +1435,7 @@ class DtlsConnection {
     send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
     /* Virtual methods of Gio-2.0.Gio.DtlsConnection */
     vfunc_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
-    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array[]): boolean
+    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array): boolean
     vfunc_get_negotiated_protocol(): string | null
     vfunc_handshake(cancellable?: Cancellable | null): boolean
     vfunc_handshake_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -1398,18 +1459,73 @@ class DtlsConnection {
 class DtlsServerConnection {
     /* Properties of Gio-2.0.Gio.DtlsServerConnection */
     authentication_mode: TlsAuthenticationMode
+    /* Properties of Gio-2.0.Gio.DtlsConnection */
+    advertised_protocols: string[]
+    certificate: TlsCertificate
+    readonly ciphersuite_name: string
+    database: TlsDatabase
+    interaction: TlsInteraction
+    readonly negotiated_protocol: string
+    readonly peer_certificate: TlsCertificate
+    readonly peer_certificate_errors: TlsCertificateFlags
+    readonly protocol_version: TlsProtocolVersion
+    rehandshake_mode: TlsRehandshakeMode
+    require_close_notify: boolean
     /* Methods of Gio-2.0.Gio.DatagramBased */
     condition_check(condition: GLib.IOCondition): GLib.IOCondition
     condition_wait(condition: GLib.IOCondition, timeout: number, cancellable?: Cancellable | null): boolean
     create_source(condition: GLib.IOCondition, cancellable?: Cancellable | null): GLib.Source
     receive_messages(messages: InputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
     send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
+    /* Methods of Gio-2.0.Gio.DtlsConnection */
+    close(cancellable?: Cancellable | null): boolean
+    close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    close_finish(result: AsyncResult): boolean
+    emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
+    get_certificate(): TlsCertificate | null
+    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array | null ]
+    get_ciphersuite_name(): string | null
+    get_database(): TlsDatabase | null
+    get_interaction(): TlsInteraction | null
+    get_negotiated_protocol(): string | null
+    get_peer_certificate(): TlsCertificate | null
+    get_peer_certificate_errors(): TlsCertificateFlags
+    get_protocol_version(): TlsProtocolVersion
+    get_rehandshake_mode(): TlsRehandshakeMode
+    get_require_close_notify(): boolean
+    handshake(cancellable?: Cancellable | null): boolean
+    handshake_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    handshake_finish(result: AsyncResult): boolean
+    set_advertised_protocols(protocols?: string[] | null): void
+    set_certificate(certificate: TlsCertificate): void
+    set_database(database?: TlsDatabase | null): void
+    set_interaction(interaction?: TlsInteraction | null): void
+    set_rehandshake_mode(mode: TlsRehandshakeMode): void
+    set_require_close_notify(require_close_notify: boolean): void
+    shutdown(shutdown_read: boolean, shutdown_write: boolean, cancellable?: Cancellable | null): boolean
+    shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    shutdown_finish(result: AsyncResult): boolean
+    /* Virtual methods of Gio-2.0.Gio.DtlsServerConnection */
+    vfunc_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
+    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array): boolean
+    vfunc_get_negotiated_protocol(): string | null
+    vfunc_handshake(cancellable?: Cancellable | null): boolean
+    vfunc_handshake_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_handshake_finish(result: AsyncResult): boolean
+    vfunc_set_advertised_protocols(protocols?: string[] | null): void
+    vfunc_shutdown(shutdown_read: boolean, shutdown_write: boolean, cancellable?: Cancellable | null): boolean
+    vfunc_shutdown_async(shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_shutdown_finish(result: AsyncResult): boolean
     /* Virtual methods of Gio-2.0.Gio.DatagramBased */
     vfunc_condition_check(condition: GLib.IOCondition): GLib.IOCondition
     vfunc_condition_wait(condition: GLib.IOCondition, timeout: number, cancellable?: Cancellable | null): boolean
     vfunc_create_source(condition: GLib.IOCondition, cancellable?: Cancellable | null): GLib.Source
     vfunc_receive_messages(messages: InputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
     vfunc_send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
+    /* Signals of Gio-2.0.Gio.DtlsConnection */
+    connect(sigName: "accept-certificate", callback: (($obj: DtlsServerConnection, peer_cert: TlsCertificate, errors: TlsCertificateFlags) => boolean)): number
+    connect_after(sigName: "accept-certificate", callback: (($obj: DtlsServerConnection, peer_cert: TlsCertificate, errors: TlsCertificateFlags) => boolean)): number
+    emit(sigName: "accept-certificate", peer_cert: TlsCertificate, errors: TlsCertificateFlags): void
     static name: string
 }
 class File {
@@ -1460,10 +1576,10 @@ class File {
     load_bytes(cancellable?: Cancellable | null): [ /* returnType */ GLib.Bytes, /* etag_out */ string | null ]
     load_bytes_async(cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     load_bytes_finish(result: AsyncResult): [ /* returnType */ GLib.Bytes, /* etag_out */ string | null ]
-    load_contents(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* contents */ Uint8Array[], /* etag_out */ string | null ]
+    load_contents(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* contents */ Uint8Array, /* etag_out */ string | null ]
     load_contents_async(cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
-    load_contents_finish(res: AsyncResult): [ /* returnType */ boolean, /* contents */ Uint8Array[], /* etag_out */ string | null ]
-    load_partial_contents_finish(res: AsyncResult): [ /* returnType */ boolean, /* contents */ Uint8Array[], /* etag_out */ string | null ]
+    load_contents_finish(res: AsyncResult): [ /* returnType */ boolean, /* contents */ Uint8Array, /* etag_out */ string | null ]
+    load_partial_contents_finish(res: AsyncResult): [ /* returnType */ boolean, /* contents */ Uint8Array, /* etag_out */ string | null ]
     make_directory(cancellable?: Cancellable | null): boolean
     make_directory_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     make_directory_finish(result: AsyncResult): boolean
@@ -1502,8 +1618,8 @@ class File {
     read_finish(res: AsyncResult): FileInputStream
     replace(etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null): FileOutputStream
     replace_async(etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
-    replace_contents(contents: Uint8Array[], etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* new_etag */ string | null ]
-    replace_contents_async(contents: Uint8Array[], etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    replace_contents(contents: Uint8Array, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* new_etag */ string | null ]
+    replace_contents_async(contents: Uint8Array, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     replace_contents_bytes_async(contents: GLib.Bytes, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     replace_contents_finish(res: AsyncResult): [ /* returnType */ boolean, /* new_etag */ string | null ]
     replace_finish(res: AsyncResult): FileOutputStream
@@ -1817,18 +1933,18 @@ class NetworkMonitor {
     /* Static methods and pseudo-constructors */
     static get_default(): NetworkMonitor
 }
-export interface PollableInputStream_ConstructProps extends InputStream_ConstructProps {
+interface PollableInputStream_ConstructProps extends InputStream_ConstructProps {
 }
 class PollableInputStream {
     /* Fields of Gio-2.0.Gio.InputStream */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.PollableInputStream */
     can_poll(): boolean
     create_source(cancellable?: Cancellable | null): GLib.Source
     is_readable(): boolean
-    read_nonblocking(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
+    read_nonblocking(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
     /* Methods of Gio-2.0.Gio.InputStream */
     clear_pending(): void
     close(cancellable?: Cancellable | null): boolean
@@ -1836,11 +1952,11 @@ class PollableInputStream {
     close_finish(result: AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     read_bytes_finish(result: AsyncResult): GLib.Bytes
@@ -1875,12 +1991,12 @@ class PollableInputStream {
     vfunc_can_poll(): boolean
     vfunc_create_source(cancellable?: Cancellable | null): GLib.Source
     vfunc_is_readable(): boolean
-    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array[] | null ]
+    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array | null ]
     /* Virtual methods of Gio-2.0.Gio.InputStream */
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
     vfunc_close_fn(cancellable?: Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Cancellable | null): number
@@ -1907,18 +2023,18 @@ class PollableInputStream {
     _init (config?: PollableInputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PollableOutputStream_ConstructProps extends OutputStream_ConstructProps {
+interface PollableOutputStream_ConstructProps extends OutputStream_ConstructProps {
 }
 class PollableOutputStream {
     /* Fields of Gio-2.0.Gio.OutputStream */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.PollableOutputStream */
     can_poll(): boolean
     create_source(cancellable?: Cancellable | null): GLib.Source
     is_writable(): boolean
-    write_nonblocking(buffer: Uint8Array[], cancellable?: Cancellable | null): number
+    write_nonblocking(buffer: Uint8Array, cancellable?: Cancellable | null): number
     writev_nonblocking(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     /* Methods of Gio-2.0.Gio.OutputStream */
     clear_pending(): void
@@ -1935,11 +2051,11 @@ class PollableOutputStream {
     splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     splice_finish(result: AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes_finish(result: AsyncResult): number
@@ -1976,7 +2092,7 @@ class PollableOutputStream {
     vfunc_can_poll(): boolean
     vfunc_create_source(cancellable?: Cancellable | null): GLib.Source
     vfunc_is_writable(): boolean
-    vfunc_write_nonblocking(buffer: Uint8Array[] | null): number
+    vfunc_write_nonblocking(buffer: Uint8Array | null): number
     vfunc_writev_nonblocking(vectors: OutputVector[]): [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     /* Virtual methods of Gio-2.0.Gio.OutputStream */
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -1988,9 +2104,9 @@ class PollableOutputStream {
     vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_splice_finish(result: AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_write_finish(result: AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Cancellable | null): number
     vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_writev_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -2156,7 +2272,8 @@ class TlsBackend {
     /* Static methods and pseudo-constructors */
     static get_default(): TlsBackend
 }
-export interface TlsClientConnection_ConstructProps extends TlsConnection_ConstructProps {
+interface TlsClientConnection_ConstructProps extends TlsConnection_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.TlsClientConnection */
     server_identity?: SocketConnectable
     use_ssl3?: boolean
     validation_flags?: TlsCertificateFlags
@@ -2185,10 +2302,10 @@ class TlsClientConnection {
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
     /* Fields of Gio-2.0.Gio.TlsConnection */
-    parent_instance: IOStream
-    priv: TlsConnectionPrivate
+    readonly parent_instance: IOStream
+    readonly priv: TlsConnectionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TlsClientConnection */
     copy_session_state(source: TlsClientConnection): void
     get_accepted_cas(): any[]
@@ -2201,7 +2318,7 @@ class TlsClientConnection {
     /* Methods of Gio-2.0.Gio.TlsConnection */
     emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
     get_certificate(): TlsCertificate | null
-    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array[] | null ]
+    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array | null ]
     get_ciphersuite_name(): string | null
     get_database(): TlsDatabase | null
     get_interaction(): TlsInteraction | null
@@ -2259,7 +2376,7 @@ class TlsClientConnection {
     vfunc_copy_session_state(source: TlsClientConnection): void
     /* Virtual methods of Gio-2.0.Gio.TlsConnection */
     vfunc_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
-    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array[]): boolean
+    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array): boolean
     vfunc_get_negotiated_protocol(): string | null
     vfunc_handshake(cancellable?: Cancellable | null): boolean
     vfunc_handshake_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -2333,17 +2450,18 @@ class TlsClientConnection {
     _init (config?: TlsClientConnection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TlsFileDatabase_ConstructProps extends TlsDatabase_ConstructProps {
+interface TlsFileDatabase_ConstructProps extends TlsDatabase_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.TlsFileDatabase */
     anchors?: string
 }
 class TlsFileDatabase {
     /* Properties of Gio-2.0.Gio.TlsFileDatabase */
     anchors: string
     /* Fields of Gio-2.0.Gio.TlsDatabase */
-    parent_instance: GObject.Object
-    priv: TlsDatabasePrivate
+    readonly parent_instance: GObject.Object
+    readonly priv: TlsDatabasePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TlsDatabase */
     create_certificate_handle(certificate: TlsCertificate): string | null
     lookup_certificate_for_handle(handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate | null
@@ -2352,8 +2470,8 @@ class TlsFileDatabase {
     lookup_certificate_issuer(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate
     lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     lookup_certificate_issuer_finish(result: AsyncResult): TlsCertificate
-    lookup_certificates_issued_by(issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate[]
-    lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    lookup_certificates_issued_by(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate[]
+    lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     lookup_certificates_issued_by_finish(result: AsyncResult): TlsCertificate[]
     verify_chain(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null): TlsCertificateFlags
     verify_chain_async(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -2388,8 +2506,8 @@ class TlsFileDatabase {
     vfunc_lookup_certificate_issuer(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate
     vfunc_lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_lookup_certificate_issuer_finish(result: AsyncResult): TlsCertificate
-    vfunc_lookup_certificates_issued_by(issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate[]
-    vfunc_lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_lookup_certificates_issued_by(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate[]
+    vfunc_lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_lookup_certificates_issued_by_finish(result: AsyncResult): TlsCertificate[]
     vfunc_verify_chain(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null): TlsCertificateFlags
     vfunc_verify_chain_async(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -2417,7 +2535,8 @@ class TlsFileDatabase {
     _init (config?: TlsFileDatabase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TlsServerConnection_ConstructProps extends TlsConnection_ConstructProps {
+interface TlsServerConnection_ConstructProps extends TlsConnection_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.TlsServerConnection */
     authentication_mode?: TlsAuthenticationMode
 }
 class TlsServerConnection {
@@ -2441,14 +2560,14 @@ class TlsServerConnection {
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
     /* Fields of Gio-2.0.Gio.TlsConnection */
-    parent_instance: IOStream
-    priv: TlsConnectionPrivate
+    readonly parent_instance: IOStream
+    readonly priv: TlsConnectionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TlsConnection */
     emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
     get_certificate(): TlsCertificate | null
-    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array[] | null ]
+    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array | null ]
     get_ciphersuite_name(): string | null
     get_database(): TlsDatabase | null
     get_interaction(): TlsInteraction | null
@@ -2504,7 +2623,7 @@ class TlsServerConnection {
     watch_closure(closure: Function): void
     /* Virtual methods of Gio-2.0.Gio.TlsConnection */
     vfunc_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
-    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array[]): boolean
+    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array): boolean
     vfunc_get_negotiated_protocol(): string | null
     vfunc_handshake(cancellable?: Cancellable | null): boolean
     vfunc_handshake_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -2624,11 +2743,11 @@ class Volume {
     emit(sigName: "removed"): void
     static name: string
 }
-export interface AppInfoMonitor_ConstructProps extends GObject.Object_ConstructProps {
+interface AppInfoMonitor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AppInfoMonitor {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2678,13 +2797,11 @@ class AppInfoMonitor {
     static get(): AppInfoMonitor
     static $gtype: GObject.Type
 }
-export interface AppLaunchContext_ConstructProps extends GObject.Object_ConstructProps {
+interface AppLaunchContext_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AppLaunchContext {
-    /* Fields of Gio-2.0.Gio.AppLaunchContext */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.AppLaunchContext */
     get_display(info: AppInfo, files: File[]): string | null
     get_environment(): string[]
@@ -2753,7 +2870,8 @@ class AppLaunchContext {
     static new(): AppLaunchContext
     static $gtype: GObject.Type
 }
-export interface Application_ConstructProps extends GObject.Object_ConstructProps {
+interface Application_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.Application */
     action_group?: ActionGroup
     application_id?: string
     flags?: ApplicationFlags
@@ -2771,7 +2889,7 @@ class Application {
     readonly is_remote: boolean
     resource_base_path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Application */
     activate(): void
     add_main_option(long_name: string, short_name: number, flags: GLib.OptionFlags, arg: GLib.OptionArg, description: string, arg_description?: string | null): void
@@ -2829,26 +2947,6 @@ class Application {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
-    /* Methods of Gio-2.0.Gio.ActionGroup */
-    action_added(action_name: string): void
-    action_enabled_changed(action_name: string, enabled: boolean): void
-    action_removed(action_name: string): void
-    action_state_changed(action_name: string, state: GLib.Variant): void
-    activate_action(action_name: string, parameter?: GLib.Variant | null): void
-    change_action_state(action_name: string, value: GLib.Variant): void
-    get_action_enabled(action_name: string): boolean
-    get_action_parameter_type(action_name: string): GLib.VariantType | null
-    get_action_state(action_name: string): GLib.Variant | null
-    get_action_state_hint(action_name: string): GLib.Variant | null
-    get_action_state_type(action_name: string): GLib.VariantType | null
-    has_action(action_name: string): boolean
-    list_actions(): string[]
-    query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
-    /* Methods of Gio-2.0.Gio.ActionMap */
-    add_action(action: Action): void
-    add_action_entries(entries: ActionEntry[], user_data?: object | null): void
-    lookup_action(action_name: string): Action | null
-    remove_action(action_name: string): void
     /* Virtual methods of Gio-2.0.Gio.Application */
     vfunc_activate(): void
     vfunc_add_platform_data(builder: GLib.VariantBuilder): void
@@ -2865,23 +2963,6 @@ class Application {
     vfunc_run_mainloop(): void
     vfunc_shutdown(): void
     vfunc_startup(): void
-    vfunc_action_added(action_name: string): void
-    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void
-    vfunc_action_removed(action_name: string): void
-    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void
-    vfunc_activate_action(action_name: string, parameter?: GLib.Variant | null): void
-    vfunc_change_action_state(action_name: string, value: GLib.Variant): void
-    vfunc_get_action_enabled(action_name: string): boolean
-    vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null
-    vfunc_get_action_state(action_name: string): GLib.Variant | null
-    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null
-    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null
-    vfunc_has_action(action_name: string): boolean
-    vfunc_list_actions(): string[]
-    vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
-    vfunc_add_action(action: Action): void
-    vfunc_lookup_action(action_name: string): Action | null
-    vfunc_remove_action(action_name: string): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -2916,19 +2997,6 @@ class Application {
     connect(sigName: "notify", callback: (($obj: Application, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Application, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    /* Signals of Gio-2.0.Gio.ActionGroup */
-    connect(sigName: "action-added", callback: (($obj: Application, action_name: string) => void)): number
-    connect_after(sigName: "action-added", callback: (($obj: Application, action_name: string) => void)): number
-    emit(sigName: "action-added", action_name: string): void
-    connect(sigName: "action-enabled-changed", callback: (($obj: Application, action_name: string, enabled: boolean) => void)): number
-    connect_after(sigName: "action-enabled-changed", callback: (($obj: Application, action_name: string, enabled: boolean) => void)): number
-    emit(sigName: "action-enabled-changed", action_name: string, enabled: boolean): void
-    connect(sigName: "action-removed", callback: (($obj: Application, action_name: string) => void)): number
-    connect_after(sigName: "action-removed", callback: (($obj: Application, action_name: string) => void)): number
-    emit(sigName: "action-removed", action_name: string): void
-    connect(sigName: "action-state-changed", callback: (($obj: Application, action_name: string, value: GLib.Variant) => void)): number
-    connect_after(sigName: "action-state-changed", callback: (($obj: Application, action_name: string, value: GLib.Variant) => void)): number
-    emit(sigName: "action-state-changed", action_name: string, value: GLib.Variant): void
     connect(sigName: "notify::action-group", callback: (($obj: Application, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::action-group", callback: (($obj: Application, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::application-id", callback: (($obj: Application, pspec: GObject.ParamSpec) => void)): number
@@ -2958,7 +3026,8 @@ class Application {
     static id_is_valid(application_id: string): boolean
     static $gtype: GObject.Type
 }
-export interface ApplicationCommandLine_ConstructProps extends GObject.Object_ConstructProps {
+interface ApplicationCommandLine_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ApplicationCommandLine */
     "arguments"?: GLib.Variant
     options?: GLib.Variant
     platform_data?: GLib.Variant
@@ -2967,7 +3036,7 @@ class ApplicationCommandLine {
     /* Properties of Gio-2.0.Gio.ApplicationCommandLine */
     readonly is_remote: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.ApplicationCommandLine */
     create_file_for_arg(arg: string): File
     get_arguments(): string[]
@@ -3029,7 +3098,8 @@ class ApplicationCommandLine {
     _init (config?: ApplicationCommandLine_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BufferedInputStream_ConstructProps extends FilterInputStream_ConstructProps {
+interface BufferedInputStream_ConstructProps extends FilterInputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.BufferedInputStream */
     buffer_size?: number
 }
 class BufferedInputStream {
@@ -3037,20 +3107,19 @@ class BufferedInputStream {
     buffer_size: number
     /* Properties of Gio-2.0.Gio.FilterInputStream */
     close_base_stream: boolean
-    /* Fields of Gio-2.0.Gio.BufferedInputStream */
-    parent_instance: FilterInputStream
     /* Fields of Gio-2.0.Gio.FilterInputStream */
-    base_stream: InputStream
+    readonly parent_instance: InputStream
+    readonly base_stream: InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.BufferedInputStream */
     fill(count: number, cancellable?: Cancellable | null): number
     fill_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     fill_finish(result: AsyncResult): number
     get_available(): number
     get_buffer_size(): number
-    peek(buffer: Uint8Array[], offset: number): number
-    peek_buffer(): Uint8Array[]
+    peek(buffer: Uint8Array, offset: number): number
+    peek_buffer(): Uint8Array
     read_byte(cancellable?: Cancellable | null): number
     set_buffer_size(size: number): void
     /* Methods of Gio-2.0.Gio.FilterInputStream */
@@ -3064,11 +3133,11 @@ class BufferedInputStream {
     close_finish(result: AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     read_bytes_finish(result: AsyncResult): GLib.Bytes
@@ -3118,7 +3187,7 @@ class BufferedInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
     vfunc_close_fn(cancellable?: Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Cancellable | null): number
@@ -3152,7 +3221,8 @@ class BufferedInputStream {
     static new_sized(base_stream: InputStream, size: number): BufferedInputStream
     static $gtype: GObject.Type
 }
-export interface BufferedOutputStream_ConstructProps extends FilterOutputStream_ConstructProps {
+interface BufferedOutputStream_ConstructProps extends FilterOutputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.BufferedOutputStream */
     auto_grow?: boolean
     buffer_size?: number
 }
@@ -3160,13 +3230,11 @@ class BufferedOutputStream {
     /* Properties of Gio-2.0.Gio.BufferedOutputStream */
     auto_grow: boolean
     buffer_size: number
-    /* Fields of Gio-2.0.Gio.BufferedOutputStream */
-    parent_instance: FilterOutputStream
-    priv: BufferedOutputStreamPrivate
     /* Fields of Gio-2.0.Gio.FilterOutputStream */
-    base_stream: OutputStream
+    readonly parent_instance: OutputStream
+    readonly base_stream: OutputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.BufferedOutputStream */
     get_auto_grow(): boolean
     get_buffer_size(): number
@@ -3191,11 +3259,11 @@ class BufferedOutputStream {
     splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     splice_finish(result: AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes_finish(result: AsyncResult): number
@@ -3250,9 +3318,9 @@ class BufferedOutputStream {
     vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_splice_finish(result: AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_write_finish(result: AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Cancellable | null): number
     vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_writev_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -3284,12 +3352,13 @@ class BufferedOutputStream {
     static new_sized(base_stream: OutputStream, size: number): BufferedOutputStream
     static $gtype: GObject.Type
 }
-export interface BytesIcon_ConstructProps extends GObject.Object_ConstructProps {
+interface BytesIcon_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.BytesIcon */
     bytes?: GLib.Bytes
 }
 class BytesIcon {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.BytesIcon */
     get_bytes(): GLib.Bytes
     /* Methods of GObject-2.0.GObject.Object */
@@ -3355,13 +3424,11 @@ class BytesIcon {
     static new_for_string(str: string): Icon
     static $gtype: GObject.Type
 }
-export interface Cancellable_ConstructProps extends GObject.Object_ConstructProps {
+interface Cancellable_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Cancellable {
-    /* Fields of Gio-2.0.Gio.Cancellable */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Cancellable */
     cancel(): void
     connect(callback: GObject.Callback): number
@@ -3427,7 +3494,8 @@ class Cancellable {
     static get_current(): Cancellable | null
     static $gtype: GObject.Type
 }
-export interface CharsetConverter_ConstructProps extends GObject.Object_ConstructProps {
+interface CharsetConverter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.CharsetConverter */
     from_charset?: string
     to_charset?: string
     use_fallback?: boolean
@@ -3436,7 +3504,7 @@ class CharsetConverter {
     /* Properties of Gio-2.0.Gio.CharsetConverter */
     use_fallback: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.CharsetConverter */
     get_num_fallbacks(): number
     get_use_fallback(): boolean
@@ -3464,12 +3532,12 @@ class CharsetConverter {
     unref(): void
     watch_closure(closure: Function): void
     /* Methods of Gio-2.0.Gio.Converter */
-    convert(inbuf: Uint8Array[], outbuf: Uint8Array[], flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
+    convert(inbuf: Uint8Array, outbuf: Uint8Array, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
     reset(): void
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Cancellable | null): boolean
     /* Virtual methods of Gio-2.0.Gio.CharsetConverter */
-    vfunc_convert(inbuf: Uint8Array[] | null, outbuf: Uint8Array[] | null, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
+    vfunc_convert(inbuf: Uint8Array | null, outbuf: Uint8Array | null, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
     vfunc_reset(): void
     vfunc_init(cancellable?: Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
@@ -3498,18 +3566,18 @@ class CharsetConverter {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ConverterInputStream_ConstructProps extends FilterInputStream_ConstructProps {
+interface ConverterInputStream_ConstructProps extends FilterInputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ConverterInputStream */
     converter?: Converter
 }
 class ConverterInputStream {
     /* Properties of Gio-2.0.Gio.FilterInputStream */
     close_base_stream: boolean
-    /* Fields of Gio-2.0.Gio.ConverterInputStream */
-    parent_instance: FilterInputStream
     /* Fields of Gio-2.0.Gio.FilterInputStream */
-    base_stream: InputStream
+    readonly parent_instance: InputStream
+    readonly base_stream: InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.ConverterInputStream */
     get_converter(): Converter
     /* Methods of Gio-2.0.Gio.FilterInputStream */
@@ -3523,11 +3591,11 @@ class ConverterInputStream {
     close_finish(result: AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     read_bytes_finish(result: AsyncResult): GLib.Bytes
@@ -3562,17 +3630,17 @@ class ConverterInputStream {
     can_poll(): boolean
     create_source(cancellable?: Cancellable | null): GLib.Source
     is_readable(): boolean
-    read_nonblocking(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
+    read_nonblocking(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
     /* Virtual methods of Gio-2.0.Gio.ConverterInputStream */
     vfunc_can_poll(): boolean
     vfunc_create_source(cancellable?: Cancellable | null): GLib.Source
     vfunc_is_readable(): boolean
-    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array[] | null ]
+    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array | null ]
     /* Virtual methods of Gio-2.0.Gio.InputStream */
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
     vfunc_close_fn(cancellable?: Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Cancellable | null): number
@@ -3603,16 +3671,16 @@ class ConverterInputStream {
     static new(base_stream: InputStream, converter: Converter): ConverterInputStream
     static $gtype: GObject.Type
 }
-export interface ConverterOutputStream_ConstructProps extends FilterOutputStream_ConstructProps {
+interface ConverterOutputStream_ConstructProps extends FilterOutputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ConverterOutputStream */
     converter?: Converter
 }
 class ConverterOutputStream {
-    /* Fields of Gio-2.0.Gio.ConverterOutputStream */
-    parent_instance: FilterOutputStream
     /* Fields of Gio-2.0.Gio.FilterOutputStream */
-    base_stream: OutputStream
+    readonly parent_instance: OutputStream
+    readonly base_stream: OutputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.ConverterOutputStream */
     get_converter(): Converter
     /* Methods of Gio-2.0.Gio.FilterOutputStream */
@@ -3634,11 +3702,11 @@ class ConverterOutputStream {
     splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     splice_finish(result: AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes_finish(result: AsyncResult): number
@@ -3675,13 +3743,13 @@ class ConverterOutputStream {
     can_poll(): boolean
     create_source(cancellable?: Cancellable | null): GLib.Source
     is_writable(): boolean
-    write_nonblocking(buffer: Uint8Array[], cancellable?: Cancellable | null): number
+    write_nonblocking(buffer: Uint8Array, cancellable?: Cancellable | null): number
     writev_nonblocking(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     /* Virtual methods of Gio-2.0.Gio.ConverterOutputStream */
     vfunc_can_poll(): boolean
     vfunc_create_source(cancellable?: Cancellable | null): GLib.Source
     vfunc_is_writable(): boolean
-    vfunc_write_nonblocking(buffer: Uint8Array[] | null): number
+    vfunc_write_nonblocking(buffer: Uint8Array | null): number
     vfunc_writev_nonblocking(vectors: OutputVector[]): [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     /* Virtual methods of Gio-2.0.Gio.OutputStream */
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -3693,9 +3761,9 @@ class ConverterOutputStream {
     vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_splice_finish(result: AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_write_finish(result: AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Cancellable | null): number
     vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_writev_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -3722,11 +3790,11 @@ class ConverterOutputStream {
     static new(base_stream: OutputStream, converter: Converter): ConverterOutputStream
     static $gtype: GObject.Type
 }
-export interface Credentials_ConstructProps extends GObject.Object_ConstructProps {
+interface Credentials_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Credentials {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Credentials */
     get_unix_pid(): number
     get_unix_user(): number
@@ -3779,11 +3847,11 @@ class Credentials {
     static new(): Credentials
     static $gtype: GObject.Type
 }
-export interface DBusActionGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusActionGroup_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DBusActionGroup {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3877,11 +3945,11 @@ class DBusActionGroup {
     static get(connection: DBusConnection, bus_name: string | null, object_path: string): DBusActionGroup
     static $gtype: GObject.Type
 }
-export interface DBusAuthObserver_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusAuthObserver_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DBusAuthObserver {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusAuthObserver */
     allow_mechanism(mechanism: string): boolean
     authorize_authenticated_peer(stream: IOStream, credentials?: Credentials | null): boolean
@@ -3937,7 +4005,8 @@ class DBusAuthObserver {
     static new(): DBusAuthObserver
     static $gtype: GObject.Type
 }
-export interface DBusConnection_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusConnection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DBusConnection */
     address?: string
     authentication_observer?: DBusAuthObserver
     exit_on_close?: boolean
@@ -3952,7 +4021,7 @@ class DBusConnection {
     exit_on_close: boolean
     readonly unique_name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusConnection */
     add_filter(filter_function: DBusMessageFilterFunction): number
     call(bus_name: string | null, object_path: string, interface_name: string, method_name: string, parameters: GLib.Variant | null, reply_type: GLib.VariantType | null, flags: DBusCallFlags, timeout_msec: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -4067,14 +4136,15 @@ class DBusConnection {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DBusInterfaceSkeleton_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusInterfaceSkeleton_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags?: DBusInterfaceSkeletonFlags
 }
 class DBusInterfaceSkeleton {
     /* Properties of Gio-2.0.Gio.DBusInterfaceSkeleton */
     g_flags: DBusInterfaceSkeletonFlags
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     export(connection: DBusConnection, object_path: string): boolean
     flush(): void
@@ -4110,16 +4180,11 @@ class DBusInterfaceSkeleton {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
-    /* Methods of Gio-2.0.Gio.DBusInterface */
-    get_object(): DBusObject | null
-    set_object(object?: DBusObject | null): void
     /* Virtual methods of Gio-2.0.Gio.DBusInterfaceSkeleton */
     vfunc_flush(): void
     vfunc_g_authorize_method(invocation: DBusMethodInvocation): boolean
     vfunc_get_info(): DBusInterfaceInfo
     vfunc_get_properties(): GLib.Variant
-    vfunc_dup_object(): DBusObject | null
-    vfunc_set_object(object?: DBusObject | null): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4147,14 +4212,14 @@ class DBusInterfaceSkeleton {
     _init (config?: DBusInterfaceSkeleton_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DBusMenuModel_ConstructProps extends MenuModel_ConstructProps {
+interface DBusMenuModel_ConstructProps extends MenuModel_ConstructProps {
 }
 class DBusMenuModel {
     /* Fields of Gio-2.0.Gio.MenuModel */
-    parent_instance: GObject.Object
-    priv: MenuModelPrivate
+    readonly parent_instance: GObject.Object
+    readonly priv: MenuModelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.MenuModel */
     get_item_attribute_value(item_index: number, attribute: string, expected_type?: GLib.VariantType | null): GLib.Variant | null
     get_item_link(item_index: number, link: string): MenuModel | null
@@ -4221,13 +4286,13 @@ class DBusMenuModel {
     static get(connection: DBusConnection, bus_name: string | null, object_path: string): DBusMenuModel
     static $gtype: GObject.Type
 }
-export interface DBusMessage_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusMessage_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DBusMessage {
     /* Properties of Gio-2.0.Gio.DBusMessage */
     readonly locked: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusMessage */
     copy(): DBusMessage
     get_arg0(): string | null
@@ -4237,7 +4302,7 @@ class DBusMessage {
     get_error_name(): string | null
     get_flags(): DBusMessageFlags
     get_header(header_field: DBusMessageHeaderField): GLib.Variant | null
-    get_header_fields(): Uint8Array[]
+    get_header_fields(): Uint8Array
     get_interface(): string | null
     get_locked(): boolean
     get_member(): string | null
@@ -4269,7 +4334,7 @@ class DBusMessage {
     set_serial(serial: number): void
     set_signature(value?: string | null): void
     set_unix_fd_list(fd_list?: UnixFDList | null): void
-    to_blob(capabilities: DBusCapabilityFlags): Uint8Array[]
+    to_blob(capabilities: DBusCapabilityFlags): Uint8Array
     to_gerror(): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
@@ -4316,17 +4381,17 @@ class DBusMessage {
     _init (config?: DBusMessage_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): DBusMessage
-    static new_from_blob(blob: Uint8Array[], capabilities: DBusCapabilityFlags): DBusMessage
+    static new_from_blob(blob: Uint8Array, capabilities: DBusCapabilityFlags): DBusMessage
     static new_method_call(name: string | null, path: string, interface_: string | null, method: string): DBusMessage
     static new_signal(path: string, interface_: string, signal: string): DBusMessage
-    static bytes_needed(blob: Uint8Array[]): number
+    static bytes_needed(blob: Uint8Array): number
     static $gtype: GObject.Type
 }
-export interface DBusMethodInvocation_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusMethodInvocation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DBusMethodInvocation {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusMethodInvocation */
     get_connection(): DBusConnection
     get_interface_name(): string
@@ -4385,7 +4450,8 @@ class DBusMethodInvocation {
     _init (config?: DBusMethodInvocation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DBusObjectManagerClient_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusObjectManagerClient_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DBusObjectManagerClient */
     bus_type?: BusType
     connection?: DBusConnection
     flags?: DBusObjectManagerClientFlags
@@ -4399,7 +4465,7 @@ class DBusObjectManagerClient {
     /* Properties of Gio-2.0.Gio.DBusObjectManagerClient */
     readonly name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusObjectManagerClient */
     get_connection(): DBusConnection
     get_flags(): DBusObjectManagerClientFlags
@@ -4503,7 +4569,8 @@ class DBusObjectManagerClient {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DBusObjectManagerServer_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusObjectManagerServer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DBusObjectManagerServer */
     connection?: DBusConnection
     object_path?: string
 }
@@ -4511,7 +4578,7 @@ class DBusObjectManagerServer {
     /* Properties of Gio-2.0.Gio.DBusObjectManagerServer */
     connection: DBusConnection
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusObjectManagerServer */
     export(object: DBusObjectSkeleton): void
     export_uniquely(object: DBusObjectSkeleton): void
@@ -4593,13 +4660,14 @@ class DBusObjectManagerServer {
     static new(object_path: string): DBusObjectManagerServer
     static $gtype: GObject.Type
 }
-export interface DBusObjectProxy_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusObjectProxy_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DBusObjectProxy */
     g_connection?: DBusConnection
     g_object_path?: string
 }
 class DBusObjectProxy {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusObjectProxy */
     get_connection(): DBusConnection
     /* Methods of GObject-2.0.GObject.Object */
@@ -4664,14 +4732,15 @@ class DBusObjectProxy {
     static new(connection: DBusConnection, object_path: string): DBusObjectProxy
     static $gtype: GObject.Type
 }
-export interface DBusObjectSkeleton_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusObjectSkeleton_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DBusObjectSkeleton */
     g_object_path?: string
 }
 class DBusObjectSkeleton {
     /* Properties of Gio-2.0.Gio.DBusObjectSkeleton */
     g_object_path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusObjectSkeleton */
     add_interface(interface_: DBusInterfaceSkeleton): void
     flush(): void
@@ -4747,7 +4816,8 @@ class DBusObjectSkeleton {
     static new(object_path: string): DBusObjectSkeleton
     static $gtype: GObject.Type
 }
-export interface DBusProxy_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusProxy_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DBusProxy */
     g_bus_type?: BusType
     g_connection?: DBusConnection
     g_default_timeout?: number
@@ -4763,7 +4833,7 @@ class DBusProxy {
     g_interface_info: DBusInterfaceInfo
     readonly g_name_owner: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusProxy */
     call(method_name: string, parameters: GLib.Variant | null, flags: DBusCallFlags, timeout_msec: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     call_finish(res: AsyncResult): GLib.Variant
@@ -4806,25 +4876,9 @@ class DBusProxy {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
-    /* Methods of Gio-2.0.Gio.AsyncInitable */
-    init_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
-    init_finish(res: AsyncResult): boolean
-    new_finish(res: AsyncResult): GObject.Object
-    /* Methods of Gio-2.0.Gio.DBusInterface */
-    get_object(): DBusObject | null
-    get_info(): DBusInterfaceInfo
-    set_object(object?: DBusObject | null): void
-    /* Methods of Gio-2.0.Gio.Initable */
-    init(cancellable?: Cancellable | null): boolean
     /* Virtual methods of Gio-2.0.Gio.DBusProxy */
     vfunc_g_properties_changed(changed_properties: GLib.Variant, invalidated_properties: string): void
     vfunc_g_signal(sender_name: string, signal_name: string, parameters: GLib.Variant): void
-    vfunc_init_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
-    vfunc_init_finish(res: AsyncResult): boolean
-    vfunc_dup_object(): DBusObject | null
-    vfunc_get_info(): DBusInterfaceInfo
-    vfunc_set_object(object?: DBusObject | null): void
-    vfunc_init(cancellable?: Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4863,11 +4917,10 @@ class DBusProxy {
     static new_for_bus_sync(bus_type: BusType, flags: DBusProxyFlags, info: DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Cancellable | null): DBusProxy
     static new_sync(connection: DBusConnection, flags: DBusProxyFlags, info: DBusInterfaceInfo | null, name: string | null, object_path: string, interface_name: string, cancellable?: Cancellable | null): DBusProxy
     static new_for_bus(bus_type: BusType, flags: DBusProxyFlags, info: DBusInterfaceInfo | null, name: string, object_path: string, interface_name: string, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
-    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
-    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DBusServer_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusServer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DBusServer */
     address?: string
     authentication_observer?: DBusAuthObserver
     flags?: DBusServerFlags
@@ -4878,7 +4931,7 @@ class DBusServer {
     readonly active: boolean
     readonly client_address: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DBusServer */
     get_client_address(): string
     get_flags(): DBusServerFlags
@@ -4944,7 +4997,8 @@ class DBusServer {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DataInputStream_ConstructProps extends BufferedInputStream_ConstructProps {
+interface DataInputStream_ConstructProps extends BufferedInputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DataInputStream */
     byte_order?: DataStreamByteOrder
     newline_type?: DataStreamNewlineType
 }
@@ -4956,12 +5010,12 @@ class DataInputStream {
     buffer_size: number
     /* Properties of Gio-2.0.Gio.FilterInputStream */
     close_base_stream: boolean
-    /* Fields of Gio-2.0.Gio.DataInputStream */
-    parent_instance: BufferedInputStream
+    /* Fields of Gio-2.0.Gio.BufferedInputStream */
+    readonly parent_instance: FilterInputStream
     /* Fields of Gio-2.0.Gio.FilterInputStream */
-    base_stream: InputStream
+    readonly base_stream: InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DataInputStream */
     get_byte_order(): DataStreamByteOrder
     get_newline_type(): DataStreamNewlineType
@@ -4969,9 +5023,9 @@ class DataInputStream {
     read_int16(cancellable?: Cancellable | null): number
     read_int32(cancellable?: Cancellable | null): number
     read_int64(cancellable?: Cancellable | null): number
-    read_line(cancellable?: Cancellable | null): [ /* returnType */ Uint8Array[] | null, /* length */ number | null ]
+    read_line(cancellable?: Cancellable | null): [ /* returnType */ Uint8Array | null, /* length */ number | null ]
     read_line_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
-    read_line_finish(result: AsyncResult): [ /* returnType */ Uint8Array[] | null, /* length */ number | null ]
+    read_line_finish(result: AsyncResult): [ /* returnType */ Uint8Array | null, /* length */ number | null ]
     read_line_finish_utf8(result: AsyncResult): [ /* returnType */ string | null, /* length */ number | null ]
     read_line_utf8(cancellable?: Cancellable | null): [ /* returnType */ string | null, /* length */ number | null ]
     read_uint16(cancellable?: Cancellable | null): number
@@ -4991,8 +5045,9 @@ class DataInputStream {
     fill_finish(result: AsyncResult): number
     get_available(): number
     get_buffer_size(): number
-    peek(buffer: Uint8Array[], offset: number): number
-    peek_buffer(): Uint8Array[]
+    peek(buffer: Uint8Array, offset: number): number
+    peek_buffer(): Uint8Array
+    read_byte(cancellable?: Cancellable | null): number
     set_buffer_size(size: number): void
     /* Methods of Gio-2.0.Gio.FilterInputStream */
     get_base_stream(): InputStream
@@ -5005,11 +5060,11 @@ class DataInputStream {
     close_finish(result: AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     read_bytes_finish(result: AsyncResult): GLib.Bytes
@@ -5046,6 +5101,12 @@ class DataInputStream {
     seek(offset: number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean
     tell(): number
     truncate(offset: number, cancellable?: Cancellable | null): boolean
+    /* Virtual methods of Gio-2.0.Gio.DataInputStream */
+    vfunc_can_seek(): boolean
+    vfunc_can_truncate(): boolean
+    vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean
+    vfunc_tell(): number
+    vfunc_truncate_fn(offset: number, cancellable?: Cancellable | null): boolean
     /* Virtual methods of Gio-2.0.Gio.BufferedInputStream */
     vfunc_fill(count: number, cancellable?: Cancellable | null): number
     vfunc_fill_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -5059,7 +5120,7 @@ class DataInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
     vfunc_close_fn(cancellable?: Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Cancellable | null): number
@@ -5094,20 +5155,22 @@ class DataInputStream {
     _init (config?: DataInputStream_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(base_stream: InputStream): DataInputStream
+    /* Function overloads */
+    static new(base_stream: InputStream): DataInputStream
     static $gtype: GObject.Type
 }
-export interface DataOutputStream_ConstructProps extends FilterOutputStream_ConstructProps {
+interface DataOutputStream_ConstructProps extends FilterOutputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DataOutputStream */
     byte_order?: DataStreamByteOrder
 }
 class DataOutputStream {
     /* Properties of Gio-2.0.Gio.DataOutputStream */
     byte_order: DataStreamByteOrder
-    /* Fields of Gio-2.0.Gio.DataOutputStream */
-    parent_instance: FilterOutputStream
     /* Fields of Gio-2.0.Gio.FilterOutputStream */
-    base_stream: OutputStream
+    readonly parent_instance: OutputStream
+    readonly base_stream: OutputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DataOutputStream */
     get_byte_order(): DataStreamByteOrder
     put_byte(data: number, cancellable?: Cancellable | null): boolean
@@ -5138,11 +5201,11 @@ class DataOutputStream {
     splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     splice_finish(result: AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes_finish(result: AsyncResult): number
@@ -5197,9 +5260,9 @@ class DataOutputStream {
     vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_splice_finish(result: AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_write_finish(result: AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Cancellable | null): number
     vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_writev_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -5228,12 +5291,13 @@ class DataOutputStream {
     static new(base_stream: OutputStream): DataOutputStream
     static $gtype: GObject.Type
 }
-export interface DesktopAppInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface DesktopAppInfo_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DesktopAppInfo */
     filename?: string
 }
 class DesktopAppInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.DesktopAppInfo */
     get_action_name(action_name: string): string
     get_boolean(key: string): boolean
@@ -5351,7 +5415,7 @@ class DesktopAppInfo {
     static new_from_filename(filename: string): DesktopAppInfo
     static new_from_keyfile(key_file: GLib.KeyFile): DesktopAppInfo
     static get_implementations(interface: string): DesktopAppInfo[]
-    static search(search_string: string): any[]
+    static search(search_string: string): string[]
     static set_desktop_env(desktop_env: string): void
     static create_from_commandline(commandline: string, application_name: string | null, flags: AppInfoCreateFlags): AppInfo
     static get_all(): AppInfo[]
@@ -5366,13 +5430,14 @@ class DesktopAppInfo {
     static reset_type_associations(content_type: string): void
     static $gtype: GObject.Type
 }
-export interface Emblem_ConstructProps extends GObject.Object_ConstructProps {
+interface Emblem_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.Emblem */
     icon?: GObject.Object
     origin?: EmblemOrigin
 }
 class Emblem {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Emblem */
     get_icon(): Icon
     get_origin(): EmblemOrigin
@@ -5433,14 +5498,13 @@ class Emblem {
     static new_for_string(str: string): Icon
     static $gtype: GObject.Type
 }
-export interface EmblemedIcon_ConstructProps extends GObject.Object_ConstructProps {
+interface EmblemedIcon_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.EmblemedIcon */
     gicon?: Icon
 }
 class EmblemedIcon {
-    /* Fields of Gio-2.0.Gio.EmblemedIcon */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.EmblemedIcon */
     add_emblem(emblem: Emblem): void
     clear_emblems(): void
@@ -5502,14 +5566,13 @@ class EmblemedIcon {
     static new_for_string(str: string): Icon
     static $gtype: GObject.Type
 }
-export interface FileEnumerator_ConstructProps extends GObject.Object_ConstructProps {
+interface FileEnumerator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.FileEnumerator */
     container?: File
 }
 class FileEnumerator {
-    /* Fields of Gio-2.0.Gio.FileEnumerator */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FileEnumerator */
     close(cancellable?: Cancellable | null): boolean
     close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -5573,17 +5636,17 @@ class FileEnumerator {
     _init (config?: FileEnumerator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FileIOStream_ConstructProps extends IOStream_ConstructProps {
+interface FileIOStream_ConstructProps extends IOStream_ConstructProps {
 }
 class FileIOStream {
     /* Properties of Gio-2.0.Gio.IOStream */
     readonly closed: boolean
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
-    /* Fields of Gio-2.0.Gio.FileIOStream */
-    parent_instance: IOStream
+    /* Fields of Gio-2.0.Gio.IOStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FileIOStream */
     get_etag(): string | null
     query_info(attributes: string, cancellable?: Cancellable | null): FileInfo
@@ -5636,8 +5699,12 @@ class FileIOStream {
     vfunc_query_info_async(attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_query_info_finish(result: AsyncResult): FileInfo
     vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean
+    /* Function overloads */
+    vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean
     vfunc_tell(): number
     vfunc_truncate_fn(size: number, cancellable?: Cancellable | null): boolean
+    /* Function overloads */
+    vfunc_truncate_fn(offset: number, cancellable?: Cancellable | null): boolean
     /* Virtual methods of Gio-2.0.Gio.IOStream */
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
@@ -5671,12 +5738,13 @@ class FileIOStream {
     _init (config?: FileIOStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FileIcon_ConstructProps extends GObject.Object_ConstructProps {
+interface FileIcon_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.FileIcon */
     file?: File
 }
 class FileIcon {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FileIcon */
     get_file(): File
     /* Methods of GObject-2.0.GObject.Object */
@@ -5742,11 +5810,11 @@ class FileIcon {
     static new_for_string(str: string): Icon
     static $gtype: GObject.Type
 }
-export interface FileInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface FileInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FileInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FileInfo */
     clear_status(): void
     copy_into(dest_info: FileInfo): void
@@ -5861,13 +5929,13 @@ class FileInfo {
     static new(): FileInfo
     static $gtype: GObject.Type
 }
-export interface FileInputStream_ConstructProps extends InputStream_ConstructProps {
+interface FileInputStream_ConstructProps extends InputStream_ConstructProps {
 }
 class FileInputStream {
-    /* Fields of Gio-2.0.Gio.FileInputStream */
-    parent_instance: InputStream
+    /* Fields of Gio-2.0.Gio.InputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FileInputStream */
     query_info(attributes: string, cancellable?: Cancellable | null): FileInfo
     query_info_async(attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -5879,11 +5947,11 @@ class FileInputStream {
     close_finish(result: AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     read_bytes_finish(result: AsyncResult): GLib.Bytes
@@ -5926,6 +5994,8 @@ class FileInputStream {
     vfunc_query_info_async(attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_query_info_finish(result: AsyncResult): FileInfo
     vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean
+    /* Function overloads */
+    vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean
     vfunc_tell(): number
     vfunc_can_truncate(): boolean
     vfunc_truncate_fn(offset: number, cancellable?: Cancellable | null): boolean
@@ -5933,7 +6003,7 @@ class FileInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
     vfunc_close_fn(cancellable?: Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Cancellable | null): number
@@ -5960,17 +6030,16 @@ class FileInputStream {
     _init (config?: FileInputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FileMonitor_ConstructProps extends GObject.Object_ConstructProps {
+interface FileMonitor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.FileMonitor */
     rate_limit?: number
 }
 class FileMonitor {
     /* Properties of Gio-2.0.Gio.FileMonitor */
     readonly cancelled: boolean
     rate_limit: number
-    /* Fields of Gio-2.0.Gio.FileMonitor */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FileMonitor */
     cancel(): boolean
     emit_event(child: File, other_file: File, event_type: FileMonitorEvent): void
@@ -6030,13 +6099,13 @@ class FileMonitor {
     _init (config?: FileMonitor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FileOutputStream_ConstructProps extends OutputStream_ConstructProps {
+interface FileOutputStream_ConstructProps extends OutputStream_ConstructProps {
 }
 class FileOutputStream {
-    /* Fields of Gio-2.0.Gio.FileOutputStream */
-    parent_instance: OutputStream
+    /* Fields of Gio-2.0.Gio.OutputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FileOutputStream */
     get_etag(): string | null
     query_info(attributes: string, cancellable?: Cancellable | null): FileInfo
@@ -6057,11 +6126,11 @@ class FileOutputStream {
     splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     splice_finish(result: AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes_finish(result: AsyncResult): number
@@ -6108,8 +6177,12 @@ class FileOutputStream {
     vfunc_query_info_async(attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_query_info_finish(result: AsyncResult): FileInfo
     vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean
+    /* Function overloads */
+    vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean
     vfunc_tell(): number
     vfunc_truncate_fn(size: number, cancellable?: Cancellable | null): boolean
+    /* Function overloads */
+    vfunc_truncate_fn(offset: number, cancellable?: Cancellable | null): boolean
     /* Virtual methods of Gio-2.0.Gio.OutputStream */
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
@@ -6120,9 +6193,9 @@ class FileOutputStream {
     vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_splice_finish(result: AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_write_finish(result: AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Cancellable | null): number
     vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_writev_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -6147,11 +6220,11 @@ class FileOutputStream {
     _init (config?: FileOutputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FilenameCompleter_ConstructProps extends GObject.Object_ConstructProps {
+interface FilenameCompleter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class FilenameCompleter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FilenameCompleter */
     get_completion_suffix(initial_text: string): string | null
     get_completions(initial_text: string): string[]
@@ -6207,18 +6280,18 @@ class FilenameCompleter {
     static new(): FilenameCompleter
     static $gtype: GObject.Type
 }
-export interface FilterInputStream_ConstructProps extends InputStream_ConstructProps {
+interface FilterInputStream_ConstructProps extends InputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.FilterInputStream */
     base_stream?: InputStream
     close_base_stream?: boolean
 }
 class FilterInputStream {
     /* Properties of Gio-2.0.Gio.FilterInputStream */
     close_base_stream: boolean
-    /* Fields of Gio-2.0.Gio.FilterInputStream */
-    parent_instance: InputStream
-    base_stream: InputStream
+    /* Fields of Gio-2.0.Gio.InputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FilterInputStream */
     get_base_stream(): InputStream
     get_close_base_stream(): boolean
@@ -6230,11 +6303,11 @@ class FilterInputStream {
     close_finish(result: AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     read_bytes_finish(result: AsyncResult): GLib.Bytes
@@ -6269,7 +6342,7 @@ class FilterInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
     vfunc_close_fn(cancellable?: Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Cancellable | null): number
@@ -6298,16 +6371,16 @@ class FilterInputStream {
     _init (config?: FilterInputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FilterOutputStream_ConstructProps extends OutputStream_ConstructProps {
+interface FilterOutputStream_ConstructProps extends OutputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.FilterOutputStream */
     base_stream?: OutputStream
     close_base_stream?: boolean
 }
 class FilterOutputStream {
-    /* Fields of Gio-2.0.Gio.FilterOutputStream */
-    parent_instance: OutputStream
-    base_stream: OutputStream
+    /* Fields of Gio-2.0.Gio.OutputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FilterOutputStream */
     get_base_stream(): OutputStream
     get_close_base_stream(): boolean
@@ -6327,11 +6400,11 @@ class FilterOutputStream {
     splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     splice_finish(result: AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes_finish(result: AsyncResult): number
@@ -6374,9 +6447,9 @@ class FilterOutputStream {
     vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_splice_finish(result: AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_write_finish(result: AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Cancellable | null): number
     vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_writev_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -6401,17 +6474,17 @@ class FilterOutputStream {
     _init (config?: FilterOutputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface IOModule_ConstructProps extends GObject.TypeModule_ConstructProps {
+interface IOModule_ConstructProps extends GObject.TypeModule_ConstructProps {
 }
 class IOModule {
     /* Fields of GObject-2.0.GObject.TypeModule */
-    parent_instance: GObject.Object
-    use_count: number
-    type_infos: object[]
-    interface_infos: object[]
-    name: string
+    readonly parent_instance: GObject.Object
+    readonly use_count: number
+    readonly type_infos: object[]
+    readonly interface_infos: object[]
+    readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.TypeModule */
     add_interface(instance_type: GObject.Type, interface_type: GObject.Type, interface_info: GObject.InterfaceInfo): void
     register_enum(name: string, const_static_values: GObject.EnumValue): GObject.Type
@@ -6473,17 +6546,15 @@ class IOModule {
     static query(): string[]
     static $gtype: GObject.Type
 }
-export interface IOStream_ConstructProps extends GObject.Object_ConstructProps {
+interface IOStream_ConstructProps extends GObject.Object_ConstructProps {
 }
 class IOStream {
     /* Properties of Gio-2.0.Gio.IOStream */
     readonly closed: boolean
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
-    /* Fields of Gio-2.0.Gio.IOStream */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.IOStream */
     clear_pending(): void
     close(cancellable?: Cancellable | null): boolean
@@ -6552,7 +6623,8 @@ class IOStream {
     static splice_finish(result: AsyncResult): boolean
     static $gtype: GObject.Type
 }
-export interface InetAddress_ConstructProps extends GObject.Object_ConstructProps {
+interface InetAddress_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.InetAddress */
     bytes?: object
     family?: SocketFamily
 }
@@ -6568,10 +6640,8 @@ class InetAddress {
     readonly is_mc_site_local: boolean
     readonly is_multicast: boolean
     readonly is_site_local: boolean
-    /* Fields of Gio-2.0.Gio.InetAddress */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.InetAddress */
     equal(other_address: InetAddress): boolean
     get_family(): SocketFamily
@@ -6652,12 +6722,13 @@ class InetAddress {
     _init (config?: InetAddress_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_any(family: SocketFamily): InetAddress
-    static new_from_bytes(bytes: Uint8Array[], family: SocketFamily): InetAddress
+    static new_from_bytes(bytes: Uint8Array, family: SocketFamily): InetAddress
     static new_from_string(string: string): InetAddress
     static new_loopback(family: SocketFamily): InetAddress
     static $gtype: GObject.Type
 }
-export interface InetAddressMask_ConstructProps extends GObject.Object_ConstructProps {
+interface InetAddressMask_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.InetAddressMask */
     address?: InetAddress
     length?: number
 }
@@ -6666,10 +6737,8 @@ class InetAddressMask {
     address: InetAddress
     readonly family: SocketFamily
     length: number
-    /* Fields of Gio-2.0.Gio.InetAddressMask */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.InetAddressMask */
     equal(mask2: InetAddressMask): boolean
     get_address(): InetAddress
@@ -6734,7 +6803,8 @@ class InetAddressMask {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface InetSocketAddress_ConstructProps extends SocketAddress_ConstructProps {
+interface InetSocketAddress_ConstructProps extends SocketAddress_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.InetSocketAddress */
     address?: InetAddress
     flowinfo?: number
     port?: number
@@ -6743,10 +6813,10 @@ export interface InetSocketAddress_ConstructProps extends SocketAddress_Construc
 class InetSocketAddress {
     /* Properties of Gio-2.0.Gio.SocketAddress */
     readonly family: SocketFamily
-    /* Fields of Gio-2.0.Gio.InetSocketAddress */
-    parent_instance: SocketAddress
+    /* Fields of Gio-2.0.Gio.SocketAddress */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.InetSocketAddress */
     get_address(): InetAddress
     get_flowinfo(): number
@@ -6782,6 +6852,10 @@ class InetSocketAddress {
     enumerate(): SocketAddressEnumerator
     proxy_enumerate(): SocketAddressEnumerator
     to_string(): string
+    /* Virtual methods of Gio-2.0.Gio.InetSocketAddress */
+    vfunc_enumerate(): SocketAddressEnumerator
+    vfunc_proxy_enumerate(): SocketAddressEnumerator
+    vfunc_to_string(): string
     /* Virtual methods of Gio-2.0.Gio.SocketAddress */
     vfunc_get_family(): SocketFamily
     vfunc_get_native_size(): number
@@ -6815,13 +6889,11 @@ class InetSocketAddress {
     static new_from_string(address: string, port: number): InetSocketAddress
     static $gtype: GObject.Type
 }
-export interface InputStream_ConstructProps extends GObject.Object_ConstructProps {
+interface InputStream_ConstructProps extends GObject.Object_ConstructProps {
 }
 class InputStream {
-    /* Fields of Gio-2.0.Gio.InputStream */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.InputStream */
     clear_pending(): void
     close(cancellable?: Cancellable | null): boolean
@@ -6829,11 +6901,11 @@ class InputStream {
     close_finish(result: AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     read_bytes_finish(result: AsyncResult): GLib.Bytes
@@ -6868,7 +6940,7 @@ class InputStream {
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
     vfunc_close_fn(cancellable?: Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Cancellable | null): number
@@ -6895,12 +6967,13 @@ class InputStream {
     _init (config?: InputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ListStore_ConstructProps extends GObject.Object_ConstructProps {
+interface ListStore_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ListStore */
     item_type?: GObject.Type
 }
 class ListStore {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.ListStore */
     append(item: GObject.Object): void
     find(item: GObject.Object): [ /* returnType */ boolean, /* position */ number | null ]
@@ -6969,16 +7042,16 @@ class ListStore {
     static new(item_type: GObject.Type): ListStore
     static $gtype: GObject.Type
 }
-export interface MemoryInputStream_ConstructProps extends InputStream_ConstructProps {
+interface MemoryInputStream_ConstructProps extends InputStream_ConstructProps {
 }
 class MemoryInputStream {
-    /* Fields of Gio-2.0.Gio.MemoryInputStream */
-    parent_instance: InputStream
+    /* Fields of Gio-2.0.Gio.InputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.MemoryInputStream */
     add_bytes(bytes: GLib.Bytes): void
-    add_data(data: Uint8Array[], destroy?: GLib.DestroyNotify | null): void
+    add_data(data: Uint8Array, destroy?: GLib.DestroyNotify | null): void
     /* Methods of Gio-2.0.Gio.InputStream */
     clear_pending(): void
     close(cancellable?: Cancellable | null): boolean
@@ -6986,11 +7059,11 @@ class MemoryInputStream {
     close_finish(result: AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     read_bytes_finish(result: AsyncResult): GLib.Bytes
@@ -7025,7 +7098,7 @@ class MemoryInputStream {
     can_poll(): boolean
     create_source(cancellable?: Cancellable | null): GLib.Source
     is_readable(): boolean
-    read_nonblocking(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
+    read_nonblocking(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
     /* Methods of Gio-2.0.Gio.Seekable */
     can_seek(): boolean
     can_truncate(): boolean
@@ -7036,7 +7109,7 @@ class MemoryInputStream {
     vfunc_can_poll(): boolean
     vfunc_create_source(cancellable?: Cancellable | null): GLib.Source
     vfunc_is_readable(): boolean
-    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array[] | null ]
+    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array | null ]
     vfunc_can_seek(): boolean
     vfunc_can_truncate(): boolean
     vfunc_seek(offset: number, type: GLib.SeekType, cancellable?: Cancellable | null): boolean
@@ -7046,7 +7119,7 @@ class MemoryInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
     vfunc_close_fn(cancellable?: Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Cancellable | null): number
@@ -7074,20 +7147,21 @@ class MemoryInputStream {
     /* Static methods and pseudo-constructors */
     static new(): MemoryInputStream
     static new_from_bytes(bytes: GLib.Bytes): MemoryInputStream
-    static new_from_data(data: Uint8Array[], destroy?: GLib.DestroyNotify | null): MemoryInputStream
+    static new_from_data(data: Uint8Array, destroy?: GLib.DestroyNotify | null): MemoryInputStream
     static $gtype: GObject.Type
 }
-export interface MemoryOutputStream_ConstructProps extends OutputStream_ConstructProps {
+interface MemoryOutputStream_ConstructProps extends OutputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.MemoryOutputStream */
     data?: object
     size?: number
 }
 class MemoryOutputStream {
     /* Properties of Gio-2.0.Gio.MemoryOutputStream */
     readonly data_size: number
-    /* Fields of Gio-2.0.Gio.MemoryOutputStream */
-    parent_instance: OutputStream
+    /* Fields of Gio-2.0.Gio.OutputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.MemoryOutputStream */
     get_data(): object | null
     get_data_size(): number
@@ -7109,11 +7183,11 @@ class MemoryOutputStream {
     splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     splice_finish(result: AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes_finish(result: AsyncResult): number
@@ -7150,7 +7224,7 @@ class MemoryOutputStream {
     can_poll(): boolean
     create_source(cancellable?: Cancellable | null): GLib.Source
     is_writable(): boolean
-    write_nonblocking(buffer: Uint8Array[], cancellable?: Cancellable | null): number
+    write_nonblocking(buffer: Uint8Array, cancellable?: Cancellable | null): number
     writev_nonblocking(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     /* Methods of Gio-2.0.Gio.Seekable */
     can_seek(): boolean
@@ -7162,7 +7236,7 @@ class MemoryOutputStream {
     vfunc_can_poll(): boolean
     vfunc_create_source(cancellable?: Cancellable | null): GLib.Source
     vfunc_is_writable(): boolean
-    vfunc_write_nonblocking(buffer: Uint8Array[] | null): number
+    vfunc_write_nonblocking(buffer: Uint8Array | null): number
     vfunc_writev_nonblocking(vectors: OutputVector[]): [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     vfunc_can_seek(): boolean
     vfunc_can_truncate(): boolean
@@ -7179,9 +7253,9 @@ class MemoryOutputStream {
     vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_splice_finish(result: AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_write_finish(result: AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Cancellable | null): number
     vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_writev_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -7210,14 +7284,14 @@ class MemoryOutputStream {
     static new_resizable(): MemoryOutputStream
     static $gtype: GObject.Type
 }
-export interface Menu_ConstructProps extends MenuModel_ConstructProps {
+interface Menu_ConstructProps extends MenuModel_ConstructProps {
 }
 class Menu {
     /* Fields of Gio-2.0.Gio.MenuModel */
-    parent_instance: GObject.Object
-    priv: MenuModelPrivate
+    readonly parent_instance: GObject.Object
+    readonly priv: MenuModelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Menu */
     append(label?: string | null, detailed_action?: string | null): void
     append_item(item: MenuItem): void
@@ -7300,14 +7374,11 @@ class Menu {
     static new(): Menu
     static $gtype: GObject.Type
 }
-export interface MenuAttributeIter_ConstructProps extends GObject.Object_ConstructProps {
+interface MenuAttributeIter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MenuAttributeIter {
-    /* Fields of Gio-2.0.Gio.MenuAttributeIter */
-    parent_instance: GObject.Object
-    priv: MenuAttributeIterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.MenuAttributeIter */
     get_name(): string
     get_next(): [ /* returnType */ boolean, /* out_name */ string | null, /* value */ GLib.Variant | null ]
@@ -7358,11 +7429,11 @@ class MenuAttributeIter {
     _init (config?: MenuAttributeIter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MenuItem_ConstructProps extends GObject.Object_ConstructProps {
+interface MenuItem_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MenuItem {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.MenuItem */
     get_attribute_value(attribute: string, expected_type?: GLib.VariantType | null): GLib.Variant | null
     get_link(link: string): MenuModel | null
@@ -7422,14 +7493,11 @@ class MenuItem {
     static new_submenu(label: string | null, submenu: MenuModel): MenuItem
     static $gtype: GObject.Type
 }
-export interface MenuLinkIter_ConstructProps extends GObject.Object_ConstructProps {
+interface MenuLinkIter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MenuLinkIter {
-    /* Fields of Gio-2.0.Gio.MenuLinkIter */
-    parent_instance: GObject.Object
-    priv: MenuLinkIterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.MenuLinkIter */
     get_name(): string
     get_next(): [ /* returnType */ boolean, /* out_link */ string | null, /* value */ MenuModel | null ]
@@ -7480,14 +7548,11 @@ class MenuLinkIter {
     _init (config?: MenuLinkIter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MenuModel_ConstructProps extends GObject.Object_ConstructProps {
+interface MenuModel_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MenuModel {
-    /* Fields of Gio-2.0.Gio.MenuModel */
-    parent_instance: GObject.Object
-    priv: MenuModelPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.MenuModel */
     get_item_attribute_value(item_index: number, attribute: string, expected_type?: GLib.VariantType | null): GLib.Variant | null
     get_item_link(item_index: number, link: string): MenuModel | null
@@ -7552,7 +7617,8 @@ class MenuModel {
     _init (config?: MenuModel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MountOperation_ConstructProps extends GObject.Object_ConstructProps {
+interface MountOperation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.MountOperation */
     anonymous?: boolean
     choice?: number
     domain?: string
@@ -7574,11 +7640,8 @@ class MountOperation {
     password_save: PasswordSave
     pim: number
     username: string
-    /* Fields of Gio-2.0.Gio.MountOperation */
-    parent_instance: GObject.Object
-    priv: MountOperationPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.MountOperation */
     get_anonymous(): boolean
     get_choice(): number
@@ -7688,15 +7751,15 @@ class MountOperation {
     static new(): MountOperation
     static $gtype: GObject.Type
 }
-export interface NativeSocketAddress_ConstructProps extends SocketAddress_ConstructProps {
+interface NativeSocketAddress_ConstructProps extends SocketAddress_ConstructProps {
 }
 class NativeSocketAddress {
     /* Properties of Gio-2.0.Gio.SocketAddress */
     readonly family: SocketFamily
-    /* Fields of Gio-2.0.Gio.NativeSocketAddress */
-    parent_instance: SocketAddress
+    /* Fields of Gio-2.0.Gio.SocketAddress */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketAddress */
     get_family(): SocketFamily
     get_native_size(): number
@@ -7727,6 +7790,10 @@ class NativeSocketAddress {
     enumerate(): SocketAddressEnumerator
     proxy_enumerate(): SocketAddressEnumerator
     to_string(): string
+    /* Virtual methods of Gio-2.0.Gio.NativeSocketAddress */
+    vfunc_enumerate(): SocketAddressEnumerator
+    vfunc_proxy_enumerate(): SocketAddressEnumerator
+    vfunc_to_string(): string
     /* Virtual methods of Gio-2.0.Gio.SocketAddress */
     vfunc_get_family(): SocketFamily
     vfunc_get_native_size(): number
@@ -7759,13 +7826,13 @@ class NativeSocketAddress {
     static new(native: object | null, len: number): NativeSocketAddress
     static $gtype: GObject.Type
 }
-export interface NativeVolumeMonitor_ConstructProps extends VolumeMonitor_ConstructProps {
+interface NativeVolumeMonitor_ConstructProps extends VolumeMonitor_ConstructProps {
 }
 class NativeVolumeMonitor {
-    /* Fields of Gio-2.0.Gio.NativeVolumeMonitor */
-    parent_instance: VolumeMonitor
+    /* Fields of Gio-2.0.Gio.VolumeMonitor */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.VolumeMonitor */
     get_connected_drives(): Drive[]
     get_mount_for_uuid(uuid: string): Mount | null
@@ -7870,16 +7937,15 @@ class NativeVolumeMonitor {
     _init (config?: NativeVolumeMonitor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface NetworkAddress_ConstructProps extends GObject.Object_ConstructProps {
+interface NetworkAddress_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.NetworkAddress */
     hostname?: string
     port?: number
     scheme?: string
 }
 class NetworkAddress {
-    /* Fields of Gio-2.0.Gio.NetworkAddress */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.NetworkAddress */
     get_hostname(): string
     get_port(): number
@@ -7940,7 +8006,8 @@ class NetworkAddress {
     static parse_uri(uri: string, default_port: number): NetworkAddress
     static $gtype: GObject.Type
 }
-export interface NetworkService_ConstructProps extends GObject.Object_ConstructProps {
+interface NetworkService_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.NetworkService */
     domain?: string
     protocol?: string
     scheme?: string
@@ -7949,10 +8016,8 @@ export interface NetworkService_ConstructProps extends GObject.Object_ConstructP
 class NetworkService {
     /* Properties of Gio-2.0.Gio.NetworkService */
     scheme: string
-    /* Fields of Gio-2.0.Gio.NetworkService */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.NetworkService */
     get_domain(): string
     get_protocol(): string
@@ -8014,11 +8079,11 @@ class NetworkService {
     static new(service: string, protocol: string, domain: string): NetworkService
     static $gtype: GObject.Type
 }
-export interface Notification_ConstructProps extends GObject.Object_ConstructProps {
+interface Notification_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Notification {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Notification */
     add_button(label: string, detailed_action: string): void
     add_button_with_target(label: string, action: string, target?: GLib.Variant | null): void
@@ -8075,13 +8140,11 @@ class Notification {
     static new(title: string): Notification
     static $gtype: GObject.Type
 }
-export interface OutputStream_ConstructProps extends GObject.Object_ConstructProps {
+interface OutputStream_ConstructProps extends GObject.Object_ConstructProps {
 }
 class OutputStream {
-    /* Fields of Gio-2.0.Gio.OutputStream */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.OutputStream */
     clear_pending(): void
     close(cancellable?: Cancellable | null): boolean
@@ -8097,11 +8160,11 @@ class OutputStream {
     splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     splice_finish(result: AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes_finish(result: AsyncResult): number
@@ -8144,9 +8207,9 @@ class OutputStream {
     vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_splice_finish(result: AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_write_finish(result: AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Cancellable | null): number
     vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_writev_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -8171,17 +8234,15 @@ class OutputStream {
     _init (config?: OutputStream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Permission_ConstructProps extends GObject.Object_ConstructProps {
+interface Permission_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Permission {
     /* Properties of Gio-2.0.Gio.Permission */
     readonly allowed: boolean
     readonly can_acquire: boolean
     readonly can_release: boolean
-    /* Fields of Gio-2.0.Gio.Permission */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Permission */
     acquire(cancellable?: Cancellable | null): boolean
     acquire_async(cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -8249,7 +8310,8 @@ class Permission {
     _init (config?: Permission_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PropertyAction_ConstructProps extends GObject.Object_ConstructProps {
+interface PropertyAction_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.PropertyAction */
     invert_boolean?: boolean
     name?: string
     object?: GObject.Object
@@ -8264,7 +8326,7 @@ class PropertyAction {
     /* Properties of Gio-2.0.Gio.Action */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -8341,7 +8403,8 @@ class PropertyAction {
     static print_detailed_name(action_name: string, target_value?: GLib.Variant | null): string
     static $gtype: GObject.Type
 }
-export interface ProxyAddress_ConstructProps extends InetSocketAddress_ConstructProps {
+interface ProxyAddress_ConstructProps extends InetSocketAddress_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ProxyAddress */
     destination_hostname?: string
     destination_port?: number
     destination_protocol?: string
@@ -8353,10 +8416,10 @@ export interface ProxyAddress_ConstructProps extends InetSocketAddress_Construct
 class ProxyAddress {
     /* Properties of Gio-2.0.Gio.SocketAddress */
     readonly family: SocketFamily
-    /* Fields of Gio-2.0.Gio.ProxyAddress */
-    parent_instance: InetSocketAddress
+    /* Fields of Gio-2.0.Gio.InetSocketAddress */
+    readonly parent_instance: SocketAddress
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.ProxyAddress */
     get_destination_hostname(): string
     get_destination_port(): number
@@ -8400,6 +8463,14 @@ class ProxyAddress {
     enumerate(): SocketAddressEnumerator
     proxy_enumerate(): SocketAddressEnumerator
     to_string(): string
+    /* Virtual methods of Gio-2.0.Gio.ProxyAddress */
+    vfunc_enumerate(): SocketAddressEnumerator
+    vfunc_proxy_enumerate(): SocketAddressEnumerator
+    vfunc_to_string(): string
+    /* Virtual methods of Gio-2.0.Gio.InetSocketAddress */
+    vfunc_enumerate(): SocketAddressEnumerator
+    vfunc_proxy_enumerate(): SocketAddressEnumerator
+    vfunc_to_string(): string
     /* Virtual methods of Gio-2.0.Gio.SocketAddress */
     vfunc_get_family(): SocketFamily
     vfunc_get_native_size(): number
@@ -8430,10 +8501,12 @@ class ProxyAddress {
     _init (config?: ProxyAddress_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(inetaddr: InetAddress, port: number, protocol: string, dest_hostname: string, dest_port: number, username?: string | null, password?: string | null): ProxyAddress
+    /* Function overloads */
     static new(address: InetAddress, port: number): ProxyAddress
     static $gtype: GObject.Type
 }
-export interface ProxyAddressEnumerator_ConstructProps extends SocketAddressEnumerator_ConstructProps {
+interface ProxyAddressEnumerator_ConstructProps extends SocketAddressEnumerator_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ProxyAddressEnumerator */
     connectable?: SocketConnectable
     default_port?: number
     proxy_resolver?: ProxyResolver
@@ -8443,7 +8516,7 @@ class ProxyAddressEnumerator {
     /* Properties of Gio-2.0.Gio.ProxyAddressEnumerator */
     proxy_resolver: ProxyResolver
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketAddressEnumerator */
     next(cancellable?: Cancellable | null): SocketAddress
     next_async(cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -8497,14 +8570,11 @@ class ProxyAddressEnumerator {
     _init (config?: ProxyAddressEnumerator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Resolver_ConstructProps extends GObject.Object_ConstructProps {
+interface Resolver_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Resolver {
-    /* Fields of Gio-2.0.Gio.Resolver */
-    parent_instance: GObject.Object
-    priv: ResolverPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Resolver */
     lookup_by_address(address: InetAddress, cancellable?: Cancellable | null): string
     lookup_by_address_async(address: InetAddress, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -8587,7 +8657,8 @@ class Resolver {
     static get_default(): Resolver
     static $gtype: GObject.Type
 }
-export interface Settings_ConstructProps extends GObject.Object_ConstructProps {
+interface Settings_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.Settings */
     backend?: SettingsBackend
     path?: string
     schema?: string
@@ -8598,11 +8669,8 @@ class Settings {
     /* Properties of Gio-2.0.Gio.Settings */
     readonly delay_apply: boolean
     readonly has_unapplied: boolean
-    /* Fields of Gio-2.0.Gio.Settings */
-    parent_instance: GObject.Object
-    priv: SettingsPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Settings */
     apply(): void
     bind(key: string, object: GObject.Object, property: string, flags: SettingsBindFlags): void
@@ -8718,13 +8786,11 @@ class Settings {
     static unbind(object: GObject.Object, property: string): void
     static $gtype: GObject.Type
 }
-export interface SettingsBackend_ConstructProps extends GObject.Object_ConstructProps {
+interface SettingsBackend_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SettingsBackend {
-    /* Fields of Gio-2.0.Gio.SettingsBackend */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SettingsBackend */
     changed(key: string, origin_tag?: object | null): void
     changed_tree(tree: GLib.Tree, origin_tag?: object | null): void
@@ -8788,7 +8854,8 @@ class SettingsBackend {
     static get_default(): SettingsBackend
     static $gtype: GObject.Type
 }
-export interface SimpleAction_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleAction_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.SimpleAction */
     enabled?: boolean
     name?: string
     parameter_type?: GLib.VariantType
@@ -8803,7 +8870,7 @@ class SimpleAction {
     readonly name: string
     readonly parameter_type: GLib.VariantType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SimpleAction */
     set_enabled(enabled: boolean): void
     set_state(value: GLib.Variant): void
@@ -8892,11 +8959,11 @@ class SimpleAction {
     static print_detailed_name(action_name: string, target_value?: GLib.Variant | null): string
     static $gtype: GObject.Type
 }
-export interface SimpleActionGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleActionGroup_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SimpleActionGroup {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SimpleActionGroup */
     add_entries(entries: ActionEntry[], user_data?: object | null): void
     insert(action: Action): void
@@ -8998,11 +9065,11 @@ class SimpleActionGroup {
     static new(): SimpleActionGroup
     static $gtype: GObject.Type
 }
-export interface SimpleAsyncResult_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleAsyncResult_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SimpleAsyncResult {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SimpleAsyncResult */
     complete(): void
     complete_in_idle(): void
@@ -9070,7 +9137,8 @@ class SimpleAsyncResult {
     static is_valid(result: AsyncResult, source?: GObject.Object | null, source_tag?: object | null): boolean
     static $gtype: GObject.Type
 }
-export interface SimpleIOStream_ConstructProps extends IOStream_ConstructProps {
+interface SimpleIOStream_ConstructProps extends IOStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.SimpleIOStream */
     input_stream?: InputStream
     output_stream?: OutputStream
 }
@@ -9080,9 +9148,9 @@ class SimpleIOStream {
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
     /* Fields of Gio-2.0.Gio.IOStream */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.IOStream */
     clear_pending(): void
     close(cancellable?: Cancellable | null): boolean
@@ -9151,7 +9219,7 @@ class SimpleIOStream {
     static new(input_stream: InputStream, output_stream: OutputStream): SimpleIOStream
     static $gtype: GObject.Type
 }
-export interface SimplePermission_ConstructProps extends Permission_ConstructProps {
+interface SimplePermission_ConstructProps extends Permission_ConstructProps {
 }
 class SimplePermission {
     /* Properties of Gio-2.0.Gio.Permission */
@@ -9159,9 +9227,9 @@ class SimplePermission {
     readonly can_acquire: boolean
     readonly can_release: boolean
     /* Fields of Gio-2.0.Gio.Permission */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Permission */
     acquire(cancellable?: Cancellable | null): boolean
     acquire_async(cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -9231,7 +9299,8 @@ class SimplePermission {
     static new(allowed: boolean): SimplePermission
     static $gtype: GObject.Type
 }
-export interface SimpleProxyResolver_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleProxyResolver_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.SimpleProxyResolver */
     default_proxy?: string
     ignore_hosts?: string[]
 }
@@ -9239,10 +9308,8 @@ class SimpleProxyResolver {
     /* Properties of Gio-2.0.Gio.SimpleProxyResolver */
     default_proxy: string
     ignore_hosts: string[]
-    /* Fields of Gio-2.0.Gio.SimpleProxyResolver */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SimpleProxyResolver */
     set_default_proxy(default_proxy: string): void
     set_ignore_hosts(ignore_hosts: string[]): void
@@ -9306,7 +9373,8 @@ class SimpleProxyResolver {
     static get_default(): ProxyResolver
     static $gtype: GObject.Type
 }
-export interface Socket_ConstructProps extends GObject.Object_ConstructProps {
+interface Socket_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.Socket */
     blocking?: boolean
     broadcast?: boolean
     family?: SocketFamily
@@ -9332,11 +9400,8 @@ class Socket {
     readonly remote_address: SocketAddress
     timeout: number
     ttl: number
-    /* Fields of Gio-2.0.Gio.Socket */
-    parent_instance: GObject.Object
-    priv: SocketPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Socket */
     accept(cancellable?: Cancellable | null): Socket
     bind(address: SocketAddress, allow_reuse: boolean): boolean
@@ -9371,17 +9436,17 @@ class Socket {
     leave_multicast_group(group: InetAddress, source_specific: boolean, iface?: string | null): boolean
     leave_multicast_group_ssm(group: InetAddress, source_specific?: InetAddress | null, iface?: string | null): boolean
     listen(): boolean
-    receive(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    receive_from(cancellable?: Cancellable | null): [ /* returnType */ number, /* address */ SocketAddress | null, /* buffer */ Uint8Array[] ]
+    receive(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    receive_from(cancellable?: Cancellable | null): [ /* returnType */ number, /* address */ SocketAddress | null, /* buffer */ Uint8Array ]
     receive_message(vectors: InputVector[], flags: number, cancellable?: Cancellable | null): [ /* returnType */ number, /* address */ SocketAddress | null, /* messages */ SocketControlMessage[] | null, /* flags */ number ]
     receive_messages(messages: InputMessage[], flags: number, cancellable?: Cancellable | null): number
-    receive_with_blocking(blocking: boolean, cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    send(buffer: Uint8Array[], cancellable?: Cancellable | null): number
+    receive_with_blocking(blocking: boolean, cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    send(buffer: Uint8Array, cancellable?: Cancellable | null): number
     send_message(address: SocketAddress | null, vectors: OutputVector[], messages: SocketControlMessage[] | null, flags: number, cancellable?: Cancellable | null): number
     send_message_with_timeout(address: SocketAddress | null, vectors: OutputVector[], messages: SocketControlMessage[] | null, flags: number, timeout_us: number, cancellable?: Cancellable | null): [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     send_messages(messages: OutputMessage[], flags: number, cancellable?: Cancellable | null): number
-    send_to(address: SocketAddress | null, buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    send_with_blocking(buffer: Uint8Array[], blocking: boolean, cancellable?: Cancellable | null): number
+    send_to(address: SocketAddress | null, buffer: Uint8Array, cancellable?: Cancellable | null): number
+    send_with_blocking(buffer: Uint8Array, blocking: boolean, cancellable?: Cancellable | null): number
     set_blocking(blocking: boolean): void
     set_broadcast(broadcast: boolean): void
     set_keepalive(keepalive: boolean): void
@@ -9416,6 +9481,7 @@ class Socket {
     unref(): void
     watch_closure(closure: Function): void
     /* Methods of Gio-2.0.Gio.DatagramBased */
+    condition_check(condition: GLib.IOCondition): GLib.IOCondition
     condition_wait(condition: GLib.IOCondition, timeout: number, cancellable?: Cancellable | null): boolean
     create_source(condition: GLib.IOCondition, cancellable?: Cancellable | null): GLib.Source
     receive_messages(messages: InputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
@@ -9474,15 +9540,13 @@ class Socket {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SocketAddress_ConstructProps extends GObject.Object_ConstructProps {
+interface SocketAddress_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SocketAddress {
     /* Properties of Gio-2.0.Gio.SocketAddress */
     readonly family: SocketFamily
-    /* Fields of Gio-2.0.Gio.SocketAddress */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketAddress */
     get_family(): SocketFamily
     get_native_size(): number
@@ -9545,11 +9609,11 @@ class SocketAddress {
     static new_from_native(native: object, len: number): SocketAddress
     static $gtype: GObject.Type
 }
-export interface SocketAddressEnumerator_ConstructProps extends GObject.Object_ConstructProps {
+interface SocketAddressEnumerator_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SocketAddressEnumerator {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketAddressEnumerator */
     next(cancellable?: Cancellable | null): SocketAddress
     next_async(cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -9601,7 +9665,8 @@ class SocketAddressEnumerator {
     _init (config?: SocketAddressEnumerator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SocketClient_ConstructProps extends GObject.Object_ConstructProps {
+interface SocketClient_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.SocketClient */
     enable_proxy?: boolean
     family?: SocketFamily
     local_address?: SocketAddress
@@ -9623,11 +9688,8 @@ class SocketClient {
     tls: boolean
     tls_validation_flags: TlsCertificateFlags
     type: SocketType
-    /* Fields of Gio-2.0.Gio.SocketClient */
-    parent_instance: GObject.Object
-    priv: SocketClientPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketClient */
     add_application_proxy(protocol: string): void
     connect(connectable: SocketConnectable, cancellable?: Cancellable | null): SocketConnection
@@ -9729,7 +9791,8 @@ class SocketClient {
     static new(): SocketClient
     static $gtype: GObject.Type
 }
-export interface SocketConnection_ConstructProps extends IOStream_ConstructProps {
+interface SocketConnection_ConstructProps extends IOStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.SocketConnection */
     socket?: Socket
 }
 class SocketConnection {
@@ -9737,11 +9800,10 @@ class SocketConnection {
     readonly closed: boolean
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
-    /* Fields of Gio-2.0.Gio.SocketConnection */
-    parent_instance: IOStream
-    priv: SocketConnectionPrivate
+    /* Fields of Gio-2.0.Gio.IOStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketConnection */
     connect(address: SocketAddress, cancellable?: Cancellable | null): boolean
     connect_async(address: SocketAddress, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -9819,14 +9881,11 @@ class SocketConnection {
     static factory_register_type(g_type: GObject.Type, family: SocketFamily, type: SocketType, protocol: number): void
     static $gtype: GObject.Type
 }
-export interface SocketControlMessage_ConstructProps extends GObject.Object_ConstructProps {
+interface SocketControlMessage_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SocketControlMessage {
-    /* Fields of Gio-2.0.Gio.SocketControlMessage */
-    parent_instance: GObject.Object
-    priv: SocketControlMessagePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketControlMessage */
     get_level(): number
     get_msg_type(): number
@@ -9879,20 +9938,18 @@ class SocketControlMessage {
     constructor (config?: SocketControlMessage_ConstructProps)
     _init (config?: SocketControlMessage_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static deserialize(level: number, type: number, data: Uint8Array[]): SocketControlMessage
+    static deserialize(level: number, type: number, data: Uint8Array): SocketControlMessage
     static $gtype: GObject.Type
 }
-export interface SocketListener_ConstructProps extends GObject.Object_ConstructProps {
+interface SocketListener_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.SocketListener */
     listen_backlog?: number
 }
 class SocketListener {
     /* Properties of Gio-2.0.Gio.SocketListener */
     listen_backlog: number
-    /* Fields of Gio-2.0.Gio.SocketListener */
-    parent_instance: GObject.Object
-    priv: SocketListenerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketListener */
     accept(cancellable?: Cancellable | null): [ /* returnType */ SocketConnection, /* source_object */ GObject.Object | null ]
     accept_async(cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -9960,7 +10017,8 @@ class SocketListener {
     static new(): SocketListener
     static $gtype: GObject.Type
 }
-export interface SocketService_ConstructProps extends SocketListener_ConstructProps {
+interface SocketService_ConstructProps extends SocketListener_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.SocketService */
     active?: boolean
 }
 class SocketService {
@@ -9968,11 +10026,11 @@ class SocketService {
     active: boolean
     /* Properties of Gio-2.0.Gio.SocketListener */
     listen_backlog: number
-    /* Fields of Gio-2.0.Gio.SocketService */
-    parent_instance: SocketListener
-    priv: SocketServicePrivate
+    /* Fields of Gio-2.0.Gio.SocketListener */
+    readonly parent_instance: GObject.Object
+    readonly priv: SocketListenerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketService */
     is_active(): boolean
     start(): void
@@ -10050,15 +10108,18 @@ class SocketService {
     _init (config?: SocketService_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): SocketService
+    /* Function overloads */
+    static new(): SocketService
     static $gtype: GObject.Type
 }
-export interface Subprocess_ConstructProps extends GObject.Object_ConstructProps {
+interface Subprocess_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.Subprocess */
     argv?: string[]
     flags?: SubprocessFlags
 }
 class Subprocess {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Subprocess */
     communicate(stdin_buf?: GLib.Bytes | null, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* stdout_buf */ GLib.Bytes | null, /* stderr_buf */ GLib.Bytes | null ]
     communicate_async(stdin_buf?: GLib.Bytes | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -10134,12 +10195,13 @@ class Subprocess {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SubprocessLauncher_ConstructProps extends GObject.Object_ConstructProps {
+interface SubprocessLauncher_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.SubprocessLauncher */
     flags?: SubprocessFlags
 }
 class SubprocessLauncher {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SubprocessLauncher */
     close(): void
     getenv(variable: string): string | null
@@ -10201,13 +10263,13 @@ class SubprocessLauncher {
     static new(flags: SubprocessFlags): SubprocessLauncher
     static $gtype: GObject.Type
 }
-export interface Task_ConstructProps extends GObject.Object_ConstructProps {
+interface Task_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Task {
     /* Properties of Gio-2.0.Gio.Task */
     readonly completed: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Task */
     get_cancellable(): Cancellable
     get_check_cancellable(): boolean
@@ -10295,7 +10357,8 @@ class Task {
     static report_error(source_object: GObject.Object | null, callback: AsyncReadyCallback | null, source_tag: object | null, error: GLib.Error): void
     static $gtype: GObject.Type
 }
-export interface TcpConnection_ConstructProps extends SocketConnection_ConstructProps {
+interface TcpConnection_ConstructProps extends SocketConnection_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.TcpConnection */
     graceful_disconnect?: boolean
 }
 class TcpConnection {
@@ -10305,11 +10368,11 @@ class TcpConnection {
     readonly closed: boolean
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
-    /* Fields of Gio-2.0.Gio.TcpConnection */
-    parent_instance: SocketConnection
-    priv: TcpConnectionPrivate
+    /* Fields of Gio-2.0.Gio.SocketConnection */
+    readonly parent_instance: IOStream
+    readonly priv: SocketConnectionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TcpConnection */
     get_graceful_disconnect(): boolean
     set_graceful_disconnect(graceful_disconnect: boolean): void
@@ -10389,7 +10452,8 @@ class TcpConnection {
     _init (config?: TcpConnection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TcpWrapperConnection_ConstructProps extends TcpConnection_ConstructProps {
+interface TcpWrapperConnection_ConstructProps extends TcpConnection_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.TcpWrapperConnection */
     base_io_stream?: IOStream
 }
 class TcpWrapperConnection {
@@ -10399,11 +10463,11 @@ class TcpWrapperConnection {
     readonly closed: boolean
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
-    /* Fields of Gio-2.0.Gio.TcpWrapperConnection */
-    parent_instance: TcpConnection
-    priv: TcpWrapperConnectionPrivate
+    /* Fields of Gio-2.0.Gio.TcpConnection */
+    readonly parent_instance: SocketConnection
+    readonly priv: TcpConnectionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TcpWrapperConnection */
     get_base_io_stream(): IOStream
     /* Methods of Gio-2.0.Gio.TcpConnection */
@@ -10487,12 +10551,13 @@ class TcpWrapperConnection {
     static new(base_io_stream: IOStream, socket: Socket): TcpWrapperConnection
     static $gtype: GObject.Type
 }
-export interface TestDBus_ConstructProps extends GObject.Object_ConstructProps {
+interface TestDBus_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.TestDBus */
     flags?: TestDBusFlags
 }
 class TestDBus {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TestDBus */
     add_service_dir(path: string): void
     down(): void
@@ -10546,14 +10611,15 @@ class TestDBus {
     static unset(): void
     static $gtype: GObject.Type
 }
-export interface ThemedIcon_ConstructProps extends GObject.Object_ConstructProps {
+interface ThemedIcon_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ThemedIcon */
     name?: string
     names?: string[]
     use_default_fallbacks?: boolean
 }
 class ThemedIcon {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.ThemedIcon */
     append_name(iconname: string): void
     get_names(): string[]
@@ -10616,7 +10682,8 @@ class ThemedIcon {
     static new_for_string(str: string): Icon
     static $gtype: GObject.Type
 }
-export interface ThreadedSocketService_ConstructProps extends SocketService_ConstructProps {
+interface ThreadedSocketService_ConstructProps extends SocketService_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ThreadedSocketService */
     max_threads?: number
 }
 class ThreadedSocketService {
@@ -10624,11 +10691,11 @@ class ThreadedSocketService {
     active: boolean
     /* Properties of Gio-2.0.Gio.SocketListener */
     listen_backlog: number
-    /* Fields of Gio-2.0.Gio.ThreadedSocketService */
-    parent_instance: SocketService
-    priv: ThreadedSocketServicePrivate
+    /* Fields of Gio-2.0.Gio.SocketService */
+    readonly parent_instance: SocketListener
+    readonly priv: SocketServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.SocketService */
     is_active(): boolean
     start(): void
@@ -10712,15 +10779,18 @@ class ThreadedSocketService {
     _init (config?: ThreadedSocketService_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(max_threads: number): ThreadedSocketService
+    /* Function overloads */
+    static new(): ThreadedSocketService
     static new(): ThreadedSocketService
     static $gtype: GObject.Type
 }
-export interface TlsCertificate_ConstructProps extends GObject.Object_ConstructProps {
-    certificate?: Uint8Array[]
+interface TlsCertificate_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.TlsCertificate */
+    certificate?: Uint8Array
     certificate_pem?: string
     issuer?: TlsCertificate
     pkcs11_uri?: string
-    private_key?: Uint8Array[]
+    private_key?: Uint8Array
     private_key_pem?: string
     private_key_pkcs11_uri?: string
 }
@@ -10732,11 +10802,8 @@ class TlsCertificate {
     readonly not_valid_after: GLib.DateTime
     readonly not_valid_before: GLib.DateTime
     readonly subject_name: string
-    /* Fields of Gio-2.0.Gio.TlsCertificate */
-    parent_instance: GObject.Object
-    priv: TlsCertificatePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TlsCertificate */
     get_dns_names(): GLib.Bytes[] | null
     get_ip_addresses(): InetAddress[] | null
@@ -10810,7 +10877,8 @@ class TlsCertificate {
     static list_new_from_file(file: string): TlsCertificate[]
     static $gtype: GObject.Type
 }
-export interface TlsConnection_ConstructProps extends IOStream_ConstructProps {
+interface TlsConnection_ConstructProps extends IOStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.TlsConnection */
     advertised_protocols?: string[]
     base_io_stream?: IOStream
     certificate?: TlsCertificate
@@ -10838,15 +10906,14 @@ class TlsConnection {
     readonly closed: boolean
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
-    /* Fields of Gio-2.0.Gio.TlsConnection */
-    parent_instance: IOStream
-    priv: TlsConnectionPrivate
+    /* Fields of Gio-2.0.Gio.IOStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TlsConnection */
     emit_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
     get_certificate(): TlsCertificate | null
-    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array[] | null ]
+    get_channel_binding_data(type: TlsChannelBindingType): [ /* returnType */ boolean, /* data */ Uint8Array | null ]
     get_ciphersuite_name(): string | null
     get_database(): TlsDatabase | null
     get_interaction(): TlsInteraction | null
@@ -10902,7 +10969,7 @@ class TlsConnection {
     watch_closure(closure: Function): void
     /* Virtual methods of Gio-2.0.Gio.TlsConnection */
     vfunc_accept_certificate(peer_cert: TlsCertificate, errors: TlsCertificateFlags): boolean
-    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array[]): boolean
+    vfunc_get_binding_data(type: TlsChannelBindingType, data: Uint8Array): boolean
     vfunc_get_negotiated_protocol(): string | null
     vfunc_handshake(cancellable?: Cancellable | null): boolean
     vfunc_handshake_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -10968,14 +11035,11 @@ class TlsConnection {
     _init (config?: TlsConnection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TlsDatabase_ConstructProps extends GObject.Object_ConstructProps {
+interface TlsDatabase_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TlsDatabase {
-    /* Fields of Gio-2.0.Gio.TlsDatabase */
-    parent_instance: GObject.Object
-    priv: TlsDatabasePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TlsDatabase */
     create_certificate_handle(certificate: TlsCertificate): string | null
     lookup_certificate_for_handle(handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate | null
@@ -10984,8 +11048,8 @@ class TlsDatabase {
     lookup_certificate_issuer(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate
     lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     lookup_certificate_issuer_finish(result: AsyncResult): TlsCertificate
-    lookup_certificates_issued_by(issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate[]
-    lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    lookup_certificates_issued_by(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate[]
+    lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     lookup_certificates_issued_by_finish(result: AsyncResult): TlsCertificate[]
     verify_chain(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null): TlsCertificateFlags
     verify_chain_async(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -11020,8 +11084,8 @@ class TlsDatabase {
     vfunc_lookup_certificate_issuer(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate
     vfunc_lookup_certificate_issuer_async(certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_lookup_certificate_issuer_finish(result: AsyncResult): TlsCertificate
-    vfunc_lookup_certificates_issued_by(issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate[]
-    vfunc_lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_lookup_certificates_issued_by(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null): TlsCertificate[]
+    vfunc_lookup_certificates_issued_by_async(issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_lookup_certificates_issued_by_finish(result: AsyncResult): TlsCertificate[]
     vfunc_verify_chain(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null): TlsCertificateFlags
     vfunc_verify_chain_async(chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -11047,11 +11111,11 @@ class TlsDatabase {
     _init (config?: TlsDatabase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TlsInteraction_ConstructProps extends GObject.Object_ConstructProps {
+interface TlsInteraction_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TlsInteraction {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TlsInteraction */
     ask_password(password: TlsPassword, cancellable?: Cancellable | null): TlsInteractionResult
     ask_password_async(password: TlsPassword, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -11111,7 +11175,8 @@ class TlsInteraction {
     _init (config?: TlsInteraction_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TlsPassword_ConstructProps extends GObject.Object_ConstructProps {
+interface TlsPassword_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.TlsPassword */
     description?: string
     flags?: TlsPasswordFlags
     warning?: string
@@ -11121,20 +11186,17 @@ class TlsPassword {
     description: string
     flags: TlsPasswordFlags
     warning: string
-    /* Fields of Gio-2.0.Gio.TlsPassword */
-    parent_instance: GObject.Object
-    priv: TlsPasswordPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.TlsPassword */
     get_description(): string
     get_flags(): TlsPasswordFlags
-    get_value(): Uint8Array[]
+    get_value(): Uint8Array
     get_warning(): string
     set_description(description: string): void
     set_flags(flags: TlsPasswordFlags): void
-    set_value(value: Uint8Array[]): void
-    set_value_full(value: Uint8Array[], destroy?: GLib.DestroyNotify | null): void
+    set_value(value: Uint8Array): void
+    set_value_full(value: Uint8Array, destroy?: GLib.DestroyNotify | null): void
     set_warning(warning: string): void
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
@@ -11160,8 +11222,8 @@ class TlsPassword {
     watch_closure(closure: Function): void
     /* Virtual methods of Gio-2.0.Gio.TlsPassword */
     vfunc_get_default_warning(): string
-    vfunc_get_value(): Uint8Array[]
-    vfunc_set_value(value: Uint8Array[], destroy?: GLib.DestroyNotify | null): void
+    vfunc_get_value(): Uint8Array
+    vfunc_set_value(value: Uint8Array, destroy?: GLib.DestroyNotify | null): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -11191,18 +11253,18 @@ class TlsPassword {
     static new(flags: TlsPasswordFlags, description: string): TlsPassword
     static $gtype: GObject.Type
 }
-export interface UnixConnection_ConstructProps extends SocketConnection_ConstructProps {
+interface UnixConnection_ConstructProps extends SocketConnection_ConstructProps {
 }
 class UnixConnection {
     /* Properties of Gio-2.0.Gio.IOStream */
     readonly closed: boolean
     readonly input_stream: InputStream
     readonly output_stream: OutputStream
-    /* Fields of Gio-2.0.Gio.UnixConnection */
-    parent_instance: SocketConnection
-    priv: UnixConnectionPrivate
+    /* Fields of Gio-2.0.Gio.SocketConnection */
+    readonly parent_instance: IOStream
+    readonly priv: SocketConnectionPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.UnixConnection */
     receive_credentials(cancellable?: Cancellable | null): Credentials
     receive_credentials_async(cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -11286,15 +11348,16 @@ class UnixConnection {
     _init (config?: UnixConnection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UnixCredentialsMessage_ConstructProps extends SocketControlMessage_ConstructProps {
+interface UnixCredentialsMessage_ConstructProps extends SocketControlMessage_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.UnixCredentialsMessage */
     credentials?: Credentials
 }
 class UnixCredentialsMessage {
-    /* Fields of Gio-2.0.Gio.UnixCredentialsMessage */
-    parent_instance: SocketControlMessage
-    priv: UnixCredentialsMessagePrivate
+    /* Fields of Gio-2.0.Gio.SocketControlMessage */
+    readonly parent_instance: GObject.Object
+    readonly priv: SocketControlMessagePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.UnixCredentialsMessage */
     get_credentials(): Credentials
     /* Methods of Gio-2.0.Gio.SocketControlMessage */
@@ -11354,14 +11417,11 @@ class UnixCredentialsMessage {
     static is_supported(): boolean
     static $gtype: GObject.Type
 }
-export interface UnixFDList_ConstructProps extends GObject.Object_ConstructProps {
+interface UnixFDList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class UnixFDList {
-    /* Fields of Gio-2.0.Gio.UnixFDList */
-    parent_instance: GObject.Object
-    priv: UnixFDListPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.UnixFDList */
     append(fd: number): number
     get(index_: number): number
@@ -11414,15 +11474,16 @@ class UnixFDList {
     static new_from_array(fds: number[]): UnixFDList
     static $gtype: GObject.Type
 }
-export interface UnixFDMessage_ConstructProps extends SocketControlMessage_ConstructProps {
+interface UnixFDMessage_ConstructProps extends SocketControlMessage_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.UnixFDMessage */
     fd_list?: UnixFDList
 }
 class UnixFDMessage {
-    /* Fields of Gio-2.0.Gio.UnixFDMessage */
-    parent_instance: SocketControlMessage
-    priv: UnixFDMessagePrivate
+    /* Fields of Gio-2.0.Gio.SocketControlMessage */
+    readonly parent_instance: GObject.Object
+    readonly priv: SocketControlMessagePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.UnixFDMessage */
     append_fd(fd: number): boolean
     get_fd_list(): UnixFDList
@@ -11483,17 +11544,18 @@ class UnixFDMessage {
     static new_with_fd_list(fd_list: UnixFDList): UnixFDMessage
     static $gtype: GObject.Type
 }
-export interface UnixInputStream_ConstructProps extends InputStream_ConstructProps {
+interface UnixInputStream_ConstructProps extends InputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.UnixInputStream */
     close_fd?: boolean
     fd?: number
 }
 class UnixInputStream {
     /* Properties of Gio-2.0.Gio.UnixInputStream */
     close_fd: boolean
-    /* Fields of Gio-2.0.Gio.UnixInputStream */
-    parent_instance: InputStream
+    /* Fields of Gio-2.0.Gio.InputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.UnixInputStream */
     get_close_fd(): boolean
     get_fd(): number
@@ -11505,11 +11567,11 @@ class UnixInputStream {
     close_finish(result: AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     read_bytes_finish(result: AsyncResult): GLib.Bytes
@@ -11544,18 +11606,18 @@ class UnixInputStream {
     can_poll(): boolean
     create_source(cancellable?: Cancellable | null): GLib.Source
     is_readable(): boolean
-    read_nonblocking(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
+    read_nonblocking(cancellable?: Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
     /* Virtual methods of Gio-2.0.Gio.UnixInputStream */
     vfunc_get_fd(): number
     vfunc_can_poll(): boolean
     vfunc_create_source(cancellable?: Cancellable | null): GLib.Source
     vfunc_is_readable(): boolean
-    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array[] | null ]
+    vfunc_read_nonblocking(): [ /* returnType */ number, /* buffer */ Uint8Array | null ]
     /* Virtual methods of Gio-2.0.Gio.InputStream */
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_close_finish(result: AsyncResult): boolean
     vfunc_close_fn(cancellable?: Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Cancellable | null): number
@@ -11586,11 +11648,11 @@ class UnixInputStream {
     static new(fd: number, close_fd: boolean): UnixInputStream
     static $gtype: GObject.Type
 }
-export interface UnixMountMonitor_ConstructProps extends GObject.Object_ConstructProps {
+interface UnixMountMonitor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class UnixMountMonitor {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.UnixMountMonitor */
     set_rate_limit(limit_msec: number): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -11646,17 +11708,18 @@ class UnixMountMonitor {
     static get(): UnixMountMonitor
     static $gtype: GObject.Type
 }
-export interface UnixOutputStream_ConstructProps extends OutputStream_ConstructProps {
+interface UnixOutputStream_ConstructProps extends OutputStream_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.UnixOutputStream */
     close_fd?: boolean
     fd?: number
 }
 class UnixOutputStream {
     /* Properties of Gio-2.0.Gio.UnixOutputStream */
     close_fd: boolean
-    /* Fields of Gio-2.0.Gio.UnixOutputStream */
-    parent_instance: OutputStream
+    /* Fields of Gio-2.0.Gio.OutputStream */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.UnixOutputStream */
     get_close_fd(): boolean
     get_fd(): number
@@ -11676,11 +11739,11 @@ class UnixOutputStream {
     splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     splice_finish(result: AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_all_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     write_bytes_finish(result: AsyncResult): number
@@ -11717,14 +11780,14 @@ class UnixOutputStream {
     can_poll(): boolean
     create_source(cancellable?: Cancellable | null): GLib.Source
     is_writable(): boolean
-    write_nonblocking(buffer: Uint8Array[], cancellable?: Cancellable | null): number
+    write_nonblocking(buffer: Uint8Array, cancellable?: Cancellable | null): number
     writev_nonblocking(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     /* Virtual methods of Gio-2.0.Gio.UnixOutputStream */
     vfunc_get_fd(): number
     vfunc_can_poll(): boolean
     vfunc_create_source(cancellable?: Cancellable | null): GLib.Source
     vfunc_is_writable(): boolean
-    vfunc_write_nonblocking(buffer: Uint8Array[] | null): number
+    vfunc_write_nonblocking(buffer: Uint8Array | null): number
     vfunc_writev_nonblocking(vectors: OutputVector[]): [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     /* Virtual methods of Gio-2.0.Gio.OutputStream */
     vfunc_close_async(io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
@@ -11736,9 +11799,9 @@ class UnixOutputStream {
     vfunc_splice(source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null): number
     vfunc_splice_async(source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_splice_finish(result: AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_write_finish(result: AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Cancellable | null): number
     vfunc_writev_async(vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null): void
     vfunc_writev_finish(result: AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: OutputVector[], cancellable?: Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -11767,19 +11830,20 @@ class UnixOutputStream {
     static new(fd: number, close_fd: boolean): UnixOutputStream
     static $gtype: GObject.Type
 }
-export interface UnixSocketAddress_ConstructProps extends SocketAddress_ConstructProps {
+interface UnixSocketAddress_ConstructProps extends SocketAddress_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.UnixSocketAddress */
     abstract?: boolean
     address_type?: UnixSocketAddressType
     path?: string
-    path_as_array?: Uint8Array[]
+    path_as_array?: Uint8Array
 }
 class UnixSocketAddress {
     /* Properties of Gio-2.0.Gio.SocketAddress */
     readonly family: SocketFamily
-    /* Fields of Gio-2.0.Gio.UnixSocketAddress */
-    parent_instance: SocketAddress
+    /* Fields of Gio-2.0.Gio.SocketAddress */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.UnixSocketAddress */
     get_address_type(): UnixSocketAddressType
     get_is_abstract(): boolean
@@ -11815,6 +11879,10 @@ class UnixSocketAddress {
     enumerate(): SocketAddressEnumerator
     proxy_enumerate(): SocketAddressEnumerator
     to_string(): string
+    /* Virtual methods of Gio-2.0.Gio.UnixSocketAddress */
+    vfunc_enumerate(): SocketAddressEnumerator
+    vfunc_proxy_enumerate(): SocketAddressEnumerator
+    vfunc_to_string(): string
     /* Virtual methods of Gio-2.0.Gio.SocketAddress */
     vfunc_get_family(): SocketFamily
     vfunc_get_native_size(): number
@@ -11850,13 +11918,11 @@ class UnixSocketAddress {
     static abstract_names_supported(): boolean
     static $gtype: GObject.Type
 }
-export interface Vfs_ConstructProps extends GObject.Object_ConstructProps {
+interface Vfs_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Vfs {
-    /* Fields of Gio-2.0.Gio.Vfs */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.Vfs */
     get_file_for_path(path: string): File
     get_file_for_uri(uri: string): File
@@ -11922,13 +11988,11 @@ class Vfs {
     static get_local(): Vfs
     static $gtype: GObject.Type
 }
-export interface VolumeMonitor_ConstructProps extends GObject.Object_ConstructProps {
+interface VolumeMonitor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class VolumeMonitor {
-    /* Fields of Gio-2.0.Gio.VolumeMonitor */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.VolumeMonitor */
     get_connected_drives(): Drive[]
     get_mount_for_uuid(uuid: string): Mount | null
@@ -12036,7 +12100,8 @@ class VolumeMonitor {
     static get(): VolumeMonitor
     static $gtype: GObject.Type
 }
-export interface ZlibCompressor_ConstructProps extends GObject.Object_ConstructProps {
+interface ZlibCompressor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ZlibCompressor */
     file_info?: FileInfo
     format?: ZlibCompressorFormat
     level?: number
@@ -12045,7 +12110,7 @@ class ZlibCompressor {
     /* Properties of Gio-2.0.Gio.ZlibCompressor */
     file_info: FileInfo
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.ZlibCompressor */
     get_file_info(): FileInfo | null
     set_file_info(file_info?: FileInfo | null): void
@@ -12072,10 +12137,10 @@ class ZlibCompressor {
     unref(): void
     watch_closure(closure: Function): void
     /* Methods of Gio-2.0.Gio.Converter */
-    convert(inbuf: Uint8Array[], outbuf: Uint8Array[], flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
+    convert(inbuf: Uint8Array, outbuf: Uint8Array, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
     reset(): void
     /* Virtual methods of Gio-2.0.Gio.ZlibCompressor */
-    vfunc_convert(inbuf: Uint8Array[] | null, outbuf: Uint8Array[] | null, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
+    vfunc_convert(inbuf: Uint8Array | null, outbuf: Uint8Array | null, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -12102,14 +12167,15 @@ class ZlibCompressor {
     static new(format: ZlibCompressorFormat, level: number): ZlibCompressor
     static $gtype: GObject.Type
 }
-export interface ZlibDecompressor_ConstructProps extends GObject.Object_ConstructProps {
+interface ZlibDecompressor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.ZlibDecompressor */
     format?: ZlibCompressorFormat
 }
 class ZlibDecompressor {
     /* Properties of Gio-2.0.Gio.ZlibDecompressor */
     readonly file_info: FileInfo
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.ZlibDecompressor */
     get_file_info(): FileInfo | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -12135,10 +12201,10 @@ class ZlibDecompressor {
     unref(): void
     watch_closure(closure: Function): void
     /* Methods of Gio-2.0.Gio.Converter */
-    convert(inbuf: Uint8Array[], outbuf: Uint8Array[], flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
+    convert(inbuf: Uint8Array, outbuf: Uint8Array, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
     reset(): void
     /* Virtual methods of Gio-2.0.Gio.ZlibDecompressor */
-    vfunc_convert(inbuf: Uint8Array[] | null, outbuf: Uint8Array[] | null, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
+    vfunc_convert(inbuf: Uint8Array | null, outbuf: Uint8Array | null, flags: ConverterFlags): [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -12167,91 +12233,91 @@ class ZlibDecompressor {
 }
 class ActionEntry {
     /* Fields of Gio-2.0.Gio.ActionEntry */
-    name: string
-    activate: (action: SimpleAction, parameter: GLib.Variant) => void
-    parameter_type: string
-    state: string
-    change_state: (action: SimpleAction, value: GLib.Variant) => void
+    readonly name: string
+    readonly activate: (action: SimpleAction, parameter: GLib.Variant) => void
+    readonly parameter_type: string
+    readonly state: string
+    readonly change_state: (action: SimpleAction, value: GLib.Variant) => void
     static name: string
 }
 abstract class ActionGroupInterface {
     /* Fields of Gio-2.0.Gio.ActionGroupInterface */
-    g_iface: GObject.TypeInterface
-    has_action: (action_group: ActionGroup, action_name: string) => boolean
-    list_actions: (action_group: ActionGroup) => string[]
-    get_action_enabled: (action_group: ActionGroup, action_name: string) => boolean
-    get_action_parameter_type: (action_group: ActionGroup, action_name: string) => GLib.VariantType | null
-    get_action_state_type: (action_group: ActionGroup, action_name: string) => GLib.VariantType | null
-    get_action_state_hint: (action_group: ActionGroup, action_name: string) => GLib.Variant | null
-    get_action_state: (action_group: ActionGroup, action_name: string) => GLib.Variant | null
-    change_action_state: (action_group: ActionGroup, action_name: string, value: GLib.Variant) => void
-    activate_action: (action_group: ActionGroup, action_name: string, parameter?: GLib.Variant | null) => void
-    action_added: (action_group: ActionGroup, action_name: string) => void
-    action_removed: (action_group: ActionGroup, action_name: string) => void
-    action_enabled_changed: (action_group: ActionGroup, action_name: string, enabled: boolean) => void
-    action_state_changed: (action_group: ActionGroup, action_name: string, state: GLib.Variant) => void
-    query_action: (action_group: ActionGroup, action_name: string) => [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
+    readonly g_iface: GObject.TypeInterface
+    readonly has_action: (action_group: ActionGroup, action_name: string) => boolean
+    readonly list_actions: (action_group: ActionGroup) => string[]
+    readonly get_action_enabled: (action_group: ActionGroup, action_name: string) => boolean
+    readonly get_action_parameter_type: (action_group: ActionGroup, action_name: string) => GLib.VariantType | null
+    readonly get_action_state_type: (action_group: ActionGroup, action_name: string) => GLib.VariantType | null
+    readonly get_action_state_hint: (action_group: ActionGroup, action_name: string) => GLib.Variant | null
+    readonly get_action_state: (action_group: ActionGroup, action_name: string) => GLib.Variant | null
+    readonly change_action_state: (action_group: ActionGroup, action_name: string, value: GLib.Variant) => void
+    readonly activate_action: (action_group: ActionGroup, action_name: string, parameter?: GLib.Variant | null) => void
+    readonly action_added: (action_group: ActionGroup, action_name: string) => void
+    readonly action_removed: (action_group: ActionGroup, action_name: string) => void
+    readonly action_enabled_changed: (action_group: ActionGroup, action_name: string, enabled: boolean) => void
+    readonly action_state_changed: (action_group: ActionGroup, action_name: string, state: GLib.Variant) => void
+    readonly query_action: (action_group: ActionGroup, action_name: string) => [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
     static name: string
 }
 abstract class ActionInterface {
     /* Fields of Gio-2.0.Gio.ActionInterface */
-    g_iface: GObject.TypeInterface
-    get_name: (action: Action) => string
-    get_parameter_type: (action: Action) => GLib.VariantType | null
-    get_state_type: (action: Action) => GLib.VariantType | null
-    get_state_hint: (action: Action) => GLib.Variant | null
-    get_enabled: (action: Action) => boolean
-    get_state: (action: Action) => GLib.Variant | null
-    change_state: (action: Action, value: GLib.Variant) => void
-    activate: (action: Action, parameter?: GLib.Variant | null) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly get_name: (action: Action) => string
+    readonly get_parameter_type: (action: Action) => GLib.VariantType | null
+    readonly get_state_type: (action: Action) => GLib.VariantType | null
+    readonly get_state_hint: (action: Action) => GLib.Variant | null
+    readonly get_enabled: (action: Action) => boolean
+    readonly get_state: (action: Action) => GLib.Variant | null
+    readonly change_state: (action: Action, value: GLib.Variant) => void
+    readonly activate: (action: Action, parameter?: GLib.Variant | null) => void
     static name: string
 }
 abstract class ActionMapInterface {
     /* Fields of Gio-2.0.Gio.ActionMapInterface */
-    g_iface: GObject.TypeInterface
-    lookup_action: (action_map: ActionMap, action_name: string) => Action | null
-    add_action: (action_map: ActionMap, action: Action) => void
-    remove_action: (action_map: ActionMap, action_name: string) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly lookup_action: (action_map: ActionMap, action_name: string) => Action | null
+    readonly add_action: (action_map: ActionMap, action: Action) => void
+    readonly remove_action: (action_map: ActionMap, action_name: string) => void
     static name: string
 }
 abstract class AppInfoIface {
     /* Fields of Gio-2.0.Gio.AppInfoIface */
-    g_iface: GObject.TypeInterface
-    dup: (appinfo: AppInfo) => AppInfo
-    equal: (appinfo1: AppInfo, appinfo2: AppInfo) => boolean
-    get_id: (appinfo: AppInfo) => string | null
-    get_name: (appinfo: AppInfo) => string
-    get_description: (appinfo: AppInfo) => string | null
-    get_executable: (appinfo: AppInfo) => string
-    get_icon: (appinfo: AppInfo) => Icon | null
-    launch: (appinfo: AppInfo, files?: File[] | null, context?: AppLaunchContext | null) => boolean
-    supports_uris: (appinfo: AppInfo) => boolean
-    supports_files: (appinfo: AppInfo) => boolean
-    launch_uris: (appinfo: AppInfo, uris?: string[] | null, context?: AppLaunchContext | null) => boolean
-    should_show: (appinfo: AppInfo) => boolean
-    set_as_default_for_type: (appinfo: AppInfo, content_type: string) => boolean
-    set_as_default_for_extension: (appinfo: AppInfo, extension: string) => boolean
-    add_supports_type: (appinfo: AppInfo, content_type: string) => boolean
-    can_remove_supports_type: (appinfo: AppInfo) => boolean
-    remove_supports_type: (appinfo: AppInfo, content_type: string) => boolean
-    can_delete: (appinfo: AppInfo) => boolean
-    do_delete: (appinfo: AppInfo) => boolean
-    get_commandline: (appinfo: AppInfo) => string | null
-    get_display_name: (appinfo: AppInfo) => string
-    set_as_last_used_for_type: (appinfo: AppInfo, content_type: string) => boolean
-    get_supported_types: (appinfo: AppInfo) => string[]
-    launch_uris_async: (appinfo: AppInfo, uris?: string[] | null, context?: AppLaunchContext | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    launch_uris_finish: (appinfo: AppInfo, result: AsyncResult) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly dup: (appinfo: AppInfo) => AppInfo
+    readonly equal: (appinfo1: AppInfo, appinfo2: AppInfo) => boolean
+    readonly get_id: (appinfo: AppInfo) => string | null
+    readonly get_name: (appinfo: AppInfo) => string
+    readonly get_description: (appinfo: AppInfo) => string | null
+    readonly get_executable: (appinfo: AppInfo) => string
+    readonly get_icon: (appinfo: AppInfo) => Icon | null
+    readonly launch: (appinfo: AppInfo, files?: File[] | null, context?: AppLaunchContext | null) => boolean
+    readonly supports_uris: (appinfo: AppInfo) => boolean
+    readonly supports_files: (appinfo: AppInfo) => boolean
+    readonly launch_uris: (appinfo: AppInfo, uris?: string[] | null, context?: AppLaunchContext | null) => boolean
+    readonly should_show: (appinfo: AppInfo) => boolean
+    readonly set_as_default_for_type: (appinfo: AppInfo, content_type: string) => boolean
+    readonly set_as_default_for_extension: (appinfo: AppInfo, extension: string) => boolean
+    readonly add_supports_type: (appinfo: AppInfo, content_type: string) => boolean
+    readonly can_remove_supports_type: (appinfo: AppInfo) => boolean
+    readonly remove_supports_type: (appinfo: AppInfo, content_type: string) => boolean
+    readonly can_delete: (appinfo: AppInfo) => boolean
+    readonly do_delete: (appinfo: AppInfo) => boolean
+    readonly get_commandline: (appinfo: AppInfo) => string | null
+    readonly get_display_name: (appinfo: AppInfo) => string
+    readonly set_as_last_used_for_type: (appinfo: AppInfo, content_type: string) => boolean
+    readonly get_supported_types: (appinfo: AppInfo) => string[]
+    readonly launch_uris_async: (appinfo: AppInfo, uris?: string[] | null, context?: AppLaunchContext | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly launch_uris_finish: (appinfo: AppInfo, result: AsyncResult) => boolean
     static name: string
 }
 abstract class AppLaunchContextClass {
     /* Fields of Gio-2.0.Gio.AppLaunchContextClass */
-    parent_class: GObject.ObjectClass
-    get_display: (context: AppLaunchContext, info: AppInfo, files: File[]) => string | null
-    get_startup_notify_id: (context: AppLaunchContext, info: AppInfo, files: File[]) => string | null
-    launch_failed: (context: AppLaunchContext, startup_notify_id: string) => void
-    launched: (context: AppLaunchContext, info: AppInfo, platform_data: GLib.Variant) => void
-    launch_started: (context: AppLaunchContext, info: AppInfo, platform_data: GLib.Variant) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly get_display: (context: AppLaunchContext, info: AppInfo, files: File[]) => string | null
+    readonly get_startup_notify_id: (context: AppLaunchContext, info: AppInfo, files: File[]) => string | null
+    readonly launch_failed: (context: AppLaunchContext, startup_notify_id: string) => void
+    readonly launched: (context: AppLaunchContext, info: AppInfo, platform_data: GLib.Variant) => void
+    readonly launch_started: (context: AppLaunchContext, info: AppInfo, platform_data: GLib.Variant) => void
     static name: string
 }
 class AppLaunchContextPrivate {
@@ -12259,28 +12325,28 @@ class AppLaunchContextPrivate {
 }
 abstract class ApplicationClass {
     /* Fields of Gio-2.0.Gio.ApplicationClass */
-    startup: (application: Application) => void
-    activate: (application: Application) => void
-    open: (application: Application, files: File[], hint: string) => void
-    command_line: (application: Application, command_line: ApplicationCommandLine) => number
-    local_command_line: (application: Application, arguments_: string[]) => [ /* returnType */ boolean, /* arguments_ */ string[], /* exit_status */ number ]
-    before_emit: (application: Application, platform_data: GLib.Variant) => void
-    after_emit: (application: Application, platform_data: GLib.Variant) => void
-    add_platform_data: (application: Application, builder: GLib.VariantBuilder) => void
-    quit_mainloop: (application: Application) => void
-    run_mainloop: (application: Application) => void
-    shutdown: (application: Application) => void
-    dbus_register: (application: Application, connection: DBusConnection, object_path: string) => boolean
-    dbus_unregister: (application: Application, connection: DBusConnection, object_path: string) => void
-    handle_local_options: (application: Application, options: GLib.VariantDict) => number
-    name_lost: (application: Application) => boolean
+    readonly startup: (application: Application) => void
+    readonly activate: (application: Application) => void
+    readonly open: (application: Application, files: File[], hint: string) => void
+    readonly command_line: (application: Application, command_line: ApplicationCommandLine) => number
+    readonly local_command_line: (application: Application, arguments_: string[]) => [ /* returnType */ boolean, /* arguments_ */ string[], /* exit_status */ number ]
+    readonly before_emit: (application: Application, platform_data: GLib.Variant) => void
+    readonly after_emit: (application: Application, platform_data: GLib.Variant) => void
+    readonly add_platform_data: (application: Application, builder: GLib.VariantBuilder) => void
+    readonly quit_mainloop: (application: Application) => void
+    readonly run_mainloop: (application: Application) => void
+    readonly shutdown: (application: Application) => void
+    readonly dbus_register: (application: Application, connection: DBusConnection, object_path: string) => boolean
+    readonly dbus_unregister: (application: Application, connection: DBusConnection, object_path: string) => void
+    readonly handle_local_options: (application: Application, options: GLib.VariantDict) => number
+    readonly name_lost: (application: Application) => boolean
     static name: string
 }
 abstract class ApplicationCommandLineClass {
     /* Fields of Gio-2.0.Gio.ApplicationCommandLineClass */
-    print_literal: (cmdline: ApplicationCommandLine, message: string) => void
-    printerr_literal: (cmdline: ApplicationCommandLine, message: string) => void
-    get_stdin: (cmdline: ApplicationCommandLine) => InputStream | null
+    readonly print_literal: (cmdline: ApplicationCommandLine, message: string) => void
+    readonly printerr_literal: (cmdline: ApplicationCommandLine, message: string) => void
+    readonly get_stdin: (cmdline: ApplicationCommandLine) => InputStream | null
     static name: string
 }
 class ApplicationCommandLinePrivate {
@@ -12291,25 +12357,25 @@ class ApplicationPrivate {
 }
 abstract class AsyncInitableIface {
     /* Fields of Gio-2.0.Gio.AsyncInitableIface */
-    g_iface: GObject.TypeInterface
-    init_async: (initable: AsyncInitable, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    init_finish: (initable: AsyncInitable, res: AsyncResult) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly init_async: (initable: AsyncInitable, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly init_finish: (initable: AsyncInitable, res: AsyncResult) => boolean
     static name: string
 }
 abstract class AsyncResultIface {
     /* Fields of Gio-2.0.Gio.AsyncResultIface */
-    g_iface: GObject.TypeInterface
-    get_user_data: (res: AsyncResult) => object | null
-    get_source_object: (res: AsyncResult) => GObject.Object | null
-    is_tagged: (res: AsyncResult, source_tag?: object | null) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly get_user_data: (res: AsyncResult) => object | null
+    readonly get_source_object: (res: AsyncResult) => GObject.Object | null
+    readonly is_tagged: (res: AsyncResult, source_tag?: object | null) => boolean
     static name: string
 }
 abstract class BufferedInputStreamClass {
     /* Fields of Gio-2.0.Gio.BufferedInputStreamClass */
-    parent_class: FilterInputStreamClass
-    fill: (stream: BufferedInputStream, count: number, cancellable?: Cancellable | null) => number
-    fill_async: (stream: BufferedInputStream, count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    fill_finish: (stream: BufferedInputStream, result: AsyncResult) => number
+    readonly parent_class: FilterInputStreamClass
+    readonly fill: (stream: BufferedInputStream, count: number, cancellable?: Cancellable | null) => number
+    readonly fill_async: (stream: BufferedInputStream, count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly fill_finish: (stream: BufferedInputStream, result: AsyncResult) => number
     static name: string
 }
 class BufferedInputStreamPrivate {
@@ -12317,7 +12383,7 @@ class BufferedInputStreamPrivate {
 }
 abstract class BufferedOutputStreamClass {
     /* Fields of Gio-2.0.Gio.BufferedOutputStreamClass */
-    parent_class: FilterOutputStreamClass
+    readonly parent_class: FilterOutputStreamClass
     static name: string
 }
 class BufferedOutputStreamPrivate {
@@ -12325,8 +12391,8 @@ class BufferedOutputStreamPrivate {
 }
 abstract class CancellableClass {
     /* Fields of Gio-2.0.Gio.CancellableClass */
-    parent_class: GObject.ObjectClass
-    cancelled: (cancellable?: Cancellable | null) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly cancelled: (cancellable?: Cancellable | null) => void
     static name: string
 }
 class CancellablePrivate {
@@ -12334,19 +12400,19 @@ class CancellablePrivate {
 }
 abstract class CharsetConverterClass {
     /* Fields of Gio-2.0.Gio.CharsetConverterClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ConverterIface {
     /* Fields of Gio-2.0.Gio.ConverterIface */
-    g_iface: GObject.TypeInterface
-    convert: (converter: Converter, inbuf: Uint8Array[] | null, outbuf: Uint8Array[] | null, flags: ConverterFlags) => [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
-    reset: (converter: Converter) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly convert: (converter: Converter, inbuf: Uint8Array | null, outbuf: Uint8Array | null, flags: ConverterFlags) => [ /* returnType */ ConverterResult, /* bytes_read */ number, /* bytes_written */ number ]
+    readonly reset: (converter: Converter) => void
     static name: string
 }
 abstract class ConverterInputStreamClass {
     /* Fields of Gio-2.0.Gio.ConverterInputStreamClass */
-    parent_class: FilterInputStreamClass
+    readonly parent_class: FilterInputStreamClass
     static name: string
 }
 class ConverterInputStreamPrivate {
@@ -12354,7 +12420,7 @@ class ConverterInputStreamPrivate {
 }
 abstract class ConverterOutputStreamClass {
     /* Fields of Gio-2.0.Gio.ConverterOutputStreamClass */
-    parent_class: FilterOutputStreamClass
+    readonly parent_class: FilterOutputStreamClass
     static name: string
 }
 class ConverterOutputStreamPrivate {
@@ -12365,10 +12431,10 @@ abstract class CredentialsClass {
 }
 class DBusAnnotationInfo {
     /* Fields of Gio-2.0.Gio.DBusAnnotationInfo */
-    ref_count: number
-    key: string
-    value: string
-    annotations: DBusAnnotationInfo[]
+    readonly ref_count: number
+    readonly key: string
+    readonly value: string
+    readonly annotations: DBusAnnotationInfo[]
     /* Methods of Gio-2.0.Gio.DBusAnnotationInfo */
     ref(): DBusAnnotationInfo
     unref(): void
@@ -12378,10 +12444,10 @@ class DBusAnnotationInfo {
 }
 class DBusArgInfo {
     /* Fields of Gio-2.0.Gio.DBusArgInfo */
-    ref_count: number
-    name: string
-    signature: string
-    annotations: DBusAnnotationInfo[]
+    readonly ref_count: number
+    readonly name: string
+    readonly signature: string
+    readonly annotations: DBusAnnotationInfo[]
     /* Methods of Gio-2.0.Gio.DBusArgInfo */
     ref(): DBusArgInfo
     unref(): void
@@ -12389,27 +12455,27 @@ class DBusArgInfo {
 }
 class DBusErrorEntry {
     /* Fields of Gio-2.0.Gio.DBusErrorEntry */
-    error_code: number
-    dbus_error_name: string
+    readonly error_code: number
+    readonly dbus_error_name: string
     static name: string
 }
 abstract class DBusInterfaceIface {
     /* Fields of Gio-2.0.Gio.DBusInterfaceIface */
-    parent_iface: GObject.TypeInterface
-    get_info: (interface_: DBusInterface) => DBusInterfaceInfo
-    get_object: (interface_: DBusInterface) => DBusObject | null
-    set_object: (interface_: DBusInterface, object?: DBusObject | null) => void
-    dup_object: (interface_: DBusInterface) => DBusObject | null
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_info: (interface_: DBusInterface) => DBusInterfaceInfo
+    readonly get_object: (interface_: DBusInterface) => DBusObject | null
+    readonly set_object: (interface_: DBusInterface, object?: DBusObject | null) => void
+    readonly dup_object: (interface_: DBusInterface) => DBusObject | null
     static name: string
 }
 class DBusInterfaceInfo {
     /* Fields of Gio-2.0.Gio.DBusInterfaceInfo */
-    ref_count: number
-    name: string
-    methods: DBusMethodInfo[]
-    signals: DBusSignalInfo[]
-    properties: DBusPropertyInfo[]
-    annotations: DBusAnnotationInfo[]
+    readonly ref_count: number
+    readonly name: string
+    readonly methods: DBusMethodInfo[]
+    readonly signals: DBusSignalInfo[]
+    readonly properties: DBusPropertyInfo[]
+    readonly annotations: DBusAnnotationInfo[]
     /* Methods of Gio-2.0.Gio.DBusInterfaceInfo */
     cache_build(): void
     cache_release(): void
@@ -12423,11 +12489,11 @@ class DBusInterfaceInfo {
 }
 abstract class DBusInterfaceSkeletonClass {
     /* Fields of Gio-2.0.Gio.DBusInterfaceSkeletonClass */
-    parent_class: GObject.ObjectClass
-    get_info: (interface_: DBusInterfaceSkeleton) => DBusInterfaceInfo
-    get_properties: (interface_: DBusInterfaceSkeleton) => GLib.Variant
-    flush: (interface_: DBusInterfaceSkeleton) => void
-    g_authorize_method: (interface_: DBusInterfaceSkeleton, invocation: DBusMethodInvocation) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly get_info: (interface_: DBusInterfaceSkeleton) => DBusInterfaceInfo
+    readonly get_properties: (interface_: DBusInterfaceSkeleton) => GLib.Variant
+    readonly flush: (interface_: DBusInterfaceSkeleton) => void
+    readonly g_authorize_method: (interface_: DBusInterfaceSkeleton, invocation: DBusMethodInvocation) => boolean
     static name: string
 }
 class DBusInterfaceSkeletonPrivate {
@@ -12435,18 +12501,18 @@ class DBusInterfaceSkeletonPrivate {
 }
 class DBusInterfaceVTable {
     /* Fields of Gio-2.0.Gio.DBusInterfaceVTable */
-    method_call: DBusInterfaceMethodCallFunc
-    get_property: DBusInterfaceGetPropertyFunc
-    set_property: DBusInterfaceSetPropertyFunc
+    readonly method_call: DBusInterfaceMethodCallFunc
+    readonly get_property: DBusInterfaceGetPropertyFunc
+    readonly set_property: DBusInterfaceSetPropertyFunc
     static name: string
 }
 class DBusMethodInfo {
     /* Fields of Gio-2.0.Gio.DBusMethodInfo */
-    ref_count: number
-    name: string
-    in_args: DBusArgInfo[]
-    out_args: DBusArgInfo[]
-    annotations: DBusAnnotationInfo[]
+    readonly ref_count: number
+    readonly name: string
+    readonly in_args: DBusArgInfo[]
+    readonly out_args: DBusArgInfo[]
+    readonly annotations: DBusAnnotationInfo[]
     /* Methods of Gio-2.0.Gio.DBusMethodInfo */
     ref(): DBusMethodInfo
     unref(): void
@@ -12454,11 +12520,11 @@ class DBusMethodInfo {
 }
 class DBusNodeInfo {
     /* Fields of Gio-2.0.Gio.DBusNodeInfo */
-    ref_count: number
-    path: string
-    interfaces: DBusInterfaceInfo[]
-    nodes: DBusNodeInfo[]
-    annotations: DBusAnnotationInfo[]
+    readonly ref_count: number
+    readonly path: string
+    readonly interfaces: DBusInterfaceInfo[]
+    readonly nodes: DBusNodeInfo[]
+    readonly annotations: DBusAnnotationInfo[]
     /* Methods of Gio-2.0.Gio.DBusNodeInfo */
     generate_xml(indent: number, string_builder: GLib.String): void
     lookup_interface(name: string): DBusInterfaceInfo | null
@@ -12470,19 +12536,19 @@ class DBusNodeInfo {
 }
 abstract class DBusObjectIface {
     /* Fields of Gio-2.0.Gio.DBusObjectIface */
-    parent_iface: GObject.TypeInterface
-    get_object_path: (object: DBusObject) => string
-    get_interfaces: (object: DBusObject) => DBusInterface[]
-    get_interface: (object: DBusObject, interface_name: string) => DBusInterface | null
-    interface_added: (object: DBusObject, interface_: DBusInterface) => void
-    interface_removed: (object: DBusObject, interface_: DBusInterface) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_object_path: (object: DBusObject) => string
+    readonly get_interfaces: (object: DBusObject) => DBusInterface[]
+    readonly get_interface: (object: DBusObject, interface_name: string) => DBusInterface | null
+    readonly interface_added: (object: DBusObject, interface_: DBusInterface) => void
+    readonly interface_removed: (object: DBusObject, interface_: DBusInterface) => void
     static name: string
 }
 abstract class DBusObjectManagerClientClass {
     /* Fields of Gio-2.0.Gio.DBusObjectManagerClientClass */
-    parent_class: GObject.ObjectClass
-    interface_proxy_signal: (manager: DBusObjectManagerClient, object_proxy: DBusObjectProxy, interface_proxy: DBusProxy, sender_name: string, signal_name: string, parameters: GLib.Variant) => void
-    interface_proxy_properties_changed: (manager: DBusObjectManagerClient, object_proxy: DBusObjectProxy, interface_proxy: DBusProxy, changed_properties: GLib.Variant, invalidated_properties: string) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly interface_proxy_signal: (manager: DBusObjectManagerClient, object_proxy: DBusObjectProxy, interface_proxy: DBusProxy, sender_name: string, signal_name: string, parameters: GLib.Variant) => void
+    readonly interface_proxy_properties_changed: (manager: DBusObjectManagerClient, object_proxy: DBusObjectProxy, interface_proxy: DBusProxy, changed_properties: GLib.Variant, invalidated_properties: string) => void
     static name: string
 }
 class DBusObjectManagerClientPrivate {
@@ -12490,20 +12556,20 @@ class DBusObjectManagerClientPrivate {
 }
 abstract class DBusObjectManagerIface {
     /* Fields of Gio-2.0.Gio.DBusObjectManagerIface */
-    parent_iface: GObject.TypeInterface
-    get_object_path: (manager: DBusObjectManager) => string
-    get_objects: (manager: DBusObjectManager) => DBusObject[]
-    get_object: (manager: DBusObjectManager, object_path: string) => DBusObject | null
-    get_interface: (manager: DBusObjectManager, object_path: string, interface_name: string) => DBusInterface | null
-    object_added: (manager: DBusObjectManager, object: DBusObject) => void
-    object_removed: (manager: DBusObjectManager, object: DBusObject) => void
-    interface_added: (manager: DBusObjectManager, object: DBusObject, interface_: DBusInterface) => void
-    interface_removed: (manager: DBusObjectManager, object: DBusObject, interface_: DBusInterface) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_object_path: (manager: DBusObjectManager) => string
+    readonly get_objects: (manager: DBusObjectManager) => DBusObject[]
+    readonly get_object: (manager: DBusObjectManager, object_path: string) => DBusObject | null
+    readonly get_interface: (manager: DBusObjectManager, object_path: string, interface_name: string) => DBusInterface | null
+    readonly object_added: (manager: DBusObjectManager, object: DBusObject) => void
+    readonly object_removed: (manager: DBusObjectManager, object: DBusObject) => void
+    readonly interface_added: (manager: DBusObjectManager, object: DBusObject, interface_: DBusInterface) => void
+    readonly interface_removed: (manager: DBusObjectManager, object: DBusObject, interface_: DBusInterface) => void
     static name: string
 }
 abstract class DBusObjectManagerServerClass {
     /* Fields of Gio-2.0.Gio.DBusObjectManagerServerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DBusObjectManagerServerPrivate {
@@ -12511,7 +12577,7 @@ class DBusObjectManagerServerPrivate {
 }
 abstract class DBusObjectProxyClass {
     /* Fields of Gio-2.0.Gio.DBusObjectProxyClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class DBusObjectProxyPrivate {
@@ -12519,8 +12585,8 @@ class DBusObjectProxyPrivate {
 }
 abstract class DBusObjectSkeletonClass {
     /* Fields of Gio-2.0.Gio.DBusObjectSkeletonClass */
-    parent_class: GObject.ObjectClass
-    authorize_method: (object: DBusObjectSkeleton, interface_: DBusInterfaceSkeleton, invocation: DBusMethodInvocation) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly authorize_method: (object: DBusObjectSkeleton, interface_: DBusInterfaceSkeleton, invocation: DBusMethodInvocation) => boolean
     static name: string
 }
 class DBusObjectSkeletonPrivate {
@@ -12528,11 +12594,11 @@ class DBusObjectSkeletonPrivate {
 }
 class DBusPropertyInfo {
     /* Fields of Gio-2.0.Gio.DBusPropertyInfo */
-    ref_count: number
-    name: string
-    signature: string
-    flags: DBusPropertyInfoFlags
-    annotations: DBusAnnotationInfo[]
+    readonly ref_count: number
+    readonly name: string
+    readonly signature: string
+    readonly flags: DBusPropertyInfoFlags
+    readonly annotations: DBusAnnotationInfo[]
     /* Methods of Gio-2.0.Gio.DBusPropertyInfo */
     ref(): DBusPropertyInfo
     unref(): void
@@ -12540,8 +12606,8 @@ class DBusPropertyInfo {
 }
 abstract class DBusProxyClass {
     /* Fields of Gio-2.0.Gio.DBusProxyClass */
-    g_properties_changed: (proxy: DBusProxy, changed_properties: GLib.Variant, invalidated_properties: string) => void
-    g_signal: (proxy: DBusProxy, sender_name: string, signal_name: string, parameters: GLib.Variant) => void
+    readonly g_properties_changed: (proxy: DBusProxy, changed_properties: GLib.Variant, invalidated_properties: string) => void
+    readonly g_signal: (proxy: DBusProxy, sender_name: string, signal_name: string, parameters: GLib.Variant) => void
     static name: string
 }
 class DBusProxyPrivate {
@@ -12549,10 +12615,10 @@ class DBusProxyPrivate {
 }
 class DBusSignalInfo {
     /* Fields of Gio-2.0.Gio.DBusSignalInfo */
-    ref_count: number
-    name: string
-    args: DBusArgInfo[]
-    annotations: DBusAnnotationInfo[]
+    readonly ref_count: number
+    readonly name: string
+    readonly args: DBusArgInfo[]
+    readonly annotations: DBusAnnotationInfo[]
     /* Methods of Gio-2.0.Gio.DBusSignalInfo */
     ref(): DBusSignalInfo
     unref(): void
@@ -12560,14 +12626,14 @@ class DBusSignalInfo {
 }
 class DBusSubtreeVTable {
     /* Fields of Gio-2.0.Gio.DBusSubtreeVTable */
-    enumerate: DBusSubtreeEnumerateFunc
-    introspect: DBusSubtreeIntrospectFunc
-    dispatch: DBusSubtreeDispatchFunc
+    readonly enumerate: DBusSubtreeEnumerateFunc
+    readonly introspect: DBusSubtreeIntrospectFunc
+    readonly dispatch: DBusSubtreeDispatchFunc
     static name: string
 }
 abstract class DataInputStreamClass {
     /* Fields of Gio-2.0.Gio.DataInputStreamClass */
-    parent_class: BufferedInputStreamClass
+    readonly parent_class: BufferedInputStreamClass
     static name: string
 }
 class DataInputStreamPrivate {
@@ -12575,7 +12641,7 @@ class DataInputStreamPrivate {
 }
 abstract class DataOutputStreamClass {
     /* Fields of Gio-2.0.Gio.DataOutputStreamClass */
-    parent_class: FilterOutputStreamClass
+    readonly parent_class: FilterOutputStreamClass
     static name: string
 }
 class DataOutputStreamPrivate {
@@ -12583,85 +12649,85 @@ class DataOutputStreamPrivate {
 }
 abstract class DatagramBasedInterface {
     /* Fields of Gio-2.0.Gio.DatagramBasedInterface */
-    g_iface: GObject.TypeInterface
-    receive_messages: (datagram_based: DatagramBased, messages: InputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null) => number
-    send_messages: (datagram_based: DatagramBased, messages: OutputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null) => number
-    create_source: (datagram_based: DatagramBased, condition: GLib.IOCondition, cancellable?: Cancellable | null) => GLib.Source
-    condition_check: (datagram_based: DatagramBased, condition: GLib.IOCondition) => GLib.IOCondition
-    condition_wait: (datagram_based: DatagramBased, condition: GLib.IOCondition, timeout: number, cancellable?: Cancellable | null) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly receive_messages: (datagram_based: DatagramBased, messages: InputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null) => number
+    readonly send_messages: (datagram_based: DatagramBased, messages: OutputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null) => number
+    readonly create_source: (datagram_based: DatagramBased, condition: GLib.IOCondition, cancellable?: Cancellable | null) => GLib.Source
+    readonly condition_check: (datagram_based: DatagramBased, condition: GLib.IOCondition) => GLib.IOCondition
+    readonly condition_wait: (datagram_based: DatagramBased, condition: GLib.IOCondition, timeout: number, cancellable?: Cancellable | null) => boolean
     static name: string
 }
 abstract class DesktopAppInfoClass {
     /* Fields of Gio-2.0.Gio.DesktopAppInfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DesktopAppInfoLookupIface {
     /* Fields of Gio-2.0.Gio.DesktopAppInfoLookupIface */
-    g_iface: GObject.TypeInterface
-    get_default_for_uri_scheme: (lookup: DesktopAppInfoLookup, uri_scheme: string) => AppInfo | null
+    readonly g_iface: GObject.TypeInterface
+    readonly get_default_for_uri_scheme: (lookup: DesktopAppInfoLookup, uri_scheme: string) => AppInfo | null
     static name: string
 }
 abstract class DriveIface {
     /* Fields of Gio-2.0.Gio.DriveIface */
-    g_iface: GObject.TypeInterface
-    changed: (drive: Drive) => void
-    disconnected: (drive: Drive) => void
-    eject_button: (drive: Drive) => void
-    get_name: (drive: Drive) => string
-    get_icon: (drive: Drive) => Icon
-    has_volumes: (drive: Drive) => boolean
-    get_volumes: (drive: Drive) => Volume[]
-    is_media_removable: (drive: Drive) => boolean
-    has_media: (drive: Drive) => boolean
-    is_media_check_automatic: (drive: Drive) => boolean
-    can_eject: (drive: Drive) => boolean
-    can_poll_for_media: (drive: Drive) => boolean
-    eject: (drive: Drive, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    eject_finish: (drive: Drive, result: AsyncResult) => boolean
-    poll_for_media: (drive: Drive, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    poll_for_media_finish: (drive: Drive, result: AsyncResult) => boolean
-    get_identifier: (drive: Drive, kind: string) => string | null
-    enumerate_identifiers: (drive: Drive) => string[]
-    get_start_stop_type: (drive: Drive) => DriveStartStopType
-    can_start: (drive: Drive) => boolean
-    can_start_degraded: (drive: Drive) => boolean
-    start: (drive: Drive, flags: DriveStartFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    start_finish: (drive: Drive, result: AsyncResult) => boolean
-    can_stop: (drive: Drive) => boolean
-    stop: (drive: Drive, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    stop_finish: (drive: Drive, result: AsyncResult) => boolean
-    stop_button: (drive: Drive) => void
-    eject_with_operation: (drive: Drive, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    eject_with_operation_finish: (drive: Drive, result: AsyncResult) => boolean
-    get_sort_key: (drive: Drive) => string | null
-    get_symbolic_icon: (drive: Drive) => Icon
-    is_removable: (drive: Drive) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly changed: (drive: Drive) => void
+    readonly disconnected: (drive: Drive) => void
+    readonly eject_button: (drive: Drive) => void
+    readonly get_name: (drive: Drive) => string
+    readonly get_icon: (drive: Drive) => Icon
+    readonly has_volumes: (drive: Drive) => boolean
+    readonly get_volumes: (drive: Drive) => Volume[]
+    readonly is_media_removable: (drive: Drive) => boolean
+    readonly has_media: (drive: Drive) => boolean
+    readonly is_media_check_automatic: (drive: Drive) => boolean
+    readonly can_eject: (drive: Drive) => boolean
+    readonly can_poll_for_media: (drive: Drive) => boolean
+    readonly eject: (drive: Drive, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly eject_finish: (drive: Drive, result: AsyncResult) => boolean
+    readonly poll_for_media: (drive: Drive, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly poll_for_media_finish: (drive: Drive, result: AsyncResult) => boolean
+    readonly get_identifier: (drive: Drive, kind: string) => string | null
+    readonly enumerate_identifiers: (drive: Drive) => string[]
+    readonly get_start_stop_type: (drive: Drive) => DriveStartStopType
+    readonly can_start: (drive: Drive) => boolean
+    readonly can_start_degraded: (drive: Drive) => boolean
+    readonly start: (drive: Drive, flags: DriveStartFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly start_finish: (drive: Drive, result: AsyncResult) => boolean
+    readonly can_stop: (drive: Drive) => boolean
+    readonly stop: (drive: Drive, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly stop_finish: (drive: Drive, result: AsyncResult) => boolean
+    readonly stop_button: (drive: Drive) => void
+    readonly eject_with_operation: (drive: Drive, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly eject_with_operation_finish: (drive: Drive, result: AsyncResult) => boolean
+    readonly get_sort_key: (drive: Drive) => string | null
+    readonly get_symbolic_icon: (drive: Drive) => Icon
+    readonly is_removable: (drive: Drive) => boolean
     static name: string
 }
 abstract class DtlsClientConnectionInterface {
     /* Fields of Gio-2.0.Gio.DtlsClientConnectionInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class DtlsConnectionInterface {
     /* Fields of Gio-2.0.Gio.DtlsConnectionInterface */
-    g_iface: GObject.TypeInterface
-    accept_certificate: (connection: DtlsConnection, peer_cert: TlsCertificate, errors: TlsCertificateFlags) => boolean
-    handshake: (conn: DtlsConnection, cancellable?: Cancellable | null) => boolean
-    handshake_async: (conn: DtlsConnection, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    handshake_finish: (conn: DtlsConnection, result: AsyncResult) => boolean
-    shutdown: (conn: DtlsConnection, shutdown_read: boolean, shutdown_write: boolean, cancellable?: Cancellable | null) => boolean
-    shutdown_async: (conn: DtlsConnection, shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    shutdown_finish: (conn: DtlsConnection, result: AsyncResult) => boolean
-    set_advertised_protocols: (conn: DtlsConnection, protocols?: string[] | null) => void
-    get_negotiated_protocol: (conn: DtlsConnection) => string | null
-    get_binding_data: (conn: DtlsConnection, type: TlsChannelBindingType, data: Uint8Array[]) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly accept_certificate: (connection: DtlsConnection, peer_cert: TlsCertificate, errors: TlsCertificateFlags) => boolean
+    readonly handshake: (conn: DtlsConnection, cancellable?: Cancellable | null) => boolean
+    readonly handshake_async: (conn: DtlsConnection, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly handshake_finish: (conn: DtlsConnection, result: AsyncResult) => boolean
+    readonly shutdown: (conn: DtlsConnection, shutdown_read: boolean, shutdown_write: boolean, cancellable?: Cancellable | null) => boolean
+    readonly shutdown_async: (conn: DtlsConnection, shutdown_read: boolean, shutdown_write: boolean, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly shutdown_finish: (conn: DtlsConnection, result: AsyncResult) => boolean
+    readonly set_advertised_protocols: (conn: DtlsConnection, protocols?: string[] | null) => void
+    readonly get_negotiated_protocol: (conn: DtlsConnection) => string | null
+    readonly get_binding_data: (conn: DtlsConnection, type: TlsChannelBindingType, data: Uint8Array) => boolean
     static name: string
 }
 abstract class DtlsServerConnectionInterface {
     /* Fields of Gio-2.0.Gio.DtlsServerConnectionInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class EmblemClass {
@@ -12669,7 +12735,7 @@ abstract class EmblemClass {
 }
 abstract class EmblemedIconClass {
     /* Fields of Gio-2.0.Gio.EmblemedIconClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class EmblemedIconPrivate {
@@ -12677,15 +12743,15 @@ class EmblemedIconPrivate {
 }
 class FileAttributeInfo {
     /* Fields of Gio-2.0.Gio.FileAttributeInfo */
-    name: string
-    type: FileAttributeType
-    flags: FileAttributeInfoFlags
+    readonly name: string
+    readonly type: FileAttributeType
+    readonly flags: FileAttributeInfoFlags
     static name: string
 }
 class FileAttributeInfoList {
     /* Fields of Gio-2.0.Gio.FileAttributeInfoList */
-    infos: FileAttributeInfo
-    n_infos: number
+    readonly infos: FileAttributeInfo
+    readonly n_infos: number
     /* Methods of Gio-2.0.Gio.FileAttributeInfoList */
     add(name: string, type: FileAttributeType, flags: FileAttributeInfoFlags): void
     dup(): FileAttributeInfoList
@@ -12716,19 +12782,19 @@ class FileAttributeMatcher {
 }
 abstract class FileDescriptorBasedIface {
     /* Fields of Gio-2.0.Gio.FileDescriptorBasedIface */
-    g_iface: GObject.TypeInterface
-    get_fd: (fd_based: FileDescriptorBased) => number
+    readonly g_iface: GObject.TypeInterface
+    readonly get_fd: (fd_based: FileDescriptorBased) => number
     static name: string
 }
 abstract class FileEnumeratorClass {
     /* Fields of Gio-2.0.Gio.FileEnumeratorClass */
-    parent_class: GObject.ObjectClass
-    next_file: (enumerator: FileEnumerator, cancellable?: Cancellable | null) => FileInfo | null
-    close_fn: (enumerator: FileEnumerator, cancellable?: Cancellable | null) => boolean
-    next_files_async: (enumerator: FileEnumerator, num_files: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    next_files_finish: (enumerator: FileEnumerator, result: AsyncResult) => FileInfo[]
-    close_async: (enumerator: FileEnumerator, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    close_finish: (enumerator: FileEnumerator, result: AsyncResult) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly next_file: (enumerator: FileEnumerator, cancellable?: Cancellable | null) => FileInfo | null
+    readonly close_fn: (enumerator: FileEnumerator, cancellable?: Cancellable | null) => boolean
+    readonly next_files_async: (enumerator: FileEnumerator, num_files: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly next_files_finish: (enumerator: FileEnumerator, result: AsyncResult) => FileInfo[]
+    readonly close_async: (enumerator: FileEnumerator, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly close_finish: (enumerator: FileEnumerator, result: AsyncResult) => boolean
     static name: string
 }
 class FileEnumeratorPrivate {
@@ -12736,16 +12802,16 @@ class FileEnumeratorPrivate {
 }
 abstract class FileIOStreamClass {
     /* Fields of Gio-2.0.Gio.FileIOStreamClass */
-    parent_class: IOStreamClass
-    tell: (stream: FileIOStream) => number
-    can_seek: (stream: FileIOStream) => boolean
-    seek: (stream: FileIOStream, offset: number, type: GLib.SeekType, cancellable?: Cancellable | null) => boolean
-    can_truncate: (stream: FileIOStream) => boolean
-    truncate_fn: (stream: FileIOStream, size: number, cancellable?: Cancellable | null) => boolean
-    query_info: (stream: FileIOStream, attributes: string, cancellable?: Cancellable | null) => FileInfo
-    query_info_async: (stream: FileIOStream, attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    query_info_finish: (stream: FileIOStream, result: AsyncResult) => FileInfo
-    get_etag: (stream: FileIOStream) => string | null
+    readonly parent_class: IOStreamClass
+    readonly tell: (stream: FileIOStream) => number
+    readonly can_seek: (stream: FileIOStream) => boolean
+    readonly seek: (stream: FileIOStream, offset: number, type: GLib.SeekType, cancellable?: Cancellable | null) => boolean
+    readonly can_truncate: (stream: FileIOStream) => boolean
+    readonly truncate_fn: (stream: FileIOStream, size: number, cancellable?: Cancellable | null) => boolean
+    readonly query_info: (stream: FileIOStream, attributes: string, cancellable?: Cancellable | null) => FileInfo
+    readonly query_info_async: (stream: FileIOStream, attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly query_info_finish: (stream: FileIOStream, result: AsyncResult) => FileInfo
+    readonly get_etag: (stream: FileIOStream) => string | null
     static name: string
 }
 class FileIOStreamPrivate {
@@ -12756,100 +12822,100 @@ abstract class FileIconClass {
 }
 abstract class FileIface {
     /* Fields of Gio-2.0.Gio.FileIface */
-    g_iface: GObject.TypeInterface
-    dup: (file: File) => File
-    hash: (file: File) => number
-    equal: (file1: File, file2: File) => boolean
-    is_native: (file: File) => boolean
-    has_uri_scheme: (file: File, uri_scheme: string) => boolean
-    get_uri_scheme: (file: File) => string | null
-    get_basename: (file: File) => string | null
-    get_path: (file: File) => string | null
-    get_uri: (file: File) => string
-    get_parse_name: (file: File) => string
-    get_parent: (file: File) => File | null
-    prefix_matches: (prefix: File, file: File) => boolean
-    get_relative_path: (parent: File, descendant: File) => string | null
-    resolve_relative_path: (file: File, relative_path: string) => File | null
-    get_child_for_display_name: (file: File, display_name: string) => File
-    enumerate_children: (file: File, attributes: string, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => FileEnumerator
-    enumerate_children_async: (file: File, attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    enumerate_children_finish: (file: File, res: AsyncResult) => FileEnumerator
-    query_info: (file: File, attributes: string, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => FileInfo
-    query_info_async: (file: File, attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    query_info_finish: (file: File, res: AsyncResult) => FileInfo
-    query_filesystem_info: (file: File, attributes: string, cancellable?: Cancellable | null) => FileInfo
-    query_filesystem_info_async: (file: File, attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    query_filesystem_info_finish: (file: File, res: AsyncResult) => FileInfo
-    find_enclosing_mount: (file: File, cancellable?: Cancellable | null) => Mount
-    find_enclosing_mount_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    find_enclosing_mount_finish: (file: File, res: AsyncResult) => Mount
-    set_display_name: (file: File, display_name: string, cancellable?: Cancellable | null) => File
-    set_display_name_async: (file: File, display_name: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    set_display_name_finish: (file: File, res: AsyncResult) => File
-    query_settable_attributes: (file: File, cancellable?: Cancellable | null) => FileAttributeInfoList
-    query_writable_namespaces: (file: File, cancellable?: Cancellable | null) => FileAttributeInfoList
-    set_attribute: (file: File, attribute: string, type: FileAttributeType, value_p: object | null, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => boolean
-    set_attributes_from_info: (file: File, info: FileInfo, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => boolean
-    set_attributes_async: (file: File, info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    set_attributes_finish: (file: File, result: AsyncResult) => [ /* returnType */ boolean, /* info */ FileInfo ]
-    read_fn: (file: File, cancellable?: Cancellable | null) => FileInputStream
-    read_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    read_finish: (file: File, res: AsyncResult) => FileInputStream
-    append_to: (file: File, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileOutputStream
-    append_to_async: (file: File, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    append_to_finish: (file: File, res: AsyncResult) => FileOutputStream
-    create: (file: File, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileOutputStream
-    create_async: (file: File, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    create_finish: (file: File, res: AsyncResult) => FileOutputStream
-    replace: (file: File, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileOutputStream
-    replace_async: (file: File, etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    replace_finish: (file: File, res: AsyncResult) => FileOutputStream
-    delete_file: (file: File, cancellable?: Cancellable | null) => boolean
-    delete_file_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    delete_file_finish: (file: File, result: AsyncResult) => boolean
-    trash: (file: File, cancellable?: Cancellable | null) => boolean
-    trash_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    trash_finish: (file: File, result: AsyncResult) => boolean
-    make_directory: (file: File, cancellable?: Cancellable | null) => boolean
-    make_directory_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    make_directory_finish: (file: File, result: AsyncResult) => boolean
-    make_symbolic_link: (file: File, symlink_value: string, cancellable?: Cancellable | null) => boolean
-    copy: (source: File, destination: File, flags: FileCopyFlags, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null) => boolean
-    copy_async: (source: File, destination: File, flags: FileCopyFlags, io_priority: number, cancellable?: Cancellable | null) => void
-    copy_finish: (file: File, res: AsyncResult) => boolean
-    move: (source: File, destination: File, flags: FileCopyFlags, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null) => boolean
-    mount_mountable: (file: File, flags: MountMountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    mount_mountable_finish: (file: File, result: AsyncResult) => File
-    unmount_mountable: (file: File, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    unmount_mountable_finish: (file: File, result: AsyncResult) => boolean
-    eject_mountable: (file: File, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    eject_mountable_finish: (file: File, result: AsyncResult) => boolean
-    mount_enclosing_volume: (location: File, flags: MountMountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    mount_enclosing_volume_finish: (location: File, result: AsyncResult) => boolean
-    monitor_dir: (file: File, flags: FileMonitorFlags, cancellable?: Cancellable | null) => FileMonitor
-    monitor_file: (file: File, flags: FileMonitorFlags, cancellable?: Cancellable | null) => FileMonitor
-    open_readwrite: (file: File, cancellable?: Cancellable | null) => FileIOStream
-    open_readwrite_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    open_readwrite_finish: (file: File, res: AsyncResult) => FileIOStream
-    create_readwrite: (file: File, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileIOStream
-    create_readwrite_async: (file: File, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    create_readwrite_finish: (file: File, res: AsyncResult) => FileIOStream
-    replace_readwrite: (file: File, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileIOStream
-    replace_readwrite_async: (file: File, etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    replace_readwrite_finish: (file: File, res: AsyncResult) => FileIOStream
-    start_mountable: (file: File, flags: DriveStartFlags, start_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    start_mountable_finish: (file: File, result: AsyncResult) => boolean
-    stop_mountable: (file: File, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    stop_mountable_finish: (file: File, result: AsyncResult) => boolean
-    supports_thread_contexts: boolean
-    unmount_mountable_with_operation: (file: File, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    unmount_mountable_with_operation_finish: (file: File, result: AsyncResult) => boolean
-    eject_mountable_with_operation: (file: File, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    eject_mountable_with_operation_finish: (file: File, result: AsyncResult) => boolean
-    poll_mountable: (file: File, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    poll_mountable_finish: (file: File, result: AsyncResult) => boolean
-    measure_disk_usage_finish: (file: File, result: AsyncResult) => [ /* returnType */ boolean, /* disk_usage */ number | null, /* num_dirs */ number | null, /* num_files */ number | null ]
+    readonly g_iface: GObject.TypeInterface
+    readonly dup: (file: File) => File
+    readonly hash: (file: File) => number
+    readonly equal: (file1: File, file2: File) => boolean
+    readonly is_native: (file: File) => boolean
+    readonly has_uri_scheme: (file: File, uri_scheme: string) => boolean
+    readonly get_uri_scheme: (file: File) => string | null
+    readonly get_basename: (file: File) => string | null
+    readonly get_path: (file: File) => string | null
+    readonly get_uri: (file: File) => string
+    readonly get_parse_name: (file: File) => string
+    readonly get_parent: (file: File) => File | null
+    readonly prefix_matches: (prefix: File, file: File) => boolean
+    readonly get_relative_path: (parent: File, descendant: File) => string | null
+    readonly resolve_relative_path: (file: File, relative_path: string) => File | null
+    readonly get_child_for_display_name: (file: File, display_name: string) => File
+    readonly enumerate_children: (file: File, attributes: string, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => FileEnumerator
+    readonly enumerate_children_async: (file: File, attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly enumerate_children_finish: (file: File, res: AsyncResult) => FileEnumerator
+    readonly query_info: (file: File, attributes: string, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => FileInfo
+    readonly query_info_async: (file: File, attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly query_info_finish: (file: File, res: AsyncResult) => FileInfo
+    readonly query_filesystem_info: (file: File, attributes: string, cancellable?: Cancellable | null) => FileInfo
+    readonly query_filesystem_info_async: (file: File, attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly query_filesystem_info_finish: (file: File, res: AsyncResult) => FileInfo
+    readonly find_enclosing_mount: (file: File, cancellable?: Cancellable | null) => Mount
+    readonly find_enclosing_mount_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly find_enclosing_mount_finish: (file: File, res: AsyncResult) => Mount
+    readonly set_display_name: (file: File, display_name: string, cancellable?: Cancellable | null) => File
+    readonly set_display_name_async: (file: File, display_name: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly set_display_name_finish: (file: File, res: AsyncResult) => File
+    readonly query_settable_attributes: (file: File, cancellable?: Cancellable | null) => FileAttributeInfoList
+    readonly query_writable_namespaces: (file: File, cancellable?: Cancellable | null) => FileAttributeInfoList
+    readonly set_attribute: (file: File, attribute: string, type: FileAttributeType, value_p: object | null, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => boolean
+    readonly set_attributes_from_info: (file: File, info: FileInfo, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => boolean
+    readonly set_attributes_async: (file: File, info: FileInfo, flags: FileQueryInfoFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly set_attributes_finish: (file: File, result: AsyncResult) => [ /* returnType */ boolean, /* info */ FileInfo ]
+    readonly read_fn: (file: File, cancellable?: Cancellable | null) => FileInputStream
+    readonly read_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly read_finish: (file: File, res: AsyncResult) => FileInputStream
+    readonly append_to: (file: File, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileOutputStream
+    readonly append_to_async: (file: File, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly append_to_finish: (file: File, res: AsyncResult) => FileOutputStream
+    readonly create: (file: File, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileOutputStream
+    readonly create_async: (file: File, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly create_finish: (file: File, res: AsyncResult) => FileOutputStream
+    readonly replace: (file: File, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileOutputStream
+    readonly replace_async: (file: File, etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly replace_finish: (file: File, res: AsyncResult) => FileOutputStream
+    readonly delete_file: (file: File, cancellable?: Cancellable | null) => boolean
+    readonly delete_file_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly delete_file_finish: (file: File, result: AsyncResult) => boolean
+    readonly trash: (file: File, cancellable?: Cancellable | null) => boolean
+    readonly trash_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly trash_finish: (file: File, result: AsyncResult) => boolean
+    readonly make_directory: (file: File, cancellable?: Cancellable | null) => boolean
+    readonly make_directory_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly make_directory_finish: (file: File, result: AsyncResult) => boolean
+    readonly make_symbolic_link: (file: File, symlink_value: string, cancellable?: Cancellable | null) => boolean
+    readonly copy: (source: File, destination: File, flags: FileCopyFlags, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null) => boolean
+    readonly copy_async: (source: File, destination: File, flags: FileCopyFlags, io_priority: number, cancellable?: Cancellable | null) => void
+    readonly copy_finish: (file: File, res: AsyncResult) => boolean
+    readonly move: (source: File, destination: File, flags: FileCopyFlags, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null) => boolean
+    readonly mount_mountable: (file: File, flags: MountMountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly mount_mountable_finish: (file: File, result: AsyncResult) => File
+    readonly unmount_mountable: (file: File, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly unmount_mountable_finish: (file: File, result: AsyncResult) => boolean
+    readonly eject_mountable: (file: File, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly eject_mountable_finish: (file: File, result: AsyncResult) => boolean
+    readonly mount_enclosing_volume: (location: File, flags: MountMountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly mount_enclosing_volume_finish: (location: File, result: AsyncResult) => boolean
+    readonly monitor_dir: (file: File, flags: FileMonitorFlags, cancellable?: Cancellable | null) => FileMonitor
+    readonly monitor_file: (file: File, flags: FileMonitorFlags, cancellable?: Cancellable | null) => FileMonitor
+    readonly open_readwrite: (file: File, cancellable?: Cancellable | null) => FileIOStream
+    readonly open_readwrite_async: (file: File, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly open_readwrite_finish: (file: File, res: AsyncResult) => FileIOStream
+    readonly create_readwrite: (file: File, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileIOStream
+    readonly create_readwrite_async: (file: File, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly create_readwrite_finish: (file: File, res: AsyncResult) => FileIOStream
+    readonly replace_readwrite: (file: File, etag: string | null, make_backup: boolean, flags: FileCreateFlags, cancellable?: Cancellable | null) => FileIOStream
+    readonly replace_readwrite_async: (file: File, etag: string | null, make_backup: boolean, flags: FileCreateFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly replace_readwrite_finish: (file: File, res: AsyncResult) => FileIOStream
+    readonly start_mountable: (file: File, flags: DriveStartFlags, start_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly start_mountable_finish: (file: File, result: AsyncResult) => boolean
+    readonly stop_mountable: (file: File, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly stop_mountable_finish: (file: File, result: AsyncResult) => boolean
+    readonly supports_thread_contexts: boolean
+    readonly unmount_mountable_with_operation: (file: File, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly unmount_mountable_with_operation_finish: (file: File, result: AsyncResult) => boolean
+    readonly eject_mountable_with_operation: (file: File, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly eject_mountable_with_operation_finish: (file: File, result: AsyncResult) => boolean
+    readonly poll_mountable: (file: File, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly poll_mountable_finish: (file: File, result: AsyncResult) => boolean
+    readonly measure_disk_usage_finish: (file: File, result: AsyncResult) => [ /* returnType */ boolean, /* disk_usage */ number | null, /* num_dirs */ number | null, /* num_files */ number | null ]
     static name: string
 }
 abstract class FileInfoClass {
@@ -12857,13 +12923,13 @@ abstract class FileInfoClass {
 }
 abstract class FileInputStreamClass {
     /* Fields of Gio-2.0.Gio.FileInputStreamClass */
-    parent_class: InputStreamClass
-    tell: (stream: FileInputStream) => number
-    can_seek: (stream: FileInputStream) => boolean
-    seek: (stream: FileInputStream, offset: number, type: GLib.SeekType, cancellable?: Cancellable | null) => boolean
-    query_info: (stream: FileInputStream, attributes: string, cancellable?: Cancellable | null) => FileInfo
-    query_info_async: (stream: FileInputStream, attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    query_info_finish: (stream: FileInputStream, result: AsyncResult) => FileInfo
+    readonly parent_class: InputStreamClass
+    readonly tell: (stream: FileInputStream) => number
+    readonly can_seek: (stream: FileInputStream) => boolean
+    readonly seek: (stream: FileInputStream, offset: number, type: GLib.SeekType, cancellable?: Cancellable | null) => boolean
+    readonly query_info: (stream: FileInputStream, attributes: string, cancellable?: Cancellable | null) => FileInfo
+    readonly query_info_async: (stream: FileInputStream, attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly query_info_finish: (stream: FileInputStream, result: AsyncResult) => FileInfo
     static name: string
 }
 class FileInputStreamPrivate {
@@ -12871,9 +12937,9 @@ class FileInputStreamPrivate {
 }
 abstract class FileMonitorClass {
     /* Fields of Gio-2.0.Gio.FileMonitorClass */
-    parent_class: GObject.ObjectClass
-    changed: (monitor: FileMonitor, file: File, other_file: File, event_type: FileMonitorEvent) => void
-    cancel: (monitor: FileMonitor) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (monitor: FileMonitor, file: File, other_file: File, event_type: FileMonitorEvent) => void
+    readonly cancel: (monitor: FileMonitor) => boolean
     static name: string
 }
 class FileMonitorPrivate {
@@ -12881,16 +12947,16 @@ class FileMonitorPrivate {
 }
 abstract class FileOutputStreamClass {
     /* Fields of Gio-2.0.Gio.FileOutputStreamClass */
-    parent_class: OutputStreamClass
-    tell: (stream: FileOutputStream) => number
-    can_seek: (stream: FileOutputStream) => boolean
-    seek: (stream: FileOutputStream, offset: number, type: GLib.SeekType, cancellable?: Cancellable | null) => boolean
-    can_truncate: (stream: FileOutputStream) => boolean
-    truncate_fn: (stream: FileOutputStream, size: number, cancellable?: Cancellable | null) => boolean
-    query_info: (stream: FileOutputStream, attributes: string, cancellable?: Cancellable | null) => FileInfo
-    query_info_async: (stream: FileOutputStream, attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    query_info_finish: (stream: FileOutputStream, result: AsyncResult) => FileInfo
-    get_etag: (stream: FileOutputStream) => string | null
+    readonly parent_class: OutputStreamClass
+    readonly tell: (stream: FileOutputStream) => number
+    readonly can_seek: (stream: FileOutputStream) => boolean
+    readonly seek: (stream: FileOutputStream, offset: number, type: GLib.SeekType, cancellable?: Cancellable | null) => boolean
+    readonly can_truncate: (stream: FileOutputStream) => boolean
+    readonly truncate_fn: (stream: FileOutputStream, size: number, cancellable?: Cancellable | null) => boolean
+    readonly query_info: (stream: FileOutputStream, attributes: string, cancellable?: Cancellable | null) => FileInfo
+    readonly query_info_async: (stream: FileOutputStream, attributes: string, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly query_info_finish: (stream: FileOutputStream, result: AsyncResult) => FileInfo
+    readonly get_etag: (stream: FileOutputStream) => string | null
     static name: string
 }
 class FileOutputStreamPrivate {
@@ -12898,18 +12964,18 @@ class FileOutputStreamPrivate {
 }
 abstract class FilenameCompleterClass {
     /* Fields of Gio-2.0.Gio.FilenameCompleterClass */
-    parent_class: GObject.ObjectClass
-    got_completion_data: (filename_completer: FilenameCompleter) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly got_completion_data: (filename_completer: FilenameCompleter) => void
     static name: string
 }
 abstract class FilterInputStreamClass {
     /* Fields of Gio-2.0.Gio.FilterInputStreamClass */
-    parent_class: InputStreamClass
+    readonly parent_class: InputStreamClass
     static name: string
 }
 abstract class FilterOutputStreamClass {
     /* Fields of Gio-2.0.Gio.FilterOutputStreamClass */
-    parent_class: OutputStreamClass
+    readonly parent_class: OutputStreamClass
     static name: string
 }
 class IOExtension {
@@ -12951,12 +13017,12 @@ class IOStreamAdapter {
 }
 abstract class IOStreamClass {
     /* Fields of Gio-2.0.Gio.IOStreamClass */
-    parent_class: GObject.ObjectClass
-    get_input_stream: (stream: IOStream) => InputStream
-    get_output_stream: (stream: IOStream) => OutputStream
-    close_fn: (stream: IOStream, cancellable?: Cancellable | null) => boolean
-    close_async: (stream: IOStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    close_finish: (stream: IOStream, result: AsyncResult) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly get_input_stream: (stream: IOStream) => InputStream
+    readonly get_output_stream: (stream: IOStream) => OutputStream
+    readonly close_fn: (stream: IOStream, cancellable?: Cancellable | null) => boolean
+    readonly close_async: (stream: IOStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly close_finish: (stream: IOStream, result: AsyncResult) => boolean
     static name: string
 }
 class IOStreamPrivate {
@@ -12964,22 +13030,22 @@ class IOStreamPrivate {
 }
 abstract class IconIface {
     /* Fields of Gio-2.0.Gio.IconIface */
-    g_iface: GObject.TypeInterface
-    hash: (icon: Icon) => number
-    equal: (icon1?: Icon | null, icon2?: Icon | null) => boolean
-    serialize: (icon: Icon) => GLib.Variant | null
+    readonly g_iface: GObject.TypeInterface
+    readonly hash: (icon: Icon) => number
+    readonly equal: (icon1?: Icon | null, icon2?: Icon | null) => boolean
+    readonly serialize: (icon: Icon) => GLib.Variant | null
     static name: string
 }
 abstract class InetAddressClass {
     /* Fields of Gio-2.0.Gio.InetAddressClass */
-    parent_class: GObject.ObjectClass
-    to_string: (address: InetAddress) => string
-    to_bytes: (address: InetAddress) => number
+    readonly parent_class: GObject.ObjectClass
+    readonly to_string: (address: InetAddress) => string
+    readonly to_bytes: (address: InetAddress) => number
     static name: string
 }
 abstract class InetAddressMaskClass {
     /* Fields of Gio-2.0.Gio.InetAddressMaskClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class InetAddressMaskPrivate {
@@ -12990,7 +13056,7 @@ class InetAddressPrivate {
 }
 abstract class InetSocketAddressClass {
     /* Fields of Gio-2.0.Gio.InetSocketAddressClass */
-    parent_class: SocketAddressClass
+    readonly parent_class: SocketAddressClass
     static name: string
 }
 class InetSocketAddressPrivate {
@@ -12998,33 +13064,33 @@ class InetSocketAddressPrivate {
 }
 abstract class InitableIface {
     /* Fields of Gio-2.0.Gio.InitableIface */
-    g_iface: GObject.TypeInterface
-    init: (initable: Initable, cancellable?: Cancellable | null) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly init: (initable: Initable, cancellable?: Cancellable | null) => boolean
     static name: string
 }
 class InputMessage {
     /* Fields of Gio-2.0.Gio.InputMessage */
-    address: SocketAddress
-    vectors: InputVector[]
-    num_vectors: number
-    bytes_received: number
-    flags: number
-    control_messages: SocketControlMessage[]
-    num_control_messages: number
+    readonly address: SocketAddress
+    readonly vectors: InputVector[]
+    readonly num_vectors: number
+    readonly bytes_received: number
+    readonly flags: number
+    readonly control_messages: SocketControlMessage[]
+    readonly num_control_messages: number
     static name: string
 }
 abstract class InputStreamClass {
     /* Fields of Gio-2.0.Gio.InputStreamClass */
-    parent_class: GObject.ObjectClass
-    read_fn: (stream: InputStream, buffer: object | null, count: number, cancellable?: Cancellable | null) => number
-    skip: (stream: InputStream, count: number, cancellable?: Cancellable | null) => number
-    close_fn: (stream: InputStream, cancellable?: Cancellable | null) => boolean
-    read_async: (stream: InputStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => /* buffer */ Uint8Array[] | null
-    read_finish: (stream: InputStream, result: AsyncResult) => number
-    skip_async: (stream: InputStream, count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    skip_finish: (stream: InputStream, result: AsyncResult) => number
-    close_async: (stream: InputStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    close_finish: (stream: InputStream, result: AsyncResult) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly read_fn: (stream: InputStream, buffer: object | null, count: number, cancellable?: Cancellable | null) => number
+    readonly skip: (stream: InputStream, count: number, cancellable?: Cancellable | null) => number
+    readonly close_fn: (stream: InputStream, cancellable?: Cancellable | null) => boolean
+    readonly read_async: (stream: InputStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => /* buffer */ Uint8Array | null
+    readonly read_finish: (stream: InputStream, result: AsyncResult) => number
+    readonly skip_async: (stream: InputStream, count: number, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly skip_finish: (stream: InputStream, result: AsyncResult) => number
+    readonly close_async: (stream: InputStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly close_finish: (stream: InputStream, result: AsyncResult) => boolean
     static name: string
 }
 class InputStreamPrivate {
@@ -13032,34 +13098,34 @@ class InputStreamPrivate {
 }
 class InputVector {
     /* Fields of Gio-2.0.Gio.InputVector */
-    buffer: object
-    size: number
+    readonly buffer: object
+    readonly size: number
     static name: string
 }
 abstract class ListModelInterface {
     /* Fields of Gio-2.0.Gio.ListModelInterface */
-    g_iface: GObject.TypeInterface
-    get_item_type: (list: ListModel) => GObject.Type
-    get_n_items: (list: ListModel) => number
-    get_item: (list: ListModel, position: number) => GObject.Object | null
+    readonly g_iface: GObject.TypeInterface
+    readonly get_item_type: (list: ListModel) => GObject.Type
+    readonly get_n_items: (list: ListModel) => number
+    readonly get_item: (list: ListModel, position: number) => GObject.Object | null
     static name: string
 }
 abstract class ListStoreClass {
     /* Fields of Gio-2.0.Gio.ListStoreClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class LoadableIconIface {
     /* Fields of Gio-2.0.Gio.LoadableIconIface */
-    g_iface: GObject.TypeInterface
-    load: (icon: LoadableIcon, size: number, cancellable?: Cancellable | null) => [ /* returnType */ InputStream, /* type */ string | null ]
-    load_async: (icon: LoadableIcon, size: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    load_finish: (icon: LoadableIcon, res: AsyncResult) => [ /* returnType */ InputStream, /* type */ string | null ]
+    readonly g_iface: GObject.TypeInterface
+    readonly load: (icon: LoadableIcon, size: number, cancellable?: Cancellable | null) => [ /* returnType */ InputStream, /* type */ string | null ]
+    readonly load_async: (icon: LoadableIcon, size: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly load_finish: (icon: LoadableIcon, res: AsyncResult) => [ /* returnType */ InputStream, /* type */ string | null ]
     static name: string
 }
 abstract class MemoryInputStreamClass {
     /* Fields of Gio-2.0.Gio.MemoryInputStreamClass */
-    parent_class: InputStreamClass
+    readonly parent_class: InputStreamClass
     static name: string
 }
 class MemoryInputStreamPrivate {
@@ -13067,12 +13133,12 @@ class MemoryInputStreamPrivate {
 }
 abstract class MemoryMonitorInterface {
     /* Fields of Gio-2.0.Gio.MemoryMonitorInterface */
-    low_memory_warning: (monitor: MemoryMonitor, level: MemoryMonitorWarningLevel) => void
+    readonly low_memory_warning: (monitor: MemoryMonitor, level: MemoryMonitorWarningLevel) => void
     static name: string
 }
 abstract class MemoryOutputStreamClass {
     /* Fields of Gio-2.0.Gio.MemoryOutputStreamClass */
-    parent_class: OutputStreamClass
+    readonly parent_class: OutputStreamClass
     static name: string
 }
 class MemoryOutputStreamPrivate {
@@ -13080,8 +13146,8 @@ class MemoryOutputStreamPrivate {
 }
 abstract class MenuAttributeIterClass {
     /* Fields of Gio-2.0.Gio.MenuAttributeIterClass */
-    parent_class: GObject.ObjectClass
-    get_next: (iter: MenuAttributeIter) => [ /* returnType */ boolean, /* out_name */ string | null, /* value */ GLib.Variant | null ]
+    readonly parent_class: GObject.ObjectClass
+    readonly get_next: (iter: MenuAttributeIter) => [ /* returnType */ boolean, /* out_name */ string | null, /* value */ GLib.Variant | null ]
     static name: string
 }
 class MenuAttributeIterPrivate {
@@ -13089,8 +13155,8 @@ class MenuAttributeIterPrivate {
 }
 abstract class MenuLinkIterClass {
     /* Fields of Gio-2.0.Gio.MenuLinkIterClass */
-    parent_class: GObject.ObjectClass
-    get_next: (iter: MenuLinkIter) => [ /* returnType */ boolean, /* out_link */ string | null, /* value */ MenuModel | null ]
+    readonly parent_class: GObject.ObjectClass
+    readonly get_next: (iter: MenuLinkIter) => [ /* returnType */ boolean, /* out_link */ string | null, /* value */ MenuModel | null ]
     static name: string
 }
 class MenuLinkIterPrivate {
@@ -13098,15 +13164,15 @@ class MenuLinkIterPrivate {
 }
 abstract class MenuModelClass {
     /* Fields of Gio-2.0.Gio.MenuModelClass */
-    parent_class: GObject.ObjectClass
-    is_mutable: (model: MenuModel) => boolean
-    get_n_items: (model: MenuModel) => number
-    get_item_attributes: (model: MenuModel, item_index: number) => /* attributes */ GLib.HashTable
-    iterate_item_attributes: (model: MenuModel, item_index: number) => MenuAttributeIter
-    get_item_attribute_value: (model: MenuModel, item_index: number, attribute: string, expected_type?: GLib.VariantType | null) => GLib.Variant | null
-    get_item_links: (model: MenuModel, item_index: number) => /* links */ GLib.HashTable
-    iterate_item_links: (model: MenuModel, item_index: number) => MenuLinkIter
-    get_item_link: (model: MenuModel, item_index: number, link: string) => MenuModel | null
+    readonly parent_class: GObject.ObjectClass
+    readonly is_mutable: (model: MenuModel) => boolean
+    readonly get_n_items: (model: MenuModel) => number
+    readonly get_item_attributes: (model: MenuModel, item_index: number) => /* attributes */ GLib.HashTable
+    readonly iterate_item_attributes: (model: MenuModel, item_index: number) => MenuAttributeIter
+    readonly get_item_attribute_value: (model: MenuModel, item_index: number, attribute: string, expected_type?: GLib.VariantType | null) => GLib.Variant | null
+    readonly get_item_links: (model: MenuModel, item_index: number) => /* links */ GLib.HashTable
+    readonly iterate_item_links: (model: MenuModel, item_index: number) => MenuLinkIter
+    readonly get_item_link: (model: MenuModel, item_index: number, link: string) => MenuModel | null
     static name: string
 }
 class MenuModelPrivate {
@@ -13114,45 +13180,45 @@ class MenuModelPrivate {
 }
 abstract class MountIface {
     /* Fields of Gio-2.0.Gio.MountIface */
-    g_iface: GObject.TypeInterface
-    changed: (mount: Mount) => void
-    unmounted: (mount: Mount) => void
-    get_root: (mount: Mount) => File
-    get_name: (mount: Mount) => string
-    get_icon: (mount: Mount) => Icon
-    get_uuid: (mount: Mount) => string | null
-    get_volume: (mount: Mount) => Volume | null
-    get_drive: (mount: Mount) => Drive | null
-    can_unmount: (mount: Mount) => boolean
-    can_eject: (mount: Mount) => boolean
-    unmount: (mount: Mount, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    unmount_finish: (mount: Mount, result: AsyncResult) => boolean
-    eject: (mount: Mount, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    eject_finish: (mount: Mount, result: AsyncResult) => boolean
-    remount: (mount: Mount, flags: MountMountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    remount_finish: (mount: Mount, result: AsyncResult) => boolean
-    guess_content_type: (mount: Mount, force_rescan: boolean, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    guess_content_type_finish: (mount: Mount, result: AsyncResult) => string[]
-    guess_content_type_sync: (mount: Mount, force_rescan: boolean, cancellable?: Cancellable | null) => string[]
-    pre_unmount: (mount: Mount) => void
-    unmount_with_operation: (mount: Mount, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    unmount_with_operation_finish: (mount: Mount, result: AsyncResult) => boolean
-    eject_with_operation: (mount: Mount, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    eject_with_operation_finish: (mount: Mount, result: AsyncResult) => boolean
-    get_default_location: (mount: Mount) => File
-    get_sort_key: (mount: Mount) => string | null
-    get_symbolic_icon: (mount: Mount) => Icon
+    readonly g_iface: GObject.TypeInterface
+    readonly changed: (mount: Mount) => void
+    readonly unmounted: (mount: Mount) => void
+    readonly get_root: (mount: Mount) => File
+    readonly get_name: (mount: Mount) => string
+    readonly get_icon: (mount: Mount) => Icon
+    readonly get_uuid: (mount: Mount) => string | null
+    readonly get_volume: (mount: Mount) => Volume | null
+    readonly get_drive: (mount: Mount) => Drive | null
+    readonly can_unmount: (mount: Mount) => boolean
+    readonly can_eject: (mount: Mount) => boolean
+    readonly unmount: (mount: Mount, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly unmount_finish: (mount: Mount, result: AsyncResult) => boolean
+    readonly eject: (mount: Mount, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly eject_finish: (mount: Mount, result: AsyncResult) => boolean
+    readonly remount: (mount: Mount, flags: MountMountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly remount_finish: (mount: Mount, result: AsyncResult) => boolean
+    readonly guess_content_type: (mount: Mount, force_rescan: boolean, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly guess_content_type_finish: (mount: Mount, result: AsyncResult) => string[]
+    readonly guess_content_type_sync: (mount: Mount, force_rescan: boolean, cancellable?: Cancellable | null) => string[]
+    readonly pre_unmount: (mount: Mount) => void
+    readonly unmount_with_operation: (mount: Mount, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly unmount_with_operation_finish: (mount: Mount, result: AsyncResult) => boolean
+    readonly eject_with_operation: (mount: Mount, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly eject_with_operation_finish: (mount: Mount, result: AsyncResult) => boolean
+    readonly get_default_location: (mount: Mount) => File
+    readonly get_sort_key: (mount: Mount) => string | null
+    readonly get_symbolic_icon: (mount: Mount) => Icon
     static name: string
 }
 abstract class MountOperationClass {
     /* Fields of Gio-2.0.Gio.MountOperationClass */
-    parent_class: GObject.ObjectClass
-    ask_password: (op: MountOperation, message: string, default_user: string, default_domain: string, flags: AskPasswordFlags) => void
-    ask_question: (op: MountOperation, message: string, choices: string[]) => void
-    reply: (op: MountOperation, result: MountOperationResult) => void
-    aborted: (op: MountOperation) => void
-    show_processes: (op: MountOperation, message: string, processes: GLib.Pid[], choices: string[]) => void
-    show_unmount_progress: (op: MountOperation, message: string, time_left: number, bytes_left: number) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly ask_password: (op: MountOperation, message: string, default_user: string, default_domain: string, flags: AskPasswordFlags) => void
+    readonly ask_question: (op: MountOperation, message: string, choices: string[]) => void
+    readonly reply: (op: MountOperation, result: MountOperationResult) => void
+    readonly aborted: (op: MountOperation) => void
+    readonly show_processes: (op: MountOperation, message: string, processes: GLib.Pid[], choices: string[]) => void
+    readonly show_unmount_progress: (op: MountOperation, message: string, time_left: number, bytes_left: number) => void
     static name: string
 }
 class MountOperationPrivate {
@@ -13160,7 +13226,7 @@ class MountOperationPrivate {
 }
 abstract class NativeSocketAddressClass {
     /* Fields of Gio-2.0.Gio.NativeSocketAddressClass */
-    parent_class: SocketAddressClass
+    readonly parent_class: SocketAddressClass
     static name: string
 }
 class NativeSocketAddressPrivate {
@@ -13168,12 +13234,12 @@ class NativeSocketAddressPrivate {
 }
 abstract class NativeVolumeMonitorClass {
     /* Fields of Gio-2.0.Gio.NativeVolumeMonitorClass */
-    parent_class: VolumeMonitorClass
+    readonly parent_class: VolumeMonitorClass
     static name: string
 }
 abstract class NetworkAddressClass {
     /* Fields of Gio-2.0.Gio.NetworkAddressClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class NetworkAddressPrivate {
@@ -13181,16 +13247,16 @@ class NetworkAddressPrivate {
 }
 abstract class NetworkMonitorInterface {
     /* Fields of Gio-2.0.Gio.NetworkMonitorInterface */
-    g_iface: GObject.TypeInterface
-    network_changed: (monitor: NetworkMonitor, network_available: boolean) => void
-    can_reach: (monitor: NetworkMonitor, connectable: SocketConnectable, cancellable?: Cancellable | null) => boolean
-    can_reach_async: (monitor: NetworkMonitor, connectable: SocketConnectable, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    can_reach_finish: (monitor: NetworkMonitor, result: AsyncResult) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly network_changed: (monitor: NetworkMonitor, network_available: boolean) => void
+    readonly can_reach: (monitor: NetworkMonitor, connectable: SocketConnectable, cancellable?: Cancellable | null) => boolean
+    readonly can_reach_async: (monitor: NetworkMonitor, connectable: SocketConnectable, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly can_reach_finish: (monitor: NetworkMonitor, result: AsyncResult) => boolean
     static name: string
 }
 abstract class NetworkServiceClass {
     /* Fields of Gio-2.0.Gio.NetworkServiceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class NetworkServicePrivate {
@@ -13198,32 +13264,32 @@ class NetworkServicePrivate {
 }
 class OutputMessage {
     /* Fields of Gio-2.0.Gio.OutputMessage */
-    address: SocketAddress
-    vectors: OutputVector
-    num_vectors: number
-    bytes_sent: number
-    control_messages: SocketControlMessage[]
-    num_control_messages: number
+    readonly address: SocketAddress
+    readonly vectors: OutputVector
+    readonly num_vectors: number
+    readonly bytes_sent: number
+    readonly control_messages: SocketControlMessage[]
+    readonly num_control_messages: number
     static name: string
 }
 abstract class OutputStreamClass {
     /* Fields of Gio-2.0.Gio.OutputStreamClass */
-    parent_class: GObject.ObjectClass
-    write_fn: (stream: OutputStream, buffer: Uint8Array[] | null, cancellable?: Cancellable | null) => number
-    splice: (stream: OutputStream, source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null) => number
-    flush: (stream: OutputStream, cancellable?: Cancellable | null) => boolean
-    close_fn: (stream: OutputStream, cancellable?: Cancellable | null) => boolean
-    write_async: (stream: OutputStream, buffer: Uint8Array[] | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    write_finish: (stream: OutputStream, result: AsyncResult) => number
-    splice_async: (stream: OutputStream, source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    splice_finish: (stream: OutputStream, result: AsyncResult) => number
-    flush_async: (stream: OutputStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    flush_finish: (stream: OutputStream, result: AsyncResult) => boolean
-    close_async: (stream: OutputStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    close_finish: (stream: OutputStream, result: AsyncResult) => boolean
-    writev_fn: (stream: OutputStream, vectors: OutputVector[], cancellable?: Cancellable | null) => [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    writev_async: (stream: OutputStream, vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    writev_finish: (stream: OutputStream, result: AsyncResult) => [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    readonly parent_class: GObject.ObjectClass
+    readonly write_fn: (stream: OutputStream, buffer: Uint8Array | null, cancellable?: Cancellable | null) => number
+    readonly splice: (stream: OutputStream, source: InputStream, flags: OutputStreamSpliceFlags, cancellable?: Cancellable | null) => number
+    readonly flush: (stream: OutputStream, cancellable?: Cancellable | null) => boolean
+    readonly close_fn: (stream: OutputStream, cancellable?: Cancellable | null) => boolean
+    readonly write_async: (stream: OutputStream, buffer: Uint8Array | null, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly write_finish: (stream: OutputStream, result: AsyncResult) => number
+    readonly splice_async: (stream: OutputStream, source: InputStream, flags: OutputStreamSpliceFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly splice_finish: (stream: OutputStream, result: AsyncResult) => number
+    readonly flush_async: (stream: OutputStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly flush_finish: (stream: OutputStream, result: AsyncResult) => boolean
+    readonly close_async: (stream: OutputStream, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly close_finish: (stream: OutputStream, result: AsyncResult) => boolean
+    readonly writev_fn: (stream: OutputStream, vectors: OutputVector[], cancellable?: Cancellable | null) => [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    readonly writev_async: (stream: OutputStream, vectors: OutputVector[], io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly writev_finish: (stream: OutputStream, result: AsyncResult) => [ /* returnType */ boolean, /* bytes_written */ number | null ]
     static name: string
 }
 class OutputStreamPrivate {
@@ -13231,20 +13297,20 @@ class OutputStreamPrivate {
 }
 class OutputVector {
     /* Fields of Gio-2.0.Gio.OutputVector */
-    buffer: object
-    size: number
+    readonly buffer: object
+    readonly size: number
     static name: string
 }
 abstract class PermissionClass {
     /* Fields of Gio-2.0.Gio.PermissionClass */
-    parent_class: GObject.ObjectClass
-    acquire: (permission: Permission, cancellable?: Cancellable | null) => boolean
-    acquire_async: (permission: Permission, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    acquire_finish: (permission: Permission, result: AsyncResult) => boolean
-    release: (permission: Permission, cancellable?: Cancellable | null) => boolean
-    release_async: (permission: Permission, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    release_finish: (permission: Permission, result: AsyncResult) => boolean
-    reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly acquire: (permission: Permission, cancellable?: Cancellable | null) => boolean
+    readonly acquire_async: (permission: Permission, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly acquire_finish: (permission: Permission, result: AsyncResult) => boolean
+    readonly release: (permission: Permission, cancellable?: Cancellable | null) => boolean
+    readonly release_async: (permission: Permission, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly release_finish: (permission: Permission, result: AsyncResult) => boolean
+    readonly reserved: object[]
     static name: string
 }
 class PermissionPrivate {
@@ -13252,21 +13318,21 @@ class PermissionPrivate {
 }
 abstract class PollableInputStreamInterface {
     /* Fields of Gio-2.0.Gio.PollableInputStreamInterface */
-    g_iface: GObject.TypeInterface
-    can_poll: (stream: PollableInputStream) => boolean
-    is_readable: (stream: PollableInputStream) => boolean
-    create_source: (stream: PollableInputStream, cancellable?: Cancellable | null) => GLib.Source
-    read_nonblocking: (stream: PollableInputStream) => [ /* returnType */ number, /* buffer */ Uint8Array[] | null ]
+    readonly g_iface: GObject.TypeInterface
+    readonly can_poll: (stream: PollableInputStream) => boolean
+    readonly is_readable: (stream: PollableInputStream) => boolean
+    readonly create_source: (stream: PollableInputStream, cancellable?: Cancellable | null) => GLib.Source
+    readonly read_nonblocking: (stream: PollableInputStream) => [ /* returnType */ number, /* buffer */ Uint8Array | null ]
     static name: string
 }
 abstract class PollableOutputStreamInterface {
     /* Fields of Gio-2.0.Gio.PollableOutputStreamInterface */
-    g_iface: GObject.TypeInterface
-    can_poll: (stream: PollableOutputStream) => boolean
-    is_writable: (stream: PollableOutputStream) => boolean
-    create_source: (stream: PollableOutputStream, cancellable?: Cancellable | null) => GLib.Source
-    write_nonblocking: (stream: PollableOutputStream, buffer: Uint8Array[] | null) => number
-    writev_nonblocking: (stream: PollableOutputStream, vectors: OutputVector[]) => [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
+    readonly g_iface: GObject.TypeInterface
+    readonly can_poll: (stream: PollableOutputStream) => boolean
+    readonly is_writable: (stream: PollableOutputStream) => boolean
+    readonly create_source: (stream: PollableOutputStream, cancellable?: Cancellable | null) => GLib.Source
+    readonly write_nonblocking: (stream: PollableOutputStream, buffer: Uint8Array | null) => number
+    readonly writev_nonblocking: (stream: PollableOutputStream, vectors: OutputVector[]) => [ /* returnType */ PollableReturn, /* bytes_written */ number | null ]
     static name: string
 }
 abstract class PowerProfileMonitorInterface {
@@ -13274,7 +13340,7 @@ abstract class PowerProfileMonitorInterface {
 }
 abstract class ProxyAddressClass {
     /* Fields of Gio-2.0.Gio.ProxyAddressClass */
-    parent_class: InetSocketAddressClass
+    readonly parent_class: InetSocketAddressClass
     static name: string
 }
 abstract class ProxyAddressEnumeratorClass {
@@ -13288,47 +13354,47 @@ class ProxyAddressPrivate {
 }
 abstract class ProxyInterface {
     /* Fields of Gio-2.0.Gio.ProxyInterface */
-    g_iface: GObject.TypeInterface
-    connect: (proxy: Proxy, connection: IOStream, proxy_address: ProxyAddress, cancellable?: Cancellable | null) => IOStream
-    connect_async: (proxy: Proxy, connection: IOStream, proxy_address: ProxyAddress, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    connect_finish: (proxy: Proxy, result: AsyncResult) => IOStream
-    supports_hostname: (proxy: Proxy) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly connect: (proxy: Proxy, connection: IOStream, proxy_address: ProxyAddress, cancellable?: Cancellable | null) => IOStream
+    readonly connect_async: (proxy: Proxy, connection: IOStream, proxy_address: ProxyAddress, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly connect_finish: (proxy: Proxy, result: AsyncResult) => IOStream
+    readonly supports_hostname: (proxy: Proxy) => boolean
     static name: string
 }
 abstract class ProxyResolverInterface {
     /* Fields of Gio-2.0.Gio.ProxyResolverInterface */
-    g_iface: GObject.TypeInterface
-    is_supported: (resolver: ProxyResolver) => boolean
-    lookup: (resolver: ProxyResolver, uri: string, cancellable?: Cancellable | null) => string[]
-    lookup_async: (resolver: ProxyResolver, uri: string, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    lookup_finish: (resolver: ProxyResolver, result: AsyncResult) => string[]
+    readonly g_iface: GObject.TypeInterface
+    readonly is_supported: (resolver: ProxyResolver) => boolean
+    readonly lookup: (resolver: ProxyResolver, uri: string, cancellable?: Cancellable | null) => string[]
+    readonly lookup_async: (resolver: ProxyResolver, uri: string, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly lookup_finish: (resolver: ProxyResolver, result: AsyncResult) => string[]
     static name: string
 }
 abstract class RemoteActionGroupInterface {
     /* Fields of Gio-2.0.Gio.RemoteActionGroupInterface */
-    g_iface: GObject.TypeInterface
-    activate_action_full: (remote: RemoteActionGroup, action_name: string, parameter: GLib.Variant | null, platform_data: GLib.Variant) => void
-    change_action_state_full: (remote: RemoteActionGroup, action_name: string, value: GLib.Variant, platform_data: GLib.Variant) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly activate_action_full: (remote: RemoteActionGroup, action_name: string, parameter: GLib.Variant | null, platform_data: GLib.Variant) => void
+    readonly change_action_state_full: (remote: RemoteActionGroup, action_name: string, value: GLib.Variant, platform_data: GLib.Variant) => void
     static name: string
 }
 abstract class ResolverClass {
     /* Fields of Gio-2.0.Gio.ResolverClass */
-    parent_class: GObject.ObjectClass
-    reload: (resolver: Resolver) => void
-    lookup_by_name: (resolver: Resolver, hostname: string, cancellable?: Cancellable | null) => InetAddress[]
-    lookup_by_name_async: (resolver: Resolver, hostname: string, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    lookup_by_name_finish: (resolver: Resolver, result: AsyncResult) => InetAddress[]
-    lookup_by_address: (resolver: Resolver, address: InetAddress, cancellable?: Cancellable | null) => string
-    lookup_by_address_async: (resolver: Resolver, address: InetAddress, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    lookup_by_address_finish: (resolver: Resolver, result: AsyncResult) => string
-    lookup_service_async: (resolver: Resolver, rrname: string, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    lookup_service_finish: (resolver: Resolver, result: AsyncResult) => SrvTarget[]
-    lookup_records: (resolver: Resolver, rrname: string, record_type: ResolverRecordType, cancellable?: Cancellable | null) => GLib.Variant[]
-    lookup_records_async: (resolver: Resolver, rrname: string, record_type: ResolverRecordType, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    lookup_records_finish: (resolver: Resolver, result: AsyncResult) => GLib.Variant[]
-    lookup_by_name_with_flags_async: (resolver: Resolver, hostname: string, flags: ResolverNameLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    lookup_by_name_with_flags_finish: (resolver: Resolver, result: AsyncResult) => InetAddress[]
-    lookup_by_name_with_flags: (resolver: Resolver, hostname: string, flags: ResolverNameLookupFlags, cancellable?: Cancellable | null) => InetAddress[]
+    readonly parent_class: GObject.ObjectClass
+    readonly reload: (resolver: Resolver) => void
+    readonly lookup_by_name: (resolver: Resolver, hostname: string, cancellable?: Cancellable | null) => InetAddress[]
+    readonly lookup_by_name_async: (resolver: Resolver, hostname: string, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly lookup_by_name_finish: (resolver: Resolver, result: AsyncResult) => InetAddress[]
+    readonly lookup_by_address: (resolver: Resolver, address: InetAddress, cancellable?: Cancellable | null) => string
+    readonly lookup_by_address_async: (resolver: Resolver, address: InetAddress, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly lookup_by_address_finish: (resolver: Resolver, result: AsyncResult) => string
+    readonly lookup_service_async: (resolver: Resolver, rrname: string, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly lookup_service_finish: (resolver: Resolver, result: AsyncResult) => SrvTarget[]
+    readonly lookup_records: (resolver: Resolver, rrname: string, record_type: ResolverRecordType, cancellable?: Cancellable | null) => GLib.Variant[]
+    readonly lookup_records_async: (resolver: Resolver, rrname: string, record_type: ResolverRecordType, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly lookup_records_finish: (resolver: Resolver, result: AsyncResult) => GLib.Variant[]
+    readonly lookup_by_name_with_flags_async: (resolver: Resolver, hostname: string, flags: ResolverNameLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly lookup_by_name_with_flags_finish: (resolver: Resolver, result: AsyncResult) => InetAddress[]
+    readonly lookup_by_name_with_flags: (resolver: Resolver, hostname: string, flags: ResolverNameLookupFlags, cancellable?: Cancellable | null) => InetAddress[]
     static name: string
 }
 class ResolverPrivate {
@@ -13351,26 +13417,26 @@ class Resource {
 }
 abstract class SeekableIface {
     /* Fields of Gio-2.0.Gio.SeekableIface */
-    g_iface: GObject.TypeInterface
-    tell: (seekable: Seekable) => number
-    can_seek: (seekable: Seekable) => boolean
-    seek: (seekable: Seekable, offset: number, type: GLib.SeekType, cancellable?: Cancellable | null) => boolean
-    can_truncate: (seekable: Seekable) => boolean
-    truncate_fn: (seekable: Seekable, offset: number, cancellable?: Cancellable | null) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly tell: (seekable: Seekable) => number
+    readonly can_seek: (seekable: Seekable) => boolean
+    readonly seek: (seekable: Seekable, offset: number, type: GLib.SeekType, cancellable?: Cancellable | null) => boolean
+    readonly can_truncate: (seekable: Seekable) => boolean
+    readonly truncate_fn: (seekable: Seekable, offset: number, cancellable?: Cancellable | null) => boolean
     static name: string
 }
 abstract class SettingsBackendClass {
     /* Fields of Gio-2.0.Gio.SettingsBackendClass */
-    parent_class: GObject.ObjectClass
-    read: (backend: SettingsBackend, key: string, expected_type: GLib.VariantType, default_value: boolean) => GLib.Variant
-    get_writable: (backend: SettingsBackend, key: string) => boolean
-    write: (backend: SettingsBackend, key: string, value: GLib.Variant, origin_tag?: object | null) => boolean
-    write_tree: (backend: SettingsBackend, tree: GLib.Tree, origin_tag?: object | null) => boolean
-    reset: (backend: SettingsBackend, key: string, origin_tag?: object | null) => void
-    subscribe: (backend: SettingsBackend, name: string) => void
-    unsubscribe: (backend: SettingsBackend, name: string) => void
-    sync: (backend: SettingsBackend) => void
-    read_user_value: (backend: SettingsBackend, key: string, expected_type: GLib.VariantType) => GLib.Variant
+    readonly parent_class: GObject.ObjectClass
+    readonly read: (backend: SettingsBackend, key: string, expected_type: GLib.VariantType, default_value: boolean) => GLib.Variant
+    readonly get_writable: (backend: SettingsBackend, key: string) => boolean
+    readonly write: (backend: SettingsBackend, key: string, value: GLib.Variant, origin_tag?: object | null) => boolean
+    readonly write_tree: (backend: SettingsBackend, tree: GLib.Tree, origin_tag?: object | null) => boolean
+    readonly reset: (backend: SettingsBackend, key: string, origin_tag?: object | null) => void
+    readonly subscribe: (backend: SettingsBackend, name: string) => void
+    readonly unsubscribe: (backend: SettingsBackend, name: string) => void
+    readonly sync: (backend: SettingsBackend) => void
+    readonly read_user_value: (backend: SettingsBackend, key: string, expected_type: GLib.VariantType) => GLib.Variant
     static name: string
 }
 class SettingsBackendPrivate {
@@ -13378,12 +13444,12 @@ class SettingsBackendPrivate {
 }
 abstract class SettingsClass {
     /* Fields of Gio-2.0.Gio.SettingsClass */
-    parent_class: GObject.ObjectClass
-    writable_changed: (settings: Settings, key: string) => void
-    changed: (settings: Settings, key: string) => void
-    writable_change_event: (settings: Settings, key: GLib.Quark) => boolean
-    change_event: (settings: Settings, keys: GLib.Quark, n_keys: number) => boolean
-    padding: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly writable_changed: (settings: Settings, key: string) => void
+    readonly changed: (settings: Settings, key: string) => void
+    readonly writable_change_event: (settings: Settings, key: GLib.Quark) => boolean
+    readonly change_event: (settings: Settings, keys: GLib.Quark, n_keys: number) => boolean
+    readonly padding: object[]
     static name: string
 }
 class SettingsPrivate {
@@ -13436,7 +13502,7 @@ abstract class SimpleAsyncResultClass {
 }
 abstract class SimpleProxyResolverClass {
     /* Fields of Gio-2.0.Gio.SimpleProxyResolverClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SimpleProxyResolverPrivate {
@@ -13444,28 +13510,28 @@ class SimpleProxyResolverPrivate {
 }
 abstract class SocketAddressClass {
     /* Fields of Gio-2.0.Gio.SocketAddressClass */
-    parent_class: GObject.ObjectClass
-    get_family: (address: SocketAddress) => SocketFamily
-    get_native_size: (address: SocketAddress) => number
-    to_native: (address: SocketAddress, dest: object | null, destlen: number) => boolean
+    readonly parent_class: GObject.ObjectClass
+    readonly get_family: (address: SocketAddress) => SocketFamily
+    readonly get_native_size: (address: SocketAddress) => number
+    readonly to_native: (address: SocketAddress, dest: object | null, destlen: number) => boolean
     static name: string
 }
 abstract class SocketAddressEnumeratorClass {
     /* Fields of Gio-2.0.Gio.SocketAddressEnumeratorClass */
-    next: (enumerator: SocketAddressEnumerator, cancellable?: Cancellable | null) => SocketAddress
-    next_async: (enumerator: SocketAddressEnumerator, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    next_finish: (enumerator: SocketAddressEnumerator, result: AsyncResult) => SocketAddress
+    readonly next: (enumerator: SocketAddressEnumerator, cancellable?: Cancellable | null) => SocketAddress
+    readonly next_async: (enumerator: SocketAddressEnumerator, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly next_finish: (enumerator: SocketAddressEnumerator, result: AsyncResult) => SocketAddress
     static name: string
 }
 abstract class SocketClass {
     /* Fields of Gio-2.0.Gio.SocketClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SocketClientClass {
     /* Fields of Gio-2.0.Gio.SocketClientClass */
-    parent_class: GObject.ObjectClass
-    event: (client: SocketClient, event: SocketClientEvent, connectable: SocketConnectable, connection: IOStream) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly event: (client: SocketClient, event: SocketClientEvent, connectable: SocketConnectable, connection: IOStream) => void
     static name: string
 }
 class SocketClientPrivate {
@@ -13473,15 +13539,15 @@ class SocketClientPrivate {
 }
 abstract class SocketConnectableIface {
     /* Fields of Gio-2.0.Gio.SocketConnectableIface */
-    g_iface: GObject.TypeInterface
-    enumerate: (connectable: SocketConnectable) => SocketAddressEnumerator
-    proxy_enumerate: (connectable: SocketConnectable) => SocketAddressEnumerator
-    to_string: (connectable: SocketConnectable) => string
+    readonly g_iface: GObject.TypeInterface
+    readonly enumerate: (connectable: SocketConnectable) => SocketAddressEnumerator
+    readonly proxy_enumerate: (connectable: SocketConnectable) => SocketAddressEnumerator
+    readonly to_string: (connectable: SocketConnectable) => string
     static name: string
 }
 abstract class SocketConnectionClass {
     /* Fields of Gio-2.0.Gio.SocketConnectionClass */
-    parent_class: IOStreamClass
+    readonly parent_class: IOStreamClass
     static name: string
 }
 class SocketConnectionPrivate {
@@ -13489,11 +13555,11 @@ class SocketConnectionPrivate {
 }
 abstract class SocketControlMessageClass {
     /* Fields of Gio-2.0.Gio.SocketControlMessageClass */
-    parent_class: GObject.ObjectClass
-    get_size: (message: SocketControlMessage) => number
-    get_level: (message: SocketControlMessage) => number
-    get_type: (message: SocketControlMessage) => number
-    serialize: (message: SocketControlMessage, data: object) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly get_size: (message: SocketControlMessage) => number
+    readonly get_level: (message: SocketControlMessage) => number
+    readonly get_type: (message: SocketControlMessage) => number
+    readonly serialize: (message: SocketControlMessage, data: object) => void
     static name: string
 }
 class SocketControlMessagePrivate {
@@ -13501,9 +13567,9 @@ class SocketControlMessagePrivate {
 }
 abstract class SocketListenerClass {
     /* Fields of Gio-2.0.Gio.SocketListenerClass */
-    parent_class: GObject.ObjectClass
-    changed: (listener: SocketListener) => void
-    event: (listener: SocketListener, event: SocketListenerEvent, socket: Socket) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (listener: SocketListener) => void
+    readonly event: (listener: SocketListener, event: SocketListenerEvent, socket: Socket) => void
     static name: string
 }
 class SocketListenerPrivate {
@@ -13514,8 +13580,8 @@ class SocketPrivate {
 }
 abstract class SocketServiceClass {
     /* Fields of Gio-2.0.Gio.SocketServiceClass */
-    parent_class: SocketListenerClass
-    incoming: (service: SocketService, connection: SocketConnection, source_object: GObject.Object) => boolean
+    readonly parent_class: SocketListenerClass
+    readonly incoming: (service: SocketService, connection: SocketConnection, source_object: GObject.Object) => boolean
     static name: string
 }
 class SocketServicePrivate {
@@ -13547,7 +13613,7 @@ abstract class TaskClass {
 }
 abstract class TcpConnectionClass {
     /* Fields of Gio-2.0.Gio.TcpConnectionClass */
-    parent_class: SocketConnectionClass
+    readonly parent_class: SocketConnectionClass
     static name: string
 }
 class TcpConnectionPrivate {
@@ -13555,7 +13621,7 @@ class TcpConnectionPrivate {
 }
 abstract class TcpWrapperConnectionClass {
     /* Fields of Gio-2.0.Gio.TcpWrapperConnectionClass */
-    parent_class: TcpConnectionClass
+    readonly parent_class: TcpConnectionClass
     static name: string
 }
 class TcpWrapperConnectionPrivate {
@@ -13566,8 +13632,8 @@ abstract class ThemedIconClass {
 }
 abstract class ThreadedSocketServiceClass {
     /* Fields of Gio-2.0.Gio.ThreadedSocketServiceClass */
-    parent_class: SocketServiceClass
-    run: (service: ThreadedSocketService, connection: SocketConnection, source_object: GObject.Object) => boolean
+    readonly parent_class: SocketServiceClass
+    readonly run: (service: ThreadedSocketService, connection: SocketConnection, source_object: GObject.Object) => boolean
     static name: string
 }
 class ThreadedSocketServicePrivate {
@@ -13575,22 +13641,22 @@ class ThreadedSocketServicePrivate {
 }
 abstract class TlsBackendInterface {
     /* Fields of Gio-2.0.Gio.TlsBackendInterface */
-    g_iface: GObject.TypeInterface
-    supports_tls: (backend: TlsBackend) => boolean
-    get_certificate_type: () => GObject.Type
-    get_client_connection_type: () => GObject.Type
-    get_server_connection_type: () => GObject.Type
-    get_file_database_type: () => GObject.Type
-    get_default_database: (backend: TlsBackend) => TlsDatabase
-    supports_dtls: (backend: TlsBackend) => boolean
-    get_dtls_client_connection_type: () => GObject.Type
-    get_dtls_server_connection_type: () => GObject.Type
+    readonly g_iface: GObject.TypeInterface
+    readonly supports_tls: (backend: TlsBackend) => boolean
+    readonly get_certificate_type: () => GObject.Type
+    readonly get_client_connection_type: () => GObject.Type
+    readonly get_server_connection_type: () => GObject.Type
+    readonly get_file_database_type: () => GObject.Type
+    readonly get_default_database: (backend: TlsBackend) => TlsDatabase
+    readonly supports_dtls: (backend: TlsBackend) => boolean
+    readonly get_dtls_client_connection_type: () => GObject.Type
+    readonly get_dtls_server_connection_type: () => GObject.Type
     static name: string
 }
 abstract class TlsCertificateClass {
     /* Fields of Gio-2.0.Gio.TlsCertificateClass */
-    parent_class: GObject.ObjectClass
-    verify: (cert: TlsCertificate, identity?: SocketConnectable | null, trusted_ca?: TlsCertificate | null) => TlsCertificateFlags
+    readonly parent_class: GObject.ObjectClass
+    readonly verify: (cert: TlsCertificate, identity?: SocketConnectable | null, trusted_ca?: TlsCertificate | null) => TlsCertificateFlags
     static name: string
 }
 class TlsCertificatePrivate {
@@ -13598,19 +13664,19 @@ class TlsCertificatePrivate {
 }
 abstract class TlsClientConnectionInterface {
     /* Fields of Gio-2.0.Gio.TlsClientConnectionInterface */
-    g_iface: GObject.TypeInterface
-    copy_session_state: (conn: TlsClientConnection, source: TlsClientConnection) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly copy_session_state: (conn: TlsClientConnection, source: TlsClientConnection) => void
     static name: string
 }
 abstract class TlsConnectionClass {
     /* Fields of Gio-2.0.Gio.TlsConnectionClass */
-    parent_class: IOStreamClass
-    accept_certificate: (connection: TlsConnection, peer_cert: TlsCertificate, errors: TlsCertificateFlags) => boolean
-    handshake: (conn: TlsConnection, cancellable?: Cancellable | null) => boolean
-    handshake_async: (conn: TlsConnection, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    handshake_finish: (conn: TlsConnection, result: AsyncResult) => boolean
-    get_binding_data: (conn: TlsConnection, type: TlsChannelBindingType, data: Uint8Array[]) => boolean
-    get_negotiated_protocol: (conn: TlsConnection) => string | null
+    readonly parent_class: IOStreamClass
+    readonly accept_certificate: (connection: TlsConnection, peer_cert: TlsCertificate, errors: TlsCertificateFlags) => boolean
+    readonly handshake: (conn: TlsConnection, cancellable?: Cancellable | null) => boolean
+    readonly handshake_async: (conn: TlsConnection, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly handshake_finish: (conn: TlsConnection, result: AsyncResult) => boolean
+    readonly get_binding_data: (conn: TlsConnection, type: TlsChannelBindingType, data: Uint8Array) => boolean
+    readonly get_negotiated_protocol: (conn: TlsConnection) => string | null
     static name: string
 }
 class TlsConnectionPrivate {
@@ -13618,20 +13684,20 @@ class TlsConnectionPrivate {
 }
 abstract class TlsDatabaseClass {
     /* Fields of Gio-2.0.Gio.TlsDatabaseClass */
-    parent_class: GObject.ObjectClass
-    verify_chain: (self: TlsDatabase, chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null) => TlsCertificateFlags
-    verify_chain_async: (self: TlsDatabase, chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    verify_chain_finish: (self: TlsDatabase, result: AsyncResult) => TlsCertificateFlags
-    create_certificate_handle: (self: TlsDatabase, certificate: TlsCertificate) => string | null
-    lookup_certificate_for_handle: (self: TlsDatabase, handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null) => TlsCertificate | null
-    lookup_certificate_for_handle_async: (self: TlsDatabase, handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    lookup_certificate_for_handle_finish: (self: TlsDatabase, result: AsyncResult) => TlsCertificate
-    lookup_certificate_issuer: (self: TlsDatabase, certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null) => TlsCertificate
-    lookup_certificate_issuer_async: (self: TlsDatabase, certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    lookup_certificate_issuer_finish: (self: TlsDatabase, result: AsyncResult) => TlsCertificate
-    lookup_certificates_issued_by: (self: TlsDatabase, issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null) => TlsCertificate[]
-    lookup_certificates_issued_by_async: (self: TlsDatabase, issuer_raw_dn: Uint8Array[], interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    lookup_certificates_issued_by_finish: (self: TlsDatabase, result: AsyncResult) => TlsCertificate[]
+    readonly parent_class: GObject.ObjectClass
+    readonly verify_chain: (self: TlsDatabase, chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null) => TlsCertificateFlags
+    readonly verify_chain_async: (self: TlsDatabase, chain: TlsCertificate, purpose: string, identity: SocketConnectable | null, interaction: TlsInteraction | null, flags: TlsDatabaseVerifyFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly verify_chain_finish: (self: TlsDatabase, result: AsyncResult) => TlsCertificateFlags
+    readonly create_certificate_handle: (self: TlsDatabase, certificate: TlsCertificate) => string | null
+    readonly lookup_certificate_for_handle: (self: TlsDatabase, handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null) => TlsCertificate | null
+    readonly lookup_certificate_for_handle_async: (self: TlsDatabase, handle: string, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly lookup_certificate_for_handle_finish: (self: TlsDatabase, result: AsyncResult) => TlsCertificate
+    readonly lookup_certificate_issuer: (self: TlsDatabase, certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null) => TlsCertificate
+    readonly lookup_certificate_issuer_async: (self: TlsDatabase, certificate: TlsCertificate, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly lookup_certificate_issuer_finish: (self: TlsDatabase, result: AsyncResult) => TlsCertificate
+    readonly lookup_certificates_issued_by: (self: TlsDatabase, issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null) => TlsCertificate[]
+    readonly lookup_certificates_issued_by_async: (self: TlsDatabase, issuer_raw_dn: Uint8Array, interaction: TlsInteraction | null, flags: TlsDatabaseLookupFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly lookup_certificates_issued_by_finish: (self: TlsDatabase, result: AsyncResult) => TlsCertificate[]
     static name: string
 }
 class TlsDatabasePrivate {
@@ -13639,17 +13705,17 @@ class TlsDatabasePrivate {
 }
 abstract class TlsFileDatabaseInterface {
     /* Fields of Gio-2.0.Gio.TlsFileDatabaseInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class TlsInteractionClass {
     /* Fields of Gio-2.0.Gio.TlsInteractionClass */
-    ask_password: (interaction: TlsInteraction, password: TlsPassword, cancellable?: Cancellable | null) => TlsInteractionResult
-    ask_password_async: (interaction: TlsInteraction, password: TlsPassword, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    ask_password_finish: (interaction: TlsInteraction, result: AsyncResult) => TlsInteractionResult
-    request_certificate: (interaction: TlsInteraction, connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable?: Cancellable | null) => TlsInteractionResult
-    request_certificate_async: (interaction: TlsInteraction, connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    request_certificate_finish: (interaction: TlsInteraction, result: AsyncResult) => TlsInteractionResult
+    readonly ask_password: (interaction: TlsInteraction, password: TlsPassword, cancellable?: Cancellable | null) => TlsInteractionResult
+    readonly ask_password_async: (interaction: TlsInteraction, password: TlsPassword, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly ask_password_finish: (interaction: TlsInteraction, result: AsyncResult) => TlsInteractionResult
+    readonly request_certificate: (interaction: TlsInteraction, connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable?: Cancellable | null) => TlsInteractionResult
+    readonly request_certificate_async: (interaction: TlsInteraction, connection: TlsConnection, flags: TlsCertificateRequestFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly request_certificate_finish: (interaction: TlsInteraction, result: AsyncResult) => TlsInteractionResult
     static name: string
 }
 class TlsInteractionPrivate {
@@ -13657,10 +13723,10 @@ class TlsInteractionPrivate {
 }
 abstract class TlsPasswordClass {
     /* Fields of Gio-2.0.Gio.TlsPasswordClass */
-    parent_class: GObject.ObjectClass
-    get_value: (password: TlsPassword) => Uint8Array[]
-    set_value: (password: TlsPassword, value: Uint8Array[], destroy?: GLib.DestroyNotify | null) => void
-    get_default_warning: (password: TlsPassword) => string
+    readonly parent_class: GObject.ObjectClass
+    readonly get_value: (password: TlsPassword) => Uint8Array
+    readonly set_value: (password: TlsPassword, value: Uint8Array, destroy?: GLib.DestroyNotify | null) => void
+    readonly get_default_warning: (password: TlsPassword) => string
     static name: string
 }
 class TlsPasswordPrivate {
@@ -13668,12 +13734,12 @@ class TlsPasswordPrivate {
 }
 abstract class TlsServerConnectionInterface {
     /* Fields of Gio-2.0.Gio.TlsServerConnectionInterface */
-    g_iface: GObject.TypeInterface
+    readonly g_iface: GObject.TypeInterface
     static name: string
 }
 abstract class UnixConnectionClass {
     /* Fields of Gio-2.0.Gio.UnixConnectionClass */
-    parent_class: SocketConnectionClass
+    readonly parent_class: SocketConnectionClass
     static name: string
 }
 class UnixConnectionPrivate {
@@ -13681,7 +13747,7 @@ class UnixConnectionPrivate {
 }
 abstract class UnixCredentialsMessageClass {
     /* Fields of Gio-2.0.Gio.UnixCredentialsMessageClass */
-    parent_class: SocketControlMessageClass
+    readonly parent_class: SocketControlMessageClass
     static name: string
 }
 class UnixCredentialsMessagePrivate {
@@ -13689,7 +13755,7 @@ class UnixCredentialsMessagePrivate {
 }
 abstract class UnixFDListClass {
     /* Fields of Gio-2.0.Gio.UnixFDListClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class UnixFDListPrivate {
@@ -13697,7 +13763,7 @@ class UnixFDListPrivate {
 }
 abstract class UnixFDMessageClass {
     /* Fields of Gio-2.0.Gio.UnixFDMessageClass */
-    parent_class: SocketControlMessageClass
+    readonly parent_class: SocketControlMessageClass
     static name: string
 }
 class UnixFDMessagePrivate {
@@ -13705,7 +13771,7 @@ class UnixFDMessagePrivate {
 }
 abstract class UnixInputStreamClass {
     /* Fields of Gio-2.0.Gio.UnixInputStreamClass */
-    parent_class: InputStreamClass
+    readonly parent_class: InputStreamClass
     static name: string
 }
 class UnixInputStreamPrivate {
@@ -13739,7 +13805,7 @@ class UnixMountPoint {
 }
 abstract class UnixOutputStreamClass {
     /* Fields of Gio-2.0.Gio.UnixOutputStreamClass */
-    parent_class: OutputStreamClass
+    readonly parent_class: OutputStreamClass
     static name: string
 }
 class UnixOutputStreamPrivate {
@@ -13747,7 +13813,7 @@ class UnixOutputStreamPrivate {
 }
 abstract class UnixSocketAddressClass {
     /* Fields of Gio-2.0.Gio.UnixSocketAddressClass */
-    parent_class: SocketAddressClass
+    readonly parent_class: SocketAddressClass
     static name: string
 }
 class UnixSocketAddressPrivate {
@@ -13755,76 +13821,76 @@ class UnixSocketAddressPrivate {
 }
 abstract class VfsClass {
     /* Fields of Gio-2.0.Gio.VfsClass */
-    parent_class: GObject.ObjectClass
-    is_active: (vfs: Vfs) => boolean
-    get_file_for_path: (vfs: Vfs, path: string) => File
-    get_file_for_uri: (vfs: Vfs, uri: string) => File
-    get_supported_uri_schemes: (vfs: Vfs) => string[]
-    parse_name: (vfs: Vfs, parse_name: string) => File
-    local_file_add_info: (vfs: Vfs, filename: string, device: number, attribute_matcher: FileAttributeMatcher, info: FileInfo, cancellable: Cancellable | null, extra_data: object | null, free_extra_data: GLib.DestroyNotify) => void
-    add_writable_namespaces: (vfs: Vfs, list: FileAttributeInfoList) => void
-    local_file_set_attributes: (vfs: Vfs, filename: string, info: FileInfo, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => boolean
-    local_file_removed: (vfs: Vfs, filename: string) => void
-    local_file_moved: (vfs: Vfs, source: string, dest: string) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly is_active: (vfs: Vfs) => boolean
+    readonly get_file_for_path: (vfs: Vfs, path: string) => File
+    readonly get_file_for_uri: (vfs: Vfs, uri: string) => File
+    readonly get_supported_uri_schemes: (vfs: Vfs) => string[]
+    readonly parse_name: (vfs: Vfs, parse_name: string) => File
+    readonly local_file_add_info: (vfs: Vfs, filename: string, device: number, attribute_matcher: FileAttributeMatcher, info: FileInfo, cancellable: Cancellable | null, extra_data: object | null, free_extra_data: GLib.DestroyNotify) => void
+    readonly add_writable_namespaces: (vfs: Vfs, list: FileAttributeInfoList) => void
+    readonly local_file_set_attributes: (vfs: Vfs, filename: string, info: FileInfo, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => boolean
+    readonly local_file_removed: (vfs: Vfs, filename: string) => void
+    readonly local_file_moved: (vfs: Vfs, source: string, dest: string) => void
     static name: string
 }
 abstract class VolumeIface {
     /* Fields of Gio-2.0.Gio.VolumeIface */
-    g_iface: GObject.TypeInterface
-    changed: (volume: Volume) => void
-    removed: (volume: Volume) => void
-    get_name: (volume: Volume) => string
-    get_icon: (volume: Volume) => Icon
-    get_uuid: (volume: Volume) => string | null
-    get_drive: (volume: Volume) => Drive | null
-    get_mount: (volume: Volume) => Mount | null
-    can_mount: (volume: Volume) => boolean
-    can_eject: (volume: Volume) => boolean
-    mount_fn: (volume: Volume, flags: MountMountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    mount_finish: (volume: Volume, result: AsyncResult) => boolean
-    eject: (volume: Volume, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    eject_finish: (volume: Volume, result: AsyncResult) => boolean
-    get_identifier: (volume: Volume, kind: string) => string | null
-    enumerate_identifiers: (volume: Volume) => string[]
-    should_automount: (volume: Volume) => boolean
-    get_activation_root: (volume: Volume) => File | null
-    eject_with_operation: (volume: Volume, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
-    eject_with_operation_finish: (volume: Volume, result: AsyncResult) => boolean
-    get_sort_key: (volume: Volume) => string | null
-    get_symbolic_icon: (volume: Volume) => Icon
+    readonly g_iface: GObject.TypeInterface
+    readonly changed: (volume: Volume) => void
+    readonly removed: (volume: Volume) => void
+    readonly get_name: (volume: Volume) => string
+    readonly get_icon: (volume: Volume) => Icon
+    readonly get_uuid: (volume: Volume) => string | null
+    readonly get_drive: (volume: Volume) => Drive | null
+    readonly get_mount: (volume: Volume) => Mount | null
+    readonly can_mount: (volume: Volume) => boolean
+    readonly can_eject: (volume: Volume) => boolean
+    readonly mount_fn: (volume: Volume, flags: MountMountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly mount_finish: (volume: Volume, result: AsyncResult) => boolean
+    readonly eject: (volume: Volume, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly eject_finish: (volume: Volume, result: AsyncResult) => boolean
+    readonly get_identifier: (volume: Volume, kind: string) => string | null
+    readonly enumerate_identifiers: (volume: Volume) => string[]
+    readonly should_automount: (volume: Volume) => boolean
+    readonly get_activation_root: (volume: Volume) => File | null
+    readonly eject_with_operation: (volume: Volume, flags: MountUnmountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
+    readonly eject_with_operation_finish: (volume: Volume, result: AsyncResult) => boolean
+    readonly get_sort_key: (volume: Volume) => string | null
+    readonly get_symbolic_icon: (volume: Volume) => Icon
     static name: string
 }
 abstract class VolumeMonitorClass {
     /* Fields of Gio-2.0.Gio.VolumeMonitorClass */
-    parent_class: GObject.ObjectClass
-    volume_added: (volume_monitor: VolumeMonitor, volume: Volume) => void
-    volume_removed: (volume_monitor: VolumeMonitor, volume: Volume) => void
-    volume_changed: (volume_monitor: VolumeMonitor, volume: Volume) => void
-    mount_added: (volume_monitor: VolumeMonitor, mount: Mount) => void
-    mount_removed: (volume_monitor: VolumeMonitor, mount: Mount) => void
-    mount_pre_unmount: (volume_monitor: VolumeMonitor, mount: Mount) => void
-    mount_changed: (volume_monitor: VolumeMonitor, mount: Mount) => void
-    drive_connected: (volume_monitor: VolumeMonitor, drive: Drive) => void
-    drive_disconnected: (volume_monitor: VolumeMonitor, drive: Drive) => void
-    drive_changed: (volume_monitor: VolumeMonitor, drive: Drive) => void
-    is_supported: () => boolean
-    get_connected_drives: (volume_monitor: VolumeMonitor) => Drive[]
-    get_volumes: (volume_monitor: VolumeMonitor) => Volume[]
-    get_mounts: (volume_monitor: VolumeMonitor) => Mount[]
-    get_volume_for_uuid: (volume_monitor: VolumeMonitor, uuid: string) => Volume | null
-    get_mount_for_uuid: (volume_monitor: VolumeMonitor, uuid: string) => Mount | null
-    drive_eject_button: (volume_monitor: VolumeMonitor, drive: Drive) => void
-    drive_stop_button: (volume_monitor: VolumeMonitor, drive: Drive) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly volume_added: (volume_monitor: VolumeMonitor, volume: Volume) => void
+    readonly volume_removed: (volume_monitor: VolumeMonitor, volume: Volume) => void
+    readonly volume_changed: (volume_monitor: VolumeMonitor, volume: Volume) => void
+    readonly mount_added: (volume_monitor: VolumeMonitor, mount: Mount) => void
+    readonly mount_removed: (volume_monitor: VolumeMonitor, mount: Mount) => void
+    readonly mount_pre_unmount: (volume_monitor: VolumeMonitor, mount: Mount) => void
+    readonly mount_changed: (volume_monitor: VolumeMonitor, mount: Mount) => void
+    readonly drive_connected: (volume_monitor: VolumeMonitor, drive: Drive) => void
+    readonly drive_disconnected: (volume_monitor: VolumeMonitor, drive: Drive) => void
+    readonly drive_changed: (volume_monitor: VolumeMonitor, drive: Drive) => void
+    readonly is_supported: () => boolean
+    readonly get_connected_drives: (volume_monitor: VolumeMonitor) => Drive[]
+    readonly get_volumes: (volume_monitor: VolumeMonitor) => Volume[]
+    readonly get_mounts: (volume_monitor: VolumeMonitor) => Mount[]
+    readonly get_volume_for_uuid: (volume_monitor: VolumeMonitor, uuid: string) => Volume | null
+    readonly get_mount_for_uuid: (volume_monitor: VolumeMonitor, uuid: string) => Mount | null
+    readonly drive_eject_button: (volume_monitor: VolumeMonitor, drive: Drive) => void
+    readonly drive_stop_button: (volume_monitor: VolumeMonitor, drive: Drive) => void
     static name: string
 }
 abstract class ZlibCompressorClass {
     /* Fields of Gio-2.0.Gio.ZlibCompressorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ZlibDecompressorClass {
     /* Fields of Gio-2.0.Gio.ZlibDecompressorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

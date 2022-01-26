@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * ClutterGst-3.0
  */
@@ -34,12 +40,12 @@ enum SeekFlags {
     NONE,
     ACCURATE,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const VERSION: number
-export const VERSION_HEX: number
-export const VERSION_S: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const VERSION: number
+const VERSION_HEX: number
+const VERSION_S: string
 function create_video_sink(): Gst.Element
 function init(argv?: string[] | null): [ /* returnType */ Clutter.InitError, /* argv */ string[] | null ]
 function init_with_args(argv: string[] | null, parameter_string: string, entries: GLib.OptionEntry, translation_domain: string): [ /* returnType */ Clutter.InitError, /* argv */ string[] | null ]
@@ -89,7 +95,8 @@ class Player {
     emit(sigName: "size-change", width: number, height: number): void
     static name: string
 }
-export interface Aspectratio_ConstructProps extends Content_ConstructProps {
+interface Aspectratio_ConstructProps extends Content_ConstructProps {
+    /* Constructor properties of ClutterGst-3.0.ClutterGst.Aspectratio */
     fill_allocation?: boolean
     paint_borders?: boolean
 }
@@ -104,7 +111,7 @@ class Aspectratio {
     player: GObject.Object
     sink: VideoSink
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ClutterGst-3.0.ClutterGst.Content */
     get_frame(): Frame
     get_overlays(): Overlays
@@ -138,6 +145,12 @@ class Aspectratio {
     /* Methods of Clutter-1.0.Clutter.Content */
     get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     invalidate(): void
+    /* Virtual methods of ClutterGst-3.0.ClutterGst.Aspectratio */
+    vfunc_attached(actor: Clutter.Actor): void
+    vfunc_detached(actor: Clutter.Actor): void
+    vfunc_get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
+    vfunc_invalidate(): void
+    vfunc_paint_content(actor: Clutter.Actor, node: Clutter.PaintNode): void
     /* Virtual methods of ClutterGst-3.0.ClutterGst.Content */
     vfunc_has_painting_content(): boolean
     vfunc_attached(actor: Clutter.Actor): void
@@ -191,8 +204,10 @@ class Aspectratio {
     _init (config?: Aspectratio_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Camera_ConstructProps extends GObject.Object_ConstructProps {
+interface Camera_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ClutterGst-3.0.ClutterGst.Camera */
     device?: CameraDevice
+    /* Constructor properties of ClutterGst-3.0.ClutterGst.Player */
     audio_volume?: number
     playing?: boolean
 }
@@ -204,7 +219,7 @@ class Camera {
     readonly idle: boolean
     playing: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ClutterGst-3.0.ClutterGst.Camera */
     get_brightness(cur_value: number): boolean
     get_brightness_range(min_value: number, max_value: number, default_value: number): boolean
@@ -348,14 +363,15 @@ class Camera {
     static new(): Camera
     static $gtype: GObject.Type
 }
-export interface CameraDevice_ConstructProps extends GObject.Object_ConstructProps {
+interface CameraDevice_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ClutterGst-3.0.ClutterGst.CameraDevice */
     element_factory?: Gst.ElementFactory
     name?: string
     node?: string
 }
 class CameraDevice {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ClutterGst-3.0.ClutterGst.CameraDevice */
     get_capture_resolution(): [ /* width */ number, /* height */ number ]
     get_name(): string
@@ -411,11 +427,11 @@ class CameraDevice {
     _init (config?: CameraDevice_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CameraManager_ConstructProps extends GObject.Object_ConstructProps {
+interface CameraManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CameraManager {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ClutterGst-3.0.ClutterGst.CameraManager */
     get_camera_devices(): CameraDevice[]
     /* Methods of GObject-2.0.GObject.Object */
@@ -470,7 +486,8 @@ class CameraManager {
     static get_default(): CameraManager
     static $gtype: GObject.Type
 }
-export interface Content_ConstructProps extends GObject.Object_ConstructProps {
+interface Content_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ClutterGst-3.0.ClutterGst.Content */
     frame?: Frame
     paint_frame?: boolean
     paint_overlays?: boolean
@@ -485,7 +502,7 @@ class Content {
     player: GObject.Object
     sink: VideoSink
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ClutterGst-3.0.ClutterGst.Content */
     get_frame(): Frame
     get_overlays(): Overlays
@@ -570,7 +587,8 @@ class Content {
     static new_with_sink(sink: VideoSink): Clutter.Content
     static $gtype: GObject.Type
 }
-export interface Crop_ConstructProps extends Content_ConstructProps {
+interface Crop_ConstructProps extends Content_ConstructProps {
+    /* Constructor properties of ClutterGst-3.0.ClutterGst.Crop */
     cull_backface?: boolean
     input_region?: Box
     output_region?: Box
@@ -589,7 +607,7 @@ class Crop {
     player: GObject.Object
     sink: VideoSink
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ClutterGst-3.0.ClutterGst.Content */
     get_frame(): Frame
     get_overlays(): Overlays
@@ -623,6 +641,12 @@ class Crop {
     /* Methods of Clutter-1.0.Clutter.Content */
     get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
     invalidate(): void
+    /* Virtual methods of ClutterGst-3.0.ClutterGst.Crop */
+    vfunc_attached(actor: Clutter.Actor): void
+    vfunc_detached(actor: Clutter.Actor): void
+    vfunc_get_preferred_size(): [ /* returnType */ boolean, /* width */ number, /* height */ number ]
+    vfunc_invalidate(): void
+    vfunc_paint_content(actor: Clutter.Actor, node: Clutter.PaintNode): void
     /* Virtual methods of ClutterGst-3.0.ClutterGst.Content */
     vfunc_has_painting_content(): boolean
     vfunc_attached(actor: Clutter.Actor): void
@@ -682,7 +706,8 @@ class Crop {
     static new(): Crop
     static $gtype: GObject.Type
 }
-export interface Playback_ConstructProps extends GObject.Object_ConstructProps {
+interface Playback_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ClutterGst-3.0.ClutterGst.Playback */
     audio_stream?: number
     progress?: number
     seek_flags?: SeekFlags
@@ -691,6 +716,7 @@ export interface Playback_ConstructProps extends GObject.Object_ConstructProps {
     subtitle_uri?: string
     uri?: string
     user_agent?: string
+    /* Constructor properties of ClutterGst-3.0.ClutterGst.Player */
     audio_volume?: number
     playing?: boolean
 }
@@ -714,11 +740,8 @@ class Playback {
     audio_volume: number
     readonly idle: boolean
     playing: boolean
-    /* Fields of ClutterGst-3.0.ClutterGst.Playback */
-    parent: GObject.Object
-    priv: PlaybackPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ClutterGst-3.0.ClutterGst.Playback */
     get_audio_stream(): number
     get_audio_streams(): string[]
@@ -873,7 +896,8 @@ class Playback {
     static new(): Playback
     static $gtype: GObject.Type
 }
-export interface VideoSink_ConstructProps extends GstVideo.VideoSink_ConstructProps {
+interface VideoSink_ConstructProps extends GstVideo.VideoSink_ConstructProps {
+    /* Constructor properties of ClutterGst-3.0.ClutterGst.VideoSink */
     update_priority?: number
 }
 class VideoSink {
@@ -895,54 +919,53 @@ class VideoSink {
     sync: boolean
     throttle_time: number
     ts_offset: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of GstVideo-1.0.GstVideo.VideoSink */
-    element: GstBase.BaseSink
-    width: number
-    height: number
+    readonly element: GstBase.BaseSink
+    readonly width: number
+    readonly height: number
     /* Fields of GstBase-1.0.GstBase.BaseSink */
-    sinkpad: Gst.Pad
-    pad_mode: Gst.PadMode
-    offset: number
-    can_activate_pull: boolean
-    can_activate_push: boolean
-    preroll_lock: GLib.Mutex
-    preroll_cond: GLib.Cond
-    eos: boolean
-    need_preroll: boolean
-    have_preroll: boolean
-    playing_async: boolean
-    have_newsegment: boolean
-    segment: Gst.Segment
+    readonly sinkpad: Gst.Pad
+    readonly pad_mode: Gst.PadMode
+    readonly offset: number
+    readonly can_activate_pull: boolean
+    readonly can_activate_push: boolean
+    readonly preroll_lock: GLib.Mutex
+    readonly preroll_cond: GLib.Cond
+    readonly eos: boolean
+    readonly need_preroll: boolean
+    readonly have_preroll: boolean
+    readonly playing_async: boolean
+    readonly have_newsegment: boolean
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ClutterGst-3.0.ClutterGst.VideoSink */
     get_frame(): Frame
     get_overlays(): Overlays
@@ -1115,10 +1138,17 @@ class VideoSink {
     vfunc_set_value(channel: GstVideo.ColorBalanceChannel, value: number): void
     vfunc_value_changed(channel: GstVideo.ColorBalanceChannel, value: number): void
     vfunc_send_event(structure: Gst.Structure): void
+    /* Function overloads */
     vfunc_send_event(event: Gst.Event): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstVideo-1.0.GstVideo.VideoSink */
     vfunc_set_info(caps: Gst.Caps, info: GstVideo.VideoInfo): boolean
     vfunc_show_frame(buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSink */
     vfunc_activate_pull(active: boolean): boolean
     vfunc_event(event: Gst.Event): boolean
@@ -1129,6 +1159,8 @@ class VideoSink {
     vfunc_prepare_list(buffer_list: Gst.BufferList): Gst.FlowReturn
     vfunc_preroll(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_propose_allocation(query: Gst.Query): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_render(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_render_list(buffer_list: Gst.BufferList): Gst.FlowReturn
@@ -1227,10 +1259,6 @@ class VideoSink {
     connect_after(sigName: "notify::throttle-time", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::ts-offset", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::ts-offset", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: VideoSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1272,10 +1300,10 @@ class AspectratioPrivate {
 }
 class Box {
     /* Fields of ClutterGst-3.0.ClutterGst.Box */
-    x1: number
-    y1: number
-    x2: number
-    y2: number
+    readonly x1: number
+    readonly y1: number
+    readonly x2: number
+    readonly y2: number
     /* Methods of ClutterGst-3.0.ClutterGst.Box */
     get_height(): number
     get_width(): number
@@ -1283,15 +1311,15 @@ class Box {
 }
 abstract class CameraClass {
     /* Fields of ClutterGst-3.0.ClutterGst.CameraClass */
-    ready_for_capture: (self: Camera, ready: boolean) => void
-    photo_saved: (self: Camera) => void
-    photo_taken: (self: Camera, pixbuf: GdkPixbuf.Pixbuf) => void
-    video_saved: (self: Camera) => void
+    readonly ready_for_capture: (self: Camera, ready: boolean) => void
+    readonly photo_saved: (self: Camera) => void
+    readonly photo_taken: (self: Camera, pixbuf: GdkPixbuf.Pixbuf) => void
+    readonly video_saved: (self: Camera) => void
     static name: string
 }
 abstract class CameraDeviceClass {
     /* Fields of ClutterGst-3.0.ClutterGst.CameraDeviceClass */
-    capture_resolution_changed: (device: CameraDevice, width: number, height: number) => void
+    readonly capture_resolution_changed: (device: CameraDevice, width: number, height: number) => void
     static name: string
 }
 class CameraDevicePrivate {
@@ -1308,7 +1336,7 @@ class CameraPrivate {
 }
 abstract class ContentClass {
     /* Fields of ClutterGst-3.0.ClutterGst.ContentClass */
-    has_painting_content: (self: Content) => boolean
+    readonly has_painting_content: (self: Content) => boolean
     static name: string
 }
 class ContentPrivate {
@@ -1322,22 +1350,22 @@ class CropPrivate {
 }
 class Frame {
     /* Fields of ClutterGst-3.0.ClutterGst.Frame */
-    resolution: VideoResolution
+    readonly resolution: VideoResolution
     static name: string
 }
 class Overlay {
     /* Fields of ClutterGst-3.0.ClutterGst.Overlay */
-    position: Box
+    readonly position: Box
     static name: string
 }
 class Overlays {
     /* Fields of ClutterGst-3.0.ClutterGst.Overlays */
-    overlays: object[]
+    readonly overlays: object[]
     static name: string
 }
 abstract class PlaybackClass {
     /* Fields of ClutterGst-3.0.ClutterGst.PlaybackClass */
-    should_buffer: (self: Playback, query: Gst.Query) => boolean
+    readonly should_buffer: (self: Playback, query: Gst.Query) => boolean
     static name: string
 }
 class PlaybackPrivate {
@@ -1345,19 +1373,19 @@ class PlaybackPrivate {
 }
 abstract class PlayerIface {
     /* Fields of ClutterGst-3.0.ClutterGst.PlayerIface */
-    get_frame: (self: Player) => Frame
-    get_pipeline: (self: Player) => Gst.Element
-    get_video_sink: (self: Player) => VideoSink
-    get_idle: (self: Player) => boolean
-    get_audio_volume: (self: Player) => number
-    set_audio_volume: (self: Player, volume: number) => void
-    get_playing: (self: Player) => boolean
-    set_playing: (self: Player, playing: boolean) => void
-    new_frame: (self: Player, frame: Frame) => void
-    ready: (self: Player) => void
-    eos: (self: Player) => void
-    error: (self: Player, error: GLib.Error) => void
-    size_change: (self: Player, width: number, height: number) => void
+    readonly get_frame: (self: Player) => Frame
+    readonly get_pipeline: (self: Player) => Gst.Element
+    readonly get_video_sink: (self: Player) => VideoSink
+    readonly get_idle: (self: Player) => boolean
+    readonly get_audio_volume: (self: Player) => number
+    readonly set_audio_volume: (self: Player, volume: number) => void
+    readonly get_playing: (self: Player) => boolean
+    readonly set_playing: (self: Player, playing: boolean) => void
+    readonly new_frame: (self: Player, frame: Frame) => void
+    readonly ready: (self: Player) => void
+    readonly eos: (self: Player) => void
+    readonly error: (self: Player, error: GLib.Error) => void
+    readonly size_change: (self: Player, width: number, height: number) => void
     static name: string
 }
 class PlayerIfacePrivate {
@@ -1365,17 +1393,17 @@ class PlayerIfacePrivate {
 }
 class VideoResolution {
     /* Fields of ClutterGst-3.0.ClutterGst.VideoResolution */
-    width: number
-    height: number
-    par_n: number
-    par_d: number
+    readonly width: number
+    readonly height: number
+    readonly par_n: number
+    readonly par_d: number
     static name: string
 }
 abstract class VideoSinkClass {
     /* Fields of ClutterGst-3.0.ClutterGst.VideoSinkClass */
-    new_frame: (sink: VideoSink) => void
-    pipeline_ready: (sink: VideoSink) => void
-    new_overlays: (sink: VideoSink) => void
+    readonly new_frame: (sink: VideoSink) => void
+    readonly pipeline_ready: (sink: VideoSink) => void
+    readonly new_overlays: (sink: VideoSink) => void
     static name: string
 }
 class VideoSinkPrivate {

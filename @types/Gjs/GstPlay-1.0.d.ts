@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstPlay-1.0
  */
@@ -71,7 +77,8 @@ function play_state_get_name(state: PlayState): string
 class PlayVideoRenderer {
     static name: string
 }
-export interface Play_ConstructProps extends Gst.Object_ConstructProps {
+interface Play_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstPlay-1.0.GstPlay.Play */
     audio_video_offset?: number
     mute?: boolean
     rate?: number
@@ -102,15 +109,14 @@ class Play {
     video_multiview_mode: GstVideo.VideoMultiviewFramePacking
     video_renderer: PlayVideoRenderer
     volume: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlay-1.0.GstPlay.Play */
     get_audio_video_offset(): number
     get_color_balance(type: PlayColorBalanceType): number
@@ -255,10 +261,6 @@ class Play {
     connect_after(sigName: "notify::video-renderer", callback: (($obj: Play, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::volume", callback: (($obj: Play, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::volume", callback: (($obj: Play, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Play, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Play, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Play, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Play, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -282,11 +284,11 @@ class Play {
     static visualizations_get(): PlayVisualization[]
     static $gtype: GObject.Type
 }
-export interface PlayAudioInfo_ConstructProps extends PlayStreamInfo_ConstructProps {
+interface PlayAudioInfo_ConstructProps extends PlayStreamInfo_ConstructProps {
 }
 class PlayAudioInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlay-1.0.GstPlay.PlayAudioInfo */
     get_bitrate(): number
     get_channels(): number
@@ -342,11 +344,11 @@ class PlayAudioInfo {
     _init (config?: PlayAudioInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayMediaInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface PlayMediaInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PlayMediaInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlay-1.0.GstPlay.PlayMediaInfo */
     get_audio_streams(): PlayAudioInfo[]
     get_container_format(): string | null
@@ -407,13 +409,13 @@ class PlayMediaInfo {
     _init (config?: PlayMediaInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlaySignalAdapter_ConstructProps extends GObject.Object_ConstructProps {
+interface PlaySignalAdapter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PlaySignalAdapter {
     /* Properties of GstPlay-1.0.GstPlay.PlaySignalAdapter */
     readonly play: Play
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlay-1.0.GstPlay.PlaySignalAdapter */
     get_play(): Play
     /* Methods of GObject-2.0.GObject.Object */
@@ -505,11 +507,11 @@ class PlaySignalAdapter {
     static new_with_main_context(play: Play, context: GLib.MainContext): PlaySignalAdapter
     static $gtype: GObject.Type
 }
-export interface PlayStreamInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface PlayStreamInfo_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PlayStreamInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlay-1.0.GstPlay.PlayStreamInfo */
     get_caps(): Gst.Caps | null
     get_codec(): string | null
@@ -559,11 +561,11 @@ class PlayStreamInfo {
     _init (config?: PlayStreamInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlaySubtitleInfo_ConstructProps extends PlayStreamInfo_ConstructProps {
+interface PlaySubtitleInfo_ConstructProps extends PlayStreamInfo_ConstructProps {
 }
 class PlaySubtitleInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlay-1.0.GstPlay.PlaySubtitleInfo */
     get_language(): string | null
     /* Methods of GstPlay-1.0.GstPlay.PlayStreamInfo */
@@ -615,11 +617,11 @@ class PlaySubtitleInfo {
     _init (config?: PlaySubtitleInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayVideoInfo_ConstructProps extends PlayStreamInfo_ConstructProps {
+interface PlayVideoInfo_ConstructProps extends PlayStreamInfo_ConstructProps {
 }
 class PlayVideoInfo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlay-1.0.GstPlay.PlayVideoInfo */
     get_bitrate(): number
     get_framerate(): [ /* fps_n */ number, /* fps_d */ number ]
@@ -676,7 +678,8 @@ class PlayVideoInfo {
     _init (config?: PlayVideoInfo_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlayVideoOverlayVideoRenderer_ConstructProps extends GObject.Object_ConstructProps {
+interface PlayVideoOverlayVideoRenderer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GstPlay-1.0.GstPlay.PlayVideoOverlayVideoRenderer */
     video_sink?: Gst.Element
     window_handle?: object
 }
@@ -685,7 +688,7 @@ class PlayVideoOverlayVideoRenderer {
     video_sink: Gst.Element
     window_handle: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstPlay-1.0.GstPlay.PlayVideoOverlayVideoRenderer */
     expose(): void
     get_render_rectangle(): [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
@@ -767,13 +770,13 @@ abstract class PlayVideoOverlayVideoRendererClass {
 }
 abstract class PlayVideoRendererInterface {
     /* Fields of GstPlay-1.0.GstPlay.PlayVideoRendererInterface */
-    parent_iface: GObject.TypeInterface
+    readonly parent_iface: GObject.TypeInterface
     static name: string
 }
 class PlayVisualization {
     /* Fields of GstPlay-1.0.GstPlay.PlayVisualization */
-    name: string
-    description: string
+    readonly name: string
+    readonly description: string
     /* Methods of GstPlay-1.0.GstPlay.PlayVisualization */
     copy(): PlayVisualization
     free(): void

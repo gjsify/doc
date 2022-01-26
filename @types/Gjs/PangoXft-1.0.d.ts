@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PangoXft-1.0
  */
@@ -30,28 +36,30 @@ function substitute_changed(display: xlib.Display, screen: number): void
 interface SubstituteFunc {
     (pattern: fontconfig.Pattern, data?: object | null): void
 }
-export interface Font_ConstructProps extends PangoFc.Font_ConstructProps {
+interface Font_ConstructProps extends PangoFc.Font_ConstructProps {
 }
 class Font {
-    /* Properties of PangoFc-1.0.PangoFc.Font */
-    fontmap: PangoFc.FontMap
     /* Fields of PangoFc-1.0.PangoFc.Font */
-    parent_instance: Pango.Font
-    font_pattern: fontconfig.Pattern
-    priv: object
-    matrix: Pango.Matrix
-    description: Pango.FontDescription
-    metrics_by_lang: object[]
-    is_hinted: number
-    is_transformed: number
+    readonly parent_instance: Pango.Font
+    readonly font_pattern: fontconfig.Pattern
+    readonly fontmap: Pango.FontMap
+    readonly priv: object
+    readonly matrix: Pango.Matrix
+    readonly description: Pango.FontDescription
+    readonly metrics_by_lang: object[]
+    readonly is_hinted: number
+    readonly is_transformed: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoXft-1.0.PangoXft.Font */
     get_glyph(wc: number): number
     get_unknown_glyph(wc: number): Pango.Glyph
     has_char(wc: number): boolean
     /* Methods of PangoFc-1.0.PangoFc.Font */
+    get_glyph(wc: number): number
     get_languages(): Pango.Language | null
+    get_unknown_glyph(wc: number): Pango.Glyph
+    has_char(wc: number): boolean
     kern_glyphs(glyphs: Pango.GlyphString): void
     unlock_face(): void
     /* Methods of Pango-1.0.Pango.Font */
@@ -64,6 +72,7 @@ class Font {
     get_glyph_extents(glyph: Pango.Glyph): [ /* ink_rect */ Pango.Rectangle | null, /* logical_rect */ Pango.Rectangle | null ]
     get_languages(): Pango.Language[] | null
     get_metrics(language?: Pango.Language | null): Pango.FontMetrics
+    has_char(wc: number): boolean
     serialize(): GLib.Bytes
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
@@ -108,8 +117,6 @@ class Font {
     connect(sigName: "notify", callback: (($obj: Font, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Font, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::fontmap", callback: (($obj: Font, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::fontmap", callback: (($obj: Font, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -119,13 +126,13 @@ class Font {
     _init (config?: Font_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FontMap_ConstructProps extends PangoFc.FontMap_ConstructProps {
+interface FontMap_ConstructProps extends PangoFc.FontMap_ConstructProps {
 }
 class FontMap {
     /* Fields of Pango-1.0.Pango.FontMap */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoFc-1.0.PangoFc.FontMap */
     cache_clear(): void
     config_changed(): void
@@ -191,15 +198,16 @@ class FontMap {
     _init (config?: FontMap_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Renderer_ConstructProps extends Pango.Renderer_ConstructProps {
+interface Renderer_ConstructProps extends Pango.Renderer_ConstructProps {
+    /* Constructor properties of PangoXft-1.0.PangoXft.Renderer */
     display?: object
     screen?: number
 }
 class Renderer {
     /* Fields of Pango-1.0.Pango.Renderer */
-    matrix: Pango.Matrix
+    readonly matrix: Pango.Matrix
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoXft-1.0.PangoXft.Renderer */
     set_default_color(default_color: Pango.Color): void
     set_draw(draw: xft.Draw): void
@@ -285,8 +293,8 @@ class Renderer {
 }
 abstract class RendererClass {
     /* Fields of PangoXft-1.0.PangoXft.RendererClass */
-    composite_trapezoids: (xftrenderer: Renderer, part: Pango.RenderPart, trapezoids: xlib.XTrapezoid, n_trapezoids: number) => void
-    composite_glyphs: (xftrenderer: Renderer, xft_font: xft.Font, glyphs: xft.GlyphSpec, n_glyphs: number) => void
+    readonly composite_trapezoids: (xftrenderer: Renderer, part: Pango.RenderPart, trapezoids: xlib.XTrapezoid, n_trapezoids: number) => void
+    readonly composite_glyphs: (xftrenderer: Renderer, xft_font: xft.Font, glyphs: xft.GlyphSpec, n_glyphs: number) => void
     static name: string
 }
 class RendererPrivate {

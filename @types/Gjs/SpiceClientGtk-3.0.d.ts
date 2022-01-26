@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * SpiceClientGtk-3.0
  */
@@ -26,7 +32,8 @@ enum DisplayKeyEvent {
     RELEASE,
     CLICK,
 }
-export interface Display_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface Display_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of SpiceClientGtk-3.0.SpiceClientGtk.Display */
     channel_id?: number
     disable_inputs?: boolean
     grab_keyboard?: boolean
@@ -99,15 +106,15 @@ class Display {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGtk-3.0.SpiceClientGtk.Display */
     get_grab_keys(): GrabSequence
     get_pixbuf(): GdkPixbuf.Pixbuf
@@ -125,7 +132,7 @@ class Display {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -440,6 +447,7 @@ class Display {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of SpiceClientGtk-3.0.SpiceClientGtk.Display */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -905,11 +913,13 @@ class Display {
     _init (config?: Display_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(session: SpiceClientGLib.Session, channel_id: number): Display
+    /* Function overloads */
     static new(): Display
     static new_with_monitor(session: SpiceClientGLib.Session, channel_id: number, monitor_id: number): Display
     static $gtype: GObject.Type
 }
-export interface GtkSession_ConstructProps extends GObject.Object_ConstructProps {
+interface GtkSession_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of SpiceClientGtk-3.0.SpiceClientGtk.GtkSession */
     auto_clipboard?: boolean
     auto_usbredir?: boolean
     session?: SpiceClientGLib.Session
@@ -922,7 +932,7 @@ class GtkSession {
     readonly pointer_grabbed: boolean
     sync_modifiers: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of SpiceClientGtk-3.0.SpiceClientGtk.GtkSession */
     copy_to_guest(): void
     paste_from_guest(): void
@@ -979,9 +989,11 @@ class GtkSession {
     static get(session: SpiceClientGLib.Session): GtkSession
     static $gtype: GObject.Type
 }
-export interface UsbDeviceWidget_ConstructProps extends Gtk.Box_ConstructProps {
+interface UsbDeviceWidget_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of SpiceClientGtk-3.0.SpiceClientGtk.UsbDeviceWidget */
     device_format_string?: string
     session?: SpiceClientGLib.Session
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class UsbDeviceWidget {
@@ -1036,13 +1048,13 @@ class UsbDeviceWidget {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Box */
     get_baseline_position(): Gtk.BaselinePosition
     get_center_widget(): Gtk.Widget | null
@@ -1061,7 +1073,7 @@ class UsbDeviceWidget {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1376,6 +1388,7 @@ class UsbDeviceWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -1822,6 +1835,7 @@ class UsbDeviceWidget {
     _init (config?: UsbDeviceWidget_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(session: SpiceClientGLib.Session, device_format_string?: string | null): UsbDeviceWidget
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): UsbDeviceWidget
     static $gtype: GObject.Type
 }

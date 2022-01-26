@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Handy-1
  */
@@ -80,7 +86,7 @@ interface ComboRowGetEnumValueNameFunc {
 interface ComboRowGetNameFunc {
     (item: GObject.Object): string
 }
-export interface Swipeable_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Swipeable_ConstructProps extends Gtk.Widget_ConstructProps {
 }
 class Swipeable {
     /* Properties of Gtk-3.0.Gtk.Widget */
@@ -124,9 +130,9 @@ class Swipeable {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.Swipeable */
     emit_child_switched(index: number, duration: number): void
     get_cancel_progress(): number
@@ -819,13 +825,15 @@ class Swipeable {
     _init (config?: Swipeable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ActionRow_ConstructProps extends PreferencesRow_ConstructProps {
+interface ActionRow_ConstructProps extends PreferencesRow_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.ActionRow */
     activatable_widget?: Gtk.Widget
     icon_name?: string
     subtitle?: string
     subtitle_lines?: number
     title_lines?: number
     use_underline?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
 }
@@ -889,14 +897,14 @@ class ActionRow {
     /* Properties of Gtk-3.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Fields of Handy-1.Handy.ActionRow */
-    parent_instance: PreferencesRow
+    /* Fields of Handy-1.Handy.PreferencesRow */
+    readonly parent_instance: Gtk.ListBoxRow
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.ActionRow */
     activate(): void
     add_prefix(widget: Gtk.Widget): void
@@ -915,6 +923,7 @@ class ActionRow {
     /* Methods of Handy-1.Handy.PreferencesRow */
     get_title(): string | null
     set_title(title?: string | null): void
+    set_use_underline(use_underline: boolean): void
     /* Methods of Gtk-3.0.Gtk.ListBoxRow */
     changed(): void
     get_activatable(): boolean
@@ -931,7 +940,7 @@ class ActionRow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1252,8 +1261,23 @@ class ActionRow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.ActionRow */
     vfunc_activate(): void
+    vfunc_get_action_name(): string | null
+    vfunc_get_action_target_value(): GLib.Variant
+    vfunc_set_action_name(action_name?: string | null): void
+    vfunc_set_action_target_value(target_value?: GLib.Variant | null): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.PreferencesRow */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
@@ -1723,7 +1747,7 @@ class ActionRow {
     static new(): ActionRow
     static $gtype: GObject.Type
 }
-export interface ApplicationWindow_ConstructProps extends Gtk.ApplicationWindow_ConstructProps {
+interface ApplicationWindow_ConstructProps extends Gtk.ApplicationWindow_ConstructProps {
 }
 class ApplicationWindow {
     /* Properties of Gtk-3.0.Gtk.ApplicationWindow */
@@ -1805,17 +1829,17 @@ class ApplicationWindow {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Handy-1.Handy.ApplicationWindow */
-    parent_instance: Gtk.ApplicationWindow
+    /* Fields of Gtk-3.0.Gtk.ApplicationWindow */
+    readonly parent_instance: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.ApplicationWindow */
     get_help_overlay(): Gtk.ShortcutsWindow | null
     get_id(): number
@@ -1935,7 +1959,7 @@ class ApplicationWindow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2179,6 +2203,7 @@ class ApplicationWindow {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -2267,7 +2292,25 @@ class ApplicationWindow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.ApplicationWindow */
+    vfunc_action_added(action_name: string): void
+    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void
+    vfunc_action_removed(action_name: string): void
+    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void
+    vfunc_activate_action(action_name: string, parameter?: GLib.Variant | null): void
+    vfunc_change_action_state(action_name: string, value: GLib.Variant): void
+    vfunc_get_action_enabled(action_name: string): boolean
+    vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null
+    vfunc_get_action_state(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null
+    vfunc_has_action(action_name: string): boolean
+    vfunc_list_actions(): string[]
+    vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
+    vfunc_add_action(action: Gio.Action): void
+    vfunc_lookup_action(action_name: string): Gio.Action | null
+    vfunc_remove_action(action_name: string): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2817,11 +2860,13 @@ class ApplicationWindow {
     _init (config?: ApplicationWindow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): ApplicationWindow
+    /* Function overloads */
     static new(application: Gtk.Application): ApplicationWindow
     static new(type: Gtk.WindowType): ApplicationWindow
     static $gtype: GObject.Type
 }
-export interface Avatar_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+interface Avatar_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.Avatar */
     icon_name?: string
     loadable_icon?: Gio.LoadableIcon
     show_initials?: boolean
@@ -2876,11 +2921,11 @@ class Avatar {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.DrawingArea */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.Avatar */
     draw_to_pixbuf(size: number, scale_factor: number): GdkPixbuf.Pixbuf
     draw_to_pixbuf_async(size: number, scale_factor: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3186,6 +3231,7 @@ class Avatar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.Avatar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3597,10 +3643,12 @@ class Avatar {
     _init (config?: Avatar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(size: number, text: string | null, show_initials: boolean): Avatar
+    /* Function overloads */
     static new(): Avatar
     static $gtype: GObject.Type
 }
-export interface Carousel_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface Carousel_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.Carousel */
     allow_long_swipes?: boolean
     allow_mouse_drag?: boolean
     allow_scroll_wheel?: boolean
@@ -3608,6 +3656,7 @@ export interface Carousel_ConstructProps extends Gtk.EventBox_ConstructProps {
     interactive?: boolean
     reveal_duration?: number
     spacing?: number
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Carousel {
@@ -3671,15 +3720,15 @@ class Carousel {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.Carousel */
     get_allow_long_swipes(): boolean
     get_allow_mouse_drag(): boolean
@@ -3713,7 +3762,7 @@ class Carousel {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4028,6 +4077,7 @@ class Carousel {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -4512,8 +4562,10 @@ class Carousel {
     static new(): Carousel
     static $gtype: GObject.Type
 }
-export interface CarouselIndicatorDots_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+interface CarouselIndicatorDots_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.CarouselIndicatorDots */
     carousel?: Carousel
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class CarouselIndicatorDots {
@@ -4562,11 +4614,11 @@ class CarouselIndicatorDots {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.DrawingArea */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.CarouselIndicatorDots */
     get_carousel(): Carousel | null
     set_carousel(carousel?: Carousel | null): void
@@ -4860,6 +4912,7 @@ class CarouselIndicatorDots {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -5270,8 +5323,10 @@ class CarouselIndicatorDots {
     static new(): CarouselIndicatorDots
     static $gtype: GObject.Type
 }
-export interface CarouselIndicatorLines_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+interface CarouselIndicatorLines_ConstructProps extends Gtk.DrawingArea_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.CarouselIndicatorLines */
     carousel?: Carousel
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class CarouselIndicatorLines {
@@ -5320,11 +5375,11 @@ class CarouselIndicatorLines {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.DrawingArea */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.CarouselIndicatorLines */
     get_carousel(): Carousel | null
     set_carousel(carousel?: Carousel | null): void
@@ -5618,6 +5673,7 @@ class CarouselIndicatorLines {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -6028,9 +6084,11 @@ class CarouselIndicatorLines {
     static new(): CarouselIndicatorLines
     static $gtype: GObject.Type
 }
-export interface Clamp_ConstructProps extends Gtk.Bin_ConstructProps {
+interface Clamp_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.Clamp */
     maximum_size?: number
     tightening_threshold?: number
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Clamp {
@@ -6084,13 +6142,13 @@ class Clamp {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.Clamp */
     get_maximum_size(): number
     get_tightening_threshold(): number
@@ -6102,7 +6160,7 @@ class Clamp {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -6417,6 +6475,7 @@ class Clamp {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -6859,9 +6918,11 @@ class Clamp {
     static new(): Clamp
     static $gtype: GObject.Type
 }
-export interface ComboRow_ConstructProps extends ActionRow_ConstructProps {
+interface ComboRow_ConstructProps extends ActionRow_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.ComboRow */
     selected_index?: number
     use_subtitle?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
 }
@@ -6928,14 +6989,14 @@ class ComboRow {
     /* Properties of Gtk-3.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Fields of Handy-1.Handy.ComboRow */
-    parent_instance: ActionRow
+    /* Fields of Handy-1.Handy.ActionRow */
+    readonly parent_instance: PreferencesRow
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.ComboRow */
     bind_model(model: Gio.ListModel | null, create_list_widget_func: Gtk.ListBoxCreateWidgetFunc | null, create_current_widget_func: Gtk.ListBoxCreateWidgetFunc | null): void
     bind_name_model(model: Gio.ListModel | null, get_name_func: ComboRowGetNameFunc | null): void
@@ -6964,6 +7025,7 @@ class ComboRow {
     /* Methods of Handy-1.Handy.PreferencesRow */
     get_title(): string | null
     set_title(title?: string | null): void
+    set_use_underline(use_underline: boolean): void
     /* Methods of Gtk-3.0.Gtk.ListBoxRow */
     changed(): void
     get_activatable(): boolean
@@ -6980,7 +7042,7 @@ class ComboRow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7301,8 +7363,38 @@ class ComboRow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Virtual methods of Handy-1.Handy.ComboRow */
+    vfunc_get_action_name(): string | null
+    vfunc_get_action_target_value(): GLib.Variant
+    vfunc_set_action_name(action_name?: string | null): void
+    vfunc_set_action_target_value(target_value?: GLib.Variant | null): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.ActionRow */
     vfunc_activate(): void
+    vfunc_get_action_name(): string | null
+    vfunc_get_action_target_value(): GLib.Variant
+    vfunc_set_action_name(action_name?: string | null): void
+    vfunc_set_action_target_value(target_value?: GLib.Variant | null): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.PreferencesRow */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
@@ -7776,7 +7868,8 @@ class ComboRow {
     static new(): ComboRow
     static $gtype: GObject.Type
 }
-export interface Deck_ConstructProps extends Gtk.Container_ConstructProps {
+interface Deck_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.Deck */
     can_swipe_back?: boolean
     can_swipe_forward?: boolean
     hhomogeneous?: boolean
@@ -7786,6 +7879,7 @@ export interface Deck_ConstructProps extends Gtk.Container_ConstructProps {
     vhomogeneous?: boolean
     visible_child?: Gtk.Widget
     visible_child_name?: string
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Deck {
@@ -7846,12 +7940,12 @@ class Deck {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Handy-1.Handy.Deck */
-    parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.Deck */
     get_adjacent_child(direction: NavigationDirection): Gtk.Widget | null
     get_can_swipe_back(): boolean
@@ -7880,7 +7974,7 @@ class Deck {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8195,6 +8289,7 @@ class Deck {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -8673,11 +8768,11 @@ class Deck {
     static new(): Deck
     static $gtype: GObject.Type
 }
-export interface EnumValueObject_ConstructProps extends GObject.Object_ConstructProps {
+interface EnumValueObject_ConstructProps extends GObject.Object_ConstructProps {
 }
 class EnumValueObject {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.EnumValueObject */
     get_name(): string
     get_nick(): string
@@ -8727,13 +8822,15 @@ class EnumValueObject {
     static new(enum_value: GObject.EnumValue): EnumValueObject
     static $gtype: GObject.Type
 }
-export interface ExpanderRow_ConstructProps extends PreferencesRow_ConstructProps {
+interface ExpanderRow_ConstructProps extends PreferencesRow_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.ExpanderRow */
     enable_expansion?: boolean
     expanded?: boolean
     icon_name?: string
     show_enable_switch?: boolean
     subtitle?: string
     use_underline?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
 }
@@ -8797,14 +8894,14 @@ class ExpanderRow {
     /* Properties of Gtk-3.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Fields of Handy-1.Handy.ExpanderRow */
-    parent_instance: PreferencesRow
+    /* Fields of Handy-1.Handy.PreferencesRow */
+    readonly parent_instance: Gtk.ListBoxRow
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.ExpanderRow */
     add_action(widget: Gtk.Widget): void
     add_prefix(widget: Gtk.Widget): void
@@ -8823,6 +8920,7 @@ class ExpanderRow {
     /* Methods of Handy-1.Handy.PreferencesRow */
     get_title(): string | null
     set_title(title?: string | null): void
+    set_use_underline(use_underline: boolean): void
     /* Methods of Gtk-3.0.Gtk.ListBoxRow */
     changed(): void
     get_activatable(): boolean
@@ -8839,7 +8937,7 @@ class ExpanderRow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9160,6 +9258,22 @@ class ExpanderRow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Virtual methods of Handy-1.Handy.ExpanderRow */
+    vfunc_get_action_name(): string | null
+    vfunc_get_action_target_value(): GLib.Variant
+    vfunc_set_action_name(action_name?: string | null): void
+    vfunc_set_action_target_value(target_value?: GLib.Variant | null): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.PreferencesRow */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
@@ -9625,7 +9739,8 @@ class ExpanderRow {
     static new(): ExpanderRow
     static $gtype: GObject.Type
 }
-export interface Flap_ConstructProps extends Gtk.Container_ConstructProps {
+interface Flap_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.Flap */
     content?: Gtk.Widget
     flap?: Gtk.Widget
     flap_position?: Gtk.PackType
@@ -9639,6 +9754,7 @@ export interface Flap_ConstructProps extends Gtk.Container_ConstructProps {
     swipe_to_close?: boolean
     swipe_to_open?: boolean
     transition_type?: FlapTransitionType
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Flap {
@@ -9705,11 +9821,11 @@ class Flap {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.Flap */
     get_content(): Gtk.Widget | null
     get_flap(): Gtk.Widget | null
@@ -9743,7 +9859,7 @@ class Flap {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10058,6 +10174,7 @@ class Flap {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -10546,7 +10663,8 @@ class Flap {
     static new(): Flap
     static $gtype: GObject.Type
 }
-export interface HeaderBar_ConstructProps extends Gtk.Container_ConstructProps {
+interface HeaderBar_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.HeaderBar */
     centering_policy?: CenteringPolicy
     custom_title?: Gtk.Widget
     decoration_layout?: string
@@ -10617,12 +10735,12 @@ class HeaderBar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Handy-1.Handy.HeaderBar */
-    parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.HeaderBar */
     get_centering_policy(): CenteringPolicy
     get_custom_title(): Gtk.Widget | null
@@ -10649,7 +10767,7 @@ class HeaderBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10964,6 +11082,7 @@ class HeaderBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.HeaderBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -11421,14 +11540,15 @@ class HeaderBar {
     static new(): HeaderBar
     static $gtype: GObject.Type
 }
-export interface HeaderGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface HeaderGroup_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.HeaderGroup */
     decorate_all?: boolean
 }
 class HeaderGroup {
     /* Properties of Handy-1.Handy.HeaderGroup */
     decorate_all: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.HeaderGroup */
     add_gtk_header_bar(header_bar: Gtk.HeaderBar): void
     add_header_bar(header_bar: HeaderBar): void
@@ -11513,11 +11633,11 @@ class HeaderGroup {
     static new(): HeaderGroup
     static $gtype: GObject.Type
 }
-export interface HeaderGroupChild_ConstructProps extends GObject.Object_ConstructProps {
+interface HeaderGroupChild_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HeaderGroupChild {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.HeaderGroupChild */
     get_child_type(): HeaderGroupChildType
     get_gtk_header_bar(): Gtk.HeaderBar
@@ -11566,7 +11686,8 @@ class HeaderGroupChild {
     _init (config?: HeaderGroupChild_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Keypad_ConstructProps extends Gtk.Bin_ConstructProps {
+interface Keypad_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.Keypad */
     column_spacing?: number
     end_action?: Gtk.Widget
     entry?: Gtk.Entry
@@ -11628,14 +11749,14 @@ class Keypad {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Handy-1.Handy.Keypad */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.Keypad */
     get_column_spacing(): number
     get_end_action(): Gtk.Widget | null
@@ -11657,7 +11778,7 @@ class Keypad {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -11972,6 +12093,7 @@ class Keypad {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.Keypad */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -12419,7 +12541,8 @@ class Keypad {
     static new(symbols_visible: boolean, letters_visible: boolean): Keypad
     static $gtype: GObject.Type
 }
-export interface Leaflet_ConstructProps extends Gtk.Container_ConstructProps {
+interface Leaflet_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.Leaflet */
     can_swipe_back?: boolean
     can_swipe_forward?: boolean
     child_transition_duration?: number
@@ -12432,6 +12555,7 @@ export interface Leaflet_ConstructProps extends Gtk.Container_ConstructProps {
     vhomogeneous_unfolded?: boolean
     visible_child?: Gtk.Widget
     visible_child_name?: string
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Leaflet {
@@ -12496,12 +12620,12 @@ class Leaflet {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
-    /* Fields of Handy-1.Handy.Leaflet */
-    parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.Leaflet */
     get_adjacent_child(direction: NavigationDirection): Gtk.Widget | null
     get_can_swipe_back(): boolean
@@ -12533,7 +12657,7 @@ class Leaflet {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -12848,6 +12972,7 @@ class Leaflet {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -13334,7 +13459,8 @@ class Leaflet {
     static new(): Leaflet
     static $gtype: GObject.Type
 }
-export interface PreferencesGroup_ConstructProps extends Gtk.Bin_ConstructProps {
+interface PreferencesGroup_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.PreferencesGroup */
     description?: string
     title?: string
     use_markup?: boolean
@@ -13388,14 +13514,14 @@ class PreferencesGroup {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Handy-1.Handy.PreferencesGroup */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.PreferencesGroup */
     get_description(): string
     get_title(): string
@@ -13409,7 +13535,7 @@ class PreferencesGroup {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -13724,6 +13850,7 @@ class PreferencesGroup {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.PreferencesGroup */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -14163,7 +14290,8 @@ class PreferencesGroup {
     static new(): PreferencesGroup
     static $gtype: GObject.Type
 }
-export interface PreferencesPage_ConstructProps extends Gtk.Bin_ConstructProps {
+interface PreferencesPage_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.PreferencesPage */
     icon_name?: string
     title?: string
 }
@@ -14215,14 +14343,14 @@ class PreferencesPage {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Handy-1.Handy.PreferencesPage */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.PreferencesPage */
     get_icon_name(): string | null
     get_title(): string | null
@@ -14234,7 +14362,7 @@ class PreferencesPage {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -14549,6 +14677,7 @@ class PreferencesPage {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.PreferencesPage */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -14986,9 +15115,11 @@ class PreferencesPage {
     static new(): PreferencesPage
     static $gtype: GObject.Type
 }
-export interface PreferencesRow_ConstructProps extends Gtk.ListBoxRow_ConstructProps {
+interface PreferencesRow_ConstructProps extends Gtk.ListBoxRow_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.PreferencesRow */
     title?: string
     use_underline?: boolean
+    /* Constructor properties of Gtk-3.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
 }
@@ -15046,14 +15177,14 @@ class PreferencesRow {
     /* Properties of Gtk-3.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Fields of Handy-1.Handy.PreferencesRow */
-    parent_instance: Gtk.ListBoxRow
+    /* Fields of Gtk-3.0.Gtk.ListBoxRow */
+    readonly parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.PreferencesRow */
     get_title(): string | null
     get_use_underline(): boolean
@@ -15075,7 +15206,7 @@ class PreferencesRow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -15396,6 +15527,7 @@ class PreferencesRow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.PreferencesRow */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant
@@ -15851,7 +15983,8 @@ class PreferencesRow {
     static new(): PreferencesRow
     static $gtype: GObject.Type
 }
-export interface PreferencesWindow_ConstructProps extends Window_ConstructProps {
+interface PreferencesWindow_ConstructProps extends Window_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.PreferencesWindow */
     can_swipe_back?: boolean
     search_enabled?: boolean
 }
@@ -15936,17 +16069,17 @@ class PreferencesWindow {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Handy-1.Handy.PreferencesWindow */
-    parent_instance: Window
+    /* Fields of Handy-1.Handy.Window */
+    readonly parent_instance: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.PreferencesWindow */
     close_subpage(): void
     get_can_swipe_back(): boolean
@@ -16067,7 +16200,7 @@ class PreferencesWindow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -16311,6 +16444,7 @@ class PreferencesWindow {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -16379,6 +16513,18 @@ class PreferencesWindow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
+    /* Virtual methods of Handy-1.Handy.PreferencesWindow */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ GLib.MarkupParser, /* data */ object | null ]
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_get_name(): string
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.Window */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -16900,10 +17046,12 @@ class PreferencesWindow {
     _init (config?: PreferencesWindow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PreferencesWindow
+    /* Function overloads */
     static new(type: Gtk.WindowType): PreferencesWindow
     static $gtype: GObject.Type
 }
-export interface SearchBar_ConstructProps extends Gtk.Bin_ConstructProps {
+interface SearchBar_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.SearchBar */
     search_mode_enabled?: boolean
     show_close_button?: boolean
 }
@@ -16955,14 +17103,14 @@ class SearchBar {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Handy-1.Handy.SearchBar */
-    parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.SearchBar */
     connect_entry(entry: Gtk.Entry): void
     get_search_mode(): boolean
@@ -16976,7 +17124,7 @@ class SearchBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -17291,6 +17439,7 @@ class SearchBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.SearchBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -17728,13 +17877,15 @@ class SearchBar {
     static new(): SearchBar
     static $gtype: GObject.Type
 }
-export interface Squeezer_ConstructProps extends Gtk.Container_ConstructProps {
+interface Squeezer_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.Squeezer */
     homogeneous?: boolean
     interpolate_size?: boolean
     transition_duration?: number
     transition_type?: SqueezerTransitionType
     xalign?: number
     yalign?: number
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Squeezer {
@@ -17794,11 +17945,11 @@ class Squeezer {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.Squeezer */
     get_child_enabled(child: Gtk.Widget): boolean
     get_homogeneous(): boolean
@@ -17820,7 +17971,7 @@ class Squeezer {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -18135,6 +18286,7 @@ class Squeezer {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -18589,7 +18741,8 @@ class Squeezer {
     static new(): Squeezer
     static $gtype: GObject.Type
 }
-export interface StatusPage_ConstructProps extends Gtk.Bin_ConstructProps {
+interface StatusPage_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.StatusPage */
     description?: string
     icon_name?: string
     title?: string
@@ -18644,13 +18797,13 @@ class StatusPage {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.StatusPage */
     get_description(): string | null
     get_icon_name(): string | null
@@ -18664,7 +18817,7 @@ class StatusPage {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -18979,6 +19132,7 @@ class StatusPage {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.StatusPage */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -19418,7 +19572,8 @@ class StatusPage {
     static new(): StatusPage
     static $gtype: GObject.Type
 }
-export interface StyleManager_ConstructProps extends GObject.Object_ConstructProps {
+interface StyleManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.StyleManager */
     color_scheme?: ColorScheme
     display?: Gdk.Display
 }
@@ -19429,7 +19584,7 @@ class StyleManager {
     readonly high_contrast: boolean
     readonly system_supports_color_schemes: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.StyleManager */
     get_color_scheme(): ColorScheme
     get_dark(): boolean
@@ -19491,11 +19646,11 @@ class StyleManager {
     static get_for_display(display: Gdk.Display): StyleManager
     static $gtype: GObject.Type
 }
-export interface SwipeGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface SwipeGroup_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SwipeGroup {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.SwipeGroup */
     add_swipeable(swipeable: Swipeable): void
     get_swipeables(): Swipeable[]
@@ -19567,12 +19722,14 @@ class SwipeGroup {
     static new(): SwipeGroup
     static $gtype: GObject.Type
 }
-export interface SwipeTracker_ConstructProps extends GObject.Object_ConstructProps {
+interface SwipeTracker_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.SwipeTracker */
     allow_long_swipes?: boolean
     allow_mouse_drag?: boolean
     enabled?: boolean
     reversed?: boolean
     swipeable?: Swipeable
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class SwipeTracker {
@@ -19584,7 +19741,7 @@ class SwipeTracker {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.SwipeTracker */
     get_allow_long_swipes(): boolean
     get_allow_mouse_drag(): boolean
@@ -19664,7 +19821,8 @@ class SwipeTracker {
     static new(swipeable: Swipeable): SwipeTracker
     static $gtype: GObject.Type
 }
-export interface TabBar_ConstructProps extends Gtk.Bin_ConstructProps {
+interface TabBar_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.TabBar */
     autohide?: boolean
     end_action_widget?: Gtk.Widget
     expand_tabs?: boolean
@@ -19729,13 +19887,13 @@ class TabBar {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.TabBar */
     get_autohide(): boolean
     get_end_action_widget(): Gtk.Widget | null
@@ -19759,7 +19917,7 @@ class TabBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -20074,6 +20232,7 @@ class TabBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.TabBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -20529,7 +20688,8 @@ class TabBar {
     static new(): TabBar
     static $gtype: GObject.Type
 }
-export interface TabPage_ConstructProps extends GObject.Object_ConstructProps {
+interface TabPage_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.TabPage */
     child?: Gtk.Widget
     icon?: Gio.Icon
     indicator_activatable?: boolean
@@ -20552,7 +20712,7 @@ class TabPage {
     title: string
     tooltip: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.TabPage */
     get_child(): Gtk.Widget
     get_icon(): Gio.Icon | null
@@ -20633,7 +20793,8 @@ class TabPage {
     _init (config?: TabPage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TabView_ConstructProps extends Gtk.Bin_ConstructProps {
+interface TabView_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.TabView */
     default_icon?: Gio.Icon
     menu_model?: Gio.MenuModel
     selected_page?: TabPage
@@ -20693,13 +20854,13 @@ class TabView {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.TabView */
     add_page(child: Gtk.Widget, parent?: TabPage | null): TabPage
     append(child: Gtk.Widget): TabPage
@@ -20743,7 +20904,7 @@ class TabView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -21058,6 +21219,7 @@ class TabView {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.TabView */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -21527,7 +21689,8 @@ class TabView {
     static new(): TabView
     static $gtype: GObject.Type
 }
-export interface TitleBar_ConstructProps extends Gtk.Bin_ConstructProps {
+interface TitleBar_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.TitleBar */
     selection_mode?: boolean
 }
 class TitleBar {
@@ -21578,13 +21741,13 @@ class TitleBar {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.TitleBar */
     get_selection_mode(): boolean
     set_selection_mode(selection_mode: boolean): void
@@ -21594,7 +21757,7 @@ class TitleBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -21909,6 +22072,7 @@ class TitleBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.TitleBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -22344,12 +22508,13 @@ class TitleBar {
     static new(): TitleBar
     static $gtype: GObject.Type
 }
-export interface ValueObject_ConstructProps extends GObject.Object_ConstructProps {
+interface ValueObject_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.ValueObject */
     value?: any
 }
 class ValueObject {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.ValueObject */
     copy_value(dest: any): void
     dup_string(): string
@@ -22400,7 +22565,8 @@ class ValueObject {
     static new(value: any): ValueObject
     static $gtype: GObject.Type
 }
-export interface ViewSwitcher_ConstructProps extends Gtk.Bin_ConstructProps {
+interface ViewSwitcher_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.ViewSwitcher */
     narrow_ellipsize?: Pango.EllipsizeMode
     policy?: ViewSwitcherPolicy
     stack?: Gtk.Stack
@@ -22455,13 +22621,13 @@ class ViewSwitcher {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.ViewSwitcher */
     get_narrow_ellipsize(): Pango.EllipsizeMode
     get_policy(): ViewSwitcherPolicy
@@ -22475,7 +22641,7 @@ class ViewSwitcher {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -22790,6 +22956,7 @@ class ViewSwitcher {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.ViewSwitcher */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -23229,7 +23396,8 @@ class ViewSwitcher {
     static new(): ViewSwitcher
     static $gtype: GObject.Type
 }
-export interface ViewSwitcherBar_ConstructProps extends Gtk.Bin_ConstructProps {
+interface ViewSwitcherBar_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.ViewSwitcherBar */
     policy?: ViewSwitcherPolicy
     reveal?: boolean
     stack?: Gtk.Stack
@@ -23284,13 +23452,13 @@ class ViewSwitcherBar {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.ViewSwitcherBar */
     get_policy(): ViewSwitcherPolicy
     get_reveal(): boolean
@@ -23304,7 +23472,7 @@ class ViewSwitcherBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -23619,6 +23787,7 @@ class ViewSwitcherBar {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.ViewSwitcherBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -24058,7 +24227,8 @@ class ViewSwitcherBar {
     static new(): ViewSwitcherBar
     static $gtype: GObject.Type
 }
-export interface ViewSwitcherTitle_ConstructProps extends Gtk.Bin_ConstructProps {
+interface ViewSwitcherTitle_ConstructProps extends Gtk.Bin_ConstructProps {
+    /* Constructor properties of Handy-1.Handy.ViewSwitcherTitle */
     policy?: ViewSwitcherPolicy
     stack?: Gtk.Stack
     subtitle?: string
@@ -24118,13 +24288,13 @@ class ViewSwitcherTitle {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Handy-1.Handy.ViewSwitcherTitle */
     get_policy(): ViewSwitcherPolicy
     get_stack(): Gtk.Stack | null
@@ -24143,7 +24313,7 @@ class ViewSwitcherTitle {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -24458,6 +24628,7 @@ class ViewSwitcherTitle {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.ViewSwitcherTitle */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -24903,7 +25074,7 @@ class ViewSwitcherTitle {
     static new(): ViewSwitcherTitle
     static $gtype: GObject.Type
 }
-export interface Window_ConstructProps extends Gtk.Window_ConstructProps {
+interface Window_ConstructProps extends Gtk.Window_ConstructProps {
 }
 class Window {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -24983,17 +25154,17 @@ class Window {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Handy-1.Handy.Window */
-    parent_instance: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
+    /* Fields of Gtk-3.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
@@ -25107,7 +25278,7 @@ class Window {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -25351,6 +25522,7 @@ class Window {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -25419,6 +25591,7 @@ class Window {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.Window */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -25936,10 +26109,11 @@ class Window {
     _init (config?: Window_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Window
+    /* Function overloads */
     static new(type: Gtk.WindowType): Window
     static $gtype: GObject.Type
 }
-export interface WindowHandle_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface WindowHandle_ConstructProps extends Gtk.EventBox_ConstructProps {
 }
 class WindowHandle {
     /* Properties of Gtk-3.0.Gtk.EventBox */
@@ -25990,15 +26164,15 @@ class WindowHandle {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.EventBox */
     get_above_child(): boolean
     get_visible_window(): boolean
@@ -26010,7 +26184,7 @@ class WindowHandle {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -26325,6 +26499,7 @@ class WindowHandle {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Handy-1.Handy.WindowHandle */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -26764,200 +26939,200 @@ class WindowHandle {
 }
 abstract class ActionRowClass {
     /* Fields of Handy-1.Handy.ActionRowClass */
-    parent_class: Gtk.ListBoxRowClass
-    activate: (self: ActionRow) => void
+    readonly parent_class: Gtk.ListBoxRowClass
+    readonly activate: (self: ActionRow) => void
     static name: string
 }
 abstract class ApplicationWindowClass {
     /* Fields of Handy-1.Handy.ApplicationWindowClass */
-    parent_class: Gtk.ApplicationWindowClass
+    readonly parent_class: Gtk.ApplicationWindowClass
     static name: string
 }
 abstract class AvatarClass {
     /* Fields of Handy-1.Handy.AvatarClass */
-    parent_class: Gtk.DrawingAreaClass
+    readonly parent_class: Gtk.DrawingAreaClass
     static name: string
 }
 abstract class CarouselClass {
     /* Fields of Handy-1.Handy.CarouselClass */
-    parent_class: Gtk.EventBoxClass
+    readonly parent_class: Gtk.EventBoxClass
     static name: string
 }
 abstract class CarouselIndicatorDotsClass {
     /* Fields of Handy-1.Handy.CarouselIndicatorDotsClass */
-    parent_class: Gtk.DrawingAreaClass
+    readonly parent_class: Gtk.DrawingAreaClass
     static name: string
 }
 abstract class CarouselIndicatorLinesClass {
     /* Fields of Handy-1.Handy.CarouselIndicatorLinesClass */
-    parent_class: Gtk.DrawingAreaClass
+    readonly parent_class: Gtk.DrawingAreaClass
     static name: string
 }
 abstract class ClampClass {
     /* Fields of Handy-1.Handy.ClampClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class ComboRowClass {
     /* Fields of Handy-1.Handy.ComboRowClass */
-    parent_class: ActionRowClass
+    readonly parent_class: ActionRowClass
     static name: string
 }
 abstract class DeckClass {
     /* Fields of Handy-1.Handy.DeckClass */
-    parent_class: Gtk.ContainerClass
+    readonly parent_class: Gtk.ContainerClass
     static name: string
 }
 abstract class EnumValueObjectClass {
     /* Fields of Handy-1.Handy.EnumValueObjectClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ExpanderRowClass {
     /* Fields of Handy-1.Handy.ExpanderRowClass */
-    parent_class: PreferencesRowClass
+    readonly parent_class: PreferencesRowClass
     static name: string
 }
 abstract class FlapClass {
     /* Fields of Handy-1.Handy.FlapClass */
-    parent_class: Gtk.ContainerClass
+    readonly parent_class: Gtk.ContainerClass
     static name: string
 }
 abstract class HeaderBarClass {
     /* Fields of Handy-1.Handy.HeaderBarClass */
-    parent_class: Gtk.ContainerClass
+    readonly parent_class: Gtk.ContainerClass
     static name: string
 }
 abstract class HeaderGroupChildClass {
     /* Fields of Handy-1.Handy.HeaderGroupChildClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HeaderGroupClass {
     /* Fields of Handy-1.Handy.HeaderGroupClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class KeypadClass {
     /* Fields of Handy-1.Handy.KeypadClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class LeafletClass {
     /* Fields of Handy-1.Handy.LeafletClass */
-    parent_class: Gtk.ContainerClass
+    readonly parent_class: Gtk.ContainerClass
     static name: string
 }
 abstract class PreferencesGroupClass {
     /* Fields of Handy-1.Handy.PreferencesGroupClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class PreferencesPageClass {
     /* Fields of Handy-1.Handy.PreferencesPageClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class PreferencesRowClass {
     /* Fields of Handy-1.Handy.PreferencesRowClass */
-    parent_class: Gtk.ListBoxRowClass
+    readonly parent_class: Gtk.ListBoxRowClass
     static name: string
 }
 abstract class PreferencesWindowClass {
     /* Fields of Handy-1.Handy.PreferencesWindowClass */
-    parent_class: WindowClass
+    readonly parent_class: WindowClass
     static name: string
 }
 abstract class SearchBarClass {
     /* Fields of Handy-1.Handy.SearchBarClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class SqueezerClass {
     /* Fields of Handy-1.Handy.SqueezerClass */
-    parent_class: Gtk.ContainerClass
+    readonly parent_class: Gtk.ContainerClass
     static name: string
 }
 abstract class StatusPageClass {
     /* Fields of Handy-1.Handy.StatusPageClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class StyleManagerClass {
     /* Fields of Handy-1.Handy.StyleManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SwipeGroupClass {
     /* Fields of Handy-1.Handy.SwipeGroupClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SwipeTrackerClass {
     /* Fields of Handy-1.Handy.SwipeTrackerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SwipeableInterface {
     /* Fields of Handy-1.Handy.SwipeableInterface */
-    parent: GObject.TypeInterface
-    switch_child: (self: Swipeable, index: number, duration: number) => void
-    get_swipe_tracker: (self: Swipeable) => SwipeTracker
-    get_distance: (self: Swipeable) => number
-    get_snap_points: (self: Swipeable) => number[]
-    get_progress: (self: Swipeable) => number
-    get_cancel_progress: (self: Swipeable) => number
-    get_swipe_area: (self: Swipeable, navigation_direction: NavigationDirection, is_drag: boolean) => /* rect */ Gdk.Rectangle
+    readonly parent: GObject.TypeInterface
+    readonly switch_child: (self: Swipeable, index: number, duration: number) => void
+    readonly get_swipe_tracker: (self: Swipeable) => SwipeTracker
+    readonly get_distance: (self: Swipeable) => number
+    readonly get_snap_points: (self: Swipeable) => number[]
+    readonly get_progress: (self: Swipeable) => number
+    readonly get_cancel_progress: (self: Swipeable) => number
+    readonly get_swipe_area: (self: Swipeable, navigation_direction: NavigationDirection, is_drag: boolean) => /* rect */ Gdk.Rectangle
     static name: string
 }
 abstract class TabBarClass {
     /* Fields of Handy-1.Handy.TabBarClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class TabPageClass {
     /* Fields of Handy-1.Handy.TabPageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TabViewClass {
     /* Fields of Handy-1.Handy.TabViewClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class TitleBarClass {
     /* Fields of Handy-1.Handy.TitleBarClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class ValueObjectClass {
     /* Fields of Handy-1.Handy.ValueObjectClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ViewSwitcherBarClass {
     /* Fields of Handy-1.Handy.ViewSwitcherBarClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class ViewSwitcherClass {
     /* Fields of Handy-1.Handy.ViewSwitcherClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class ViewSwitcherTitleClass {
     /* Fields of Handy-1.Handy.ViewSwitcherTitleClass */
-    parent_class: Gtk.BinClass
+    readonly parent_class: Gtk.BinClass
     static name: string
 }
 abstract class WindowClass {
     /* Fields of Handy-1.Handy.WindowClass */
-    parent_class: Gtk.WindowClass
+    readonly parent_class: Gtk.WindowClass
     static name: string
 }
 abstract class WindowHandleClass {
     /* Fields of Handy-1.Handy.WindowHandleClass */
-    parent_class: Gtk.EventBoxClass
+    readonly parent_class: Gtk.EventBoxClass
     static name: string
 }
 }

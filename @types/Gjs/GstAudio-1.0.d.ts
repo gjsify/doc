@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstAudio-1.0
  */
@@ -215,39 +221,39 @@ enum AudioResamplerFlags {
     NON_INTERLEAVED_OUT,
     VARIABLE_RATE,
 }
-export const AUDIO_CHANNELS_RANGE: string
-export const AUDIO_CONVERTER_OPT_DITHER_METHOD: string
-export const AUDIO_CONVERTER_OPT_MIX_MATRIX: string
-export const AUDIO_CONVERTER_OPT_NOISE_SHAPING_METHOD: string
-export const AUDIO_CONVERTER_OPT_QUANTIZATION: string
-export const AUDIO_CONVERTER_OPT_RESAMPLER_METHOD: string
-export const AUDIO_DECODER_MAX_ERRORS: number
-export const AUDIO_DECODER_SINK_NAME: string
-export const AUDIO_DECODER_SRC_NAME: string
-export const AUDIO_DEF_CHANNELS: number
-export const AUDIO_DEF_FORMAT: string
-export const AUDIO_DEF_RATE: number
-export const AUDIO_ENCODER_SINK_NAME: string
-export const AUDIO_ENCODER_SRC_NAME: string
-export const AUDIO_FORMATS_ALL: string
-export const AUDIO_RATE_RANGE: string
-export const AUDIO_RESAMPLER_OPT_CUBIC_B: string
-export const AUDIO_RESAMPLER_OPT_CUBIC_C: string
-export const AUDIO_RESAMPLER_OPT_CUTOFF: string
-export const AUDIO_RESAMPLER_OPT_FILTER_INTERPOLATION: string
-export const AUDIO_RESAMPLER_OPT_FILTER_MODE: string
-export const AUDIO_RESAMPLER_OPT_FILTER_MODE_THRESHOLD: string
-export const AUDIO_RESAMPLER_OPT_FILTER_OVERSAMPLE: string
-export const AUDIO_RESAMPLER_OPT_MAX_PHASE_ERROR: string
-export const AUDIO_RESAMPLER_OPT_N_TAPS: string
-export const AUDIO_RESAMPLER_OPT_STOP_ATTENUATION: string
-export const AUDIO_RESAMPLER_OPT_TRANSITION_BANDWIDTH: string
-export const AUDIO_RESAMPLER_QUALITY_DEFAULT: number
-export const AUDIO_RESAMPLER_QUALITY_MAX: number
-export const AUDIO_RESAMPLER_QUALITY_MIN: number
-export const META_TAG_AUDIO_CHANNELS_STR: string
-export const META_TAG_AUDIO_RATE_STR: string
-export const META_TAG_AUDIO_STR: string
+const AUDIO_CHANNELS_RANGE: string
+const AUDIO_CONVERTER_OPT_DITHER_METHOD: string
+const AUDIO_CONVERTER_OPT_MIX_MATRIX: string
+const AUDIO_CONVERTER_OPT_NOISE_SHAPING_METHOD: string
+const AUDIO_CONVERTER_OPT_QUANTIZATION: string
+const AUDIO_CONVERTER_OPT_RESAMPLER_METHOD: string
+const AUDIO_DECODER_MAX_ERRORS: number
+const AUDIO_DECODER_SINK_NAME: string
+const AUDIO_DECODER_SRC_NAME: string
+const AUDIO_DEF_CHANNELS: number
+const AUDIO_DEF_FORMAT: string
+const AUDIO_DEF_RATE: number
+const AUDIO_ENCODER_SINK_NAME: string
+const AUDIO_ENCODER_SRC_NAME: string
+const AUDIO_FORMATS_ALL: string
+const AUDIO_RATE_RANGE: string
+const AUDIO_RESAMPLER_OPT_CUBIC_B: string
+const AUDIO_RESAMPLER_OPT_CUBIC_C: string
+const AUDIO_RESAMPLER_OPT_CUTOFF: string
+const AUDIO_RESAMPLER_OPT_FILTER_INTERPOLATION: string
+const AUDIO_RESAMPLER_OPT_FILTER_MODE: string
+const AUDIO_RESAMPLER_OPT_FILTER_MODE_THRESHOLD: string
+const AUDIO_RESAMPLER_OPT_FILTER_OVERSAMPLE: string
+const AUDIO_RESAMPLER_OPT_MAX_PHASE_ERROR: string
+const AUDIO_RESAMPLER_OPT_N_TAPS: string
+const AUDIO_RESAMPLER_OPT_STOP_ATTENUATION: string
+const AUDIO_RESAMPLER_OPT_TRANSITION_BANDWIDTH: string
+const AUDIO_RESAMPLER_QUALITY_DEFAULT: number
+const AUDIO_RESAMPLER_QUALITY_MAX: number
+const AUDIO_RESAMPLER_QUALITY_MIN: number
+const META_TAG_AUDIO_CHANNELS_STR: string
+const META_TAG_AUDIO_RATE_STR: string
+const META_TAG_AUDIO_STR: string
 function audio_buffer_clip(buffer: Gst.Buffer, segment: Gst.Segment, rate: number, bpf: number): Gst.Buffer
 function audio_buffer_map(info: AudioInfo, gstbuffer: Gst.Buffer, flags: Gst.MapFlags): [ /* returnType */ boolean, /* buffer */ AudioBuffer ]
 function audio_buffer_reorder_channels(buffer: Gst.Buffer, format: AudioFormat, from: AudioChannelPosition[], to: AudioChannelPosition[]): boolean
@@ -263,7 +269,7 @@ function audio_clipping_meta_get_info(): Gst.MetaInfo
 function audio_downmix_meta_api_get_type(): GObject.Type
 function audio_downmix_meta_get_info(): Gst.MetaInfo
 function audio_format_build_integer(sign: boolean, endianness: number, width: number, depth: number): AudioFormat
-function audio_format_fill_silence(info: AudioFormatInfo, dest: Uint8Array[]): void
+function audio_format_fill_silence(info: AudioFormatInfo, dest: Uint8Array): void
 function audio_format_from_string(format: string): AudioFormat
 function audio_format_get_info(format: AudioFormat): AudioFormatInfo
 function audio_format_info_get_type(): GObject.Type
@@ -271,7 +277,7 @@ function audio_format_to_string(format: AudioFormat): string
 function audio_formats_raw(): AudioFormat[]
 function audio_get_channel_reorder_map(from: AudioChannelPosition[], to: AudioChannelPosition[], reorder_map: number[]): boolean
 function audio_iec61937_frame_size(spec: AudioRingBufferSpec): number
-function audio_iec61937_payload(src: Uint8Array[], dst: Uint8Array[], spec: AudioRingBufferSpec, endianness: number): boolean
+function audio_iec61937_payload(src: Uint8Array, dst: Uint8Array, spec: AudioRingBufferSpec, endianness: number): boolean
 function audio_info_from_caps(caps: Gst.Caps): [ /* returnType */ boolean, /* info */ AudioInfo ]
 function audio_info_init(): /* info */ AudioInfo
 function audio_level_meta_api_get_type(): GObject.Type
@@ -279,7 +285,7 @@ function audio_level_meta_get_info(): Gst.MetaInfo
 function audio_make_raw_caps(formats: AudioFormat[] | null, layout: AudioLayout): Gst.Caps
 function audio_meta_api_get_type(): GObject.Type
 function audio_meta_get_info(): Gst.MetaInfo
-function audio_reorder_channels(data: Uint8Array[], format: AudioFormat, from: AudioChannelPosition[], to: AudioChannelPosition[]): boolean
+function audio_reorder_channels(data: Uint8Array, format: AudioFormat, from: AudioChannelPosition[], to: AudioChannelPosition[]): boolean
 function audio_resampler_new(method: AudioResamplerMethod, flags: AudioResamplerFlags, format: AudioFormat, channels: number, in_rate: number, out_rate: number, options: Gst.Structure): AudioResampler
 function audio_resampler_options_set_quality(method: AudioResamplerMethod, quality: number, in_rate: number, out_rate: number, options: Gst.Structure): void
 function buffer_add_audio_clipping_meta(buffer: Gst.Buffer, format: Gst.Format, start: number, end: number): AudioClippingMeta
@@ -296,13 +302,13 @@ interface AudioClockGetTimeFunc {
     (clock: Gst.Clock): Gst.ClockTime
 }
 interface AudioFormatPack {
-    (info: AudioFormatInfo, flags: AudioPackFlags, src: Uint8Array[], data: Uint8Array[], length: number): void
+    (info: AudioFormatInfo, flags: AudioPackFlags, src: Uint8Array, data: Uint8Array, length: number): void
 }
 interface AudioFormatUnpack {
-    (info: AudioFormatInfo, flags: AudioPackFlags, dest: Uint8Array[], data: Uint8Array[], length: number): void
+    (info: AudioFormatInfo, flags: AudioPackFlags, dest: Uint8Array, data: Uint8Array, length: number): void
 }
 interface AudioRingBufferCallback {
-    (rbuf: AudioRingBuffer, data: Uint8Array[]): void
+    (rbuf: AudioRingBuffer, data: Uint8Array): void
 }
 class StreamVolume {
     /* Properties of GstAudio-1.0.GstAudio.StreamVolume */
@@ -317,7 +323,8 @@ class StreamVolume {
     /* Static methods and pseudo-constructors */
     static convert_volume(from: StreamVolumeFormat, to: StreamVolumeFormat, val: number): number
 }
-export interface AudioAggregator_ConstructProps extends GstBase.Aggregator_ConstructProps {
+interface AudioAggregator_ConstructProps extends GstBase.Aggregator_ConstructProps {
+    /* Constructor properties of GstAudio-1.0.GstAudio.AudioAggregator */
     alignment_threshold?: number
     discont_wait?: number
     ignore_inactive_pads?: boolean
@@ -337,39 +344,36 @@ class AudioAggregator {
     min_upstream_latency: number
     start_time: number
     start_time_selection: GstBase.AggregatorStartTimeSelection
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioAggregator */
-    current_caps: Gst.Caps
     /* Fields of GstBase-1.0.GstBase.Aggregator */
-    srcpad: Gst.Pad
+    readonly parent: Gst.Element
+    readonly srcpad: Gst.Pad
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioAggregator */
     set_sink_caps(pad: AudioAggregatorPad, caps: Gst.Caps): void
     /* Methods of GstBase-1.0.GstBase.Aggregator */
@@ -595,10 +599,6 @@ class AudioAggregator {
     connect_after(sigName: "notify::start-time", callback: (($obj: AudioAggregator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::start-time-selection", callback: (($obj: AudioAggregator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::start-time-selection", callback: (($obj: AudioAggregator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioAggregator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioAggregator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioAggregator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioAggregator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -608,7 +608,8 @@ class AudioAggregator {
     _init (config?: AudioAggregator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AudioAggregatorConvertPad_ConstructProps extends AudioAggregatorPad_ConstructProps {
+interface AudioAggregatorConvertPad_ConstructProps extends AudioAggregatorPad_ConstructProps {
+    /* Constructor properties of GstAudio-1.0.GstAudio.AudioAggregatorConvertPad */
     converter_config?: Gst.Structure
 }
 class AudioAggregatorConvertPad {
@@ -622,23 +623,22 @@ class AudioAggregatorConvertPad {
     readonly caps: Gst.Caps
     offset: number
     template: Gst.PadTemplate
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of GstAudio-1.0.GstAudio.AudioAggregatorPad */
-    info: AudioInfo
+    readonly parent: GstBase.AggregatorPad
+    readonly info: AudioInfo
     /* Fields of GstBase-1.0.GstBase.AggregatorPad */
-    segment: Gst.Segment
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Pad */
-    object: Gst.Object
-    element_private: object
-    padtemplate: Gst.PadTemplate
-    direction: Gst.PadDirection
+    readonly object: Gst.Object
+    readonly element_private: object
+    readonly padtemplate: Gst.PadTemplate
+    readonly direction: Gst.PadDirection
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.AggregatorPad */
     drop_buffer(): boolean
     has_buffer(): boolean
@@ -823,10 +823,6 @@ class AudioAggregatorConvertPad {
     connect_after(sigName: "notify::offset", callback: (($obj: AudioAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::template", callback: (($obj: AudioAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::template", callback: (($obj: AudioAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioAggregatorConvertPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -836,7 +832,8 @@ class AudioAggregatorConvertPad {
     _init (config?: AudioAggregatorConvertPad_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AudioAggregatorPad_ConstructProps extends GstBase.AggregatorPad_ConstructProps {
+interface AudioAggregatorPad_ConstructProps extends GstBase.AggregatorPad_ConstructProps {
+    /* Constructor properties of GstAudio-1.0.GstAudio.AudioAggregatorPad */
     qos_messages?: boolean
 }
 class AudioAggregatorPad {
@@ -848,23 +845,20 @@ class AudioAggregatorPad {
     readonly caps: Gst.Caps
     offset: number
     template: Gst.PadTemplate
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioAggregatorPad */
-    info: AudioInfo
     /* Fields of GstBase-1.0.GstBase.AggregatorPad */
-    segment: Gst.Segment
+    readonly parent: Gst.Pad
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Pad */
-    object: Gst.Object
-    element_private: object
-    padtemplate: Gst.PadTemplate
-    direction: Gst.PadDirection
+    readonly object: Gst.Object
+    readonly element_private: object
+    readonly padtemplate: Gst.PadTemplate
+    readonly direction: Gst.PadDirection
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.AggregatorPad */
     drop_buffer(): boolean
     has_buffer(): boolean
@@ -1047,10 +1041,6 @@ class AudioAggregatorPad {
     connect_after(sigName: "notify::offset", callback: (($obj: AudioAggregatorPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::template", callback: (($obj: AudioAggregatorPad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::template", callback: (($obj: AudioAggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioAggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioAggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioAggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioAggregatorPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1060,7 +1050,8 @@ class AudioAggregatorPad {
     _init (config?: AudioAggregatorPad_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AudioBaseSink_ConstructProps extends GstBase.BaseSink_ConstructProps {
+interface AudioBaseSink_ConstructProps extends GstBase.BaseSink_ConstructProps {
+    /* Constructor properties of GstAudio-1.0.GstAudio.AudioBaseSink */
     alignment_threshold?: number
     buffer_time?: number
     can_activate_pull?: boolean
@@ -1094,55 +1085,49 @@ class AudioBaseSink {
     sync: boolean
     throttle_time: number
     ts_offset: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioBaseSink */
-    element: GstBase.BaseSink
-    ringbuffer: AudioRingBuffer
-    next_sample: number
-    provided_clock: Gst.Clock
-    eos_rendering: boolean
     /* Fields of GstBase-1.0.GstBase.BaseSink */
-    sinkpad: Gst.Pad
-    pad_mode: Gst.PadMode
-    offset: number
-    can_activate_push: boolean
-    preroll_lock: GLib.Mutex
-    preroll_cond: GLib.Cond
-    eos: boolean
-    need_preroll: boolean
-    have_preroll: boolean
-    playing_async: boolean
-    have_newsegment: boolean
-    segment: Gst.Segment
+    readonly element: Gst.Element
+    readonly sinkpad: Gst.Pad
+    readonly pad_mode: Gst.PadMode
+    readonly offset: number
+    readonly can_activate_push: boolean
+    readonly preroll_lock: GLib.Mutex
+    readonly preroll_cond: GLib.Cond
+    readonly eos: boolean
+    readonly need_preroll: boolean
+    readonly have_preroll: boolean
+    readonly playing_async: boolean
+    readonly have_newsegment: boolean
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioBaseSink */
     create_ringbuffer(): AudioRingBuffer
     get_alignment_threshold(): Gst.ClockTime
@@ -1305,6 +1290,9 @@ class AudioBaseSink {
     /* Virtual methods of GstAudio-1.0.GstAudio.AudioBaseSink */
     vfunc_create_ringbuffer(): AudioRingBuffer
     vfunc_payload(buffer: Gst.Buffer): Gst.Buffer
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSink */
     vfunc_activate_pull(active: boolean): boolean
     vfunc_event(event: Gst.Event): boolean
@@ -1315,6 +1303,8 @@ class AudioBaseSink {
     vfunc_prepare_list(buffer_list: Gst.BufferList): Gst.FlowReturn
     vfunc_preroll(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_propose_allocation(query: Gst.Query): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_render(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_render_list(buffer_list: Gst.BufferList): Gst.FlowReturn
@@ -1411,10 +1401,6 @@ class AudioBaseSink {
     connect_after(sigName: "notify::throttle-time", callback: (($obj: AudioBaseSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::ts-offset", callback: (($obj: AudioBaseSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::ts-offset", callback: (($obj: AudioBaseSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioBaseSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioBaseSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioBaseSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioBaseSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1424,7 +1410,8 @@ class AudioBaseSink {
     _init (config?: AudioBaseSink_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AudioBaseSrc_ConstructProps extends GstBase.PushSrc_ConstructProps {
+interface AudioBaseSrc_ConstructProps extends GstBase.PushSrc_ConstructProps {
+    /* Constructor properties of GstAudio-1.0.GstAudio.AudioBaseSrc */
     buffer_time?: number
     latency_time?: number
     provide_clock?: boolean
@@ -1439,59 +1426,56 @@ class AudioBaseSrc {
     provide_clock: boolean
     slave_method: AudioBaseSrcSlaveMethod
     /* Properties of GstBase-1.0.GstBase.BaseSrc */
-    blocksize: number
     do_timestamp: boolean
-    num_buffers: number
-    typefind: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioBaseSrc */
-    element: GstBase.PushSrc
-    ringbuffer: AudioRingBuffer
-    next_sample: number
-    clock: Gst.Clock
+    /* Fields of GstBase-1.0.GstBase.PushSrc */
+    readonly parent: GstBase.BaseSrc
     /* Fields of GstBase-1.0.GstBase.BaseSrc */
-    srcpad: Gst.Pad
-    live_lock: GLib.Mutex
-    live_cond: GLib.Cond
-    is_live: boolean
-    live_running: boolean
-    can_activate_push: boolean
-    random_access: boolean
-    clock_id: Gst.ClockID
-    segment: Gst.Segment
-    need_newsegment: boolean
-    num_buffers_left: number
-    running: boolean
-    pending_seek: Gst.Event
-    priv: GstBase.BaseSrcPrivate
+    readonly element: Gst.Element
+    readonly srcpad: Gst.Pad
+    readonly live_lock: GLib.Mutex
+    readonly live_cond: GLib.Cond
+    readonly is_live: boolean
+    readonly live_running: boolean
+    readonly blocksize: number
+    readonly can_activate_push: boolean
+    readonly random_access: boolean
+    readonly clock_id: Gst.ClockID
+    readonly segment: Gst.Segment
+    readonly need_newsegment: boolean
+    readonly num_buffers: number
+    readonly num_buffers_left: number
+    readonly typefind: boolean
+    readonly running: boolean
+    readonly pending_seek: Gst.Event
+    readonly priv: GstBase.BaseSrcPrivate
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioBaseSrc */
     create_ringbuffer(): AudioRingBuffer
     get_provide_clock(): boolean
@@ -1635,18 +1619,30 @@ class AudioBaseSrc {
     /* Virtual methods of GstAudio-1.0.GstAudio.AudioBaseSrc */
     vfunc_create_ringbuffer(): AudioRingBuffer
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.PushSrc */
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSrc */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
@@ -1661,6 +1657,8 @@ class AudioBaseSrc {
     vfunc_is_seekable(): boolean
     vfunc_negotiate(): boolean
     vfunc_prepare_seek_segment(seek: Gst.Event, segment: Gst.Segment): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(caps: Gst.Caps): boolean
     vfunc_start(): boolean
@@ -1724,18 +1722,8 @@ class AudioBaseSrc {
     connect_after(sigName: "notify::provide-clock", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::slave-method", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::slave-method", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::blocksize", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::blocksize", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::do-timestamp", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::do-timestamp", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::num-buffers", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::num-buffers", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::typefind", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::typefind", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioBaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1745,7 +1733,8 @@ class AudioBaseSrc {
     _init (config?: AudioBaseSrc_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AudioCdSrc_ConstructProps extends GstBase.PushSrc_ConstructProps {
+interface AudioCdSrc_ConstructProps extends GstBase.PushSrc_ConstructProps {
+    /* Constructor properties of GstAudio-1.0.GstAudio.AudioCdSrc */
     device?: string
     mode?: AudioCdSrcMode
     track?: number
@@ -1756,59 +1745,56 @@ class AudioCdSrc {
     mode: AudioCdSrcMode
     track: number
     /* Properties of GstBase-1.0.GstBase.BaseSrc */
-    blocksize: number
     do_timestamp: boolean
-    num_buffers: number
-    typefind: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioCdSrc */
-    pushsrc: GstBase.PushSrc
-    tags: Gst.TagList
+    /* Fields of GstBase-1.0.GstBase.PushSrc */
+    readonly parent: GstBase.BaseSrc
     /* Fields of GstBase-1.0.GstBase.BaseSrc */
-    element: Gst.Element
-    srcpad: Gst.Pad
-    live_lock: GLib.Mutex
-    live_cond: GLib.Cond
-    is_live: boolean
-    live_running: boolean
-    can_activate_push: boolean
-    random_access: boolean
-    clock_id: Gst.ClockID
-    segment: Gst.Segment
-    need_newsegment: boolean
-    num_buffers_left: number
-    running: boolean
-    pending_seek: Gst.Event
-    priv: GstBase.BaseSrcPrivate
+    readonly element: Gst.Element
+    readonly srcpad: Gst.Pad
+    readonly live_lock: GLib.Mutex
+    readonly live_cond: GLib.Cond
+    readonly is_live: boolean
+    readonly live_running: boolean
+    readonly blocksize: number
+    readonly can_activate_push: boolean
+    readonly random_access: boolean
+    readonly clock_id: Gst.ClockID
+    readonly segment: Gst.Segment
+    readonly need_newsegment: boolean
+    readonly num_buffers: number
+    readonly num_buffers_left: number
+    readonly typefind: boolean
+    readonly running: boolean
+    readonly pending_seek: Gst.Event
+    readonly priv: GstBase.BaseSrcPrivate
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioCdSrc */
     add_track(track: AudioCdSrcTrack): boolean
     /* Methods of GstBase-1.0.GstBase.BaseSrc */
@@ -1958,18 +1944,30 @@ class AudioCdSrc {
     vfunc_get_uri(): string | null
     vfunc_set_uri(uri: string): boolean
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.PushSrc */
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSrc */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
@@ -1984,6 +1982,8 @@ class AudioCdSrc {
     vfunc_is_seekable(): boolean
     vfunc_negotiate(): boolean
     vfunc_prepare_seek_segment(seek: Gst.Event, segment: Gst.Segment): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(caps: Gst.Caps): boolean
     vfunc_start(): boolean
@@ -2041,18 +2041,8 @@ class AudioCdSrc {
     connect_after(sigName: "notify::mode", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::track", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::track", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::blocksize", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::blocksize", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::do-timestamp", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::do-timestamp", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::num-buffers", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::num-buffers", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::typefind", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::typefind", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioCdSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2062,7 +2052,7 @@ class AudioCdSrc {
     _init (config?: AudioCdSrc_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AudioClock_ConstructProps extends Gst.SystemClock_ConstructProps {
+interface AudioClock_ConstructProps extends Gst.SystemClock_ConstructProps {
 }
 class AudioClock {
     /* Properties of Gst-1.0.Gst.SystemClock */
@@ -2071,21 +2061,17 @@ class AudioClock {
     timeout: number
     window_size: number
     window_threshold: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioClock */
-    clock: Gst.SystemClock
-    func: AudioClockGetTimeFunc
-    user_data: object
-    destroy_notify: GLib.DestroyNotify
+    /* Fields of Gst-1.0.Gst.SystemClock */
+    readonly clock: Gst.Clock
     /* Fields of Gst-1.0.Gst.Clock */
-    object: Gst.Object
+    readonly object: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioClock */
     adjust(time: Gst.ClockTime): Gst.ClockTime
     get_time(): Gst.ClockTime
@@ -2197,10 +2183,6 @@ class AudioClock {
     connect_after(sigName: "notify::window-size", callback: (($obj: AudioClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::window-threshold", callback: (($obj: AudioClock, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::window-threshold", callback: (($obj: AudioClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioClock, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioClock, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioClock, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2212,7 +2194,8 @@ class AudioClock {
     static new(name: string, func: AudioClockGetTimeFunc): AudioClock
     static $gtype: GObject.Type
 }
-export interface AudioDecoder_ConstructProps extends Gst.Element_ConstructProps {
+interface AudioDecoder_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstAudio-1.0.GstAudio.AudioDecoder */
     max_errors?: number
     min_latency?: number
     plc?: boolean
@@ -2224,43 +2207,35 @@ class AudioDecoder {
     min_latency: number
     plc: boolean
     tolerance: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioDecoder */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    stream_lock: GLib.RecMutex
-    input_segment: Gst.Segment
-    output_segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioDecoder */
     allocate_output_buffer(size: number): Gst.Buffer
     finish_frame(buf: Gst.Buffer | null, frames: number): Gst.FlowReturn
@@ -2479,10 +2454,6 @@ class AudioDecoder {
     connect_after(sigName: "notify::plc", callback: (($obj: AudioDecoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::tolerance", callback: (($obj: AudioDecoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::tolerance", callback: (($obj: AudioDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioDecoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioDecoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2492,7 +2463,8 @@ class AudioDecoder {
     _init (config?: AudioDecoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AudioEncoder_ConstructProps extends Gst.Element_ConstructProps {
+interface AudioEncoder_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstAudio-1.0.GstAudio.AudioEncoder */
     hard_resync?: boolean
     perfect_timestamp?: boolean
     tolerance?: number
@@ -2503,43 +2475,35 @@ class AudioEncoder {
     readonly mark_granule: boolean
     perfect_timestamp: boolean
     tolerance: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioEncoder */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    stream_lock: GLib.RecMutex
-    input_segment: Gst.Segment
-    output_segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioEncoder */
     allocate_output_buffer(size: number): Gst.Buffer
     finish_frame(buffer: Gst.Buffer | null, samples: number): Gst.FlowReturn
@@ -2775,10 +2739,6 @@ class AudioEncoder {
     connect_after(sigName: "notify::perfect-timestamp", callback: (($obj: AudioEncoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::tolerance", callback: (($obj: AudioEncoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::tolerance", callback: (($obj: AudioEncoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioEncoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioEncoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioEncoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioEncoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2791,51 +2751,47 @@ class AudioEncoder {
     static set_app_dir(app_dir: string): boolean
     static $gtype: GObject.Type
 }
-export interface AudioFilter_ConstructProps extends GstBase.BaseTransform_ConstructProps {
+interface AudioFilter_ConstructProps extends GstBase.BaseTransform_ConstructProps {
 }
 class AudioFilter {
     /* Properties of GstBase-1.0.GstBase.BaseTransform */
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioFilter */
-    basetransform: GstBase.BaseTransform
-    info: AudioInfo
     /* Fields of GstBase-1.0.GstBase.BaseTransform */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    have_segment: boolean
-    segment: Gst.Segment
-    queued_buf: Gst.Buffer
+    readonly element: Gst.Element
+    readonly sinkpad: Gst.Pad
+    readonly srcpad: Gst.Pad
+    readonly have_segment: boolean
+    readonly segment: Gst.Segment
+    readonly queued_buf: Gst.Buffer
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseTransform */
     get_allocator(): [ /* allocator */ Gst.Allocator | null, /* params */ Gst.AllocationParams | null ]
     get_buffer_pool(): Gst.BufferPool | null
@@ -2968,6 +2924,7 @@ class AudioFilter {
     /* Virtual methods of GstAudio-1.0.GstAudio.AudioFilter */
     vfunc_setup(info: AudioInfo): boolean
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseTransform */
     vfunc_accept_caps(direction: Gst.PadDirection, caps: Gst.Caps): boolean
@@ -2981,6 +2938,7 @@ class AudioFilter {
     vfunc_prepare_output_buffer(input: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
     vfunc_propose_allocation(decide_query: Gst.Query, query: Gst.Query): boolean
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(incaps: Gst.Caps, outcaps: Gst.Caps): boolean
     vfunc_sink_event(event: Gst.Event): boolean
@@ -3040,10 +2998,6 @@ class AudioFilter {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::qos", callback: (($obj: AudioFilter, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: AudioFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioFilter, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioFilter, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioFilter, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3055,31 +3009,17 @@ class AudioFilter {
     static add_pad_templates(klass: AudioFilter | Function | GObject.Type, allowed_caps: Gst.Caps): void
     static $gtype: GObject.Type
 }
-export interface AudioRingBuffer_ConstructProps extends Gst.Object_ConstructProps {
+interface AudioRingBuffer_ConstructProps extends Gst.Object_ConstructProps {
 }
 class AudioRingBuffer {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioRingBuffer */
-    object: Gst.Object
-    cond: GLib.Cond
-    open: boolean
-    acquired: boolean
-    memory: number
-    size: number
-    spec: AudioRingBufferSpec
-    samples_per_seg: number
-    empty_seg: number
-    state: number
-    segdone: number
-    segbase: number
-    waiting: number
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioRingBuffer */
     acquire(spec: AudioRingBufferSpec): boolean
     activate(active: boolean): boolean
@@ -3087,7 +3027,7 @@ class AudioRingBuffer {
     clear(segment: number): void
     clear_all(): void
     close_device(): boolean
-    commit(sample: number, data: Uint8Array[], out_samples: number, accum: number): [ /* returnType */ number, /* accum */ number ]
+    commit(sample: number, data: Uint8Array, out_samples: number, accum: number): [ /* returnType */ number, /* accum */ number ]
     convert(src_fmt: Gst.Format, src_val: number, dest_fmt: Gst.Format): [ /* returnType */ boolean, /* dest_val */ number ]
     delay(): number
     device_is_open(): boolean
@@ -3097,8 +3037,8 @@ class AudioRingBuffer {
     may_start(allowed: boolean): void
     open_device(): boolean
     pause(): boolean
-    prepare_read(): [ /* returnType */ boolean, /* segment */ number, /* readptr */ Uint8Array[] ]
-    read(sample: number, data: Uint8Array[]): [ /* returnType */ number, /* timestamp */ Gst.ClockTime ]
+    prepare_read(): [ /* returnType */ boolean, /* segment */ number, /* readptr */ Uint8Array ]
+    read(sample: number, data: Uint8Array): [ /* returnType */ number, /* timestamp */ Gst.ClockTime ]
     release(): boolean
     samples_done(): number
     set_callback(cb: AudioRingBufferCallback | null): void
@@ -3159,7 +3099,7 @@ class AudioRingBuffer {
     vfunc_activate(active: boolean): boolean
     vfunc_clear_all(): void
     vfunc_close_device(): boolean
-    vfunc_commit(sample: number, data: Uint8Array[], out_samples: number, accum: number): [ /* returnType */ number, /* accum */ number ]
+    vfunc_commit(sample: number, data: Uint8Array, out_samples: number, accum: number): [ /* returnType */ number, /* accum */ number ]
     vfunc_delay(): number
     vfunc_open_device(): boolean
     vfunc_pause(): boolean
@@ -3185,10 +3125,6 @@ class AudioRingBuffer {
     connect(sigName: "notify", callback: (($obj: AudioRingBuffer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AudioRingBuffer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: AudioRingBuffer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioRingBuffer, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioRingBuffer, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioRingBuffer, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3202,16 +3138,14 @@ class AudioRingBuffer {
     static parse_caps(spec: AudioRingBufferSpec, caps: Gst.Caps): boolean
     static $gtype: GObject.Type
 }
-export interface AudioSink_ConstructProps extends AudioBaseSink_ConstructProps {
+interface AudioSink_ConstructProps extends AudioBaseSink_ConstructProps {
 }
 class AudioSink {
     /* Properties of GstAudio-1.0.GstAudio.AudioBaseSink */
     alignment_threshold: number
-    buffer_time: number
     can_activate_pull: boolean
     discont_wait: number
     drift_tolerance: number
-    latency_time: number
     provide_clock: boolean
     slave_method: AudioBaseSinkSlaveMethod
     /* Properties of GstBase-1.0.GstBase.BaseSink */
@@ -3228,56 +3162,56 @@ class AudioSink {
     sync: boolean
     throttle_time: number
     ts_offset: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioSink */
-    element: AudioBaseSink
     /* Fields of GstAudio-1.0.GstAudio.AudioBaseSink */
-    ringbuffer: AudioRingBuffer
-    next_sample: number
-    provided_clock: Gst.Clock
-    eos_rendering: boolean
+    readonly element: GstBase.BaseSink
+    readonly ringbuffer: AudioRingBuffer
+    readonly buffer_time: number
+    readonly latency_time: number
+    readonly next_sample: number
+    readonly provided_clock: Gst.Clock
+    readonly eos_rendering: boolean
     /* Fields of GstBase-1.0.GstBase.BaseSink */
-    sinkpad: Gst.Pad
-    pad_mode: Gst.PadMode
-    offset: number
-    can_activate_push: boolean
-    preroll_lock: GLib.Mutex
-    preroll_cond: GLib.Cond
-    eos: boolean
-    need_preroll: boolean
-    have_preroll: boolean
-    playing_async: boolean
-    have_newsegment: boolean
-    segment: Gst.Segment
+    readonly sinkpad: Gst.Pad
+    readonly pad_mode: Gst.PadMode
+    readonly offset: number
+    readonly can_activate_push: boolean
+    readonly preroll_lock: GLib.Mutex
+    readonly preroll_cond: GLib.Cond
+    readonly eos: boolean
+    readonly need_preroll: boolean
+    readonly have_preroll: boolean
+    readonly playing_async: boolean
+    readonly have_newsegment: boolean
+    readonly segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioBaseSink */
     create_ringbuffer(): AudioRingBuffer
     get_alignment_threshold(): Gst.ClockTime
@@ -3443,16 +3377,24 @@ class AudioSink {
     vfunc_open(): boolean
     vfunc_pause(): void
     vfunc_prepare(spec: AudioRingBufferSpec): boolean
+    /* Function overloads */
     vfunc_prepare(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_reset(): void
     vfunc_resume(): void
     vfunc_stop(): void
+    /* Function overloads */
     vfunc_stop(): boolean
     vfunc_unprepare(): boolean
     vfunc_write(data: object | null, length: number): number
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstAudio-1.0.GstAudio.AudioBaseSink */
     vfunc_create_ringbuffer(): AudioRingBuffer
     vfunc_payload(buffer: Gst.Buffer): Gst.Buffer
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSink */
     vfunc_activate_pull(active: boolean): boolean
     vfunc_event(event: Gst.Event): boolean
@@ -3463,6 +3405,8 @@ class AudioSink {
     vfunc_prepare_list(buffer_list: Gst.BufferList): Gst.FlowReturn
     vfunc_preroll(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_propose_allocation(query: Gst.Query): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_render(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_render_list(buffer_list: Gst.BufferList): Gst.FlowReturn
@@ -3519,16 +3463,12 @@ class AudioSink {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::alignment-threshold", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::alignment-threshold", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::buffer-time", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::buffer-time", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::can-activate-pull", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::can-activate-pull", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::discont-wait", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::discont-wait", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::drift-tolerance", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::drift-tolerance", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::latency-time", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::latency-time", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::provide-clock", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::provide-clock", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::slave-method", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
@@ -3559,10 +3499,6 @@ class AudioSink {
     connect_after(sigName: "notify::throttle-time", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::ts-offset", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::ts-offset", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3572,71 +3508,70 @@ class AudioSink {
     _init (config?: AudioSink_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AudioSrc_ConstructProps extends AudioBaseSrc_ConstructProps {
+interface AudioSrc_ConstructProps extends AudioBaseSrc_ConstructProps {
 }
 class AudioSrc {
     /* Properties of GstAudio-1.0.GstAudio.AudioBaseSrc */
     readonly actual_buffer_time: number
     readonly actual_latency_time: number
-    buffer_time: number
-    latency_time: number
     provide_clock: boolean
     slave_method: AudioBaseSrcSlaveMethod
     /* Properties of GstBase-1.0.GstBase.BaseSrc */
-    blocksize: number
     do_timestamp: boolean
-    num_buffers: number
-    typefind: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstAudio-1.0.GstAudio.AudioSrc */
-    element: AudioBaseSrc
     /* Fields of GstAudio-1.0.GstAudio.AudioBaseSrc */
-    ringbuffer: AudioRingBuffer
-    next_sample: number
-    clock: Gst.Clock
+    readonly element: GstBase.PushSrc
+    readonly ringbuffer: AudioRingBuffer
+    readonly buffer_time: Gst.ClockTime
+    readonly latency_time: Gst.ClockTime
+    readonly next_sample: number
+    readonly clock: Gst.Clock
+    /* Fields of GstBase-1.0.GstBase.PushSrc */
+    readonly parent: GstBase.BaseSrc
     /* Fields of GstBase-1.0.GstBase.BaseSrc */
-    srcpad: Gst.Pad
-    live_lock: GLib.Mutex
-    live_cond: GLib.Cond
-    is_live: boolean
-    live_running: boolean
-    can_activate_push: boolean
-    random_access: boolean
-    clock_id: Gst.ClockID
-    segment: Gst.Segment
-    need_newsegment: boolean
-    num_buffers_left: number
-    running: boolean
-    pending_seek: Gst.Event
-    priv: GstBase.BaseSrcPrivate
+    readonly srcpad: Gst.Pad
+    readonly live_lock: GLib.Mutex
+    readonly live_cond: GLib.Cond
+    readonly is_live: boolean
+    readonly live_running: boolean
+    readonly blocksize: number
+    readonly can_activate_push: boolean
+    readonly random_access: boolean
+    readonly clock_id: Gst.ClockID
+    readonly segment: Gst.Segment
+    readonly need_newsegment: boolean
+    readonly num_buffers: number
+    readonly num_buffers_left: number
+    readonly typefind: boolean
+    readonly running: boolean
+    readonly pending_seek: Gst.Event
+    readonly priv: GstBase.BaseSrcPrivate
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstAudio-1.0.GstAudio.AudioBaseSrc */
     create_ringbuffer(): AudioRingBuffer
     get_provide_clock(): boolean
@@ -3786,26 +3721,44 @@ class AudioSrc {
     vfunc_reset(): void
     vfunc_unprepare(): boolean
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstAudio-1.0.GstAudio.AudioBaseSrc */
     vfunc_create_ringbuffer(): AudioRingBuffer
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.PushSrc */
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSrc */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
@@ -3820,6 +3773,8 @@ class AudioSrc {
     vfunc_is_seekable(): boolean
     vfunc_negotiate(): boolean
     vfunc_prepare_seek_segment(seek: Gst.Event, segment: Gst.Segment): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(caps: Gst.Caps): boolean
     vfunc_start(): boolean
@@ -3875,26 +3830,12 @@ class AudioSrc {
     connect_after(sigName: "notify::actual-buffer-time", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::actual-latency-time", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::actual-latency-time", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::buffer-time", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::buffer-time", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::latency-time", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::latency-time", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::provide-clock", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::provide-clock", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::slave-method", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::slave-method", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::blocksize", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::blocksize", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::do-timestamp", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::do-timestamp", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::num-buffers", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::num-buffers", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::typefind", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::typefind", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AudioSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3906,14 +3847,14 @@ class AudioSrc {
 }
 abstract class AudioAggregatorClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioAggregatorClass */
-    parent_class: GstBase.AggregatorClass
-    create_output_buffer: (aagg: AudioAggregator, num_frames: number) => Gst.Buffer
-    aggregate_one_buffer: (aagg: AudioAggregator, pad: AudioAggregatorPad, inbuf: Gst.Buffer, in_offset: number, outbuf: Gst.Buffer, out_offset: number, num_frames: number) => boolean
+    readonly parent_class: GstBase.AggregatorClass
+    readonly create_output_buffer: (aagg: AudioAggregator, num_frames: number) => Gst.Buffer
+    readonly aggregate_one_buffer: (aagg: AudioAggregator, pad: AudioAggregatorPad, inbuf: Gst.Buffer, in_offset: number, outbuf: Gst.Buffer, out_offset: number, num_frames: number) => boolean
     static name: string
 }
 abstract class AudioAggregatorConvertPadClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioAggregatorConvertPadClass */
-    parent_class: AudioAggregatorPadClass
+    readonly parent_class: AudioAggregatorPadClass
     static name: string
 }
 class AudioAggregatorConvertPadPrivate {
@@ -3921,9 +3862,9 @@ class AudioAggregatorConvertPadPrivate {
 }
 abstract class AudioAggregatorPadClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioAggregatorPadClass */
-    parent_class: GstBase.AggregatorPadClass
-    convert_buffer: (pad: AudioAggregatorPad, in_info: AudioInfo, out_info: AudioInfo, buffer: Gst.Buffer) => Gst.Buffer
-    update_conversion_info: (pad: AudioAggregatorPad) => void
+    readonly parent_class: GstBase.AggregatorPadClass
+    readonly convert_buffer: (pad: AudioAggregatorPad, in_info: AudioInfo, out_info: AudioInfo, buffer: Gst.Buffer) => Gst.Buffer
+    readonly update_conversion_info: (pad: AudioAggregatorPad) => void
     static name: string
 }
 class AudioAggregatorPadPrivate {
@@ -3934,9 +3875,9 @@ class AudioAggregatorPrivate {
 }
 abstract class AudioBaseSinkClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioBaseSinkClass */
-    parent_class: GstBase.BaseSinkClass
-    create_ringbuffer: (sink: AudioBaseSink) => AudioRingBuffer
-    payload: (sink: AudioBaseSink, buffer: Gst.Buffer) => Gst.Buffer
+    readonly parent_class: GstBase.BaseSinkClass
+    readonly create_ringbuffer: (sink: AudioBaseSink) => AudioRingBuffer
+    readonly payload: (sink: AudioBaseSink, buffer: Gst.Buffer) => Gst.Buffer
     static name: string
 }
 class AudioBaseSinkPrivate {
@@ -3944,8 +3885,8 @@ class AudioBaseSinkPrivate {
 }
 abstract class AudioBaseSrcClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioBaseSrcClass */
-    parent_class: GstBase.PushSrcClass
-    create_ringbuffer: (src: AudioBaseSrc) => AudioRingBuffer
+    readonly parent_class: GstBase.PushSrcClass
+    readonly create_ringbuffer: (src: AudioBaseSrc) => AudioRingBuffer
     static name: string
 }
 class AudioBaseSrcPrivate {
@@ -3953,11 +3894,11 @@ class AudioBaseSrcPrivate {
 }
 class AudioBuffer {
     /* Fields of GstAudio-1.0.GstAudio.AudioBuffer */
-    info: AudioInfo
-    n_samples: number
-    n_planes: number
-    planes: object
-    buffer: Gst.Buffer
+    readonly info: AudioInfo
+    readonly n_samples: number
+    readonly n_planes: number
+    readonly planes: object
+    readonly buffer: Gst.Buffer
     /* Methods of GstAudio-1.0.GstAudio.AudioBuffer */
     unmap(): void
     static name: string
@@ -3969,10 +3910,10 @@ class AudioBuffer {
 }
 abstract class AudioCdSrcClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioCdSrcClass */
-    pushsrc_class: GstBase.PushSrcClass
-    open: (src: AudioCdSrc, device: string) => boolean
-    close: (src: AudioCdSrc) => void
-    read_sector: (src: AudioCdSrc, sector: number) => Gst.Buffer
+    readonly pushsrc_class: GstBase.PushSrcClass
+    readonly open: (src: AudioCdSrc, device: string) => boolean
+    readonly close: (src: AudioCdSrc) => void
+    readonly read_sector: (src: AudioCdSrc, sector: number) => Gst.Buffer
     static name: string
 }
 class AudioCdSrcPrivate {
@@ -3980,11 +3921,11 @@ class AudioCdSrcPrivate {
 }
 class AudioCdSrcTrack {
     /* Fields of GstAudio-1.0.GstAudio.AudioCdSrcTrack */
-    is_audio: boolean
-    num: number
-    start: number
-    end: number
-    tags: Gst.TagList
+    readonly is_audio: boolean
+    readonly num: number
+    readonly start: number
+    readonly end: number
+    readonly tags: Gst.TagList
     static name: string
 }
 class AudioChannelMixer {
@@ -3996,22 +3937,22 @@ class AudioChannelMixer {
 }
 class AudioClippingMeta {
     /* Fields of GstAudio-1.0.GstAudio.AudioClippingMeta */
-    meta: Gst.Meta
-    format: Gst.Format
-    start: number
-    end: number
+    readonly meta: Gst.Meta
+    readonly format: Gst.Format
+    readonly start: number
+    readonly end: number
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 abstract class AudioClockClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioClockClass */
-    parent_class: Gst.SystemClockClass
+    readonly parent_class: Gst.SystemClockClass
     static name: string
 }
 class AudioConverter {
     /* Methods of GstAudio-1.0.GstAudio.AudioConverter */
-    convert(flags: AudioConverterFlags, in_: Uint8Array[]): [ /* returnType */ boolean, /* out */ Uint8Array[] ]
+    convert(flags: AudioConverterFlags, in_: Uint8Array): [ /* returnType */ boolean, /* out */ Uint8Array ]
     free(): void
     get_config(): [ /* returnType */ Gst.Structure, /* in_rate */ number | null, /* out_rate */ number | null ]
     get_in_frames(out_frames: number): number
@@ -4030,25 +3971,25 @@ class AudioConverter {
 }
 abstract class AudioDecoderClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioDecoderClass */
-    element_class: Gst.ElementClass
-    start: (dec: AudioDecoder) => boolean
-    stop: (dec: AudioDecoder) => boolean
-    set_format: (dec: AudioDecoder, caps: Gst.Caps) => boolean
-    parse: (dec: AudioDecoder, adapter: GstBase.Adapter, offset: number, length: number) => Gst.FlowReturn
-    handle_frame: (dec: AudioDecoder, buffer: Gst.Buffer) => Gst.FlowReturn
-    flush: (dec: AudioDecoder, hard: boolean) => void
-    pre_push: (dec: AudioDecoder, buffer: Gst.Buffer) => Gst.FlowReturn
-    sink_event: (dec: AudioDecoder, event: Gst.Event) => boolean
-    src_event: (dec: AudioDecoder, event: Gst.Event) => boolean
-    open: (dec: AudioDecoder) => boolean
-    close: (dec: AudioDecoder) => boolean
-    negotiate: (dec: AudioDecoder) => boolean
-    decide_allocation: (dec: AudioDecoder, query: Gst.Query) => boolean
-    propose_allocation: (dec: AudioDecoder, query: Gst.Query) => boolean
-    sink_query: (dec: AudioDecoder, query: Gst.Query) => boolean
-    src_query: (dec: AudioDecoder, query: Gst.Query) => boolean
-    getcaps: (dec: AudioDecoder, filter: Gst.Caps) => Gst.Caps
-    transform_meta: (enc: AudioDecoder, outbuf: Gst.Buffer, meta: Gst.Meta, inbuf: Gst.Buffer) => boolean
+    readonly element_class: Gst.ElementClass
+    readonly start: (dec: AudioDecoder) => boolean
+    readonly stop: (dec: AudioDecoder) => boolean
+    readonly set_format: (dec: AudioDecoder, caps: Gst.Caps) => boolean
+    readonly parse: (dec: AudioDecoder, adapter: GstBase.Adapter, offset: number, length: number) => Gst.FlowReturn
+    readonly handle_frame: (dec: AudioDecoder, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly flush: (dec: AudioDecoder, hard: boolean) => void
+    readonly pre_push: (dec: AudioDecoder, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly sink_event: (dec: AudioDecoder, event: Gst.Event) => boolean
+    readonly src_event: (dec: AudioDecoder, event: Gst.Event) => boolean
+    readonly open: (dec: AudioDecoder) => boolean
+    readonly close: (dec: AudioDecoder) => boolean
+    readonly negotiate: (dec: AudioDecoder) => boolean
+    readonly decide_allocation: (dec: AudioDecoder, query: Gst.Query) => boolean
+    readonly propose_allocation: (dec: AudioDecoder, query: Gst.Query) => boolean
+    readonly sink_query: (dec: AudioDecoder, query: Gst.Query) => boolean
+    readonly src_query: (dec: AudioDecoder, query: Gst.Query) => boolean
+    readonly getcaps: (dec: AudioDecoder, filter: Gst.Caps) => Gst.Caps
+    readonly transform_meta: (enc: AudioDecoder, outbuf: Gst.Buffer, meta: Gst.Meta, inbuf: Gst.Buffer) => boolean
     static name: string
 }
 class AudioDecoderPrivate {
@@ -4056,36 +3997,36 @@ class AudioDecoderPrivate {
 }
 class AudioDownmixMeta {
     /* Fields of GstAudio-1.0.GstAudio.AudioDownmixMeta */
-    meta: Gst.Meta
-    from_position: AudioChannelPosition
-    to_position: AudioChannelPosition
-    from_channels: number
-    to_channels: number
-    matrix: number
+    readonly meta: Gst.Meta
+    readonly from_position: AudioChannelPosition
+    readonly to_position: AudioChannelPosition
+    readonly from_channels: number
+    readonly to_channels: number
+    readonly matrix: number
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 abstract class AudioEncoderClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioEncoderClass */
-    element_class: Gst.ElementClass
-    start: (enc: AudioEncoder) => boolean
-    stop: (enc: AudioEncoder) => boolean
-    set_format: (enc: AudioEncoder, info: AudioInfo) => boolean
-    handle_frame: (enc: AudioEncoder, buffer: Gst.Buffer) => Gst.FlowReturn
-    flush: (enc: AudioEncoder) => void
-    pre_push: (enc: AudioEncoder, buffer: Gst.Buffer) => Gst.FlowReturn
-    sink_event: (enc: AudioEncoder, event: Gst.Event) => boolean
-    src_event: (enc: AudioEncoder, event: Gst.Event) => boolean
-    getcaps: (enc: AudioEncoder, filter: Gst.Caps) => Gst.Caps
-    open: (enc: AudioEncoder) => boolean
-    close: (enc: AudioEncoder) => boolean
-    negotiate: (enc: AudioEncoder) => boolean
-    decide_allocation: (enc: AudioEncoder, query: Gst.Query) => boolean
-    propose_allocation: (enc: AudioEncoder, query: Gst.Query) => boolean
-    transform_meta: (enc: AudioEncoder, outbuf: Gst.Buffer, meta: Gst.Meta, inbuf: Gst.Buffer) => boolean
-    sink_query: (encoder: AudioEncoder, query: Gst.Query) => boolean
-    src_query: (encoder: AudioEncoder, query: Gst.Query) => boolean
+    readonly element_class: Gst.ElementClass
+    readonly start: (enc: AudioEncoder) => boolean
+    readonly stop: (enc: AudioEncoder) => boolean
+    readonly set_format: (enc: AudioEncoder, info: AudioInfo) => boolean
+    readonly handle_frame: (enc: AudioEncoder, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly flush: (enc: AudioEncoder) => void
+    readonly pre_push: (enc: AudioEncoder, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly sink_event: (enc: AudioEncoder, event: Gst.Event) => boolean
+    readonly src_event: (enc: AudioEncoder, event: Gst.Event) => boolean
+    readonly getcaps: (enc: AudioEncoder, filter: Gst.Caps) => Gst.Caps
+    readonly open: (enc: AudioEncoder) => boolean
+    readonly close: (enc: AudioEncoder) => boolean
+    readonly negotiate: (enc: AudioEncoder) => boolean
+    readonly decide_allocation: (enc: AudioEncoder, query: Gst.Query) => boolean
+    readonly propose_allocation: (enc: AudioEncoder, query: Gst.Query) => boolean
+    readonly transform_meta: (enc: AudioEncoder, outbuf: Gst.Buffer, meta: Gst.Meta, inbuf: Gst.Buffer) => boolean
+    readonly sink_query: (encoder: AudioEncoder, query: Gst.Query) => boolean
+    readonly src_query: (encoder: AudioEncoder, query: Gst.Query) => boolean
     static name: string
 }
 class AudioEncoderPrivate {
@@ -4093,38 +4034,38 @@ class AudioEncoderPrivate {
 }
 abstract class AudioFilterClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioFilterClass */
-    basetransformclass: GstBase.BaseTransformClass
-    setup: (filter: AudioFilter, info: AudioInfo) => boolean
+    readonly basetransformclass: GstBase.BaseTransformClass
+    readonly setup: (filter: AudioFilter, info: AudioInfo) => boolean
     /* Methods of GstAudio-1.0.GstAudio.AudioFilterClass */
-    add_pad_templates(klass: AudioFilter | Function | GObject.Type, allowed_caps: Gst.Caps): void
+    static add_pad_templates(klass: AudioFilter | Function | GObject.Type, allowed_caps: Gst.Caps): void
     static name: string
 }
 class AudioFormatInfo {
     /* Fields of GstAudio-1.0.GstAudio.AudioFormatInfo */
-    format: AudioFormat
-    name: string
-    description: string
-    flags: AudioFormatFlags
-    endianness: number
-    width: number
-    depth: number
-    silence: Uint8Array[]
-    unpack_format: AudioFormat
-    unpack_func: AudioFormatUnpack
-    pack_func: AudioFormatPack
+    readonly format: AudioFormat
+    readonly name: string
+    readonly description: string
+    readonly flags: AudioFormatFlags
+    readonly endianness: number
+    readonly width: number
+    readonly depth: number
+    readonly silence: Uint8Array
+    readonly unpack_format: AudioFormat
+    readonly unpack_func: AudioFormatUnpack
+    readonly pack_func: AudioFormatPack
     /* Methods of GstAudio-1.0.GstAudio.AudioFormatInfo */
-    fill_silence(dest: Uint8Array[]): void
+    fill_silence(dest: Uint8Array): void
     static name: string
 }
 class AudioInfo {
     /* Fields of GstAudio-1.0.GstAudio.AudioInfo */
-    finfo: AudioFormatInfo
-    flags: AudioFlags
-    layout: AudioLayout
-    rate: number
-    channels: number
-    bpf: number
-    position: AudioChannelPosition[]
+    readonly finfo: AudioFormatInfo
+    readonly flags: AudioFlags
+    readonly layout: AudioLayout
+    readonly rate: number
+    readonly channels: number
+    readonly bpf: number
+    readonly position: AudioChannelPosition[]
     /* Methods of GstAudio-1.0.GstAudio.AudioInfo */
     convert(src_fmt: Gst.Format, src_val: number, dest_fmt: Gst.Format): [ /* returnType */ boolean, /* dest_val */ number ]
     copy(): AudioInfo
@@ -4142,19 +4083,19 @@ class AudioInfo {
 }
 class AudioLevelMeta {
     /* Fields of GstAudio-1.0.GstAudio.AudioLevelMeta */
-    meta: Gst.Meta
-    level: number
-    voice_activity: boolean
+    readonly meta: Gst.Meta
+    readonly level: number
+    readonly voice_activity: boolean
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
 }
 class AudioMeta {
     /* Fields of GstAudio-1.0.GstAudio.AudioMeta */
-    meta: Gst.Meta
-    info: AudioInfo
-    samples: number
-    offsets: number
+    readonly meta: Gst.Meta
+    readonly info: AudioInfo
+    readonly samples: number
+    readonly offsets: number
     static name: string
     /* Static methods and pseudo-constructors */
     static get_info(): Gst.MetaInfo
@@ -4181,64 +4122,64 @@ class AudioResampler {
 }
 abstract class AudioRingBufferClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioRingBufferClass */
-    parent_class: Gst.ObjectClass
-    open_device: (buf: AudioRingBuffer) => boolean
-    acquire: (buf: AudioRingBuffer, spec: AudioRingBufferSpec) => boolean
-    release: (buf: AudioRingBuffer) => boolean
-    close_device: (buf: AudioRingBuffer) => boolean
-    start: (buf: AudioRingBuffer) => boolean
-    pause: (buf: AudioRingBuffer) => boolean
-    resume: (buf: AudioRingBuffer) => boolean
-    stop: (buf: AudioRingBuffer) => boolean
-    delay: (buf: AudioRingBuffer) => number
-    activate: (buf: AudioRingBuffer, active: boolean) => boolean
-    commit: (buf: AudioRingBuffer, sample: number, data: Uint8Array[], out_samples: number, accum: number) => [ /* returnType */ number, /* accum */ number ]
-    clear_all: (buf: AudioRingBuffer) => void
+    readonly parent_class: Gst.ObjectClass
+    readonly open_device: (buf: AudioRingBuffer) => boolean
+    readonly acquire: (buf: AudioRingBuffer, spec: AudioRingBufferSpec) => boolean
+    readonly release: (buf: AudioRingBuffer) => boolean
+    readonly close_device: (buf: AudioRingBuffer) => boolean
+    readonly start: (buf: AudioRingBuffer) => boolean
+    readonly pause: (buf: AudioRingBuffer) => boolean
+    readonly resume: (buf: AudioRingBuffer) => boolean
+    readonly stop: (buf: AudioRingBuffer) => boolean
+    readonly delay: (buf: AudioRingBuffer) => number
+    readonly activate: (buf: AudioRingBuffer, active: boolean) => boolean
+    readonly commit: (buf: AudioRingBuffer, sample: number, data: Uint8Array, out_samples: number, accum: number) => [ /* returnType */ number, /* accum */ number ]
+    readonly clear_all: (buf: AudioRingBuffer) => void
     static name: string
 }
 class AudioRingBufferSpec {
     /* Fields of GstAudio-1.0.GstAudio.AudioRingBufferSpec */
-    caps: Gst.Caps
-    type: AudioRingBufferFormatType
-    info: AudioInfo
-    latency_time: number
-    buffer_time: number
-    segsize: number
-    segtotal: number
-    seglatency: number
+    readonly caps: Gst.Caps
+    readonly type: AudioRingBufferFormatType
+    readonly info: AudioInfo
+    readonly latency_time: number
+    readonly buffer_time: number
+    readonly segsize: number
+    readonly segtotal: number
+    readonly seglatency: number
     static name: string
 }
 abstract class AudioSinkClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioSinkClass */
-    parent_class: AudioBaseSinkClass
-    open: (sink: AudioSink) => boolean
-    prepare: (sink: AudioSink, spec: AudioRingBufferSpec) => boolean
-    unprepare: (sink: AudioSink) => boolean
-    close: (sink: AudioSink) => boolean
-    write: (sink: AudioSink, data: object | null, length: number) => number
-    delay: (sink: AudioSink) => number
-    reset: (sink: AudioSink) => void
-    pause: (sink: AudioSink) => void
-    resume: (sink: AudioSink) => void
-    stop: (sink: AudioSink) => void
-    extension: AudioSinkClassExtension
+    readonly parent_class: AudioBaseSinkClass
+    readonly open: (sink: AudioSink) => boolean
+    readonly prepare: (sink: AudioSink, spec: AudioRingBufferSpec) => boolean
+    readonly unprepare: (sink: AudioSink) => boolean
+    readonly close: (sink: AudioSink) => boolean
+    readonly write: (sink: AudioSink, data: object | null, length: number) => number
+    readonly delay: (sink: AudioSink) => number
+    readonly reset: (sink: AudioSink) => void
+    readonly pause: (sink: AudioSink) => void
+    readonly resume: (sink: AudioSink) => void
+    readonly stop: (sink: AudioSink) => void
+    readonly extension: AudioSinkClassExtension
     static name: string
 }
 class AudioSinkClassExtension {
     /* Fields of GstAudio-1.0.GstAudio.AudioSinkClassExtension */
-    clear_all: (sink: AudioSink) => void
+    readonly clear_all: (sink: AudioSink) => void
     static name: string
 }
 abstract class AudioSrcClass {
     /* Fields of GstAudio-1.0.GstAudio.AudioSrcClass */
-    parent_class: AudioBaseSrcClass
-    open: (src: AudioSrc) => boolean
-    prepare: (src: AudioSrc, spec: AudioRingBufferSpec) => boolean
-    unprepare: (src: AudioSrc) => boolean
-    close: (src: AudioSrc) => boolean
-    read: (src: AudioSrc, data: object | null, length: number, timestamp: Gst.ClockTime) => number
-    delay: (src: AudioSrc) => number
-    reset: (src: AudioSrc) => void
+    readonly parent_class: AudioBaseSrcClass
+    readonly open: (src: AudioSrc) => boolean
+    readonly prepare: (src: AudioSrc, spec: AudioRingBufferSpec) => boolean
+    readonly unprepare: (src: AudioSrc) => boolean
+    readonly close: (src: AudioSrc) => boolean
+    readonly read: (src: AudioSrc, data: object | null, length: number, timestamp: Gst.ClockTime) => number
+    readonly delay: (src: AudioSrc) => number
+    readonly reset: (src: AudioSrc) => void
     static name: string
 }
 class AudioStreamAlign {
@@ -4263,7 +4204,7 @@ class AudioStreamAlign {
 }
 abstract class StreamVolumeInterface {
     /* Fields of GstAudio-1.0.GstAudio.StreamVolumeInterface */
-    iface: GObject.TypeInterface
+    readonly iface: GObject.TypeInterface
     static name: string
 }
 }

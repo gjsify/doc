@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * EDataServerUI-1.2
  */
@@ -42,7 +48,8 @@ function trust_prompt_run_modal(parent: Gtk.Window, source_extension: string | n
 interface CredentialsPrompterLoopPromptFunc {
     (prompter: CredentialsPrompter, source: EDataServer.Source, credentials: EDataServer.NamedParameters, cancellable?: Gio.Cancellable | null): boolean
 }
-export interface CellRendererColor_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+interface CellRendererColor_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+    /* Constructor properties of EDataServerUI-1.2.EDataServerUI.CellRendererColor */
     rgba?: Gdk.RGBA
 }
 class CellRendererColor {
@@ -65,13 +72,10 @@ class CellRendererColor {
     xpad: number
     yalign: number
     ypad: number
-    /* Fields of EDataServerUI-1.2.EDataServerUI.CellRendererColor */
-    parent: Gtk.CellRenderer
-    priv: CellRendererColorPrivate
     /* Fields of Gtk-3.0.Gtk.CellRenderer */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.CellRenderer */
     activate(event: Gdk.Event, widget: Gtk.Widget, path: string, background_area: Gdk.Rectangle, cell_area: Gdk.Rectangle, flags: Gtk.CellRendererState): boolean
     get_aligned_area(widget: Gtk.Widget, flags: Gtk.CellRendererState, cell_area: Gdk.Rectangle): /* aligned_area */ Gdk.Rectangle
@@ -196,7 +200,8 @@ class CellRendererColor {
     static new(): CellRendererColor
     static $gtype: GObject.Type
 }
-export interface CredentialsPrompter_ConstructProps extends GObject.Object_ConstructProps {
+interface CredentialsPrompter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of EDataServerUI-1.2.EDataServerUI.CredentialsPrompter */
     auto_prompt?: boolean
     registry?: EDataServer.SourceRegistry
 }
@@ -204,11 +209,8 @@ class CredentialsPrompter {
     /* Properties of EDataServerUI-1.2.EDataServerUI.CredentialsPrompter */
     auto_prompt: boolean
     readonly provider: EDataServer.SourceCredentialsProvider
-    /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompter */
-    parent: GObject.Object
-    priv: CredentialsPrompterPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServerUI-1.2.EDataServerUI.CredentialsPrompter */
     complete_prompt_call(async_result: Gio.SimpleAsyncResult, source: EDataServer.Source, credentials: EDataServer.NamedParameters | null, error: GLib.Error): void
     get_auto_prompt(): boolean
@@ -287,14 +289,11 @@ class CredentialsPrompter {
     static new(registry: EDataServer.SourceRegistry): CredentialsPrompter
     static $gtype: GObject.Type
 }
-export interface CredentialsPrompterImpl_ConstructProps extends EDataServer.Extension_ConstructProps {
+interface CredentialsPrompterImpl_ConstructProps extends EDataServer.Extension_ConstructProps {
 }
 class CredentialsPrompterImpl {
-    /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImpl */
-    parent: EDataServer.Extension
-    priv: CredentialsPrompterImplPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImpl */
     cancel_prompt(prompt_id?: object | null): void
     get_credentials_prompter(): object | null
@@ -353,14 +352,14 @@ class CredentialsPrompterImpl {
     _init (config?: CredentialsPrompterImpl_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CredentialsPrompterImplOAuth2_ConstructProps extends CredentialsPrompterImpl_ConstructProps {
+interface CredentialsPrompterImplOAuth2_ConstructProps extends CredentialsPrompterImpl_ConstructProps {
 }
 class CredentialsPrompterImplOAuth2 {
-    /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImplOAuth2 */
-    parent: CredentialsPrompterImpl
-    priv: CredentialsPrompterImplOAuth2Private
+    /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImpl */
+    readonly parent: EDataServer.Extension
+    readonly priv: CredentialsPrompterImplPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImpl */
     cancel_prompt(prompt_id?: object | null): void
     get_credentials_prompter(): object | null
@@ -421,14 +420,14 @@ class CredentialsPrompterImplOAuth2 {
     static new(): CredentialsPrompterImplOAuth2
     static $gtype: GObject.Type
 }
-export interface CredentialsPrompterImplPassword_ConstructProps extends CredentialsPrompterImpl_ConstructProps {
+interface CredentialsPrompterImplPassword_ConstructProps extends CredentialsPrompterImpl_ConstructProps {
 }
 class CredentialsPrompterImplPassword {
-    /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImplPassword */
-    parent: CredentialsPrompterImpl
-    priv: CredentialsPrompterImplPasswordPrivate
+    /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImpl */
+    readonly parent: EDataServer.Extension
+    readonly priv: CredentialsPrompterImplPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImpl */
     cancel_prompt(prompt_id?: object | null): void
     get_credentials_prompter(): object | null
@@ -489,8 +488,10 @@ class CredentialsPrompterImplPassword {
     static new(): CredentialsPrompterImplPassword
     static $gtype: GObject.Type
 }
-export interface RemindersWidget_ConstructProps extends Gtk.Grid_ConstructProps {
+interface RemindersWidget_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of EDataServerUI-1.2.EDataServerUI.RemindersWidget */
     watcher?: ECal.ReminderWatcher
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class RemindersWidget {
@@ -549,11 +550,11 @@ class RemindersWidget {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServerUI-1.2.EDataServerUI.RemindersWidget */
     get_paned(): Gtk.Paned
     get_settings(): Gio.Settings
@@ -586,7 +587,7 @@ class RemindersWidget {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -904,6 +905,7 @@ class RemindersWidget {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -1361,10 +1363,12 @@ class RemindersWidget {
     _init (config?: RemindersWidget_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(watcher: ECal.ReminderWatcher): RemindersWidget
+    /* Function overloads */
     static new(): RemindersWidget
     static $gtype: GObject.Type
 }
-export interface WebDAVDiscoverContent_ConstructProps extends Gtk.Grid_ConstructProps {
+interface WebDAVDiscoverContent_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Gtk-3.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class WebDAVDiscoverContent {
@@ -1421,11 +1425,11 @@ class WebDAVDiscoverContent {
     /* Properties of Gtk-3.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServerUI-1.2.EDataServerUI.WebDAVDiscoverContent */
     get_base_url(): string
     get_multiselect(): boolean
@@ -1462,7 +1466,7 @@ class WebDAVDiscoverContent {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1777,6 +1781,7 @@ class WebDAVDiscoverContent {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -2223,10 +2228,11 @@ class WebDAVDiscoverContent {
     _init (config?: WebDAVDiscoverContent_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(credentials_prompter: CredentialsPrompter, source: EDataServer.Source | null, base_url: string | null, supports_filter: number): WebDAVDiscoverContent
+    /* Function overloads */
     static new(): WebDAVDiscoverContent
     static $gtype: GObject.Type
 }
-export interface WebDAVDiscoverDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface WebDAVDiscoverDialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
 class WebDAVDiscoverDialog {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -2305,18 +2311,19 @@ class WebDAVDiscoverDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of EDataServerUI-1.2.EDataServerUI.WebDAVDiscoverDialog */
     get_content(): WebDAVDiscoverContent
     refresh(): void
@@ -2446,7 +2453,7 @@ class WebDAVDiscoverDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2690,6 +2697,7 @@ class WebDAVDiscoverDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -2758,6 +2766,7 @@ class WebDAVDiscoverDialog {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of EDataServerUI-1.2.EDataServerUI.WebDAVDiscoverDialog */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -3274,8 +3283,6 @@ class WebDAVDiscoverDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: WebDAVDiscoverDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: WebDAVDiscoverDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: WebDAVDiscoverDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: WebDAVDiscoverDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: WebDAVDiscoverDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -3285,13 +3292,14 @@ class WebDAVDiscoverDialog {
     _init (config?: WebDAVDiscoverDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(parent: Gtk.Window, title: string, credentials_prompter: CredentialsPrompter, source: EDataServer.Source, base_url: string | null, supports_filter: number): WebDAVDiscoverDialog
+    /* Function overloads */
     static new(): WebDAVDiscoverDialog
     static new(type: Gtk.WindowType): WebDAVDiscoverDialog
     static $gtype: GObject.Type
 }
 abstract class CellRendererColorClass {
     /* Fields of EDataServerUI-1.2.EDataServerUI.CellRendererColorClass */
-    parent_class: Gtk.CellRendererClass
+    readonly parent_class: Gtk.CellRendererClass
     static name: string
 }
 class CellRendererColorPrivate {
@@ -3299,22 +3307,22 @@ class CellRendererColorPrivate {
 }
 abstract class CredentialsPrompterClass {
     /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterClass */
-    parent_class: GObject.ObjectClass
-    get_dialog_parent: (prompter: CredentialsPrompter) => Gtk.Window
+    readonly parent_class: GObject.ObjectClass
+    readonly get_dialog_parent: (prompter: CredentialsPrompter) => Gtk.Window
     static name: string
 }
 abstract class CredentialsPrompterImplClass {
     /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImplClass */
-    parent_class: EDataServer.ExtensionClass
-    authentication_methods: string
-    process_prompt: (prompter_impl: CredentialsPrompterImpl, prompt_id: object | null, auth_source: EDataServer.Source, cred_source: EDataServer.Source, error_text: string, credentials: EDataServer.NamedParameters) => void
-    cancel_prompt: (prompter_impl: CredentialsPrompterImpl, prompt_id?: object | null) => void
-    prompt_finished: (prompter_impl: CredentialsPrompterImpl, prompt_id: object | null, credentials: EDataServer.NamedParameters) => void
+    readonly parent_class: EDataServer.ExtensionClass
+    readonly authentication_methods: string
+    readonly process_prompt: (prompter_impl: CredentialsPrompterImpl, prompt_id: object | null, auth_source: EDataServer.Source, cred_source: EDataServer.Source, error_text: string, credentials: EDataServer.NamedParameters) => void
+    readonly cancel_prompt: (prompter_impl: CredentialsPrompterImpl, prompt_id?: object | null) => void
+    readonly prompt_finished: (prompter_impl: CredentialsPrompterImpl, prompt_id: object | null, credentials: EDataServer.NamedParameters) => void
     static name: string
 }
 abstract class CredentialsPrompterImplOAuth2Class {
     /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImplOAuth2Class */
-    parent_class: CredentialsPrompterImplClass
+    readonly parent_class: CredentialsPrompterImplClass
     static name: string
 }
 class CredentialsPrompterImplOAuth2Private {
@@ -3322,7 +3330,7 @@ class CredentialsPrompterImplOAuth2Private {
 }
 abstract class CredentialsPrompterImplPasswordClass {
     /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterImplPasswordClass */
-    parent_class: CredentialsPrompterImplClass
+    readonly parent_class: CredentialsPrompterImplClass
     static name: string
 }
 class CredentialsPrompterImplPasswordPrivate {
@@ -3336,8 +3344,8 @@ class CredentialsPrompterPrivate {
 }
 abstract class RemindersWidgetClass {
     /* Fields of EDataServerUI-1.2.EDataServerUI.RemindersWidgetClass */
-    changed: (reminders: RemindersWidget) => void
-    activated: (reminders: RemindersWidget, rd: ECal.ReminderData) => boolean
+    readonly changed: (reminders: RemindersWidget) => void
+    readonly activated: (reminders: RemindersWidget, rd: ECal.ReminderData) => boolean
     static name: string
 }
 class RemindersWidgetPrivate {
@@ -3345,12 +3353,12 @@ class RemindersWidgetPrivate {
 }
 abstract class WebDAVDiscoverContentClass {
     /* Fields of EDataServerUI-1.2.EDataServerUI.WebDAVDiscoverContentClass */
-    parent_class: Gtk.GridClass
+    readonly parent_class: Gtk.GridClass
     static name: string
 }
 abstract class WebDAVDiscoverDialogClass {
     /* Fields of EDataServerUI-1.2.EDataServerUI.WebDAVDiscoverDialogClass */
-    parent_class: Gtk.DialogClass
+    readonly parent_class: Gtk.DialogClass
     static name: string
 }
 }

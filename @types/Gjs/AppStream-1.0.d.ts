@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * AppStream-1.0
  */
@@ -351,15 +357,15 @@ enum VercmpFlags {
     NONE,
     IGNORE_EPOCH,
 }
-export const IMAGE_LARGE_HEIGHT: number
-export const IMAGE_LARGE_WIDTH: number
-export const IMAGE_NORMAL_HEIGHT: number
-export const IMAGE_NORMAL_WIDTH: number
-export const IMAGE_THUMBNAIL_HEIGHT: number
-export const IMAGE_THUMBNAIL_WIDTH: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const IMAGE_LARGE_HEIGHT: number
+const IMAGE_LARGE_WIDTH: number
+const IMAGE_NORMAL_HEIGHT: number
+const IMAGE_NORMAL_WIDTH: number
+const IMAGE_THUMBNAIL_HEIGHT: number
+const IMAGE_THUMBNAIL_WIDTH: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function agreement_kind_from_string(value: string): AgreementKind
 function agreement_kind_to_string(value: AgreementKind): string
 function artifact_kind_from_string(kind: string): ArtifactKind
@@ -469,13 +475,11 @@ function video_codec_kind_from_string(str: string): VideoCodecKind
 function video_codec_kind_to_string(kind: VideoCodecKind): string
 function video_container_kind_from_string(str: string): VideoContainerKind
 function video_container_kind_to_string(kind: VideoContainerKind): string
-export interface Agreement_ConstructProps extends GObject.Object_ConstructProps {
+interface Agreement_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Agreement {
-    /* Fields of AppStream-1.0.AppStream.Agreement */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Agreement */
     add_section(agreement_section: AgreementSection): void
     get_kind(): AgreementKind
@@ -529,13 +533,11 @@ class Agreement {
     static new(): Agreement
     static $gtype: GObject.Type
 }
-export interface AgreementSection_ConstructProps extends GObject.Object_ConstructProps {
+interface AgreementSection_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AgreementSection {
-    /* Fields of AppStream-1.0.AppStream.AgreementSection */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.AgreementSection */
     get_active_locale(): string
     get_description(): string
@@ -590,13 +592,11 @@ class AgreementSection {
     static new(): AgreementSection
     static $gtype: GObject.Type
 }
-export interface Artifact_ConstructProps extends GObject.Object_ConstructProps {
+interface Artifact_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Artifact {
-    /* Fields of AppStream-1.0.AppStream.Artifact */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Artifact */
     add_checksum(cs: Checksum): void
     add_location(location: string): void
@@ -658,13 +658,11 @@ class Artifact {
     static new(): Artifact
     static $gtype: GObject.Type
 }
-export interface Bundle_ConstructProps extends GObject.Object_ConstructProps {
+interface Bundle_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Bundle {
-    /* Fields of AppStream-1.0.AppStream.Bundle */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Bundle */
     get_id(): string
     get_kind(): BundleKind
@@ -715,7 +713,8 @@ class Bundle {
     static new(): Bundle
     static $gtype: GObject.Type
 }
-export interface Category_ConstructProps extends GObject.Object_ConstructProps {
+interface Category_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of AppStream-1.0.AppStream.Category */
     icon?: string
     id?: string
     name?: string
@@ -727,10 +726,8 @@ class Category {
     id: string
     name: string
     readonly summary: string
-    /* Fields of AppStream-1.0.AppStream.Category */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Category */
     add_child(subcat: Category): void
     add_component(cpt: Component): void
@@ -804,13 +801,11 @@ class Category {
     static new(): Category
     static $gtype: GObject.Type
 }
-export interface Checksum_ConstructProps extends GObject.Object_ConstructProps {
+interface Checksum_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Checksum {
-    /* Fields of AppStream-1.0.AppStream.Checksum */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Checksum */
     get_kind(): ChecksumKind
     get_value(): string
@@ -862,7 +857,8 @@ class Checksum {
     static new_for_kind_value(kind: ChecksumKind, value: string): Checksum
     static $gtype: GObject.Type
 }
-export interface Component_ConstructProps extends GObject.Object_ConstructProps {
+interface Component_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of AppStream-1.0.AppStream.Component */
     description?: string
     developer_name?: string
     id?: string
@@ -890,10 +886,8 @@ class Component {
     readonly screenshots: Screenshot[]
     summary: string
     readonly urls: GLib.HashTable
-    /* Fields of AppStream-1.0.AppStream.Component */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Component */
     add_addon(addon: Component): void
     add_agreement(agreement: Agreement): void
@@ -1086,13 +1080,11 @@ class Component {
     static new(): Component
     static $gtype: GObject.Type
 }
-export interface ContentRating_ConstructProps extends GObject.Object_ConstructProps {
+interface ContentRating_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ContentRating {
-    /* Fields of AppStream-1.0.AppStream.ContentRating */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.ContentRating */
     add_attribute(id: string, value: ContentRatingValue): void
     get_kind(): string
@@ -1150,13 +1142,11 @@ class ContentRating {
     static get_all_rating_ids(): string[]
     static $gtype: GObject.Type
 }
-export interface Context_ConstructProps extends GObject.Object_ConstructProps {
+interface Context_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Context {
-    /* Fields of AppStream-1.0.AppStream.Context */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Context */
     get_filename(): string
     get_format_version(): FormatVersion
@@ -1219,7 +1209,7 @@ class Context {
     static new(): Context
     static $gtype: GObject.Type
 }
-export interface DistroDetails_ConstructProps extends GObject.Object_ConstructProps {
+interface DistroDetails_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DistroDetails {
     /* Properties of AppStream-1.0.AppStream.DistroDetails */
@@ -1227,10 +1217,8 @@ class DistroDetails {
     readonly id: string
     readonly name: string
     readonly version: string
-    /* Fields of AppStream-1.0.AppStream.DistroDetails */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.DistroDetails */
     get_bool(key: string, default_val: boolean): boolean
     get_cid(): string
@@ -1292,13 +1280,11 @@ class DistroDetails {
     static new(): DistroDetails
     static $gtype: GObject.Type
 }
-export interface Icon_ConstructProps extends GObject.Object_ConstructProps {
+interface Icon_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Icon {
-    /* Fields of AppStream-1.0.AppStream.Icon */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Icon */
     get_filename(): string
     get_height(): number
@@ -1359,13 +1345,11 @@ class Icon {
     static new(): Icon
     static $gtype: GObject.Type
 }
-export interface Image_ConstructProps extends GObject.Object_ConstructProps {
+interface Image_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Image {
-    /* Fields of AppStream-1.0.AppStream.Image */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Image */
     get_height(): number
     get_kind(): ImageKind
@@ -1422,13 +1406,11 @@ class Image {
     static new(): Image
     static $gtype: GObject.Type
 }
-export interface Issue_ConstructProps extends GObject.Object_ConstructProps {
+interface Issue_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Issue {
-    /* Fields of AppStream-1.0.AppStream.Issue */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Issue */
     get_id(): string
     get_kind(): IssueKind
@@ -1481,13 +1463,11 @@ class Issue {
     static new(): Issue
     static $gtype: GObject.Type
 }
-export interface Launchable_ConstructProps extends GObject.Object_ConstructProps {
+interface Launchable_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Launchable {
-    /* Fields of AppStream-1.0.AppStream.Launchable */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Launchable */
     add_entry(entry: string): void
     get_entries(): string[]
@@ -1538,13 +1518,11 @@ class Launchable {
     static new(): Launchable
     static $gtype: GObject.Type
 }
-export interface Metadata_ConstructProps extends GObject.Object_ConstructProps {
+interface Metadata_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Metadata {
-    /* Fields of AppStream-1.0.AppStream.Metadata */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Metadata */
     add_component(cpt: Component): void
     clear_components(): void
@@ -1622,13 +1600,11 @@ class Metadata {
     static file_guess_style(filename: string): FormatStyle
     static $gtype: GObject.Type
 }
-export interface Pool_ConstructProps extends GObject.Object_ConstructProps {
+interface Pool_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Pool {
-    /* Fields of AppStream-1.0.AppStream.Pool */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Pool */
     add_component(cpt: Component): boolean
     add_components(cpts: Component[]): boolean
@@ -1715,13 +1691,11 @@ class Pool {
     static new(): Pool
     static $gtype: GObject.Type
 }
-export interface Provided_ConstructProps extends GObject.Object_ConstructProps {
+interface Provided_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Provided {
-    /* Fields of AppStream-1.0.AppStream.Provided */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Provided */
     add_item(item: string): void
     get_items(): string[]
@@ -1773,13 +1747,11 @@ class Provided {
     static new(): Provided
     static $gtype: GObject.Type
 }
-export interface Relation_ConstructProps extends GObject.Object_ConstructProps {
+interface Relation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Relation {
-    /* Fields of AppStream-1.0.AppStream.Relation */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Relation */
     get_compare(): RelationCompare
     get_display_side_kind(): DisplaySideKind
@@ -1849,13 +1821,11 @@ class Relation {
     static new(): Relation
     static $gtype: GObject.Type
 }
-export interface Release_ConstructProps extends GObject.Object_ConstructProps {
+interface Release_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Release {
-    /* Fields of AppStream-1.0.AppStream.Release */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Release */
     add_artifact(artifact: Artifact): void
     add_checksum(cs: Checksum): void
@@ -1934,7 +1904,8 @@ class Release {
     static new(): Release
     static $gtype: GObject.Type
 }
-export interface Review_ConstructProps extends GObject.Object_ConstructProps {
+interface Review_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of AppStream-1.0.AppStream.Review */
     date?: Review
     description?: string
     flags?: number
@@ -1958,10 +1929,8 @@ class Review {
     reviewer_name: string
     summary: string
     version: string
-    /* Fields of AppStream-1.0.AppStream.Review */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Review */
     add_flags(flags: ReviewFlags): void
     add_metadata(key: string, value: string): void
@@ -2054,13 +2023,11 @@ class Review {
     static new(): Review
     static $gtype: GObject.Type
 }
-export interface Screenshot_ConstructProps extends GObject.Object_ConstructProps {
+interface Screenshot_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Screenshot {
-    /* Fields of AppStream-1.0.AppStream.Screenshot */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Screenshot */
     add_image(image: Image): void
     add_video(video: Video): void
@@ -2121,13 +2088,11 @@ class Screenshot {
     static new(): Screenshot
     static $gtype: GObject.Type
 }
-export interface Suggested_ConstructProps extends GObject.Object_ConstructProps {
+interface Suggested_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Suggested {
-    /* Fields of AppStream-1.0.AppStream.Suggested */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Suggested */
     add_id(cid: string): void
     get_ids(): string[]
@@ -2179,13 +2144,11 @@ class Suggested {
     static new(): Suggested
     static $gtype: GObject.Type
 }
-export interface Translation_ConstructProps extends GObject.Object_ConstructProps {
+interface Translation_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Translation {
-    /* Fields of AppStream-1.0.AppStream.Translation */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Translation */
     get_id(): string
     get_kind(): TranslationKind
@@ -2238,13 +2201,11 @@ class Translation {
     static new(): Translation
     static $gtype: GObject.Type
 }
-export interface Validator_ConstructProps extends GObject.Object_ConstructProps {
+interface Validator_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Validator {
-    /* Fields of AppStream-1.0.AppStream.Validator */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Validator */
     clear_issues(): void
     get_check_urls(): boolean
@@ -2304,13 +2265,11 @@ class Validator {
     static new(): Validator
     static $gtype: GObject.Type
 }
-export interface ValidatorIssue_ConstructProps extends GObject.Object_ConstructProps {
+interface ValidatorIssue_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ValidatorIssue {
-    /* Fields of AppStream-1.0.AppStream.ValidatorIssue */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.ValidatorIssue */
     get_cid(): string
     get_explanation(): string
@@ -2376,13 +2335,11 @@ class ValidatorIssue {
     static new(): ValidatorIssue
     static $gtype: GObject.Type
 }
-export interface Video_ConstructProps extends GObject.Object_ConstructProps {
+interface Video_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Video {
-    /* Fields of AppStream-1.0.AppStream.Video */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of AppStream-1.0.AppStream.Video */
     get_codec_kind(): VideoCodecKind
     get_container_kind(): VideoContainerKind
@@ -2443,133 +2400,133 @@ class Video {
 }
 abstract class AgreementClass {
     /* Fields of AppStream-1.0.AppStream.AgreementClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class AgreementSectionClass {
     /* Fields of AppStream-1.0.AppStream.AgreementSectionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ArtifactClass {
     /* Fields of AppStream-1.0.AppStream.ArtifactClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class BundleClass {
     /* Fields of AppStream-1.0.AppStream.BundleClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CategoryClass {
     /* Fields of AppStream-1.0.AppStream.CategoryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ChecksumClass {
     /* Fields of AppStream-1.0.AppStream.ChecksumClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ComponentClass {
     /* Fields of AppStream-1.0.AppStream.ComponentClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ContentRatingClass {
     /* Fields of AppStream-1.0.AppStream.ContentRatingClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ContextClass {
     /* Fields of AppStream-1.0.AppStream.ContextClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class DistroDetailsClass {
     /* Fields of AppStream-1.0.AppStream.DistroDetailsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class IconClass {
     /* Fields of AppStream-1.0.AppStream.IconClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ImageClass {
     /* Fields of AppStream-1.0.AppStream.ImageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class IssueClass {
     /* Fields of AppStream-1.0.AppStream.IssueClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class LaunchableClass {
     /* Fields of AppStream-1.0.AppStream.LaunchableClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MetadataClass {
     /* Fields of AppStream-1.0.AppStream.MetadataClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PoolClass {
     /* Fields of AppStream-1.0.AppStream.PoolClass */
-    parent_class: GObject.ObjectClass
-    changed: (pool: Pool) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (pool: Pool) => void
     static name: string
 }
 abstract class ProvidedClass {
     /* Fields of AppStream-1.0.AppStream.ProvidedClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RelationClass {
     /* Fields of AppStream-1.0.AppStream.RelationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ReleaseClass {
     /* Fields of AppStream-1.0.AppStream.ReleaseClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ReviewClass {
     /* Fields of AppStream-1.0.AppStream.ReviewClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ScreenshotClass {
     /* Fields of AppStream-1.0.AppStream.ScreenshotClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SuggestedClass {
     /* Fields of AppStream-1.0.AppStream.SuggestedClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TranslationClass {
     /* Fields of AppStream-1.0.AppStream.TranslationClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ValidatorClass {
     /* Fields of AppStream-1.0.AppStream.ValidatorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ValidatorIssueClass {
     /* Fields of AppStream-1.0.AppStream.ValidatorIssueClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class VideoClass {
     /* Fields of AppStream-1.0.AppStream.VideoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

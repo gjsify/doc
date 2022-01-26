@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Granite-1.0
  */
@@ -74,52 +80,52 @@ enum SettingsColorScheme {
     DARK,
     LIGHT,
 }
-export const StyleClassBADGE: string
-export const StyleClassCATEGORY_EXPANDER: string
-export const StyleClassCONTENT_VIEW: string
-export const StyleClassCONTENT_VIEW_WINDOW: string
-export const StyleClassCOMPOSITED: string
-export const StyleClassDECORATED_WINDOW: string
-export const StyleClassH1_TEXT: string
-export const StyleClassH2_TEXT: string
-export const StyleClassH3_TEXT: string
-export const StyleClassHELP_BUTTON: string
-export const StyleClassOVERLAY_BAR: string
-export const StyleClassPOPOVER: string
-export const StyleClassPOPOVER_BG: string
-export const StyleClassSOURCE_LIST: string
-export const StyleClassTHIN_PANE_SEPARATOR: string
-export const StyleClassTITLE_TEXT: string
-export const STYLE_CLASS_ACCENT: string
-export const STYLE_CLASS_AVATAR: string
-export const STYLE_CLASS_BACK_BUTTON: string
-export const STYLE_CLASS_BADGE: string
-export const STYLE_CLASS_CARD: string
-export const STYLE_CLASS_CATEGORY_EXPANDER: string
-export const STYLE_CLASS_CHECKERBOARD: string
-export const STYLE_CLASS_COLOR_BUTTON: string
-export const STYLE_CLASS_DEFAULT_DECORATION: string
-export const STYLE_CLASS_H1_LABEL: string
-export const STYLE_CLASS_H2_LABEL: string
-export const STYLE_CLASS_H3_LABEL: string
-export const STYLE_CLASS_H4_LABEL: string
-export const STYLE_CLASS_KEYCAP: string
-export const STYLE_CLASS_MODE_SWITCH: string
-export const STYLE_CLASS_OVERLAY_BAR: string
-export const STYLE_CLASS_PRIMARY_LABEL: string
-export const STYLE_CLASS_ROUNDED: string
-export const STYLE_CLASS_SEEKBAR: string
-export const STYLE_CLASS_SMALL_LABEL: string
-export const STYLE_CLASS_SOURCE_LIST: string
-export const STYLE_CLASS_STORAGEBAR: string
-export const STYLE_CLASS_TERMINAL: string
-export const STYLE_CLASS_WELCOME: string
-export const STYLE_CLASS_WARMTH: string
-export const STYLE_CLASS_TEMPERATURE: string
-export const TRANSITION_DURATION_CLOSE: number
-export const TRANSITION_DURATION_IN_PLACE: number
-export const TRANSITION_DURATION_OPEN: number
-export const TOOLTIP_SECONDARY_TEXT_MARKUP: string
+const StyleClassBADGE: string
+const StyleClassCATEGORY_EXPANDER: string
+const StyleClassCONTENT_VIEW: string
+const StyleClassCONTENT_VIEW_WINDOW: string
+const StyleClassCOMPOSITED: string
+const StyleClassDECORATED_WINDOW: string
+const StyleClassH1_TEXT: string
+const StyleClassH2_TEXT: string
+const StyleClassH3_TEXT: string
+const StyleClassHELP_BUTTON: string
+const StyleClassOVERLAY_BAR: string
+const StyleClassPOPOVER: string
+const StyleClassPOPOVER_BG: string
+const StyleClassSOURCE_LIST: string
+const StyleClassTHIN_PANE_SEPARATOR: string
+const StyleClassTITLE_TEXT: string
+const STYLE_CLASS_ACCENT: string
+const STYLE_CLASS_AVATAR: string
+const STYLE_CLASS_BACK_BUTTON: string
+const STYLE_CLASS_BADGE: string
+const STYLE_CLASS_CARD: string
+const STYLE_CLASS_CATEGORY_EXPANDER: string
+const STYLE_CLASS_CHECKERBOARD: string
+const STYLE_CLASS_COLOR_BUTTON: string
+const STYLE_CLASS_DEFAULT_DECORATION: string
+const STYLE_CLASS_H1_LABEL: string
+const STYLE_CLASS_H2_LABEL: string
+const STYLE_CLASS_H3_LABEL: string
+const STYLE_CLASS_H4_LABEL: string
+const STYLE_CLASS_KEYCAP: string
+const STYLE_CLASS_MODE_SWITCH: string
+const STYLE_CLASS_OVERLAY_BAR: string
+const STYLE_CLASS_PRIMARY_LABEL: string
+const STYLE_CLASS_ROUNDED: string
+const STYLE_CLASS_SEEKBAR: string
+const STYLE_CLASS_SMALL_LABEL: string
+const STYLE_CLASS_SOURCE_LIST: string
+const STYLE_CLASS_STORAGEBAR: string
+const STYLE_CLASS_TERMINAL: string
+const STYLE_CLASS_WELCOME: string
+const STYLE_CLASS_WARMTH: string
+const STYLE_CLASS_TEMPERATURE: string
+const TRANSITION_DURATION_CLOSE: number
+const TRANSITION_DURATION_IN_PLACE: number
+const TRANSITION_DURATION_OPEN: number
+const TOOLTIP_SECONDARY_TEXT_MARKUP: string
 function date_time_get_default_time_format(is_12h: boolean, with_second: boolean): string
 function date_time_get_relative_datetime(date_time: GLib.DateTime): string
 function date_time_is_same_day(day1: GLib.DateTime, day2: GLib.DateTime): boolean
@@ -149,11 +155,11 @@ function contrasting_foreground_color(bg_color: Gdk.RGBA): /* result */ Gdk.RGBA
 interface WidgetsDroppedDelegate {
     (): void
 }
-export interface ServicesContract_ConstructProps extends GObject.Object_ConstructProps {
+interface ServicesContract_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServicesContract {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.ServicesContract */
     get_display_name(): string
     get_description(): string
@@ -209,11 +215,11 @@ class ServicesContract {
     _init (config?: ServicesContract_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ServicesSettingsSerializable_ConstructProps extends GObject.Object_ConstructProps {
+interface ServicesSettingsSerializable_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServicesSettingsSerializable {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.ServicesSettingsSerializable */
     settings_serialize(): string
     settings_deserialize(s: string): void
@@ -263,7 +269,7 @@ class ServicesSettingsSerializable {
     _init (config?: ServicesSettingsSerializable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WidgetsSourceListSortable_ConstructProps extends WidgetsSourceListExpandableItem_ConstructProps {
+interface WidgetsSourceListSortable_ConstructProps extends WidgetsSourceListExpandableItem_ConstructProps {
 }
 class WidgetsSourceListSortable {
     /* Properties of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
@@ -284,7 +290,7 @@ class WidgetsSourceListSortable {
     activatable: Gio.Icon
     activatable_tooltip: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsSourceListSortable */
     allow_dnd_sorting(): boolean
     compare(a: WidgetsSourceListItem, b: WidgetsSourceListItem): number
@@ -431,9 +437,13 @@ class WidgetsSourceListSortable {
     static name: string
     constructor (config?: WidgetsSourceListSortable_ConstructProps)
     _init (config?: WidgetsSourceListSortable_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(name: string): WidgetsSourceListSortable
+    /* Function overloads */
+    static new(name: string): WidgetsSourceListSortable
     static $gtype: GObject.Type
 }
-export interface WidgetsSourceListDragSource_ConstructProps extends WidgetsSourceListItem_ConstructProps {
+interface WidgetsSourceListDragSource_ConstructProps extends WidgetsSourceListItem_ConstructProps {
 }
 class WidgetsSourceListDragSource {
     /* Properties of Granite-1.0.Granite.WidgetsSourceListItem */
@@ -449,7 +459,7 @@ class WidgetsSourceListDragSource {
     activatable: Gio.Icon
     activatable_tooltip: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsSourceListDragSource */
     draggable(): boolean
     prepare_selection_data(selection_data: Gtk.SelectionData): void
@@ -559,7 +569,7 @@ class WidgetsSourceListDragSource {
     _init (config?: WidgetsSourceListDragSource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WidgetsSourceListDragDest_ConstructProps extends WidgetsSourceListItem_ConstructProps {
+interface WidgetsSourceListDragDest_ConstructProps extends WidgetsSourceListItem_ConstructProps {
 }
 class WidgetsSourceListDragDest {
     /* Properties of Granite-1.0.Granite.WidgetsSourceListItem */
@@ -575,7 +585,7 @@ class WidgetsSourceListDragDest {
     activatable: Gio.Icon
     activatable_tooltip: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsSourceListDragDest */
     data_drop_possible(context: Gdk.DragContext, data: Gtk.SelectionData): boolean
     data_received(context: Gdk.DragContext, data: Gtk.SelectionData): Gdk.DragAction
@@ -685,7 +695,8 @@ class WidgetsSourceListDragDest {
     _init (config?: WidgetsSourceListDragDest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DrawingBufferSurface_ConstructProps extends GObject.Object_ConstructProps {
+interface DrawingBufferSurface_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.DrawingBufferSurface */
     surface?: cairo.Surface
     width?: number
     height?: number
@@ -697,7 +708,7 @@ class DrawingBufferSurface {
     height: number
     readonly context: cairo.Context
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.DrawingBufferSurface */
     get_surface(): cairo.Surface
     get_width(): number
@@ -764,16 +775,11 @@ class DrawingBufferSurface {
     static with_buffer_surface(width: number, height: number, model: DrawingBufferSurface): DrawingBufferSurface
     static $gtype: GObject.Type
 }
-export interface DrawingColor_ConstructProps extends GObject.Object_ConstructProps {
+interface DrawingColor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DrawingColor {
-    /* Fields of Granite-1.0.Granite.DrawingColor */
-    R: number
-    G: number
-    B: number
-    A: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.DrawingColor */
     set_hue(hue: number): DrawingColor
     set_sat(sat: number): DrawingColor
@@ -846,11 +852,11 @@ class DrawingColor {
     static blue_from_int(color: number): number
     static $gtype: GObject.Type
 }
-export interface DrawingUtilities_ConstructProps extends GObject.Object_ConstructProps {
+interface DrawingUtilities_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DrawingUtilities {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -898,11 +904,11 @@ class DrawingUtilities {
     static average_color(source: GdkPixbuf.Pixbuf): DrawingColor
     static $gtype: GObject.Type
 }
-export interface ServicesContractorProxy_ConstructProps extends GObject.Object_ConstructProps {
+interface ServicesContractorProxy_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServicesContractorProxy {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -957,11 +963,11 @@ class ServicesContractorProxy {
     static get_contracts_for_files(files: Gio.File[]): Gee.List
     static $gtype: GObject.Type
 }
-export interface ServicesIconFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface ServicesIconFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServicesIconFactory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.ServicesIconFactory */
     load_symbolic_icon_from_gicon(style: Gtk.StyleContext, gicon: Gio.Icon, size: number): GdkPixbuf.Pixbuf | null
     load_symbolic_icon(style: Gtk.StyleContext, iconname: string, size: number): GdkPixbuf.Pixbuf | null
@@ -1011,11 +1017,11 @@ class ServicesIconFactory {
     static get_default(): any
     static $gtype: GObject.Type
 }
-export interface ServicesLogger_ConstructProps extends GObject.Object_ConstructProps {
+interface ServicesLogger_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServicesLogger {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1065,11 +1071,11 @@ class ServicesLogger {
     static notification(msg: string): void
     static $gtype: GObject.Type
 }
-export interface ServicesPaths_ConstructProps extends GObject.Object_ConstructProps {
+interface ServicesPaths_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServicesPaths {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1135,12 +1141,13 @@ class ServicesPaths {
     static ensure_directory_exists(dir: Gio.File): boolean
     static $gtype: GObject.Type
 }
-export interface ServicesSettings_ConstructProps extends GObject.Object_ConstructProps {
+interface ServicesSettings_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.ServicesSettings */
     schema?: Gio.Settings
 }
 class ServicesSettings {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.ServicesSettings */
     get_schema(): Gio.Settings
     verify(key: string): void
@@ -1193,15 +1200,11 @@ class ServicesSettings {
     _init (config?: ServicesSettings_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ServicesSimpleCommand_ConstructProps extends GObject.Object_ConstructProps {
+interface ServicesSimpleCommand_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServicesSimpleCommand {
-    /* Fields of Granite-1.0.Granite.ServicesSimpleCommand */
-    standard_output_str: string
-    error_output_str: string
-    output_str: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.ServicesSimpleCommand */
     run(): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1262,11 +1265,11 @@ class ServicesSimpleCommand {
     static new(dir: string, command: string): ServicesSimpleCommand
     static $gtype: GObject.Type
 }
-export interface ServicesSystem_ConstructProps extends GObject.Object_ConstructProps {
+interface ServicesSystem_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ServicesSystem {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1319,7 +1322,8 @@ class ServicesSystem {
     static history_is_enabled(): boolean
     static $gtype: GObject.Type
 }
-export interface WidgetsAlertView_ConstructProps extends Gtk.Grid_ConstructProps {
+interface WidgetsAlertView_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsAlertView */
     title?: string
     description?: string
     icon_name?: string
@@ -1380,11 +1384,11 @@ class WidgetsAlertView {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsAlertView */
     get_title(): string
     set_title(value: string): void
@@ -1419,7 +1423,7 @@ class WidgetsAlertView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2165,10 +2169,12 @@ class WidgetsAlertView {
     _init (config?: WidgetsAlertView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(title: string, description: string, icon_name: string): WidgetsAlertView
+    /* Function overloads */
     static new(): WidgetsAlertView
     static $gtype: GObject.Type
 }
-export interface WidgetsAvatar_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface WidgetsAvatar_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsAvatar */
     pixbuf?: GdkPixbuf.Pixbuf
 }
 class WidgetsAvatar {
@@ -2222,15 +2228,15 @@ class WidgetsAvatar {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsAvatar */
     get_pixbuf(): GdkPixbuf.Pixbuf | null
     set_pixbuf(value?: GdkPixbuf.Pixbuf | null): void
@@ -2246,7 +2252,7 @@ class WidgetsAvatar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -2978,12 +2984,15 @@ class WidgetsAvatar {
     _init (config?: WidgetsAvatar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): WidgetsAvatar
+    /* Function overloads */
+    static new(): WidgetsAvatar
     static from_pixbuf(pixbuf: GdkPixbuf.Pixbuf): WidgetsAvatar
     static from_file(filepath: string, pixel_size: number): WidgetsAvatar
     static with_default_icon(pixel_size: number): WidgetsAvatar
     static $gtype: GObject.Type
 }
-export interface WidgetsCellRendererBadge_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+interface WidgetsCellRendererBadge_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsCellRendererBadge */
     text?: string
 }
 class WidgetsCellRendererBadge {
@@ -3007,9 +3016,9 @@ class WidgetsCellRendererBadge {
     yalign: number
     ypad: number
     /* Fields of Gtk-3.0.Gtk.CellRenderer */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsCellRendererBadge */
     get_text(): string
     set_text(value: string): void
@@ -3137,7 +3146,8 @@ class WidgetsCellRendererBadge {
     static new(): WidgetsCellRendererBadge
     static $gtype: GObject.Type
 }
-export interface WidgetsCellRendererExpander_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+interface WidgetsCellRendererExpander_ConstructProps extends Gtk.CellRenderer_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsCellRendererExpander */
     is_category_expander?: boolean
 }
 class WidgetsCellRendererExpander {
@@ -3161,9 +3171,9 @@ class WidgetsCellRendererExpander {
     yalign: number
     ypad: number
     /* Fields of Gtk-3.0.Gtk.CellRenderer */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsCellRendererExpander */
     get_is_category_expander(): boolean
     set_is_category_expander(value: boolean): void
@@ -3294,7 +3304,8 @@ class WidgetsCellRendererExpander {
     static new(): WidgetsCellRendererExpander
     static $gtype: GObject.Type
 }
-export interface WidgetsCollapsiblePaned_ConstructProps extends Gtk.Paned_ConstructProps {
+interface WidgetsCollapsiblePaned_ConstructProps extends Gtk.Paned_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsCollapsiblePaned */
     collapse_mode?: CollapseMode
 }
 class WidgetsCollapsiblePaned {
@@ -3351,13 +3362,13 @@ class WidgetsCollapsiblePaned {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Paned */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsCollapsiblePaned */
     get_collapse_mode(): CollapseMode
     set_collapse_mode(value: CollapseMode): void
@@ -3377,7 +3388,7 @@ class WidgetsCollapsiblePaned {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4141,9 +4152,11 @@ class WidgetsCollapsiblePaned {
     _init (config?: WidgetsCollapsiblePaned_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(orientation: Gtk.Orientation): WidgetsCollapsiblePaned
+    /* Function overloads */
+    static new(orientation: Gtk.Orientation): WidgetsCollapsiblePaned
     static $gtype: GObject.Type
 }
-export interface WidgetsCompositedWindow_ConstructProps extends Gtk.Window_ConstructProps {
+interface WidgetsCompositedWindow_ConstructProps extends Gtk.Window_ConstructProps {
 }
 class WidgetsCompositedWindow {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -4224,16 +4237,16 @@ class WidgetsCompositedWindow {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Window */
     activate_default(): boolean
     activate_focus(): boolean
@@ -4347,7 +4360,7 @@ class WidgetsCompositedWindow {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -4591,6 +4604,7 @@ class WidgetsCompositedWindow {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -4659,6 +4673,7 @@ class WidgetsCompositedWindow {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Granite-1.0.Granite.WidgetsCompositedWindow */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_construct_child(builder: Gtk.Builder, name: string): GObject.Object
@@ -5176,10 +5191,12 @@ class WidgetsCompositedWindow {
     _init (config?: WidgetsCompositedWindow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): WidgetsCompositedWindow
+    /* Function overloads */
     static new(type: Gtk.WindowType): WidgetsCompositedWindow
     static $gtype: GObject.Type
 }
-export interface WidgetsDatePicker_ConstructProps extends Gtk.Entry_ConstructProps {
+interface WidgetsDatePicker_ConstructProps extends Gtk.Entry_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsDatePicker */
     format?: string
     date?: GLib.DateTime
 }
@@ -5278,13 +5295,10 @@ class WidgetsDatePicker {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Granite-1.0.Granite.WidgetsDatePicker */
-    dropdown: Gtk.EventBox
-    calendar: Gtk.Calendar
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsDatePicker */
     get_format(): string
     get_date(): GLib.DateTime
@@ -5655,6 +5669,7 @@ class WidgetsDatePicker {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of Granite-1.0.Granite.WidgetsDatePicker */
     vfunc_position_dropdown(): /* rect */ Gdk.Rectangle
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
@@ -6223,9 +6238,12 @@ class WidgetsDatePicker {
     /* Static methods and pseudo-constructors */
     static with_format(format: string): WidgetsDatePicker
     static new(): WidgetsDatePicker
+    /* Function overloads */
+    static new(): WidgetsDatePicker
     static $gtype: GObject.Type
 }
-export interface WidgetsTab_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface WidgetsTab_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsTab */
     label?: string
     tooltip?: string
     pinned?: boolean
@@ -6299,25 +6317,16 @@ class WidgetsTab {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Granite-1.0.Granite.WidgetsTab */
-    dropped_callback: WidgetsDroppedDelegate
-    dropped_callback_target: object
-    dropped_callback_target_destroy_notify: GLib.DestroyNotify
-    page_container: any
-    _icon: Gtk.Image
-    new_window_m: Gtk.MenuItem
-    duplicate_m: Gtk.MenuItem
-    pin_m: Gtk.MenuItem
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsTab */
     get_label(): string
     set_label(value: string): void
@@ -6353,7 +6362,7 @@ class WidgetsTab {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -7103,11 +7112,13 @@ class WidgetsTab {
     _init (config?: WidgetsTab_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(label?: string | null, icon?: Gio.Icon | null, page?: Gtk.Widget | null): WidgetsTab
+    /* Function overloads */
     static new(): WidgetsTab
     static with_accellabels(label?: string | null, icon?: Gio.Icon | null, page?: Gtk.Widget | null, _close_tab_label?: AccelLabel | null, _duplicate_tab_label?: AccelLabel | null, _new_window_label?: AccelLabel | null): WidgetsTab
     static $gtype: GObject.Type
 }
-export interface WidgetsDynamicNotebook_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface WidgetsDynamicNotebook_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsDynamicNotebook */
     show_tabs?: boolean
     tabs_closable?: boolean
     allow_drag?: boolean
@@ -7193,15 +7204,15 @@ class WidgetsDynamicNotebook {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsDynamicNotebook */
     get_n_tabs(): number
     get_show_tabs(): boolean
@@ -7257,7 +7268,7 @@ class WidgetsDynamicNotebook {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8048,10 +8059,13 @@ class WidgetsDynamicNotebook {
     _init (config?: WidgetsDynamicNotebook_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): WidgetsDynamicNotebook
+    /* Function overloads */
+    static new(): WidgetsDynamicNotebook
     static with_accellabels(new_tab_label: AccelLabel, restore_tab_label: AccelLabel): WidgetsDynamicNotebook
     static $gtype: GObject.Type
 }
-export interface WidgetsModeButton_ConstructProps extends Gtk.Box_ConstructProps {
+interface WidgetsModeButton_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsModeButton */
     selected?: number
 }
 class WidgetsModeButton {
@@ -8107,13 +8121,13 @@ class WidgetsModeButton {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsModeButton */
     get_selected(): number
     set_selected(value: number): void
@@ -8144,7 +8158,7 @@ class WidgetsModeButton {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -8890,10 +8904,12 @@ class WidgetsModeButton {
     _init (config?: WidgetsModeButton_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): WidgetsModeButton
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): WidgetsModeButton
     static $gtype: GObject.Type
 }
-export interface WidgetsOverlayBar_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface WidgetsOverlayBar_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsOverlayBar */
     overlay?: Gtk.Overlay
     status?: string
     label?: string
@@ -8952,15 +8968,15 @@ class WidgetsOverlayBar {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsOverlayBar */
     get_overlay(): Gtk.Overlay | null
     get_status(): string
@@ -8980,7 +8996,7 @@ class WidgetsOverlayBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -9716,10 +9732,12 @@ class WidgetsOverlayBar {
     _init (config?: WidgetsOverlayBar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(overlay?: Gtk.Overlay | null): WidgetsOverlayBar
+    /* Function overloads */
     static new(): WidgetsOverlayBar
     static $gtype: GObject.Type
 }
-export interface WidgetsSourceList_ConstructProps extends Gtk.ScrolledWindow_ConstructProps {
+interface WidgetsSourceList_ConstructProps extends Gtk.ScrolledWindow_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsSourceList */
     root?: WidgetsSourceListExpandableItem
     selected?: WidgetsSourceListItem
     ellipsize_mode?: Pango.EllipsizeMode
@@ -9791,14 +9809,14 @@ class WidgetsSourceList {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.ScrolledWindow */
-    container: Gtk.Bin
-    priv: Gtk.ScrolledWindowPrivate
+    readonly container: Gtk.Bin
+    readonly priv: Gtk.ScrolledWindowPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsSourceList */
     get_root(): WidgetsSourceListExpandableItem
     set_root(value: WidgetsSourceListExpandableItem): void
@@ -9862,7 +9880,7 @@ class WidgetsSourceList {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -10648,10 +10666,12 @@ class WidgetsSourceList {
     _init (config?: WidgetsSourceList_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(root: WidgetsSourceListExpandableItem): WidgetsSourceList
+    /* Function overloads */
     static new(hadjustment?: Gtk.Adjustment | null, vadjustment?: Gtk.Adjustment | null): WidgetsSourceList
     static $gtype: GObject.Type
 }
-export interface WidgetsSourceListItem_ConstructProps extends GObject.Object_ConstructProps {
+interface WidgetsSourceListItem_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsSourceListItem */
     parent?: WidgetsSourceListExpandableItem
     name?: string
     tooltip?: string
@@ -10678,7 +10698,7 @@ class WidgetsSourceListItem {
     activatable: Gio.Icon
     activatable_tooltip: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsSourceListItem */
     get_parent(): WidgetsSourceListExpandableItem
     get_name(): string
@@ -10784,7 +10804,8 @@ class WidgetsSourceListItem {
     static new(name: string): WidgetsSourceListItem
     static $gtype: GObject.Type
 }
-export interface WidgetsSourceListExpandableItem_ConstructProps extends WidgetsSourceListItem_ConstructProps {
+interface WidgetsSourceListExpandableItem_ConstructProps extends WidgetsSourceListItem_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
     collapsible?: boolean
     expanded?: boolean
 }
@@ -10807,7 +10828,7 @@ class WidgetsSourceListExpandableItem {
     activatable: Gio.Icon
     activatable_tooltip: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsSourceListExpandableItem */
     get_collapsible(): boolean
     set_collapsible(value: boolean): void
@@ -10946,9 +10967,12 @@ class WidgetsSourceListExpandableItem {
     _init (config?: WidgetsSourceListExpandableItem_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(name: string): WidgetsSourceListExpandableItem
+    /* Function overloads */
+    static new(name: string): WidgetsSourceListExpandableItem
     static $gtype: GObject.Type
 }
-export interface WidgetsStorageBar_ConstructProps extends Gtk.Box_ConstructProps {
+interface WidgetsStorageBar_ConstructProps extends Gtk.Box_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsStorageBar */
     storage?: number
     total_usage?: number
     inner_margin_sides?: number
@@ -11007,13 +11031,13 @@ class WidgetsStorageBar {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Box */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsStorageBar */
     get_storage(): number
     set_storage(value: number): void
@@ -11040,7 +11064,7 @@ class WidgetsStorageBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -11778,11 +11802,13 @@ class WidgetsStorageBar {
     _init (config?: WidgetsStorageBar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(storage: number): WidgetsStorageBar
+    /* Function overloads */
     static new(orientation: Gtk.Orientation, spacing: number): WidgetsStorageBar
     static with_total_usage(storage: number, total_usage: number): WidgetsStorageBar
     static $gtype: GObject.Type
 }
-export interface WidgetsTimePicker_ConstructProps extends Gtk.Entry_ConstructProps {
+interface WidgetsTimePicker_ConstructProps extends Gtk.Entry_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsTimePicker */
     format_12?: string
     format_24?: string
     time?: GLib.DateTime
@@ -11883,9 +11909,9 @@ class WidgetsTimePicker {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsTimePicker */
     get_format_12(): string
     get_format_24(): string
@@ -12806,9 +12832,12 @@ class WidgetsTimePicker {
     /* Static methods and pseudo-constructors */
     static with_format(format_12: string, format_24: string): WidgetsTimePicker
     static new(): WidgetsTimePicker
+    /* Function overloads */
+    static new(): WidgetsTimePicker
     static $gtype: GObject.Type
 }
-export interface WidgetsToast_ConstructProps extends Gtk.Revealer_ConstructProps {
+interface WidgetsToast_ConstructProps extends Gtk.Revealer_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsToast */
     title?: string
 }
 class WidgetsToast {
@@ -12864,13 +12893,13 @@ class WidgetsToast {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Revealer */
-    parent_instance: Gtk.Bin
+    readonly parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsToast */
     get_title(): string
     set_title(value: string): void
@@ -12890,7 +12919,7 @@ class WidgetsToast {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -13633,10 +13662,12 @@ class WidgetsToast {
     _init (config?: WidgetsToast_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(title: string): WidgetsToast
+    /* Function overloads */
     static new(): WidgetsToast
     static $gtype: GObject.Type
 }
-export interface WidgetsWelcomeButton_ConstructProps extends Gtk.Button_ConstructProps {
+interface WidgetsWelcomeButton_ConstructProps extends Gtk.Button_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsWelcomeButton */
     title?: string
     description?: string
     icon?: Gtk.Image
@@ -13701,13 +13732,13 @@ class WidgetsWelcomeButton {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsWelcomeButton */
     get_title(): string
     set_title(value: string): void
@@ -13746,7 +13777,7 @@ class WidgetsWelcomeButton {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -13974,6 +14005,7 @@ class WidgetsWelcomeButton {
     set_direction(dir: Gtk.TextDirection): void
     set_double_buffered(double_buffered: boolean): void
     set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
     set_font_map(font_map?: Pango.FontMap | null): void
     set_font_options(options?: cairo.FontOptions | null): void
     set_halign(align: Gtk.Align): void
@@ -14520,10 +14552,12 @@ class WidgetsWelcomeButton {
     _init (config?: WidgetsWelcomeButton_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(image: Gtk.Image | null, option_text: string, description_text: string): WidgetsWelcomeButton
+    /* Function overloads */
     static new(): WidgetsWelcomeButton
     static $gtype: GObject.Type
 }
-export interface WidgetsWelcome_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface WidgetsWelcome_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.WidgetsWelcome */
     title?: string
     subtitle?: string
 }
@@ -14578,19 +14612,16 @@ class WidgetsWelcome {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Granite-1.0.Granite.WidgetsWelcome */
-    children: Gtk.Button[]
-    options: Gtk.Grid
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.WidgetsWelcome */
     get_title(): string
     set_title(value: string): void
@@ -14614,7 +14645,7 @@ class WidgetsWelcome {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -15352,10 +15383,11 @@ class WidgetsWelcome {
     _init (config?: WidgetsWelcome_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(title_text: string, subtitle_text: string): WidgetsWelcome
+    /* Function overloads */
     static new(): WidgetsWelcome
     static $gtype: GObject.Type
 }
-export interface Application_ConstructProps extends Gtk.Application_ConstructProps {
+interface Application_ConstructProps extends Gtk.Application_ConstructProps {
 }
 class Application {
     /* Properties of Gtk-3.0.Gtk.Application */
@@ -15373,37 +15405,10 @@ class Application {
     readonly is_registered: boolean
     readonly is_remote: boolean
     resource_base_path: string
-    /* Fields of Granite-1.0.Granite.Application */
-    build_data_dir: string
-    build_pkg_data_dir: string
-    build_release_name: string
-    build_version: string
-    build_version_info: string
-    program_name: string
-    exec_name: string
-    app_copyright: string
-    app_years: string
-    app_icon: string
-    app_launcher: string
-    main_url: string
-    bug_url: string
-    help_url: string
-    translate_url: string
-    about_authors: string[]
-    about_authors_length1: number
-    about_documenters: string[]
-    about_documenters_length1: number
-    about_artists: string[]
-    about_artists_length1: number
-    about_comments: string
-    about_translators: string
-    about_license: string
-    about_license_type: Gtk.License
-    granite_application_DEBUG: boolean
     /* Fields of Gtk-3.0.Gtk.Application */
-    parent: Gio.Application
+    readonly parent: Gio.Application
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.Application */
     run(args: string[]): number
     set_options(): void
@@ -15600,9 +15605,14 @@ class Application {
     static name: string
     constructor (config?: Application_ConstructProps)
     _init (config?: Application_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): Application
+    /* Function overloads */
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): Application
     static $gtype: GObject.Type
 }
-export interface SettingsPage_ConstructProps extends Gtk.ScrolledWindow_ConstructProps {
+interface SettingsPage_ConstructProps extends Gtk.ScrolledWindow_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.SettingsPage */
     status_type?: SettingsPageStatusType
     display_widget?: Gtk.Widget
     header?: string
@@ -15676,18 +15686,15 @@ class SettingsPage {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of Granite-1.0.Granite.SettingsPage */
-    _icon_name: string
-    _title: string
     /* Fields of Gtk-3.0.Gtk.ScrolledWindow */
-    container: Gtk.Bin
-    priv: Gtk.ScrolledWindowPrivate
+    readonly container: Gtk.Bin
+    readonly priv: Gtk.ScrolledWindowPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.SettingsPage */
     get_status_type(): SettingsPageStatusType
     set_status_type(value: SettingsPageStatusType): void
@@ -15738,7 +15745,7 @@ class SettingsPage {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -16518,7 +16525,8 @@ class SettingsPage {
     _init (config?: SettingsPage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SimpleSettingsPage_ConstructProps extends SettingsPage_ConstructProps {
+interface SimpleSettingsPage_ConstructProps extends SettingsPage_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.SimpleSettingsPage */
     action_area?: Gtk.ButtonBox
     content_area?: Gtk.Grid
     status_switch?: Gtk.Switch
@@ -16596,17 +16604,17 @@ class SimpleSettingsPage {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Granite-1.0.Granite.SettingsPage */
-    _icon_name: string
-    _title: string
+    readonly _icon_name: string
+    readonly _title: string
     /* Fields of Gtk-3.0.Gtk.ScrolledWindow */
-    container: Gtk.Bin
-    priv: Gtk.ScrolledWindowPrivate
+    readonly container: Gtk.Bin
+    readonly priv: Gtk.ScrolledWindowPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.SimpleSettingsPage */
     get_action_area(): Gtk.ButtonBox
     get_content_area(): Gtk.Grid
@@ -16627,6 +16635,7 @@ class SimpleSettingsPage {
     set_status(value: string): void
     get_icon_name(): string | null
     set_icon_name(value?: string | null): void
+    set_title(value: string): void
     /* Methods of Gtk-3.0.Gtk.ScrolledWindow */
     add_with_viewport(child: Gtk.Widget): void
     get_capture_button_press(): boolean
@@ -16666,7 +16675,7 @@ class SimpleSettingsPage {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -17448,7 +17457,8 @@ class SimpleSettingsPage {
     _init (config?: SimpleSettingsPage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AccelLabel_ConstructProps extends Gtk.Grid_ConstructProps {
+interface AccelLabel_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.AccelLabel */
     action_name?: string
     accel_string?: string
     label?: string
@@ -17509,11 +17519,11 @@ class AccelLabel {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.AccelLabel */
     get_action_name(): string
     set_action_name(value: string): void
@@ -17546,7 +17556,7 @@ class AccelLabel {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -18288,11 +18298,13 @@ class AccelLabel {
     _init (config?: AccelLabel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(label: string, accel_string?: string | null): AccelLabel
+    /* Function overloads */
     static new(): AccelLabel
     static from_action_name(label: string, action_name: string): AccelLabel
     static $gtype: GObject.Type
 }
-export interface AsyncImage_ConstructProps extends Gtk.Image_ConstructProps {
+interface AsyncImage_ConstructProps extends Gtk.Image_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.AsyncImage */
     load_on_realize?: boolean
     auto_size_request?: boolean
     gicon_async?: Gio.Icon
@@ -18362,13 +18374,13 @@ class AsyncImage {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Image */
-    misc: Gtk.Misc
+    readonly misc: Gtk.Misc
     /* Fields of Gtk-3.0.Gtk.Misc */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.AsyncImage */
     get_gicon_async(): Gio.Icon | null
     get_size_async(): number
@@ -19112,12 +19124,13 @@ class AsyncImage {
     _init (config?: AsyncImage_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(load_on_realize: boolean, auto_size_request: boolean): AsyncImage
+    /* Function overloads */
     static new(): AsyncImage
     static from_gicon_async(icon: Gio.Icon, size: number, load_on_realize: boolean, auto_size_request: boolean): AsyncImage
     static from_icon_name_async(icon_name: string, icon_size: Gtk.IconSize, load_on_realize: boolean, auto_size_request: boolean): AsyncImage
     static $gtype: GObject.Type
 }
-export interface Dialog_ConstructProps extends Gtk.Dialog_ConstructProps {
+interface Dialog_ConstructProps extends Gtk.Dialog_ConstructProps {
 }
 class Dialog {
     /* Properties of Gtk-3.0.Gtk.Window */
@@ -19196,18 +19209,19 @@ class Dialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Dialog */
     add_action_widget(child: Gtk.Widget, response_id: number): void
     add_button(button_text: string, response_id: number): Gtk.Widget
@@ -19334,7 +19348,7 @@ class Dialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -19578,6 +19592,7 @@ class Dialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -20142,8 +20157,6 @@ class Dialog {
     connect_after(sigName: "notify::visible", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: Dialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -20153,10 +20166,12 @@ class Dialog {
     _init (config?: Dialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Dialog
+    /* Function overloads */
+    static new(): Dialog
     static new(type: Gtk.WindowType): Dialog
     static $gtype: GObject.Type
 }
-export interface HeaderLabel_ConstructProps extends Gtk.Label_ConstructProps {
+interface HeaderLabel_ConstructProps extends Gtk.Label_ConstructProps {
 }
 class HeaderLabel {
     /* Properties of Gtk-3.0.Gtk.Label */
@@ -20226,13 +20241,13 @@ class HeaderLabel {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Label */
-    misc: Gtk.Misc
+    readonly misc: Gtk.Misc
     /* Fields of Gtk-3.0.Gtk.Misc */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.Label */
     get_angle(): number
     get_attributes(): Pango.AttrList | null
@@ -21027,10 +21042,11 @@ class HeaderLabel {
     _init (config?: HeaderLabel_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(label: string): HeaderLabel
+    /* Function overloads */
     static new(str?: string | null): HeaderLabel
     static $gtype: GObject.Type
 }
-export interface HyperTextView_ConstructProps extends Gtk.TextView_ConstructProps {
+interface HyperTextView_ConstructProps extends Gtk.TextView_ConstructProps {
 }
 class HyperTextView {
     /* Properties of Gtk-3.0.Gtk.TextView */
@@ -21100,11 +21116,11 @@ class HyperTextView {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.TextView */
-    parent_instance: Gtk.Container
+    readonly parent_instance: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gtk-3.0.Gtk.TextView */
     add_child_at_anchor(child: Gtk.Widget, anchor: Gtk.TextChildAnchor): void
     add_child_in_window(child: Gtk.Widget, which_window: Gtk.TextWindowType, xpos: number, ypos: number): void
@@ -21142,7 +21158,7 @@ class HyperTextView {
     get_top_margin(): number
     get_vadjustment(): Gtk.Adjustment
     get_visible_rect(): /* visible_rect */ Gdk.Rectangle
-    /* get_window clashes with Gtk.Widget.get_window */
+    get_window(win: Gtk.TextWindowType): Gdk.Window | null
     get_window_type(window: Gdk.Window): Gtk.TextWindowType
     get_wrap_mode(): Gtk.WrapMode
     im_context_filter_keypress(event: Gdk.EventKey): boolean
@@ -21181,7 +21197,7 @@ class HyperTextView {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -22012,9 +22028,12 @@ class HyperTextView {
     _init (config?: HyperTextView_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): HyperTextView
+    /* Function overloads */
+    static new(): HyperTextView
     static $gtype: GObject.Type
 }
-export interface MessageDialog_ConstructProps extends Dialog_ConstructProps {
+interface MessageDialog_ConstructProps extends Dialog_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.MessageDialog */
     primary_text?: string
     secondary_text?: string
     image_icon?: Gio.Icon
@@ -22106,18 +22125,19 @@ class MessageDialog {
     vexpand_set: boolean
     visible: boolean
     width_request: number
-    readonly window: Gdk.Window
+    /* Fields of Gtk-3.0.Gtk.Dialog */
+    readonly window: Gtk.Window
     /* Fields of Gtk-3.0.Gtk.Window */
-    bin: Gtk.Bin
-    priv: Gtk.WindowPrivate
+    readonly bin: Gtk.Bin
+    readonly priv: Gtk.WindowPrivate
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.MessageDialog */
     get_primary_text(): string
     set_primary_text(value: string): void
@@ -22257,7 +22277,7 @@ class MessageDialog {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -22501,6 +22521,7 @@ class MessageDialog {
     set_margin_top(margin: number): void
     set_name(name: string): void
     set_no_show_all(no_show_all: boolean): void
+    set_opacity(opacity: number): void
     set_parent(parent: Gtk.Widget): void
     set_parent_window(parent_window: Gdk.Window): void
     set_realized(realized: boolean): void
@@ -23073,8 +23094,6 @@ class MessageDialog {
     connect_after(sigName: "notify::visible", callback: (($obj: MessageDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::width-request", callback: (($obj: MessageDialog, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::width-request", callback: (($obj: MessageDialog, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::window", callback: (($obj: MessageDialog, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::window", callback: (($obj: MessageDialog, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -23084,12 +23103,15 @@ class MessageDialog {
     _init (config?: MessageDialog_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(primary_text: string, secondary_text: string, image_icon: Gio.Icon, buttons: Gtk.ButtonsType): MessageDialog
+    /* Function overloads */
+    static new(): MessageDialog
     static new(): MessageDialog
     static new(type: Gtk.WindowType): MessageDialog
     static with_image_from_icon_name(primary_text: string, secondary_text: string, image_icon_name: string, buttons: Gtk.ButtonsType): MessageDialog
     static $gtype: GObject.Type
 }
-export interface ModeSwitch_ConstructProps extends Gtk.Grid_ConstructProps {
+interface ModeSwitch_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.ModeSwitch */
     active?: boolean
     primary_icon_gicon?: Gio.Icon
     primary_icon_name?: string
@@ -23158,11 +23180,11 @@ class ModeSwitch {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.ModeSwitch */
     get_active(): boolean
     set_active(value: boolean): void
@@ -23203,7 +23225,7 @@ class ModeSwitch {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -23953,11 +23975,13 @@ class ModeSwitch {
     _init (config?: ModeSwitch_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(primary_icon_gicon: Gio.Icon, secondary_icon_gicon: Gio.Icon): ModeSwitch
+    /* Function overloads */
     static new(): ModeSwitch
     static from_icon_name(primary_icon_name: string, secondary_icon_name: string): ModeSwitch
     static $gtype: GObject.Type
 }
-export interface SeekBar_ConstructProps extends Gtk.Grid_ConstructProps {
+interface SeekBar_ConstructProps extends Gtk.Grid_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.SeekBar */
     playback_duration?: number
     playback_progress?: number
     is_grabbing?: boolean
@@ -24026,11 +24050,11 @@ class SeekBar {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.SeekBar */
     get_playback_duration(): number
     set_playback_duration(value: number): void
@@ -24069,7 +24093,7 @@ class SeekBar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -24819,10 +24843,12 @@ class SeekBar {
     _init (config?: SeekBar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(playback_duration: number): SeekBar
+    /* Function overloads */
     static new(): SeekBar
     static $gtype: GObject.Type
 }
-export interface SettingsSidebar_ConstructProps extends Gtk.ScrolledWindow_ConstructProps {
+interface SettingsSidebar_ConstructProps extends Gtk.ScrolledWindow_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.SettingsSidebar */
     stack?: Gtk.Stack
     visible_child_name?: string
 }
@@ -24890,14 +24916,14 @@ class SettingsSidebar {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.ScrolledWindow */
-    container: Gtk.Bin
-    priv: Gtk.ScrolledWindowPrivate
+    readonly container: Gtk.Bin
+    readonly priv: Gtk.ScrolledWindowPrivate
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.SettingsSidebar */
     get_stack(): Gtk.Stack
     get_visible_child_name(): string | null
@@ -24941,7 +24967,7 @@ class SettingsSidebar {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -25715,17 +25741,19 @@ class SettingsSidebar {
     _init (config?: SettingsSidebar_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(stack: Gtk.Stack): SettingsSidebar
+    /* Function overloads */
     static new(hadjustment?: Gtk.Adjustment | null, vadjustment?: Gtk.Adjustment | null): SettingsSidebar
     static $gtype: GObject.Type
 }
-export interface Settings_ConstructProps extends GObject.Object_ConstructProps {
+interface Settings_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.Settings */
     prefers_color_scheme?: SettingsColorScheme
 }
 class Settings {
     /* Properties of Granite-1.0.Granite.Settings */
     prefers_color_scheme: SettingsColorScheme
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.Settings */
     get_prefers_color_scheme(): SettingsColorScheme
     /* Methods of GObject-2.0.GObject.Object */
@@ -25775,7 +25803,8 @@ class Settings {
     static get_default(): Settings
     static $gtype: GObject.Type
 }
-export interface SwitchModelButton_ConstructProps extends Gtk.ToggleButton_ConstructProps {
+interface SwitchModelButton_ConstructProps extends Gtk.ToggleButton_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.SwitchModelButton */
     text?: string
     description?: string
 }
@@ -25842,13 +25871,13 @@ class SwitchModelButton {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.SwitchModelButton */
     get_text(): string
     set_text(value: string): void
@@ -25893,7 +25922,7 @@ class SwitchModelButton {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -26121,6 +26150,7 @@ class SwitchModelButton {
     set_direction(dir: Gtk.TextDirection): void
     set_double_buffered(double_buffered: boolean): void
     set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
     set_font_map(font_map?: Pango.FontMap | null): void
     set_font_options(options?: cairo.FontOptions | null): void
     set_halign(align: Gtk.Align): void
@@ -26677,10 +26707,19 @@ class SwitchModelButton {
     _init (config?: SwitchModelButton_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(text: string): SwitchModelButton
+    /* Function overloads */
     static new(): SwitchModelButton
+    static new(): SwitchModelButton
+    static new_with_label(label: string): SwitchModelButton
+    /* Function overloads */
+    static new_with_label(label: string): SwitchModelButton
+    static new_with_mnemonic(label: string): SwitchModelButton
+    /* Function overloads */
+    static new_with_mnemonic(label: string): SwitchModelButton
     static $gtype: GObject.Type
 }
-export interface ValidatedEntry_ConstructProps extends Gtk.Entry_ConstructProps {
+interface ValidatedEntry_ConstructProps extends Gtk.Entry_ConstructProps {
+    /* Constructor properties of Granite-1.0.Granite.ValidatedEntry */
     is_valid?: boolean
     min_length?: number
     regex?: GLib.Regex
@@ -26783,9 +26822,9 @@ class ValidatedEntry {
     width_request: number
     readonly window: Gdk.Window
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Granite-1.0.Granite.ValidatedEntry */
     get_is_valid(): boolean
     set_is_valid(value: boolean): void
@@ -27705,6 +27744,8 @@ class ValidatedEntry {
     /* Static methods and pseudo-constructors */
     static from_regex(regex_arg: GLib.Regex): ValidatedEntry
     static new(): ValidatedEntry
+    /* Function overloads */
+    static new(): ValidatedEntry
     static $gtype: GObject.Type
 }
 abstract class DrawingBufferSurfaceClass {
@@ -27751,7 +27792,7 @@ class ServicesPathsPrivate {
 }
 abstract class ServicesSettingsClass {
     /* Fields of Granite-1.0.Granite.ServicesSettingsClass */
-    verify: (self: any, key: string) => void
+    readonly verify: (self: any, key: string) => void
     static name: string
 }
 class ServicesSettingsPrivate {
@@ -27771,17 +27812,17 @@ class ServicesSystemPrivate {
 }
 abstract class ServicesContractIface {
     /* Fields of Granite-1.0.Granite.ServicesContractIface */
-    get_display_name: (self: any) => string
-    get_description: (self: any) => string
-    get_icon: (self: any) => Gio.Icon
-    execute_with_file: (self: any, file: Gio.File) => void
-    execute_with_files: (self: any, files: Gio.File[]) => void
+    readonly get_display_name: (self: any) => string
+    readonly get_description: (self: any) => string
+    readonly get_icon: (self: any) => Gio.Icon
+    readonly execute_with_file: (self: any, file: Gio.File) => void
+    readonly execute_with_files: (self: any, files: Gio.File[]) => void
     static name: string
 }
 abstract class ServicesSettingsSerializableIface {
     /* Fields of Granite-1.0.Granite.ServicesSettingsSerializableIface */
-    settings_serialize: (self: any) => string
-    settings_deserialize: (self: any, s: string) => void
+    readonly settings_serialize: (self: any) => string
+    readonly settings_deserialize: (self: any, s: string) => void
     static name: string
 }
 abstract class WidgetsAlertViewClass {
@@ -27804,7 +27845,7 @@ class WidgetsCellRendererBadgePrivate {
 }
 abstract class WidgetsCellRendererExpanderClass {
     /* Fields of Granite-1.0.Granite.WidgetsCellRendererExpanderClass */
-    get_arrow_size: (self: WidgetsCellRendererExpander, widget: Gtk.Widget) => number
+    readonly get_arrow_size: (self: WidgetsCellRendererExpander, widget: Gtk.Widget) => number
     static name: string
 }
 class WidgetsCellRendererExpanderPrivate {
@@ -27824,7 +27865,7 @@ class WidgetsCompositedWindowPrivate {
 }
 abstract class WidgetsDatePickerClass {
     /* Fields of Granite-1.0.Granite.WidgetsDatePickerClass */
-    position_dropdown: (self: WidgetsDatePicker) => /* rect */ Gdk.Rectangle
+    readonly position_dropdown: (self: WidgetsDatePicker) => /* rect */ Gdk.Rectangle
     static name: string
 }
 class WidgetsDatePickerPrivate {
@@ -27856,7 +27897,7 @@ class WidgetsOverlayBarPrivate {
 }
 abstract class WidgetsSourceListClass {
     /* Fields of Granite-1.0.Granite.WidgetsSourceListClass */
-    item_selected: (self: WidgetsSourceList, item?: WidgetsSourceListItem | null) => void
+    readonly item_selected: (self: WidgetsSourceList, item?: WidgetsSourceListItem | null) => void
     static name: string
 }
 class WidgetsSourceListPrivate {
@@ -27864,10 +27905,10 @@ class WidgetsSourceListPrivate {
 }
 abstract class WidgetsSourceListItemClass {
     /* Fields of Granite-1.0.Granite.WidgetsSourceListItemClass */
-    get_context_menu: (self: WidgetsSourceListItem) => Gtk.Menu | null
-    edited: (self: WidgetsSourceListItem, new_name: string) => void
-    action_activated: (self: WidgetsSourceListItem) => void
-    activated: (self: WidgetsSourceListItem) => void
+    readonly get_context_menu: (self: WidgetsSourceListItem) => Gtk.Menu | null
+    readonly edited: (self: WidgetsSourceListItem, new_name: string) => void
+    readonly action_activated: (self: WidgetsSourceListItem) => void
+    readonly activated: (self: WidgetsSourceListItem) => void
     static name: string
 }
 class WidgetsSourceListItemPrivate {
@@ -27875,7 +27916,7 @@ class WidgetsSourceListItemPrivate {
 }
 abstract class WidgetsSourceListExpandableItemClass {
     /* Fields of Granite-1.0.Granite.WidgetsSourceListExpandableItemClass */
-    toggled: (self: WidgetsSourceListExpandableItem) => void
+    readonly toggled: (self: WidgetsSourceListExpandableItem) => void
     static name: string
 }
 class WidgetsSourceListExpandableItemPrivate {
@@ -27889,7 +27930,7 @@ class WidgetsStorageBarPrivate {
 }
 abstract class WidgetsTimePickerClass {
     /* Fields of Granite-1.0.Granite.WidgetsTimePickerClass */
-    position_dropdown: (self: WidgetsTimePicker) => [ /* x */ number, /* y */ number ]
+    readonly position_dropdown: (self: WidgetsTimePicker) => [ /* x */ number, /* y */ number ]
     static name: string
 }
 class WidgetsTimePickerPrivate {
@@ -27915,25 +27956,25 @@ class WidgetsWelcomePrivate {
 }
 abstract class WidgetsSourceListSortableIface {
     /* Fields of Granite-1.0.Granite.WidgetsSourceListSortableIface */
-    allow_dnd_sorting: (self: WidgetsSourceListSortable) => boolean
-    compare: (self: WidgetsSourceListSortable, a: WidgetsSourceListItem, b: WidgetsSourceListItem) => number
+    readonly allow_dnd_sorting: (self: WidgetsSourceListSortable) => boolean
+    readonly compare: (self: WidgetsSourceListSortable, a: WidgetsSourceListItem, b: WidgetsSourceListItem) => number
     static name: string
 }
 abstract class WidgetsSourceListDragSourceIface {
     /* Fields of Granite-1.0.Granite.WidgetsSourceListDragSourceIface */
-    draggable: (self: WidgetsSourceListDragSource) => boolean
-    prepare_selection_data: (self: WidgetsSourceListDragSource, selection_data: Gtk.SelectionData) => void
+    readonly draggable: (self: WidgetsSourceListDragSource) => boolean
+    readonly prepare_selection_data: (self: WidgetsSourceListDragSource, selection_data: Gtk.SelectionData) => void
     static name: string
 }
 abstract class WidgetsSourceListDragDestIface {
     /* Fields of Granite-1.0.Granite.WidgetsSourceListDragDestIface */
-    data_drop_possible: (self: WidgetsSourceListDragDest, context: Gdk.DragContext, data: Gtk.SelectionData) => boolean
-    data_received: (self: WidgetsSourceListDragDest, context: Gdk.DragContext, data: Gtk.SelectionData) => Gdk.DragAction
+    readonly data_drop_possible: (self: WidgetsSourceListDragDest, context: Gdk.DragContext, data: Gtk.SelectionData) => boolean
+    readonly data_received: (self: WidgetsSourceListDragDest, context: Gdk.DragContext, data: Gtk.SelectionData) => Gdk.DragAction
     static name: string
 }
 abstract class ApplicationClass {
     /* Fields of Granite-1.0.Granite.ApplicationClass */
-    set_options: (self: Application) => void
+    readonly set_options: (self: Application) => void
     static name: string
 }
 class ApplicationPrivate {

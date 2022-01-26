@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Tracker-3.0
  */
@@ -50,34 +56,33 @@ enum SparqlConnectionFlags {
     FTS_IGNORE_NUMBERS,
     ANONYMOUS_BNODES,
 }
-export const PREFIX_DC: string
-export const PREFIX_MFO: string
-export const PREFIX_NAO: string
-export const PREFIX_NCO: string
-export const PREFIX_NFO: string
-export const PREFIX_NIE: string
-export const PREFIX_NMM: string
-export const PREFIX_NRL: string
-export const PREFIX_OSINFO: string
-export const PREFIX_RDF: string
-export const PREFIX_RDFS: string
-export const PREFIX_SLO: string
-export const PREFIX_TRACKER: string
-export const PREFIX_XSD: string
+const PREFIX_DC: string
+const PREFIX_MFO: string
+const PREFIX_NAO: string
+const PREFIX_NCO: string
+const PREFIX_NFO: string
+const PREFIX_NIE: string
+const PREFIX_NMM: string
+const PREFIX_NRL: string
+const PREFIX_OSINFO: string
+const PREFIX_RDF: string
+const PREFIX_RDFS: string
+const PREFIX_SLO: string
+const PREFIX_TRACKER: string
+const PREFIX_XSD: string
 function check_version(required_major: number, required_minor: number, required_micro: number): string
 function sparql_error_quark(): GLib.Quark
 function sparql_escape_string(literal: string): string
 function sparql_escape_uri(uri: string): string
 function sparql_get_ontology_nepomuk(): Gio.File
 function sparql_get_uuid_urn(): string
-export interface Batch_ConstructProps extends GObject.Object_ConstructProps {
+interface Batch_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tracker-3.0.Tracker.Batch */
     connection?: SparqlConnection
 }
 class Batch {
-    /* Fields of Tracker-3.0.Tracker.Batch */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.Batch */
     add_resource(graph: string, resource: Resource): void
     add_sparql(sparql: string): void
@@ -128,14 +133,13 @@ class Batch {
     _init (config?: Batch_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Endpoint_ConstructProps extends GObject.Object_ConstructProps {
+interface Endpoint_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tracker-3.0.Tracker.Endpoint */
     sparql_connection?: SparqlConnection
 }
 class Endpoint {
-    /* Fields of Tracker-3.0.Tracker.Endpoint */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.Endpoint */
     get_sparql_connection(): SparqlConnection
     /* Methods of GObject-2.0.GObject.Object */
@@ -181,15 +185,16 @@ class Endpoint {
     _init (config?: Endpoint_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EndpointDBus_ConstructProps extends Endpoint_ConstructProps {
+interface EndpointDBus_ConstructProps extends Endpoint_ConstructProps {
+    /* Constructor properties of Tracker-3.0.Tracker.EndpointDBus */
     dbus_connection?: Gio.DBusConnection
     object_path?: string
 }
 class EndpointDBus {
     /* Fields of Tracker-3.0.Tracker.Endpoint */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.Endpoint */
     get_sparql_connection(): SparqlConnection
     /* Methods of GObject-2.0.GObject.Object */
@@ -242,15 +247,16 @@ class EndpointDBus {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface EndpointHttp_ConstructProps extends Endpoint_ConstructProps {
+interface EndpointHttp_ConstructProps extends Endpoint_ConstructProps {
+    /* Constructor properties of Tracker-3.0.Tracker.EndpointHttp */
     http_certificate?: Gio.TlsCertificate
     http_port?: number
 }
 class EndpointHttp {
     /* Fields of Tracker-3.0.Tracker.Endpoint */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.Endpoint */
     get_sparql_connection(): SparqlConnection
     /* Methods of GObject-2.0.GObject.Object */
@@ -307,11 +313,11 @@ class EndpointHttp {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface NamespaceManager_ConstructProps extends GObject.Object_ConstructProps {
+interface NamespaceManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class NamespaceManager {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.NamespaceManager */
     add_prefix(prefix: string, ns: string): void
     compress_uri(uri: string): string
@@ -366,14 +372,13 @@ class NamespaceManager {
     static get_default(): NamespaceManager
     static $gtype: GObject.Type
 }
-export interface Notifier_ConstructProps extends GObject.Object_ConstructProps {
+interface Notifier_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tracker-3.0.Tracker.Notifier */
     connection?: SparqlConnection
 }
 class Notifier {
-    /* Fields of Tracker-3.0.Tracker.Notifier */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.Notifier */
     signal_subscribe(connection: Gio.DBusConnection, service: string, object_path?: string | null, graph?: string | null): number
     signal_unsubscribe(handler_id: number): void
@@ -424,16 +429,15 @@ class Notifier {
     _init (config?: Notifier_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Resource_ConstructProps extends GObject.Object_ConstructProps {
+interface Resource_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tracker-3.0.Tracker.Resource */
     identifier?: string
 }
 class Resource {
     /* Properties of Tracker-3.0.Tracker.Resource */
     identifier: string
-    /* Fields of Tracker-3.0.Tracker.Resource */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.Resource */
     add_boolean(property_uri: string, value: boolean): void
     add_datetime(property_uri: string, value: GLib.DateTime): void
@@ -519,13 +523,11 @@ class Resource {
     static deserialize(variant: GLib.Variant): Resource
     static $gtype: GObject.Type
 }
-export interface SparqlConnection_ConstructProps extends GObject.Object_ConstructProps {
+interface SparqlConnection_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SparqlConnection {
-    /* Fields of Tracker-3.0.Tracker.SparqlConnection */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.SparqlConnection */
     close(): void
     close_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -599,16 +601,15 @@ class SparqlConnection {
     static new_async(flags: SparqlConnectionFlags, store?: Gio.File | null, ontology?: Gio.File | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static $gtype: GObject.Type
 }
-export interface SparqlCursor_ConstructProps extends GObject.Object_ConstructProps {
+interface SparqlCursor_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tracker-3.0.Tracker.SparqlCursor */
     connection?: SparqlConnection
 }
 class SparqlCursor {
     /* Properties of Tracker-3.0.Tracker.SparqlCursor */
     readonly n_columns: number
-    /* Fields of Tracker-3.0.Tracker.SparqlCursor */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.SparqlCursor */
     close(): void
     get_boolean(column: number): boolean
@@ -670,15 +671,14 @@ class SparqlCursor {
     _init (config?: SparqlCursor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SparqlStatement_ConstructProps extends GObject.Object_ConstructProps {
+interface SparqlStatement_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Tracker-3.0.Tracker.SparqlStatement */
     connection?: SparqlConnection
     sparql?: string
 }
 class SparqlStatement {
-    /* Fields of Tracker-3.0.Tracker.SparqlStatement */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Tracker-3.0.Tracker.SparqlStatement */
     bind_boolean(name: string, value: boolean): void
     bind_datetime(name: string, value: GLib.DateTime): void
@@ -742,7 +742,7 @@ abstract class EndpointClass {
 }
 abstract class NamespaceManagerClass {
     /* Fields of Tracker-3.0.Tracker.NamespaceManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class NotifierClass {

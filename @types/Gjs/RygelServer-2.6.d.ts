@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * RygelServer-2.6
  */
@@ -56,7 +62,8 @@ enum PlaySpeedError {
     INVALID_SPEED_FORMAT,
     SPEED_NOT_PRESENT,
 }
-export interface SearchableContainer_ConstructProps extends MediaContainer_ConstructProps {
+interface SearchableContainer_ConstructProps extends MediaContainer_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.SearchableContainer */
     search_classes?: Gee.ArrayList
 }
 class SearchableContainer {
@@ -83,13 +90,13 @@ class SearchableContainer {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaContainer */
-    update_id: number
-    storage_used: number
-    total_deleted_child_count: number
+    readonly update_id: number
+    readonly storage_used: number
+    readonly total_deleted_child_count: number
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.SearchableContainer */
     search(expression: SearchExpression | null, offset: number, max_count: number, sort_criteria: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     search_finish(_res_: Gio.AsyncResult): [ /* returnType */ MediaObjects | null, /* total_matches */ number ]
@@ -102,6 +109,8 @@ class SearchableContainer {
     /* Methods of RygelServer-2.6.RygelServer.MediaContainer */
     get_children(offset: number, max_count: number, sort_criteria: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     get_children_finish(_res_: Gio.AsyncResult): MediaObjects | null
+    find_object(id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
+    find_object_finish(_res_: Gio.AsyncResult): MediaObject | null
     updated(object: MediaObject | null, event_type: ObjectEventType, sub_tree_update: boolean): void
     get_child_count(): number
     set_child_count(value: number): void
@@ -259,7 +268,7 @@ class SearchableContainer {
     _init (config?: SearchableContainer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TrackableContainer_ConstructProps extends MediaContainer_ConstructProps {
+interface TrackableContainer_ConstructProps extends MediaContainer_ConstructProps {
 }
 class TrackableContainer {
     /* Properties of RygelServer-2.6.RygelServer.MediaContainer */
@@ -283,13 +292,13 @@ class TrackableContainer {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaContainer */
-    update_id: number
-    storage_used: number
-    total_deleted_child_count: number
+    readonly update_id: number
+    readonly storage_used: number
+    readonly total_deleted_child_count: number
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.TrackableContainer */
     clear(_callback_?: Gio.AsyncReadyCallback | null): void
     clear_finish(_res_: Gio.AsyncResult): void
@@ -474,7 +483,7 @@ class TrackableContainer {
     _init (config?: TrackableContainer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TrackableItem_ConstructProps extends MediaItem_ConstructProps {
+interface TrackableItem_ConstructProps extends MediaItem_ConstructProps {
 }
 class TrackableItem {
     /* Properties of RygelServer-2.6.RygelServer.MediaItem */
@@ -494,9 +503,9 @@ class TrackableItem {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.TrackableItem */
     changed(): void
     /* Methods of RygelServer-2.6.RygelServer.MediaItem */
@@ -622,7 +631,8 @@ class TrackableItem {
     _init (config?: TrackableItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VisualItem_ConstructProps extends MediaFileItem_ConstructProps {
+interface VisualItem_ConstructProps extends MediaFileItem_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.VisualItem */
     width?: number
     height?: number
     color_depth?: number
@@ -656,12 +666,12 @@ class VisualItem {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaFileItem */
-    rygel_media_file_item_address_regex: GLib.Regex
-    rygel_media_file_item_mime_to_ext: Gee.HashMap
+    readonly rygel_media_file_item_address_regex: GLib.Regex
+    readonly rygel_media_file_item_mime_to_ext: Gee.HashMap
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.VisualItem */
     get_width(): number
     set_width(value: number): void
@@ -840,7 +850,8 @@ class VisualItem {
     _init (config?: VisualItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WritableContainer_ConstructProps extends MediaContainer_ConstructProps {
+interface WritableContainer_ConstructProps extends MediaContainer_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.WritableContainer */
     create_classes?: Gee.ArrayList
 }
 class WritableContainer {
@@ -867,13 +878,13 @@ class WritableContainer {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaContainer */
-    update_id: number
-    storage_used: number
-    total_deleted_child_count: number
+    readonly update_id: number
+    readonly storage_used: number
+    readonly total_deleted_child_count: number
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.WritableContainer */
     can_create(upnp_class: string): boolean
     add_item(item: MediaFileItem, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -1058,11 +1069,11 @@ class WritableContainer {
     _init (config?: WritableContainer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DataSource_ConstructProps extends GObject.Object_ConstructProps {
+interface DataSource_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DataSource {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.DataSource */
     preroll(seek?: HTTPSeekRequest | null, playspeed?: PlaySpeedRequest | null): Gee.List | null
     start(): void
@@ -1106,9 +1117,9 @@ class DataSource {
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of RygelServer-2.6.RygelServer.DataSource */
-    connect(sigName: "data-available", callback: (($obj: DataSource, data: Uint8Array[]) => void)): number
-    connect_after(sigName: "data-available", callback: (($obj: DataSource, data: Uint8Array[]) => void)): number
-    emit(sigName: "data-available", data: Uint8Array[]): void
+    connect(sigName: "data-available", callback: (($obj: DataSource, data: Uint8Array) => void)): number
+    connect_after(sigName: "data-available", callback: (($obj: DataSource, data: Uint8Array) => void)): number
+    emit(sigName: "data-available", data: Uint8Array): void
     connect(sigName: "done", callback: (($obj: DataSource) => void)): number
     connect_after(sigName: "done", callback: (($obj: DataSource) => void)): number
     emit(sigName: "done"): void
@@ -1128,7 +1139,7 @@ class DataSource {
     _init (config?: DataSource_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface UpdatableObject_ConstructProps extends MediaObject_ConstructProps {
+interface UpdatableObject_ConstructProps extends MediaObject_ConstructProps {
 }
 class UpdatableObject {
     /* Properties of RygelServer-2.6.RygelServer.MediaObject */
@@ -1146,9 +1157,9 @@ class UpdatableObject {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.UpdatableObject */
     commit(_callback_?: Gio.AsyncReadyCallback | null): void
     commit_finish(_res_: Gio.AsyncResult): void
@@ -1273,7 +1284,8 @@ class UpdatableObject {
     _init (config?: UpdatableObject_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AudioItem_ConstructProps extends MediaFileItem_ConstructProps {
+interface AudioItem_ConstructProps extends MediaFileItem_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.AudioItem */
     duration?: number
     bitrate?: number
     sample_freq?: number
@@ -1311,12 +1323,12 @@ class AudioItem {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaFileItem */
-    rygel_media_file_item_address_regex: GLib.Regex
-    rygel_media_file_item_mime_to_ext: Gee.HashMap
+    readonly rygel_media_file_item_address_regex: GLib.Regex
+    readonly rygel_media_file_item_mime_to_ext: Gee.HashMap
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.AudioItem */
     get_duration(): number
     set_duration(value: number): void
@@ -1496,7 +1508,8 @@ class AudioItem {
     static new(id: string, parent: MediaContainer, title: string, upnp_class: string): AudioItem
     static $gtype: GObject.Type
 }
-export interface ImageItem_ConstructProps extends MediaFileItem_ConstructProps {
+interface ImageItem_ConstructProps extends MediaFileItem_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.VisualItem */
     width?: number
     height?: number
     color_depth?: number
@@ -1530,12 +1543,12 @@ class ImageItem {
     color_depth: number
     thumbnails: Gee.ArrayList
     /* Fields of RygelServer-2.6.RygelServer.MediaFileItem */
-    rygel_media_file_item_address_regex: GLib.Regex
-    rygel_media_file_item_mime_to_ext: Gee.HashMap
+    readonly rygel_media_file_item_address_regex: GLib.Regex
+    readonly rygel_media_file_item_mime_to_ext: Gee.HashMap
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaFileItem */
     get_primary_resource(): MediaResource
     get_extension(): string
@@ -1718,10 +1731,10 @@ class ImageItem {
 }
 class LogicalExpression {
     /* Fields of RygelServer-2.6.RygelServer.SearchExpression */
-    ref_count: number
-    op: object | null
-    operand1: object | null
-    operand2: object | null
+    readonly ref_count: number
+    readonly op: object | null
+    readonly operand1: object | null
+    readonly operand2: object | null
     /* Methods of RygelServer-2.6.RygelServer.SearchExpression */
     satisfied_by(media_object: MediaObject): boolean
     to_string(): string
@@ -1734,14 +1747,14 @@ class LogicalExpression {
     /* Static methods and pseudo-constructors */
     static new(): LogicalExpression
 }
-export interface MediaArtStore_ConstructProps extends GObject.Object_ConstructProps {
+interface MediaArtStore_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MediaArtStore {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaArtStore */
     lookup_media_art(item: MusicItem): Thumbnail | null
-    add(item: MusicItem, file: Gio.File, data: Uint8Array[], mime: string): void
+    add(item: MusicItem, file: Gio.File, data: Uint8Array, mime: string): void
     search_media_art_for_file(item: MusicItem, file: Gio.File): void
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
@@ -1788,7 +1801,7 @@ class MediaArtStore {
     static get_default(): MediaArtStore | null
     static $gtype: GObject.Type
 }
-export interface MediaObjects_ConstructProps extends Gee.ArrayList_ConstructProps {
+interface MediaObjects_ConstructProps extends Gee.ArrayList_ConstructProps {
 }
 class MediaObjects {
     /* Properties of Gee-0.8.Gee.AbstractBidirList */
@@ -1797,11 +1810,11 @@ class MediaObjects {
     readonly size: number
     readonly read_only: boolean
     /* Fields of Gee-0.8.Gee.ArrayList */
-    _items: object[]
-    _items_length1: number
-    _size: number
+    readonly _items: object[]
+    readonly _items_length1: number
+    readonly _size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaObjects */
     sort_by_criteria(sort_criteria: string): void
     /* Methods of Gee-0.8.Gee.ArrayList */
@@ -1863,11 +1876,23 @@ class MediaObjects {
     watch_closure(closure: Function): void
     /* Virtual methods of RygelServer-2.6.RygelServer.MediaObjects */
     vfunc_get_read_only_view(): Gee.BidirList
+    /* Function overloads */
     vfunc_get_read_only_view(): Gee.List
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.List
+    /* Function overloads */
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.Collection
     vfunc_get_read_only_view(): Gee.Collection
     /* Virtual methods of Gee-0.8.Gee.ArrayList */
     vfunc_get_read_only_view(): Gee.BidirList
+    /* Function overloads */
     vfunc_get_read_only_view(): Gee.List
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.List
+    /* Function overloads */
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.Collection
     vfunc_get_read_only_view(): Gee.Collection
     /* Virtual methods of Gee-0.8.Gee.AbstractBidirList */
     vfunc_bidir_list_iterator(): Gee.BidirListIterator
@@ -1882,15 +1907,79 @@ class MediaObjects {
     vfunc_reserved8(): void
     vfunc_reserved9(): void
     vfunc_get_read_only_view(): Gee.BidirList
+    /* Function overloads */
     vfunc_get_read_only_view(): Gee.List
     vfunc_get_read_only_view(): Gee.Collection
-    /* Virtual methods of Gee-0.8.Gee.AbstractList */
+    vfunc_get_read_only_view(): Gee.List
+    /* Function overloads */
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.Collection
+    vfunc_get_read_only_view(): Gee.Collection
     vfunc_list_iterator(): Gee.ListIterator
     vfunc_get(index: number): object | null
     vfunc_set(index: number, item?: object | null): void
     vfunc_index_of(item?: object | null): number
     vfunc_insert(index: number, item?: object | null): void
     vfunc_remove_at(index: number): object | null
+    vfunc_slice(start: number, stop: number): Gee.List | null
+    vfunc_first(): object | null
+    vfunc_last(): object | null
+    vfunc_insert_all(index: number, collection: Gee.Collection): void
+    vfunc_sort(compare_func: GLib.CompareDataFunc | null): void
+    vfunc_contains(item?: object | null): boolean
+    vfunc_add(item?: object | null): boolean
+    vfunc_remove(item?: object | null): boolean
+    vfunc_clear(): void
+    vfunc_add_all(collection: Gee.Collection): boolean
+    vfunc_contains_all(collection: Gee.Collection): boolean
+    vfunc_remove_all(collection: Gee.Collection): boolean
+    vfunc_retain_all(collection: Gee.Collection): boolean
+    vfunc_to_array(): object[]
+    vfunc_add_all_array(array: object[]): boolean
+    vfunc_contains_all_array(array: object[]): boolean
+    vfunc_remove_all_array(array: object[]): boolean
+    vfunc_add_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_contains_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_remove_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_get_size(): number
+    vfunc_get_is_empty(): boolean
+    vfunc_get_read_only(): boolean
+    vfunc_iterator(): Gee.Iterator
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    vfunc_fold(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): object | null
+    vfunc_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.MapFunc): Gee.Iterator
+    vfunc_scan(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): Gee.Iterator
+    vfunc_filter(pred: Gee.Predicate): Gee.Iterator
+    vfunc_chop(offset: number, length: number): Gee.Iterator
+    vfunc_flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FlatMapFunc): Gee.Iterator
+    vfunc_tee(forks: number): Gee.Iterator[]
+    vfunc_first_match(pred: Gee.Predicate): object | null
+    vfunc_any_match(pred: Gee.Predicate): boolean
+    vfunc_all_match(pred: Gee.Predicate): boolean
+    vfunc_max(compare: GLib.CompareDataFunc): object | null
+    vfunc_min(compare: GLib.CompareDataFunc): object | null
+    vfunc_order_by(compare: GLib.CompareDataFunc | null): Gee.Iterator
+    vfunc_get_element_type(): GObject.Type
+    /* Virtual methods of Gee-0.8.Gee.AbstractList */
+    vfunc_list_iterator(): Gee.ListIterator
+    vfunc_get(index: number): object | null
+    /* Function overloads */
+    vfunc_get(index: number): object | null
+    vfunc_set(index: number, item?: object | null): void
+    /* Function overloads */
+    vfunc_set(index: number, item?: object | null): void
+    vfunc_index_of(item?: object | null): number
+    /* Function overloads */
+    vfunc_index_of(item?: object | null): number
+    vfunc_insert(index: number, item?: object | null): void
+    /* Function overloads */
+    vfunc_insert(index: number, item?: object | null): void
+    vfunc_remove_at(index: number): object | null
+    /* Function overloads */
+    vfunc_remove_at(index: number): object | null
+    vfunc_slice(start: number, stop: number): Gee.List | null
+    /* Function overloads */
     vfunc_slice(start: number, stop: number): Gee.List | null
     vfunc_reserved0(): void
     vfunc_reserved1(): void
@@ -1903,17 +1992,64 @@ class MediaObjects {
     vfunc_reserved8(): void
     vfunc_reserved9(): void
     vfunc_get_read_only_view(): Gee.List
+    /* Function overloads */
+    vfunc_get_read_only_view(): Gee.Collection
     vfunc_get_read_only_view(): Gee.Collection
     vfunc_first(): object | null
     vfunc_last(): object | null
     vfunc_insert_all(index: number, collection: Gee.Collection): void
     vfunc_sort(compare_func: GLib.CompareDataFunc | null): void
-    /* Virtual methods of Gee-0.8.Gee.AbstractCollection */
     vfunc_contains(item?: object | null): boolean
     vfunc_add(item?: object | null): boolean
     vfunc_remove(item?: object | null): boolean
     vfunc_clear(): void
+    vfunc_add_all(collection: Gee.Collection): boolean
+    vfunc_contains_all(collection: Gee.Collection): boolean
+    vfunc_remove_all(collection: Gee.Collection): boolean
+    vfunc_retain_all(collection: Gee.Collection): boolean
+    vfunc_to_array(): object[]
+    vfunc_add_all_array(array: object[]): boolean
+    vfunc_contains_all_array(array: object[]): boolean
+    vfunc_remove_all_array(array: object[]): boolean
+    vfunc_add_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_contains_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_remove_all_iterator(iter: Gee.Iterator): boolean
+    vfunc_get_size(): number
+    vfunc_get_is_empty(): boolean
+    vfunc_get_read_only(): boolean
     vfunc_iterator(): Gee.Iterator
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    vfunc_fold(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): object | null
+    vfunc_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.MapFunc): Gee.Iterator
+    vfunc_scan(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): Gee.Iterator
+    vfunc_filter(pred: Gee.Predicate): Gee.Iterator
+    vfunc_chop(offset: number, length: number): Gee.Iterator
+    vfunc_flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FlatMapFunc): Gee.Iterator
+    vfunc_tee(forks: number): Gee.Iterator[]
+    vfunc_first_match(pred: Gee.Predicate): object | null
+    vfunc_any_match(pred: Gee.Predicate): boolean
+    vfunc_all_match(pred: Gee.Predicate): boolean
+    vfunc_max(compare: GLib.CompareDataFunc): object | null
+    vfunc_min(compare: GLib.CompareDataFunc): object | null
+    vfunc_order_by(compare: GLib.CompareDataFunc | null): Gee.Iterator
+    vfunc_get_element_type(): GObject.Type
+    /* Virtual methods of Gee-0.8.Gee.AbstractCollection */
+    vfunc_contains(item?: object | null): boolean
+    /* Function overloads */
+    vfunc_contains(item?: object | null): boolean
+    vfunc_add(item?: object | null): boolean
+    /* Function overloads */
+    vfunc_add(item?: object | null): boolean
+    vfunc_remove(item?: object | null): boolean
+    /* Function overloads */
+    vfunc_remove(item?: object | null): boolean
+    vfunc_clear(): void
+    vfunc_iterator(): Gee.Iterator
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    /* Function overloads */
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_foreach(f: Gee.ForallFunc): boolean
     vfunc_foreach(f: Gee.ForallFunc): boolean
     vfunc_reserved0(): void
     vfunc_reserved1(): void
@@ -1982,10 +2118,12 @@ class MediaObjects {
     _init (config?: MediaObjects_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): MediaObjects
+    /* Function overloads */
     static new(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, equal_func: Gee.EqualDataFunc | null): MediaObjects
     static $gtype: GObject.Type
 }
-export interface MusicItem_ConstructProps extends AudioItem_ConstructProps {
+interface MusicItem_ConstructProps extends AudioItem_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.MusicItem */
     track_number?: number
     album_art?: Thumbnail
 }
@@ -2022,12 +2160,12 @@ class MusicItem {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaFileItem */
-    rygel_media_file_item_address_regex: GLib.Regex
-    rygel_media_file_item_mime_to_ext: Gee.HashMap
+    readonly rygel_media_file_item_address_regex: GLib.Regex
+    readonly rygel_media_file_item_mime_to_ext: Gee.HashMap
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MusicItem */
     lookup_album_art(): void
     get_track_number(): number
@@ -2215,9 +2353,11 @@ class MusicItem {
     _init (config?: MusicItem_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string, parent: MediaContainer, title: string, upnp_class: string): MusicItem
+    /* Function overloads */
+    static new(id: string, parent: MediaContainer, title: string, upnp_class: string): MusicItem
     static $gtype: GObject.Type
 }
-export interface PhotoItem_ConstructProps extends ImageItem_ConstructProps {
+interface PhotoItem_ConstructProps extends ImageItem_ConstructProps {
 }
 class PhotoItem {
     /* Properties of RygelServer-2.6.RygelServer.MediaFileItem */
@@ -2242,12 +2382,12 @@ class PhotoItem {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaFileItem */
-    rygel_media_file_item_address_regex: GLib.Regex
-    rygel_media_file_item_mime_to_ext: Gee.HashMap
+    readonly rygel_media_file_item_address_regex: GLib.Regex
+    readonly rygel_media_file_item_mime_to_ext: Gee.HashMap
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaFileItem */
     get_primary_resource(): MediaResource
     get_extension(): string
@@ -2409,14 +2549,16 @@ class PhotoItem {
     _init (config?: PhotoItem_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string, parent: MediaContainer, title: string, upnp_class: string): PhotoItem
+    /* Function overloads */
+    static new(id: string, parent: MediaContainer, title: string, upnp_class: string): PhotoItem
     static $gtype: GObject.Type
 }
 class RelationalExpression {
     /* Fields of RygelServer-2.6.RygelServer.SearchExpression */
-    ref_count: number
-    op: object | null
-    operand1: object | null
-    operand2: object | null
+    readonly ref_count: number
+    readonly op: object | null
+    readonly operand1: object | null
+    readonly operand2: object | null
     /* Methods of RygelServer-2.6.RygelServer.RelationalExpression */
     compare_string(str?: string | null): boolean
     compare_int(integer: number): boolean
@@ -2433,7 +2575,8 @@ class RelationalExpression {
     /* Static methods and pseudo-constructors */
     static new(): RelationalExpression
 }
-export interface SimpleContainer_ConstructProps extends MediaContainer_ConstructProps {
+interface SimpleContainer_ConstructProps extends MediaContainer_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.SearchableContainer */
     search_classes?: Gee.ArrayList
 }
 class SimpleContainer {
@@ -2459,16 +2602,14 @@ class SimpleContainer {
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Properties of RygelServer-2.6.RygelServer.SearchableContainer */
     search_classes: Gee.ArrayList
-    /* Fields of RygelServer-2.6.RygelServer.SimpleContainer */
-    children: MediaObjects
     /* Fields of RygelServer-2.6.RygelServer.MediaContainer */
-    update_id: number
-    storage_used: number
-    total_deleted_child_count: number
+    readonly update_id: number
+    readonly storage_used: number
+    readonly total_deleted_child_count: number
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.SimpleContainer */
     add_child_item(child: MediaItem): void
     get_all_children(): MediaObjects
@@ -2560,6 +2701,8 @@ class SimpleContainer {
     search_finish(_res_: Gio.AsyncResult): [ /* returnType */ MediaObjects | null, /* total_matches */ number ]
     simple_search(expression: SearchExpression | null, offset: number, max_count: number, sort_criteria: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     simple_search_finish(_res_: Gio.AsyncResult): [ /* returnType */ MediaObjects | null, /* total_matches */ number ]
+    find_object(id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
+    find_object_finish(_res_: Gio.AsyncResult): MediaObject | null
     get_search_classes(): Gee.ArrayList
     set_search_classes(value: Gee.ArrayList): void
     /* Virtual methods of RygelServer-2.6.RygelServer.SimpleContainer */
@@ -2649,13 +2792,6 @@ class SimpleContainer {
     static $gtype: GObject.Type
 }
 class Subtitle {
-    /* Fields of RygelServer-2.6.RygelServer.Subtitle */
-    ref_count: number
-    uri: string
-    mime_type: string
-    caption_type: string
-    file_extension: string
-    size: number
     /* Methods of RygelServer-2.6.RygelServer.Subtitle */
     get_resource(protocol: string, index: number): MediaResource
     /* Virtual methods of RygelServer-2.6.RygelServer.Subtitle */
@@ -2667,17 +2803,15 @@ class Subtitle {
     static new(mime_type: string, caption_type: string, file_extension: string): Subtitle
 }
 class Thumbnail {
-    /* Fields of RygelServer-2.6.RygelServer.Thumbnail */
-    dlna_profile: string
     /* Fields of RygelCore-2.6.RygelCore.IconInfo */
-    ref_count: number
-    mime_type: string
-    uri: string
-    file_extension: string
-    size: number
-    width: number
-    height: number
-    depth: number
+    readonly ref_count: number
+    readonly mime_type: string
+    readonly uri: string
+    readonly file_extension: string
+    readonly size: number
+    readonly width: number
+    readonly height: number
+    readonly depth: number
     /* Methods of RygelServer-2.6.RygelServer.Thumbnail */
     get_resource(protocol: string, index: number): MediaResource
     /* Virtual methods of RygelServer-2.6.RygelServer.Thumbnail */
@@ -2687,11 +2821,14 @@ class Thumbnail {
     constructor(mime_type: string, dlna_profile: string, file_extension: string)
     /* Static methods and pseudo-constructors */
     static new(mime_type: string, dlna_profile: string, file_extension: string): Thumbnail
+    /* Function overloads */
     static new(mime_type: string, file_extension: string): Thumbnail
 }
-export interface VideoItem_ConstructProps extends AudioItem_ConstructProps {
+interface VideoItem_ConstructProps extends AudioItem_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.VideoItem */
     author?: string
     subtitles?: Gee.ArrayList
+    /* Constructor properties of RygelServer-2.6.RygelServer.VisualItem */
     width?: number
     height?: number
     color_depth?: number
@@ -2735,12 +2872,12 @@ class VideoItem {
     color_depth: number
     thumbnails: Gee.ArrayList
     /* Fields of RygelServer-2.6.RygelServer.MediaFileItem */
-    rygel_media_file_item_address_regex: GLib.Regex
-    rygel_media_file_item_mime_to_ext: Gee.HashMap
+    readonly rygel_media_file_item_address_regex: GLib.Regex
+    readonly rygel_media_file_item_mime_to_ext: Gee.HashMap
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.VideoItem */
     add_subtitle_resources(http_server: HTTPServer): void
     get_author(): string
@@ -2955,9 +3092,12 @@ class VideoItem {
     _init (config?: VideoItem_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string, parent: MediaContainer, title: string, upnp_class: string): VideoItem
+    /* Function overloads */
+    static new(id: string, parent: MediaContainer, title: string, upnp_class: string): VideoItem
     static $gtype: GObject.Type
 }
-export interface MediaContainer_ConstructProps extends MediaObject_ConstructProps {
+interface MediaContainer_ConstructProps extends MediaObject_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.MediaContainer */
     child_count?: number
     empty_child_count?: number
     create_mode_enabled?: boolean
@@ -2984,14 +3124,10 @@ class MediaContainer {
     parent_ref: MediaContainer
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
-    /* Fields of RygelServer-2.6.RygelServer.MediaContainer */
-    update_id: number
-    storage_used: number
-    total_deleted_child_count: number
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaContainer */
     get_children(offset: number, max_count: number, sort_criteria: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null): void
     get_children_finish(_res_: Gio.AsyncResult): MediaObjects | null
@@ -3149,7 +3285,8 @@ class MediaContainer {
     static equal_func(a: MediaContainer, b: MediaContainer): boolean
     static $gtype: GObject.Type
 }
-export interface MediaItem_ConstructProps extends MediaObject_ConstructProps {
+interface MediaItem_ConstructProps extends MediaObject_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.MediaItem */
     description?: string
 }
 class MediaItem {
@@ -3170,9 +3307,9 @@ class MediaItem {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaItem */
     get_description(): string
     set_description(value: string): void
@@ -3296,7 +3433,8 @@ class MediaItem {
     _init (config?: MediaItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MediaFileItem_ConstructProps extends MediaItem_ConstructProps {
+interface MediaFileItem_ConstructProps extends MediaItem_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.MediaFileItem */
     mime_type?: string
     dlna_profile?: string
     size?: number
@@ -3324,13 +3462,10 @@ class MediaFileItem {
     parent_ref: MediaContainer
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
-    /* Fields of RygelServer-2.6.RygelServer.MediaFileItem */
-    rygel_media_file_item_address_regex: GLib.Regex
-    rygel_media_file_item_mime_to_ext: Gee.HashMap
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaFileItem */
     get_primary_resource(): MediaResource
     get_extension(): string
@@ -3483,7 +3618,8 @@ class MediaFileItem {
     _init (config?: MediaFileItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface MediaObject_ConstructProps extends GObject.Object_ConstructProps {
+interface MediaObject_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.MediaObject */
     id?: string
     ref_id?: string
     upnp_class?: string
@@ -3512,10 +3648,8 @@ class MediaObject {
     parent_ref: MediaContainer
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
-    /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaObject */
     get_uris(): Gee.List
     get_primary_uri(): string | null
@@ -3636,7 +3770,8 @@ class MediaObject {
     static apply_replacements(replacement_pairs: GLib.HashTable, source_string?: string | null): string | null
     static $gtype: GObject.Type
 }
-export interface MediaResource_ConstructProps extends GObject.Object_ConstructProps {
+interface MediaResource_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.MediaResource */
     uri?: string
     import_uri?: string
     extension?: string
@@ -3680,11 +3815,8 @@ class MediaResource {
     dlna_conversion: GUPnPAV.DLNAConversion
     dlna_flags: GUPnPAV.DLNAFlags
     dlna_operation: GUPnPAV.DLNAOperation
-    /* Fields of RygelServer-2.6.RygelServer.MediaResource */
-    play_speeds: string[]
-    play_speeds_length1: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaResource */
     dup(): MediaResource
     get_name(): string
@@ -3834,7 +3966,8 @@ class MediaResource {
     static from_didl_lite_resource(name: string, didl_resource: GUPnPAV.DIDLLiteResource): MediaResource
     static $gtype: GObject.Type
 }
-export interface MediaServerPlugin_ConstructProps extends RygelCore.Plugin_ConstructProps {
+interface MediaServerPlugin_ConstructProps extends RygelCore.Plugin_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.MediaServerPlugin */
     root_container?: MediaContainer
     upload_profiles?: RygelCore.DLNAProfile[]
     supported_profiles?: RygelCore.DLNAProfile[]
@@ -3852,9 +3985,9 @@ class MediaServerPlugin {
     icon_infos: Gee.ArrayList
     default_icons: Gee.ArrayList
     /* Fields of GUPnP-1.2.GUPnP.ResourceFactory */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaServerPlugin */
     get_root_container(): MediaContainer
     get_search_caps(): string
@@ -3948,15 +4081,11 @@ class MediaServerPlugin {
     _init (config?: MediaServerPlugin_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(desc_path: string, name: string, title: string | null, description: string | null, capabilities: RygelCore.PluginCapabilities): MediaServerPlugin
+    /* Function overloads */
     static new(): MediaServerPlugin
     static $gtype: GObject.Type
 }
 class SearchExpression {
-    /* Fields of RygelServer-2.6.RygelServer.SearchExpression */
-    ref_count: number
-    op: object | null
-    operand1: object | null
-    operand2: object | null
     /* Methods of RygelServer-2.6.RygelServer.SearchExpression */
     satisfied_by(media_object: MediaObject): boolean
     to_string(): string
@@ -3965,14 +4094,15 @@ class SearchExpression {
     vfunc_to_string(): string
     static name: string
 }
-export interface MediaServer_ConstructProps extends RygelCore.MediaDevice_ConstructProps {
+interface MediaServer_ConstructProps extends RygelCore.MediaDevice_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.MediaServer */
     root_container?: MediaContainer
 }
 class MediaServer {
     /* Properties of RygelCore-2.6.RygelCore.MediaDevice */
     plugin: RygelCore.Plugin
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.MediaDevice */
     add_interface(iface: string): void
     remove_interface(iface: string): void
@@ -4028,11 +4158,11 @@ class MediaServer {
     static new(title: string, root_container: MediaContainer, capabilities: RygelCore.PluginCapabilities): MediaServer
     static $gtype: GObject.Type
 }
-export interface MediaEngine_ConstructProps extends GObject.Object_ConstructProps {
+interface MediaEngine_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MediaEngine {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaEngine */
     get_dlna_profiles(): RygelCore.DLNAProfile[]
     get_resources_for_item(item: MediaObject, _callback_?: Gio.AsyncReadyCallback | null): void
@@ -4097,11 +4227,11 @@ class MediaEngine {
     static get_default(): MediaEngine
     static $gtype: GObject.Type
 }
-export interface HTTPSeekRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface HTTPSeekRequest_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HTTPSeekRequest {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4145,7 +4275,7 @@ class HTTPSeekRequest {
     _init (config?: HTTPSeekRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PlaylistItem_ConstructProps extends MediaFileItem_ConstructProps {
+interface PlaylistItem_ConstructProps extends MediaFileItem_ConstructProps {
 }
 class PlaylistItem {
     /* Properties of RygelServer-2.6.RygelServer.MediaFileItem */
@@ -4170,12 +4300,12 @@ class PlaylistItem {
     title: string
     readonly ocm_flags: GUPnPAV.OCMFlags
     /* Fields of RygelServer-2.6.RygelServer.MediaFileItem */
-    rygel_media_file_item_address_regex: GLib.Regex
-    rygel_media_file_item_mime_to_ext: Gee.HashMap
+    readonly rygel_media_file_item_address_regex: GLib.Regex
+    readonly rygel_media_file_item_mime_to_ext: Gee.HashMap
     /* Fields of RygelServer-2.6.RygelServer.MediaObject */
-    parent_ptr: MediaContainer
+    readonly parent_ptr: MediaContainer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.MediaFileItem */
     get_primary_resource(): MediaResource
     get_extension(): string
@@ -4330,19 +4460,13 @@ class PlaylistItem {
     static new(id: string, parent: MediaContainer, title: string, upnp_class: string): PlaylistItem
     static $gtype: GObject.Type
 }
-export interface ContentDirectory_ConstructProps extends GUPnP.Service_ConstructProps {
+interface ContentDirectory_ConstructProps extends GUPnP.Service_ConstructProps {
 }
 class ContentDirectory {
-    /* Fields of RygelServer-2.6.RygelServer.ContentDirectory */
-    feature_list: string
-    http_server: HTTPServer
-    root_container: MediaContainer
-    cancellable: Gio.Cancellable
-    system_update_id: number
     /* Fields of GUPnP-1.2.GUPnP.Service */
-    parent_instance: GUPnP.ServiceInfo
+    readonly parent_instance: GUPnP.ServiceInfo
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.Service */
     freeze_notify(): void
     notify_value(variable: string, value: any): void
@@ -4418,7 +4542,8 @@ class ContentDirectory {
     static new(): ContentDirectory
     static $gtype: GObject.Type
 }
-export interface HTTPByteSeekRequest_ConstructProps extends HTTPSeekRequest_ConstructProps {
+interface HTTPByteSeekRequest_ConstructProps extends HTTPSeekRequest_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.HTTPByteSeekRequest */
     start_byte?: number
     end_byte?: number
     range_length?: number
@@ -4431,7 +4556,7 @@ class HTTPByteSeekRequest {
     range_length: number
     total_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPByteSeekRequest */
     get_start_byte(): number
     set_start_byte(value: number): void
@@ -4495,7 +4620,8 @@ class HTTPByteSeekRequest {
     static requested(msg: Soup.Message): boolean
     static $gtype: GObject.Type
 }
-export interface HTTPByteSeekResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
+interface HTTPByteSeekResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.HTTPByteSeekResponse */
     start_byte?: number
     end_byte?: number
     range_length?: number
@@ -4508,7 +4634,7 @@ class HTTPByteSeekResponse {
     range_length: number
     total_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPByteSeekResponse */
     get_start_byte(): number
     set_start_byte(value: number): void
@@ -4577,14 +4703,15 @@ class HTTPByteSeekResponse {
     static from_request(request: HTTPByteSeekRequest): HTTPByteSeekResponse
     static $gtype: GObject.Type
 }
-export interface HTTPGetHandler_ConstructProps extends GObject.Object_ConstructProps {
+interface HTTPGetHandler_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.HTTPGetHandler */
     cancellable?: Gio.Cancellable
 }
 class HTTPGetHandler {
     /* Properties of RygelServer-2.6.RygelServer.HTTPGetHandler */
     cancellable: Gio.Cancellable
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPGetHandler */
     add_response_headers(request: HTTPGet): void
     get_default_transfer_mode(): string
@@ -4652,22 +4779,18 @@ class HTTPGetHandler {
     _init (config?: HTTPGetHandler_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface HTTPGet_ConstructProps extends HTTPRequest_ConstructProps {
+interface HTTPGet_ConstructProps extends HTTPRequest_ConstructProps {
 }
 class HTTPGet {
-    /* Fields of RygelServer-2.6.RygelServer.HTTPGet */
-    seek: HTTPSeekRequest
-    speed_request: PlaySpeedRequest
-    handler: HTTPGetHandler
     /* Fields of RygelServer-2.6.RygelServer.HTTPRequest */
-    http_server: HTTPServer
-    server: Soup.Server
-    msg: Soup.Message
-    uri: HTTPItemURI
-    object: MediaObject
-    hack: any
+    readonly http_server: HTTPServer
+    readonly server: Soup.Server
+    readonly msg: Soup.Message
+    readonly uri: HTTPItemURI
+    readonly object: MediaObject
+    readonly hack: any
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPRequest */
     handle(_callback_?: Gio.AsyncReadyCallback | null): void
     handle_finish(_res_: Gio.AsyncResult): void
@@ -4729,7 +4852,8 @@ class HTTPGet {
     static new(http_server: HTTPServer, server: Soup.Server, msg: Soup.Message): HTTPGet
     static $gtype: GObject.Type
 }
-export interface HTTPItemURI_ConstructProps extends GObject.Object_ConstructProps {
+interface HTTPItemURI_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.HTTPItemURI */
     item_id?: string
     thumbnail_index?: number
     subtitle_index?: number
@@ -4745,10 +4869,8 @@ class HTTPItemURI {
     resource_name: string
     http_server: HTTPServer
     extension: string
-    /* Fields of RygelServer-2.6.RygelServer.HTTPItemURI */
-    rygel_http_item_uri_mime_to_ext: Gee.HashMap
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPItemURI */
     to_string(): string
     get_item_id(): string
@@ -4821,21 +4943,15 @@ class HTTPItemURI {
     static from_string(uri: string, http_server: HTTPServer): HTTPItemURI
     static $gtype: GObject.Type
 }
-export interface HTTPRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface HTTPRequest_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.StateMachine */
     cancellable?: Gio.Cancellable
 }
 class HTTPRequest {
     /* Properties of RygelCore-2.6.RygelCore.StateMachine */
     cancellable: Gio.Cancellable
-    /* Fields of RygelServer-2.6.RygelServer.HTTPRequest */
-    http_server: HTTPServer
-    server: Soup.Server
-    msg: Soup.Message
-    uri: HTTPItemURI
-    object: MediaObject
-    hack: any
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPRequest */
     handle(_callback_?: Gio.AsyncReadyCallback | null): void
     handle_finish(_res_: Gio.AsyncResult): void
@@ -4906,8 +5022,10 @@ class HTTPRequest {
     _init (config?: HTTPRequest_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface HTTPResponse_ConstructProps extends GObject.Object_ConstructProps {
+interface HTTPResponse_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.HTTPResponse */
     server?: Soup.Server
+    /* Constructor properties of RygelCore-2.6.RygelCore.StateMachine */
     cancellable?: Gio.Cancellable
 }
 class HTTPResponse {
@@ -4916,12 +5034,8 @@ class HTTPResponse {
     readonly priority: number
     /* Properties of RygelCore-2.6.RygelCore.StateMachine */
     cancellable: Gio.Cancellable
-    /* Fields of RygelServer-2.6.RygelServer.HTTPResponse */
-    msg: Soup.Message
-    seek: HTTPSeekRequest
-    speed: PlaySpeedRequest
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPResponse */
     preroll(): Gee.List | null
     end(aborted: boolean, status: number): void
@@ -4993,11 +5107,11 @@ class HTTPResponse {
     static new(request: HTTPGet, request_handler: HTTPGetHandler, src: DataSource): HTTPResponse
     static $gtype: GObject.Type
 }
-export interface HTTPResponseElement_ConstructProps extends GObject.Object_ConstructProps {
+interface HTTPResponseElement_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HTTPResponseElement {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPResponseElement */
     add_response_headers(request: HTTPRequest): void
     to_string(): string
@@ -5047,9 +5161,11 @@ class HTTPResponseElement {
     _init (config?: HTTPResponseElement_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface HTTPServer_ConstructProps extends GObject.Object_ConstructProps {
+interface HTTPServer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.HTTPServer */
     path_root?: string
     server_name?: string
+    /* Constructor properties of RygelCore-2.6.RygelCore.StateMachine */
     cancellable?: Gio.Cancellable
 }
 class HTTPServer {
@@ -5058,12 +5174,8 @@ class HTTPServer {
     server_name: string
     /* Properties of RygelCore-2.6.RygelCore.StateMachine */
     cancellable: Gio.Cancellable
-    /* Fields of RygelServer-2.6.RygelServer.HTTPServer */
-    root_container: MediaContainer
-    context: GUPnP.Context
-    replacements: GLib.HashTable
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPServer */
     set_resource_delivery_options(res: MediaResource): void
     need_proxy(uri: string): boolean
@@ -5141,16 +5253,11 @@ class HTTPServer {
     static new(content_dir: ContentDirectory, name: string): HTTPServer
     static $gtype: GObject.Type
 }
-export interface HTTPTimeSeekRequest_ConstructProps extends HTTPSeekRequest_ConstructProps {
+interface HTTPTimeSeekRequest_ConstructProps extends HTTPSeekRequest_ConstructProps {
 }
 class HTTPTimeSeekRequest {
-    /* Fields of RygelServer-2.6.RygelServer.HTTPTimeSeekRequest */
-    start_time: number
-    end_time: number
-    range_duration: number
-    total_duration: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPTimeSeekRequest */
     to_string(): string
     /* Methods of GObject-2.0.GObject.Object */
@@ -5199,7 +5306,8 @@ class HTTPTimeSeekRequest {
     static requested(message: Soup.Message): boolean
     static $gtype: GObject.Type
 }
-export interface HTTPTimeSeekResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
+interface HTTPTimeSeekResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.HTTPTimeSeekResponse */
     start_time?: number
     end_time?: number
     range_duration?: number
@@ -5220,7 +5328,7 @@ class HTTPTimeSeekResponse {
     response_length: number
     total_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.HTTPTimeSeekResponse */
     get_start_time(): number
     get_end_time(): number
@@ -5300,12 +5408,13 @@ class HTTPTimeSeekResponse {
     static from_request(time_seek_request: HTTPTimeSeekRequest, total_duration: number): HTTPTimeSeekResponse
     static $gtype: GObject.Type
 }
-export interface Serializer_ConstructProps extends GObject.Object_ConstructProps {
+interface Serializer_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.Serializer */
     serializer_type?: SerializerType
 }
 class Serializer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.Serializer */
     add_item(): GUPnPAV.DIDLLiteItem | null
     add_container(): GUPnPAV.DIDLLiteContainer | null
@@ -5357,10 +5466,6 @@ class Serializer {
     static $gtype: GObject.Type
 }
 class PlaySpeed {
-    /* Fields of RygelServer-2.6.RygelServer.PlaySpeed */
-    ref_count: number
-    numerator: number
-    denominator: number
     /* Methods of RygelServer-2.6.RygelServer.PlaySpeed */
     equals(that: PlaySpeed): boolean
     is_positive(): boolean
@@ -5375,14 +5480,15 @@ class PlaySpeed {
     static new(numerator: number, denominator: number): PlaySpeed
     static from_string(speed: string): PlaySpeed
 }
-export interface PlaySpeedRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface PlaySpeedRequest_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.PlaySpeedRequest */
     speed?: PlaySpeed
 }
 class PlaySpeedRequest {
     /* Properties of RygelServer-2.6.RygelServer.PlaySpeedRequest */
     speed: PlaySpeed
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.PlaySpeedRequest */
     equals(that: PlaySpeedRequest): boolean
     get_speed(): PlaySpeed
@@ -5435,13 +5541,11 @@ class PlaySpeedRequest {
     static supported(request: HTTPGet): boolean
     static $gtype: GObject.Type
 }
-export interface PlaySpeedResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
+interface PlaySpeedResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
 }
 class PlaySpeedResponse {
-    /* Fields of RygelServer-2.6.RygelServer.PlaySpeedResponse */
-    framerate: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.PlaySpeedResponse */
     equals(that: PlaySpeedRequest): boolean
     /* Methods of RygelServer-2.6.RygelServer.HTTPResponseElement */
@@ -5497,7 +5601,8 @@ class PlaySpeedResponse {
     static from_string(speed: string, framerate: number): PlaySpeedResponse
     static $gtype: GObject.Type
 }
-export interface DTCPCleartextRequest_ConstructProps extends HTTPSeekRequest_ConstructProps {
+interface DTCPCleartextRequest_ConstructProps extends HTTPSeekRequest_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.DTCPCleartextRequest */
     start_byte?: number
     end_byte?: number
     range_length?: number
@@ -5510,7 +5615,7 @@ class DTCPCleartextRequest {
     range_length: number
     total_size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.DTCPCleartextRequest */
     get_start_byte(): number
     get_end_byte(): number
@@ -5571,7 +5676,8 @@ class DTCPCleartextRequest {
     static requested(message: Soup.Message): boolean
     static $gtype: GObject.Type
 }
-export interface DTCPCleartextResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
+interface DTCPCleartextResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.DTCPCleartextResponse */
     start_byte?: number
     end_byte?: number
     range_length?: number
@@ -5586,7 +5692,7 @@ class DTCPCleartextResponse {
     total_size: number
     encrypted_length: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.DTCPCleartextResponse */
     get_start_byte(): number
     get_end_byte(): number
@@ -5656,11 +5762,11 @@ class DTCPCleartextResponse {
     static from_request(request: DTCPCleartextRequest, encrypted_length: number): DTCPCleartextResponse
     static $gtype: GObject.Type
 }
-export interface DLNAAvailableSeekRangeRequest_ConstructProps extends HTTPSeekRequest_ConstructProps {
+interface DLNAAvailableSeekRangeRequest_ConstructProps extends HTTPSeekRequest_ConstructProps {
 }
 class DLNAAvailableSeekRangeRequest {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -5707,7 +5813,8 @@ class DLNAAvailableSeekRangeRequest {
     static requested(message: Soup.Message): boolean
     static $gtype: GObject.Type
 }
-export interface DLNAAvailableSeekRangeResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
+interface DLNAAvailableSeekRangeResponse_ConstructProps extends HTTPResponseElement_ConstructProps {
+    /* Constructor properties of RygelServer-2.6.RygelServer.DLNAAvailableSeekRangeResponse */
     mode?: number
     start_time?: number
     end_time?: number
@@ -5724,7 +5831,7 @@ class DLNAAvailableSeekRangeResponse {
     end_byte: number
     range_length: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelServer-2.6.RygelServer.DLNAAvailableSeekRangeResponse */
     get_mode(): number
     get_start_time(): number
@@ -5852,7 +5959,7 @@ class SimpleContainerPrivate {
 }
 abstract class SubtitleClass {
     /* Fields of RygelServer-2.6.RygelServer.SubtitleClass */
-    get_resource: (self: Subtitle, protocol: string, index: number) => MediaResource
+    readonly get_resource: (self: Subtitle, protocol: string, index: number) => MediaResource
     static name: string
 }
 class SubtitlePrivate {
@@ -5860,7 +5967,7 @@ class SubtitlePrivate {
 }
 abstract class ThumbnailClass {
     /* Fields of RygelServer-2.6.RygelServer.ThumbnailClass */
-    get_resource: (self: Thumbnail, protocol: string, index: number) => MediaResource
+    readonly get_resource: (self: Thumbnail, protocol: string, index: number) => MediaResource
     static name: string
 }
 class ThumbnailPrivate {
@@ -5868,7 +5975,7 @@ class ThumbnailPrivate {
 }
 abstract class VideoItemClass {
     /* Fields of RygelServer-2.6.RygelServer.VideoItemClass */
-    add_subtitle_resources: (self: VideoItem, http_server: HTTPServer) => void
+    readonly add_subtitle_resources: (self: VideoItem, http_server: HTTPServer) => void
     static name: string
 }
 class VideoItemPrivate {
@@ -5876,10 +5983,10 @@ class VideoItemPrivate {
 }
 abstract class MediaContainerClass {
     /* Fields of RygelServer-2.6.RygelServer.MediaContainerClass */
-    get_children: (self: MediaContainer, offset: number, max_count: number, sort_criteria: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    get_children_finish: (self: MediaContainer, _res_: Gio.AsyncResult) => MediaObjects | null
-    find_object: (self: MediaContainer, id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    find_object_finish: (self: MediaContainer, _res_: Gio.AsyncResult) => MediaObject | null
+    readonly get_children: (self: MediaContainer, offset: number, max_count: number, sort_criteria: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly get_children_finish: (self: MediaContainer, _res_: Gio.AsyncResult) => MediaObjects | null
+    readonly find_object: (self: MediaContainer, id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly find_object_finish: (self: MediaContainer, _res_: Gio.AsyncResult) => MediaObject | null
     static name: string
 }
 class MediaContainerPrivate {
@@ -5893,11 +6000,11 @@ class MediaItemPrivate {
 }
 abstract class MediaFileItemClass {
     /* Fields of RygelServer-2.6.RygelServer.MediaFileItemClass */
-    get_primary_resource: (self: MediaFileItem) => MediaResource
-    get_extension: (self: MediaFileItem) => string
-    add_engine_resources: (self: MediaFileItem, _callback_?: Gio.AsyncReadyCallback | null) => void
-    add_engine_resources_finish: (self: MediaFileItem, _res_: Gio.AsyncResult) => void
-    add_additional_resources: (self: MediaFileItem, server: HTTPServer) => void
+    readonly get_primary_resource: (self: MediaFileItem) => MediaResource
+    readonly get_extension: (self: MediaFileItem) => string
+    readonly add_engine_resources: (self: MediaFileItem, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly add_engine_resources_finish: (self: MediaFileItem, _res_: Gio.AsyncResult) => void
+    readonly add_additional_resources: (self: MediaFileItem, server: HTTPServer) => void
     static name: string
 }
 class MediaFileItemPrivate {
@@ -5905,11 +6012,11 @@ class MediaFileItemPrivate {
 }
 abstract class MediaObjectClass {
     /* Fields of RygelServer-2.6.RygelServer.MediaObjectClass */
-    add_uri: (self: MediaObject, uri: string) => void
-    serialize: (self: MediaObject, serializer: Serializer, http_server: HTTPServer) => GUPnPAV.DIDLLiteObject | null
-    create_stream_source_for_resource: (self: MediaObject, request: HTTPRequest, resource: MediaResource) => DataSource | null
-    apply_didl_lite: (self: MediaObject, didl_object: GUPnPAV.DIDLLiteObject) => void
-    compare_by_property: (self: MediaObject, media_object: MediaObject, property: string) => number
+    readonly add_uri: (self: MediaObject, uri: string) => void
+    readonly serialize: (self: MediaObject, serializer: Serializer, http_server: HTTPServer) => GUPnPAV.DIDLLiteObject | null
+    readonly create_stream_source_for_resource: (self: MediaObject, request: HTTPRequest, resource: MediaResource) => DataSource | null
+    readonly apply_didl_lite: (self: MediaObject, didl_object: GUPnPAV.DIDLLiteObject) => void
+    readonly compare_by_property: (self: MediaObject, media_object: MediaObject, property: string) => number
     static name: string
 }
 class MediaObjectPrivate {
@@ -5929,8 +6036,8 @@ class MediaServerPluginPrivate {
 }
 abstract class SearchExpressionClass {
     /* Fields of RygelServer-2.6.RygelServer.SearchExpressionClass */
-    satisfied_by: (self: SearchExpression, media_object: MediaObject) => boolean
-    to_string: (self: SearchExpression) => string
+    readonly satisfied_by: (self: SearchExpression, media_object: MediaObject) => boolean
+    readonly to_string: (self: SearchExpression) => string
     static name: string
 }
 class SearchExpressionPrivate {
@@ -5944,12 +6051,12 @@ class MediaServerPrivate {
 }
 abstract class MediaEngineClass {
     /* Fields of RygelServer-2.6.RygelServer.MediaEngineClass */
-    get_dlna_profiles: (self: MediaEngine) => RygelCore.DLNAProfile[]
-    get_resources_for_item: (self: MediaEngine, item: MediaObject, _callback_?: Gio.AsyncReadyCallback | null) => void
-    get_resources_for_item_finish: (self: MediaEngine, _res_: Gio.AsyncResult) => Gee.List | null
-    create_data_source_for_resource: (self: MediaEngine, item: MediaObject, resource: MediaResource, replacements: GLib.HashTable) => DataSource | null
-    create_data_source_for_uri: (self: MediaEngine, uri: string) => DataSource | null
-    get_internal_protocol_schemes: (self: MediaEngine) => string[]
+    readonly get_dlna_profiles: (self: MediaEngine) => RygelCore.DLNAProfile[]
+    readonly get_resources_for_item: (self: MediaEngine, item: MediaObject, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly get_resources_for_item_finish: (self: MediaEngine, _res_: Gio.AsyncResult) => Gee.List | null
+    readonly create_data_source_for_resource: (self: MediaEngine, item: MediaObject, resource: MediaResource, replacements: GLib.HashTable) => DataSource | null
+    readonly create_data_source_for_uri: (self: MediaEngine, uri: string) => DataSource | null
+    readonly get_internal_protocol_schemes: (self: MediaEngine) => string[]
     static name: string
 }
 class MediaEnginePrivate {
@@ -5987,15 +6094,15 @@ class HTTPByteSeekResponsePrivate {
 }
 abstract class HTTPGetHandlerClass {
     /* Fields of RygelServer-2.6.RygelServer.HTTPGetHandlerClass */
-    add_response_headers: (self: HTTPGetHandler, request: HTTPGet) => void
-    get_default_transfer_mode: (self: HTTPGetHandler) => string
-    supports_transfer_mode: (self: HTTPGetHandler, mode: string) => boolean
-    get_resource_size: (self: HTTPGetHandler) => number
-    get_resource_duration: (self: HTTPGetHandler) => number
-    supports_byte_seek: (self: HTTPGetHandler) => boolean
-    supports_time_seek: (self: HTTPGetHandler) => boolean
-    supports_playspeed: (self: HTTPGetHandler) => boolean
-    render_body: (self: HTTPGetHandler, request: HTTPGet) => HTTPResponse
+    readonly add_response_headers: (self: HTTPGetHandler, request: HTTPGet) => void
+    readonly get_default_transfer_mode: (self: HTTPGetHandler) => string
+    readonly supports_transfer_mode: (self: HTTPGetHandler, mode: string) => boolean
+    readonly get_resource_size: (self: HTTPGetHandler) => number
+    readonly get_resource_duration: (self: HTTPGetHandler) => number
+    readonly supports_byte_seek: (self: HTTPGetHandler) => boolean
+    readonly supports_time_seek: (self: HTTPGetHandler) => boolean
+    readonly supports_playspeed: (self: HTTPGetHandler) => boolean
+    readonly render_body: (self: HTTPGetHandler, request: HTTPGet) => HTTPResponse
     static name: string
 }
 class HTTPGetHandlerPrivate {
@@ -6015,10 +6122,10 @@ class HTTPItemURIPrivate {
 }
 abstract class HTTPRequestClass {
     /* Fields of RygelServer-2.6.RygelServer.HTTPRequestClass */
-    handle: (self: HTTPRequest, _callback_?: Gio.AsyncReadyCallback | null) => void
-    handle_finish: (self: HTTPRequest, _res_: Gio.AsyncResult) => void
-    find_item: (self: HTTPRequest, _callback_?: Gio.AsyncReadyCallback | null) => void
-    find_item_finish: (self: HTTPRequest, _res_: Gio.AsyncResult) => void
+    readonly handle: (self: HTTPRequest, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly handle_finish: (self: HTTPRequest, _res_: Gio.AsyncResult) => void
+    readonly find_item: (self: HTTPRequest, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly find_item_finish: (self: HTTPRequest, _res_: Gio.AsyncResult) => void
     static name: string
 }
 class HTTPRequestPrivate {
@@ -6026,7 +6133,7 @@ class HTTPRequestPrivate {
 }
 abstract class HTTPResponseClass {
     /* Fields of RygelServer-2.6.RygelServer.HTTPResponseClass */
-    end: (self: HTTPResponse, aborted: boolean, status: number) => void
+    readonly end: (self: HTTPResponse, aborted: boolean, status: number) => void
     static name: string
 }
 class HTTPResponsePrivate {
@@ -6034,8 +6141,8 @@ class HTTPResponsePrivate {
 }
 abstract class HTTPResponseElementClass {
     /* Fields of RygelServer-2.6.RygelServer.HTTPResponseElementClass */
-    add_response_headers: (self: HTTPResponseElement, request: HTTPRequest) => void
-    to_string: (self: HTTPResponseElement) => string
+    readonly add_response_headers: (self: HTTPResponseElement, request: HTTPRequest) => void
+    readonly to_string: (self: HTTPResponseElement) => string
     static name: string
 }
 class HTTPResponseElementPrivate {
@@ -6043,8 +6150,8 @@ class HTTPResponseElementPrivate {
 }
 abstract class HTTPServerClass {
     /* Fields of RygelServer-2.6.RygelServer.HTTPServerClass */
-    get_protocol: (self: HTTPServer) => string
-    get_protocol_info: (self: HTTPServer) => Gee.ArrayList
+    readonly get_protocol: (self: HTTPServer) => string
+    readonly get_protocol_info: (self: HTTPServer) => Gee.ArrayList
     static name: string
 }
 class HTTPServerPrivate {
@@ -6112,21 +6219,21 @@ class DLNAAvailableSeekRangeResponsePrivate {
 }
 abstract class SearchableContainerIface {
     /* Fields of RygelServer-2.6.RygelServer.SearchableContainerIface */
-    search: (self: SearchableContainer, expression: SearchExpression | null, offset: number, max_count: number, sort_criteria: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    search_finish: (self: SearchableContainer, _res_: Gio.AsyncResult) => [ /* returnType */ MediaObjects | null, /* total_matches */ number ]
-    get_search_classes: (self: SearchableContainer) => Gee.ArrayList
-    set_search_classes: (self: SearchableContainer, value: Gee.ArrayList) => void
+    readonly search: (self: SearchableContainer, expression: SearchExpression | null, offset: number, max_count: number, sort_criteria: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly search_finish: (self: SearchableContainer, _res_: Gio.AsyncResult) => [ /* returnType */ MediaObjects | null, /* total_matches */ number ]
+    readonly get_search_classes: (self: SearchableContainer) => Gee.ArrayList
+    readonly set_search_classes: (self: SearchableContainer, value: Gee.ArrayList) => void
     static name: string
 }
 abstract class TrackableContainerIface {
     /* Fields of RygelServer-2.6.RygelServer.TrackableContainerIface */
-    add_child: (self: TrackableContainer, object: MediaObject, _callback_?: Gio.AsyncReadyCallback | null) => void
-    add_child_finish: (self: TrackableContainer, _res_: Gio.AsyncResult) => void
-    remove_child: (self: TrackableContainer, object: MediaObject, _callback_?: Gio.AsyncReadyCallback | null) => void
-    remove_child_finish: (self: TrackableContainer, _res_: Gio.AsyncResult) => void
-    get_service_reset_token: (self: TrackableContainer) => string
-    set_service_reset_token: (self: TrackableContainer, token: string) => void
-    get_system_update_id: (self: TrackableContainer) => number
+    readonly add_child: (self: TrackableContainer, object: MediaObject, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly add_child_finish: (self: TrackableContainer, _res_: Gio.AsyncResult) => void
+    readonly remove_child: (self: TrackableContainer, object: MediaObject, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly remove_child_finish: (self: TrackableContainer, _res_: Gio.AsyncResult) => void
+    readonly get_service_reset_token: (self: TrackableContainer) => string
+    readonly set_service_reset_token: (self: TrackableContainer, token: string) => void
+    readonly get_system_update_id: (self: TrackableContainer) => number
     static name: string
 }
 abstract class TrackableItemIface {
@@ -6134,45 +6241,45 @@ abstract class TrackableItemIface {
 }
 abstract class VisualItemIface {
     /* Fields of RygelServer-2.6.RygelServer.VisualItemIface */
-    get_width: (self: VisualItem) => number
-    set_width: (self: VisualItem, value: number) => void
-    get_height: (self: VisualItem) => number
-    set_height: (self: VisualItem, value: number) => void
-    get_color_depth: (self: VisualItem) => number
-    set_color_depth: (self: VisualItem, value: number) => void
-    get_thumbnails: (self: VisualItem) => Gee.ArrayList
-    set_thumbnails: (self: VisualItem, value: Gee.ArrayList) => void
+    readonly get_width: (self: VisualItem) => number
+    readonly set_width: (self: VisualItem, value: number) => void
+    readonly get_height: (self: VisualItem) => number
+    readonly set_height: (self: VisualItem, value: number) => void
+    readonly get_color_depth: (self: VisualItem) => number
+    readonly set_color_depth: (self: VisualItem, value: number) => void
+    readonly get_thumbnails: (self: VisualItem) => Gee.ArrayList
+    readonly set_thumbnails: (self: VisualItem, value: Gee.ArrayList) => void
     static name: string
 }
 abstract class WritableContainerIface {
     /* Fields of RygelServer-2.6.RygelServer.WritableContainerIface */
-    add_item: (self: WritableContainer, item: MediaFileItem, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    add_item_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => void
-    add_container: (self: WritableContainer, container: MediaContainer, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    add_container_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => void
-    add_reference: (self: WritableContainer, object: MediaObject, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    add_reference_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => string
-    remove_item: (self: WritableContainer, id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    remove_item_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => void
-    remove_container: (self: WritableContainer, id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    remove_container_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => void
-    get_create_classes: (self: WritableContainer) => Gee.ArrayList
-    set_create_classes: (self: WritableContainer, value: Gee.ArrayList) => void
+    readonly add_item: (self: WritableContainer, item: MediaFileItem, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly add_item_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => void
+    readonly add_container: (self: WritableContainer, container: MediaContainer, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly add_container_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => void
+    readonly add_reference: (self: WritableContainer, object: MediaObject, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly add_reference_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => string
+    readonly remove_item: (self: WritableContainer, id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly remove_item_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => void
+    readonly remove_container: (self: WritableContainer, id: string, cancellable?: Gio.Cancellable | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly remove_container_finish: (self: WritableContainer, _res_: Gio.AsyncResult) => void
+    readonly get_create_classes: (self: WritableContainer) => Gee.ArrayList
+    readonly set_create_classes: (self: WritableContainer, value: Gee.ArrayList) => void
     static name: string
 }
 abstract class DataSourceIface {
     /* Fields of RygelServer-2.6.RygelServer.DataSourceIface */
-    preroll: (self: DataSource, seek?: HTTPSeekRequest | null, playspeed?: PlaySpeedRequest | null) => Gee.List | null
-    start: (self: DataSource) => void
-    freeze: (self: DataSource) => void
-    thaw: (self: DataSource) => void
-    stop: (self: DataSource) => void
+    readonly preroll: (self: DataSource, seek?: HTTPSeekRequest | null, playspeed?: PlaySpeedRequest | null) => Gee.List | null
+    readonly start: (self: DataSource) => void
+    readonly freeze: (self: DataSource) => void
+    readonly thaw: (self: DataSource) => void
+    readonly stop: (self: DataSource) => void
     static name: string
 }
 abstract class UpdatableObjectIface {
     /* Fields of RygelServer-2.6.RygelServer.UpdatableObjectIface */
-    commit: (self: UpdatableObject, _callback_?: Gio.AsyncReadyCallback | null) => void
-    commit_finish: (self: UpdatableObject, _res_: Gio.AsyncResult) => void
+    readonly commit: (self: UpdatableObject, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly commit_finish: (self: UpdatableObject, _res_: Gio.AsyncResult) => void
     static name: string
 }
 }

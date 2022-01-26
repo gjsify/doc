@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstTranscoder-1.0
  */
@@ -39,7 +45,8 @@ function transcoder_message_parse_position(msg: Gst.Message): /* position */ Gst
 function transcoder_message_parse_state(msg: Gst.Message): /* state */ TranscoderState
 function transcoder_message_parse_warning(msg: Gst.Message): [ /* error */ GLib.Error, /* details */ Gst.Structure ]
 function transcoder_state_get_name(state: TranscoderState): string
-export interface Transcoder_ConstructProps extends Gst.Object_ConstructProps {
+interface Transcoder_ConstructProps extends Gst.Object_ConstructProps {
+    /* Constructor properties of GstTranscoder-1.0.GstTranscoder.Transcoder */
     avoid_reencoding?: boolean
     dest_uri?: string
     position_update_interval?: number
@@ -53,15 +60,14 @@ class Transcoder {
     readonly pipeline: Gst.Element
     readonly position: number
     position_update_interval: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Object */
-    object: GObject.InitiallyUnowned
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstTranscoder-1.0.GstTranscoder.Transcoder */
     get_avoid_reencoding(): boolean
     get_dest_uri(): string
@@ -152,10 +158,6 @@ class Transcoder {
     connect_after(sigName: "notify::position", callback: (($obj: Transcoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::position-update-interval", callback: (($obj: Transcoder, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::position-update-interval", callback: (($obj: Transcoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Transcoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Transcoder, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Transcoder, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Transcoder, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -169,13 +171,13 @@ class Transcoder {
     static is_transcoder_message(msg: Gst.Message): boolean
     static $gtype: GObject.Type
 }
-export interface TranscoderSignalAdapter_ConstructProps extends GObject.Object_ConstructProps {
+interface TranscoderSignalAdapter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TranscoderSignalAdapter {
     /* Properties of GstTranscoder-1.0.GstTranscoder.TranscoderSignalAdapter */
     readonly transcoder: Transcoder
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstTranscoder-1.0.GstTranscoder.TranscoderSignalAdapter */
     get_transcoder(): Transcoder | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -244,12 +246,12 @@ class TranscoderSignalAdapter {
 }
 abstract class TranscoderClass {
     /* Fields of GstTranscoder-1.0.GstTranscoder.TranscoderClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 abstract class TranscoderSignalAdapterClass {
     /* Fields of GstTranscoder-1.0.GstTranscoder.TranscoderSignalAdapterClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

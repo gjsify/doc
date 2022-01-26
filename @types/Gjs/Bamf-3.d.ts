@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Bamf-3
  */
@@ -35,31 +41,31 @@ enum WindowType {
     SPLASHSCREEN,
     UNKNOWN,
 }
-export const APPLICATION_SIGNAL_DESKTOP_FILE_UPDATED: string
-export const APPLICATION_SIGNAL_WINDOW_ADDED: string
-export const APPLICATION_SIGNAL_WINDOW_REMOVED: string
-export const MATCHER_SIGNAL_ACTIVE_APPLICATION_CHANGED: string
-export const MATCHER_SIGNAL_ACTIVE_WINDOW_CHANGED: string
-export const MATCHER_SIGNAL_STACKING_ORDER_CHANGED: string
-export const MATCHER_SIGNAL_VIEW_CLOSED: string
-export const MATCHER_SIGNAL_VIEW_OPENED: string
-export const VIEW_SIGNAL_ACTIVE_CHANGED: string
-export const VIEW_SIGNAL_CHILD_ADDED: string
-export const VIEW_SIGNAL_CHILD_MOVED: string
-export const VIEW_SIGNAL_CHILD_REMOVED: string
-export const VIEW_SIGNAL_CLOSED: string
-export const VIEW_SIGNAL_ICON_CHANGED: string
-export const VIEW_SIGNAL_NAME_CHANGED: string
-export const VIEW_SIGNAL_RUNNING_CHANGED: string
-export const VIEW_SIGNAL_STARTING_CHANGED: string
-export const VIEW_SIGNAL_URGENT_CHANGED: string
-export const VIEW_SIGNAL_USER_VISIBLE_CHANGED: string
-export const WINDOW_SIGNAL_MAXIMIZED_CHANGED: string
-export const WINDOW_SIGNAL_MONITOR_CHANGED: string
+const APPLICATION_SIGNAL_DESKTOP_FILE_UPDATED: string
+const APPLICATION_SIGNAL_WINDOW_ADDED: string
+const APPLICATION_SIGNAL_WINDOW_REMOVED: string
+const MATCHER_SIGNAL_ACTIVE_APPLICATION_CHANGED: string
+const MATCHER_SIGNAL_ACTIVE_WINDOW_CHANGED: string
+const MATCHER_SIGNAL_STACKING_ORDER_CHANGED: string
+const MATCHER_SIGNAL_VIEW_CLOSED: string
+const MATCHER_SIGNAL_VIEW_OPENED: string
+const VIEW_SIGNAL_ACTIVE_CHANGED: string
+const VIEW_SIGNAL_CHILD_ADDED: string
+const VIEW_SIGNAL_CHILD_MOVED: string
+const VIEW_SIGNAL_CHILD_REMOVED: string
+const VIEW_SIGNAL_CLOSED: string
+const VIEW_SIGNAL_ICON_CHANGED: string
+const VIEW_SIGNAL_NAME_CHANGED: string
+const VIEW_SIGNAL_RUNNING_CHANGED: string
+const VIEW_SIGNAL_STARTING_CHANGED: string
+const VIEW_SIGNAL_URGENT_CHANGED: string
+const VIEW_SIGNAL_USER_VISIBLE_CHANGED: string
+const WINDOW_SIGNAL_MAXIMIZED_CHANGED: string
+const WINDOW_SIGNAL_MONITOR_CHANGED: string
 interface TabPreviewReadyCallback {
     (self: Tab, preview_data: string): void
 }
-export interface Application_ConstructProps extends View_ConstructProps {
+interface Application_ConstructProps extends View_ConstructProps {
 }
 class Application {
     /* Properties of Bamf-3.Bamf.View */
@@ -69,11 +75,11 @@ class Application {
     readonly starting: boolean
     readonly urgent: boolean
     readonly user_visible: boolean
-    /* Fields of Bamf-3.Bamf.Application */
-    parent: View
-    priv: ApplicationPrivate
+    /* Fields of Bamf-3.Bamf.View */
+    readonly parent: GObject.InitiallyUnowned
+    readonly priv: ViewPrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bamf-3.Bamf.Application */
     get_application_menu(): [ /* returnType */ boolean, /* name */ string, /* object_path */ string ]
     get_application_type(): string
@@ -223,14 +229,11 @@ class Application {
     _init (config?: Application_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Control_ConstructProps extends GObject.Object_ConstructProps {
+interface Control_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Control {
-    /* Fields of Bamf-3.Bamf.Control */
-    parent: GObject.Object
-    priv: ControlPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bamf-3.Bamf.Control */
     create_local_desktop_file(application: Application): void
     insert_desktop_file(desktop_file: string): void
@@ -281,14 +284,11 @@ class Control {
     static get_default(): Control
     static $gtype: GObject.Type
 }
-export interface Matcher_ConstructProps extends GObject.Object_ConstructProps {
+interface Matcher_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Matcher {
-    /* Fields of Bamf-3.Bamf.Matcher */
-    parent: GObject.Object
-    priv: MatcherPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bamf-3.Bamf.Matcher */
     application_is_running(desktop_file: string): boolean
     get_active_application(): Application
@@ -365,7 +365,7 @@ class Matcher {
     static get_default(): Matcher
     static $gtype: GObject.Type
 }
-export interface Tab_ConstructProps extends View_ConstructProps {
+interface Tab_ConstructProps extends View_ConstructProps {
 }
 class Tab {
     /* Properties of Bamf-3.Bamf.Tab */
@@ -380,11 +380,11 @@ class Tab {
     readonly starting: boolean
     readonly urgent: boolean
     readonly user_visible: boolean
-    /* Fields of Bamf-3.Bamf.Tab */
-    parent: View
-    priv: TabPrivate
+    /* Fields of Bamf-3.Bamf.View */
+    readonly parent: GObject.InitiallyUnowned
+    readonly priv: ViewPrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bamf-3.Bamf.Tab */
     close(): boolean
     get_desktop_name(): string
@@ -535,7 +535,7 @@ class Tab {
     _init (config?: Tab_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface View_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
+interface View_ConstructProps extends GObject.InitiallyUnowned_ConstructProps {
 }
 class View {
     /* Properties of Bamf-3.Bamf.View */
@@ -545,11 +545,8 @@ class View {
     readonly starting: boolean
     readonly urgent: boolean
     readonly user_visible: boolean
-    /* Fields of Bamf-3.Bamf.View */
-    parent: GObject.InitiallyUnowned
-    priv: ViewPrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bamf-3.Bamf.View */
     get_children(): View[]
     get_click_suggestion(): ClickBehavior
@@ -679,7 +676,7 @@ class View {
     _init (config?: View_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Window_ConstructProps extends View_ConstructProps {
+interface Window_ConstructProps extends View_ConstructProps {
 }
 class Window {
     /* Properties of Bamf-3.Bamf.View */
@@ -689,11 +686,11 @@ class Window {
     readonly starting: boolean
     readonly urgent: boolean
     readonly user_visible: boolean
-    /* Fields of Bamf-3.Bamf.Window */
-    parent: View
-    priv: WindowPrivate
+    /* Fields of Bamf-3.Bamf.View */
+    readonly parent: GObject.InitiallyUnowned
+    readonly priv: ViewPrivate
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Bamf-3.Bamf.Window */
     get_monitor(): number
     get_pid(): number
@@ -852,7 +849,7 @@ class Window {
 }
 abstract class ApplicationClass {
     /* Fields of Bamf-3.Bamf.ApplicationClass */
-    parent_class: ViewClass
+    readonly parent_class: ViewClass
     static name: string
 }
 class ApplicationPrivate {
@@ -860,7 +857,7 @@ class ApplicationPrivate {
 }
 abstract class ControlClass {
     /* Fields of Bamf-3.Bamf.ControlClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ControlPrivate {
@@ -868,7 +865,7 @@ class ControlPrivate {
 }
 abstract class MatcherClass {
     /* Fields of Bamf-3.Bamf.MatcherClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MatcherPrivate {
@@ -876,11 +873,11 @@ class MatcherPrivate {
 }
 abstract class TabClass {
     /* Fields of Bamf-3.Bamf.TabClass */
-    parent_class: ViewClass
-    get_desktop_name: (self: Tab) => string
-    get_location: (self: Tab) => string
-    get_xid: (self: Tab) => number
-    get_is_foreground_tab: (self: Tab) => boolean
+    readonly parent_class: ViewClass
+    readonly get_desktop_name: (self: Tab) => string
+    readonly get_location: (self: Tab) => string
+    readonly get_xid: (self: Tab) => number
+    readonly get_is_foreground_tab: (self: Tab) => boolean
     static name: string
 }
 class TabPrivate {
@@ -888,30 +885,30 @@ class TabPrivate {
 }
 abstract class ViewClass {
     /* Fields of Bamf-3.Bamf.ViewClass */
-    parent_class: GObject.InitiallyUnownedClass
-    get_children: (view: View) => View[]
-    is_active: (view: View) => boolean
-    is_running: (view: View) => boolean
-    is_urgent: (view: View) => boolean
-    is_user_visible: (view: View) => boolean
-    get_name: (view: View) => string
-    get_icon: (view: View) => string
-    view_type: (view: View) => string
-    set_path: (view: View, path: string) => void
-    set_sticky: (view: View, value: boolean) => void
-    click_behavior: (view: View) => ClickBehavior
-    active_changed: (view: View, active: boolean) => void
-    closed: (view: View) => void
-    child_added: (view: View, child: View) => void
-    child_removed: (view: View, child: View) => void
-    running_changed: (view: View, running: boolean) => void
-    urgent_changed: (view: View, urgent: boolean) => void
-    user_visible_changed: (view: View, user_visible: boolean) => void
-    name_changed: (view: View, old_name: string, new_name: string) => void
-    icon_changed: (view: View, icon: string) => void
-    child_moved: (view: View, child: View) => void
-    is_starting: (view: View) => boolean
-    starting_changed: (view: View, starting: boolean) => void
+    readonly parent_class: GObject.InitiallyUnownedClass
+    readonly get_children: (view: View) => View[]
+    readonly is_active: (view: View) => boolean
+    readonly is_running: (view: View) => boolean
+    readonly is_urgent: (view: View) => boolean
+    readonly is_user_visible: (view: View) => boolean
+    readonly get_name: (view: View) => string
+    readonly get_icon: (view: View) => string
+    readonly view_type: (view: View) => string
+    readonly set_path: (view: View, path: string) => void
+    readonly set_sticky: (view: View, value: boolean) => void
+    readonly click_behavior: (view: View) => ClickBehavior
+    readonly active_changed: (view: View, active: boolean) => void
+    readonly closed: (view: View) => void
+    readonly child_added: (view: View, child: View) => void
+    readonly child_removed: (view: View, child: View) => void
+    readonly running_changed: (view: View, running: boolean) => void
+    readonly urgent_changed: (view: View, urgent: boolean) => void
+    readonly user_visible_changed: (view: View, user_visible: boolean) => void
+    readonly name_changed: (view: View, old_name: string, new_name: string) => void
+    readonly icon_changed: (view: View, icon: string) => void
+    readonly child_moved: (view: View, child: View) => void
+    readonly is_starting: (view: View) => boolean
+    readonly starting_changed: (view: View, starting: boolean) => void
     static name: string
 }
 class ViewPrivate {
@@ -919,17 +916,17 @@ class ViewPrivate {
 }
 abstract class WindowClass {
     /* Fields of Bamf-3.Bamf.WindowClass */
-    parent_class: ViewClass
-    get_transient: (self: Window) => Window
-    get_window_type: (self: Window) => WindowType
-    get_xid: (self: Window) => number
-    get_pid: (self: Window) => number
-    get_monitor: (self: Window) => number
-    get_utf8_prop: (self: Window, prop: string) => string
-    maximized: (self: Window) => WindowMaximizationType
-    last_active: (self: Window) => number
-    monitor_changed: (window: Window, old_value: number, new_value: number) => void
-    maximized_changed: (window: Window, old_value: number, new_value: number) => void
+    readonly parent_class: ViewClass
+    readonly get_transient: (self: Window) => Window
+    readonly get_window_type: (self: Window) => WindowType
+    readonly get_xid: (self: Window) => number
+    readonly get_pid: (self: Window) => number
+    readonly get_monitor: (self: Window) => number
+    readonly get_utf8_prop: (self: Window, prop: string) => string
+    readonly maximized: (self: Window) => WindowMaximizationType
+    readonly last_active: (self: Window) => number
+    readonly monitor_changed: (window: Window, old_value: number, new_value: number) => void
+    readonly maximized_changed: (window: Window, old_value: number, new_value: number) => void
     static name: string
 }
 class WindowPrivate {

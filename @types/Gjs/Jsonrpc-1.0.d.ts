@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Jsonrpc-1.0
  */
@@ -17,24 +23,23 @@ enum ClientError {
     INVALID_PARAMS,
     INTERNAL_ERROR,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const VERSION_S: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const VERSION_S: string
 interface ServerHandler {
     (self: Server, client: Client, method: string, id: GLib.Variant, params: GLib.Variant): void
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Jsonrpc-1.0.Jsonrpc.Client */
     io_stream?: Gio.IOStream
     use_gvariant?: boolean
 }
 class Client {
     /* Properties of Jsonrpc-1.0.Jsonrpc.Client */
     use_gvariant: boolean
-    /* Fields of Jsonrpc-1.0.Jsonrpc.Client */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Jsonrpc-1.0.Jsonrpc.Client */
     call(method: string, params?: GLib.Variant | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* return_value */ GLib.Variant | null ]
     call_async(method: string, params?: GLib.Variant | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -116,7 +121,7 @@ class Client {
     static error_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface InputStream_ConstructProps extends Gio.DataInputStream_ConstructProps {
+interface InputStream_ConstructProps extends Gio.DataInputStream_ConstructProps {
 }
 class InputStream {
     /* Properties of Gio-2.0.Gio.DataInputStream */
@@ -126,12 +131,12 @@ class InputStream {
     buffer_size: number
     /* Properties of Gio-2.0.Gio.FilterInputStream */
     close_base_stream: boolean
-    /* Fields of Jsonrpc-1.0.Jsonrpc.InputStream */
-    parent_instance: Gio.DataInputStream
+    /* Fields of Gio-2.0.Gio.DataInputStream */
+    readonly parent_instance: Gio.BufferedInputStream
     /* Fields of Gio-2.0.Gio.FilterInputStream */
-    base_stream: Gio.InputStream
+    readonly base_stream: Gio.InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Jsonrpc-1.0.Jsonrpc.InputStream */
     read_message(cancellable: Gio.Cancellable | null, message: GLib.Variant): boolean
     read_message_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -143,9 +148,9 @@ class InputStream {
     read_int16(cancellable?: Gio.Cancellable | null): number
     read_int32(cancellable?: Gio.Cancellable | null): number
     read_int64(cancellable?: Gio.Cancellable | null): number
-    read_line(cancellable?: Gio.Cancellable | null): [ /* returnType */ Uint8Array[] | null, /* length */ number | null ]
+    read_line(cancellable?: Gio.Cancellable | null): [ /* returnType */ Uint8Array | null, /* length */ number | null ]
     read_line_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    read_line_finish(result: Gio.AsyncResult): [ /* returnType */ Uint8Array[] | null, /* length */ number | null ]
+    read_line_finish(result: Gio.AsyncResult): [ /* returnType */ Uint8Array | null, /* length */ number | null ]
     read_line_finish_utf8(result: Gio.AsyncResult): [ /* returnType */ string | null, /* length */ number | null ]
     read_line_utf8(cancellable?: Gio.Cancellable | null): [ /* returnType */ string | null, /* length */ number | null ]
     read_uint16(cancellable?: Gio.Cancellable | null): number
@@ -165,8 +170,9 @@ class InputStream {
     fill_finish(result: Gio.AsyncResult): number
     get_available(): number
     get_buffer_size(): number
-    peek(buffer: Uint8Array[], offset: number): number
-    peek_buffer(): Uint8Array[]
+    peek(buffer: Uint8Array, offset: number): number
+    peek_buffer(): Uint8Array
+    read_byte(cancellable?: Gio.Cancellable | null): number
     set_buffer_size(size: number): void
     /* Methods of Gio-2.0.Gio.FilterInputStream */
     get_base_stream(): Gio.InputStream
@@ -179,11 +185,11 @@ class InputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -234,7 +240,7 @@ class InputStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -269,9 +275,13 @@ class InputStream {
     _init (config?: InputStream_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(base_stream: Gio.InputStream): InputStream
+    /* Function overloads */
+    static new(base_stream: Gio.InputStream): InputStream
+    static new(base_stream: Gio.InputStream): InputStream
     static $gtype: GObject.Type
 }
-export interface OutputStream_ConstructProps extends Gio.DataOutputStream_ConstructProps {
+interface OutputStream_ConstructProps extends Gio.DataOutputStream_ConstructProps {
+    /* Constructor properties of Jsonrpc-1.0.Jsonrpc.OutputStream */
     use_gvariant?: boolean
 }
 class OutputStream {
@@ -279,12 +289,12 @@ class OutputStream {
     use_gvariant: boolean
     /* Properties of Gio-2.0.Gio.DataOutputStream */
     byte_order: Gio.DataStreamByteOrder
-    /* Fields of Jsonrpc-1.0.Jsonrpc.OutputStream */
-    parent_instance: Gio.DataOutputStream
+    /* Fields of Gio-2.0.Gio.DataOutputStream */
+    readonly parent_instance: Gio.FilterOutputStream
     /* Fields of Gio-2.0.Gio.FilterOutputStream */
-    base_stream: Gio.OutputStream
+    readonly base_stream: Gio.OutputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Jsonrpc-1.0.Jsonrpc.OutputStream */
     get_use_gvariant(): boolean
     set_use_gvariant(use_gvariant: boolean): void
@@ -321,11 +331,11 @@ class OutputStream {
     splice(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, cancellable?: Gio.Cancellable | null): number
     splice_async(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     splice_finish(result: Gio.AsyncResult): number
-    write(buffer: Uint8Array[], cancellable?: Gio.Cancellable | null): number
-    write_all(buffer: Uint8Array[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_all_async(buffer: Uint8Array[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    write(buffer: Uint8Array, cancellable?: Gio.Cancellable | null): number
+    write_all(buffer: Uint8Array, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
+    write_all_async(buffer: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
-    write_async(buffer: Uint8Array[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    write_async(buffer: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_bytes(bytes: GLib.Bytes, cancellable?: Gio.Cancellable | null): number
     write_bytes_async(bytes: GLib.Bytes, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_bytes_finish(result: Gio.AsyncResult): number
@@ -380,9 +390,9 @@ class OutputStream {
     vfunc_splice(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, cancellable?: Gio.Cancellable | null): number
     vfunc_splice_async(source: Gio.InputStream, flags: Gio.OutputStreamSpliceFlags, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_splice_finish(result: Gio.AsyncResult): number
-    vfunc_write_async(buffer: Uint8Array[] | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_write_async(buffer: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_write_finish(result: Gio.AsyncResult): number
-    vfunc_write_fn(buffer: Uint8Array[] | null, cancellable?: Gio.Cancellable | null): number
+    vfunc_write_fn(buffer: Uint8Array | null, cancellable?: Gio.Cancellable | null): number
     vfunc_writev_async(vectors: Gio.OutputVector[], io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_writev_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_written */ number | null ]
     vfunc_writev_fn(vectors: Gio.OutputVector[], cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* bytes_written */ number | null ]
@@ -411,15 +421,15 @@ class OutputStream {
     _init (config?: OutputStream_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(base_stream: Gio.OutputStream): OutputStream
+    /* Function overloads */
+    static new(base_stream: Gio.OutputStream): OutputStream
     static $gtype: GObject.Type
 }
-export interface Server_ConstructProps extends GObject.Object_ConstructProps {
+interface Server_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Server {
-    /* Fields of Jsonrpc-1.0.Jsonrpc.Server */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Jsonrpc-1.0.Jsonrpc.Server */
     accept_io_stream(io_stream: Gio.IOStream): void
     add_handler(method: string, handler: ServerHandler): number
@@ -490,161 +500,161 @@ class Server {
 }
 abstract class ClientClass {
     /* Fields of Jsonrpc-1.0.Jsonrpc.ClientClass */
-    parent_class: GObject.ObjectClass
-    notification: (self: Client, method_name: string, params: GLib.Variant) => void
-    handle_call: (self: Client, method: string, id: GLib.Variant, params: GLib.Variant) => boolean
-    failed: (self: Client) => void
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
-    _reserved5: object
-    _reserved6: object
-    _reserved7: object
-    _reserved8: object
+    readonly parent_class: GObject.ObjectClass
+    readonly notification: (self: Client, method_name: string, params: GLib.Variant) => void
+    readonly handle_call: (self: Client, method: string, id: GLib.Variant, params: GLib.Variant) => boolean
+    readonly failed: (self: Client) => void
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
+    readonly _reserved5: object
+    readonly _reserved6: object
+    readonly _reserved7: object
+    readonly _reserved8: object
     static name: string
 }
 abstract class InputStreamClass {
     /* Fields of Jsonrpc-1.0.Jsonrpc.InputStreamClass */
-    parent_class: Gio.DataInputStreamClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
-    _reserved5: object
-    _reserved6: object
-    _reserved7: object
-    _reserved8: object
+    readonly parent_class: Gio.DataInputStreamClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
+    readonly _reserved5: object
+    readonly _reserved6: object
+    readonly _reserved7: object
+    readonly _reserved8: object
     static name: string
 }
 class MessageAny {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageAny */
-    magic: MessageMagic
+    readonly magic: MessageMagic
     static name: string
 }
 class MessageGetBoolean {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetBoolean */
-    magic: MessageMagic
-    valptr: boolean
+    readonly magic: MessageMagic
+    readonly valptr: boolean
     static name: string
 }
 class MessageGetDict {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetDict */
-    magic: MessageMagic
-    dictptr: GLib.VariantDict
+    readonly magic: MessageMagic
+    readonly dictptr: GLib.VariantDict
     static name: string
 }
 class MessageGetDouble {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetDouble */
-    magic: MessageMagic
-    valptr: number
+    readonly magic: MessageMagic
+    readonly valptr: number
     static name: string
 }
 class MessageGetInt32 {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetInt32 */
-    magic: MessageMagic
-    valptr: number
+    readonly magic: MessageMagic
+    readonly valptr: number
     static name: string
 }
 class MessageGetInt64 {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetInt64 */
-    magic: MessageMagic
-    valptr: number
+    readonly magic: MessageMagic
+    readonly valptr: number
     static name: string
 }
 class MessageGetIter {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetIter */
-    magic: MessageMagic
+    readonly magic: MessageMagic
     static name: string
 }
 class MessageGetString {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetString */
-    magic: MessageMagic
-    valptr: string
+    readonly magic: MessageMagic
+    readonly valptr: string
     static name: string
 }
 class MessageGetStrv {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetStrv */
-    magic: MessageMagic
-    valptr: string
+    readonly magic: MessageMagic
+    readonly valptr: string
     static name: string
 }
 class MessageGetVariant {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageGetVariant */
-    magic: MessageMagic
-    variantptr: GLib.Variant
+    readonly magic: MessageMagic
+    readonly variantptr: GLib.Variant
     static name: string
 }
 class MessageMagic {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessageMagic */
-    bytes: number[]
+    readonly bytes: number[]
     static name: string
 }
 class MessagePutBoolean {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutBoolean */
-    magic: MessageMagic
-    val: boolean
+    readonly magic: MessageMagic
+    readonly val: boolean
     static name: string
 }
 class MessagePutDouble {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutDouble */
-    magic: MessageMagic
-    val: number
+    readonly magic: MessageMagic
+    readonly val: number
     static name: string
 }
 class MessagePutInt32 {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutInt32 */
-    magic: MessageMagic
-    val: number
+    readonly magic: MessageMagic
+    readonly val: number
     static name: string
 }
 class MessagePutInt64 {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutInt64 */
-    magic: MessageMagic
-    val: number
+    readonly magic: MessageMagic
+    readonly val: number
     static name: string
 }
 class MessagePutString {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutString */
-    magic: MessageMagic
-    val: string
+    readonly magic: MessageMagic
+    readonly val: string
     static name: string
 }
 class MessagePutStrv {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutStrv */
-    magic: MessageMagic
-    val: string
+    readonly magic: MessageMagic
+    readonly val: string
     static name: string
 }
 class MessagePutVariant {
     /* Fields of Jsonrpc-1.0.Jsonrpc.MessagePutVariant */
-    magic: MessageMagic
-    val: GLib.Variant
+    readonly magic: MessageMagic
+    readonly val: GLib.Variant
     static name: string
 }
 abstract class OutputStreamClass {
     /* Fields of Jsonrpc-1.0.Jsonrpc.OutputStreamClass */
-    parent_class: Gio.DataOutputStreamClass
-    _reserved1: object
-    _reserved2: object
-    _reserved3: object
-    _reserved4: object
-    _reserved5: object
-    _reserved6: object
-    _reserved7: object
-    _reserved8: object
-    _reserved9: object
-    _reserved10: object
-    _reserved11: object
-    _reserved12: object
+    readonly parent_class: Gio.DataOutputStreamClass
+    readonly _reserved1: object
+    readonly _reserved2: object
+    readonly _reserved3: object
+    readonly _reserved4: object
+    readonly _reserved5: object
+    readonly _reserved6: object
+    readonly _reserved7: object
+    readonly _reserved8: object
+    readonly _reserved9: object
+    readonly _reserved10: object
+    readonly _reserved11: object
+    readonly _reserved12: object
     static name: string
 }
 abstract class ServerClass {
     /* Fields of Jsonrpc-1.0.Jsonrpc.ServerClass */
-    parent_class: GObject.ObjectClass
-    handle_call: (self: Server, client: Client, method: string, id: GLib.Variant, params: GLib.Variant) => boolean
-    notification: (self: Server, client: Client, method: string, params: GLib.Variant) => void
-    client_accepted: (self: Server, client: Client) => void
-    client_closed: (self: Server, client: Client) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly handle_call: (self: Server, client: Client, method: string, id: GLib.Variant, params: GLib.Variant) => boolean
+    readonly notification: (self: Server, client: Client, method: string, params: GLib.Variant) => void
+    readonly client_accepted: (self: Server, client: Client) => void
+    readonly client_closed: (self: Server, client: Client) => void
     static name: string
 }
 }

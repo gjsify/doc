@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Zpj-0.0
  */
@@ -27,10 +33,10 @@ enum ThumbnailSize {
     SMALL,
     NORMAL,
 }
-export const SKYDRIVE_FOLDER_MY_DOCUMENTS: string
-export const SKYDRIVE_FOLDER_MY_PHOTOS: string
-export const SKYDRIVE_FOLDER_PUBLIC_DOCUMENTS: string
-export const SKYDRIVE_FOLDER_SKYDRIVE: string
+const SKYDRIVE_FOLDER_MY_DOCUMENTS: string
+const SKYDRIVE_FOLDER_MY_PHOTOS: string
+const SKYDRIVE_FOLDER_PUBLIC_DOCUMENTS: string
+const SKYDRIVE_FOLDER_SKYDRIVE: string
 function error_quark(): GLib.Quark
 class Authorizer {
     /* Methods of Zpj-0.0.Zpj.Authorizer */
@@ -47,16 +53,14 @@ class Authorizer {
     vfunc_refresh_authorization(cancellable?: Gio.Cancellable | null): boolean
     static name: string
 }
-export interface AuthorizationDomain_ConstructProps extends GObject.Object_ConstructProps {
+interface AuthorizationDomain_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Zpj-0.0.Zpj.AuthorizationDomain */
     scope?: string
     service_name?: string
 }
 class AuthorizationDomain {
-    /* Fields of Zpj-0.0.Zpj.AuthorizationDomain */
-    parent_instance: GObject.Object
-    priv: AuthorizationDomainPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zpj-0.0.Zpj.AuthorizationDomain */
     get_scope(): string
     get_service_name(): string
@@ -103,14 +107,11 @@ class AuthorizationDomain {
     _init (config?: AuthorizationDomain_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GoaAuthorizer_ConstructProps extends GObject.Object_ConstructProps {
+interface GoaAuthorizer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class GoaAuthorizer {
-    /* Fields of Zpj-0.0.Zpj.GoaAuthorizer */
-    parent_instance: GObject.Object
-    priv: GoaAuthorizerPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -166,17 +167,15 @@ class GoaAuthorizer {
     _init (config?: GoaAuthorizer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Skydrive_ConstructProps extends GObject.Object_ConstructProps {
+interface Skydrive_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Zpj-0.0.Zpj.Skydrive */
     authorizer?: Authorizer
 }
 class Skydrive {
     /* Properties of Zpj-0.0.Zpj.Skydrive */
     authorizer: Authorizer
-    /* Fields of Zpj-0.0.Zpj.Skydrive */
-    parent_instance: GObject.Object
-    priv: SkydrivePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zpj-0.0.Zpj.Skydrive */
     create_folder(folder: SkydriveFolder, cancellable?: Gio.Cancellable | null): boolean
     create_folder_from_name(name: string, parent_id: string, cancellable?: Gio.Cancellable | null): boolean
@@ -248,7 +247,8 @@ class Skydrive {
     static new(authorizer: Authorizer): Skydrive
     static $gtype: GObject.Type
 }
-export interface SkydriveEntry_ConstructProps extends GObject.Object_ConstructProps {
+interface SkydriveEntry_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Zpj-0.0.Zpj.SkydriveEntry */
     json?: Json.Node
 }
 class SkydriveEntry {
@@ -262,11 +262,8 @@ class SkydriveEntry {
     readonly parent_id: string
     readonly type: SkydriveEntryType
     readonly updated_time: GLib.DateTime
-    /* Fields of Zpj-0.0.Zpj.SkydriveEntry */
-    parent_instance: GObject.Object
-    priv: SkydriveEntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zpj-0.0.Zpj.SkydriveEntry */
     get_created_time(): GLib.DateTime
     get_description(): string
@@ -340,7 +337,7 @@ class SkydriveEntry {
     _init (config?: SkydriveEntry_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SkydriveFile_ConstructProps extends SkydriveEntry_ConstructProps {
+interface SkydriveFile_ConstructProps extends SkydriveEntry_ConstructProps {
 }
 class SkydriveFile {
     /* Properties of Zpj-0.0.Zpj.SkydriveFile */
@@ -355,11 +352,11 @@ class SkydriveFile {
     readonly parent_id: string
     readonly type: SkydriveEntryType
     readonly updated_time: GLib.DateTime
-    /* Fields of Zpj-0.0.Zpj.SkydriveFile */
-    parent_instance: SkydriveEntry
-    priv: SkydriveFilePrivate
+    /* Fields of Zpj-0.0.Zpj.SkydriveEntry */
+    readonly parent_instance: GObject.Object
+    readonly priv: SkydriveEntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zpj-0.0.Zpj.SkydriveFile */
     get_size(): number
     /* Methods of Zpj-0.0.Zpj.SkydriveEntry */
@@ -439,7 +436,7 @@ class SkydriveFile {
     static new(node: Json.Node): SkydriveFile
     static $gtype: GObject.Type
 }
-export interface SkydriveFolder_ConstructProps extends SkydriveEntry_ConstructProps {
+interface SkydriveFolder_ConstructProps extends SkydriveEntry_ConstructProps {
 }
 class SkydriveFolder {
     /* Properties of Zpj-0.0.Zpj.SkydriveEntry */
@@ -452,12 +449,11 @@ class SkydriveFolder {
     readonly parent_id: string
     readonly type: SkydriveEntryType
     readonly updated_time: GLib.DateTime
-    /* Fields of Zpj-0.0.Zpj.SkydriveFolder */
-    parent_instance: SkydriveEntry
     /* Fields of Zpj-0.0.Zpj.SkydriveEntry */
-    priv: SkydriveEntryPrivate
+    readonly parent_instance: GObject.Object
+    readonly priv: SkydriveEntryPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zpj-0.0.Zpj.SkydriveEntry */
     get_created_time(): GLib.DateTime
     get_description(): string
@@ -533,7 +529,7 @@ class SkydriveFolder {
     static new(node: Json.Node): SkydriveFolder
     static $gtype: GObject.Type
 }
-export interface SkydrivePhoto_ConstructProps extends SkydriveFile_ConstructProps {
+interface SkydrivePhoto_ConstructProps extends SkydriveFile_ConstructProps {
 }
 class SkydrivePhoto {
     /* Properties of Zpj-0.0.Zpj.SkydriveFile */
@@ -548,12 +544,11 @@ class SkydrivePhoto {
     readonly parent_id: string
     readonly type: SkydriveEntryType
     readonly updated_time: GLib.DateTime
-    /* Fields of Zpj-0.0.Zpj.SkydrivePhoto */
-    parent_instance: SkydriveFile
     /* Fields of Zpj-0.0.Zpj.SkydriveFile */
-    priv: SkydriveFilePrivate
+    readonly parent_instance: SkydriveEntry
+    readonly priv: SkydriveFilePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zpj-0.0.Zpj.SkydriveFile */
     get_size(): number
     /* Methods of Zpj-0.0.Zpj.SkydriveEntry */
@@ -631,9 +626,11 @@ class SkydrivePhoto {
     _init (config?: SkydrivePhoto_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(node: Json.Node): SkydrivePhoto
+    /* Function overloads */
+    static new(node: Json.Node): SkydrivePhoto
     static $gtype: GObject.Type
 }
-export interface SkydriveVideo_ConstructProps extends SkydriveFile_ConstructProps {
+interface SkydriveVideo_ConstructProps extends SkydriveFile_ConstructProps {
 }
 class SkydriveVideo {
     /* Properties of Zpj-0.0.Zpj.SkydriveVideo */
@@ -653,11 +650,11 @@ class SkydriveVideo {
     readonly parent_id: string
     readonly type: SkydriveEntryType
     readonly updated_time: GLib.DateTime
-    /* Fields of Zpj-0.0.Zpj.SkydriveVideo */
-    parent_instance: SkydriveFile
-    priv: SkydriveVideoPrivate
+    /* Fields of Zpj-0.0.Zpj.SkydriveFile */
+    readonly parent_instance: SkydriveEntry
+    readonly priv: SkydriveFilePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Zpj-0.0.Zpj.SkydriveVideo */
     get_bitrate(): number
     get_duration(): number
@@ -748,11 +745,13 @@ class SkydriveVideo {
     _init (config?: SkydriveVideo_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(node: Json.Node): SkydriveVideo
+    /* Function overloads */
+    static new(node: Json.Node): SkydriveVideo
     static $gtype: GObject.Type
 }
 abstract class AuthorizationDomainClass {
     /* Fields of Zpj-0.0.Zpj.AuthorizationDomainClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AuthorizationDomainPrivate {
@@ -760,16 +759,16 @@ class AuthorizationDomainPrivate {
 }
 abstract class AuthorizerInterface {
     /* Fields of Zpj-0.0.Zpj.AuthorizerInterface */
-    parent_iface: GObject.TypeInterface
-    is_authorized_for_domain: (iface: Authorizer, domain: AuthorizationDomain) => boolean
-    process_call: (iface: Authorizer, domain: AuthorizationDomain | null, call: Rest.ProxyCall) => void
-    process_message: (iface: Authorizer, domain: AuthorizationDomain | null, message: Soup.Message) => void
-    refresh_authorization: (iface: Authorizer, cancellable?: Gio.Cancellable | null) => boolean
+    readonly parent_iface: GObject.TypeInterface
+    readonly is_authorized_for_domain: (iface: Authorizer, domain: AuthorizationDomain) => boolean
+    readonly process_call: (iface: Authorizer, domain: AuthorizationDomain | null, call: Rest.ProxyCall) => void
+    readonly process_message: (iface: Authorizer, domain: AuthorizationDomain | null, message: Soup.Message) => void
+    readonly refresh_authorization: (iface: Authorizer, cancellable?: Gio.Cancellable | null) => boolean
     static name: string
 }
 abstract class GoaAuthorizerClass {
     /* Fields of Zpj-0.0.Zpj.GoaAuthorizerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class GoaAuthorizerPrivate {
@@ -777,13 +776,13 @@ class GoaAuthorizerPrivate {
 }
 abstract class SkydriveClass {
     /* Fields of Zpj-0.0.Zpj.SkydriveClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SkydriveEntryClass {
     /* Fields of Zpj-0.0.Zpj.SkydriveEntryClass */
-    parent_class: GObject.ObjectClass
-    parse_json_node: (self: SkydriveEntry, node: Json.Node) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly parse_json_node: (self: SkydriveEntry, node: Json.Node) => void
     static name: string
 }
 class SkydriveEntryPrivate {
@@ -791,7 +790,7 @@ class SkydriveEntryPrivate {
 }
 abstract class SkydriveFileClass {
     /* Fields of Zpj-0.0.Zpj.SkydriveFileClass */
-    parent_class: SkydriveEntryClass
+    readonly parent_class: SkydriveEntryClass
     static name: string
 }
 class SkydriveFilePrivate {
@@ -799,12 +798,12 @@ class SkydriveFilePrivate {
 }
 abstract class SkydriveFolderClass {
     /* Fields of Zpj-0.0.Zpj.SkydriveFolderClass */
-    parent_class: SkydriveEntryClass
+    readonly parent_class: SkydriveEntryClass
     static name: string
 }
 abstract class SkydrivePhotoClass {
     /* Fields of Zpj-0.0.Zpj.SkydrivePhotoClass */
-    parent_class: SkydriveFileClass
+    readonly parent_class: SkydriveFileClass
     static name: string
 }
 class SkydrivePrivate {
@@ -812,7 +811,7 @@ class SkydrivePrivate {
 }
 abstract class SkydriveVideoClass {
     /* Fields of Zpj-0.0.Zpj.SkydriveVideoClass */
-    parent_class: SkydriveFileClass
+    readonly parent_class: SkydriveFileClass
     static name: string
 }
 class SkydriveVideoPrivate {

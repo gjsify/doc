@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstBase-1.0
  */
@@ -35,15 +41,15 @@ enum CollectPadsStateFlags {
     WAITING,
     LOCKED,
 }
-export const BASE_PARSE_FLAG_DRAINING: number
-export const BASE_PARSE_FLAG_LOST_SYNC: number
-export const BASE_TRANSFORM_SINK_NAME: string
-export const BASE_TRANSFORM_SRC_NAME: string
+const BASE_PARSE_FLAG_DRAINING: number
+const BASE_PARSE_FLAG_LOST_SYNC: number
+const BASE_TRANSFORM_SINK_NAME: string
+const BASE_TRANSFORM_SRC_NAME: string
 function type_find_helper(src: Gst.Pad, size: number): Gst.Caps | null
 function type_find_helper_for_buffer(obj: Gst.Object | null, buf: Gst.Buffer): [ /* returnType */ Gst.Caps | null, /* prob */ Gst.TypeFindProbability | null ]
 function type_find_helper_for_buffer_with_extension(obj: Gst.Object | null, buf: Gst.Buffer, extension?: string | null): [ /* returnType */ Gst.Caps | null, /* prob */ Gst.TypeFindProbability | null ]
-function type_find_helper_for_data(obj: Gst.Object | null, data: Uint8Array[]): [ /* returnType */ Gst.Caps | null, /* prob */ Gst.TypeFindProbability | null ]
-function type_find_helper_for_data_with_extension(obj: Gst.Object | null, data: Uint8Array[], extension?: string | null): [ /* returnType */ Gst.Caps | null, /* prob */ Gst.TypeFindProbability | null ]
+function type_find_helper_for_data(obj: Gst.Object | null, data: Uint8Array): [ /* returnType */ Gst.Caps | null, /* prob */ Gst.TypeFindProbability | null ]
+function type_find_helper_for_data_with_extension(obj: Gst.Object | null, data: Uint8Array, extension?: string | null): [ /* returnType */ Gst.Caps | null, /* prob */ Gst.TypeFindProbability | null ]
 function type_find_helper_for_extension(obj: Gst.Object | null, extension: string): Gst.Caps | null
 function type_find_helper_get_range(obj: Gst.Object, parent: Gst.Object | null, func: TypeFindHelperGetRangeFunction, size: number, extension?: string | null): [ /* returnType */ Gst.Caps | null, /* prob */ Gst.TypeFindProbability | null ]
 function type_find_helper_get_range_full(obj: Gst.Object, parent: Gst.Object | null, func: TypeFindHelperGetRangeFunction, size: number, extension?: string | null): [ /* returnType */ Gst.FlowReturn, /* caps */ Gst.Caps, /* prob */ Gst.TypeFindProbability | null ]
@@ -80,11 +86,11 @@ interface DataQueueFullCallback {
 interface TypeFindHelperGetRangeFunction {
     (obj: Gst.Object, parent: Gst.Object | null, offset: number, length: number): Gst.FlowReturn
 }
-export interface Adapter_ConstructProps extends GObject.Object_ConstructProps {
+interface Adapter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Adapter {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.Adapter */
     available(): number
     available_fast(): number
@@ -97,7 +103,7 @@ class Adapter {
     get_buffer_fast(nbytes: number): Gst.Buffer | null
     get_buffer_list(nbytes: number): Gst.BufferList | null
     get_list(nbytes: number): Gst.Buffer[] | null
-    map(): Uint8Array[] | null
+    map(): Uint8Array | null
     masked_scan_uint32(mask: number, pattern: number, offset: number, size: number): number
     masked_scan_uint32_peek(mask: number, pattern: number, offset: number, size: number): [ /* returnType */ number, /* value */ number | null ]
     offset_at_discont(): number
@@ -108,7 +114,7 @@ class Adapter {
     prev_pts_at_offset(offset: number): [ /* returnType */ Gst.ClockTime, /* distance */ number | null ]
     pts_at_discont(): Gst.ClockTime
     push(buf: Gst.Buffer): void
-    take(): Uint8Array[] | null
+    take(): Uint8Array | null
     take_buffer(nbytes: number): Gst.Buffer | null
     take_buffer_fast(nbytes: number): Gst.Buffer | null
     take_buffer_list(nbytes: number): Gst.BufferList | null
@@ -159,7 +165,8 @@ class Adapter {
     static new(): Adapter
     static $gtype: GObject.Type
 }
-export interface Aggregator_ConstructProps extends Gst.Element_ConstructProps {
+interface Aggregator_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstBase-1.0.GstBase.Aggregator */
     emit_signals?: boolean
     latency?: number
     min_upstream_latency?: number
@@ -173,37 +180,34 @@ class Aggregator {
     min_upstream_latency: number
     start_time: number
     start_time_selection: AggregatorStartTimeSelection
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstBase-1.0.GstBase.Aggregator */
-    srcpad: Gst.Pad
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.Aggregator */
     finish_buffer(buffer: Gst.Buffer): Gst.FlowReturn
     finish_buffer_list(bufferlist: Gst.BufferList): Gst.FlowReturn
@@ -414,10 +418,6 @@ class Aggregator {
     connect_after(sigName: "notify::start-time", callback: (($obj: Aggregator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::start-time-selection", callback: (($obj: Aggregator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::start-time-selection", callback: (($obj: Aggregator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: Aggregator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: Aggregator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: Aggregator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: Aggregator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -427,7 +427,8 @@ class Aggregator {
     _init (config?: Aggregator_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AggregatorPad_ConstructProps extends Gst.Pad_ConstructProps {
+interface AggregatorPad_ConstructProps extends Gst.Pad_ConstructProps {
+    /* Constructor properties of GstBase-1.0.GstBase.AggregatorPad */
     emit_signals?: boolean
 }
 class AggregatorPad {
@@ -437,21 +438,18 @@ class AggregatorPad {
     readonly caps: Gst.Caps
     offset: number
     template: Gst.PadTemplate
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstBase-1.0.GstBase.AggregatorPad */
-    segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Pad */
-    object: Gst.Object
-    element_private: object
-    padtemplate: Gst.PadTemplate
-    direction: Gst.PadDirection
+    readonly object: Gst.Object
+    readonly element_private: object
+    readonly padtemplate: Gst.PadTemplate
+    readonly direction: Gst.PadDirection
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.AggregatorPad */
     drop_buffer(): boolean
     has_buffer(): boolean
@@ -629,10 +627,6 @@ class AggregatorPad {
     connect_after(sigName: "notify::offset", callback: (($obj: AggregatorPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::template", callback: (($obj: AggregatorPad, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::template", callback: (($obj: AggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: AggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: AggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: AggregatorPad, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: AggregatorPad, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -642,47 +636,42 @@ class AggregatorPad {
     _init (config?: AggregatorPad_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BaseParse_ConstructProps extends Gst.Element_ConstructProps {
+interface BaseParse_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstBase-1.0.GstBase.BaseParse */
     disable_passthrough?: boolean
 }
 class BaseParse {
     /* Properties of GstBase-1.0.GstBase.BaseParse */
     disable_passthrough: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstBase-1.0.GstBase.BaseParse */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    flags: number
-    segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseParse */
     add_index_entry(offset: number, ts: Gst.ClockTime, key: boolean, force: boolean): boolean
     convert_default(src_format: Gst.Format, src_value: number, dest_format: Gst.Format): [ /* returnType */ boolean, /* dest_value */ number ]
@@ -874,10 +863,6 @@ class BaseParse {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::disable-passthrough", callback: (($obj: BaseParse, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::disable-passthrough", callback: (($obj: BaseParse, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: BaseParse, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: BaseParse, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: BaseParse, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: BaseParse, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -887,7 +872,8 @@ class BaseParse {
     _init (config?: BaseParse_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BaseSink_ConstructProps extends Gst.Element_ConstructProps {
+interface BaseSink_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstBase-1.0.GstBase.BaseSink */
     async?: boolean
     blocksize?: number
     enable_last_sample?: boolean
@@ -915,51 +901,35 @@ class BaseSink {
     sync: boolean
     throttle_time: number
     ts_offset: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstBase-1.0.GstBase.BaseSink */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    pad_mode: Gst.PadMode
-    offset: number
-    can_activate_pull: boolean
-    can_activate_push: boolean
-    preroll_lock: GLib.Mutex
-    preroll_cond: GLib.Cond
-    eos: boolean
-    need_preroll: boolean
-    have_preroll: boolean
-    playing_async: boolean
-    have_newsegment: boolean
-    segment: Gst.Segment
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseSink */
     do_preroll(obj: Gst.MiniObject): Gst.FlowReturn
     get_blocksize(): number
@@ -1117,6 +1087,8 @@ class BaseSink {
     vfunc_preroll(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_propose_allocation(query: Gst.Query): boolean
     vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     vfunc_render(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_render_list(buffer_list: Gst.BufferList): Gst.FlowReturn
     vfunc_set_caps(caps: Gst.Caps): boolean
@@ -1196,10 +1168,6 @@ class BaseSink {
     connect_after(sigName: "notify::throttle-time", callback: (($obj: BaseSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::ts-offset", callback: (($obj: BaseSink, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::ts-offset", callback: (($obj: BaseSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: BaseSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: BaseSink, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: BaseSink, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: BaseSink, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1209,7 +1177,8 @@ class BaseSink {
     _init (config?: BaseSink_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BaseSrc_ConstructProps extends Gst.Element_ConstructProps {
+interface BaseSrc_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstBase-1.0.GstBase.BaseSrc */
     blocksize?: number
     do_timestamp?: boolean
     num_buffers?: number
@@ -1221,58 +1190,42 @@ class BaseSrc {
     do_timestamp: boolean
     num_buffers: number
     typefind: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstBase-1.0.GstBase.BaseSrc */
-    element: Gst.Element
-    srcpad: Gst.Pad
-    live_lock: GLib.Mutex
-    live_cond: GLib.Cond
-    is_live: boolean
-    live_running: boolean
-    can_activate_push: boolean
-    random_access: boolean
-    clock_id: Gst.ClockID
-    segment: Gst.Segment
-    need_newsegment: boolean
-    num_buffers_left: number
-    running: boolean
-    pending_seek: Gst.Event
-    priv: BaseSrcPrivate
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseSrc */
     get_allocator(): [ /* allocator */ Gst.Allocator | null, /* params */ Gst.AllocationParams | null ]
     get_blocksize(): number
     get_buffer_pool(): Gst.BufferPool | null
     get_do_timestamp(): boolean
     is_async(): boolean
+    is_live(): boolean
     negotiate(): boolean
     new_seamless_segment(start: number, stop: number, time: number): boolean
     new_segment(segment: Gst.Segment): boolean
@@ -1417,6 +1370,8 @@ class BaseSrc {
     vfunc_negotiate(): boolean
     vfunc_prepare_seek_segment(seek: Gst.Event, segment: Gst.Segment): boolean
     vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(caps: Gst.Caps): boolean
     vfunc_start(): boolean
     vfunc_stop(): boolean
@@ -1475,10 +1430,6 @@ class BaseSrc {
     connect_after(sigName: "notify::num-buffers", callback: (($obj: BaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::typefind", callback: (($obj: BaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::typefind", callback: (($obj: BaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: BaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: BaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: BaseSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: BaseSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1488,49 +1439,42 @@ class BaseSrc {
     _init (config?: BaseSrc_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BaseTransform_ConstructProps extends Gst.Element_ConstructProps {
+interface BaseTransform_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstBase-1.0.GstBase.BaseTransform */
     qos?: boolean
 }
 class BaseTransform {
     /* Properties of GstBase-1.0.GstBase.BaseTransform */
     qos: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstBase-1.0.GstBase.BaseTransform */
-    element: Gst.Element
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    have_segment: boolean
-    segment: Gst.Segment
-    queued_buf: Gst.Buffer
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseTransform */
     get_allocator(): [ /* allocator */ Gst.Allocator | null, /* params */ Gst.AllocationParams | null ]
     get_buffer_pool(): Gst.BufferPool | null
@@ -1672,6 +1616,7 @@ class BaseTransform {
     vfunc_prepare_output_buffer(input: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
     vfunc_propose_allocation(decide_query: Gst.Query, query: Gst.Query): boolean
     vfunc_query(direction: Gst.PadDirection, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(incaps: Gst.Caps, outcaps: Gst.Caps): boolean
     vfunc_sink_event(event: Gst.Event): boolean
@@ -1731,10 +1676,6 @@ class BaseTransform {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::qos", callback: (($obj: BaseTransform, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::qos", callback: (($obj: BaseTransform, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: BaseTransform, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: BaseTransform, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: BaseTransform, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: BaseTransform, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1744,20 +1685,17 @@ class BaseTransform {
     _init (config?: BaseTransform_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CollectPads_ConstructProps extends Gst.Object_ConstructProps {
+interface CollectPads_ConstructProps extends Gst.Object_ConstructProps {
 }
 class CollectPads {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstBase-1.0.GstBase.CollectPads */
-    object: Gst.Object
-    data: CollectData[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly object: GObject.InitiallyUnowned
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.CollectPads */
     add_pad(pad: Gst.Pad, size: number, destroy_notify: CollectDataDestroyNotify, lock: boolean): CollectData | null
     available(): number
@@ -1846,10 +1784,6 @@ class CollectPads {
     connect(sigName: "notify", callback: (($obj: CollectPads, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: CollectPads, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: CollectPads, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: CollectPads, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CollectPads, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CollectPads, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1861,17 +1795,15 @@ class CollectPads {
     static new(): CollectPads
     static $gtype: GObject.Type
 }
-export interface DataQueue_ConstructProps extends GObject.Object_ConstructProps {
+interface DataQueue_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DataQueue {
     /* Properties of GstBase-1.0.GstBase.DataQueue */
     readonly current_level_bytes: number
     readonly current_level_time: number
     readonly current_level_visible: number
-    /* Fields of GstBase-1.0.GstBase.DataQueue */
-    object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1931,60 +1863,59 @@ class DataQueue {
     _init (config?: DataQueue_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PushSrc_ConstructProps extends BaseSrc_ConstructProps {
+interface PushSrc_ConstructProps extends BaseSrc_ConstructProps {
 }
 class PushSrc {
     /* Properties of GstBase-1.0.GstBase.BaseSrc */
-    blocksize: number
     do_timestamp: boolean
-    num_buffers: number
-    typefind: boolean
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of GstBase-1.0.GstBase.BaseSrc */
-    element: Gst.Element
-    srcpad: Gst.Pad
-    live_lock: GLib.Mutex
-    live_cond: GLib.Cond
-    is_live: boolean
-    live_running: boolean
-    can_activate_push: boolean
-    random_access: boolean
-    clock_id: Gst.ClockID
-    segment: Gst.Segment
-    need_newsegment: boolean
-    num_buffers_left: number
-    running: boolean
-    pending_seek: Gst.Event
-    priv: BaseSrcPrivate
+    readonly element: Gst.Element
+    readonly srcpad: Gst.Pad
+    readonly live_lock: GLib.Mutex
+    readonly live_cond: GLib.Cond
+    readonly is_live: boolean
+    readonly live_running: boolean
+    readonly blocksize: number
+    readonly can_activate_push: boolean
+    readonly random_access: boolean
+    readonly clock_id: Gst.ClockID
+    readonly segment: Gst.Segment
+    readonly need_newsegment: boolean
+    readonly num_buffers: number
+    readonly num_buffers_left: number
+    readonly typefind: boolean
+    readonly running: boolean
+    readonly pending_seek: Gst.Event
+    readonly priv: BaseSrcPrivate
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstBase-1.0.GstBase.BaseSrc */
     get_allocator(): [ /* allocator */ Gst.Allocator | null, /* params */ Gst.AllocationParams | null ]
     get_blocksize(): number
@@ -2122,11 +2053,17 @@ class PushSrc {
     watch_closure(closure: Function): void
     /* Virtual methods of GstBase-1.0.GstBase.PushSrc */
     vfunc_alloc(): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    /* Function overloads */
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_fill(buf: Gst.Buffer): Gst.FlowReturn
+    /* Function overloads */
     vfunc_fill(offset: number, size: number, buf: Gst.Buffer): Gst.FlowReturn
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
+    vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstBase-1.0.GstBase.BaseSrc */
     vfunc_alloc(offset: number, size: number): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
     vfunc_create(offset: number, size: number, buf: Gst.Buffer): [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
@@ -2141,6 +2078,8 @@ class PushSrc {
     vfunc_is_seekable(): boolean
     vfunc_negotiate(): boolean
     vfunc_prepare_seek_segment(seek: Gst.Event, segment: Gst.Segment): boolean
+    vfunc_query(query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(caps: Gst.Caps): boolean
     vfunc_start(): boolean
@@ -2192,18 +2131,8 @@ class PushSrc {
     connect(sigName: "notify", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::blocksize", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::blocksize", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::do-timestamp", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::do-timestamp", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::num-buffers", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::num-buffers", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::typefind", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::typefind", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: PushSrc, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -2218,36 +2147,36 @@ abstract class AdapterClass {
 }
 abstract class AggregatorClass {
     /* Fields of GstBase-1.0.GstBase.AggregatorClass */
-    parent_class: Gst.ElementClass
-    flush: (aggregator: Aggregator) => Gst.FlowReturn
-    clip: (aggregator: Aggregator, aggregator_pad: AggregatorPad, buf: Gst.Buffer) => Gst.Buffer
-    finish_buffer: (aggregator: Aggregator, buffer: Gst.Buffer) => Gst.FlowReturn
-    sink_event: (aggregator: Aggregator, aggregator_pad: AggregatorPad, event: Gst.Event) => boolean
-    sink_query: (aggregator: Aggregator, aggregator_pad: AggregatorPad, query: Gst.Query) => boolean
-    src_event: (aggregator: Aggregator, event: Gst.Event) => boolean
-    src_query: (aggregator: Aggregator, query: Gst.Query) => boolean
-    src_activate: (aggregator: Aggregator, mode: Gst.PadMode, active: boolean) => boolean
-    aggregate: (aggregator: Aggregator, timeout: boolean) => Gst.FlowReturn
-    stop: (aggregator: Aggregator) => boolean
-    start: (aggregator: Aggregator) => boolean
-    get_next_time: (aggregator: Aggregator) => Gst.ClockTime
-    update_src_caps: (self: Aggregator, caps: Gst.Caps) => [ /* returnType */ Gst.FlowReturn, /* ret */ Gst.Caps | null ]
-    fixate_src_caps: (self: Aggregator, caps: Gst.Caps) => Gst.Caps
-    negotiated_src_caps: (self: Aggregator, caps: Gst.Caps) => boolean
-    decide_allocation: (self: Aggregator, query: Gst.Query) => boolean
-    propose_allocation: (self: Aggregator, pad: AggregatorPad, decide_query: Gst.Query, query: Gst.Query) => boolean
-    negotiate: (self: Aggregator) => boolean
-    sink_event_pre_queue: (aggregator: Aggregator, aggregator_pad: AggregatorPad, event: Gst.Event) => Gst.FlowReturn
-    sink_query_pre_queue: (aggregator: Aggregator, aggregator_pad: AggregatorPad, query: Gst.Query) => boolean
-    finish_buffer_list: (aggregator: Aggregator, bufferlist: Gst.BufferList) => Gst.FlowReturn
-    peek_next_sample: (aggregator: Aggregator, aggregator_pad: AggregatorPad) => Gst.Sample | null
+    readonly parent_class: Gst.ElementClass
+    readonly flush: (aggregator: Aggregator) => Gst.FlowReturn
+    readonly clip: (aggregator: Aggregator, aggregator_pad: AggregatorPad, buf: Gst.Buffer) => Gst.Buffer
+    readonly finish_buffer: (aggregator: Aggregator, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly sink_event: (aggregator: Aggregator, aggregator_pad: AggregatorPad, event: Gst.Event) => boolean
+    readonly sink_query: (aggregator: Aggregator, aggregator_pad: AggregatorPad, query: Gst.Query) => boolean
+    readonly src_event: (aggregator: Aggregator, event: Gst.Event) => boolean
+    readonly src_query: (aggregator: Aggregator, query: Gst.Query) => boolean
+    readonly src_activate: (aggregator: Aggregator, mode: Gst.PadMode, active: boolean) => boolean
+    readonly aggregate: (aggregator: Aggregator, timeout: boolean) => Gst.FlowReturn
+    readonly stop: (aggregator: Aggregator) => boolean
+    readonly start: (aggregator: Aggregator) => boolean
+    readonly get_next_time: (aggregator: Aggregator) => Gst.ClockTime
+    readonly update_src_caps: (self: Aggregator, caps: Gst.Caps) => [ /* returnType */ Gst.FlowReturn, /* ret */ Gst.Caps | null ]
+    readonly fixate_src_caps: (self: Aggregator, caps: Gst.Caps) => Gst.Caps
+    readonly negotiated_src_caps: (self: Aggregator, caps: Gst.Caps) => boolean
+    readonly decide_allocation: (self: Aggregator, query: Gst.Query) => boolean
+    readonly propose_allocation: (self: Aggregator, pad: AggregatorPad, decide_query: Gst.Query, query: Gst.Query) => boolean
+    readonly negotiate: (self: Aggregator) => boolean
+    readonly sink_event_pre_queue: (aggregator: Aggregator, aggregator_pad: AggregatorPad, event: Gst.Event) => Gst.FlowReturn
+    readonly sink_query_pre_queue: (aggregator: Aggregator, aggregator_pad: AggregatorPad, query: Gst.Query) => boolean
+    readonly finish_buffer_list: (aggregator: Aggregator, bufferlist: Gst.BufferList) => Gst.FlowReturn
+    readonly peek_next_sample: (aggregator: Aggregator, aggregator_pad: AggregatorPad) => Gst.Sample | null
     static name: string
 }
 abstract class AggregatorPadClass {
     /* Fields of GstBase-1.0.GstBase.AggregatorPadClass */
-    parent_class: Gst.PadClass
-    flush: (aggpad: AggregatorPad, aggregator: Aggregator) => Gst.FlowReturn
-    skip_buffer: (aggpad: AggregatorPad, aggregator: Aggregator, buffer: Gst.Buffer) => boolean
+    readonly parent_class: Gst.PadClass
+    readonly flush: (aggpad: AggregatorPad, aggregator: Aggregator) => Gst.FlowReturn
+    readonly skip_buffer: (aggpad: AggregatorPad, aggregator: Aggregator, buffer: Gst.Buffer) => boolean
     static name: string
 }
 class AggregatorPadPrivate {
@@ -2258,28 +2187,28 @@ class AggregatorPrivate {
 }
 abstract class BaseParseClass {
     /* Fields of GstBase-1.0.GstBase.BaseParseClass */
-    parent_class: Gst.ElementClass
-    start: (parse: BaseParse) => boolean
-    stop: (parse: BaseParse) => boolean
-    set_sink_caps: (parse: BaseParse, caps: Gst.Caps) => boolean
-    handle_frame: (parse: BaseParse, frame: BaseParseFrame) => [ /* returnType */ Gst.FlowReturn, /* skipsize */ number ]
-    pre_push_frame: (parse: BaseParse, frame: BaseParseFrame) => Gst.FlowReturn
-    convert: (parse: BaseParse, src_format: Gst.Format, src_value: number, dest_format: Gst.Format, dest_value: number) => boolean
-    sink_event: (parse: BaseParse, event: Gst.Event) => boolean
-    src_event: (parse: BaseParse, event: Gst.Event) => boolean
-    get_sink_caps: (parse: BaseParse, filter: Gst.Caps) => Gst.Caps
-    detect: (parse: BaseParse, buffer: Gst.Buffer) => Gst.FlowReturn
-    sink_query: (parse: BaseParse, query: Gst.Query) => boolean
-    src_query: (parse: BaseParse, query: Gst.Query) => boolean
+    readonly parent_class: Gst.ElementClass
+    readonly start: (parse: BaseParse) => boolean
+    readonly stop: (parse: BaseParse) => boolean
+    readonly set_sink_caps: (parse: BaseParse, caps: Gst.Caps) => boolean
+    readonly handle_frame: (parse: BaseParse, frame: BaseParseFrame) => [ /* returnType */ Gst.FlowReturn, /* skipsize */ number ]
+    readonly pre_push_frame: (parse: BaseParse, frame: BaseParseFrame) => Gst.FlowReturn
+    readonly convert: (parse: BaseParse, src_format: Gst.Format, src_value: number, dest_format: Gst.Format, dest_value: number) => boolean
+    readonly sink_event: (parse: BaseParse, event: Gst.Event) => boolean
+    readonly src_event: (parse: BaseParse, event: Gst.Event) => boolean
+    readonly get_sink_caps: (parse: BaseParse, filter: Gst.Caps) => Gst.Caps
+    readonly detect: (parse: BaseParse, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly sink_query: (parse: BaseParse, query: Gst.Query) => boolean
+    readonly src_query: (parse: BaseParse, query: Gst.Query) => boolean
     static name: string
 }
 class BaseParseFrame {
     /* Fields of GstBase-1.0.GstBase.BaseParseFrame */
-    buffer: Gst.Buffer
-    out_buffer: Gst.Buffer
-    flags: number
-    offset: number
-    overhead: number
+    readonly buffer: Gst.Buffer
+    readonly out_buffer: Gst.Buffer
+    readonly flags: number
+    readonly offset: number
+    readonly overhead: number
     /* Methods of GstBase-1.0.GstBase.BaseParseFrame */
     copy(): BaseParseFrame
     free(): void
@@ -2295,25 +2224,25 @@ class BaseParsePrivate {
 }
 abstract class BaseSinkClass {
     /* Fields of GstBase-1.0.GstBase.BaseSinkClass */
-    parent_class: Gst.ElementClass
-    get_caps: (sink: BaseSink, filter: Gst.Caps) => Gst.Caps
-    set_caps: (sink: BaseSink, caps: Gst.Caps) => boolean
-    fixate: (sink: BaseSink, caps: Gst.Caps) => Gst.Caps
-    activate_pull: (sink: BaseSink, active: boolean) => boolean
-    get_times: (sink: BaseSink, buffer: Gst.Buffer, start: Gst.ClockTime, end: Gst.ClockTime) => void
-    propose_allocation: (sink: BaseSink, query: Gst.Query) => boolean
-    start: (sink: BaseSink) => boolean
-    stop: (sink: BaseSink) => boolean
-    unlock: (sink: BaseSink) => boolean
-    unlock_stop: (sink: BaseSink) => boolean
-    query: (sink: BaseSink, query: Gst.Query) => boolean
-    event: (sink: BaseSink, event: Gst.Event) => boolean
-    wait_event: (sink: BaseSink, event: Gst.Event) => Gst.FlowReturn
-    prepare: (sink: BaseSink, buffer: Gst.Buffer) => Gst.FlowReturn
-    prepare_list: (sink: BaseSink, buffer_list: Gst.BufferList) => Gst.FlowReturn
-    preroll: (sink: BaseSink, buffer: Gst.Buffer) => Gst.FlowReturn
-    render: (sink: BaseSink, buffer: Gst.Buffer) => Gst.FlowReturn
-    render_list: (sink: BaseSink, buffer_list: Gst.BufferList) => Gst.FlowReturn
+    readonly parent_class: Gst.ElementClass
+    readonly get_caps: (sink: BaseSink, filter: Gst.Caps) => Gst.Caps
+    readonly set_caps: (sink: BaseSink, caps: Gst.Caps) => boolean
+    readonly fixate: (sink: BaseSink, caps: Gst.Caps) => Gst.Caps
+    readonly activate_pull: (sink: BaseSink, active: boolean) => boolean
+    readonly get_times: (sink: BaseSink, buffer: Gst.Buffer, start: Gst.ClockTime, end: Gst.ClockTime) => void
+    readonly propose_allocation: (sink: BaseSink, query: Gst.Query) => boolean
+    readonly start: (sink: BaseSink) => boolean
+    readonly stop: (sink: BaseSink) => boolean
+    readonly unlock: (sink: BaseSink) => boolean
+    readonly unlock_stop: (sink: BaseSink) => boolean
+    readonly query: (sink: BaseSink, query: Gst.Query) => boolean
+    readonly event: (sink: BaseSink, event: Gst.Event) => boolean
+    readonly wait_event: (sink: BaseSink, event: Gst.Event) => Gst.FlowReturn
+    readonly prepare: (sink: BaseSink, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly prepare_list: (sink: BaseSink, buffer_list: Gst.BufferList) => Gst.FlowReturn
+    readonly preroll: (sink: BaseSink, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly render: (sink: BaseSink, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly render_list: (sink: BaseSink, buffer_list: Gst.BufferList) => Gst.FlowReturn
     static name: string
 }
 class BaseSinkPrivate {
@@ -2321,26 +2250,26 @@ class BaseSinkPrivate {
 }
 abstract class BaseSrcClass {
     /* Fields of GstBase-1.0.GstBase.BaseSrcClass */
-    parent_class: Gst.ElementClass
-    get_caps: (src: BaseSrc, filter?: Gst.Caps | null) => Gst.Caps
-    negotiate: (src: BaseSrc) => boolean
-    fixate: (src: BaseSrc, caps: Gst.Caps) => Gst.Caps
-    set_caps: (src: BaseSrc, caps: Gst.Caps) => boolean
-    decide_allocation: (src: BaseSrc, query: Gst.Query) => boolean
-    start: (src: BaseSrc) => boolean
-    stop: (src: BaseSrc) => boolean
-    get_times: (src: BaseSrc, buffer: Gst.Buffer) => [ /* start */ Gst.ClockTime, /* end */ Gst.ClockTime ]
-    get_size: (src: BaseSrc) => [ /* returnType */ boolean, /* size */ number ]
-    is_seekable: (src: BaseSrc) => boolean
-    prepare_seek_segment: (src: BaseSrc, seek: Gst.Event, segment: Gst.Segment) => boolean
-    do_seek: (src: BaseSrc, segment: Gst.Segment) => boolean
-    unlock: (src: BaseSrc) => boolean
-    unlock_stop: (src: BaseSrc) => boolean
-    query: (src: BaseSrc, query: Gst.Query) => boolean
-    event: (src: BaseSrc, event: Gst.Event) => boolean
-    create: (src: BaseSrc, offset: number, size: number, buf: Gst.Buffer) => [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
-    alloc: (src: BaseSrc, offset: number, size: number) => [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
-    fill: (src: BaseSrc, offset: number, size: number, buf: Gst.Buffer) => Gst.FlowReturn
+    readonly parent_class: Gst.ElementClass
+    readonly get_caps: (src: BaseSrc, filter?: Gst.Caps | null) => Gst.Caps
+    readonly negotiate: (src: BaseSrc) => boolean
+    readonly fixate: (src: BaseSrc, caps: Gst.Caps) => Gst.Caps
+    readonly set_caps: (src: BaseSrc, caps: Gst.Caps) => boolean
+    readonly decide_allocation: (src: BaseSrc, query: Gst.Query) => boolean
+    readonly start: (src: BaseSrc) => boolean
+    readonly stop: (src: BaseSrc) => boolean
+    readonly get_times: (src: BaseSrc, buffer: Gst.Buffer) => [ /* start */ Gst.ClockTime, /* end */ Gst.ClockTime ]
+    readonly get_size: (src: BaseSrc) => [ /* returnType */ boolean, /* size */ number ]
+    readonly is_seekable: (src: BaseSrc) => boolean
+    readonly prepare_seek_segment: (src: BaseSrc, seek: Gst.Event, segment: Gst.Segment) => boolean
+    readonly do_seek: (src: BaseSrc, segment: Gst.Segment) => boolean
+    readonly unlock: (src: BaseSrc) => boolean
+    readonly unlock_stop: (src: BaseSrc) => boolean
+    readonly query: (src: BaseSrc, query: Gst.Query) => boolean
+    readonly event: (src: BaseSrc, event: Gst.Event) => boolean
+    readonly create: (src: BaseSrc, offset: number, size: number, buf: Gst.Buffer) => [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    readonly alloc: (src: BaseSrc, offset: number, size: number) => [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    readonly fill: (src: BaseSrc, offset: number, size: number, buf: Gst.Buffer) => Gst.FlowReturn
     static name: string
 }
 class BaseSrcPrivate {
@@ -2348,31 +2277,31 @@ class BaseSrcPrivate {
 }
 abstract class BaseTransformClass {
     /* Fields of GstBase-1.0.GstBase.BaseTransformClass */
-    parent_class: Gst.ElementClass
-    passthrough_on_same_caps: boolean
-    transform_ip_on_passthrough: boolean
-    transform_caps: (trans: BaseTransform, direction: Gst.PadDirection, caps: Gst.Caps, filter: Gst.Caps) => Gst.Caps
-    fixate_caps: (trans: BaseTransform, direction: Gst.PadDirection, caps: Gst.Caps, othercaps: Gst.Caps) => Gst.Caps
-    accept_caps: (trans: BaseTransform, direction: Gst.PadDirection, caps: Gst.Caps) => boolean
-    set_caps: (trans: BaseTransform, incaps: Gst.Caps, outcaps: Gst.Caps) => boolean
-    query: (trans: BaseTransform, direction: Gst.PadDirection, query: Gst.Query) => boolean
-    decide_allocation: (trans: BaseTransform, query: Gst.Query) => boolean
-    filter_meta: (trans: BaseTransform, query: Gst.Query, api: GObject.Type, params: Gst.Structure) => boolean
-    propose_allocation: (trans: BaseTransform, decide_query: Gst.Query, query: Gst.Query) => boolean
-    transform_size: (trans: BaseTransform, direction: Gst.PadDirection, caps: Gst.Caps, size: number, othercaps: Gst.Caps) => [ /* returnType */ boolean, /* othersize */ number ]
-    get_unit_size: (trans: BaseTransform, caps: Gst.Caps) => [ /* returnType */ boolean, /* size */ number ]
-    start: (trans: BaseTransform) => boolean
-    stop: (trans: BaseTransform) => boolean
-    sink_event: (trans: BaseTransform, event: Gst.Event) => boolean
-    src_event: (trans: BaseTransform, event: Gst.Event) => boolean
-    prepare_output_buffer: (trans: BaseTransform, input: Gst.Buffer) => [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
-    copy_metadata: (trans: BaseTransform, input: Gst.Buffer, outbuf: Gst.Buffer) => boolean
-    transform_meta: (trans: BaseTransform, outbuf: Gst.Buffer, meta: Gst.Meta, inbuf: Gst.Buffer) => boolean
-    before_transform: (trans: BaseTransform, buffer: Gst.Buffer) => void
-    transform: (trans: BaseTransform, inbuf: Gst.Buffer, outbuf: Gst.Buffer) => Gst.FlowReturn
-    transform_ip: (trans: BaseTransform, buf: Gst.Buffer) => Gst.FlowReturn
-    submit_input_buffer: (trans: BaseTransform, is_discont: boolean, input: Gst.Buffer) => Gst.FlowReturn
-    generate_output: (trans: BaseTransform) => [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
+    readonly parent_class: Gst.ElementClass
+    readonly passthrough_on_same_caps: boolean
+    readonly transform_ip_on_passthrough: boolean
+    readonly transform_caps: (trans: BaseTransform, direction: Gst.PadDirection, caps: Gst.Caps, filter: Gst.Caps) => Gst.Caps
+    readonly fixate_caps: (trans: BaseTransform, direction: Gst.PadDirection, caps: Gst.Caps, othercaps: Gst.Caps) => Gst.Caps
+    readonly accept_caps: (trans: BaseTransform, direction: Gst.PadDirection, caps: Gst.Caps) => boolean
+    readonly set_caps: (trans: BaseTransform, incaps: Gst.Caps, outcaps: Gst.Caps) => boolean
+    readonly query: (trans: BaseTransform, direction: Gst.PadDirection, query: Gst.Query) => boolean
+    readonly decide_allocation: (trans: BaseTransform, query: Gst.Query) => boolean
+    readonly filter_meta: (trans: BaseTransform, query: Gst.Query, api: GObject.Type, params: Gst.Structure) => boolean
+    readonly propose_allocation: (trans: BaseTransform, decide_query: Gst.Query, query: Gst.Query) => boolean
+    readonly transform_size: (trans: BaseTransform, direction: Gst.PadDirection, caps: Gst.Caps, size: number, othercaps: Gst.Caps) => [ /* returnType */ boolean, /* othersize */ number ]
+    readonly get_unit_size: (trans: BaseTransform, caps: Gst.Caps) => [ /* returnType */ boolean, /* size */ number ]
+    readonly start: (trans: BaseTransform) => boolean
+    readonly stop: (trans: BaseTransform) => boolean
+    readonly sink_event: (trans: BaseTransform, event: Gst.Event) => boolean
+    readonly src_event: (trans: BaseTransform, event: Gst.Event) => boolean
+    readonly prepare_output_buffer: (trans: BaseTransform, input: Gst.Buffer) => [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
+    readonly copy_metadata: (trans: BaseTransform, input: Gst.Buffer, outbuf: Gst.Buffer) => boolean
+    readonly transform_meta: (trans: BaseTransform, outbuf: Gst.Buffer, meta: Gst.Meta, inbuf: Gst.Buffer) => boolean
+    readonly before_transform: (trans: BaseTransform, buffer: Gst.Buffer) => void
+    readonly transform: (trans: BaseTransform, inbuf: Gst.Buffer, outbuf: Gst.Buffer) => Gst.FlowReturn
+    readonly transform_ip: (trans: BaseTransform, buf: Gst.Buffer) => Gst.FlowReturn
+    readonly submit_input_buffer: (trans: BaseTransform, is_discont: boolean, input: Gst.Buffer) => Gst.FlowReturn
+    readonly generate_output: (trans: BaseTransform) => [ /* returnType */ Gst.FlowReturn, /* outbuf */ Gst.Buffer ]
     static name: string
 }
 class BaseTransformPrivate {
@@ -2380,10 +2309,10 @@ class BaseTransformPrivate {
 }
 class BitReader {
     /* Fields of GstBase-1.0.GstBase.BitReader */
-    data: Uint8Array[]
-    size: number
-    byte: number
-    bit: number
+    readonly data: Uint8Array
+    readonly size: number
+    readonly byte: number
+    readonly bit: number
     /* Methods of GstBase-1.0.GstBase.BitReader */
     free(): void
     get_bits_uint16(nbits: number): [ /* returnType */ boolean, /* val */ number ]
@@ -2393,7 +2322,7 @@ class BitReader {
     get_pos(): number
     get_remaining(): number
     get_size(): number
-    init(data: Uint8Array[]): void
+    init(data: Uint8Array): void
     peek_bits_uint16(nbits: number): [ /* returnType */ boolean, /* val */ number ]
     peek_bits_uint32(nbits: number): [ /* returnType */ boolean, /* val */ number ]
     peek_bits_uint64(nbits: number): [ /* returnType */ boolean, /* val */ number ]
@@ -2405,39 +2334,39 @@ class BitReader {
 }
 class BitWriter {
     /* Fields of GstBase-1.0.GstBase.BitWriter */
-    data: number
-    bit_size: number
+    readonly data: number
+    readonly bit_size: number
     /* Methods of GstBase-1.0.GstBase.BitWriter */
     align_bytes(trailing_bit: number): boolean
     free(): void
     free_and_get_buffer(): Gst.Buffer
-    free_and_get_data(): Uint8Array[]
-    get_data(): Uint8Array[]
+    free_and_get_data(): Uint8Array
+    get_data(): Uint8Array
     get_remaining(): number
     get_size(): number
     put_bits_uint16(value: number, nbits: number): boolean
     put_bits_uint32(value: number, nbits: number): boolean
     put_bits_uint64(value: number, nbits: number): boolean
     put_bits_uint8(value: number, nbits: number): boolean
-    put_bytes(data: Uint8Array[], nbytes: number): boolean
+    put_bytes(data: Uint8Array, nbytes: number): boolean
     reset(): void
     reset_and_get_buffer(): Gst.Buffer
-    reset_and_get_data(): Uint8Array[]
+    reset_and_get_data(): Uint8Array
     set_pos(pos: number): boolean
     static name: string
 }
 class ByteReader {
     /* Fields of GstBase-1.0.GstBase.ByteReader */
-    data: Uint8Array[]
-    size: number
-    byte: number
+    readonly data: Uint8Array
+    readonly size: number
+    readonly byte: number
     /* Methods of GstBase-1.0.GstBase.ByteReader */
-    dup_data(): [ /* returnType */ boolean, /* val */ Uint8Array[] ]
+    dup_data(): [ /* returnType */ boolean, /* val */ Uint8Array ]
     dup_string_utf16(): [ /* returnType */ boolean, /* str */ number[] ]
     dup_string_utf32(): [ /* returnType */ boolean, /* str */ number[] ]
     dup_string_utf8(): [ /* returnType */ boolean, /* str */ string[] ]
     free(): void
-    get_data(): [ /* returnType */ boolean, /* val */ Uint8Array[] ]
+    get_data(): [ /* returnType */ boolean, /* val */ Uint8Array ]
     get_float32_be(): [ /* returnType */ boolean, /* val */ number ]
     get_float32_le(): [ /* returnType */ boolean, /* val */ number ]
     get_float64_be(): [ /* returnType */ boolean, /* val */ number ]
@@ -2464,10 +2393,10 @@ class ByteReader {
     get_uint64_be(): [ /* returnType */ boolean, /* val */ number ]
     get_uint64_le(): [ /* returnType */ boolean, /* val */ number ]
     get_uint8(): [ /* returnType */ boolean, /* val */ number ]
-    init(data: Uint8Array[]): void
+    init(data: Uint8Array): void
     masked_scan_uint32(mask: number, pattern: number, offset: number, size: number): number
     masked_scan_uint32_peek(mask: number, pattern: number, offset: number, size: number): [ /* returnType */ number, /* value */ number ]
-    peek_data(): [ /* returnType */ boolean, /* val */ Uint8Array[] ]
+    peek_data(): [ /* returnType */ boolean, /* val */ Uint8Array ]
     peek_float32_be(): [ /* returnType */ boolean, /* val */ number ]
     peek_float32_le(): [ /* returnType */ boolean, /* val */ number ]
     peek_float64_be(): [ /* returnType */ boolean, /* val */ number ]
@@ -2500,10 +2429,10 @@ class ByteReader {
 }
 class ByteWriter {
     /* Fields of GstBase-1.0.GstBase.ByteWriter */
-    parent: ByteReader
-    alloc_size: number
-    fixed: boolean
-    owned: boolean
+    readonly parent: ByteReader
+    readonly alloc_size: number
+    readonly fixed: boolean
+    readonly owned: boolean
     /* Methods of GstBase-1.0.GstBase.ByteWriter */
     ensure_free_space(size: number): boolean
     fill(value: number, size: number): boolean
@@ -2512,10 +2441,10 @@ class ByteWriter {
     free_and_get_data(): number
     get_remaining(): number
     init(): void
-    init_with_data(data: Uint8Array[], initialized: boolean): void
+    init_with_data(data: Uint8Array, initialized: boolean): void
     init_with_size(size: number, fixed: boolean): void
     put_buffer(buffer: Gst.Buffer, offset: number, size: number): boolean
-    put_data(data: Uint8Array[]): boolean
+    put_data(data: Uint8Array): boolean
     put_float32_be(val: number): boolean
     put_float32_le(val: number): boolean
     put_float64_be(val: number): boolean
@@ -2543,16 +2472,16 @@ class ByteWriter {
     put_uint8(val: number): boolean
     reset(): void
     reset_and_get_buffer(): Gst.Buffer
-    reset_and_get_data(): Uint8Array[]
+    reset_and_get_data(): Uint8Array
     static name: string
 }
 class CollectData {
     /* Fields of GstBase-1.0.GstBase.CollectData */
-    collect: CollectPads
-    pad: Gst.Pad
-    buffer: Gst.Buffer
-    pos: number
-    segment: Gst.Segment
+    readonly collect: CollectPads
+    readonly pad: Gst.Pad
+    readonly buffer: Gst.Buffer
+    readonly pos: number
+    readonly segment: Gst.Segment
     static name: string
 }
 class CollectDataPrivate {
@@ -2560,7 +2489,7 @@ class CollectDataPrivate {
 }
 abstract class CollectPadsClass {
     /* Fields of GstBase-1.0.GstBase.CollectPadsClass */
-    parent_class: Gst.ObjectClass
+    readonly parent_class: Gst.ObjectClass
     static name: string
 }
 class CollectPadsPrivate {
@@ -2568,19 +2497,19 @@ class CollectPadsPrivate {
 }
 abstract class DataQueueClass {
     /* Fields of GstBase-1.0.GstBase.DataQueueClass */
-    parent_class: GObject.ObjectClass
-    empty: (queue: DataQueue) => void
-    full: (queue: DataQueue) => void
-    _gst_reserved: object[]
+    readonly parent_class: GObject.ObjectClass
+    readonly empty: (queue: DataQueue) => void
+    readonly full: (queue: DataQueue) => void
+    readonly _gst_reserved: object[]
     static name: string
 }
 class DataQueueItem {
     /* Fields of GstBase-1.0.GstBase.DataQueueItem */
-    object: Gst.MiniObject
-    size: number
-    duration: number
-    visible: boolean
-    destroy: GLib.DestroyNotify
+    readonly object: Gst.MiniObject
+    readonly size: number
+    readonly duration: number
+    readonly visible: boolean
+    readonly destroy: GLib.DestroyNotify
     static name: string
 }
 class DataQueuePrivate {
@@ -2588,9 +2517,9 @@ class DataQueuePrivate {
 }
 class DataQueueSize {
     /* Fields of GstBase-1.0.GstBase.DataQueueSize */
-    visible: number
-    bytes: number
-    time: number
+    readonly visible: number
+    readonly bytes: number
+    readonly time: number
     static name: string
 }
 class FlowCombiner {
@@ -2612,10 +2541,10 @@ class FlowCombiner {
 }
 abstract class PushSrcClass {
     /* Fields of GstBase-1.0.GstBase.PushSrcClass */
-    parent_class: BaseSrcClass
-    create: (src: PushSrc, buf: Gst.Buffer) => [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
-    alloc: (src: PushSrc) => [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
-    fill: (src: PushSrc, buf: Gst.Buffer) => Gst.FlowReturn
+    readonly parent_class: BaseSrcClass
+    readonly create: (src: PushSrc, buf: Gst.Buffer) => [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    readonly alloc: (src: PushSrc) => [ /* returnType */ Gst.FlowReturn, /* buf */ Gst.Buffer ]
+    readonly fill: (src: PushSrc, buf: Gst.Buffer) => Gst.FlowReturn
     static name: string
 }
 class QueueArray {

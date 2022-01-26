@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * RestExtras-0.7
  */
@@ -15,7 +21,8 @@ export namespace RestExtras {
 interface YoutubeProxyUploadCallback {
     (proxy: YoutubeProxy, payload: string, total: number, uploaded: number, error: GLib.Error, weak_object: GObject.Object): void
 }
-export interface FlickrProxy_ConstructProps extends Rest.Proxy_ConstructProps {
+interface FlickrProxy_ConstructProps extends Rest.Proxy_ConstructProps {
+    /* Constructor properties of RestExtras-0.7.RestExtras.FlickrProxy */
     api_key?: string
     shared_secret?: string
     token?: string
@@ -31,11 +38,10 @@ class FlickrProxy {
     url_format: string
     user_agent: string
     username: string
-    /* Fields of RestExtras-0.7.RestExtras.FlickrProxy */
-    parent: Rest.Proxy
-    priv: FlickrProxyPrivate
+    /* Fields of Rest-0.7.Rest.Proxy */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RestExtras-0.7.RestExtras.FlickrProxy */
     build_login_url(frob: string, perms: string): string
     get_api_key(): string
@@ -116,21 +122,22 @@ class FlickrProxy {
     _init (config?: FlickrProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(api_key: string, shared_secret: string): FlickrProxy
+    /* Function overloads */
     static new(url_format: string, binding_required: boolean): FlickrProxy
     static new_with_token(api_key: string, shared_secret: string, token: string): FlickrProxy
     static is_successful(root: Rest.XmlNode): boolean
     static $gtype: GObject.Type
 }
-export interface FlickrProxyCall_ConstructProps extends Rest.ProxyCall_ConstructProps {
+interface FlickrProxyCall_ConstructProps extends Rest.ProxyCall_ConstructProps {
+    /* Constructor properties of RestExtras-0.7.RestExtras.FlickrProxyCall */
     upload?: boolean
 }
 class FlickrProxyCall {
-    /* Fields of RestExtras-0.7.RestExtras.FlickrProxyCall */
-    parent: Rest.ProxyCall
     /* Fields of Rest-0.7.Rest.ProxyCall */
-    priv: Rest.ProxyCallPrivate
+    readonly parent: GObject.Object
+    readonly priv: Rest.ProxyCallPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.ProxyCall */
     add_header(header: string, value: string): void
     add_param(name: string, value: string): void
@@ -202,7 +209,8 @@ class FlickrProxyCall {
     _init (config?: FlickrProxyCall_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface LastfmProxy_ConstructProps extends Rest.Proxy_ConstructProps {
+interface LastfmProxy_ConstructProps extends Rest.Proxy_ConstructProps {
+    /* Constructor properties of RestExtras-0.7.RestExtras.LastfmProxy */
     api_key?: string
     secret?: string
     session_key?: string
@@ -218,11 +226,10 @@ class LastfmProxy {
     url_format: string
     user_agent: string
     username: string
-    /* Fields of RestExtras-0.7.RestExtras.LastfmProxy */
-    parent: Rest.Proxy
-    priv: LastfmProxyPrivate
+    /* Fields of Rest-0.7.Rest.Proxy */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RestExtras-0.7.RestExtras.LastfmProxy */
     build_login_url(token: string): string
     get_api_key(): string
@@ -301,20 +308,20 @@ class LastfmProxy {
     _init (config?: LastfmProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(api_key: string, secret: string): LastfmProxy
+    /* Function overloads */
     static new(url_format: string, binding_required: boolean): LastfmProxy
     static new_with_session(api_key: string, secret: string, session_key: string): LastfmProxy
     static is_successful(root: Rest.XmlNode): boolean
     static $gtype: GObject.Type
 }
-export interface LastfmProxyCall_ConstructProps extends Rest.ProxyCall_ConstructProps {
+interface LastfmProxyCall_ConstructProps extends Rest.ProxyCall_ConstructProps {
 }
 class LastfmProxyCall {
-    /* Fields of RestExtras-0.7.RestExtras.LastfmProxyCall */
-    parent: Rest.ProxyCall
     /* Fields of Rest-0.7.Rest.ProxyCall */
-    priv: Rest.ProxyCallPrivate
+    readonly parent: GObject.Object
+    readonly priv: Rest.ProxyCallPrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rest-0.7.Rest.ProxyCall */
     add_header(header: string, value: string): void
     add_param(name: string, value: string): void
@@ -386,7 +393,8 @@ class LastfmProxyCall {
     _init (config?: LastfmProxyCall_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface YoutubeProxy_ConstructProps extends Rest.Proxy_ConstructProps {
+interface YoutubeProxy_ConstructProps extends Rest.Proxy_ConstructProps {
+    /* Constructor properties of RestExtras-0.7.RestExtras.YoutubeProxy */
     developer_key?: string
     user_auth?: string
 }
@@ -401,11 +409,10 @@ class YoutubeProxy {
     url_format: string
     user_agent: string
     username: string
-    /* Fields of RestExtras-0.7.RestExtras.YoutubeProxy */
-    parent: Rest.Proxy
-    priv: YoutubeProxyPrivate
+    /* Fields of Rest-0.7.Rest.Proxy */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RestExtras-0.7.RestExtras.YoutubeProxy */
     set_user_auth(user_auth: string): void
     upload_async(filename: string, fields: GLib.HashTable, incomplete: boolean, callback: YoutubeProxyUploadCallback, weak_object: GObject.Object): boolean
@@ -480,18 +487,19 @@ class YoutubeProxy {
     _init (config?: YoutubeProxy_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(developer_key: string): YoutubeProxy
+    /* Function overloads */
     static new(url_format: string, binding_required: boolean): YoutubeProxy
     static new_with_auth(developer_key: string, user_auth: string): YoutubeProxy
     static $gtype: GObject.Type
 }
 abstract class FlickrProxyCallClass {
     /* Fields of RestExtras-0.7.RestExtras.FlickrProxyCallClass */
-    parent_class: Rest.ProxyCallClass
+    readonly parent_class: Rest.ProxyCallClass
     static name: string
 }
 abstract class FlickrProxyClass {
     /* Fields of RestExtras-0.7.RestExtras.FlickrProxyClass */
-    parent_class: Rest.ProxyClass
+    readonly parent_class: Rest.ProxyClass
     static name: string
 }
 class FlickrProxyPrivate {
@@ -499,12 +507,12 @@ class FlickrProxyPrivate {
 }
 abstract class LastfmProxyCallClass {
     /* Fields of RestExtras-0.7.RestExtras.LastfmProxyCallClass */
-    parent_class: Rest.ProxyCallClass
+    readonly parent_class: Rest.ProxyCallClass
     static name: string
 }
 abstract class LastfmProxyClass {
     /* Fields of RestExtras-0.7.RestExtras.LastfmProxyClass */
-    parent_class: Rest.ProxyClass
+    readonly parent_class: Rest.ProxyClass
     static name: string
 }
 class LastfmProxyPrivate {
@@ -512,7 +520,7 @@ class LastfmProxyPrivate {
 }
 abstract class YoutubeProxyClass {
     /* Fields of RestExtras-0.7.RestExtras.YoutubeProxyClass */
-    parent_class: Rest.ProxyClass
+    readonly parent_class: Rest.ProxyClass
     static name: string
 }
 class YoutubeProxyPrivate {

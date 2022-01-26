@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstBadAllocators-1.0
  */
@@ -12,27 +18,26 @@ export namespace GstBadAllocators {
 
 function is_phys_memory(mem: Gst.Memory): boolean
 function phys_memory_get_phys_addr(mem: Gst.Memory): number
-export interface PhysMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
+interface PhysMemoryAllocator_ConstructProps extends Gst.Allocator_ConstructProps {
 }
 class PhysMemoryAllocator {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Allocator */
-    object: Gst.Object
-    mem_type: string
-    mem_map: Gst.MemoryMapFunction
-    mem_unmap: Gst.MemoryUnmapFunction
-    mem_copy: Gst.MemoryCopyFunction
-    mem_share: Gst.MemoryShareFunction
-    mem_is_span: Gst.MemoryIsSpanFunction
-    mem_map_full: Gst.MemoryMapFullFunction
-    mem_unmap_full: Gst.MemoryUnmapFullFunction
+    readonly object: Gst.Object
+    readonly mem_type: string
+    readonly mem_map: Gst.MemoryMapFunction
+    readonly mem_unmap: Gst.MemoryUnmapFunction
+    readonly mem_copy: Gst.MemoryCopyFunction
+    readonly mem_share: Gst.MemoryShareFunction
+    readonly mem_is_span: Gst.MemoryIsSpanFunction
+    readonly mem_map_full: Gst.MemoryMapFullFunction
+    readonly mem_unmap_full: Gst.MemoryUnmapFullFunction
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gst-1.0.Gst.Allocator */
     alloc(size: number, params?: Gst.AllocationParams | null): Gst.Memory | null
     free(memory: Gst.Memory): void
@@ -106,10 +111,6 @@ class PhysMemoryAllocator {
     connect(sigName: "notify", callback: (($obj: PhysMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PhysMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: PhysMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: PhysMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: PhysMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: PhysMemoryAllocator, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -121,8 +122,8 @@ class PhysMemoryAllocator {
 }
 abstract class PhysMemoryAllocatorInterface {
     /* Fields of GstBadAllocators-1.0.GstBadAllocators.PhysMemoryAllocatorInterface */
-    parent_iface: GObject.TypeInterface
-    get_phys_addr: (allocator: PhysMemoryAllocator, mem: Gst.Memory) => number
+    readonly parent_iface: GObject.TypeInterface
+    readonly get_phys_addr: (allocator: PhysMemoryAllocator, mem: Gst.Memory) => number
     static name: string
 }
 }

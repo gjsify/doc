@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstRtp-1.0
  */
@@ -69,7 +75,7 @@ enum RTCPXRType {
 }
 enum RTPPayload {
     PCMU,
-    /* 1016 (invalid, starts with a number) */
+    TODO_1016,
     G721,
     GSM,
     G723,
@@ -122,67 +128,67 @@ enum RTPHeaderExtensionFlags {
     ONE_BYTE,
     TWO_BYTE,
 }
-export const RTCP_MAX_BYE_SSRC_COUNT: number
-export const RTCP_MAX_RB_COUNT: number
-export const RTCP_MAX_SDES: number
-export const RTCP_MAX_SDES_ITEM_COUNT: number
-export const RTCP_REDUCED_SIZE_VALID_MASK: number
-export const RTCP_VALID_MASK: number
-export const RTCP_VALID_VALUE: number
-export const RTCP_VERSION: number
-export const RTP_HDREXT_BASE: string
-export const RTP_HDREXT_ELEMENT_CLASS: string
-export const RTP_HDREXT_NTP_56: string
-export const RTP_HDREXT_NTP_56_SIZE: number
-export const RTP_HDREXT_NTP_64: string
-export const RTP_HDREXT_NTP_64_SIZE: number
-export const RTP_HEADER_EXTENSION_URI_METADATA_KEY: string
-export const RTP_PAYLOAD_1016_STRING: string
-export const RTP_PAYLOAD_CELLB_STRING: string
-export const RTP_PAYLOAD_CN_STRING: string
-export const RTP_PAYLOAD_DVI4_11025_STRING: string
-export const RTP_PAYLOAD_DVI4_16000_STRING: string
-export const RTP_PAYLOAD_DVI4_22050_STRING: string
-export const RTP_PAYLOAD_DVI4_8000_STRING: string
-export const RTP_PAYLOAD_DYNAMIC_STRING: string
-export const RTP_PAYLOAD_G721_STRING: string
-export const RTP_PAYLOAD_G722_STRING: string
-export const RTP_PAYLOAD_G723_53: number
-export const RTP_PAYLOAD_G723_53_STRING: string
-export const RTP_PAYLOAD_G723_63: number
-export const RTP_PAYLOAD_G723_63_STRING: string
-export const RTP_PAYLOAD_G723_STRING: string
-export const RTP_PAYLOAD_G728_STRING: string
-export const RTP_PAYLOAD_G729_STRING: string
-export const RTP_PAYLOAD_GSM_STRING: string
-export const RTP_PAYLOAD_H261_STRING: string
-export const RTP_PAYLOAD_H263_STRING: string
-export const RTP_PAYLOAD_JPEG_STRING: string
-export const RTP_PAYLOAD_L16_MONO_STRING: string
-export const RTP_PAYLOAD_L16_STEREO_STRING: string
-export const RTP_PAYLOAD_LPC_STRING: string
-export const RTP_PAYLOAD_MP2T_STRING: string
-export const RTP_PAYLOAD_MPA_STRING: string
-export const RTP_PAYLOAD_MPV_STRING: string
-export const RTP_PAYLOAD_NV_STRING: string
-export const RTP_PAYLOAD_PCMA_STRING: string
-export const RTP_PAYLOAD_PCMU_STRING: string
-export const RTP_PAYLOAD_QCELP_STRING: string
-export const RTP_PAYLOAD_TS41: number
-export const RTP_PAYLOAD_TS41_STRING: string
-export const RTP_PAYLOAD_TS48: number
-export const RTP_PAYLOAD_TS48_STRING: string
-export const RTP_SOURCE_META_MAX_CSRC_COUNT: number
-export const RTP_VERSION: number
+const RTCP_MAX_BYE_SSRC_COUNT: number
+const RTCP_MAX_RB_COUNT: number
+const RTCP_MAX_SDES: number
+const RTCP_MAX_SDES_ITEM_COUNT: number
+const RTCP_REDUCED_SIZE_VALID_MASK: number
+const RTCP_VALID_MASK: number
+const RTCP_VALID_VALUE: number
+const RTCP_VERSION: number
+const RTP_HDREXT_BASE: string
+const RTP_HDREXT_ELEMENT_CLASS: string
+const RTP_HDREXT_NTP_56: string
+const RTP_HDREXT_NTP_56_SIZE: number
+const RTP_HDREXT_NTP_64: string
+const RTP_HDREXT_NTP_64_SIZE: number
+const RTP_HEADER_EXTENSION_URI_METADATA_KEY: string
+const RTP_PAYLOAD_1016_STRING: string
+const RTP_PAYLOAD_CELLB_STRING: string
+const RTP_PAYLOAD_CN_STRING: string
+const RTP_PAYLOAD_DVI4_11025_STRING: string
+const RTP_PAYLOAD_DVI4_16000_STRING: string
+const RTP_PAYLOAD_DVI4_22050_STRING: string
+const RTP_PAYLOAD_DVI4_8000_STRING: string
+const RTP_PAYLOAD_DYNAMIC_STRING: string
+const RTP_PAYLOAD_G721_STRING: string
+const RTP_PAYLOAD_G722_STRING: string
+const RTP_PAYLOAD_G723_53: number
+const RTP_PAYLOAD_G723_53_STRING: string
+const RTP_PAYLOAD_G723_63: number
+const RTP_PAYLOAD_G723_63_STRING: string
+const RTP_PAYLOAD_G723_STRING: string
+const RTP_PAYLOAD_G728_STRING: string
+const RTP_PAYLOAD_G729_STRING: string
+const RTP_PAYLOAD_GSM_STRING: string
+const RTP_PAYLOAD_H261_STRING: string
+const RTP_PAYLOAD_H263_STRING: string
+const RTP_PAYLOAD_JPEG_STRING: string
+const RTP_PAYLOAD_L16_MONO_STRING: string
+const RTP_PAYLOAD_L16_STEREO_STRING: string
+const RTP_PAYLOAD_LPC_STRING: string
+const RTP_PAYLOAD_MP2T_STRING: string
+const RTP_PAYLOAD_MPA_STRING: string
+const RTP_PAYLOAD_MPV_STRING: string
+const RTP_PAYLOAD_NV_STRING: string
+const RTP_PAYLOAD_PCMA_STRING: string
+const RTP_PAYLOAD_PCMU_STRING: string
+const RTP_PAYLOAD_QCELP_STRING: string
+const RTP_PAYLOAD_TS41: number
+const RTP_PAYLOAD_TS41_STRING: string
+const RTP_PAYLOAD_TS48: number
+const RTP_PAYLOAD_TS48_STRING: string
+const RTP_SOURCE_META_MAX_CSRC_COUNT: number
+const RTP_VERSION: number
 function buffer_add_rtp_source_meta(buffer: Gst.Buffer, ssrc: number | null, csrc: number | null, csrc_count: number): RTPSourceMeta
 function buffer_get_rtp_source_meta(buffer: Gst.Buffer): RTPSourceMeta
 function rtcp_buffer_map(buffer: Gst.Buffer, flags: Gst.MapFlags, rtcp: RTCPBuffer): boolean
 function rtcp_buffer_new(mtu: number): Gst.Buffer
-function rtcp_buffer_new_copy_data(data: Uint8Array[]): Gst.Buffer
-function rtcp_buffer_new_take_data(data: Uint8Array[]): Gst.Buffer
+function rtcp_buffer_new_copy_data(data: Uint8Array): Gst.Buffer
+function rtcp_buffer_new_take_data(data: Uint8Array): Gst.Buffer
 function rtcp_buffer_validate(buffer: Gst.Buffer): boolean
-function rtcp_buffer_validate_data(data: Uint8Array[]): boolean
-function rtcp_buffer_validate_data_reduced(data: Uint8Array[]): boolean
+function rtcp_buffer_validate_data(data: Uint8Array): boolean
+function rtcp_buffer_validate_data_reduced(data: Uint8Array): boolean
 function rtcp_buffer_validate_reduced(buffer: Gst.Buffer): boolean
 function rtcp_ntp_to_unix(ntptime: number): number
 function rtcp_sdes_name_to_type(name: string): RTCPSDESType
@@ -195,22 +201,23 @@ function rtp_buffer_calc_payload_len(packet_len: number, pad_len: number, csrc_c
 function rtp_buffer_compare_seqnum(seqnum1: number, seqnum2: number): number
 function rtp_buffer_default_clock_rate(payload_type: number): number
 function rtp_buffer_ext_timestamp(exttimestamp: number, timestamp: number): [ /* returnType */ number, /* exttimestamp */ number ]
-function rtp_buffer_get_extension_onebyte_header_from_bytes(bytes: GLib.Bytes, bit_pattern: number, id: number, nth: number): [ /* returnType */ boolean, /* data */ Uint8Array[] ]
+function rtp_buffer_get_extension_onebyte_header_from_bytes(bytes: GLib.Bytes, bit_pattern: number, id: number, nth: number): [ /* returnType */ boolean, /* data */ Uint8Array ]
 function rtp_buffer_map(buffer: Gst.Buffer, flags: Gst.MapFlags): [ /* returnType */ boolean, /* rtp */ RTPBuffer ]
 function rtp_buffer_new_allocate(payload_len: number, pad_len: number, csrc_count: number): Gst.Buffer
 function rtp_buffer_new_allocate_len(packet_len: number, pad_len: number, csrc_count: number): Gst.Buffer
-function rtp_buffer_new_copy_data(data: Uint8Array[]): Gst.Buffer
-function rtp_buffer_new_take_data(data: Uint8Array[]): Gst.Buffer
+function rtp_buffer_new_copy_data(data: Uint8Array): Gst.Buffer
+function rtp_buffer_new_take_data(data: Uint8Array): Gst.Buffer
 function rtp_get_header_extension_list(): Gst.ElementFactory[]
-function rtp_hdrext_get_ntp_56(data: Uint8Array[]): [ /* returnType */ boolean, /* ntptime */ number ]
-function rtp_hdrext_get_ntp_64(data: Uint8Array[]): [ /* returnType */ boolean, /* ntptime */ number ]
+function rtp_hdrext_get_ntp_56(data: Uint8Array): [ /* returnType */ boolean, /* ntptime */ number ]
+function rtp_hdrext_get_ntp_64(data: Uint8Array): [ /* returnType */ boolean, /* ntptime */ number ]
 function rtp_hdrext_set_ntp_56(data: object | null, size: number, ntptime: number): boolean
 function rtp_hdrext_set_ntp_64(data: object | null, size: number, ntptime: number): boolean
 function rtp_payload_info_for_name(media: string, encoding_name: string): RTPPayloadInfo
 function rtp_payload_info_for_pt(payload_type: number): RTPPayloadInfo
 function rtp_source_meta_api_get_type(): GObject.Type
 function rtp_source_meta_get_info(): Gst.MetaInfo
-export interface RTPBaseAudioPayload_ConstructProps extends RTPBasePayload_ConstructProps {
+interface RTPBaseAudioPayload_ConstructProps extends RTPBasePayload_ConstructProps {
+    /* Constructor properties of GstRtp-1.0.GstRtp.RTPBaseAudioPayload */
     buffer_list?: boolean
 }
 class RTPBaseAudioPayload {
@@ -233,49 +240,41 @@ class RTPBaseAudioPayload {
     readonly stats: Gst.Structure
     readonly timestamp: number
     timestamp_offset: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstRtp-1.0.GstRtp.RTPBaseAudioPayload */
-    payload: RTPBasePayload
-    priv: RTPBaseAudioPayloadPrivate
-    base_ts: Gst.ClockTime
-    frame_size: number
-    frame_duration: number
-    sample_size: number
     /* Fields of GstRtp-1.0.GstRtp.RTPBasePayload */
-    element: Gst.Element
+    readonly element: Gst.Element
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstRtp-1.0.GstRtp.RTPBaseAudioPayload */
     flush(payload_len: number, timestamp: Gst.ClockTime): Gst.FlowReturn
     get_adapter(): GstBase.Adapter
-    push(data: Uint8Array[], timestamp: Gst.ClockTime): Gst.FlowReturn
+    push(data: Uint8Array, timestamp: Gst.ClockTime): Gst.FlowReturn
     set_frame_based(): void
     set_frame_options(frame_duration: number, frame_size: number): void
     set_sample_based(): void
@@ -406,11 +405,13 @@ class RTPBaseAudioPayload {
     watch_closure(closure: Function): void
     /* Virtual methods of GstRtp-1.0.GstRtp.RTPBaseAudioPayload */
     vfunc_query(pad: Gst.Pad, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     /* Virtual methods of GstRtp-1.0.GstRtp.RTPBasePayload */
     vfunc_get_caps(pad: Gst.Pad, filter: Gst.Caps): Gst.Caps
     vfunc_handle_buffer(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_query(pad: Gst.Pad, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(caps: Gst.Caps): boolean
     vfunc_sink_event(event: Gst.Event): boolean
@@ -504,10 +505,6 @@ class RTPBaseAudioPayload {
     connect_after(sigName: "notify::timestamp", callback: (($obj: RTPBaseAudioPayload, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::timestamp-offset", callback: (($obj: RTPBaseAudioPayload, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::timestamp-offset", callback: (($obj: RTPBaseAudioPayload, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: RTPBaseAudioPayload, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: RTPBaseAudioPayload, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: RTPBaseAudioPayload, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: RTPBaseAudioPayload, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -517,7 +514,8 @@ class RTPBaseAudioPayload {
     _init (config?: RTPBaseAudioPayload_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RTPBaseDepayload_ConstructProps extends Gst.Element_ConstructProps {
+interface RTPBaseDepayload_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstRtp-1.0.GstRtp.RTPBaseDepayload */
     auto_header_extension?: boolean
     max_reorder?: number
     source_info?: boolean
@@ -528,42 +526,35 @@ class RTPBaseDepayload {
     max_reorder: number
     source_info: boolean
     readonly stats: Gst.Structure
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstRtp-1.0.GstRtp.RTPBaseDepayload */
-    sinkpad: Gst.Pad
-    srcpad: Gst.Pad
-    clock_rate: number
-    segment: Gst.Segment
-    need_newsegment: boolean
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstRtp-1.0.GstRtp.RTPBaseDepayload */
     is_source_info_enabled(): boolean
     push(out_buf: Gst.Buffer): Gst.FlowReturn
@@ -751,10 +742,6 @@ class RTPBaseDepayload {
     connect_after(sigName: "notify::source-info", callback: (($obj: RTPBaseDepayload, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::stats", callback: (($obj: RTPBaseDepayload, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::stats", callback: (($obj: RTPBaseDepayload, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: RTPBaseDepayload, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: RTPBaseDepayload, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: RTPBaseDepayload, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: RTPBaseDepayload, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -764,7 +751,8 @@ class RTPBaseDepayload {
     _init (config?: RTPBaseDepayload_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RTPBasePayload_ConstructProps extends Gst.Element_ConstructProps {
+interface RTPBasePayload_ConstructProps extends Gst.Element_ConstructProps {
+    /* Constructor properties of GstRtp-1.0.GstRtp.RTPBasePayload */
     auto_header_extension?: boolean
     max_ptime?: number
     min_ptime?: number
@@ -797,38 +785,35 @@ class RTPBasePayload {
     readonly stats: Gst.Structure
     readonly timestamp: number
     timestamp_offset: number
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
-    /* Fields of GstRtp-1.0.GstRtp.RTPBasePayload */
-    element: Gst.Element
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstRtp-1.0.GstRtp.RTPBasePayload */
     allocate_output_buffer(payload_len: number, pad_len: number, csrc_count: number): Gst.Buffer
     get_source_count(buffer: Gst.Buffer): number
@@ -956,6 +941,7 @@ class RTPBasePayload {
     vfunc_get_caps(pad: Gst.Pad, filter: Gst.Caps): Gst.Caps
     vfunc_handle_buffer(buffer: Gst.Buffer): Gst.FlowReturn
     vfunc_query(pad: Gst.Pad, query: Gst.Query): boolean
+    /* Function overloads */
     vfunc_query(query: Gst.Query): boolean
     vfunc_set_caps(caps: Gst.Caps): boolean
     vfunc_sink_event(event: Gst.Event): boolean
@@ -1047,10 +1033,6 @@ class RTPBasePayload {
     connect_after(sigName: "notify::timestamp", callback: (($obj: RTPBasePayload, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::timestamp-offset", callback: (($obj: RTPBasePayload, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::timestamp-offset", callback: (($obj: RTPBasePayload, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::name", callback: (($obj: RTPBasePayload, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: RTPBasePayload, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: RTPBasePayload, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: RTPBasePayload, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1060,39 +1042,38 @@ class RTPBasePayload {
     _init (config?: RTPBasePayload_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RTPHeaderExtension_ConstructProps extends Gst.Element_ConstructProps {
+interface RTPHeaderExtension_ConstructProps extends Gst.Element_ConstructProps {
 }
 class RTPHeaderExtension {
-    /* Properties of Gst-1.0.Gst.Object */
-    name: string
-    parent: Gst.Object
     /* Fields of Gst-1.0.Gst.Element */
-    object: Gst.Object
-    state_lock: GLib.RecMutex
-    state_cond: GLib.Cond
-    state_cookie: number
-    target_state: Gst.State
-    current_state: Gst.State
-    next_state: Gst.State
-    pending_state: Gst.State
-    last_return: Gst.StateChangeReturn
-    bus: Gst.Bus
-    clock: Gst.Clock
-    base_time: Gst.ClockTimeDiff
-    start_time: Gst.ClockTime
-    numpads: number
-    pads: Gst.Pad[]
-    numsrcpads: number
-    srcpads: Gst.Pad[]
-    numsinkpads: number
-    sinkpads: Gst.Pad[]
-    pads_cookie: number
-    contexts: Gst.Context[]
+    readonly object: Gst.Object
+    readonly state_lock: GLib.RecMutex
+    readonly state_cond: GLib.Cond
+    readonly state_cookie: number
+    readonly target_state: Gst.State
+    readonly current_state: Gst.State
+    readonly next_state: Gst.State
+    readonly pending_state: Gst.State
+    readonly last_return: Gst.StateChangeReturn
+    readonly bus: Gst.Bus
+    readonly clock: Gst.Clock
+    readonly base_time: Gst.ClockTimeDiff
+    readonly start_time: Gst.ClockTime
+    readonly numpads: number
+    readonly pads: Gst.Pad[]
+    readonly numsrcpads: number
+    readonly srcpads: Gst.Pad[]
+    readonly numsinkpads: number
+    readonly sinkpads: Gst.Pad[]
+    readonly pads_cookie: number
+    readonly contexts: Gst.Context[]
     /* Fields of Gst-1.0.Gst.Object */
-    lock: GLib.Mutex
-    flags: number
+    readonly lock: GLib.Mutex
+    readonly name: string
+    readonly parent: Gst.Object
+    readonly flags: number
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GstRtp-1.0.GstRtp.RTPHeaderExtension */
     get_direction(): RTPHeaderExtensionDirection
     get_id(): number
@@ -1100,7 +1081,7 @@ class RTPHeaderExtension {
     get_sdp_caps_field_name(): string
     get_supported_flags(): RTPHeaderExtensionFlags
     get_uri(): string
-    read(read_flags: RTPHeaderExtensionFlags, data: Uint8Array[], buffer: Gst.Buffer): boolean
+    read(read_flags: RTPHeaderExtensionFlags, data: Uint8Array, buffer: Gst.Buffer): boolean
     set_attributes_from_caps(caps: Gst.Caps): boolean
     set_caps_from_attributes(caps: Gst.Caps): boolean
     set_caps_from_attributes_helper(caps: Gst.Caps, attributes: string): boolean
@@ -1110,7 +1091,7 @@ class RTPHeaderExtension {
     set_wants_update_non_rtp_src_caps(state: boolean): void
     update_non_rtp_src_caps(caps: Gst.Caps): boolean
     wants_update_non_rtp_src_caps(): boolean
-    write(input_meta: Gst.Buffer, write_flags: RTPHeaderExtensionFlags, output: Gst.Buffer, data: Uint8Array[]): number
+    write(input_meta: Gst.Buffer, write_flags: RTPHeaderExtensionFlags, output: Gst.Buffer, data: Uint8Array): number
     /* Methods of Gst-1.0.Gst.Element */
     abort_state(): void
     add_pad(pad: Gst.Pad): boolean
@@ -1227,12 +1208,12 @@ class RTPHeaderExtension {
     /* Virtual methods of GstRtp-1.0.GstRtp.RTPHeaderExtension */
     vfunc_get_max_size(input_meta: Gst.Buffer): number
     vfunc_get_supported_flags(): RTPHeaderExtensionFlags
-    vfunc_read(read_flags: RTPHeaderExtensionFlags, data: Uint8Array[], buffer: Gst.Buffer): boolean
+    vfunc_read(read_flags: RTPHeaderExtensionFlags, data: Uint8Array, buffer: Gst.Buffer): boolean
     vfunc_set_attributes(direction: RTPHeaderExtensionDirection, attributes: string): boolean
     vfunc_set_caps_from_attributes(caps: Gst.Caps): boolean
     vfunc_set_non_rtp_sink_caps(caps: Gst.Caps): boolean
     vfunc_update_non_rtp_src_caps(caps: Gst.Caps): boolean
-    vfunc_write(input_meta: Gst.Buffer, write_flags: RTPHeaderExtensionFlags, output: Gst.Buffer, data: Uint8Array[]): number
+    vfunc_write(input_meta: Gst.Buffer, write_flags: RTPHeaderExtensionFlags, output: Gst.Buffer, data: Uint8Array): number
     /* Virtual methods of Gst-1.0.Gst.Element */
     vfunc_change_state(transition: Gst.StateChange): Gst.StateChangeReturn
     vfunc_get_state(timeout: Gst.ClockTime): [ /* returnType */ Gst.StateChangeReturn, /* state */ Gst.State | null, /* pending */ Gst.State | null ]
@@ -1278,10 +1259,6 @@ class RTPHeaderExtension {
     connect(sigName: "notify", callback: (($obj: RTPHeaderExtension, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: RTPHeaderExtension, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
-    connect(sigName: "notify::name", callback: (($obj: RTPHeaderExtension, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::name", callback: (($obj: RTPHeaderExtension, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: RTPHeaderExtension, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: RTPHeaderExtension, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
     connect_after(sigName: string, callback: any): number
     emit(sigName: string, ...args: any[]): void
@@ -1296,8 +1273,8 @@ class RTPHeaderExtension {
 }
 class RTCPBuffer {
     /* Fields of GstRtp-1.0.GstRtp.RTCPBuffer */
-    buffer: Gst.Buffer
-    map: Gst.MapInfo
+    readonly buffer: Gst.Buffer
+    readonly map: Gst.MapInfo
     /* Methods of GstRtp-1.0.GstRtp.RTCPBuffer */
     add_packet(type: RTCPType, packet: RTCPPacket): boolean
     get_first_packet(packet: RTCPPacket): boolean
@@ -1306,19 +1283,19 @@ class RTCPBuffer {
     static name: string
     /* Static methods and pseudo-constructors */
     static map(buffer: Gst.Buffer, flags: Gst.MapFlags, rtcp: RTCPBuffer): boolean
-    static new_copy_data(data: Uint8Array[]): Gst.Buffer
-    static new_take_data(data: Uint8Array[]): Gst.Buffer
+    static new_copy_data(data: Uint8Array): Gst.Buffer
+    static new_take_data(data: Uint8Array): Gst.Buffer
     static validate(buffer: Gst.Buffer): boolean
-    static validate_data(data: Uint8Array[]): boolean
-    static validate_data_reduced(data: Uint8Array[]): boolean
+    static validate_data(data: Uint8Array): boolean
+    static validate_data_reduced(data: Uint8Array): boolean
     static validate_reduced(buffer: Gst.Buffer): boolean
 }
 class RTCPPacket {
     /* Fields of GstRtp-1.0.GstRtp.RTCPPacket */
-    rtcp: RTCPBuffer
-    offset: number
+    readonly rtcp: RTCPBuffer
+    readonly offset: number
     /* Methods of GstRtp-1.0.GstRtp.RTCPPacket */
-    add_profile_specific_ext(data: Uint8Array[]): boolean
+    add_profile_specific_ext(data: Uint8Array): boolean
     add_rb(ssrc: number, fractionlost: number, packetslost: number, exthighestseq: number, jitter: number, lsr: number, dlsr: number): boolean
     app_get_data(): number
     app_get_data_length(): number
@@ -1336,7 +1313,7 @@ class RTCPPacket {
     bye_get_reason_len(): number
     bye_get_ssrc_count(): number
     bye_set_reason(reason: string): boolean
-    copy_profile_specific_ext(): [ /* returnType */ boolean, /* data */ Uint8Array[] ]
+    copy_profile_specific_ext(): [ /* returnType */ boolean, /* data */ Uint8Array ]
     fb_get_fci(): number
     fb_get_fci_length(): number
     fb_get_media_ssrc(): number
@@ -1349,7 +1326,7 @@ class RTCPPacket {
     get_count(): number
     get_length(): number
     get_padding(): boolean
-    get_profile_specific_ext(): [ /* returnType */ boolean, /* data */ Uint8Array[] ]
+    get_profile_specific_ext(): [ /* returnType */ boolean, /* data */ Uint8Array ]
     get_profile_specific_ext_length(): number
     get_rb(nth: number): [ /* ssrc */ number, /* fractionlost */ number, /* packetslost */ number, /* exthighestseq */ number, /* jitter */ number, /* lsr */ number, /* dlsr */ number ]
     get_rb_count(): number
@@ -1358,12 +1335,12 @@ class RTCPPacket {
     remove(): boolean
     rr_get_ssrc(): number
     rr_set_ssrc(ssrc: number): void
-    sdes_add_entry(type: RTCPSDESType, data: Uint8Array[]): boolean
+    sdes_add_entry(type: RTCPSDESType, data: Uint8Array): boolean
     sdes_add_item(ssrc: number): boolean
-    sdes_copy_entry(type: RTCPSDESType): [ /* returnType */ boolean, /* data */ Uint8Array[] ]
+    sdes_copy_entry(type: RTCPSDESType): [ /* returnType */ boolean, /* data */ Uint8Array ]
     sdes_first_entry(): boolean
     sdes_first_item(): boolean
-    sdes_get_entry(type: RTCPSDESType): [ /* returnType */ boolean, /* data */ Uint8Array[] ]
+    sdes_get_entry(type: RTCPSDESType): [ /* returnType */ boolean, /* data */ Uint8Array ]
     sdes_get_item_count(): number
     sdes_get_ssrc(): number
     sdes_next_entry(): boolean
@@ -1398,7 +1375,7 @@ class RTCPPacket {
 }
 abstract class RTPBaseAudioPayloadClass {
     /* Fields of GstRtp-1.0.GstRtp.RTPBaseAudioPayloadClass */
-    parent_class: RTPBasePayloadClass
+    readonly parent_class: RTPBasePayloadClass
     static name: string
 }
 class RTPBaseAudioPayloadPrivate {
@@ -1406,12 +1383,12 @@ class RTPBaseAudioPayloadPrivate {
 }
 abstract class RTPBaseDepayloadClass {
     /* Fields of GstRtp-1.0.GstRtp.RTPBaseDepayloadClass */
-    parent_class: Gst.ElementClass
-    set_caps: (filter: RTPBaseDepayload, caps: Gst.Caps) => boolean
-    process: (base: RTPBaseDepayload, in_: Gst.Buffer) => Gst.Buffer
-    packet_lost: (filter: RTPBaseDepayload, event: Gst.Event) => boolean
-    handle_event: (filter: RTPBaseDepayload, event: Gst.Event) => boolean
-    process_rtp_packet: (base: RTPBaseDepayload, rtp_buffer: RTPBuffer) => Gst.Buffer
+    readonly parent_class: Gst.ElementClass
+    readonly set_caps: (filter: RTPBaseDepayload, caps: Gst.Caps) => boolean
+    readonly process: (base: RTPBaseDepayload, in_: Gst.Buffer) => Gst.Buffer
+    readonly packet_lost: (filter: RTPBaseDepayload, event: Gst.Event) => boolean
+    readonly handle_event: (filter: RTPBaseDepayload, event: Gst.Event) => boolean
+    readonly process_rtp_packet: (base: RTPBaseDepayload, rtp_buffer: RTPBuffer) => Gst.Buffer
     static name: string
 }
 class RTPBaseDepayloadPrivate {
@@ -1419,13 +1396,13 @@ class RTPBaseDepayloadPrivate {
 }
 abstract class RTPBasePayloadClass {
     /* Fields of GstRtp-1.0.GstRtp.RTPBasePayloadClass */
-    parent_class: Gst.ElementClass
-    get_caps: (payload: RTPBasePayload, pad: Gst.Pad, filter: Gst.Caps) => Gst.Caps
-    set_caps: (payload: RTPBasePayload, caps: Gst.Caps) => boolean
-    handle_buffer: (payload: RTPBasePayload, buffer: Gst.Buffer) => Gst.FlowReturn
-    sink_event: (payload: RTPBasePayload, event: Gst.Event) => boolean
-    src_event: (payload: RTPBasePayload, event: Gst.Event) => boolean
-    query: (payload: RTPBasePayload, pad: Gst.Pad, query: Gst.Query) => boolean
+    readonly parent_class: Gst.ElementClass
+    readonly get_caps: (payload: RTPBasePayload, pad: Gst.Pad, filter: Gst.Caps) => Gst.Caps
+    readonly set_caps: (payload: RTPBasePayload, caps: Gst.Caps) => boolean
+    readonly handle_buffer: (payload: RTPBasePayload, buffer: Gst.Buffer) => Gst.FlowReturn
+    readonly sink_event: (payload: RTPBasePayload, event: Gst.Event) => boolean
+    readonly src_event: (payload: RTPBasePayload, event: Gst.Event) => boolean
+    readonly query: (payload: RTPBasePayload, pad: Gst.Pad, query: Gst.Query) => boolean
     static name: string
 }
 class RTPBasePayloadPrivate {
@@ -1433,20 +1410,20 @@ class RTPBasePayloadPrivate {
 }
 class RTPBuffer {
     /* Fields of GstRtp-1.0.GstRtp.RTPBuffer */
-    buffer: Gst.Buffer
-    state: number
-    data: object[]
-    size: number[]
-    map: Gst.MapInfo[]
+    readonly buffer: Gst.Buffer
+    readonly state: number
+    readonly data: object[]
+    readonly size: number[]
+    readonly map: Gst.MapInfo[]
     /* Methods of GstRtp-1.0.GstRtp.RTPBuffer */
-    add_extension_onebyte_header(id: number, data: Uint8Array[]): boolean
-    add_extension_twobytes_header(appbits: number, id: number, data: Uint8Array[]): boolean
+    add_extension_onebyte_header(id: number, data: Uint8Array): boolean
+    add_extension_twobytes_header(appbits: number, id: number, data: Uint8Array): boolean
     get_csrc(idx: number): number
     get_csrc_count(): number
     get_extension(): boolean
     get_extension_data(): [ /* returnType */ GLib.Bytes, /* bits */ number ]
-    get_extension_onebyte_header(id: number, nth: number): [ /* returnType */ boolean, /* data */ Uint8Array[] ]
-    get_extension_twobytes_header(id: number, nth: number): [ /* returnType */ boolean, /* appbits */ number, /* data */ Uint8Array[] ]
+    get_extension_onebyte_header(id: number, nth: number): [ /* returnType */ boolean, /* data */ Uint8Array ]
+    get_extension_twobytes_header(id: number, nth: number): [ /* returnType */ boolean, /* appbits */ number, /* data */ Uint8Array ]
     get_header_len(): number
     get_marker(): boolean
     get_packet_len(): number
@@ -1483,36 +1460,36 @@ class RTPBuffer {
     static compare_seqnum(seqnum1: number, seqnum2: number): number
     static default_clock_rate(payload_type: number): number
     static ext_timestamp(exttimestamp: number, timestamp: number): [ /* returnType */ number, /* exttimestamp */ number ]
-    static get_extension_onebyte_header_from_bytes(bytes: GLib.Bytes, bit_pattern: number, id: number, nth: number): [ /* returnType */ boolean, /* data */ Uint8Array[] ]
+    static get_extension_onebyte_header_from_bytes(bytes: GLib.Bytes, bit_pattern: number, id: number, nth: number): [ /* returnType */ boolean, /* data */ Uint8Array ]
     static map(buffer: Gst.Buffer, flags: Gst.MapFlags): [ /* returnType */ boolean, /* rtp */ RTPBuffer ]
     static new_allocate(payload_len: number, pad_len: number, csrc_count: number): Gst.Buffer
     static new_allocate_len(packet_len: number, pad_len: number, csrc_count: number): Gst.Buffer
-    static new_copy_data(data: Uint8Array[]): Gst.Buffer
-    static new_take_data(data: Uint8Array[]): Gst.Buffer
+    static new_copy_data(data: Uint8Array): Gst.Buffer
+    static new_take_data(data: Uint8Array): Gst.Buffer
 }
 abstract class RTPHeaderExtensionClass {
     /* Fields of GstRtp-1.0.GstRtp.RTPHeaderExtensionClass */
-    parent_class: Gst.ElementClass
-    get_supported_flags: (ext: RTPHeaderExtension) => RTPHeaderExtensionFlags
-    get_max_size: (ext: RTPHeaderExtension, input_meta: Gst.Buffer) => number
-    write: (ext: RTPHeaderExtension, input_meta: Gst.Buffer, write_flags: RTPHeaderExtensionFlags, output: Gst.Buffer, data: Uint8Array[]) => number
-    read: (ext: RTPHeaderExtension, read_flags: RTPHeaderExtensionFlags, data: Uint8Array[], buffer: Gst.Buffer) => boolean
-    set_non_rtp_sink_caps: (ext: RTPHeaderExtension, caps: Gst.Caps) => boolean
-    update_non_rtp_src_caps: (ext: RTPHeaderExtension, caps: Gst.Caps) => boolean
-    set_attributes: (ext: RTPHeaderExtension, direction: RTPHeaderExtensionDirection, attributes: string) => boolean
-    set_caps_from_attributes: (ext: RTPHeaderExtension, caps: Gst.Caps) => boolean
+    readonly parent_class: Gst.ElementClass
+    readonly get_supported_flags: (ext: RTPHeaderExtension) => RTPHeaderExtensionFlags
+    readonly get_max_size: (ext: RTPHeaderExtension, input_meta: Gst.Buffer) => number
+    readonly write: (ext: RTPHeaderExtension, input_meta: Gst.Buffer, write_flags: RTPHeaderExtensionFlags, output: Gst.Buffer, data: Uint8Array) => number
+    readonly read: (ext: RTPHeaderExtension, read_flags: RTPHeaderExtensionFlags, data: Uint8Array, buffer: Gst.Buffer) => boolean
+    readonly set_non_rtp_sink_caps: (ext: RTPHeaderExtension, caps: Gst.Caps) => boolean
+    readonly update_non_rtp_src_caps: (ext: RTPHeaderExtension, caps: Gst.Caps) => boolean
+    readonly set_attributes: (ext: RTPHeaderExtension, direction: RTPHeaderExtensionDirection, attributes: string) => boolean
+    readonly set_caps_from_attributes: (ext: RTPHeaderExtension, caps: Gst.Caps) => boolean
     /* Methods of GstRtp-1.0.GstRtp.RTPHeaderExtensionClass */
-    set_uri(klass: RTPHeaderExtension | Function | GObject.Type, uri: string): void
+    static set_uri(klass: RTPHeaderExtension | Function | GObject.Type, uri: string): void
     static name: string
 }
 class RTPPayloadInfo {
     /* Fields of GstRtp-1.0.GstRtp.RTPPayloadInfo */
-    payload_type: number
-    media: string
-    encoding_name: string
-    clock_rate: number
-    encoding_parameters: string
-    bitrate: number
+    readonly payload_type: number
+    readonly media: string
+    readonly encoding_name: string
+    readonly clock_rate: number
+    readonly encoding_parameters: string
+    readonly bitrate: number
     static name: string
     /* Static methods and pseudo-constructors */
     static for_name(media: string, encoding_name: string): RTPPayloadInfo
@@ -1520,11 +1497,11 @@ class RTPPayloadInfo {
 }
 class RTPSourceMeta {
     /* Fields of GstRtp-1.0.GstRtp.RTPSourceMeta */
-    meta: Gst.Meta
-    ssrc: number
-    ssrc_valid: boolean
-    csrc: number[]
-    csrc_count: number
+    readonly meta: Gst.Meta
+    readonly ssrc: number
+    readonly ssrc_valid: boolean
+    readonly csrc: number[]
+    readonly csrc_count: number
     /* Methods of GstRtp-1.0.GstRtp.RTPSourceMeta */
     append_csrc(csrc: number, csrc_count: number): boolean
     get_source_count(): number

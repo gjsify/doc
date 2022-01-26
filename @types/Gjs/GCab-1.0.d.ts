@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GCab-1.0
  */
@@ -34,22 +40,23 @@ function error_quark(): GLib.Quark
 interface FileCallback {
     (file: File): boolean
 }
-export interface Cabinet_ConstructProps extends GObject.Object_ConstructProps {
-    reserved?: Uint8Array[]
-    signature?: Uint8Array[]
+interface Cabinet_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCab-1.0.GCab.Cabinet */
+    reserved?: Uint8Array
+    signature?: Uint8Array
 }
 class Cabinet {
     /* Properties of GCab-1.0.GCab.Cabinet */
-    reserved: Uint8Array[]
-    signature: Uint8Array[]
+    reserved: Uint8Array
+    signature: Uint8Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCab-1.0.GCab.Cabinet */
     add_folder(folder: Folder): boolean
     extract(path?: Gio.File | null, file_callback?: FileCallback | null, progress_callback?: Gio.FileProgressCallback | null, cancellable?: Gio.Cancellable | null): boolean
     extract_simple(path: Gio.File, file_callback?: FileCallback | null, cancellable?: Gio.Cancellable | null): boolean
     get_folders(): Folder[]
-    get_signature(cancellable?: Gio.Cancellable | null): Uint8Array[]
+    get_signature(cancellable?: Gio.Cancellable | null): Uint8Array
     get_size(): number
     load(stream: Gio.InputStream, cancellable?: Gio.Cancellable | null): boolean
     write(stream: Gio.OutputStream, file_callback?: FileCallback | null, progress_callback?: Gio.FileProgressCallback | null, cancellable?: Gio.Cancellable | null): boolean
@@ -103,7 +110,8 @@ class Cabinet {
     static new(): Cabinet
     static $gtype: GObject.Type
 }
-export interface File_ConstructProps extends GObject.Object_ConstructProps {
+interface File_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCab-1.0.GCab.File */
     bytes?: GLib.Bytes
     file?: Gio.File
     name?: string
@@ -114,7 +122,7 @@ class File {
     file: Gio.File
     name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCab-1.0.GCab.File */
     get_attributes(): number
     get_bytes(): GLib.Bytes
@@ -181,16 +189,17 @@ class File {
     static new_with_file(name: string, file: Gio.File): File
     static $gtype: GObject.Type
 }
-export interface Folder_ConstructProps extends GObject.Object_ConstructProps {
+interface Folder_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GCab-1.0.GCab.Folder */
     comptype?: number
-    reserved?: Uint8Array[]
+    reserved?: Uint8Array
 }
 class Folder {
     /* Properties of GCab-1.0.GCab.Folder */
     readonly compression: Compression
-    reserved: Uint8Array[]
+    reserved: Uint8Array
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GCab-1.0.GCab.Folder */
     add_file(cabfile: File, recurse: boolean, cancellable?: Gio.Cancellable | null): boolean
     get_comptype(): number
@@ -248,17 +257,17 @@ class Folder {
 }
 abstract class CabinetClass {
     /* Fields of GCab-1.0.GCab.CabinetClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FileClass {
     /* Fields of GCab-1.0.GCab.FileClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class FolderClass {
     /* Fields of GCab-1.0.GCab.FolderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

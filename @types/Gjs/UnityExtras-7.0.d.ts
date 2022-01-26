@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * UnityExtras-7.0
  */
@@ -17,11 +23,11 @@ function dbus_own_name(name: string, scope_creation_cb: CreateScopeCallback): Gi
 interface CreateScopeCallback {
     (): void
 }
-export interface PreviewPlayer_ConstructProps extends GObject.Object_ConstructProps {
+interface PreviewPlayer_ConstructProps extends GObject.Object_ConstructProps {
 }
 class PreviewPlayer {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of UnityExtras-7.0.UnityExtras.PreviewPlayer */
     play(uri: string, _callback_?: Gio.AsyncReadyCallback | null): void
     play_finish(_res_: Gio.AsyncResult): void

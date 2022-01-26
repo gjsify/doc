@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Accounts-1.0
  */
@@ -30,9 +36,9 @@ enum SettingSource {
     ACCOUNT,
     PROFILE,
 }
-export const MANAGER_INTERFACE: string
-export const MANAGER_OBJECT_PATH: string
-export const MANAGER_SERVICE_NAME: string
+const MANAGER_INTERFACE: string
+const MANAGER_OBJECT_PATH: string
+const MANAGER_SERVICE_NAME: string
 function accounts_error_quark(): GLib.Quark
 function errors_quark(): GLib.Quark
 function provider_list_free(list: Provider[]): void
@@ -44,7 +50,8 @@ interface AccountNotifyCb {
 interface AccountStoreCb {
     (account: Account, error: GLib.Error): void
 }
-export interface Account_ConstructProps extends GObject.Object_ConstructProps {
+interface Account_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Accounts-1.0.Accounts.Account */
     foreign?: boolean
     id?: number
     manager?: Manager
@@ -54,11 +61,8 @@ class Account {
     /* Properties of Accounts-1.0.Accounts.Account */
     readonly display_name: string
     readonly enabled: boolean
-    /* Fields of Accounts-1.0.Accounts.Account */
-    parent_instance: GObject.Object
-    id: AccountId
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Accounts-1.0.Accounts.Account */
     delete(): void
     get_display_name(): string
@@ -152,18 +156,16 @@ class Account {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface AccountService_ConstructProps extends GObject.Object_ConstructProps {
+interface AccountService_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Accounts-1.0.Accounts.AccountService */
     account?: Account
     service?: Service
 }
 class AccountService {
     /* Properties of Accounts-1.0.Accounts.AccountService */
     readonly enabled: boolean
-    /* Fields of Accounts-1.0.Accounts.AccountService */
-    parent_instance: GObject.Object
-    priv: AccountServicePrivate
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Accounts-1.0.Accounts.AccountService */
     get_account(): Account
     get_auth_data(): AuthData
@@ -231,7 +233,8 @@ class AccountService {
     static settings_iter_next(iter: AccountSettingIter): [ /* returnType */ boolean, /* key */ string, /* value */ any ]
     static $gtype: GObject.Type
 }
-export interface Manager_ConstructProps extends GObject.Object_ConstructProps {
+interface Manager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Accounts-1.0.Accounts.Manager */
     abort_on_db_timeout?: boolean
     db_timeout?: number
     service_type?: string
@@ -241,10 +244,8 @@ class Manager {
     /* Properties of Accounts-1.0.Accounts.Manager */
     abort_on_db_timeout: boolean
     db_timeout: number
-    /* Fields of Accounts-1.0.Accounts.Manager */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Accounts-1.0.Accounts.Manager */
     create_account(provider_name: string): Account
     get_abort_on_db_timeout(): boolean
@@ -341,7 +342,7 @@ class Manager {
 }
 abstract class AccountClass {
     /* Fields of Accounts-1.0.Accounts.AccountClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AccountPrivate {
@@ -349,7 +350,7 @@ class AccountPrivate {
 }
 abstract class AccountServiceClass {
     /* Fields of Accounts-1.0.Accounts.AccountServiceClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class AccountServicePrivate {
@@ -357,7 +358,7 @@ class AccountServicePrivate {
 }
 class AccountSettingIter {
     /* Fields of Accounts-1.0.Accounts.AccountSettingIter */
-    account: Account
+    readonly account: Account
     /* Methods of Accounts-1.0.Accounts.AccountSettingIter */
     free(): void
     get_next(): [ /* returnType */ boolean, /* key */ string, /* value */ GLib.Variant ]
@@ -392,8 +393,8 @@ class AuthData {
 }
 abstract class ManagerClass {
     /* Fields of Accounts-1.0.Accounts.ManagerClass */
-    parent_class: GObject.ObjectClass
-    account_deleted: (manager: Manager, id: AccountId) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly account_deleted: (manager: Manager, id: AccountId) => void
     static name: string
 }
 class ManagerPrivate {
@@ -451,6 +452,6 @@ class ServiceType {
     /* Static methods and pseudo-constructors */
     static list_free(list: ServiceType[]): void
 }
-type AccountId = number
+    type AccountId = number
 }
 export default Accounts;

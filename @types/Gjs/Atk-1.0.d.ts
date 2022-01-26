@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Atk-1.0
  */
@@ -313,12 +319,12 @@ enum ValueType {
 enum HyperlinkStateFlags {
     INLINE,
 }
-export const BINARY_AGE: number
-export const INTERFACE_AGE: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const VERSION_MIN_REQUIRED: number
+const BINARY_AGE: number
+const INTERFACE_AGE: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const VERSION_MIN_REQUIRED: number
 function attribute_set_free(attrib_set: AttributeSet): void
 function focus_tracker_notify(object: Object): void
 function get_binary_age(): number
@@ -382,11 +388,17 @@ class Action {
     /* Virtual methods of Atk-1.0.Atk.Action */
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     static name: string
 }
 class Component {
@@ -534,11 +546,15 @@ class Selection {
     select_all_selection(): boolean
     /* Virtual methods of Atk-1.0.Atk.Selection */
     vfunc_add_selection(i: number): boolean
+    /* Function overloads */
+    vfunc_add_selection(start_offset: number, end_offset: number): boolean
     vfunc_clear_selection(): boolean
     vfunc_get_selection_count(): number
     vfunc_is_child_selected(i: number): boolean
     vfunc_ref_selection(i: number): Object | null
     vfunc_remove_selection(i: number): boolean
+    /* Function overloads */
+    vfunc_remove_selection(selection_num: number): boolean
     vfunc_select_all_selection(): boolean
     vfunc_selection_changed(): void
     /* Signals of Atk-1.0.Atk.Selection */
@@ -652,7 +668,7 @@ class Table {
     emit(sigName: "row-reordered"): void
     static name: string
 }
-export interface TableCell_ConstructProps extends Object_ConstructProps {
+interface TableCell_ConstructProps extends Object_ConstructProps {
 }
 class TableCell {
     /* Properties of Atk-1.0.Atk.Object */
@@ -661,7 +677,6 @@ class TableCell {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Object
     accessible_role: Role
     accessible_table_caption: string
     accessible_table_caption_object: Object
@@ -672,14 +687,15 @@ class TableCell {
     accessible_table_summary: Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.Object */
-    parent: GObject.Object
-    description: string
-    name: string
-    role: Role
-    relation_set: RelationSet
-    layer: Layer
+    readonly parent: GObject.Object
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Object
+    readonly role: Role
+    readonly relation_set: RelationSet
+    readonly layer: Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.TableCell */
     get_column_header_cells(): Object[]
     get_column_span(): number
@@ -692,14 +708,12 @@ class TableCell {
     add_relationship(relationship: RelationType, target: Object): boolean
     get_accessible_id(): string
     get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Object
     get_role(): Role
@@ -712,8 +726,7 @@ class TableCell {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: RelationType, target: Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Object): void
     set_role(role: Role): void
@@ -752,14 +765,12 @@ class TableCell {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Object
     vfunc_get_role(): Role
@@ -768,8 +779,7 @@ class TableCell {
     vfunc_ref_relation_set(): RelationSet
     vfunc_ref_state_set(): StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Object): void
     vfunc_set_role(role: Role): void
@@ -816,8 +826,6 @@ class TableCell {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: TableCell, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: TableCell, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: TableCell, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: TableCell, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: TableCell, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: TableCell, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: TableCell, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: TableCell, pspec: GObject.ParamSpec) => void)): number
@@ -948,7 +956,7 @@ class Value {
     emit(sigName: "value-changed", value: number, text: string): void
     static name: string
 }
-export interface Window_ConstructProps extends Object_ConstructProps {
+interface Window_ConstructProps extends Object_ConstructProps {
 }
 class Window {
     /* Properties of Atk-1.0.Atk.Object */
@@ -957,7 +965,6 @@ class Window {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Object
     accessible_role: Role
     accessible_table_caption: string
     accessible_table_caption_object: Object
@@ -968,26 +975,25 @@ class Window {
     accessible_table_summary: Object
     accessible_value: number
     /* Fields of Atk-1.0.Atk.Object */
-    parent: GObject.Object
-    description: string
-    name: string
-    role: Role
-    relation_set: RelationSet
-    layer: Layer
+    readonly parent: GObject.Object
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Object
+    readonly role: Role
+    readonly relation_set: RelationSet
+    readonly layer: Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.Object */
     add_relationship(relationship: RelationType, target: Object): boolean
     get_accessible_id(): string
     get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Object
     get_role(): Role
@@ -1000,8 +1006,7 @@ class Window {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: RelationType, target: Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Object): void
     set_role(role: Role): void
@@ -1032,14 +1037,12 @@ class Window {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Object
     vfunc_get_role(): Role
@@ -1048,8 +1051,7 @@ class Window {
     vfunc_ref_relation_set(): RelationSet
     vfunc_ref_state_set(): StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Object): void
     vfunc_set_role(role: Role): void
@@ -1124,8 +1126,6 @@ class Window {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
@@ -1153,7 +1153,7 @@ class Window {
     _init (config?: Window_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface GObjectAccessible_ConstructProps extends Object_ConstructProps {
+interface GObjectAccessible_ConstructProps extends Object_ConstructProps {
 }
 class GObjectAccessible {
     /* Properties of Atk-1.0.Atk.Object */
@@ -1162,7 +1162,6 @@ class GObjectAccessible {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Object
     accessible_role: Role
     accessible_table_caption: string
     accessible_table_caption_object: Object
@@ -1172,30 +1171,28 @@ class GObjectAccessible {
     accessible_table_row_header: Object
     accessible_table_summary: Object
     accessible_value: number
-    /* Fields of Atk-1.0.Atk.GObjectAccessible */
-    parent: Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Role
-    relation_set: RelationSet
-    layer: Layer
+    readonly parent: GObject.Object
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Object
+    readonly role: Role
+    readonly relation_set: RelationSet
+    readonly layer: Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.GObjectAccessible */
     get_object(): GObject.Object
     /* Methods of Atk-1.0.Atk.Object */
     add_relationship(relationship: RelationType, target: Object): boolean
     get_accessible_id(): string
     get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Object
     get_role(): Role
@@ -1208,8 +1205,7 @@ class GObjectAccessible {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: RelationType, target: Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Object): void
     set_role(role: Role): void
@@ -1240,14 +1236,12 @@ class GObjectAccessible {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Object
     vfunc_get_role(): Role
@@ -1256,8 +1250,7 @@ class GObjectAccessible {
     vfunc_ref_relation_set(): RelationSet
     vfunc_ref_state_set(): StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Object): void
     vfunc_set_role(role: Role): void
@@ -1304,8 +1297,6 @@ class GObjectAccessible {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: GObjectAccessible, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: GObjectAccessible, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: GObjectAccessible, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: GObjectAccessible, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: GObjectAccessible, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: GObjectAccessible, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: GObjectAccessible, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: GObjectAccessible, pspec: GObject.ParamSpec) => void)): number
@@ -1335,7 +1326,7 @@ class GObjectAccessible {
     static for_object(obj: GObject.Object): Object
     static $gtype: GObject.Type
 }
-export interface Hyperlink_ConstructProps extends GObject.Object_ConstructProps {
+interface Hyperlink_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Hyperlink {
     /* Properties of Atk-1.0.Atk.Hyperlink */
@@ -1343,10 +1334,8 @@ class Hyperlink {
     readonly number_of_anchors: number
     readonly selected_link: boolean
     readonly start_index: number
-    /* Fields of Atk-1.0.Atk.Hyperlink */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.Hyperlink */
     get_end_index(): number
     get_n_anchors(): number
@@ -1398,11 +1387,17 @@ class Hyperlink {
     vfunc_link_state(): number
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1436,13 +1431,11 @@ class Hyperlink {
     _init (config?: Hyperlink_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Misc_ConstructProps extends GObject.Object_ConstructProps {
+interface Misc_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Misc {
-    /* Fields of Atk-1.0.Atk.Misc */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.Misc */
     threads_enter(): void
     threads_leave(): void
@@ -1494,7 +1487,7 @@ class Misc {
     static get_instance(): Misc
     static $gtype: GObject.Type
 }
-export interface NoOpObject_ConstructProps extends Object_ConstructProps {
+interface NoOpObject_ConstructProps extends Object_ConstructProps {
 }
 class NoOpObject {
     /* Properties of Atk-1.0.Atk.Object */
@@ -1503,7 +1496,6 @@ class NoOpObject {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Object
     accessible_role: Role
     accessible_table_caption: string
     accessible_table_caption_object: Object
@@ -1513,28 +1505,26 @@ class NoOpObject {
     accessible_table_row_header: Object
     accessible_table_summary: Object
     accessible_value: number
-    /* Fields of Atk-1.0.Atk.NoOpObject */
-    parent: Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Role
-    relation_set: RelationSet
-    layer: Layer
+    readonly parent: GObject.Object
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Object
+    readonly role: Role
+    readonly relation_set: RelationSet
+    readonly layer: Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.Object */
     add_relationship(relationship: RelationType, target: Object): boolean
     get_accessible_id(): string
     get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Object
     get_role(): Role
@@ -1547,8 +1537,7 @@ class NoOpObject {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: RelationType, target: Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Object): void
     set_role(role: Role): void
@@ -1705,17 +1694,17 @@ class NoOpObject {
     /* Virtual methods of Atk-1.0.Atk.NoOpObject */
     vfunc_do_action(i: number): boolean
     vfunc_get_description(i: number): string | null
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    /* Function overloads */
+    vfunc_get_description(): string
     vfunc_get_keybinding(i: number): string | null
     vfunc_get_localized_name(i: number): string | null
     vfunc_get_n_actions(): number
     vfunc_get_name(i: number): string | null
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    /* Function overloads */
+    vfunc_get_name(): string
     vfunc_set_description(i: number, desc: string): boolean
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    /* Function overloads */
+    vfunc_set_description(description: string): void
     vfunc_bounds_changed(bounds: Rectangle): void
     vfunc_contains(x: number, y: number, coord_type: CoordType): boolean
     vfunc_get_alpha(): number
@@ -1723,7 +1712,6 @@ class NoOpObject {
     vfunc_get_layer(): Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_position(coord_type: CoordType): [ /* x */ number | null, /* y */ number | null ]
-    vfunc_get_position(): [ /* returnType */ boolean, /* row */ number, /* column */ number ]
     vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
     vfunc_grab_focus(): boolean
     vfunc_ref_accessible_at_point(x: number, y: number, coord_type: CoordType): Object | null
@@ -1758,12 +1746,15 @@ class NoOpObject {
     vfunc_get_image_size(): [ /* width */ number | null, /* height */ number | null ]
     vfunc_set_image_description(description: string): boolean
     vfunc_add_selection(i: number): boolean
+    /* Function overloads */
     vfunc_add_selection(start_offset: number, end_offset: number): boolean
     vfunc_clear_selection(): boolean
     vfunc_get_selection_count(): number
     vfunc_is_child_selected(i: number): boolean
     vfunc_ref_selection(i: number): Object | null
     vfunc_remove_selection(i: number): boolean
+    /* Function overloads */
+    vfunc_remove_selection(selection_num: number): boolean
     vfunc_select_all_selection(): boolean
     vfunc_selection_changed(): void
     vfunc_add_column_selection(column: number): boolean
@@ -1847,14 +1838,12 @@ class NoOpObject {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Object
     vfunc_get_role(): Role
@@ -1863,8 +1852,7 @@ class NoOpObject {
     vfunc_ref_relation_set(): RelationSet
     vfunc_ref_state_set(): StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Object): void
     vfunc_set_role(role: Role): void
@@ -2009,8 +1997,6 @@ class NoOpObject {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: NoOpObject, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: NoOpObject, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: NoOpObject, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: NoOpObject, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: NoOpObject, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: NoOpObject, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: NoOpObject, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: NoOpObject, pspec: GObject.ParamSpec) => void)): number
@@ -2041,13 +2027,13 @@ class NoOpObject {
     static free_ranges(ranges: TextRange[]): void
     static $gtype: GObject.Type
 }
-export interface NoOpObjectFactory_ConstructProps extends ObjectFactory_ConstructProps {
+interface NoOpObjectFactory_ConstructProps extends ObjectFactory_ConstructProps {
 }
 class NoOpObjectFactory {
-    /* Fields of Atk-1.0.Atk.NoOpObjectFactory */
-    parent: ObjectFactory
+    /* Fields of Atk-1.0.Atk.ObjectFactory */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.ObjectFactory */
     create_accessible(obj: GObject.Object): Object
     get_accessible_type(): GObject.Type
@@ -2099,7 +2085,8 @@ class NoOpObjectFactory {
     static new(): NoOpObjectFactory
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+interface Object_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Atk-1.0.Atk.Object */
     accessible_description?: string
     accessible_name?: string
     accessible_parent?: Object
@@ -2130,27 +2117,18 @@ class Object {
     accessible_table_row_header: Object
     accessible_table_summary: Object
     accessible_value: number
-    /* Fields of Atk-1.0.Atk.Object */
-    parent: GObject.Object
-    description: string
-    name: string
-    role: Role
-    relation_set: RelationSet
-    layer: Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.Object */
     add_relationship(relationship: RelationType, target: Object): boolean
     get_accessible_id(): string
     get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Object
     get_role(): Role
@@ -2163,8 +2141,7 @@ class Object {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: RelationType, target: Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Object): void
     set_role(role: Role): void
@@ -2195,14 +2172,12 @@ class Object {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Object
     vfunc_get_role(): Role
@@ -2211,8 +2186,7 @@ class Object {
     vfunc_ref_relation_set(): RelationSet
     vfunc_ref_state_set(): StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Object): void
     vfunc_set_role(role: Role): void
@@ -2288,13 +2262,11 @@ class Object {
     _init (config?: Object_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ObjectFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface ObjectFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ObjectFactory {
-    /* Fields of Atk-1.0.Atk.ObjectFactory */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.ObjectFactory */
     create_accessible(obj: GObject.Object): Object
     get_accessible_type(): GObject.Type
@@ -2344,7 +2316,7 @@ class ObjectFactory {
     _init (config?: ObjectFactory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Plug_ConstructProps extends Object_ConstructProps {
+interface Plug_ConstructProps extends Object_ConstructProps {
 }
 class Plug {
     /* Properties of Atk-1.0.Atk.Object */
@@ -2353,7 +2325,6 @@ class Plug {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Object
     accessible_role: Role
     accessible_table_caption: string
     accessible_table_caption_object: Object
@@ -2363,16 +2334,16 @@ class Plug {
     accessible_table_row_header: Object
     accessible_table_summary: Object
     accessible_value: number
-    /* Fields of Atk-1.0.Atk.Plug */
-    parent: Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Role
-    relation_set: RelationSet
-    layer: Layer
+    readonly parent: GObject.Object
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Object
+    readonly role: Role
+    readonly relation_set: RelationSet
+    readonly layer: Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.Plug */
     get_id(): string
     set_child(child: Object): void
@@ -2380,14 +2351,12 @@ class Plug {
     add_relationship(relationship: RelationType, target: Object): boolean
     get_accessible_id(): string
     get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Object
     get_role(): Role
@@ -2400,8 +2369,7 @@ class Plug {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: RelationType, target: Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Object): void
     set_role(role: Role): void
@@ -2464,14 +2432,12 @@ class Plug {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Object
     vfunc_get_role(): Role
@@ -2480,8 +2446,7 @@ class Plug {
     vfunc_ref_relation_set(): RelationSet
     vfunc_ref_state_set(): StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Object): void
     vfunc_set_role(role: Role): void
@@ -2532,8 +2497,6 @@ class Plug {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Plug, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Plug, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Plug, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Plug, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Plug, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Plug, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Plug, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Plug, pspec: GObject.ParamSpec) => void)): number
@@ -2563,15 +2526,11 @@ class Plug {
     static new(): Plug
     static $gtype: GObject.Type
 }
-export interface Registry_ConstructProps extends GObject.Object_ConstructProps {
+interface Registry_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Registry {
-    /* Fields of Atk-1.0.Atk.Registry */
-    parent: GObject.Object
-    factory_type_registry: GLib.HashTable
-    factory_singleton_cache: GLib.HashTable
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.Registry */
     get_factory(type: GObject.Type): ObjectFactory
     get_factory_type(type: GObject.Type): GObject.Type
@@ -2619,7 +2578,8 @@ class Registry {
     _init (config?: Registry_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Relation_ConstructProps extends GObject.Object_ConstructProps {
+interface Relation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Atk-1.0.Atk.Relation */
     relation_type?: RelationType
     target?: GObject.ValueArray
 }
@@ -2627,11 +2587,8 @@ class Relation {
     /* Properties of Atk-1.0.Atk.Relation */
     relation_type: RelationType
     target: GObject.ValueArray
-    /* Fields of Atk-1.0.Atk.Relation */
-    parent: GObject.Object
-    relationship: RelationType
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.Relation */
     add_target(target: Object): void
     get_relation_type(): RelationType
@@ -2686,14 +2643,11 @@ class Relation {
     static new(targets: Object[], relationship: RelationType): Relation
     static $gtype: GObject.Type
 }
-export interface RelationSet_ConstructProps extends GObject.Object_ConstructProps {
+interface RelationSet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RelationSet {
-    /* Fields of Atk-1.0.Atk.RelationSet */
-    parent: GObject.Object
-    relations: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.RelationSet */
     add(relation: Relation): void
     add_relation_by_type(relationship: RelationType, target: Object): void
@@ -2748,7 +2702,7 @@ class RelationSet {
     static new(): RelationSet
     static $gtype: GObject.Type
 }
-export interface Socket_ConstructProps extends Object_ConstructProps {
+interface Socket_ConstructProps extends Object_ConstructProps {
 }
 class Socket {
     /* Properties of Atk-1.0.Atk.Object */
@@ -2757,7 +2711,6 @@ class Socket {
     accessible_description: string
     readonly accessible_hypertext_nlinks: number
     accessible_name: string
-    accessible_parent: Object
     accessible_role: Role
     accessible_table_caption: string
     accessible_table_caption_object: Object
@@ -2767,16 +2720,16 @@ class Socket {
     accessible_table_row_header: Object
     accessible_table_summary: Object
     accessible_value: number
-    /* Fields of Atk-1.0.Atk.Socket */
-    parent: Object
     /* Fields of Atk-1.0.Atk.Object */
-    description: string
-    name: string
-    role: Role
-    relation_set: RelationSet
-    layer: Layer
+    readonly parent: GObject.Object
+    readonly description: string
+    readonly name: string
+    readonly accessible_parent: Object
+    readonly role: Role
+    readonly relation_set: RelationSet
+    readonly layer: Layer
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.Socket */
     embed(plug_id: string): void
     is_occupied(): boolean
@@ -2784,14 +2737,12 @@ class Socket {
     add_relationship(relationship: RelationType, target: Object): boolean
     get_accessible_id(): string
     get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    get_description(): string | null
+    get_description(): string
     get_index_in_parent(): number
     get_layer(): Layer
     get_mdi_zorder(): number
     get_n_accessible_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    get_name(): string | null
+    get_name(): string
     get_object_locale(): string
     get_parent(): Object
     get_role(): Role
@@ -2804,8 +2755,7 @@ class Socket {
     remove_property_change_handler(handler_id: number): void
     remove_relationship(relationship: RelationType, target: Object): boolean
     set_accessible_id(name: string): void
-    /* return type clashes with Atk.Action.set_description */
-    set_description(description: string): boolean | null
+    set_description(description: string): void
     set_name(name: string): void
     set_parent(parent: Object): void
     set_role(role: Role): void
@@ -2868,14 +2818,12 @@ class Socket {
     vfunc_children_changed(change_index: number, changed_child?: object | null): void
     vfunc_focus_event(focus_in: boolean): void
     vfunc_get_attributes(): AttributeSet
-    /* return type clashes with Atk.Action.get_description */
-    vfunc_get_description(): string | null
+    vfunc_get_description(): string
     vfunc_get_index_in_parent(): number
     vfunc_get_layer(): Layer
     vfunc_get_mdi_zorder(): number
     vfunc_get_n_children(): number
-    /* return type clashes with Atk.Action.get_name */
-    vfunc_get_name(): string | null
+    vfunc_get_name(): string
     vfunc_get_object_locale(): string
     vfunc_get_parent(): Object
     vfunc_get_role(): Role
@@ -2884,8 +2832,7 @@ class Socket {
     vfunc_ref_relation_set(): RelationSet
     vfunc_ref_state_set(): StateSet
     vfunc_remove_property_change_handler(handler_id: number): void
-    /* return type clashes with Atk.Action.set_description */
-    vfunc_set_description(description: string): boolean | null
+    vfunc_set_description(description: string): void
     vfunc_set_name(name: string): void
     vfunc_set_parent(parent: Object): void
     vfunc_set_role(role: Role): void
@@ -2936,8 +2883,6 @@ class Socket {
     connect_after(sigName: "notify::accessible-hypertext-nlinks", callback: (($obj: Socket, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-name", callback: (($obj: Socket, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-name", callback: (($obj: Socket, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::accessible-parent", callback: (($obj: Socket, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::accessible-parent", callback: (($obj: Socket, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-role", callback: (($obj: Socket, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::accessible-role", callback: (($obj: Socket, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::accessible-table-caption", callback: (($obj: Socket, pspec: GObject.ParamSpec) => void)): number
@@ -2967,13 +2912,11 @@ class Socket {
     static new(): Socket
     static $gtype: GObject.Type
 }
-export interface StateSet_ConstructProps extends GObject.Object_ConstructProps {
+interface StateSet_ConstructProps extends GObject.Object_ConstructProps {
 }
 class StateSet {
-    /* Fields of Atk-1.0.Atk.StateSet */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.StateSet */
     add_state(type: StateType): boolean
     add_states(types: StateType[]): void
@@ -3030,13 +2973,11 @@ class StateSet {
     static new(): StateSet
     static $gtype: GObject.Type
 }
-export interface Util_ConstructProps extends GObject.Object_ConstructProps {
+interface Util_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Util {
-    /* Fields of Atk-1.0.Atk.Util */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3082,113 +3023,113 @@ class Util {
 }
 abstract class ActionIface {
     /* Fields of Atk-1.0.Atk.ActionIface */
-    do_action: (action: Action, i: number) => boolean
-    get_n_actions: (action: Action) => number
-    get_description: (action: Action, i: number) => string | null
-    get_name: (action: Action, i: number) => string | null
-    get_keybinding: (action: Action, i: number) => string | null
-    set_description: (action: Action, i: number, desc: string) => boolean
-    get_localized_name: (action: Action, i: number) => string | null
+    readonly do_action: (action: Action, i: number) => boolean
+    readonly get_n_actions: (action: Action) => number
+    readonly get_description: (action: Action, i: number) => string | null
+    readonly get_name: (action: Action, i: number) => string | null
+    readonly get_keybinding: (action: Action, i: number) => string | null
+    readonly set_description: (action: Action, i: number, desc: string) => boolean
+    readonly get_localized_name: (action: Action, i: number) => string | null
     static name: string
 }
 class Attribute {
     /* Fields of Atk-1.0.Atk.Attribute */
-    name: string
-    value: string
+    readonly name: string
+    readonly value: string
     static name: string
     /* Static methods and pseudo-constructors */
     static set_free(attrib_set: AttributeSet): void
 }
 abstract class ComponentIface {
     /* Fields of Atk-1.0.Atk.ComponentIface */
-    contains: (component: Component, x: number, y: number, coord_type: CoordType) => boolean
-    ref_accessible_at_point: (component: Component, x: number, y: number, coord_type: CoordType) => Object | null
-    get_extents: (component: Component, coord_type: CoordType) => [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
-    get_position: (component: Component, coord_type: CoordType) => [ /* x */ number | null, /* y */ number | null ]
-    get_size: (component: Component) => [ /* width */ number | null, /* height */ number | null ]
-    grab_focus: (component: Component) => boolean
-    remove_focus_handler: (component: Component, handler_id: number) => void
-    set_extents: (component: Component, x: number, y: number, width: number, height: number, coord_type: CoordType) => boolean
-    set_position: (component: Component, x: number, y: number, coord_type: CoordType) => boolean
-    set_size: (component: Component, width: number, height: number) => boolean
-    get_layer: (component: Component) => Layer
-    get_mdi_zorder: (component: Component) => number
-    bounds_changed: (component: Component, bounds: Rectangle) => void
-    get_alpha: (component: Component) => number
-    scroll_to: (component: Component, type: ScrollType) => boolean
-    scroll_to_point: (component: Component, coords: CoordType, x: number, y: number) => boolean
+    readonly contains: (component: Component, x: number, y: number, coord_type: CoordType) => boolean
+    readonly ref_accessible_at_point: (component: Component, x: number, y: number, coord_type: CoordType) => Object | null
+    readonly get_extents: (component: Component, coord_type: CoordType) => [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
+    readonly get_position: (component: Component, coord_type: CoordType) => [ /* x */ number | null, /* y */ number | null ]
+    readonly get_size: (component: Component) => [ /* width */ number | null, /* height */ number | null ]
+    readonly grab_focus: (component: Component) => boolean
+    readonly remove_focus_handler: (component: Component, handler_id: number) => void
+    readonly set_extents: (component: Component, x: number, y: number, width: number, height: number, coord_type: CoordType) => boolean
+    readonly set_position: (component: Component, x: number, y: number, coord_type: CoordType) => boolean
+    readonly set_size: (component: Component, width: number, height: number) => boolean
+    readonly get_layer: (component: Component) => Layer
+    readonly get_mdi_zorder: (component: Component) => number
+    readonly bounds_changed: (component: Component, bounds: Rectangle) => void
+    readonly get_alpha: (component: Component) => number
+    readonly scroll_to: (component: Component, type: ScrollType) => boolean
+    readonly scroll_to_point: (component: Component, coords: CoordType, x: number, y: number) => boolean
     static name: string
 }
 abstract class DocumentIface {
     /* Fields of Atk-1.0.Atk.DocumentIface */
-    parent: GObject.TypeInterface
-    get_document_type: (document: Document) => string
-    get_document: (document: Document) => object | null
-    get_document_locale: (document: Document) => string
-    get_document_attributes: (document: Document) => AttributeSet
-    get_document_attribute_value: (document: Document, attribute_name: string) => string | null
-    set_document_attribute: (document: Document, attribute_name: string, attribute_value: string) => boolean
-    get_current_page_number: (document: Document) => number
-    get_page_count: (document: Document) => number
+    readonly parent: GObject.TypeInterface
+    readonly get_document_type: (document: Document) => string
+    readonly get_document: (document: Document) => object | null
+    readonly get_document_locale: (document: Document) => string
+    readonly get_document_attributes: (document: Document) => AttributeSet
+    readonly get_document_attribute_value: (document: Document, attribute_name: string) => string | null
+    readonly set_document_attribute: (document: Document, attribute_name: string, attribute_value: string) => boolean
+    readonly get_current_page_number: (document: Document) => number
+    readonly get_page_count: (document: Document) => number
     static name: string
 }
 abstract class EditableTextIface {
     /* Fields of Atk-1.0.Atk.EditableTextIface */
-    parent_interface: GObject.TypeInterface
-    set_run_attributes: (text: EditableText, attrib_set: AttributeSet, start_offset: number, end_offset: number) => boolean
-    set_text_contents: (text: EditableText, string: string) => void
-    insert_text: (text: EditableText, string: string, length: number, position: number) => void
-    copy_text: (text: EditableText, start_pos: number, end_pos: number) => void
-    cut_text: (text: EditableText, start_pos: number, end_pos: number) => void
-    delete_text: (text: EditableText, start_pos: number, end_pos: number) => void
-    paste_text: (text: EditableText, position: number) => void
+    readonly parent_interface: GObject.TypeInterface
+    readonly set_run_attributes: (text: EditableText, attrib_set: AttributeSet, start_offset: number, end_offset: number) => boolean
+    readonly set_text_contents: (text: EditableText, string: string) => void
+    readonly insert_text: (text: EditableText, string: string, length: number, position: number) => void
+    readonly copy_text: (text: EditableText, start_pos: number, end_pos: number) => void
+    readonly cut_text: (text: EditableText, start_pos: number, end_pos: number) => void
+    readonly delete_text: (text: EditableText, start_pos: number, end_pos: number) => void
+    readonly paste_text: (text: EditableText, position: number) => void
     static name: string
 }
 abstract class GObjectAccessibleClass {
     /* Fields of Atk-1.0.Atk.GObjectAccessibleClass */
-    parent_class: ObjectClass
-    pad1: Function
-    pad2: Function
+    readonly parent_class: ObjectClass
+    readonly pad1: Function
+    readonly pad2: Function
     static name: string
 }
 abstract class HyperlinkClass {
     /* Fields of Atk-1.0.Atk.HyperlinkClass */
-    parent: GObject.ObjectClass
-    get_uri: (link_: Hyperlink, i: number) => string
-    get_object: (link_: Hyperlink, i: number) => Object
-    get_end_index: (link_: Hyperlink) => number
-    get_start_index: (link_: Hyperlink) => number
-    is_valid: (link_: Hyperlink) => boolean
-    get_n_anchors: (link_: Hyperlink) => number
-    link_state: (link_: Hyperlink) => number
-    is_selected_link: (link_: Hyperlink) => boolean
-    link_activated: (link_: Hyperlink) => void
-    pad1: Function
+    readonly parent: GObject.ObjectClass
+    readonly get_uri: (link_: Hyperlink, i: number) => string
+    readonly get_object: (link_: Hyperlink, i: number) => Object
+    readonly get_end_index: (link_: Hyperlink) => number
+    readonly get_start_index: (link_: Hyperlink) => number
+    readonly is_valid: (link_: Hyperlink) => boolean
+    readonly get_n_anchors: (link_: Hyperlink) => number
+    readonly link_state: (link_: Hyperlink) => number
+    readonly is_selected_link: (link_: Hyperlink) => boolean
+    readonly link_activated: (link_: Hyperlink) => void
+    readonly pad1: Function
     static name: string
 }
 abstract class HyperlinkImplIface {
     /* Fields of Atk-1.0.Atk.HyperlinkImplIface */
-    parent: GObject.TypeInterface
-    get_hyperlink: (impl: HyperlinkImpl) => Hyperlink
+    readonly parent: GObject.TypeInterface
+    readonly get_hyperlink: (impl: HyperlinkImpl) => Hyperlink
     static name: string
 }
 abstract class HypertextIface {
     /* Fields of Atk-1.0.Atk.HypertextIface */
-    parent: GObject.TypeInterface
-    get_link: (hypertext: Hypertext, link_index: number) => Hyperlink
-    get_n_links: (hypertext: Hypertext) => number
-    get_link_index: (hypertext: Hypertext, char_index: number) => number
-    link_selected: (hypertext: Hypertext, link_index: number) => void
+    readonly parent: GObject.TypeInterface
+    readonly get_link: (hypertext: Hypertext, link_index: number) => Hyperlink
+    readonly get_n_links: (hypertext: Hypertext) => number
+    readonly get_link_index: (hypertext: Hypertext, char_index: number) => number
+    readonly link_selected: (hypertext: Hypertext, link_index: number) => void
     static name: string
 }
 abstract class ImageIface {
     /* Fields of Atk-1.0.Atk.ImageIface */
-    parent: GObject.TypeInterface
-    get_image_position: (image: Image, coord_type: CoordType) => [ /* x */ number | null, /* y */ number | null ]
-    get_image_description: (image: Image) => string
-    get_image_size: (image: Image) => [ /* width */ number | null, /* height */ number | null ]
-    set_image_description: (image: Image, description: string) => boolean
-    get_image_locale: (image: Image) => string | null
+    readonly parent: GObject.TypeInterface
+    readonly get_image_position: (image: Image, coord_type: CoordType) => [ /* x */ number | null, /* y */ number | null ]
+    readonly get_image_description: (image: Image) => string
+    readonly get_image_size: (image: Image) => [ /* width */ number | null, /* height */ number | null ]
+    readonly set_image_description: (image: Image, description: string) => boolean
+    readonly get_image_locale: (image: Image) => string | null
     static name: string
 }
 class Implementor {
@@ -3198,83 +3139,83 @@ class Implementor {
 }
 class KeyEventStruct {
     /* Fields of Atk-1.0.Atk.KeyEventStruct */
-    type: number
-    state: number
-    keyval: number
-    length: number
-    string: string
-    keycode: number
-    timestamp: number
+    readonly type: number
+    readonly state: number
+    readonly keyval: number
+    readonly length: number
+    readonly string: string
+    readonly keycode: number
+    readonly timestamp: number
     static name: string
 }
 abstract class MiscClass {
     /* Fields of Atk-1.0.Atk.MiscClass */
-    parent: GObject.ObjectClass
-    threads_enter: (misc: Misc) => void
-    threads_leave: (misc: Misc) => void
-    vfuncs: object[]
+    readonly parent: GObject.ObjectClass
+    readonly threads_enter: (misc: Misc) => void
+    readonly threads_leave: (misc: Misc) => void
+    readonly vfuncs: object[]
     static name: string
 }
 abstract class NoOpObjectClass {
     /* Fields of Atk-1.0.Atk.NoOpObjectClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 abstract class NoOpObjectFactoryClass {
     /* Fields of Atk-1.0.Atk.NoOpObjectFactoryClass */
-    parent_class: ObjectFactoryClass
+    readonly parent_class: ObjectFactoryClass
     static name: string
 }
 abstract class ObjectClass {
     /* Fields of Atk-1.0.Atk.ObjectClass */
-    parent: GObject.ObjectClass
-    get_name: (accessible: Object) => string
-    get_description: (accessible: Object) => string
-    get_parent: (accessible: Object) => Object
-    get_n_children: (accessible: Object) => number
-    get_index_in_parent: (accessible: Object) => number
-    ref_relation_set: (accessible: Object) => RelationSet
-    get_role: (accessible: Object) => Role
-    get_layer: (accessible: Object) => Layer
-    get_mdi_zorder: (accessible: Object) => number
-    ref_state_set: (accessible: Object) => StateSet
-    set_name: (accessible: Object, name: string) => void
-    set_description: (accessible: Object, description: string) => void
-    set_parent: (accessible: Object, parent: Object) => void
-    set_role: (accessible: Object, role: Role) => void
-    remove_property_change_handler: (accessible: Object, handler_id: number) => void
-    initialize: (accessible: Object, data?: object | null) => void
-    children_changed: (accessible: Object, change_index: number, changed_child?: object | null) => void
-    focus_event: (accessible: Object, focus_in: boolean) => void
-    property_change: (accessible: Object, values: PropertyValues) => void
-    state_change: (accessible: Object, name: string, state_set: boolean) => void
-    visible_data_changed: (accessible: Object) => void
-    active_descendant_changed: (accessible: Object, child?: object | null) => void
-    get_attributes: (accessible: Object) => AttributeSet
-    get_object_locale: (accessible: Object) => string
-    pad1: Function
+    readonly parent: GObject.ObjectClass
+    readonly get_name: (accessible: Object) => string
+    readonly get_description: (accessible: Object) => string
+    readonly get_parent: (accessible: Object) => Object
+    readonly get_n_children: (accessible: Object) => number
+    readonly get_index_in_parent: (accessible: Object) => number
+    readonly ref_relation_set: (accessible: Object) => RelationSet
+    readonly get_role: (accessible: Object) => Role
+    readonly get_layer: (accessible: Object) => Layer
+    readonly get_mdi_zorder: (accessible: Object) => number
+    readonly ref_state_set: (accessible: Object) => StateSet
+    readonly set_name: (accessible: Object, name: string) => void
+    readonly set_description: (accessible: Object, description: string) => void
+    readonly set_parent: (accessible: Object, parent: Object) => void
+    readonly set_role: (accessible: Object, role: Role) => void
+    readonly remove_property_change_handler: (accessible: Object, handler_id: number) => void
+    readonly initialize: (accessible: Object, data?: object | null) => void
+    readonly children_changed: (accessible: Object, change_index: number, changed_child?: object | null) => void
+    readonly focus_event: (accessible: Object, focus_in: boolean) => void
+    readonly property_change: (accessible: Object, values: PropertyValues) => void
+    readonly state_change: (accessible: Object, name: string, state_set: boolean) => void
+    readonly visible_data_changed: (accessible: Object) => void
+    readonly active_descendant_changed: (accessible: Object, child?: object | null) => void
+    readonly get_attributes: (accessible: Object) => AttributeSet
+    readonly get_object_locale: (accessible: Object) => string
+    readonly pad1: Function
     static name: string
 }
 abstract class ObjectFactoryClass {
     /* Fields of Atk-1.0.Atk.ObjectFactoryClass */
-    parent_class: GObject.ObjectClass
-    invalidate: (factory: ObjectFactory) => void
-    get_accessible_type: () => GObject.Type
-    pad1: Function
-    pad2: Function
+    readonly parent_class: GObject.ObjectClass
+    readonly invalidate: (factory: ObjectFactory) => void
+    readonly get_accessible_type: () => GObject.Type
+    readonly pad1: Function
+    readonly pad2: Function
     static name: string
 }
 abstract class PlugClass {
     /* Fields of Atk-1.0.Atk.PlugClass */
-    parent_class: ObjectClass
-    get_object_id: (obj: Plug) => string
+    readonly parent_class: ObjectClass
+    readonly get_object_id: (obj: Plug) => string
     static name: string
 }
 class PropertyValues {
     /* Fields of Atk-1.0.Atk.PropertyValues */
-    property_name: string
-    old_value: any
-    new_value: any
+    readonly property_name: string
+    readonly old_value: any
+    readonly new_value: any
     static name: string
 }
 class Range {
@@ -3292,194 +3233,194 @@ class Range {
 }
 class Rectangle {
     /* Fields of Atk-1.0.Atk.Rectangle */
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     static name: string
 }
 abstract class RegistryClass {
     /* Fields of Atk-1.0.Atk.RegistryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class RelationClass {
     /* Fields of Atk-1.0.Atk.RelationClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 abstract class RelationSetClass {
     /* Fields of Atk-1.0.Atk.RelationSetClass */
-    parent: GObject.ObjectClass
-    pad1: Function
-    pad2: Function
+    readonly parent: GObject.ObjectClass
+    readonly pad1: Function
+    readonly pad2: Function
     static name: string
 }
 abstract class SelectionIface {
     /* Fields of Atk-1.0.Atk.SelectionIface */
-    parent: GObject.TypeInterface
-    add_selection: (selection: Selection, i: number) => boolean
-    clear_selection: (selection: Selection) => boolean
-    ref_selection: (selection: Selection, i: number) => Object | null
-    get_selection_count: (selection: Selection) => number
-    is_child_selected: (selection: Selection, i: number) => boolean
-    remove_selection: (selection: Selection, i: number) => boolean
-    select_all_selection: (selection: Selection) => boolean
-    selection_changed: (selection: Selection) => void
+    readonly parent: GObject.TypeInterface
+    readonly add_selection: (selection: Selection, i: number) => boolean
+    readonly clear_selection: (selection: Selection) => boolean
+    readonly ref_selection: (selection: Selection, i: number) => Object | null
+    readonly get_selection_count: (selection: Selection) => number
+    readonly is_child_selected: (selection: Selection, i: number) => boolean
+    readonly remove_selection: (selection: Selection, i: number) => boolean
+    readonly select_all_selection: (selection: Selection) => boolean
+    readonly selection_changed: (selection: Selection) => void
     static name: string
 }
 abstract class SocketClass {
     /* Fields of Atk-1.0.Atk.SocketClass */
-    parent_class: ObjectClass
-    embed: (obj: Socket, plug_id: string) => void
+    readonly parent_class: ObjectClass
+    readonly embed: (obj: Socket, plug_id: string) => void
     static name: string
 }
 abstract class StateSetClass {
     /* Fields of Atk-1.0.Atk.StateSetClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 abstract class StreamableContentIface {
     /* Fields of Atk-1.0.Atk.StreamableContentIface */
-    parent: GObject.TypeInterface
-    get_n_mime_types: (streamable: StreamableContent) => number
-    get_mime_type: (streamable: StreamableContent, i: number) => string
-    get_stream: (streamable: StreamableContent, mime_type: string) => GLib.IOChannel
-    get_uri: (streamable: StreamableContent, mime_type: string) => string | null
-    pad1: Function
-    pad2: Function
-    pad3: Function
+    readonly parent: GObject.TypeInterface
+    readonly get_n_mime_types: (streamable: StreamableContent) => number
+    readonly get_mime_type: (streamable: StreamableContent, i: number) => string
+    readonly get_stream: (streamable: StreamableContent, mime_type: string) => GLib.IOChannel
+    readonly get_uri: (streamable: StreamableContent, mime_type: string) => string | null
+    readonly pad1: Function
+    readonly pad2: Function
+    readonly pad3: Function
     static name: string
 }
 abstract class TableCellIface {
     /* Fields of Atk-1.0.Atk.TableCellIface */
-    get_column_span: (cell: TableCell) => number
-    get_column_header_cells: (cell: TableCell) => Object[]
-    get_position: (cell: TableCell) => [ /* returnType */ boolean, /* row */ number, /* column */ number ]
-    get_row_span: (cell: TableCell) => number
-    get_row_header_cells: (cell: TableCell) => Object[]
-    get_row_column_span: (cell: TableCell) => [ /* returnType */ boolean, /* row */ number, /* column */ number, /* row_span */ number, /* column_span */ number ]
-    get_table: (cell: TableCell) => Object
+    readonly get_column_span: (cell: TableCell) => number
+    readonly get_column_header_cells: (cell: TableCell) => Object[]
+    readonly get_position: (cell: TableCell) => [ /* returnType */ boolean, /* row */ number, /* column */ number ]
+    readonly get_row_span: (cell: TableCell) => number
+    readonly get_row_header_cells: (cell: TableCell) => Object[]
+    readonly get_row_column_span: (cell: TableCell) => [ /* returnType */ boolean, /* row */ number, /* column */ number, /* row_span */ number, /* column_span */ number ]
+    readonly get_table: (cell: TableCell) => Object
     static name: string
 }
 abstract class TableIface {
     /* Fields of Atk-1.0.Atk.TableIface */
-    parent: GObject.TypeInterface
-    ref_at: (table: Table, row: number, column: number) => Object
-    get_index_at: (table: Table, row: number, column: number) => number
-    get_column_at_index: (table: Table, index_: number) => number
-    get_row_at_index: (table: Table, index_: number) => number
-    get_n_columns: (table: Table) => number
-    get_n_rows: (table: Table) => number
-    get_column_extent_at: (table: Table, row: number, column: number) => number
-    get_row_extent_at: (table: Table, row: number, column: number) => number
-    get_caption: (table: Table) => Object | null
-    get_column_description: (table: Table, column: number) => string
-    get_column_header: (table: Table, column: number) => Object | null
-    get_row_description: (table: Table, row: number) => string | null
-    get_row_header: (table: Table, row: number) => Object | null
-    get_summary: (table: Table) => Object
-    set_caption: (table: Table, caption: Object) => void
-    set_column_description: (table: Table, column: number, description: string) => void
-    set_column_header: (table: Table, column: number, header: Object) => void
-    set_row_description: (table: Table, row: number, description: string) => void
-    set_row_header: (table: Table, row: number, header: Object) => void
-    set_summary: (table: Table, accessible: Object) => void
-    get_selected_columns: (table: Table, selected: number) => number
-    get_selected_rows: (table: Table, selected: number) => number
-    is_column_selected: (table: Table, column: number) => boolean
-    is_row_selected: (table: Table, row: number) => boolean
-    is_selected: (table: Table, row: number, column: number) => boolean
-    add_row_selection: (table: Table, row: number) => boolean
-    remove_row_selection: (table: Table, row: number) => boolean
-    add_column_selection: (table: Table, column: number) => boolean
-    remove_column_selection: (table: Table, column: number) => boolean
-    row_inserted: (table: Table, row: number, num_inserted: number) => void
-    column_inserted: (table: Table, column: number, num_inserted: number) => void
-    row_deleted: (table: Table, row: number, num_deleted: number) => void
-    column_deleted: (table: Table, column: number, num_deleted: number) => void
-    row_reordered: (table: Table) => void
-    column_reordered: (table: Table) => void
-    model_changed: (table: Table) => void
+    readonly parent: GObject.TypeInterface
+    readonly ref_at: (table: Table, row: number, column: number) => Object
+    readonly get_index_at: (table: Table, row: number, column: number) => number
+    readonly get_column_at_index: (table: Table, index_: number) => number
+    readonly get_row_at_index: (table: Table, index_: number) => number
+    readonly get_n_columns: (table: Table) => number
+    readonly get_n_rows: (table: Table) => number
+    readonly get_column_extent_at: (table: Table, row: number, column: number) => number
+    readonly get_row_extent_at: (table: Table, row: number, column: number) => number
+    readonly get_caption: (table: Table) => Object | null
+    readonly get_column_description: (table: Table, column: number) => string
+    readonly get_column_header: (table: Table, column: number) => Object | null
+    readonly get_row_description: (table: Table, row: number) => string | null
+    readonly get_row_header: (table: Table, row: number) => Object | null
+    readonly get_summary: (table: Table) => Object
+    readonly set_caption: (table: Table, caption: Object) => void
+    readonly set_column_description: (table: Table, column: number, description: string) => void
+    readonly set_column_header: (table: Table, column: number, header: Object) => void
+    readonly set_row_description: (table: Table, row: number, description: string) => void
+    readonly set_row_header: (table: Table, row: number, header: Object) => void
+    readonly set_summary: (table: Table, accessible: Object) => void
+    readonly get_selected_columns: (table: Table, selected: number) => number
+    readonly get_selected_rows: (table: Table, selected: number) => number
+    readonly is_column_selected: (table: Table, column: number) => boolean
+    readonly is_row_selected: (table: Table, row: number) => boolean
+    readonly is_selected: (table: Table, row: number, column: number) => boolean
+    readonly add_row_selection: (table: Table, row: number) => boolean
+    readonly remove_row_selection: (table: Table, row: number) => boolean
+    readonly add_column_selection: (table: Table, column: number) => boolean
+    readonly remove_column_selection: (table: Table, column: number) => boolean
+    readonly row_inserted: (table: Table, row: number, num_inserted: number) => void
+    readonly column_inserted: (table: Table, column: number, num_inserted: number) => void
+    readonly row_deleted: (table: Table, row: number, num_deleted: number) => void
+    readonly column_deleted: (table: Table, column: number, num_deleted: number) => void
+    readonly row_reordered: (table: Table) => void
+    readonly column_reordered: (table: Table) => void
+    readonly model_changed: (table: Table) => void
     static name: string
 }
 abstract class TextIface {
     /* Fields of Atk-1.0.Atk.TextIface */
-    parent: GObject.TypeInterface
-    get_text: (text: Text, start_offset: number, end_offset: number) => string
-    get_text_after_offset: (text: Text, offset: number, boundary_type: TextBoundary) => [ /* returnType */ string, /* start_offset */ number, /* end_offset */ number ]
-    get_text_at_offset: (text: Text, offset: number, boundary_type: TextBoundary) => [ /* returnType */ string, /* start_offset */ number, /* end_offset */ number ]
-    get_character_at_offset: (text: Text, offset: number) => number
-    get_text_before_offset: (text: Text, offset: number, boundary_type: TextBoundary) => [ /* returnType */ string, /* start_offset */ number, /* end_offset */ number ]
-    get_caret_offset: (text: Text) => number
-    get_run_attributes: (text: Text, offset: number) => [ /* returnType */ AttributeSet, /* start_offset */ number, /* end_offset */ number ]
-    get_default_attributes: (text: Text) => AttributeSet
-    get_character_extents: (text: Text, offset: number, coords: CoordType) => [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
-    get_character_count: (text: Text) => number
-    get_offset_at_point: (text: Text, x: number, y: number, coords: CoordType) => number
-    get_n_selections: (text: Text) => number
-    get_selection: (text: Text, selection_num: number) => [ /* returnType */ string, /* start_offset */ number, /* end_offset */ number ]
-    add_selection: (text: Text, start_offset: number, end_offset: number) => boolean
-    remove_selection: (text: Text, selection_num: number) => boolean
-    set_selection: (text: Text, selection_num: number, start_offset: number, end_offset: number) => boolean
-    set_caret_offset: (text: Text, offset: number) => boolean
-    text_changed: (text: Text, position: number, length: number) => void
-    text_caret_moved: (text: Text, location: number) => void
-    text_selection_changed: (text: Text) => void
-    text_attributes_changed: (text: Text) => void
-    get_range_extents: (text: Text, start_offset: number, end_offset: number, coord_type: CoordType) => /* rect */ TextRectangle
-    get_bounded_ranges: (text: Text, rect: TextRectangle, coord_type: CoordType, x_clip_type: TextClipType, y_clip_type: TextClipType) => TextRange[]
-    get_string_at_offset: (text: Text, offset: number, granularity: TextGranularity) => [ /* returnType */ string | null, /* start_offset */ number, /* end_offset */ number ]
-    scroll_substring_to: (text: Text, start_offset: number, end_offset: number, type: ScrollType) => boolean
-    scroll_substring_to_point: (text: Text, start_offset: number, end_offset: number, coords: CoordType, x: number, y: number) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly get_text: (text: Text, start_offset: number, end_offset: number) => string
+    readonly get_text_after_offset: (text: Text, offset: number, boundary_type: TextBoundary) => [ /* returnType */ string, /* start_offset */ number, /* end_offset */ number ]
+    readonly get_text_at_offset: (text: Text, offset: number, boundary_type: TextBoundary) => [ /* returnType */ string, /* start_offset */ number, /* end_offset */ number ]
+    readonly get_character_at_offset: (text: Text, offset: number) => number
+    readonly get_text_before_offset: (text: Text, offset: number, boundary_type: TextBoundary) => [ /* returnType */ string, /* start_offset */ number, /* end_offset */ number ]
+    readonly get_caret_offset: (text: Text) => number
+    readonly get_run_attributes: (text: Text, offset: number) => [ /* returnType */ AttributeSet, /* start_offset */ number, /* end_offset */ number ]
+    readonly get_default_attributes: (text: Text) => AttributeSet
+    readonly get_character_extents: (text: Text, offset: number, coords: CoordType) => [ /* x */ number | null, /* y */ number | null, /* width */ number | null, /* height */ number | null ]
+    readonly get_character_count: (text: Text) => number
+    readonly get_offset_at_point: (text: Text, x: number, y: number, coords: CoordType) => number
+    readonly get_n_selections: (text: Text) => number
+    readonly get_selection: (text: Text, selection_num: number) => [ /* returnType */ string, /* start_offset */ number, /* end_offset */ number ]
+    readonly add_selection: (text: Text, start_offset: number, end_offset: number) => boolean
+    readonly remove_selection: (text: Text, selection_num: number) => boolean
+    readonly set_selection: (text: Text, selection_num: number, start_offset: number, end_offset: number) => boolean
+    readonly set_caret_offset: (text: Text, offset: number) => boolean
+    readonly text_changed: (text: Text, position: number, length: number) => void
+    readonly text_caret_moved: (text: Text, location: number) => void
+    readonly text_selection_changed: (text: Text) => void
+    readonly text_attributes_changed: (text: Text) => void
+    readonly get_range_extents: (text: Text, start_offset: number, end_offset: number, coord_type: CoordType) => /* rect */ TextRectangle
+    readonly get_bounded_ranges: (text: Text, rect: TextRectangle, coord_type: CoordType, x_clip_type: TextClipType, y_clip_type: TextClipType) => TextRange[]
+    readonly get_string_at_offset: (text: Text, offset: number, granularity: TextGranularity) => [ /* returnType */ string | null, /* start_offset */ number, /* end_offset */ number ]
+    readonly scroll_substring_to: (text: Text, start_offset: number, end_offset: number, type: ScrollType) => boolean
+    readonly scroll_substring_to_point: (text: Text, start_offset: number, end_offset: number, coords: CoordType, x: number, y: number) => boolean
     static name: string
 }
 class TextRange {
     /* Fields of Atk-1.0.Atk.TextRange */
-    bounds: TextRectangle
-    start_offset: number
-    end_offset: number
-    content: string
+    readonly bounds: TextRectangle
+    readonly start_offset: number
+    readonly end_offset: number
+    readonly content: string
     static name: string
 }
 class TextRectangle {
     /* Fields of Atk-1.0.Atk.TextRectangle */
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     static name: string
 }
 abstract class UtilClass {
     /* Fields of Atk-1.0.Atk.UtilClass */
-    parent: GObject.ObjectClass
-    remove_global_event_listener: (listener_id: number) => void
-    remove_key_event_listener: (listener_id: number) => void
-    get_toolkit_name: () => string
-    get_toolkit_version: () => string
+    readonly parent: GObject.ObjectClass
+    readonly remove_global_event_listener: (listener_id: number) => void
+    readonly remove_key_event_listener: (listener_id: number) => void
+    readonly get_toolkit_name: () => string
+    readonly get_toolkit_version: () => string
     static name: string
 }
 abstract class ValueIface {
     /* Fields of Atk-1.0.Atk.ValueIface */
-    parent: GObject.TypeInterface
-    get_current_value: (obj: Value) => /* value */ any
-    get_maximum_value: (obj: Value) => /* value */ any
-    get_minimum_value: (obj: Value) => /* value */ any
-    set_current_value: (obj: Value, value: any) => boolean
-    get_minimum_increment: (obj: Value) => /* value */ any
-    get_value_and_text: (obj: Value) => [ /* value */ number, /* text */ string | null ]
-    get_range: (obj: Value) => Range | null
-    get_increment: (obj: Value) => number
-    get_sub_ranges: (obj: Value) => Range[]
-    set_value: (obj: Value, new_value: number) => void
+    readonly parent: GObject.TypeInterface
+    readonly get_current_value: (obj: Value) => /* value */ any
+    readonly get_maximum_value: (obj: Value) => /* value */ any
+    readonly get_minimum_value: (obj: Value) => /* value */ any
+    readonly set_current_value: (obj: Value, value: any) => boolean
+    readonly get_minimum_increment: (obj: Value) => /* value */ any
+    readonly get_value_and_text: (obj: Value) => [ /* value */ number, /* text */ string | null ]
+    readonly get_range: (obj: Value) => Range | null
+    readonly get_increment: (obj: Value) => number
+    readonly get_sub_ranges: (obj: Value) => Range[]
+    readonly set_value: (obj: Value, new_value: number) => void
     static name: string
 }
 abstract class WindowIface {
     /* Fields of Atk-1.0.Atk.WindowIface */
-    parent: GObject.TypeInterface
+    readonly parent: GObject.TypeInterface
     static name: string
 }
-type AttributeSet = any[]
-type State = number
+    type AttributeSet = any[]
+    type State = number
 }
 export default Atk;

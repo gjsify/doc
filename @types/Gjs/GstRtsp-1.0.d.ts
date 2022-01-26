@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GstRtsp-1.0
  */
@@ -215,9 +221,9 @@ enum RTSPTimeType {
 }
 enum RTSPVersion {
     INVALID,
-    /* 1_0 (invalid, starts with a number) */
-    /* 1_1 (invalid, starts with a number) */
-    /* 2_0 (invalid, starts with a number) */
+    TODO_1_0,
+    TODO_1_1,
+    TODO_2_0,
 }
 enum RTSPEvent {
     READ,
@@ -259,7 +265,7 @@ enum RTSPTransMode {
     RTP,
     RDT,
 }
-export const RTSP_DEFAULT_PORT: number
+const RTSP_DEFAULT_PORT: number
 function rtsp_auth_credentials_free(credentials: RTSPAuthCredential): void
 function rtsp_connection_accept(socket: Gio.Socket, cancellable?: Gio.Cancellable | null): [ /* returnType */ RTSPResult, /* conn */ RTSPConnection ]
 function rtsp_connection_create(url: RTSPUrl): [ /* returnType */ RTSPResult, /* conn */ RTSPConnection ]
@@ -324,15 +330,15 @@ class RTSPExtension {
 }
 class RTSPAuthCredential {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPAuthCredential */
-    scheme: RTSPAuthMethod
-    params: RTSPAuthParam
-    authorization: string
+    readonly scheme: RTSPAuthMethod
+    readonly params: RTSPAuthParam
+    readonly authorization: string
     static name: string
 }
 class RTSPAuthParam {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPAuthParam */
-    name: string
-    value: string
+    readonly name: string
+    readonly value: string
     /* Methods of GstRtsp-1.0.GstRtsp.RTSPAuthParam */
     copy(): RTSPAuthParam
     free(): void
@@ -398,22 +404,22 @@ class RTSPConnection {
 }
 abstract class RTSPExtensionInterface {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPExtensionInterface */
-    parent: GObject.TypeInterface
-    detect_server: (ext: RTSPExtension, resp: RTSPMessage) => boolean
-    before_send: (ext: RTSPExtension, req: RTSPMessage) => RTSPResult
-    after_send: (ext: RTSPExtension, req: RTSPMessage, resp: RTSPMessage) => RTSPResult
-    parse_sdp: (ext: RTSPExtension, sdp: GstSdp.SDPMessage, s: Gst.Structure) => RTSPResult
-    setup_media: (ext: RTSPExtension, media: GstSdp.SDPMedia) => RTSPResult
-    configure_stream: (ext: RTSPExtension, caps: Gst.Caps) => boolean
-    get_transports: (ext: RTSPExtension, protocols: RTSPLowerTrans, transport: string) => RTSPResult
-    stream_select: (ext: RTSPExtension, url: RTSPUrl) => RTSPResult
-    send: (ext: RTSPExtension, req: RTSPMessage, resp: RTSPMessage) => RTSPResult
-    receive_request: (ext: RTSPExtension, req: RTSPMessage) => RTSPResult
+    readonly parent: GObject.TypeInterface
+    readonly detect_server: (ext: RTSPExtension, resp: RTSPMessage) => boolean
+    readonly before_send: (ext: RTSPExtension, req: RTSPMessage) => RTSPResult
+    readonly after_send: (ext: RTSPExtension, req: RTSPMessage, resp: RTSPMessage) => RTSPResult
+    readonly parse_sdp: (ext: RTSPExtension, sdp: GstSdp.SDPMessage, s: Gst.Structure) => RTSPResult
+    readonly setup_media: (ext: RTSPExtension, media: GstSdp.SDPMedia) => RTSPResult
+    readonly configure_stream: (ext: RTSPExtension, caps: Gst.Caps) => boolean
+    readonly get_transports: (ext: RTSPExtension, protocols: RTSPLowerTrans, transport: string) => RTSPResult
+    readonly stream_select: (ext: RTSPExtension, url: RTSPUrl) => RTSPResult
+    readonly send: (ext: RTSPExtension, req: RTSPMessage, resp: RTSPMessage) => RTSPResult
+    readonly receive_request: (ext: RTSPExtension, req: RTSPMessage) => RTSPResult
     static name: string
 }
 class RTSPMessage {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPMessage */
-    type: RTSPMsgType
+    readonly type: RTSPMsgType
     /* Methods of GstRtsp-1.0.GstRtsp.RTSPMessage */
     add_header(field: RTSPHeaderField, value: string): RTSPResult
     add_header_by_name(header: string, value: string): RTSPResult
@@ -421,7 +427,7 @@ class RTSPMessage {
     copy(): [ /* returnType */ RTSPResult, /* copy */ RTSPMessage ]
     dump(): RTSPResult
     free(): RTSPResult
-    get_body(): [ /* returnType */ RTSPResult, /* data */ Uint8Array[] ]
+    get_body(): [ /* returnType */ RTSPResult, /* data */ Uint8Array ]
     get_body_buffer(): [ /* returnType */ RTSPResult, /* buffer */ Gst.Buffer ]
     get_header(field: RTSPHeaderField, indx: number): [ /* returnType */ RTSPResult, /* value */ string ]
     get_header_by_name(header: string, index: number): [ /* returnType */ RTSPResult, /* value */ string ]
@@ -437,11 +443,11 @@ class RTSPMessage {
     parse_response(): [ /* returnType */ RTSPResult, /* code */ RTSPStatusCode | null, /* reason */ string | null, /* version */ RTSPVersion | null ]
     remove_header(field: RTSPHeaderField, indx: number): RTSPResult
     remove_header_by_name(header: string, index: number): RTSPResult
-    set_body(data: Uint8Array[]): RTSPResult
+    set_body(data: Uint8Array): RTSPResult
     set_body_buffer(buffer: Gst.Buffer): RTSPResult
-    steal_body(): [ /* returnType */ RTSPResult, /* data */ Uint8Array[] ]
+    steal_body(): [ /* returnType */ RTSPResult, /* data */ Uint8Array ]
     steal_body_buffer(): [ /* returnType */ RTSPResult, /* buffer */ Gst.Buffer ]
-    take_body(data: Uint8Array[]): RTSPResult
+    take_body(data: Uint8Array): RTSPResult
     take_body_buffer(buffer: Gst.Buffer): RTSPResult
     take_header(field: RTSPHeaderField, value: string): RTSPResult
     take_header_by_name(header: string, value: string): RTSPResult
@@ -450,8 +456,8 @@ class RTSPMessage {
 }
 class RTSPRange {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPRange */
-    min: number
-    max: number
+    readonly min: number
+    readonly max: number
     static name: string
     /* Static methods and pseudo-constructors */
     static convert_units(range: RTSPTimeRange, unit: RTSPRangeUnit): boolean
@@ -462,44 +468,44 @@ class RTSPRange {
 }
 class RTSPTime {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPTime */
-    type: RTSPTimeType
-    seconds: number
+    readonly type: RTSPTimeType
+    readonly seconds: number
     static name: string
 }
 class RTSPTime2 {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPTime2 */
-    frames: number
-    year: number
-    month: number
-    day: number
+    readonly frames: number
+    readonly year: number
+    readonly month: number
+    readonly day: number
     static name: string
 }
 class RTSPTimeRange {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPTimeRange */
-    unit: RTSPRangeUnit
-    min: RTSPTime
-    max: RTSPTime
-    min2: RTSPTime2
-    max2: RTSPTime2
+    readonly unit: RTSPRangeUnit
+    readonly min: RTSPTime
+    readonly max: RTSPTime
+    readonly min2: RTSPTime2
+    readonly max2: RTSPTime2
     static name: string
 }
 class RTSPTransport {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPTransport */
-    trans: RTSPTransMode
-    profile: RTSPProfile
-    lower_transport: RTSPLowerTrans
-    destination: string
-    source: string
-    layers: number
-    mode_play: boolean
-    mode_record: boolean
-    append: boolean
-    interleaved: RTSPRange
-    ttl: number
-    port: RTSPRange
-    client_port: RTSPRange
-    server_port: RTSPRange
-    ssrc: number
+    readonly trans: RTSPTransMode
+    readonly profile: RTSPProfile
+    readonly lower_transport: RTSPLowerTrans
+    readonly destination: string
+    readonly source: string
+    readonly layers: number
+    readonly mode_play: boolean
+    readonly mode_record: boolean
+    readonly append: boolean
+    readonly interleaved: RTSPRange
+    readonly ttl: number
+    readonly port: RTSPRange
+    readonly client_port: RTSPRange
+    readonly server_port: RTSPRange
+    readonly ssrc: number
     /* Methods of GstRtsp-1.0.GstRtsp.RTSPTransport */
     as_text(): string
     free(): RTSPResult
@@ -513,14 +519,14 @@ class RTSPTransport {
 }
 class RTSPUrl {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPUrl */
-    transports: RTSPLowerTrans
-    family: RTSPFamily
-    user: string
-    passwd: string
-    host: string
-    port: number
-    abspath: string
-    query: string
+    readonly transports: RTSPLowerTrans
+    readonly family: RTSPFamily
+    readonly user: string
+    readonly passwd: string
+    readonly host: string
+    readonly port: number
+    readonly abspath: string
+    readonly query: string
     /* Methods of GstRtsp-1.0.GstRtsp.RTSPUrl */
     copy(): RTSPUrl
     decode_path_components(): string[]
@@ -545,20 +551,20 @@ class RTSPWatch {
     unref(): void
     wait_backlog(timeout: GLib.TimeVal): RTSPResult
     wait_backlog_usec(timeout: number): RTSPResult
-    write_data(data: Uint8Array[]): [ /* returnType */ RTSPResult, /* id */ number | null ]
+    write_data(data: Uint8Array): [ /* returnType */ RTSPResult, /* id */ number | null ]
     static name: string
 }
 class RTSPWatchFuncs {
     /* Fields of GstRtsp-1.0.GstRtsp.RTSPWatchFuncs */
-    message_received: (watch: RTSPWatch, message: RTSPMessage) => RTSPResult
-    message_sent: (watch: RTSPWatch, id: number) => RTSPResult
-    closed: (watch: RTSPWatch) => RTSPResult
-    error: (watch: RTSPWatch, result: RTSPResult) => RTSPResult
-    tunnel_start: (watch: RTSPWatch) => RTSPStatusCode
-    tunnel_complete: (watch: RTSPWatch) => RTSPResult
-    error_full: (watch: RTSPWatch, result: RTSPResult, message: RTSPMessage, id: number) => RTSPResult
-    tunnel_lost: (watch: RTSPWatch) => RTSPResult
-    tunnel_http_response: (watch: RTSPWatch, request: RTSPMessage, response: RTSPMessage) => RTSPResult
+    readonly message_received: (watch: RTSPWatch, message: RTSPMessage) => RTSPResult
+    readonly message_sent: (watch: RTSPWatch, id: number) => RTSPResult
+    readonly closed: (watch: RTSPWatch) => RTSPResult
+    readonly error: (watch: RTSPWatch, result: RTSPResult) => RTSPResult
+    readonly tunnel_start: (watch: RTSPWatch) => RTSPStatusCode
+    readonly tunnel_complete: (watch: RTSPWatch) => RTSPResult
+    readonly error_full: (watch: RTSPWatch, result: RTSPResult, message: RTSPMessage, id: number) => RTSPResult
+    readonly tunnel_lost: (watch: RTSPWatch) => RTSPResult
+    readonly tunnel_http_response: (watch: RTSPWatch, request: RTSPMessage, response: RTSPMessage) => RTSPResult
     static name: string
 }
 }

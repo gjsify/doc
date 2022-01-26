@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gpseq-1.0
  */
@@ -121,14 +127,14 @@ interface VoidFunc {
 interface VoidTaskFunc {
     (): void
 }
-export interface Channel_ConstructProps extends Sender_ConstructProps {
+interface Channel_ConstructProps extends Sender_ConstructProps {
 }
 class Channel {
     /* Properties of Gpseq-1.0.Gpseq.ChannelBase */
     readonly capacity: Optional
     readonly length: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Sender */
     send(data?: object | null): Result
     send_until(data: object | null, end_time: number): Result
@@ -161,10 +167,50 @@ class Channel {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of Gpseq-1.0.Gpseq.Receiver */
+    recv(): Result
+    recv_until(end_time: number): Result
+    try_recv(): Result
+    /* Methods of Gee-0.8.Gee.Traversable */
+    foreach(f: Gee.ForallFunc): boolean
+    stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    fold(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): object | null
+    map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.MapFunc): Gee.Iterator
+    scan(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): Gee.Iterator
+    filter(pred: Gee.Predicate): Gee.Iterator
+    chop(offset: number, length: number): Gee.Iterator
+    flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FlatMapFunc): Gee.Iterator
+    tee(forks: number): Gee.Iterator[]
+    first_match(pred: Gee.Predicate): object | null
+    any_match(pred: Gee.Predicate): boolean
+    all_match(pred: Gee.Predicate): boolean
+    max(compare: GLib.CompareDataFunc): object | null
+    min(compare: GLib.CompareDataFunc): object | null
+    order_by(compare: GLib.CompareDataFunc | null): Gee.Iterator
+    get_element_type(): GObject.Type
     /* Virtual methods of Gpseq-1.0.Gpseq.Channel */
     vfunc_send(data?: object | null): Result
     vfunc_send_until(data: object | null, end_time: number): Result
     vfunc_try_send(data?: object | null): Result
+    vfunc_recv(): Result
+    vfunc_recv_until(end_time: number): Result
+    vfunc_try_recv(): Result
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    vfunc_fold(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): object | null
+    vfunc_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.MapFunc): Gee.Iterator
+    vfunc_scan(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): Gee.Iterator
+    vfunc_filter(pred: Gee.Predicate): Gee.Iterator
+    vfunc_chop(offset: number, length: number): Gee.Iterator
+    vfunc_flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FlatMapFunc): Gee.Iterator
+    vfunc_tee(forks: number): Gee.Iterator[]
+    vfunc_first_match(pred: Gee.Predicate): object | null
+    vfunc_any_match(pred: Gee.Predicate): boolean
+    vfunc_all_match(pred: Gee.Predicate): boolean
+    vfunc_max(compare: GLib.CompareDataFunc): object | null
+    vfunc_min(compare: GLib.CompareDataFunc): object | null
+    vfunc_order_by(compare: GLib.CompareDataFunc | null): Gee.Iterator
+    vfunc_get_element_type(): GObject.Type
     /* Virtual methods of Gpseq-1.0.Gpseq.Sender */
     vfunc_send(data?: object | null): Result
     vfunc_send_until(data: object | null, end_time: number): Result
@@ -208,14 +254,14 @@ class Channel {
     static unbounded(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Channel
     static $gtype: GObject.Type
 }
-export interface ChannelBase_ConstructProps extends GObject.Object_ConstructProps {
+interface ChannelBase_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ChannelBase {
     /* Properties of Gpseq-1.0.Gpseq.ChannelBase */
     readonly capacity: Optional
     readonly length: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.ChannelBase */
     get_capacity(): Optional
     get_length(): number
@@ -275,13 +321,13 @@ class ChannelBase {
     _init (config?: ChannelBase_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Collector_ConstructProps extends GObject.Object_ConstructProps {
+interface Collector_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Collector {
     /* Properties of Gpseq-1.0.Gpseq.Collector */
     readonly features: CollectorFeatures
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Collector */
     get_features(): CollectorFeatures
     create_accumulator(): object | null
@@ -339,13 +385,13 @@ class Collector {
     _init (config?: Collector_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Executor_ConstructProps extends GObject.Object_ConstructProps {
+interface Executor_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Executor {
     /* Properties of Gpseq-1.0.Gpseq.Executor */
     readonly parallels: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Executor */
     submit(task: Task): void
     get_parallels(): number
@@ -397,14 +443,14 @@ class Executor {
     _init (config?: Executor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Receiver_ConstructProps extends ChannelBase_ConstructProps {
+interface Receiver_ConstructProps extends ChannelBase_ConstructProps {
 }
 class Receiver {
     /* Properties of Gpseq-1.0.Gpseq.ChannelBase */
     readonly capacity: Optional
     readonly length: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Receiver */
     recv(): Result
     recv_until(end_time: number): Result
@@ -437,6 +483,23 @@ class Receiver {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of Gee-0.8.Gee.Traversable */
+    foreach(f: Gee.ForallFunc): boolean
+    stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    fold(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): object | null
+    map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.MapFunc): Gee.Iterator
+    scan(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): Gee.Iterator
+    filter(pred: Gee.Predicate): Gee.Iterator
+    chop(offset: number, length: number): Gee.Iterator
+    flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FlatMapFunc): Gee.Iterator
+    tee(forks: number): Gee.Iterator[]
+    first_match(pred: Gee.Predicate): object | null
+    any_match(pred: Gee.Predicate): boolean
+    all_match(pred: Gee.Predicate): boolean
+    max(compare: GLib.CompareDataFunc): object | null
+    min(compare: GLib.CompareDataFunc): object | null
+    order_by(compare: GLib.CompareDataFunc | null): Gee.Iterator
+    get_element_type(): GObject.Type
     /* Virtual methods of Gpseq-1.0.Gpseq.Receiver */
     vfunc_recv(): Result
     vfunc_recv_until(end_time: number): Result
@@ -446,6 +509,22 @@ class Receiver {
     vfunc_get_is_full(): boolean
     vfunc_get_is_empty(): boolean
     vfunc_close(): void
+    vfunc_foreach(f: Gee.ForallFunc): boolean
+    vfunc_stream(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.StreamFunc): Gee.Iterator
+    vfunc_fold(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): object | null
+    vfunc_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.MapFunc): Gee.Iterator
+    vfunc_scan(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FoldFunc, seed?: object | null): Gee.Iterator
+    vfunc_filter(pred: Gee.Predicate): Gee.Iterator
+    vfunc_chop(offset: number, length: number): Gee.Iterator
+    vfunc_flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, f: Gee.FlatMapFunc): Gee.Iterator
+    vfunc_tee(forks: number): Gee.Iterator[]
+    vfunc_first_match(pred: Gee.Predicate): object | null
+    vfunc_any_match(pred: Gee.Predicate): boolean
+    vfunc_all_match(pred: Gee.Predicate): boolean
+    vfunc_max(compare: GLib.CompareDataFunc): object | null
+    vfunc_min(compare: GLib.CompareDataFunc): object | null
+    vfunc_order_by(compare: GLib.CompareDataFunc | null): Gee.Iterator
+    vfunc_get_element_type(): GObject.Type
     /* Virtual methods of Gpseq-1.0.Gpseq.ChannelBase */
     vfunc_get_capacity(): Optional
     vfunc_get_length(): number
@@ -477,11 +556,11 @@ class Receiver {
     _init (config?: Receiver_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Result_ConstructProps extends Gee.Hashable_ConstructProps {
+interface Result_ConstructProps extends Gee.Hashable_ConstructProps {
 }
 class Result {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Result */
     get_value_type(): GObject.Type
     get_value(): object | null
@@ -562,14 +641,14 @@ class Result {
     static err(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, exception: GLib.Error): Result
     static $gtype: GObject.Type
 }
-export interface Sender_ConstructProps extends ChannelBase_ConstructProps {
+interface Sender_ConstructProps extends ChannelBase_ConstructProps {
 }
 class Sender {
     /* Properties of Gpseq-1.0.Gpseq.ChannelBase */
     readonly capacity: Optional
     readonly length: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Sender */
     send(data?: object | null): Result
     send_until(data: object | null, end_time: number): Result
@@ -642,14 +721,14 @@ class Sender {
     _init (config?: Sender_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Spliterator_ConstructProps extends GObject.Object_ConstructProps {
+interface Spliterator_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Spliterator {
     /* Properties of Gpseq-1.0.Gpseq.Spliterator */
     readonly estimated_size: number
     readonly is_size_known: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Spliterator */
     get_element_type(): GObject.Type
     try_split(): Spliterator | null
@@ -714,11 +793,11 @@ class Spliterator {
     static empty(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Spliterator
     static $gtype: GObject.Type
 }
-export interface Supplier_ConstructProps extends GObject.Object_ConstructProps {
+interface Supplier_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Supplier {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Supplier */
     supply(): object | null
     /* Methods of GObject-2.0.GObject.Object */
@@ -768,13 +847,13 @@ class Supplier {
     static from_func(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: SupplyFunc): Supplier
     static $gtype: GObject.Type
 }
-export interface Task_ConstructProps extends GObject.Object_ConstructProps {
+interface Task_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Task {
     /* Properties of Gpseq-1.0.Gpseq.Task */
     readonly future: Future
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Task */
     get_future(): Future
     compute(): void
@@ -827,11 +906,11 @@ class Task {
     _init (config?: Task_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ThreadFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface ThreadFactory_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ThreadFactory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.ThreadFactory */
     create_thread(pool: WorkerPool): WorkerThread
     /* Methods of GObject-2.0.GObject.Object */
@@ -879,7 +958,8 @@ class ThreadFactory {
     _init (config?: ThreadFactory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ArraySpliterator_ConstructProps extends GObject.Object_ConstructProps {
+interface ArraySpliterator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.ArraySpliterator */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -889,7 +969,7 @@ class ArraySpliterator {
     readonly estimated_size: number
     readonly is_size_known: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -955,7 +1035,8 @@ class ArraySpliterator {
     static empty(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Spliterator
     static $gtype: GObject.Type
 }
-export interface ForkJoinTask_ConstructProps extends GObject.Object_ConstructProps {
+interface ForkJoinTask_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.ForkJoinTask */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -976,7 +1057,7 @@ class ForkJoinTask {
     /* Properties of Gpseq-1.0.Gpseq.Task */
     readonly future: Future
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.ForkJoinTask */
     get_parent(): ForkJoinTask | null
     get_root(): ForkJoinTask
@@ -1065,8 +1146,6 @@ class ForkJoinTask {
     static $gtype: GObject.Type
 }
 class ForkJoinTaskSharedResult {
-    /* Fields of Gpseq-1.0.Gpseq.ForkJoinTaskSharedResult */
-    ref_count: number
     /* Methods of Gpseq-1.0.Gpseq.ForkJoinTaskSharedResult */
     get_ready(): boolean
     get_value(): object | null
@@ -1080,7 +1159,8 @@ class ForkJoinTaskSharedResult {
     /* Static methods and pseudo-constructors */
     static new(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): ForkJoinTaskSharedResult
 }
-export interface FuncTask_ConstructProps extends GObject.Object_ConstructProps {
+interface FuncTask_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.FuncTask */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -1089,7 +1169,7 @@ class FuncTask {
     /* Properties of Gpseq-1.0.Gpseq.Task */
     readonly future: Future
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1144,7 +1224,8 @@ class FuncTask {
     static new(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, func: TaskFunc): FuncTask
     static $gtype: GObject.Type
 }
-export interface Future_ConstructProps extends GObject.Object_ConstructProps {
+interface Future_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.Future */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -1153,7 +1234,7 @@ class Future {
     /* Properties of Gpseq-1.0.Gpseq.Future */
     readonly ready: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Future */
     get_ready(): boolean
     wait(): object | null
@@ -1193,6 +1274,7 @@ class Future {
     ok_with(expected: object | null, equal: Gee.EqualDataFunc | null): Result
     future(): Future
     get(): object | null
+    transform(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any): Result
     flat_map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any): Result
     map(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any): Result
     map_err(func: any): Result
@@ -1203,6 +1285,8 @@ class Future {
     vfunc_get_ready(): boolean
     vfunc_wait(): object | null
     vfunc_wait_until(end_time: number): [ /* returnType */ boolean, /* value */ object | null ]
+    vfunc_transform(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any): Result
+    /* Function overloads */
     vfunc_transform(a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any): Result
     vfunc_hash(): number
     vfunc_equal_to(object?: object | null): boolean
@@ -1237,13 +1321,16 @@ class Future {
     _init (config?: Future_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static of(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, value?: object | null): Future
+    /* Function overloads */
     static of(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, value?: object | null): Result
     static err(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, exception: GLib.Error): Future
+    /* Function overloads */
     static err(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, exception: GLib.Error): Result
     static done(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, result: Result): Future
     static $gtype: GObject.Type
 }
-export interface GenericArraySpliterator_ConstructProps extends GObject.Object_ConstructProps {
+interface GenericArraySpliterator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.GenericArraySpliterator */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -1253,7 +1340,7 @@ class GenericArraySpliterator {
     readonly estimated_size: number
     readonly is_size_known: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1319,7 +1406,8 @@ class GenericArraySpliterator {
     static empty(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Spliterator
     static $gtype: GObject.Type
 }
-export interface IteratorSpliterator_ConstructProps extends GObject.Object_ConstructProps {
+interface IteratorSpliterator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.IteratorSpliterator */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -1329,7 +1417,7 @@ class IteratorSpliterator {
     readonly estimated_size: number
     readonly is_size_known: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1396,7 +1484,8 @@ class IteratorSpliterator {
     static empty(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Spliterator
     static $gtype: GObject.Type
 }
-export interface ListSpliterator_ConstructProps extends GObject.Object_ConstructProps {
+interface ListSpliterator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.ListSpliterator */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -1406,7 +1495,7 @@ class ListSpliterator {
     readonly estimated_size: number
     readonly is_size_known: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1472,7 +1561,8 @@ class ListSpliterator {
     static empty(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Spliterator
     static $gtype: GObject.Type
 }
-export interface Optional_ConstructProps extends GObject.Object_ConstructProps {
+interface Optional_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.Optional */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -1483,7 +1573,7 @@ class Optional {
     readonly value: object
     readonly is_present: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Optional */
     get_value_type(): GObject.Type
     get_value(): object | null
@@ -1550,8 +1640,6 @@ class Optional {
     static $gtype: GObject.Type
 }
 class Promise {
-    /* Fields of Gpseq-1.0.Gpseq.Promise */
-    ref_count: number
     /* Methods of Gpseq-1.0.Gpseq.Promise */
     get_future(): Future
     set_value(value?: object | null): void
@@ -1562,7 +1650,8 @@ class Promise {
     /* Static methods and pseudo-constructors */
     static new(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Promise
 }
-export interface Seq_ConstructProps extends GObject.Object_ConstructProps {
+interface Seq_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.Seq */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -1574,7 +1663,7 @@ class Seq {
     readonly is_closed: boolean
     readonly is_parallel: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Seq */
     get_element_type(): GObject.Type
     get_task_env(): TaskEnv
@@ -1679,7 +1768,8 @@ class Seq {
     static empty(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Seq
     static $gtype: GObject.Type
 }
-export interface SpliteratorTask_ConstructProps extends ForkJoinTask_ConstructProps {
+interface SpliteratorTask_ConstructProps extends ForkJoinTask_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.SpliteratorTask */
     r_type?: GObject.Type
     r_dup_func?: GObject.BoxedCopyFunc
     r_destroy_func?: GLib.DestroyNotify
@@ -1707,7 +1797,7 @@ class SpliteratorTask {
     readonly shared_result: ForkJoinTaskSharedResult
     readonly is_cancelled: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.SpliteratorTask */
     get_spliterator(): Spliterator
     get_left_child(): SpliteratorTask | null
@@ -1818,7 +1908,8 @@ class SpliteratorTask {
     _init (config?: SpliteratorTask_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SubArray_ConstructProps extends GObject.Object_ConstructProps {
+interface SubArray_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.SubArray */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -1827,7 +1918,7 @@ class SubArray {
     /* Properties of Gpseq-1.0.Gpseq.SubArray */
     readonly size: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.SubArray */
     get_data(): object[]
     get_size(): number
@@ -1922,7 +2013,8 @@ class SubArray {
     static from_sub_array(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify, array: SubArray, start: number, stop: number): SubArray
     static $gtype: GObject.Type
 }
-export interface SubArraySpliterator_ConstructProps extends GObject.Object_ConstructProps {
+interface SubArraySpliterator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.SubArraySpliterator */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -1932,7 +2024,7 @@ class SubArraySpliterator {
     readonly estimated_size: number
     readonly is_size_known: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1998,7 +2090,8 @@ class SubArraySpliterator {
     static empty(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Spliterator
     static $gtype: GObject.Type
 }
-export interface SupplierSpliterator_ConstructProps extends GObject.Object_ConstructProps {
+interface SupplierSpliterator_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.SupplierSpliterator */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -2008,7 +2101,7 @@ class SupplierSpliterator {
     readonly estimated_size: number
     readonly is_size_known: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2074,13 +2167,13 @@ class SupplierSpliterator {
     static empty(g_type: GObject.Type, g_dup_func: GObject.BoxedCopyFunc, g_destroy_func: GLib.DestroyNotify): Spliterator
     static $gtype: GObject.Type
 }
-export interface TaskEnv_ConstructProps extends GObject.Object_ConstructProps {
+interface TaskEnv_ConstructProps extends GObject.Object_ConstructProps {
 }
 class TaskEnv {
     /* Properties of Gpseq-1.0.Gpseq.TaskEnv */
     readonly executor: Executor
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.TaskEnv */
     get_executor(): Executor
     resolve_threshold(elements: number, threads: number): number
@@ -2141,11 +2234,11 @@ class TaskEnv {
     static apply(task_env: TaskEnv, func: VoidFunc): void
     static $gtype: GObject.Type
 }
-export interface WaitGroup_ConstructProps extends GObject.Object_ConstructProps {
+interface WaitGroup_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WaitGroup {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.WaitGroup */
     add(delta: number): void
     done(): void
@@ -2198,7 +2291,8 @@ class WaitGroup {
     static new(): WaitGroup
     static $gtype: GObject.Type
 }
-export interface WorkerPool_ConstructProps extends GObject.Object_ConstructProps {
+interface WorkerPool_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.WorkerPool */
     max_threads?: number
 }
 class WorkerPool {
@@ -2212,7 +2306,7 @@ class WorkerPool {
     /* Properties of Gpseq-1.0.Gpseq.Executor */
     readonly parallels: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.WorkerPool */
     get_max_threads(): number
     set_max_threads(value: number): void
@@ -2292,7 +2386,7 @@ class WorkerPool {
     static get_default_factory(): ThreadFactory
     static $gtype: GObject.Type
 }
-export interface WorkerThread_ConstructProps extends GObject.Object_ConstructProps {
+interface WorkerThread_ConstructProps extends GObject.Object_ConstructProps {
 }
 class WorkerThread {
     /* Properties of Gpseq-1.0.Gpseq.WorkerThread */
@@ -2303,7 +2397,7 @@ class WorkerThread {
     readonly is_terminated: boolean
     readonly is_alive: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.WorkerThread */
     get_thread(): GLib.Thread | null
     get_pool(): WorkerPool
@@ -2373,7 +2467,8 @@ class WorkerThread {
     static self(): WorkerThread | null
     static $gtype: GObject.Type
 }
-export interface Wrapper_ConstructProps extends GObject.Object_ConstructProps {
+interface Wrapper_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gpseq-1.0.Gpseq.Wrapper */
     g_type?: GObject.Type
     g_dup_func?: GObject.BoxedCopyFunc
     g_destroy_func?: GLib.DestroyNotify
@@ -2383,7 +2478,7 @@ class Wrapper {
     readonly value: object
     readonly value_type: GObject.Type
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gpseq-1.0.Gpseq.Wrapper */
     get_value(): object | null
     get_value_type(): GObject.Type
@@ -2444,7 +2539,7 @@ class ArraySpliteratorPrivate {
 }
 abstract class ForkJoinTaskClass {
     /* Fields of Gpseq-1.0.Gpseq.ForkJoinTaskClass */
-    compute: (self: ForkJoinTask) => void
+    readonly compute: (self: ForkJoinTask) => void
     static name: string
 }
 class ForkJoinTaskPrivate {
@@ -2464,9 +2559,9 @@ class FuncTaskPrivate {
 }
 abstract class FutureClass {
     /* Fields of Gpseq-1.0.Gpseq.FutureClass */
-    wait: (self: Future) => object | null
-    wait_until: (self: Future, end_time: number) => [ /* returnType */ boolean, /* value */ object | null ]
-    transform: (self: Future, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any) => Result
+    readonly wait: (self: Future) => object | null
+    readonly wait_until: (self: Future, end_time: number) => [ /* returnType */ boolean, /* value */ object | null ]
+    readonly transform: (self: Future, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any) => Result
     static name: string
 }
 class FuturePrivate {
@@ -2510,9 +2605,9 @@ class SeqPrivate {
 }
 abstract class SpliteratorTaskClass {
     /* Fields of Gpseq-1.0.Gpseq.SpliteratorTaskClass */
-    leaf_compute: (self: SpliteratorTask) => object | null
-    merge_results: (self: SpliteratorTask, left?: object | null, right?: object | null) => object | null
-    make_child: (self: SpliteratorTask, spliterator: Spliterator) => SpliteratorTask
+    readonly leaf_compute: (self: SpliteratorTask) => object | null
+    readonly merge_results: (self: SpliteratorTask, left?: object | null, right?: object | null) => object | null
+    readonly make_child: (self: SpliteratorTask, spliterator: Spliterator) => SpliteratorTask
     static name: string
 }
 class SpliteratorTaskPrivate {
@@ -2538,8 +2633,8 @@ class SupplierSpliteratorPrivate {
 }
 abstract class TaskEnvClass {
     /* Fields of Gpseq-1.0.Gpseq.TaskEnvClass */
-    resolve_threshold: (self: TaskEnv, elements: number, threads: number) => number
-    resolve_max_depth: (self: TaskEnv, elements: number, threads: number) => number
+    readonly resolve_threshold: (self: TaskEnv, elements: number, threads: number) => number
+    readonly resolve_max_depth: (self: TaskEnv, elements: number, threads: number) => number
     static name: string
 }
 class TaskEnvPrivate {
@@ -2574,79 +2669,79 @@ abstract class ChannelIface {
 }
 abstract class ChannelBaseIface {
     /* Fields of Gpseq-1.0.Gpseq.ChannelBaseIface */
-    close: (self: ChannelBase) => void
-    get_capacity: (self: ChannelBase) => Optional
-    get_length: (self: ChannelBase) => number
-    get_is_full: (self: ChannelBase) => boolean
-    get_is_empty: (self: ChannelBase) => boolean
+    readonly close: (self: ChannelBase) => void
+    readonly get_capacity: (self: ChannelBase) => Optional
+    readonly get_length: (self: ChannelBase) => number
+    readonly get_is_full: (self: ChannelBase) => boolean
+    readonly get_is_empty: (self: ChannelBase) => boolean
     static name: string
 }
 abstract class CollectorIface {
     /* Fields of Gpseq-1.0.Gpseq.CollectorIface */
-    create_accumulator: (self: Collector) => object | null
-    accumulate: (self: Collector, g?: object | null, a?: object | null) => void
-    combine: (self: Collector, a?: object | null, b?: object | null) => object | null
-    finish: (self: Collector, a?: object | null) => object | null
-    get_features: (self: Collector) => CollectorFeatures
+    readonly create_accumulator: (self: Collector) => object | null
+    readonly accumulate: (self: Collector, g?: object | null, a?: object | null) => void
+    readonly combine: (self: Collector, a?: object | null, b?: object | null) => object | null
+    readonly finish: (self: Collector, a?: object | null) => object | null
+    readonly get_features: (self: Collector) => CollectorFeatures
     static name: string
 }
 abstract class ExecutorIface {
     /* Fields of Gpseq-1.0.Gpseq.ExecutorIface */
-    submit: (self: Executor, task: Task) => void
-    get_parallels: (self: Executor) => number
+    readonly submit: (self: Executor, task: Task) => void
+    readonly get_parallels: (self: Executor) => number
     static name: string
 }
 abstract class ReceiverIface {
     /* Fields of Gpseq-1.0.Gpseq.ReceiverIface */
-    recv: (self: Receiver) => Result
-    recv_until: (self: Receiver, end_time: number) => Result
-    try_recv: (self: Receiver) => Result
+    readonly recv: (self: Receiver) => Result
+    readonly recv_until: (self: Receiver, end_time: number) => Result
+    readonly try_recv: (self: Receiver) => Result
     static name: string
 }
 abstract class ResultIface {
     /* Fields of Gpseq-1.0.Gpseq.ResultIface */
-    future: (self: Result) => Future
-    get: (self: Result) => object | null
-    transform: (self: Result, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any) => Result
-    flat_map: (self: Result, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any) => Result
-    map: (self: Result, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any) => Result
-    map_err: (self: Result, func: any) => Result
-    zip: (self: Result, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, b_type: GObject.Type, b_dup_func: GObject.BoxedCopyFunc, b_destroy_func: GLib.DestroyNotify, zip_func: any, second: Result) => Result
-    then: (self: Result, func: GLib.Func) => Result
-    and_then: (self: Result, func: Func) => Result
+    readonly future: (self: Result) => Future
+    readonly get: (self: Result) => object | null
+    readonly transform: (self: Result, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any) => Result
+    readonly flat_map: (self: Result, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any) => Result
+    readonly map: (self: Result, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, func: any) => Result
+    readonly map_err: (self: Result, func: any) => Result
+    readonly zip: (self: Result, a_type: GObject.Type, a_dup_func: GObject.BoxedCopyFunc, a_destroy_func: GLib.DestroyNotify, b_type: GObject.Type, b_dup_func: GObject.BoxedCopyFunc, b_destroy_func: GLib.DestroyNotify, zip_func: any, second: Result) => Result
+    readonly then: (self: Result, func: GLib.Func) => Result
+    readonly and_then: (self: Result, func: Func) => Result
     static name: string
 }
 abstract class SenderIface {
     /* Fields of Gpseq-1.0.Gpseq.SenderIface */
-    send: (self: Sender, data?: object | null) => Result
-    send_until: (self: Sender, data: object | null, end_time: number) => Result
-    try_send: (self: Sender, data?: object | null) => Result
+    readonly send: (self: Sender, data?: object | null) => Result
+    readonly send_until: (self: Sender, data: object | null, end_time: number) => Result
+    readonly try_send: (self: Sender, data?: object | null) => Result
     static name: string
 }
 abstract class SpliteratorIface {
     /* Fields of Gpseq-1.0.Gpseq.SpliteratorIface */
-    try_split: (self: Spliterator) => Spliterator | null
-    try_advance: (self: Spliterator, consumer: Func) => boolean
-    each: (self: Spliterator, f: Func) => void
-    each_chunk: (self: Spliterator, f: EachChunkFunc) => boolean
-    get_estimated_size: (self: Spliterator) => number
-    get_is_size_known: (self: Spliterator) => boolean
+    readonly try_split: (self: Spliterator) => Spliterator | null
+    readonly try_advance: (self: Spliterator, consumer: Func) => boolean
+    readonly each: (self: Spliterator, f: Func) => void
+    readonly each_chunk: (self: Spliterator, f: EachChunkFunc) => boolean
+    readonly get_estimated_size: (self: Spliterator) => number
+    readonly get_is_size_known: (self: Spliterator) => boolean
     static name: string
 }
 abstract class SupplierIface {
     /* Fields of Gpseq-1.0.Gpseq.SupplierIface */
-    supply: (self: Supplier) => object | null
+    readonly supply: (self: Supplier) => object | null
     static name: string
 }
 abstract class TaskIface {
     /* Fields of Gpseq-1.0.Gpseq.TaskIface */
-    compute: (self: Task) => void
-    get_future: (self: Task) => Future
+    readonly compute: (self: Task) => void
+    readonly get_future: (self: Task) => Future
     static name: string
 }
 abstract class ThreadFactoryIface {
     /* Fields of Gpseq-1.0.Gpseq.ThreadFactoryIface */
-    create_thread: (self: ThreadFactory, pool: WorkerPool) => WorkerThread
+    readonly create_thread: (self: ThreadFactory, pool: WorkerPool) => WorkerThread
     static name: string
 }
 class CacheLinePad {

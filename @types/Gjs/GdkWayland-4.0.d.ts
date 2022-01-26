@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GdkWayland-4.0
  */
@@ -19,7 +25,7 @@ export namespace GdkWayland {
 interface WaylandToplevelExported {
     (toplevel: WaylandToplevel, handle: string): void
 }
-export interface WaylandDevice_ConstructProps extends Gdk.Device_ConstructProps {
+interface WaylandDevice_ConstructProps extends Gdk.Device_ConstructProps {
 }
 class WaylandDevice {
     /* Properties of Gdk-4.0.Gdk.Device */
@@ -33,7 +39,7 @@ class WaylandDevice {
     seat: Gdk.Seat
     readonly tool: Gdk.DeviceTool
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GdkWayland-4.0.GdkWayland.WaylandDevice */
     get_node_path(): string | null
     get_xkb_keymap(): object | null
@@ -122,7 +128,7 @@ class WaylandDevice {
     _init (config?: WaylandDevice_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WaylandDisplay_ConstructProps extends Gdk.Display_ConstructProps {
+interface WaylandDisplay_ConstructProps extends Gdk.Display_ConstructProps {
 }
 class WaylandDisplay {
     /* Properties of Gdk-4.0.Gdk.Display */
@@ -130,7 +136,7 @@ class WaylandDisplay {
     readonly input_shapes: boolean
     readonly rgba: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GdkWayland-4.0.GdkWayland.WaylandDisplay */
     get_egl_display(): object | null
     get_startup_notification_id(): string | null
@@ -228,14 +234,14 @@ class WaylandDisplay {
     _init (config?: WaylandDisplay_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WaylandGLContext_ConstructProps extends Gdk.GLContext_ConstructProps {
+interface WaylandGLContext_ConstructProps extends Gdk.GLContext_ConstructProps {
 }
 class WaylandGLContext {
     /* Properties of Gdk-4.0.Gdk.GLContext */
     allowed_apis: Gdk.GLAPI
     readonly api: Gdk.GLAPI
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-4.0.Gdk.GLContext */
     get_allowed_apis(): Gdk.GLAPI
     get_api(): Gdk.GLAPI
@@ -308,7 +314,7 @@ class WaylandGLContext {
     _init (config?: WaylandGLContext_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WaylandMonitor_ConstructProps extends Gdk.Monitor_ConstructProps {
+interface WaylandMonitor_ConstructProps extends Gdk.Monitor_ConstructProps {
 }
 class WaylandMonitor {
     /* Properties of Gdk-4.0.Gdk.Monitor */
@@ -323,7 +329,7 @@ class WaylandMonitor {
     readonly valid: boolean
     readonly width_mm: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-4.0.Gdk.Monitor */
     get_connector(): string | null
     get_display(): Gdk.Display
@@ -403,7 +409,8 @@ class WaylandMonitor {
     _init (config?: WaylandMonitor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WaylandPopup_ConstructProps extends WaylandSurface_ConstructProps {
+interface WaylandPopup_ConstructProps extends WaylandSurface_ConstructProps {
+    /* Constructor properties of Gdk-4.0.Gdk.Popup */
     autohide?: boolean
     parent?: Gdk.Surface
 }
@@ -415,7 +422,7 @@ class WaylandPopup {
     readonly scale_factor: number
     readonly width: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-4.0.Gdk.Surface */
     beep(): void
     create_cairo_context(): Gdk.CairoContext
@@ -465,7 +472,7 @@ class WaylandPopup {
     watch_closure(closure: Function): void
     /* Methods of Gdk-4.0.Gdk.Popup */
     get_autohide(): boolean
-    get_parent(): Gdk.Surface
+    get_parent(): Gdk.Surface | null
     get_position_x(): number
     get_position_y(): number
     get_rect_anchor(): Gdk.Gravity
@@ -518,13 +525,13 @@ class WaylandPopup {
     _init (config?: WaylandPopup_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WaylandSeat_ConstructProps extends Gdk.Seat_ConstructProps {
+interface WaylandSeat_ConstructProps extends Gdk.Seat_ConstructProps {
 }
 class WaylandSeat {
     /* Fields of Gdk-4.0.Gdk.Seat */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-4.0.Gdk.Seat */
     get_capabilities(): Gdk.SeatCapabilities
     get_devices(capabilities: Gdk.SeatCapabilities): Gdk.Device[]
@@ -588,7 +595,7 @@ class WaylandSeat {
     _init (config?: WaylandSeat_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WaylandSurface_ConstructProps extends Gdk.Surface_ConstructProps {
+interface WaylandSurface_ConstructProps extends Gdk.Surface_ConstructProps {
 }
 class WaylandSurface {
     /* Properties of Gdk-4.0.Gdk.Surface */
@@ -598,7 +605,7 @@ class WaylandSurface {
     readonly scale_factor: number
     readonly width: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-4.0.Gdk.Surface */
     beep(): void
     create_cairo_context(): Gdk.CairoContext
@@ -693,7 +700,8 @@ class WaylandSurface {
     _init (config?: WaylandSurface_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WaylandToplevel_ConstructProps extends WaylandSurface_ConstructProps {
+interface WaylandToplevel_ConstructProps extends WaylandSurface_ConstructProps {
+    /* Constructor properties of Gdk-4.0.Gdk.Toplevel */
     decorated?: boolean
     deletable?: boolean
     fullscreen_mode?: Gdk.FullscreenMode
@@ -722,7 +730,7 @@ class WaylandToplevel {
     title: string
     transient_for: Gdk.Surface
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GdkWayland-4.0.GdkWayland.WaylandToplevel */
     export_handle(callback: WaylandToplevelExported): boolean
     set_application_id(application_id: string): void

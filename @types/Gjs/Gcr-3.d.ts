@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Gcr-3
  */
@@ -80,29 +86,29 @@ enum ColumnFlags {
     HIDDEN,
     SORTABLE,
 }
-export const ICON_CERTIFICATE: string
-export const ICON_GNUPG: string
-export const ICON_HOME_DIRECTORY: string
-export const ICON_KEY: string
-export const ICON_KEY_PAIR: string
-export const ICON_PASSWORD: string
-export const ICON_SMART_CARD: string
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const PURPOSE_CLIENT_AUTH: string
-export const PURPOSE_CODE_SIGNING: string
-export const PURPOSE_EMAIL: string
-export const PURPOSE_SERVER_AUTH: string
-export const SECRET_EXCHANGE_PROTOCOL_1: string
-export const UNLOCK_OPTION_ALWAYS: string
-export const UNLOCK_OPTION_IDLE: string
-export const UNLOCK_OPTION_SESSION: string
-export const UNLOCK_OPTION_TIMEOUT: string
+const ICON_CERTIFICATE: string
+const ICON_GNUPG: string
+const ICON_HOME_DIRECTORY: string
+const ICON_KEY: string
+const ICON_KEY_PAIR: string
+const ICON_PASSWORD: string
+const ICON_SMART_CARD: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const PURPOSE_CLIENT_AUTH: string
+const PURPOSE_CODE_SIGNING: string
+const PURPOSE_EMAIL: string
+const PURPOSE_SERVER_AUTH: string
+const SECRET_EXCHANGE_PROTOCOL_1: string
+const UNLOCK_OPTION_ALWAYS: string
+const UNLOCK_OPTION_IDLE: string
+const UNLOCK_OPTION_SESSION: string
+const UNLOCK_OPTION_TIMEOUT: string
 function certificate_compare(first?: Comparable | null, other?: Comparable | null): number
 function data_error_get_domain(): GLib.Quark
-function fingerprint_from_attributes(attrs: Gck.Attributes, checksum_type: GLib.ChecksumType): Uint8Array[] | null
-function fingerprint_from_subject_public_key_info(key_info: Uint8Array[], checksum_type: GLib.ChecksumType): Uint8Array[] | null
+function fingerprint_from_attributes(attrs: Gck.Attributes, checksum_type: GLib.ChecksumType): Uint8Array | null
+function fingerprint_from_subject_public_key_info(key_info: Uint8Array, checksum_type: GLib.ChecksumType): Uint8Array | null
 function icon_for_token(token_info: Gck.TokenInfo): Gio.Icon
 function importer_create_for_parsed(parsed: Parsed): Importer[]
 function importer_queue_and_filter_for_parsed(importers: Importer[], parsed: Parsed): Importer[]
@@ -158,31 +164,31 @@ class Certificate {
     readonly subject: string
     /* Methods of Gcr-3.Gcr.Certificate */
     get_basic_constraints(): [ /* returnType */ boolean, /* is_ca */ boolean | null, /* path_len */ number | null ]
-    get_der_data(): Uint8Array[]
+    get_der_data(): Uint8Array
     get_expiry_date(): GLib.Date
-    get_fingerprint(type: GLib.ChecksumType): Uint8Array[]
+    get_fingerprint(type: GLib.ChecksumType): Uint8Array
     get_fingerprint_hex(type: GLib.ChecksumType): string
     get_issued_date(): GLib.Date
     get_issuer_cn(): string
     get_issuer_dn(): string
     get_issuer_name(): string
     get_issuer_part(part: string): string | null
-    get_issuer_raw(): Uint8Array[]
+    get_issuer_raw(): Uint8Array
     get_key_size(): number
     get_markup_text(): string
-    get_serial_number(): Uint8Array[]
+    get_serial_number(): Uint8Array
     get_serial_number_hex(): string
     get_subject_cn(): string
     get_subject_dn(): string
     get_subject_name(): string
     get_subject_part(part: string): string | null
-    get_subject_raw(): Uint8Array[]
+    get_subject_raw(): Uint8Array
     is_issuer(issuer: Certificate): boolean
     mixin_emit_notify(): void
     /* Methods of Gcr-3.Gcr.Comparable */
     compare(other?: Comparable | null): number
     /* Virtual methods of Gcr-3.Gcr.Certificate */
-    vfunc_get_der_data(): Uint8Array[]
+    vfunc_get_der_data(): Uint8Array
     /* Virtual methods of Gcr-3.Gcr.Comparable */
     vfunc_compare(other?: Comparable | null): number
     static name: string
@@ -218,11 +224,11 @@ class Comparable {
     vfunc_compare(other?: Comparable | null): number
     static name: string
 }
-export interface ImportInteraction_ConstructProps extends Gio.TlsInteraction_ConstructProps {
+interface ImportInteraction_ConstructProps extends Gio.TlsInteraction_ConstructProps {
 }
 class ImportInteraction {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.ImportInteraction */
     supplement(builder: Gck.Builder, cancellable?: Gio.Cancellable | null): Gio.TlsInteractionResult
     supplement_async(builder: Gck.Builder, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -374,15 +380,13 @@ class Prompt {
     emit(sigName: "prompt-close"): void
     static name: string
 }
-export interface CertificateChain_ConstructProps extends GObject.Object_ConstructProps {
+interface CertificateChain_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CertificateChain {
     /* Properties of Gcr-3.Gcr.CertificateChain */
     readonly length: number
-    /* Fields of Gcr-3.Gcr.CertificateChain */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.CertificateChain */
     add(certificate: Certificate): void
     build(purpose: string, peer: string | null, flags: CertificateChainFlags, cancellable?: Gio.Cancellable | null): boolean
@@ -440,17 +444,18 @@ class CertificateChain {
     static new(): CertificateChain
     static $gtype: GObject.Type
 }
-export interface CertificateRequest_ConstructProps extends GObject.Object_ConstructProps {
+interface CertificateRequest_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gcr-3.Gcr.CertificateRequest */
     private_key?: Gck.Object
 }
 class CertificateRequest {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.CertificateRequest */
     complete(cancellable?: Gio.Cancellable | null): boolean
     complete_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     complete_finish(result: Gio.AsyncResult): boolean
-    encode(textual: boolean): Uint8Array[]
+    encode(textual: boolean): Uint8Array
     get_format(): CertificateRequestFormat
     get_private_key(): Gck.Object
     set_cn(cn: string): void
@@ -502,14 +507,13 @@ class CertificateRequest {
     static prepare(format: CertificateRequestFormat, private_key: Gck.Object): CertificateRequest
     static $gtype: GObject.Type
 }
-export interface FilterCollection_ConstructProps extends GObject.Object_ConstructProps {
+interface FilterCollection_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gcr-3.Gcr.FilterCollection */
     underlying?: Collection
 }
 class FilterCollection {
-    /* Fields of Gcr-3.Gcr.FilterCollection */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.FilterCollection */
     get_underlying(): Collection
     refilter(): void
@@ -578,17 +582,15 @@ class FilterCollection {
     static new_with_callback(underlying: Collection, callback: FilterCollectionFunc | null): FilterCollection
     static $gtype: GObject.Type
 }
-export interface Parser_ConstructProps extends GObject.Object_ConstructProps {
+interface Parser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Parser {
     /* Properties of Gcr-3.Gcr.Parser */
     readonly parsed_attributes: Gck.Attributes
     readonly parsed_description: string
     readonly parsed_label: string
-    /* Fields of Gcr-3.Gcr.Parser */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.Parser */
     add_password(password?: string | null): void
     format_disable(format: DataFormat): void
@@ -597,13 +599,13 @@ class Parser {
     get_filename(): string
     get_parsed(): Parsed
     get_parsed_attributes(): Gck.Attributes | null
-    get_parsed_block(): Uint8Array[] | null
+    get_parsed_block(): Uint8Array | null
     get_parsed_bytes(): GLib.Bytes
     get_parsed_description(): string | null
     get_parsed_format(): DataFormat
     get_parsed_label(): string | null
     parse_bytes(data: GLib.Bytes): boolean
-    parse_data(data: Uint8Array[]): boolean
+    parse_data(data: Uint8Array): boolean
     parse_stream(input: Gio.InputStream, cancellable?: Gio.Cancellable | null): boolean
     parse_stream_async(input: Gio.InputStream, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     parse_stream_finish(result: Gio.AsyncResult): boolean
@@ -669,7 +671,8 @@ class Parser {
     static new(): Parser
     static $gtype: GObject.Type
 }
-export interface Pkcs11Certificate_ConstructProps extends Gck.Object_ConstructProps {
+interface Pkcs11Certificate_ConstructProps extends Gck.Object_ConstructProps {
+    /* Constructor properties of Gcr-3.Gcr.Pkcs11Certificate */
     attributes?: Gck.Attributes
 }
 class Pkcs11Certificate {
@@ -681,10 +684,10 @@ class Pkcs11Certificate {
     readonly label: string
     readonly markup: string
     readonly subject: string
-    /* Fields of Gcr-3.Gcr.Pkcs11Certificate */
-    parent: Gck.Object
+    /* Fields of Gck-1.Gck.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.Pkcs11Certificate */
     get_attributes(): Gck.Attributes
     /* Methods of Gck-1.Gck.Object */
@@ -696,9 +699,9 @@ class Pkcs11Certificate {
     destroy_finish(result: Gio.AsyncResult): boolean
     equal(object2: Gck.Object): boolean
     get_async(attr_types: number[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_data(attr_type: number, cancellable?: Gio.Cancellable | null): Uint8Array[]
+    get_data(attr_type: number, cancellable?: Gio.Cancellable | null): Uint8Array
     get_data_async(attr_type: number, allocator: Gck.Allocator, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    get_data_finish(result: Gio.AsyncResult): Uint8Array[]
+    get_data_finish(result: Gio.AsyncResult): Uint8Array
     get_finish(result: Gio.AsyncResult): Gck.Attributes
     get_full(attr_types: number[], cancellable?: Gio.Cancellable | null): Gck.Attributes
     get_handle(): number
@@ -738,31 +741,31 @@ class Pkcs11Certificate {
     watch_closure(closure: Function): void
     /* Methods of Gcr-3.Gcr.Certificate */
     get_basic_constraints(): [ /* returnType */ boolean, /* is_ca */ boolean | null, /* path_len */ number | null ]
-    get_der_data(): Uint8Array[]
+    get_der_data(): Uint8Array
     get_expiry_date(): GLib.Date
-    get_fingerprint(type: GLib.ChecksumType): Uint8Array[]
+    get_fingerprint(type: GLib.ChecksumType): Uint8Array
     get_fingerprint_hex(type: GLib.ChecksumType): string
     get_issued_date(): GLib.Date
     get_issuer_cn(): string
     get_issuer_dn(): string
     get_issuer_name(): string
     get_issuer_part(part: string): string | null
-    get_issuer_raw(): Uint8Array[]
+    get_issuer_raw(): Uint8Array
     get_key_size(): number
     get_markup_text(): string
-    get_serial_number(): Uint8Array[]
+    get_serial_number(): Uint8Array
     get_serial_number_hex(): string
     get_subject_cn(): string
     get_subject_dn(): string
     get_subject_name(): string
     get_subject_part(part: string): string | null
-    get_subject_raw(): Uint8Array[]
+    get_subject_raw(): Uint8Array
     is_issuer(issuer: Certificate): boolean
     mixin_emit_notify(): void
     /* Methods of Gcr-3.Gcr.Comparable */
     compare(other?: Comparable | null): number
     /* Virtual methods of Gcr-3.Gcr.Pkcs11Certificate */
-    vfunc_get_der_data(): Uint8Array[]
+    vfunc_get_der_data(): Uint8Array
     vfunc_compare(other?: Comparable | null): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -804,12 +807,13 @@ class Pkcs11Certificate {
     static compare(first?: Comparable | null, other?: Comparable | null): number
     static $gtype: GObject.Type
 }
-export interface SecretExchange_ConstructProps extends GObject.Object_ConstructProps {
+interface SecretExchange_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gcr-3.Gcr.SecretExchange */
     protocol?: string
 }
 class SecretExchange {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.SecretExchange */
     begin(): string
     get_protocol(): string
@@ -864,7 +868,7 @@ class SecretExchange {
     static new(protocol?: string | null): SecretExchange
     static $gtype: GObject.Type
 }
-export interface SimpleCertificate_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleCertificate_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SimpleCertificate {
     /* Properties of Gcr-3.Gcr.Certificate */
@@ -875,10 +879,8 @@ class SimpleCertificate {
     readonly label: string
     readonly markup: string
     readonly subject: string
-    /* Fields of Gcr-3.Gcr.SimpleCertificate */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -903,31 +905,31 @@ class SimpleCertificate {
     watch_closure(closure: Function): void
     /* Methods of Gcr-3.Gcr.Certificate */
     get_basic_constraints(): [ /* returnType */ boolean, /* is_ca */ boolean | null, /* path_len */ number | null ]
-    get_der_data(): Uint8Array[]
+    get_der_data(): Uint8Array
     get_expiry_date(): GLib.Date
-    get_fingerprint(type: GLib.ChecksumType): Uint8Array[]
+    get_fingerprint(type: GLib.ChecksumType): Uint8Array
     get_fingerprint_hex(type: GLib.ChecksumType): string
     get_issued_date(): GLib.Date
     get_issuer_cn(): string
     get_issuer_dn(): string
     get_issuer_name(): string
     get_issuer_part(part: string): string | null
-    get_issuer_raw(): Uint8Array[]
+    get_issuer_raw(): Uint8Array
     get_key_size(): number
     get_markup_text(): string
-    get_serial_number(): Uint8Array[]
+    get_serial_number(): Uint8Array
     get_serial_number_hex(): string
     get_subject_cn(): string
     get_subject_dn(): string
     get_subject_name(): string
     get_subject_part(part: string): string | null
-    get_subject_raw(): Uint8Array[]
+    get_subject_raw(): Uint8Array
     is_issuer(issuer: Certificate): boolean
     mixin_emit_notify(): void
     /* Methods of Gcr-3.Gcr.Comparable */
     compare(other?: Comparable | null): number
     /* Virtual methods of Gcr-3.Gcr.SimpleCertificate */
-    vfunc_get_der_data(): Uint8Array[]
+    vfunc_get_der_data(): Uint8Array
     vfunc_compare(other?: Comparable | null): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -963,17 +965,15 @@ class SimpleCertificate {
     constructor (config?: SimpleCertificate_ConstructProps)
     _init (config?: SimpleCertificate_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(data: Uint8Array[]): SimpleCertificate
+    static new(data: Uint8Array): SimpleCertificate
     static compare(first?: Comparable | null, other?: Comparable | null): number
     static $gtype: GObject.Type
 }
-export interface SimpleCollection_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleCollection_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SimpleCollection {
-    /* Fields of Gcr-3.Gcr.SimpleCollection */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.SimpleCollection */
     add(object: GObject.Object): void
     remove(object: GObject.Object): void
@@ -1041,12 +1041,13 @@ class SimpleCollection {
     static new(): SimpleCollection
     static $gtype: GObject.Type
 }
-export interface SshAskpass_ConstructProps extends GObject.Object_ConstructProps {
+interface SshAskpass_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gcr-3.Gcr.SshAskpass */
     interaction?: Gio.TlsInteraction
 }
 class SshAskpass {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.SshAskpass */
     get_interaction(): Gio.TlsInteraction
     /* Methods of GObject-2.0.GObject.Object */
@@ -1095,10 +1096,12 @@ class SshAskpass {
     static child_setup(askpass?: object | null): void
     static $gtype: GObject.Type
 }
-export interface SystemPrompt_ConstructProps extends GObject.Object_ConstructProps {
+interface SystemPrompt_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gcr-3.Gcr.SystemPrompt */
     bus_name?: string
     secret_exchange?: SecretExchange
     timeout_seconds?: number
+    /* Constructor properties of Gcr-3.Gcr.Prompt */
     caller_window?: string
     cancel_label?: string
     choice_chosen?: boolean
@@ -1125,10 +1128,8 @@ class SystemPrompt {
     readonly password_strength: number
     title: string
     warning: string
-    /* Fields of Gcr-3.Gcr.SystemPrompt */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.SystemPrompt */
     close(cancellable?: Gio.Cancellable | null): boolean
     close_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1261,16 +1262,15 @@ class SystemPrompt {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SystemPrompter_ConstructProps extends GObject.Object_ConstructProps {
+interface SystemPrompter_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gcr-3.Gcr.SystemPrompter */
     prompt_type?: GObject.Type
 }
 class SystemPrompter {
     /* Properties of Gcr-3.Gcr.SystemPrompter */
     readonly prompting: boolean
-    /* Fields of Gcr-3.Gcr.SystemPrompter */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.SystemPrompter */
     get_mode(): SystemPrompterMode
     get_prompt_type(): GObject.Type
@@ -1328,13 +1328,11 @@ class SystemPrompter {
     static new(mode: SystemPrompterMode, prompt_type: GObject.Type): SystemPrompter
     static $gtype: GObject.Type
 }
-export interface UnionCollection_ConstructProps extends GObject.Object_ConstructProps {
+interface UnionCollection_ConstructProps extends GObject.Object_ConstructProps {
 }
 class UnionCollection {
-    /* Fields of Gcr-3.Gcr.UnionCollection */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gcr-3.Gcr.UnionCollection */
     add(collection: Collection): void
     elements(): Collection[]
@@ -1408,7 +1406,7 @@ class UnionCollection {
 }
 abstract class CertificateChainClass {
     /* Fields of Gcr-3.Gcr.CertificateChainClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CertificateChainPrivate {
@@ -1416,45 +1414,45 @@ class CertificateChainPrivate {
 }
 abstract class CertificateIface {
     /* Fields of Gcr-3.Gcr.CertificateIface */
-    parent: GObject.TypeInterface
-    get_der_data: (self: Certificate) => Uint8Array[]
+    readonly parent: GObject.TypeInterface
+    readonly get_der_data: (self: Certificate) => Uint8Array
     static name: string
 }
 abstract class CertificateRequestClass {
     /* Fields of Gcr-3.Gcr.CertificateRequestClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CollectionIface {
     /* Fields of Gcr-3.Gcr.CollectionIface */
-    parent: GObject.TypeInterface
-    added: (self: Collection, object: GObject.Object) => void
-    removed: (self: Collection, object: GObject.Object) => void
-    get_length: (self: Collection) => number
-    get_objects: (self: Collection) => GObject.Object[]
-    contains: (self: Collection, object: GObject.Object) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly added: (self: Collection, object: GObject.Object) => void
+    readonly removed: (self: Collection, object: GObject.Object) => void
+    readonly get_length: (self: Collection) => number
+    readonly get_objects: (self: Collection) => GObject.Object[]
+    readonly contains: (self: Collection, object: GObject.Object) => boolean
     static name: string
 }
 class Column {
     /* Fields of Gcr-3.Gcr.Column */
-    property_name: string
-    property_type: GObject.Type
-    column_type: GObject.Type
-    label: string
-    flags: ColumnFlags
-    transformer: GObject.ValueTransform
-    user_data: object
+    readonly property_name: string
+    readonly property_type: GObject.Type
+    readonly column_type: GObject.Type
+    readonly label: string
+    readonly flags: ColumnFlags
+    readonly transformer: GObject.ValueTransform
+    readonly user_data: object
     static name: string
 }
 abstract class ComparableIface {
     /* Fields of Gcr-3.Gcr.ComparableIface */
-    parent: GObject.TypeInterface
-    compare: (self: Comparable, other?: Comparable | null) => number
+    readonly parent: GObject.TypeInterface
+    readonly compare: (self: Comparable, other?: Comparable | null) => number
     static name: string
 }
 abstract class FilterCollectionClass {
     /* Fields of Gcr-3.Gcr.FilterCollectionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class FilterCollectionPrivate {
@@ -1462,27 +1460,27 @@ class FilterCollectionPrivate {
 }
 abstract class ImportInteractionIface {
     /* Fields of Gcr-3.Gcr.ImportInteractionIface */
-    parent: GObject.TypeInterface
-    supplement_prep: (interaction: ImportInteraction, builder: Gck.Builder) => void
-    supplement: (interaction: ImportInteraction, builder: Gck.Builder, cancellable?: Gio.Cancellable | null) => Gio.TlsInteractionResult
-    supplement_async: (interaction: ImportInteraction, builder: Gck.Builder, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    supplement_finish: (interaction: ImportInteraction, result: Gio.AsyncResult) => Gio.TlsInteractionResult
+    readonly parent: GObject.TypeInterface
+    readonly supplement_prep: (interaction: ImportInteraction, builder: Gck.Builder) => void
+    readonly supplement: (interaction: ImportInteraction, builder: Gck.Builder, cancellable?: Gio.Cancellable | null) => Gio.TlsInteractionResult
+    readonly supplement_async: (interaction: ImportInteraction, builder: Gck.Builder, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly supplement_finish: (interaction: ImportInteraction, result: Gio.AsyncResult) => Gio.TlsInteractionResult
     static name: string
 }
 abstract class ImporterIface {
     /* Fields of Gcr-3.Gcr.ImporterIface */
-    parent: GObject.TypeInterface
-    queue_for_parsed: (importer: Importer, parsed: Parsed) => boolean
-    import_sync: (importer: Importer, cancellable?: Gio.Cancellable | null) => boolean
-    import_async: (importer: Importer, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    import_finish: (importer: Importer, result: Gio.AsyncResult) => boolean
+    readonly parent: GObject.TypeInterface
+    readonly queue_for_parsed: (importer: Importer, parsed: Parsed) => boolean
+    readonly import_sync: (importer: Importer, cancellable?: Gio.Cancellable | null) => boolean
+    readonly import_async: (importer: Importer, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly import_finish: (importer: Importer, result: Gio.AsyncResult) => boolean
     static name: string
 }
 class Parsed {
     /* Methods of Gcr-3.Gcr.Parsed */
     get_attributes(): Gck.Attributes | null
     get_bytes(): GLib.Bytes
-    get_data(): Uint8Array[] | null
+    get_data(): Uint8Array | null
     get_description(): string | null
     get_filename(): string
     get_format(): DataFormat
@@ -1494,9 +1492,9 @@ class Parsed {
 }
 abstract class ParserClass {
     /* Fields of Gcr-3.Gcr.ParserClass */
-    parent_class: GObject.ObjectClass
-    authenticate: (self: Parser, count: number) => boolean
-    parsed: (self: Parser) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly authenticate: (self: Parser, count: number) => boolean
+    readonly parsed: (self: Parser) => void
     static name: string
 }
 class ParserPrivate {
@@ -1510,18 +1508,18 @@ class Pkcs11CertificatePrivate {
 }
 abstract class PromptIface {
     /* Fields of Gcr-3.Gcr.PromptIface */
-    parent_iface: GObject.TypeInterface
-    prompt_password_async: (prompt: Prompt, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    prompt_password_finish: (prompt: Prompt, result: Gio.AsyncResult) => string
-    prompt_confirm_async: (prompt: Prompt, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
-    prompt_confirm_finish: (prompt: Prompt, result: Gio.AsyncResult) => PromptReply
-    prompt_close: (prompt: Prompt) => void
+    readonly parent_iface: GObject.TypeInterface
+    readonly prompt_password_async: (prompt: Prompt, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly prompt_password_finish: (prompt: Prompt, result: Gio.AsyncResult) => string
+    readonly prompt_confirm_async: (prompt: Prompt, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null) => void
+    readonly prompt_confirm_finish: (prompt: Prompt, result: Gio.AsyncResult) => PromptReply
+    readonly prompt_close: (prompt: Prompt) => void
     static name: string
 }
 abstract class SecretExchangeClass {
     /* Fields of Gcr-3.Gcr.SecretExchangeClass */
-    generate_exchange_key: (exchange: SecretExchange, scheme: string, public_key: number, n_public_key: number) => boolean
-    derive_transport_key: (exchange: SecretExchange, peer: number, n_peer: number) => boolean
+    readonly generate_exchange_key: (exchange: SecretExchange, scheme: string, public_key: number, n_public_key: number) => boolean
+    readonly derive_transport_key: (exchange: SecretExchange, peer: number, n_peer: number) => boolean
     static name: string
 }
 class SecretExchangePrivate {
@@ -1529,7 +1527,7 @@ class SecretExchangePrivate {
 }
 abstract class SimpleCertificateClass {
     /* Fields of Gcr-3.Gcr.SimpleCertificateClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SimpleCertificatePrivate {
@@ -1537,7 +1535,7 @@ class SimpleCertificatePrivate {
 }
 abstract class SimpleCollectionClass {
     /* Fields of Gcr-3.Gcr.SimpleCollectionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SimpleCollectionPrivate {
@@ -1545,12 +1543,12 @@ class SimpleCollectionPrivate {
 }
 abstract class SshAskpassClass {
     /* Fields of Gcr-3.Gcr.SshAskpassClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SystemPromptClass {
     /* Fields of Gcr-3.Gcr.SystemPromptClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SystemPromptPrivate {
@@ -1558,7 +1556,7 @@ class SystemPromptPrivate {
 }
 abstract class SystemPrompterClass {
     /* Fields of Gcr-3.Gcr.SystemPrompterClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class SystemPrompterPrivate {
@@ -1566,7 +1564,7 @@ class SystemPrompterPrivate {
 }
 abstract class UnionCollectionClass {
     /* Fields of Gcr-3.Gcr.UnionCollectionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class UnionCollectionPrivate {

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Plasma-1.0
  */
@@ -11,14 +17,13 @@ import type GLib from './GLib-2.0';
 
 export namespace Plasma {
 
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Plasma-1.0.Plasma.Client */
     client?: object
 }
 class Client {
-    /* Fields of Plasma-1.0.Plasma.Client */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Plasma-1.0.Plasma.Client */
     create(id: ObjectID, data_size: number, options?: ClientCreateOptions | null): CreatedObject | null
     disconnect(): boolean
@@ -68,19 +73,18 @@ class Client {
     static new(store_socket_name: string, options?: ClientOptions | null): Client
     static $gtype: GObject.Type
 }
-export interface ClientCreateOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface ClientCreateOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Plasma-1.0.Plasma.ClientCreateOptions */
     gpu_device?: number
 }
 class ClientCreateOptions {
     /* Properties of Plasma-1.0.Plasma.ClientCreateOptions */
     gpu_device: number
-    /* Fields of Plasma-1.0.Plasma.ClientCreateOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Plasma-1.0.Plasma.ClientCreateOptions */
-    get_metadata(): Uint8Array[] | null
-    set_metadata(metadata: Uint8Array[] | null): void
+    get_metadata(): Uint8Array | null
+    set_metadata(metadata: Uint8Array | null): void
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -128,16 +132,15 @@ class ClientCreateOptions {
     static new(): ClientCreateOptions
     static $gtype: GObject.Type
 }
-export interface ClientOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface ClientOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Plasma-1.0.Plasma.ClientOptions */
     n_retries?: number
 }
 class ClientOptions {
     /* Properties of Plasma-1.0.Plasma.ClientOptions */
     n_retries: number
-    /* Fields of Plasma-1.0.Plasma.ClientOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Plasma-1.0.Plasma.ClientOptions */
     get_n_retries(): number
     set_n_retries(n_retries: number): void
@@ -188,13 +191,13 @@ class ClientOptions {
     static new(): ClientOptions
     static $gtype: GObject.Type
 }
-export interface CreatedObject_ConstructProps extends Object_ConstructProps {
+interface CreatedObject_ConstructProps extends Object_ConstructProps {
 }
 class CreatedObject {
-    /* Fields of Plasma-1.0.Plasma.CreatedObject */
-    parent_instance: Object
+    /* Fields of Plasma-1.0.Plasma.Object */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Plasma-1.0.Plasma.CreatedObject */
     abort(): boolean
     seal(): boolean
@@ -241,7 +244,8 @@ class CreatedObject {
     _init (config?: CreatedObject_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+interface Object_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Plasma-1.0.Plasma.Object */
     client?: Client
     data?: Arrow.Buffer
     gpu_device?: number
@@ -251,10 +255,8 @@ export interface Object_ConstructProps extends GObject.Object_ConstructProps {
     raw_metadata?: object
 }
 class Object {
-    /* Fields of Plasma-1.0.Plasma.Object */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -298,15 +300,13 @@ class Object {
     _init (config?: Object_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ObjectID_ConstructProps extends GObject.Object_ConstructProps {
+interface ObjectID_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ObjectID {
-    /* Fields of Plasma-1.0.Plasma.ObjectID */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Plasma-1.0.Plasma.ObjectID */
-    to_binary(): Uint8Array[]
+    to_binary(): Uint8Array
     to_hex(): string
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
@@ -350,16 +350,16 @@ class ObjectID {
     constructor (config?: ObjectID_ConstructProps)
     _init (config?: ObjectID_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(id: Uint8Array[]): ObjectID
+    static new(id: Uint8Array): ObjectID
     static $gtype: GObject.Type
 }
-export interface ReferredObject_ConstructProps extends Object_ConstructProps {
+interface ReferredObject_ConstructProps extends Object_ConstructProps {
 }
 class ReferredObject {
-    /* Fields of Plasma-1.0.Plasma.ReferredObject */
-    parent_instance: Object
+    /* Fields of Plasma-1.0.Plasma.Object */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Plasma-1.0.Plasma.ReferredObject */
     release(): boolean
     /* Methods of GObject-2.0.GObject.Object */
@@ -407,37 +407,37 @@ class ReferredObject {
 }
 abstract class ClientClass {
     /* Fields of Plasma-1.0.Plasma.ClientClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ClientCreateOptionsClass {
     /* Fields of Plasma-1.0.Plasma.ClientCreateOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ClientOptionsClass {
     /* Fields of Plasma-1.0.Plasma.ClientOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CreatedObjectClass {
     /* Fields of Plasma-1.0.Plasma.CreatedObjectClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 abstract class ObjectClass {
     /* Fields of Plasma-1.0.Plasma.ObjectClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ObjectIDClass {
     /* Fields of Plasma-1.0.Plasma.ObjectIDClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ReferredObjectClass {
     /* Fields of Plasma-1.0.Plasma.ReferredObjectClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 }

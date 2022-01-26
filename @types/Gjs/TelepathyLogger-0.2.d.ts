@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * TelepathyLogger-0.2
  */
@@ -27,7 +33,8 @@ enum EventTypeMask {
 interface LogEventFilter {
     (event: Event): boolean
 }
-export interface CallEvent_ConstructProps extends Event_ConstructProps {
+interface CallEvent_ConstructProps extends Event_ConstructProps {
+    /* Constructor properties of TelepathyLogger-0.2.TelepathyLogger.CallEvent */
     detailed_end_reason?: string
     duration?: number
     end_actor?: Entity
@@ -37,7 +44,7 @@ class CallEvent {
     /* Properties of TelepathyLogger-0.2.TelepathyLogger.Event */
     readonly account_path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TelepathyLogger-0.2.TelepathyLogger.CallEvent */
     get_detailed_end_reason(): string
     get_duration(): GLib.TimeSpan
@@ -95,18 +102,16 @@ class CallEvent {
     _init (config?: CallEvent_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Entity_ConstructProps extends GObject.Object_ConstructProps {
+interface Entity_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TelepathyLogger-0.2.TelepathyLogger.Entity */
     alias?: string
     avatar_token?: string
     identifier?: string
     type?: number
 }
 class Entity {
-    /* Fields of TelepathyLogger-0.2.TelepathyLogger.Entity */
-    parent: GObject.Object
-    priv: EntityPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TelepathyLogger-0.2.TelepathyLogger.Entity */
     get_alias(): string
     get_avatar_token(): string
@@ -159,7 +164,8 @@ class Entity {
     static new_from_tp_contact(contact: TelepathyGLib.Contact, type: EntityType): Entity
     static $gtype: GObject.Type
 }
-export interface Event_ConstructProps extends GObject.Object_ConstructProps {
+interface Event_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TelepathyLogger-0.2.TelepathyLogger.Event */
     account?: TelepathyGLib.Account
     channel_path?: string
     receiver?: Entity
@@ -170,7 +176,7 @@ class Event {
     /* Properties of TelepathyLogger-0.2.TelepathyLogger.Event */
     readonly account_path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TelepathyLogger-0.2.TelepathyLogger.Event */
     equal(data: Event): boolean
     get_account(): TelepathyGLib.Account
@@ -223,14 +229,11 @@ class Event {
     _init (config?: Event_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface LogManager_ConstructProps extends GObject.Object_ConstructProps {
+interface LogManager_ConstructProps extends GObject.Object_ConstructProps {
 }
 class LogManager {
-    /* Fields of TelepathyLogger-0.2.TelepathyLogger.LogManager */
-    parent: GObject.Object
-    priv: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TelepathyLogger-0.2.TelepathyLogger.LogManager */
     disable_for_entity(account: TelepathyGLib.Account, entity: Entity): void
     enable_for_entity(account: TelepathyGLib.Account, entity: Entity): void
@@ -293,16 +296,14 @@ class LogManager {
     static errors_quark(): GLib.Quark
     static $gtype: GObject.Type
 }
-export interface LogWalker_ConstructProps extends GObject.Object_ConstructProps {
+interface LogWalker_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of TelepathyLogger-0.2.TelepathyLogger.LogWalker */
     filter?: object
     filter_data?: object
 }
 class LogWalker {
-    /* Fields of TelepathyLogger-0.2.TelepathyLogger.LogWalker */
-    parent_instance: GObject.Object
-    priv: LogWalkerPriv
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TelepathyLogger-0.2.TelepathyLogger.LogWalker */
     get_events_async(num_events: number, callback?: Gio.AsyncReadyCallback | null): void
     get_events_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* events */ Event[] ]
@@ -353,7 +354,8 @@ class LogWalker {
     _init (config?: LogWalker_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TextEvent_ConstructProps extends Event_ConstructProps {
+interface TextEvent_ConstructProps extends Event_ConstructProps {
+    /* Constructor properties of TelepathyLogger-0.2.TelepathyLogger.TextEvent */
     edit_timestamp?: number
     message?: string
     message_token?: string
@@ -364,7 +366,7 @@ class TextEvent {
     /* Properties of TelepathyLogger-0.2.TelepathyLogger.Event */
     readonly account_path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of TelepathyLogger-0.2.TelepathyLogger.TextEvent */
     get_edit_timestamp(): number
     get_message(): string
@@ -441,14 +443,14 @@ class EventPriv {
 }
 abstract class LogManagerClass {
     /* Fields of TelepathyLogger-0.2.TelepathyLogger.LogManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class LogSearchHit {
     /* Fields of TelepathyLogger-0.2.TelepathyLogger.LogSearchHit */
-    account: TelepathyGLib.Account
-    target: Entity
-    date: GLib.Date
+    readonly account: TelepathyGLib.Account
+    readonly target: Entity
+    readonly date: GLib.Date
     static name: string
 }
 abstract class LogWalkerClass {

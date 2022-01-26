@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Adw-1
  */
@@ -104,11 +110,11 @@ enum ViewSwitcherPolicy {
     NARROW,
     WIDE,
 }
-export const DURATION_INFINITE: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const VERSION_S: string
+const DURATION_INFINITE: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const VERSION_S: string
 function easing_ease(self: Easing, value: number): number
 function get_enable_animations(widget: Gtk.Widget): boolean
 function get_major_version(): number
@@ -120,7 +126,7 @@ function lerp(a: number, b: number, t: number): number
 interface AnimationTargetFunc {
     (value: number): void
 }
-export interface Swipeable_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Swipeable_ConstructProps extends Gtk.Widget_ConstructProps {
 }
 class Swipeable {
     /* Properties of Gtk-4.0.Gtk.Widget */
@@ -158,9 +164,9 @@ class Swipeable {
     visible: boolean
     width_request: number
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Swipeable */
     get_cancel_progress(): number
     get_distance(): number
@@ -505,13 +511,16 @@ class Swipeable {
     _init (config?: Swipeable_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ActionRow_ConstructProps extends PreferencesRow_ConstructProps {
+interface ActionRow_ConstructProps extends PreferencesRow_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ActionRow */
     activatable_widget?: Gtk.Widget
     icon_name?: string
     subtitle?: string
     subtitle_lines?: number
     title_lines?: number
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
 }
@@ -568,10 +577,10 @@ class ActionRow {
     /* Properties of Gtk-4.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Fields of Adw-1.Adw.ActionRow */
-    parent_instance: PreferencesRow
+    /* Fields of Adw-1.Adw.PreferencesRow */
+    readonly parent_instance: Gtk.ListBoxRow
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ActionRow */
     activate(): void
     add_prefix(widget: Gtk.Widget): void
@@ -798,9 +807,22 @@ class ActionRow {
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.ActionRow */
     vfunc_activate(): void
+    vfunc_get_action_name(): string | null
+    vfunc_get_action_target_value(): GLib.Variant | null
+    vfunc_set_action_name(action_name?: string | null): void
+    vfunc_set_action_target_value(target_value?: GLib.Variant | null): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ Gtk.BuildableParser, /* data */ object | null ]
+    vfunc_get_id(): string
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_id(id: string): void
     /* Virtual methods of Adw-1.Adw.PreferencesRow */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant | null
@@ -1006,7 +1028,8 @@ class ActionRow {
     static new(): ActionRow
     static $gtype: GObject.Type
 }
-export interface Animation_ConstructProps extends GObject.Object_ConstructProps {
+interface Animation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Animation */
     target?: AnimationTarget
     widget?: Gtk.Widget
 }
@@ -1015,10 +1038,8 @@ class Animation {
     readonly state: AnimationState
     target: AnimationTarget
     readonly value: number
-    /* Fields of Adw-1.Adw.Animation */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Animation */
     get_state(): AnimationState
     get_target(): AnimationTarget
@@ -1082,11 +1103,11 @@ class Animation {
     _init (config?: Animation_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface AnimationTarget_ConstructProps extends GObject.Object_ConstructProps {
+interface AnimationTarget_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AnimationTarget {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1130,7 +1151,7 @@ class AnimationTarget {
     _init (config?: AnimationTarget_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Application_ConstructProps extends Gtk.Application_ConstructProps {
+interface Application_ConstructProps extends Gtk.Application_ConstructProps {
 }
 class Application {
     /* Properties of Adw-1.Adw.Application */
@@ -1149,10 +1170,10 @@ class Application {
     readonly is_registered: boolean
     readonly is_remote: boolean
     resource_base_path: string
-    /* Fields of Adw-1.Adw.Application */
-    parent_instance: Gtk.Application
+    /* Fields of Gtk-4.0.Gtk.Application */
+    readonly parent_instance: Gio.Application
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Application */
     get_style_manager(): StyleManager
     /* Methods of Gtk-4.0.Gtk.Application */
@@ -1247,6 +1268,24 @@ class Application {
     add_action_entries(entries: Gio.ActionEntry[], user_data?: object | null): void
     lookup_action(action_name: string): Gio.Action | null
     remove_action(action_name: string): void
+    /* Virtual methods of Adw-1.Adw.Application */
+    vfunc_action_added(action_name: string): void
+    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void
+    vfunc_action_removed(action_name: string): void
+    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void
+    vfunc_activate_action(action_name: string, parameter?: GLib.Variant | null): void
+    vfunc_change_action_state(action_name: string, value: GLib.Variant): void
+    vfunc_get_action_enabled(action_name: string): boolean
+    vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null
+    vfunc_get_action_state(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null
+    vfunc_has_action(action_name: string): boolean
+    vfunc_list_actions(): string[]
+    vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
+    vfunc_add_action(action: Gio.Action): void
+    vfunc_lookup_action(action_name: string): Gio.Action | null
+    vfunc_remove_action(action_name: string): void
     /* Virtual methods of Gtk-4.0.Gtk.Application */
     vfunc_window_added(window: Gtk.Window): void
     vfunc_window_removed(window: Gtk.Window): void
@@ -1375,10 +1414,15 @@ class Application {
     _init (config?: Application_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(application_id: string | null, flags: Gio.ApplicationFlags): Application
+    /* Function overloads */
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): Application
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): Application
     static $gtype: GObject.Type
 }
-export interface ApplicationWindow_ConstructProps extends Gtk.ApplicationWindow_ConstructProps {
+interface ApplicationWindow_ConstructProps extends Gtk.ApplicationWindow_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ApplicationWindow */
     content?: Gtk.Widget
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class ApplicationWindow {
@@ -1447,10 +1491,10 @@ class ApplicationWindow {
     width_request: number
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
-    /* Fields of Adw-1.Adw.ApplicationWindow */
-    parent_instance: Gtk.ApplicationWindow
+    /* Fields of Gtk-4.0.Gtk.ApplicationWindow */
+    readonly parent_instance: Gtk.Window
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ApplicationWindow */
     get_content(): Gtk.Widget | null
     set_content(content?: Gtk.Widget | null): void
@@ -1722,12 +1766,31 @@ class ApplicationWindow {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Native */
     get_renderer(): Gsk.Renderer
     get_surface(): Gdk.Surface
     get_surface_transform(): [ /* x */ number, /* y */ number ]
+    /* Methods of Gtk-4.0.Gtk.Root */
+    set_focus(focus?: Gtk.Widget | null): void
     /* Virtual methods of Adw-1.Adw.ApplicationWindow */
+    vfunc_action_added(action_name: string): void
+    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void
+    vfunc_action_removed(action_name: string): void
+    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void
+    vfunc_activate_action(action_name: string, parameter?: GLib.Variant | null): void
+    vfunc_change_action_state(action_name: string, value: GLib.Variant): void
+    vfunc_get_action_enabled(action_name: string): boolean
+    vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null
+    vfunc_get_action_state(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null
+    vfunc_has_action(action_name: string): boolean
+    vfunc_list_actions(): string[]
+    vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
+    vfunc_add_action(action: Gio.Action): void
+    vfunc_lookup_action(action_name: string): Gio.Action | null
+    vfunc_remove_action(action_name: string): void
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
     vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -1999,16 +2062,20 @@ class ApplicationWindow {
     _init (config?: ApplicationWindow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(app: Gtk.Application): ApplicationWindow
+    /* Function overloads */
+    static new(application: Gtk.Application): ApplicationWindow
     static new(): ApplicationWindow
-    static get_for_surface(surface: Gdk.Surface): Gtk.Native
+    static get_for_surface(surface: Gdk.Surface): Gtk.Native | null
     static $gtype: GObject.Type
 }
-export interface Avatar_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Avatar_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Avatar */
     custom_image?: Gdk.Paintable
     icon_name?: string
     show_initials?: boolean
     size?: number
     text?: string
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class Avatar {
@@ -2055,9 +2122,9 @@ class Avatar {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Avatar */
     draw_to_texture(scale_factor: number): Gdk.Texture
     get_custom_image(): Gdk.Paintable | null
@@ -2258,7 +2325,7 @@ class Avatar {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.Avatar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2436,8 +2503,10 @@ class Avatar {
     static new(size: number, text: string | null, show_initials: boolean): Avatar
     static $gtype: GObject.Type
 }
-export interface Bin_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Bin_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Bin */
     child?: Gtk.Widget
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class Bin {
@@ -2479,10 +2548,10 @@ class Bin {
     width_request: number
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
-    /* Fields of Adw-1.Adw.Bin */
-    parent_instance: Gtk.Widget
+    /* Fields of Gtk-4.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Bin */
     get_child(): Gtk.Widget | null
     set_child(child?: Gtk.Widget | null): void
@@ -2674,7 +2743,7 @@ class Bin {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.Bin */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -2844,10 +2913,12 @@ class Bin {
     static new(): Bin
     static $gtype: GObject.Type
 }
-export interface ButtonContent_ConstructProps extends Gtk.Widget_ConstructProps {
+interface ButtonContent_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ButtonContent */
     icon_name?: string
     label?: string
     use_underline?: boolean
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class ButtonContent {
@@ -2892,9 +2963,9 @@ class ButtonContent {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ButtonContent */
     get_icon_name(): string
     get_label(): string
@@ -3090,7 +3161,7 @@ class ButtonContent {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.ButtonContent */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -3264,11 +3335,11 @@ class ButtonContent {
     static new(): ButtonContent
     static $gtype: GObject.Type
 }
-export interface CallbackAnimationTarget_ConstructProps extends AnimationTarget_ConstructProps {
+interface CallbackAnimationTarget_ConstructProps extends AnimationTarget_ConstructProps {
 }
 class CallbackAnimationTarget {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3314,7 +3385,8 @@ class CallbackAnimationTarget {
     static new(): CallbackAnimationTarget
     static $gtype: GObject.Type
 }
-export interface Carousel_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Carousel_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Carousel */
     allow_long_swipes?: boolean
     allow_mouse_drag?: boolean
     allow_scroll_wheel?: boolean
@@ -3322,7 +3394,9 @@ export interface Carousel_ConstructProps extends Gtk.Widget_ConstructProps {
     reveal_duration?: number
     scroll_params?: SpringParams
     spacing?: number
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Carousel {
@@ -3375,9 +3449,9 @@ class Carousel {
     /* Properties of Gtk-4.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Carousel */
     append(child: Gtk.Widget): void
     get_allow_long_swipes(): boolean
@@ -3596,7 +3670,7 @@ class Carousel {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -3796,9 +3870,12 @@ class Carousel {
     static new(): Carousel
     static $gtype: GObject.Type
 }
-export interface CarouselIndicatorDots_ConstructProps extends Gtk.Widget_ConstructProps {
+interface CarouselIndicatorDots_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.CarouselIndicatorDots */
     carousel?: Carousel
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class CarouselIndicatorDots {
@@ -3843,9 +3920,9 @@ class CarouselIndicatorDots {
     /* Properties of Gtk-4.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.CarouselIndicatorDots */
     get_carousel(): Carousel | null
     set_carousel(carousel?: Carousel | null): void
@@ -4037,7 +4114,7 @@ class CarouselIndicatorDots {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -4212,9 +4289,12 @@ class CarouselIndicatorDots {
     static new(): CarouselIndicatorDots
     static $gtype: GObject.Type
 }
-export interface CarouselIndicatorLines_ConstructProps extends Gtk.Widget_ConstructProps {
+interface CarouselIndicatorLines_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.CarouselIndicatorLines */
     carousel?: Carousel
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class CarouselIndicatorLines {
@@ -4259,9 +4339,9 @@ class CarouselIndicatorLines {
     /* Properties of Gtk-4.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.CarouselIndicatorLines */
     get_carousel(): Carousel | null
     set_carousel(carousel?: Carousel | null): void
@@ -4453,7 +4533,7 @@ class CarouselIndicatorLines {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -4628,11 +4708,14 @@ class CarouselIndicatorLines {
     static new(): CarouselIndicatorLines
     static $gtype: GObject.Type
 }
-export interface Clamp_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Clamp_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Clamp */
     child?: Gtk.Widget
     maximum_size?: number
     tightening_threshold?: number
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Clamp {
@@ -4679,9 +4762,9 @@ class Clamp {
     /* Properties of Gtk-4.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Clamp */
     get_child(): Gtk.Widget | null
     get_maximum_size(): number
@@ -4877,7 +4960,7 @@ class Clamp {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -5056,9 +5139,11 @@ class Clamp {
     static new(): Clamp
     static $gtype: GObject.Type
 }
-export interface ClampLayout_ConstructProps extends Gtk.LayoutManager_ConstructProps {
+interface ClampLayout_ConstructProps extends Gtk.LayoutManager_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ClampLayout */
     maximum_size?: number
     tightening_threshold?: number
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class ClampLayout {
@@ -5068,9 +5153,9 @@ class ClampLayout {
     /* Properties of Gtk-4.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-4.0.Gtk.LayoutManager */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ClampLayout */
     get_maximum_size(): number
     get_tightening_threshold(): number
@@ -5144,12 +5229,16 @@ class ClampLayout {
     static new(): ClampLayout
     static $gtype: GObject.Type
 }
-export interface ClampScrollable_ConstructProps extends Gtk.Widget_ConstructProps {
+interface ClampScrollable_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ClampScrollable */
     child?: Gtk.Widget
     maximum_size?: number
     tightening_threshold?: number
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
+    /* Constructor properties of Gtk-4.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -5204,9 +5293,9 @@ class ClampScrollable {
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ClampScrollable */
     get_child(): Gtk.Widget | null
     get_maximum_size(): number
@@ -5402,15 +5491,15 @@ class ClampScrollable {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
     /* Methods of Gtk-4.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
-    get_hadjustment(): Gtk.Adjustment
+    get_hadjustment(): Gtk.Adjustment | null
     get_hscroll_policy(): Gtk.ScrollablePolicy
-    get_vadjustment(): Gtk.Adjustment
+    get_vadjustment(): Gtk.Adjustment | null
     get_vscroll_policy(): Gtk.ScrollablePolicy
     set_hadjustment(hadjustment?: Gtk.Adjustment | null): void
     set_hscroll_policy(policy: Gtk.ScrollablePolicy): void
@@ -5600,14 +5689,17 @@ class ClampScrollable {
     static new(): ClampScrollable
     static $gtype: GObject.Type
 }
-export interface ComboRow_ConstructProps extends ActionRow_ConstructProps {
+interface ComboRow_ConstructProps extends ActionRow_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ComboRow */
     expression?: Gtk.Expression
     factory?: Gtk.ListItemFactory
     list_factory?: Gtk.ListItemFactory
     model?: Gio.ListModel
     selected?: number
     use_subtitle?: boolean
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
 }
@@ -5672,10 +5764,10 @@ class ComboRow {
     /* Properties of Gtk-4.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Fields of Adw-1.Adw.ComboRow */
-    parent_instance: ActionRow
+    /* Fields of Adw-1.Adw.ActionRow */
+    readonly parent_instance: PreferencesRow
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ComboRow */
     get_expression(): Gtk.Expression | null
     get_factory(): Gtk.ListItemFactory | null
@@ -5916,9 +6008,36 @@ class ComboRow {
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
+    /* Virtual methods of Adw-1.Adw.ComboRow */
+    vfunc_get_action_name(): string | null
+    vfunc_get_action_target_value(): GLib.Variant | null
+    vfunc_set_action_name(action_name?: string | null): void
+    vfunc_set_action_target_value(target_value?: GLib.Variant | null): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ Gtk.BuildableParser, /* data */ object | null ]
+    vfunc_get_id(): string
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_id(id: string): void
     /* Virtual methods of Adw-1.Adw.ActionRow */
     vfunc_activate(): void
+    vfunc_get_action_name(): string | null
+    vfunc_get_action_target_value(): GLib.Variant | null
+    vfunc_set_action_name(action_name?: string | null): void
+    vfunc_set_action_target_value(target_value?: GLib.Variant | null): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ Gtk.BuildableParser, /* data */ object | null ]
+    vfunc_get_id(): string
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_id(id: string): void
     /* Virtual methods of Adw-1.Adw.PreferencesRow */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant | null
@@ -6138,7 +6257,7 @@ class ComboRow {
     static new(): ComboRow
     static $gtype: GObject.Type
 }
-export interface EnumListItem_ConstructProps extends GObject.Object_ConstructProps {
+interface EnumListItem_ConstructProps extends GObject.Object_ConstructProps {
 }
 class EnumListItem {
     /* Properties of Adw-1.Adw.EnumListItem */
@@ -6146,7 +6265,7 @@ class EnumListItem {
     readonly nick: string
     readonly value: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.EnumListItem */
     get_name(): string
     get_nick(): string
@@ -6200,12 +6319,13 @@ class EnumListItem {
     _init (config?: EnumListItem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface EnumListModel_ConstructProps extends GObject.Object_ConstructProps {
+interface EnumListModel_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.EnumListModel */
     enum_type?: GObject.Type
 }
 class EnumListModel {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.EnumListModel */
     find_position(value: number): number
     get_enum_type(): GObject.Type
@@ -6267,13 +6387,16 @@ class EnumListModel {
     static new(enum_type: GObject.Type): EnumListModel
     static $gtype: GObject.Type
 }
-export interface ExpanderRow_ConstructProps extends PreferencesRow_ConstructProps {
+interface ExpanderRow_ConstructProps extends PreferencesRow_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ExpanderRow */
     enable_expansion?: boolean
     expanded?: boolean
     icon_name?: string
     show_enable_switch?: boolean
     subtitle?: string
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
 }
@@ -6330,10 +6453,10 @@ class ExpanderRow {
     /* Properties of Gtk-4.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Fields of Adw-1.Adw.ExpanderRow */
-    parent_instance: PreferencesRow
+    /* Fields of Adw-1.Adw.PreferencesRow */
+    readonly parent_instance: Gtk.ListBoxRow
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ExpanderRow */
     add_action(widget: Gtk.Widget): void
     add_prefix(widget: Gtk.Widget): void
@@ -6560,7 +6683,21 @@ class ExpanderRow {
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
+    /* Virtual methods of Adw-1.Adw.ExpanderRow */
+    vfunc_get_action_name(): string | null
+    vfunc_get_action_target_value(): GLib.Variant | null
+    vfunc_set_action_name(action_name?: string | null): void
+    vfunc_set_action_target_value(target_value?: GLib.Variant | null): void
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ Gtk.BuildableParser, /* data */ object | null ]
+    vfunc_get_id(): string
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_id(id: string): void
     /* Virtual methods of Adw-1.Adw.PreferencesRow */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant | null
@@ -6762,7 +6899,8 @@ class ExpanderRow {
     static new(): ExpanderRow
     static $gtype: GObject.Type
 }
-export interface Flap_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Flap_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Flap */
     content?: Gtk.Widget
     flap?: Gtk.Widget
     flap_position?: Gtk.PackType
@@ -6777,7 +6915,9 @@ export interface Flap_ConstructProps extends Gtk.Widget_ConstructProps {
     swipe_to_close?: boolean
     swipe_to_open?: boolean
     transition_type?: FlapTransitionType
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Flap {
@@ -6837,9 +6977,9 @@ class Flap {
     /* Properties of Gtk-4.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Flap */
     get_content(): Gtk.Widget | null
     get_flap(): Gtk.Widget | null
@@ -7065,7 +7205,7 @@ class Flap {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -7275,12 +7415,14 @@ class Flap {
     static new(): Flap
     static $gtype: GObject.Type
 }
-export interface HeaderBar_ConstructProps extends Gtk.Widget_ConstructProps {
+interface HeaderBar_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.HeaderBar */
     centering_policy?: CenteringPolicy
     decoration_layout?: string
     show_end_title_buttons?: boolean
     show_start_title_buttons?: boolean
     title_widget?: Gtk.Widget
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class HeaderBar {
@@ -7327,9 +7469,9 @@ class HeaderBar {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.HeaderBar */
     get_centering_policy(): CenteringPolicy
     get_decoration_layout(): string | null
@@ -7532,7 +7674,7 @@ class HeaderBar {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.HeaderBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -7710,7 +7852,8 @@ class HeaderBar {
     static new(): HeaderBar
     static $gtype: GObject.Type
 }
-export interface Leaflet_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Leaflet_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Leaflet */
     can_navigate_back?: boolean
     can_navigate_forward?: boolean
     can_unfold?: boolean
@@ -7721,7 +7864,9 @@ export interface Leaflet_ConstructProps extends Gtk.Widget_ConstructProps {
     transition_type?: LeafletTransitionType
     visible_child?: Gtk.Widget
     visible_child_name?: string
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Leaflet {
@@ -7778,9 +7923,9 @@ class Leaflet {
     /* Properties of Gtk-4.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Leaflet */
     append(child: Gtk.Widget): LeafletPage
     get_adjacent_child(direction: NavigationDirection): Gtk.Widget | null
@@ -8008,7 +8153,7 @@ class Leaflet {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -8212,7 +8357,8 @@ class Leaflet {
     static new(): Leaflet
     static $gtype: GObject.Type
 }
-export interface LeafletPage_ConstructProps extends GObject.Object_ConstructProps {
+interface LeafletPage_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.LeafletPage */
     child?: Gtk.Widget
     name?: string
     navigatable?: boolean
@@ -8222,7 +8368,7 @@ class LeafletPage {
     name: string
     navigatable: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.LeafletPage */
     get_child(): Gtk.Widget
     get_name(): string | null
@@ -8276,9 +8422,11 @@ class LeafletPage {
     _init (config?: LeafletPage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface PreferencesGroup_ConstructProps extends Gtk.Widget_ConstructProps {
+interface PreferencesGroup_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.PreferencesGroup */
     description?: string
     title?: string
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class PreferencesGroup {
@@ -8321,10 +8469,10 @@ class PreferencesGroup {
     width_request: number
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
-    /* Fields of Adw-1.Adw.PreferencesGroup */
-    parent_instance: Gtk.Widget
+    /* Fields of Gtk-4.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.PreferencesGroup */
     add(child: Gtk.Widget): void
     get_description(): string | null
@@ -8520,7 +8668,7 @@ class PreferencesGroup {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.PreferencesGroup */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -8692,11 +8840,13 @@ class PreferencesGroup {
     static new(): PreferencesGroup
     static $gtype: GObject.Type
 }
-export interface PreferencesPage_ConstructProps extends Gtk.Widget_ConstructProps {
+interface PreferencesPage_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.PreferencesPage */
     icon_name?: string
     name?: string
     title?: string
     use_underline?: boolean
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class PreferencesPage {
@@ -8740,10 +8890,10 @@ class PreferencesPage {
     width_request: number
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
-    /* Fields of Adw-1.Adw.PreferencesPage */
-    parent_instance: Gtk.Widget
+    /* Fields of Gtk-4.0.Gtk.Widget */
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.PreferencesPage */
     add(group: PreferencesGroup): void
     get_icon_name(): string | null
@@ -8943,7 +9093,7 @@ class PreferencesPage {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.PreferencesPage */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -9117,10 +9267,13 @@ class PreferencesPage {
     static new(): PreferencesPage
     static $gtype: GObject.Type
 }
-export interface PreferencesRow_ConstructProps extends Gtk.ListBoxRow_ConstructProps {
+interface PreferencesRow_ConstructProps extends Gtk.ListBoxRow_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.PreferencesRow */
     title?: string
     use_underline?: boolean
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
 }
@@ -9171,10 +9324,10 @@ class PreferencesRow {
     /* Properties of Gtk-4.0.Gtk.Actionable */
     action_name: string
     action_target: GLib.Variant
-    /* Fields of Adw-1.Adw.PreferencesRow */
-    parent_instance: Gtk.ListBoxRow
+    /* Fields of Gtk-4.0.Gtk.ListBoxRow */
+    readonly parent_instance: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.PreferencesRow */
     get_title(): string
     get_use_underline(): boolean
@@ -9386,7 +9539,7 @@ class PreferencesRow {
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.PreferencesRow */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant | null
@@ -9578,11 +9731,13 @@ class PreferencesRow {
     static new(): PreferencesRow
     static $gtype: GObject.Type
 }
-export interface PreferencesWindow_ConstructProps extends Window_ConstructProps {
+interface PreferencesWindow_ConstructProps extends Window_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.PreferencesWindow */
     can_navigate_back?: boolean
     search_enabled?: boolean
     visible_page?: Gtk.Widget
     visible_page_name?: string
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class PreferencesWindow {
@@ -9654,10 +9809,10 @@ class PreferencesWindow {
     width_request: number
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
-    /* Fields of Adw-1.Adw.PreferencesWindow */
-    parent_instance: Window
+    /* Fields of Adw-1.Adw.Window */
+    readonly parent_instance: Gtk.Window
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.PreferencesWindow */
     add(page: PreferencesPage): void
     add_toast(toast: Toast): void
@@ -9917,11 +10072,25 @@ class PreferencesWindow {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Native */
     get_renderer(): Gsk.Renderer
     get_surface(): Gdk.Surface
     get_surface_transform(): [ /* x */ number, /* y */ number ]
+    /* Methods of Gtk-4.0.Gtk.Root */
+    set_focus(focus?: Gtk.Widget | null): void
+    /* Virtual methods of Adw-1.Adw.PreferencesWindow */
+    vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
+    vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_end(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
+    vfunc_custom_tag_start(builder: Gtk.Builder, child: GObject.Object | null, tagname: string): [ /* returnType */ boolean, /* parser */ Gtk.BuildableParser, /* data */ object | null ]
+    vfunc_get_id(): string
+    vfunc_get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
+    vfunc_parser_finished(builder: Gtk.Builder): void
+    vfunc_set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    vfunc_set_id(id: string): void
+    vfunc_add_controller(controller: Gtk.ShortcutController): void
+    vfunc_remove_controller(controller: Gtk.ShortcutController): void
     /* Virtual methods of Adw-1.Adw.Window */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -10169,9 +10338,11 @@ class PreferencesWindow {
     _init (config?: PreferencesWindow_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): PreferencesWindow
+    static get_for_surface(surface: Gdk.Surface): Gtk.Native | null
     static $gtype: GObject.Type
 }
-export interface SplitButton_ConstructProps extends Gtk.Widget_ConstructProps {
+interface SplitButton_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.SplitButton */
     child?: Gtk.Widget
     direction?: Gtk.ArrowType
     icon_name?: string
@@ -10179,7 +10350,9 @@ export interface SplitButton_ConstructProps extends Gtk.Widget_ConstructProps {
     menu_model?: Gio.MenuModel
     popover?: Gtk.Popover
     use_underline?: boolean
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Actionable */
     action_name?: string
     action_target?: GLib.Variant
 }
@@ -10232,9 +10405,9 @@ class SplitButton {
     action_name: string
     action_target: GLib.Variant
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.SplitButton */
     get_child(): Gtk.Widget | null
     get_direction(): Gtk.ArrowType
@@ -10446,7 +10619,7 @@ class SplitButton {
     set_action_target_value(target_value?: GLib.Variant | null): void
     set_detailed_action_name(detailed_action_name: string): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.SplitButton */
     vfunc_get_action_name(): string | null
     vfunc_get_action_target_value(): GLib.Variant | null
@@ -10643,7 +10816,8 @@ class SplitButton {
     static new(): SplitButton
     static $gtype: GObject.Type
 }
-export interface SpringAnimation_ConstructProps extends Animation_ConstructProps {
+interface SpringAnimation_ConstructProps extends Animation_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.SpringAnimation */
     clamp?: boolean
     epsilon?: number
     initial_velocity?: number
@@ -10666,9 +10840,9 @@ class SpringAnimation {
     target: AnimationTarget
     readonly value: number
     /* Fields of Adw-1.Adw.Animation */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.SpringAnimation */
     get_clamp(): boolean
     get_epsilon(): number
@@ -10765,7 +10939,8 @@ class SpringAnimation {
     static new(widget: Gtk.Widget, from: number, to: number, spring_params: SpringParams, target: AnimationTarget): SpringAnimation
     static $gtype: GObject.Type
 }
-export interface Squeezer_ConstructProps extends Gtk.Widget_ConstructProps {
+interface Squeezer_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Squeezer */
     allow_none?: boolean
     homogeneous?: boolean
     interpolate_size?: boolean
@@ -10774,7 +10949,9 @@ export interface Squeezer_ConstructProps extends Gtk.Widget_ConstructProps {
     transition_type?: SqueezerTransitionType
     xalign?: number
     yalign?: number
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class Squeezer {
@@ -10829,9 +11006,9 @@ class Squeezer {
     /* Properties of Gtk-4.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Squeezer */
     add(child: Gtk.Widget): SqueezerPage
     get_allow_none(): boolean
@@ -11043,7 +11220,7 @@ class Squeezer {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Orientable */
     get_orientation(): Gtk.Orientation
     set_orientation(orientation: Gtk.Orientation): void
@@ -11238,7 +11415,8 @@ class Squeezer {
     static new(): Squeezer
     static $gtype: GObject.Type
 }
-export interface SqueezerPage_ConstructProps extends GObject.Object_ConstructProps {
+interface SqueezerPage_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.SqueezerPage */
     child?: Gtk.Widget
     enabled?: boolean
 }
@@ -11246,7 +11424,7 @@ class SqueezerPage {
     /* Properties of Adw-1.Adw.SqueezerPage */
     enabled: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.SqueezerPage */
     get_child(): Gtk.Widget
     get_enabled(): boolean
@@ -11296,12 +11474,14 @@ class SqueezerPage {
     _init (config?: SqueezerPage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface StatusPage_ConstructProps extends Gtk.Widget_ConstructProps {
+interface StatusPage_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.StatusPage */
     child?: Gtk.Widget
     description?: string
     icon_name?: string
     paintable?: Gdk.Paintable
     title?: string
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class StatusPage {
@@ -11348,9 +11528,9 @@ class StatusPage {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.StatusPage */
     get_child(): Gtk.Widget | null
     get_description(): string | null
@@ -11550,7 +11730,7 @@ class StatusPage {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.StatusPage */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -11728,7 +11908,8 @@ class StatusPage {
     static new(): StatusPage
     static $gtype: GObject.Type
 }
-export interface StyleManager_ConstructProps extends GObject.Object_ConstructProps {
+interface StyleManager_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.StyleManager */
     color_scheme?: ColorScheme
     display?: Gdk.Display
 }
@@ -11739,7 +11920,7 @@ class StyleManager {
     readonly high_contrast: boolean
     readonly system_supports_color_schemes: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.StyleManager */
     get_color_scheme(): ColorScheme
     get_dark(): boolean
@@ -11801,12 +11982,14 @@ class StyleManager {
     static get_for_display(display: Gdk.Display): StyleManager
     static $gtype: GObject.Type
 }
-export interface SwipeTracker_ConstructProps extends GObject.Object_ConstructProps {
+interface SwipeTracker_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.SwipeTracker */
     allow_long_swipes?: boolean
     allow_mouse_drag?: boolean
     enabled?: boolean
     reversed?: boolean
     swipeable?: Swipeable
+    /* Constructor properties of Gtk-4.0.Gtk.Orientable */
     orientation?: Gtk.Orientation
 }
 class SwipeTracker {
@@ -11818,7 +12001,7 @@ class SwipeTracker {
     /* Properties of Gtk-4.0.Gtk.Orientable */
     orientation: Gtk.Orientation
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.SwipeTracker */
     get_allow_long_swipes(): boolean
     get_allow_mouse_drag(): boolean
@@ -11901,13 +12084,15 @@ class SwipeTracker {
     static new(swipeable: Swipeable): SwipeTracker
     static $gtype: GObject.Type
 }
-export interface TabBar_ConstructProps extends Gtk.Widget_ConstructProps {
+interface TabBar_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.TabBar */
     autohide?: boolean
     end_action_widget?: Gtk.Widget
     expand_tabs?: boolean
     inverted?: boolean
     start_action_widget?: Gtk.Widget
     view?: TabView
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class TabBar {
@@ -11957,9 +12142,9 @@ class TabBar {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.TabBar */
     get_autohide(): boolean
     get_end_action_widget(): Gtk.Widget | null
@@ -12164,7 +12349,7 @@ class TabBar {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.TabBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -12352,7 +12537,8 @@ class TabBar {
     static new(): TabBar
     static $gtype: GObject.Type
 }
-export interface TabPage_ConstructProps extends GObject.Object_ConstructProps {
+interface TabPage_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.TabPage */
     child?: Gtk.Widget
     icon?: Gio.Icon
     indicator_activatable?: boolean
@@ -12375,7 +12561,7 @@ class TabPage {
     title: string
     tooltip: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.TabPage */
     get_child(): Gtk.Widget
     get_icon(): Gio.Icon | null
@@ -12456,10 +12642,12 @@ class TabPage {
     _init (config?: TabPage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface TabView_ConstructProps extends Gtk.Widget_ConstructProps {
+interface TabView_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.TabView */
     default_icon?: Gio.Icon
     menu_model?: Gio.MenuModel
     selected_page?: TabPage
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class TabView {
@@ -12508,9 +12696,9 @@ class TabView {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.TabView */
     add_page(child: Gtk.Widget, parent?: TabPage | null): TabPage
     append(child: Gtk.Widget): TabPage
@@ -12734,7 +12922,7 @@ class TabView {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.TabView */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -12938,7 +13126,8 @@ class TabView {
     static new(): TabView
     static $gtype: GObject.Type
 }
-export interface TimedAnimation_ConstructProps extends Animation_ConstructProps {
+interface TimedAnimation_ConstructProps extends Animation_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.TimedAnimation */
     alternate?: boolean
     duration?: number
     easing?: Easing
@@ -12961,9 +13150,9 @@ class TimedAnimation {
     target: AnimationTarget
     readonly value: number
     /* Fields of Adw-1.Adw.Animation */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.TimedAnimation */
     get_alternate(): boolean
     get_duration(): number
@@ -13058,7 +13247,8 @@ class TimedAnimation {
     static new(widget: Gtk.Widget, from: number, to: number, duration: number, target: AnimationTarget): TimedAnimation
     static $gtype: GObject.Type
 }
-export interface Toast_ConstructProps extends GObject.Object_ConstructProps {
+interface Toast_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Toast */
     action_name?: string
     action_target?: GLib.Variant
     button_label?: string
@@ -13075,7 +13265,7 @@ class Toast {
     timeout: number
     title: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Toast */
     dismiss(): void
     get_action_name(): string | null
@@ -13152,8 +13342,10 @@ class Toast {
     static new(title: string): Toast
     static $gtype: GObject.Type
 }
-export interface ToastOverlay_ConstructProps extends Gtk.Widget_ConstructProps {
+interface ToastOverlay_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ToastOverlay */
     child?: Gtk.Widget
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class ToastOverlay {
@@ -13196,9 +13388,9 @@ class ToastOverlay {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ToastOverlay */
     add_toast(toast: Toast): void
     get_child(): Gtk.Widget | null
@@ -13391,7 +13583,7 @@ class ToastOverlay {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.ToastOverlay */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -13561,11 +13753,13 @@ class ToastOverlay {
     static new(): ToastOverlay
     static $gtype: GObject.Type
 }
-export interface ViewStack_ConstructProps extends Gtk.Widget_ConstructProps {
+interface ViewStack_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ViewStack */
     hhomogeneous?: boolean
     vhomogeneous?: boolean
     visible_child?: Gtk.Widget
     visible_child_name?: string
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class ViewStack {
@@ -13612,9 +13806,9 @@ class ViewStack {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ViewStack */
     add(child: Gtk.Widget): ViewStackPage
     add_named(child: Gtk.Widget, name?: string | null): ViewStackPage
@@ -13819,7 +14013,7 @@ class ViewStack {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.ViewStack */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -13997,7 +14191,8 @@ class ViewStack {
     static new(): ViewStack
     static $gtype: GObject.Type
 }
-export interface ViewStackPage_ConstructProps extends GObject.Object_ConstructProps {
+interface ViewStackPage_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ViewStackPage */
     badge_number?: number
     child?: Gtk.Widget
     icon_name?: string
@@ -14017,7 +14212,7 @@ class ViewStackPage {
     use_underline: boolean
     visible: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ViewStackPage */
     get_badge_number(): number
     get_child(): Gtk.Widget
@@ -14091,9 +14286,11 @@ class ViewStackPage {
     _init (config?: ViewStackPage_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ViewSwitcher_ConstructProps extends Gtk.Widget_ConstructProps {
+interface ViewSwitcher_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ViewSwitcher */
     policy?: ViewSwitcherPolicy
     stack?: ViewStack
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class ViewSwitcher {
@@ -14137,9 +14334,9 @@ class ViewSwitcher {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ViewSwitcher */
     get_policy(): ViewSwitcherPolicy
     get_stack(): ViewStack | null
@@ -14333,7 +14530,7 @@ class ViewSwitcher {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.ViewSwitcher */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -14505,9 +14702,11 @@ class ViewSwitcher {
     static new(): ViewSwitcher
     static $gtype: GObject.Type
 }
-export interface ViewSwitcherBar_ConstructProps extends Gtk.Widget_ConstructProps {
+interface ViewSwitcherBar_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ViewSwitcherBar */
     reveal?: boolean
     stack?: ViewStack
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class ViewSwitcherBar {
@@ -14551,9 +14750,9 @@ class ViewSwitcherBar {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ViewSwitcherBar */
     get_reveal(): boolean
     get_stack(): ViewStack | null
@@ -14747,7 +14946,7 @@ class ViewSwitcherBar {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.ViewSwitcherBar */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -14919,11 +15118,13 @@ class ViewSwitcherBar {
     static new(): ViewSwitcherBar
     static $gtype: GObject.Type
 }
-export interface ViewSwitcherTitle_ConstructProps extends Gtk.Widget_ConstructProps {
+interface ViewSwitcherTitle_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.ViewSwitcherTitle */
     stack?: ViewStack
     subtitle?: string
     title?: string
     view_switcher_enabled?: boolean
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class ViewSwitcherTitle {
@@ -14970,9 +15171,9 @@ class ViewSwitcherTitle {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.ViewSwitcherTitle */
     get_stack(): ViewStack | null
     get_subtitle(): string
@@ -15171,7 +15372,7 @@ class ViewSwitcherTitle {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.ViewSwitcherTitle */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -15349,8 +15550,10 @@ class ViewSwitcherTitle {
     static new(): ViewSwitcherTitle
     static $gtype: GObject.Type
 }
-export interface Window_ConstructProps extends Gtk.Window_ConstructProps {
+interface Window_ConstructProps extends Gtk.Window_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.Window */
     content?: Gtk.Widget
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class Window {
@@ -15417,10 +15620,10 @@ class Window {
     width_request: number
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
-    /* Fields of Adw-1.Adw.Window */
-    parent_instance: Gtk.Window
+    /* Fields of Gtk-4.0.Gtk.Window */
+    readonly parent_instance: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.Window */
     get_content(): Gtk.Widget | null
     set_content(content?: Gtk.Widget | null): void
@@ -15666,11 +15869,13 @@ class Window {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Methods of Gtk-4.0.Gtk.Native */
     get_renderer(): Gsk.Renderer
     get_surface(): Gdk.Surface
     get_surface_transform(): [ /* x */ number, /* y */ number ]
+    /* Methods of Gtk-4.0.Gtk.Root */
+    set_focus(focus?: Gtk.Widget | null): void
     /* Virtual methods of Adw-1.Adw.Window */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -15910,12 +16115,14 @@ class Window {
     _init (config?: Window_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Window
-    static get_for_surface(surface: Gdk.Surface): Gtk.Native
+    static get_for_surface(surface: Gdk.Surface): Gtk.Native | null
     static $gtype: GObject.Type
 }
-export interface WindowTitle_ConstructProps extends Gtk.Widget_ConstructProps {
+interface WindowTitle_ConstructProps extends Gtk.Widget_ConstructProps {
+    /* Constructor properties of Adw-1.Adw.WindowTitle */
     subtitle?: string
     title?: string
+    /* Constructor properties of Gtk-4.0.Gtk.Accessible */
     accessible_role?: Gtk.AccessibleRole
 }
 class WindowTitle {
@@ -15959,9 +16166,9 @@ class WindowTitle {
     /* Properties of Gtk-4.0.Gtk.Accessible */
     accessible_role: Gtk.AccessibleRole
     /* Fields of Gtk-4.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Adw-1.Adw.WindowTitle */
     get_subtitle(): string
     get_title(): string
@@ -16155,7 +16362,7 @@ class WindowTitle {
     update_relation(relations: Gtk.AccessibleRelation[], values: any[]): void
     update_state(states: Gtk.AccessibleState[], values: any[]): void
     /* Methods of Gtk-4.0.Gtk.Buildable */
-    get_buildable_id(): string
+    get_buildable_id(): string | null
     /* Virtual methods of Adw-1.Adw.WindowTitle */
     vfunc_add_child(builder: Gtk.Builder, child: GObject.Object, type?: string | null): void
     vfunc_custom_finished(builder: Gtk.Builder, child: GObject.Object | null, tagname: string, data?: object | null): void
@@ -16329,8 +16536,8 @@ class WindowTitle {
 }
 abstract class ActionRowClass {
     /* Fields of Adw-1.Adw.ActionRowClass */
-    parent_class: PreferencesRowClass
-    activate: (self: ActionRow) => void
+    readonly parent_class: PreferencesRowClass
+    readonly activate: (self: ActionRow) => void
     static name: string
 }
 abstract class AnimationClass {
@@ -16341,27 +16548,27 @@ abstract class AnimationTargetClass {
 }
 abstract class ApplicationClass {
     /* Fields of Adw-1.Adw.ApplicationClass */
-    parent_class: Gtk.ApplicationClass
+    readonly parent_class: Gtk.ApplicationClass
     static name: string
 }
 abstract class ApplicationWindowClass {
     /* Fields of Adw-1.Adw.ApplicationWindowClass */
-    parent_class: Gtk.ApplicationWindowClass
+    readonly parent_class: Gtk.ApplicationWindowClass
     static name: string
 }
 abstract class AvatarClass {
     /* Fields of Adw-1.Adw.AvatarClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class BinClass {
     /* Fields of Adw-1.Adw.BinClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class ButtonContentClass {
     /* Fields of Adw-1.Adw.ButtonContentClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class CallbackAnimationTargetClass {
@@ -16369,97 +16576,97 @@ abstract class CallbackAnimationTargetClass {
 }
 abstract class CarouselClass {
     /* Fields of Adw-1.Adw.CarouselClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class CarouselIndicatorDotsClass {
     /* Fields of Adw-1.Adw.CarouselIndicatorDotsClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class CarouselIndicatorLinesClass {
     /* Fields of Adw-1.Adw.CarouselIndicatorLinesClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class ClampClass {
     /* Fields of Adw-1.Adw.ClampClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class ClampLayoutClass {
     /* Fields of Adw-1.Adw.ClampLayoutClass */
-    parent_class: Gtk.LayoutManagerClass
+    readonly parent_class: Gtk.LayoutManagerClass
     static name: string
 }
 abstract class ClampScrollableClass {
     /* Fields of Adw-1.Adw.ClampScrollableClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class ComboRowClass {
     /* Fields of Adw-1.Adw.ComboRowClass */
-    parent_class: ActionRowClass
+    readonly parent_class: ActionRowClass
     static name: string
 }
 abstract class EnumListItemClass {
     /* Fields of Adw-1.Adw.EnumListItemClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class EnumListModelClass {
     /* Fields of Adw-1.Adw.EnumListModelClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ExpanderRowClass {
     /* Fields of Adw-1.Adw.ExpanderRowClass */
-    parent_class: PreferencesRowClass
+    readonly parent_class: PreferencesRowClass
     static name: string
 }
 abstract class FlapClass {
     /* Fields of Adw-1.Adw.FlapClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class HeaderBarClass {
     /* Fields of Adw-1.Adw.HeaderBarClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class LeafletClass {
     /* Fields of Adw-1.Adw.LeafletClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class LeafletPageClass {
     /* Fields of Adw-1.Adw.LeafletPageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class PreferencesGroupClass {
     /* Fields of Adw-1.Adw.PreferencesGroupClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class PreferencesPageClass {
     /* Fields of Adw-1.Adw.PreferencesPageClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class PreferencesRowClass {
     /* Fields of Adw-1.Adw.PreferencesRowClass */
-    parent_class: Gtk.ListBoxRowClass
+    readonly parent_class: Gtk.ListBoxRowClass
     static name: string
 }
 abstract class PreferencesWindowClass {
     /* Fields of Adw-1.Adw.PreferencesWindowClass */
-    parent_class: WindowClass
+    readonly parent_class: WindowClass
     static name: string
 }
 abstract class SplitButtonClass {
     /* Fields of Adw-1.Adw.SplitButtonClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class SpringAnimationClass {
@@ -16482,52 +16689,52 @@ class SpringParams {
 }
 abstract class SqueezerClass {
     /* Fields of Adw-1.Adw.SqueezerClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class SqueezerPageClass {
     /* Fields of Adw-1.Adw.SqueezerPageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class StatusPageClass {
     /* Fields of Adw-1.Adw.StatusPageClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class StyleManagerClass {
     /* Fields of Adw-1.Adw.StyleManagerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SwipeTrackerClass {
     /* Fields of Adw-1.Adw.SwipeTrackerClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SwipeableInterface {
     /* Fields of Adw-1.Adw.SwipeableInterface */
-    parent: GObject.TypeInterface
-    get_distance: (self: Swipeable) => number
-    get_snap_points: (self: Swipeable) => number[]
-    get_progress: (self: Swipeable) => number
-    get_cancel_progress: (self: Swipeable) => number
-    get_swipe_area: (self: Swipeable, navigation_direction: NavigationDirection, is_drag: boolean) => /* rect */ Gdk.Rectangle
+    readonly parent: GObject.TypeInterface
+    readonly get_distance: (self: Swipeable) => number
+    readonly get_snap_points: (self: Swipeable) => number[]
+    readonly get_progress: (self: Swipeable) => number
+    readonly get_cancel_progress: (self: Swipeable) => number
+    readonly get_swipe_area: (self: Swipeable, navigation_direction: NavigationDirection, is_drag: boolean) => /* rect */ Gdk.Rectangle
     static name: string
 }
 abstract class TabBarClass {
     /* Fields of Adw-1.Adw.TabBarClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class TabPageClass {
     /* Fields of Adw-1.Adw.TabPageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class TabViewClass {
     /* Fields of Adw-1.Adw.TabViewClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class TimedAnimationClass {
@@ -16535,47 +16742,47 @@ abstract class TimedAnimationClass {
 }
 abstract class ToastClass {
     /* Fields of Adw-1.Adw.ToastClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ToastOverlayClass {
     /* Fields of Adw-1.Adw.ToastOverlayClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class ViewStackClass {
     /* Fields of Adw-1.Adw.ViewStackClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class ViewStackPageClass {
     /* Fields of Adw-1.Adw.ViewStackPageClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ViewSwitcherBarClass {
     /* Fields of Adw-1.Adw.ViewSwitcherBarClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class ViewSwitcherClass {
     /* Fields of Adw-1.Adw.ViewSwitcherClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class ViewSwitcherTitleClass {
     /* Fields of Adw-1.Adw.ViewSwitcherTitleClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 abstract class WindowClass {
     /* Fields of Adw-1.Adw.WindowClass */
-    parent_class: Gtk.WindowClass
+    readonly parent_class: Gtk.WindowClass
     static name: string
 }
 abstract class WindowTitleClass {
     /* Fields of Adw-1.Adw.WindowTitleClass */
-    parent_class: Gtk.WidgetClass
+    readonly parent_class: Gtk.WidgetClass
     static name: string
 }
 }

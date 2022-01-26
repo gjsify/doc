@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Notify-0.7
  */
@@ -16,11 +22,11 @@ enum Urgency {
     NORMAL,
     CRITICAL,
 }
-export const EXPIRES_DEFAULT: number
-export const EXPIRES_NEVER: number
-export const VERSION_MAJOR: number
-export const VERSION_MICRO: number
-export const VERSION_MINOR: number
+const EXPIRES_DEFAULT: number
+const EXPIRES_NEVER: number
+const VERSION_MAJOR: number
+const VERSION_MICRO: number
+const VERSION_MINOR: number
 function get_app_name(): string
 function get_server_caps(): string[]
 function get_server_info(): [ /* returnType */ boolean, /* ret_name */ string | null, /* ret_vendor */ string | null, /* ret_version */ string | null, /* ret_spec_version */ string | null ]
@@ -31,7 +37,8 @@ function uninit(): void
 interface ActionCallback {
     (notification: Notification, action: string): void
 }
-export interface Notification_ConstructProps extends GObject.Object_ConstructProps {
+interface Notification_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Notify-0.7.Notify.Notification */
     app_name?: string
     body?: string
     icon_name?: string
@@ -47,7 +54,7 @@ class Notification {
     id: number
     summary: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Notify-0.7.Notify.Notification */
     add_action(action: string, label: string, callback: ActionCallback): void
     clear_actions(): void
@@ -58,7 +65,7 @@ class Notification {
     set_category(category: string): void
     set_hint(key: string, value?: GLib.Variant | null): void
     set_hint_byte(key: string, value: number): void
-    set_hint_byte_array(key: string, value: Uint8Array[]): void
+    set_hint_byte_array(key: string, value: Uint8Array): void
     set_hint_double(key: string, value: number): void
     set_hint_int32(key: string, value: number): void
     set_hint_string(key: string, value: string): void
@@ -134,8 +141,8 @@ class Notification {
 }
 abstract class NotificationClass {
     /* Fields of Notify-0.7.Notify.NotificationClass */
-    parent_class: GObject.ObjectClass
-    closed: (notification: Notification) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly closed: (notification: Notification) => void
     static name: string
 }
 class NotificationPrivate {

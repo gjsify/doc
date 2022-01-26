@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PanelApplet-4.0
  */
@@ -31,11 +37,12 @@ enum AppletFlags {
     EXPAND_MINOR,
     HAS_HANDLE,
 }
-export const APPLET_FLAGS_ALL: number
+const APPLET_FLAGS_ALL: number
 interface AppletFactoryCallback {
     (applet: Applet, iid: string): boolean
 }
-export interface Applet_ConstructProps extends Gtk.EventBox_ConstructProps {
+interface Applet_ConstructProps extends Gtk.EventBox_ConstructProps {
+    /* Constructor properties of PanelApplet-4.0.PanelApplet.Applet */
     flags?: number
     locked_down?: boolean
     orient?: number
@@ -100,18 +107,16 @@ class Applet {
     visible: boolean
     width_request: number
     readonly window: Gdk.Window
-    /* Fields of PanelApplet-4.0.PanelApplet.Applet */
-    event_box: Gtk.EventBox
     /* Fields of Gtk-3.0.Gtk.EventBox */
-    bin: Gtk.Bin
+    readonly bin: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PanelApplet-4.0.PanelApplet.Applet */
     add_preferences(schema_dir: string): void
     gconf_get_bool(key: string): boolean
@@ -149,7 +154,7 @@ class Applet {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -464,6 +469,7 @@ class Applet {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Virtual methods of PanelApplet-4.0.PanelApplet.Applet */
     vfunc_change_background(pattern: cairo.Pattern): void
     vfunc_change_orient(orient: AppletOrient): void
@@ -934,11 +940,11 @@ class Applet {
 }
 abstract class AppletClass {
     /* Fields of PanelApplet-4.0.PanelApplet.AppletClass */
-    event_box_class: Gtk.EventBoxClass
-    change_orient: (applet: Applet, orient: AppletOrient) => void
-    change_size: (applet: Applet, size: number) => void
-    change_background: (applet: Applet, pattern: cairo.Pattern) => void
-    move_focus_out_of_applet: (frame: Applet, direction: Gtk.DirectionType) => void
+    readonly event_box_class: Gtk.EventBoxClass
+    readonly change_orient: (applet: Applet, orient: AppletOrient) => void
+    readonly change_size: (applet: Applet, size: number) => void
+    readonly change_background: (applet: Applet, pattern: cairo.Pattern) => void
+    readonly move_focus_out_of_applet: (frame: Applet, direction: Gtk.DirectionType) => void
     static name: string
 }
 class AppletPrivate {

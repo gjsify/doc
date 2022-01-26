@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Rsvg-2.0
  */
@@ -31,15 +37,16 @@ enum HandleFlags {
     FLAG_UNLIMITED,
     FLAG_KEEP_IMAGE_DATA,
 }
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const VERSION: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const VERSION: string
 function cleanup(): void
 function error_quark(): GLib.Quark
 function set_default_dpi(dpi: number): void
 function set_default_dpi_x_y(dpi_x: number, dpi_y: number): void
-export interface Handle_ConstructProps extends GObject.Object_ConstructProps {
+interface Handle_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Rsvg-2.0.Rsvg.Handle */
     base_uri?: string
     dpi_x?: number
     dpi_y?: number
@@ -57,10 +64,8 @@ class Handle {
     readonly metadata: string
     readonly title: string
     readonly width: number
-    /* Fields of Rsvg-2.0.Rsvg.Handle */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Rsvg-2.0.Rsvg.Handle */
     close(): boolean
     get_base_uri(): string
@@ -85,8 +90,8 @@ class Handle {
     set_base_uri(base_uri: string): void
     set_dpi(dpi: number): void
     set_dpi_x_y(dpi_x: number, dpi_y: number): void
-    set_stylesheet(css: Uint8Array[]): boolean
-    write(buf: Uint8Array[]): boolean
+    set_stylesheet(css: Uint8Array): boolean
+    write(buf: Uint8Array): boolean
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -150,7 +155,7 @@ class Handle {
     _init (config?: Handle_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Handle
-    static new_from_data(data: Uint8Array[]): Handle
+    static new_from_data(data: Uint8Array): Handle
     static new_from_file(filename: string): Handle
     static new_from_gfile_sync(file: Gio.File, flags: HandleFlags, cancellable?: Gio.Cancellable | null): Handle
     static new_from_stream_sync(input_stream: Gio.InputStream, base_file: Gio.File | null, flags: HandleFlags, cancellable?: Gio.Cancellable | null): Handle
@@ -159,35 +164,35 @@ class Handle {
 }
 class DimensionData {
     /* Fields of Rsvg-2.0.Rsvg.DimensionData */
-    width: number
-    height: number
-    em: number
-    ex: number
+    readonly width: number
+    readonly height: number
+    readonly em: number
+    readonly ex: number
     static name: string
 }
 abstract class HandleClass {
     /* Fields of Rsvg-2.0.Rsvg.HandleClass */
-    parent: GObject.ObjectClass
+    readonly parent: GObject.ObjectClass
     static name: string
 }
 class Length {
     /* Fields of Rsvg-2.0.Rsvg.Length */
-    length: number
-    unit: Unit
+    readonly length: number
+    readonly unit: Unit
     static name: string
 }
 class PositionData {
     /* Fields of Rsvg-2.0.Rsvg.PositionData */
-    x: number
-    y: number
+    readonly x: number
+    readonly y: number
     static name: string
 }
 class Rectangle {
     /* Fields of Rsvg-2.0.Rsvg.Rectangle */
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     static name: string
 }
 }

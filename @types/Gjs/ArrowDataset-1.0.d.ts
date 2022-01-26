@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * ArrowDataset-1.0
  */
@@ -10,13 +16,13 @@ import type GLib from './GLib-2.0';
 
 export namespace ArrowDataset {
 
-export interface CSVFileFormat_ConstructProps extends FileFormat_ConstructProps {
+interface CSVFileFormat_ConstructProps extends FileFormat_ConstructProps {
 }
 class CSVFileFormat {
-    /* Fields of ArrowDataset-1.0.ArrowDataset.CSVFileFormat */
-    parent_instance: FileFormat
+    /* Fields of ArrowDataset-1.0.ArrowDataset.FileFormat */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ArrowDataset-1.0.ArrowDataset.FileFormat */
     equal(other_file_format: FileFormat): boolean
     get_type_name(): string
@@ -65,14 +71,13 @@ class CSVFileFormat {
     static new(): CSVFileFormat
     static $gtype: GObject.Type
 }
-export interface FileFormat_ConstructProps extends GObject.Object_ConstructProps {
+interface FileFormat_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ArrowDataset-1.0.ArrowDataset.FileFormat */
     file_format?: object
 }
 class FileFormat {
-    /* Fields of ArrowDataset-1.0.ArrowDataset.FileFormat */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ArrowDataset-1.0.ArrowDataset.FileFormat */
     equal(other_file_format: FileFormat): boolean
     get_type_name(): string
@@ -119,13 +124,13 @@ class FileFormat {
     _init (config?: FileFormat_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface IPCFileFormat_ConstructProps extends FileFormat_ConstructProps {
+interface IPCFileFormat_ConstructProps extends FileFormat_ConstructProps {
 }
 class IPCFileFormat {
-    /* Fields of ArrowDataset-1.0.ArrowDataset.IPCFileFormat */
-    parent_instance: FileFormat
+    /* Fields of ArrowDataset-1.0.ArrowDataset.FileFormat */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ArrowDataset-1.0.ArrowDataset.FileFormat */
     equal(other_file_format: FileFormat): boolean
     get_type_name(): string
@@ -174,13 +179,13 @@ class IPCFileFormat {
     static new(): IPCFileFormat
     static $gtype: GObject.Type
 }
-export interface InMemoryScanTask_ConstructProps extends ScanTask_ConstructProps {
+interface InMemoryScanTask_ConstructProps extends ScanTask_ConstructProps {
 }
 class InMemoryScanTask {
-    /* Fields of ArrowDataset-1.0.ArrowDataset.InMemoryScanTask */
-    parent_instance: ScanTask
+    /* Fields of ArrowDataset-1.0.ArrowDataset.ScanTask */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ArrowDataset-1.0.ArrowDataset.ScanTask */
     execute(): Arrow.RecordBatchIterator | null
     get_context(): ScanContext
@@ -230,13 +235,13 @@ class InMemoryScanTask {
     static new(record_batches: Arrow.RecordBatch[], options: ScanOptions, context: ScanContext): InMemoryScanTask
     static $gtype: GObject.Type
 }
-export interface ParquetFileFormat_ConstructProps extends FileFormat_ConstructProps {
+interface ParquetFileFormat_ConstructProps extends FileFormat_ConstructProps {
 }
 class ParquetFileFormat {
-    /* Fields of ArrowDataset-1.0.ArrowDataset.ParquetFileFormat */
-    parent_instance: FileFormat
+    /* Fields of ArrowDataset-1.0.ArrowDataset.FileFormat */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ArrowDataset-1.0.ArrowDataset.FileFormat */
     equal(other_file_format: FileFormat): boolean
     get_type_name(): string
@@ -285,17 +290,16 @@ class ParquetFileFormat {
     static new(): ParquetFileFormat
     static $gtype: GObject.Type
 }
-export interface ScanContext_ConstructProps extends GObject.Object_ConstructProps {
+interface ScanContext_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ArrowDataset-1.0.ArrowDataset.ScanContext */
     scan_context?: object
     use_threads?: boolean
 }
 class ScanContext {
     /* Properties of ArrowDataset-1.0.ArrowDataset.ScanContext */
     use_threads: boolean
-    /* Fields of ArrowDataset-1.0.ArrowDataset.ScanContext */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -343,17 +347,16 @@ class ScanContext {
     static new(): ScanContext
     static $gtype: GObject.Type
 }
-export interface ScanOptions_ConstructProps extends GObject.Object_ConstructProps {
+interface ScanOptions_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ArrowDataset-1.0.ArrowDataset.ScanOptions */
     batch_size?: number
     scan_options?: object
 }
 class ScanOptions {
     /* Properties of ArrowDataset-1.0.ArrowDataset.ScanOptions */
     batch_size: number
-    /* Fields of ArrowDataset-1.0.ArrowDataset.ScanOptions */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ArrowDataset-1.0.ArrowDataset.ScanOptions */
     get_schema(): Arrow.Schema
     replace_schema(schema: Arrow.Schema): ScanOptions
@@ -404,16 +407,15 @@ class ScanOptions {
     static new(schema: Arrow.Schema): ScanOptions
     static $gtype: GObject.Type
 }
-export interface ScanTask_ConstructProps extends GObject.Object_ConstructProps {
+interface ScanTask_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of ArrowDataset-1.0.ArrowDataset.ScanTask */
     context?: ScanContext
     options?: ScanOptions
     scan_task?: object
 }
 class ScanTask {
-    /* Fields of ArrowDataset-1.0.ArrowDataset.ScanTask */
-    parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of ArrowDataset-1.0.ArrowDataset.ScanTask */
     execute(): Arrow.RecordBatchIterator | null
     get_context(): ScanContext
@@ -463,42 +465,42 @@ class ScanTask {
 }
 abstract class CSVFileFormatClass {
     /* Fields of ArrowDataset-1.0.ArrowDataset.CSVFileFormatClass */
-    parent_class: FileFormatClass
+    readonly parent_class: FileFormatClass
     static name: string
 }
 abstract class FileFormatClass {
     /* Fields of ArrowDataset-1.0.ArrowDataset.FileFormatClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class IPCFileFormatClass {
     /* Fields of ArrowDataset-1.0.ArrowDataset.IPCFileFormatClass */
-    parent_class: FileFormatClass
+    readonly parent_class: FileFormatClass
     static name: string
 }
 abstract class InMemoryScanTaskClass {
     /* Fields of ArrowDataset-1.0.ArrowDataset.InMemoryScanTaskClass */
-    parent_class: ScanTaskClass
+    readonly parent_class: ScanTaskClass
     static name: string
 }
 abstract class ParquetFileFormatClass {
     /* Fields of ArrowDataset-1.0.ArrowDataset.ParquetFileFormatClass */
-    parent_class: FileFormatClass
+    readonly parent_class: FileFormatClass
     static name: string
 }
 abstract class ScanContextClass {
     /* Fields of ArrowDataset-1.0.ArrowDataset.ScanContextClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ScanOptionsClass {
     /* Fields of ArrowDataset-1.0.ArrowDataset.ScanOptionsClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ScanTaskClass {
     /* Fields of ArrowDataset-1.0.ArrowDataset.ScanTaskClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 }

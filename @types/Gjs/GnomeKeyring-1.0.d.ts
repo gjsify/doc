@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GnomeKeyring-1.0
  */
@@ -47,10 +53,10 @@ enum ItemInfoFlags {
     BASICS,
     SECRET,
 }
-export const ITEM_APPLICATION_SECRET: number
-export const ITEM_INFO_ALL: number
-export const ITEM_TYPE_MASK: number
-export const SESSION: string
+const ITEM_APPLICATION_SECRET: number
+const ITEM_INFO_ALL: number
+const ITEM_TYPE_MASK: number
+const SESSION: string
 function acl_copy(list: AccessControl[]): AccessControl[]
 function acl_free(acl: AccessControl[]): void
 function attribute_list_append_string(attributes: AttributeList, name: string, value: string): void
@@ -141,8 +147,8 @@ class ApplicationRef {
 }
 class Attribute {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.Attribute */
-    name: string
-    type: AttributeType
+    readonly name: string
+    readonly type: AttributeType
     /* Methods of GnomeKeyring-1.0.GnomeKeyring.Attribute */
     get_string(): string
     get_uint32(): number
@@ -157,10 +163,10 @@ class Attribute {
 }
 class Found {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.Found */
-    keyring: string
-    item_id: number
-    attributes: AttributeList
-    secret: string
+    readonly keyring: string
+    readonly item_id: number
+    readonly attributes: AttributeList
+    readonly secret: string
     /* Methods of GnomeKeyring-1.0.GnomeKeyring.Found */
     copy(): Found
     free(): void
@@ -201,30 +207,30 @@ class ItemInfo {
 }
 class NetworkPasswordData {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.NetworkPasswordData */
-    keyring: string
-    item_id: number
-    protocol: string
-    server: string
-    object: string
-    authtype: string
-    port: number
-    user: string
-    domain: string
-    password: string
+    readonly keyring: string
+    readonly item_id: number
+    readonly protocol: string
+    readonly server: string
+    readonly object: string
+    readonly authtype: string
+    readonly port: number
+    readonly user: string
+    readonly domain: string
+    readonly password: string
     static name: string
 }
 class PasswordSchema {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.PasswordSchema */
-    item_type: ItemType
-    attributes: PasswordSchemaAttribute[]
+    readonly item_type: ItemType
+    readonly attributes: PasswordSchemaAttribute[]
     static name: string
 }
 class PasswordSchemaAttribute {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.PasswordSchemaAttribute */
-    name: string
-    type: AttributeType
+    readonly name: string
+    readonly type: AttributeType
     static name: string
 }
-type AttributeList = GLib.Array
+    type AttributeList = GLib.Array
 }
 export default GnomeKeyring;

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * OSTree-1.0
  */
@@ -128,31 +134,31 @@ enum SysrootUpgraderPullFlags {
     NONE,
     ALLOW_OLDER,
 }
-export const COMMIT_GVARIANT_STRING: string
-export const DIRMETA_GVARIANT_STRING: string
-export const FILEMETA_GVARIANT_STRING: string
-export const MAX_METADATA_SIZE: number
-export const MAX_METADATA_WARN_SIZE: number
-export const MAX_RECURSION: number
-export const SHA256_DIGEST_LEN: number
-export const SHA256_STRING_LEN: number
-export const SUMMARY_GVARIANT_STRING: string
-export const SUMMARY_SIG_GVARIANT_STRING: string
-export const TIMESTAMP: number
-export const TREE_GVARIANT_STRING: string
-export const WITH_AUTOCLEANUPS: number
-function checksum_b64_from_bytes(csum: Uint8Array[]): string
-function checksum_b64_to_bytes(checksum: string): Uint8Array[]
-function checksum_bytes_peek(bytes: GLib.Variant): Uint8Array[]
-function checksum_bytes_peek_validate(bytes: GLib.Variant): Uint8Array[]
-function checksum_file(f: Gio.File, objtype: ObjectType, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_csum */ Uint8Array[] ]
+const COMMIT_GVARIANT_STRING: string
+const DIRMETA_GVARIANT_STRING: string
+const FILEMETA_GVARIANT_STRING: string
+const MAX_METADATA_SIZE: number
+const MAX_METADATA_WARN_SIZE: number
+const MAX_RECURSION: number
+const SHA256_DIGEST_LEN: number
+const SHA256_STRING_LEN: number
+const SUMMARY_GVARIANT_STRING: string
+const SUMMARY_SIG_GVARIANT_STRING: string
+const TIMESTAMP: number
+const TREE_GVARIANT_STRING: string
+const WITH_AUTOCLEANUPS: number
+function checksum_b64_from_bytes(csum: Uint8Array): string
+function checksum_b64_to_bytes(checksum: string): Uint8Array
+function checksum_bytes_peek(bytes: GLib.Variant): Uint8Array
+function checksum_bytes_peek_validate(bytes: GLib.Variant): Uint8Array
+function checksum_file(f: Gio.File, objtype: ObjectType, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_csum */ Uint8Array ]
 function checksum_file_async(f: Gio.File, objtype: ObjectType, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-function checksum_file_async_finish(f: Gio.File, result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_csum */ Uint8Array[] ]
-function checksum_file_from_input(file_info: Gio.FileInfo, xattrs: GLib.Variant | null, in_: Gio.InputStream | null, objtype: ObjectType, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_csum */ Uint8Array[] ]
-function checksum_from_bytes(csum: Uint8Array[]): string
+function checksum_file_async_finish(f: Gio.File, result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_csum */ Uint8Array ]
+function checksum_file_from_input(file_info: Gio.FileInfo, xattrs: GLib.Variant | null, in_: Gio.InputStream | null, objtype: ObjectType, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_csum */ Uint8Array ]
+function checksum_from_bytes(csum: Uint8Array): string
 function checksum_from_bytes_v(csum_v: GLib.Variant): string
 function checksum_inplace_to_bytes(checksum: string, buf: number): void
-function checksum_to_bytes(checksum: string): Uint8Array[]
+function checksum_to_bytes(checksum: string): Uint8Array
 function checksum_to_bytes_v(checksum: string): GLib.Variant
 function cmd__private__(): CmdPrivateVTable
 function cmp_checksum_bytes(a: number, b: number): number
@@ -191,11 +197,11 @@ interface RepoCommitFilter {
 interface RepoCommitModifierXattrCallback {
     (repo: Repo, path: string, file_info: Gio.FileInfo): GLib.Variant
 }
-export interface AsyncProgress_ConstructProps extends GObject.Object_ConstructProps {
+interface AsyncProgress_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AsyncProgress {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.AsyncProgress */
     finish(): void
     get_status(): string
@@ -256,11 +262,11 @@ class AsyncProgress {
     static new_and_connect(changed?: object | null, user_data?: object | null): AsyncProgress
     static $gtype: GObject.Type
 }
-export interface BootconfigParser_ConstructProps extends GObject.Object_ConstructProps {
+interface BootconfigParser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BootconfigParser {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.BootconfigParser */
     clone(): BootconfigParser
     get(key: string): string
@@ -314,18 +320,18 @@ class BootconfigParser {
     static new(): BootconfigParser
     static $gtype: GObject.Type
 }
-export interface ChecksumInputStream_ConstructProps extends Gio.FilterInputStream_ConstructProps {
+interface ChecksumInputStream_ConstructProps extends Gio.FilterInputStream_ConstructProps {
+    /* Constructor properties of OSTree-1.0.OSTree.ChecksumInputStream */
     checksum?: object
 }
 class ChecksumInputStream {
     /* Properties of Gio-2.0.Gio.FilterInputStream */
     close_base_stream: boolean
-    /* Fields of OSTree-1.0.OSTree.ChecksumInputStream */
-    parent_instance: Gio.FilterInputStream
     /* Fields of Gio-2.0.Gio.FilterInputStream */
-    base_stream: Gio.InputStream
+    readonly parent_instance: Gio.InputStream
+    readonly base_stream: Gio.InputStream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gio-2.0.Gio.FilterInputStream */
     get_base_stream(): Gio.InputStream
     get_close_base_stream(): boolean
@@ -337,11 +343,11 @@ class ChecksumInputStream {
     close_finish(result: Gio.AsyncResult): boolean
     has_pending(): boolean
     is_closed(): boolean
-    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array[] ]
-    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array[], /* bytes_read */ number ]
-    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read(cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* buffer */ Uint8Array ]
+    read_all(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* buffer */ Uint8Array, /* bytes_read */ number ]
+    read_all_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_all_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* bytes_read */ number ]
-    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[]
+    read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array
     read_bytes(count: number, cancellable?: Gio.Cancellable | null): GLib.Bytes
     read_bytes_async(count: number, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     read_bytes_finish(result: Gio.AsyncResult): GLib.Bytes
@@ -376,7 +382,7 @@ class ChecksumInputStream {
     vfunc_close_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     vfunc_close_finish(result: Gio.AsyncResult): boolean
     vfunc_close_fn(cancellable?: Gio.Cancellable | null): boolean
-    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array[] | null
+    vfunc_read_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* buffer */ Uint8Array | null
     vfunc_read_finish(result: Gio.AsyncResult): number
     vfunc_read_fn(buffer: object | null, count: number, cancellable?: Gio.Cancellable | null): number
     vfunc_skip(count: number, cancellable?: Gio.Cancellable | null): number
@@ -407,11 +413,11 @@ class ChecksumInputStream {
     static new(stream: Gio.InputStream, checksum: GLib.Checksum): ChecksumInputStream
     static $gtype: GObject.Type
 }
-export interface Deployment_ConstructProps extends GObject.Object_ConstructProps {
+interface Deployment_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Deployment {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.Deployment */
     clone(): Deployment
     equal(bp: Deployment): boolean
@@ -476,11 +482,11 @@ class Deployment {
     static unlocked_state_to_string(state: DeploymentUnlockedState): string
     static $gtype: GObject.Type
 }
-export interface GpgVerifyResult_ConstructProps extends GObject.Object_ConstructProps {
+interface GpgVerifyResult_ConstructProps extends GObject.Object_ConstructProps {
 }
 class GpgVerifyResult {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.GpgVerifyResult */
     count_all(): number
     count_valid(): number
@@ -539,11 +545,11 @@ class GpgVerifyResult {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface MutableTree_ConstructProps extends GObject.Object_ConstructProps {
+interface MutableTree_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MutableTree {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.MutableTree */
     ensure_dir(name: string, out_subdir: MutableTree): boolean
     ensure_parent_dirs(split_path: string[], metadata_checksum: string): [ /* returnType */ boolean, /* out_parent */ MutableTree ]
@@ -601,14 +607,15 @@ class MutableTree {
     static new(): MutableTree
     static $gtype: GObject.Type
 }
-export interface Repo_ConstructProps extends GObject.Object_ConstructProps {
+interface Repo_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of OSTree-1.0.OSTree.Repo */
     path?: Gio.File
     remotes_config_dir?: string
     sysroot_path?: Gio.File
 }
 class Repo {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.Repo */
     abort_transaction(cancellable?: Gio.Cancellable | null): boolean
     add_gpg_signature_summary(key_id: string[], homedir?: string | null, cancellable?: Gio.Cancellable | null): boolean
@@ -688,13 +695,13 @@ class Repo {
     write_commit_detached_metadata(checksum: string, metadata?: GLib.Variant | null, cancellable?: Gio.Cancellable | null): boolean
     write_commit_with_time(parent: string | null, subject: string | null, body: string | null, metadata: GLib.Variant | null, root: RepoFile, time: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_commit */ string ]
     write_config(new_config: GLib.KeyFile): boolean
-    write_content(expected_checksum: string | null, object_input: Gio.InputStream, length: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_csum */ Uint8Array[] | null ]
+    write_content(expected_checksum: string | null, object_input: Gio.InputStream, length: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_csum */ Uint8Array | null ]
     write_content_async(expected_checksum: string | null, object: Gio.InputStream, length: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_content_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* out_csum */ number ]
     write_content_trusted(checksum: string, object_input: Gio.InputStream, length: number, cancellable?: Gio.Cancellable | null): boolean
     write_dfd_to_mtree(dfd: number, path: string, mtree: MutableTree, modifier?: RepoCommitModifier | null, cancellable?: Gio.Cancellable | null): boolean
     write_directory_to_mtree(dir: Gio.File, mtree: MutableTree, modifier?: RepoCommitModifier | null, cancellable?: Gio.Cancellable | null): boolean
-    write_metadata(objtype: ObjectType, expected_checksum: string | null, object: GLib.Variant, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_csum */ Uint8Array[] | null ]
+    write_metadata(objtype: ObjectType, expected_checksum: string | null, object: GLib.Variant, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_csum */ Uint8Array | null ]
     write_metadata_async(objtype: ObjectType, expected_checksum: string | null, object: GLib.Variant, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     write_metadata_finish(result: Gio.AsyncResult, out_csum: number): boolean
     write_metadata_stream_trusted(objtype: ObjectType, checksum: string, object_input: Gio.InputStream, length: number, cancellable?: Gio.Cancellable | null): boolean
@@ -754,11 +761,11 @@ class Repo {
     static traverse_new_reachable(): GLib.HashTable
     static $gtype: GObject.Type
 }
-export interface RepoFile_ConstructProps extends GObject.Object_ConstructProps {
+interface RepoFile_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RepoFile {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.RepoFile */
     ensure_resolved(): boolean
     get_checksum(): string
@@ -841,10 +848,10 @@ class RepoFile {
     load_bytes(cancellable?: Gio.Cancellable | null): [ /* returnType */ GLib.Bytes, /* etag_out */ string | null ]
     load_bytes_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     load_bytes_finish(result: Gio.AsyncResult): [ /* returnType */ GLib.Bytes, /* etag_out */ string | null ]
-    load_contents(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* contents */ Uint8Array[], /* etag_out */ string | null ]
+    load_contents(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* contents */ Uint8Array, /* etag_out */ string | null ]
     load_contents_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    load_contents_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* contents */ Uint8Array[], /* etag_out */ string | null ]
-    load_partial_contents_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* contents */ Uint8Array[], /* etag_out */ string | null ]
+    load_contents_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* contents */ Uint8Array, /* etag_out */ string | null ]
+    load_partial_contents_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* contents */ Uint8Array, /* etag_out */ string | null ]
     make_directory(cancellable?: Gio.Cancellable | null): boolean
     make_directory_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     make_directory_finish(result: Gio.AsyncResult): boolean
@@ -883,8 +890,8 @@ class RepoFile {
     read_finish(res: Gio.AsyncResult): Gio.FileInputStream
     replace(etag: string | null, make_backup: boolean, flags: Gio.FileCreateFlags, cancellable?: Gio.Cancellable | null): Gio.FileOutputStream
     replace_async(etag: string | null, make_backup: boolean, flags: Gio.FileCreateFlags, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
-    replace_contents(contents: Uint8Array[], etag: string | null, make_backup: boolean, flags: Gio.FileCreateFlags, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* new_etag */ string | null ]
-    replace_contents_async(contents: Uint8Array[], etag: string | null, make_backup: boolean, flags: Gio.FileCreateFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    replace_contents(contents: Uint8Array, etag: string | null, make_backup: boolean, flags: Gio.FileCreateFlags, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* new_etag */ string | null ]
+    replace_contents_async(contents: Uint8Array, etag: string | null, make_backup: boolean, flags: Gio.FileCreateFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     replace_contents_bytes_async(contents: GLib.Bytes, etag: string | null, make_backup: boolean, flags: Gio.FileCreateFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     replace_contents_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* new_etag */ string | null ]
     replace_finish(res: Gio.AsyncResult): Gio.FileOutputStream
@@ -1038,12 +1045,13 @@ class RepoFile {
     static parse_name(parse_name: string): Gio.File
     static $gtype: GObject.Type
 }
-export interface SePolicy_ConstructProps extends GObject.Object_ConstructProps {
+interface SePolicy_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of OSTree-1.0.OSTree.SePolicy */
     path?: Gio.File
 }
 class SePolicy {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.SePolicy */
     get_csum(): string
     get_label(relpath: string, unix_mode: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_label */ string | null ]
@@ -1102,12 +1110,13 @@ class SePolicy {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Sysroot_ConstructProps extends GObject.Object_ConstructProps {
+interface Sysroot_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of OSTree-1.0.OSTree.Sysroot */
     path?: Gio.File
 }
 class Sysroot {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.Sysroot */
     cleanup(cancellable?: Gio.Cancellable | null): boolean
     deploy_tree(osname: string | null, revision: string, origin?: GLib.KeyFile | null, provided_merge_deployment?: Deployment | null, override_kernel_argv?: string[] | null, cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_new_deployment */ Deployment ]
@@ -1186,14 +1195,15 @@ class Sysroot {
     static get_deployment_origin_path(deployment_path: Gio.File): Gio.File
     static $gtype: GObject.Type
 }
-export interface SysrootUpgrader_ConstructProps extends GObject.Object_ConstructProps {
+interface SysrootUpgrader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of OSTree-1.0.OSTree.SysrootUpgrader */
     flags?: SysrootUpgraderFlags
     osname?: string
     sysroot?: Sysroot
 }
 class SysrootUpgrader {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of OSTree-1.0.OSTree.SysrootUpgrader */
     deploy(cancellable?: Gio.Cancellable | null): boolean
     dup_origin(): GLib.KeyFile
@@ -1257,8 +1267,8 @@ class SysrootUpgrader {
 }
 abstract class AsyncProgressClass {
     /* Fields of OSTree-1.0.OSTree.AsyncProgressClass */
-    parent_class: GObject.ObjectClass
-    changed: (self: AsyncProgress) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly changed: (self: AsyncProgress) => void
     static name: string
 }
 class Bootloader {
@@ -1269,11 +1279,11 @@ class BootloaderGrub2 {
 }
 class BootloaderInterface {
     /* Fields of OSTree-1.0.OSTree.BootloaderInterface */
-    g_iface: GObject.TypeInterface
-    query: (bootloader: Bootloader, out_is_active: boolean, cancellable: Gio.Cancellable) => boolean
-    get_name: (self: Bootloader) => string
-    write_config: (self: Bootloader, bootversion: number, cancellable: Gio.Cancellable) => boolean
-    is_atomic: (self: Bootloader) => boolean
+    readonly g_iface: GObject.TypeInterface
+    readonly query: (bootloader: Bootloader, out_is_active: boolean, cancellable: Gio.Cancellable) => boolean
+    readonly get_name: (self: Bootloader) => string
+    readonly write_config: (self: Bootloader, bootversion: number, cancellable: Gio.Cancellable) => boolean
+    readonly is_atomic: (self: Bootloader) => boolean
     static name: string
 }
 class BootloaderSyslinux {
@@ -1284,7 +1294,7 @@ class BootloaderUboot {
 }
 abstract class ChecksumInputStreamClass {
     /* Fields of OSTree-1.0.OSTree.ChecksumInputStreamClass */
-    parent_class: Gio.FilterInputStreamClass
+    readonly parent_class: Gio.FilterInputStreamClass
     static name: string
 }
 class ChecksumInputStreamPrivate {
@@ -1292,21 +1302,21 @@ class ChecksumInputStreamPrivate {
 }
 class CmdPrivateVTable {
     /* Fields of OSTree-1.0.OSTree.CmdPrivateVTable */
-    ostree_generate_grub2_config: (sysroot: Sysroot, bootversion: number, target_fd: number, cancellable: Gio.Cancellable) => boolean
-    ostree_static_delta_dump: (repo: Repo, delta_id: string, cancellable: Gio.Cancellable) => boolean
-    ostree_static_delta_query_exists: (repo: Repo, delta_id: string, out_exists: boolean, cancellable: Gio.Cancellable) => boolean
-    ostree_static_delta_delete: (repo: Repo, delta_id: string, cancellable: Gio.Cancellable) => boolean
+    readonly ostree_generate_grub2_config: (sysroot: Sysroot, bootversion: number, target_fd: number, cancellable: Gio.Cancellable) => boolean
+    readonly ostree_static_delta_dump: (repo: Repo, delta_id: string, cancellable: Gio.Cancellable) => boolean
+    readonly ostree_static_delta_query_exists: (repo: Repo, delta_id: string, out_exists: boolean, cancellable: Gio.Cancellable) => boolean
+    readonly ostree_static_delta_delete: (repo: Repo, delta_id: string, cancellable: Gio.Cancellable) => boolean
     static name: string
 }
 class DiffItem {
     /* Fields of OSTree-1.0.OSTree.DiffItem */
-    refcount: number
-    src: Gio.File
-    target: Gio.File
-    src_info: Gio.FileInfo
-    target_info: Gio.FileInfo
-    src_checksum: string
-    target_checksum: string
+    readonly refcount: number
+    readonly src: Gio.File
+    readonly target: Gio.File
+    readonly src_info: Gio.FileInfo
+    readonly target_info: Gio.FileInfo
+    readonly src_checksum: string
+    readonly target_checksum: string
     /* Methods of OSTree-1.0.OSTree.DiffItem */
     ref(): DiffItem
     unref(): void
@@ -1317,12 +1327,12 @@ class GpgVerifier {
 }
 class LibarchiveInputStream {
     /* Fields of OSTree-1.0.OSTree.LibarchiveInputStream */
-    parent_instance: Gio.InputStream
+    readonly parent_instance: Gio.InputStream
     static name: string
 }
 class LibarchiveInputStreamClass {
     /* Fields of OSTree-1.0.OSTree.LibarchiveInputStreamClass */
-    parent_class: Gio.InputStreamClass
+    readonly parent_class: Gio.InputStreamClass
     static name: string
 }
 class LibarchiveInputStreamPrivate {
@@ -1333,7 +1343,7 @@ class LzmaCompressor {
 }
 class LzmaCompressorClass {
     /* Fields of OSTree-1.0.OSTree.LzmaCompressorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class LzmaDecompressor {
@@ -1341,48 +1351,48 @@ class LzmaDecompressor {
 }
 class LzmaDecompressorClass {
     /* Fields of OSTree-1.0.OSTree.LzmaDecompressorClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class MutableTreeClass {
     /* Fields of OSTree-1.0.OSTree.MutableTreeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class MutableTreeIter {
     /* Fields of OSTree-1.0.OSTree.MutableTreeIter */
-    in_files: boolean
-    iter: GLib.HashTableIter
+    readonly in_files: boolean
+    readonly iter: GLib.HashTableIter
     static name: string
 }
 class RepoCheckoutAtOptions {
     /* Fields of OSTree-1.0.OSTree.RepoCheckoutAtOptions */
-    mode: RepoCheckoutMode
-    overwrite_mode: RepoCheckoutOverwriteMode
-    enable_uncompressed_cache: boolean
-    enable_fsync: boolean
-    process_whiteouts: boolean
-    no_copy_fallback: boolean
-    unused_bools: boolean[]
-    subpath: string
-    devino_to_csum_cache: RepoDevInoCache
-    unused_ints: number[]
-    unused_ptrs: object[]
+    readonly mode: RepoCheckoutMode
+    readonly overwrite_mode: RepoCheckoutOverwriteMode
+    readonly enable_uncompressed_cache: boolean
+    readonly enable_fsync: boolean
+    readonly process_whiteouts: boolean
+    readonly no_copy_fallback: boolean
+    readonly unused_bools: boolean[]
+    readonly subpath: string
+    readonly devino_to_csum_cache: RepoDevInoCache
+    readonly unused_ints: number[]
+    readonly unused_ptrs: object[]
     static name: string
 }
 class RepoCheckoutOptions {
     /* Fields of OSTree-1.0.OSTree.RepoCheckoutOptions */
-    mode: RepoCheckoutMode
-    overwrite_mode: RepoCheckoutOverwriteMode
-    enable_uncompressed_cache: number
-    disable_fsync: number
-    process_whiteouts: number
-    no_copy_fallback: number
-    reserved: number
-    subpath: string
-    devino_to_csum_cache: RepoDevInoCache
-    unused_uints: number[]
-    unused_ptrs: object[]
+    readonly mode: RepoCheckoutMode
+    readonly overwrite_mode: RepoCheckoutOverwriteMode
+    readonly enable_uncompressed_cache: number
+    readonly disable_fsync: number
+    readonly process_whiteouts: number
+    readonly no_copy_fallback: number
+    readonly reserved: number
+    readonly subpath: string
+    readonly devino_to_csum_cache: RepoDevInoCache
+    readonly unused_uints: number[]
+    readonly unused_ptrs: object[]
     static name: string
 }
 class RepoCommitModifier {
@@ -1400,9 +1410,9 @@ class RepoCommitModifier {
 }
 class RepoCommitTraverseIter {
     /* Fields of OSTree-1.0.OSTree.RepoCommitTraverseIter */
-    initialized: boolean
-    dummy: object[]
-    dummy_checksum_data: number[]
+    readonly initialized: boolean
+    readonly dummy: object[]
+    readonly dummy_checksum_data: number[]
     /* Methods of OSTree-1.0.OSTree.RepoCommitTraverseIter */
     clear(): void
     get_dir(): [ /* out_name */ string, /* out_content_checksum */ string, /* out_meta_checksum */ string ]
@@ -1426,17 +1436,17 @@ class RepoDevInoCache {
 }
 class RepoExportArchiveOptions {
     /* Fields of OSTree-1.0.OSTree.RepoExportArchiveOptions */
-    disable_xattrs: number
-    reserved: number
-    timestamp_secs: number
-    unused_uint: number[]
-    path_prefix: string
-    unused_ptrs: object[]
+    readonly disable_xattrs: number
+    readonly reserved: number
+    readonly timestamp_secs: number
+    readonly unused_uint: number[]
+    readonly path_prefix: string
+    readonly unused_ptrs: object[]
     static name: string
 }
 abstract class RepoFileClass {
     /* Fields of OSTree-1.0.OSTree.RepoFileClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class RepoFileEnumerator {
@@ -1444,42 +1454,42 @@ class RepoFileEnumerator {
 }
 class RepoFileEnumeratorClass {
     /* Fields of OSTree-1.0.OSTree.RepoFileEnumeratorClass */
-    parent_class: Gio.FileEnumeratorClass
+    readonly parent_class: Gio.FileEnumeratorClass
     static name: string
 }
 class RepoImportArchiveOptions {
     /* Fields of OSTree-1.0.OSTree.RepoImportArchiveOptions */
-    ignore_unsupported_content: number
-    autocreate_parents: number
-    use_ostree_convention: number
-    callback_with_entry_pathname: number
-    reserved: number
-    unused_uint: number[]
-    unused_ptrs: object[]
+    readonly ignore_unsupported_content: number
+    readonly autocreate_parents: number
+    readonly use_ostree_convention: number
+    readonly callback_with_entry_pathname: number
+    readonly reserved: number
+    readonly unused_uint: number[]
+    readonly unused_ptrs: object[]
     static name: string
 }
 class RepoTransactionStats {
     /* Fields of OSTree-1.0.OSTree.RepoTransactionStats */
-    metadata_objects_total: number
-    metadata_objects_written: number
-    content_objects_total: number
-    content_objects_written: number
-    content_bytes_written: number
-    padding1: number
-    padding2: number
-    padding3: number
-    padding4: number
+    readonly metadata_objects_total: number
+    readonly metadata_objects_written: number
+    readonly content_objects_total: number
+    readonly content_objects_written: number
+    readonly content_bytes_written: number
+    readonly padding1: number
+    readonly padding2: number
+    readonly padding3: number
+    readonly padding4: number
     static name: string
 }
 class RollsumMatches {
     /* Fields of OSTree-1.0.OSTree.RollsumMatches */
-    from_rollsums: GLib.HashTable
-    to_rollsums: GLib.HashTable
-    crcmatches: number
-    bufmatches: number
-    total: number
-    match_size: number
-    matches: object[]
+    readonly from_rollsums: GLib.HashTable
+    readonly to_rollsums: GLib.HashTable
+    readonly crcmatches: number
+    readonly bufmatches: number
+    readonly total: number
+    readonly match_size: number
+    readonly matches: object[]
     static name: string
 }
 class TlsCertInteraction {

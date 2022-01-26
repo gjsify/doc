@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PangoOT-1.0
  */
@@ -18,19 +24,19 @@ enum TableType {
     GSUB,
     GPOS,
 }
-export const ALL_GLYPHS: number
-export const DEFAULT_LANGUAGE: number
-export const NO_FEATURE: number
-export const NO_SCRIPT: number
+const ALL_GLYPHS: number
+const DEFAULT_LANGUAGE: number
+const NO_FEATURE: number
+const NO_SCRIPT: number
 function tag_from_language(language?: Pango.Language | null): Tag
 function tag_from_script(script: Pango.Script): Tag
 function tag_to_language(language_tag: Tag): Pango.Language
 function tag_to_script(script_tag: Tag): Pango.Script
-export interface Info_ConstructProps extends GObject.Object_ConstructProps {
+interface Info_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Info {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoOT-1.0.PangoOT.Info */
     find_feature(table_type: TableType, feature_tag: Tag, script_index: number, language_index: number): [ /* returnType */ boolean, /* feature_index */ number | null ]
     find_language(table_type: TableType, script_index: number, language_tag: Tag): [ /* returnType */ boolean, /* language_index */ number | null, /* required_feature_index */ number | null ]
@@ -83,11 +89,11 @@ class Info {
     static get(face: freetype2.Face): Info
     static $gtype: GObject.Type
 }
-export interface Ruleset_ConstructProps extends GObject.Object_ConstructProps {
+interface Ruleset_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Ruleset {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoOT-1.0.PangoOT.Ruleset */
     add_feature(table_type: TableType, feature_index: number, property_bit: number): void
     get_feature_count(): [ /* returnType */ number, /* n_gsub_features */ number | null, /* n_gpos_features */ number | null ]
@@ -160,30 +166,30 @@ class Buffer {
 }
 class FeatureMap {
     /* Fields of PangoOT-1.0.PangoOT.FeatureMap */
-    feature_name: number[]
-    property_bit: number
+    readonly feature_name: number[]
+    readonly property_bit: number
     static name: string
 }
 class Glyph {
     /* Fields of PangoOT-1.0.PangoOT.Glyph */
-    glyph: number
-    properties: number
-    cluster: number
-    component: number
-    ligID: number
-    internal: number
+    readonly glyph: number
+    readonly properties: number
+    readonly cluster: number
+    readonly component: number
+    readonly ligID: number
+    readonly internal: number
     static name: string
 }
 class RulesetDescription {
     /* Fields of PangoOT-1.0.PangoOT.RulesetDescription */
-    script: Pango.Script
-    language: Pango.Language
-    static_gsub_features: FeatureMap
-    n_static_gsub_features: number
-    static_gpos_features: FeatureMap
-    n_static_gpos_features: number
-    other_features: FeatureMap
-    n_other_features: number
+    readonly script: Pango.Script
+    readonly language: Pango.Language
+    readonly static_gsub_features: FeatureMap
+    readonly n_static_gsub_features: number
+    readonly static_gpos_features: FeatureMap
+    readonly n_static_gpos_features: number
+    readonly other_features: FeatureMap
+    readonly n_other_features: number
     /* Methods of PangoOT-1.0.PangoOT.RulesetDescription */
     copy(): RulesetDescription
     equal(desc2: RulesetDescription): boolean
@@ -191,6 +197,6 @@ class RulesetDescription {
     hash(): number
     static name: string
 }
-type Tag = number
+    type Tag = number
 }
 export default PangoOT;

@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * RygelCore-2.6
  */
@@ -58,11 +64,11 @@ enum PluginCapabilities {
     ENERGY_MANAGEMENT,
 }
 function get_pretty_host_name(): string
-export interface DBusInterface_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusInterface_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DBusInterface {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.DBusInterface */
     shutdown(): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -110,11 +116,11 @@ class DBusInterface {
     _init (config?: DBusInterface_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DBusAclProvider_ConstructProps extends GObject.Object_ConstructProps {
+interface DBusAclProvider_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DBusAclProvider {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.DBusAclProvider */
     is_allowed(device: GLib.HashTable, service: GLib.HashTable, path: string, address: string, agent?: string | null, _callback_?: Gio.AsyncReadyCallback | null): void
     is_allowed_finish(_res_: Gio.AsyncResult): boolean
@@ -164,11 +170,11 @@ class DBusAclProvider {
     _init (config?: DBusAclProvider_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Configuration_ConstructProps extends GObject.Object_ConstructProps {
+interface Configuration_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Configuration {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.Configuration */
     get_interface(): string
     get_interfaces(): string[]
@@ -264,14 +270,15 @@ class Configuration {
     _init (config?: Configuration_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface StateMachine_ConstructProps extends GObject.Object_ConstructProps {
+interface StateMachine_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.StateMachine */
     cancellable?: Gio.Cancellable
 }
 class StateMachine {
     /* Properties of RygelCore-2.6.RygelCore.StateMachine */
     cancellable: Gio.Cancellable
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.StateMachine */
     run(_callback_?: Gio.AsyncReadyCallback | null): void
     run_finish(_res_: Gio.AsyncResult): void
@@ -331,20 +338,13 @@ class StateMachine {
     _init (config?: StateMachine_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ConnectionManager_ConstructProps extends GUPnP.Service_ConstructProps {
+interface ConnectionManager_ConstructProps extends GUPnP.Service_ConstructProps {
 }
 class ConnectionManager {
-    /* Fields of RygelCore-2.6.RygelCore.ConnectionManager */
-    sink_protocol_info: string
-    connection_ids: string
-    source_protocol_info: string
-    rcs_id: number
-    av_transport_id: number
-    direction: string
     /* Fields of GUPnP-1.2.GUPnP.Service */
-    parent_instance: GUPnP.ServiceInfo
+    readonly parent_instance: GUPnP.ServiceInfo
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.ConnectionManager */
     get_current_protocol_info(): string
     /* Methods of GUPnP-1.2.GUPnP.Service */
@@ -424,18 +424,17 @@ class ConnectionManager {
     static new(): ConnectionManager
     static $gtype: GObject.Type
 }
-export interface BasicManagement_ConstructProps extends GUPnP.Service_ConstructProps {
+interface BasicManagement_ConstructProps extends GUPnP.Service_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.BasicManagement */
     max_history_size?: number
 }
 class BasicManagement {
     /* Properties of RygelCore-2.6.RygelCore.BasicManagement */
     max_history_size: number
-    /* Fields of RygelCore-2.6.RygelCore.BasicManagement */
-    device_status: string
     /* Fields of GUPnP-1.2.GUPnP.Service */
-    parent_instance: GUPnP.ServiceInfo
+    readonly parent_instance: GUPnP.ServiceInfo
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.BasicManagement */
     get_max_history_size(): number
     set_max_history_size(value: number): void
@@ -516,11 +515,11 @@ class BasicManagement {
     static new(): BasicManagement
     static $gtype: GObject.Type
 }
-export interface DescriptionFile_ConstructProps extends GObject.Object_ConstructProps {
+interface DescriptionFile_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DescriptionFile {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.DescriptionFile */
     set_device_type(device_type: string): void
     set_model_description(model_description: string): void
@@ -587,10 +586,6 @@ class DescriptionFile {
     static $gtype: GObject.Type
 }
 class DLNAProfile {
-    /* Fields of RygelCore-2.6.RygelCore.DLNAProfile */
-    ref_count: number
-    mime: string
-    name: string
     static name: string
     static new(name: string, mime: string): DLNAProfile
     constructor(name: string, mime: string)
@@ -598,13 +593,13 @@ class DLNAProfile {
     static new(name: string, mime: string): DLNAProfile
     static compare_by_name(a: DLNAProfile, b: DLNAProfile): number
 }
-export interface EnergyManagement_ConstructProps extends GUPnP.Service_ConstructProps {
+interface EnergyManagement_ConstructProps extends GUPnP.Service_ConstructProps {
 }
 class EnergyManagement {
     /* Fields of GUPnP-1.2.GUPnP.Service */
-    parent_instance: GUPnP.ServiceInfo
+    readonly parent_instance: GUPnP.ServiceInfo
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GUPnP-1.2.GUPnP.Service */
     freeze_notify(): void
     notify_value(variable: string, value: any): void
@@ -680,7 +675,8 @@ class EnergyManagement {
     static new(): EnergyManagement
     static $gtype: GObject.Type
 }
-export interface RootDevice_ConstructProps extends GUPnP.RootDevice_ConstructProps {
+interface RootDevice_ConstructProps extends GUPnP.RootDevice_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.RootDevice */
     services?: Gee.ArrayList
 }
 class RootDevice {
@@ -689,18 +685,20 @@ class RootDevice {
     /* Properties of GUPnP-1.2.GUPnP.RootDevice */
     available: boolean
     /* Properties of GUPnP-1.2.GUPnP.DeviceInfo */
+    document: GUPnP.XMLDoc
     element: object
     location: string
     url_base: Soup.URI
     /* Fields of GUPnP-1.2.GUPnP.RootDevice */
-    parent_instance: GUPnP.Device
+    readonly parent_instance: GUPnP.Device
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.RootDevice */
     get_services(): Gee.ArrayList
     /* Methods of GUPnP-1.2.GUPnP.RootDevice */
     get_available(): boolean
     get_description_dir(): string
+    get_description_document_name(): string
     get_description_path(): string
     get_relative_location(): string
     get_ssdp_resource_group(): GSSDP.ResourceGroup
@@ -756,6 +754,8 @@ class RootDevice {
     watch_closure(closure: Function): void
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of RygelCore-2.6.RygelCore.RootDevice */
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GUPnP-1.2.GUPnP.RootDevice */
     vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
@@ -774,6 +774,8 @@ class RootDevice {
     connect_after(sigName: "notify::services", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::available", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::available", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::document", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::document", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::element", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::element", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::location", callback: (($obj: RootDevice, pspec: GObject.ParamSpec) => void)): number
@@ -789,15 +791,18 @@ class RootDevice {
     _init (config?: RootDevice_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(context: GUPnP.Context, plugin: Plugin, description_doc: GUPnP.XMLDoc, description_path: string, description_dir: string): RootDevice
+    /* Function overloads */
     static new(context: GUPnP.Context, description_path: string, description_dir: string): RootDevice
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface RootDeviceFactory_ConstructProps extends GObject.Object_ConstructProps {
+interface RootDeviceFactory_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.RootDeviceFactory */
     context?: GUPnP.Context
 }
 class RootDeviceFactory {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.RootDeviceFactory */
     create(plugin: Plugin): RootDevice
     get_context(): GUPnP.Context
@@ -851,11 +856,11 @@ class RootDeviceFactory {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface LogHandler_ConstructProps extends GObject.Object_ConstructProps {
+interface LogHandler_ConstructProps extends GObject.Object_ConstructProps {
 }
 class LogHandler {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -901,11 +906,11 @@ class LogHandler {
     static get_default(): LogHandler
     static $gtype: GObject.Type
 }
-export interface MetaConfig_ConstructProps extends GObject.Object_ConstructProps {
+interface MetaConfig_ConstructProps extends GObject.Object_ConstructProps {
 }
 class MetaConfig {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1006,13 +1011,13 @@ class MetaConfig {
     static cleanup(): void
     static $gtype: GObject.Type
 }
-export interface PluginLoader_ConstructProps extends RecursiveModuleLoader_ConstructProps {
+interface PluginLoader_ConstructProps extends RecursiveModuleLoader_ConstructProps {
 }
 class PluginLoader {
     /* Properties of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     base_path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.PluginLoader */
     plugin_disabled(name: string): boolean
     add_plugin(plugin: Plugin): void
@@ -1079,14 +1084,15 @@ class PluginLoader {
     static new(): PluginLoader
     static $gtype: GObject.Type
 }
-export interface RecursiveModuleLoader_ConstructProps extends GObject.Object_ConstructProps {
+interface RecursiveModuleLoader_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     base_path?: string
 }
 class RecursiveModuleLoader {
     /* Properties of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     base_path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.RecursiveModuleLoader */
     load_modules(): void
     load_modules_sync(cancellable?: Gio.Cancellable | null): void
@@ -1142,7 +1148,8 @@ class RecursiveModuleLoader {
     _init (config?: RecursiveModuleLoader_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Plugin_ConstructProps extends GUPnP.ResourceFactory_ConstructProps {
+interface Plugin_ConstructProps extends GUPnP.ResourceFactory_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.Plugin */
     capabilities?: PluginCapabilities
     name?: string
     title?: string
@@ -1162,9 +1169,9 @@ class Plugin {
     icon_infos: Gee.ArrayList
     default_icons: Gee.ArrayList
     /* Fields of GUPnP-1.2.GUPnP.ResourceFactory */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.Plugin */
     add_resource(resource_info: ResourceInfo): void
     add_icon(icon_info: IconInfo): void
@@ -1243,23 +1250,19 @@ class Plugin {
     _init (config?: Plugin_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(desc_path: string, name: string, title: string | null, description: string | null, capabilities: PluginCapabilities): Plugin
+    /* Function overloads */
     static new(): Plugin
     static $gtype: GObject.Type
 }
 class ResourceInfo {
-    /* Fields of RygelCore-2.6.RygelCore.ResourceInfo */
-    ref_count: number
-    upnp_type: string
-    upnp_id: string
-    description_path: string
-    type: GObject.Type
     static name: string
     static new(upnp_id: string, upnp_type: string, description_path: string, type: GObject.Type): ResourceInfo
     constructor(upnp_id: string, upnp_type: string, description_path: string, type: GObject.Type)
     /* Static methods and pseudo-constructors */
     static new(upnp_id: string, upnp_type: string, description_path: string, type: GObject.Type): ResourceInfo
 }
-export interface MediaDevice_ConstructProps extends GObject.Object_ConstructProps {
+interface MediaDevice_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.MediaDevice */
     plugin?: Plugin
     title?: string
     capabilities?: PluginCapabilities
@@ -1268,7 +1271,7 @@ class MediaDevice {
     /* Properties of RygelCore-2.6.RygelCore.MediaDevice */
     plugin: Plugin
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.MediaDevice */
     add_interface(iface: string): void
     remove_interface(iface: string): void
@@ -1322,11 +1325,11 @@ class MediaDevice {
     _init (config?: MediaDevice_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface BaseConfiguration_ConstructProps extends GObject.Object_ConstructProps {
+interface BaseConfiguration_ConstructProps extends GObject.Object_ConstructProps {
 }
 class BaseConfiguration {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.BaseConfiguration */
     get_interface(): string
     get_interfaces(): string[]
@@ -1370,6 +1373,14 @@ class BaseConfiguration {
     thaw_notify(): void
     unref(): void
     watch_closure(closure: Function): void
+    /* Methods of RygelCore-2.6.RygelCore.Configuration */
+    get_enabled(section: string): boolean
+    get_title(section: string): string
+    get_string(section: string, key: string): string
+    get_string_list(section: string, key: string): Gee.ArrayList
+    get_int(section: string, key: string, min: number, max: number): number
+    get_int_list(section: string, key: string): Gee.ArrayList
+    get_bool(section: string, key: string): boolean
     /* Virtual methods of RygelCore-2.6.RygelCore.BaseConfiguration */
     vfunc_get_interface(): string
     vfunc_get_interfaces(): string[]
@@ -1385,11 +1396,25 @@ class BaseConfiguration {
     vfunc_get_music_upload_folder(): string | null
     vfunc_get_picture_upload_folder(): string | null
     vfunc_get_enabled(section: string): boolean
+    /* Function overloads */
+    vfunc_get_enabled(section: string): boolean
+    vfunc_get_title(section: string): string
+    /* Function overloads */
     vfunc_get_title(section: string): string
     vfunc_get_string(section: string, key: string): string
+    /* Function overloads */
+    vfunc_get_string(section: string, key: string): string
+    vfunc_get_string_list(section: string, key: string): Gee.ArrayList
+    /* Function overloads */
     vfunc_get_string_list(section: string, key: string): Gee.ArrayList
     vfunc_get_int(section: string, key: string, min: number, max: number): number
+    /* Function overloads */
+    vfunc_get_int(section: string, key: string, min: number, max: number): number
     vfunc_get_int_list(section: string, key: string): Gee.ArrayList
+    /* Function overloads */
+    vfunc_get_int_list(section: string, key: string): Gee.ArrayList
+    vfunc_get_bool(section: string, key: string): boolean
+    /* Function overloads */
     vfunc_get_bool(section: string, key: string): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1424,11 +1449,11 @@ class BaseConfiguration {
     static new(): BaseConfiguration
     static $gtype: GObject.Type
 }
-export interface CmdlineConfig_ConstructProps extends GObject.Object_ConstructProps {
+interface CmdlineConfig_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CmdlineConfig {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.CmdlineConfig */
     get_config_file(): string
     /* Methods of GObject-2.0.GObject.Object */
@@ -1530,11 +1555,11 @@ class CmdlineConfig {
     static parse_args(args: string[]): /* args */ string[]
     static $gtype: GObject.Type
 }
-export interface EnvironmentConfig_ConstructProps extends GObject.Object_ConstructProps {
+interface EnvironmentConfig_ConstructProps extends GObject.Object_ConstructProps {
 }
 class EnvironmentConfig {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1633,16 +1658,11 @@ class EnvironmentConfig {
     static get_default(): EnvironmentConfig
     static $gtype: GObject.Type
 }
-export interface UserConfig_ConstructProps extends GObject.Object_ConstructProps {
+interface UserConfig_ConstructProps extends GObject.Object_ConstructProps {
 }
 class UserConfig {
-    /* Fields of RygelCore-2.6.RygelCore.UserConfig */
-    key_file: GLib.KeyFile
-    sys_key_file: GLib.KeyFile
-    key_file_monitor: Gio.FileMonitor
-    sys_key_file_monitor: Gio.FileMonitor
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1742,17 +1762,16 @@ class UserConfig {
     static get_default(): UserConfig
     static $gtype: GObject.Type
 }
-export interface V1Hacks_ConstructProps extends GObject.Object_ConstructProps {
+interface V1Hacks_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.V1Hacks */
     device_type?: string
     service_types?: string[]
 }
 class V1Hacks {
     /* Properties of RygelCore-2.6.RygelCore.V1Hacks */
     device_type: string
-    /* Fields of RygelCore-2.6.RygelCore.V1Hacks */
-    description_path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.V1Hacks */
     apply_on_device(device: RootDevice, template_path?: string | null): void
     get_device_type(): string
@@ -1806,15 +1825,6 @@ class V1Hacks {
     static $gtype: GObject.Type
 }
 class IconInfo {
-    /* Fields of RygelCore-2.6.RygelCore.IconInfo */
-    ref_count: number
-    mime_type: string
-    uri: string
-    file_extension: string
-    size: number
-    width: number
-    height: number
-    depth: number
     static name: string
     static new(mime_type: string, file_extension: string): IconInfo
     constructor(mime_type: string, file_extension: string)
@@ -1822,8 +1832,6 @@ class IconInfo {
     static new(mime_type: string, file_extension: string): IconInfo
 }
 class XMLUtils {
-    /* Fields of RygelCore-2.6.RygelCore.XMLUtils */
-    ref_count: number
     static name: string
     static new(): XMLUtils
     constructor()
@@ -1831,8 +1839,6 @@ class XMLUtils {
     static new(): XMLUtils
 }
 class XMLUtilsIterator {
-    /* Fields of RygelCore-2.6.RygelCore.XMLUtilsIterator */
-    ref_count: number
     /* Methods of RygelCore-2.6.RygelCore.XMLUtilsIterator */
     iterator(): XMLUtilsIterator
     next(): boolean
@@ -1845,7 +1851,7 @@ class XMLUtilsIterator {
 }
 class XMLUtilsChildIterator {
     /* Fields of RygelCore-2.6.RygelCore.XMLUtilsIterator */
-    ref_count: number
+    readonly ref_count: number
     /* Methods of RygelCore-2.6.RygelCore.XMLUtilsIterator */
     iterator(): XMLUtilsIterator
     next(): boolean
@@ -1855,8 +1861,11 @@ class XMLUtilsChildIterator {
     constructor(node?: object | null)
     /* Static methods and pseudo-constructors */
     static new(node?: object | null): XMLUtilsChildIterator
+    /* Function overloads */
+    static new(node?: object | null): XMLUtilsChildIterator
 }
-export interface PluginInformation_ConstructProps extends GObject.Object_ConstructProps {
+interface PluginInformation_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of RygelCore-2.6.RygelCore.PluginInformation */
     module_path?: string
     name?: string
     conflicts?: any
@@ -1866,7 +1875,7 @@ class PluginInformation {
     /* Properties of RygelCore-2.6.RygelCore.PluginInformation */
     module_loaded: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of RygelCore-2.6.RygelCore.PluginInformation */
     get_module_path(): string
     get_name(): string
@@ -1922,7 +1931,7 @@ class PluginInformation {
 }
 abstract class ConnectionManagerClass {
     /* Fields of RygelCore-2.6.RygelCore.ConnectionManagerClass */
-    get_current_protocol_info: (self: ConnectionManager) => string
+    readonly get_current_protocol_info: (self: ConnectionManager) => string
     static name: string
 }
 class ConnectionManagerPrivate {
@@ -1984,8 +1993,8 @@ class PluginLoaderPrivate {
 }
 abstract class RecursiveModuleLoaderClass {
     /* Fields of RygelCore-2.6.RygelCore.RecursiveModuleLoaderClass */
-    load_module_from_file: (self: RecursiveModuleLoader, file: Gio.File) => boolean
-    load_module_from_info: (self: RecursiveModuleLoader, info: PluginInformation) => boolean
+    readonly load_module_from_file: (self: RecursiveModuleLoader, file: Gio.File) => boolean
+    readonly load_module_from_info: (self: RecursiveModuleLoader, info: PluginInformation) => boolean
     static name: string
 }
 class RecursiveModuleLoaderPrivate {
@@ -1993,7 +2002,7 @@ class RecursiveModuleLoaderPrivate {
 }
 abstract class PluginClass {
     /* Fields of RygelCore-2.6.RygelCore.PluginClass */
-    apply_hacks: (self: Plugin, device: RootDevice, description_path: string) => void
+    readonly apply_hacks: (self: Plugin, device: RootDevice, description_path: string) => void
     static name: string
 }
 class PluginPrivate {
@@ -2013,26 +2022,26 @@ class MediaDevicePrivate {
 }
 abstract class BaseConfigurationClass {
     /* Fields of RygelCore-2.6.RygelCore.BaseConfigurationClass */
-    get_interface: (self: BaseConfiguration) => string
-    get_interfaces: (self: BaseConfiguration) => string[]
-    get_port: (self: BaseConfiguration) => number
-    get_transcoding: (self: BaseConfiguration) => boolean
-    get_allow_upload: (self: BaseConfiguration) => boolean
-    get_allow_deletion: (self: BaseConfiguration) => boolean
-    get_log_levels: (self: BaseConfiguration) => string
-    get_plugin_path: (self: BaseConfiguration) => string
-    get_engine_path: (self: BaseConfiguration) => string
-    get_media_engine: (self: BaseConfiguration) => string
-    get_video_upload_folder: (self: BaseConfiguration) => string | null
-    get_music_upload_folder: (self: BaseConfiguration) => string | null
-    get_picture_upload_folder: (self: BaseConfiguration) => string | null
-    get_enabled: (self: BaseConfiguration, section: string) => boolean
-    get_title: (self: BaseConfiguration, section: string) => string
-    get_string: (self: BaseConfiguration, section: string, key: string) => string
-    get_string_list: (self: BaseConfiguration, section: string, key: string) => Gee.ArrayList
-    get_int: (self: BaseConfiguration, section: string, key: string, min: number, max: number) => number
-    get_int_list: (self: BaseConfiguration, section: string, key: string) => Gee.ArrayList
-    get_bool: (self: BaseConfiguration, section: string, key: string) => boolean
+    readonly get_interface: (self: BaseConfiguration) => string
+    readonly get_interfaces: (self: BaseConfiguration) => string[]
+    readonly get_port: (self: BaseConfiguration) => number
+    readonly get_transcoding: (self: BaseConfiguration) => boolean
+    readonly get_allow_upload: (self: BaseConfiguration) => boolean
+    readonly get_allow_deletion: (self: BaseConfiguration) => boolean
+    readonly get_log_levels: (self: BaseConfiguration) => string
+    readonly get_plugin_path: (self: BaseConfiguration) => string
+    readonly get_engine_path: (self: BaseConfiguration) => string
+    readonly get_media_engine: (self: BaseConfiguration) => string
+    readonly get_video_upload_folder: (self: BaseConfiguration) => string | null
+    readonly get_music_upload_folder: (self: BaseConfiguration) => string | null
+    readonly get_picture_upload_folder: (self: BaseConfiguration) => string | null
+    readonly get_enabled: (self: BaseConfiguration, section: string) => boolean
+    readonly get_title: (self: BaseConfiguration, section: string) => string
+    readonly get_string: (self: BaseConfiguration, section: string, key: string) => string
+    readonly get_string_list: (self: BaseConfiguration, section: string, key: string) => Gee.ArrayList
+    readonly get_int: (self: BaseConfiguration, section: string, key: string, min: number, max: number) => number
+    readonly get_int_list: (self: BaseConfiguration, section: string, key: string) => Gee.ArrayList
+    readonly get_bool: (self: BaseConfiguration, section: string, key: string) => boolean
     static name: string
 }
 class BaseConfigurationPrivate {
@@ -2094,45 +2103,45 @@ class PluginInformationPrivate {
 }
 abstract class DBusInterfaceIface {
     /* Fields of RygelCore-2.6.RygelCore.DBusInterfaceIface */
-    shutdown: (self: DBusInterface) => void
+    readonly shutdown: (self: DBusInterface) => void
     static name: string
 }
 abstract class DBusAclProviderIface {
     /* Fields of RygelCore-2.6.RygelCore.DBusAclProviderIface */
-    is_allowed: (self: DBusAclProvider, device: GLib.HashTable, service: GLib.HashTable, path: string, address: string, agent?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
-    is_allowed_finish: (self: DBusAclProvider, _res_: Gio.AsyncResult) => boolean
+    readonly is_allowed: (self: DBusAclProvider, device: GLib.HashTable, service: GLib.HashTable, path: string, address: string, agent?: string | null, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly is_allowed_finish: (self: DBusAclProvider, _res_: Gio.AsyncResult) => boolean
     static name: string
 }
 abstract class ConfigurationIface {
     /* Fields of RygelCore-2.6.RygelCore.ConfigurationIface */
-    get_interface: (self: Configuration) => string
-    get_interfaces: (self: Configuration) => string[]
-    get_port: (self: Configuration) => number
-    get_transcoding: (self: Configuration) => boolean
-    get_allow_upload: (self: Configuration) => boolean
-    get_allow_deletion: (self: Configuration) => boolean
-    get_log_levels: (self: Configuration) => string
-    get_plugin_path: (self: Configuration) => string
-    get_engine_path: (self: Configuration) => string
-    get_media_engine: (self: Configuration) => string
-    get_video_upload_folder: (self: Configuration) => string | null
-    get_music_upload_folder: (self: Configuration) => string | null
-    get_picture_upload_folder: (self: Configuration) => string | null
-    get_enabled: (self: Configuration, section: string) => boolean
-    get_title: (self: Configuration, section: string) => string
-    get_string: (self: Configuration, section: string, key: string) => string
-    get_string_list: (self: Configuration, section: string, key: string) => Gee.ArrayList
-    get_int: (self: Configuration, section: string, key: string, min: number, max: number) => number
-    get_int_list: (self: Configuration, section: string, key: string) => Gee.ArrayList
-    get_bool: (self: Configuration, section: string, key: string) => boolean
+    readonly get_interface: (self: Configuration) => string
+    readonly get_interfaces: (self: Configuration) => string[]
+    readonly get_port: (self: Configuration) => number
+    readonly get_transcoding: (self: Configuration) => boolean
+    readonly get_allow_upload: (self: Configuration) => boolean
+    readonly get_allow_deletion: (self: Configuration) => boolean
+    readonly get_log_levels: (self: Configuration) => string
+    readonly get_plugin_path: (self: Configuration) => string
+    readonly get_engine_path: (self: Configuration) => string
+    readonly get_media_engine: (self: Configuration) => string
+    readonly get_video_upload_folder: (self: Configuration) => string | null
+    readonly get_music_upload_folder: (self: Configuration) => string | null
+    readonly get_picture_upload_folder: (self: Configuration) => string | null
+    readonly get_enabled: (self: Configuration, section: string) => boolean
+    readonly get_title: (self: Configuration, section: string) => string
+    readonly get_string: (self: Configuration, section: string, key: string) => string
+    readonly get_string_list: (self: Configuration, section: string, key: string) => Gee.ArrayList
+    readonly get_int: (self: Configuration, section: string, key: string, min: number, max: number) => number
+    readonly get_int_list: (self: Configuration, section: string, key: string) => Gee.ArrayList
+    readonly get_bool: (self: Configuration, section: string, key: string) => boolean
     static name: string
 }
 abstract class StateMachineIface {
     /* Fields of RygelCore-2.6.RygelCore.StateMachineIface */
-    run: (self: StateMachine, _callback_?: Gio.AsyncReadyCallback | null) => void
-    run_finish: (self: StateMachine, _res_: Gio.AsyncResult) => void
-    get_cancellable: (self: StateMachine) => Gio.Cancellable
-    set_cancellable: (self: StateMachine, value: Gio.Cancellable) => void
+    readonly run: (self: StateMachine, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly run_finish: (self: StateMachine, _res_: Gio.AsyncResult) => void
+    readonly get_cancellable: (self: StateMachine) => Gio.Cancellable
+    readonly set_cancellable: (self: StateMachine, value: Gio.Cancellable) => void
     static name: string
 }
 }

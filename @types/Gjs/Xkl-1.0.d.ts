@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Xkl-1.0
  */
@@ -26,9 +32,9 @@ enum EngineFeatures {
     REQUIRES_MANUAL_LAYOUT_MANAGEMENT,
     DEVICE_DISCOVERY,
 }
-export const MAX_CI_DESC_LENGTH: number
-export const MAX_CI_NAME_LENGTH: number
-export const MAX_CI_SHORT_DESC_LENGTH: number
+const MAX_CI_DESC_LENGTH: number
+const MAX_CI_NAME_LENGTH: number
+const MAX_CI_SHORT_DESC_LENGTH: number
 function get_country_name(code: string): string
 function get_language_name(code: string): string
 function get_last_error(): string
@@ -40,16 +46,11 @@ interface ConfigItemProcessFunc {
 interface TwoConfigItemsProcessFunc {
     (config: ConfigRegistry, item: ConfigItem, subitem: ConfigItem, data: object): void
 }
-export interface ConfigItem_ConstructProps extends GObject.Object_ConstructProps {
+interface ConfigItem_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ConfigItem {
-    /* Fields of Xkl-1.0.Xkl.ConfigItem */
-    parent: GObject.Object
-    name: number[]
-    short_description: number[]
-    description: number[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Xkl-1.0.Xkl.ConfigItem */
     get_description(): string
     get_name(): string
@@ -102,17 +103,11 @@ class ConfigItem {
     static new(): ConfigItem
     static $gtype: GObject.Type
 }
-export interface ConfigRec_ConstructProps extends GObject.Object_ConstructProps {
+interface ConfigRec_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ConfigRec {
-    /* Fields of Xkl-1.0.Xkl.ConfigRec */
-    parent: GObject.Object
-    model: string
-    layouts: string[]
-    variants: string[]
-    options: string[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Xkl-1.0.Xkl.ConfigRec */
     activate(engine: Engine): boolean
     equals(data2: ConfigRec): boolean
@@ -171,14 +166,13 @@ class ConfigRec {
     static write_to_file(engine: Engine, file_name: string, data: ConfigRec, binary: boolean): boolean
     static $gtype: GObject.Type
 }
-export interface ConfigRegistry_ConstructProps extends GObject.Object_ConstructProps {
+interface ConfigRegistry_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Xkl-1.0.Xkl.ConfigRegistry */
     engine?: Engine
 }
 class ConfigRegistry {
-    /* Fields of Xkl-1.0.Xkl.ConfigRegistry */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Xkl-1.0.Xkl.ConfigRegistry */
     find_layout(item: ConfigItem): boolean
     find_model(item: ConfigItem): boolean
@@ -241,7 +235,8 @@ class ConfigRegistry {
     static get_instance(engine: Engine): ConfigRegistry
     static $gtype: GObject.Type
 }
-export interface Engine_ConstructProps extends GObject.Object_ConstructProps {
+interface Engine_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Xkl-1.0.Xkl.Engine */
     display?: object
 }
 class Engine {
@@ -253,10 +248,8 @@ class Engine {
     readonly max_num_groups: number
     readonly num_groups: number
     readonly secondary_groups_mask: number
-    /* Fields of Xkl-1.0.Xkl.Engine */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Xkl-1.0.Xkl.Engine */
     allow_one_switch_to_secondary_group(): void
     backup_names_prop(): boolean
@@ -375,17 +368,17 @@ class Engine {
 }
 abstract class ConfigItemClass {
     /* Fields of Xkl-1.0.Xkl.ConfigItemClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ConfigRecClass {
     /* Fields of Xkl-1.0.Xkl.ConfigRecClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ConfigRegistryClass {
     /* Fields of Xkl-1.0.Xkl.ConfigRegistryClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ConfigRegistryPrivate {
@@ -393,11 +386,11 @@ class ConfigRegistryPrivate {
 }
 abstract class EngineClass {
     /* Fields of Xkl-1.0.Xkl.EngineClass */
-    parent_class: GObject.ObjectClass
-    config_notify: (engine: Engine) => void
-    new_window_notify: (engine: Engine, win: xlib.Window, parent: xlib.Window) => number
-    state_notify: (engine: Engine, change_type: EngineStateChange, group: number, restore: boolean) => void
-    new_device_notify: (engine: Engine) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly config_notify: (engine: Engine) => void
+    readonly new_window_notify: (engine: Engine, win: xlib.Window, parent: xlib.Window) => number
+    readonly state_notify: (engine: Engine, change_type: EngineStateChange, group: number, restore: boolean) => void
+    readonly new_device_notify: (engine: Engine) => void
     static name: string
 }
 class EnginePrivate {
@@ -405,8 +398,8 @@ class EnginePrivate {
 }
 class State {
     /* Fields of Xkl-1.0.Xkl.State */
-    group: number
-    indicators: number
+    readonly group: number
+    readonly indicators: number
     static name: string
 }
 }

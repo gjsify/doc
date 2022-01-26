@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GMime-3.0
  */
@@ -24,7 +30,7 @@ enum AutocryptPreferEncrypt {
 enum CipherAlgo {
     DEFAULT,
     IDEA,
-    /* 3DES (invalid, starts with a number) */
+    TODO_3DES,
     CAST5,
     BLOWFISH,
     AES,
@@ -37,8 +43,8 @@ enum CipherAlgo {
 }
 enum ContentEncoding {
     DEFAULT,
-    /* 7BIT (invalid, starts with a number) */
-    /* 8BIT (invalid, starts with a number) */
+    TODO_7BIT,
+    TODO_8BIT,
     BINARY,
     BASE64,
     QUOTEDPRINTABLE,
@@ -62,8 +68,8 @@ enum DigestAlgo {
     CRC32_RFC2440,
 }
 enum EncodingConstraint {
-    /* 7BIT (invalid, starts with a number) */
-    /* 8BIT (invalid, starts with a number) */
+    TODO_7BIT,
+    TODO_8BIT,
     BINARY,
 }
 enum EncryptFlags {
@@ -213,37 +219,37 @@ enum VerifyFlags {
     ENABLE_KEYSERVER_LOOKUPS,
     ENABLE_ONLINE_CERTIFICATE_CHECKS,
 }
-export const BINARY_AGE: number
-export const DISPOSITION_ATTACHMENT: string
-export const DISPOSITION_INLINE: string
-export const FILTER_ENRICHED_IS_RICHTEXT: number
-export const FILTER_HTML_BLOCKQUOTE_CITATION: number
-export const FILTER_HTML_CITE: number
-export const FILTER_HTML_CONVERT_ADDRESSES: number
-export const FILTER_HTML_CONVERT_NL: number
-export const FILTER_HTML_CONVERT_SPACES: number
-export const FILTER_HTML_CONVERT_URLS: number
-export const FILTER_HTML_ESCAPE_8BIT: number
-export const FILTER_HTML_MARK_CITATION: number
-export const FILTER_HTML_PRE: number
-export const INTERFACE_AGE: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const SIGNATURE_STATUS_ERROR_MASK: number
-export const UUDECODE_STATE_BEGIN: number
-export const UUDECODE_STATE_END: number
-export const UUDECODE_STATE_INIT: number
-export const UUDECODE_STATE_MASK: number
-export const YDECODE_STATE_BEGIN: number
-export const YDECODE_STATE_DECODE: number
-export const YDECODE_STATE_END: number
-export const YDECODE_STATE_EOLN: number
-export const YDECODE_STATE_ESCAPE: number
-export const YDECODE_STATE_INIT: number
-export const YDECODE_STATE_PART: number
-export const YENCODE_CRC_INIT: number
-export const YENCODE_STATE_INIT: number
+const BINARY_AGE: number
+const DISPOSITION_ATTACHMENT: string
+const DISPOSITION_INLINE: string
+const FILTER_ENRICHED_IS_RICHTEXT: number
+const FILTER_HTML_BLOCKQUOTE_CITATION: number
+const FILTER_HTML_CITE: number
+const FILTER_HTML_CONVERT_ADDRESSES: number
+const FILTER_HTML_CONVERT_NL: number
+const FILTER_HTML_CONVERT_SPACES: number
+const FILTER_HTML_CONVERT_URLS: number
+const FILTER_HTML_ESCAPE_8BIT: number
+const FILTER_HTML_MARK_CITATION: number
+const FILTER_HTML_PRE: number
+const INTERFACE_AGE: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const SIGNATURE_STATUS_ERROR_MASK: number
+const UUDECODE_STATE_BEGIN: number
+const UUDECODE_STATE_END: number
+const UUDECODE_STATE_INIT: number
+const UUDECODE_STATE_MASK: number
+const YDECODE_STATE_BEGIN: number
+const YDECODE_STATE_DECODE: number
+const YDECODE_STATE_END: number
+const YDECODE_STATE_EOLN: number
+const YDECODE_STATE_ESCAPE: number
+const YDECODE_STATE_INIT: number
+const YDECODE_STATE_PART: number
+const YENCODE_CRC_INIT: number
+const YENCODE_STATE_INIT: number
 function charset_best(inbuf: string, inlen: number): string | null
 function charset_canon_name(charset: string): string
 function charset_iconv_name(charset: string): string
@@ -276,8 +282,8 @@ function locale_language(): string | null
 function parser_options_get_default(): ParserOptions
 function references_parse(options: ParserOptions | null, text: string): References
 function shutdown(): void
-function utils_best_encoding(text: Uint8Array[]): ContentEncoding
-function utils_decode_8bit(options: ParserOptions | null, text: Uint8Array[]): string
+function utils_best_encoding(text: Uint8Array): ContentEncoding
+function utils_decode_8bit(options: ParserOptions | null, text: Uint8Array): string
 function utils_decode_message_id(message_id: string): string
 function utils_generate_message_id(fqdn: string): string
 function utils_header_decode_date(str: string): GLib.DateTime | null
@@ -289,7 +295,7 @@ function utils_header_format_date(date: GLib.DateTime): string
 function utils_header_unfold(value: string): string
 function utils_quote_string(str: string): string
 function utils_structured_header_fold(options: ParserOptions | null, format: FormatOptions | null, header: string): string
-function utils_text_is_8bit(text: Uint8Array[]): boolean
+function utils_text_is_8bit(text: Uint8Array): boolean
 function utils_unquote_string(str: string): void
 function utils_unstructured_header_fold(options: ParserOptions | null, format: FormatOptions | null, header: string): string
 function ydecode_step(inbuf: number, inlen: number, outbuf: number, state: number, pcrc: number, crc: number): number
@@ -310,26 +316,24 @@ interface ParserWarningFunc {
 interface PasswordRequestFunc {
     (ctx: CryptoContext, user_id: string, prompt: string, reprompt: boolean, response: Stream): boolean
 }
-export interface ApplicationPkcs7Mime_ConstructProps extends Part_ConstructProps {
+interface ApplicationPkcs7Mime_ConstructProps extends Part_ConstructProps {
 }
 class ApplicationPkcs7Mime {
-    /* Fields of GMime-3.0.GMime.ApplicationPkcs7Mime */
-    parent_object: Part
-    smime_type: SecureMimeType
     /* Fields of GMime-3.0.GMime.Part */
-    encoding: ContentEncoding
-    openpgp: OpenPGPData
-    content_description: string
-    content_location: string
-    content_md5: string
-    content: DataWrapper
+    readonly parent_object: Object
+    readonly encoding: ContentEncoding
+    readonly openpgp: OpenPGPData
+    readonly content_description: string
+    readonly content_location: string
+    readonly content_md5: string
+    readonly content: DataWrapper
     /* Fields of GMime-3.0.GMime.Object */
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
+    readonly disposition: ContentDisposition
+    readonly content_type: ContentType
+    readonly headers: HeaderList
+    readonly content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.ApplicationPkcs7Mime */
     decrypt(flags: DecryptFlags, session_key: string, result: DecryptResult): Object | null
     get_smime_type(): SecureMimeType
@@ -373,6 +377,7 @@ class ApplicationPkcs7Mime {
     remove_header(header: string): boolean
     set_content_disposition(disposition: ContentDisposition): void
     set_content_disposition_parameter(name: string, value: string): void
+    set_content_id(content_id: string): void
     set_content_type(content_type: ContentType): void
     set_content_type_parameter(name: string, value: string): void
     set_disposition(disposition: string): void
@@ -434,23 +439,18 @@ class ApplicationPkcs7Mime {
     _init (config?: ApplicationPkcs7Mime_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(type: SecureMimeType): ApplicationPkcs7Mime
+    /* Function overloads */
     static new(): ApplicationPkcs7Mime
     static new(options: ParserOptions | null, content_type: ContentType): ApplicationPkcs7Mime
     static encrypt(entity: Object, flags: EncryptFlags, recipients: string[]): ApplicationPkcs7Mime | null
     static sign(entity: Object, userid: string): ApplicationPkcs7Mime | null
     static $gtype: GObject.Type
 }
-export interface AutocryptHeader_ConstructProps extends GObject.Object_ConstructProps {
+interface AutocryptHeader_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AutocryptHeader {
-    /* Fields of GMime-3.0.GMime.AutocryptHeader */
-    parent_object: GObject.Object
-    address: InternetAddressMailbox
-    prefer_encrypt: AutocryptPreferEncrypt
-    keydata: GLib.Bytes
-    effective_date: GLib.DateTime
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.AutocryptHeader */
     clone(src: AutocryptHeader): void
     compare(ah2: AutocryptHeader): number
@@ -512,13 +512,11 @@ class AutocryptHeader {
     static new_from_string(string: string): AutocryptHeader
     static $gtype: GObject.Type
 }
-export interface AutocryptHeaderList_ConstructProps extends GObject.Object_ConstructProps {
+interface AutocryptHeaderList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class AutocryptHeaderList {
-    /* Fields of GMime-3.0.GMime.AutocryptHeaderList */
-    parent_object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.AutocryptHeaderList */
     add(header: AutocryptHeader): void
     add_missing_addresses(addresses: InternetAddressList): number
@@ -571,26 +569,11 @@ class AutocryptHeaderList {
     static new(): AutocryptHeaderList
     static $gtype: GObject.Type
 }
-export interface Certificate_ConstructProps extends GObject.Object_ConstructProps {
+interface Certificate_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Certificate {
-    /* Fields of GMime-3.0.GMime.Certificate */
-    parent_object: GObject.Object
-    pubkey_algo: PubKeyAlgo
-    digest_algo: DigestAlgo
-    trust: Trust
-    issuer_serial: string
-    issuer_name: string
-    fingerprint: string
-    created: number
-    expires: number
-    keyid: string
-    email: string
-    name: string
-    user_id: string
-    id_validity: Validity
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Certificate */
     get_created(): number
     get_created64(): number
@@ -665,14 +648,11 @@ class Certificate {
     static new(): Certificate
     static $gtype: GObject.Type
 }
-export interface CertificateList_ConstructProps extends GObject.Object_ConstructProps {
+interface CertificateList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CertificateList {
-    /* Fields of GMime-3.0.GMime.CertificateList */
-    parent_object: GObject.Object
-    array: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.CertificateList */
     add(cert: Certificate): number
     clear(): void
@@ -729,15 +709,11 @@ class CertificateList {
     static new(): CertificateList
     static $gtype: GObject.Type
 }
-export interface ContentDisposition_ConstructProps extends GObject.Object_ConstructProps {
+interface ContentDisposition_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ContentDisposition {
-    /* Fields of GMime-3.0.GMime.ContentDisposition */
-    parent_object: GObject.Object
-    disposition: string
-    params: ParamList
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.ContentDisposition */
     encode(options?: FormatOptions | null): string
     get_disposition(): string
@@ -792,16 +768,11 @@ class ContentDisposition {
     static parse(options: ParserOptions | null, str: string): ContentDisposition
     static $gtype: GObject.Type
 }
-export interface ContentType_ConstructProps extends GObject.Object_ConstructProps {
+interface ContentType_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ContentType {
-    /* Fields of GMime-3.0.GMime.ContentType */
-    parent_object: GObject.Object
-    type: string
-    subtype: string
-    params: ParamList
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.ContentType */
     encode(options?: FormatOptions | null): string
     get_media_subtype(): string
@@ -859,14 +830,11 @@ class ContentType {
     static parse(options: ParserOptions | null, str: string): ContentType
     static $gtype: GObject.Type
 }
-export interface CryptoContext_ConstructProps extends GObject.Object_ConstructProps {
+interface CryptoContext_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CryptoContext {
-    /* Fields of GMime-3.0.GMime.CryptoContext */
-    parent_object: GObject.Object
-    request_passwd: PasswordRequestFunc
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.CryptoContext */
     decrypt(flags: DecryptFlags, session_key: string | null, istream: Stream, ostream: Stream): DecryptResult
     digest_id(name: string): DigestAlgo
@@ -936,15 +904,11 @@ class CryptoContext {
     static new(protocol: string): CryptoContext
     static $gtype: GObject.Type
 }
-export interface DataWrapper_ConstructProps extends GObject.Object_ConstructProps {
+interface DataWrapper_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DataWrapper {
-    /* Fields of GMime-3.0.GMime.DataWrapper */
-    parent_object: GObject.Object
-    encoding: ContentEncoding
-    stream: Stream
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.DataWrapper */
     get_encoding(): ContentEncoding
     get_stream(): Stream
@@ -999,18 +963,11 @@ class DataWrapper {
     static new_with_stream(stream: Stream, encoding: ContentEncoding): DataWrapper
     static $gtype: GObject.Type
 }
-export interface DecryptResult_ConstructProps extends GObject.Object_ConstructProps {
+interface DecryptResult_ConstructProps extends GObject.Object_ConstructProps {
 }
 class DecryptResult {
-    /* Fields of GMime-3.0.GMime.DecryptResult */
-    parent_object: GObject.Object
-    recipients: CertificateList
-    signatures: SignatureList
-    cipher: CipherAlgo
-    mdc: DigestAlgo
-    session_key: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.DecryptResult */
     get_cipher(): CipherAlgo
     get_mdc(): DigestAlgo
@@ -1067,27 +1024,16 @@ class DecryptResult {
     static new(): DecryptResult
     static $gtype: GObject.Type
 }
-export interface Filter_ConstructProps extends GObject.Object_ConstructProps {
+interface Filter_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Filter {
-    /* Fields of GMime-3.0.GMime.Filter */
-    parent_object: GObject.Object
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1113,9 +1059,9 @@ class Filter {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1138,29 +1084,27 @@ class Filter {
     _init (config?: Filter_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface FilterBasic_ConstructProps extends Filter_ConstructProps {
+interface FilterBasic_ConstructProps extends Filter_ConstructProps {
 }
 class FilterBasic {
-    /* Fields of GMime-3.0.GMime.FilterBasic */
-    parent_object: Filter
-    encoder: Encoding
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1186,9 +1130,9 @@ class FilterBasic {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1213,42 +1157,30 @@ class FilterBasic {
     static new(encoding: ContentEncoding, encode: boolean): FilterBasic
     static $gtype: GObject.Type
 }
-export interface FilterBest_ConstructProps extends Filter_ConstructProps {
+interface FilterBest_ConstructProps extends Filter_ConstructProps {
 }
 class FilterBest {
-    /* Fields of GMime-3.0.GMime.FilterBest */
-    parent_object: Filter
-    flags: FilterBestFlags
-    charset: Charset
-    count0: number
-    count8: number
-    total: number
-    maxline: number
-    linelen: number
-    frombuf: Uint8Array[]
-    fromlen: number
-    hadfrom: number
-    startline: number
-    midline: number
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.FilterBest */
+    charset(): string
     encoding(constraint: EncodingConstraint): ContentEncoding
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1274,9 +1206,9 @@ class FilterBest {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1301,30 +1233,27 @@ class FilterBest {
     static new(flags: FilterBestFlags): FilterBest
     static $gtype: GObject.Type
 }
-export interface FilterCharset_ConstructProps extends Filter_ConstructProps {
+interface FilterCharset_ConstructProps extends Filter_ConstructProps {
 }
 class FilterCharset {
-    /* Fields of GMime-3.0.GMime.FilterCharset */
-    parent_object: Filter
-    from_charset: string
-    to_charset: string
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1350,9 +1279,9 @@ class FilterCharset {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1377,32 +1306,30 @@ class FilterCharset {
     static new(from_charset: string, to_charset: string): FilterCharset
     static $gtype: GObject.Type
 }
-export interface FilterChecksum_ConstructProps extends Filter_ConstructProps {
+interface FilterChecksum_ConstructProps extends Filter_ConstructProps {
 }
 class FilterChecksum {
-    /* Fields of GMime-3.0.GMime.FilterChecksum */
-    parent_object: Filter
-    checksum: GLib.Checksum
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.FilterChecksum */
     get_digest(digest: number, len: number): number
     get_string(): string
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1428,9 +1355,9 @@ class FilterChecksum {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1455,30 +1382,27 @@ class FilterChecksum {
     static new(type: GLib.ChecksumType): FilterChecksum
     static $gtype: GObject.Type
 }
-export interface FilterDos2Unix_ConstructProps extends Filter_ConstructProps {
+interface FilterDos2Unix_ConstructProps extends Filter_ConstructProps {
 }
 class FilterDos2Unix {
-    /* Fields of GMime-3.0.GMime.FilterDos2Unix */
-    parent_object: Filter
-    ensure_newline: boolean
-    pc: number
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1504,9 +1428,9 @@ class FilterDos2Unix {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1531,30 +1455,27 @@ class FilterDos2Unix {
     static new(ensure_newline: boolean): FilterDos2Unix
     static $gtype: GObject.Type
 }
-export interface FilterEnriched_ConstructProps extends Filter_ConstructProps {
+interface FilterEnriched_ConstructProps extends Filter_ConstructProps {
 }
 class FilterEnriched {
-    /* Fields of GMime-3.0.GMime.FilterEnriched */
-    parent_object: Filter
-    flags: number
-    nofill: number
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1580,9 +1501,9 @@ class FilterEnriched {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1607,30 +1528,27 @@ class FilterEnriched {
     static new(flags: number): FilterEnriched
     static $gtype: GObject.Type
 }
-export interface FilterFrom_ConstructProps extends Filter_ConstructProps {
+interface FilterFrom_ConstructProps extends Filter_ConstructProps {
 }
 class FilterFrom {
-    /* Fields of GMime-3.0.GMime.FilterFrom */
-    parent_object: Filter
-    mode: FilterFromMode
-    midline: boolean
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1656,9 +1574,9 @@ class FilterFrom {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1683,35 +1601,32 @@ class FilterFrom {
     static new(mode: FilterFromMode): FilterFrom
     static $gtype: GObject.Type
 }
-export interface FilterGZip_ConstructProps extends Filter_ConstructProps {
+interface FilterGZip_ConstructProps extends Filter_ConstructProps {
 }
 class FilterGZip {
-    /* Fields of GMime-3.0.GMime.FilterGZip */
-    parent_object: Filter
-    priv: object
-    mode: FilterGZipMode
-    level: number
     /* Fields of GMime-3.0.GMime.Filter */
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.FilterGZip */
     get_comment(): string
     get_filename(): string
     set_comment(comment: string): void
     set_filename(filename: string): void
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1737,9 +1652,9 @@ class FilterGZip {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1764,34 +1679,27 @@ class FilterGZip {
     static new(mode: FilterGZipMode, level: number): FilterGZip
     static $gtype: GObject.Type
 }
-export interface FilterHTML_ConstructProps extends Filter_ConstructProps {
+interface FilterHTML_ConstructProps extends Filter_ConstructProps {
 }
 class FilterHTML {
-    /* Fields of GMime-3.0.GMime.FilterHTML */
-    parent_object: Filter
-    scanner: object
-    flags: number
-    colour: number
-    column: number
-    pre_open: number
-    citation_depth: number
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1817,9 +1725,9 @@ class FilterHTML {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1844,32 +1752,31 @@ class FilterHTML {
     static new(flags: number, colour: number): FilterHTML
     static $gtype: GObject.Type
 }
-export interface FilterOpenPGP_ConstructProps extends Filter_ConstructProps {
+interface FilterOpenPGP_ConstructProps extends Filter_ConstructProps {
 }
 class FilterOpenPGP {
-    /* Fields of GMime-3.0.GMime.FilterOpenPGP */
-    parent_object: Filter
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.FilterOpenPGP */
     get_begin_offset(): number
     get_data_type(): OpenPGPData
     get_end_offset(): number
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1895,9 +1802,9 @@ class FilterOpenPGP {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1922,29 +1829,27 @@ class FilterOpenPGP {
     static new(): FilterOpenPGP
     static $gtype: GObject.Type
 }
-export interface FilterSmtpData_ConstructProps extends Filter_ConstructProps {
+interface FilterSmtpData_ConstructProps extends Filter_ConstructProps {
 }
 class FilterSmtpData {
-    /* Fields of GMime-3.0.GMime.FilterSmtpData */
-    parent_object: Filter
-    bol: boolean
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -1970,9 +1875,9 @@ class FilterSmtpData {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -1997,28 +1902,27 @@ class FilterSmtpData {
     static new(): FilterSmtpData
     static $gtype: GObject.Type
 }
-export interface FilterStrip_ConstructProps extends Filter_ConstructProps {
+interface FilterStrip_ConstructProps extends Filter_ConstructProps {
 }
 class FilterStrip {
-    /* Fields of GMime-3.0.GMime.FilterStrip */
-    parent_object: Filter
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -2044,9 +1948,9 @@ class FilterStrip {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -2071,30 +1975,27 @@ class FilterStrip {
     static new(): FilterStrip
     static $gtype: GObject.Type
 }
-export interface FilterUnix2Dos_ConstructProps extends Filter_ConstructProps {
+interface FilterUnix2Dos_ConstructProps extends Filter_ConstructProps {
 }
 class FilterUnix2Dos {
-    /* Fields of GMime-3.0.GMime.FilterUnix2Dos */
-    parent_object: Filter
-    ensure_newline: boolean
-    pc: number
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -2120,9 +2021,9 @@ class FilterUnix2Dos {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -2147,33 +2048,30 @@ class FilterUnix2Dos {
     static new(ensure_newline: boolean): FilterUnix2Dos
     static $gtype: GObject.Type
 }
-export interface FilterWindows_ConstructProps extends Filter_ConstructProps {
+interface FilterWindows_ConstructProps extends Filter_ConstructProps {
 }
 class FilterWindows {
-    /* Fields of GMime-3.0.GMime.FilterWindows */
-    parent_object: Filter
-    is_windows: boolean
-    claimed_charset: string
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.FilterWindows */
     is_windows_charset(): boolean
     real_charset(): string
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -2199,9 +2097,9 @@ class FilterWindows {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -2226,38 +2124,32 @@ class FilterWindows {
     static new(claimed_charset: string): FilterWindows
     static $gtype: GObject.Type
 }
-export interface FilterYenc_ConstructProps extends Filter_ConstructProps {
+interface FilterYenc_ConstructProps extends Filter_ConstructProps {
 }
 class FilterYenc {
-    /* Fields of GMime-3.0.GMime.FilterYenc */
-    parent_object: Filter
-    encode: boolean
-    part: number
-    state: number
-    pcrc: number
-    crc: number
     /* Fields of GMime-3.0.GMime.Filter */
-    priv: object
-    outreal: string
-    outbuf: string
-    outptr: string
-    outsize: number
-    outpre: number
-    backbuf: string
-    backsize: number
-    backlen: number
+    readonly parent_object: GObject.Object
+    readonly priv: object
+    readonly outreal: string
+    readonly outbuf: string
+    readonly outptr: string
+    readonly outsize: number
+    readonly outpre: number
+    readonly backbuf: string
+    readonly backsize: number
+    readonly backlen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.FilterYenc */
     get_crc(): number
     get_pcrc(): number
     set_crc(crc: number): void
     set_state(state: number): void
     /* Methods of GMime-3.0.GMime.Filter */
-    backup(data: Uint8Array[]): void
-    complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    backup(data: Uint8Array): void
+    complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     copy(): Filter
-    filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     reset(): void
     set_size(size: number, keep: boolean): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -2283,9 +2175,9 @@ class FilterYenc {
     unref(): void
     watch_closure(closure: Function): void
     /* Virtual methods of GMime-3.0.GMime.Filter */
-    vfunc_complete(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_complete(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_copy(): Filter
-    vfunc_filter(inbuf: Uint8Array[], prespace: number): [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
+    vfunc_filter(inbuf: Uint8Array, prespace: number): [ /* outbuf */ Uint8Array, /* outprespace */ number ]
     vfunc_reset(): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -2310,14 +2202,14 @@ class FilterYenc {
     static new(encode: boolean): FilterYenc
     static $gtype: GObject.Type
 }
-export interface GpgContext_ConstructProps extends CryptoContext_ConstructProps {
+interface GpgContext_ConstructProps extends CryptoContext_ConstructProps {
 }
 class GpgContext {
     /* Fields of GMime-3.0.GMime.CryptoContext */
-    parent_object: GObject.Object
-    request_passwd: PasswordRequestFunc
+    readonly parent_object: GObject.Object
+    readonly request_passwd: PasswordRequestFunc
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.CryptoContext */
     decrypt(flags: DecryptFlags, session_key: string | null, istream: Stream, ostream: Stream): DecryptResult
     digest_id(name: string): DigestAlgo
@@ -2385,14 +2277,15 @@ class GpgContext {
     _init (config?: GpgContext_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): GpgContext
+    /* Function overloads */
     static new(protocol: string): GpgContext
     static $gtype: GObject.Type
 }
-export interface Header_ConstructProps extends GObject.Object_ConstructProps {
+interface Header_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Header {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Header */
     format_addrlist(options: FormatOptions | null, value: string, charset: string): string
     format_content_disposition(options: FormatOptions | null, value: string, charset: string): string
@@ -2452,13 +2345,11 @@ class Header {
     _init (config?: Header_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface HeaderList_ConstructProps extends GObject.Object_ConstructProps {
+interface HeaderList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class HeaderList {
-    /* Fields of GMime-3.0.GMime.HeaderList */
-    parent_object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.HeaderList */
     append(name: string, value: string, charset: string): void
     clear(): void
@@ -2517,15 +2408,11 @@ class HeaderList {
     static new(options?: ParserOptions | null): HeaderList
     static $gtype: GObject.Type
 }
-export interface InternetAddress_ConstructProps extends GObject.Object_ConstructProps {
+interface InternetAddress_ConstructProps extends GObject.Object_ConstructProps {
 }
 class InternetAddress {
-    /* Fields of GMime-3.0.GMime.InternetAddress */
-    parent_object: GObject.Object
-    charset: string
-    name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.InternetAddress */
     get_charset(): string | null
     get_name(): string | null
@@ -2577,17 +2464,15 @@ class InternetAddress {
     _init (config?: InternetAddress_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface InternetAddressGroup_ConstructProps extends InternetAddress_ConstructProps {
+interface InternetAddressGroup_ConstructProps extends InternetAddress_ConstructProps {
 }
 class InternetAddressGroup {
-    /* Fields of GMime-3.0.GMime.InternetAddressGroup */
-    parent_object: InternetAddress
-    members: InternetAddressList
     /* Fields of GMime-3.0.GMime.InternetAddress */
-    charset: string
-    name: string
+    readonly parent_object: GObject.Object
+    readonly charset: string
+    readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.InternetAddressGroup */
     add_member(member: InternetAddress): number
     get_members(): InternetAddressList
@@ -2645,14 +2530,11 @@ class InternetAddressGroup {
     static new(name: string): InternetAddressGroup
     static $gtype: GObject.Type
 }
-export interface InternetAddressList_ConstructProps extends GObject.Object_ConstructProps {
+interface InternetAddressList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class InternetAddressList {
-    /* Fields of GMime-3.0.GMime.InternetAddressList */
-    parent_object: GObject.Object
-    array: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.InternetAddressList */
     add(ia: InternetAddress): number
     append(append: InternetAddressList): void
@@ -2714,19 +2596,15 @@ class InternetAddressList {
     static parse(options: ParserOptions | null, str: string): InternetAddressList | null
     static $gtype: GObject.Type
 }
-export interface InternetAddressMailbox_ConstructProps extends InternetAddress_ConstructProps {
+interface InternetAddressMailbox_ConstructProps extends InternetAddress_ConstructProps {
 }
 class InternetAddressMailbox {
-    /* Fields of GMime-3.0.GMime.InternetAddressMailbox */
-    parent_object: InternetAddress
-    idn_addr: string
-    addr: string
-    at: number
     /* Fields of GMime-3.0.GMime.InternetAddress */
-    charset: string
-    name: string
+    readonly parent_object: GObject.Object
+    readonly charset: string
+    readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.InternetAddressMailbox */
     get_addr(): string
     get_idn_addr(): string
@@ -2784,23 +2662,17 @@ class InternetAddressMailbox {
     static new(name: string, addr: string): InternetAddressMailbox
     static $gtype: GObject.Type
 }
-export interface Message_ConstructProps extends Object_ConstructProps {
+interface Message_ConstructProps extends Object_ConstructProps {
 }
 class Message {
-    /* Fields of GMime-3.0.GMime.Message */
-    parent_object: Object
-    addrlists: InternetAddressList
-    mime_part: Object
-    message_id: string
-    date: GLib.DateTime
-    subject: string
     /* Fields of GMime-3.0.GMime.Object */
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
+    readonly parent_object: GObject.Object
+    readonly disposition: ContentDisposition
+    readonly content_type: ContentType
+    readonly headers: HeaderList
+    readonly content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Message */
     add_mailbox(type: AddressType, name: string, addr: string): void
     foreach(callback: ObjectForeachFunc): void
@@ -2901,22 +2773,21 @@ class Message {
     _init (config?: Message_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(pretty_headers: boolean): Message
+    /* Function overloads */
     static new(options: ParserOptions | null, content_type: ContentType): Message
     static $gtype: GObject.Type
 }
-export interface MessagePart_ConstructProps extends Object_ConstructProps {
+interface MessagePart_ConstructProps extends Object_ConstructProps {
 }
 class MessagePart {
-    /* Fields of GMime-3.0.GMime.MessagePart */
-    parent_object: Object
-    message: Message
     /* Fields of GMime-3.0.GMime.Object */
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
+    readonly parent_object: GObject.Object
+    readonly disposition: ContentDisposition
+    readonly content_type: ContentType
+    readonly headers: HeaderList
+    readonly content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.MessagePart */
     get_message(): Message
     set_message(message: Message): void
@@ -2996,32 +2867,29 @@ class MessagePart {
     _init (config?: MessagePart_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(subtype: string): MessagePart
+    /* Function overloads */
     static new(options: ParserOptions | null, content_type: ContentType): MessagePart
     static new_with_message(subtype: string, message: Message): MessagePart
     static $gtype: GObject.Type
 }
-export interface MessagePartial_ConstructProps extends Part_ConstructProps {
+interface MessagePartial_ConstructProps extends Part_ConstructProps {
 }
 class MessagePartial {
-    /* Fields of GMime-3.0.GMime.MessagePartial */
-    parent_object: Part
-    number: number
-    total: number
-    id: string
     /* Fields of GMime-3.0.GMime.Part */
-    encoding: ContentEncoding
-    openpgp: OpenPGPData
-    content_description: string
-    content_location: string
-    content_md5: string
-    content: DataWrapper
+    readonly parent_object: Object
+    readonly encoding: ContentEncoding
+    readonly openpgp: OpenPGPData
+    readonly content_description: string
+    readonly content_location: string
+    readonly content_md5: string
+    readonly content: DataWrapper
     /* Fields of GMime-3.0.GMime.Object */
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
+    readonly disposition: ContentDisposition
+    readonly content_type: ContentType
+    readonly headers: HeaderList
+    readonly content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.MessagePartial */
     get_id(): string
     get_number(): number
@@ -3065,6 +2933,7 @@ class MessagePartial {
     remove_header(header: string): boolean
     set_content_disposition(disposition: ContentDisposition): void
     set_content_disposition_parameter(name: string, value: string): void
+    set_content_id(content_id: string): void
     set_content_type(content_type: ContentType): void
     set_content_type_parameter(name: string, value: string): void
     set_disposition(disposition: string): void
@@ -3126,27 +2995,23 @@ class MessagePartial {
     _init (config?: MessagePartial_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(id: string, number: number, total: number): MessagePartial
+    /* Function overloads */
     static new(): MessagePartial
     static new(options: ParserOptions | null, content_type: ContentType): MessagePartial
     static reconstruct_message(partials: MessagePartial, num: number): Message
     static $gtype: GObject.Type
 }
-export interface Multipart_ConstructProps extends Object_ConstructProps {
+interface Multipart_ConstructProps extends Object_ConstructProps {
 }
 class Multipart {
-    /* Fields of GMime-3.0.GMime.Multipart */
-    parent_object: Object
-    children: object[]
-    boundary: string
-    prologue: string
-    epilogue: string
     /* Fields of GMime-3.0.GMime.Object */
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
+    readonly parent_object: GObject.Object
+    readonly disposition: ContentDisposition
+    readonly content_type: ContentType
+    readonly headers: HeaderList
+    readonly content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Multipart */
     add(part: Object): void
     clear(): void
@@ -3254,27 +3119,27 @@ class Multipart {
     _init (config?: Multipart_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Multipart
+    /* Function overloads */
     static new(options: ParserOptions | null, content_type: ContentType): Multipart
     static new_with_subtype(subtype: string): Multipart
     static $gtype: GObject.Type
 }
-export interface MultipartEncrypted_ConstructProps extends Multipart_ConstructProps {
+interface MultipartEncrypted_ConstructProps extends Multipart_ConstructProps {
 }
 class MultipartEncrypted {
-    /* Fields of GMime-3.0.GMime.MultipartEncrypted */
-    parent_object: Multipart
     /* Fields of GMime-3.0.GMime.Multipart */
-    children: object[]
-    boundary: string
-    prologue: string
-    epilogue: string
+    readonly parent_object: Object
+    readonly children: object[]
+    readonly boundary: string
+    readonly prologue: string
+    readonly epilogue: string
     /* Fields of GMime-3.0.GMime.Object */
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
+    readonly disposition: ContentDisposition
+    readonly content_type: ContentType
+    readonly headers: HeaderList
+    readonly content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.MultipartEncrypted */
     decrypt(flags: DecryptFlags, session_key: string): [ /* returnType */ Object | null, /* result */ DecryptResult ]
     /* Methods of GMime-3.0.GMime.Multipart */
@@ -3384,27 +3249,28 @@ class MultipartEncrypted {
     _init (config?: MultipartEncrypted_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): MultipartEncrypted
+    /* Function overloads */
+    static new(): MultipartEncrypted
     static new(options: ParserOptions | null, content_type: ContentType): MultipartEncrypted
     static encrypt(ctx: CryptoContext, entity: Object, sign: boolean, userid: string | null, flags: EncryptFlags, recipients: string[]): MultipartEncrypted | null
     static $gtype: GObject.Type
 }
-export interface MultipartSigned_ConstructProps extends Multipart_ConstructProps {
+interface MultipartSigned_ConstructProps extends Multipart_ConstructProps {
 }
 class MultipartSigned {
-    /* Fields of GMime-3.0.GMime.MultipartSigned */
-    parent_object: Multipart
     /* Fields of GMime-3.0.GMime.Multipart */
-    children: object[]
-    boundary: string
-    prologue: string
-    epilogue: string
+    readonly parent_object: Object
+    readonly children: object[]
+    readonly boundary: string
+    readonly prologue: string
+    readonly epilogue: string
     /* Fields of GMime-3.0.GMime.Object */
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
+    readonly disposition: ContentDisposition
+    readonly content_type: ContentType
+    readonly headers: HeaderList
+    readonly content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.MultipartSigned */
     verify(flags: VerifyFlags): SignatureList | null
     /* Methods of GMime-3.0.GMime.Multipart */
@@ -3514,21 +3380,17 @@ class MultipartSigned {
     _init (config?: MultipartSigned_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): MultipartSigned
+    /* Function overloads */
+    static new(): MultipartSigned
     static new(options: ParserOptions | null, content_type: ContentType): MultipartSigned
     static sign(ctx: CryptoContext, entity: Object, userid: string): MultipartSigned | null
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+interface Object_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Object {
-    /* Fields of GMime-3.0.GMime.Object */
-    parent_object: GObject.Object
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Object */
     append_header(header: string, value: string, charset: string): void
     encode(constraint: EncodingConstraint): void
@@ -3611,18 +3473,11 @@ class Object {
     static type_registry_shutdown(): void
     static $gtype: GObject.Type
 }
-export interface Param_ConstructProps extends GObject.Object_ConstructProps {
+interface Param_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Param {
-    /* Fields of GMime-3.0.GMime.Param */
-    parent_object: GObject.Object
-    method: ParamEncodingMethod
-    charset: string
-    lang: string
-    name: string
-    value: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Param */
     get_charset(): string
     get_encoding_method(): ParamEncodingMethod
@@ -3676,11 +3531,11 @@ class Param {
     _init (config?: Param_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ParamList_ConstructProps extends GObject.Object_ConstructProps {
+interface ParamList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class ParamList {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.ParamList */
     clear(): void
     encode(options: FormatOptions, fold: boolean, str: GLib.String): void
@@ -3736,14 +3591,11 @@ class ParamList {
     static parse(options: ParserOptions, str: string): ParamList
     static $gtype: GObject.Type
 }
-export interface Parser_ConstructProps extends GObject.Object_ConstructProps {
+interface Parser_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Parser {
-    /* Fields of GMime-3.0.GMime.Parser */
-    parent_object: GObject.Object
-    priv: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Parser */
     construct_message(options?: ParserOptions | null): Message | null
     construct_part(options?: ParserOptions | null): Object | null
@@ -3806,24 +3658,17 @@ class Parser {
     static new_with_stream(stream: Stream): Parser
     static $gtype: GObject.Type
 }
-export interface Part_ConstructProps extends Object_ConstructProps {
+interface Part_ConstructProps extends Object_ConstructProps {
 }
 class Part {
-    /* Fields of GMime-3.0.GMime.Part */
-    parent_object: Object
-    encoding: ContentEncoding
-    openpgp: OpenPGPData
-    content_description: string
-    content_location: string
-    content_md5: string
-    content: DataWrapper
     /* Fields of GMime-3.0.GMime.Object */
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
+    readonly parent_object: GObject.Object
+    readonly disposition: ContentDisposition
+    readonly content_type: ContentType
+    readonly headers: HeaderList
+    readonly content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Part */
     get_best_content_encoding(constraint: EncodingConstraint): ContentEncoding
     get_content(): DataWrapper
@@ -3863,6 +3708,7 @@ class Part {
     remove_header(header: string): boolean
     set_content_disposition(disposition: ContentDisposition): void
     set_content_disposition_parameter(name: string, value: string): void
+    set_content_id(content_id: string): void
     set_content_type(content_type: ContentType): void
     set_content_type_parameter(name: string, value: string): void
     set_disposition(disposition: string): void
@@ -3924,18 +3770,19 @@ class Part {
     _init (config?: Part_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Part
+    /* Function overloads */
     static new(options: ParserOptions | null, content_type: ContentType): Part
     static new_with_type(type: string, subtype: string): Part
     static $gtype: GObject.Type
 }
-export interface Pkcs7Context_ConstructProps extends CryptoContext_ConstructProps {
+interface Pkcs7Context_ConstructProps extends CryptoContext_ConstructProps {
 }
 class Pkcs7Context {
     /* Fields of GMime-3.0.GMime.CryptoContext */
-    parent_object: GObject.Object
-    request_passwd: PasswordRequestFunc
+    readonly parent_object: GObject.Object
+    readonly request_passwd: PasswordRequestFunc
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.CryptoContext */
     decrypt(flags: DecryptFlags, session_key: string | null, istream: Stream, ostream: Stream): DecryptResult
     digest_id(name: string): DigestAlgo
@@ -4003,20 +3850,15 @@ class Pkcs7Context {
     _init (config?: Pkcs7Context_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): Pkcs7Context
+    /* Function overloads */
     static new(protocol: string): Pkcs7Context
     static $gtype: GObject.Type
 }
-export interface Signature_ConstructProps extends GObject.Object_ConstructProps {
+interface Signature_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Signature {
-    /* Fields of GMime-3.0.GMime.Signature */
-    parent_object: GObject.Object
-    status: SignatureStatus
-    cert: Certificate
-    created: number
-    expires: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Signature */
     get_certificate(): Certificate
     get_created(): number
@@ -4073,13 +3915,11 @@ class Signature {
     static new(): Signature
     static $gtype: GObject.Type
 }
-export interface SignatureList_ConstructProps extends GObject.Object_ConstructProps {
+interface SignatureList_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SignatureList {
-    /* Fields of GMime-3.0.GMime.SignatureList */
-    parent_object: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.SignatureList */
     add(sig: Signature): number
     clear(): void
@@ -4136,26 +3976,26 @@ class SignatureList {
     static new(): SignatureList
     static $gtype: GObject.Type
 }
-export interface Stream_ConstructProps extends GObject.Object_ConstructProps {
+interface Stream_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Stream {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
     eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4186,12 +4026,12 @@ class Stream {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4213,34 +4053,26 @@ class Stream {
     _init (config?: Stream_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface StreamBuffer_ConstructProps extends Stream_ConstructProps {
+interface StreamBuffer_ConstructProps extends Stream_ConstructProps {
 }
 class StreamBuffer {
-    /* Fields of GMime-3.0.GMime.StreamBuffer */
-    parent_object: Stream
-    mode: StreamBufferMode
-    source: Stream
-    buffer: string
-    bufptr: string
-    bufend: string
-    buflen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
     eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4271,12 +4103,12 @@ class StreamBuffer {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4300,32 +4132,28 @@ class StreamBuffer {
     static new(source: Stream, mode: StreamBufferMode): StreamBuffer
     static $gtype: GObject.Type
 }
-export interface StreamCat_ConstructProps extends Stream_ConstructProps {
+interface StreamCat_ConstructProps extends Stream_ConstructProps {
 }
 class StreamCat {
-    /* Fields of GMime-3.0.GMime.StreamCat */
-    parent_object: Stream
-    sources: object
-    current: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.StreamCat */
     add_source(source: Stream): number
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
     eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4356,12 +4184,12 @@ class StreamCat {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4385,33 +4213,29 @@ class StreamCat {
     static new(): StreamCat
     static $gtype: GObject.Type
 }
-export interface StreamFile_ConstructProps extends Stream_ConstructProps {
+interface StreamFile_ConstructProps extends Stream_ConstructProps {
 }
 class StreamFile {
-    /* Fields of GMime-3.0.GMime.StreamFile */
-    parent_object: Stream
-    owner: boolean
-    fp: object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.StreamFile */
     get_owner(): boolean
     set_owner(owner: boolean): void
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
     eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4442,12 +4266,12 @@ class StreamFile {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4473,36 +4297,31 @@ class StreamFile {
     static open(path: string, mode: string): Stream
     static $gtype: GObject.Type
 }
-export interface StreamFilter_ConstructProps extends Stream_ConstructProps {
+interface StreamFilter_ConstructProps extends Stream_ConstructProps {
 }
 class StreamFilter {
-    /* Fields of GMime-3.0.GMime.StreamFilter */
-    parent_object: Stream
-    priv: object
-    source: Stream
-    owner: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.StreamFilter */
     add(filter: Filter): number
     get_owner(): boolean
     remove(id: number): void
     set_owner(owner: boolean): void
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
     eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4533,12 +4352,12 @@ class StreamFilter {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4562,33 +4381,29 @@ class StreamFilter {
     static new(stream: Stream): StreamFilter
     static $gtype: GObject.Type
 }
-export interface StreamFs_ConstructProps extends Stream_ConstructProps {
+interface StreamFs_ConstructProps extends Stream_ConstructProps {
 }
 class StreamFs {
-    /* Fields of GMime-3.0.GMime.StreamFs */
-    parent_object: Stream
-    owner: boolean
-    eos: boolean
-    fd: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.StreamFs */
     get_owner(): boolean
     set_owner(owner: boolean): void
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
+    eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4619,12 +4434,12 @@ class StreamFs {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4650,35 +4465,29 @@ class StreamFs {
     static open(path: string, flags: number, mode: number): Stream
     static $gtype: GObject.Type
 }
-export interface StreamGIO_ConstructProps extends Stream_ConstructProps {
+interface StreamGIO_ConstructProps extends Stream_ConstructProps {
 }
 class StreamGIO {
-    /* Fields of GMime-3.0.GMime.StreamGIO */
-    parent_object: Stream
-    ostream: Gio.OutputStream
-    istream: Gio.InputStream
-    file: Gio.File
-    owner: boolean
-    eos: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.StreamGIO */
     get_owner(): boolean
     set_owner(owner: boolean): void
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
+    eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4709,12 +4518,12 @@ class StreamGIO {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4739,35 +4548,31 @@ class StreamGIO {
     static new_with_bounds(file: Gio.File, start: number, end: number): StreamGIO
     static $gtype: GObject.Type
 }
-export interface StreamMem_ConstructProps extends Stream_ConstructProps {
+interface StreamMem_ConstructProps extends Stream_ConstructProps {
 }
 class StreamMem {
-    /* Fields of GMime-3.0.GMime.StreamMem */
-    parent_object: Stream
-    buffer: Uint8Array[]
-    owner: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.StreamMem */
-    get_byte_array(): Uint8Array[]
+    get_byte_array(): Uint8Array
     get_owner(): boolean
-    set_byte_array(array: Uint8Array[]): void
+    set_byte_array(array: Uint8Array): void
     set_owner(owner: boolean): void
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
     eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4798,12 +4603,12 @@ class StreamMem {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4825,39 +4630,33 @@ class StreamMem {
     _init (config?: StreamMem_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): StreamMem
-    static new_with_buffer(buffer: Uint8Array[]): StreamMem
-    static new_with_byte_array(array: Uint8Array[]): StreamMem
+    static new_with_buffer(buffer: Uint8Array): StreamMem
+    static new_with_byte_array(array: Uint8Array): StreamMem
     static $gtype: GObject.Type
 }
-export interface StreamMmap_ConstructProps extends Stream_ConstructProps {
+interface StreamMmap_ConstructProps extends Stream_ConstructProps {
 }
 class StreamMmap {
-    /* Fields of GMime-3.0.GMime.StreamMmap */
-    parent_object: Stream
-    owner: boolean
-    eos: boolean
-    fd: number
-    map: string
-    maplen: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.StreamMmap */
     get_owner(): boolean
     set_owner(owner: boolean): void
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
+    eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4888,12 +4687,12 @@ class StreamMmap {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -4918,34 +4717,29 @@ class StreamMmap {
     static new_with_bounds(fd: number, prot: number, flags: number, start: number, end: number): StreamMmap
     static $gtype: GObject.Type
 }
-export interface StreamNull_ConstructProps extends Stream_ConstructProps {
+interface StreamNull_ConstructProps extends Stream_ConstructProps {
 }
 class StreamNull {
-    /* Fields of GMime-3.0.GMime.StreamNull */
-    parent_object: Stream
-    written: number
-    newlines: number
-    count_newlines: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.StreamNull */
     get_count_newlines(): boolean
     set_count_newlines(count: boolean): void
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
     eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -4976,12 +4770,12 @@ class StreamNull {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -5005,33 +4799,29 @@ class StreamNull {
     static new(): StreamNull
     static $gtype: GObject.Type
 }
-export interface StreamPipe_ConstructProps extends Stream_ConstructProps {
+interface StreamPipe_ConstructProps extends Stream_ConstructProps {
 }
 class StreamPipe {
-    /* Fields of GMime-3.0.GMime.StreamPipe */
-    parent_object: Stream
-    owner: boolean
-    eos: boolean
-    fd: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.StreamPipe */
     get_owner(): boolean
     set_owner(owner: boolean): void
     /* Methods of GMime-3.0.GMime.Stream */
-    buffer_gets(buf: Uint8Array[]): number
-    buffer_readln(buffer: Uint8Array[]): void
+    buffer_gets(buf: Uint8Array): number
+    buffer_readln(buffer: Uint8Array): void
     close(): number
     construct(start: number, end: number): void
+    eos(): boolean
     flush(): number
     length(): number
-    read(buf: Uint8Array[]): number
+    read(buf: Uint8Array): number
     reset(): number
     seek(offset: number, whence: SeekWhence): number
     set_bounds(start: number, end: number): void
     substream(start: number, end: number): Stream
     tell(): number
-    write(buf: Uint8Array[]): number
+    write(buf: Uint8Array): number
     write_string(str: string): number
     write_to_stream(dest: Stream): number
     writev(vector: StreamIOVector[]): number
@@ -5062,12 +4852,12 @@ class StreamPipe {
     vfunc_eos(): boolean
     vfunc_flush(): number
     vfunc_length(): number
-    vfunc_read(buf: Uint8Array[]): number
+    vfunc_read(buf: Uint8Array): number
     vfunc_reset(): number
     vfunc_seek(offset: number, whence: SeekWhence): number
     vfunc_substream(start: number, end: number): Stream
     vfunc_tell(): number
-    vfunc_write(buf: Uint8Array[]): number
+    vfunc_write(buf: Uint8Array): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -5091,25 +4881,24 @@ class StreamPipe {
     static new(fd: number): StreamPipe
     static $gtype: GObject.Type
 }
-export interface TextPart_ConstructProps extends Part_ConstructProps {
+interface TextPart_ConstructProps extends Part_ConstructProps {
 }
 class TextPart {
-    /* Fields of GMime-3.0.GMime.TextPart */
-    parent_object: Part
     /* Fields of GMime-3.0.GMime.Part */
-    encoding: ContentEncoding
-    openpgp: OpenPGPData
-    content_description: string
-    content_location: string
-    content_md5: string
-    content: DataWrapper
+    readonly parent_object: Object
+    readonly encoding: ContentEncoding
+    readonly openpgp: OpenPGPData
+    readonly content_description: string
+    readonly content_location: string
+    readonly content_md5: string
+    readonly content: DataWrapper
     /* Fields of GMime-3.0.GMime.Object */
-    disposition: ContentDisposition
-    content_type: ContentType
-    headers: HeaderList
-    content_id: string
+    readonly disposition: ContentDisposition
+    readonly content_type: ContentType
+    readonly headers: HeaderList
+    readonly content_id: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GMime-3.0.GMime.TextPart */
     get_charset(): string
     get_text(): string
@@ -5154,6 +4943,7 @@ class TextPart {
     remove_header(header: string): boolean
     set_content_disposition(disposition: ContentDisposition): void
     set_content_disposition_parameter(name: string, value: string): void
+    set_content_id(content_id: string): void
     set_content_type(content_type: ContentType): void
     set_content_type_parameter(name: string, value: string): void
     set_disposition(disposition: string): void
@@ -5215,39 +5005,41 @@ class TextPart {
     _init (config?: TextPart_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): TextPart
+    /* Function overloads */
+    static new(): TextPart
     static new(options: ParserOptions | null, content_type: ContentType): TextPart
     static new_with_subtype(subtype: string): TextPart
     static $gtype: GObject.Type
 }
 abstract class ApplicationPkcs7MimeClass {
     /* Fields of GMime-3.0.GMime.ApplicationPkcs7MimeClass */
-    parent_class: PartClass
+    readonly parent_class: PartClass
     static name: string
 }
 abstract class AutocryptHeaderClass {
     /* Fields of GMime-3.0.GMime.AutocryptHeaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class AutocryptHeaderListClass {
     /* Fields of GMime-3.0.GMime.AutocryptHeaderListClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CertificateClass {
     /* Fields of GMime-3.0.GMime.CertificateClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CertificateListClass {
     /* Fields of GMime-3.0.GMime.CertificateListClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Charset {
     /* Fields of GMime-3.0.GMime.Charset */
-    mask: number
-    level: number
+    readonly mask: number
+    readonly level: number
     /* Methods of GMime-3.0.GMime.Charset */
     best_name(): string | null
     can_encode(charset: string, text: string, len: number): boolean
@@ -5266,48 +5058,48 @@ class Charset {
 }
 abstract class ContentDispositionClass {
     /* Fields of GMime-3.0.GMime.ContentDispositionClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ContentTypeClass {
     /* Fields of GMime-3.0.GMime.ContentTypeClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CryptoContextClass {
     /* Fields of GMime-3.0.GMime.CryptoContextClass */
-    parent_class: GObject.ObjectClass
-    digest_id: (ctx: CryptoContext, name: string) => DigestAlgo
-    digest_name: (ctx: CryptoContext, digest: DigestAlgo) => string | null
-    get_signature_protocol: (ctx: CryptoContext) => string | null
-    get_encryption_protocol: (ctx: CryptoContext) => string | null
-    get_key_exchange_protocol: (ctx: CryptoContext) => string | null
-    sign: (ctx: CryptoContext, detach: boolean, userid: string, istream: Stream, ostream: Stream) => number
-    verify: (ctx: CryptoContext, flags: VerifyFlags, istream: Stream, sigstream?: Stream | null, ostream?: Stream | null) => SignatureList | null
-    encrypt: (ctx: CryptoContext, sign: boolean, userid: string | null, flags: EncryptFlags, recipients: string[], istream: Stream, ostream: Stream) => number
-    decrypt: (ctx: CryptoContext, flags: DecryptFlags, session_key: string | null, istream: Stream, ostream: Stream) => DecryptResult
-    import_keys: (ctx: CryptoContext, istream: Stream) => number
-    export_keys: (ctx: CryptoContext, keys: string, ostream: Stream) => number
+    readonly parent_class: GObject.ObjectClass
+    readonly digest_id: (ctx: CryptoContext, name: string) => DigestAlgo
+    readonly digest_name: (ctx: CryptoContext, digest: DigestAlgo) => string | null
+    readonly get_signature_protocol: (ctx: CryptoContext) => string | null
+    readonly get_encryption_protocol: (ctx: CryptoContext) => string | null
+    readonly get_key_exchange_protocol: (ctx: CryptoContext) => string | null
+    readonly sign: (ctx: CryptoContext, detach: boolean, userid: string, istream: Stream, ostream: Stream) => number
+    readonly verify: (ctx: CryptoContext, flags: VerifyFlags, istream: Stream, sigstream?: Stream | null, ostream?: Stream | null) => SignatureList | null
+    readonly encrypt: (ctx: CryptoContext, sign: boolean, userid: string | null, flags: EncryptFlags, recipients: string[], istream: Stream, ostream: Stream) => number
+    readonly decrypt: (ctx: CryptoContext, flags: DecryptFlags, session_key: string | null, istream: Stream, ostream: Stream) => DecryptResult
+    readonly import_keys: (ctx: CryptoContext, istream: Stream) => number
+    readonly export_keys: (ctx: CryptoContext, keys: string, ostream: Stream) => number
     static name: string
 }
 abstract class DataWrapperClass {
     /* Fields of GMime-3.0.GMime.DataWrapperClass */
-    parent_class: GObject.ObjectClass
-    write_to_stream: (wrapper: DataWrapper, stream: Stream) => number
+    readonly parent_class: GObject.ObjectClass
+    readonly write_to_stream: (wrapper: DataWrapper, stream: Stream) => number
     static name: string
 }
 abstract class DecryptResultClass {
     /* Fields of GMime-3.0.GMime.DecryptResultClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Encoding {
     /* Fields of GMime-3.0.GMime.Encoding */
-    encoding: ContentEncoding
-    uubuf: Uint8Array[]
-    encode: boolean
-    save: number
-    state: number
+    readonly encoding: ContentEncoding
+    readonly uubuf: Uint8Array
+    readonly encode: boolean
+    readonly save: number
+    readonly state: number
     /* Methods of GMime-3.0.GMime.Encoding */
     flush(inbuf: string, inlen: number, outbuf: string): number
     init_decode(encoding: ContentEncoding): void
@@ -5329,86 +5121,86 @@ class Encoding {
 }
 abstract class FilterBasicClass {
     /* Fields of GMime-3.0.GMime.FilterBasicClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterBestClass {
     /* Fields of GMime-3.0.GMime.FilterBestClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterCharsetClass {
     /* Fields of GMime-3.0.GMime.FilterCharsetClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterChecksumClass {
     /* Fields of GMime-3.0.GMime.FilterChecksumClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterClass {
     /* Fields of GMime-3.0.GMime.FilterClass */
-    parent_class: GObject.ObjectClass
-    copy: (filter: Filter) => Filter
-    filter: (filter: Filter, inbuf: Uint8Array[], prespace: number) => [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
-    complete: (filter: Filter, inbuf: Uint8Array[], prespace: number) => [ /* outbuf */ Uint8Array[], /* outprespace */ number ]
-    reset: (filter: Filter) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly copy: (filter: Filter) => Filter
+    readonly filter: (filter: Filter, inbuf: Uint8Array, prespace: number) => [ /* outbuf */ Uint8Array, /* outprespace */ number ]
+    readonly complete: (filter: Filter, inbuf: Uint8Array, prespace: number) => [ /* outbuf */ Uint8Array, /* outprespace */ number ]
+    readonly reset: (filter: Filter) => void
     static name: string
 }
 abstract class FilterDos2UnixClass {
     /* Fields of GMime-3.0.GMime.FilterDos2UnixClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterEnrichedClass {
     /* Fields of GMime-3.0.GMime.FilterEnrichedClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterFromClass {
     /* Fields of GMime-3.0.GMime.FilterFromClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterGZipClass {
     /* Fields of GMime-3.0.GMime.FilterGZipClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterHTMLClass {
     /* Fields of GMime-3.0.GMime.FilterHTMLClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterOpenPGPClass {
     /* Fields of GMime-3.0.GMime.FilterOpenPGPClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterSmtpDataClass {
     /* Fields of GMime-3.0.GMime.FilterSmtpDataClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterStripClass {
     /* Fields of GMime-3.0.GMime.FilterStripClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterUnix2DosClass {
     /* Fields of GMime-3.0.GMime.FilterUnix2DosClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterWindowsClass {
     /* Fields of GMime-3.0.GMime.FilterWindowsClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 abstract class FilterYencClass {
     /* Fields of GMime-3.0.GMime.FilterYencClass */
-    parent_class: FilterClass
+    readonly parent_class: FilterClass
     static name: string
 }
 class FormatOptions {
@@ -5437,111 +5229,111 @@ abstract class GpgContextClass {
 }
 abstract class HeaderClass {
     /* Fields of GMime-3.0.GMime.HeaderClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class HeaderListClass {
     /* Fields of GMime-3.0.GMime.HeaderListClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class InternetAddressClass {
     /* Fields of GMime-3.0.GMime.InternetAddressClass */
-    parent_class: GObject.ObjectClass
-    to_string: (ia: InternetAddress, options: FormatOptions, flags: number, linelen: number, str: GLib.String) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly to_string: (ia: InternetAddress, options: FormatOptions, flags: number, linelen: number, str: GLib.String) => void
     static name: string
 }
 abstract class InternetAddressGroupClass {
     /* Fields of GMime-3.0.GMime.InternetAddressGroupClass */
-    parent_class: InternetAddressClass
+    readonly parent_class: InternetAddressClass
     static name: string
 }
 abstract class InternetAddressListClass {
     /* Fields of GMime-3.0.GMime.InternetAddressListClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class InternetAddressMailboxClass {
     /* Fields of GMime-3.0.GMime.InternetAddressMailboxClass */
-    parent_class: InternetAddressClass
+    readonly parent_class: InternetAddressClass
     static name: string
 }
 abstract class MessageClass {
     /* Fields of GMime-3.0.GMime.MessageClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 abstract class MessagePartClass {
     /* Fields of GMime-3.0.GMime.MessagePartClass */
-    parent_class: ObjectClass
+    readonly parent_class: ObjectClass
     static name: string
 }
 abstract class MessagePartialClass {
     /* Fields of GMime-3.0.GMime.MessagePartialClass */
-    parent_class: PartClass
+    readonly parent_class: PartClass
     static name: string
 }
 abstract class MultipartClass {
     /* Fields of GMime-3.0.GMime.MultipartClass */
-    parent_class: ObjectClass
-    clear: (multipart: Multipart) => void
-    add: (multipart: Multipart, part: Object) => void
-    insert: (multipart: Multipart, index: number, part: Object) => void
-    remove: (multipart: Multipart, part: Object) => boolean
-    remove_at: (multipart: Multipart, index: number) => Object
-    get_part: (multipart: Multipart, index: number) => Object
-    contains: (multipart: Multipart, part: Object) => boolean
-    index_of: (multipart: Multipart, part: Object) => number
-    get_count: (multipart: Multipart) => number
-    set_boundary: (multipart: Multipart, boundary: string) => void
-    get_boundary: (multipart: Multipart) => string
+    readonly parent_class: ObjectClass
+    readonly clear: (multipart: Multipart) => void
+    readonly add: (multipart: Multipart, part: Object) => void
+    readonly insert: (multipart: Multipart, index: number, part: Object) => void
+    readonly remove: (multipart: Multipart, part: Object) => boolean
+    readonly remove_at: (multipart: Multipart, index: number) => Object
+    readonly get_part: (multipart: Multipart, index: number) => Object
+    readonly contains: (multipart: Multipart, part: Object) => boolean
+    readonly index_of: (multipart: Multipart, part: Object) => number
+    readonly get_count: (multipart: Multipart) => number
+    readonly set_boundary: (multipart: Multipart, boundary: string) => void
+    readonly get_boundary: (multipart: Multipart) => string
     static name: string
 }
 abstract class MultipartEncryptedClass {
     /* Fields of GMime-3.0.GMime.MultipartEncryptedClass */
-    parent_class: MultipartClass
+    readonly parent_class: MultipartClass
     static name: string
 }
 abstract class MultipartSignedClass {
     /* Fields of GMime-3.0.GMime.MultipartSignedClass */
-    parent_class: MultipartClass
+    readonly parent_class: MultipartClass
     static name: string
 }
 abstract class ObjectClass {
     /* Fields of GMime-3.0.GMime.ObjectClass */
-    parent_class: GObject.ObjectClass
-    header_added: (object: Object, header: Header) => void
-    header_changed: (object: Object, header: Header) => void
-    header_removed: (object: Object, header: Header) => void
-    headers_cleared: (object: Object) => void
-    set_content_type: (object: Object, content_type: ContentType) => void
-    get_headers: (object: Object, options?: FormatOptions | null) => string
-    write_to_stream: (object: Object, options: FormatOptions, content_only: boolean, stream: Stream) => number
-    encode: (object: Object, constraint: EncodingConstraint) => void
+    readonly parent_class: GObject.ObjectClass
+    readonly header_added: (object: Object, header: Header) => void
+    readonly header_changed: (object: Object, header: Header) => void
+    readonly header_removed: (object: Object, header: Header) => void
+    readonly headers_cleared: (object: Object) => void
+    readonly set_content_type: (object: Object, content_type: ContentType) => void
+    readonly get_headers: (object: Object, options?: FormatOptions | null) => string
+    readonly write_to_stream: (object: Object, options: FormatOptions, content_only: boolean, stream: Stream) => number
+    readonly encode: (object: Object, constraint: EncodingConstraint) => void
     static name: string
 }
 class OpenPGPMarker {
     /* Fields of GMime-3.0.GMime.OpenPGPMarker */
-    marker: string
-    len: number
-    before: OpenPGPState
-    after: OpenPGPState
-    is_end_marker: boolean
+    readonly marker: string
+    readonly len: number
+    readonly before: OpenPGPState
+    readonly after: OpenPGPState
+    readonly is_end_marker: boolean
     static name: string
 }
 abstract class ParamClass {
     /* Fields of GMime-3.0.GMime.ParamClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ParamListClass {
     /* Fields of GMime-3.0.GMime.ParamListClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class ParserClass {
     /* Fields of GMime-3.0.GMime.ParserClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class ParserOptions {
@@ -5567,8 +5359,8 @@ class ParserOptions {
 }
 abstract class PartClass {
     /* Fields of GMime-3.0.GMime.PartClass */
-    parent_class: ObjectClass
-    set_content: (mime_part: Part, content: DataWrapper) => void
+    readonly parent_class: ObjectClass
+    readonly set_content: (mime_part: Part, content: DataWrapper) => void
     static name: string
 }
 class PartIter {
@@ -5597,7 +5389,7 @@ abstract class Pkcs7ContextClass {
 }
 class References {
     /* Fields of GMime-3.0.GMime.References */
-    array: object[]
+    readonly array: object[]
     /* Methods of GMime-3.0.GMime.References */
     append(msgid: string): void
     clear(): void
@@ -5615,88 +5407,88 @@ class References {
 }
 abstract class SignatureClass {
     /* Fields of GMime-3.0.GMime.SignatureClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class SignatureListClass {
     /* Fields of GMime-3.0.GMime.SignatureListClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class StreamBufferClass {
     /* Fields of GMime-3.0.GMime.StreamBufferClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 abstract class StreamCatClass {
     /* Fields of GMime-3.0.GMime.StreamCatClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 abstract class StreamClass {
     /* Fields of GMime-3.0.GMime.StreamClass */
-    parent_class: GObject.ObjectClass
-    read: (stream: Stream, buf: Uint8Array[]) => number
-    write: (stream: Stream, buf: Uint8Array[]) => number
-    flush: (stream: Stream) => number
-    close: (stream: Stream) => number
-    eos: (stream: Stream) => boolean
-    reset: (stream: Stream) => number
-    seek: (stream: Stream, offset: number, whence: SeekWhence) => number
-    tell: (stream: Stream) => number
-    length: (stream: Stream) => number
-    substream: (stream: Stream, start: number, end: number) => Stream
+    readonly parent_class: GObject.ObjectClass
+    readonly read: (stream: Stream, buf: Uint8Array) => number
+    readonly write: (stream: Stream, buf: Uint8Array) => number
+    readonly flush: (stream: Stream) => number
+    readonly close: (stream: Stream) => number
+    readonly eos: (stream: Stream) => boolean
+    readonly reset: (stream: Stream) => number
+    readonly seek: (stream: Stream, offset: number, whence: SeekWhence) => number
+    readonly tell: (stream: Stream) => number
+    readonly length: (stream: Stream) => number
+    readonly substream: (stream: Stream, start: number, end: number) => Stream
     static name: string
 }
 abstract class StreamFileClass {
     /* Fields of GMime-3.0.GMime.StreamFileClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 abstract class StreamFilterClass {
     /* Fields of GMime-3.0.GMime.StreamFilterClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 abstract class StreamFsClass {
     /* Fields of GMime-3.0.GMime.StreamFsClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 abstract class StreamGIOClass {
     /* Fields of GMime-3.0.GMime.StreamGIOClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 class StreamIOVector {
     /* Fields of GMime-3.0.GMime.StreamIOVector */
-    data: object
-    len: number
+    readonly data: object
+    readonly len: number
     static name: string
 }
 abstract class StreamMemClass {
     /* Fields of GMime-3.0.GMime.StreamMemClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 abstract class StreamMmapClass {
     /* Fields of GMime-3.0.GMime.StreamMmapClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 abstract class StreamNullClass {
     /* Fields of GMime-3.0.GMime.StreamNullClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 abstract class StreamPipeClass {
     /* Fields of GMime-3.0.GMime.StreamPipeClass */
-    parent_class: StreamClass
+    readonly parent_class: StreamClass
     static name: string
 }
 abstract class TextPartClass {
     /* Fields of GMime-3.0.GMime.TextPartClass */
-    parent_class: PartClass
+    readonly parent_class: PartClass
     static name: string
 }
 }

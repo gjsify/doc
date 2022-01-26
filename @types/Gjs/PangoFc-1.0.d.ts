@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * PangoFc-1.0
  */
@@ -12,19 +18,19 @@ import type GLib from './GLib-2.0';
 
 export namespace PangoFc {
 
-export const FONT_FEATURES: string
-export const FONT_VARIATIONS: string
-export const GRAVITY: string
-export const PRGNAME: string
-export const VERSION: string
+const FONT_FEATURES: string
+const FONT_VARIATIONS: string
+const GRAVITY: string
+const PRGNAME: string
+const VERSION: string
 interface SubstituteFunc {
     (pattern: fontconfig.Pattern, data?: object | null): void
 }
-export interface Decoder_ConstructProps extends GObject.Object_ConstructProps {
+interface Decoder_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Decoder {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoFc-1.0.PangoFc.Decoder */
     get_charset(fcfont: Font): fontconfig.CharSet
     get_glyph(fcfont: Font, wc: number): Pango.Glyph
@@ -74,24 +80,18 @@ class Decoder {
     _init (config?: Decoder_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Font_ConstructProps extends Pango.Font_ConstructProps {
+interface Font_ConstructProps extends Pango.Font_ConstructProps {
+    /* Constructor properties of PangoFc-1.0.PangoFc.Font */
     fontmap?: FontMap
     pattern?: object
 }
 class Font {
     /* Properties of PangoFc-1.0.PangoFc.Font */
     fontmap: FontMap
-    /* Fields of PangoFc-1.0.PangoFc.Font */
-    parent_instance: Pango.Font
-    font_pattern: fontconfig.Pattern
-    priv: object
-    matrix: Pango.Matrix
-    description: Pango.FontDescription
-    metrics_by_lang: object[]
-    is_hinted: number
-    is_transformed: number
+    /* Fields of Pango-1.0.Pango.Font */
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoFc-1.0.PangoFc.Font */
     get_glyph(wc: number): number
     get_languages(): Pango.Language | null
@@ -109,6 +109,7 @@ class Font {
     get_glyph_extents(glyph: Pango.Glyph): [ /* ink_rect */ Pango.Rectangle | null, /* logical_rect */ Pango.Rectangle | null ]
     get_languages(): Pango.Language[] | null
     get_metrics(language?: Pango.Language | null): Pango.FontMetrics
+    has_char(wc: number): boolean
     serialize(): GLib.Bytes
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
@@ -166,13 +167,13 @@ class Font {
     static description_from_pattern(pattern: fontconfig.Pattern, include_size: boolean): Pango.FontDescription
     static $gtype: GObject.Type
 }
-export interface FontMap_ConstructProps extends Pango.FontMap_ConstructProps {
+interface FontMap_ConstructProps extends Pango.FontMap_ConstructProps {
 }
 class FontMap {
     /* Fields of Pango-1.0.Pango.FontMap */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of PangoFc-1.0.PangoFc.FontMap */
     cache_clear(): void
     config_changed(): void
@@ -240,8 +241,8 @@ class FontMap {
 }
 abstract class DecoderClass {
     /* Fields of PangoFc-1.0.PangoFc.DecoderClass */
-    get_charset: (decoder: Decoder, fcfont: Font) => fontconfig.CharSet
-    get_glyph: (decoder: Decoder, fcfont: Font, wc: number) => Pango.Glyph
+    readonly get_charset: (decoder: Decoder, fcfont: Font) => fontconfig.CharSet
+    readonly get_glyph: (decoder: Decoder, fcfont: Font, wc: number) => Pango.Glyph
     static name: string
 }
 abstract class FontClass {

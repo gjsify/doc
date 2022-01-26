@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GWeather-3.0
  */
@@ -150,8 +156,8 @@ enum Provider {
     OWM,
     ALL,
 }
-export const LOCATION_ENTRY_H: number
-export const TIMEZONE_MENU_H: number
+const LOCATION_ENTRY_H: number
+const TIMEZONE_MENU_H: number
 function location_detect_nearest_city_finish(result: Gio.AsyncResult): Location
 function location_get_world(): Location | null
 function location_level_to_string(level: LocationLevel): string
@@ -166,7 +172,8 @@ function wind_direction_to_string_full(wind: WindDirection, options: FormatOptio
 interface FilterFunc {
     (location: Location): boolean
 }
-export interface Info_ConstructProps extends GObject.Object_ConstructProps {
+interface Info_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GWeather-3.0.GWeather.Info */
     application_id?: string
     contact_info?: string
     enabled_providers?: Provider
@@ -179,7 +186,7 @@ class Info {
     enabled_providers: Provider
     location: Location
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GWeather-3.0.GWeather.Info */
     abort(): void
     get_apparent(): string
@@ -290,10 +297,12 @@ class Info {
     static store_cache(): void
     static $gtype: GObject.Type
 }
-export interface LocationEntry_ConstructProps extends Gtk.SearchEntry_ConstructProps {
+interface LocationEntry_ConstructProps extends Gtk.SearchEntry_ConstructProps {
+    /* Constructor properties of GWeather-3.0.GWeather.LocationEntry */
     location?: Location
     show_named_timezones?: boolean
     top?: Location
+    /* Constructor properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled?: boolean
 }
 class LocationEntry {
@@ -378,7 +387,6 @@ class LocationEntry {
     name: string
     no_show_all: boolean
     opacity: number
-    parent: Gtk.Container
     receives_default: boolean
     readonly scale_factor: number
     sensitive: boolean
@@ -393,10 +401,12 @@ class LocationEntry {
     readonly window: Gdk.Window
     /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
+    /* Fields of Gtk-3.0.Gtk.SearchEntry */
+    readonly parent: Gtk.Entry
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GWeather-3.0.GWeather.LocationEntry */
     get_location(): Location | null
     has_custom_text(): boolean
@@ -769,6 +779,7 @@ class LocationEntry {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
@@ -1362,8 +1373,6 @@ class LocationEntry {
     connect_after(sigName: "notify::no-show-all", callback: (($obj: LocationEntry, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::opacity", callback: (($obj: LocationEntry, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::opacity", callback: (($obj: LocationEntry, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: LocationEntry, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: LocationEntry, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::receives-default", callback: (($obj: LocationEntry, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::receives-default", callback: (($obj: LocationEntry, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::scale-factor", callback: (($obj: LocationEntry, pspec: GObject.ParamSpec) => void)): number
@@ -1399,12 +1408,16 @@ class LocationEntry {
     _init (config?: LocationEntry_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(top: Location): LocationEntry
+    /* Function overloads */
+    static new(): LocationEntry
     static new(): LocationEntry
     static $gtype: GObject.Type
 }
-export interface TimezoneMenu_ConstructProps extends Gtk.ComboBox_ConstructProps {
+interface TimezoneMenu_ConstructProps extends Gtk.ComboBox_ConstructProps {
+    /* Constructor properties of GWeather-3.0.GWeather.TimezoneMenu */
     top?: Location
     tzid?: string
+    /* Constructor properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled?: boolean
 }
 class TimezoneMenu {
@@ -1472,13 +1485,13 @@ class TimezoneMenu {
     /* Properties of Gtk-3.0.Gtk.CellEditable */
     editing_canceled: boolean
     /* Fields of Gtk-3.0.Gtk.ComboBox */
-    parent_instance: Gtk.Bin
+    readonly parent_instance: Gtk.Bin
     /* Fields of Gtk-3.0.Gtk.Bin */
-    container: Gtk.Container
+    readonly container: Gtk.Container
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GWeather-3.0.GWeather.TimezoneMenu */
     get_tzid(): string | null
     set_tzid(tzid?: string | null): void
@@ -1523,7 +1536,7 @@ class TimezoneMenu {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -1751,6 +1764,7 @@ class TimezoneMenu {
     set_direction(dir: Gtk.TextDirection): void
     set_double_buffered(double_buffered: boolean): void
     set_events(events: number): void
+    set_focus_on_click(focus_on_click: boolean): void
     set_font_map(font_map?: Pango.FontMap | null): void
     set_font_options(options?: cairo.FontOptions | null): void
     set_halign(align: Gtk.Align): void
@@ -1836,6 +1850,7 @@ class TimezoneMenu {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.CellEditable */
     editing_done(): void
     remove_widget(): void
@@ -2351,14 +2366,15 @@ class TimezoneMenu {
     _init (config?: TimezoneMenu_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(top: Location): TimezoneMenu
+    /* Function overloads */
     static new(): TimezoneMenu
     static $gtype: GObject.Type
 }
 class Conditions {
     /* Fields of GWeather-3.0.GWeather.Conditions */
-    significant: boolean
-    phenomenon: ConditionPhenomenon
-    qualifier: ConditionQualifier
+    readonly significant: boolean
+    readonly phenomenon: ConditionPhenomenon
+    readonly qualifier: ConditionQualifier
     /* Methods of GWeather-3.0.GWeather.Conditions */
     to_string(): string
     to_string_full(options: FormatOptions): string
@@ -2366,7 +2382,7 @@ class Conditions {
 }
 abstract class InfoClass {
     /* Fields of GWeather-3.0.GWeather.InfoClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class Location {
@@ -2408,7 +2424,7 @@ class Location {
 }
 abstract class LocationEntryClass {
     /* Fields of GWeather-3.0.GWeather.LocationEntryClass */
-    parent_class: Gtk.SearchEntryClass
+    readonly parent_class: Gtk.SearchEntryClass
     static name: string
 }
 class LocationEntryPrivate {
@@ -2430,10 +2446,10 @@ class Timezone {
 }
 abstract class TimezoneMenuClass {
     /* Fields of GWeather-3.0.GWeather.TimezoneMenuClass */
-    parent_class: Gtk.ComboBoxClass
+    readonly parent_class: Gtk.ComboBoxClass
     static name: string
 }
-type MoonLatitude = number
-type MoonPhase = number
+    type MoonLatitude = number
+    type MoonPhase = number
 }
 export default GWeather;

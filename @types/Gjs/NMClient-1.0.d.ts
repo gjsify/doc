@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * NMClient-1.0
  */
@@ -168,154 +174,154 @@ enum SecretAgentGetSecretsFlags {
     REQUEST_NEW,
     USER_REQUESTED,
 }
-export const ACCESS_POINT_BSSID: string
-export const ACCESS_POINT_FLAGS: string
-export const ACCESS_POINT_FREQUENCY: string
-export const ACCESS_POINT_HW_ADDRESS: string
-export const ACCESS_POINT_LAST_SEEN: string
-export const ACCESS_POINT_MAX_BITRATE: string
-export const ACCESS_POINT_MODE: string
-export const ACCESS_POINT_RSN_FLAGS: string
-export const ACCESS_POINT_SSID: string
-export const ACCESS_POINT_STRENGTH: string
-export const ACCESS_POINT_WPA_FLAGS: string
-export const ACTIVE_CONNECTION_CONNECTION: string
-export const ACTIVE_CONNECTION_DEFAULT: string
-export const ACTIVE_CONNECTION_DEFAULT6: string
-export const ACTIVE_CONNECTION_DEVICES: string
-export const ACTIVE_CONNECTION_DHCP4_CONFIG: string
-export const ACTIVE_CONNECTION_DHCP6_CONFIG: string
-export const ACTIVE_CONNECTION_ID: string
-export const ACTIVE_CONNECTION_IP4_CONFIG: string
-export const ACTIVE_CONNECTION_IP6_CONFIG: string
-export const ACTIVE_CONNECTION_MASTER: string
-export const ACTIVE_CONNECTION_SPECIFIC_OBJECT: string
-export const ACTIVE_CONNECTION_STATE: string
-export const ACTIVE_CONNECTION_TYPE: string
-export const ACTIVE_CONNECTION_UUID: string
-export const ACTIVE_CONNECTION_VPN: string
-export const CLIENT_ACTIVATING_CONNECTION: string
-export const CLIENT_ACTIVE_CONNECTIONS: string
-export const CLIENT_ALL_DEVICES: string
-export const CLIENT_CONNECTIVITY: string
-export const CLIENT_DEVICES: string
-export const CLIENT_MANAGER_RUNNING: string
-export const CLIENT_NETWORKING_ENABLED: string
-export const CLIENT_PRIMARY_CONNECTION: string
-export const CLIENT_STARTUP: string
-export const CLIENT_STATE: string
-export const CLIENT_VERSION: string
-export const CLIENT_WIMAX_ENABLED: string
-export const CLIENT_WIMAX_HARDWARE_ENABLED: string
-export const CLIENT_WIRELESS_ENABLED: string
-export const CLIENT_WIRELESS_HARDWARE_ENABLED: string
-export const CLIENT_WWAN_ENABLED: string
-export const CLIENT_WWAN_HARDWARE_ENABLED: string
-export const DEVICE_ACTIVE_CONNECTION: string
-export const DEVICE_ADSL_CARRIER: string
-export const DEVICE_AUTOCONNECT: string
-export const DEVICE_AVAILABLE_CONNECTIONS: string
-export const DEVICE_BOND_CARRIER: string
-export const DEVICE_BOND_HW_ADDRESS: string
-export const DEVICE_BOND_SLAVES: string
-export const DEVICE_BRIDGE_CARRIER: string
-export const DEVICE_BRIDGE_HW_ADDRESS: string
-export const DEVICE_BRIDGE_SLAVES: string
-export const DEVICE_BT_CAPABILITIES: string
-export const DEVICE_BT_HW_ADDRESS: string
-export const DEVICE_BT_NAME: string
-export const DEVICE_CAPABILITIES: string
-export const DEVICE_DEVICE_TYPE: string
-export const DEVICE_DHCP4_CONFIG: string
-export const DEVICE_DHCP6_CONFIG: string
-export const DEVICE_DRIVER: string
-export const DEVICE_DRIVER_VERSION: string
-export const DEVICE_ETHERNET_CARRIER: string
-export const DEVICE_ETHERNET_HW_ADDRESS: string
-export const DEVICE_ETHERNET_PERMANENT_HW_ADDRESS: string
-export const DEVICE_ETHERNET_SPEED: string
-export const DEVICE_FIRMWARE_MISSING: string
-export const DEVICE_FIRMWARE_VERSION: string
-export const DEVICE_GENERIC_HW_ADDRESS: string
-export const DEVICE_GENERIC_TYPE_DESCRIPTION: string
-export const DEVICE_INFINIBAND_CARRIER: string
-export const DEVICE_INFINIBAND_HW_ADDRESS: string
-export const DEVICE_INTERFACE: string
-export const DEVICE_IP4_CONFIG: string
-export const DEVICE_IP6_CONFIG: string
-export const DEVICE_IP_INTERFACE: string
-export const DEVICE_MANAGED: string
-export const DEVICE_MODEM_CURRENT_CAPABILITIES: string
-export const DEVICE_MODEM_MODEM_CAPABILITIES: string
-export const DEVICE_MTU: string
-export const DEVICE_OLPC_MESH_ACTIVE_CHANNEL: string
-export const DEVICE_OLPC_MESH_COMPANION: string
-export const DEVICE_OLPC_MESH_HW_ADDRESS: string
-export const DEVICE_PHYSICAL_PORT_ID: string
-export const DEVICE_PRODUCT: string
-export const DEVICE_REAL: string
-export const DEVICE_STATE: string
-export const DEVICE_STATE_REASON: string
-export const DEVICE_TEAM_CARRIER: string
-export const DEVICE_TEAM_HW_ADDRESS: string
-export const DEVICE_TEAM_SLAVES: string
-export const DEVICE_UDI: string
-export const DEVICE_VENDOR: string
-export const DEVICE_VLAN_CARRIER: string
-export const DEVICE_VLAN_HW_ADDRESS: string
-export const DEVICE_VLAN_PARENT: string
-export const DEVICE_VLAN_VLAN_ID: string
-export const DEVICE_WIFI_ACCESS_POINTS: string
-export const DEVICE_WIFI_ACTIVE_ACCESS_POINT: string
-export const DEVICE_WIFI_BITRATE: string
-export const DEVICE_WIFI_CAPABILITIES: string
-export const DEVICE_WIFI_HW_ADDRESS: string
-export const DEVICE_WIFI_MODE: string
-export const DEVICE_WIFI_PERMANENT_HW_ADDRESS: string
-export const DEVICE_WIMAX_ACTIVE_NSP: string
-export const DEVICE_WIMAX_BSID: string
-export const DEVICE_WIMAX_CENTER_FREQUENCY: string
-export const DEVICE_WIMAX_CINR: string
-export const DEVICE_WIMAX_HW_ADDRESS: string
-export const DEVICE_WIMAX_NSPS: string
-export const DEVICE_WIMAX_RSSI: string
-export const DEVICE_WIMAX_TX_POWER: string
-export const DHCP4_CONFIG_OPTIONS: string
-export const DHCP6_CONFIG_OPTIONS: string
-export const IP4_CONFIG_ADDRESSES: string
-export const IP4_CONFIG_DOMAINS: string
-export const IP4_CONFIG_GATEWAY: string
-export const IP4_CONFIG_NAMESERVERS: string
-export const IP4_CONFIG_ROUTES: string
-export const IP4_CONFIG_SEARCHES: string
-export const IP4_CONFIG_WINS_SERVERS: string
-export const IP6_CONFIG_ADDRESSES: string
-export const IP6_CONFIG_DOMAINS: string
-export const IP6_CONFIG_GATEWAY: string
-export const IP6_CONFIG_NAMESERVERS: string
-export const IP6_CONFIG_ROUTES: string
-export const IP6_CONFIG_SEARCHES: string
-export const OBJECT_DBUS_CONNECTION: string
-export const OBJECT_DBUS_PATH: string
-export const REMOTE_CONNECTION_REMOVED: string
-export const REMOTE_CONNECTION_UNSAVED: string
-export const REMOTE_CONNECTION_UPDATED: string
-export const REMOTE_SETTINGS_BUS: string
-export const REMOTE_SETTINGS_CAN_MODIFY: string
-export const REMOTE_SETTINGS_CONNECTIONS_READ: string
-export const REMOTE_SETTINGS_HOSTNAME: string
-export const REMOTE_SETTINGS_NEW_CONNECTION: string
-export const REMOTE_SETTINGS_SERVICE_RUNNING: string
-export const SECRET_AGENT_AUTO_REGISTER: string
-export const SECRET_AGENT_CAPABILITIES: string
-export const SECRET_AGENT_IDENTIFIER: string
-export const SECRET_AGENT_REGISTERED: string
-export const SECRET_AGENT_REGISTRATION_RESULT: string
-export const VPN_CONNECTION_BANNER: string
-export const VPN_CONNECTION_VPN_STATE: string
-export const WIMAX_NSP_NAME: string
-export const WIMAX_NSP_NETWORK_TYPE: string
-export const WIMAX_NSP_SIGNAL_QUALITY: string
+const ACCESS_POINT_BSSID: string
+const ACCESS_POINT_FLAGS: string
+const ACCESS_POINT_FREQUENCY: string
+const ACCESS_POINT_HW_ADDRESS: string
+const ACCESS_POINT_LAST_SEEN: string
+const ACCESS_POINT_MAX_BITRATE: string
+const ACCESS_POINT_MODE: string
+const ACCESS_POINT_RSN_FLAGS: string
+const ACCESS_POINT_SSID: string
+const ACCESS_POINT_STRENGTH: string
+const ACCESS_POINT_WPA_FLAGS: string
+const ACTIVE_CONNECTION_CONNECTION: string
+const ACTIVE_CONNECTION_DEFAULT: string
+const ACTIVE_CONNECTION_DEFAULT6: string
+const ACTIVE_CONNECTION_DEVICES: string
+const ACTIVE_CONNECTION_DHCP4_CONFIG: string
+const ACTIVE_CONNECTION_DHCP6_CONFIG: string
+const ACTIVE_CONNECTION_ID: string
+const ACTIVE_CONNECTION_IP4_CONFIG: string
+const ACTIVE_CONNECTION_IP6_CONFIG: string
+const ACTIVE_CONNECTION_MASTER: string
+const ACTIVE_CONNECTION_SPECIFIC_OBJECT: string
+const ACTIVE_CONNECTION_STATE: string
+const ACTIVE_CONNECTION_TYPE: string
+const ACTIVE_CONNECTION_UUID: string
+const ACTIVE_CONNECTION_VPN: string
+const CLIENT_ACTIVATING_CONNECTION: string
+const CLIENT_ACTIVE_CONNECTIONS: string
+const CLIENT_ALL_DEVICES: string
+const CLIENT_CONNECTIVITY: string
+const CLIENT_DEVICES: string
+const CLIENT_MANAGER_RUNNING: string
+const CLIENT_NETWORKING_ENABLED: string
+const CLIENT_PRIMARY_CONNECTION: string
+const CLIENT_STARTUP: string
+const CLIENT_STATE: string
+const CLIENT_VERSION: string
+const CLIENT_WIMAX_ENABLED: string
+const CLIENT_WIMAX_HARDWARE_ENABLED: string
+const CLIENT_WIRELESS_ENABLED: string
+const CLIENT_WIRELESS_HARDWARE_ENABLED: string
+const CLIENT_WWAN_ENABLED: string
+const CLIENT_WWAN_HARDWARE_ENABLED: string
+const DEVICE_ACTIVE_CONNECTION: string
+const DEVICE_ADSL_CARRIER: string
+const DEVICE_AUTOCONNECT: string
+const DEVICE_AVAILABLE_CONNECTIONS: string
+const DEVICE_BOND_CARRIER: string
+const DEVICE_BOND_HW_ADDRESS: string
+const DEVICE_BOND_SLAVES: string
+const DEVICE_BRIDGE_CARRIER: string
+const DEVICE_BRIDGE_HW_ADDRESS: string
+const DEVICE_BRIDGE_SLAVES: string
+const DEVICE_BT_CAPABILITIES: string
+const DEVICE_BT_HW_ADDRESS: string
+const DEVICE_BT_NAME: string
+const DEVICE_CAPABILITIES: string
+const DEVICE_DEVICE_TYPE: string
+const DEVICE_DHCP4_CONFIG: string
+const DEVICE_DHCP6_CONFIG: string
+const DEVICE_DRIVER: string
+const DEVICE_DRIVER_VERSION: string
+const DEVICE_ETHERNET_CARRIER: string
+const DEVICE_ETHERNET_HW_ADDRESS: string
+const DEVICE_ETHERNET_PERMANENT_HW_ADDRESS: string
+const DEVICE_ETHERNET_SPEED: string
+const DEVICE_FIRMWARE_MISSING: string
+const DEVICE_FIRMWARE_VERSION: string
+const DEVICE_GENERIC_HW_ADDRESS: string
+const DEVICE_GENERIC_TYPE_DESCRIPTION: string
+const DEVICE_INFINIBAND_CARRIER: string
+const DEVICE_INFINIBAND_HW_ADDRESS: string
+const DEVICE_INTERFACE: string
+const DEVICE_IP4_CONFIG: string
+const DEVICE_IP6_CONFIG: string
+const DEVICE_IP_INTERFACE: string
+const DEVICE_MANAGED: string
+const DEVICE_MODEM_CURRENT_CAPABILITIES: string
+const DEVICE_MODEM_MODEM_CAPABILITIES: string
+const DEVICE_MTU: string
+const DEVICE_OLPC_MESH_ACTIVE_CHANNEL: string
+const DEVICE_OLPC_MESH_COMPANION: string
+const DEVICE_OLPC_MESH_HW_ADDRESS: string
+const DEVICE_PHYSICAL_PORT_ID: string
+const DEVICE_PRODUCT: string
+const DEVICE_REAL: string
+const DEVICE_STATE: string
+const DEVICE_STATE_REASON: string
+const DEVICE_TEAM_CARRIER: string
+const DEVICE_TEAM_HW_ADDRESS: string
+const DEVICE_TEAM_SLAVES: string
+const DEVICE_UDI: string
+const DEVICE_VENDOR: string
+const DEVICE_VLAN_CARRIER: string
+const DEVICE_VLAN_HW_ADDRESS: string
+const DEVICE_VLAN_PARENT: string
+const DEVICE_VLAN_VLAN_ID: string
+const DEVICE_WIFI_ACCESS_POINTS: string
+const DEVICE_WIFI_ACTIVE_ACCESS_POINT: string
+const DEVICE_WIFI_BITRATE: string
+const DEVICE_WIFI_CAPABILITIES: string
+const DEVICE_WIFI_HW_ADDRESS: string
+const DEVICE_WIFI_MODE: string
+const DEVICE_WIFI_PERMANENT_HW_ADDRESS: string
+const DEVICE_WIMAX_ACTIVE_NSP: string
+const DEVICE_WIMAX_BSID: string
+const DEVICE_WIMAX_CENTER_FREQUENCY: string
+const DEVICE_WIMAX_CINR: string
+const DEVICE_WIMAX_HW_ADDRESS: string
+const DEVICE_WIMAX_NSPS: string
+const DEVICE_WIMAX_RSSI: string
+const DEVICE_WIMAX_TX_POWER: string
+const DHCP4_CONFIG_OPTIONS: string
+const DHCP6_CONFIG_OPTIONS: string
+const IP4_CONFIG_ADDRESSES: string
+const IP4_CONFIG_DOMAINS: string
+const IP4_CONFIG_GATEWAY: string
+const IP4_CONFIG_NAMESERVERS: string
+const IP4_CONFIG_ROUTES: string
+const IP4_CONFIG_SEARCHES: string
+const IP4_CONFIG_WINS_SERVERS: string
+const IP6_CONFIG_ADDRESSES: string
+const IP6_CONFIG_DOMAINS: string
+const IP6_CONFIG_GATEWAY: string
+const IP6_CONFIG_NAMESERVERS: string
+const IP6_CONFIG_ROUTES: string
+const IP6_CONFIG_SEARCHES: string
+const OBJECT_DBUS_CONNECTION: string
+const OBJECT_DBUS_PATH: string
+const REMOTE_CONNECTION_REMOVED: string
+const REMOTE_CONNECTION_UNSAVED: string
+const REMOTE_CONNECTION_UPDATED: string
+const REMOTE_SETTINGS_BUS: string
+const REMOTE_SETTINGS_CAN_MODIFY: string
+const REMOTE_SETTINGS_CONNECTIONS_READ: string
+const REMOTE_SETTINGS_HOSTNAME: string
+const REMOTE_SETTINGS_NEW_CONNECTION: string
+const REMOTE_SETTINGS_SERVICE_RUNNING: string
+const SECRET_AGENT_AUTO_REGISTER: string
+const SECRET_AGENT_CAPABILITIES: string
+const SECRET_AGENT_IDENTIFIER: string
+const SECRET_AGENT_REGISTERED: string
+const SECRET_AGENT_REGISTRATION_RESULT: string
+const VPN_CONNECTION_BANNER: string
+const VPN_CONNECTION_VPN_STATE: string
+const WIMAX_NSP_NAME: string
+const WIMAX_NSP_NETWORK_TYPE: string
+const WIMAX_NSP_SIGNAL_QUALITY: string
 function client_error_quark(): GLib.Quark
 function device_adsl_error_quark(): GLib.Quark
 function device_bond_error_quark(): GLib.Quark
@@ -374,7 +380,7 @@ interface SecretAgentGetSecretsFunc {
 interface SecretAgentSaveSecretsFunc {
     (agent: SecretAgent, connection: NetworkManager.Connection, error: GLib.Error): void
 }
-export interface AccessPoint_ConstructProps extends Object_ConstructProps {
+interface AccessPoint_ConstructProps extends Object_ConstructProps {
 }
 class AccessPoint {
     /* Properties of NMClient-1.0.NMClient.AccessPoint */
@@ -389,10 +395,10 @@ class AccessPoint {
     readonly ssid: any
     readonly strength: number
     readonly wpa_flags: number
-    /* Fields of NMClient-1.0.NMClient.AccessPoint */
-    parent: Object
+    /* Fields of NMClient-1.0.NMClient.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.AccessPoint */
     connection_valid(connection: NetworkManager.Connection): boolean
     filter_connections(connections: NetworkManager.Connection[]): NetworkManager.Connection[]
@@ -404,7 +410,7 @@ class AccessPoint {
     get_max_bitrate(): number
     get_mode(): NetworkManager.TODO_80211Mode
     get_rsn_flags(): NetworkManager.TODO_80211ApSecurityFlags
-    get_ssid(): Uint8Array[]
+    get_ssid(): Uint8Array
     get_strength(): number
     get_wpa_flags(): NetworkManager.TODO_80211ApSecurityFlags
     /* Methods of NMClient-1.0.NMClient.Object */
@@ -438,6 +444,10 @@ class AccessPoint {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.AccessPoint */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -490,9 +500,11 @@ class AccessPoint {
     _init (config?: AccessPoint_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): AccessPoint
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface ActiveConnection_ConstructProps extends Object_ConstructProps {
+interface ActiveConnection_ConstructProps extends Object_ConstructProps {
 }
 class ActiveConnection {
     /* Properties of NMClient-1.0.NMClient.ActiveConnection */
@@ -511,10 +523,10 @@ class ActiveConnection {
     readonly type: string
     readonly uuid: string
     readonly vpn: boolean
-    /* Fields of NMClient-1.0.NMClient.ActiveConnection */
-    parent: Object
+    /* Fields of NMClient-1.0.NMClient.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.ActiveConnection */
     get_connection(): string
     get_connection_type(): string
@@ -562,6 +574,10 @@ class ActiveConnection {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.ActiveConnection */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -622,9 +638,12 @@ class ActiveConnection {
     _init (config?: ActiveConnection_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): ActiveConnection
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Client_ConstructProps extends Object_ConstructProps {
+interface Client_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of NMClient-1.0.NMClient.Client */
     networking_enabled?: boolean
     wimax_enabled?: boolean
     wireless_enabled?: boolean
@@ -649,10 +668,10 @@ class Client {
     readonly wireless_hardware_enabled: boolean
     wwan_enabled: boolean
     readonly wwan_hardware_enabled: boolean
-    /* Fields of NMClient-1.0.NMClient.Client */
-    parent: Object
+    /* Fields of NMClient-1.0.NMClient.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.Client */
     activate_connection(connection?: NetworkManager.Connection | null, device?: Device | null, specific_object?: string | null, callback?: ClientActivateFn | null): void
     add_and_activate_connection(partial: NetworkManager.Connection | null, device: Device, specific_object?: string | null, callback?: ClientAddActivateFn | null): void
@@ -722,6 +741,9 @@ class Client {
     vfunc_device_added(device: Device): void
     vfunc_device_removed(device: Device): void
     vfunc_permission_changed(permission: ClientPermission, result: ClientPermissionResult): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -804,17 +826,19 @@ class Client {
     static new(): Client
     static new_finish(result: Gio.AsyncResult): Client
     static new_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DHCP4Config_ConstructProps extends Object_ConstructProps {
+interface DHCP4Config_ConstructProps extends Object_ConstructProps {
 }
 class DHCP4Config {
     /* Properties of NMClient-1.0.NMClient.DHCP4Config */
     readonly options: GLib.HashTable
-    /* Fields of NMClient-1.0.NMClient.DHCP4Config */
-    parent: Object
+    /* Fields of NMClient-1.0.NMClient.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DHCP4Config */
     get_one_option(option: string): string
     get_options(): GLib.HashTable
@@ -849,6 +873,10 @@ class DHCP4Config {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DHCP4Config */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -881,17 +909,19 @@ class DHCP4Config {
     _init (config?: DHCP4Config_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, object_path: string): DHCP4Config
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DHCP6Config_ConstructProps extends Object_ConstructProps {
+interface DHCP6Config_ConstructProps extends Object_ConstructProps {
 }
 class DHCP6Config {
     /* Properties of NMClient-1.0.NMClient.DHCP6Config */
     readonly options: GLib.HashTable
-    /* Fields of NMClient-1.0.NMClient.DHCP6Config */
-    parent: Object
+    /* Fields of NMClient-1.0.NMClient.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DHCP6Config */
     get_one_option(option: string): string
     get_options(): GLib.HashTable
@@ -926,6 +956,10 @@ class DHCP6Config {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DHCP6Config */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -958,9 +992,12 @@ class DHCP6Config {
     _init (config?: DHCP6Config_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, object_path: string): DHCP6Config
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends Object_ConstructProps {
+interface Device_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of NMClient-1.0.NMClient.Device */
     autoconnect?: boolean
 }
 class Device {
@@ -988,10 +1025,10 @@ class Device {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.Device */
-    parent: Object
+    /* Fields of NMClient-1.0.NMClient.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.Device */
     connection_compatible(connection: NetworkManager.Connection): boolean
     connection_valid(connection: NetworkManager.Connection): boolean
@@ -1066,6 +1103,9 @@ class Device {
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1147,9 +1187,11 @@ class Device {
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): Device
     static disambiguate_names(devices: Device[]): string[]
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceAdsl_ConstructProps extends Device_ConstructProps {
+interface DeviceAdsl_ConstructProps extends Device_ConstructProps {
 }
 class DeviceAdsl {
     /* Properties of NMClient-1.0.NMClient.DeviceAdsl */
@@ -1178,10 +1220,10 @@ class DeviceAdsl {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceAdsl */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceAdsl */
     get_carrier(): boolean
     /* Methods of NMClient-1.0.NMClient.Device */
@@ -1252,12 +1294,19 @@ class DeviceAdsl {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceAdsl */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1340,9 +1389,13 @@ class DeviceAdsl {
     _init (config?: DeviceAdsl_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceAdsl
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceAdsl
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceBond_ConstructProps extends Device_ConstructProps {
+interface DeviceBond_ConstructProps extends Device_ConstructProps {
 }
 class DeviceBond {
     /* Properties of NMClient-1.0.NMClient.DeviceBond */
@@ -1373,10 +1426,10 @@ class DeviceBond {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceBond */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceBond */
     get_carrier(): boolean
     get_hw_address(): string
@@ -1448,12 +1501,19 @@ class DeviceBond {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceBond */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1540,9 +1600,13 @@ class DeviceBond {
     _init (config?: DeviceBond_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceBond
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceBond
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceBridge_ConstructProps extends Device_ConstructProps {
+interface DeviceBridge_ConstructProps extends Device_ConstructProps {
 }
 class DeviceBridge {
     /* Properties of NMClient-1.0.NMClient.DeviceBridge */
@@ -1573,10 +1637,10 @@ class DeviceBridge {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceBridge */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceBridge */
     get_carrier(): boolean
     get_hw_address(): string
@@ -1648,12 +1712,19 @@ class DeviceBridge {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceBridge */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1740,9 +1811,13 @@ class DeviceBridge {
     _init (config?: DeviceBridge_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceBridge
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceBridge
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceBt_ConstructProps extends Device_ConstructProps {
+interface DeviceBt_ConstructProps extends Device_ConstructProps {
 }
 class DeviceBt {
     /* Properties of NMClient-1.0.NMClient.DeviceBt */
@@ -1773,10 +1848,10 @@ class DeviceBt {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceBt */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceBt */
     get_capabilities(): NetworkManager.BluetoothCapabilities
     get_hw_address(): string
@@ -1848,12 +1923,19 @@ class DeviceBt {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceBt */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1940,9 +2022,13 @@ class DeviceBt {
     _init (config?: DeviceBt_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceBt
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceBt
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceEthernet_ConstructProps extends Device_ConstructProps {
+interface DeviceEthernet_ConstructProps extends Device_ConstructProps {
 }
 class DeviceEthernet {
     /* Properties of NMClient-1.0.NMClient.DeviceEthernet */
@@ -1974,10 +2060,10 @@ class DeviceEthernet {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceEthernet */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceEthernet */
     get_carrier(): boolean
     get_hw_address(): string
@@ -2050,12 +2136,19 @@ class DeviceEthernet {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceEthernet */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -2144,9 +2237,13 @@ class DeviceEthernet {
     _init (config?: DeviceEthernet_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceEthernet
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceEthernet
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceGeneric_ConstructProps extends Device_ConstructProps {
+interface DeviceGeneric_ConstructProps extends Device_ConstructProps {
 }
 class DeviceGeneric {
     /* Properties of NMClient-1.0.NMClient.DeviceGeneric */
@@ -2176,10 +2273,10 @@ class DeviceGeneric {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceGeneric */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceGeneric */
     get_hw_address(): string
     /* Methods of NMClient-1.0.NMClient.Device */
@@ -2249,12 +2346,19 @@ class DeviceGeneric {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceGeneric */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -2339,9 +2443,13 @@ class DeviceGeneric {
     _init (config?: DeviceGeneric_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceGeneric
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceGeneric
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceInfiniband_ConstructProps extends Device_ConstructProps {
+interface DeviceInfiniband_ConstructProps extends Device_ConstructProps {
 }
 class DeviceInfiniband {
     /* Properties of NMClient-1.0.NMClient.DeviceInfiniband */
@@ -2371,10 +2479,10 @@ class DeviceInfiniband {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceInfiniband */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceInfiniband */
     get_carrier(): boolean
     get_hw_address(): string
@@ -2445,12 +2553,19 @@ class DeviceInfiniband {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceInfiniband */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -2535,9 +2650,13 @@ class DeviceInfiniband {
     _init (config?: DeviceInfiniband_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceInfiniband
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceInfiniband
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceModem_ConstructProps extends Device_ConstructProps {
+interface DeviceModem_ConstructProps extends Device_ConstructProps {
 }
 class DeviceModem {
     /* Properties of NMClient-1.0.NMClient.DeviceModem */
@@ -2567,10 +2686,10 @@ class DeviceModem {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceModem */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceModem */
     get_current_capabilities(): NetworkManager.DeviceModemCapabilities
     get_modem_capabilities(): NetworkManager.DeviceModemCapabilities
@@ -2642,12 +2761,19 @@ class DeviceModem {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceModem */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -2730,9 +2856,12 @@ class DeviceModem {
     static name: string
     constructor (config?: DeviceModem_ConstructProps)
     _init (config?: DeviceModem_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceOlpcMesh_ConstructProps extends Device_ConstructProps {
+interface DeviceOlpcMesh_ConstructProps extends Device_ConstructProps {
 }
 class DeviceOlpcMesh {
     /* Properties of NMClient-1.0.NMClient.DeviceOlpcMesh */
@@ -2763,10 +2892,10 @@ class DeviceOlpcMesh {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceOlpcMesh */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceOlpcMesh */
     get_active_channel(): number
     get_companion(): DeviceWifi
@@ -2838,12 +2967,19 @@ class DeviceOlpcMesh {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceOlpcMesh */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -2930,9 +3066,13 @@ class DeviceOlpcMesh {
     _init (config?: DeviceOlpcMesh_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceOlpcMesh
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceOlpcMesh
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceTeam_ConstructProps extends Device_ConstructProps {
+interface DeviceTeam_ConstructProps extends Device_ConstructProps {
 }
 class DeviceTeam {
     /* Properties of NMClient-1.0.NMClient.DeviceTeam */
@@ -2963,10 +3103,10 @@ class DeviceTeam {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceTeam */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceTeam */
     get_carrier(): boolean
     get_hw_address(): string
@@ -3038,12 +3178,19 @@ class DeviceTeam {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceTeam */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3130,9 +3277,13 @@ class DeviceTeam {
     _init (config?: DeviceTeam_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceTeam
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceTeam
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceVlan_ConstructProps extends Device_ConstructProps {
+interface DeviceVlan_ConstructProps extends Device_ConstructProps {
 }
 class DeviceVlan {
     /* Properties of NMClient-1.0.NMClient.DeviceVlan */
@@ -3165,7 +3316,7 @@ class DeviceVlan {
     readonly udi: string
     readonly vendor: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceVlan */
     get_carrier(): boolean
     get_hw_address(): string
@@ -3238,12 +3389,19 @@ class DeviceVlan {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.DeviceVlan */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3332,9 +3490,13 @@ class DeviceVlan {
     _init (config?: DeviceVlan_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceVlan
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceVlan
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceWifi_ConstructProps extends Device_ConstructProps {
+interface DeviceWifi_ConstructProps extends Device_ConstructProps {
 }
 class DeviceWifi {
     /* Properties of NMClient-1.0.NMClient.DeviceWifi */
@@ -3369,10 +3531,10 @@ class DeviceWifi {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceWifi */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceWifi */
     get_access_point_by_path(path: string): AccessPoint
     get_access_points(): AccessPoint[]
@@ -3453,12 +3615,18 @@ class DeviceWifi {
     /* Virtual methods of NMClient-1.0.NMClient.DeviceWifi */
     vfunc_access_point_added(ap: AccessPoint): void
     vfunc_access_point_removed(ap: AccessPoint): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3560,9 +3728,13 @@ class DeviceWifi {
     _init (config?: DeviceWifi_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceWifi
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceWifi
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface DeviceWimax_ConstructProps extends Device_ConstructProps {
+interface DeviceWimax_ConstructProps extends Device_ConstructProps {
 }
 class DeviceWimax {
     /* Properties of NMClient-1.0.NMClient.DeviceWimax */
@@ -3598,10 +3770,10 @@ class DeviceWimax {
     readonly state: number
     readonly udi: string
     readonly vendor: string
-    /* Fields of NMClient-1.0.NMClient.DeviceWimax */
-    parent: Device
+    /* Fields of NMClient-1.0.NMClient.Device */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.DeviceWimax */
     get_active_nsp(): WimaxNsp
     get_bsid(): string
@@ -3682,12 +3854,18 @@ class DeviceWimax {
     /* Virtual methods of NMClient-1.0.NMClient.DeviceWimax */
     vfunc_nsp_added(nsp: WimaxNsp): void
     vfunc_nsp_removed(nsp: WimaxNsp): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Device */
     vfunc_connection_compatible(connection: NetworkManager.Connection): boolean
     vfunc_get_hw_address(): string
     vfunc_get_setting_type(): GObject.Type
     vfunc_get_type_description(): string
     vfunc_state_changed(new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3791,9 +3969,13 @@ class DeviceWimax {
     _init (config?: DeviceWimax_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): DeviceWimax
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): DeviceWimax
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface IP4Config_ConstructProps extends Object_ConstructProps {
+interface IP4Config_ConstructProps extends Object_ConstructProps {
 }
 class IP4Config {
     /* Properties of NMClient-1.0.NMClient.IP4Config */
@@ -3804,10 +3986,10 @@ class IP4Config {
     readonly routes: object
     readonly searches: any
     readonly wins_servers: any
-    /* Fields of NMClient-1.0.NMClient.IP4Config */
-    parent: Object
+    /* Fields of NMClient-1.0.NMClient.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.IP4Config */
     get_addresses(): NetworkManager.IP4Address[]
     get_domains(): string[]
@@ -3847,6 +4029,10 @@ class IP4Config {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.IP4Config */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3891,9 +4077,11 @@ class IP4Config {
     _init (config?: IP4Config_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, object_path: string): IP4Config
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface IP6Config_ConstructProps extends Object_ConstructProps {
+interface IP6Config_ConstructProps extends Object_ConstructProps {
 }
 class IP6Config {
     /* Properties of NMClient-1.0.NMClient.IP6Config */
@@ -3903,15 +4091,15 @@ class IP6Config {
     readonly nameservers: any
     readonly routes: any
     readonly searches: any
-    /* Fields of NMClient-1.0.NMClient.IP6Config */
-    parent: Object
+    /* Fields of NMClient-1.0.NMClient.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.IP6Config */
     get_addresses(): NetworkManager.IP6Address[]
     get_domains(): string[]
     get_gateway(): string
-    get_nameserver(idx: number): Uint8Array[]
+    get_nameserver(idx: number): Uint8Array
     get_num_nameservers(): number
     get_routes(): NetworkManager.IP6Route[]
     get_searches(): string[]
@@ -3946,6 +4134,10 @@ class IP6Config {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.IP6Config */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3988,16 +4180,17 @@ class IP6Config {
     _init (config?: IP6Config_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, object_path: string): IP6Config
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+interface Object_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NMClient-1.0.NMClient.Object */
     dbus_path?: string
 }
 class Object {
-    /* Fields of NMClient-1.0.NMClient.Object */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.Object */
     get_connection(): DBusGLib.Connection
     get_path(): string
@@ -4062,7 +4255,8 @@ class Object {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface RemoteConnection_ConstructProps extends NetworkManager.Connection_ConstructProps {
+interface RemoteConnection_ConstructProps extends NetworkManager.Connection_ConstructProps {
+    /* Constructor properties of NMClient-1.0.NMClient.RemoteConnection */
     dbus_path?: string
 }
 class RemoteConnection {
@@ -4070,10 +4264,10 @@ class RemoteConnection {
     readonly unsaved: boolean
     /* Properties of NetworkManager-1.0.NetworkManager.Connection */
     path: string
-    /* Fields of NMClient-1.0.NMClient.RemoteConnection */
-    parent: NetworkManager.Connection
+    /* Fields of NetworkManager-1.0.NetworkManager.Connection */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.RemoteConnection */
     commit_changes(callback?: RemoteConnectionResultFunc | null): void
     commit_changes_unsaved(callback?: RemoteConnectionResultFunc | null): void
@@ -4216,22 +4410,21 @@ class RemoteConnection {
     _init (config?: RemoteConnection_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(bus: DBusGLib.Connection, path: string): RemoteConnection
+    /* Function overloads */
     static new(): RemoteConnection
     static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface RemoteSettings_ConstructProps extends GObject.Object_ConstructProps {
+interface RemoteSettings_ConstructProps extends GObject.Object_ConstructProps {
 }
 class RemoteSettings {
     /* Properties of NMClient-1.0.NMClient.RemoteSettings */
     readonly can_modify: boolean
     readonly hostname: string
     readonly service_running: boolean
-    /* Fields of NMClient-1.0.NMClient.RemoteSettings */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.RemoteSettings */
     add_connection(connection: NetworkManager.Connection, callback: RemoteSettingsAddConnectionFunc): boolean
     add_connection_unsaved(connection: NetworkManager.Connection, callback: RemoteSettingsAddConnectionFunc): boolean
@@ -4316,7 +4509,8 @@ class RemoteSettings {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface SecretAgent_ConstructProps extends GObject.Object_ConstructProps {
+interface SecretAgent_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NMClient-1.0.NMClient.SecretAgent */
     auto_register?: boolean
     capabilities?: SecretAgentCapabilities
     identifier?: string
@@ -4326,10 +4520,8 @@ class SecretAgent {
     auto_register: boolean
     capabilities: SecretAgentCapabilities
     readonly registered: boolean
-    /* Fields of NMClient-1.0.NMClient.SecretAgent */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.SecretAgent */
     delete_secrets(connection: NetworkManager.Connection, callback: SecretAgentDeleteSecretsFunc): void
     get_registered(): boolean
@@ -4396,7 +4588,7 @@ class SecretAgent {
     _init (config?: SecretAgent_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VPNConnection_ConstructProps extends ActiveConnection_ConstructProps {
+interface VPNConnection_ConstructProps extends ActiveConnection_ConstructProps {
 }
 class VPNConnection {
     /* Properties of NMClient-1.0.NMClient.VPNConnection */
@@ -4418,10 +4610,10 @@ class VPNConnection {
     readonly type: string
     readonly uuid: string
     readonly vpn: boolean
-    /* Fields of NMClient-1.0.NMClient.VPNConnection */
-    parent: ActiveConnection
+    /* Fields of NMClient-1.0.NMClient.ActiveConnection */
+    readonly parent: Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.VPNConnection */
     get_banner(): string
     get_vpn_state(): NetworkManager.VPNConnectionState
@@ -4474,6 +4666,13 @@ class VPNConnection {
     init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.VPNConnection */
     vfunc_vpn_state_changed(state: NetworkManager.VPNConnectionState, reason: NetworkManager.VPNConnectionStateReason): void
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.ActiveConnection */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4542,19 +4741,23 @@ class VPNConnection {
     _init (config?: VPNConnection_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): VPNConnection
+    /* Function overloads */
+    static new(connection: DBusGLib.Connection, path: string): VPNConnection
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface WimaxNsp_ConstructProps extends Object_ConstructProps {
+interface WimaxNsp_ConstructProps extends Object_ConstructProps {
 }
 class WimaxNsp {
     /* Properties of NMClient-1.0.NMClient.WimaxNsp */
     readonly name: string
     readonly network_type: number
     readonly signal_quality: number
-    /* Fields of NMClient-1.0.NMClient.WimaxNsp */
-    parent: Object
+    /* Fields of NMClient-1.0.NMClient.Object */
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NMClient-1.0.NMClient.WimaxNsp */
     connection_valid(connection: NetworkManager.Connection): boolean
     filter_connections(connections: NetworkManager.Connection[]): NetworkManager.Connection[]
@@ -4592,6 +4795,10 @@ class WimaxNsp {
     new_finish(res: Gio.AsyncResult): GObject.Object
     /* Methods of Gio-2.0.Gio.Initable */
     init(cancellable?: Gio.Cancellable | null): boolean
+    /* Virtual methods of NMClient-1.0.NMClient.WimaxNsp */
+    vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    vfunc_init_finish(res: Gio.AsyncResult): boolean
+    vfunc_init(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of NMClient-1.0.NMClient.Object */
     vfunc_object_creation_failed(error: GLib.Error, failed_path: string): void
     vfunc_init_async(io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -4628,167 +4835,169 @@ class WimaxNsp {
     _init (config?: WimaxNsp_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(connection: DBusGLib.Connection, path: string): WimaxNsp
+    static newv_async(object_type: GObject.Type, n_parameters: number, parameters: GObject.Parameter, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
 abstract class AccessPointClass {
     /* Fields of NMClient-1.0.NMClient.AccessPointClass */
-    parent: ObjectClass
+    readonly parent: ObjectClass
     static name: string
 }
 abstract class ActiveConnectionClass {
     /* Fields of NMClient-1.0.NMClient.ActiveConnectionClass */
-    parent: ObjectClass
+    readonly parent: ObjectClass
     static name: string
 }
 abstract class ClientClass {
     /* Fields of NMClient-1.0.NMClient.ClientClass */
-    parent: ObjectClass
-    device_added: (client: Client, device: Device) => void
-    device_removed: (client: Client, device: Device) => void
-    permission_changed: (client: Client, permission: ClientPermission, result: ClientPermissionResult) => void
+    readonly parent: ObjectClass
+    readonly device_added: (client: Client, device: Device) => void
+    readonly device_removed: (client: Client, device: Device) => void
+    readonly permission_changed: (client: Client, permission: ClientPermission, result: ClientPermissionResult) => void
     static name: string
 }
 abstract class DHCP4ConfigClass {
     /* Fields of NMClient-1.0.NMClient.DHCP4ConfigClass */
-    parent: ObjectClass
+    readonly parent: ObjectClass
     static name: string
 }
 abstract class DHCP6ConfigClass {
     /* Fields of NMClient-1.0.NMClient.DHCP6ConfigClass */
-    parent: ObjectClass
+    readonly parent: ObjectClass
     static name: string
 }
 abstract class DeviceAdslClass {
     /* Fields of NMClient-1.0.NMClient.DeviceAdslClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceBondClass {
     /* Fields of NMClient-1.0.NMClient.DeviceBondClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceBridgeClass {
     /* Fields of NMClient-1.0.NMClient.DeviceBridgeClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceBtClass {
     /* Fields of NMClient-1.0.NMClient.DeviceBtClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceClass {
     /* Fields of NMClient-1.0.NMClient.DeviceClass */
-    parent: ObjectClass
-    state_changed: (device: Device, new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason) => void
-    connection_compatible: (device: Device, connection: NetworkManager.Connection) => boolean
-    get_type_description: (device: Device) => string
-    get_hw_address: (device: Device) => string
-    get_setting_type: (device: Device) => GObject.Type
+    readonly parent: ObjectClass
+    readonly state_changed: (device: Device, new_state: NetworkManager.DeviceState, old_state: NetworkManager.DeviceState, reason: NetworkManager.DeviceStateReason) => void
+    readonly connection_compatible: (device: Device, connection: NetworkManager.Connection) => boolean
+    readonly get_type_description: (device: Device) => string
+    readonly get_hw_address: (device: Device) => string
+    readonly get_setting_type: (device: Device) => GObject.Type
     static name: string
 }
 abstract class DeviceEthernetClass {
     /* Fields of NMClient-1.0.NMClient.DeviceEthernetClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceGenericClass {
     /* Fields of NMClient-1.0.NMClient.DeviceGenericClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceInfinibandClass {
     /* Fields of NMClient-1.0.NMClient.DeviceInfinibandClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceModemClass {
     /* Fields of NMClient-1.0.NMClient.DeviceModemClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceOlpcMeshClass {
     /* Fields of NMClient-1.0.NMClient.DeviceOlpcMeshClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceTeamClass {
     /* Fields of NMClient-1.0.NMClient.DeviceTeamClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceVlanClass {
     /* Fields of NMClient-1.0.NMClient.DeviceVlanClass */
-    parent: DeviceClass
+    readonly parent: DeviceClass
     static name: string
 }
 abstract class DeviceWifiClass {
     /* Fields of NMClient-1.0.NMClient.DeviceWifiClass */
-    parent: DeviceClass
-    access_point_added: (device: DeviceWifi, ap: AccessPoint) => void
-    access_point_removed: (device: DeviceWifi, ap: AccessPoint) => void
+    readonly parent: DeviceClass
+    readonly access_point_added: (device: DeviceWifi, ap: AccessPoint) => void
+    readonly access_point_removed: (device: DeviceWifi, ap: AccessPoint) => void
     static name: string
 }
 abstract class DeviceWimaxClass {
     /* Fields of NMClient-1.0.NMClient.DeviceWimaxClass */
-    parent: DeviceClass
-    nsp_added: (self: DeviceWimax, nsp: WimaxNsp) => void
-    nsp_removed: (self: DeviceWimax, nsp: WimaxNsp) => void
+    readonly parent: DeviceClass
+    readonly nsp_added: (self: DeviceWimax, nsp: WimaxNsp) => void
+    readonly nsp_removed: (self: DeviceWimax, nsp: WimaxNsp) => void
     static name: string
 }
 abstract class IP4ConfigClass {
     /* Fields of NMClient-1.0.NMClient.IP4ConfigClass */
-    parent: ObjectClass
+    readonly parent: ObjectClass
     static name: string
 }
 abstract class IP6ConfigClass {
     /* Fields of NMClient-1.0.NMClient.IP6ConfigClass */
-    parent: ObjectClass
+    readonly parent: ObjectClass
     static name: string
 }
 abstract class ObjectClass {
     /* Fields of NMClient-1.0.NMClient.ObjectClass */
-    parent: GObject.ObjectClass
-    object_creation_failed: (master_object: Object, error: GLib.Error, failed_path: string) => void
+    readonly parent: GObject.ObjectClass
+    readonly object_creation_failed: (master_object: Object, error: GLib.Error, failed_path: string) => void
     static name: string
 }
 abstract class RemoteConnectionClass {
     /* Fields of NMClient-1.0.NMClient.RemoteConnectionClass */
-    parent_class: NetworkManager.ConnectionClass
-    updated: (connection: RemoteConnection, new_settings: GLib.HashTable) => void
-    removed: (connection: RemoteConnection) => void
+    readonly parent_class: NetworkManager.ConnectionClass
+    readonly updated: (connection: RemoteConnection, new_settings: GLib.HashTable) => void
+    readonly removed: (connection: RemoteConnection) => void
     static name: string
 }
 abstract class RemoteSettingsClass {
     /* Fields of NMClient-1.0.NMClient.RemoteSettingsClass */
-    parent: GObject.ObjectClass
-    new_connection: (settings: RemoteSettings, connection: RemoteConnection) => void
-    connections_read: (settings: RemoteSettings) => void
+    readonly parent: GObject.ObjectClass
+    readonly new_connection: (settings: RemoteSettings, connection: RemoteConnection) => void
+    readonly connections_read: (settings: RemoteSettings) => void
     static name: string
 }
 abstract class SecretAgentClass {
     /* Fields of NMClient-1.0.NMClient.SecretAgentClass */
-    parent: GObject.ObjectClass
-    get_secrets: (self: SecretAgent, connection: NetworkManager.Connection, connection_path: string, setting_name: string, hints: string[], flags: SecretAgentGetSecretsFlags, callback: SecretAgentGetSecretsFunc) => void
-    cancel_get_secrets: (self: SecretAgent, connection_path: string, setting_name: string) => void
-    save_secrets: (self: SecretAgent, connection: NetworkManager.Connection, connection_path: string, callback: SecretAgentSaveSecretsFunc) => void
-    delete_secrets: (self: SecretAgent, connection: NetworkManager.Connection, connection_path: string, callback: SecretAgentDeleteSecretsFunc) => void
-    registration_result: (agent: SecretAgent, error: GLib.Error) => void
+    readonly parent: GObject.ObjectClass
+    readonly get_secrets: (self: SecretAgent, connection: NetworkManager.Connection, connection_path: string, setting_name: string, hints: string[], flags: SecretAgentGetSecretsFlags, callback: SecretAgentGetSecretsFunc) => void
+    readonly cancel_get_secrets: (self: SecretAgent, connection_path: string, setting_name: string) => void
+    readonly save_secrets: (self: SecretAgent, connection: NetworkManager.Connection, connection_path: string, callback: SecretAgentSaveSecretsFunc) => void
+    readonly delete_secrets: (self: SecretAgent, connection: NetworkManager.Connection, connection_path: string, callback: SecretAgentDeleteSecretsFunc) => void
+    readonly registration_result: (agent: SecretAgent, error: GLib.Error) => void
     static name: string
 }
 abstract class VPNConnectionClass {
     /* Fields of NMClient-1.0.NMClient.VPNConnectionClass */
-    parent: ActiveConnectionClass
-    vpn_state_changed: (connection: VPNConnection, state: NetworkManager.VPNConnectionState, reason: NetworkManager.VPNConnectionStateReason) => void
+    readonly parent: ActiveConnectionClass
+    readonly vpn_state_changed: (connection: VPNConnection, state: NetworkManager.VPNConnectionState, reason: NetworkManager.VPNConnectionStateReason) => void
     static name: string
 }
 abstract class WimaxNspClass {
     /* Fields of NMClient-1.0.NMClient.WimaxNspClass */
-    parent: ObjectClass
+    readonly parent: ObjectClass
     static name: string
 }
-type RemoteConnectionCommitFunc = RemoteConnectionResultFunc
-type RemoteConnectionDeleteFunc = RemoteConnectionResultFunc
+    type RemoteConnectionCommitFunc = RemoteConnectionResultFunc
+    type RemoteConnectionDeleteFunc = RemoteConnectionResultFunc
 }
 export default NMClient;

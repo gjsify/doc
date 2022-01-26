@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * NM-1.0
  */
@@ -242,7 +248,7 @@ enum DeviceType {
     OVS_PORT,
     OVS_BRIDGE,
     WPAN,
-    /* 6LOWPAN (invalid, starts with a number) */
+    TODO_6LOWPAN,
     WIREGUARD,
     WIFI_P2P,
     VRF,
@@ -441,8 +447,8 @@ enum SettingsError {
     INVALIDARGUMENTS,
 }
 enum SriovVFVlanProtocol {
-    /* 1Q (invalid, starts with a number) */
-    /* 1AD (invalid, starts with a number) */
+    TODO_1Q,
+    TODO_1AD,
 }
 enum State {
     UNKNOWN,
@@ -726,7 +732,7 @@ enum SettingWirelessWakeOnWLan {
     MAGIC,
     GTK_REKEY_FAILURE,
     EAP_IDENTITY_REQUEST,
-    /* 4WAY_HANDSHAKE (invalid, starts with a number) */
+    TODO_4WAY_HANDSHAKE,
     RFKILL_RELEASE,
     TCP,
     ALL,
@@ -773,1073 +779,1074 @@ enum VpnEditorPluginCapability {
     EXPORT,
     IPV6,
 }
-export const ACCESS_POINT_BSSID: string
-export const ACCESS_POINT_FLAGS: string
-export const ACCESS_POINT_FREQUENCY: string
-export const ACCESS_POINT_HW_ADDRESS: string
-export const ACCESS_POINT_LAST_SEEN: string
-export const ACCESS_POINT_MAX_BITRATE: string
-export const ACCESS_POINT_MODE: string
-export const ACCESS_POINT_RSN_FLAGS: string
-export const ACCESS_POINT_SSID: string
-export const ACCESS_POINT_STRENGTH: string
-export const ACCESS_POINT_WPA_FLAGS: string
-export const ACTIVE_CONNECTION_CONNECTION: string
-export const ACTIVE_CONNECTION_DEFAULT: string
-export const ACTIVE_CONNECTION_DEFAULT6: string
-export const ACTIVE_CONNECTION_DEVICES: string
-export const ACTIVE_CONNECTION_DHCP4_CONFIG: string
-export const ACTIVE_CONNECTION_DHCP6_CONFIG: string
-export const ACTIVE_CONNECTION_ID: string
-export const ACTIVE_CONNECTION_IP4_CONFIG: string
-export const ACTIVE_CONNECTION_IP6_CONFIG: string
-export const ACTIVE_CONNECTION_MASTER: string
-export const ACTIVE_CONNECTION_SPECIFIC_OBJECT_PATH: string
-export const ACTIVE_CONNECTION_STATE: string
-export const ACTIVE_CONNECTION_STATE_FLAGS: string
-export const ACTIVE_CONNECTION_TYPE: string
-export const ACTIVE_CONNECTION_UUID: string
-export const ACTIVE_CONNECTION_VPN: string
-export const BRIDGE_VLAN_VID_MAX: number
-export const BRIDGE_VLAN_VID_MIN: number
-export const CHECKPOINT_CREATED: string
-export const CHECKPOINT_DEVICES: string
-export const CHECKPOINT_ROLLBACK_TIMEOUT: string
-export const CLIENT_ACTIVATING_CONNECTION: string
-export const CLIENT_ACTIVE_CONNECTIONS: string
-export const CLIENT_ACTIVE_CONNECTION_ADDED: string
-export const CLIENT_ACTIVE_CONNECTION_REMOVED: string
-export const CLIENT_ALL_DEVICES: string
-export const CLIENT_ANY_DEVICE_ADDED: string
-export const CLIENT_ANY_DEVICE_REMOVED: string
-export const CLIENT_CAN_MODIFY: string
-export const CLIENT_CAPABILITIES: string
-export const CLIENT_CHECKPOINTS: string
-export const CLIENT_CONNECTIONS: string
-export const CLIENT_CONNECTION_ADDED: string
-export const CLIENT_CONNECTION_REMOVED: string
-export const CLIENT_CONNECTIVITY: string
-export const CLIENT_CONNECTIVITY_CHECK_AVAILABLE: string
-export const CLIENT_CONNECTIVITY_CHECK_ENABLED: string
-export const CLIENT_CONNECTIVITY_CHECK_URI: string
-export const CLIENT_DBUS_CONNECTION: string
-export const CLIENT_DBUS_NAME_OWNER: string
-export const CLIENT_DEVICES: string
-export const CLIENT_DEVICE_ADDED: string
-export const CLIENT_DEVICE_REMOVED: string
-export const CLIENT_DNS_CONFIGURATION: string
-export const CLIENT_DNS_MODE: string
-export const CLIENT_DNS_RC_MANAGER: string
-export const CLIENT_HOSTNAME: string
-export const CLIENT_INSTANCE_FLAGS: string
-export const CLIENT_METERED: string
-export const CLIENT_NETWORKING_ENABLED: string
-export const CLIENT_NM_RUNNING: string
-export const CLIENT_PERMISSIONS_STATE: string
-export const CLIENT_PERMISSION_CHANGED: string
-export const CLIENT_PRIMARY_CONNECTION: string
-export const CLIENT_STARTUP: string
-export const CLIENT_STATE: string
-export const CLIENT_VERSION: string
-export const CLIENT_WIMAX_ENABLED: string
-export const CLIENT_WIMAX_HARDWARE_ENABLED: string
-export const CLIENT_WIRELESS_ENABLED: string
-export const CLIENT_WIRELESS_HARDWARE_ENABLED: string
-export const CLIENT_WWAN_ENABLED: string
-export const CLIENT_WWAN_HARDWARE_ENABLED: string
-export const CONNECTION_CHANGED: string
-export const CONNECTION_NORMALIZE_PARAM_IP4_CONFIG_METHOD: string
-export const CONNECTION_NORMALIZE_PARAM_IP6_CONFIG_METHOD: string
-export const CONNECTION_SECRETS_CLEARED: string
-export const CONNECTION_SECRETS_UPDATED: string
-export const DBUS_INTERFACE: string
-export const DBUS_INTERFACE_DNS_MANAGER: string
-export const DBUS_INTERFACE_SETTINGS: string
-export const DBUS_INTERFACE_SETTINGS_CONNECTION: string
-export const DBUS_INTERFACE_SETTINGS_CONNECTION_SECRETS: string
-export const DBUS_INTERFACE_VPN: string
-export const DBUS_INTERFACE_VPN_CONNECTION: string
-export const DBUS_INVALID_VPN_CONNECTION: string
-export const DBUS_NO_ACTIVE_VPN_CONNECTION: string
-export const DBUS_NO_VPN_CONNECTIONS: string
-export const DBUS_PATH: string
-export const DBUS_PATH_AGENT_MANAGER: string
-export const DBUS_PATH_DNS_MANAGER: string
-export const DBUS_PATH_SECRET_AGENT: string
-export const DBUS_PATH_SETTINGS: string
-export const DBUS_PATH_SETTINGS_CONNECTION: string
-export const DBUS_PATH_VPN: string
-export const DBUS_PATH_VPN_CONNECTION: string
-export const DBUS_SERVICE: string
-export const DBUS_VPN_ALREADY_STARTED: string
-export const DBUS_VPN_ALREADY_STOPPED: string
-export const DBUS_VPN_BAD_ARGUMENTS: string
-export const DBUS_VPN_ERROR_PREFIX: string
-export const DBUS_VPN_INTERACTIVE_NOT_SUPPORTED: string
-export const DBUS_VPN_SIGNAL_CONNECT_FAILED: string
-export const DBUS_VPN_SIGNAL_IP4_CONFIG: string
-export const DBUS_VPN_SIGNAL_IP_CONFIG_BAD: string
-export const DBUS_VPN_SIGNAL_LAUNCH_FAILED: string
-export const DBUS_VPN_SIGNAL_LOGIN_BANNER: string
-export const DBUS_VPN_SIGNAL_LOGIN_FAILED: string
-export const DBUS_VPN_SIGNAL_STATE_CHANGE: string
-export const DBUS_VPN_SIGNAL_VPN_CONFIG_BAD: string
-export const DBUS_VPN_STARTING_IN_PROGRESS: string
-export const DBUS_VPN_STOPPING_IN_PROGRESS: string
-export const DBUS_VPN_WRONG_STATE: string
-export const DEVICE_6LOWPAN_HW_ADDRESS: string
-export const DEVICE_6LOWPAN_PARENT: string
-export const DEVICE_ACTIVE_CONNECTION: string
-export const DEVICE_ADSL_CARRIER: string
-export const DEVICE_AUTOCONNECT: string
-export const DEVICE_AVAILABLE_CONNECTIONS: string
-export const DEVICE_BOND_CARRIER: string
-export const DEVICE_BOND_HW_ADDRESS: string
-export const DEVICE_BOND_SLAVES: string
-export const DEVICE_BRIDGE_CARRIER: string
-export const DEVICE_BRIDGE_HW_ADDRESS: string
-export const DEVICE_BRIDGE_SLAVES: string
-export const DEVICE_BT_CAPABILITIES: string
-export const DEVICE_BT_HW_ADDRESS: string
-export const DEVICE_BT_NAME: string
-export const DEVICE_CAPABILITIES: string
-export const DEVICE_DEVICE_TYPE: string
-export const DEVICE_DHCP4_CONFIG: string
-export const DEVICE_DHCP6_CONFIG: string
-export const DEVICE_DRIVER: string
-export const DEVICE_DRIVER_VERSION: string
-export const DEVICE_DUMMY_HW_ADDRESS: string
-export const DEVICE_ETHERNET_CARRIER: string
-export const DEVICE_ETHERNET_HW_ADDRESS: string
-export const DEVICE_ETHERNET_PERMANENT_HW_ADDRESS: string
-export const DEVICE_ETHERNET_S390_SUBCHANNELS: string
-export const DEVICE_ETHERNET_SPEED: string
-export const DEVICE_FIRMWARE_MISSING: string
-export const DEVICE_FIRMWARE_VERSION: string
-export const DEVICE_GENERIC_HW_ADDRESS: string
-export const DEVICE_GENERIC_TYPE_DESCRIPTION: string
-export const DEVICE_HW_ADDRESS: string
-export const DEVICE_INFINIBAND_CARRIER: string
-export const DEVICE_INFINIBAND_HW_ADDRESS: string
-export const DEVICE_INTERFACE: string
-export const DEVICE_INTERFACE_FLAGS: string
-export const DEVICE_IP4_CONFIG: string
-export const DEVICE_IP4_CONNECTIVITY: string
-export const DEVICE_IP6_CONFIG: string
-export const DEVICE_IP6_CONNECTIVITY: string
-export const DEVICE_IP_INTERFACE: string
-export const DEVICE_IP_TUNNEL_ENCAPSULATION_LIMIT: string
-export const DEVICE_IP_TUNNEL_FLAGS: string
-export const DEVICE_IP_TUNNEL_FLOW_LABEL: string
-export const DEVICE_IP_TUNNEL_INPUT_KEY: string
-export const DEVICE_IP_TUNNEL_LOCAL: string
-export const DEVICE_IP_TUNNEL_MODE: string
-export const DEVICE_IP_TUNNEL_OUTPUT_KEY: string
-export const DEVICE_IP_TUNNEL_PARENT: string
-export const DEVICE_IP_TUNNEL_PATH_MTU_DISCOVERY: string
-export const DEVICE_IP_TUNNEL_REMOTE: string
-export const DEVICE_IP_TUNNEL_TOS: string
-export const DEVICE_IP_TUNNEL_TTL: string
-export const DEVICE_LLDP_NEIGHBORS: string
-export const DEVICE_MACSEC_CIPHER_SUITE: string
-export const DEVICE_MACSEC_ENCODING_SA: string
-export const DEVICE_MACSEC_ENCRYPT: string
-export const DEVICE_MACSEC_ES: string
-export const DEVICE_MACSEC_HW_ADDRESS: string
-export const DEVICE_MACSEC_ICV_LENGTH: string
-export const DEVICE_MACSEC_INCLUDE_SCI: string
-export const DEVICE_MACSEC_PARENT: string
-export const DEVICE_MACSEC_PROTECT: string
-export const DEVICE_MACSEC_REPLAY_PROTECT: string
-export const DEVICE_MACSEC_SCB: string
-export const DEVICE_MACSEC_SCI: string
-export const DEVICE_MACSEC_VALIDATION: string
-export const DEVICE_MACSEC_WINDOW: string
-export const DEVICE_MACVLAN_HW_ADDRESS: string
-export const DEVICE_MACVLAN_MODE: string
-export const DEVICE_MACVLAN_NO_PROMISC: string
-export const DEVICE_MACVLAN_PARENT: string
-export const DEVICE_MACVLAN_TAP: string
-export const DEVICE_MANAGED: string
-export const DEVICE_METERED: string
-export const DEVICE_MODEM_APN: string
-export const DEVICE_MODEM_CURRENT_CAPABILITIES: string
-export const DEVICE_MODEM_DEVICE_ID: string
-export const DEVICE_MODEM_MODEM_CAPABILITIES: string
-export const DEVICE_MODEM_OPERATOR_CODE: string
-export const DEVICE_MTU: string
-export const DEVICE_NM_PLUGIN_MISSING: string
-export const DEVICE_OLPC_MESH_ACTIVE_CHANNEL: string
-export const DEVICE_OLPC_MESH_COMPANION: string
-export const DEVICE_OLPC_MESH_HW_ADDRESS: string
-export const DEVICE_OVS_BRIDGE_SLAVES: string
-export const DEVICE_OVS_PORT_SLAVES: string
-export const DEVICE_PATH: string
-export const DEVICE_PHYSICAL_PORT_ID: string
-export const DEVICE_PORTS: string
-export const DEVICE_PRODUCT: string
-export const DEVICE_REAL: string
-export const DEVICE_STATE: string
-export const DEVICE_STATE_REASON: string
-export const DEVICE_TEAM_CARRIER: string
-export const DEVICE_TEAM_CONFIG: string
-export const DEVICE_TEAM_HW_ADDRESS: string
-export const DEVICE_TEAM_SLAVES: string
-export const DEVICE_TUN_GROUP: string
-export const DEVICE_TUN_HW_ADDRESS: string
-export const DEVICE_TUN_MODE: string
-export const DEVICE_TUN_MULTI_QUEUE: string
-export const DEVICE_TUN_NO_PI: string
-export const DEVICE_TUN_OWNER: string
-export const DEVICE_TUN_VNET_HDR: string
-export const DEVICE_UDI: string
-export const DEVICE_VENDOR: string
-export const DEVICE_VETH_PEER: string
-export const DEVICE_VLAN_CARRIER: string
-export const DEVICE_VLAN_HW_ADDRESS: string
-export const DEVICE_VLAN_PARENT: string
-export const DEVICE_VLAN_VLAN_ID: string
-export const DEVICE_VRF_TABLE: string
-export const DEVICE_VXLAN_AGEING: string
-export const DEVICE_VXLAN_CARRIER: string
-export const DEVICE_VXLAN_DST_PORT: string
-export const DEVICE_VXLAN_GROUP: string
-export const DEVICE_VXLAN_HW_ADDRESS: string
-export const DEVICE_VXLAN_ID: string
-export const DEVICE_VXLAN_L2MISS: string
-export const DEVICE_VXLAN_L3MISS: string
-export const DEVICE_VXLAN_LEARNING: string
-export const DEVICE_VXLAN_LIMIT: string
-export const DEVICE_VXLAN_LOCAL: string
-export const DEVICE_VXLAN_PARENT: string
-export const DEVICE_VXLAN_PROXY: string
-export const DEVICE_VXLAN_RSC: string
-export const DEVICE_VXLAN_SRC_PORT_MAX: string
-export const DEVICE_VXLAN_SRC_PORT_MIN: string
-export const DEVICE_VXLAN_TOS: string
-export const DEVICE_VXLAN_TTL: string
-export const DEVICE_WIFI_ACCESS_POINTS: string
-export const DEVICE_WIFI_ACTIVE_ACCESS_POINT: string
-export const DEVICE_WIFI_BITRATE: string
-export const DEVICE_WIFI_CAPABILITIES: string
-export const DEVICE_WIFI_HW_ADDRESS: string
-export const DEVICE_WIFI_LAST_SCAN: string
-export const DEVICE_WIFI_MODE: string
-export const DEVICE_WIFI_P2P_HW_ADDRESS: string
-export const DEVICE_WIFI_P2P_PEERS: string
-export const DEVICE_WIFI_P2P_WFDIES: string
-export const DEVICE_WIFI_PERMANENT_HW_ADDRESS: string
-export const DEVICE_WIMAX_ACTIVE_NSP: string
-export const DEVICE_WIMAX_BSID: string
-export const DEVICE_WIMAX_CENTER_FREQUENCY: string
-export const DEVICE_WIMAX_CINR: string
-export const DEVICE_WIMAX_HW_ADDRESS: string
-export const DEVICE_WIMAX_NSPS: string
-export const DEVICE_WIMAX_RSSI: string
-export const DEVICE_WIMAX_TX_POWER: string
-export const DEVICE_WIREGUARD_FWMARK: string
-export const DEVICE_WIREGUARD_LISTEN_PORT: string
-export const DEVICE_WIREGUARD_PUBLIC_KEY: string
-export const DEVICE_WPAN_HW_ADDRESS: string
-export const DHCP_CONFIG_FAMILY: string
-export const DHCP_CONFIG_OPTIONS: string
-export const ETHTOOL_OPTNAME_COALESCE_ADAPTIVE_RX: string
-export const ETHTOOL_OPTNAME_COALESCE_ADAPTIVE_TX: string
-export const ETHTOOL_OPTNAME_COALESCE_PKT_RATE_HIGH: string
-export const ETHTOOL_OPTNAME_COALESCE_PKT_RATE_LOW: string
-export const ETHTOOL_OPTNAME_COALESCE_RX_FRAMES: string
-export const ETHTOOL_OPTNAME_COALESCE_RX_FRAMES_HIGH: string
-export const ETHTOOL_OPTNAME_COALESCE_RX_FRAMES_IRQ: string
-export const ETHTOOL_OPTNAME_COALESCE_RX_FRAMES_LOW: string
-export const ETHTOOL_OPTNAME_COALESCE_RX_USECS: string
-export const ETHTOOL_OPTNAME_COALESCE_RX_USECS_HIGH: string
-export const ETHTOOL_OPTNAME_COALESCE_RX_USECS_IRQ: string
-export const ETHTOOL_OPTNAME_COALESCE_RX_USECS_LOW: string
-export const ETHTOOL_OPTNAME_COALESCE_SAMPLE_INTERVAL: string
-export const ETHTOOL_OPTNAME_COALESCE_STATS_BLOCK_USECS: string
-export const ETHTOOL_OPTNAME_COALESCE_TX_FRAMES: string
-export const ETHTOOL_OPTNAME_COALESCE_TX_FRAMES_HIGH: string
-export const ETHTOOL_OPTNAME_COALESCE_TX_FRAMES_IRQ: string
-export const ETHTOOL_OPTNAME_COALESCE_TX_FRAMES_LOW: string
-export const ETHTOOL_OPTNAME_COALESCE_TX_USECS: string
-export const ETHTOOL_OPTNAME_COALESCE_TX_USECS_HIGH: string
-export const ETHTOOL_OPTNAME_COALESCE_TX_USECS_IRQ: string
-export const ETHTOOL_OPTNAME_COALESCE_TX_USECS_LOW: string
-export const ETHTOOL_OPTNAME_FEATURE_ESP_HW_OFFLOAD: string
-export const ETHTOOL_OPTNAME_FEATURE_ESP_TX_CSUM_HW_OFFLOAD: string
-export const ETHTOOL_OPTNAME_FEATURE_FCOE_MTU: string
-export const ETHTOOL_OPTNAME_FEATURE_GRO: string
-export const ETHTOOL_OPTNAME_FEATURE_GSO: string
-export const ETHTOOL_OPTNAME_FEATURE_HIGHDMA: string
-export const ETHTOOL_OPTNAME_FEATURE_HW_TC_OFFLOAD: string
-export const ETHTOOL_OPTNAME_FEATURE_L2_FWD_OFFLOAD: string
-export const ETHTOOL_OPTNAME_FEATURE_LOOPBACK: string
-export const ETHTOOL_OPTNAME_FEATURE_LRO: string
-export const ETHTOOL_OPTNAME_FEATURE_MACSEC_HW_OFFLOAD: string
-export const ETHTOOL_OPTNAME_FEATURE_NTUPLE: string
-export const ETHTOOL_OPTNAME_FEATURE_RX: string
-export const ETHTOOL_OPTNAME_FEATURE_RXHASH: string
-export const ETHTOOL_OPTNAME_FEATURE_RXVLAN: string
-export const ETHTOOL_OPTNAME_FEATURE_RX_ALL: string
-export const ETHTOOL_OPTNAME_FEATURE_RX_FCS: string
-export const ETHTOOL_OPTNAME_FEATURE_RX_GRO_HW: string
-export const ETHTOOL_OPTNAME_FEATURE_RX_GRO_LIST: string
-export const ETHTOOL_OPTNAME_FEATURE_RX_UDP_GRO_FORWARDING: string
-export const ETHTOOL_OPTNAME_FEATURE_RX_UDP_TUNNEL_PORT_OFFLOAD: string
-export const ETHTOOL_OPTNAME_FEATURE_RX_VLAN_FILTER: string
-export const ETHTOOL_OPTNAME_FEATURE_RX_VLAN_STAG_FILTER: string
-export const ETHTOOL_OPTNAME_FEATURE_RX_VLAN_STAG_HW_PARSE: string
-export const ETHTOOL_OPTNAME_FEATURE_SG: string
-export const ETHTOOL_OPTNAME_FEATURE_TLS_HW_RECORD: string
-export const ETHTOOL_OPTNAME_FEATURE_TLS_HW_RX_OFFLOAD: string
-export const ETHTOOL_OPTNAME_FEATURE_TLS_HW_TX_OFFLOAD: string
-export const ETHTOOL_OPTNAME_FEATURE_TSO: string
-export const ETHTOOL_OPTNAME_FEATURE_TX: string
-export const ETHTOOL_OPTNAME_FEATURE_TXVLAN: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_FCOE_CRC: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_IPV4: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_IPV6: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_IP_GENERIC: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_SCTP: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_ESP_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_FCOE_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_GRE_CSUM_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_GRE_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_GSO_LIST: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_GSO_PARTIAL: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_GSO_ROBUST: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_IPXIP4_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_IPXIP6_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_NOCACHE_COPY: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_SCATTER_GATHER: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_SCATTER_GATHER_FRAGLIST: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_SCTP_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_TCP6_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_TCP_ECN_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_TCP_MANGLEID_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_TCP_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_TUNNEL_REMCSUM_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_UDP_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_UDP_TNL_CSUM_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_UDP_TNL_SEGMENTATION: string
-export const ETHTOOL_OPTNAME_FEATURE_TX_VLAN_STAG_HW_INSERT: string
-export const ETHTOOL_OPTNAME_PAUSE_AUTONEG: string
-export const ETHTOOL_OPTNAME_PAUSE_RX: string
-export const ETHTOOL_OPTNAME_PAUSE_TX: string
-export const ETHTOOL_OPTNAME_RING_RX: string
-export const ETHTOOL_OPTNAME_RING_RX_JUMBO: string
-export const ETHTOOL_OPTNAME_RING_RX_MINI: string
-export const ETHTOOL_OPTNAME_RING_TX: string
-export const IP_ADDRESS_ATTRIBUTE_LABEL: string
-export const IP_CONFIG_ADDRESSES: string
-export const IP_CONFIG_DOMAINS: string
-export const IP_CONFIG_FAMILY: string
-export const IP_CONFIG_GATEWAY: string
-export const IP_CONFIG_NAMESERVERS: string
-export const IP_CONFIG_ROUTES: string
-export const IP_CONFIG_SEARCHES: string
-export const IP_CONFIG_WINS_SERVERS: string
-export const IP_ROUTE_ATTRIBUTE_CWND: string
-export const IP_ROUTE_ATTRIBUTE_FROM: string
-export const IP_ROUTE_ATTRIBUTE_INITCWND: string
-export const IP_ROUTE_ATTRIBUTE_INITRWND: string
-export const IP_ROUTE_ATTRIBUTE_LOCK_CWND: string
-export const IP_ROUTE_ATTRIBUTE_LOCK_INITCWND: string
-export const IP_ROUTE_ATTRIBUTE_LOCK_INITRWND: string
-export const IP_ROUTE_ATTRIBUTE_LOCK_MTU: string
-export const IP_ROUTE_ATTRIBUTE_LOCK_WINDOW: string
-export const IP_ROUTE_ATTRIBUTE_MTU: string
-export const IP_ROUTE_ATTRIBUTE_ONLINK: string
-export const IP_ROUTE_ATTRIBUTE_SCOPE: string
-export const IP_ROUTE_ATTRIBUTE_SRC: string
-export const IP_ROUTE_ATTRIBUTE_TABLE: string
-export const IP_ROUTE_ATTRIBUTE_TOS: string
-export const IP_ROUTE_ATTRIBUTE_TYPE: string
-export const IP_ROUTE_ATTRIBUTE_WINDOW: string
-export const LLDP_ATTR_CHASSIS_ID: string
-export const LLDP_ATTR_CHASSIS_ID_TYPE: string
-export const LLDP_ATTR_DESTINATION: string
-export const LLDP_ATTR_IEEE_802_1_PPVID: string
-export const LLDP_ATTR_IEEE_802_1_PPVIDS: string
-export const LLDP_ATTR_IEEE_802_1_PPVID_FLAGS: string
-export const LLDP_ATTR_IEEE_802_1_PVID: string
-export const LLDP_ATTR_IEEE_802_1_VID: string
-export const LLDP_ATTR_IEEE_802_1_VLANS: string
-export const LLDP_ATTR_IEEE_802_1_VLAN_NAME: string
-export const LLDP_ATTR_IEEE_802_3_MAC_PHY_CONF: string
-export const LLDP_ATTR_IEEE_802_3_MAX_FRAME_SIZE: string
-export const LLDP_ATTR_IEEE_802_3_POWER_VIA_MDI: string
-export const LLDP_ATTR_MANAGEMENT_ADDRESSES: string
-export const LLDP_ATTR_MUD_URL: string
-export const LLDP_ATTR_PORT_DESCRIPTION: string
-export const LLDP_ATTR_PORT_ID: string
-export const LLDP_ATTR_PORT_ID_TYPE: string
-export const LLDP_ATTR_RAW: string
-export const LLDP_ATTR_SYSTEM_CAPABILITIES: string
-export const LLDP_ATTR_SYSTEM_DESCRIPTION: string
-export const LLDP_ATTR_SYSTEM_NAME: string
-export const LLDP_DEST_NEAREST_BRIDGE: string
-export const LLDP_DEST_NEAREST_CUSTOMER_BRIDGE: string
-export const LLDP_DEST_NEAREST_NON_TPMR_BRIDGE: string
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
-export const OBJECT_CLIENT: string
-export const OBJECT_PATH: string
-export const REMOTE_CONNECTION_DBUS_CONNECTION: string
-export const REMOTE_CONNECTION_FILENAME: string
-export const REMOTE_CONNECTION_FLAGS: string
-export const REMOTE_CONNECTION_PATH: string
-export const REMOTE_CONNECTION_UNSAVED: string
-export const REMOTE_CONNECTION_VISIBLE: string
-export const SECRET_AGENT_OLD_AUTO_REGISTER: string
-export const SECRET_AGENT_OLD_CAPABILITIES: string
-export const SECRET_AGENT_OLD_DBUS_CONNECTION: string
-export const SECRET_AGENT_OLD_IDENTIFIER: string
-export const SECRET_AGENT_OLD_REGISTERED: string
-export const SETTING_6LOWPAN_PARENT: string
-export const SETTING_6LOWPAN_SETTING_NAME: string
-export const SETTING_802_1X_ALTSUBJECT_MATCHES: string
-export const SETTING_802_1X_ANONYMOUS_IDENTITY: string
-export const SETTING_802_1X_AUTH_TIMEOUT: string
-export const SETTING_802_1X_CA_CERT: string
-export const SETTING_802_1X_CA_CERT_PASSWORD: string
-export const SETTING_802_1X_CA_CERT_PASSWORD_FLAGS: string
-export const SETTING_802_1X_CA_PATH: string
-export const SETTING_802_1X_CERT_SCHEME_PREFIX_PATH: string
-export const SETTING_802_1X_CERT_SCHEME_PREFIX_PKCS11: string
-export const SETTING_802_1X_CLIENT_CERT: string
-export const SETTING_802_1X_CLIENT_CERT_PASSWORD: string
-export const SETTING_802_1X_CLIENT_CERT_PASSWORD_FLAGS: string
-export const SETTING_802_1X_DOMAIN_MATCH: string
-export const SETTING_802_1X_DOMAIN_SUFFIX_MATCH: string
-export const SETTING_802_1X_EAP: string
-export const SETTING_802_1X_IDENTITY: string
-export const SETTING_802_1X_OPTIONAL: string
-export const SETTING_802_1X_PAC_FILE: string
-export const SETTING_802_1X_PASSWORD: string
-export const SETTING_802_1X_PASSWORD_FLAGS: string
-export const SETTING_802_1X_PASSWORD_RAW: string
-export const SETTING_802_1X_PASSWORD_RAW_FLAGS: string
-export const SETTING_802_1X_PHASE1_AUTH_FLAGS: string
-export const SETTING_802_1X_PHASE1_FAST_PROVISIONING: string
-export const SETTING_802_1X_PHASE1_PEAPLABEL: string
-export const SETTING_802_1X_PHASE1_PEAPVER: string
-export const SETTING_802_1X_PHASE2_ALTSUBJECT_MATCHES: string
-export const SETTING_802_1X_PHASE2_AUTH: string
-export const SETTING_802_1X_PHASE2_AUTHEAP: string
-export const SETTING_802_1X_PHASE2_CA_CERT: string
-export const SETTING_802_1X_PHASE2_CA_CERT_PASSWORD: string
-export const SETTING_802_1X_PHASE2_CA_CERT_PASSWORD_FLAGS: string
-export const SETTING_802_1X_PHASE2_CA_PATH: string
-export const SETTING_802_1X_PHASE2_CLIENT_CERT: string
-export const SETTING_802_1X_PHASE2_CLIENT_CERT_PASSWORD: string
-export const SETTING_802_1X_PHASE2_CLIENT_CERT_PASSWORD_FLAGS: string
-export const SETTING_802_1X_PHASE2_DOMAIN_MATCH: string
-export const SETTING_802_1X_PHASE2_DOMAIN_SUFFIX_MATCH: string
-export const SETTING_802_1X_PHASE2_PRIVATE_KEY: string
-export const SETTING_802_1X_PHASE2_PRIVATE_KEY_PASSWORD: string
-export const SETTING_802_1X_PHASE2_PRIVATE_KEY_PASSWORD_FLAGS: string
-export const SETTING_802_1X_PHASE2_SUBJECT_MATCH: string
-export const SETTING_802_1X_PIN: string
-export const SETTING_802_1X_PIN_FLAGS: string
-export const SETTING_802_1X_PRIVATE_KEY: string
-export const SETTING_802_1X_PRIVATE_KEY_PASSWORD: string
-export const SETTING_802_1X_PRIVATE_KEY_PASSWORD_FLAGS: string
-export const SETTING_802_1X_SETTING_NAME: string
-export const SETTING_802_1X_SUBJECT_MATCH: string
-export const SETTING_802_1X_SYSTEM_CA_CERTS: string
-export const SETTING_ADSL_ENCAPSULATION: string
-export const SETTING_ADSL_ENCAPSULATION_LLC: string
-export const SETTING_ADSL_ENCAPSULATION_VCMUX: string
-export const SETTING_ADSL_PASSWORD: string
-export const SETTING_ADSL_PASSWORD_FLAGS: string
-export const SETTING_ADSL_PROTOCOL: string
-export const SETTING_ADSL_PROTOCOL_IPOATM: string
-export const SETTING_ADSL_PROTOCOL_PPPOA: string
-export const SETTING_ADSL_PROTOCOL_PPPOE: string
-export const SETTING_ADSL_SETTING_NAME: string
-export const SETTING_ADSL_USERNAME: string
-export const SETTING_ADSL_VCI: string
-export const SETTING_ADSL_VPI: string
-export const SETTING_BLUETOOTH_BDADDR: string
-export const SETTING_BLUETOOTH_SETTING_NAME: string
-export const SETTING_BLUETOOTH_TYPE: string
-export const SETTING_BLUETOOTH_TYPE_DUN: string
-export const SETTING_BLUETOOTH_TYPE_NAP: string
-export const SETTING_BLUETOOTH_TYPE_PANU: string
-export const SETTING_BOND_OPTIONS: string
-export const SETTING_BOND_OPTION_ACTIVE_SLAVE: string
-export const SETTING_BOND_OPTION_AD_ACTOR_SYSTEM: string
-export const SETTING_BOND_OPTION_AD_ACTOR_SYS_PRIO: string
-export const SETTING_BOND_OPTION_AD_SELECT: string
-export const SETTING_BOND_OPTION_AD_USER_PORT_KEY: string
-export const SETTING_BOND_OPTION_ALL_SLAVES_ACTIVE: string
-export const SETTING_BOND_OPTION_ARP_ALL_TARGETS: string
-export const SETTING_BOND_OPTION_ARP_INTERVAL: string
-export const SETTING_BOND_OPTION_ARP_IP_TARGET: string
-export const SETTING_BOND_OPTION_ARP_VALIDATE: string
-export const SETTING_BOND_OPTION_DOWNDELAY: string
-export const SETTING_BOND_OPTION_FAIL_OVER_MAC: string
-export const SETTING_BOND_OPTION_LACP_RATE: string
-export const SETTING_BOND_OPTION_LP_INTERVAL: string
-export const SETTING_BOND_OPTION_MIIMON: string
-export const SETTING_BOND_OPTION_MIN_LINKS: string
-export const SETTING_BOND_OPTION_MODE: string
-export const SETTING_BOND_OPTION_NUM_GRAT_ARP: string
-export const SETTING_BOND_OPTION_NUM_UNSOL_NA: string
-export const SETTING_BOND_OPTION_PACKETS_PER_SLAVE: string
-export const SETTING_BOND_OPTION_PEER_NOTIF_DELAY: string
-export const SETTING_BOND_OPTION_PRIMARY: string
-export const SETTING_BOND_OPTION_PRIMARY_RESELECT: string
-export const SETTING_BOND_OPTION_RESEND_IGMP: string
-export const SETTING_BOND_OPTION_TLB_DYNAMIC_LB: string
-export const SETTING_BOND_OPTION_UPDELAY: string
-export const SETTING_BOND_OPTION_USE_CARRIER: string
-export const SETTING_BOND_OPTION_XMIT_HASH_POLICY: string
-export const SETTING_BOND_PORT_QUEUE_ID: string
-export const SETTING_BOND_PORT_SETTING_NAME: string
-export const SETTING_BOND_SETTING_NAME: string
-export const SETTING_BRIDGE_AGEING_TIME: string
-export const SETTING_BRIDGE_FORWARD_DELAY: string
-export const SETTING_BRIDGE_GROUP_ADDRESS: string
-export const SETTING_BRIDGE_GROUP_FORWARD_MASK: string
-export const SETTING_BRIDGE_HELLO_TIME: string
-export const SETTING_BRIDGE_MAC_ADDRESS: string
-export const SETTING_BRIDGE_MAX_AGE: string
-export const SETTING_BRIDGE_MULTICAST_HASH_MAX: string
-export const SETTING_BRIDGE_MULTICAST_LAST_MEMBER_COUNT: string
-export const SETTING_BRIDGE_MULTICAST_LAST_MEMBER_INTERVAL: string
-export const SETTING_BRIDGE_MULTICAST_MEMBERSHIP_INTERVAL: string
-export const SETTING_BRIDGE_MULTICAST_QUERIER: string
-export const SETTING_BRIDGE_MULTICAST_QUERIER_INTERVAL: string
-export const SETTING_BRIDGE_MULTICAST_QUERY_INTERVAL: string
-export const SETTING_BRIDGE_MULTICAST_QUERY_RESPONSE_INTERVAL: string
-export const SETTING_BRIDGE_MULTICAST_QUERY_USE_IFADDR: string
-export const SETTING_BRIDGE_MULTICAST_ROUTER: string
-export const SETTING_BRIDGE_MULTICAST_SNOOPING: string
-export const SETTING_BRIDGE_MULTICAST_STARTUP_QUERY_COUNT: string
-export const SETTING_BRIDGE_MULTICAST_STARTUP_QUERY_INTERVAL: string
-export const SETTING_BRIDGE_PORT_HAIRPIN_MODE: string
-export const SETTING_BRIDGE_PORT_PATH_COST: string
-export const SETTING_BRIDGE_PORT_PRIORITY: string
-export const SETTING_BRIDGE_PORT_SETTING_NAME: string
-export const SETTING_BRIDGE_PORT_VLANS: string
-export const SETTING_BRIDGE_PRIORITY: string
-export const SETTING_BRIDGE_SETTING_NAME: string
-export const SETTING_BRIDGE_STP: string
-export const SETTING_BRIDGE_VLANS: string
-export const SETTING_BRIDGE_VLAN_DEFAULT_PVID: string
-export const SETTING_BRIDGE_VLAN_FILTERING: string
-export const SETTING_BRIDGE_VLAN_PROTOCOL: string
-export const SETTING_BRIDGE_VLAN_STATS_ENABLED: string
-export const SETTING_CDMA_MTU: string
-export const SETTING_CDMA_NUMBER: string
-export const SETTING_CDMA_PASSWORD: string
-export const SETTING_CDMA_PASSWORD_FLAGS: string
-export const SETTING_CDMA_SETTING_NAME: string
-export const SETTING_CDMA_USERNAME: string
-export const SETTING_CONNECTION_AUTH_RETRIES: string
-export const SETTING_CONNECTION_AUTOCONNECT: string
-export const SETTING_CONNECTION_AUTOCONNECT_PRIORITY: string
-export const SETTING_CONNECTION_AUTOCONNECT_PRIORITY_DEFAULT: number
-export const SETTING_CONNECTION_AUTOCONNECT_PRIORITY_MAX: number
-export const SETTING_CONNECTION_AUTOCONNECT_PRIORITY_MIN: number
-export const SETTING_CONNECTION_AUTOCONNECT_RETRIES: string
-export const SETTING_CONNECTION_AUTOCONNECT_SLAVES: string
-export const SETTING_CONNECTION_DNS_OVER_TLS: string
-export const SETTING_CONNECTION_GATEWAY_PING_TIMEOUT: string
-export const SETTING_CONNECTION_ID: string
-export const SETTING_CONNECTION_INTERFACE_NAME: string
-export const SETTING_CONNECTION_LLDP: string
-export const SETTING_CONNECTION_LLMNR: string
-export const SETTING_CONNECTION_MASTER: string
-export const SETTING_CONNECTION_MDNS: string
-export const SETTING_CONNECTION_METERED: string
-export const SETTING_CONNECTION_MUD_URL: string
-export const SETTING_CONNECTION_MULTI_CONNECT: string
-export const SETTING_CONNECTION_PERMISSIONS: string
-export const SETTING_CONNECTION_READ_ONLY: string
-export const SETTING_CONNECTION_SECONDARIES: string
-export const SETTING_CONNECTION_SETTING_NAME: string
-export const SETTING_CONNECTION_SLAVE_TYPE: string
-export const SETTING_CONNECTION_STABLE_ID: string
-export const SETTING_CONNECTION_TIMESTAMP: string
-export const SETTING_CONNECTION_TYPE: string
-export const SETTING_CONNECTION_UUID: string
-export const SETTING_CONNECTION_WAIT_DEVICE_TIMEOUT: string
-export const SETTING_CONNECTION_ZONE: string
-export const SETTING_DCB_APP_FCOE_FLAGS: string
-export const SETTING_DCB_APP_FCOE_MODE: string
-export const SETTING_DCB_APP_FCOE_PRIORITY: string
-export const SETTING_DCB_APP_FIP_FLAGS: string
-export const SETTING_DCB_APP_FIP_PRIORITY: string
-export const SETTING_DCB_APP_ISCSI_FLAGS: string
-export const SETTING_DCB_APP_ISCSI_PRIORITY: string
-export const SETTING_DCB_FCOE_MODE_FABRIC: string
-export const SETTING_DCB_FCOE_MODE_VN2VN: string
-export const SETTING_DCB_PRIORITY_BANDWIDTH: string
-export const SETTING_DCB_PRIORITY_FLOW_CONTROL: string
-export const SETTING_DCB_PRIORITY_FLOW_CONTROL_FLAGS: string
-export const SETTING_DCB_PRIORITY_GROUP_BANDWIDTH: string
-export const SETTING_DCB_PRIORITY_GROUP_FLAGS: string
-export const SETTING_DCB_PRIORITY_GROUP_ID: string
-export const SETTING_DCB_PRIORITY_STRICT_BANDWIDTH: string
-export const SETTING_DCB_PRIORITY_TRAFFIC_CLASS: string
-export const SETTING_DCB_SETTING_NAME: string
-export const SETTING_DNS_OPTION_ATTEMPTS: string
-export const SETTING_DNS_OPTION_DEBUG: string
-export const SETTING_DNS_OPTION_EDNS0: string
-export const SETTING_DNS_OPTION_INET6: string
-export const SETTING_DNS_OPTION_IP6_BYTESTRING: string
-export const SETTING_DNS_OPTION_IP6_DOTINT: string
-export const SETTING_DNS_OPTION_NDOTS: string
-export const SETTING_DNS_OPTION_NO_CHECK_NAMES: string
-export const SETTING_DNS_OPTION_NO_IP6_DOTINT: string
-export const SETTING_DNS_OPTION_NO_RELOAD: string
-export const SETTING_DNS_OPTION_NO_TLD_QUERY: string
-export const SETTING_DNS_OPTION_ROTATE: string
-export const SETTING_DNS_OPTION_SINGLE_REQUEST: string
-export const SETTING_DNS_OPTION_SINGLE_REQUEST_REOPEN: string
-export const SETTING_DNS_OPTION_TIMEOUT: string
-export const SETTING_DNS_OPTION_TRUST_AD: string
-export const SETTING_DNS_OPTION_USE_VC: string
-export const SETTING_DUMMY_SETTING_NAME: string
-export const SETTING_ETHTOOL_SETTING_NAME: string
-export const SETTING_GENERIC_SETTING_NAME: string
-export const SETTING_GSM_APN: string
-export const SETTING_GSM_AUTO_CONFIG: string
-export const SETTING_GSM_DEVICE_ID: string
-export const SETTING_GSM_HOME_ONLY: string
-export const SETTING_GSM_MTU: string
-export const SETTING_GSM_NETWORK_ID: string
-export const SETTING_GSM_NUMBER: string
-export const SETTING_GSM_PASSWORD: string
-export const SETTING_GSM_PASSWORD_FLAGS: string
-export const SETTING_GSM_PIN: string
-export const SETTING_GSM_PIN_FLAGS: string
-export const SETTING_GSM_SETTING_NAME: string
-export const SETTING_GSM_SIM_ID: string
-export const SETTING_GSM_SIM_OPERATOR_ID: string
-export const SETTING_GSM_USERNAME: string
-export const SETTING_HOSTNAME_FROM_DHCP: string
-export const SETTING_HOSTNAME_FROM_DNS_LOOKUP: string
-export const SETTING_HOSTNAME_ONLY_FROM_DEFAULT: string
-export const SETTING_HOSTNAME_PRIORITY: string
-export const SETTING_HOSTNAME_SETTING_NAME: string
-export const SETTING_INFINIBAND_MAC_ADDRESS: string
-export const SETTING_INFINIBAND_MTU: string
-export const SETTING_INFINIBAND_PARENT: string
-export const SETTING_INFINIBAND_P_KEY: string
-export const SETTING_INFINIBAND_SETTING_NAME: string
-export const SETTING_INFINIBAND_TRANSPORT_MODE: string
-export const SETTING_IP4_CONFIG_DHCP_CLIENT_ID: string
-export const SETTING_IP4_CONFIG_DHCP_FQDN: string
-export const SETTING_IP4_CONFIG_DHCP_VENDOR_CLASS_IDENTIFIER: string
-export const SETTING_IP4_CONFIG_METHOD_AUTO: string
-export const SETTING_IP4_CONFIG_METHOD_DISABLED: string
-export const SETTING_IP4_CONFIG_METHOD_LINK_LOCAL: string
-export const SETTING_IP4_CONFIG_METHOD_MANUAL: string
-export const SETTING_IP4_CONFIG_METHOD_SHARED: string
-export const SETTING_IP4_CONFIG_SETTING_NAME: string
-export const SETTING_IP6_CONFIG_ADDR_GEN_MODE: string
-export const SETTING_IP6_CONFIG_DHCP_DUID: string
-export const SETTING_IP6_CONFIG_IP6_PRIVACY: string
-export const SETTING_IP6_CONFIG_METHOD_AUTO: string
-export const SETTING_IP6_CONFIG_METHOD_DHCP: string
-export const SETTING_IP6_CONFIG_METHOD_DISABLED: string
-export const SETTING_IP6_CONFIG_METHOD_IGNORE: string
-export const SETTING_IP6_CONFIG_METHOD_LINK_LOCAL: string
-export const SETTING_IP6_CONFIG_METHOD_MANUAL: string
-export const SETTING_IP6_CONFIG_METHOD_SHARED: string
-export const SETTING_IP6_CONFIG_RA_TIMEOUT: string
-export const SETTING_IP6_CONFIG_SETTING_NAME: string
-export const SETTING_IP6_CONFIG_TOKEN: string
-export const SETTING_IP_CONFIG_ADDRESSES: string
-export const SETTING_IP_CONFIG_DAD_TIMEOUT: string
-export const SETTING_IP_CONFIG_DAD_TIMEOUT_MAX: number
-export const SETTING_IP_CONFIG_DHCP_HOSTNAME: string
-export const SETTING_IP_CONFIG_DHCP_HOSTNAME_FLAGS: string
-export const SETTING_IP_CONFIG_DHCP_IAID: string
-export const SETTING_IP_CONFIG_DHCP_REJECT_SERVERS: string
-export const SETTING_IP_CONFIG_DHCP_SEND_HOSTNAME: string
-export const SETTING_IP_CONFIG_DHCP_TIMEOUT: string
-export const SETTING_IP_CONFIG_DNS: string
-export const SETTING_IP_CONFIG_DNS_OPTIONS: string
-export const SETTING_IP_CONFIG_DNS_PRIORITY: string
-export const SETTING_IP_CONFIG_DNS_SEARCH: string
-export const SETTING_IP_CONFIG_GATEWAY: string
-export const SETTING_IP_CONFIG_IGNORE_AUTO_DNS: string
-export const SETTING_IP_CONFIG_IGNORE_AUTO_ROUTES: string
-export const SETTING_IP_CONFIG_MAY_FAIL: string
-export const SETTING_IP_CONFIG_METHOD: string
-export const SETTING_IP_CONFIG_NEVER_DEFAULT: string
-export const SETTING_IP_CONFIG_REQUIRED_TIMEOUT: string
-export const SETTING_IP_CONFIG_ROUTES: string
-export const SETTING_IP_CONFIG_ROUTE_METRIC: string
-export const SETTING_IP_CONFIG_ROUTE_TABLE: string
-export const SETTING_IP_CONFIG_ROUTING_RULES: string
-export const SETTING_IP_TUNNEL_ENCAPSULATION_LIMIT: string
-export const SETTING_IP_TUNNEL_FLAGS: string
-export const SETTING_IP_TUNNEL_FLOW_LABEL: string
-export const SETTING_IP_TUNNEL_INPUT_KEY: string
-export const SETTING_IP_TUNNEL_LOCAL: string
-export const SETTING_IP_TUNNEL_MODE: string
-export const SETTING_IP_TUNNEL_MTU: string
-export const SETTING_IP_TUNNEL_OUTPUT_KEY: string
-export const SETTING_IP_TUNNEL_PARENT: string
-export const SETTING_IP_TUNNEL_PATH_MTU_DISCOVERY: string
-export const SETTING_IP_TUNNEL_REMOTE: string
-export const SETTING_IP_TUNNEL_SETTING_NAME: string
-export const SETTING_IP_TUNNEL_TOS: string
-export const SETTING_IP_TUNNEL_TTL: string
-export const SETTING_MACSEC_ENCRYPT: string
-export const SETTING_MACSEC_MKA_CAK: string
-export const SETTING_MACSEC_MKA_CAK_FLAGS: string
-export const SETTING_MACSEC_MKA_CAK_LENGTH: number
-export const SETTING_MACSEC_MKA_CKN: string
-export const SETTING_MACSEC_MKA_CKN_LENGTH: number
-export const SETTING_MACSEC_MODE: string
-export const SETTING_MACSEC_PARENT: string
-export const SETTING_MACSEC_PORT: string
-export const SETTING_MACSEC_SEND_SCI: string
-export const SETTING_MACSEC_SETTING_NAME: string
-export const SETTING_MACSEC_VALIDATION: string
-export const SETTING_MACVLAN_MODE: string
-export const SETTING_MACVLAN_PARENT: string
-export const SETTING_MACVLAN_PROMISCUOUS: string
-export const SETTING_MACVLAN_SETTING_NAME: string
-export const SETTING_MACVLAN_TAP: string
-export const SETTING_MATCH_DRIVER: string
-export const SETTING_MATCH_INTERFACE_NAME: string
-export const SETTING_MATCH_KERNEL_COMMAND_LINE: string
-export const SETTING_MATCH_PATH: string
-export const SETTING_MATCH_SETTING_NAME: string
-export const SETTING_NAME: string
-export const SETTING_OLPC_MESH_CHANNEL: string
-export const SETTING_OLPC_MESH_DHCP_ANYCAST_ADDRESS: string
-export const SETTING_OLPC_MESH_SETTING_NAME: string
-export const SETTING_OLPC_MESH_SSID: string
-export const SETTING_OVS_BRIDGE_DATAPATH_TYPE: string
-export const SETTING_OVS_BRIDGE_FAIL_MODE: string
-export const SETTING_OVS_BRIDGE_MCAST_SNOOPING_ENABLE: string
-export const SETTING_OVS_BRIDGE_RSTP_ENABLE: string
-export const SETTING_OVS_BRIDGE_SETTING_NAME: string
-export const SETTING_OVS_BRIDGE_STP_ENABLE: string
-export const SETTING_OVS_DPDK_DEVARGS: string
-export const SETTING_OVS_DPDK_SETTING_NAME: string
-export const SETTING_OVS_EXTERNAL_IDS_DATA: string
-export const SETTING_OVS_EXTERNAL_IDS_SETTING_NAME: string
-export const SETTING_OVS_INTERFACE_SETTING_NAME: string
-export const SETTING_OVS_INTERFACE_TYPE: string
-export const SETTING_OVS_PATCH_PEER: string
-export const SETTING_OVS_PATCH_SETTING_NAME: string
-export const SETTING_OVS_PORT_BOND_DOWNDELAY: string
-export const SETTING_OVS_PORT_BOND_MODE: string
-export const SETTING_OVS_PORT_BOND_UPDELAY: string
-export const SETTING_OVS_PORT_LACP: string
-export const SETTING_OVS_PORT_SETTING_NAME: string
-export const SETTING_OVS_PORT_TAG: string
-export const SETTING_OVS_PORT_VLAN_MODE: string
-export const SETTING_PARAM_FUZZY_IGNORE: number
-export const SETTING_PARAM_REQUIRED: number
-export const SETTING_PARAM_SECRET: number
-export const SETTING_PPPOE_PARENT: string
-export const SETTING_PPPOE_PASSWORD: string
-export const SETTING_PPPOE_PASSWORD_FLAGS: string
-export const SETTING_PPPOE_SERVICE: string
-export const SETTING_PPPOE_SETTING_NAME: string
-export const SETTING_PPPOE_USERNAME: string
-export const SETTING_PPP_BAUD: string
-export const SETTING_PPP_CRTSCTS: string
-export const SETTING_PPP_LCP_ECHO_FAILURE: string
-export const SETTING_PPP_LCP_ECHO_INTERVAL: string
-export const SETTING_PPP_MPPE_STATEFUL: string
-export const SETTING_PPP_MRU: string
-export const SETTING_PPP_MTU: string
-export const SETTING_PPP_NOAUTH: string
-export const SETTING_PPP_NOBSDCOMP: string
-export const SETTING_PPP_NODEFLATE: string
-export const SETTING_PPP_NO_VJ_COMP: string
-export const SETTING_PPP_REFUSE_CHAP: string
-export const SETTING_PPP_REFUSE_EAP: string
-export const SETTING_PPP_REFUSE_MSCHAP: string
-export const SETTING_PPP_REFUSE_MSCHAPV2: string
-export const SETTING_PPP_REFUSE_PAP: string
-export const SETTING_PPP_REQUIRE_MPPE: string
-export const SETTING_PPP_REQUIRE_MPPE_128: string
-export const SETTING_PPP_SETTING_NAME: string
-export const SETTING_PROXY_BROWSER_ONLY: string
-export const SETTING_PROXY_METHOD: string
-export const SETTING_PROXY_PAC_SCRIPT: string
-export const SETTING_PROXY_PAC_URL: string
-export const SETTING_PROXY_SETTING_NAME: string
-export const SETTING_SERIAL_BAUD: string
-export const SETTING_SERIAL_BITS: string
-export const SETTING_SERIAL_PARITY: string
-export const SETTING_SERIAL_SEND_DELAY: string
-export const SETTING_SERIAL_SETTING_NAME: string
-export const SETTING_SERIAL_STOPBITS: string
-export const SETTING_SRIOV_AUTOPROBE_DRIVERS: string
-export const SETTING_SRIOV_SETTING_NAME: string
-export const SETTING_SRIOV_TOTAL_VFS: string
-export const SETTING_SRIOV_VFS: string
-export const SETTING_TC_CONFIG_QDISCS: string
-export const SETTING_TC_CONFIG_SETTING_NAME: string
-export const SETTING_TC_CONFIG_TFILTERS: string
-export const SETTING_TEAM_CONFIG: string
-export const SETTING_TEAM_LINK_WATCHERS: string
-export const SETTING_TEAM_MCAST_REJOIN_COUNT: string
-export const SETTING_TEAM_MCAST_REJOIN_INTERVAL: string
-export const SETTING_TEAM_NOTIFY_MCAST_COUNT_ACTIVEBACKUP_DEFAULT: number
-export const SETTING_TEAM_NOTIFY_PEERS_COUNT: string
-export const SETTING_TEAM_NOTIFY_PEERS_COUNT_ACTIVEBACKUP_DEFAULT: number
-export const SETTING_TEAM_NOTIFY_PEERS_INTERVAL: string
-export const SETTING_TEAM_PORT_CONFIG: string
-export const SETTING_TEAM_PORT_LACP_KEY: string
-export const SETTING_TEAM_PORT_LACP_PRIO: string
-export const SETTING_TEAM_PORT_LACP_PRIO_DEFAULT: number
-export const SETTING_TEAM_PORT_LINK_WATCHERS: string
-export const SETTING_TEAM_PORT_PRIO: string
-export const SETTING_TEAM_PORT_QUEUE_ID: string
-export const SETTING_TEAM_PORT_QUEUE_ID_DEFAULT: number
-export const SETTING_TEAM_PORT_SETTING_NAME: string
-export const SETTING_TEAM_PORT_STICKY: string
-export const SETTING_TEAM_RUNNER: string
-export const SETTING_TEAM_RUNNER_ACTIVE: string
-export const SETTING_TEAM_RUNNER_ACTIVEBACKUP: string
-export const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY: string
-export const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_BANDWIDTH: string
-export const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_COUNT: string
-export const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_LACP_PRIO: string
-export const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_LACP_PRIO_STABLE: string
-export const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_PORT_CONFIG: string
-export const SETTING_TEAM_RUNNER_BROADCAST: string
-export const SETTING_TEAM_RUNNER_FAST_RATE: string
-export const SETTING_TEAM_RUNNER_HWADDR_POLICY: string
-export const SETTING_TEAM_RUNNER_HWADDR_POLICY_BY_ACTIVE: string
-export const SETTING_TEAM_RUNNER_HWADDR_POLICY_ONLY_ACTIVE: string
-export const SETTING_TEAM_RUNNER_HWADDR_POLICY_SAME_ALL: string
-export const SETTING_TEAM_RUNNER_LACP: string
-export const SETTING_TEAM_RUNNER_LOADBALANCE: string
-export const SETTING_TEAM_RUNNER_MIN_PORTS: string
-export const SETTING_TEAM_RUNNER_RANDOM: string
-export const SETTING_TEAM_RUNNER_ROUNDROBIN: string
-export const SETTING_TEAM_RUNNER_SYS_PRIO: string
-export const SETTING_TEAM_RUNNER_SYS_PRIO_DEFAULT: number
-export const SETTING_TEAM_RUNNER_TX_BALANCER: string
-export const SETTING_TEAM_RUNNER_TX_BALANCER_INTERVAL: string
-export const SETTING_TEAM_RUNNER_TX_BALANCER_INTERVAL_DEFAULT: number
-export const SETTING_TEAM_RUNNER_TX_HASH: string
-export const SETTING_TEAM_SETTING_NAME: string
-export const SETTING_TUN_GROUP: string
-export const SETTING_TUN_MODE: string
-export const SETTING_TUN_MULTI_QUEUE: string
-export const SETTING_TUN_OWNER: string
-export const SETTING_TUN_PI: string
-export const SETTING_TUN_SETTING_NAME: string
-export const SETTING_TUN_VNET_HDR: string
-export const SETTING_USER_DATA: string
-export const SETTING_USER_SETTING_NAME: string
-export const SETTING_VETH_PEER: string
-export const SETTING_VETH_SETTING_NAME: string
-export const SETTING_VLAN_EGRESS_PRIORITY_MAP: string
-export const SETTING_VLAN_FLAGS: string
-export const SETTING_VLAN_ID: string
-export const SETTING_VLAN_INGRESS_PRIORITY_MAP: string
-export const SETTING_VLAN_PARENT: string
-export const SETTING_VLAN_SETTING_NAME: string
-export const SETTING_VPN_DATA: string
-export const SETTING_VPN_PERSISTENT: string
-export const SETTING_VPN_SECRETS: string
-export const SETTING_VPN_SERVICE_TYPE: string
-export const SETTING_VPN_SETTING_NAME: string
-export const SETTING_VPN_TIMEOUT: string
-export const SETTING_VPN_USER_NAME: string
-export const SETTING_VRF_SETTING_NAME: string
-export const SETTING_VRF_TABLE: string
-export const SETTING_VXLAN_AGEING: string
-export const SETTING_VXLAN_DESTINATION_PORT: string
-export const SETTING_VXLAN_ID: string
-export const SETTING_VXLAN_L2_MISS: string
-export const SETTING_VXLAN_L3_MISS: string
-export const SETTING_VXLAN_LEARNING: string
-export const SETTING_VXLAN_LIMIT: string
-export const SETTING_VXLAN_LOCAL: string
-export const SETTING_VXLAN_PARENT: string
-export const SETTING_VXLAN_PROXY: string
-export const SETTING_VXLAN_REMOTE: string
-export const SETTING_VXLAN_RSC: string
-export const SETTING_VXLAN_SETTING_NAME: string
-export const SETTING_VXLAN_SOURCE_PORT_MAX: string
-export const SETTING_VXLAN_SOURCE_PORT_MIN: string
-export const SETTING_VXLAN_TOS: string
-export const SETTING_VXLAN_TTL: string
-export const SETTING_WIFI_P2P_PEER: string
-export const SETTING_WIFI_P2P_SETTING_NAME: string
-export const SETTING_WIFI_P2P_WFD_IES: string
-export const SETTING_WIFI_P2P_WPS_METHOD: string
-export const SETTING_WIMAX_MAC_ADDRESS: string
-export const SETTING_WIMAX_NETWORK_NAME: string
-export const SETTING_WIMAX_SETTING_NAME: string
-export const SETTING_WIRED_ACCEPT_ALL_MAC_ADDRESSES: string
-export const SETTING_WIRED_AUTO_NEGOTIATE: string
-export const SETTING_WIRED_CLONED_MAC_ADDRESS: string
-export const SETTING_WIRED_DUPLEX: string
-export const SETTING_WIRED_GENERATE_MAC_ADDRESS_MASK: string
-export const SETTING_WIRED_MAC_ADDRESS: string
-export const SETTING_WIRED_MAC_ADDRESS_BLACKLIST: string
-export const SETTING_WIRED_MTU: string
-export const SETTING_WIRED_PORT: string
-export const SETTING_WIRED_S390_NETTYPE: string
-export const SETTING_WIRED_S390_OPTIONS: string
-export const SETTING_WIRED_S390_SUBCHANNELS: string
-export const SETTING_WIRED_SETTING_NAME: string
-export const SETTING_WIRED_SPEED: string
-export const SETTING_WIRED_WAKE_ON_LAN: string
-export const SETTING_WIRED_WAKE_ON_LAN_PASSWORD: string
-export const SETTING_WIREGUARD_FWMARK: string
-export const SETTING_WIREGUARD_IP4_AUTO_DEFAULT_ROUTE: string
-export const SETTING_WIREGUARD_IP6_AUTO_DEFAULT_ROUTE: string
-export const SETTING_WIREGUARD_LISTEN_PORT: string
-export const SETTING_WIREGUARD_MTU: string
-export const SETTING_WIREGUARD_PEERS: string
-export const SETTING_WIREGUARD_PEER_ROUTES: string
-export const SETTING_WIREGUARD_PRIVATE_KEY: string
-export const SETTING_WIREGUARD_PRIVATE_KEY_FLAGS: string
-export const SETTING_WIREGUARD_SETTING_NAME: string
-export const SETTING_WIRELESS_AP_ISOLATION: string
-export const SETTING_WIRELESS_BAND: string
-export const SETTING_WIRELESS_BSSID: string
-export const SETTING_WIRELESS_CHANNEL: string
-export const SETTING_WIRELESS_CLONED_MAC_ADDRESS: string
-export const SETTING_WIRELESS_GENERATE_MAC_ADDRESS_MASK: string
-export const SETTING_WIRELESS_HIDDEN: string
-export const SETTING_WIRELESS_MAC_ADDRESS: string
-export const SETTING_WIRELESS_MAC_ADDRESS_BLACKLIST: string
-export const SETTING_WIRELESS_MAC_ADDRESS_RANDOMIZATION: string
-export const SETTING_WIRELESS_MODE: string
-export const SETTING_WIRELESS_MODE_ADHOC: string
-export const SETTING_WIRELESS_MODE_AP: string
-export const SETTING_WIRELESS_MODE_INFRA: string
-export const SETTING_WIRELESS_MODE_MESH: string
-export const SETTING_WIRELESS_MTU: string
-export const SETTING_WIRELESS_POWERSAVE: string
-export const SETTING_WIRELESS_RATE: string
-export const SETTING_WIRELESS_SECURITY_AUTH_ALG: string
-export const SETTING_WIRELESS_SECURITY_FILS: string
-export const SETTING_WIRELESS_SECURITY_GROUP: string
-export const SETTING_WIRELESS_SECURITY_KEY_MGMT: string
-export const SETTING_WIRELESS_SECURITY_LEAP_PASSWORD: string
-export const SETTING_WIRELESS_SECURITY_LEAP_PASSWORD_FLAGS: string
-export const SETTING_WIRELESS_SECURITY_LEAP_USERNAME: string
-export const SETTING_WIRELESS_SECURITY_PAIRWISE: string
-export const SETTING_WIRELESS_SECURITY_PMF: string
-export const SETTING_WIRELESS_SECURITY_PROTO: string
-export const SETTING_WIRELESS_SECURITY_PSK: string
-export const SETTING_WIRELESS_SECURITY_PSK_FLAGS: string
-export const SETTING_WIRELESS_SECURITY_SETTING_NAME: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY0: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY1: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY2: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY3: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY_FLAGS: string
-export const SETTING_WIRELESS_SECURITY_WEP_KEY_TYPE: string
-export const SETTING_WIRELESS_SECURITY_WEP_TX_KEYIDX: string
-export const SETTING_WIRELESS_SECURITY_WPS_METHOD: string
-export const SETTING_WIRELESS_SEEN_BSSIDS: string
-export const SETTING_WIRELESS_SETTING_NAME: string
-export const SETTING_WIRELESS_SSID: string
-export const SETTING_WIRELESS_TX_POWER: string
-export const SETTING_WIRELESS_WAKE_ON_WLAN: string
-export const SETTING_WPAN_CHANNEL: string
-export const SETTING_WPAN_CHANNEL_DEFAULT: number
-export const SETTING_WPAN_MAC_ADDRESS: string
-export const SETTING_WPAN_PAGE: string
-export const SETTING_WPAN_PAGE_DEFAULT: number
-export const SETTING_WPAN_PAN_ID: string
-export const SETTING_WPAN_SETTING_NAME: string
-export const SETTING_WPAN_SHORT_ADDRESS: string
-export const SRIOV_VF_ATTRIBUTE_MAC: string
-export const SRIOV_VF_ATTRIBUTE_MAX_TX_RATE: string
-export const SRIOV_VF_ATTRIBUTE_MIN_TX_RATE: string
-export const SRIOV_VF_ATTRIBUTE_SPOOF_CHECK: string
-export const SRIOV_VF_ATTRIBUTE_TRUST: string
-export const TEAM_LINK_WATCHER_ARP_PING: string
-export const TEAM_LINK_WATCHER_ETHTOOL: string
-export const TEAM_LINK_WATCHER_NSNA_PING: string
-export const UTILS_HWADDR_LEN_MAX: number
-export const VLAN_FLAGS_ALL: number
-export const VPN_CONNECTION_BANNER: string
-export const VPN_CONNECTION_VPN_STATE: string
-export const VPN_DBUS_PLUGIN_INTERFACE: string
-export const VPN_DBUS_PLUGIN_PATH: string
-export const VPN_EDITOR_PLUGIN_DESCRIPTION: string
-export const VPN_EDITOR_PLUGIN_NAME: string
-export const VPN_EDITOR_PLUGIN_SERVICE: string
-export const VPN_PLUGIN_CAN_PERSIST: string
-export const VPN_PLUGIN_CONFIG_BANNER: string
-export const VPN_PLUGIN_CONFIG_EXT_GATEWAY: string
-export const VPN_PLUGIN_CONFIG_HAS_IP4: string
-export const VPN_PLUGIN_CONFIG_HAS_IP6: string
-export const VPN_PLUGIN_CONFIG_MTU: string
-export const VPN_PLUGIN_CONFIG_PROXY_PAC: string
-export const VPN_PLUGIN_CONFIG_TUNDEV: string
-export const VPN_PLUGIN_INFO_FILENAME: string
-export const VPN_PLUGIN_INFO_KEYFILE: string
-export const VPN_PLUGIN_INFO_KF_GROUP_CONNECTION: string
-export const VPN_PLUGIN_INFO_KF_GROUP_GNOME: string
-export const VPN_PLUGIN_INFO_KF_GROUP_LIBNM: string
-export const VPN_PLUGIN_INFO_NAME: string
-export const VPN_PLUGIN_IP4_CONFIG_ADDRESS: string
-export const VPN_PLUGIN_IP4_CONFIG_DNS: string
-export const VPN_PLUGIN_IP4_CONFIG_DOMAIN: string
-export const VPN_PLUGIN_IP4_CONFIG_DOMAINS: string
-export const VPN_PLUGIN_IP4_CONFIG_INT_GATEWAY: string
-export const VPN_PLUGIN_IP4_CONFIG_MSS: string
-export const VPN_PLUGIN_IP4_CONFIG_NBNS: string
-export const VPN_PLUGIN_IP4_CONFIG_NEVER_DEFAULT: string
-export const VPN_PLUGIN_IP4_CONFIG_PREFIX: string
-export const VPN_PLUGIN_IP4_CONFIG_PRESERVE_ROUTES: string
-export const VPN_PLUGIN_IP4_CONFIG_PTP: string
-export const VPN_PLUGIN_IP4_CONFIG_ROUTES: string
-export const VPN_PLUGIN_IP6_CONFIG_ADDRESS: string
-export const VPN_PLUGIN_IP6_CONFIG_DNS: string
-export const VPN_PLUGIN_IP6_CONFIG_DOMAIN: string
-export const VPN_PLUGIN_IP6_CONFIG_DOMAINS: string
-export const VPN_PLUGIN_IP6_CONFIG_INT_GATEWAY: string
-export const VPN_PLUGIN_IP6_CONFIG_MSS: string
-export const VPN_PLUGIN_IP6_CONFIG_NEVER_DEFAULT: string
-export const VPN_PLUGIN_IP6_CONFIG_PREFIX: string
-export const VPN_PLUGIN_IP6_CONFIG_PRESERVE_ROUTES: string
-export const VPN_PLUGIN_IP6_CONFIG_PTP: string
-export const VPN_PLUGIN_IP6_CONFIG_ROUTES: string
-export const VPN_PLUGIN_OLD_DBUS_SERVICE_NAME: string
-export const VPN_PLUGIN_OLD_STATE: string
-export const VPN_SERVICE_PLUGIN_DBUS_SERVICE_NAME: string
-export const VPN_SERVICE_PLUGIN_DBUS_WATCH_PEER: string
-export const VPN_SERVICE_PLUGIN_STATE: string
-export const WIFI_P2P_PEER_FLAGS: string
-export const WIFI_P2P_PEER_HW_ADDRESS: string
-export const WIFI_P2P_PEER_LAST_SEEN: string
-export const WIFI_P2P_PEER_MANUFACTURER: string
-export const WIFI_P2P_PEER_MODEL: string
-export const WIFI_P2P_PEER_MODEL_NUMBER: string
-export const WIFI_P2P_PEER_NAME: string
-export const WIFI_P2P_PEER_SERIAL: string
-export const WIFI_P2P_PEER_STRENGTH: string
-export const WIFI_P2P_PEER_WFD_IES: string
-export const WIMAX_NSP_NAME: string
-export const WIMAX_NSP_NETWORK_TYPE: string
-export const WIMAX_NSP_SIGNAL_QUALITY: string
-export const WIREGUARD_PEER_ATTR_ALLOWED_IPS: string
-export const WIREGUARD_PEER_ATTR_ENDPOINT: string
-export const WIREGUARD_PEER_ATTR_PERSISTENT_KEEPALIVE: string
-export const WIREGUARD_PEER_ATTR_PRESHARED_KEY: string
-export const WIREGUARD_PEER_ATTR_PRESHARED_KEY_FLAGS: string
-export const WIREGUARD_PEER_ATTR_PUBLIC_KEY: string
-export const WIREGUARD_PUBLIC_KEY_LEN: number
-export const WIREGUARD_SYMMETRIC_KEY_LEN: number
+const ACCESS_POINT_BSSID: string
+const ACCESS_POINT_FLAGS: string
+const ACCESS_POINT_FREQUENCY: string
+const ACCESS_POINT_HW_ADDRESS: string
+const ACCESS_POINT_LAST_SEEN: string
+const ACCESS_POINT_MAX_BITRATE: string
+const ACCESS_POINT_MODE: string
+const ACCESS_POINT_RSN_FLAGS: string
+const ACCESS_POINT_SSID: string
+const ACCESS_POINT_STRENGTH: string
+const ACCESS_POINT_WPA_FLAGS: string
+const ACTIVE_CONNECTION_CONNECTION: string
+const ACTIVE_CONNECTION_DEFAULT: string
+const ACTIVE_CONNECTION_DEFAULT6: string
+const ACTIVE_CONNECTION_DEVICES: string
+const ACTIVE_CONNECTION_DHCP4_CONFIG: string
+const ACTIVE_CONNECTION_DHCP6_CONFIG: string
+const ACTIVE_CONNECTION_ID: string
+const ACTIVE_CONNECTION_IP4_CONFIG: string
+const ACTIVE_CONNECTION_IP6_CONFIG: string
+const ACTIVE_CONNECTION_MASTER: string
+const ACTIVE_CONNECTION_SPECIFIC_OBJECT_PATH: string
+const ACTIVE_CONNECTION_STATE: string
+const ACTIVE_CONNECTION_STATE_FLAGS: string
+const ACTIVE_CONNECTION_TYPE: string
+const ACTIVE_CONNECTION_UUID: string
+const ACTIVE_CONNECTION_VPN: string
+const BRIDGE_VLAN_VID_MAX: number
+const BRIDGE_VLAN_VID_MIN: number
+const CHECKPOINT_CREATED: string
+const CHECKPOINT_DEVICES: string
+const CHECKPOINT_ROLLBACK_TIMEOUT: string
+const CLIENT_ACTIVATING_CONNECTION: string
+const CLIENT_ACTIVE_CONNECTIONS: string
+const CLIENT_ACTIVE_CONNECTION_ADDED: string
+const CLIENT_ACTIVE_CONNECTION_REMOVED: string
+const CLIENT_ALL_DEVICES: string
+const CLIENT_ANY_DEVICE_ADDED: string
+const CLIENT_ANY_DEVICE_REMOVED: string
+const CLIENT_CAN_MODIFY: string
+const CLIENT_CAPABILITIES: string
+const CLIENT_CHECKPOINTS: string
+const CLIENT_CONNECTIONS: string
+const CLIENT_CONNECTION_ADDED: string
+const CLIENT_CONNECTION_REMOVED: string
+const CLIENT_CONNECTIVITY: string
+const CLIENT_CONNECTIVITY_CHECK_AVAILABLE: string
+const CLIENT_CONNECTIVITY_CHECK_ENABLED: string
+const CLIENT_CONNECTIVITY_CHECK_URI: string
+const CLIENT_DBUS_CONNECTION: string
+const CLIENT_DBUS_NAME_OWNER: string
+const CLIENT_DEVICES: string
+const CLIENT_DEVICE_ADDED: string
+const CLIENT_DEVICE_REMOVED: string
+const CLIENT_DNS_CONFIGURATION: string
+const CLIENT_DNS_MODE: string
+const CLIENT_DNS_RC_MANAGER: string
+const CLIENT_HOSTNAME: string
+const CLIENT_INSTANCE_FLAGS: string
+const CLIENT_METERED: string
+const CLIENT_NETWORKING_ENABLED: string
+const CLIENT_NM_RUNNING: string
+const CLIENT_PERMISSIONS_STATE: string
+const CLIENT_PERMISSION_CHANGED: string
+const CLIENT_PRIMARY_CONNECTION: string
+const CLIENT_STARTUP: string
+const CLIENT_STATE: string
+const CLIENT_VERSION: string
+const CLIENT_WIMAX_ENABLED: string
+const CLIENT_WIMAX_HARDWARE_ENABLED: string
+const CLIENT_WIRELESS_ENABLED: string
+const CLIENT_WIRELESS_HARDWARE_ENABLED: string
+const CLIENT_WWAN_ENABLED: string
+const CLIENT_WWAN_HARDWARE_ENABLED: string
+const CONNECTION_CHANGED: string
+const CONNECTION_NORMALIZE_PARAM_IP4_CONFIG_METHOD: string
+const CONNECTION_NORMALIZE_PARAM_IP6_CONFIG_METHOD: string
+const CONNECTION_SECRETS_CLEARED: string
+const CONNECTION_SECRETS_UPDATED: string
+const DBUS_INTERFACE: string
+const DBUS_INTERFACE_DNS_MANAGER: string
+const DBUS_INTERFACE_SETTINGS: string
+const DBUS_INTERFACE_SETTINGS_CONNECTION: string
+const DBUS_INTERFACE_SETTINGS_CONNECTION_SECRETS: string
+const DBUS_INTERFACE_VPN: string
+const DBUS_INTERFACE_VPN_CONNECTION: string
+const DBUS_INVALID_VPN_CONNECTION: string
+const DBUS_NO_ACTIVE_VPN_CONNECTION: string
+const DBUS_NO_VPN_CONNECTIONS: string
+const DBUS_PATH: string
+const DBUS_PATH_AGENT_MANAGER: string
+const DBUS_PATH_DNS_MANAGER: string
+const DBUS_PATH_SECRET_AGENT: string
+const DBUS_PATH_SETTINGS: string
+const DBUS_PATH_SETTINGS_CONNECTION: string
+const DBUS_PATH_VPN: string
+const DBUS_PATH_VPN_CONNECTION: string
+const DBUS_SERVICE: string
+const DBUS_VPN_ALREADY_STARTED: string
+const DBUS_VPN_ALREADY_STOPPED: string
+const DBUS_VPN_BAD_ARGUMENTS: string
+const DBUS_VPN_ERROR_PREFIX: string
+const DBUS_VPN_INTERACTIVE_NOT_SUPPORTED: string
+const DBUS_VPN_SIGNAL_CONNECT_FAILED: string
+const DBUS_VPN_SIGNAL_IP4_CONFIG: string
+const DBUS_VPN_SIGNAL_IP_CONFIG_BAD: string
+const DBUS_VPN_SIGNAL_LAUNCH_FAILED: string
+const DBUS_VPN_SIGNAL_LOGIN_BANNER: string
+const DBUS_VPN_SIGNAL_LOGIN_FAILED: string
+const DBUS_VPN_SIGNAL_STATE_CHANGE: string
+const DBUS_VPN_SIGNAL_VPN_CONFIG_BAD: string
+const DBUS_VPN_STARTING_IN_PROGRESS: string
+const DBUS_VPN_STOPPING_IN_PROGRESS: string
+const DBUS_VPN_WRONG_STATE: string
+const DEVICE_6LOWPAN_HW_ADDRESS: string
+const DEVICE_6LOWPAN_PARENT: string
+const DEVICE_ACTIVE_CONNECTION: string
+const DEVICE_ADSL_CARRIER: string
+const DEVICE_AUTOCONNECT: string
+const DEVICE_AVAILABLE_CONNECTIONS: string
+const DEVICE_BOND_CARRIER: string
+const DEVICE_BOND_HW_ADDRESS: string
+const DEVICE_BOND_SLAVES: string
+const DEVICE_BRIDGE_CARRIER: string
+const DEVICE_BRIDGE_HW_ADDRESS: string
+const DEVICE_BRIDGE_SLAVES: string
+const DEVICE_BT_CAPABILITIES: string
+const DEVICE_BT_HW_ADDRESS: string
+const DEVICE_BT_NAME: string
+const DEVICE_CAPABILITIES: string
+const DEVICE_DEVICE_TYPE: string
+const DEVICE_DHCP4_CONFIG: string
+const DEVICE_DHCP6_CONFIG: string
+const DEVICE_DRIVER: string
+const DEVICE_DRIVER_VERSION: string
+const DEVICE_DUMMY_HW_ADDRESS: string
+const DEVICE_ETHERNET_CARRIER: string
+const DEVICE_ETHERNET_HW_ADDRESS: string
+const DEVICE_ETHERNET_PERMANENT_HW_ADDRESS: string
+const DEVICE_ETHERNET_S390_SUBCHANNELS: string
+const DEVICE_ETHERNET_SPEED: string
+const DEVICE_FIRMWARE_MISSING: string
+const DEVICE_FIRMWARE_VERSION: string
+const DEVICE_GENERIC_HW_ADDRESS: string
+const DEVICE_GENERIC_TYPE_DESCRIPTION: string
+const DEVICE_HW_ADDRESS: string
+const DEVICE_INFINIBAND_CARRIER: string
+const DEVICE_INFINIBAND_HW_ADDRESS: string
+const DEVICE_INTERFACE: string
+const DEVICE_INTERFACE_FLAGS: string
+const DEVICE_IP4_CONFIG: string
+const DEVICE_IP4_CONNECTIVITY: string
+const DEVICE_IP6_CONFIG: string
+const DEVICE_IP6_CONNECTIVITY: string
+const DEVICE_IP_INTERFACE: string
+const DEVICE_IP_TUNNEL_ENCAPSULATION_LIMIT: string
+const DEVICE_IP_TUNNEL_FLAGS: string
+const DEVICE_IP_TUNNEL_FLOW_LABEL: string
+const DEVICE_IP_TUNNEL_INPUT_KEY: string
+const DEVICE_IP_TUNNEL_LOCAL: string
+const DEVICE_IP_TUNNEL_MODE: string
+const DEVICE_IP_TUNNEL_OUTPUT_KEY: string
+const DEVICE_IP_TUNNEL_PARENT: string
+const DEVICE_IP_TUNNEL_PATH_MTU_DISCOVERY: string
+const DEVICE_IP_TUNNEL_REMOTE: string
+const DEVICE_IP_TUNNEL_TOS: string
+const DEVICE_IP_TUNNEL_TTL: string
+const DEVICE_LLDP_NEIGHBORS: string
+const DEVICE_MACSEC_CIPHER_SUITE: string
+const DEVICE_MACSEC_ENCODING_SA: string
+const DEVICE_MACSEC_ENCRYPT: string
+const DEVICE_MACSEC_ES: string
+const DEVICE_MACSEC_HW_ADDRESS: string
+const DEVICE_MACSEC_ICV_LENGTH: string
+const DEVICE_MACSEC_INCLUDE_SCI: string
+const DEVICE_MACSEC_PARENT: string
+const DEVICE_MACSEC_PROTECT: string
+const DEVICE_MACSEC_REPLAY_PROTECT: string
+const DEVICE_MACSEC_SCB: string
+const DEVICE_MACSEC_SCI: string
+const DEVICE_MACSEC_VALIDATION: string
+const DEVICE_MACSEC_WINDOW: string
+const DEVICE_MACVLAN_HW_ADDRESS: string
+const DEVICE_MACVLAN_MODE: string
+const DEVICE_MACVLAN_NO_PROMISC: string
+const DEVICE_MACVLAN_PARENT: string
+const DEVICE_MACVLAN_TAP: string
+const DEVICE_MANAGED: string
+const DEVICE_METERED: string
+const DEVICE_MODEM_APN: string
+const DEVICE_MODEM_CURRENT_CAPABILITIES: string
+const DEVICE_MODEM_DEVICE_ID: string
+const DEVICE_MODEM_MODEM_CAPABILITIES: string
+const DEVICE_MODEM_OPERATOR_CODE: string
+const DEVICE_MTU: string
+const DEVICE_NM_PLUGIN_MISSING: string
+const DEVICE_OLPC_MESH_ACTIVE_CHANNEL: string
+const DEVICE_OLPC_MESH_COMPANION: string
+const DEVICE_OLPC_MESH_HW_ADDRESS: string
+const DEVICE_OVS_BRIDGE_SLAVES: string
+const DEVICE_OVS_PORT_SLAVES: string
+const DEVICE_PATH: string
+const DEVICE_PHYSICAL_PORT_ID: string
+const DEVICE_PORTS: string
+const DEVICE_PRODUCT: string
+const DEVICE_REAL: string
+const DEVICE_STATE: string
+const DEVICE_STATE_REASON: string
+const DEVICE_TEAM_CARRIER: string
+const DEVICE_TEAM_CONFIG: string
+const DEVICE_TEAM_HW_ADDRESS: string
+const DEVICE_TEAM_SLAVES: string
+const DEVICE_TUN_GROUP: string
+const DEVICE_TUN_HW_ADDRESS: string
+const DEVICE_TUN_MODE: string
+const DEVICE_TUN_MULTI_QUEUE: string
+const DEVICE_TUN_NO_PI: string
+const DEVICE_TUN_OWNER: string
+const DEVICE_TUN_VNET_HDR: string
+const DEVICE_UDI: string
+const DEVICE_VENDOR: string
+const DEVICE_VETH_PEER: string
+const DEVICE_VLAN_CARRIER: string
+const DEVICE_VLAN_HW_ADDRESS: string
+const DEVICE_VLAN_PARENT: string
+const DEVICE_VLAN_VLAN_ID: string
+const DEVICE_VRF_TABLE: string
+const DEVICE_VXLAN_AGEING: string
+const DEVICE_VXLAN_CARRIER: string
+const DEVICE_VXLAN_DST_PORT: string
+const DEVICE_VXLAN_GROUP: string
+const DEVICE_VXLAN_HW_ADDRESS: string
+const DEVICE_VXLAN_ID: string
+const DEVICE_VXLAN_L2MISS: string
+const DEVICE_VXLAN_L3MISS: string
+const DEVICE_VXLAN_LEARNING: string
+const DEVICE_VXLAN_LIMIT: string
+const DEVICE_VXLAN_LOCAL: string
+const DEVICE_VXLAN_PARENT: string
+const DEVICE_VXLAN_PROXY: string
+const DEVICE_VXLAN_RSC: string
+const DEVICE_VXLAN_SRC_PORT_MAX: string
+const DEVICE_VXLAN_SRC_PORT_MIN: string
+const DEVICE_VXLAN_TOS: string
+const DEVICE_VXLAN_TTL: string
+const DEVICE_WIFI_ACCESS_POINTS: string
+const DEVICE_WIFI_ACTIVE_ACCESS_POINT: string
+const DEVICE_WIFI_BITRATE: string
+const DEVICE_WIFI_CAPABILITIES: string
+const DEVICE_WIFI_HW_ADDRESS: string
+const DEVICE_WIFI_LAST_SCAN: string
+const DEVICE_WIFI_MODE: string
+const DEVICE_WIFI_P2P_HW_ADDRESS: string
+const DEVICE_WIFI_P2P_PEERS: string
+const DEVICE_WIFI_P2P_WFDIES: string
+const DEVICE_WIFI_PERMANENT_HW_ADDRESS: string
+const DEVICE_WIMAX_ACTIVE_NSP: string
+const DEVICE_WIMAX_BSID: string
+const DEVICE_WIMAX_CENTER_FREQUENCY: string
+const DEVICE_WIMAX_CINR: string
+const DEVICE_WIMAX_HW_ADDRESS: string
+const DEVICE_WIMAX_NSPS: string
+const DEVICE_WIMAX_RSSI: string
+const DEVICE_WIMAX_TX_POWER: string
+const DEVICE_WIREGUARD_FWMARK: string
+const DEVICE_WIREGUARD_LISTEN_PORT: string
+const DEVICE_WIREGUARD_PUBLIC_KEY: string
+const DEVICE_WPAN_HW_ADDRESS: string
+const DHCP_CONFIG_FAMILY: string
+const DHCP_CONFIG_OPTIONS: string
+const ETHTOOL_OPTNAME_COALESCE_ADAPTIVE_RX: string
+const ETHTOOL_OPTNAME_COALESCE_ADAPTIVE_TX: string
+const ETHTOOL_OPTNAME_COALESCE_PKT_RATE_HIGH: string
+const ETHTOOL_OPTNAME_COALESCE_PKT_RATE_LOW: string
+const ETHTOOL_OPTNAME_COALESCE_RX_FRAMES: string
+const ETHTOOL_OPTNAME_COALESCE_RX_FRAMES_HIGH: string
+const ETHTOOL_OPTNAME_COALESCE_RX_FRAMES_IRQ: string
+const ETHTOOL_OPTNAME_COALESCE_RX_FRAMES_LOW: string
+const ETHTOOL_OPTNAME_COALESCE_RX_USECS: string
+const ETHTOOL_OPTNAME_COALESCE_RX_USECS_HIGH: string
+const ETHTOOL_OPTNAME_COALESCE_RX_USECS_IRQ: string
+const ETHTOOL_OPTNAME_COALESCE_RX_USECS_LOW: string
+const ETHTOOL_OPTNAME_COALESCE_SAMPLE_INTERVAL: string
+const ETHTOOL_OPTNAME_COALESCE_STATS_BLOCK_USECS: string
+const ETHTOOL_OPTNAME_COALESCE_TX_FRAMES: string
+const ETHTOOL_OPTNAME_COALESCE_TX_FRAMES_HIGH: string
+const ETHTOOL_OPTNAME_COALESCE_TX_FRAMES_IRQ: string
+const ETHTOOL_OPTNAME_COALESCE_TX_FRAMES_LOW: string
+const ETHTOOL_OPTNAME_COALESCE_TX_USECS: string
+const ETHTOOL_OPTNAME_COALESCE_TX_USECS_HIGH: string
+const ETHTOOL_OPTNAME_COALESCE_TX_USECS_IRQ: string
+const ETHTOOL_OPTNAME_COALESCE_TX_USECS_LOW: string
+const ETHTOOL_OPTNAME_FEATURE_ESP_HW_OFFLOAD: string
+const ETHTOOL_OPTNAME_FEATURE_ESP_TX_CSUM_HW_OFFLOAD: string
+const ETHTOOL_OPTNAME_FEATURE_FCOE_MTU: string
+const ETHTOOL_OPTNAME_FEATURE_GRO: string
+const ETHTOOL_OPTNAME_FEATURE_GSO: string
+const ETHTOOL_OPTNAME_FEATURE_HIGHDMA: string
+const ETHTOOL_OPTNAME_FEATURE_HW_TC_OFFLOAD: string
+const ETHTOOL_OPTNAME_FEATURE_L2_FWD_OFFLOAD: string
+const ETHTOOL_OPTNAME_FEATURE_LOOPBACK: string
+const ETHTOOL_OPTNAME_FEATURE_LRO: string
+const ETHTOOL_OPTNAME_FEATURE_MACSEC_HW_OFFLOAD: string
+const ETHTOOL_OPTNAME_FEATURE_NTUPLE: string
+const ETHTOOL_OPTNAME_FEATURE_RX: string
+const ETHTOOL_OPTNAME_FEATURE_RXHASH: string
+const ETHTOOL_OPTNAME_FEATURE_RXVLAN: string
+const ETHTOOL_OPTNAME_FEATURE_RX_ALL: string
+const ETHTOOL_OPTNAME_FEATURE_RX_FCS: string
+const ETHTOOL_OPTNAME_FEATURE_RX_GRO_HW: string
+const ETHTOOL_OPTNAME_FEATURE_RX_GRO_LIST: string
+const ETHTOOL_OPTNAME_FEATURE_RX_UDP_GRO_FORWARDING: string
+const ETHTOOL_OPTNAME_FEATURE_RX_UDP_TUNNEL_PORT_OFFLOAD: string
+const ETHTOOL_OPTNAME_FEATURE_RX_VLAN_FILTER: string
+const ETHTOOL_OPTNAME_FEATURE_RX_VLAN_STAG_FILTER: string
+const ETHTOOL_OPTNAME_FEATURE_RX_VLAN_STAG_HW_PARSE: string
+const ETHTOOL_OPTNAME_FEATURE_SG: string
+const ETHTOOL_OPTNAME_FEATURE_TLS_HW_RECORD: string
+const ETHTOOL_OPTNAME_FEATURE_TLS_HW_RX_OFFLOAD: string
+const ETHTOOL_OPTNAME_FEATURE_TLS_HW_TX_OFFLOAD: string
+const ETHTOOL_OPTNAME_FEATURE_TSO: string
+const ETHTOOL_OPTNAME_FEATURE_TX: string
+const ETHTOOL_OPTNAME_FEATURE_TXVLAN: string
+const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_FCOE_CRC: string
+const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_IPV4: string
+const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_IPV6: string
+const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_IP_GENERIC: string
+const ETHTOOL_OPTNAME_FEATURE_TX_CHECKSUM_SCTP: string
+const ETHTOOL_OPTNAME_FEATURE_TX_ESP_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_FCOE_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_GRE_CSUM_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_GRE_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_GSO_LIST: string
+const ETHTOOL_OPTNAME_FEATURE_TX_GSO_PARTIAL: string
+const ETHTOOL_OPTNAME_FEATURE_TX_GSO_ROBUST: string
+const ETHTOOL_OPTNAME_FEATURE_TX_IPXIP4_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_IPXIP6_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_NOCACHE_COPY: string
+const ETHTOOL_OPTNAME_FEATURE_TX_SCATTER_GATHER: string
+const ETHTOOL_OPTNAME_FEATURE_TX_SCATTER_GATHER_FRAGLIST: string
+const ETHTOOL_OPTNAME_FEATURE_TX_SCTP_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_TCP6_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_TCP_ECN_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_TCP_MANGLEID_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_TCP_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_TUNNEL_REMCSUM_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_UDP_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_UDP_TNL_CSUM_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_UDP_TNL_SEGMENTATION: string
+const ETHTOOL_OPTNAME_FEATURE_TX_VLAN_STAG_HW_INSERT: string
+const ETHTOOL_OPTNAME_PAUSE_AUTONEG: string
+const ETHTOOL_OPTNAME_PAUSE_RX: string
+const ETHTOOL_OPTNAME_PAUSE_TX: string
+const ETHTOOL_OPTNAME_RING_RX: string
+const ETHTOOL_OPTNAME_RING_RX_JUMBO: string
+const ETHTOOL_OPTNAME_RING_RX_MINI: string
+const ETHTOOL_OPTNAME_RING_TX: string
+const IP_ADDRESS_ATTRIBUTE_LABEL: string
+const IP_CONFIG_ADDRESSES: string
+const IP_CONFIG_DOMAINS: string
+const IP_CONFIG_FAMILY: string
+const IP_CONFIG_GATEWAY: string
+const IP_CONFIG_NAMESERVERS: string
+const IP_CONFIG_ROUTES: string
+const IP_CONFIG_SEARCHES: string
+const IP_CONFIG_WINS_SERVERS: string
+const IP_ROUTE_ATTRIBUTE_CWND: string
+const IP_ROUTE_ATTRIBUTE_FROM: string
+const IP_ROUTE_ATTRIBUTE_INITCWND: string
+const IP_ROUTE_ATTRIBUTE_INITRWND: string
+const IP_ROUTE_ATTRIBUTE_LOCK_CWND: string
+const IP_ROUTE_ATTRIBUTE_LOCK_INITCWND: string
+const IP_ROUTE_ATTRIBUTE_LOCK_INITRWND: string
+const IP_ROUTE_ATTRIBUTE_LOCK_MTU: string
+const IP_ROUTE_ATTRIBUTE_LOCK_WINDOW: string
+const IP_ROUTE_ATTRIBUTE_MTU: string
+const IP_ROUTE_ATTRIBUTE_ONLINK: string
+const IP_ROUTE_ATTRIBUTE_SCOPE: string
+const IP_ROUTE_ATTRIBUTE_SRC: string
+const IP_ROUTE_ATTRIBUTE_TABLE: string
+const IP_ROUTE_ATTRIBUTE_TOS: string
+const IP_ROUTE_ATTRIBUTE_TYPE: string
+const IP_ROUTE_ATTRIBUTE_WINDOW: string
+const LLDP_ATTR_CHASSIS_ID: string
+const LLDP_ATTR_CHASSIS_ID_TYPE: string
+const LLDP_ATTR_DESTINATION: string
+const LLDP_ATTR_IEEE_802_1_PPVID: string
+const LLDP_ATTR_IEEE_802_1_PPVIDS: string
+const LLDP_ATTR_IEEE_802_1_PPVID_FLAGS: string
+const LLDP_ATTR_IEEE_802_1_PVID: string
+const LLDP_ATTR_IEEE_802_1_VID: string
+const LLDP_ATTR_IEEE_802_1_VLANS: string
+const LLDP_ATTR_IEEE_802_1_VLAN_NAME: string
+const LLDP_ATTR_IEEE_802_3_MAC_PHY_CONF: string
+const LLDP_ATTR_IEEE_802_3_MAX_FRAME_SIZE: string
+const LLDP_ATTR_IEEE_802_3_POWER_VIA_MDI: string
+const LLDP_ATTR_MANAGEMENT_ADDRESSES: string
+const LLDP_ATTR_MUD_URL: string
+const LLDP_ATTR_PORT_DESCRIPTION: string
+const LLDP_ATTR_PORT_ID: string
+const LLDP_ATTR_PORT_ID_TYPE: string
+const LLDP_ATTR_RAW: string
+const LLDP_ATTR_SYSTEM_CAPABILITIES: string
+const LLDP_ATTR_SYSTEM_DESCRIPTION: string
+const LLDP_ATTR_SYSTEM_NAME: string
+const LLDP_DEST_NEAREST_BRIDGE: string
+const LLDP_DEST_NEAREST_CUSTOMER_BRIDGE: string
+const LLDP_DEST_NEAREST_NON_TPMR_BRIDGE: string
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
+const OBJECT_CLIENT: string
+const OBJECT_PATH: string
+const REMOTE_CONNECTION_DBUS_CONNECTION: string
+const REMOTE_CONNECTION_FILENAME: string
+const REMOTE_CONNECTION_FLAGS: string
+const REMOTE_CONNECTION_PATH: string
+const REMOTE_CONNECTION_UNSAVED: string
+const REMOTE_CONNECTION_VISIBLE: string
+const SECRET_AGENT_OLD_AUTO_REGISTER: string
+const SECRET_AGENT_OLD_CAPABILITIES: string
+const SECRET_AGENT_OLD_DBUS_CONNECTION: string
+const SECRET_AGENT_OLD_IDENTIFIER: string
+const SECRET_AGENT_OLD_REGISTERED: string
+const SETTING_6LOWPAN_PARENT: string
+const SETTING_6LOWPAN_SETTING_NAME: string
+const SETTING_802_1X_ALTSUBJECT_MATCHES: string
+const SETTING_802_1X_ANONYMOUS_IDENTITY: string
+const SETTING_802_1X_AUTH_TIMEOUT: string
+const SETTING_802_1X_CA_CERT: string
+const SETTING_802_1X_CA_CERT_PASSWORD: string
+const SETTING_802_1X_CA_CERT_PASSWORD_FLAGS: string
+const SETTING_802_1X_CA_PATH: string
+const SETTING_802_1X_CERT_SCHEME_PREFIX_PATH: string
+const SETTING_802_1X_CERT_SCHEME_PREFIX_PKCS11: string
+const SETTING_802_1X_CLIENT_CERT: string
+const SETTING_802_1X_CLIENT_CERT_PASSWORD: string
+const SETTING_802_1X_CLIENT_CERT_PASSWORD_FLAGS: string
+const SETTING_802_1X_DOMAIN_MATCH: string
+const SETTING_802_1X_DOMAIN_SUFFIX_MATCH: string
+const SETTING_802_1X_EAP: string
+const SETTING_802_1X_IDENTITY: string
+const SETTING_802_1X_OPTIONAL: string
+const SETTING_802_1X_PAC_FILE: string
+const SETTING_802_1X_PASSWORD: string
+const SETTING_802_1X_PASSWORD_FLAGS: string
+const SETTING_802_1X_PASSWORD_RAW: string
+const SETTING_802_1X_PASSWORD_RAW_FLAGS: string
+const SETTING_802_1X_PHASE1_AUTH_FLAGS: string
+const SETTING_802_1X_PHASE1_FAST_PROVISIONING: string
+const SETTING_802_1X_PHASE1_PEAPLABEL: string
+const SETTING_802_1X_PHASE1_PEAPVER: string
+const SETTING_802_1X_PHASE2_ALTSUBJECT_MATCHES: string
+const SETTING_802_1X_PHASE2_AUTH: string
+const SETTING_802_1X_PHASE2_AUTHEAP: string
+const SETTING_802_1X_PHASE2_CA_CERT: string
+const SETTING_802_1X_PHASE2_CA_CERT_PASSWORD: string
+const SETTING_802_1X_PHASE2_CA_CERT_PASSWORD_FLAGS: string
+const SETTING_802_1X_PHASE2_CA_PATH: string
+const SETTING_802_1X_PHASE2_CLIENT_CERT: string
+const SETTING_802_1X_PHASE2_CLIENT_CERT_PASSWORD: string
+const SETTING_802_1X_PHASE2_CLIENT_CERT_PASSWORD_FLAGS: string
+const SETTING_802_1X_PHASE2_DOMAIN_MATCH: string
+const SETTING_802_1X_PHASE2_DOMAIN_SUFFIX_MATCH: string
+const SETTING_802_1X_PHASE2_PRIVATE_KEY: string
+const SETTING_802_1X_PHASE2_PRIVATE_KEY_PASSWORD: string
+const SETTING_802_1X_PHASE2_PRIVATE_KEY_PASSWORD_FLAGS: string
+const SETTING_802_1X_PHASE2_SUBJECT_MATCH: string
+const SETTING_802_1X_PIN: string
+const SETTING_802_1X_PIN_FLAGS: string
+const SETTING_802_1X_PRIVATE_KEY: string
+const SETTING_802_1X_PRIVATE_KEY_PASSWORD: string
+const SETTING_802_1X_PRIVATE_KEY_PASSWORD_FLAGS: string
+const SETTING_802_1X_SETTING_NAME: string
+const SETTING_802_1X_SUBJECT_MATCH: string
+const SETTING_802_1X_SYSTEM_CA_CERTS: string
+const SETTING_ADSL_ENCAPSULATION: string
+const SETTING_ADSL_ENCAPSULATION_LLC: string
+const SETTING_ADSL_ENCAPSULATION_VCMUX: string
+const SETTING_ADSL_PASSWORD: string
+const SETTING_ADSL_PASSWORD_FLAGS: string
+const SETTING_ADSL_PROTOCOL: string
+const SETTING_ADSL_PROTOCOL_IPOATM: string
+const SETTING_ADSL_PROTOCOL_PPPOA: string
+const SETTING_ADSL_PROTOCOL_PPPOE: string
+const SETTING_ADSL_SETTING_NAME: string
+const SETTING_ADSL_USERNAME: string
+const SETTING_ADSL_VCI: string
+const SETTING_ADSL_VPI: string
+const SETTING_BLUETOOTH_BDADDR: string
+const SETTING_BLUETOOTH_SETTING_NAME: string
+const SETTING_BLUETOOTH_TYPE: string
+const SETTING_BLUETOOTH_TYPE_DUN: string
+const SETTING_BLUETOOTH_TYPE_NAP: string
+const SETTING_BLUETOOTH_TYPE_PANU: string
+const SETTING_BOND_OPTIONS: string
+const SETTING_BOND_OPTION_ACTIVE_SLAVE: string
+const SETTING_BOND_OPTION_AD_ACTOR_SYSTEM: string
+const SETTING_BOND_OPTION_AD_ACTOR_SYS_PRIO: string
+const SETTING_BOND_OPTION_AD_SELECT: string
+const SETTING_BOND_OPTION_AD_USER_PORT_KEY: string
+const SETTING_BOND_OPTION_ALL_SLAVES_ACTIVE: string
+const SETTING_BOND_OPTION_ARP_ALL_TARGETS: string
+const SETTING_BOND_OPTION_ARP_INTERVAL: string
+const SETTING_BOND_OPTION_ARP_IP_TARGET: string
+const SETTING_BOND_OPTION_ARP_VALIDATE: string
+const SETTING_BOND_OPTION_DOWNDELAY: string
+const SETTING_BOND_OPTION_FAIL_OVER_MAC: string
+const SETTING_BOND_OPTION_LACP_RATE: string
+const SETTING_BOND_OPTION_LP_INTERVAL: string
+const SETTING_BOND_OPTION_MIIMON: string
+const SETTING_BOND_OPTION_MIN_LINKS: string
+const SETTING_BOND_OPTION_MODE: string
+const SETTING_BOND_OPTION_NUM_GRAT_ARP: string
+const SETTING_BOND_OPTION_NUM_UNSOL_NA: string
+const SETTING_BOND_OPTION_PACKETS_PER_SLAVE: string
+const SETTING_BOND_OPTION_PEER_NOTIF_DELAY: string
+const SETTING_BOND_OPTION_PRIMARY: string
+const SETTING_BOND_OPTION_PRIMARY_RESELECT: string
+const SETTING_BOND_OPTION_RESEND_IGMP: string
+const SETTING_BOND_OPTION_TLB_DYNAMIC_LB: string
+const SETTING_BOND_OPTION_UPDELAY: string
+const SETTING_BOND_OPTION_USE_CARRIER: string
+const SETTING_BOND_OPTION_XMIT_HASH_POLICY: string
+const SETTING_BOND_PORT_QUEUE_ID: string
+const SETTING_BOND_PORT_SETTING_NAME: string
+const SETTING_BOND_SETTING_NAME: string
+const SETTING_BRIDGE_AGEING_TIME: string
+const SETTING_BRIDGE_FORWARD_DELAY: string
+const SETTING_BRIDGE_GROUP_ADDRESS: string
+const SETTING_BRIDGE_GROUP_FORWARD_MASK: string
+const SETTING_BRIDGE_HELLO_TIME: string
+const SETTING_BRIDGE_MAC_ADDRESS: string
+const SETTING_BRIDGE_MAX_AGE: string
+const SETTING_BRIDGE_MULTICAST_HASH_MAX: string
+const SETTING_BRIDGE_MULTICAST_LAST_MEMBER_COUNT: string
+const SETTING_BRIDGE_MULTICAST_LAST_MEMBER_INTERVAL: string
+const SETTING_BRIDGE_MULTICAST_MEMBERSHIP_INTERVAL: string
+const SETTING_BRIDGE_MULTICAST_QUERIER: string
+const SETTING_BRIDGE_MULTICAST_QUERIER_INTERVAL: string
+const SETTING_BRIDGE_MULTICAST_QUERY_INTERVAL: string
+const SETTING_BRIDGE_MULTICAST_QUERY_RESPONSE_INTERVAL: string
+const SETTING_BRIDGE_MULTICAST_QUERY_USE_IFADDR: string
+const SETTING_BRIDGE_MULTICAST_ROUTER: string
+const SETTING_BRIDGE_MULTICAST_SNOOPING: string
+const SETTING_BRIDGE_MULTICAST_STARTUP_QUERY_COUNT: string
+const SETTING_BRIDGE_MULTICAST_STARTUP_QUERY_INTERVAL: string
+const SETTING_BRIDGE_PORT_HAIRPIN_MODE: string
+const SETTING_BRIDGE_PORT_PATH_COST: string
+const SETTING_BRIDGE_PORT_PRIORITY: string
+const SETTING_BRIDGE_PORT_SETTING_NAME: string
+const SETTING_BRIDGE_PORT_VLANS: string
+const SETTING_BRIDGE_PRIORITY: string
+const SETTING_BRIDGE_SETTING_NAME: string
+const SETTING_BRIDGE_STP: string
+const SETTING_BRIDGE_VLANS: string
+const SETTING_BRIDGE_VLAN_DEFAULT_PVID: string
+const SETTING_BRIDGE_VLAN_FILTERING: string
+const SETTING_BRIDGE_VLAN_PROTOCOL: string
+const SETTING_BRIDGE_VLAN_STATS_ENABLED: string
+const SETTING_CDMA_MTU: string
+const SETTING_CDMA_NUMBER: string
+const SETTING_CDMA_PASSWORD: string
+const SETTING_CDMA_PASSWORD_FLAGS: string
+const SETTING_CDMA_SETTING_NAME: string
+const SETTING_CDMA_USERNAME: string
+const SETTING_CONNECTION_AUTH_RETRIES: string
+const SETTING_CONNECTION_AUTOCONNECT: string
+const SETTING_CONNECTION_AUTOCONNECT_PRIORITY: string
+const SETTING_CONNECTION_AUTOCONNECT_PRIORITY_DEFAULT: number
+const SETTING_CONNECTION_AUTOCONNECT_PRIORITY_MAX: number
+const SETTING_CONNECTION_AUTOCONNECT_PRIORITY_MIN: number
+const SETTING_CONNECTION_AUTOCONNECT_RETRIES: string
+const SETTING_CONNECTION_AUTOCONNECT_SLAVES: string
+const SETTING_CONNECTION_DNS_OVER_TLS: string
+const SETTING_CONNECTION_GATEWAY_PING_TIMEOUT: string
+const SETTING_CONNECTION_ID: string
+const SETTING_CONNECTION_INTERFACE_NAME: string
+const SETTING_CONNECTION_LLDP: string
+const SETTING_CONNECTION_LLMNR: string
+const SETTING_CONNECTION_MASTER: string
+const SETTING_CONNECTION_MDNS: string
+const SETTING_CONNECTION_METERED: string
+const SETTING_CONNECTION_MUD_URL: string
+const SETTING_CONNECTION_MULTI_CONNECT: string
+const SETTING_CONNECTION_PERMISSIONS: string
+const SETTING_CONNECTION_READ_ONLY: string
+const SETTING_CONNECTION_SECONDARIES: string
+const SETTING_CONNECTION_SETTING_NAME: string
+const SETTING_CONNECTION_SLAVE_TYPE: string
+const SETTING_CONNECTION_STABLE_ID: string
+const SETTING_CONNECTION_TIMESTAMP: string
+const SETTING_CONNECTION_TYPE: string
+const SETTING_CONNECTION_UUID: string
+const SETTING_CONNECTION_WAIT_DEVICE_TIMEOUT: string
+const SETTING_CONNECTION_ZONE: string
+const SETTING_DCB_APP_FCOE_FLAGS: string
+const SETTING_DCB_APP_FCOE_MODE: string
+const SETTING_DCB_APP_FCOE_PRIORITY: string
+const SETTING_DCB_APP_FIP_FLAGS: string
+const SETTING_DCB_APP_FIP_PRIORITY: string
+const SETTING_DCB_APP_ISCSI_FLAGS: string
+const SETTING_DCB_APP_ISCSI_PRIORITY: string
+const SETTING_DCB_FCOE_MODE_FABRIC: string
+const SETTING_DCB_FCOE_MODE_VN2VN: string
+const SETTING_DCB_PRIORITY_BANDWIDTH: string
+const SETTING_DCB_PRIORITY_FLOW_CONTROL: string
+const SETTING_DCB_PRIORITY_FLOW_CONTROL_FLAGS: string
+const SETTING_DCB_PRIORITY_GROUP_BANDWIDTH: string
+const SETTING_DCB_PRIORITY_GROUP_FLAGS: string
+const SETTING_DCB_PRIORITY_GROUP_ID: string
+const SETTING_DCB_PRIORITY_STRICT_BANDWIDTH: string
+const SETTING_DCB_PRIORITY_TRAFFIC_CLASS: string
+const SETTING_DCB_SETTING_NAME: string
+const SETTING_DNS_OPTION_ATTEMPTS: string
+const SETTING_DNS_OPTION_DEBUG: string
+const SETTING_DNS_OPTION_EDNS0: string
+const SETTING_DNS_OPTION_INET6: string
+const SETTING_DNS_OPTION_IP6_BYTESTRING: string
+const SETTING_DNS_OPTION_IP6_DOTINT: string
+const SETTING_DNS_OPTION_NDOTS: string
+const SETTING_DNS_OPTION_NO_CHECK_NAMES: string
+const SETTING_DNS_OPTION_NO_IP6_DOTINT: string
+const SETTING_DNS_OPTION_NO_RELOAD: string
+const SETTING_DNS_OPTION_NO_TLD_QUERY: string
+const SETTING_DNS_OPTION_ROTATE: string
+const SETTING_DNS_OPTION_SINGLE_REQUEST: string
+const SETTING_DNS_OPTION_SINGLE_REQUEST_REOPEN: string
+const SETTING_DNS_OPTION_TIMEOUT: string
+const SETTING_DNS_OPTION_TRUST_AD: string
+const SETTING_DNS_OPTION_USE_VC: string
+const SETTING_DUMMY_SETTING_NAME: string
+const SETTING_ETHTOOL_SETTING_NAME: string
+const SETTING_GENERIC_SETTING_NAME: string
+const SETTING_GSM_APN: string
+const SETTING_GSM_AUTO_CONFIG: string
+const SETTING_GSM_DEVICE_ID: string
+const SETTING_GSM_HOME_ONLY: string
+const SETTING_GSM_MTU: string
+const SETTING_GSM_NETWORK_ID: string
+const SETTING_GSM_NUMBER: string
+const SETTING_GSM_PASSWORD: string
+const SETTING_GSM_PASSWORD_FLAGS: string
+const SETTING_GSM_PIN: string
+const SETTING_GSM_PIN_FLAGS: string
+const SETTING_GSM_SETTING_NAME: string
+const SETTING_GSM_SIM_ID: string
+const SETTING_GSM_SIM_OPERATOR_ID: string
+const SETTING_GSM_USERNAME: string
+const SETTING_HOSTNAME_FROM_DHCP: string
+const SETTING_HOSTNAME_FROM_DNS_LOOKUP: string
+const SETTING_HOSTNAME_ONLY_FROM_DEFAULT: string
+const SETTING_HOSTNAME_PRIORITY: string
+const SETTING_HOSTNAME_SETTING_NAME: string
+const SETTING_INFINIBAND_MAC_ADDRESS: string
+const SETTING_INFINIBAND_MTU: string
+const SETTING_INFINIBAND_PARENT: string
+const SETTING_INFINIBAND_P_KEY: string
+const SETTING_INFINIBAND_SETTING_NAME: string
+const SETTING_INFINIBAND_TRANSPORT_MODE: string
+const SETTING_IP4_CONFIG_DHCP_CLIENT_ID: string
+const SETTING_IP4_CONFIG_DHCP_FQDN: string
+const SETTING_IP4_CONFIG_DHCP_VENDOR_CLASS_IDENTIFIER: string
+const SETTING_IP4_CONFIG_METHOD_AUTO: string
+const SETTING_IP4_CONFIG_METHOD_DISABLED: string
+const SETTING_IP4_CONFIG_METHOD_LINK_LOCAL: string
+const SETTING_IP4_CONFIG_METHOD_MANUAL: string
+const SETTING_IP4_CONFIG_METHOD_SHARED: string
+const SETTING_IP4_CONFIG_SETTING_NAME: string
+const SETTING_IP6_CONFIG_ADDR_GEN_MODE: string
+const SETTING_IP6_CONFIG_DHCP_DUID: string
+const SETTING_IP6_CONFIG_IP6_PRIVACY: string
+const SETTING_IP6_CONFIG_METHOD_AUTO: string
+const SETTING_IP6_CONFIG_METHOD_DHCP: string
+const SETTING_IP6_CONFIG_METHOD_DISABLED: string
+const SETTING_IP6_CONFIG_METHOD_IGNORE: string
+const SETTING_IP6_CONFIG_METHOD_LINK_LOCAL: string
+const SETTING_IP6_CONFIG_METHOD_MANUAL: string
+const SETTING_IP6_CONFIG_METHOD_SHARED: string
+const SETTING_IP6_CONFIG_RA_TIMEOUT: string
+const SETTING_IP6_CONFIG_SETTING_NAME: string
+const SETTING_IP6_CONFIG_TOKEN: string
+const SETTING_IP_CONFIG_ADDRESSES: string
+const SETTING_IP_CONFIG_DAD_TIMEOUT: string
+const SETTING_IP_CONFIG_DAD_TIMEOUT_MAX: number
+const SETTING_IP_CONFIG_DHCP_HOSTNAME: string
+const SETTING_IP_CONFIG_DHCP_HOSTNAME_FLAGS: string
+const SETTING_IP_CONFIG_DHCP_IAID: string
+const SETTING_IP_CONFIG_DHCP_REJECT_SERVERS: string
+const SETTING_IP_CONFIG_DHCP_SEND_HOSTNAME: string
+const SETTING_IP_CONFIG_DHCP_TIMEOUT: string
+const SETTING_IP_CONFIG_DNS: string
+const SETTING_IP_CONFIG_DNS_OPTIONS: string
+const SETTING_IP_CONFIG_DNS_PRIORITY: string
+const SETTING_IP_CONFIG_DNS_SEARCH: string
+const SETTING_IP_CONFIG_GATEWAY: string
+const SETTING_IP_CONFIG_IGNORE_AUTO_DNS: string
+const SETTING_IP_CONFIG_IGNORE_AUTO_ROUTES: string
+const SETTING_IP_CONFIG_MAY_FAIL: string
+const SETTING_IP_CONFIG_METHOD: string
+const SETTING_IP_CONFIG_NEVER_DEFAULT: string
+const SETTING_IP_CONFIG_REQUIRED_TIMEOUT: string
+const SETTING_IP_CONFIG_ROUTES: string
+const SETTING_IP_CONFIG_ROUTE_METRIC: string
+const SETTING_IP_CONFIG_ROUTE_TABLE: string
+const SETTING_IP_CONFIG_ROUTING_RULES: string
+const SETTING_IP_TUNNEL_ENCAPSULATION_LIMIT: string
+const SETTING_IP_TUNNEL_FLAGS: string
+const SETTING_IP_TUNNEL_FLOW_LABEL: string
+const SETTING_IP_TUNNEL_INPUT_KEY: string
+const SETTING_IP_TUNNEL_LOCAL: string
+const SETTING_IP_TUNNEL_MODE: string
+const SETTING_IP_TUNNEL_MTU: string
+const SETTING_IP_TUNNEL_OUTPUT_KEY: string
+const SETTING_IP_TUNNEL_PARENT: string
+const SETTING_IP_TUNNEL_PATH_MTU_DISCOVERY: string
+const SETTING_IP_TUNNEL_REMOTE: string
+const SETTING_IP_TUNNEL_SETTING_NAME: string
+const SETTING_IP_TUNNEL_TOS: string
+const SETTING_IP_TUNNEL_TTL: string
+const SETTING_MACSEC_ENCRYPT: string
+const SETTING_MACSEC_MKA_CAK: string
+const SETTING_MACSEC_MKA_CAK_FLAGS: string
+const SETTING_MACSEC_MKA_CAK_LENGTH: number
+const SETTING_MACSEC_MKA_CKN: string
+const SETTING_MACSEC_MKA_CKN_LENGTH: number
+const SETTING_MACSEC_MODE: string
+const SETTING_MACSEC_PARENT: string
+const SETTING_MACSEC_PORT: string
+const SETTING_MACSEC_SEND_SCI: string
+const SETTING_MACSEC_SETTING_NAME: string
+const SETTING_MACSEC_VALIDATION: string
+const SETTING_MACVLAN_MODE: string
+const SETTING_MACVLAN_PARENT: string
+const SETTING_MACVLAN_PROMISCUOUS: string
+const SETTING_MACVLAN_SETTING_NAME: string
+const SETTING_MACVLAN_TAP: string
+const SETTING_MATCH_DRIVER: string
+const SETTING_MATCH_INTERFACE_NAME: string
+const SETTING_MATCH_KERNEL_COMMAND_LINE: string
+const SETTING_MATCH_PATH: string
+const SETTING_MATCH_SETTING_NAME: string
+const SETTING_NAME: string
+const SETTING_OLPC_MESH_CHANNEL: string
+const SETTING_OLPC_MESH_DHCP_ANYCAST_ADDRESS: string
+const SETTING_OLPC_MESH_SETTING_NAME: string
+const SETTING_OLPC_MESH_SSID: string
+const SETTING_OVS_BRIDGE_DATAPATH_TYPE: string
+const SETTING_OVS_BRIDGE_FAIL_MODE: string
+const SETTING_OVS_BRIDGE_MCAST_SNOOPING_ENABLE: string
+const SETTING_OVS_BRIDGE_RSTP_ENABLE: string
+const SETTING_OVS_BRIDGE_SETTING_NAME: string
+const SETTING_OVS_BRIDGE_STP_ENABLE: string
+const SETTING_OVS_DPDK_DEVARGS: string
+const SETTING_OVS_DPDK_N_RXQ: string
+const SETTING_OVS_DPDK_SETTING_NAME: string
+const SETTING_OVS_EXTERNAL_IDS_DATA: string
+const SETTING_OVS_EXTERNAL_IDS_SETTING_NAME: string
+const SETTING_OVS_INTERFACE_SETTING_NAME: string
+const SETTING_OVS_INTERFACE_TYPE: string
+const SETTING_OVS_PATCH_PEER: string
+const SETTING_OVS_PATCH_SETTING_NAME: string
+const SETTING_OVS_PORT_BOND_DOWNDELAY: string
+const SETTING_OVS_PORT_BOND_MODE: string
+const SETTING_OVS_PORT_BOND_UPDELAY: string
+const SETTING_OVS_PORT_LACP: string
+const SETTING_OVS_PORT_SETTING_NAME: string
+const SETTING_OVS_PORT_TAG: string
+const SETTING_OVS_PORT_VLAN_MODE: string
+const SETTING_PARAM_FUZZY_IGNORE: number
+const SETTING_PARAM_REQUIRED: number
+const SETTING_PARAM_SECRET: number
+const SETTING_PPPOE_PARENT: string
+const SETTING_PPPOE_PASSWORD: string
+const SETTING_PPPOE_PASSWORD_FLAGS: string
+const SETTING_PPPOE_SERVICE: string
+const SETTING_PPPOE_SETTING_NAME: string
+const SETTING_PPPOE_USERNAME: string
+const SETTING_PPP_BAUD: string
+const SETTING_PPP_CRTSCTS: string
+const SETTING_PPP_LCP_ECHO_FAILURE: string
+const SETTING_PPP_LCP_ECHO_INTERVAL: string
+const SETTING_PPP_MPPE_STATEFUL: string
+const SETTING_PPP_MRU: string
+const SETTING_PPP_MTU: string
+const SETTING_PPP_NOAUTH: string
+const SETTING_PPP_NOBSDCOMP: string
+const SETTING_PPP_NODEFLATE: string
+const SETTING_PPP_NO_VJ_COMP: string
+const SETTING_PPP_REFUSE_CHAP: string
+const SETTING_PPP_REFUSE_EAP: string
+const SETTING_PPP_REFUSE_MSCHAP: string
+const SETTING_PPP_REFUSE_MSCHAPV2: string
+const SETTING_PPP_REFUSE_PAP: string
+const SETTING_PPP_REQUIRE_MPPE: string
+const SETTING_PPP_REQUIRE_MPPE_128: string
+const SETTING_PPP_SETTING_NAME: string
+const SETTING_PROXY_BROWSER_ONLY: string
+const SETTING_PROXY_METHOD: string
+const SETTING_PROXY_PAC_SCRIPT: string
+const SETTING_PROXY_PAC_URL: string
+const SETTING_PROXY_SETTING_NAME: string
+const SETTING_SERIAL_BAUD: string
+const SETTING_SERIAL_BITS: string
+const SETTING_SERIAL_PARITY: string
+const SETTING_SERIAL_SEND_DELAY: string
+const SETTING_SERIAL_SETTING_NAME: string
+const SETTING_SERIAL_STOPBITS: string
+const SETTING_SRIOV_AUTOPROBE_DRIVERS: string
+const SETTING_SRIOV_SETTING_NAME: string
+const SETTING_SRIOV_TOTAL_VFS: string
+const SETTING_SRIOV_VFS: string
+const SETTING_TC_CONFIG_QDISCS: string
+const SETTING_TC_CONFIG_SETTING_NAME: string
+const SETTING_TC_CONFIG_TFILTERS: string
+const SETTING_TEAM_CONFIG: string
+const SETTING_TEAM_LINK_WATCHERS: string
+const SETTING_TEAM_MCAST_REJOIN_COUNT: string
+const SETTING_TEAM_MCAST_REJOIN_INTERVAL: string
+const SETTING_TEAM_NOTIFY_MCAST_COUNT_ACTIVEBACKUP_DEFAULT: number
+const SETTING_TEAM_NOTIFY_PEERS_COUNT: string
+const SETTING_TEAM_NOTIFY_PEERS_COUNT_ACTIVEBACKUP_DEFAULT: number
+const SETTING_TEAM_NOTIFY_PEERS_INTERVAL: string
+const SETTING_TEAM_PORT_CONFIG: string
+const SETTING_TEAM_PORT_LACP_KEY: string
+const SETTING_TEAM_PORT_LACP_PRIO: string
+const SETTING_TEAM_PORT_LACP_PRIO_DEFAULT: number
+const SETTING_TEAM_PORT_LINK_WATCHERS: string
+const SETTING_TEAM_PORT_PRIO: string
+const SETTING_TEAM_PORT_QUEUE_ID: string
+const SETTING_TEAM_PORT_QUEUE_ID_DEFAULT: number
+const SETTING_TEAM_PORT_SETTING_NAME: string
+const SETTING_TEAM_PORT_STICKY: string
+const SETTING_TEAM_RUNNER: string
+const SETTING_TEAM_RUNNER_ACTIVE: string
+const SETTING_TEAM_RUNNER_ACTIVEBACKUP: string
+const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY: string
+const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_BANDWIDTH: string
+const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_COUNT: string
+const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_LACP_PRIO: string
+const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_LACP_PRIO_STABLE: string
+const SETTING_TEAM_RUNNER_AGG_SELECT_POLICY_PORT_CONFIG: string
+const SETTING_TEAM_RUNNER_BROADCAST: string
+const SETTING_TEAM_RUNNER_FAST_RATE: string
+const SETTING_TEAM_RUNNER_HWADDR_POLICY: string
+const SETTING_TEAM_RUNNER_HWADDR_POLICY_BY_ACTIVE: string
+const SETTING_TEAM_RUNNER_HWADDR_POLICY_ONLY_ACTIVE: string
+const SETTING_TEAM_RUNNER_HWADDR_POLICY_SAME_ALL: string
+const SETTING_TEAM_RUNNER_LACP: string
+const SETTING_TEAM_RUNNER_LOADBALANCE: string
+const SETTING_TEAM_RUNNER_MIN_PORTS: string
+const SETTING_TEAM_RUNNER_RANDOM: string
+const SETTING_TEAM_RUNNER_ROUNDROBIN: string
+const SETTING_TEAM_RUNNER_SYS_PRIO: string
+const SETTING_TEAM_RUNNER_SYS_PRIO_DEFAULT: number
+const SETTING_TEAM_RUNNER_TX_BALANCER: string
+const SETTING_TEAM_RUNNER_TX_BALANCER_INTERVAL: string
+const SETTING_TEAM_RUNNER_TX_BALANCER_INTERVAL_DEFAULT: number
+const SETTING_TEAM_RUNNER_TX_HASH: string
+const SETTING_TEAM_SETTING_NAME: string
+const SETTING_TUN_GROUP: string
+const SETTING_TUN_MODE: string
+const SETTING_TUN_MULTI_QUEUE: string
+const SETTING_TUN_OWNER: string
+const SETTING_TUN_PI: string
+const SETTING_TUN_SETTING_NAME: string
+const SETTING_TUN_VNET_HDR: string
+const SETTING_USER_DATA: string
+const SETTING_USER_SETTING_NAME: string
+const SETTING_VETH_PEER: string
+const SETTING_VETH_SETTING_NAME: string
+const SETTING_VLAN_EGRESS_PRIORITY_MAP: string
+const SETTING_VLAN_FLAGS: string
+const SETTING_VLAN_ID: string
+const SETTING_VLAN_INGRESS_PRIORITY_MAP: string
+const SETTING_VLAN_PARENT: string
+const SETTING_VLAN_SETTING_NAME: string
+const SETTING_VPN_DATA: string
+const SETTING_VPN_PERSISTENT: string
+const SETTING_VPN_SECRETS: string
+const SETTING_VPN_SERVICE_TYPE: string
+const SETTING_VPN_SETTING_NAME: string
+const SETTING_VPN_TIMEOUT: string
+const SETTING_VPN_USER_NAME: string
+const SETTING_VRF_SETTING_NAME: string
+const SETTING_VRF_TABLE: string
+const SETTING_VXLAN_AGEING: string
+const SETTING_VXLAN_DESTINATION_PORT: string
+const SETTING_VXLAN_ID: string
+const SETTING_VXLAN_L2_MISS: string
+const SETTING_VXLAN_L3_MISS: string
+const SETTING_VXLAN_LEARNING: string
+const SETTING_VXLAN_LIMIT: string
+const SETTING_VXLAN_LOCAL: string
+const SETTING_VXLAN_PARENT: string
+const SETTING_VXLAN_PROXY: string
+const SETTING_VXLAN_REMOTE: string
+const SETTING_VXLAN_RSC: string
+const SETTING_VXLAN_SETTING_NAME: string
+const SETTING_VXLAN_SOURCE_PORT_MAX: string
+const SETTING_VXLAN_SOURCE_PORT_MIN: string
+const SETTING_VXLAN_TOS: string
+const SETTING_VXLAN_TTL: string
+const SETTING_WIFI_P2P_PEER: string
+const SETTING_WIFI_P2P_SETTING_NAME: string
+const SETTING_WIFI_P2P_WFD_IES: string
+const SETTING_WIFI_P2P_WPS_METHOD: string
+const SETTING_WIMAX_MAC_ADDRESS: string
+const SETTING_WIMAX_NETWORK_NAME: string
+const SETTING_WIMAX_SETTING_NAME: string
+const SETTING_WIRED_ACCEPT_ALL_MAC_ADDRESSES: string
+const SETTING_WIRED_AUTO_NEGOTIATE: string
+const SETTING_WIRED_CLONED_MAC_ADDRESS: string
+const SETTING_WIRED_DUPLEX: string
+const SETTING_WIRED_GENERATE_MAC_ADDRESS_MASK: string
+const SETTING_WIRED_MAC_ADDRESS: string
+const SETTING_WIRED_MAC_ADDRESS_BLACKLIST: string
+const SETTING_WIRED_MTU: string
+const SETTING_WIRED_PORT: string
+const SETTING_WIRED_S390_NETTYPE: string
+const SETTING_WIRED_S390_OPTIONS: string
+const SETTING_WIRED_S390_SUBCHANNELS: string
+const SETTING_WIRED_SETTING_NAME: string
+const SETTING_WIRED_SPEED: string
+const SETTING_WIRED_WAKE_ON_LAN: string
+const SETTING_WIRED_WAKE_ON_LAN_PASSWORD: string
+const SETTING_WIREGUARD_FWMARK: string
+const SETTING_WIREGUARD_IP4_AUTO_DEFAULT_ROUTE: string
+const SETTING_WIREGUARD_IP6_AUTO_DEFAULT_ROUTE: string
+const SETTING_WIREGUARD_LISTEN_PORT: string
+const SETTING_WIREGUARD_MTU: string
+const SETTING_WIREGUARD_PEERS: string
+const SETTING_WIREGUARD_PEER_ROUTES: string
+const SETTING_WIREGUARD_PRIVATE_KEY: string
+const SETTING_WIREGUARD_PRIVATE_KEY_FLAGS: string
+const SETTING_WIREGUARD_SETTING_NAME: string
+const SETTING_WIRELESS_AP_ISOLATION: string
+const SETTING_WIRELESS_BAND: string
+const SETTING_WIRELESS_BSSID: string
+const SETTING_WIRELESS_CHANNEL: string
+const SETTING_WIRELESS_CLONED_MAC_ADDRESS: string
+const SETTING_WIRELESS_GENERATE_MAC_ADDRESS_MASK: string
+const SETTING_WIRELESS_HIDDEN: string
+const SETTING_WIRELESS_MAC_ADDRESS: string
+const SETTING_WIRELESS_MAC_ADDRESS_BLACKLIST: string
+const SETTING_WIRELESS_MAC_ADDRESS_RANDOMIZATION: string
+const SETTING_WIRELESS_MODE: string
+const SETTING_WIRELESS_MODE_ADHOC: string
+const SETTING_WIRELESS_MODE_AP: string
+const SETTING_WIRELESS_MODE_INFRA: string
+const SETTING_WIRELESS_MODE_MESH: string
+const SETTING_WIRELESS_MTU: string
+const SETTING_WIRELESS_POWERSAVE: string
+const SETTING_WIRELESS_RATE: string
+const SETTING_WIRELESS_SECURITY_AUTH_ALG: string
+const SETTING_WIRELESS_SECURITY_FILS: string
+const SETTING_WIRELESS_SECURITY_GROUP: string
+const SETTING_WIRELESS_SECURITY_KEY_MGMT: string
+const SETTING_WIRELESS_SECURITY_LEAP_PASSWORD: string
+const SETTING_WIRELESS_SECURITY_LEAP_PASSWORD_FLAGS: string
+const SETTING_WIRELESS_SECURITY_LEAP_USERNAME: string
+const SETTING_WIRELESS_SECURITY_PAIRWISE: string
+const SETTING_WIRELESS_SECURITY_PMF: string
+const SETTING_WIRELESS_SECURITY_PROTO: string
+const SETTING_WIRELESS_SECURITY_PSK: string
+const SETTING_WIRELESS_SECURITY_PSK_FLAGS: string
+const SETTING_WIRELESS_SECURITY_SETTING_NAME: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY0: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY1: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY2: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY3: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY_FLAGS: string
+const SETTING_WIRELESS_SECURITY_WEP_KEY_TYPE: string
+const SETTING_WIRELESS_SECURITY_WEP_TX_KEYIDX: string
+const SETTING_WIRELESS_SECURITY_WPS_METHOD: string
+const SETTING_WIRELESS_SEEN_BSSIDS: string
+const SETTING_WIRELESS_SETTING_NAME: string
+const SETTING_WIRELESS_SSID: string
+const SETTING_WIRELESS_TX_POWER: string
+const SETTING_WIRELESS_WAKE_ON_WLAN: string
+const SETTING_WPAN_CHANNEL: string
+const SETTING_WPAN_CHANNEL_DEFAULT: number
+const SETTING_WPAN_MAC_ADDRESS: string
+const SETTING_WPAN_PAGE: string
+const SETTING_WPAN_PAGE_DEFAULT: number
+const SETTING_WPAN_PAN_ID: string
+const SETTING_WPAN_SETTING_NAME: string
+const SETTING_WPAN_SHORT_ADDRESS: string
+const SRIOV_VF_ATTRIBUTE_MAC: string
+const SRIOV_VF_ATTRIBUTE_MAX_TX_RATE: string
+const SRIOV_VF_ATTRIBUTE_MIN_TX_RATE: string
+const SRIOV_VF_ATTRIBUTE_SPOOF_CHECK: string
+const SRIOV_VF_ATTRIBUTE_TRUST: string
+const TEAM_LINK_WATCHER_ARP_PING: string
+const TEAM_LINK_WATCHER_ETHTOOL: string
+const TEAM_LINK_WATCHER_NSNA_PING: string
+const UTILS_HWADDR_LEN_MAX: number
+const VLAN_FLAGS_ALL: number
+const VPN_CONNECTION_BANNER: string
+const VPN_CONNECTION_VPN_STATE: string
+const VPN_DBUS_PLUGIN_INTERFACE: string
+const VPN_DBUS_PLUGIN_PATH: string
+const VPN_EDITOR_PLUGIN_DESCRIPTION: string
+const VPN_EDITOR_PLUGIN_NAME: string
+const VPN_EDITOR_PLUGIN_SERVICE: string
+const VPN_PLUGIN_CAN_PERSIST: string
+const VPN_PLUGIN_CONFIG_BANNER: string
+const VPN_PLUGIN_CONFIG_EXT_GATEWAY: string
+const VPN_PLUGIN_CONFIG_HAS_IP4: string
+const VPN_PLUGIN_CONFIG_HAS_IP6: string
+const VPN_PLUGIN_CONFIG_MTU: string
+const VPN_PLUGIN_CONFIG_PROXY_PAC: string
+const VPN_PLUGIN_CONFIG_TUNDEV: string
+const VPN_PLUGIN_INFO_FILENAME: string
+const VPN_PLUGIN_INFO_KEYFILE: string
+const VPN_PLUGIN_INFO_KF_GROUP_CONNECTION: string
+const VPN_PLUGIN_INFO_KF_GROUP_GNOME: string
+const VPN_PLUGIN_INFO_KF_GROUP_LIBNM: string
+const VPN_PLUGIN_INFO_NAME: string
+const VPN_PLUGIN_IP4_CONFIG_ADDRESS: string
+const VPN_PLUGIN_IP4_CONFIG_DNS: string
+const VPN_PLUGIN_IP4_CONFIG_DOMAIN: string
+const VPN_PLUGIN_IP4_CONFIG_DOMAINS: string
+const VPN_PLUGIN_IP4_CONFIG_INT_GATEWAY: string
+const VPN_PLUGIN_IP4_CONFIG_MSS: string
+const VPN_PLUGIN_IP4_CONFIG_NBNS: string
+const VPN_PLUGIN_IP4_CONFIG_NEVER_DEFAULT: string
+const VPN_PLUGIN_IP4_CONFIG_PREFIX: string
+const VPN_PLUGIN_IP4_CONFIG_PRESERVE_ROUTES: string
+const VPN_PLUGIN_IP4_CONFIG_PTP: string
+const VPN_PLUGIN_IP4_CONFIG_ROUTES: string
+const VPN_PLUGIN_IP6_CONFIG_ADDRESS: string
+const VPN_PLUGIN_IP6_CONFIG_DNS: string
+const VPN_PLUGIN_IP6_CONFIG_DOMAIN: string
+const VPN_PLUGIN_IP6_CONFIG_DOMAINS: string
+const VPN_PLUGIN_IP6_CONFIG_INT_GATEWAY: string
+const VPN_PLUGIN_IP6_CONFIG_MSS: string
+const VPN_PLUGIN_IP6_CONFIG_NEVER_DEFAULT: string
+const VPN_PLUGIN_IP6_CONFIG_PREFIX: string
+const VPN_PLUGIN_IP6_CONFIG_PRESERVE_ROUTES: string
+const VPN_PLUGIN_IP6_CONFIG_PTP: string
+const VPN_PLUGIN_IP6_CONFIG_ROUTES: string
+const VPN_PLUGIN_OLD_DBUS_SERVICE_NAME: string
+const VPN_PLUGIN_OLD_STATE: string
+const VPN_SERVICE_PLUGIN_DBUS_SERVICE_NAME: string
+const VPN_SERVICE_PLUGIN_DBUS_WATCH_PEER: string
+const VPN_SERVICE_PLUGIN_STATE: string
+const WIFI_P2P_PEER_FLAGS: string
+const WIFI_P2P_PEER_HW_ADDRESS: string
+const WIFI_P2P_PEER_LAST_SEEN: string
+const WIFI_P2P_PEER_MANUFACTURER: string
+const WIFI_P2P_PEER_MODEL: string
+const WIFI_P2P_PEER_MODEL_NUMBER: string
+const WIFI_P2P_PEER_NAME: string
+const WIFI_P2P_PEER_SERIAL: string
+const WIFI_P2P_PEER_STRENGTH: string
+const WIFI_P2P_PEER_WFD_IES: string
+const WIMAX_NSP_NAME: string
+const WIMAX_NSP_NETWORK_TYPE: string
+const WIMAX_NSP_SIGNAL_QUALITY: string
+const WIREGUARD_PEER_ATTR_ALLOWED_IPS: string
+const WIREGUARD_PEER_ATTR_ENDPOINT: string
+const WIREGUARD_PEER_ATTR_PERSISTENT_KEEPALIVE: string
+const WIREGUARD_PEER_ATTR_PRESHARED_KEY: string
+const WIREGUARD_PEER_ATTR_PRESHARED_KEY_FLAGS: string
+const WIREGUARD_PEER_ATTR_PUBLIC_KEY: string
+const WIREGUARD_PUBLIC_KEY_LEN: number
+const WIREGUARD_SYMMETRIC_KEY_LEN: number
 function agent_manager_error_quark(): GLib.Quark
 function bridge_vlan_from_str(str: string): BridgeVlan
 function client_error_quark(): GLib.Quark
@@ -1861,14 +1868,14 @@ function settings_error_quark(): GLib.Quark
 function sriov_vf_attribute_validate(name: string, value: GLib.Variant): [ /* returnType */ boolean, /* known */ boolean ]
 function utils_ap_mode_security_valid(type: UtilsSecurityType, wifi_caps: DeviceWifiCapabilities): boolean
 function utils_base64secret_decode(base64_key: string, required_key_len: number, out_key?: number | null): boolean
-function utils_bin2hexstr(src: Uint8Array[], final_len: number): string
+function utils_bin2hexstr(src: Uint8Array, final_len: number): string
 function utils_bond_mode_int_to_string(mode: number): string
 function utils_bond_mode_string_to_int(mode: string): number
 function utils_check_virtual_device_compatibility(virtual_type: GObject.Type, other_type: GObject.Type): boolean
 function utils_enum_from_str(type: GObject.Type, str: string): [ /* returnType */ boolean, /* out_value */ number | null, /* err_token */ string | null ]
 function utils_enum_get_values(type: GObject.Type, from: number, to: number): string[]
 function utils_enum_to_str(type: GObject.Type, value: number): string
-function utils_escape_ssid(ssid: Uint8Array[]): string
+function utils_escape_ssid(ssid: Uint8Array): string
 function utils_file_is_certificate(filename: string): boolean
 function utils_file_is_pkcs12(filename: string): boolean
 function utils_file_is_private_key(filename: string): [ /* returnType */ boolean, /* out_encrypted */ boolean ]
@@ -1876,12 +1883,12 @@ function utils_file_search_in_paths(progname: string, try_first: string | null, 
 function utils_format_variant_attributes(attributes: GLib.HashTable, attr_separator: number, key_value_separator: number): string
 function utils_get_timestamp_msec(): number
 function utils_hexstr2bin(hex: string): GLib.Bytes
-function utils_hwaddr_atoba(asc: string, length: number): Uint8Array[]
-function utils_hwaddr_aton(asc: string, buffer: Uint8Array[]): number
+function utils_hwaddr_atoba(asc: string, length: number): Uint8Array
+function utils_hwaddr_aton(asc: string, buffer: Uint8Array): number
 function utils_hwaddr_canonical(asc: string, length: number): string
 function utils_hwaddr_len(type: number): number
 function utils_hwaddr_matches(hwaddr1: object | null, hwaddr1_len: number, hwaddr2: object | null, hwaddr2_len: number): boolean
-function utils_hwaddr_ntoa(addr: Uint8Array[]): string
+function utils_hwaddr_ntoa(addr: Uint8Array): string
 function utils_hwaddr_valid(asc: string, length: number): boolean
 function utils_iface_valid_name(name?: string | null): boolean
 function utils_ip4_addresses_from_variant(value: GLib.Variant): [ /* returnType */ IPAddress[], /* out_gateway */ string | null ]
@@ -1904,17 +1911,17 @@ function utils_ip_addresses_to_variant(addresses: IPAddress[]): GLib.Variant
 function utils_ip_routes_from_variant(value: GLib.Variant, family: number): IPRoute[]
 function utils_ip_routes_to_variant(routes: IPRoute[]): GLib.Variant
 function utils_ipaddr_valid(family: number, ip: string): boolean
-function utils_is_empty_ssid(ssid: Uint8Array[]): boolean
+function utils_is_empty_ssid(ssid: Uint8Array): boolean
 function utils_is_json_object(str: string): boolean
 function utils_is_uuid(str?: string | null): boolean
 function utils_is_valid_iface_name(name?: string | null): boolean
 function utils_parse_variant_attributes(string: string, attr_separator: number, key_value_separator: number, ignore_unknown: boolean, spec: VariantAttributeSpec): GLib.HashTable
 function utils_print(output_mode: number, msg: string): void
-function utils_same_ssid(ssid1: Uint8Array[], ssid2: Uint8Array[], ignore_trailing_null: boolean): boolean
+function utils_same_ssid(ssid1: Uint8Array, ssid2: Uint8Array, ignore_trailing_null: boolean): boolean
 function utils_security_valid(type: UtilsSecurityType, wifi_caps: DeviceWifiCapabilities, have_ap: boolean, adhoc: boolean, ap_flags: TODO_80211ApFlags, ap_wpa: TODO_80211ApSecurityFlags, ap_rsn: TODO_80211ApSecurityFlags): boolean
 function utils_sriov_vf_from_str(str: string): SriovVF
 function utils_sriov_vf_to_str(vf: SriovVF, omit_index: boolean): string
-function utils_ssid_to_utf8(ssid: Uint8Array[]): string
+function utils_ssid_to_utf8(ssid: Uint8Array): string
 function utils_tc_action_from_str(str: string): TCAction
 function utils_tc_action_to_str(action: TCAction): string
 function utils_tc_qdisc_from_str(str: string): TCQdisc
@@ -2096,7 +2103,7 @@ class VpnEditorPlugin {
     static load(plugin_name: string, check_service: string): VpnEditorPlugin
     static load_from_file(plugin_name: string, check_service: string, check_owner: number, check_file: UtilsCheckFilePredicate): VpnEditorPlugin
 }
-export interface AccessPoint_ConstructProps extends Object_ConstructProps {
+interface AccessPoint_ConstructProps extends Object_ConstructProps {
 }
 class AccessPoint {
     /* Properties of NM-1.0.NM.AccessPoint */
@@ -2115,7 +2122,7 @@ class AccessPoint {
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.AccessPoint */
     connection_valid(connection: Connection): boolean
     filter_connections(connections: Connection[]): Connection[]
@@ -2201,7 +2208,7 @@ class AccessPoint {
     _init (config?: AccessPoint_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface ActiveConnection_ConstructProps extends Object_ConstructProps {
+interface ActiveConnection_ConstructProps extends Object_ConstructProps {
 }
 class ActiveConnection {
     /* Properties of NM-1.0.NM.ActiveConnection */
@@ -2225,7 +2232,7 @@ class ActiveConnection {
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.ActiveConnection */
     get_connection(): RemoteConnection
     get_connection_type(): string
@@ -2330,7 +2337,7 @@ class ActiveConnection {
     _init (config?: ActiveConnection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Checkpoint_ConstructProps extends Object_ConstructProps {
+interface Checkpoint_ConstructProps extends Object_ConstructProps {
 }
 class Checkpoint {
     /* Properties of NM-1.0.NM.Checkpoint */
@@ -2341,7 +2348,7 @@ class Checkpoint {
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Checkpoint */
     get_created(): number
     get_devices(): Device[]
@@ -2402,7 +2409,8 @@ class Checkpoint {
     _init (config?: Checkpoint_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Client_ConstructProps extends GObject.Object_ConstructProps {
+interface Client_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.Client */
     connectivity_check_enabled?: boolean
     dbus_connection?: Gio.DBusConnection
     instance_flags?: number
@@ -2446,7 +2454,7 @@ class Client {
     wwan_enabled: boolean
     readonly wwan_hardware_enabled: boolean
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Client */
     activate_connection_async(connection?: Connection | null, device?: Device | null, specific_object?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     activate_connection_finish(result: Gio.AsyncResult): ActiveConnection
@@ -2685,7 +2693,8 @@ class Client {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Device_ConstructProps extends Object_ConstructProps {
+interface Device_ConstructProps extends Object_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.Device */
     autoconnect?: boolean
 }
 class Device {
@@ -2726,7 +2735,7 @@ class Device {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Device */
     connection_compatible(connection: Connection): boolean
     connection_valid(connection: Connection): boolean
@@ -2900,7 +2909,7 @@ class Device {
     static disambiguate_names(devices: Device[]): string[]
     static $gtype: GObject.Type
 }
-export interface Device6Lowpan_ConstructProps extends Device_ConstructProps {
+interface Device6Lowpan_ConstructProps extends Device_ConstructProps {
 }
 class Device6Lowpan {
     /* Properties of NM-1.0.NM.Device6Lowpan */
@@ -2942,7 +2951,7 @@ class Device6Lowpan {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Device6Lowpan */
     get_parent(): Device
     /* Methods of NM-1.0.NM.Device */
@@ -3118,7 +3127,7 @@ class Device6Lowpan {
     _init (config?: Device6Lowpan_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceAdsl_ConstructProps extends Device_ConstructProps {
+interface DeviceAdsl_ConstructProps extends Device_ConstructProps {
 }
 class DeviceAdsl {
     /* Properties of NM-1.0.NM.DeviceAdsl */
@@ -3160,7 +3169,7 @@ class DeviceAdsl {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceAdsl */
     get_carrier(): boolean
     /* Methods of NM-1.0.NM.Device */
@@ -3336,7 +3345,7 @@ class DeviceAdsl {
     _init (config?: DeviceAdsl_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceBond_ConstructProps extends Device_ConstructProps {
+interface DeviceBond_ConstructProps extends Device_ConstructProps {
 }
 class DeviceBond {
     /* Properties of NM-1.0.NM.DeviceBond */
@@ -3379,7 +3388,7 @@ class DeviceBond {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceBond */
     get_carrier(): boolean
     get_slaves(): Device[]
@@ -3558,7 +3567,7 @@ class DeviceBond {
     _init (config?: DeviceBond_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceBridge_ConstructProps extends Device_ConstructProps {
+interface DeviceBridge_ConstructProps extends Device_ConstructProps {
 }
 class DeviceBridge {
     /* Properties of NM-1.0.NM.DeviceBridge */
@@ -3601,7 +3610,7 @@ class DeviceBridge {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceBridge */
     get_carrier(): boolean
     get_slaves(): Device[]
@@ -3780,7 +3789,7 @@ class DeviceBridge {
     _init (config?: DeviceBridge_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceBt_ConstructProps extends Device_ConstructProps {
+interface DeviceBt_ConstructProps extends Device_ConstructProps {
 }
 class DeviceBt {
     /* Properties of NM-1.0.NM.DeviceBt */
@@ -3823,7 +3832,7 @@ class DeviceBt {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceBt */
     get_capabilities(): BluetoothCapabilities
     get_name(): string
@@ -4002,7 +4011,7 @@ class DeviceBt {
     _init (config?: DeviceBt_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceDummy_ConstructProps extends Device_ConstructProps {
+interface DeviceDummy_ConstructProps extends Device_ConstructProps {
 }
 class DeviceDummy {
     /* Properties of NM-1.0.NM.Device */
@@ -4042,7 +4051,7 @@ class DeviceDummy {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Device */
     connection_compatible(connection: Connection): boolean
     connection_valid(connection: Connection): boolean
@@ -4214,7 +4223,7 @@ class DeviceDummy {
     _init (config?: DeviceDummy_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceEthernet_ConstructProps extends Device_ConstructProps {
+interface DeviceEthernet_ConstructProps extends Device_ConstructProps {
 }
 class DeviceEthernet {
     /* Properties of NM-1.0.NM.DeviceEthernet */
@@ -4259,7 +4268,7 @@ class DeviceEthernet {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceEthernet */
     get_carrier(): boolean
     get_permanent_hw_address(): string
@@ -4444,7 +4453,7 @@ class DeviceEthernet {
     _init (config?: DeviceEthernet_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceGeneric_ConstructProps extends Device_ConstructProps {
+interface DeviceGeneric_ConstructProps extends Device_ConstructProps {
 }
 class DeviceGeneric {
     /* Properties of NM-1.0.NM.DeviceGeneric */
@@ -4486,7 +4495,7 @@ class DeviceGeneric {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Device */
     connection_compatible(connection: Connection): boolean
     connection_valid(connection: Connection): boolean
@@ -4660,7 +4669,7 @@ class DeviceGeneric {
     _init (config?: DeviceGeneric_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceIPTunnel_ConstructProps extends Device_ConstructProps {
+interface DeviceIPTunnel_ConstructProps extends Device_ConstructProps {
 }
 class DeviceIPTunnel {
     /* Properties of NM-1.0.NM.DeviceIPTunnel */
@@ -4713,7 +4722,7 @@ class DeviceIPTunnel {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceIPTunnel */
     get_encapsulation_limit(): number
     get_flags(): IPTunnelFlags
@@ -4922,7 +4931,7 @@ class DeviceIPTunnel {
     _init (config?: DeviceIPTunnel_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceInfiniband_ConstructProps extends Device_ConstructProps {
+interface DeviceInfiniband_ConstructProps extends Device_ConstructProps {
 }
 class DeviceInfiniband {
     /* Properties of NM-1.0.NM.DeviceInfiniband */
@@ -4964,7 +4973,7 @@ class DeviceInfiniband {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceInfiniband */
     get_carrier(): boolean
     /* Methods of NM-1.0.NM.Device */
@@ -5140,7 +5149,7 @@ class DeviceInfiniband {
     _init (config?: DeviceInfiniband_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceMacsec_ConstructProps extends Device_ConstructProps {
+interface DeviceMacsec_ConstructProps extends Device_ConstructProps {
 }
 class DeviceMacsec {
     /* Properties of NM-1.0.NM.DeviceMacsec */
@@ -5194,7 +5203,7 @@ class DeviceMacsec {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceMacsec */
     get_cipher_suite(): number
     get_encoding_sa(): number
@@ -5406,7 +5415,7 @@ class DeviceMacsec {
     _init (config?: DeviceMacsec_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceMacvlan_ConstructProps extends Device_ConstructProps {
+interface DeviceMacvlan_ConstructProps extends Device_ConstructProps {
 }
 class DeviceMacvlan {
     /* Properties of NM-1.0.NM.DeviceMacvlan */
@@ -5451,7 +5460,7 @@ class DeviceMacvlan {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceMacvlan */
     get_mode(): string
     get_no_promisc(): boolean
@@ -5636,7 +5645,7 @@ class DeviceMacvlan {
     _init (config?: DeviceMacvlan_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceModem_ConstructProps extends Device_ConstructProps {
+interface DeviceModem_ConstructProps extends Device_ConstructProps {
 }
 class DeviceModem {
     /* Properties of NM-1.0.NM.DeviceModem */
@@ -5682,7 +5691,7 @@ class DeviceModem {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceModem */
     get_apn(): string
     get_current_capabilities(): DeviceModemCapabilities
@@ -5870,7 +5879,7 @@ class DeviceModem {
     _init (config?: DeviceModem_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceOlpcMesh_ConstructProps extends Device_ConstructProps {
+interface DeviceOlpcMesh_ConstructProps extends Device_ConstructProps {
 }
 class DeviceOlpcMesh {
     /* Properties of NM-1.0.NM.DeviceOlpcMesh */
@@ -5913,7 +5922,7 @@ class DeviceOlpcMesh {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceOlpcMesh */
     get_active_channel(): number
     get_companion(): DeviceWifi
@@ -6092,7 +6101,7 @@ class DeviceOlpcMesh {
     _init (config?: DeviceOlpcMesh_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceOvsBridge_ConstructProps extends Device_ConstructProps {
+interface DeviceOvsBridge_ConstructProps extends Device_ConstructProps {
 }
 class DeviceOvsBridge {
     /* Properties of NM-1.0.NM.DeviceOvsBridge */
@@ -6134,7 +6143,7 @@ class DeviceOvsBridge {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceOvsBridge */
     get_slaves(): Device[]
     /* Methods of NM-1.0.NM.Device */
@@ -6310,7 +6319,7 @@ class DeviceOvsBridge {
     _init (config?: DeviceOvsBridge_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceOvsInterface_ConstructProps extends Device_ConstructProps {
+interface DeviceOvsInterface_ConstructProps extends Device_ConstructProps {
 }
 class DeviceOvsInterface {
     /* Properties of NM-1.0.NM.Device */
@@ -6350,7 +6359,7 @@ class DeviceOvsInterface {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Device */
     connection_compatible(connection: Connection): boolean
     connection_valid(connection: Connection): boolean
@@ -6522,7 +6531,7 @@ class DeviceOvsInterface {
     _init (config?: DeviceOvsInterface_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceOvsPort_ConstructProps extends Device_ConstructProps {
+interface DeviceOvsPort_ConstructProps extends Device_ConstructProps {
 }
 class DeviceOvsPort {
     /* Properties of NM-1.0.NM.DeviceOvsPort */
@@ -6564,7 +6573,7 @@ class DeviceOvsPort {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceOvsPort */
     get_slaves(): Device[]
     /* Methods of NM-1.0.NM.Device */
@@ -6740,7 +6749,7 @@ class DeviceOvsPort {
     _init (config?: DeviceOvsPort_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DevicePpp_ConstructProps extends Device_ConstructProps {
+interface DevicePpp_ConstructProps extends Device_ConstructProps {
 }
 class DevicePpp {
     /* Properties of NM-1.0.NM.Device */
@@ -6780,7 +6789,7 @@ class DevicePpp {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Device */
     connection_compatible(connection: Connection): boolean
     connection_valid(connection: Connection): boolean
@@ -6952,7 +6961,7 @@ class DevicePpp {
     _init (config?: DevicePpp_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceTeam_ConstructProps extends Device_ConstructProps {
+interface DeviceTeam_ConstructProps extends Device_ConstructProps {
 }
 class DeviceTeam {
     /* Properties of NM-1.0.NM.DeviceTeam */
@@ -6996,7 +7005,7 @@ class DeviceTeam {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceTeam */
     get_carrier(): boolean
     get_config(): string
@@ -7178,7 +7187,7 @@ class DeviceTeam {
     _init (config?: DeviceTeam_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceTun_ConstructProps extends Device_ConstructProps {
+interface DeviceTun_ConstructProps extends Device_ConstructProps {
 }
 class DeviceTun {
     /* Properties of NM-1.0.NM.DeviceTun */
@@ -7225,7 +7234,7 @@ class DeviceTun {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceTun */
     get_group(): number
     get_mode(): string
@@ -7416,7 +7425,7 @@ class DeviceTun {
     _init (config?: DeviceTun_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceVeth_ConstructProps extends DeviceEthernet_ConstructProps {
+interface DeviceVeth_ConstructProps extends DeviceEthernet_ConstructProps {
 }
 class DeviceVeth {
     /* Properties of NM-1.0.NM.DeviceVeth */
@@ -7463,7 +7472,7 @@ class DeviceVeth {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceVeth */
     get_peer(): Device
     /* Methods of NM-1.0.NM.DeviceEthernet */
@@ -7652,7 +7661,7 @@ class DeviceVeth {
     _init (config?: DeviceVeth_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceVlan_ConstructProps extends Device_ConstructProps {
+interface DeviceVlan_ConstructProps extends Device_ConstructProps {
 }
 class DeviceVlan {
     /* Properties of NM-1.0.NM.DeviceVlan */
@@ -7696,7 +7705,7 @@ class DeviceVlan {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceVlan */
     get_carrier(): boolean
     get_parent(): Device
@@ -7878,7 +7887,7 @@ class DeviceVlan {
     _init (config?: DeviceVlan_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceVrf_ConstructProps extends Device_ConstructProps {
+interface DeviceVrf_ConstructProps extends Device_ConstructProps {
 }
 class DeviceVrf {
     /* Properties of NM-1.0.NM.DeviceVrf */
@@ -7920,7 +7929,7 @@ class DeviceVrf {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceVrf */
     get_table(): number
     /* Methods of NM-1.0.NM.Device */
@@ -8096,7 +8105,7 @@ class DeviceVrf {
     _init (config?: DeviceVrf_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceVxlan_ConstructProps extends Device_ConstructProps {
+interface DeviceVxlan_ConstructProps extends Device_ConstructProps {
 }
 class DeviceVxlan {
     /* Properties of NM-1.0.NM.DeviceVxlan */
@@ -8154,7 +8163,7 @@ class DeviceVxlan {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceVxlan */
     get_ageing(): number
     get_carrier(): boolean
@@ -8378,7 +8387,7 @@ class DeviceVxlan {
     _init (config?: DeviceVxlan_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceWifi_ConstructProps extends Device_ConstructProps {
+interface DeviceWifi_ConstructProps extends Device_ConstructProps {
 }
 class DeviceWifi {
     /* Properties of NM-1.0.NM.DeviceWifi */
@@ -8426,7 +8435,7 @@ class DeviceWifi {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceWifi */
     get_access_point_by_path(path: string): AccessPoint
     get_access_points(): AccessPoint[]
@@ -8633,7 +8642,7 @@ class DeviceWifi {
     _init (config?: DeviceWifi_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceWifiP2P_ConstructProps extends Device_ConstructProps {
+interface DeviceWifiP2P_ConstructProps extends Device_ConstructProps {
 }
 class DeviceWifiP2P {
     /* Properties of NM-1.0.NM.DeviceWifiP2P */
@@ -8675,7 +8684,7 @@ class DeviceWifiP2P {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceWifiP2P */
     get_peer_by_path(path: string): WifiP2PPeer
     get_peers(): WifiP2PPeer[]
@@ -8863,7 +8872,7 @@ class DeviceWifiP2P {
     _init (config?: DeviceWifiP2P_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceWimax_ConstructProps extends Device_ConstructProps {
+interface DeviceWimax_ConstructProps extends Device_ConstructProps {
 }
 class DeviceWimax {
     /* Properties of NM-1.0.NM.DeviceWimax */
@@ -8911,7 +8920,7 @@ class DeviceWimax {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceWimax */
     get_active_nsp(): WimaxNsp
     get_bsid(): string
@@ -9113,7 +9122,7 @@ class DeviceWimax {
     _init (config?: DeviceWimax_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceWireGuard_ConstructProps extends Device_ConstructProps {
+interface DeviceWireGuard_ConstructProps extends Device_ConstructProps {
 }
 class DeviceWireGuard {
     /* Properties of NM-1.0.NM.DeviceWireGuard */
@@ -9157,7 +9166,7 @@ class DeviceWireGuard {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DeviceWireGuard */
     get_fwmark(): number
     get_listen_port(): number
@@ -9339,7 +9348,7 @@ class DeviceWireGuard {
     _init (config?: DeviceWireGuard_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DeviceWpan_ConstructProps extends Device_ConstructProps {
+interface DeviceWpan_ConstructProps extends Device_ConstructProps {
 }
 class DeviceWpan {
     /* Properties of NM-1.0.NM.Device */
@@ -9379,7 +9388,7 @@ class DeviceWpan {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Device */
     connection_compatible(connection: Connection): boolean
     connection_valid(connection: Connection): boolean
@@ -9551,7 +9560,7 @@ class DeviceWpan {
     _init (config?: DeviceWpan_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface DhcpConfig_ConstructProps extends Object_ConstructProps {
+interface DhcpConfig_ConstructProps extends Object_ConstructProps {
 }
 class DhcpConfig {
     /* Properties of NM-1.0.NM.DhcpConfig */
@@ -9561,7 +9570,7 @@ class DhcpConfig {
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.DhcpConfig */
     get_family(): number
     get_one_option(option: string): string
@@ -9620,7 +9629,7 @@ class DhcpConfig {
     _init (config?: DhcpConfig_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface IPConfig_ConstructProps extends Object_ConstructProps {
+interface IPConfig_ConstructProps extends Object_ConstructProps {
 }
 class IPConfig {
     /* Properties of NM-1.0.NM.IPConfig */
@@ -9636,7 +9645,7 @@ class IPConfig {
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.IPConfig */
     get_addresses(): IPAddress[]
     get_domains(): string[]
@@ -9712,14 +9721,14 @@ class IPConfig {
     _init (config?: IPConfig_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface Object_ConstructProps extends GObject.Object_ConstructProps {
+interface Object_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Object {
     /* Properties of NM-1.0.NM.Object */
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Object */
     get_client(): Client
     get_path(): string
@@ -9770,7 +9779,7 @@ class Object {
     _init (config?: Object_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface RemoteConnection_ConstructProps extends Object_ConstructProps {
+interface RemoteConnection_ConstructProps extends Object_ConstructProps {
 }
 class RemoteConnection {
     /* Properties of NM-1.0.NM.RemoteConnection */
@@ -9782,7 +9791,7 @@ class RemoteConnection {
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.RemoteConnection */
     commit_changes(save_to_disk: boolean, cancellable?: Gio.Cancellable | null): boolean
     commit_changes_async(save_to_disk: boolean, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -9941,7 +9950,8 @@ class RemoteConnection {
     _init (config?: RemoteConnection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SecretAgentOld_ConstructProps extends GObject.Object_ConstructProps {
+interface SecretAgentOld_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SecretAgentOld */
     auto_register?: boolean
     capabilities?: SecretAgentCapabilities
     dbus_connection?: Gio.DBusConnection
@@ -9952,10 +9962,8 @@ class SecretAgentOld {
     auto_register: boolean
     capabilities: SecretAgentCapabilities
     readonly registered: boolean
-    /* Fields of NM-1.0.NM.SecretAgentOld */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SecretAgentOld */
     delete_secrets(connection: Connection, callback: SecretAgentOldDeleteSecretsFunc): void
     destroy(): void
@@ -10039,13 +10047,13 @@ class SecretAgentOld {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface Setting_ConstructProps extends GObject.Object_ConstructProps {
+interface Setting_ConstructProps extends GObject.Object_ConstructProps {
 }
 class Setting {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Setting */
     compare(b: Setting, flags: SettingCompareFlags): boolean
     diff(b: Setting, flags: SettingCompareFlags, invert_results: boolean, results: GLib.HashTable): [ /* returnType */ boolean, /* results */ GLib.HashTable ]
@@ -10113,7 +10121,8 @@ class Setting {
     static lookup_type(name: string): GObject.Type
     static $gtype: GObject.Type
 }
-export interface Setting6Lowpan_ConstructProps extends Setting_ConstructProps {
+interface Setting6Lowpan_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.Setting6Lowpan */
     parent?: string
 }
 class Setting6Lowpan {
@@ -10122,7 +10131,7 @@ class Setting6Lowpan {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Setting6Lowpan */
     get_parent(): string
     /* Methods of NM-1.0.NM.Setting */
@@ -10194,7 +10203,8 @@ class Setting6Lowpan {
     static new(): Setting6Lowpan
     static $gtype: GObject.Type
 }
-export interface Setting8021x_ConstructProps extends Setting_ConstructProps {
+interface Setting8021x_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.Setting8021x */
     altsubject_matches?: string[]
     anonymous_identity?: string
     auth_timeout?: number
@@ -10295,7 +10305,7 @@ class Setting8021x {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Setting8021x */
     add_altsubject_match(altsubject_match: string): boolean
     add_eap_method(eap: string): boolean
@@ -10547,7 +10557,8 @@ class Setting8021x {
     static check_cert_scheme(pdata: object | null, length: number): Setting8021xCKScheme
     static $gtype: GObject.Type
 }
-export interface SettingAdsl_ConstructProps extends Setting_ConstructProps {
+interface SettingAdsl_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingAdsl */
     encapsulation?: string
     password?: string
     password_flags?: SettingSecretFlags
@@ -10568,7 +10579,7 @@ class SettingAdsl {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingAdsl */
     get_encapsulation(): string
     get_password(): string
@@ -10658,7 +10669,8 @@ class SettingAdsl {
     static new(): SettingAdsl
     static $gtype: GObject.Type
 }
-export interface SettingBluetooth_ConstructProps extends Setting_ConstructProps {
+interface SettingBluetooth_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingBluetooth */
     bdaddr?: string
     type?: string
 }
@@ -10669,7 +10681,7 @@ class SettingBluetooth {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingBluetooth */
     get_bdaddr(): string
     get_connection_type(): string
@@ -10744,7 +10756,8 @@ class SettingBluetooth {
     static new(): SettingBluetooth
     static $gtype: GObject.Type
 }
-export interface SettingBond_ConstructProps extends Setting_ConstructProps {
+interface SettingBond_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingBond */
     options?: GLib.HashTable
 }
 class SettingBond {
@@ -10753,7 +10766,7 @@ class SettingBond {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingBond */
     add_option(name: string, value: string): boolean
     get_num_options(): number
@@ -10833,7 +10846,8 @@ class SettingBond {
     static validate_option(name: string, value: string): boolean
     static $gtype: GObject.Type
 }
-export interface SettingBondPort_ConstructProps extends Setting_ConstructProps {
+interface SettingBondPort_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingBondPort */
     queue_id?: number
 }
 class SettingBondPort {
@@ -10842,7 +10856,7 @@ class SettingBondPort {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingBondPort */
     get_queue_id(): number
     /* Methods of NM-1.0.NM.Setting */
@@ -10914,7 +10928,8 @@ class SettingBondPort {
     static new(): SettingBondPort
     static $gtype: GObject.Type
 }
-export interface SettingBridge_ConstructProps extends Setting_ConstructProps {
+interface SettingBridge_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingBridge */
     ageing_time?: number
     forward_delay?: number
     group_address?: string
@@ -10975,7 +10990,7 @@ class SettingBridge {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingBridge */
     add_vlan(vlan: BridgeVlan): void
     clear_vlans(): void
@@ -11130,7 +11145,8 @@ class SettingBridge {
     static new(): SettingBridge
     static $gtype: GObject.Type
 }
-export interface SettingBridgePort_ConstructProps extends Setting_ConstructProps {
+interface SettingBridgePort_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingBridgePort */
     hairpin_mode?: boolean
     path_cost?: number
     priority?: number
@@ -11145,7 +11161,7 @@ class SettingBridgePort {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingBridgePort */
     add_vlan(vlan: BridgeVlan): void
     clear_vlans(): void
@@ -11231,7 +11247,8 @@ class SettingBridgePort {
     static new(): SettingBridgePort
     static $gtype: GObject.Type
 }
-export interface SettingCdma_ConstructProps extends Setting_ConstructProps {
+interface SettingCdma_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingCdma */
     mtu?: number
     number?: string
     password?: string
@@ -11248,7 +11265,7 @@ class SettingCdma {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingCdma */
     get_mtu(): number
     get_number(): string
@@ -11332,7 +11349,8 @@ class SettingCdma {
     static new(): SettingCdma
     static $gtype: GObject.Type
 }
-export interface SettingConnection_ConstructProps extends Setting_ConstructProps {
+interface SettingConnection_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingConnection */
     auth_retries?: number
     autoconnect?: boolean
     autoconnect_priority?: number
@@ -11391,7 +11409,7 @@ class SettingConnection {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingConnection */
     add_permission(ptype: string, pitem: string, detail?: string | null): boolean
     add_secondary(sec_uuid: string): boolean
@@ -11548,7 +11566,8 @@ class SettingConnection {
     static new(): SettingConnection
     static $gtype: GObject.Type
 }
-export interface SettingDcb_ConstructProps extends Setting_ConstructProps {
+interface SettingDcb_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingDcb */
     app_fcoe_flags?: SettingDcbFlags
     app_fcoe_mode?: string
     app_fcoe_priority?: number
@@ -11585,7 +11604,7 @@ class SettingDcb {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingDcb */
     get_app_fcoe_flags(): SettingDcbFlags
     get_app_fcoe_mode(): string
@@ -11705,13 +11724,13 @@ class SettingDcb {
     static new(): SettingDcb
     static $gtype: GObject.Type
 }
-export interface SettingDummy_ConstructProps extends Setting_ConstructProps {
+interface SettingDummy_ConstructProps extends Setting_ConstructProps {
 }
 class SettingDummy {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Setting */
     compare(b: Setting, flags: SettingCompareFlags): boolean
     diff(b: Setting, flags: SettingCompareFlags, invert_results: boolean, results: GLib.HashTable): [ /* returnType */ boolean, /* results */ GLib.HashTable ]
@@ -11779,13 +11798,13 @@ class SettingDummy {
     static new(): SettingDummy
     static $gtype: GObject.Type
 }
-export interface SettingEthtool_ConstructProps extends Setting_ConstructProps {
+interface SettingEthtool_ConstructProps extends Setting_ConstructProps {
 }
 class SettingEthtool {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingEthtool */
     clear_features(): void
     get_feature(optname: string): Ternary
@@ -11858,13 +11877,13 @@ class SettingEthtool {
     static new(): SettingEthtool
     static $gtype: GObject.Type
 }
-export interface SettingGeneric_ConstructProps extends Setting_ConstructProps {
+interface SettingGeneric_ConstructProps extends Setting_ConstructProps {
 }
 class SettingGeneric {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.Setting */
     compare(b: Setting, flags: SettingCompareFlags): boolean
     diff(b: Setting, flags: SettingCompareFlags, invert_results: boolean, results: GLib.HashTable): [ /* returnType */ boolean, /* results */ GLib.HashTable ]
@@ -11932,7 +11951,8 @@ class SettingGeneric {
     static new(): SettingGeneric
     static $gtype: GObject.Type
 }
-export interface SettingGsm_ConstructProps extends Setting_ConstructProps {
+interface SettingGsm_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingGsm */
     apn?: string
     auto_config?: boolean
     device_id?: string
@@ -11967,7 +11987,7 @@ class SettingGsm {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingGsm */
     get_apn(): string
     get_auto_config(): boolean
@@ -12078,7 +12098,8 @@ class SettingGsm {
     static new(): SettingGsm
     static $gtype: GObject.Type
 }
-export interface SettingHostname_ConstructProps extends Setting_ConstructProps {
+interface SettingHostname_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingHostname */
     from_dhcp?: Ternary
     from_dns_lookup?: Ternary
     only_from_default?: Ternary
@@ -12093,7 +12114,7 @@ class SettingHostname {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingHostname */
     get_from_dhcp(): Ternary
     get_from_dns_lookup(): Ternary
@@ -12174,7 +12195,8 @@ class SettingHostname {
     static new(): SettingHostname
     static $gtype: GObject.Type
 }
-export interface SettingIP4Config_ConstructProps extends SettingIPConfig_ConstructProps {
+interface SettingIP4Config_ConstructProps extends SettingIPConfig_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingIP4Config */
     dhcp_client_id?: string
     dhcp_fqdn?: string
     dhcp_vendor_class_identifier?: string
@@ -12210,7 +12232,7 @@ class SettingIP4Config {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingIP4Config */
     get_dhcp_client_id(): string
     get_dhcp_fqdn(): string
@@ -12389,7 +12411,8 @@ class SettingIP4Config {
     static new(): SettingIP4Config
     static $gtype: GObject.Type
 }
-export interface SettingIP6Config_ConstructProps extends SettingIPConfig_ConstructProps {
+interface SettingIP6Config_ConstructProps extends SettingIPConfig_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingIP6Config */
     addr_gen_mode?: number
     dhcp_duid?: string
     ip6_privacy?: SettingIP6ConfigPrivacy
@@ -12429,7 +12452,7 @@ class SettingIP6Config {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingIP6Config */
     get_addr_gen_mode(): SettingIP6ConfigAddrGenMode
     get_dhcp_duid(): string
@@ -12614,7 +12637,8 @@ class SettingIP6Config {
     static new(): SettingIP6Config
     static $gtype: GObject.Type
 }
-export interface SettingIPConfig_ConstructProps extends Setting_ConstructProps {
+interface SettingIPConfig_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingIPConfig */
     addresses?: IPAddress[]
     dad_timeout?: number
     dhcp_hostname?: string
@@ -12665,7 +12689,7 @@ class SettingIPConfig {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingIPConfig */
     add_address(address: IPAddress): boolean
     add_dhcp_reject_server(server: string): void
@@ -12832,7 +12856,8 @@ class SettingIPConfig {
     _init (config?: SettingIPConfig_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface SettingIPTunnel_ConstructProps extends Setting_ConstructProps {
+interface SettingIPTunnel_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingIPTunnel */
     encapsulation_limit?: number
     flags?: number
     flow_label?: number
@@ -12865,7 +12890,7 @@ class SettingIPTunnel {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingIPTunnel */
     get_encapsulation_limit(): number
     get_flags(): IPTunnelFlags
@@ -12973,7 +12998,8 @@ class SettingIPTunnel {
     static new(): SettingIPTunnel
     static $gtype: GObject.Type
 }
-export interface SettingInfiniband_ConstructProps extends Setting_ConstructProps {
+interface SettingInfiniband_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingInfiniband */
     mac_address?: string
     mtu?: number
     p_key?: number
@@ -12990,7 +13016,7 @@ class SettingInfiniband {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingInfiniband */
     get_mac_address(): string
     get_mtu(): number
@@ -13075,7 +13101,8 @@ class SettingInfiniband {
     static new(): SettingInfiniband
     static $gtype: GObject.Type
 }
-export interface SettingMacsec_ConstructProps extends Setting_ConstructProps {
+interface SettingMacsec_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingMacsec */
     encrypt?: boolean
     mka_cak?: string
     mka_cak_flags?: SettingSecretFlags
@@ -13100,7 +13127,7 @@ class SettingMacsec {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingMacsec */
     get_encrypt(): boolean
     get_mka_cak(): string
@@ -13196,7 +13223,8 @@ class SettingMacsec {
     static new(): SettingMacsec
     static $gtype: GObject.Type
 }
-export interface SettingMacvlan_ConstructProps extends Setting_ConstructProps {
+interface SettingMacvlan_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingMacvlan */
     mode?: number
     parent?: string
     promiscuous?: boolean
@@ -13211,7 +13239,7 @@ class SettingMacvlan {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingMacvlan */
     get_mode(): SettingMacvlanMode
     get_parent(): string
@@ -13292,7 +13320,8 @@ class SettingMacvlan {
     static new(): SettingMacvlan
     static $gtype: GObject.Type
 }
-export interface SettingMatch_ConstructProps extends Setting_ConstructProps {
+interface SettingMatch_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingMatch */
     driver?: string[]
     interface_name?: string[]
     kernel_command_line?: string[]
@@ -13307,7 +13336,7 @@ class SettingMatch {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingMatch */
     add_driver(driver: string): void
     add_interface_name(interface_name: string): void
@@ -13412,7 +13441,8 @@ class SettingMatch {
     static new(): SettingMatch
     static $gtype: GObject.Type
 }
-export interface SettingOlpcMesh_ConstructProps extends Setting_ConstructProps {
+interface SettingOlpcMesh_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingOlpcMesh */
     channel?: number
     dhcp_anycast_address?: string
     ssid?: GLib.Bytes
@@ -13425,7 +13455,7 @@ class SettingOlpcMesh {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingOlpcMesh */
     get_channel(): number
     get_dhcp_anycast_address(): string
@@ -13503,7 +13533,8 @@ class SettingOlpcMesh {
     static new(): SettingOlpcMesh
     static $gtype: GObject.Type
 }
-export interface SettingOvsBridge_ConstructProps extends Setting_ConstructProps {
+interface SettingOvsBridge_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingOvsBridge */
     datapath_type?: string
     fail_mode?: string
     mcast_snooping_enable?: boolean
@@ -13520,7 +13551,7 @@ class SettingOvsBridge {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingOvsBridge */
     get_datapath_type(): string
     get_fail_mode(): string
@@ -13604,18 +13635,22 @@ class SettingOvsBridge {
     static new(): SettingOvsBridge
     static $gtype: GObject.Type
 }
-export interface SettingOvsDpdk_ConstructProps extends Setting_ConstructProps {
+interface SettingOvsDpdk_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingOvsDpdk */
     devargs?: string
+    n_rxq?: number
 }
 class SettingOvsDpdk {
     /* Properties of NM-1.0.NM.SettingOvsDpdk */
     devargs: string
+    n_rxq: number
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingOvsDpdk */
     get_devargs(): string
+    get_n_rxq(): number
     /* Methods of NM-1.0.NM.Setting */
     compare(b: Setting, flags: SettingCompareFlags): boolean
     diff(b: Setting, flags: SettingCompareFlags, invert_results: boolean, results: GLib.HashTable): [ /* returnType */ boolean, /* results */ GLib.HashTable ]
@@ -13672,6 +13707,8 @@ class SettingOvsDpdk {
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
     connect(sigName: "notify::devargs", callback: (($obj: SettingOvsDpdk, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::devargs", callback: (($obj: SettingOvsDpdk, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: "notify::n-rxq", callback: (($obj: SettingOvsDpdk, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::n-rxq", callback: (($obj: SettingOvsDpdk, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::name", callback: (($obj: SettingOvsDpdk, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::name", callback: (($obj: SettingOvsDpdk, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: string, callback: any): number
@@ -13685,7 +13722,8 @@ class SettingOvsDpdk {
     static new(): SettingOvsDpdk
     static $gtype: GObject.Type
 }
-export interface SettingOvsExternalIDs_ConstructProps extends Setting_ConstructProps {
+interface SettingOvsExternalIDs_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingOvsExternalIDs */
     data?: GLib.HashTable
 }
 class SettingOvsExternalIDs {
@@ -13694,7 +13732,7 @@ class SettingOvsExternalIDs {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingOvsExternalIDs */
     get_data(key: string): string
     get_data_keys(): string[]
@@ -13770,7 +13808,8 @@ class SettingOvsExternalIDs {
     static check_val(val?: string | null): boolean
     static $gtype: GObject.Type
 }
-export interface SettingOvsInterface_ConstructProps extends Setting_ConstructProps {
+interface SettingOvsInterface_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingOvsInterface */
     type?: string
 }
 class SettingOvsInterface {
@@ -13779,7 +13818,7 @@ class SettingOvsInterface {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingOvsInterface */
     get_interface_type(): string
     /* Methods of NM-1.0.NM.Setting */
@@ -13851,7 +13890,8 @@ class SettingOvsInterface {
     static new(): SettingOvsInterface
     static $gtype: GObject.Type
 }
-export interface SettingOvsPatch_ConstructProps extends Setting_ConstructProps {
+interface SettingOvsPatch_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingOvsPatch */
     peer?: string
 }
 class SettingOvsPatch {
@@ -13860,7 +13900,7 @@ class SettingOvsPatch {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingOvsPatch */
     get_peer(): string
     /* Methods of NM-1.0.NM.Setting */
@@ -13932,7 +13972,8 @@ class SettingOvsPatch {
     static new(): SettingOvsPatch
     static $gtype: GObject.Type
 }
-export interface SettingOvsPort_ConstructProps extends Setting_ConstructProps {
+interface SettingOvsPort_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingOvsPort */
     bond_downdelay?: number
     bond_mode?: string
     bond_updelay?: number
@@ -13951,7 +13992,7 @@ class SettingOvsPort {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingOvsPort */
     get_bond_downdelay(): number
     get_bond_mode(): string
@@ -14038,7 +14079,8 @@ class SettingOvsPort {
     static new(): SettingOvsPort
     static $gtype: GObject.Type
 }
-export interface SettingPpp_ConstructProps extends Setting_ConstructProps {
+interface SettingPpp_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingPpp */
     baud?: number
     crtscts?: boolean
     lcp_echo_failure?: number
@@ -14081,7 +14123,7 @@ class SettingPpp {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingPpp */
     get_baud(): number
     get_crtscts(): boolean
@@ -14204,7 +14246,8 @@ class SettingPpp {
     static new(): SettingPpp
     static $gtype: GObject.Type
 }
-export interface SettingPppoe_ConstructProps extends Setting_ConstructProps {
+interface SettingPppoe_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingPppoe */
     parent?: string
     password?: string
     password_flags?: SettingSecretFlags
@@ -14221,7 +14264,7 @@ class SettingPppoe {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingPppoe */
     get_parent(): string
     get_password(): string
@@ -14305,7 +14348,8 @@ class SettingPppoe {
     static new(): SettingPppoe
     static $gtype: GObject.Type
 }
-export interface SettingProxy_ConstructProps extends Setting_ConstructProps {
+interface SettingProxy_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingProxy */
     browser_only?: boolean
     method?: number
     pac_script?: string
@@ -14320,7 +14364,7 @@ class SettingProxy {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingProxy */
     get_browser_only(): boolean
     get_method(): SettingProxyMethod
@@ -14401,7 +14445,8 @@ class SettingProxy {
     static new(): SettingProxy
     static $gtype: GObject.Type
 }
-export interface SettingSerial_ConstructProps extends Setting_ConstructProps {
+interface SettingSerial_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingSerial */
     baud?: number
     bits?: number
     parity?: SettingSerialParity
@@ -14418,7 +14463,7 @@ class SettingSerial {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingSerial */
     get_baud(): number
     get_bits(): number
@@ -14502,7 +14547,8 @@ class SettingSerial {
     static new(): SettingSerial
     static $gtype: GObject.Type
 }
-export interface SettingSriov_ConstructProps extends Setting_ConstructProps {
+interface SettingSriov_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingSriov */
     autoprobe_drivers?: Ternary
     total_vfs?: number
     vfs?: SriovVF[]
@@ -14515,7 +14561,7 @@ class SettingSriov {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingSriov */
     add_vf(vf: SriovVF): void
     clear_vfs(): void
@@ -14598,7 +14644,8 @@ class SettingSriov {
     static new(): SettingSriov
     static $gtype: GObject.Type
 }
-export interface SettingTCConfig_ConstructProps extends Setting_ConstructProps {
+interface SettingTCConfig_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingTCConfig */
     qdiscs?: TCQdisc[]
     tfilters?: TCTfilter[]
 }
@@ -14609,7 +14656,7 @@ class SettingTCConfig {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingTCConfig */
     add_qdisc(qdisc: TCQdisc): boolean
     add_tfilter(tfilter: TCTfilter): boolean
@@ -14694,7 +14741,8 @@ class SettingTCConfig {
     static new(): SettingTCConfig
     static $gtype: GObject.Type
 }
-export interface SettingTeam_ConstructProps extends Setting_ConstructProps {
+interface SettingTeam_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingTeam */
     config?: string
     link_watchers?: TeamLinkWatcher[]
     mcast_rejoin_count?: number
@@ -14733,7 +14781,7 @@ class SettingTeam {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingTeam */
     add_link_watcher(link_watcher: TeamLinkWatcher): boolean
     add_runner_tx_hash(txhash: string): boolean
@@ -14859,7 +14907,8 @@ class SettingTeam {
     static new(): SettingTeam
     static $gtype: GObject.Type
 }
-export interface SettingTeamPort_ConstructProps extends Setting_ConstructProps {
+interface SettingTeamPort_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingTeamPort */
     config?: string
     lacp_key?: number
     lacp_prio?: number
@@ -14880,7 +14929,7 @@ class SettingTeamPort {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingTeamPort */
     add_link_watcher(link_watcher: TeamLinkWatcher): boolean
     clear_link_watchers(): void
@@ -14975,7 +15024,8 @@ class SettingTeamPort {
     static new(): SettingTeamPort
     static $gtype: GObject.Type
 }
-export interface SettingTun_ConstructProps extends Setting_ConstructProps {
+interface SettingTun_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingTun */
     group?: string
     mode?: number
     multi_queue?: boolean
@@ -14994,7 +15044,7 @@ class SettingTun {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingTun */
     get_group(): string
     get_mode(): SettingTunMode
@@ -15081,7 +15131,8 @@ class SettingTun {
     static new(): SettingTun
     static $gtype: GObject.Type
 }
-export interface SettingUser_ConstructProps extends Setting_ConstructProps {
+interface SettingUser_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingUser */
     data?: GLib.HashTable
 }
 class SettingUser {
@@ -15090,7 +15141,7 @@ class SettingUser {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingUser */
     get_data(key: string): string
     get_keys(): string[]
@@ -15166,7 +15217,8 @@ class SettingUser {
     static check_val(val: string): boolean
     static $gtype: GObject.Type
 }
-export interface SettingVeth_ConstructProps extends Setting_ConstructProps {
+interface SettingVeth_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingVeth */
     peer?: string
 }
 class SettingVeth {
@@ -15175,7 +15227,7 @@ class SettingVeth {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingVeth */
     get_peer(): string
     /* Methods of NM-1.0.NM.Setting */
@@ -15247,7 +15299,8 @@ class SettingVeth {
     static new(): SettingVeth
     static $gtype: GObject.Type
 }
-export interface SettingVlan_ConstructProps extends Setting_ConstructProps {
+interface SettingVlan_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingVlan */
     egress_priority_map?: string[]
     flags?: VlanFlags
     id?: number
@@ -15264,7 +15317,7 @@ class SettingVlan {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingVlan */
     add_priority(map: VlanPriorityMap, from: number, to: number): boolean
     add_priority_str(map: VlanPriorityMap, str: string): boolean
@@ -15354,7 +15407,8 @@ class SettingVlan {
     static new(): SettingVlan
     static $gtype: GObject.Type
 }
-export interface SettingVpn_ConstructProps extends Setting_ConstructProps {
+interface SettingVpn_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingVpn */
     data?: GLib.HashTable
     persistent?: boolean
     secrets?: GLib.HashTable
@@ -15373,7 +15427,7 @@ class SettingVpn {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingVpn */
     add_data_item(key: string, item?: string | null): void
     add_secret(key: string, secret?: string | null): void
@@ -15470,7 +15524,8 @@ class SettingVpn {
     static new(): SettingVpn
     static $gtype: GObject.Type
 }
-export interface SettingVrf_ConstructProps extends Setting_ConstructProps {
+interface SettingVrf_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingVrf */
     table?: number
 }
 class SettingVrf {
@@ -15479,7 +15534,7 @@ class SettingVrf {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingVrf */
     get_table(): number
     /* Methods of NM-1.0.NM.Setting */
@@ -15551,7 +15606,8 @@ class SettingVrf {
     static new(): SettingVrf
     static $gtype: GObject.Type
 }
-export interface SettingVxlan_ConstructProps extends Setting_ConstructProps {
+interface SettingVxlan_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingVxlan */
     ageing?: number
     destination_port?: number
     id?: number
@@ -15590,7 +15646,7 @@ class SettingVxlan {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingVxlan */
     get_ageing(): number
     get_destination_port(): number
@@ -15707,7 +15763,8 @@ class SettingVxlan {
     static new(): SettingVxlan
     static $gtype: GObject.Type
 }
-export interface SettingWifiP2P_ConstructProps extends Setting_ConstructProps {
+interface SettingWifiP2P_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingWifiP2P */
     peer?: string
     wfd_ies?: GLib.Bytes
     wps_method?: number
@@ -15720,7 +15777,7 @@ class SettingWifiP2P {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingWifiP2P */
     get_peer(): string
     get_wfd_ies(): GLib.Bytes
@@ -15798,7 +15855,8 @@ class SettingWifiP2P {
     static new(): SettingWifiP2P
     static $gtype: GObject.Type
 }
-export interface SettingWimax_ConstructProps extends Setting_ConstructProps {
+interface SettingWimax_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingWimax */
     mac_address?: string
     network_name?: string
 }
@@ -15809,7 +15867,7 @@ class SettingWimax {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingWimax */
     get_mac_address(): string
     get_network_name(): string
@@ -15884,7 +15942,8 @@ class SettingWimax {
     static new(): SettingWimax
     static $gtype: GObject.Type
 }
-export interface SettingWireGuard_ConstructProps extends Setting_ConstructProps {
+interface SettingWireGuard_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingWireGuard */
     fwmark?: number
     ip4_auto_default_route?: Ternary
     ip6_auto_default_route?: Ternary
@@ -15907,7 +15966,7 @@ class SettingWireGuard {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingWireGuard */
     append_peer(peer: WireGuardPeer): void
     clear_peers(): number
@@ -16007,7 +16066,8 @@ class SettingWireGuard {
     static new(): SettingWireGuard
     static $gtype: GObject.Type
 }
-export interface SettingWired_ConstructProps extends Setting_ConstructProps {
+interface SettingWired_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingWired */
     accept_all_mac_addresses?: Ternary
     auto_negotiate?: boolean
     cloned_mac_address?: string
@@ -16044,7 +16104,7 @@ class SettingWired {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingWired */
     add_mac_blacklist_item(mac: string): boolean
     add_s390_option(key: string, value: string): boolean
@@ -16169,7 +16229,8 @@ class SettingWired {
     static new(): SettingWired
     static $gtype: GObject.Type
 }
-export interface SettingWireless_ConstructProps extends Setting_ConstructProps {
+interface SettingWireless_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingWireless */
     ap_isolation?: Ternary
     band?: string
     bssid?: string
@@ -16212,7 +16273,7 @@ class SettingWireless {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingWireless */
     add_mac_blacklist_item(mac: string): boolean
     add_seen_bssid(bssid: string): boolean
@@ -16344,7 +16405,8 @@ class SettingWireless {
     static new(): SettingWireless
     static $gtype: GObject.Type
 }
-export interface SettingWirelessSecurity_ConstructProps extends Setting_ConstructProps {
+interface SettingWirelessSecurity_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingWirelessSecurity */
     auth_alg?: string
     fils?: number
     group?: string[]
@@ -16391,7 +16453,7 @@ class SettingWirelessSecurity {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingWirelessSecurity */
     add_group(group: string): boolean
     add_pairwise(pairwise: string): boolean
@@ -16533,7 +16595,8 @@ class SettingWirelessSecurity {
     static new(): SettingWirelessSecurity
     static $gtype: GObject.Type
 }
-export interface SettingWpan_ConstructProps extends Setting_ConstructProps {
+interface SettingWpan_ConstructProps extends Setting_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.SettingWpan */
     channel?: number
     mac_address?: string
     page?: number
@@ -16550,7 +16613,7 @@ class SettingWpan {
     /* Properties of NM-1.0.NM.Setting */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.SettingWpan */
     get_channel(): number
     get_mac_address(): string
@@ -16634,11 +16697,11 @@ class SettingWpan {
     static new(): SettingWpan
     static $gtype: GObject.Type
 }
-export interface SimpleConnection_ConstructProps extends GObject.Object_ConstructProps {
+interface SimpleConnection_ConstructProps extends GObject.Object_ConstructProps {
 }
 class SimpleConnection {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -16767,7 +16830,7 @@ class SimpleConnection {
     static new_from_dbus(dict: GLib.Variant): Connection
     static $gtype: GObject.Type
 }
-export interface VpnConnection_ConstructProps extends ActiveConnection_ConstructProps {
+interface VpnConnection_ConstructProps extends ActiveConnection_ConstructProps {
 }
 class VpnConnection {
     /* Properties of NM-1.0.NM.VpnConnection */
@@ -16794,7 +16857,7 @@ class VpnConnection {
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.VpnConnection */
     get_banner(): string
     get_vpn_state(): VpnConnectionState
@@ -16910,7 +16973,8 @@ class VpnConnection {
     _init (config?: VpnConnection_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface VpnPluginInfo_ConstructProps extends GObject.Object_ConstructProps {
+interface VpnPluginInfo_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.VpnPluginInfo */
     filename?: string
     keyfile?: GLib.KeyFile
 }
@@ -16918,7 +16982,7 @@ class VpnPluginInfo {
     /* Properties of NM-1.0.NM.VpnPluginInfo */
     readonly name: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.VpnPluginInfo */
     get_aliases(): string[]
     get_auth_dialog(): string
@@ -16996,17 +17060,16 @@ class VpnPluginInfo {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface VpnPluginOld_ConstructProps extends GObject.Object_ConstructProps {
+interface VpnPluginOld_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.VpnPluginOld */
     service_name?: string
     state?: VpnServiceState
 }
 class VpnPluginOld {
     /* Properties of NM-1.0.NM.VpnPluginOld */
     state: VpnServiceState
-    /* Fields of NM-1.0.NM.VpnPluginOld */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.VpnPluginOld */
     disconnect(): boolean
     failure(reason: VpnPluginFailure): void
@@ -17108,7 +17171,8 @@ class VpnPluginOld {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface VpnServicePlugin_ConstructProps extends GObject.Object_ConstructProps {
+interface VpnServicePlugin_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of NM-1.0.NM.VpnServicePlugin */
     service_name?: string
     state?: VpnServiceState
     watch_peer?: boolean
@@ -17116,10 +17180,8 @@ export interface VpnServicePlugin_ConstructProps extends GObject.Object_Construc
 class VpnServicePlugin {
     /* Properties of NM-1.0.NM.VpnServicePlugin */
     state: VpnServiceState
-    /* Fields of NM-1.0.NM.VpnServicePlugin */
-    parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.VpnServicePlugin */
     disconnect(): boolean
     failure(reason: VpnPluginFailure): void
@@ -17220,7 +17282,7 @@ class VpnServicePlugin {
     static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Gio.Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
-export interface WifiP2PPeer_ConstructProps extends Object_ConstructProps {
+interface WifiP2PPeer_ConstructProps extends Object_ConstructProps {
 }
 class WifiP2PPeer {
     /* Properties of NM-1.0.NM.WifiP2PPeer */
@@ -17238,7 +17300,7 @@ class WifiP2PPeer {
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.WifiP2PPeer */
     connection_valid(connection: Connection): boolean
     filter_connections(connections: Connection[]): Connection[]
@@ -17322,7 +17384,7 @@ class WifiP2PPeer {
     _init (config?: WifiP2PPeer_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface WimaxNsp_ConstructProps extends Object_ConstructProps {
+interface WimaxNsp_ConstructProps extends Object_ConstructProps {
 }
 class WimaxNsp {
     /* Properties of NM-1.0.NM.WimaxNsp */
@@ -17333,7 +17395,7 @@ class WimaxNsp {
     readonly client: Client
     readonly path: string
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of NM-1.0.NM.WimaxNsp */
     connection_valid(connection: Connection): boolean
     filter_connections(connections: Connection[]): Connection[]
@@ -17431,10 +17493,10 @@ abstract class ClientClass {
 }
 abstract class ConnectionInterface {
     /* Fields of NM-1.0.NM.ConnectionInterface */
-    parent: GObject.TypeInterface
-    secrets_updated: (connection: Connection, setting: string) => void
-    secrets_cleared: (connection: Connection) => void
-    changed: (connection: Connection) => void
+    readonly parent: GObject.TypeInterface
+    readonly secrets_updated: (connection: Connection, setting: string) => void
+    readonly secrets_cleared: (connection: Connection) => void
+    readonly changed: (connection: Connection) => void
     static name: string
 }
 abstract class Device6LowpanClass {
@@ -17676,11 +17738,11 @@ abstract class RemoteConnectionClass {
 }
 abstract class SecretAgentOldClass {
     /* Fields of NM-1.0.NM.SecretAgentOldClass */
-    parent: GObject.ObjectClass
-    get_secrets: (self: SecretAgentOld, connection: Connection, connection_path: string, setting_name: string, hints: string[], flags: SecretAgentGetSecretsFlags, callback: SecretAgentOldGetSecretsFunc) => void
-    cancel_get_secrets: (self: SecretAgentOld, connection_path: string, setting_name: string) => void
-    save_secrets: (self: SecretAgentOld, connection: Connection, connection_path: string, callback: SecretAgentOldSaveSecretsFunc) => void
-    delete_secrets: (self: SecretAgentOld, connection: Connection, connection_path: string, callback: SecretAgentOldDeleteSecretsFunc) => void
+    readonly parent: GObject.ObjectClass
+    readonly get_secrets: (self: SecretAgentOld, connection: Connection, connection_path: string, setting_name: string, hints: string[], flags: SecretAgentGetSecretsFlags, callback: SecretAgentOldGetSecretsFunc) => void
+    readonly cancel_get_secrets: (self: SecretAgentOld, connection_path: string, setting_name: string) => void
+    readonly save_secrets: (self: SecretAgentOld, connection: Connection, connection_path: string, callback: SecretAgentOldSaveSecretsFunc) => void
+    readonly delete_secrets: (self: SecretAgentOld, connection: Connection, connection_path: string, callback: SecretAgentOldDeleteSecretsFunc) => void
     static name: string
 }
 abstract class Setting6LowpanClass {
@@ -17956,22 +18018,22 @@ abstract class VpnConnectionClass {
 }
 abstract class VpnEditorInterface {
     /* Fields of NM-1.0.NM.VpnEditorInterface */
-    g_iface: GObject.TypeInterface
-    get_widget: (editor: VpnEditor) => GObject.Object
-    placeholder: () => void
-    update_connection: (editor: VpnEditor, connection: Connection) => boolean
-    changed: (editor: VpnEditor) => void
+    readonly g_iface: GObject.TypeInterface
+    readonly get_widget: (editor: VpnEditor) => GObject.Object
+    readonly placeholder: () => void
+    readonly update_connection: (editor: VpnEditor, connection: Connection) => boolean
+    readonly changed: (editor: VpnEditor) => void
     static name: string
 }
 abstract class VpnEditorPluginInterface {
     /* Fields of NM-1.0.NM.VpnEditorPluginInterface */
-    g_iface: GObject.TypeInterface
-    get_editor: (plugin: VpnEditorPlugin, connection: Connection) => VpnEditor
-    get_capabilities: (plugin: VpnEditorPlugin) => VpnEditorPluginCapability
-    export_to_file: (plugin: VpnEditorPlugin, path: string, connection: Connection) => boolean
-    get_suggested_filename: (plugin: VpnEditorPlugin, connection: Connection) => string
-    notify_plugin_info_set: (plugin: VpnEditorPlugin, plugin_info: VpnPluginInfo) => void
-    get_vt: (plugin: VpnEditorPlugin, out_vt_size: number) => VpnEditorPluginVT
+    readonly g_iface: GObject.TypeInterface
+    readonly get_editor: (plugin: VpnEditorPlugin, connection: Connection) => VpnEditor
+    readonly get_capabilities: (plugin: VpnEditorPlugin) => VpnEditorPluginCapability
+    readonly export_to_file: (plugin: VpnEditorPlugin, path: string, connection: Connection) => boolean
+    readonly get_suggested_filename: (plugin: VpnEditorPlugin, connection: Connection) => string
+    readonly notify_plugin_info_set: (plugin: VpnEditorPlugin, plugin_info: VpnPluginInfo) => void
+    readonly get_vt: (plugin: VpnEditorPlugin, out_vt_size: number) => VpnEditorPluginVT
     static name: string
 }
 class VpnEditorPluginVT {
@@ -17982,36 +18044,36 @@ abstract class VpnPluginInfoClass {
 }
 abstract class VpnPluginOldClass {
     /* Fields of NM-1.0.NM.VpnPluginOldClass */
-    parent: GObject.ObjectClass
-    state_changed: (plugin: VpnPluginOld, state: VpnServiceState) => void
-    ip4_config: (plugin: VpnPluginOld, ip4_config: GLib.Variant) => void
-    login_banner: (plugin: VpnPluginOld, banner: string) => void
-    failure: (plugin: VpnPluginOld, reason: VpnPluginFailure) => void
-    quit: (plugin: VpnPluginOld) => void
-    config: (plugin: VpnPluginOld, config: GLib.Variant) => void
-    ip6_config: (plugin: VpnPluginOld, config: GLib.Variant) => void
-    connect: (plugin: VpnPluginOld, connection: Connection) => boolean
-    need_secrets: (plugin: VpnPluginOld, connection: Connection, setting_name: string) => boolean
-    disconnect: (plugin: VpnPluginOld) => boolean
-    new_secrets: (plugin: VpnPluginOld, connection: Connection) => boolean
-    connect_interactive: (plugin: VpnPluginOld, connection: Connection, details: GLib.Variant) => boolean
+    readonly parent: GObject.ObjectClass
+    readonly state_changed: (plugin: VpnPluginOld, state: VpnServiceState) => void
+    readonly ip4_config: (plugin: VpnPluginOld, ip4_config: GLib.Variant) => void
+    readonly login_banner: (plugin: VpnPluginOld, banner: string) => void
+    readonly failure: (plugin: VpnPluginOld, reason: VpnPluginFailure) => void
+    readonly quit: (plugin: VpnPluginOld) => void
+    readonly config: (plugin: VpnPluginOld, config: GLib.Variant) => void
+    readonly ip6_config: (plugin: VpnPluginOld, config: GLib.Variant) => void
+    readonly connect: (plugin: VpnPluginOld, connection: Connection) => boolean
+    readonly need_secrets: (plugin: VpnPluginOld, connection: Connection, setting_name: string) => boolean
+    readonly disconnect: (plugin: VpnPluginOld) => boolean
+    readonly new_secrets: (plugin: VpnPluginOld, connection: Connection) => boolean
+    readonly connect_interactive: (plugin: VpnPluginOld, connection: Connection, details: GLib.Variant) => boolean
     static name: string
 }
 abstract class VpnServicePluginClass {
     /* Fields of NM-1.0.NM.VpnServicePluginClass */
-    parent: GObject.ObjectClass
-    state_changed: (plugin: VpnServicePlugin, state: VpnServiceState) => void
-    ip4_config: (plugin: VpnServicePlugin, ip4_config: GLib.Variant) => void
-    login_banner: (plugin: VpnServicePlugin, banner: string) => void
-    failure: (plugin: VpnServicePlugin, reason: VpnPluginFailure) => void
-    quit: (plugin: VpnServicePlugin) => void
-    config: (plugin: VpnServicePlugin, config: GLib.Variant) => void
-    ip6_config: (plugin: VpnServicePlugin, config: GLib.Variant) => void
-    connect: (plugin: VpnServicePlugin, connection: Connection) => boolean
-    need_secrets: (plugin: VpnServicePlugin, connection: Connection, setting_name: string) => boolean
-    disconnect: (plugin: VpnServicePlugin) => boolean
-    new_secrets: (plugin: VpnServicePlugin, connection: Connection) => boolean
-    connect_interactive: (plugin: VpnServicePlugin, connection: Connection, details: GLib.Variant) => boolean
+    readonly parent: GObject.ObjectClass
+    readonly state_changed: (plugin: VpnServicePlugin, state: VpnServiceState) => void
+    readonly ip4_config: (plugin: VpnServicePlugin, ip4_config: GLib.Variant) => void
+    readonly login_banner: (plugin: VpnServicePlugin, banner: string) => void
+    readonly failure: (plugin: VpnServicePlugin, reason: VpnPluginFailure) => void
+    readonly quit: (plugin: VpnServicePlugin) => void
+    readonly config: (plugin: VpnServicePlugin, config: GLib.Variant) => void
+    readonly ip6_config: (plugin: VpnServicePlugin, config: GLib.Variant) => void
+    readonly connect: (plugin: VpnServicePlugin, connection: Connection) => boolean
+    readonly need_secrets: (plugin: VpnServicePlugin, connection: Connection, setting_name: string) => boolean
+    readonly disconnect: (plugin: VpnServicePlugin) => boolean
+    readonly new_secrets: (plugin: VpnServicePlugin, connection: Connection) => boolean
+    readonly connect_interactive: (plugin: VpnServicePlugin, connection: Connection, details: GLib.Variant) => boolean
     static name: string
 }
 abstract class WifiP2PPeerClass {

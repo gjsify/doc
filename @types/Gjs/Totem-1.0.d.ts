@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Totem-1.0
  */
@@ -52,7 +58,7 @@ enum RemoteCommand {
 enum RemoteSetting {
     REPEAT,
 }
-export const GSETTINGS_SCHEMA: string
+const GSETTINGS_SCHEMA: string
 function get_plugin_paths(): string[]
 function interface_create_header_button(header: Gtk.Widget, button: Gtk.Widget, icon_name: string, pack_type: Gtk.PackType): Gtk.Widget
 function interface_error(title: string, reason: string, parent: Gtk.Window): void
@@ -66,7 +72,7 @@ function plugin_find_file(plugin_name: string, file: string): string
 function plugin_load_interface(plugin_name: string, name: string, fatal: boolean, parent?: Gtk.Window | null, user_data?: object | null): Gtk.Builder
 function remote_command_quark(): GLib.Quark
 function remote_setting_quark(): GLib.Quark
-export interface Object_ConstructProps extends Gtk.Application_ConstructProps {
+interface Object_ConstructProps extends Gtk.Application_ConstructProps {
 }
 class Object {
     /* Properties of Totem-1.0.Totem.Object */
@@ -95,9 +101,9 @@ class Object {
     readonly is_remote: boolean
     resource_base_path: string
     /* Fields of Gtk-3.0.Gtk.Application */
-    parent: Gio.Application
+    readonly parent: Gio.Application
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Totem-1.0.Totem.Object */
     add_to_playlist(uri: string, display_name: string, play: boolean): void
     add_to_view(file: Gio.File, title: string): void
@@ -242,6 +248,23 @@ class Object {
     vfunc_get_text_subtitle(mrl: string): string
     vfunc_get_user_agent(mrl: string): string
     vfunc_metadata_updated(artist: string, title: string, album: string, track_num: number): void
+    vfunc_action_added(action_name: string): void
+    vfunc_action_enabled_changed(action_name: string, enabled: boolean): void
+    vfunc_action_removed(action_name: string): void
+    vfunc_action_state_changed(action_name: string, state: GLib.Variant): void
+    vfunc_activate_action(action_name: string, parameter?: GLib.Variant | null): void
+    vfunc_change_action_state(action_name: string, value: GLib.Variant): void
+    vfunc_get_action_enabled(action_name: string): boolean
+    vfunc_get_action_parameter_type(action_name: string): GLib.VariantType | null
+    vfunc_get_action_state(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_hint(action_name: string): GLib.Variant | null
+    vfunc_get_action_state_type(action_name: string): GLib.VariantType | null
+    vfunc_has_action(action_name: string): boolean
+    vfunc_list_actions(): string[]
+    vfunc_query_action(action_name: string): [ /* returnType */ boolean, /* enabled */ boolean, /* parameter_type */ GLib.VariantType | null, /* state_type */ GLib.VariantType | null, /* state_hint */ GLib.Variant | null, /* state */ GLib.Variant | null ]
+    vfunc_add_action(action: Gio.Action): void
+    vfunc_lookup_action(action_name: string): Gio.Action | null
+    vfunc_remove_action(action_name: string): void
     /* Virtual methods of Gtk-3.0.Gtk.Application */
     vfunc_window_added(window: Gtk.Window): void
     vfunc_window_removed(window: Gtk.Window): void
@@ -406,19 +429,22 @@ class Object {
     constructor (config?: Object_ConstructProps)
     _init (config?: Object_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): Object
+    /* Function overloads */
+    static new(application_id: string | null, flags: Gio.ApplicationFlags): Object
     static get_supported_content_types(): string[]
     static get_supported_uri_schemes(): string[]
     static $gtype: GObject.Type
 }
 abstract class ObjectClass {
     /* Fields of Totem-1.0.Totem.ObjectClass */
-    parent_class: Gtk.ApplicationClass
-    file_opened: (totem: Object, mrl: string) => void
-    file_closed: (totem: Object) => void
-    file_has_played: (totem: Object, mrl: string) => void
-    metadata_updated: (totem: Object, artist: string, title: string, album: string, track_num: number) => void
-    get_user_agent: (totem: Object, mrl: string) => string
-    get_text_subtitle: (totem: Object, mrl: string) => string
+    readonly parent_class: Gtk.ApplicationClass
+    readonly file_opened: (totem: Object, mrl: string) => void
+    readonly file_closed: (totem: Object) => void
+    readonly file_has_played: (totem: Object, mrl: string) => void
+    readonly metadata_updated: (totem: Object, artist: string, title: string, album: string, track_num: number) => void
+    readonly get_user_agent: (totem: Object, mrl: string) => string
+    readonly get_text_subtitle: (totem: Object, mrl: string) => string
     static name: string
 }
 }

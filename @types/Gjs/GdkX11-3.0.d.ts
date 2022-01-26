@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GdkX11-3.0
  */
@@ -38,13 +44,13 @@ function x11_set_sm_client_id(sm_client_id?: string | null): void
 function x11_ungrab_server(): void
 function x11_xatom_to_atom(xatom: xlib.Atom): Gdk.Atom
 function x11_xatom_to_atom_for_display(display: X11Display, xatom: xlib.Atom): Gdk.Atom
-export interface X11AppLaunchContext_ConstructProps extends Gdk.AppLaunchContext_ConstructProps {
+interface X11AppLaunchContext_ConstructProps extends Gdk.AppLaunchContext_ConstructProps {
 }
 class X11AppLaunchContext {
     /* Fields of Gio-2.0.Gio.AppLaunchContext */
-    parent_instance: GObject.Object
+    readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-3.0.Gdk.AppLaunchContext */
     set_desktop(desktop: number): void
     set_display(display: Gdk.Display): void
@@ -116,13 +122,17 @@ class X11AppLaunchContext {
     static name: string
     constructor (config?: X11AppLaunchContext_ConstructProps)
     _init (config?: X11AppLaunchContext_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(): X11AppLaunchContext
+    /* Function overloads */
+    static new(): X11AppLaunchContext
     static $gtype: GObject.Type
 }
-export interface X11Cursor_ConstructProps extends Gdk.Cursor_ConstructProps {
+interface X11Cursor_ConstructProps extends Gdk.Cursor_ConstructProps {
 }
 class X11Cursor {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GdkX11-3.0.GdkX11.X11Cursor */
     get_xcursor(): xlib.Cursor
     get_xdisplay(): xlib.Display
@@ -175,7 +185,7 @@ class X11Cursor {
     _init (config?: X11Cursor_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11DeviceCore_ConstructProps extends Gdk.Device_ConstructProps {
+interface X11DeviceCore_ConstructProps extends Gdk.Device_ConstructProps {
 }
 class X11DeviceCore {
     /* Properties of Gdk-3.0.Gdk.Device */
@@ -186,7 +196,7 @@ class X11DeviceCore {
     seat: Gdk.Seat
     readonly tool: Gdk.DeviceTool
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-3.0.Gdk.Device */
     get_associated_device(): Gdk.Device | null
     get_axes(): Gdk.AxisFlags
@@ -278,11 +288,11 @@ class X11DeviceCore {
     _init (config?: X11DeviceCore_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11DeviceManagerCore_ConstructProps extends Gdk.DeviceManager_ConstructProps {
+interface X11DeviceManagerCore_ConstructProps extends Gdk.DeviceManager_ConstructProps {
 }
 class X11DeviceManagerCore {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-3.0.Gdk.DeviceManager */
     get_client_pointer(): Gdk.Device
     get_display(): Gdk.Display | null
@@ -340,14 +350,15 @@ class X11DeviceManagerCore {
     _init (config?: X11DeviceManagerCore_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11DeviceManagerXI2_ConstructProps extends X11DeviceManagerCore_ConstructProps {
+interface X11DeviceManagerXI2_ConstructProps extends X11DeviceManagerCore_ConstructProps {
+    /* Constructor properties of GdkX11-3.0.GdkX11.X11DeviceManagerXI2 */
     major?: number
     minor?: number
     opcode?: number
 }
 class X11DeviceManagerXI2 {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-3.0.Gdk.DeviceManager */
     get_client_pointer(): Gdk.Device
     get_display(): Gdk.Display | null
@@ -405,7 +416,8 @@ class X11DeviceManagerXI2 {
     _init (config?: X11DeviceManagerXI2_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11DeviceXI2_ConstructProps extends Gdk.Device_ConstructProps {
+interface X11DeviceXI2_ConstructProps extends Gdk.Device_ConstructProps {
+    /* Constructor properties of GdkX11-3.0.GdkX11.X11DeviceXI2 */
     device_id?: number
 }
 class X11DeviceXI2 {
@@ -417,7 +429,7 @@ class X11DeviceXI2 {
     seat: Gdk.Seat
     readonly tool: Gdk.DeviceTool
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-3.0.Gdk.Device */
     get_associated_device(): Gdk.Device | null
     get_axes(): Gdk.AxisFlags
@@ -509,11 +521,11 @@ class X11DeviceXI2 {
     _init (config?: X11DeviceXI2_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11Display_ConstructProps extends Gdk.Display_ConstructProps {
+interface X11Display_ConstructProps extends Gdk.Display_ConstructProps {
 }
 class X11Display {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GdkX11-3.0.GdkX11.X11Display */
     error_trap_pop(): number
     error_trap_pop_ignored(): void
@@ -525,10 +537,10 @@ class X11Display {
     set_cursor_theme(theme: string | null, size: number): void
     set_startup_notification_id(startup_id: string): void
     set_window_scale(scale: number): void
-    string_to_compound_text(str: string): [ /* returnType */ number, /* encoding */ Gdk.Atom, /* format */ number, /* ctext */ Uint8Array[] ]
+    string_to_compound_text(str: string): [ /* returnType */ number, /* encoding */ Gdk.Atom, /* format */ number, /* ctext */ Uint8Array ]
     text_property_to_text_list(encoding: Gdk.Atom, format: number, text: number, length: number, list: string): number
     ungrab(): void
-    utf8_to_compound_text(str: string): [ /* returnType */ boolean, /* encoding */ Gdk.Atom, /* format */ number, /* ctext */ Uint8Array[] ]
+    utf8_to_compound_text(str: string): [ /* returnType */ boolean, /* encoding */ Gdk.Atom, /* format */ number, /* ctext */ Uint8Array ]
     /* Methods of Gdk-3.0.Gdk.Display */
     beep(): void
     close(): void
@@ -639,13 +651,13 @@ class X11Display {
     static get_glx_version(display: Gdk.Display): [ /* returnType */ boolean, /* major */ number, /* minor */ number ]
     static $gtype: GObject.Type
 }
-export interface X11DisplayManager_ConstructProps extends Gdk.DisplayManager_ConstructProps {
+interface X11DisplayManager_ConstructProps extends Gdk.DisplayManager_ConstructProps {
 }
 class X11DisplayManager {
     /* Properties of Gdk-3.0.Gdk.DisplayManager */
     default_display: Gdk.Display
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-3.0.Gdk.DisplayManager */
     get_default_display(): Gdk.Display | null
     list_displays(): Gdk.Display[]
@@ -700,11 +712,11 @@ class X11DisplayManager {
     _init (config?: X11DisplayManager_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11DragContext_ConstructProps extends Gdk.DragContext_ConstructProps {
+interface X11DragContext_ConstructProps extends Gdk.DragContext_ConstructProps {
 }
 class X11DragContext {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-3.0.Gdk.DragContext */
     get_actions(): Gdk.DragAction
     get_dest_window(): Gdk.Window
@@ -774,11 +786,11 @@ class X11DragContext {
     _init (config?: X11DragContext_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11GLContext_ConstructProps extends Gdk.GLContext_ConstructProps {
+interface X11GLContext_ConstructProps extends Gdk.GLContext_ConstructProps {
 }
 class X11GLContext {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-3.0.Gdk.GLContext */
     get_debug_enabled(): boolean
     get_display(): Gdk.Display | null
@@ -838,11 +850,11 @@ class X11GLContext {
     _init (config?: X11GLContext_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11Keymap_ConstructProps extends Gdk.Keymap_ConstructProps {
+interface X11Keymap_ConstructProps extends Gdk.Keymap_ConstructProps {
 }
 class X11Keymap {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GdkX11-3.0.GdkX11.X11Keymap */
     get_group_for_state(state: number): number
     key_is_modifier(keycode: number): boolean
@@ -913,7 +925,7 @@ class X11Keymap {
     _init (config?: X11Keymap_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11Monitor_ConstructProps extends Gdk.Monitor_ConstructProps {
+interface X11Monitor_ConstructProps extends Gdk.Monitor_ConstructProps {
 }
 class X11Monitor {
     /* Properties of Gdk-3.0.Gdk.Monitor */
@@ -927,7 +939,7 @@ class X11Monitor {
     readonly width_mm: number
     readonly workarea: Gdk.Rectangle
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-3.0.Gdk.Monitor */
     get_display(): Gdk.Display
     get_geometry(): /* geometry */ Gdk.Rectangle
@@ -1007,14 +1019,14 @@ class X11Monitor {
     static get_output(monitor: Gdk.Monitor): xlib.XID
     static $gtype: GObject.Type
 }
-export interface X11Screen_ConstructProps extends Gdk.Screen_ConstructProps {
+interface X11Screen_ConstructProps extends Gdk.Screen_ConstructProps {
 }
 class X11Screen {
     /* Properties of Gdk-3.0.Gdk.Screen */
     font_options: object
     resolution: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GdkX11-3.0.GdkX11.X11Screen */
     get_current_desktop(): number
     get_monitor_output(monitor_num: number): xlib.XID
@@ -1116,11 +1128,11 @@ class X11Screen {
     _init (config?: X11Screen_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11Visual_ConstructProps extends Gdk.Visual_ConstructProps {
+interface X11Visual_ConstructProps extends Gdk.Visual_ConstructProps {
 }
 class X11Visual {
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GdkX11-3.0.GdkX11.X11Visual */
     get_xvisual(): xlib.Visual
     /* Methods of Gdk-3.0.Gdk.Visual */
@@ -1176,13 +1188,13 @@ class X11Visual {
     _init (config?: X11Visual_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface X11Window_ConstructProps extends Gdk.Window_ConstructProps {
+interface X11Window_ConstructProps extends Gdk.Window_ConstructProps {
 }
 class X11Window {
     /* Properties of Gdk-3.0.Gdk.Window */
     cursor: Gdk.Cursor
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GdkX11-3.0.GdkX11.X11Window */
     get_desktop(): number
     get_xid(): xlib.Window

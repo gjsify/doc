@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * Babl-0.1
  */
@@ -30,11 +36,11 @@ enum ModelFlag {
     CIE,
     CMYK,
 }
-export const ALPHA_FLOOR: number
-export const ALPHA_FLOOR_F: number
-export const MAJOR_VERSION: number
-export const MICRO_VERSION: number
-export const MINOR_VERSION: number
+const ALPHA_FLOOR: number
+const ALPHA_FLOOR_F: number
+const MAJOR_VERSION: number
+const MICRO_VERSION: number
+const MINOR_VERSION: number
 function component(name: string): Object
 function conversion_get_destination_space(conversion: Object): Object
 function conversion_get_source_space(conversion: Object): Object
@@ -67,7 +73,7 @@ function model_with_space(name: string, space: Object): Object
 function new_palette(name: string, format_u8: Object, format_u8_with_alpha: Object): Object
 function new_palette_with_space(name: string, space: Object, format_u8: Object, format_u8_with_alpha: Object): Object
 function palette_reset(babl: Object): void
-function palette_set_palette(babl: Object, format: Object, data: Uint8Array[], count: number): void
+function palette_set_palette(babl: Object, format: Object, data: Uint8Array, count: number): void
 function process(babl_fish: Object, source: object | null, destination: object | null, n: number): number
 function process_rows(babl_fish: Object, source: object | null, source_stride: number, dest: object | null, dest_stride: number, n: number, rows: number): number
 function sampling(horizontal: number, vertical: number): Object

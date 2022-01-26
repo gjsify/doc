@@ -1,3 +1,9 @@
+/*
+ * Type Definitions for Gjs (https://gjs.guide/)
+ *
+ * These type definitions are automatically generated, do not edit them by hand.
+ * If you found a bug fix it in ts-for-gir itself or create a bug report on https://github.com/sammydre/ts-for-gjs
+ */
 /**
  * GooCanvas-3.0
  */
@@ -117,7 +123,7 @@ enum CanvasPointerEvents {
     STROKE,
     ALL,
 }
-export const CANVAS_POLYLINE_NUM_ARROW_POINTS: number
+const CANVAS_POLYLINE_NUM_ARROW_POINTS: number
 function cairo_matrix_copy(matrix: cairo.Matrix): cairo.Matrix
 function cairo_matrix_free(matrix: cairo.Matrix): void
 function canvas_item_class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
@@ -361,7 +367,8 @@ class CanvasItemModel {
     static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
     static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
 }
-export interface Canvas_ConstructProps extends Gtk.Container_ConstructProps {
+interface Canvas_ConstructProps extends Gtk.Container_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.Canvas */
     anchor?: CanvasAnchorType
     automatic_bounds?: boolean
     background_color?: string
@@ -382,6 +389,7 @@ export interface Canvas_ConstructProps extends Gtk.Container_ConstructProps {
     x2?: number
     y1?: number
     y2?: number
+    /* Constructor properties of Gtk-3.0.Gtk.Scrollable */
     hadjustment?: Gtk.Adjustment
     hscroll_policy?: Gtk.ScrollablePolicy
     vadjustment?: Gtk.Adjustment
@@ -458,37 +466,12 @@ class Canvas {
     hscroll_policy: Gtk.ScrollablePolicy
     vadjustment: Gtk.Adjustment
     vscroll_policy: Gtk.ScrollablePolicy
-    /* Fields of GooCanvas-3.0.GooCanvas.Canvas */
-    container: Gtk.Container
-    root_item_model: CanvasItemModel
-    root_item: CanvasItem
-    bounds: CanvasBounds
-    idle_id: number
-    need_update: number
-    need_entire_subtree_update: number
-    before_initial_draw: number
-    pointer_item: CanvasItem
-    pointer_grab_item: CanvasItem
-    pointer_grab_initial_item: CanvasItem
-    pointer_grab_button: number
-    focused_item: CanvasItem
-    keyboard_grab_item: CanvasItem
-    crossing_event: Gdk.EventCrossing
-    canvas_window: Gdk.Window
-    canvas_x_offset: number
-    canvas_y_offset: number
-    freeze_count: number
-    tmp_window: Gdk.Window
-    model_to_item: GLib.HashTable
-    device_to_pixels_x: number
-    device_to_pixels_y: number
-    widget_items: object[]
     /* Fields of Gtk-3.0.Gtk.Container */
-    widget: Gtk.Widget
+    readonly widget: Gtk.Widget
     /* Fields of Gtk-3.0.Gtk.Widget */
-    parent_instance: GObject.InitiallyUnowned
+    readonly parent_instance: GObject.InitiallyUnowned
     /* Fields of GObject-2.0.GObject.InitiallyUnowned */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.Canvas */
     convert_bounds_to_item_space(item: CanvasItem, bounds: CanvasBounds): void
     convert_from_item_space(item: CanvasItem, x: number, y: number): [ /* x */ number, /* y */ number ]
@@ -534,7 +517,7 @@ class Canvas {
     add(widget: Gtk.Widget): void
     check_resize(): void
     child_get_property(child: Gtk.Widget, property_name: string, value: any): void
-    /* child_notify clashes with Gtk.Widget.child_notify */
+    child_notify(child: Gtk.Widget, child_property: string): void
     child_notify_by_pspec(child: Gtk.Widget, pspec: GObject.ParamSpec): void
     child_set_property(child: Gtk.Widget, property_name: string, value: any): void
     child_type(): GObject.Type
@@ -849,6 +832,7 @@ class Canvas {
     get_internal_child(builder: Gtk.Builder, childname: string): GObject.Object
     parser_finished(builder: Gtk.Builder): void
     set_buildable_property(builder: Gtk.Builder, name: string, value: any): void
+    set_name(name: string): void
     /* Methods of Gtk-3.0.Gtk.Scrollable */
     get_border(): [ /* returnType */ boolean, /* border */ Gtk.Border ]
     get_hadjustment(): Gtk.Adjustment
@@ -1354,13 +1338,13 @@ class Canvas {
     static parse_path_data(path_data: string): CanvasPathCommand[]
     static $gtype: GObject.Type
 }
-export interface CanvasAccessibleFactory_ConstructProps extends Atk.ObjectFactory_ConstructProps {
+interface CanvasAccessibleFactory_ConstructProps extends Atk.ObjectFactory_ConstructProps {
 }
 class CanvasAccessibleFactory {
     /* Fields of Atk-1.0.Atk.ObjectFactory */
-    parent: GObject.Object
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.ObjectFactory */
     create_accessible(obj: GObject.Object): Atk.Object
     get_accessible_type(): GObject.Type
@@ -1410,7 +1394,8 @@ class CanvasAccessibleFactory {
     _init (config?: CanvasAccessibleFactory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CanvasEllipse_ConstructProps extends CanvasItemSimple_ConstructProps {
+interface CanvasEllipse_ConstructProps extends CanvasItemSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasEllipse */
     center_x?: number
     center_y?: number
     height?: number
@@ -1419,6 +1404,7 @@ export interface CanvasEllipse_ConstructProps extends CanvasItemSimple_Construct
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -1466,25 +1452,22 @@ class CanvasEllipse {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasEllipse */
-    parent_object: CanvasItemSimple
-    ellipse_data: CanvasEllipseData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -1553,6 +1536,7 @@ class CanvasEllipse {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -1562,6 +1546,51 @@ class CanvasEllipse {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasEllipse */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -1732,8 +1761,6 @@ class CanvasEllipse {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasEllipse, pspec: GObject.ParamSpec) => void)): number
@@ -1753,9 +1780,14 @@ class CanvasEllipse {
     static name: string
     constructor (config?: CanvasEllipse_ConstructProps)
     _init (config?: CanvasEllipse_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasEllipseModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+interface CanvasEllipseModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasEllipseModel */
     center_x?: number
     center_y?: number
     height?: number
@@ -1764,6 +1796,7 @@ export interface CanvasEllipseModel_ConstructProps extends CanvasItemModelSimple
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -1811,20 +1844,18 @@ class CanvasEllipseModel {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
-    parent: CanvasItemModel
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasEllipseModel */
-    parent_object: CanvasItemModelSimple
-    ellipse_data: CanvasEllipseData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    simple_data: CanvasItemSimpleData
+    readonly parent_object: GObject.Object
+    readonly parent: CanvasItemModel
+    readonly simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -1875,6 +1906,26 @@ class CanvasEllipseModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasEllipseModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -1992,8 +2043,6 @@ class CanvasEllipseModel {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasEllipseModel, pspec: GObject.ParamSpec) => void)): number
@@ -2013,9 +2062,14 @@ class CanvasEllipseModel {
     static name: string
     constructor (config?: CanvasEllipseModel_ConstructProps)
     _init (config?: CanvasEllipseModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasGrid_ConstructProps extends CanvasItemSimple_ConstructProps {
+interface CanvasGrid_ConstructProps extends CanvasItemSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasGrid */
     border_color?: string
     border_color_gdk_rgba?: Gdk.RGBA
     border_color_rgba?: number
@@ -2045,6 +2099,7 @@ export interface CanvasGrid_ConstructProps extends CanvasItemSimple_ConstructPro
     y?: number
     y_offset?: number
     y_step?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -2113,25 +2168,22 @@ class CanvasGrid {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasGrid */
-    parent_object: CanvasItemSimple
-    grid_data: CanvasGridData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -2200,6 +2252,7 @@ class CanvasGrid {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -2209,6 +2262,51 @@ class CanvasGrid {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasGrid */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -2421,8 +2519,6 @@ class CanvasGrid {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasGrid, pspec: GObject.ParamSpec) => void)): number
@@ -2442,9 +2538,14 @@ class CanvasGrid {
     static name: string
     constructor (config?: CanvasGrid_ConstructProps)
     _init (config?: CanvasGrid_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasGridModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+interface CanvasGridModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasGridModel */
     border_color?: string
     border_color_gdk_rgba?: Gdk.RGBA
     border_color_rgba?: number
@@ -2474,6 +2575,7 @@ export interface CanvasGridModel_ConstructProps extends CanvasItemModelSimple_Co
     y?: number
     y_offset?: number
     y_step?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -2542,20 +2644,18 @@ class CanvasGridModel {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
-    parent: CanvasItemModel
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasGridModel */
-    parent_object: CanvasItemModelSimple
-    grid_data: CanvasGridData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    simple_data: CanvasItemSimpleData
+    readonly parent_object: GObject.Object
+    readonly parent: CanvasItemModel
+    readonly simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -2606,6 +2706,26 @@ class CanvasGridModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasGridModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -2765,8 +2885,6 @@ class CanvasGridModel {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasGridModel, pspec: GObject.ParamSpec) => void)): number
@@ -2786,13 +2904,19 @@ class CanvasGridModel {
     static name: string
     constructor (config?: CanvasGridModel_ConstructProps)
     _init (config?: CanvasGridModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasGroup_ConstructProps extends CanvasItemSimple_ConstructProps {
+interface CanvasGroup_ConstructProps extends CanvasItemSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasGroup */
     height?: number
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -2836,25 +2960,22 @@ class CanvasGroup {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasGroup */
-    parent_object: CanvasItemSimple
-    items: object[]
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -2923,6 +3044,7 @@ class CanvasGroup {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -2932,6 +3054,51 @@ class CanvasGroup {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasGroup */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -3094,8 +3261,6 @@ class CanvasGroup {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasGroup, pspec: GObject.ParamSpec) => void)): number
@@ -3115,13 +3280,19 @@ class CanvasGroup {
     static name: string
     constructor (config?: CanvasGroup_ConstructProps)
     _init (config?: CanvasGroup_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasGroupModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+interface CanvasGroupModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasGroupModel */
     height?: number
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -3165,20 +3336,18 @@ class CanvasGroupModel {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
-    parent: CanvasItemModel
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasGroupModel */
-    parent_object: CanvasItemModelSimple
-    children: object[]
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    simple_data: CanvasItemSimpleData
+    readonly parent_object: GObject.Object
+    readonly parent: CanvasItemModel
+    readonly simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3229,6 +3398,26 @@ class CanvasGroupModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasGroupModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -3338,8 +3527,6 @@ class CanvasGroupModel {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasGroupModel, pspec: GObject.ParamSpec) => void)): number
@@ -3359,9 +3546,14 @@ class CanvasGroupModel {
     static name: string
     constructor (config?: CanvasGroupModel_ConstructProps)
     _init (config?: CanvasGroupModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasImage_ConstructProps extends CanvasItemSimple_ConstructProps {
+interface CanvasImage_ConstructProps extends CanvasItemSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasImage */
     alpha?: number
     height?: number
     pattern?: any
@@ -3370,6 +3562,7 @@ export interface CanvasImage_ConstructProps extends CanvasItemSimple_ConstructPr
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -3417,25 +3610,22 @@ class CanvasImage {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasImage */
-    parent_object: CanvasItemSimple
-    image_data: CanvasImageData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -3504,6 +3694,7 @@ class CanvasImage {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -3513,6 +3704,51 @@ class CanvasImage {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasImage */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -3683,8 +3919,6 @@ class CanvasImage {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasImage, pspec: GObject.ParamSpec) => void)): number
@@ -3704,9 +3938,14 @@ class CanvasImage {
     static name: string
     constructor (config?: CanvasImage_ConstructProps)
     _init (config?: CanvasImage_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasImageModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+interface CanvasImageModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasImageModel */
     alpha?: number
     height?: number
     pattern?: any
@@ -3715,6 +3954,7 @@ export interface CanvasImageModel_ConstructProps extends CanvasItemModelSimple_C
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -3762,20 +4002,18 @@ class CanvasImageModel {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
-    parent: CanvasItemModel
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasImageModel */
-    parent_object: CanvasItemModelSimple
-    image_data: CanvasImageData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    simple_data: CanvasItemSimpleData
+    readonly parent_object: GObject.Object
+    readonly parent: CanvasItemModel
+    readonly simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -3826,6 +4064,26 @@ class CanvasImageModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasImageModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -3943,8 +4201,6 @@ class CanvasImageModel {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasImageModel, pspec: GObject.ParamSpec) => void)): number
@@ -3964,15 +4220,19 @@ class CanvasImageModel {
     static name: string
     constructor (config?: CanvasImageModel_ConstructProps)
     _init (config?: CanvasImageModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasItemAccessibleFactory_ConstructProps extends Atk.ObjectFactory_ConstructProps {
+interface CanvasItemAccessibleFactory_ConstructProps extends Atk.ObjectFactory_ConstructProps {
 }
 class CanvasItemAccessibleFactory {
     /* Fields of Atk-1.0.Atk.ObjectFactory */
-    parent: GObject.Object
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.ObjectFactory */
     create_accessible(obj: GObject.Object): Atk.Object
     get_accessible_type(): GObject.Type
@@ -4022,7 +4282,8 @@ class CanvasItemAccessibleFactory {
     _init (config?: CanvasItemAccessibleFactory_ConstructProps): void
     static $gtype: GObject.Type
 }
-export interface CanvasItemModelSimple_ConstructProps extends GObject.Object_ConstructProps {
+interface CanvasItemModelSimple_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     antialias?: CairoAntialias
     clip_fill_rule?: CairoFillRule
     clip_path?: string
@@ -4046,6 +4307,7 @@ export interface CanvasItemModelSimple_ConstructProps extends GObject.Object_Con
     stroke_color_rgba?: number
     stroke_pattern?: any
     stroke_pixbuf?: GdkPixbuf.Pixbuf
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -4091,11 +4353,8 @@ class CanvasItemModelSimple {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    parent_object: GObject.Object
-    simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -4274,7 +4533,8 @@ class CanvasItemModelSimple {
     static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasItemSimple_ConstructProps extends GObject.Object_ConstructProps {
+interface CanvasItemSimple_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     antialias?: CairoAntialias
     clip_fill_rule?: CairoFillRule
     clip_path?: string
@@ -4298,6 +4558,7 @@ export interface CanvasItemSimple_ConstructProps extends GObject.Object_Construc
     stroke_color_rgba?: number
     stroke_pattern?: any
     stroke_pixbuf?: GdkPixbuf.Pixbuf
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -4343,15 +4604,8 @@ class CanvasItemSimple {
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -4420,6 +4674,7 @@ class CanvasItemSimple {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -4610,12 +4865,14 @@ class CanvasItemSimple {
     static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasPath_ConstructProps extends CanvasItemSimple_ConstructProps {
+interface CanvasPath_ConstructProps extends CanvasItemSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasPath */
     data?: string
     height?: number
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -4660,24 +4917,22 @@ class CanvasPath {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasPath */
-    path_data: CanvasPathData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -4746,6 +5001,7 @@ class CanvasPath {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -4755,6 +5011,51 @@ class CanvasPath {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasPath */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -4919,8 +5220,6 @@ class CanvasPath {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasPath, pspec: GObject.ParamSpec) => void)): number
@@ -4940,14 +5239,20 @@ class CanvasPath {
     static name: string
     constructor (config?: CanvasPath_ConstructProps)
     _init (config?: CanvasPath_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasPathModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+interface CanvasPathModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasPathModel */
     data?: string
     height?: number
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -4992,20 +5297,18 @@ class CanvasPathModel {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
-    parent: CanvasItemModel
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasPathModel */
-    parent_object: CanvasItemModelSimple
-    path_data: CanvasPathData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    simple_data: CanvasItemSimpleData
+    readonly parent_object: GObject.Object
+    readonly parent: CanvasItemModel
+    readonly simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -5056,6 +5359,26 @@ class CanvasPathModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasPathModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -5167,8 +5490,6 @@ class CanvasPathModel {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasPathModel, pspec: GObject.ParamSpec) => void)): number
@@ -5188,9 +5509,14 @@ class CanvasPathModel {
     static name: string
     constructor (config?: CanvasPathModel_ConstructProps)
     _init (config?: CanvasPathModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasPolyline_ConstructProps extends CanvasItemSimple_ConstructProps {
+interface CanvasPolyline_ConstructProps extends CanvasItemSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasPolyline */
     arrow_length?: number
     arrow_tip_length?: number
     arrow_width?: number
@@ -5202,6 +5528,7 @@ export interface CanvasPolyline_ConstructProps extends CanvasItemSimple_Construc
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -5252,24 +5579,22 @@ class CanvasPolyline {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasPolyline */
-    polyline_data: CanvasPolylineData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -5338,6 +5663,7 @@ class CanvasPolyline {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -5347,6 +5673,51 @@ class CanvasPolyline {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasPolyline */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -5523,8 +5894,6 @@ class CanvasPolyline {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasPolyline, pspec: GObject.ParamSpec) => void)): number
@@ -5544,9 +5913,14 @@ class CanvasPolyline {
     static name: string
     constructor (config?: CanvasPolyline_ConstructProps)
     _init (config?: CanvasPolyline_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasPolylineModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+interface CanvasPolylineModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasPolylineModel */
     arrow_length?: number
     arrow_tip_length?: number
     arrow_width?: number
@@ -5558,6 +5932,7 @@ export interface CanvasPolylineModel_ConstructProps extends CanvasItemModelSimpl
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -5608,20 +5983,18 @@ class CanvasPolylineModel {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
-    parent: CanvasItemModel
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasPolylineModel */
-    parent_object: CanvasItemModelSimple
-    polyline_data: CanvasPolylineData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    simple_data: CanvasItemSimpleData
+    readonly parent_object: GObject.Object
+    readonly parent: CanvasItemModel
+    readonly simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -5672,6 +6045,26 @@ class CanvasPolylineModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasPolylineModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -5795,8 +6188,6 @@ class CanvasPolylineModel {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasPolylineModel, pspec: GObject.ParamSpec) => void)): number
@@ -5816,9 +6207,14 @@ class CanvasPolylineModel {
     static name: string
     constructor (config?: CanvasPolylineModel_ConstructProps)
     _init (config?: CanvasPolylineModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasRect_ConstructProps extends CanvasItemSimple_ConstructProps {
+interface CanvasRect_ConstructProps extends CanvasItemSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasRect */
     height?: number
     radius_bottom_left_x?: number
     radius_bottom_left_y?: number
@@ -5833,6 +6229,7 @@ export interface CanvasRect_ConstructProps extends CanvasItemSimple_ConstructPro
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -5886,24 +6283,22 @@ class CanvasRect {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasRect */
-    rect_data: CanvasRectData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -5972,6 +6367,7 @@ class CanvasRect {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -5981,6 +6377,51 @@ class CanvasRect {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasRect */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -6163,8 +6604,6 @@ class CanvasRect {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasRect, pspec: GObject.ParamSpec) => void)): number
@@ -6184,9 +6623,14 @@ class CanvasRect {
     static name: string
     constructor (config?: CanvasRect_ConstructProps)
     _init (config?: CanvasRect_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasRectModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+interface CanvasRectModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasRectModel */
     height?: number
     radius_bottom_left_x?: number
     radius_bottom_left_y?: number
@@ -6201,6 +6645,7 @@ export interface CanvasRectModel_ConstructProps extends CanvasItemModelSimple_Co
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -6254,20 +6699,18 @@ class CanvasRectModel {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
-    parent: CanvasItemModel
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasRectModel */
-    parent_object: CanvasItemModelSimple
-    rect_data: CanvasRectData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    simple_data: CanvasItemSimpleData
+    readonly parent_object: GObject.Object
+    readonly parent: CanvasItemModel
+    readonly simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -6318,6 +6761,26 @@ class CanvasRectModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasRectModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -6447,8 +6910,6 @@ class CanvasRectModel {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasRectModel, pspec: GObject.ParamSpec) => void)): number
@@ -6468,16 +6929,17 @@ class CanvasRectModel {
     static name: string
     constructor (config?: CanvasRectModel_ConstructProps)
     _init (config?: CanvasRectModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasStyle_ConstructProps extends GObject.Object_ConstructProps {
+interface CanvasStyle_ConstructProps extends GObject.Object_ConstructProps {
 }
 class CanvasStyle {
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasStyle */
-    parent: CanvasStyle
-    properties: object[]
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasStyle */
     copy(): CanvasStyle
     get_parent(): CanvasStyle
@@ -6531,7 +6993,8 @@ class CanvasStyle {
     static new(): CanvasStyle
     static $gtype: GObject.Type
 }
-export interface CanvasTable_ConstructProps extends CanvasGroup_ConstructProps {
+interface CanvasTable_ConstructProps extends CanvasGroup_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasTable */
     column_spacing?: number
     homogeneous_columns?: boolean
     homogeneous_rows?: boolean
@@ -6540,6 +7003,7 @@ export interface CanvasTable_ConstructProps extends CanvasGroup_ConstructProps {
     vert_grid_line_width?: number
     x_border_spacing?: number
     y_border_spacing?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -6592,27 +7056,25 @@ class CanvasTable {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasTable */
-    table_data: CanvasTableData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasGroup */
-    parent_object: CanvasItemSimple
-    items: object[]
+    readonly parent_object: CanvasItemSimple
+    readonly items: object[]
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -6681,6 +7143,7 @@ class CanvasTable {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -6690,6 +7153,96 @@ class CanvasTable {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasTable */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasGroup */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -6868,8 +7421,6 @@ class CanvasTable {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasTable, pspec: GObject.ParamSpec) => void)): number
@@ -6889,9 +7440,14 @@ class CanvasTable {
     static name: string
     constructor (config?: CanvasTable_ConstructProps)
     _init (config?: CanvasTable_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasTableModel_ConstructProps extends CanvasGroupModel_ConstructProps {
+interface CanvasTableModel_ConstructProps extends CanvasGroupModel_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasTableModel */
     column_spacing?: number
     homogeneous_columns?: boolean
     homogeneous_rows?: boolean
@@ -6900,6 +7456,7 @@ export interface CanvasTableModel_ConstructProps extends CanvasGroupModel_Constr
     vert_grid_line_width?: number
     x_border_spacing?: number
     y_border_spacing?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -6952,22 +7509,20 @@ class CanvasTableModel {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
-    parent: CanvasItemModel
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasTableModel */
-    parent_object: CanvasGroupModel
-    table_data: CanvasTableData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasGroupModel */
-    children: object[]
+    readonly parent_object: CanvasItemModelSimple
+    readonly children: object[]
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    simple_data: CanvasItemSimpleData
+    readonly parent: CanvasItemModel
+    readonly simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -7018,6 +7573,46 @@ class CanvasTableModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasTableModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasGroupModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -7143,8 +7738,6 @@ class CanvasTableModel {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasTableModel, pspec: GObject.ParamSpec) => void)): number
@@ -7164,9 +7757,14 @@ class CanvasTableModel {
     static name: string
     constructor (config?: CanvasTableModel_ConstructProps)
     _init (config?: CanvasTableModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasText_ConstructProps extends CanvasItemSimple_ConstructProps {
+interface CanvasText_ConstructProps extends CanvasItemSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasText */
     alignment?: Pango.Alignment
     anchor?: CanvasAnchorType
     ellipsize?: Pango.EllipsizeMode
@@ -7177,6 +7775,7 @@ export interface CanvasText_ConstructProps extends CanvasItemSimple_ConstructPro
     wrap?: Pango.WrapMode
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -7226,25 +7825,22 @@ class CanvasText {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasText */
-    text_data: CanvasTextData
-    layout_width: number
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasText */
     get_natural_extents(): [ /* ink_rect */ Pango.Rectangle | null, /* logical_rect */ Pango.Rectangle | null ]
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
@@ -7315,6 +7911,7 @@ class CanvasText {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -7324,6 +7921,51 @@ class CanvasText {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasText */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -7498,8 +8140,6 @@ class CanvasText {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasText, pspec: GObject.ParamSpec) => void)): number
@@ -7519,9 +8159,14 @@ class CanvasText {
     static name: string
     constructor (config?: CanvasText_ConstructProps)
     _init (config?: CanvasText_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasTextModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+interface CanvasTextModel_ConstructProps extends CanvasItemModelSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasTextModel */
     alignment?: Pango.Alignment
     anchor?: CanvasAnchorType
     ellipsize?: Pango.EllipsizeMode
@@ -7532,6 +8177,7 @@ export interface CanvasTextModel_ConstructProps extends CanvasItemModelSimple_Co
     wrap?: Pango.WrapMode
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus?: boolean
     description?: string
     parent?: CanvasItemModel
@@ -7581,20 +8227,18 @@ class CanvasTextModel {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItemModel */
     can_focus: boolean
     description: string
-    parent: CanvasItemModel
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasTextModel */
-    parent_object: CanvasItemModelSimple
-    text_data: CanvasTextData
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
-    simple_data: CanvasItemSimpleData
+    readonly parent_object: GObject.Object
+    readonly parent: CanvasItemModel
+    readonly simple_data: CanvasItemSimpleData
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GObject-2.0.GObject.Object */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
@@ -7645,6 +8289,26 @@ class CanvasTextModel {
     skew_y(degrees: number, cx: number, cy: number): void
     stop_animation(): void
     translate(tx: number, ty: number): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasTextModel */
+    vfunc_add_child(child: CanvasItemModel, position: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_changed(recompute_bounds: boolean): void
+    vfunc_child_added(child_num: number): void
+    vfunc_child_moved(old_child_num: number, new_child_num: number): void
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_child_removed(child_num: number): void
+    vfunc_get_child(child_num: number): CanvasItemModel
+    vfunc_get_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItemModel
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(transform: cairo.Matrix): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_remove_child(child_num: number): void
+    vfunc_set_child_property(child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_parent(parent: CanvasItemModel): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemModelSimple */
     vfunc_add_child(child: CanvasItemModel, position: number): void
     vfunc_animation_finished(stopped: boolean): void
@@ -7766,8 +8430,6 @@ class CanvasTextModel {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasTextModel, pspec: GObject.ParamSpec) => void)): number
@@ -7787,15 +8449,21 @@ class CanvasTextModel {
     static name: string
     constructor (config?: CanvasTextModel_ConstructProps)
     _init (config?: CanvasTextModel_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(mclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(mclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(mclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasWidget_ConstructProps extends CanvasItemSimple_ConstructProps {
+interface CanvasWidget_ConstructProps extends CanvasItemSimple_ConstructProps {
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasWidget */
     anchor?: CanvasAnchorType
     height?: number
     widget?: Gtk.Widget
     width?: number
     x?: number
     y?: number
+    /* Constructor properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus?: boolean
     description?: string
     parent?: CanvasItem
@@ -7841,24 +8509,22 @@ class CanvasWidget {
     /* Properties of GooCanvas-3.0.GooCanvas.CanvasItem */
     can_focus: boolean
     description: string
-    parent: CanvasItem
     pointer_events: CanvasPointerEvents
     title: string
     tooltip: string
     transform: any
     visibility: CanvasItemVisibility
     visibility_threshold: number
-    /* Fields of GooCanvas-3.0.GooCanvas.CanvasWidget */
-    parent_object: CanvasItemSimple
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
-    canvas: Canvas
-    model: CanvasItemModelSimple
-    simple_data: CanvasItemSimpleData
-    bounds: CanvasBounds
-    need_update: number
-    need_entire_subtree_update: number
+    readonly canvas: Canvas
+    readonly parent: CanvasItem
+    readonly model: CanvasItemModelSimple
+    readonly simple_data: CanvasItemSimpleData
+    readonly bounds: CanvasBounds
+    readonly need_update: number
+    readonly need_entire_subtree_update: number
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     changed(recompute_bounds: boolean): void
     check_in_path(x: number, y: number, cr: cairo.Context, pointer_events: CanvasPointerEvents): boolean
@@ -7927,6 +8593,7 @@ class CanvasWidget {
     set_canvas(canvas: Canvas): void
     set_child_property(child: CanvasItem, property_name: string, value: any): void
     set_is_static(is_static: boolean): void
+    set_model(model: CanvasItemModel): void
     set_parent(parent: CanvasItem): void
     set_simple_transform(x: number, y: number, scale: number, rotation: number): void
     set_style(style: CanvasStyle): void
@@ -7936,6 +8603,51 @@ class CanvasWidget {
     stop_animation(): void
     translate(tx: number, ty: number): void
     update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
+    /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasWidget */
+    vfunc_add_child(child: CanvasItem, position: number): void
+    vfunc_allocate_area(cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number): void
+    vfunc_animation_finished(stopped: boolean): void
+    vfunc_button_press_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_button_release_event(target: CanvasItem, event: Gdk.EventButton): boolean
+    vfunc_child_notify(pspec: GObject.ParamSpec): void
+    vfunc_enter_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_focus_in_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_focus_out_event(target: CanvasItem, event: Gdk.EventFocus): boolean
+    vfunc_get_bounds(): /* bounds */ CanvasBounds
+    vfunc_get_canvas(): Canvas
+    vfunc_get_child(child_num: number): CanvasItem
+    vfunc_get_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_get_is_static(): boolean
+    vfunc_get_items_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]): CanvasItem[]
+    vfunc_get_model(): CanvasItemModel
+    vfunc_get_n_children(): number
+    vfunc_get_parent(): CanvasItem
+    vfunc_get_requested_area(cr: cairo.Context, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_area_for_width(cr: cairo.Context, width: number, requested_area: CanvasBounds): boolean
+    vfunc_get_requested_height(cr: cairo.Context, width: number): number
+    vfunc_get_style(): CanvasStyle
+    vfunc_get_transform(): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_get_transform_for_child(child: CanvasItem): [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    vfunc_grab_broken_event(target: CanvasItem, event: Gdk.EventGrabBroken): boolean
+    vfunc_is_visible(): boolean
+    vfunc_key_press_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_key_release_event(target: CanvasItem, event: Gdk.EventKey): boolean
+    vfunc_leave_notify_event(target: CanvasItem, event: Gdk.EventCrossing): boolean
+    vfunc_motion_notify_event(target: CanvasItem, event: Gdk.EventMotion): boolean
+    vfunc_move_child(old_position: number, new_position: number): void
+    vfunc_paint(cr: cairo.Context, bounds: CanvasBounds, scale: number): void
+    vfunc_query_tooltip(x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip): boolean
+    vfunc_remove_child(child_num: number): void
+    vfunc_request_update(): void
+    vfunc_scroll_event(target: CanvasItem, event: Gdk.EventScroll): boolean
+    vfunc_set_canvas(canvas: Canvas): void
+    vfunc_set_child_property(child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_set_is_static(is_static: boolean): void
+    vfunc_set_model(model: CanvasItemModel): void
+    vfunc_set_parent(parent: CanvasItem): void
+    vfunc_set_style(style: CanvasStyle): void
+    vfunc_set_transform(transform?: cairo.Matrix | null): void
+    vfunc_update(entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds): void
     /* Virtual methods of GooCanvas-3.0.GooCanvas.CanvasItemSimple */
     vfunc_simple_create_path(cr: cairo.Context): void
     vfunc_simple_is_item_at(x: number, y: number, cr: cairo.Context, is_pointer_event: boolean): boolean
@@ -8102,8 +8814,6 @@ class CanvasWidget {
     connect_after(sigName: "notify::can-focus", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::description", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::description", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
-    connect(sigName: "notify::parent", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
-    connect_after(sigName: "notify::parent", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::pointer-events", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify::pointer-events", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
     connect(sigName: "notify::title", callback: (($obj: CanvasWidget, pspec: GObject.ParamSpec) => void)): number
@@ -8123,15 +8833,19 @@ class CanvasWidget {
     static name: string
     constructor (config?: CanvasWidget_ConstructProps)
     _init (config?: CanvasWidget_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static class_find_child_property(iclass: GObject.ObjectClass, property_name: string): GObject.ParamSpec
+    static class_install_child_property(iclass: GObject.ObjectClass, property_id: number, pspec: GObject.ParamSpec): void
+    static class_list_child_properties(iclass: GObject.ObjectClass): GObject.ParamSpec[]
     static $gtype: GObject.Type
 }
-export interface CanvasWidgetAccessibleFactory_ConstructProps extends Atk.ObjectFactory_ConstructProps {
+interface CanvasWidgetAccessibleFactory_ConstructProps extends Atk.ObjectFactory_ConstructProps {
 }
 class CanvasWidgetAccessibleFactory {
     /* Fields of Atk-1.0.Atk.ObjectFactory */
-    parent: GObject.Object
+    readonly parent: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
-    g_type_instance: GObject.TypeInstance
+    readonly g_type_instance: GObject.TypeInstance
     /* Methods of Atk-1.0.Atk.ObjectFactory */
     create_accessible(obj: GObject.Object): Atk.Object
     get_accessible_type(): GObject.Type
@@ -8183,201 +8897,201 @@ class CanvasWidgetAccessibleFactory {
 }
 class CanvasBounds {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasBounds */
-    x1: number
-    y1: number
-    x2: number
-    y2: number
+    readonly x1: number
+    readonly y1: number
+    readonly x2: number
+    readonly y2: number
     static name: string
 }
 abstract class CanvasClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasClass */
-    create_item: (canvas: Canvas, model: CanvasItemModel) => CanvasItem
-    item_created: (canvas: Canvas, item: CanvasItem, model: CanvasItemModel) => void
+    readonly create_item: (canvas: Canvas, model: CanvasItemModel) => CanvasItem
+    readonly item_created: (canvas: Canvas, item: CanvasItem, model: CanvasItemModel) => void
     static name: string
 }
 abstract class CanvasEllipseClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasEllipseClass */
-    parent_class: CanvasItemSimpleClass
+    readonly parent_class: CanvasItemSimpleClass
     static name: string
 }
 class CanvasEllipseData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasEllipseData */
-    center_x: number
-    center_y: number
-    radius_x: number
-    radius_y: number
+    readonly center_x: number
+    readonly center_y: number
+    readonly radius_x: number
+    readonly radius_y: number
     static name: string
 }
 abstract class CanvasEllipseModelClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasEllipseModelClass */
-    parent_class: CanvasItemModelSimpleClass
+    readonly parent_class: CanvasItemModelSimpleClass
     static name: string
 }
 abstract class CanvasGridClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasGridClass */
-    parent_class: CanvasItemSimpleClass
+    readonly parent_class: CanvasItemSimpleClass
     static name: string
 }
 class CanvasGridData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasGridData */
-    x: number
-    y: number
-    width: number
-    height: number
-    x_step: number
-    y_step: number
-    x_offset: number
-    y_offset: number
-    horz_grid_line_width: number
-    vert_grid_line_width: number
-    horz_grid_line_pattern: cairo.Pattern
-    vert_grid_line_pattern: cairo.Pattern
-    border_width: number
-    border_pattern: cairo.Pattern
-    show_horz_grid_lines: number
-    show_vert_grid_lines: number
-    vert_grid_lines_on_top: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
+    readonly x_step: number
+    readonly y_step: number
+    readonly x_offset: number
+    readonly y_offset: number
+    readonly horz_grid_line_width: number
+    readonly vert_grid_line_width: number
+    readonly horz_grid_line_pattern: cairo.Pattern
+    readonly vert_grid_line_pattern: cairo.Pattern
+    readonly border_width: number
+    readonly border_pattern: cairo.Pattern
+    readonly show_horz_grid_lines: number
+    readonly show_vert_grid_lines: number
+    readonly vert_grid_lines_on_top: number
     static name: string
 }
 abstract class CanvasGridModelClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasGridModelClass */
-    parent_class: CanvasItemModelSimpleClass
+    readonly parent_class: CanvasItemModelSimpleClass
     static name: string
 }
 abstract class CanvasGroupClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasGroupClass */
-    parent_class: CanvasItemSimpleClass
+    readonly parent_class: CanvasItemSimpleClass
     static name: string
 }
 abstract class CanvasGroupModelClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasGroupModelClass */
-    parent_class: CanvasItemModelSimpleClass
+    readonly parent_class: CanvasItemModelSimpleClass
     static name: string
 }
 abstract class CanvasImageClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasImageClass */
-    parent_class: CanvasItemSimpleClass
+    readonly parent_class: CanvasItemSimpleClass
     static name: string
 }
 class CanvasImageData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasImageData */
-    pattern: cairo.Pattern
-    x: number
-    y: number
-    width: number
-    height: number
+    readonly pattern: cairo.Pattern
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
     static name: string
 }
 abstract class CanvasImageModelClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasImageModelClass */
-    parent_class: CanvasItemModelSimpleClass
+    readonly parent_class: CanvasItemModelSimpleClass
     static name: string
 }
 abstract class CanvasItemIface {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemIface */
-    get_canvas: (item: CanvasItem) => Canvas
-    set_canvas: (item: CanvasItem, canvas: Canvas) => void
-    get_n_children: (item: CanvasItem) => number
-    get_child: (item: CanvasItem, child_num: number) => CanvasItem
-    request_update: (item: CanvasItem) => void
-    add_child: (item: CanvasItem, child: CanvasItem, position: number) => void
-    move_child: (item: CanvasItem, old_position: number, new_position: number) => void
-    remove_child: (item: CanvasItem, child_num: number) => void
-    get_child_property: (item: CanvasItem, child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec) => void
-    set_child_property: (item: CanvasItem, child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec) => void
-    get_transform_for_child: (item: CanvasItem, child: CanvasItem) => [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
-    get_parent: (item: CanvasItem) => CanvasItem
-    set_parent: (item: CanvasItem, parent: CanvasItem) => void
-    get_bounds: (item: CanvasItem) => /* bounds */ CanvasBounds
-    get_items_at: (item: CanvasItem, x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]) => CanvasItem[]
-    update: (item: CanvasItem, entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds) => void
-    paint: (item: CanvasItem, cr: cairo.Context, bounds: CanvasBounds, scale: number) => void
-    get_requested_area: (item: CanvasItem, cr: cairo.Context, requested_area: CanvasBounds) => boolean
-    allocate_area: (item: CanvasItem, cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number) => void
-    get_transform: (item: CanvasItem) => [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
-    set_transform: (item: CanvasItem, transform?: cairo.Matrix | null) => void
-    get_style: (item: CanvasItem) => CanvasStyle
-    set_style: (item: CanvasItem, style: CanvasStyle) => void
-    is_visible: (item: CanvasItem) => boolean
-    get_requested_height: (item: CanvasItem, cr: cairo.Context, width: number) => number
-    get_model: (item: CanvasItem) => CanvasItemModel
-    set_model: (item: CanvasItem, model: CanvasItemModel) => void
-    enter_notify_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventCrossing) => boolean
-    leave_notify_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventCrossing) => boolean
-    motion_notify_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventMotion) => boolean
-    button_press_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventButton) => boolean
-    button_release_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventButton) => boolean
-    focus_in_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventFocus) => boolean
-    focus_out_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventFocus) => boolean
-    key_press_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventKey) => boolean
-    key_release_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventKey) => boolean
-    grab_broken_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventGrabBroken) => boolean
-    child_notify: (item: CanvasItem, pspec: GObject.ParamSpec) => void
-    query_tooltip: (item: CanvasItem, x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip) => boolean
-    get_is_static: (item: CanvasItem) => boolean
-    set_is_static: (item: CanvasItem, is_static: boolean) => void
-    animation_finished: (item: CanvasItem, stopped: boolean) => void
-    scroll_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventScroll) => boolean
-    get_requested_area_for_width: (item: CanvasItem, cr: cairo.Context, width: number, requested_area: CanvasBounds) => boolean
+    readonly get_canvas: (item: CanvasItem) => Canvas
+    readonly set_canvas: (item: CanvasItem, canvas: Canvas) => void
+    readonly get_n_children: (item: CanvasItem) => number
+    readonly get_child: (item: CanvasItem, child_num: number) => CanvasItem
+    readonly request_update: (item: CanvasItem) => void
+    readonly add_child: (item: CanvasItem, child: CanvasItem, position: number) => void
+    readonly move_child: (item: CanvasItem, old_position: number, new_position: number) => void
+    readonly remove_child: (item: CanvasItem, child_num: number) => void
+    readonly get_child_property: (item: CanvasItem, child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec) => void
+    readonly set_child_property: (item: CanvasItem, child: CanvasItem, property_id: number, value: any, pspec: GObject.ParamSpec) => void
+    readonly get_transform_for_child: (item: CanvasItem, child: CanvasItem) => [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    readonly get_parent: (item: CanvasItem) => CanvasItem
+    readonly set_parent: (item: CanvasItem, parent: CanvasItem) => void
+    readonly get_bounds: (item: CanvasItem) => /* bounds */ CanvasBounds
+    readonly get_items_at: (item: CanvasItem, x: number, y: number, cr: cairo.Context, is_pointer_event: boolean, parent_is_visible: boolean, found_items: CanvasItem[]) => CanvasItem[]
+    readonly update: (item: CanvasItem, entire_tree: boolean, cr: cairo.Context, bounds: CanvasBounds) => void
+    readonly paint: (item: CanvasItem, cr: cairo.Context, bounds: CanvasBounds, scale: number) => void
+    readonly get_requested_area: (item: CanvasItem, cr: cairo.Context, requested_area: CanvasBounds) => boolean
+    readonly allocate_area: (item: CanvasItem, cr: cairo.Context, requested_area: CanvasBounds, allocated_area: CanvasBounds, x_offset: number, y_offset: number) => void
+    readonly get_transform: (item: CanvasItem) => [ /* returnType */ boolean, /* transform */ cairo.Matrix ]
+    readonly set_transform: (item: CanvasItem, transform?: cairo.Matrix | null) => void
+    readonly get_style: (item: CanvasItem) => CanvasStyle
+    readonly set_style: (item: CanvasItem, style: CanvasStyle) => void
+    readonly is_visible: (item: CanvasItem) => boolean
+    readonly get_requested_height: (item: CanvasItem, cr: cairo.Context, width: number) => number
+    readonly get_model: (item: CanvasItem) => CanvasItemModel
+    readonly set_model: (item: CanvasItem, model: CanvasItemModel) => void
+    readonly enter_notify_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventCrossing) => boolean
+    readonly leave_notify_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventCrossing) => boolean
+    readonly motion_notify_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventMotion) => boolean
+    readonly button_press_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventButton) => boolean
+    readonly button_release_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventButton) => boolean
+    readonly focus_in_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventFocus) => boolean
+    readonly focus_out_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventFocus) => boolean
+    readonly key_press_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventKey) => boolean
+    readonly key_release_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventKey) => boolean
+    readonly grab_broken_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventGrabBroken) => boolean
+    readonly child_notify: (item: CanvasItem, pspec: GObject.ParamSpec) => void
+    readonly query_tooltip: (item: CanvasItem, x: number, y: number, keyboard_tooltip: boolean, tooltip: Gtk.Tooltip) => boolean
+    readonly get_is_static: (item: CanvasItem) => boolean
+    readonly set_is_static: (item: CanvasItem, is_static: boolean) => void
+    readonly animation_finished: (item: CanvasItem, stopped: boolean) => void
+    readonly scroll_event: (item: CanvasItem, target: CanvasItem, event: Gdk.EventScroll) => boolean
+    readonly get_requested_area_for_width: (item: CanvasItem, cr: cairo.Context, width: number, requested_area: CanvasBounds) => boolean
     static name: string
 }
 abstract class CanvasItemModelIface {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelIface */
-    get_n_children: (model: CanvasItemModel) => number
-    get_child: (model: CanvasItemModel, child_num: number) => CanvasItemModel
-    add_child: (model: CanvasItemModel, child: CanvasItemModel, position: number) => void
-    move_child: (model: CanvasItemModel, old_position: number, new_position: number) => void
-    remove_child: (model: CanvasItemModel, child_num: number) => void
-    get_child_property: (model: CanvasItemModel, child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec) => void
-    set_child_property: (item: CanvasItemModel, child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec) => void
-    get_parent: (model: CanvasItemModel) => CanvasItemModel
-    set_parent: (model: CanvasItemModel, parent: CanvasItemModel) => void
-    get_transform: (model: CanvasItemModel, transform: cairo.Matrix) => boolean
-    set_transform: (model: CanvasItemModel, transform?: cairo.Matrix | null) => void
-    get_style: (model: CanvasItemModel) => CanvasStyle
-    set_style: (model: CanvasItemModel, style: CanvasStyle) => void
-    child_added: (model: CanvasItemModel, child_num: number) => void
-    child_moved: (model: CanvasItemModel, old_child_num: number, new_child_num: number) => void
-    child_removed: (model: CanvasItemModel, child_num: number) => void
-    changed: (model: CanvasItemModel, recompute_bounds: boolean) => void
-    child_notify: (model: CanvasItemModel, pspec: GObject.ParamSpec) => void
-    animation_finished: (model: CanvasItemModel, stopped: boolean) => void
+    readonly get_n_children: (model: CanvasItemModel) => number
+    readonly get_child: (model: CanvasItemModel, child_num: number) => CanvasItemModel
+    readonly add_child: (model: CanvasItemModel, child: CanvasItemModel, position: number) => void
+    readonly move_child: (model: CanvasItemModel, old_position: number, new_position: number) => void
+    readonly remove_child: (model: CanvasItemModel, child_num: number) => void
+    readonly get_child_property: (model: CanvasItemModel, child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec) => void
+    readonly set_child_property: (item: CanvasItemModel, child: CanvasItemModel, property_id: number, value: any, pspec: GObject.ParamSpec) => void
+    readonly get_parent: (model: CanvasItemModel) => CanvasItemModel
+    readonly set_parent: (model: CanvasItemModel, parent: CanvasItemModel) => void
+    readonly get_transform: (model: CanvasItemModel, transform: cairo.Matrix) => boolean
+    readonly set_transform: (model: CanvasItemModel, transform?: cairo.Matrix | null) => void
+    readonly get_style: (model: CanvasItemModel) => CanvasStyle
+    readonly set_style: (model: CanvasItemModel, style: CanvasStyle) => void
+    readonly child_added: (model: CanvasItemModel, child_num: number) => void
+    readonly child_moved: (model: CanvasItemModel, old_child_num: number, new_child_num: number) => void
+    readonly child_removed: (model: CanvasItemModel, child_num: number) => void
+    readonly changed: (model: CanvasItemModel, recompute_bounds: boolean) => void
+    readonly child_notify: (model: CanvasItemModel, pspec: GObject.ParamSpec) => void
+    readonly animation_finished: (model: CanvasItemModel, stopped: boolean) => void
     static name: string
 }
 abstract class CanvasItemModelSimpleClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemModelSimpleClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 abstract class CanvasItemSimpleClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimpleClass */
-    simple_create_path: (simple: CanvasItemSimple, cr: cairo.Context) => void
-    simple_update: (simple: CanvasItemSimple, cr: cairo.Context) => void
-    simple_paint: (simple: CanvasItemSimple, cr: cairo.Context, bounds: CanvasBounds) => void
-    simple_is_item_at: (simple: CanvasItemSimple, x: number, y: number, cr: cairo.Context, is_pointer_event: boolean) => boolean
+    readonly simple_create_path: (simple: CanvasItemSimple, cr: cairo.Context) => void
+    readonly simple_update: (simple: CanvasItemSimple, cr: cairo.Context) => void
+    readonly simple_paint: (simple: CanvasItemSimple, cr: cairo.Context, bounds: CanvasBounds) => void
+    readonly simple_is_item_at: (simple: CanvasItemSimple, x: number, y: number, cr: cairo.Context, is_pointer_event: boolean) => boolean
     static name: string
 }
 class CanvasItemSimpleData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasItemSimpleData */
-    style: CanvasStyle
-    transform: cairo.Matrix
-    clip_path_commands: object[]
-    tooltip: string
-    visibility_threshold: number
-    visibility: number
-    pointer_events: number
-    can_focus: number
-    own_style: number
-    clip_fill_rule: number
-    is_static: number
+    readonly style: CanvasStyle
+    readonly transform: cairo.Matrix
+    readonly clip_path_commands: object[]
+    readonly tooltip: string
+    readonly visibility_threshold: number
+    readonly visibility: number
+    readonly pointer_events: number
+    readonly can_focus: number
+    readonly own_style: number
+    readonly clip_fill_rule: number
+    readonly is_static: number
     static name: string
 }
 class CanvasLineDash {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasLineDash */
-    ref_count: number
-    num_dashes: number
-    dashes: number
-    dash_offset: number
+    readonly ref_count: number
+    readonly num_dashes: number
+    readonly dashes: number
+    readonly dash_offset: number
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasLineDash */
     ref(): CanvasLineDash
     set_offset(dash_offset: number): void
@@ -8388,24 +9102,24 @@ class CanvasLineDash {
 }
 abstract class CanvasPathClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasPathClass */
-    parent_class: CanvasItemSimpleClass
+    readonly parent_class: CanvasItemSimpleClass
     static name: string
 }
 class CanvasPathData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasPathData */
-    path_commands: object[]
+    readonly path_commands: object[]
     static name: string
 }
 abstract class CanvasPathModelClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasPathModelClass */
-    parent_class: CanvasItemModelSimpleClass
+    readonly parent_class: CanvasItemModelSimpleClass
     static name: string
 }
 class CanvasPoints {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasPoints */
-    coords: number
-    num_points: number
-    ref_count: number
+    readonly coords: number
+    readonly num_points: number
+    readonly ref_count: number
     /* Methods of GooCanvas-3.0.GooCanvas.CanvasPoints */
     get_point(idx: number): [ /* x */ number, /* y */ number ]
     ref(): CanvasPoints
@@ -8419,96 +9133,96 @@ class CanvasPoints {
 }
 class CanvasPolylineArrowData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasPolylineArrowData */
-    arrow_width: number
-    arrow_length: number
-    arrow_tip_length: number
-    line_start: number[]
-    line_end: number[]
-    start_arrow_coords: number[]
-    end_arrow_coords: number[]
+    readonly arrow_width: number
+    readonly arrow_length: number
+    readonly arrow_tip_length: number
+    readonly line_start: number[]
+    readonly line_end: number[]
+    readonly start_arrow_coords: number[]
+    readonly end_arrow_coords: number[]
     static name: string
 }
 abstract class CanvasPolylineClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasPolylineClass */
-    parent_class: CanvasItemSimpleClass
+    readonly parent_class: CanvasItemSimpleClass
     static name: string
 }
 class CanvasPolylineData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasPolylineData */
-    coords: number
-    arrow_data: CanvasPolylineArrowData
-    num_points: number
-    close_path: number
-    start_arrow: number
-    end_arrow: number
-    reconfigure_arrows: number
+    readonly coords: number
+    readonly arrow_data: CanvasPolylineArrowData
+    readonly num_points: number
+    readonly close_path: number
+    readonly start_arrow: number
+    readonly end_arrow: number
+    readonly reconfigure_arrows: number
     static name: string
 }
 abstract class CanvasPolylineModelClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasPolylineModelClass */
-    parent_class: CanvasItemModelSimpleClass
+    readonly parent_class: CanvasItemModelSimpleClass
     static name: string
 }
 abstract class CanvasRectClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasRectClass */
-    parent_class: CanvasItemSimpleClass
+    readonly parent_class: CanvasItemSimpleClass
     static name: string
 }
 class CanvasRectData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasRectData */
-    x: number
-    y: number
-    width: number
-    height: number
-    radius_x: number
-    radius_y: number
-    radius_top_left_x: number
-    radius_top_left_y: number
-    radius_top_right_x: number
-    radius_top_right_y: number
-    radius_bottom_right_x: number
-    radius_bottom_right_y: number
-    radius_bottom_left_x: number
-    radius_bottom_left_y: number
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly height: number
+    readonly radius_x: number
+    readonly radius_y: number
+    readonly radius_top_left_x: number
+    readonly radius_top_left_y: number
+    readonly radius_top_right_x: number
+    readonly radius_top_right_y: number
+    readonly radius_bottom_right_x: number
+    readonly radius_bottom_right_y: number
+    readonly radius_bottom_left_x: number
+    readonly radius_bottom_left_y: number
     static name: string
 }
 abstract class CanvasRectModelClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasRectModelClass */
-    parent_class: CanvasItemModelSimpleClass
+    readonly parent_class: CanvasItemModelSimpleClass
     static name: string
 }
 abstract class CanvasStyleClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasStyleClass */
-    parent_class: GObject.ObjectClass
+    readonly parent_class: GObject.ObjectClass
     static name: string
 }
 class CanvasStyleProperty {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasStyleProperty */
-    id: GLib.Quark
-    value: any
+    readonly id: GLib.Quark
+    readonly value: any
     static name: string
 }
 abstract class CanvasTableClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasTableClass */
-    parent_class: CanvasGroupClass
+    readonly parent_class: CanvasGroupClass
     static name: string
 }
 class CanvasTableData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasTableData */
-    width: number
-    height: number
-    dimensions: CanvasTableDimension[]
-    border_width: number
-    children: object[]
-    layout_data: CanvasTableLayoutData
+    readonly width: number
+    readonly height: number
+    readonly dimensions: CanvasTableDimension[]
+    readonly border_width: number
+    readonly children: object[]
+    readonly layout_data: CanvasTableLayoutData
     static name: string
 }
 class CanvasTableDimension {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasTableDimension */
-    size: number
-    default_spacing: number
-    spacings: number
-    homogeneous: number
+    readonly size: number
+    readonly default_spacing: number
+    readonly spacings: number
+    readonly homogeneous: number
     static name: string
 }
 class CanvasTableLayoutData {
@@ -8516,35 +9230,35 @@ class CanvasTableLayoutData {
 }
 abstract class CanvasTableModelClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasTableModelClass */
-    parent_class: CanvasGroupModelClass
+    readonly parent_class: CanvasGroupModelClass
     static name: string
 }
 abstract class CanvasTextClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasTextClass */
-    parent_class: CanvasItemSimpleClass
+    readonly parent_class: CanvasItemSimpleClass
     static name: string
 }
 class CanvasTextData {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasTextData */
-    text: string
-    x: number
-    y: number
-    width: number
-    use_markup: number
-    anchor: number
-    alignment: number
-    ellipsize: number
-    wrap: number
+    readonly text: string
+    readonly x: number
+    readonly y: number
+    readonly width: number
+    readonly use_markup: number
+    readonly anchor: number
+    readonly alignment: number
+    readonly ellipsize: number
+    readonly wrap: number
     static name: string
 }
 abstract class CanvasTextModelClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasTextModelClass */
-    parent_class: CanvasItemModelSimpleClass
+    readonly parent_class: CanvasItemModelSimpleClass
     static name: string
 }
 abstract class CanvasWidgetClass {
     /* Fields of GooCanvas-3.0.GooCanvas.CanvasWidgetClass */
-    parent_class: CanvasItemSimpleClass
+    readonly parent_class: CanvasItemSimpleClass
     static name: string
 }
 class CanvasPathCommand {
