@@ -16,5 +16,5 @@
 		"inlineSources": false,
 		"newLine": "LF"
     },
-	"exclude": ["@types/node-gtk/index.d.ts", "@types/node-gtk/index.js", "typedoc.ts", "@types/Gjs"]
+	"exclude": ["@types/node-gtk/index.d.ts", "@types/node-gtk/index.js",  "cli.ts", "@types/Gjs", "packages"]
 }

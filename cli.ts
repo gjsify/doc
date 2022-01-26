@@ -1,13 +1,13 @@
 #!/usr/bin/env ts-node
 
 // See https://github.com/TypeStrong/typedoc/issues/1403
-import * as TypeDoc from 'typedoc';
+import { Application, TSConfigReader, TypeDocOptions } from 'typedoc';
 import path from 'path';
 import { readdirSync, mkdirSync } from 'fs';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers'
 import { fileURLToPath } from 'url'
-import minimatch from 'minimatch'
+// import minimatch from 'minimatch'
 
 
 // Get __dirname on ESM
@@ -37,21 +37,26 @@ interface Options {
   ignoreErrors?: boolean; 
 }
 
-async function generate({ entryPoints = [], inDir, outDir, typedoc, ignoreErrors = false}: Options, typeDocOptions: Partial<TypeDoc.TypeDocOptions> = {}) {
-  const app = new TypeDoc.Application();
+async function generate({ entryPoints = [], inDir, outDir, typedoc, ignoreErrors = false}: Options, typeDocOptions: Partial<TypeDocOptions> = {}) {
+  const app = new Application();
 
   const typedocConfigFile = typedoc ? (await import('./' + typedoc))?.default || {} : {};
   typeDocOptions = {...typedocConfigFile, ...typeDocOptions}
   typeDocOptions.out = outDir || typeDocOptions.out || 'docs';
 
-  typeDocOptions.entryPoints = entryPoints || typeDocOptions.entryPoints || [];
+  typeDocOptions.entryPoints = typeDocOptions.entryPoints || [];
+
+  typeDocOptions.entryPoints.push(...entryPoints);
 
   if (inDir) {
     typeDocOptions.entryPoints.push(...getEntryPoints(inDir, typeDocOptions.exclude));
   }
 
+  typeDocOptions.plugin = ['typedoc-gjsify-theme']
+  typeDocOptions.theme = "gjsify"
+
   // If you want TypeDoc to load tsconfig.json file
-  app.options.addReader(new TypeDoc.TSConfigReader());
+  app.options.addReader(new TSConfigReader());
 
   app.bootstrap(typeDocOptions);
 
@@ -86,7 +91,7 @@ async function start() {
   .option('options', {
     type: 'string',
     normalize: true,
-    describe: 'Specify a json option file that should be loaded. If not specified TypeDoc will look for typedoc.json and typedoc.js in the current directory. E.g. typedoc.gjs.js'
+    describe: 'Specify a json option file that should be loaded. If not specified TypeDoc will look for json and js in the current directory. E.g. gjs.js'
   })
   .option('tsconfig', {
     type: 'string',

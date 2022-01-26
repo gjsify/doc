@@ -14,12 +14,18 @@
     "sourceMap": true,
     "rootDir": "./",
     "resolveJsonModule": true,
-    "skipLibCheck": true
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+
+    "jsx": "react",
+    "jsxFactory": "JSX.createElement",
+    "jsxFragmentFactory": "JSX.Fragment"
   },
   "include": [
-    "./typedoc.ts"
+    "./cli.ts"
   ],
   "exclude": [
-    "@types"
+    "@types",
+    "packages"
   ]
 }

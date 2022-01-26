@@ -1,0 +1,23 @@
+{
+    "name": "typedoc-gjsify-theme",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "repository": "https://github.com/gjsify/doc",
+    "author": "Pascal Garber <pascal@artandcode.studio>",
+    "license": "ICS",
+    "keywords": [
+      "typedoc",
+      "typedoc-theme"
+    ],
+    "devDependencies": {
+      "typescript": "^4.5.5"
+    },
+    "peerDependencies": {
+      "tslib": "^2.3.0",
+      "typedoc": "^0.22.11"
+    },
+    "scripts": {
+      "build": "tsc",
+      "watch": "tsc --watch"
+    }
+  }
