@@ -5,6 +5,7 @@
     "**/node_modules": true,
     "./docs": true
   },
+  "deno.enable": false,
   "cSpell.words": [
     "Amtk",
     "Cogl",
@@ -33,5 +34,9 @@
     "typedoc",
     "vala",
     "yarnpkg"
-  ]
+  ],
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

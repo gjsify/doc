@@ -2,28 +2,9 @@
   "compilerOptions": {
     "lib": ["ESNext"],                 
     "target": "ESNext",
-    "module": "ESNext",
-    "outDir": "lib",
-    "strict": true,
-    "noImplicitAny": false,
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "rootDir": "./",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-
-    "jsx": "react",
-    "jsxFactory": "JSX.createElement",
-    "jsxFragmentFactory": "JSX.Fragment"
+    "module": "CommonJS",
   },
-  "include": [
-    "./cli.ts"
-  ],
+  "include": [],
   "exclude": [
     "@types",
     "packages"

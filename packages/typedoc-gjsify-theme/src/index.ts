@@ -1,6 +1,5 @@
 import {
   Application,
-  JSX
 } from "typedoc";
 
 import { GjsifyTheme } from './theme'

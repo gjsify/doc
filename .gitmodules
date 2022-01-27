@@ -2,3 +2,9 @@
 	path = vala-girs
 	url = https://github.com/nemequ/vala-girs
 	branch = master
+[submodule "vendor/riba"]
+	path = vendor/riba
+	url = https://github.com/ribajs/riba.git
+[submodule "vendor/ts-for-gjs"]
+	path = vendor/ts-for-gjs
+	url = https://github.com/gjsify/ts-for-gjs.git
