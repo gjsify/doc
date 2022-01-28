@@ -1609,6 +1609,7 @@ __metadata:
     ts-node: ^10.4.0
     typedoc: ^0.22.11
     typedoc-gjsify-theme: "workspace:*"
+    typedoc-plugin-remote-search: "workspace:^"
     typescript: ^4.5.5
     yargs: ^17.3.1
   languageName: unknown
@@ -21675,6 +21676,20 @@ __metadata:
   resolution: "typedoc-gjsify-theme@workspace:packages/typedoc-gjsify-theme"
   dependencies:
     "@types/node": ^17.0.12
+    typescript: ^4.5.5
+  peerDependencies:
+    tslib: ^2.3.0
+    typedoc: ^0.22.11
+  languageName: unknown
+  linkType: soft
+
+"typedoc-plugin-remote-search@workspace:^, typedoc-plugin-remote-search@workspace:packages/typedoc-plugin-remote-search":
+  version: 0.0.0-use.local
+  resolution: "typedoc-plugin-remote-search@workspace:packages/typedoc-plugin-remote-search"
+  dependencies:
+    "@types/lunr": ^2.3.4
+    "@types/node": ^17.0.12
+    lunr: ^2.3.9
     typescript: ^4.5.5
   peerDependencies:
     tslib: ^2.3.0

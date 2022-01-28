@@ -46,7 +46,10 @@ async function generate(
   typeDocOptions.out = outDir || typeDocOptions.out || "docs";
   typeDocOptions.entryPoints = typeDocOptions.entryPoints || [];
   typeDocOptions.entryPoints.push(...entryPoints);
-  typeDocOptions.plugin = [require.resolve("typedoc-gjsify-theme")];
+  typeDocOptions.plugin = [
+    require.resolve("typedoc-gjsify-theme"),
+    require.resolve("typedoc-plugin-remote-search"),
+  ];
   typeDocOptions.theme = "gjsify";
 
   if (inDir) {

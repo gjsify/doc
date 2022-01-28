@@ -47,6 +47,7 @@
     "minimatch": "^3.0.4",
     "source-map-support": "^0.5.21",
     "typedoc-gjsify-theme": "workspace:*",
+    "typedoc-plugin-remote-search": "workspace:^",
     "yargs": "^17.3.1"
   }
 }
