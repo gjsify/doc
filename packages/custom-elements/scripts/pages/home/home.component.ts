@@ -1,5 +1,6 @@
 import { Component } from "@ribajs/core";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Scope {}
 
 export class HomePageComponent extends Component {
@@ -7,8 +8,7 @@ export class HomePageComponent extends Component {
   public _debug = false;
   protected autobind = true;
 
-  scope: Scope = {
-  };
+  scope: Scope = {};
 
   static get observedAttributes(): string[] {
     return [];

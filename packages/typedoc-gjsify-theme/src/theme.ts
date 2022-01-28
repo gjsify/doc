@@ -6,10 +6,10 @@ import {
   Logger,
   ContainerReflection,
 } from "typedoc";
-import { copyFileSync, readdirSync } from 'fs'
-import { resolve, basename } from 'path'
+import { copyFileSync, readdirSync } from "fs";
+import { resolve, basename } from "path";
 
-import { GjsifyThemeContext } from './context'
+import { GjsifyThemeContext } from "./context";
 
 /**
  * A near clone of the default theme, that adds some custom text after the footer.
@@ -20,7 +20,7 @@ export class GjsifyTheme extends DefaultTheme {
   logger: Logger;
 
   constructor(renderer: Renderer) {
-    super(renderer)
+    super(renderer);
     this.logger = this.application.logger;
 
     this.listenTo(this.owner, {
@@ -39,44 +39,52 @@ export class GjsifyTheme extends DefaultTheme {
   }
 
   copyAsset(filename: string, outputDirectory: string) {
-    const src = resolve(__dirname, '../assets', filename)
-    const dest = resolve(outputDirectory, 'assets', filename)
-    this.logger.info(`${src} -> ${dest}`)
-    copyFileSync(src, dest)
+    const src = resolve(__dirname, "../assets", filename);
+    const dest = resolve(outputDirectory, "assets", filename);
+    this.logger.info(`${src} -> ${dest}`);
+    copyFileSync(src, dest);
   }
 
   copyAssets(filenames: string[], outputDirectory: string) {
     for (const filename of filenames) {
-      this.copyAsset(filename, outputDirectory)
+      this.copyAsset(filename, outputDirectory);
     }
   }
 
   copyFavicon(filepath: string, outputDirectory: string) {
-    const src = resolve(filepath)
-    const dest = resolve(outputDirectory, 'assets', basename(filepath))
-    this.logger.info(`${src} -> ${dest}`)
-    copyFileSync(src, dest)
+    const src = resolve(filepath);
+    const dest = resolve(outputDirectory, "assets", basename(filepath));
+    this.logger.info(`${src} -> ${dest}`);
+    copyFileSync(src, dest);
   }
 
   copyFavicons(outputDirectory: string) {
-    const dir = resolve(__dirname, '../assets/favicon')
+    const dir = resolve(__dirname, "../assets/favicon");
     const files = readdirSync(dir);
     for (const file of files) {
-      if (file.endsWith('.png') || file.endsWith('.svg')|| file.endsWith('.ico') || file.endsWith('.xml')|| file.endsWith('.webmanifest') ) {
-        this.copyFavicon(resolve(dir, file), outputDirectory)
+      if (
+        file.endsWith(".png") ||
+        file.endsWith(".svg") ||
+        file.endsWith(".ico") ||
+        file.endsWith(".xml") ||
+        file.endsWith(".webmanifest")
+      ) {
+        this.copyFavicon(resolve(dir, file), outputDirectory);
       }
     }
-
   }
 
   onGjsifyPageEnd(page: PageEvent<ContainerReflection>) {
-    this.logger.info(`Render page "${page.filename}"...`)
+    this.logger.info(`Render page "${page.filename}"...`);
   }
 
   onGjsifyRendererEnd(renderer: RendererEvent) {
     this.logger.info("onRendererEnd");
-    this.copyAssets(['logo.svg', 'main.bundle.js', 'main.css', 'vendors.bundle.js'], renderer.outputDirectory)
-    this.copyFavicons(renderer.outputDirectory)
+    this.copyAssets(
+      ["logo.svg", "main.bundle.js", "main.css", "vendors.bundle.js"],
+      renderer.outputDirectory
+    );
+    this.copyFavicons(renderer.outputDirectory);
   }
 
   onGjsifyRendererBegin(renderer: RendererEvent) {

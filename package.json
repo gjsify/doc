@@ -49,11 +49,17 @@
   "author": "Pascal Garber <pascal@artandcode.studio>",
   "license": "MIT",
   "devDependencies": {
+    "@ribajs/eslint-config": "next",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/experimental-utils": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "http-server": "^14.1.0",
-    "ts-for-gir": "workspace:*"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.16.7"
+    "prettier": "2.5.1",
+    "ts-for-gir": "workspace:*",
+    "typescript": "^4.5.5"
   },
   "workspaces": [
     "packages/*",

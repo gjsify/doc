@@ -1,8 +1,6 @@
-import {
-  Application,
-} from "typedoc";
+import { Application } from "typedoc";
 
-import { GjsifyTheme } from './theme'
+import { GjsifyTheme } from "./theme";
 
 /**
  * Called by TypeDoc when loading this theme as a plugin. Should be used to define themes which

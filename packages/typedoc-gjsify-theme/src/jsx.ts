@@ -6,41 +6,47 @@
 import { JSX as OJSX } from "typedoc";
 
 export type JsxElement = OJSX.Element;
-export declare type JsxChildren = JsxElement | string | number | null | undefined | JsxChildren[];
+export declare type JsxChildren =
+  | JsxElement
+  | string
+  | number
+  | null
+  | undefined
+  | JsxChildren[];
 
 /**
  * The common properties that may appear on any HTML element.
  *
  * Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#list_of_global_attributes
  */
- export interface JsxHtmlGlobalProps {
-    accessKey?: string;
-    autocapitalize?: string;
-    children?: JsxChildren;
-    class?: string;
-    contentEditable?: string;
-    [data: `data-${string}`]: string;
-    dir?: string;
-    draggable?: boolean;
-    enterKeyHint?: string;
-    hidden?: boolean;
-    id?: string;
-    inputMode?: string;
-    is?: string;
-    itemId?: string;
-    itemProp?: string;
-    itemRef?: string;
-    itemScope?: string;
-    itemType?: string;
-    lang?: string;
-    nonce?: string;
-    part?: string;
-    slot?: string;
-    spellcheck?: boolean;
-    style?: string;
-    tabIndex?: number;
-    title?: string;
-    translate?: boolean;
+export interface JsxHtmlGlobalProps {
+  accessKey?: string;
+  autocapitalize?: string;
+  children?: JsxChildren;
+  class?: string;
+  contentEditable?: string;
+  [data: `data-${string}`]: string;
+  dir?: string;
+  draggable?: boolean;
+  enterKeyHint?: string;
+  hidden?: boolean;
+  id?: string;
+  inputMode?: string;
+  is?: string;
+  itemId?: string;
+  itemProp?: string;
+  itemRef?: string;
+  itemScope?: string;
+  itemType?: string;
+  lang?: string;
+  nonce?: string;
+  part?: string;
+  slot?: string;
+  spellcheck?: boolean;
+  style?: string;
+  tabIndex?: number;
+  title?: string;
+  translate?: boolean;
 }
 
 /**
@@ -48,25 +54,37 @@ export declare type JsxChildren = JsxElement | string | number | null | undefine
  *
  * Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
  */
- export interface JsxLinkElementProps extends JsxHtmlGlobalProps {
-    as?: "audio" | "document" | "embed" | "fetch" | "font" | "image" | "object" | "script" | "style" | "track" | "video" | "worker";
-    crossOrigin?: "anonymous" | "use-credentials";
-    disabled?: boolean;
-    href?: string;
-    hreflang?: string;
-    imageSizes?: string;
-    imageSrcset?: string;
-    media?: string;
-    rel?: string;
-    sizes?: string;
-    type?: string;
-    // This is missing in JsxLinkElementProps of typedoc
-    color?: string;
+export interface JsxLinkElementProps extends JsxHtmlGlobalProps {
+  as?:
+    | "audio"
+    | "document"
+    | "embed"
+    | "fetch"
+    | "font"
+    | "image"
+    | "object"
+    | "script"
+    | "style"
+    | "track"
+    | "video"
+    | "worker";
+  crossOrigin?: "anonymous" | "use-credentials";
+  disabled?: boolean;
+  href?: string;
+  hreflang?: string;
+  imageSizes?: string;
+  imageSrcset?: string;
+  media?: string;
+  rel?: string;
+  sizes?: string;
+  type?: string;
+  // This is missing in JsxLinkElementProps of typedoc
+  color?: string;
 }
 
 interface IntrinsicElements extends OJSX.JSX.IntrinsicElements {
-    'router-view': JsxHtmlGlobalProps
-    'link': JsxLinkElementProps
+  "router-view": JsxHtmlGlobalProps;
+  link: JsxLinkElementProps;
 }
 
 export const Raw = OJSX.Raw;
@@ -80,8 +98,9 @@ export const Raw = OJSX.Raw;
  * looking adjacent to the factory function and we can get rid of this phantom namespace.
  * @hidden
  */
+// eslint-disable-next-line @typescript-eslint/no-namespace
 export declare namespace JSX {
-    export { IntrinsicElements, JsxElement as Element };
+  export { IntrinsicElements, JsxElement as Element };
 }
 
 /**
