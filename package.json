@@ -29,6 +29,7 @@
     "clear:types:gjs": "rm -rf ./@types/Gjs",
     "clear": "npm run clear:docs",
     "serve": "http-server ./docs",
+    "serve:try": "typedoc-server --doc-dir ./docs/try",
     "link": "npm link ts-for-gir",
     "ts-for-gir": "ts-for-gir",
     "typedoc": "yarn workspace @gjsify/typedoc-custom-cli run start"
@@ -106,5 +107,8 @@
     "@ribajs/babel-config": "workspace:*",
     "@ribajs/strapi": "workspace:*"
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.1.1",
+  "dependencies": {
+    "typedoc-plugin-remote-search": "workspace:^"
+  }
 }

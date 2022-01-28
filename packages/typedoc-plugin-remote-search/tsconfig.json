@@ -3,10 +3,12 @@
     "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "outDir": "dist",
     "skipLibCheck": true,
+    "inlineSourceMap": true,
 
     "jsx": "react",
     "jsxFactory": "JSX.createElement",

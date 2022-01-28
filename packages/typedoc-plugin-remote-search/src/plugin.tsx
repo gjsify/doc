@@ -1,6 +1,6 @@
 import { Renderer, Logger, JSX } from "typedoc";
 import { writeFileSync, readFileSync, unlinkSync, existsSync } from "fs";
-import { resolve } from "path";
+import { join } from "path";
 
 /**
  * A plugin that exports an index of the project to a json file.
@@ -37,8 +37,8 @@ export class RemoteSearchIndexPlugin {
       return;
     }
 
-    const originalFileName = resolve(outputDirectory, "assets", "search.js");
-    const jsonFileName = resolve(outputDirectory, "assets", "search.json");
+    const originalFileName = join(outputDirectory, "assets", "search.js");
+    const jsonFileName = join(outputDirectory, "assets", "search.json");
 
     const removeStart = 'window.searchData = JSON.parse("';
     const removeEnd = '");';
