@@ -12,6 +12,7 @@
     "lint": "eslint . --ext .ts,.tsx --fix && npm run lint:csr",
     "lint:csr": "tsc -p tsconfig.json --noEmit"
   },
+  "homepage": "https://github.com/gjsify/doc/tree/main/packages/typedoc-theme-client#readme",
   "repository": "https://github.com/gjsify/doc/tree/main/packages/typedoc-theme-client",
   "author": "Pascal Garber <pascal@artandcode.studio>",
   "license": "AGPL",

@@ -10,7 +10,14 @@ export const header = (
     <div class="tsd-page-toolbar">
       <div class="container">
         <div class="table-wrap">
-          {/* The search is too big to use client-side */}
+          <tsd-search
+            id="tsd-search"
+            class="table-cell ready"
+            base={context.relativeURL("./") + "/"}
+            hostname="localhost"
+            port="3024"
+          ></tsd-search>
+          {/*
           <div
             class="table-cell"
             id="tsd-search"
@@ -35,6 +42,7 @@ export const header = (
               {props.project.name}
             </a>
           </div>
+          */}
 
           <div class="table-cell" id="tsd-widgets">
             <div id="tsd-filter">

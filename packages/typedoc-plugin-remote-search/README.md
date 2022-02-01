@@ -1,11 +1,11 @@
-# typedoc-plugin-remote-search
+# Typedoc Remote Search Plugin
 
 This plugin is especially useful when the API documentation is very large. This can lead to the `search.js` becoming several hundred MB in size and thus unusable.
 
 ## Install
 
 ```bash
-npm install typedoc-plugin-remote-search
+npm install @gjsify/typedoc-plugin-remote-search
 ```
 
 ## Usage
@@ -15,13 +15,21 @@ npm install typedoc-plugin-remote-search
 Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installation/#command-line-interface):
 
 ```bash
-typedoc --plugin typedoc-plugin-remote-search
+typedoc --plugin @gjsify/typedoc-plugin-remote-search
+```
+
+```js
+const typeDocOptions = {
+  plugin: [
+    require.resolve("@gjsify/typedoc-plugin-remote-search"),
+  ],
+};
 ```
 
 **Arguments**
 
 ```bash
-$typedoc --plugin typedoc-plugin-remote-search --help
+$typedoc --plugin @gjsify/typedoc-plugin-remote-search --help
 
 Options:
  --hostname                  [Remote Search] A domain name or IP address of the search server
@@ -101,14 +109,28 @@ Of course you can also build your own search. If you want you can use the [searc
 
 For this it is recommended to set the `--noScript` option of the plugin.
 
-```js
-    const options = window.remoteSearchOptions;
+```ts
+    export interface Result {
+        classes: string;
+        url: string;
+        name: string;
+    }
+
+    export interface Options {
+        /** Port of the search server */
+        port: number;
+        /** A domain name or IP address of the search server */
+        hostname: string;
+    }
+
+
+    const options: Options = window.remoteSearchOptions;
     const url = new URL(window.location.toString());
     url.hostname = options.hostname;
     url.port = options.port.toString();
     url.pathname = `search/*${searchText}*`; // Perform a wildcard search
 
     const response = await fetch(url.toString());
-    const results = await response.json();
+    const results: Result[] = await response.json();
     ...
 ```

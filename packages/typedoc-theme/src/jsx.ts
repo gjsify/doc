@@ -82,8 +82,15 @@ export interface JsxLinkElementProps extends JsxHtmlGlobalProps {
   color?: string;
 }
 
+export interface JsxTsdSearchProps extends JsxHtmlGlobalProps {
+  base: string;
+  port: number | string;
+  hostname: string;
+}
+
 interface IntrinsicElements extends OJSX.JSX.IntrinsicElements {
   "router-view": JsxHtmlGlobalProps;
+  "tsd-search": JsxTsdSearchProps;
   link: JsxLinkElementProps;
 }
 

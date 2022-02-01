@@ -7,7 +7,7 @@ import {
   ContainerReflection,
 } from "typedoc";
 import { copyFileSync, readdirSync } from "fs";
-import { resolve, basename } from "path";
+import { resolve, basename, join } from "path";
 
 import { GjsifyThemeContext } from "./context";
 
@@ -41,7 +41,7 @@ export class GjsifyTheme extends DefaultTheme {
   copyAsset(filename: string, outputDirectory: string) {
     const src = resolve(__dirname, "../assets", filename);
     const dest = resolve(outputDirectory, "assets", filename);
-    this.logger.info(`${src} -> ${dest}`);
+    this.logger.info(`[GjsifyTheme] ${filename} -> ${dest}`);
     copyFileSync(src, dest);
   }
 
@@ -54,7 +54,7 @@ export class GjsifyTheme extends DefaultTheme {
   copyFavicon(filepath: string, outputDirectory: string) {
     const src = resolve(filepath);
     const dest = resolve(outputDirectory, "assets", basename(filepath));
-    this.logger.info(`${src} -> ${dest}`);
+    this.logger.info(`[GjsifyTheme] ${filepath} -> ${dest}`);
     copyFileSync(src, dest);
   }
 
@@ -75,11 +75,11 @@ export class GjsifyTheme extends DefaultTheme {
   }
 
   onGjsifyPageEnd(page: PageEvent<ContainerReflection>) {
-    this.logger.info(`Render page "${page.filename}"...`);
+    this.logger.info(`[GjsifyTheme] Render page "${page.filename}"...`);
   }
 
   onGjsifyRendererEnd(renderer: RendererEvent) {
-    this.logger.info("onRendererEnd");
+    this.logger.info("[GjsifyTheme] onRendererEnd");
     this.copyAssets(
       ["logo.svg", "main.bundle.js", "main.css", "vendors.bundle.js"],
       renderer.outputDirectory
@@ -88,6 +88,6 @@ export class GjsifyTheme extends DefaultTheme {
   }
 
   onGjsifyRendererBegin(renderer: RendererEvent) {
-    this.logger.info("onRendererBegin");
+    this.logger.info("[GjsifyTheme] onRendererBegin");
   }
 }

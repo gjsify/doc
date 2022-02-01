@@ -1,68 +1,33 @@
-/**
- * Based on https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/default/assets/typedoc/components/Search.ts
- */
+import { Component, TemplateFunction } from "@ribajs/core";
+import { hasChildNodesTrim, throttle } from "@ribajs/utils";
+import template from "./search.component.pug";
 
-import { SearchResult } from "../types";
-import { debounce } from "./debounce";
-import { hasChild } from "./has-child";
+import type { SearchComponentScope, SearchResult } from "../../types";
 
-export class Search extends HTMLElement {
-  base = "/";
-  port = 3024;
-  hostname = "localhost";
+export class SearchComponent extends Component {
+  public static tagName = "tsd-search";
+
+  static get observedAttributes() {
+    return ["base", "port", "hostname"];
+  }
+
+  public scope: SearchComponentScope = {
+    port: 0,
+    hostname: "localhost",
+    base: "./",
+  };
 
   constructor() {
     super();
   }
 
-  connectedCallback() {
-    try {
-      this.getOptionsFromWindowObject();
-      this.setTemplate();
-      setTimeout(() => {
-        this.initSearch();
-      }, 0);
-    } catch (error) {
-      console.error("Error on create instance of Search");
-      console.error(error);
-    }
+  protected connectedCallback() {
+    super.connectedCallback();
+    this.init(SearchComponent.observedAttributes);
   }
 
-  getOptionsFromWindowObject() {
-    if (window.remoteSearchOptions) {
-      if (window.remoteSearchOptions.hostname)
-        this.hostname = window.remoteSearchOptions.hostname;
-      if (window.remoteSearchOptions.port)
-        this.port = window.remoteSearchOptions.port;
-    }
-  }
-
-  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
-    switch (name) {
-      case "base":
-        return this.baseChangedCallback(oldValue, newValue);
-      case "port":
-        return this.portChangedCallback(oldValue, newValue);
-      case "hostname":
-        return this.hostChangedCallback(oldValue, newValue);
-      default:
-        break;
-    }
-  }
-
-  baseChangedCallback(oldValue: string, newValue: string) {
-    this.base = newValue;
-  }
-
-  portChangedCallback(oldValue: string, newValue: string) {
-    const port = Number(newValue);
-    if (!isNaN(port)) {
-      this.port = port;
-    }
-  }
-
-  hostChangedCallback(oldValue: string, newValue: string) {
-    this.hostname = newValue;
+  protected async afterBind() {
+    this.initSearch();
   }
 
   initSearch() {
@@ -96,7 +61,7 @@ export class Search extends HTMLElement {
   bindEvents(results: HTMLElement, field: HTMLInputElement) {
     field.addEventListener(
       "input",
-      debounce(() => {
+      throttle(() => {
         this.updateResults(results, field);
       }, 1000)
     );
@@ -143,8 +108,8 @@ export class Search extends HTMLElement {
     this.classList.add("loading");
 
     const url = new URL(window.location.toString());
-    url.hostname = this.hostname;
-    url.port = this.port.toString();
+    url.hostname = this.scope.hostname;
+    url.port = this.scope.port.toString();
     // Perform a wildcard search
     url.pathname = `search/*${searchText}*`;
     const res: SearchResult[] = [];
@@ -169,7 +134,7 @@ export class Search extends HTMLElement {
       item.classList.value = row.classes;
 
       const anchor = document.createElement("a");
-      anchor.href = this.base + row.url;
+      anchor.href = this.scope.base + row.url;
       anchor.classList.add("tsd-kind-icon");
       anchor.innerHTML = row.name;
       item.append(anchor);
@@ -230,24 +195,11 @@ export class Search extends HTMLElement {
     }
   }
 
-  setTemplate() {
-    // Similar template as in default theme
-    const template = `
-<div class="field">
-    <label for="tsd-search-field" class="tsd-widget search no-caption">
-        Search
-    </label>
-    <input type="text" id="tsd-search-field" />
-</div>
-
-<ul class="results">
-    <li class="state loading">Preparing remote search server...</li>
-    <li class="state failure">The remote search server is not available</li>
-</ul>
-    `;
-
-    if (!hasChild(this)) {
-      this.innerHTML = template;
+  protected template(): ReturnType<TemplateFunction> {
+    if (!hasChildNodesTrim(this)) {
+      return template(this.scope);
+    } else {
+      return null;
     }
   }
 }
