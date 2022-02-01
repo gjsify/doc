@@ -11,24 +11,30 @@ export const header = (
       <div class="container">
         <div class="table-wrap">
           {/* The search is too big to use client-side */}
-          <div class="table-cell" id="tsd-search" data-base={context.relativeURL("./")}>
-              <div class="field">
-                  <label for="tsd-search-field" class="tsd-widget search no-caption">
-                      Search
-                  </label>
-                  <input type="text" id="tsd-search-field" />
-              </div>
+          <div
+            class="table-cell"
+            id="tsd-search"
+            data-base={context.relativeURL("./")}
+          >
+            <div class="field">
+              <label
+                for="tsd-search-field"
+                class="tsd-widget search no-caption"
+              >
+                Search
+              </label>
+              <input type="text" id="tsd-search-field" />
+            </div>
 
-              <ul class="results">
-                  <li class="state loading">Preparing search index...</li>
-                  <li class="state failure">The search index is not available</li>
-              </ul>
+            <ul class="results">
+              <li class="state loading">Preparing search index...</li>
+              <li class="state failure">The search index is not available</li>
+            </ul>
 
-              <a href={context.relativeURL("index.html")} class="title">
-                  {props.project.name}
-              </a>
+            <a href={context.relativeURL("index.html")} class="title">
+              {props.project.name}
+            </a>
           </div>
-          
 
           <div class="table-cell" id="tsd-widgets">
             <div id="tsd-filter">

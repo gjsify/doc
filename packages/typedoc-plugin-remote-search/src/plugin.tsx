@@ -1,6 +1,7 @@
 import { Renderer, Logger, JSX } from "typedoc";
 import { writeFileSync, readFileSync, unlinkSync, existsSync } from "fs";
 import { join } from "path";
+import { PluginOptions } from "./types";
 
 /**
  * A plugin that exports an index of the project to a json file.
@@ -10,35 +11,63 @@ import { join } from "path";
 export class RemoteSearchIndexPlugin {
   private firstPageBegan = false;
 
-  constructor(public logger: Logger, private renderer: Renderer) {
-    // Workaround until the RendererHooks are implemented, see https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md
-    this.renderer.hooks.on(
-      "head.end",
-      (/*context: DefaultThemeRenderContext*/) => {
-        if (!this.firstPageBegan) {
-          const outputDirectory =
-            this.renderer.application.options.getValue("out");
+  private script: string;
+  private outputDirectory: string;
 
-          this.convertSearch(outputDirectory);
-          this.firstPageBegan = true;
-        }
-        return <JSX.Raw html="" />;
+  constructor(
+    public logger: Logger,
+    private renderer: Renderer,
+    private readonly options: PluginOptions
+  ) {
+    this.outputDirectory = this.renderer.application.options.getValue("out");
+
+    this.script = `window.remoteSearchOptions = window.remoteSearchOptions || {
+      hostname: "${options.hostname || ""}",
+      port: ${options.port || 0},
+      replaceElement: ${options.replaceElement || false},
+      script: ${options.script || false},
+    };`;
+
+    if (options.script)
+      this.script += readFileSync(
+        join(__dirname, "../assets/client.js"),
+        "utf8"
+      );
+
+    this.renderer.hooks.on("head.end", () => {
+      // Workaround until the RendererHooks are implemented, see https://github.com/TypeStrong/typedoc/blob/master/internal-docs/custom-themes.md
+      if (!this.firstPageBegan) {
+        this.firstPageBegan = true;
+        this.onRenderDone();
       }
+      return this.onHeadEnd();
+    });
+  }
+
+  private onHeadEnd() {
+    return (
+      <script>
+        <JSX.Raw html={this.script} />
+      </script>
     );
+  }
+
+  private onRenderDone() {
+    this.convertSearch();
   }
 
   /**
    * Instead of a search.js, we are using a search.json to load them more easily with node.js.
    * For this we need to convert the search.js to a search.json
    */
-  private convertSearch(outputDirectory?: string) {
-    if (!outputDirectory) {
+  private convertSearch() {
+    if (!this.outputDirectory) {
       this.logger.error("outputDirectory not found!");
       return;
     }
 
-    const originalFileName = join(outputDirectory, "assets", "search.js");
-    const jsonFileName = join(outputDirectory, "assets", "search.json");
+    const originalFileName = join(this.outputDirectory, "assets", "search.js");
+    const jsonFileName = join(this.outputDirectory, "assets", "search.json");
 
     const removeStart = 'window.searchData = JSON.parse("';
     const removeEnd = '");';

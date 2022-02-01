@@ -47,8 +47,8 @@ async function generate(
   typeDocOptions.entryPoints = typeDocOptions.entryPoints || [];
   typeDocOptions.entryPoints.push(...entryPoints);
   typeDocOptions.plugin = [
-    require.resolve("typedoc-gjsify-theme"),
-    require.resolve("typedoc-plugin-remote-search"),
+    require.resolve("@gjsify/typedoc-theme"),
+    require.resolve("@gjsify/typedoc-plugin-remote-search"),
   ];
   typeDocOptions.theme = "gjsify";
 

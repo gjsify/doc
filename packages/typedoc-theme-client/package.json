@@ -1,5 +1,5 @@
 {
-  "name": "@gjsify/typedoc-gjsify-theme-riba",
+  "name": "@gjsify/typedoc-theme-client",
   "version": "0.0.1",
   "description": "",
   "main": "scripts/index.ts",
@@ -12,7 +12,8 @@
     "lint": "eslint . --ext .ts,.tsx --fix && npm run lint:csr",
     "lint:csr": "tsc -p tsconfig.json --noEmit"
   },
-  "author": "Art+Code Studio (Pascal Garber) <pascal@artandcode.studio>",
+  "repository": "https://github.com/gjsify/doc/tree/main/packages/typedoc-theme-client",
+  "author": "Pascal Garber <pascal@artandcode.studio>",
   "license": "AGPL",
   "devDependencies": {
     "@babel/cli": "^7.16.7",

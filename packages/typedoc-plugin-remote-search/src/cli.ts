@@ -20,14 +20,28 @@ async function start() {
       type: "number",
       normalize: true,
       default: 3024,
+      describe: "Port of the search server",
+    })
+    .option("hostname", {
+      type: "string",
+      normalize: true,
+      default: "localhost",
+      describe: "A domain name or IP address of the search server",
+    })
+    .option("noServe", {
+      type: "boolean",
+      normalize: true,
+      default: false,
       describe:
-        "Specifies the location where *.ts files are placed. E.g. @types/Gjs",
+        "Set this value to true if the generated documentation should not be served",
     })
     .help().argv;
 
   new SearchServer({
     docDir: argv.docDir,
     port: argv.port,
+    hostname: argv.hostname,
+    serve: !argv.noServe,
   });
 }
 

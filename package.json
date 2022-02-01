@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start:docs:try": "npm run build:docs:try && npm run serve:try",
     "update": "npm run update:submodules",
     "update:submodules": "git submodule update --init --recursive && git submodule foreach git pull origin master",
     "build:types:node-gtk": "npm run clear:types:node-gtk && npm run ts-for-gir -- generate '*' -e node --useNamespace --moduleType commonjs",
@@ -32,7 +33,8 @@
     "serve:try": "typedoc-server --doc-dir ./docs/try",
     "link": "npm link ts-for-gir",
     "ts-for-gir": "ts-for-gir",
-    "typedoc": "yarn workspace @gjsify/typedoc-custom-cli run start"
+    "typedoc": "yarn workspace @gjsify/typedoc-custom-cli run start",
+    "typedoc-server": "typedoc-server"
   },
   "keywords": [
     "gjs",
@@ -48,7 +50,7 @@
     "node-gtk"
   ],
   "author": "Pascal Garber <pascal@artandcode.studio>",
-  "license": "MIT",
+  "license": "AGPL",
   "devDependencies": {
     "@ribajs/eslint-config": "next",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
@@ -109,6 +111,7 @@
   },
   "packageManager": "yarn@3.1.1",
   "dependencies": {
-    "typedoc-plugin-remote-search": "workspace:^"
+    "@gjsify/typedoc-plugin-remote-search": "workspace:^",
+    "@yarnpkg/esbuild-plugin-pnp": "^2.0.1-rc.2"
   }
 }

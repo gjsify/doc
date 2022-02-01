@@ -29,7 +29,7 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
   constructor(private ownTheme: GjsifyTheme, options: Options) {
     super(ownTheme, options);
     this.logger = ownTheme.application.logger;
-    ownTheme.owner.hooks.on("head.end", (...args) => this.onHeadEnd(...args));
+    // ownTheme.owner.hooks.on("head.end", (...args) => this.onHeadEnd(...args));
     // ownTheme.application.renderer.hooks.on("head.end", (...args) => this.onHeadEnd(...args));
   }
 

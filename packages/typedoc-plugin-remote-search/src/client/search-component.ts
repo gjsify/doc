@@ -2,68 +2,78 @@
  * Based on https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/default/assets/typedoc/components/Search.ts
  */
 
+import { SearchResult } from "../types";
 import { debounce } from "./debounce";
-import { Index } from "lunr";
+import { hasChild } from "./has-child";
 
-interface IDocument {
-  id: number;
-  kind: number;
-  name: string;
-  url: string;
-  classes: string;
-  parent?: string;
+enum StateCSSClass {
+  LOADLING = "loading",
+  READY = "ready",
+  FAILURE = "failure",
 }
 
-interface IData {
-  kinds: { [kind: number]: string };
-  rows: IDocument[];
-  index: object;
-}
+export class Search extends HTMLElement {
+  base = "/";
+  port = 3024;
+  hostname = "localhost";
 
-declare global {
-  interface Window {
-    searchData?: IData;
-  }
-}
-
-interface SearchState {
-  base: string;
-  data?: IData;
-  index?: Index;
-}
-
-class Search extends HTMLDivElement {
   constructor() {
-    // Always call super first in constructor
     super();
+  }
 
-    // Element functionality written in here
+  connectedCallback() {
+    try {
+      this.getOptionsFromWindowObject();
+      this.setTemplate();
+      setTimeout(() => {
+        this.initSearch();
+      }, 0);
+    } catch (error) {
+      console.error("Error on create instance of Search");
+      console.error(error);
+    }
+  }
+
+  getOptionsFromWindowObject() {
+    if (window.remoteSearchOptions) {
+      if (window.remoteSearchOptions.hostname)
+        this.hostname = window.remoteSearchOptions.hostname;
+      if (window.remoteSearchOptions.port)
+        this.port = window.remoteSearchOptions.port;
+    }
+  }
+
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    switch (name) {
+      case "base":
+        return this.baseChangedCallback(oldValue, newValue);
+      case "port":
+        return this.portChangedCallback(oldValue, newValue);
+      case "hostname":
+        return this.hostChangedCallback(oldValue, newValue);
+      default:
+        break;
+    }
+  }
+
+  baseChangedCallback(oldValue: string, newValue: string) {
+    this.base = newValue;
+  }
+
+  portChangedCallback(oldValue: string, newValue: string) {
+    const port = Number(newValue);
+    if (!isNaN(port)) {
+      this.port = port;
+    }
+  }
+
+  hostChangedCallback(oldValue: string, newValue: string) {
+    this.hostname = newValue;
   }
 
   initSearch() {
-    const searchEl = document.getElementById("tsd-search");
-    if (!searchEl) return;
-
-    const searchScript = document.getElementById(
-      "search-script"
-    ) as HTMLScriptElement | null;
-    searchEl.classList.add("loading");
-    if (searchScript) {
-      searchScript.addEventListener("error", () => {
-        searchEl.classList.remove("loading");
-        searchEl.classList.add("failure");
-      });
-      searchScript.addEventListener("load", () => {
-        searchEl.classList.remove("loading");
-        searchEl.classList.add("ready");
-      });
-      if (window.searchData) {
-        searchEl.classList.remove("loading");
-      }
-    }
-
-    const field = document.querySelector<HTMLInputElement>("#tsd-search input");
-    const results = document.querySelector<HTMLElement>("#tsd-search .results");
+    const field = this.querySelector<HTMLInputElement>("input");
+    const results = this.querySelector<HTMLElement>(".results");
 
     if (!field || !results) {
       throw new Error(
@@ -75,34 +85,25 @@ class Search extends HTMLDivElement {
     results.addEventListener("mousedown", () => (resultClicked = true));
     results.addEventListener("mouseup", () => {
       resultClicked = false;
-      searchEl.classList.remove("has-focus");
+      this.classList.remove("has-focus");
     });
 
-    field.addEventListener("focus", () => searchEl.classList.add("has-focus"));
+    field.addEventListener("focus", () => this.classList.add("has-focus"));
     field.addEventListener("blur", () => {
       if (!resultClicked) {
         resultClicked = false;
-        searchEl.classList.remove("has-focus");
+        this.classList.remove("has-focus");
       }
     });
 
-    const state: SearchState = {
-      base: searchEl.dataset["base"] + "/",
-    };
-
-    this.bindEvents(searchEl, results, field, state);
+    this.bindEvents(results, field);
   }
 
-  bindEvents(
-    searchEl: HTMLElement,
-    results: HTMLElement,
-    field: HTMLInputElement,
-    state: SearchState
-  ) {
+  bindEvents(results: HTMLElement, field: HTMLInputElement) {
     field.addEventListener(
       "input",
       debounce(() => {
-        this.updateResults(searchEl, results, field, state);
+        this.updateResults(results, field);
       }, 200)
     );
 
@@ -137,55 +138,46 @@ class Search extends HTMLDivElement {
     });
   }
 
-  checkIndex(state: SearchState, searchEl: HTMLElement) {
-    if (state.index) return;
-
-    if (window.searchData) {
-      searchEl.classList.remove("loading");
-      searchEl.classList.add("ready");
-      state.data = window.searchData;
-      state.index = Index.load(window.searchData.index);
-    }
-  }
-
-  updateResults(
-    searchEl: HTMLElement,
-    results: HTMLElement,
-    query: HTMLInputElement,
-    state: SearchState
-  ) {
+  async updateResults(results: HTMLElement, query: HTMLInputElement) {
+    this.classList.add("loading");
     results.textContent = "";
 
     const searchText = query.value.trim();
 
-    // TODO fetch the result here
-
+    const url = new URL(window.location.toString());
+    url.hostname = this.hostname;
+    url.port = this.port.toString();
     // Perform a wildcard search
-    // const res = state.index?.search(`*${searchText}*`);
+    url.pathname = `search/*${searchText}*`;
+    const res: SearchResult[] = [];
 
-    // for (let i = 0, c = Math.min(10, res.length); i < c; i++) {
-    //   const row = state.data?.rows[Number(res[i].ref)];
+    try {
+      const response = await fetch(url.toString());
+      res.push(...(await response.json()));
+    } catch (error) {
+      console.error(error);
+      this.classList.remove("ready");
+      this.classList.remove("loading");
+      this.classList.add("failure");
+    }
 
-    //   // Bold the matched part of the query in the search results
-    //   let name = boldMatches(row.name, searchText);
-    //   if (row.parent) {
-    //     name = `<span class="parent">${boldMatches(
-    //       row.parent,
-    //       searchText
-    //     )}.</span>${name}`;
-    //   }
+    this.classList.add("ready");
+    this.classList.remove("loading");
 
-    //   const item = document.createElement("li");
-    //   item.classList.value = row.classes;
+    for (let i = 0, c = Math.min(10, res.length); i < c; i++) {
+      const row = res[i];
 
-    //   const anchor = document.createElement("a");
-    //   anchor.href = state.base + row.url;
-    //   anchor.classList.add("tsd-kind-icon");
-    //   anchor.innerHTML = name;
-    //   item.append(anchor);
+      const item = document.createElement("li");
+      item.classList.value = row.classes;
 
-    //   results.appendChild(item);
-    // }
+      const anchor = document.createElement("a");
+      anchor.href = this.base + row.url;
+      anchor.classList.add("tsd-kind-icon");
+      anchor.innerHTML = row.name;
+      item.append(anchor);
+
+      results.appendChild(item);
+    }
   }
 
   /**
@@ -239,6 +231,29 @@ class Search extends HTMLDivElement {
       field.blur();
     }
   }
-}
 
-customElements.define("tsd-search", Search);
+  relativeURL(url: string) {
+    return this.base + url;
+  }
+
+  setTemplate() {
+    // Similar template as in default theme
+    const template = `
+<div class="field">
+    <label for="tsd-search-field" class="tsd-widget search no-caption">
+        Search
+    </label>
+    <input type="text" id="tsd-search-field" />
+</div>
+
+<ul class="results">
+    <li class="state loading">Preparing remote search server...</li>
+    <li class="state failure">The remote search server is not available</li>
+</ul>
+    `;
+
+    if (!hasChild(this)) {
+      this.innerHTML = template;
+    }
+  }
+}

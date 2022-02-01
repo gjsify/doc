@@ -5,38 +5,7 @@ import Router from "@koa/router";
 import { Index } from "lunr";
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
-
-interface Options {
-  docDir: string;
-  port: number;
-}
-
-interface IDocument {
-  id: number;
-  kind: number;
-  name: string;
-  url: string;
-  classes: string;
-  parent?: string;
-}
-
-interface IData {
-  kinds: { [kind: number]: string };
-  rows: IDocument[];
-  index: object;
-}
-
-interface Result {
-  classes: string;
-  url: string;
-  name: string;
-}
-
-interface SearchState {
-  // base: string;
-  data?: IData;
-  index?: Index;
-}
+import { ServerOptions, SearchState, SearchData, SearchResult } from "./types";
 
 const SPECIAL_HTML = {
   "&": "&amp;",
@@ -55,7 +24,7 @@ export class SearchServer {
   app: Koa<Koa.DefaultState, Koa.DefaultContext>;
   router: Router<Koa.DefaultState, Koa.DefaultContext>;
 
-  constructor(readonly options: Options) {
+  constructor(readonly options: ServerOptions) {
     this.app = new Koa();
     this.router = new Router();
 
@@ -69,14 +38,14 @@ export class SearchServer {
     });
 
     this.app.use(compress());
-    this.app.use(serve(options.docDir, {}));
+    if (options.serve) this.app.use(serve(options.docDir, {}));
     this.app.use(this.router.routes());
     this.app.use(this.router.allowedMethods());
 
     console.info(
-      `Start typedoc server, visit http://localhost:${options.port}`
+      `Start typedoc server, visit http://${options.hostname}:${options.port}`
     );
-    this.app.listen(options.port);
+    this.app.listen(options.port, options.hostname);
   }
 
   loadIndex() {
@@ -85,7 +54,7 @@ export class SearchServer {
       throw new Error(`File not found "${filePath}"`);
     }
     const jsonStr = readFileSync(filePath, "utf8");
-    const data: IData = JSON.parse(jsonStr);
+    const data: SearchData = JSON.parse(jsonStr);
     const state: SearchState = {
       data,
       index: Index.load(data.index),
@@ -93,15 +62,17 @@ export class SearchServer {
     return state;
   }
 
-  getResults(searchText: string) {
+  getResults(searchQuery: string) {
+    // Remove wildcard search
+    const searchText = searchQuery.replace(/\*/g, "");
+
     // Don't clear results if loading state is not ready,
     // because loading or error message can be removed.
     if (!this.state.index || !this.state.data) return;
 
-    const results: Result[] = [];
+    const results: SearchResult[] = [];
 
-    // Perform a wildcard search
-    const res = this.state.index.search(`*${searchText}*`);
+    const res = this.state.index.search(searchQuery);
 
     for (let i = 0, c = Math.min(10, res.length); i < c; i++) {
       const row = this.state.data.rows[Number(res[i].ref)];
@@ -116,7 +87,7 @@ export class SearchServer {
       }
 
       results.push({
-        classes: row.classes + " tsd-kind-icon",
+        classes: row.classes,
         url: row.url,
         name,
       });
