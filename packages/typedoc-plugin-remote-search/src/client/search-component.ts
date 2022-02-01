@@ -104,7 +104,7 @@ export class Search extends HTMLElement {
       "input",
       debounce(() => {
         this.updateResults(results, field);
-      }, 200)
+      }, 1000)
     );
 
     let preventPress = false;
@@ -139,10 +139,14 @@ export class Search extends HTMLElement {
   }
 
   async updateResults(results: HTMLElement, query: HTMLInputElement) {
-    this.classList.add("loading");
     results.textContent = "";
 
     const searchText = query.value.trim();
+    if (searchText.length <= 3) {
+      return;
+    }
+
+    this.classList.add("loading");
 
     const url = new URL(window.location.toString());
     url.hostname = this.hostname;

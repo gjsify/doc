@@ -1,10 +1,11 @@
 {
     "name": "@gjsify/typedoc-plugin-remote-search",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "dist/index.js",
     "bin": {
         "typedoc-server": "./dist/cli.js"
     },
+    "homepage": "https://github.com/gjsify/doc/tree/main/packages/typedoc-plugin-remote-search#readme",
     "repository": "https://github.com/gjsify/doc/tree/main/packages/typedoc-plugin-remote-search",
     "author": "Pascal Garber <pascal@artandcode.studio>",
     "license": "AGPL",
@@ -32,10 +33,10 @@
         "typedoc": "^0.22.11"
     },
     "scripts": {
-        "build": "npm run build:client && npm run build:server",
+        "build": "npm run build:client:prod && npm run build:server",
         "build:server": "tsc",
-        "build:client": "node esbuild.client.js",
-        "watch": "tsc --watch",
+        "build:client:dev": "node esbuild.client.dev.js",
+        "build:client:prod": "node esbuild.client.prod.js",
         "plugin:help": "typedoc --plugin typedoc-plugin-remote-search --help",
         "server:help": "typedoc-server --help"
     },

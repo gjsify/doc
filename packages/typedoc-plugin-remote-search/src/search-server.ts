@@ -65,12 +65,14 @@ export class SearchServer {
   getResults(searchQuery: string) {
     // Remove wildcard search
     const searchText = searchQuery.replace(/\*/g, "");
-
-    // Don't clear results if loading state is not ready,
-    // because loading or error message can be removed.
-    if (!this.state.index || !this.state.data) return;
-
     const results: SearchResult[] = [];
+
+    if (searchText.length <= 3) {
+      console.warn(`Search text to small: "${searchText}"`);
+      return results;
+    }
+
+    if (!this.state.index || !this.state.data) return results;
 
     const res = this.state.index.search(searchQuery);
 
