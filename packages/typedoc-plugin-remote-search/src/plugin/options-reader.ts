@@ -49,6 +49,13 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
       type: ParameterType.Boolean,
       defaultValue: false,
     });
+
+    container.addDeclaration({
+      help: "[Remote Search] Disables the compression of the search.json",
+      name: "noCompress",
+      type: ParameterType.Boolean,
+      defaultValue: false,
+    });
   }
 
   /**
@@ -66,7 +73,7 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
       dir = process.cwd();
     }
 
-    const file = this.findConfigFile(dir, logger);
+    const file = this.findConfigFile(dir);
 
     if (!file) {
       if (container.isSet("options")) {
@@ -147,7 +154,7 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
    * @param logger
    * @return the typedoc.(js|json) file path or undefined
    */
-  private findConfigFile(dir: string, logger: Logger): string | undefined {
+  private findConfigFile(dir: string): string | undefined {
     dir = resolve(dir);
 
     return [
@@ -167,6 +174,9 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
     const noScript =
       container.getValue("noScript") === true ||
       container.getValue("noScript") === "true";
+    const noCompress =
+      container.getValue("noCompress") === true ||
+      container.getValue("noCompress") === "true";
 
     if (!port) {
       throw new Error("port not set!");
@@ -181,6 +191,7 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
       hostname,
       replaceElement: !noReplaceElement,
       script: !noScript,
+      compress: !noCompress,
     };
     return options;
   }

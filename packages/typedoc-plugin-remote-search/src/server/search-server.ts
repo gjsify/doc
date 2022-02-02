@@ -5,6 +5,7 @@ import Router from "@koa/router";
 import { Index } from "lunr";
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
+import { unshrink } from "../utils/json-shrink";
 import { ServerOptions, SearchState, SearchData, SearchResult } from "../types";
 
 const SPECIAL_HTML = {
@@ -49,12 +50,18 @@ export class SearchServer {
   }
 
   loadIndex() {
-    const filePath = join(this.options.docDir, "assets", "search.json");
+    const filename = this.options.decompress ? "search.json.7z" : "search.json";
+    const filePath = join(this.options.docDir, "assets", filename);
     if (!existsSync) {
       throw new Error(`File not found "${filePath}"`);
     }
-    const jsonStr = readFileSync(filePath, "utf8");
-    const data: SearchData = JSON.parse(jsonStr);
+    const jsonBuf = readFileSync(filePath);
+    let data: SearchData;
+    if (this.options.decompress) {
+      data = unshrink(jsonBuf);
+    } else {
+      data = JSON.parse(jsonBuf.toString());
+    }
     const state: SearchState = {
       data,
       index: Index.load(data.index),

@@ -1,5 +1,6 @@
 import { Renderer, Logger, JSX, DefaultThemeRenderContext } from "typedoc";
 import { writeFileSync, readFileSync, unlinkSync, existsSync } from "fs";
+import { shrink } from "../utils/json-shrink";
 import { join } from "path";
 import { PluginOptions } from "../types";
 
@@ -120,7 +121,10 @@ export class RemoteSearchIndexPlugin {
     }
 
     const originalFileName = join(this.outputDirectory, "assets", "search.js");
-    const jsonFileName = join(this.outputDirectory, "assets", "search.json");
+    const targetFilename = this.options.compress
+      ? "search.json.7z"
+      : "search.json";
+    const targetJsonFile = join(this.outputDirectory, "assets", targetFilename);
 
     const removeStart = 'window.searchData = JSON.parse("';
     const removeEnd = '");';
@@ -140,7 +144,11 @@ export class RemoteSearchIndexPlugin {
       .substring(removeStart.length, searchData.length - removeEnd.length)
       .replace(/\\"/g, '"');
 
-    writeFileSync(jsonFileName, searchData);
+    if (this.options.compress) {
+      writeFileSync(targetJsonFile, shrink(JSON.parse(searchData)));
+    } else {
+      writeFileSync(targetJsonFile, searchData);
+    }
 
     this.logger.info("[RemoteSearch] Delete search.js file...");
     unlinkSync(originalFileName);

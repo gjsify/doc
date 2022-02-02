@@ -9,4 +9,6 @@ export interface ServerOptions {
   serve: boolean;
   /** Limit of the search result (there is no limit when the value is 0) */
   limit: number;
+  /** Decompress the json file, this option is needed if you compressed the json file */
+  decompress: boolean;
 }

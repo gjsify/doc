@@ -7,4 +7,6 @@ export interface PluginOptions {
   replaceElement: boolean;
   /** Insert client-side javascript into the theme */
   script: boolean;
+  /** activates the compression of the search.json */
+  compress: boolean;
 }

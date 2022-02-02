@@ -29,12 +29,17 @@ async function start() {
       default: "localhost",
       describe: "A domain name or IP address of the search server",
     })
+    .option("serve", {
+      type: "boolean",
+      normalize: true,
+      default: true,
+      describe:
+        "Remain this value if the generated documentation should be served",
+    })
     .option("no-serve", {
       type: "boolean",
       normalize: true,
-      default: false,
-      describe:
-        "Set this value to true if the generated documentation should not be served",
+      describe: "Disables the serve option",
     })
     .option("limit", {
       type: "number",
@@ -43,14 +48,27 @@ async function start() {
       describe:
         "Limit of the search result (there is no limit when the value is 0)",
     })
+    .option("decompress", {
+      type: "boolean",
+      normalize: true,
+      default: true,
+      describe:
+        "This option should remain true if you have compressed the json file",
+    })
+    .option("no-decompress", {
+      type: "boolean",
+      normalize: true,
+      describe: "Disables the decompress option",
+    })
     .help().argv;
 
   const serverOptions: ServerOptions = {
     docDir: argv.docDir,
     port: argv.port,
     hostname: argv.hostname,
-    serve: !argv.noServe,
+    serve: argv.serve,
     limit: argv.limit,
+    decompress: argv.decompress,
   };
 
   new SearchServer(serverOptions);

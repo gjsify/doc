@@ -1,6 +1,10 @@
 # Typedoc Remote Search Plugin
 
-This plugin is especially useful when the API documentation is very large. This can lead to the `search.js` becoming several hundred MB in size and thus unusable.
+A plugin for TypeDoc that moves the API search to the server.
+
+## Why?
+
+This is useful when the API documentation is very large. This can lead to the `search.js` becoming several hundred MB in size and thus unusable on the client side.
 
 ## Install
 
@@ -33,6 +37,7 @@ $typedoc --plugin @gjsify/typedoc-plugin-remote-search --help
 
 Options:
  --hostname                  [Remote Search] A domain name or IP address of the search server
+ --noCompress                [Remote Search] Disables the compression of the search.json
  --noReplaceElement          [Remote Search] Do not replace the search element with a custom element for out of the box working remote search
  --noScript                  [Remote Search] Do not insert client-side javascript into the theme (this way the search will not work without manual adjustments)
  --port                      [Remote Search] Port of remote search server
@@ -53,17 +58,21 @@ $typedoc-server --help
 typedoc-server [args]
 
 Options:
-      --version   Show version number                                  [boolean]
-  -d, --doc-dir   The directory in which your rendered typedoc documentation is
-                  located                                    [string] [required]
-      --port      Port of the search server             [number] [default: 3024]
-      --hostname  A domain name or IP address of the search server
+      --version        Show version number                             [boolean]
+  -d, --doc-dir        The directory in which your rendered typedoc
+                       documentation is located              [string] [required]
+      --port           Port of the search server        [number] [default: 3024]
+      --hostname       A domain name or IP address of the search server
                                                  [string] [default: "localhost"]
-      --no-serve  Set this value to true if the generated documentation should
-                  not be served                        [string] [default: false]
-      --limit     Limit of the search result (there is no limit when the value
-                  is 0)                                   [number] [default: 10]
-      --help      Show help                                            [boolean]
+      --serve          Remain this value if the generated documentation should
+                       be served                        [string] [default: true]
+      --no-serve       Disables the serve option                        [string]
+      --limit          Limit of the search result (there is no limit when the
+                       value is 0)                        [number] [default: 10]
+      --decompress     This option should remain true if you have compressed the
+                       json file                        [string] [default: true]
+      --no-decompress  Disables the decompress option                   [string]
+      --help           Show help                                       [boolean]
 ```
 
 To see how the search works on the web server you can open the following URL with `any search term` in your browser: [localhost:3024/search/any search term](http://localhost:3024/search/any%20search%20term).
