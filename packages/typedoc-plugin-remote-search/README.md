@@ -59,9 +59,11 @@ Options:
       --port      Port of the search server             [number] [default: 3024]
       --hostname  A domain name or IP address of the search server
                                                  [string] [default: "localhost"]
-      --noServe   Set this value to true if the generated documentation should
+      --no-serve  Set this value to true if the generated documentation should
                   not be served                        [string] [default: false]
-      --help      Show help  
+      --limit     Limit of the search result (there is no limit when the value
+                  is 0)                                   [number] [default: 10]
+      --help      Show help                                            [boolean]
 ```
 
 To see how the search works on the web server you can open the following URL with `any search term` in your browser: [localhost:3024/search/any search term](http://localhost:3024/search/any%20search%20term).
@@ -133,4 +135,12 @@ For this it is recommended to set the `--noScript` option of the plugin.
     const response = await fetch(url.toString());
     const results: Result[] = await response.json();
     ...
+```
+
+## Examples
+
+An example contains this plugin itself, so checkout this repository and run inside this package
+
+```bash
+yarn run example
 ```

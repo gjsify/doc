@@ -5,7 +5,7 @@ import Router from "@koa/router";
 import { Index } from "lunr";
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
-import { ServerOptions, SearchState, SearchData, SearchResult } from "./types";
+import { ServerOptions, SearchState, SearchData, SearchResult } from "../types";
 
 const SPECIAL_HTML = {
   "&": "&amp;",
@@ -76,7 +76,12 @@ export class SearchServer {
 
     const res = this.state.index.search(searchQuery);
 
-    for (let i = 0, c = Math.min(10, res.length); i < c; i++) {
+    const count =
+      this.options.limit > 0
+        ? Math.min(this.options.limit, res.length)
+        : res.length;
+
+    for (let i = 0; i < count; i++) {
       const row = this.state.data.rows[Number(res[i].ref)];
 
       // Bold the matched part of the query in the search results

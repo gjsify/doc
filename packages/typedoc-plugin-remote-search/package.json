@@ -1,9 +1,9 @@
 {
     "name": "@gjsify/typedoc-plugin-remote-search",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "dist/index.js",
     "bin": {
-        "typedoc-server": "./dist/cli.js"
+        "typedoc-server": "./dist/server/cli.js"
     },
     "homepage": "https://github.com/gjsify/doc/tree/main/packages/typedoc-plugin-remote-search#readme",
     "repository": "https://github.com/gjsify/doc/tree/main/packages/typedoc-plugin-remote-search",
@@ -11,7 +11,9 @@
     "license": "AGPL",
     "keywords": [
         "typedoc",
+        "typedocplugin",
         "typedoc-plugin",
+        "plugin",
         "search",
         "server",
         "serve",
@@ -26,6 +28,7 @@
         "@types/koa": "^2",
         "@types/koa__router": "^8.0.11",
         "esbuild": "^0.14.16",
+        "typedoc": "^0.22.11",
         "typescript": "^4.5.5"
     },
     "peerDependencies": {
@@ -37,8 +40,11 @@
         "build:server": "tsc",
         "build:client:dev": "node esbuild.client.dev.js",
         "build:client:prod": "node esbuild.client.prod.js",
-        "plugin:help": "typedoc --plugin typedoc-plugin-remote-search --help",
-        "server:help": "typedoc-server --help"
+        "plugin:help": "typedoc --plugin @gjsify/typedoc-plugin-remote-search --help",
+        "server:help": "typedoc-server --help",
+        "build:example": "typedoc src/index.ts src/types/index.ts src/plugin/plugin.tsx src/server/search-server.ts src/client/main.ts --out ./docs --plugin @gjsify/typedoc-plugin-remote-search",
+        "serve:example": "typedoc-server --doc-dir ./docs --limit 0",
+        "example": "npm run build:example && npm run serve:example"
     },
     "dependencies": {
         "@koa/router": "^10.1.1",

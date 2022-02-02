@@ -162,9 +162,7 @@ export class Search extends HTMLElement {
     this.classList.add("ready");
     this.classList.remove("loading");
 
-    for (let i = 0, c = Math.min(10, res.length); i < c; i++) {
-      const row = res[i];
-
+    for (const row of res) {
       const item = document.createElement("li");
       item.classList.value = row.classes;
 

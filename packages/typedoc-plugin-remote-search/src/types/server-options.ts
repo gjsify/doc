@@ -7,4 +7,6 @@ export interface ServerOptions {
   hostname: string;
   /** `true` if the generated documentation should be served */
   serve: boolean;
+  /** Limit of the search result (there is no limit when the value is 0) */
+  limit: number;
 }
