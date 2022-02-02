@@ -1154,6 +1154,7 @@ function hash_table_destroy(hash_table: HashTable): void
 function hash_table_insert(hash_table: HashTable, key?: object | null, value?: object | null): boolean
 function hash_table_lookup(hash_table: HashTable, key?: object | null): object | null
 function hash_table_lookup_extended(hash_table: HashTable, lookup_key?: object | null): [ /* returnType */ boolean, /* orig_key */ object | null, /* value */ object | null ]
+function hash_table_new_similar(other_hash_table: HashTable): HashTable
 function hash_table_remove(hash_table: HashTable, key?: object | null): boolean
 function hash_table_remove_all(hash_table: HashTable): void
 function hash_table_replace(hash_table: HashTable, key?: object | null, value?: object | null): boolean
@@ -1979,6 +1980,7 @@ class HashTable {
     static insert(hash_table: HashTable, key?: object | null, value?: object | null): boolean
     static lookup(hash_table: HashTable, key?: object | null): object | null
     static lookup_extended(hash_table: HashTable, lookup_key?: object | null): [ /* returnType */ boolean, /* orig_key */ object | null, /* value */ object | null ]
+    static new_similar(other_hash_table: HashTable): HashTable
     static remove(hash_table: HashTable, key?: object | null): boolean
     static remove_all(hash_table: HashTable): void
     static replace(hash_table: HashTable, key?: object | null, value?: object | null): boolean

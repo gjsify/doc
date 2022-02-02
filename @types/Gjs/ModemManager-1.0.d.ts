@@ -86,6 +86,15 @@ enum CdmaActivationError {
     TIMEDOUT,
     STARTFAILED,
 }
+enum CellType {
+    UNKNOWN,
+    CDMA,
+    GSM,
+    UMTS,
+    TDSCDMA,
+    LTE,
+    TODO_5GNR,
+}
 enum ConnectionError {
     UNKNOWN,
     NOCARRIER,
@@ -1086,6 +1095,7 @@ const MODEM_METHOD_CREATEBEARER: string
 const MODEM_METHOD_DELETEBEARER: string
 const MODEM_METHOD_ENABLE: string
 const MODEM_METHOD_FACTORYRESET: string
+const MODEM_METHOD_GETCELLINFO: string
 const MODEM_METHOD_LISTBEARERS: string
 const MODEM_METHOD_RESET: string
 const MODEM_METHOD_SETCURRENTBANDS: string
@@ -1269,6 +1279,7 @@ function call_direction_get_string(val: CallDirection): string
 function call_state_get_string(val: CallState): string
 function call_state_reason_get_string(val: CallStateReason): string
 function cdma_activation_error_quark(): GLib.Quark
+function cell_type_get_string(val: CellType): string
 function connection_error_quark(): GLib.Quark
 function core_error_quark(): GLib.Quark
 function firmware_image_type_get_string(val: FirmwareImageType): string
@@ -1531,6 +1542,9 @@ class GdbusModem {
     call_factory_reset(arg_code: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_factory_reset_finish(res: Gio.AsyncResult): boolean
     call_factory_reset_sync(arg_code: string, cancellable?: Gio.Cancellable | null): boolean
+    call_get_cell_info(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    call_get_cell_info_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* out_cell_info */ GLib.Variant | null ]
+    call_get_cell_info_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_cell_info */ GLib.Variant | null ]
     call_list_bearers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_list_bearers_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* out_bearers */ string[] | null ]
     call_list_bearers_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_bearers */ string[] | null ]
@@ -1557,6 +1571,7 @@ class GdbusModem {
     complete_delete_bearer(invocation: Gio.DBusMethodInvocation): void
     complete_enable(invocation: Gio.DBusMethodInvocation): void
     complete_factory_reset(invocation: Gio.DBusMethodInvocation): void
+    complete_get_cell_info(invocation: Gio.DBusMethodInvocation, cell_info: GLib.Variant): void
     complete_list_bearers(invocation: Gio.DBusMethodInvocation, bearers: string): void
     complete_reset(invocation: Gio.DBusMethodInvocation): void
     complete_set_current_bands(invocation: Gio.DBusMethodInvocation): void
@@ -1571,6 +1586,7 @@ class GdbusModem {
     vfunc_handle_delete_bearer(invocation: Gio.DBusMethodInvocation, arg_bearer: string): boolean
     vfunc_handle_enable(invocation: Gio.DBusMethodInvocation, arg_enable: boolean): boolean
     vfunc_handle_factory_reset(invocation: Gio.DBusMethodInvocation, arg_code: string): boolean
+    vfunc_handle_get_cell_info(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_list_bearers(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_reset(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_set_current_bands(invocation: Gio.DBusMethodInvocation, arg_bands: GLib.Variant): boolean
@@ -1595,6 +1611,9 @@ class GdbusModem {
     connect(sigName: "handle-factory-reset", callback: (($obj: GdbusModem, invocation: Gio.DBusMethodInvocation, arg_code: string) => boolean)): number
     connect_after(sigName: "handle-factory-reset", callback: (($obj: GdbusModem, invocation: Gio.DBusMethodInvocation, arg_code: string) => boolean)): number
     emit(sigName: "handle-factory-reset", invocation: Gio.DBusMethodInvocation, arg_code: string): void
+    connect(sigName: "handle-get-cell-info", callback: (($obj: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean)): number
+    connect_after(sigName: "handle-get-cell-info", callback: (($obj: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean)): number
+    emit(sigName: "handle-get-cell-info", invocation: Gio.DBusMethodInvocation): void
     connect(sigName: "handle-list-bearers", callback: (($obj: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-list-bearers", callback: (($obj: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-list-bearers", invocation: Gio.DBusMethodInvocation): void
@@ -3368,6 +3387,438 @@ class CdmaManualActivationProperties {
     _init (config?: CdmaManualActivationProperties_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): CdmaManualActivationProperties
+    static $gtype: GObject.Type
+}
+interface CellInfo_ConstructProps extends GObject.Object_ConstructProps {
+}
+class CellInfo {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    get_cell_type(): CellType
+    get_serving(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of ModemManager-1.0.ModemManager.CellInfo */
+    vfunc_build_string(): GLib.String
+    vfunc_get_dictionary(): GLib.VariantDict
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: CellInfo, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: CellInfo, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: CellInfo_ConstructProps)
+    _init (config?: CellInfo_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoCdma_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoCdma {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoCdma */
+    get_base_station_id(): string
+    get_nid(): string
+    get_pilot_strength(): number
+    get_ref_pn(): string
+    get_sid(): string
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    get_cell_type(): CellType
+    get_serving(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of ModemManager-1.0.ModemManager.CellInfo */
+    vfunc_build_string(): GLib.String
+    vfunc_get_dictionary(): GLib.VariantDict
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: CellInfoCdma, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: CellInfoCdma, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: CellInfoCdma_ConstructProps)
+    _init (config?: CellInfoCdma_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoGsm_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoGsm {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoGsm */
+    get_arfcn(): number
+    get_base_station_id(): string
+    get_ci(): string
+    get_lac(): string
+    get_operator_id(): string
+    get_rx_level(): number
+    get_timing_advance(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    get_cell_type(): CellType
+    get_serving(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of ModemManager-1.0.ModemManager.CellInfo */
+    vfunc_build_string(): GLib.String
+    vfunc_get_dictionary(): GLib.VariantDict
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: CellInfoGsm, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: CellInfoGsm, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: CellInfoGsm_ConstructProps)
+    _init (config?: CellInfoGsm_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoLte_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoLte {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoLte */
+    get_ci(): string
+    get_earfcn(): number
+    get_operator_id(): string
+    get_physical_ci(): string
+    get_rsrp(): number
+    get_rsrq(): number
+    get_tac(): string
+    get_timing_advance(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    get_cell_type(): CellType
+    get_serving(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of ModemManager-1.0.ModemManager.CellInfo */
+    vfunc_build_string(): GLib.String
+    vfunc_get_dictionary(): GLib.VariantDict
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: CellInfoLte, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: CellInfoLte, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: CellInfoLte_ConstructProps)
+    _init (config?: CellInfoLte_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoNr5g_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoNr5g {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoNr5g */
+    get_ci(): string
+    get_nrarfcn(): number
+    get_operator_id(): string
+    get_physical_ci(): string
+    get_rsrp(): number
+    get_rsrq(): number
+    get_sinr(): number
+    get_tac(): string
+    get_timing_advance(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    get_cell_type(): CellType
+    get_serving(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of ModemManager-1.0.ModemManager.CellInfo */
+    vfunc_build_string(): GLib.String
+    vfunc_get_dictionary(): GLib.VariantDict
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: CellInfoNr5g, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: CellInfoNr5g, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: CellInfoNr5g_ConstructProps)
+    _init (config?: CellInfoNr5g_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoTdscdma_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoTdscdma {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoTdscdma */
+    get_cell_parameter_id(): number
+    get_ci(): string
+    get_lac(): string
+    get_operator_id(): string
+    get_path_loss(): number
+    get_rscp(): number
+    get_timing_advance(): number
+    get_uarfcn(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    get_cell_type(): CellType
+    get_serving(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of ModemManager-1.0.ModemManager.CellInfo */
+    vfunc_build_string(): GLib.String
+    vfunc_get_dictionary(): GLib.VariantDict
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: CellInfoTdscdma, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: CellInfoTdscdma, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: CellInfoTdscdma_ConstructProps)
+    _init (config?: CellInfoTdscdma_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoUmts_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoUmts {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoUmts */
+    get_ci(): string
+    get_ecio(): number
+    get_frequency_fdd_dl(): number
+    get_frequency_fdd_ul(): number
+    get_frequency_tdd(): number
+    get_lac(): string
+    get_operator_id(): string
+    get_path_loss(): number
+    get_psc(): number
+    get_rscp(): number
+    get_uarfcn(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    get_cell_type(): CellType
+    get_serving(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    force_floating(): void
+    freeze_notify(): void
+    get_data(key: string): object | null
+    get_property(property_name: string, value: any): void
+    get_qdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    is_floating(): boolean
+    notify(property_name: string): void
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    ref_sink(): GObject.Object
+    run_dispose(): void
+    set_data(key: string, data?: object | null): void
+    set_property(property_name: string, value: any): void
+    steal_data(key: string): object | null
+    steal_qdata(quark: GLib.Quark): object | null
+    thaw_notify(): void
+    unref(): void
+    watch_closure(closure: Function): void
+    /* Virtual methods of ModemManager-1.0.ModemManager.CellInfo */
+    vfunc_build_string(): GLib.String
+    vfunc_get_dictionary(): GLib.VariantDict
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: (($obj: CellInfoUmts, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: CellInfoUmts, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: CellInfoUmts_ConstructProps)
+    _init (config?: CellInfoUmts_ConstructProps): void
     static $gtype: GObject.Type
 }
 interface FirmwareProperties_ConstructProps extends GObject.Object_ConstructProps {
@@ -6967,6 +7418,9 @@ class GdbusModemProxy {
     call_factory_reset(arg_code: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_factory_reset_finish(res: Gio.AsyncResult): boolean
     call_factory_reset_sync(arg_code: string, cancellable?: Gio.Cancellable | null): boolean
+    call_get_cell_info(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    call_get_cell_info_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* out_cell_info */ GLib.Variant | null ]
+    call_get_cell_info_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_cell_info */ GLib.Variant | null ]
     call_list_bearers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_list_bearers_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* out_bearers */ string[] | null ]
     call_list_bearers_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_bearers */ string[] | null ]
@@ -6993,6 +7447,7 @@ class GdbusModemProxy {
     complete_delete_bearer(invocation: Gio.DBusMethodInvocation): void
     complete_enable(invocation: Gio.DBusMethodInvocation): void
     complete_factory_reset(invocation: Gio.DBusMethodInvocation): void
+    complete_get_cell_info(invocation: Gio.DBusMethodInvocation, cell_info: GLib.Variant): void
     complete_list_bearers(invocation: Gio.DBusMethodInvocation, bearers: string): void
     complete_reset(invocation: Gio.DBusMethodInvocation): void
     complete_set_current_bands(invocation: Gio.DBusMethodInvocation): void
@@ -7013,6 +7468,7 @@ class GdbusModemProxy {
     vfunc_handle_delete_bearer(invocation: Gio.DBusMethodInvocation, arg_bearer: string): boolean
     vfunc_handle_enable(invocation: Gio.DBusMethodInvocation, arg_enable: boolean): boolean
     vfunc_handle_factory_reset(invocation: Gio.DBusMethodInvocation, arg_code: string): boolean
+    vfunc_handle_get_cell_info(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_list_bearers(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_reset(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_set_current_bands(invocation: Gio.DBusMethodInvocation, arg_bands: GLib.Variant): boolean
@@ -7059,6 +7515,9 @@ class GdbusModemProxy {
     connect(sigName: "handle-factory-reset", callback: (($obj: GdbusModemProxy, invocation: Gio.DBusMethodInvocation, arg_code: string) => boolean)): number
     connect_after(sigName: "handle-factory-reset", callback: (($obj: GdbusModemProxy, invocation: Gio.DBusMethodInvocation, arg_code: string) => boolean)): number
     emit(sigName: "handle-factory-reset", invocation: Gio.DBusMethodInvocation, arg_code: string): void
+    connect(sigName: "handle-get-cell-info", callback: (($obj: GdbusModemProxy, invocation: Gio.DBusMethodInvocation) => boolean)): number
+    connect_after(sigName: "handle-get-cell-info", callback: (($obj: GdbusModemProxy, invocation: Gio.DBusMethodInvocation) => boolean)): number
+    emit(sigName: "handle-get-cell-info", invocation: Gio.DBusMethodInvocation): void
     connect(sigName: "handle-list-bearers", callback: (($obj: GdbusModemProxy, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-list-bearers", callback: (($obj: GdbusModemProxy, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-list-bearers", invocation: Gio.DBusMethodInvocation): void
@@ -8171,6 +8630,9 @@ class GdbusModemSkeleton {
     call_factory_reset(arg_code: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_factory_reset_finish(res: Gio.AsyncResult): boolean
     call_factory_reset_sync(arg_code: string, cancellable?: Gio.Cancellable | null): boolean
+    call_get_cell_info(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    call_get_cell_info_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* out_cell_info */ GLib.Variant | null ]
+    call_get_cell_info_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_cell_info */ GLib.Variant | null ]
     call_list_bearers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_list_bearers_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* out_bearers */ string[] | null ]
     call_list_bearers_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_bearers */ string[] | null ]
@@ -8197,6 +8659,7 @@ class GdbusModemSkeleton {
     complete_delete_bearer(invocation: Gio.DBusMethodInvocation): void
     complete_enable(invocation: Gio.DBusMethodInvocation): void
     complete_factory_reset(invocation: Gio.DBusMethodInvocation): void
+    complete_get_cell_info(invocation: Gio.DBusMethodInvocation, cell_info: GLib.Variant): void
     complete_list_bearers(invocation: Gio.DBusMethodInvocation, bearers: string): void
     complete_reset(invocation: Gio.DBusMethodInvocation): void
     complete_set_current_bands(invocation: Gio.DBusMethodInvocation): void
@@ -8214,6 +8677,7 @@ class GdbusModemSkeleton {
     vfunc_handle_delete_bearer(invocation: Gio.DBusMethodInvocation, arg_bearer: string): boolean
     vfunc_handle_enable(invocation: Gio.DBusMethodInvocation, arg_enable: boolean): boolean
     vfunc_handle_factory_reset(invocation: Gio.DBusMethodInvocation, arg_code: string): boolean
+    vfunc_handle_get_cell_info(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_list_bearers(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_reset(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_set_current_bands(invocation: Gio.DBusMethodInvocation, arg_bands: GLib.Variant): boolean
@@ -8259,6 +8723,9 @@ class GdbusModemSkeleton {
     connect(sigName: "handle-factory-reset", callback: (($obj: GdbusModemSkeleton, invocation: Gio.DBusMethodInvocation, arg_code: string) => boolean)): number
     connect_after(sigName: "handle-factory-reset", callback: (($obj: GdbusModemSkeleton, invocation: Gio.DBusMethodInvocation, arg_code: string) => boolean)): number
     emit(sigName: "handle-factory-reset", invocation: Gio.DBusMethodInvocation, arg_code: string): void
+    connect(sigName: "handle-get-cell-info", callback: (($obj: GdbusModemSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
+    connect_after(sigName: "handle-get-cell-info", callback: (($obj: GdbusModemSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
+    emit(sigName: "handle-get-cell-info", invocation: Gio.DBusMethodInvocation): void
     connect(sigName: "handle-list-bearers", callback: (($obj: GdbusModemSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-list-bearers", callback: (($obj: GdbusModemSkeleton, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-list-bearers", invocation: Gio.DBusMethodInvocation): void
@@ -11056,6 +11523,9 @@ class Modem {
     get_bearer_paths(): string[]
     get_carrier_configuration(): string
     get_carrier_configuration_revision(): string
+    get_cell_info(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_cell_info_finish(res: Gio.AsyncResult): CellInfo[]
+    get_cell_info_sync(cancellable?: Gio.Cancellable | null): CellInfo[]
     get_current_bands(): [ /* returnType */ boolean, /* bands */ ModemBand[] ]
     get_current_capabilities(): ModemCapability
     get_current_modes(): [ /* returnType */ boolean, /* allowed */ ModemMode, /* preferred */ ModemMode ]
@@ -11186,6 +11656,9 @@ class Modem {
     call_factory_reset(arg_code: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_factory_reset_finish(res: Gio.AsyncResult): boolean
     call_factory_reset_sync(arg_code: string, cancellable?: Gio.Cancellable | null): boolean
+    call_get_cell_info(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    call_get_cell_info_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* out_cell_info */ GLib.Variant | null ]
+    call_get_cell_info_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_cell_info */ GLib.Variant | null ]
     call_list_bearers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     call_list_bearers_finish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* out_bearers */ string[] | null ]
     call_list_bearers_sync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* out_bearers */ string[] | null ]
@@ -11212,6 +11685,7 @@ class Modem {
     complete_delete_bearer(invocation: Gio.DBusMethodInvocation): void
     complete_enable(invocation: Gio.DBusMethodInvocation): void
     complete_factory_reset(invocation: Gio.DBusMethodInvocation): void
+    complete_get_cell_info(invocation: Gio.DBusMethodInvocation, cell_info: GLib.Variant): void
     complete_list_bearers(invocation: Gio.DBusMethodInvocation, bearers: string): void
     complete_reset(invocation: Gio.DBusMethodInvocation): void
     complete_set_current_bands(invocation: Gio.DBusMethodInvocation): void
@@ -11232,6 +11706,7 @@ class Modem {
     vfunc_handle_delete_bearer(invocation: Gio.DBusMethodInvocation, arg_bearer: string): boolean
     vfunc_handle_enable(invocation: Gio.DBusMethodInvocation, arg_enable: boolean): boolean
     vfunc_handle_factory_reset(invocation: Gio.DBusMethodInvocation, arg_code: string): boolean
+    vfunc_handle_get_cell_info(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_list_bearers(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_reset(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_set_current_bands(invocation: Gio.DBusMethodInvocation, arg_bands: GLib.Variant): boolean
@@ -11252,6 +11727,7 @@ class Modem {
     vfunc_handle_delete_bearer(invocation: Gio.DBusMethodInvocation, arg_bearer: string): boolean
     vfunc_handle_enable(invocation: Gio.DBusMethodInvocation, arg_enable: boolean): boolean
     vfunc_handle_factory_reset(invocation: Gio.DBusMethodInvocation, arg_code: string): boolean
+    vfunc_handle_get_cell_info(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_list_bearers(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_reset(invocation: Gio.DBusMethodInvocation): boolean
     vfunc_handle_set_current_bands(invocation: Gio.DBusMethodInvocation, arg_bands: GLib.Variant): boolean
@@ -11298,6 +11774,9 @@ class Modem {
     connect(sigName: "handle-factory-reset", callback: (($obj: Modem, invocation: Gio.DBusMethodInvocation, arg_code: string) => boolean)): number
     connect_after(sigName: "handle-factory-reset", callback: (($obj: Modem, invocation: Gio.DBusMethodInvocation, arg_code: string) => boolean)): number
     emit(sigName: "handle-factory-reset", invocation: Gio.DBusMethodInvocation, arg_code: string): void
+    connect(sigName: "handle-get-cell-info", callback: (($obj: Modem, invocation: Gio.DBusMethodInvocation) => boolean)): number
+    connect_after(sigName: "handle-get-cell-info", callback: (($obj: Modem, invocation: Gio.DBusMethodInvocation) => boolean)): number
+    emit(sigName: "handle-get-cell-info", invocation: Gio.DBusMethodInvocation): void
     connect(sigName: "handle-list-bearers", callback: (($obj: Modem, invocation: Gio.DBusMethodInvocation) => boolean)): number
     connect_after(sigName: "handle-list-bearers", callback: (($obj: Modem, invocation: Gio.DBusMethodInvocation) => boolean)): number
     emit(sigName: "handle-list-bearers", invocation: Gio.DBusMethodInvocation): void
@@ -15457,6 +15936,51 @@ abstract class CdmaManualActivationPropertiesClass {
 class CdmaManualActivationPropertiesPrivate {
     static name: string
 }
+abstract class CellInfoCdmaClass {
+    static name: string
+}
+class CellInfoCdmaPrivate {
+    static name: string
+}
+abstract class CellInfoClass {
+    /* Fields of ModemManager-1.0.ModemManager.CellInfoClass */
+    readonly get_dictionary: (self: CellInfo) => GLib.VariantDict
+    readonly build_string: (self: CellInfo) => GLib.String
+    static name: string
+}
+abstract class CellInfoGsmClass {
+    static name: string
+}
+class CellInfoGsmPrivate {
+    static name: string
+}
+abstract class CellInfoLteClass {
+    static name: string
+}
+class CellInfoLtePrivate {
+    static name: string
+}
+abstract class CellInfoNr5gClass {
+    static name: string
+}
+class CellInfoNr5gPrivate {
+    static name: string
+}
+class CellInfoPrivate {
+    static name: string
+}
+abstract class CellInfoTdscdmaClass {
+    static name: string
+}
+class CellInfoTdscdmaPrivate {
+    static name: string
+}
+abstract class CellInfoUmtsClass {
+    static name: string
+}
+class CellInfoUmtsPrivate {
+    static name: string
+}
 abstract class FirmwarePropertiesClass {
     static name: string
 }
@@ -15698,6 +16222,7 @@ abstract class GdbusModemIface {
     readonly handle_delete_bearer: (object: GdbusModem, invocation: Gio.DBusMethodInvocation, arg_bearer: string) => boolean
     readonly handle_enable: (object: GdbusModem, invocation: Gio.DBusMethodInvocation, arg_enable: boolean) => boolean
     readonly handle_factory_reset: (object: GdbusModem, invocation: Gio.DBusMethodInvocation, arg_code: string) => boolean
+    readonly handle_get_cell_info: (object: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean
     readonly handle_list_bearers: (object: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean
     readonly handle_reset: (object: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean
     readonly handle_set_current_bands: (object: GdbusModem, invocation: Gio.DBusMethodInvocation, arg_bands: GLib.Variant) => boolean

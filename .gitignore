@@ -103,8 +103,9 @@ dist
 # TernJS port file
 .tern-port
 
-# FIXME search.js exceeds GitHubs file size limit
+# search.js exceeds GitHubs file size limit
 docs/*/assets/search.js
+docs/*/assets/search.json
 
 # For internal tests only
 docs/try

@@ -9,6 +9,9 @@ import * as pages from "./pages";
 import * as binders from "./binders";
 import * as formatters from "./formatters";
 
+// From typedoc default theme
+import { typedocBootstrap } from "./typedoc-bootstrap";
+
 export class CSRApp {
   protected view?: View;
   protected riba = new Riba();
@@ -51,4 +54,5 @@ export class CSRApp {
 
 ready(() => {
   new CSRApp();
+  typedocBootstrap();
 });

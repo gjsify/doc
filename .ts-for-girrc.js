@@ -1,9 +1,8 @@
-export default {
+exports.default = {
     modules: ['*'],
     girDirectories: ['./vala-girs/gir-1.0', './girs'],
     ignoreConflicts: true,
     prettify: true,
-    useNamespace: true,
     moduleType: 'esm',
     ignore: [
         'Colorhug-1.0', // Duplicate of ColorHug-1.0

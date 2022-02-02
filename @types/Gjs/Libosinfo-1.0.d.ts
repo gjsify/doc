@@ -1694,7 +1694,7 @@ class InstallConfig {
     set_installation_url(url: string): void
     set_l10n_keyboard(keyboard: string): void
     set_l10n_language(language: string): void
-    set_l10n_timezone(timezone: string): void
+    set_l10n_timezone(tz: string): void
     set_post_install_drivers_disk(disk: string): void
     set_post_install_drivers_location(location: string): void
     set_pre_install_drivers_disk(disk: string): void
@@ -2546,6 +2546,7 @@ class Os {
     get_all_device_links(filter?: Filter | null): DeviceLinkList
     get_all_devices(filter?: Filter | null): DeviceList
     get_cloud_image_username(): string
+    get_complete_firmware_list(filter?: Filter | null): FirmwareList
     get_device_drivers(): DeviceDriverList
     get_device_drivers_prioritized(): DeviceDriverList
     get_device_links(filter?: Filter | null): DeviceLinkList

@@ -1,4 +1,4 @@
-export * from "./search-component-scope";
+export * from "./navbar-component-scope";
 export * from "./search-component-scope";
 export * from "./search-options";
 export * from "./search-result";

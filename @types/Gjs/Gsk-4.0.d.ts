@@ -1072,23 +1072,23 @@ class Transform {
     matrix(matrix: Graphene.Matrix): Transform
     perspective(depth: number): Transform
     print(string: GLib.String): void
-    ref(): Transform
-    rotate(angle: number): Transform
-    rotate_3d(angle: number, axis: Graphene.Vec3): Transform
-    scale(factor_x: number, factor_y: number): Transform
-    scale_3d(factor_x: number, factor_y: number, factor_z: number): Transform
-    skew(skew_x: number, skew_y: number): Transform
+    ref(): Transform | null
+    rotate(angle: number): Transform | null
+    rotate_3d(angle: number, axis: Graphene.Vec3): Transform | null
+    scale(factor_x: number, factor_y: number): Transform | null
+    scale_3d(factor_x: number, factor_y: number, factor_z: number): Transform | null
+    skew(skew_x: number, skew_y: number): Transform | null
     to_2d(): [ /* out_xx */ number, /* out_yx */ number, /* out_xy */ number, /* out_yy */ number, /* out_dx */ number, /* out_dy */ number ]
     to_2d_components(): [ /* out_skew_x */ number, /* out_skew_y */ number, /* out_scale_x */ number, /* out_scale_y */ number, /* out_angle */ number, /* out_dx */ number, /* out_dy */ number ]
     to_affine(): [ /* out_scale_x */ number, /* out_scale_y */ number, /* out_dx */ number, /* out_dy */ number ]
     to_matrix(): /* out_matrix */ Graphene.Matrix
     to_string(): string
     to_translate(): [ /* out_dx */ number, /* out_dy */ number ]
-    transform(other?: Transform | null): Transform
+    transform(other?: Transform | null): Transform | null
     transform_bounds(rect: Graphene.Rect): /* out_rect */ Graphene.Rect
     transform_point(point: Graphene.Point): /* out_point */ Graphene.Point
-    translate(point: Graphene.Point): Transform
-    translate_3d(point: Graphene.Point3D): Transform
+    translate(point: Graphene.Point): Transform | null
+    translate_3d(point: Graphene.Point3D): Transform | null
     unref(): void
     static name: string
     static new(): Transform

@@ -5729,6 +5729,8 @@ interface Style_ConstructProps extends GObject.Object_ConstructProps {
     underline_color?: string
     underline_color_set?: boolean
     underline_set?: boolean
+    weight?: Pango.Weight
+    weight_set?: boolean
 }
 class Style {
     /* Fields of GObject-2.0.GObject.Object */

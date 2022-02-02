@@ -1,6 +1,6 @@
 import type { Reflection, PageEvent } from "typedoc";
 import type { GjsifyThemeContext } from "../context";
-import * as JSX from "../jsx";
+import * as JSX from "../jsx/jsx";
 
 export const defaultLayout = (
   context: GjsifyThemeContext,
@@ -52,7 +52,6 @@ export const defaultLayout = (
       <meta name="msapplication-TileColor" content="#4a86cf" />
       <meta name="theme-color" content="#ffffff" />
 
-      <link rel="stylesheet" href={context.relativeURL("assets/style.css")} />
       <link
         rel="stylesheet"
         href={context.relativeURL("assets/highlight.css")}
@@ -88,7 +87,6 @@ export const defaultLayout = (
       {context.footer(props)}
 
       <div class="overlay"></div>
-      <script src={context.relativeURL("assets/main.js")}></script>
       <script src={context.relativeURL("assets/vendors.bundle.js")}></script>
       <script src={context.relativeURL("assets/main.bundle.js")}></script>
 

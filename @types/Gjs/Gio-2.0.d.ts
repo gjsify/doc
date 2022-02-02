@@ -343,6 +343,7 @@ enum TlsError {
     CERTIFICATE_REQUIRED,
     EOF,
     INAPPROPRIATE_FALLBACK,
+    BAD_CERTIFICATE_PASSWORD,
 }
 enum TlsInteractionResult {
     UNHANDLED,
@@ -10789,7 +10790,9 @@ interface TlsCertificate_ConstructProps extends GObject.Object_ConstructProps {
     certificate?: Uint8Array
     certificate_pem?: string
     issuer?: TlsCertificate
+    password?: string
     pkcs11_uri?: string
+    pkcs12_data?: Uint8Array
     private_key?: Uint8Array
     private_key_pem?: string
     private_key_pkcs11_uri?: string
@@ -10871,9 +10874,11 @@ class TlsCertificate {
     _init (config?: TlsCertificate_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new_from_file(file: string): TlsCertificate
+    static new_from_file_with_password(file: string, password: string): TlsCertificate
     static new_from_files(cert_file: string, key_file: string): TlsCertificate
     static new_from_pem(data: string, length: number): TlsCertificate
     static new_from_pkcs11_uris(pkcs11_uri: string, private_key_pkcs11_uri?: string | null): TlsCertificate
+    static new_from_pkcs12(data: number, length: number, password?: string | null): TlsCertificate
     static list_new_from_file(file: string): TlsCertificate[]
     static $gtype: GObject.Type
 }

@@ -1689,7 +1689,7 @@ class InstallConfig {
     setInstallationUrl(url: string): void
     setL10nKeyboard(keyboard: string): void
     setL10nLanguage(language: string): void
-    setL10nTimezone(timezone: string): void
+    setL10nTimezone(tz: string): void
     setPostInstallDriversDisk(disk: string): void
     setPostInstallDriversLocation(location: string): void
     setPreInstallDriversDisk(disk: string): void
@@ -2595,6 +2595,7 @@ class Os {
     getAllDeviceLinks(filter?: Filter | null): DeviceLinkList
     getAllDevices(filter?: Filter | null): DeviceList
     getCloudImageUsername(): string
+    getCompleteFirmwareList(filter?: Filter | null): FirmwareList
     getDeviceDrivers(): DeviceDriverList
     getDeviceDriversPrioritized(): DeviceDriverList
     getDeviceLinks(filter?: Filter | null): DeviceLinkList

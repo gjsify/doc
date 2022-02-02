@@ -85,6 +85,15 @@ enum CdmaActivationError {
     TIMEDOUT,
     STARTFAILED,
 }
+enum CellType {
+    UNKNOWN,
+    CDMA,
+    GSM,
+    UMTS,
+    TDSCDMA,
+    LTE,
+    TODO_5GNR,
+}
 enum ConnectionError {
     UNKNOWN,
     NOCARRIER,
@@ -1085,6 +1094,7 @@ const MODEM_METHOD_CREATEBEARER: string
 const MODEM_METHOD_DELETEBEARER: string
 const MODEM_METHOD_ENABLE: string
 const MODEM_METHOD_FACTORYRESET: string
+const MODEM_METHOD_GETCELLINFO: string
 const MODEM_METHOD_LISTBEARERS: string
 const MODEM_METHOD_RESET: string
 const MODEM_METHOD_SETCURRENTBANDS: string
@@ -1268,6 +1278,7 @@ function callDirectionGetString(val: CallDirection): string
 function callStateGetString(val: CallState): string
 function callStateReasonGetString(val: CallStateReason): string
 function cdmaActivationErrorQuark(): GLib.Quark
+function cellTypeGetString(val: CellType): string
 function connectionErrorQuark(): GLib.Quark
 function coreErrorQuark(): GLib.Quark
 function firmwareImageTypeGetString(val: FirmwareImageType): string
@@ -1539,6 +1550,9 @@ class GdbusModem {
     callFactoryReset(argCode: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     callFactoryResetFinish(res: Gio.AsyncResult): boolean
     callFactoryResetSync(argCode: string, cancellable?: Gio.Cancellable | null): boolean
+    callGetCellInfo(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    callGetCellInfoFinish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* outCellInfo */ GLib.Variant | null ]
+    callGetCellInfoSync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* outCellInfo */ GLib.Variant | null ]
     callListBearers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     callListBearersFinish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* outBearers */ string[] | null ]
     callListBearersSync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* outBearers */ string[] | null ]
@@ -1565,6 +1579,7 @@ class GdbusModem {
     completeDeleteBearer(invocation: Gio.DBusMethodInvocation): void
     completeEnable(invocation: Gio.DBusMethodInvocation): void
     completeFactoryReset(invocation: Gio.DBusMethodInvocation): void
+    completeGetCellInfo(invocation: Gio.DBusMethodInvocation, cellInfo: GLib.Variant): void
     completeListBearers(invocation: Gio.DBusMethodInvocation, bearers: string): void
     completeReset(invocation: Gio.DBusMethodInvocation): void
     completeSetCurrentBands(invocation: Gio.DBusMethodInvocation): void
@@ -1599,6 +1614,11 @@ class GdbusModem {
     once(sigName: "handle-factory-reset", callback: (invocation: Gio.DBusMethodInvocation, argCode: string) => void, after?: boolean): NodeJS.EventEmitter
     off(sigName: "handle-factory-reset", callback: (invocation: Gio.DBusMethodInvocation, argCode: string) => void): NodeJS.EventEmitter
     emit(sigName: "handle-factory-reset", invocation: Gio.DBusMethodInvocation, argCode: string): void
+    connect(sigName: "handle-get-cell-info", callback: ((invocation: Gio.DBusMethodInvocation) => boolean)): number
+    on(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void): NodeJS.EventEmitter
+    emit(sigName: "handle-get-cell-info", invocation: Gio.DBusMethodInvocation): void
     connect(sigName: "handle-list-bearers", callback: ((invocation: Gio.DBusMethodInvocation) => boolean)): number
     on(sigName: "handle-list-bearers", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
     once(sigName: "handle-list-bearers", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
@@ -3460,6 +3480,396 @@ class CdmaManualActivationProperties {
     _init (config?: CdmaManualActivationProperties_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(): CdmaManualActivationProperties
+    static $gtype: GObject.Type
+}
+interface CellInfo_ConstructProps extends GObject.Object_ConstructProps {
+}
+class CellInfo {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly gTypeInstance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    getCellType(): CellType
+    getServing(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bindProperty(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags): GObject.Binding
+    bindPropertyFull(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags, transformTo: Function, transformFrom: Function): GObject.Binding
+    forceFloating(): void
+    freezeNotify(): void
+    getData(key: string): object | null
+    getProperty(propertyName: string, value: any): void
+    getQdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    isFloating(): boolean
+    notify(propertyName: string): void
+    notifyByPspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    refSink(): GObject.Object
+    runDispose(): void
+    setData(key: string, data?: object | null): void
+    setProperty(propertyName: string, value: any): void
+    stealData(key: string): object | null
+    stealQdata(quark: GLib.Quark): object | null
+    thawNotify(): void
+    unref(): void
+    watchClosure(closure: Function): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: ((pspec: GObject.ParamSpec) => void)): number
+    on(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void): NodeJS.EventEmitter
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    on(sigName: string, callback: any): NodeJS.EventEmitter
+    once(sigName: string, callback: any): NodeJS.EventEmitter
+    off(sigName: string, callback: any): NodeJS.EventEmitter
+    static name: string
+    constructor (config?: CellInfo_ConstructProps)
+    _init (config?: CellInfo_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoCdma_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoCdma {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly gTypeInstance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoCdma */
+    getBaseStationId(): string
+    getNid(): string
+    getPilotStrength(): number
+    getRefPn(): string
+    getSid(): string
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    getCellType(): CellType
+    getServing(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bindProperty(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags): GObject.Binding
+    bindPropertyFull(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags, transformTo: Function, transformFrom: Function): GObject.Binding
+    forceFloating(): void
+    freezeNotify(): void
+    getData(key: string): object | null
+    getProperty(propertyName: string, value: any): void
+    getQdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    isFloating(): boolean
+    notify(propertyName: string): void
+    notifyByPspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    refSink(): GObject.Object
+    runDispose(): void
+    setData(key: string, data?: object | null): void
+    setProperty(propertyName: string, value: any): void
+    stealData(key: string): object | null
+    stealQdata(quark: GLib.Quark): object | null
+    thawNotify(): void
+    unref(): void
+    watchClosure(closure: Function): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: ((pspec: GObject.ParamSpec) => void)): number
+    on(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void): NodeJS.EventEmitter
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    on(sigName: string, callback: any): NodeJS.EventEmitter
+    once(sigName: string, callback: any): NodeJS.EventEmitter
+    off(sigName: string, callback: any): NodeJS.EventEmitter
+    static name: string
+    constructor (config?: CellInfoCdma_ConstructProps)
+    _init (config?: CellInfoCdma_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoGsm_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoGsm {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly gTypeInstance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoGsm */
+    getArfcn(): number
+    getBaseStationId(): string
+    getCi(): string
+    getLac(): string
+    getOperatorId(): string
+    getRxLevel(): number
+    getTimingAdvance(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    getCellType(): CellType
+    getServing(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bindProperty(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags): GObject.Binding
+    bindPropertyFull(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags, transformTo: Function, transformFrom: Function): GObject.Binding
+    forceFloating(): void
+    freezeNotify(): void
+    getData(key: string): object | null
+    getProperty(propertyName: string, value: any): void
+    getQdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    isFloating(): boolean
+    notify(propertyName: string): void
+    notifyByPspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    refSink(): GObject.Object
+    runDispose(): void
+    setData(key: string, data?: object | null): void
+    setProperty(propertyName: string, value: any): void
+    stealData(key: string): object | null
+    stealQdata(quark: GLib.Quark): object | null
+    thawNotify(): void
+    unref(): void
+    watchClosure(closure: Function): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: ((pspec: GObject.ParamSpec) => void)): number
+    on(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void): NodeJS.EventEmitter
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    on(sigName: string, callback: any): NodeJS.EventEmitter
+    once(sigName: string, callback: any): NodeJS.EventEmitter
+    off(sigName: string, callback: any): NodeJS.EventEmitter
+    static name: string
+    constructor (config?: CellInfoGsm_ConstructProps)
+    _init (config?: CellInfoGsm_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoLte_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoLte {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly gTypeInstance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoLte */
+    getCi(): string
+    getEarfcn(): number
+    getOperatorId(): string
+    getPhysicalCi(): string
+    getRsrp(): number
+    getRsrq(): number
+    getTac(): string
+    getTimingAdvance(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    getCellType(): CellType
+    getServing(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bindProperty(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags): GObject.Binding
+    bindPropertyFull(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags, transformTo: Function, transformFrom: Function): GObject.Binding
+    forceFloating(): void
+    freezeNotify(): void
+    getData(key: string): object | null
+    getProperty(propertyName: string, value: any): void
+    getQdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    isFloating(): boolean
+    notify(propertyName: string): void
+    notifyByPspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    refSink(): GObject.Object
+    runDispose(): void
+    setData(key: string, data?: object | null): void
+    setProperty(propertyName: string, value: any): void
+    stealData(key: string): object | null
+    stealQdata(quark: GLib.Quark): object | null
+    thawNotify(): void
+    unref(): void
+    watchClosure(closure: Function): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: ((pspec: GObject.ParamSpec) => void)): number
+    on(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void): NodeJS.EventEmitter
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    on(sigName: string, callback: any): NodeJS.EventEmitter
+    once(sigName: string, callback: any): NodeJS.EventEmitter
+    off(sigName: string, callback: any): NodeJS.EventEmitter
+    static name: string
+    constructor (config?: CellInfoLte_ConstructProps)
+    _init (config?: CellInfoLte_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoNr5g_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoNr5g {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly gTypeInstance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoNr5g */
+    getCi(): string
+    getNrarfcn(): number
+    getOperatorId(): string
+    getPhysicalCi(): string
+    getRsrp(): number
+    getRsrq(): number
+    getSinr(): number
+    getTac(): string
+    getTimingAdvance(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    getCellType(): CellType
+    getServing(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bindProperty(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags): GObject.Binding
+    bindPropertyFull(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags, transformTo: Function, transformFrom: Function): GObject.Binding
+    forceFloating(): void
+    freezeNotify(): void
+    getData(key: string): object | null
+    getProperty(propertyName: string, value: any): void
+    getQdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    isFloating(): boolean
+    notify(propertyName: string): void
+    notifyByPspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    refSink(): GObject.Object
+    runDispose(): void
+    setData(key: string, data?: object | null): void
+    setProperty(propertyName: string, value: any): void
+    stealData(key: string): object | null
+    stealQdata(quark: GLib.Quark): object | null
+    thawNotify(): void
+    unref(): void
+    watchClosure(closure: Function): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: ((pspec: GObject.ParamSpec) => void)): number
+    on(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void): NodeJS.EventEmitter
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    on(sigName: string, callback: any): NodeJS.EventEmitter
+    once(sigName: string, callback: any): NodeJS.EventEmitter
+    off(sigName: string, callback: any): NodeJS.EventEmitter
+    static name: string
+    constructor (config?: CellInfoNr5g_ConstructProps)
+    _init (config?: CellInfoNr5g_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoTdscdma_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoTdscdma {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly gTypeInstance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoTdscdma */
+    getCellParameterId(): number
+    getCi(): string
+    getLac(): string
+    getOperatorId(): string
+    getPathLoss(): number
+    getRscp(): number
+    getTimingAdvance(): number
+    getUarfcn(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    getCellType(): CellType
+    getServing(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bindProperty(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags): GObject.Binding
+    bindPropertyFull(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags, transformTo: Function, transformFrom: Function): GObject.Binding
+    forceFloating(): void
+    freezeNotify(): void
+    getData(key: string): object | null
+    getProperty(propertyName: string, value: any): void
+    getQdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    isFloating(): boolean
+    notify(propertyName: string): void
+    notifyByPspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    refSink(): GObject.Object
+    runDispose(): void
+    setData(key: string, data?: object | null): void
+    setProperty(propertyName: string, value: any): void
+    stealData(key: string): object | null
+    stealQdata(quark: GLib.Quark): object | null
+    thawNotify(): void
+    unref(): void
+    watchClosure(closure: Function): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: ((pspec: GObject.ParamSpec) => void)): number
+    on(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void): NodeJS.EventEmitter
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    on(sigName: string, callback: any): NodeJS.EventEmitter
+    once(sigName: string, callback: any): NodeJS.EventEmitter
+    off(sigName: string, callback: any): NodeJS.EventEmitter
+    static name: string
+    constructor (config?: CellInfoTdscdma_ConstructProps)
+    _init (config?: CellInfoTdscdma_ConstructProps): void
+    static $gtype: GObject.Type
+}
+interface CellInfoUmts_ConstructProps extends CellInfo_ConstructProps {
+}
+class CellInfoUmts {
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly gTypeInstance: GObject.TypeInstance
+    /* Methods of ModemManager-1.0.ModemManager.CellInfoUmts */
+    getCi(): string
+    getEcio(): number
+    getFrequencyFddDl(): number
+    getFrequencyFddUl(): number
+    getFrequencyTdd(): number
+    getLac(): string
+    getOperatorId(): string
+    getPathLoss(): number
+    getPsc(): number
+    getRscp(): number
+    getUarfcn(): number
+    /* Methods of ModemManager-1.0.ModemManager.CellInfo */
+    getCellType(): CellType
+    getServing(): boolean
+    /* Methods of GObject-2.0.GObject.Object */
+    bindProperty(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags): GObject.Binding
+    bindPropertyFull(sourceProperty: string, target: GObject.Object, targetProperty: string, flags: GObject.BindingFlags, transformTo: Function, transformFrom: Function): GObject.Binding
+    forceFloating(): void
+    freezeNotify(): void
+    getData(key: string): object | null
+    getProperty(propertyName: string, value: any): void
+    getQdata(quark: GLib.Quark): object | null
+    getv(names: string[], values: any[]): void
+    isFloating(): boolean
+    notify(propertyName: string): void
+    notifyByPspec(pspec: GObject.ParamSpec): void
+    ref(): GObject.Object
+    refSink(): GObject.Object
+    runDispose(): void
+    setData(key: string, data?: object | null): void
+    setProperty(propertyName: string, value: any): void
+    stealData(key: string): object | null
+    stealQdata(quark: GLib.Quark): object | null
+    thawNotify(): void
+    unref(): void
+    watchClosure(closure: Function): void
+    /* Signals of GObject-2.0.GObject.Object */
+    connect(sigName: "notify", callback: ((pspec: GObject.ParamSpec) => void)): number
+    on(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "notify", callback: (pspec: GObject.ParamSpec) => void): NodeJS.EventEmitter
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    on(sigName: string, callback: any): NodeJS.EventEmitter
+    once(sigName: string, callback: any): NodeJS.EventEmitter
+    off(sigName: string, callback: any): NodeJS.EventEmitter
+    static name: string
+    constructor (config?: CellInfoUmts_ConstructProps)
+    _init (config?: CellInfoUmts_ConstructProps): void
     static $gtype: GObject.Type
 }
 interface FirmwareProperties_ConstructProps extends GObject.Object_ConstructProps {
@@ -7427,6 +7837,9 @@ class GdbusModemProxy {
     callFactoryReset(argCode: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     callFactoryResetFinish(res: Gio.AsyncResult): boolean
     callFactoryResetSync(argCode: string, cancellable?: Gio.Cancellable | null): boolean
+    callGetCellInfo(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    callGetCellInfoFinish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* outCellInfo */ GLib.Variant | null ]
+    callGetCellInfoSync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* outCellInfo */ GLib.Variant | null ]
     callListBearers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     callListBearersFinish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* outBearers */ string[] | null ]
     callListBearersSync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* outBearers */ string[] | null ]
@@ -7453,6 +7866,7 @@ class GdbusModemProxy {
     completeDeleteBearer(invocation: Gio.DBusMethodInvocation): void
     completeEnable(invocation: Gio.DBusMethodInvocation): void
     completeFactoryReset(invocation: Gio.DBusMethodInvocation): void
+    completeGetCellInfo(invocation: Gio.DBusMethodInvocation, cellInfo: GLib.Variant): void
     completeListBearers(invocation: Gio.DBusMethodInvocation, bearers: string): void
     completeReset(invocation: Gio.DBusMethodInvocation): void
     completeSetCurrentBands(invocation: Gio.DBusMethodInvocation): void
@@ -7504,6 +7918,11 @@ class GdbusModemProxy {
     once(sigName: "handle-factory-reset", callback: (invocation: Gio.DBusMethodInvocation, argCode: string) => void, after?: boolean): NodeJS.EventEmitter
     off(sigName: "handle-factory-reset", callback: (invocation: Gio.DBusMethodInvocation, argCode: string) => void): NodeJS.EventEmitter
     emit(sigName: "handle-factory-reset", invocation: Gio.DBusMethodInvocation, argCode: string): void
+    connect(sigName: "handle-get-cell-info", callback: ((invocation: Gio.DBusMethodInvocation) => boolean)): number
+    on(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void): NodeJS.EventEmitter
+    emit(sigName: "handle-get-cell-info", invocation: Gio.DBusMethodInvocation): void
     connect(sigName: "handle-list-bearers", callback: ((invocation: Gio.DBusMethodInvocation) => boolean)): number
     on(sigName: "handle-list-bearers", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
     once(sigName: "handle-list-bearers", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
@@ -8808,6 +9227,9 @@ class GdbusModemSkeleton {
     callFactoryReset(argCode: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     callFactoryResetFinish(res: Gio.AsyncResult): boolean
     callFactoryResetSync(argCode: string, cancellable?: Gio.Cancellable | null): boolean
+    callGetCellInfo(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    callGetCellInfoFinish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* outCellInfo */ GLib.Variant | null ]
+    callGetCellInfoSync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* outCellInfo */ GLib.Variant | null ]
     callListBearers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     callListBearersFinish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* outBearers */ string[] | null ]
     callListBearersSync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* outBearers */ string[] | null ]
@@ -8834,6 +9256,7 @@ class GdbusModemSkeleton {
     completeDeleteBearer(invocation: Gio.DBusMethodInvocation): void
     completeEnable(invocation: Gio.DBusMethodInvocation): void
     completeFactoryReset(invocation: Gio.DBusMethodInvocation): void
+    completeGetCellInfo(invocation: Gio.DBusMethodInvocation, cellInfo: GLib.Variant): void
     completeListBearers(invocation: Gio.DBusMethodInvocation, bearers: string): void
     completeReset(invocation: Gio.DBusMethodInvocation): void
     completeSetCurrentBands(invocation: Gio.DBusMethodInvocation): void
@@ -8880,6 +9303,11 @@ class GdbusModemSkeleton {
     once(sigName: "handle-factory-reset", callback: (invocation: Gio.DBusMethodInvocation, argCode: string) => void, after?: boolean): NodeJS.EventEmitter
     off(sigName: "handle-factory-reset", callback: (invocation: Gio.DBusMethodInvocation, argCode: string) => void): NodeJS.EventEmitter
     emit(sigName: "handle-factory-reset", invocation: Gio.DBusMethodInvocation, argCode: string): void
+    connect(sigName: "handle-get-cell-info", callback: ((invocation: Gio.DBusMethodInvocation) => boolean)): number
+    on(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void): NodeJS.EventEmitter
+    emit(sigName: "handle-get-cell-info", invocation: Gio.DBusMethodInvocation): void
     connect(sigName: "handle-list-bearers", callback: ((invocation: Gio.DBusMethodInvocation) => boolean)): number
     on(sigName: "handle-list-bearers", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
     once(sigName: "handle-list-bearers", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
@@ -12047,6 +12475,9 @@ class Modem {
     getBearerPaths(): string[]
     getCarrierConfiguration(): string
     getCarrierConfigurationRevision(): string
+    getCellInfo(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    getCellInfoFinish(res: Gio.AsyncResult): CellInfo[]
+    getCellInfoSync(cancellable?: Gio.Cancellable | null): CellInfo[]
     getCurrentBands(): [ /* returnType */ boolean, /* bands */ ModemBand[] ]
     getCurrentCapabilities(): ModemCapability
     getCurrentModes(): [ /* returnType */ boolean, /* allowed */ ModemMode, /* preferred */ ModemMode ]
@@ -12177,6 +12608,9 @@ class Modem {
     callFactoryReset(argCode: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     callFactoryResetFinish(res: Gio.AsyncResult): boolean
     callFactoryResetSync(argCode: string, cancellable?: Gio.Cancellable | null): boolean
+    callGetCellInfo(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    callGetCellInfoFinish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* outCellInfo */ GLib.Variant | null ]
+    callGetCellInfoSync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* outCellInfo */ GLib.Variant | null ]
     callListBearers(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     callListBearersFinish(res: Gio.AsyncResult): [ /* returnType */ boolean, /* outBearers */ string[] | null ]
     callListBearersSync(cancellable?: Gio.Cancellable | null): [ /* returnType */ boolean, /* outBearers */ string[] | null ]
@@ -12203,6 +12637,7 @@ class Modem {
     completeDeleteBearer(invocation: Gio.DBusMethodInvocation): void
     completeEnable(invocation: Gio.DBusMethodInvocation): void
     completeFactoryReset(invocation: Gio.DBusMethodInvocation): void
+    completeGetCellInfo(invocation: Gio.DBusMethodInvocation, cellInfo: GLib.Variant): void
     completeListBearers(invocation: Gio.DBusMethodInvocation, bearers: string): void
     completeReset(invocation: Gio.DBusMethodInvocation): void
     completeSetCurrentBands(invocation: Gio.DBusMethodInvocation): void
@@ -12254,6 +12689,11 @@ class Modem {
     once(sigName: "handle-factory-reset", callback: (invocation: Gio.DBusMethodInvocation, argCode: string) => void, after?: boolean): NodeJS.EventEmitter
     off(sigName: "handle-factory-reset", callback: (invocation: Gio.DBusMethodInvocation, argCode: string) => void): NodeJS.EventEmitter
     emit(sigName: "handle-factory-reset", invocation: Gio.DBusMethodInvocation, argCode: string): void
+    connect(sigName: "handle-get-cell-info", callback: ((invocation: Gio.DBusMethodInvocation) => boolean)): number
+    on(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
+    once(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
+    off(sigName: "handle-get-cell-info", callback: (invocation: Gio.DBusMethodInvocation) => void): NodeJS.EventEmitter
+    emit(sigName: "handle-get-cell-info", invocation: Gio.DBusMethodInvocation): void
     connect(sigName: "handle-list-bearers", callback: ((invocation: Gio.DBusMethodInvocation) => boolean)): number
     on(sigName: "handle-list-bearers", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
     once(sigName: "handle-list-bearers", callback: (invocation: Gio.DBusMethodInvocation) => void, after?: boolean): NodeJS.EventEmitter
@@ -16718,6 +17158,51 @@ abstract class CdmaManualActivationPropertiesClass {
 class CdmaManualActivationPropertiesPrivate {
     static name: string
 }
+abstract class CellInfoCdmaClass {
+    static name: string
+}
+class CellInfoCdmaPrivate {
+    static name: string
+}
+abstract class CellInfoClass {
+    /* Fields of ModemManager-1.0.ModemManager.CellInfoClass */
+    readonly getDictionary: (self: CellInfo) => GLib.VariantDict
+    readonly buildString: (self: CellInfo) => GLib.String
+    static name: string
+}
+abstract class CellInfoGsmClass {
+    static name: string
+}
+class CellInfoGsmPrivate {
+    static name: string
+}
+abstract class CellInfoLteClass {
+    static name: string
+}
+class CellInfoLtePrivate {
+    static name: string
+}
+abstract class CellInfoNr5gClass {
+    static name: string
+}
+class CellInfoNr5gPrivate {
+    static name: string
+}
+class CellInfoPrivate {
+    static name: string
+}
+abstract class CellInfoTdscdmaClass {
+    static name: string
+}
+class CellInfoTdscdmaPrivate {
+    static name: string
+}
+abstract class CellInfoUmtsClass {
+    static name: string
+}
+class CellInfoUmtsPrivate {
+    static name: string
+}
 abstract class FirmwarePropertiesClass {
     static name: string
 }
@@ -16959,6 +17444,7 @@ abstract class GdbusModemIface {
     readonly handleDeleteBearer: (object: GdbusModem, invocation: Gio.DBusMethodInvocation, argBearer: string) => boolean
     readonly handleEnable: (object: GdbusModem, invocation: Gio.DBusMethodInvocation, argEnable: boolean) => boolean
     readonly handleFactoryReset: (object: GdbusModem, invocation: Gio.DBusMethodInvocation, argCode: string) => boolean
+    readonly handleGetCellInfo: (object: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean
     readonly handleListBearers: (object: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean
     readonly handleReset: (object: GdbusModem, invocation: Gio.DBusMethodInvocation) => boolean
     readonly handleSetCurrentBands: (object: GdbusModem, invocation: Gio.DBusMethodInvocation, argBands: GLib.Variant) => boolean

@@ -7,7 +7,7 @@ import {
   ContainerReflection,
 } from "typedoc";
 import { copyFileSync, readdirSync } from "fs";
-import { resolve, basename, join } from "path";
+import { resolve, basename } from "path";
 
 import { GjsifyThemeContext } from "./context";
 

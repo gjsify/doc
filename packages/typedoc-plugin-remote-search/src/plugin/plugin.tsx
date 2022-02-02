@@ -138,7 +138,7 @@ export class RemoteSearchIndexPlugin {
     let searchData = readFileSync(originalFileName, "utf8");
 
     this.logger.info(
-      "[RemoteSearch] Convert original search.js file to search.json..."
+      `[RemoteSearch] Convert original search.js file to ${targetFilename}...`
     );
     searchData = searchData
       .substring(removeStart.length, searchData.length - removeEnd.length)

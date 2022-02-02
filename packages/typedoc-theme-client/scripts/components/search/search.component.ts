@@ -1,5 +1,5 @@
 import { Component, TemplateFunction } from "@ribajs/core";
-import { hasChildNodesTrim, throttle } from "@ribajs/utils";
+import { hasChildNodesTrim, debounceCb } from "@ribajs/utils";
 import template from "./search.component.pug";
 
 import type { SearchComponentScope, SearchResult } from "../../types";
@@ -26,17 +26,20 @@ export class SearchComponent extends Component {
     this.init(SearchComponent.observedAttributes);
   }
 
-  protected async afterBind() {
+  protected async beforeBind() {
+    await super.beforeBind();
     this.initSearch();
   }
 
   initSearch() {
     const field = this.querySelector<HTMLInputElement>("input");
     const results = this.querySelector<HTMLElement>(".results");
+    console.debug("initSearch", field, results);
 
     if (!field || !results) {
+      console.error(field, results);
       throw new Error(
-        "The input field or the result list wrapper was not found"
+        "[SearchComponent] The input field or the result list wrapper was not found"
       );
     }
 
@@ -61,9 +64,10 @@ export class SearchComponent extends Component {
   bindEvents(results: HTMLElement, field: HTMLInputElement) {
     field.addEventListener(
       "input",
-      throttle(() => {
+      debounceCb(() => {
+        console.debug("input");
         this.updateResults(results, field);
-      }, 1000)
+      }, 500)
     );
 
     let preventPress = false;
@@ -101,7 +105,7 @@ export class SearchComponent extends Component {
     results.textContent = "";
 
     const searchText = query.value.trim();
-    if (searchText.length <= 3) {
+    if (searchText.length < 2) {
       return;
     }
 

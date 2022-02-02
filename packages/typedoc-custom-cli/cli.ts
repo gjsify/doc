@@ -1,23 +1,24 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env node
 
 // See https://github.com/TypeStrong/typedoc/issues/1403
 import { Application, TSConfigReader, TypeDocOptions } from "typedoc";
-import path from "path";
+import { resolve } from "path";
 import { readdirSync, mkdirSync } from "fs";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 // import minimatch from 'minimatch'
 import _appRoot from "app-root-path";
+const appRoot = _appRoot.toString();
 
 const getEntryPoints = (dir: string, exclude: string[] = []) => {
   const entryPoints: string[] = [];
-  const directoryPath = path.resolve(__dirname, dir);
+  const directoryPath = resolve(appRoot, dir);
   const files = readdirSync(directoryPath);
   for (const file of files) {
     if (file.endsWith(".d.ts")) {
       // TODO use minimatch like typedoc: https://github.com/isaacs/minimatch
       if (!exclude.includes(file)) {
-        entryPoints.push(path.join(dir, file));
+        entryPoints.push(resolve(directoryPath, file));
       }
     }
   }
@@ -32,15 +33,30 @@ interface Options {
   ignoreErrors?: boolean;
 }
 
+const loadConfigFile = async (typedoc?: string) => {
+  let config: Partial<TypeDocOptions> = {};
+  if (typedoc) {
+    typedoc = resolve(appRoot, typedoc);
+    console.debug("typedoc", typedoc);
+    const file = await import(typedoc);
+    if (file?.default?.default) {
+      config = file.default.default;
+    } else if (file?.default) {
+      config = file.default;
+    } else if (file) {
+      config = file;
+    }
+  }
+  return config;
+};
+
 async function generate(
   { entryPoints = [], inDir, outDir, typedoc, ignoreErrors = false }: Options,
   typeDocOptions: Partial<TypeDocOptions> = {}
 ) {
   const app = new Application();
 
-  const typedocConfigFile = typedoc
-    ? (await import("./" + typedoc))?.default.default || {}
-    : {};
+  const typedocConfigFile = await loadConfigFile(typedoc);
 
   typeDocOptions = { ...typedocConfigFile, ...typeDocOptions };
   typeDocOptions.out = outDir || typeDocOptions.out || "docs";
@@ -79,7 +95,7 @@ async function generate(
 async function start() {
   const argv = await yargs(hideBin(process.argv))
     .scriptName("gjsify-doc")
-    .usage("$0 <cmd> [args]")
+    .usage("$0 [args]")
     .option("in", {
       type: "string",
       normalize: true,

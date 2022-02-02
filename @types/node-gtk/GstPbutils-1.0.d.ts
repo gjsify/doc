@@ -79,24 +79,24 @@ const PLUGINS_BASE_VERSION_NANO: number
 function codecUtilsAacCapsSetLevelAndProfile(caps: Gst.Caps, audioConfig: Uint8Array): boolean
 function codecUtilsAacGetChannels(audioConfig: Uint8Array): number
 function codecUtilsAacGetIndexFromSampleRate(rate: number): number
-function codecUtilsAacGetLevel(audioConfig: Uint8Array): string
-function codecUtilsAacGetProfile(audioConfig: Uint8Array): string
+function codecUtilsAacGetLevel(audioConfig: Uint8Array): string | null
+function codecUtilsAacGetProfile(audioConfig: Uint8Array): string | null
 function codecUtilsAacGetSampleRate(audioConfig: Uint8Array): number
 function codecUtilsAacGetSampleRateFromIndex(srIdx: number): number
-function codecUtilsCapsGetMimeCodec(caps: Gst.Caps): string
+function codecUtilsCapsGetMimeCodec(caps: Gst.Caps): string | null
 function codecUtilsH264CapsSetLevelAndProfile(caps: Gst.Caps, sps: Uint8Array): boolean
-function codecUtilsH264GetLevel(sps: Uint8Array): string
+function codecUtilsH264GetLevel(sps: Uint8Array): string | null
 function codecUtilsH264GetLevelIdc(level: string): number
-function codecUtilsH264GetProfile(sps: Uint8Array): string
+function codecUtilsH264GetProfile(sps: Uint8Array): string | null
 function codecUtilsH264GetProfileFlagsLevel(codecData: Uint8Array): [ /* returnType */ boolean, /* profile */ number | null, /* flags */ number | null, /* level */ number | null ]
 function codecUtilsH265CapsSetLevelTierAndProfile(caps: Gst.Caps, profileTierLevel: Uint8Array): boolean
-function codecUtilsH265GetLevel(profileTierLevel: Uint8Array): string
+function codecUtilsH265GetLevel(profileTierLevel: Uint8Array): string | null
 function codecUtilsH265GetLevelIdc(level: string): number
-function codecUtilsH265GetProfile(profileTierLevel: Uint8Array): string
-function codecUtilsH265GetTier(profileTierLevel: Uint8Array): string
+function codecUtilsH265GetProfile(profileTierLevel: Uint8Array): string | null
+function codecUtilsH265GetTier(profileTierLevel: Uint8Array): string | null
 function codecUtilsMpeg4videoCapsSetLevelAndProfile(caps: Gst.Caps, visObjSeq: Uint8Array): boolean
-function codecUtilsMpeg4videoGetLevel(visObjSeq: Uint8Array): string
-function codecUtilsMpeg4videoGetProfile(visObjSeq: Uint8Array): string
+function codecUtilsMpeg4videoGetLevel(visObjSeq: Uint8Array): string | null
+function codecUtilsMpeg4videoGetProfile(visObjSeq: Uint8Array): string | null
 function codecUtilsOpusCreateCaps(rate: number, channels: number, channelMappingFamily: number, streamCount: number, coupledCount: number, channelMapping?: Uint8Array | null): Gst.Caps
 function codecUtilsOpusCreateCapsFromHeader(header: Gst.Buffer, comments?: Gst.Buffer | null): Gst.Caps
 function codecUtilsOpusCreateHeader(rate: number, channels: number, channelMappingFamily: number, streamCount: number, coupledCount: number, channelMapping: Uint8Array | null, preSkip: number, outputGain: number): Gst.Buffer

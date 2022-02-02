@@ -14142,7 +14142,6 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Granite.ServicesLogger': [
     'GObject.Object',
-    'GObject.Object',
 ],
     'Granite.ServicesPaths': [
     'GObject.Object',
@@ -14214,7 +14213,6 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Granite.WidgetsTab': [
     'Gtk.EventBox',
-    'Gtk.Box',
     'Gtk.Bin',
     'Gtk.Container',
     'Gtk.Widget',
@@ -14224,7 +14222,6 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Granite.WidgetsDynamicNotebook': [
     'Gtk.EventBox',
-    'Gtk.Box',
     'Gtk.Bin',
     'Gtk.Container',
     'Gtk.Widget',
@@ -22973,6 +22970,33 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Object',
 ],
     'ModemManager.CdmaManualActivationProperties': [
+    'GObject.Object',
+],
+    'ModemManager.CellInfo': [
+    'GObject.Object',
+],
+    'ModemManager.CellInfoCdma': [
+    'ModemManager.CellInfo',
+    'GObject.Object',
+],
+    'ModemManager.CellInfoGsm': [
+    'ModemManager.CellInfo',
+    'GObject.Object',
+],
+    'ModemManager.CellInfoLte': [
+    'ModemManager.CellInfo',
+    'GObject.Object',
+],
+    'ModemManager.CellInfoNr5g': [
+    'ModemManager.CellInfo',
+    'GObject.Object',
+],
+    'ModemManager.CellInfoTdscdma': [
+    'ModemManager.CellInfo',
+    'GObject.Object',
+],
+    'ModemManager.CellInfoUmts': [
+    'ModemManager.CellInfo',
     'GObject.Object',
 ],
     'ModemManager.FirmwareProperties': [

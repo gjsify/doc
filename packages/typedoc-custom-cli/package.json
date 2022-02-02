@@ -5,9 +5,14 @@
   "module": "cli.ts",
   "type": "commonjs",
   "repository": "https://github.com/gjsify/doc/tree/main/packages/typedoc-custom-cli",
+  "bin": {
+    "gjsify-doc": "./cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --max_old_space_size=20480 -r ts-node/register cli.ts"
+    "start": "node --max_old_space_size=20480 -r ts-node/register cli.ts",
+    "build": "tsc --project ./tsconfig.json && chmod +x ./cli.js",
+    "watch": "tsc --project ./tsconfig.json --watch"
   },
   "keywords": [
     "gjs",
@@ -35,7 +40,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "http-server": "^14.1.0",
     "prettier": "^2.5.1",
-    "ts-for-gir": "workspace:*",
     "ts-node": "^10.4.0",
     "typedoc": "^0.22.11",
     "typescript": "^4.5.5"
@@ -44,7 +48,7 @@
     "@babel/runtime": "^7.16.7",
     "@gjsify/typedoc-plugin-remote-search": "workspace:^",
     "@gjsify/typedoc-theme": "workspace:^",
-    "@types/node": "^17.0.12",
+    "@types/node": "^16",
     "@types/yargs": "^17.0.8",
     "app-root-path": "^3.0.0",
     "minimatch": "^3.0.4",

@@ -1,9 +1,8 @@
 {
-  "compilerOptions": {
-    "lib": ["ESNext"],                 
+  "compilerOptions": {             
     "target": "ESNext",
     "module": "CommonJS",
-    "outDir": "lib",
+    "outDir": ".",
     "strict": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
@@ -11,7 +10,7 @@
     "alwaysStrict": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "sourceMap": true,
+    "inlineSourceMap": true,
     "rootDir": "./",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,

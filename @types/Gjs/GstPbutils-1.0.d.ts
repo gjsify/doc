@@ -80,24 +80,24 @@ const PLUGINS_BASE_VERSION_NANO: number
 function codec_utils_aac_caps_set_level_and_profile(caps: Gst.Caps, audio_config: Uint8Array): boolean
 function codec_utils_aac_get_channels(audio_config: Uint8Array): number
 function codec_utils_aac_get_index_from_sample_rate(rate: number): number
-function codec_utils_aac_get_level(audio_config: Uint8Array): string
-function codec_utils_aac_get_profile(audio_config: Uint8Array): string
+function codec_utils_aac_get_level(audio_config: Uint8Array): string | null
+function codec_utils_aac_get_profile(audio_config: Uint8Array): string | null
 function codec_utils_aac_get_sample_rate(audio_config: Uint8Array): number
 function codec_utils_aac_get_sample_rate_from_index(sr_idx: number): number
-function codec_utils_caps_get_mime_codec(caps: Gst.Caps): string
+function codec_utils_caps_get_mime_codec(caps: Gst.Caps): string | null
 function codec_utils_h264_caps_set_level_and_profile(caps: Gst.Caps, sps: Uint8Array): boolean
-function codec_utils_h264_get_level(sps: Uint8Array): string
+function codec_utils_h264_get_level(sps: Uint8Array): string | null
 function codec_utils_h264_get_level_idc(level: string): number
-function codec_utils_h264_get_profile(sps: Uint8Array): string
+function codec_utils_h264_get_profile(sps: Uint8Array): string | null
 function codec_utils_h264_get_profile_flags_level(codec_data: Uint8Array): [ /* returnType */ boolean, /* profile */ number | null, /* flags */ number | null, /* level */ number | null ]
 function codec_utils_h265_caps_set_level_tier_and_profile(caps: Gst.Caps, profile_tier_level: Uint8Array): boolean
-function codec_utils_h265_get_level(profile_tier_level: Uint8Array): string
+function codec_utils_h265_get_level(profile_tier_level: Uint8Array): string | null
 function codec_utils_h265_get_level_idc(level: string): number
-function codec_utils_h265_get_profile(profile_tier_level: Uint8Array): string
-function codec_utils_h265_get_tier(profile_tier_level: Uint8Array): string
+function codec_utils_h265_get_profile(profile_tier_level: Uint8Array): string | null
+function codec_utils_h265_get_tier(profile_tier_level: Uint8Array): string | null
 function codec_utils_mpeg4video_caps_set_level_and_profile(caps: Gst.Caps, vis_obj_seq: Uint8Array): boolean
-function codec_utils_mpeg4video_get_level(vis_obj_seq: Uint8Array): string
-function codec_utils_mpeg4video_get_profile(vis_obj_seq: Uint8Array): string
+function codec_utils_mpeg4video_get_level(vis_obj_seq: Uint8Array): string | null
+function codec_utils_mpeg4video_get_profile(vis_obj_seq: Uint8Array): string | null
 function codec_utils_opus_create_caps(rate: number, channels: number, channel_mapping_family: number, stream_count: number, coupled_count: number, channel_mapping?: Uint8Array | null): Gst.Caps
 function codec_utils_opus_create_caps_from_header(header: Gst.Buffer, comments?: Gst.Buffer | null): Gst.Caps
 function codec_utils_opus_create_header(rate: number, channels: number, channel_mapping_family: number, stream_count: number, coupled_count: number, channel_mapping: Uint8Array | null, pre_skip: number, output_gain: number): Gst.Buffer

@@ -30,6 +30,7 @@ enum CertChooserFlags {
     CERT,
     PASSWORDS,
     PEM,
+    NO_PASSWORDS,
 }
 enum MobileFamily {
     UNKNOWN,
