@@ -98,7 +98,7 @@ export class Search extends HTMLElement {
       "input",
       debounce(() => {
         this.updateResults(results, field);
-      }, 1000)
+      }, 500)
     );
 
     let preventPress = false;
@@ -136,7 +136,7 @@ export class Search extends HTMLElement {
     results.textContent = "";
 
     const searchText = query.value.trim();
-    if (searchText.length <= 3) {
+    if (searchText.length < 2) {
       return;
     }
 

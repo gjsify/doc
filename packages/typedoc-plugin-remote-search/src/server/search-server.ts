@@ -67,7 +67,7 @@ export class SearchServer {
     const searchText = searchQuery.replace(/\*/g, "");
     const results: SearchResult[] = [];
 
-    if (searchText.length <= 3) {
+    if (searchText.length < 2) {
       console.warn(`Search text to small: "${searchText}"`);
       return results;
     }
