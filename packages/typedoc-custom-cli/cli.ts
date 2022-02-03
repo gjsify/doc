@@ -1,14 +1,17 @@
 #!/usr/bin/env node
 
 // See https://github.com/TypeStrong/typedoc/issues/1403
-import { Application, TSConfigReader, TypeDocOptions } from "typedoc";
+import { Application, TSConfigReader, TypeDocOptions, LogLevel } from "typedoc";
 import { resolve } from "path";
 import { readdirSync, mkdirSync } from "fs";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 // import minimatch from 'minimatch'
 import _appRoot from "app-root-path";
+import { ConsoleLogger } from "./logger";
 const appRoot = _appRoot.toString();
+const logger = new ConsoleLogger();
+logger.level = LogLevel.Verbose;
 
 const getEntryPoints = (dir: string, exclude: string[] = []) => {
   const entryPoints: string[] = [];
@@ -37,7 +40,6 @@ const loadConfigFile = async (typedoc?: string) => {
   let config: Partial<TypeDocOptions> = {};
   if (typedoc) {
     typedoc = resolve(appRoot, typedoc);
-    console.debug("typedoc", typedoc);
     const file = await import(typedoc);
     if (file?.default?.default) {
       config = file.default.default;
@@ -79,16 +81,16 @@ async function generate(
 
   app.bootstrap(typeDocOptions);
 
-  console.info("Start parsing types...");
+  logger.info("Start parsing types...");
   const project = ignoreErrors
     ? app.converter.convert(app.getEntryPoints() ?? [])
     : app.convert();
 
   if (project && typeDocOptions.out) {
     mkdirSync(typeDocOptions.out, { recursive: true });
-    console.info("Start generating the docs...");
+    logger.info("Start generating the docs...");
     await app.generateDocs(project, typeDocOptions.out);
-    console.info("Done");
+    logger.info("Done");
   }
 }
 

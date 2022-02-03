@@ -1628,16 +1628,18 @@ __metadata:
     "@types/koa-static": ^4.0.2
     "@types/koa__router": ^8.0.11
     "@types/lunr": ^2.3.4
+    "@types/lzma-native": ^4.0.1
     "@types/node": ^17.0.12
     "@types/yargs": ^17.0.8
     esbuild: ^0.14.16
-    json-shrink: ^0.0.121
     jsonpack: ^1.1.5
     koa: ^2.13.4
     koa-compress: ^5.1.0
     koa-static: ^5.0.0
     lunr: ^2.3.9
     lzma: ^2.3.2
+    lzma-native: ^8.0.6
+    ts-node: ^10.4.0
     typedoc: ^0.22.11
     typescript: ^4.5.5
     yargs: ^17.3.1
@@ -4943,6 +4945,15 @@ __metadata:
   version: 1.27.1
   resolution: "@types/luxon@npm:1.27.1"
   checksum: 732405c7459dd9f991cff056b801620b92d7c18ddad3cd7c6d3b9c2de714dbfca0c48fc103a5544d19c6e7b9bb7a954bbd2369b30733c680a4633fa60cb03f1f
+  languageName: node
+  linkType: hard
+
+"@types/lzma-native@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@types/lzma-native@npm:4.0.1"
+  dependencies:
+    "@types/node": "*"
+  checksum: 5f9520742f85e729a33261081cd9d252e69c8539a50df83a3edd4ccfc1750eeda3e1c57a54230d161adf8575ae2b31582993b19bf6d022430b51931163b495a6
   languageName: node
   linkType: hard
 
@@ -14263,16 +14274,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-shrink@npm:^0.0.121":
-  version: 0.0.121
-  resolution: "json-shrink@npm:0.0.121"
-  dependencies:
-    jsonpack: ^1.1.5
-    lzma: ^2.3.2
-  checksum: 24863b3faef1d8c1f5e14b760d0abb3665c6596360466b5e08339df1e1300af1a05f0dab536f8df729dc0cfb66c8862d7cbb25564b0d2ff62bd72d0f995631b9
-  languageName: node
-  linkType: hard
-
 "json-stable-stringify-without-jsonify@npm:^1.0.1":
   version: 1.0.1
   resolution: "json-stable-stringify-without-jsonify@npm:1.0.1"
@@ -14905,6 +14906,20 @@ __metadata:
   version: 1.28.0
   resolution: "luxon@npm:1.28.0"
   checksum: 5250cb9f138b6048eeb0b3a9044a4ac994d0058f680c72a0da4b6aeaec8612460385639cba2b1052ef6d5564879e9ed144d686f26d9d97b38ab920d82e18281c
+  languageName: node
+  linkType: hard
+
+"lzma-native@npm:^8.0.6":
+  version: 8.0.6
+  resolution: "lzma-native@npm:8.0.6"
+  dependencies:
+    node-addon-api: ^3.1.0
+    node-gyp: latest
+    node-gyp-build: ^4.2.1
+    readable-stream: ^3.6.0
+  bin:
+    lzmajs: bin/lzmajs
+  checksum: cbe782fd53309163a9362d0b5a960051936268a891779d26fdfe42085ce7fa309dc96e91414fe64ddd2bde2e2c25fc18e1d89aa6a2691557dd89b6582840a979
   languageName: node
   linkType: hard
 
@@ -15566,6 +15581,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-addon-api@npm:^3.1.0":
+  version: 3.2.1
+  resolution: "node-addon-api@npm:3.2.1"
+  dependencies:
+    node-gyp: latest
+  checksum: 2369986bb0881ccd9ef6bacdf39550e07e089a9c8ede1cbc5fc7712d8e2faa4d50da0e487e333d4125f8c7a616c730131d1091676c9d499af1d74560756b4a18
+  languageName: node
+  linkType: hard
+
 "node-emoji@npm:1.11.0":
   version: 1.11.0
   resolution: "node-emoji@npm:1.11.0"
@@ -15593,6 +15617,17 @@ __metadata:
   version: 1.2.1
   resolution: "node-forge@npm:1.2.1"
   checksum: af4f88c3f69362359f35f6a9e231b35c96d906eeb6e976fb92742afe7fcdd76439dc22b41ce3755389d171f6320756ec7505bdfa7b252466c091b8c519a22674
+  languageName: node
+  linkType: hard
+
+"node-gyp-build@npm:^4.2.1":
+  version: 4.3.0
+  resolution: "node-gyp-build@npm:4.3.0"
+  bin:
+    node-gyp-build: bin.js
+    node-gyp-build-optional: optional.js
+    node-gyp-build-test: build-test.js
+  checksum: 1ecab16d9f275174d516e223f60f65ebe07540347d5c04a6a7d6921060b7f2e3af4f19463d9d1dcedc452e275c2ae71354a99405e55ebd5b655bb2f38025c728
   languageName: node
   linkType: hard
 

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --max_old_space_size=20480 -r ts-node/register cli.ts",
+    "start": "node --max_old_space_size=25600 -r ts-node/register cli.ts",
     "build": "tsc --project ./tsconfig.json && chmod +x ./cli.js",
     "watch": "tsc --project ./tsconfig.json --watch"
   },

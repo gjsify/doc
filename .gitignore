@@ -109,6 +109,7 @@ docs/*/assets/search.json
 
 # For internal tests only
 docs/try
+docs/
 
 # Yarn, see https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 .pnp.*

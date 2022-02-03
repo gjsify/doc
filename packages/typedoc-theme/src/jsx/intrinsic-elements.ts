@@ -35,9 +35,9 @@ export interface JsxLinkElementProps extends JsxHtmlGlobalProps {
 }
 
 export interface JsxTsdSearchProps extends JsxHtmlGlobalProps {
-  base: string;
-  port: number | string;
-  hostname: string;
+  base?: string;
+  port?: number | string;
+  hostname?: string;
 }
 
 export type JsxTsdNavbarProps = JsxHtmlGlobalProps;
