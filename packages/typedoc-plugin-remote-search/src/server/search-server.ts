@@ -2,11 +2,11 @@ import Koa from "koa";
 import serve from "koa-static";
 import compress from "koa-compress";
 import Router from "@koa/router";
-import { Index } from "lunr";
-import { readFileSync, existsSync } from "fs";
 import { join } from "path";
-import { unshrink } from "../utils/json-shrink";
-import { ServerOptions, SearchState, SearchData, SearchResult } from "../types";
+import { Converter } from "../converter";
+import { ServerOptions, SearchState, SearchResult } from "../types";
+import { ConsoleLogger } from "../logger";
+import type { Logger } from "typedoc";
 
 const SPECIAL_HTML = {
   "&": "&amp;",
@@ -21,15 +21,17 @@ const SPECIAL_HTML = {
  * @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/output/themes/default/assets/typedoc/components/Search.ts
  */
 export class SearchServer {
-  state: SearchState;
+  state?: SearchState;
   app: Koa<Koa.DefaultState, Koa.DefaultContext>;
   router: Router<Koa.DefaultState, Koa.DefaultContext>;
+  converter: Converter;
+  logger: Logger;
 
-  constructor(readonly options: ServerOptions) {
+  constructor(readonly options: ServerOptions, logger?: Logger) {
     this.app = new Koa();
     this.router = new Router();
-
-    this.state = this.loadIndex();
+    this.logger = logger || new ConsoleLogger();
+    this.converter = new Converter(this.logger);
 
     this.router.get("/search/:text", (ctx, next) => {
       console.info(`Search for ${ctx.params.text}`);
@@ -42,37 +44,37 @@ export class SearchServer {
     if (options.serve) this.app.use(serve(options.docDir, {}));
     this.app.use(this.router.routes());
     this.app.use(this.router.allowedMethods());
-
-    console.info(
-      `Start typedoc server, visit http://${options.hostname}:${options.port}`
-    );
-    this.app.listen(options.port, options.hostname);
   }
 
-  loadIndex() {
+  public async start() {
+    this.state = await this.loadIndex();
+    console.info(
+      `Start typedoc server, visit http://${this.options.hostname}:${this.options.port}`
+    );
+    this.app.listen(this.options.port, this.options.hostname);
+  }
+
+  async loadIndex() {
     const filename = this.options.decompress ? "search.json.7z" : "search.json";
     const filePath = join(this.options.docDir, "assets", filename);
-    if (!existsSync) {
-      throw new Error(`File not found "${filePath}"`);
-    }
-    const jsonBuf = readFileSync(filePath);
-    let data: SearchData;
-    if (this.options.decompress) {
-      data = unshrink(jsonBuf);
-    } else {
-      data = JSON.parse(jsonBuf.toString());
-    }
-    const state: SearchState = {
-      data,
-      index: Index.load(data.index),
-    };
-    return state;
+    return await this.converter.loadSearch(
+      filePath,
+      this.options.decompress,
+      this.options.unpack
+    );
   }
 
   getResults(searchQuery: string) {
     // Remove wildcard search
     const searchText = searchQuery.replace(/\*/g, "");
     const results: SearchResult[] = [];
+
+    if (!this.state) {
+      this.logger.error(`State is\n${JSON.stringify(this.state, null, 2)}`);
+      throw new Error(
+        "state not set, forgotten to call this.loadIndex() before?"
+      );
+    }
 
     if (searchText.length < 2) {
       console.warn(`Search text to small: "${searchText}"`);

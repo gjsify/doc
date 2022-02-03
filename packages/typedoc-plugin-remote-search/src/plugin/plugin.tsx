@@ -1,6 +1,6 @@
 import { Renderer, Logger, JSX, DefaultThemeRenderContext } from "typedoc";
 import { writeFileSync, readFileSync, unlinkSync, existsSync } from "fs";
-import { shrink } from "../utils/json-shrink";
+import { Converter } from "../converter";
 import { join } from "path";
 import { PluginOptions } from "../types";
 
@@ -18,6 +18,7 @@ export class RemoteSearchIndexPlugin {
   private readonly customElementFilename = "search-custom-element.js";
   private scriptSettings: string;
   private scriptCustomElement?: string;
+  private converter: Converter;
 
   constructor(
     public logger: Logger,
@@ -27,6 +28,8 @@ export class RemoteSearchIndexPlugin {
     this.outputDirectory = this.renderer.application.options.getValue("out");
 
     this.scriptSettings = this.getScriptSettings();
+
+    this.converter = new Converter(logger);
 
     if (options.script)
       this.scriptCustomElement = this.getScriptCustomElement();
@@ -45,9 +48,9 @@ export class RemoteSearchIndexPlugin {
     return this.getScriptTags(context);
   }
 
-  private onRenderDone() {
+  private async onRenderDone() {
     this.copyScripts();
-    this.convertSearch();
+    await this.convertSearch();
   }
 
   /**
@@ -114,43 +117,25 @@ export class RemoteSearchIndexPlugin {
    * Instead of a search.js, we are using a search.json to load them more easily with node.js.
    * For this we need to convert the search.js to a search.json
    */
-  private convertSearch() {
+  private async convertSearch() {
     if (!this.outputDirectory) {
       this.logger.error("[RemoteSearch] outputDirectory not found!");
       return;
     }
 
-    const originalFileName = join(this.outputDirectory, "assets", "search.js");
+    const source = join(this.outputDirectory, "assets", "search.js");
     const targetFilename = this.options.compress
       ? "search.json.7z"
       : "search.json";
-    const targetJsonFile = join(this.outputDirectory, "assets", targetFilename);
+    const target = join(this.outputDirectory, "assets", targetFilename);
+    const deleteSource = true;
 
-    const removeStart = 'window.searchData = JSON.parse("';
-    const removeEnd = '");';
-
-    if (!existsSync(originalFileName)) {
-      this.logger.error(`[RemoteSearch] File not found "${originalFileName}"!`);
-      return;
-    }
-
-    this.logger.info("[RemoteSearch] Load original search.js file...");
-    let searchData = readFileSync(originalFileName, "utf8");
-
-    this.logger.info(
-      `[RemoteSearch] Convert original search.js file to ${targetFilename}...`
+    await this.converter.convertSearch(
+      source,
+      target,
+      deleteSource,
+      this.options.compressLevel,
+      this.options.pack
     );
-    searchData = searchData
-      .substring(removeStart.length, searchData.length - removeEnd.length)
-      .replace(/\\"/g, '"');
-
-    if (this.options.compress) {
-      writeFileSync(targetJsonFile, shrink(JSON.parse(searchData)));
-    } else {
-      writeFileSync(targetJsonFile, searchData);
-    }
-
-    this.logger.info("[RemoteSearch] Delete search.js file...");
-    unlinkSync(originalFileName);
   }
 }

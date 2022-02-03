@@ -14,8 +14,6 @@ npm install @gjsify/typedoc-plugin-remote-search
 
 ## Usage
 
-### Plugin
-
 Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installation/#command-line-interface):
 
 ```bash
@@ -30,35 +28,43 @@ const typeDocOptions = {
 };
 ```
 
-**Arguments**
+### Plugin Arguments
 
 ```bash
 $typedoc --plugin @gjsify/typedoc-plugin-remote-search --help
 
 Options:
+ --compressLevel             [Remote Search] The compression level 0-9, 0 is no compression, 1 the fastest and 9 the highest
  --hostname                  [Remote Search] A domain name or IP address of the search server
  --noCompress                [Remote Search] Disables the compression of the search.json
  --noReplaceElement          [Remote Search] Do not replace the search element with a custom element for out of the box working remote search
  --noScript                  [Remote Search] Do not insert client-side javascript into the theme (this way the search will not work without manual adjustments)
+ --pack                      [Remote Search] If true, additional compression is performed by jsonpack. Disabled by default because this can take a long time with large files
  --port                      [Remote Search] Port of remote search server
 ```
 
-### Server
-This plugin has a build in web server to run the search on the server side:
+## Cli
+
+This plugin also contains its own CLI with which the search server can be started or the search can be converted or converted back without the plugin.
+
+### Serve
+
+Build in web server to run the search on the server side:
 
 ```bash
-typedoc-server --doc-dir ./doc/my-docs --port 3000
+typedoc-server serve --doc-dir ./doc/my-docs --port 3000
 ```
 
-**Arguments**
+Possible arguments: 
 
-```bash
-$typedoc-server --help
+```
+$typedoc-server serve --help
 
-typedoc-server [args]
+typedoc-server serve [doc-dir]
+
+serves the documentation and starts the search server
 
 Options:
-      --version        Show version number                             [boolean]
   -d, --doc-dir        The directory in which your rendered typedoc
                        documentation is located              [string] [required]
       --port           Port of the search server        [number] [default: 3024]
@@ -72,11 +78,133 @@ Options:
       --decompress     This option should remain true if you have compressed the
                        json file                        [string] [default: true]
       --no-decompress  Disables the decompress option                   [string]
-      --help           Show help                                       [boolean]
+      --unpack         This value must be true if you have packed the json file
+                       before                          [string] [default: false]
 ```
+
 
 To see how the search works on the web server you can open the following URL with `any search term` in your browser: [localhost:3024/search/any search term](http://localhost:3024/search/any%20search%20term).
 
+### Other Commands
+
+There are more commands, for example to convert the search.js by hand
+
+```bash
+$typedoc-server --help
+
+Commands:
+  typedoc-server serve       serves the documentation and starts the search
+                             server
+  typedoc-server compress    Compresses the search.json, since this can take
+                             some time, this can also be done afterwards with
+                             this command
+  typedoc-server decompress  Decompresses the search.json.7z, this may be useful
+                             to compare the files to see how much memory the
+                             compression has saved
+  typedoc-server convert     Convert the search.js to search.json or
+                             search.json.7z, in this way this can also be done
+                             by hand without having to use the plugin for it
+  typedoc-server revert      Reverts the search.json(.z7) to the original
+                             search.js
+
+Options:
+  --version  Show version number                                       [boolean]
+  --help     Show help                                                 [boolean]
+```
+
+### Compress
+
+```bash
+$typedoc-server compress --help
+
+typedoc-server compress [source]
+
+Compresses the search.json, since this can take some time, this can also be done
+afterwards with this command
+
+Options:
+  --version   Show version number                                      [boolean]
+  --help      Show help                                                [boolean]
+  --source    The source file path. E.g ./docs/assets/search.json
+                                                             [string] [required]
+  --target    The destination file path. E.g ./docs/assets/search.json.7z
+                                                             [string] [required]
+  --compress  The compression level 0-9, 0 is no compression, 1 the fastest and
+              9 the highest                                [number] [default: 9]
+  --pack      If true, additional compression is performed by jsonpack. Disabled
+              by default because this can take a long time with large files
+                                                       [string] [default: false]
+```
+
+### Decompress
+
+```bash
+$typedoc-server decompress --help
+
+typedoc-server decompress [source]
+
+Decompresses the search.json.7z, this may be useful to compare the files to see
+how much memory the compression has saved
+
+Options:
+  --source   The source file path. E.g ./docs/assets/search.json.7z
+                                                             [string] [required]
+  --target   The destination file path. E.g ./docs/assets/search.json
+                                                             [string] [required]
+  --unpack   This value must be true if you have packed the json file before
+                                                       [string] [default: false]
+```
+
+### Convert
+
+```bash
+$typedoc-server convert --help
+
+typedoc-server convert [source]
+
+Convert the search.js to search.json or search.json.7z, in this way this can
+also be done by hand without having to use the plugin for it
+
+Options:
+  --source            The source file path. E.g ./docs/assets/search.js
+                                                             [string] [required]
+  --delete-source     If true the source file will be deleted after conversion
+                                                        [string] [default: true]
+  --no-delete-source  If true the source file will NOT be deleted after
+                      conversion                                        [string]
+  --target            The destination file path. E.g
+                      ./docs/assets/search.json.7z           [string] [required]
+  --compress          The compression level 0-9, 0 is no compression, 1 the
+                      fastest and 9 the highest            [number] [default: 9]
+  --pack              If true, additional compression is performed by jsonpack.
+                      Disabled by default because this can take a long time with
+                      large files                      [string] [default: false]
+```
+
+### Revert
+
+```bash
+$typedoc-server revert --help
+
+typedoc-server revert [source]
+
+Reverts the search.json(.z7) to the original search.js
+
+Options:
+  --source            The source file path. E.g ./docs/assets/search.json.7z
+                                                             [string] [required]
+  --delete-source     If true the source file will be deleted after conversion
+                                                        [string] [default: true]
+  --no-delete-source  If true the source file will NOT be deleted after
+                      conversion                                        [string]
+  --target            The destination file path. E.g ./docs/assets/search.json
+                                                             [string] [required]
+  --decompress        This option should remain true if you have compressed the
+                      json file                         [string] [default: true]
+  --no-decompress     Disables the decompress option                    [string]
+  --unpack            This value must be true if you have packed the json file
+                      before                           [string] [default: false]
+```
 
 ## Theme Integration
 
@@ -92,7 +220,7 @@ You insert the custom element provided by this plugin into the HTML code yoursel
 For this you can set the `--noReplaceElement` option of the plugin.
 
 ```jsx
-<tsd-search id="tsd-search" class="table-cell ready" base={context.relativeURL("./") + "/"} hostname="localhost" port="3024"></tsd-search>
+<tsd-search id="tsd-search" class="table-cell ready" base={context.relativeURL("./") + "/"}></tsd-search>
 ```
 
 You can also override the child html of the custom element to make adjustments to the style for the search input.
