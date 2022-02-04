@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const ribaWebpackConfig = require("@ribajs/webpack-config");
 const { resolve } = require("path");
 
@@ -34,4 +35,7 @@ const config = {
 };
 
 const webpackConfig = ribaWebpackConfig(config);
-module.exports = webpackConfig;
+module.exports = {
+  webpackConfig,
+  config,
+};

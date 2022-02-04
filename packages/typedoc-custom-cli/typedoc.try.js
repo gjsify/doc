@@ -6,5 +6,5 @@ exports.default = {
     tsconfig: "./tsconfig.try.json",
     entryPointStrategy: "resolve",
     exclude: ["index.d.ts"],
-    noScript: true,
+    disableSources: true,
 };

@@ -11,6 +11,7 @@
         "typedoc-theme"
     ],
     "devDependencies": {
+        "typedoc": "^0.22.11",
         "typescript": "^4.5.5"
     },
     "peerDependencies": {

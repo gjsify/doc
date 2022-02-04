@@ -1637,7 +1637,6 @@ __metadata:
     koa-compress: ^5.1.0
     koa-static: ^5.0.0
     lunr: ^2.3.9
-    lzma: ^2.3.2
     lzma-native: ^8.0.6
     ts-node: ^10.4.0
     typedoc: ^0.22.11
@@ -1720,6 +1719,7 @@ __metadata:
   resolution: "@gjsify/typedoc-theme@workspace:packages/typedoc-theme"
   dependencies:
     "@types/node": ^17.0.12
+    typedoc: ^0.22.11
     typescript: ^4.5.5
   peerDependencies:
     tslib: ^2.3.0
@@ -14923,15 +14923,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lzma@npm:^2.3.2":
-  version: 2.3.2
-  resolution: "lzma@npm:2.3.2"
-  bin:
-    lzma.js: bin/lzma.js
-  checksum: d4d13ba1788b882f5d2b431e0c29d6d7dc06a949299e9385c3a7270e0168eca45c3fa753ecdb273bfa53980eada3a669a8f65a264236452fe0fd0146c62f1722
-  languageName: node
-  linkType: hard
-
 "macos-release@npm:^2.5.0":
   version: 2.5.0
   resolution: "macos-release@npm:2.5.0"
@@ -20732,7 +20723,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:*, typedoc@npm:^0.22.11":
+"typedoc@npm:^0.22.11":
   version: 0.22.11
   resolution: "typedoc@npm:0.22.11"
   dependencies:

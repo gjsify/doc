@@ -2,6 +2,25 @@ import type { JSX } from "typedoc";
 import { JsxHtmlGlobalProps } from "./jsx-html-global-props";
 
 /**
+ * Properties permitted on the `<meta>` element.
+ *
+ * Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+ */
+export interface JsxMetaElementProps extends JsxHtmlGlobalProps {
+  "http-equiv"?:
+    | "content-security-policy"
+    | "content-type"
+    | "default-style"
+    | "x-ua-compatible"
+    | "refresh";
+  charSet?: "utf-8";
+  content?: string;
+  name?: string;
+  // This is missing in JsxLinkElementProps of typedoc
+  media?: string;
+}
+
+/**
  * Properties permitted on the `<link>` element.
  *
  * Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
@@ -42,9 +61,14 @@ export interface JsxTsdSearchProps extends JsxHtmlGlobalProps {
 
 export type JsxTsdNavbarProps = JsxHtmlGlobalProps;
 
+export type JsxBs5ThemeButtonProps = JsxHtmlGlobalProps;
+
 export interface IntrinsicElements extends JSX.JSX.IntrinsicElements {
+  link: JsxLinkElementProps;
+  meta: JsxMetaElementProps;
+  // Custom Elements
   "router-view": JsxHtmlGlobalProps;
   "tsd-search": JsxTsdSearchProps;
   "tsd-navbar": JsxTsdNavbarProps;
-  link: JsxLinkElementProps;
+  "bs5-theme-button": JsxBs5ThemeButtonProps;
 }

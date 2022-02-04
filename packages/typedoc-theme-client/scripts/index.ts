@@ -1,7 +1,8 @@
 import { ready } from "@ribajs/utils/src/dom";
 import { Riba, View, coreModule } from "@ribajs/core";
 import { routerModule, FadeTransition } from "@ribajs/router";
-import { Bs5IconComponent } from "@ribajs/bs5";
+import { Bs5IconComponent, Bs5ThemeButtonComponent } from "@ribajs/bs5";
+import { SearchOptions } from "./types";
 
 // Own
 import * as components from "./components";
@@ -11,6 +12,12 @@ import * as formatters from "./formatters";
 
 // From typedoc default theme
 import { typedocBootstrap } from "./typedoc-bootstrap";
+
+declare global {
+  interface Window {
+    remoteSearchOptions?: Partial<SearchOptions>;
+  }
+}
 
 export class CSRApp {
   protected view?: View;
@@ -37,7 +44,10 @@ export class CSRApp {
         defaultTransition: new FadeTransition(),
       })
     );
-    this.riba.module.component.regists({ Bs5IconComponent });
+    this.riba.module.component.regists({
+      Bs5IconComponent,
+      Bs5ThemeButtonComponent,
+    });
 
     this.view = this.riba.bind(document.body, this.model);
 

@@ -3,7 +3,8 @@ import { pack, unpack } from "jsonpack";
 // const lzma: any = require("lzma");
 import lzma, { Preset } from "lzma-native";
 
-import { readFileSync, existsSync, unlinkSync, writeFileSync } from "fs";
+import { existsSync } from "fs";
+import { readFile, unlink, writeFile } from "fs/promises";
 import { SearchState, SearchData } from "./types";
 import { Index } from "lunr";
 import { Logger } from "typedoc";
@@ -23,7 +24,7 @@ export class Converter {
     if (!existsSync(filepath)) {
       throw new Error(`File not found "${filepath}"`);
     }
-    const jsonBuf = readFileSync(filepath);
+    const jsonBuf = await readFile(filepath);
     let data: T;
     if (decompress) {
       data = await this.unshrink<T>(jsonBuf, unpack);
@@ -68,7 +69,7 @@ export class Converter {
     }
 
     this.logger.info("[RemoteSearch] Load original search.js file...");
-    let searchData = readFileSync(source, "utf8");
+    let searchData = await readFile(source, "utf8");
 
     this.logger.info(
       `[RemoteSearch] Convert original search.js file to ${basename(target)}...`
@@ -92,7 +93,7 @@ export class Converter {
 
     if (deleteSource) {
       this.logger.info(`[RemoteSearch] Delete ${basename(source)} file...`);
-      unlinkSync(source);
+      await unlink(source);
     }
   }
 
@@ -107,10 +108,10 @@ export class Converter {
     const jsSource = `window.searchData = JSON.parse("${JSON.stringify(
       data
     )}");`;
-    writeFileSync(target, jsSource);
+    await writeFile(target, jsSource);
     if (deleteSource) {
       this.logger.info(`[RemoteSearch] Delete ${basename(source)} file...`);
-      unlinkSync(source);
+      await unlink(source);
     }
   }
 
@@ -130,7 +131,7 @@ export class Converter {
         compress
       );
     }
-    writeFileSync(target, data);
+    await writeFile(target, data);
   }
 
   /**

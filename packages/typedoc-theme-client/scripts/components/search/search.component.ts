@@ -28,7 +28,20 @@ export class SearchComponent extends Component {
 
   protected async beforeBind() {
     await super.beforeBind();
+    this.initSettings();
     this.initSearch();
+  }
+
+  initSettings() {
+    if (
+      this.scope.hostname === "localhost" &&
+      window.remoteSearchOptions?.hostname
+    ) {
+      this.scope.hostname = window.remoteSearchOptions.hostname;
+    }
+    if (!this.scope.port && window.remoteSearchOptions?.port) {
+      this.scope.port = window.remoteSearchOptions.port;
+    }
   }
 
   initSearch() {

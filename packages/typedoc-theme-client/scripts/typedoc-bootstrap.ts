@@ -7,7 +7,6 @@ import { MenuHighlight } from "./typedoc-components/menu-highlight";
 import { Signature } from "./typedoc-components/signature";
 import { Toggle } from "./typedoc-components/toggle";
 import { Filter } from "./typedoc-components/filter";
-import { initTheme } from "./services/theme";
 
 export const typedocBootstrap = () => {
   registerComponent(MenuHighlight, ".menu-highlight");
@@ -18,11 +17,6 @@ export const typedocBootstrap = () => {
     registerComponent(Filter, "#tsd-filter");
   } else {
     document.documentElement.classList.add("no-filter");
-  }
-
-  const themeChoice = document.getElementById("theme");
-  if (themeChoice) {
-    initTheme(themeChoice as HTMLOptionElement);
   }
 
   const app: Application = new Application();

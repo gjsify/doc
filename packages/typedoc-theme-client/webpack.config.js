@@ -1,4 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const csrConfig = require("./webpack.csr");
+const { webpackConfig } = require("./webpack.csr");
 
-module.exports = [csrConfig];
+module.exports = [webpackConfig];

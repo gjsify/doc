@@ -25,6 +25,7 @@
     "GXPS",
     "jsonpack",
     "lzma",
+    "navbars",
     "Pango",
     "PDLNA",
     "pnpify",
@@ -58,5 +59,11 @@
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
   }
 }

@@ -22,6 +22,23 @@ export const defaultLayout = (
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+      {/* The page supports both light and dark color schemes, with light being default */}
+      <meta name="color-scheme" content="light dark" />
+
+      {/* Meta Theme Color is also supported on Safari and Chrome */}
+      <meta
+        name="theme-color"
+        content="#ffffff"
+        media="(prefers-color-scheme: light)"
+      />
+      <meta
+        name="theme-color"
+        content="#eeeeee"
+        media="(prefers-color-scheme: dark)"
+      />
+
+      <meta name="msapplication-TileColor" content="#4a86cf" />
+
       <link
         rel="shortcut icon"
         href={context.relativeURL("assets/favicon.ico")}
@@ -49,8 +66,6 @@ export const defaultLayout = (
         href={context.relativeURL("safari-pinned-tab.svg")}
         color="#4a86cf"
       />
-      <meta name="msapplication-TileColor" content="#4a86cf" />
-      <meta name="theme-color" content="#ffffff" />
 
       <link
         rel="stylesheet"
@@ -69,16 +84,19 @@ export const defaultLayout = (
     <body>
       {context.hook("body.begin")}
       <script>
-        <JSX.Raw html='document.body.classList.add(localStorage.getItem("tsd-theme") || "os")' />
+        <JSX.Raw html='document.body.classList.add(localStorage.getItem("bs5-theme") || "theme-os")' />
       </script>
-      {context.header(props)}
+      {context.navbar(props)}
 
       <router-view id="main" listen-all-links="true">
-        <div class="container container-main">
-          <div class="row">
-            <div class="col-8 col-content">{props.template(props)}</div>
-            <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-              {context.navigation(props)}
+        <div>
+          {context.header(props)}
+          <div class="container container-main">
+            <div class="row">
+              <div class="col-8 col-content">{props.template(props)}</div>
+              <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+                {context.navigation(props)}
+              </div>
             </div>
           </div>
         </div>

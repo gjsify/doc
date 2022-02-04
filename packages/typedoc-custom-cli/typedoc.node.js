@@ -5,5 +5,5 @@ exports.default = {
     tsconfig: "./tsconfig.node.json",
     entryPointStrategy: "resolve",
     exclude: ["index.d.ts"],
-    noScript: true,
+    disableSources: true,
 };
