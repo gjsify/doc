@@ -12,7 +12,7 @@ export function footer(
   return (
     <footer
       class={classNames({
-        "with-border-bottom": !hideGenerator,
+        "page-footer": true,
       })}
     >
       <div class="container">
@@ -37,6 +37,49 @@ export function footer(
         <p>
           Theme <bs5-theme-button></bs5-theme-button>
         </p>
+        <div class="table-cell" id="tsd-widgets">
+          <div id="tsd-filter">
+            <a
+              href="#"
+              class="tsd-widget options no-caption"
+              data-toggle="options"
+            >
+              Options
+            </a>
+            <div class="tsd-filter-group">
+              <div class="tsd-select" id="tsd-filter-visibility">
+                <span class="tsd-select-label">All</span>
+                <ul class="tsd-select-list">
+                  <li data-value="public">Public</li>
+                  <li data-value="protected">Public/Protected</li>
+                  <li data-value="private" class="selected">
+                    All
+                  </li>
+                </ul>
+              </div>{" "}
+              <input type="checkbox" id="tsd-filter-inherited" checked={true} />
+              <label class="tsd-widget" for="tsd-filter-inherited">
+                Inherited
+              </label>
+              {!context.options.getValue("excludeExternals") && (
+                <span>
+                  <input
+                    type="checkbox"
+                    id="tsd-filter-externals"
+                    checked={true}
+                  />
+                  <label class="tsd-widget" for="tsd-filter-externals">
+                    Externals
+                  </label>
+                </span>
+              )}
+            </div>
+          </div>
+
+          <a href="#" class="tsd-widget menu no-caption" data-toggle="menu">
+            Menu
+          </a>
+        </div>
       </div>
 
       {!hideGenerator && (

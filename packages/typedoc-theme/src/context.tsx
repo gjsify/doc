@@ -7,7 +7,7 @@ import {
   RendererHooks,
 } from "typedoc";
 import * as JSX from "./jsx";
-import { header, footer, navbar } from "./partials";
+import { header, footer, navbar, sidebar } from "./partials";
 import { defaultLayout } from "./layouts/default";
 import { readFileSync } from "fs";
 import { resolve } from "path";
@@ -47,16 +47,17 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
 
   override header: Partial = bind(header, this);
   public navbar: Partial = bind(navbar, this);
+  public sidebar: Partial = bind(sidebar, this);
   override footer: Partial = bind(footer, this);
 
-  public absoluteUrl = (url: string | undefined): string | undefined => {
-    if (!url) return;
+  public absoluteUrl = (url: string | undefined): string => {
+    if (!url) return "";
     const isAbsolute = this.urlPrefix.test(url);
     if (isAbsolute) {
       // TODO append base path from settings
       return url;
     }
-    return this.relativeURL(url);
+    return this.relativeURL(url) || "";
   };
 
   public getAssetStr(name: string) {

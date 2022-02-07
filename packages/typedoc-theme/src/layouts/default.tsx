@@ -84,8 +84,9 @@ export const defaultLayout = (
     <body>
       {context.hook("body.begin")}
       <script>
-        <JSX.Raw html='document.body.classList.add(localStorage.getItem("bs5-theme") || "theme-os")' />
+        <JSX.Raw html='document.documentElement.classList.add(localStorage.getItem("bs5-theme") || "theme-os")' />
       </script>
+      {context.sidebar(props)}
       {context.navbar(props)}
 
       <router-view id="main" listen-all-links="true">
@@ -94,7 +95,9 @@ export const defaultLayout = (
           <div class="container container-main">
             <div class="row">
               <div class="col-8 col-content">{props.template(props)}</div>
+              {/* TODO move this to sidebar */}
               <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+                {/* TODO create template of this to inject this into the sidebar */}
                 {context.navigation(props)}
               </div>
             </div>

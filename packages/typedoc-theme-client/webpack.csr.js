@@ -4,7 +4,6 @@ const { resolve } = require("path");
 
 const source = resolve(__dirname);
 const tsSourceDir = resolve(source, "scripts");
-const assets = resolve(source, "assets");
 const outputPath = resolve("../typedoc-theme/assets");
 const scssSourceDir = resolve(source, "styles");
 const tsIndexPath = resolve(tsSourceDir, "index.ts");
@@ -12,12 +11,12 @@ const scssIndexPath = resolve(scssSourceDir, "main.scss");
 
 const config = {
   template: "local",
+  publicPath: outputPath,
   copyAssets: {
     enable: true,
     images: true,
     scss: false,
     iconset: true,
-    foldername: assets,
   },
   tsSourceDir,
   scssSourceDir,

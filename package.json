@@ -67,6 +67,7 @@
   },
   "workspaces": [
     "packages/*",
+    "!vendor/riba",
     "vendor/riba/packages/*",
     "vendor/riba/backend/*",
     "vendor/riba/infra/*",

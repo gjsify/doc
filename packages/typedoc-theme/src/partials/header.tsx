@@ -7,7 +7,7 @@ export const header = (
   context: GjsifyThemeContext,
   props: PageEvent<Reflection>
 ): JSX.JsxElement => (
-  <header>
+  <header class="page-header">
     <div class="tsd-page-title">
       <div class="container">
         {!!props.model.parent && (

@@ -3,9 +3,7 @@
 
 :root {
     /* Light */
-    --light-color-background: #fcfcfc;
     --light-color-secondary-background: #fff;
-    --light-color-text: #222;
     --light-color-text-aside: #707070;
     --light-color-link: #4da6ff;
     --light-color-menu-divider: #eee;
@@ -26,9 +24,7 @@
     --light-external-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='10' height='10'><path fill-opacity='0' stroke='%23000' stroke-width='10' d='m43,35H5v60h60V57M45,5v10l10,10-30,30 20,20 30-30 10,10h10V5z'/></svg>");
 
     /* Dark */
-    --dark-color-background: #36393f;
     --dark-color-secondary-background: #2f3136;
-    --dark-color-text: #ffffff;
     --dark-color-text-aside: #e6e4e4;
     --dark-color-link: #00aff4;
     --dark-color-menu-divider: #eee;
@@ -51,9 +47,7 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --color-background: var(--light-color-background);
         --color-secondary-background: var(--light-color-secondary-background);
-        --color-text: var(--light-color-text);
         --color-text-aside: var(--light-color-text-aside);
         --color-link: var(--light-color-link);
         --color-menu-divider: var(--light-color-menu-divider);
@@ -77,9 +71,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-background: var(--dark-color-background);
         --color-secondary-background: var(--dark-color-secondary-background);
-        --color-text: var(--dark-color-text);
         --color-text-aside: var(--dark-color-text-aside);
         --color-link: var(--dark-color-link);
         --color-menu-divider: var(--dark-color-menu-divider);
@@ -105,10 +97,8 @@ body {
     margin: 0;
 }
 
-body.theme-light {
-    --color-background: var(--light-color-background);
-    --color-secondary-background: var(--light-color-secondary-background);
-    --color-text: var(--light-color-text);
+:root.theme-light {
+    --color-secondary-background: var(--light-color-secondary-background);    
     --color-text-aside: var(--light-color-text-aside);
     --color-link: var(--light-color-link);
     --color-menu-divider: var(--light-color-menu-divider);
@@ -129,10 +119,8 @@ body.theme-light {
     --external-icon: var(--light-external-icon);
 }
 
-body.theme-dark {
-    --color-background: var(--dark-color-background);
+:root.theme-dark {
     --color-secondary-background: var(--dark-color-secondary-background);
-    --color-text: var(--dark-color-text);
     --color-text-aside: var(--dark-color-text-aside);
     --color-link: var(--dark-color-link);
     --color-menu-divider: var(--dark-color-menu-divider);
@@ -356,10 +344,10 @@ dd {
 }
 
 body {
-	background: var(--color-background);
+	background: var(--bs-body-bg);
 	font-family: "Segoe UI", sans-serif;
 	font-size: 16px;
-	color: var(--color-text);
+	color: var(--bs-body-color);
 }
 a {
 	color: var(--color-link);
@@ -429,7 +417,7 @@ blockquote {
         width: 28%;
     }
     html .tsd-navigation {
-        padding-left: 10px;
+        // padding-left: 10px;
     }
 }
 
@@ -677,9 +665,6 @@ footer {
 		content: "";
 		display: table;
 	}
-	&.with-border-bottom {
-		border-bottom: 1px solid var(--color-panel-divider);
-	}
 	.tsd-legend-group {
 		font-size: 0;
 	}
@@ -860,13 +845,13 @@ footer {
 	}
 }
 .tsd-navigation {
-	margin: 0 0 0 40px;
+	// margin: 0 0 0 40px;
 	a {
 		display: block;
 		padding-top: 2px;
 		padding-bottom: 2px;
 		border-left: 2px solid transparent;
-		color: var(--color-text);
+		color: var(--bs-body-color);
 		text-decoration: none;
 		transition: border-left-color 0.1s;
 		&:hover {
@@ -1035,7 +1020,7 @@ footer {
 			font-weight: bold;
 		}
 		tr {
-			background: var(--color-background);
+			background: var(--bs-body-bg);
 			&:nth-child(even) {
 				background: var(--color-secondary-background);
 			}
@@ -1124,7 +1109,7 @@ footer {
 			outline: 0;
 			border: 0;
 			background: transparent;
-			color: var(--color-text);
+			color: var(--bs-body-color);
 		}
 		label {
 			position: absolute;
@@ -1143,7 +1128,7 @@ footer {
 		box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 		li {
 			padding: 0 10px;
-			background-color: var(--color-background);
+			background-color: var(--bs-body-bg);
 			&:nth-child(even) {
 				background-color: var(--color-panel);
 			}
@@ -1453,7 +1438,7 @@ input[type="checkbox"]:checked {
 		transition: visibility 0s 0.2s, opacity 0.2s;
 		li {
 			padding: 0 20px 0 0;
-			background-color: var(--color-background);
+			background-color: var(--bs-body-bg);
 			&:before {
 				background-position: 40px 0;
 			}
@@ -1491,7 +1476,7 @@ img {
 .tsd-anchor-icon {
 	margin-left: 10px;
 	vertical-align: middle;
-	color: var(--color-text);
+	color: var(--bs-body-color);
 	svg {
 		width: 1em;
 		height: 1em;

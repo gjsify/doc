@@ -7,7 +7,8 @@ import {
   ContainerReflection,
 } from "typedoc";
 import { copyFileSync, readdirSync } from "fs";
-import { resolve, basename } from "path";
+import { resolve, basename, dirname } from "path";
+import { mkdir } from "./lib";
 
 import { GjsifyThemeContext } from "./context";
 
@@ -40,7 +41,9 @@ export class GjsifyTheme extends DefaultTheme {
 
   copyAsset(filename: string, outputDirectory: string) {
     const src = resolve(__dirname, "../assets", filename);
-    const dest = resolve(outputDirectory, "assets", filename);
+    const destDir = resolve(outputDirectory, "assets");
+    const dest = resolve(destDir, filename);
+    mkdir(destDir);
     this.logger.info(`[GjsifyTheme] ${filename} -> ${dest}`);
     copyFileSync(src, dest);
   }
@@ -53,7 +56,9 @@ export class GjsifyTheme extends DefaultTheme {
 
   copyFavicon(filepath: string, outputDirectory: string) {
     const src = resolve(filepath);
-    const dest = resolve(outputDirectory, "assets", basename(filepath));
+    const destDir = resolve(outputDirectory, "assets");
+    const dest = resolve(destDir, basename(filepath));
+    mkdir(destDir);
     this.logger.info(`[GjsifyTheme] ${filepath} -> ${dest}`);
     copyFileSync(src, dest);
   }
@@ -74,6 +79,31 @@ export class GjsifyTheme extends DefaultTheme {
     }
   }
 
+  copyIcon(filepath: string, outputDirectory: string) {
+    const src = resolve(filepath);
+    const destDir = resolve(outputDirectory, "assets/iconset/svg");
+    const dest = resolve(destDir, basename(filepath));
+    mkdir(destDir);
+    this.logger.info(`[GjsifyTheme] ${filepath} -> ${dest}`);
+    copyFileSync(src, dest);
+  }
+
+  copyIconset(outputDirectory: string) {
+    const dir = resolve(__dirname, "../assets/iconset/svg");
+    const files = readdirSync(dir);
+    for (const file of files) {
+      if (
+        file.endsWith(".png") ||
+        file.endsWith(".svg") ||
+        file.endsWith(".ico") ||
+        file.endsWith(".xml") ||
+        file.endsWith(".webmanifest")
+      ) {
+        this.copyIcon(resolve(dir, file), outputDirectory);
+      }
+    }
+  }
+
   onGjsifyPageEnd(page: PageEvent<ContainerReflection>) {
     this.logger.info(`[GjsifyTheme] Render page "${page.filename}"...`);
   }
@@ -85,6 +115,7 @@ export class GjsifyTheme extends DefaultTheme {
       renderer.outputDirectory
     );
     this.copyFavicons(renderer.outputDirectory);
+    this.copyIconset(renderer.outputDirectory);
   }
 
   onGjsifyRendererBegin(renderer: RendererEvent) {

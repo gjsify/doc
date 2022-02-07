@@ -61,7 +61,26 @@ export interface JsxTsdSearchProps extends JsxHtmlGlobalProps {
 
 export type JsxTsdNavbarProps = JsxHtmlGlobalProps;
 
-export type JsxBs5ThemeButtonProps = JsxHtmlGlobalProps;
+export interface JsxBs5ThemeButtonProps extends JsxHtmlGlobalProps {
+  mode?: "dropdown" | "icon";
+  labels?: string; // JSON string
+  "light-icon-src"?: string;
+  "dark-icon-src"?: string;
+  "icon-size"?: string;
+}
+
+export interface JsxBs5SidebarProps extends JsxHtmlGlobalProps {
+  position?: "left" | "right";
+  // .. todo more
+}
+
+export type JsxBs5ToggleButtonProps = JsxHtmlGlobalProps;
+
+export interface JsxBs5IconProps extends JsxHtmlGlobalProps {
+  src: string;
+  size?: string;
+  // .. todo more
+}
 
 export interface IntrinsicElements extends JSX.JSX.IntrinsicElements {
   link: JsxLinkElementProps;
@@ -71,4 +90,7 @@ export interface IntrinsicElements extends JSX.JSX.IntrinsicElements {
   "tsd-search": JsxTsdSearchProps;
   "tsd-navbar": JsxTsdNavbarProps;
   "bs5-theme-button": JsxBs5ThemeButtonProps;
+  "bs5-sidebar": JsxBs5SidebarProps;
+  "bs5-toggle-button": JsxBs5ToggleButtonProps;
+  "bs5-icon": JsxBs5IconProps;
 }

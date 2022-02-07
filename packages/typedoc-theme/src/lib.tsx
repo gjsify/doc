@@ -9,6 +9,8 @@ import {
   JSX,
 } from "typedoc";
 
+import { existsSync, mkdirSync } from "fs";
+
 export function stringify(data: unknown) {
   if (typeof data === "bigint") {
     return data.toString() + "n";
@@ -110,4 +112,10 @@ export function renderTypeParametersSignature(
       )}
     </>
   );
+}
+
+export function mkdir(dir: string) {
+  if (!existsSync(dir)) {
+    mkdirSync(dir, { recursive: true });
+  }
 }

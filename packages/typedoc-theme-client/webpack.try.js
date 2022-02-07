@@ -4,8 +4,8 @@ const { config } = require("./webpack.csr");
 const { resolve } = require("path");
 const outputPath = resolve("../../docs/try/assets");
 
+config.publicPath = outputPath;
 config.output.path = outputPath;
-config.copyAssets.foldername = config.outputPath;
 
 console.debug("config", config);
 
