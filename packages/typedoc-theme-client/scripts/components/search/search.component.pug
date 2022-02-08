@@ -1,7 +1,8 @@
-.field
-  label.tsd-widget.search.no-caption(for='tsd-search-field').
-    Search
-  input#tsd-search-field(type='text')
-ul.results
+.search-group
+  span#tsd-search-field-addon
+    bs5-icon(src="/assets/iconset/svg/icon_search2.svg", size="16")
+  input.form-control#tsd-search-field(type='search', aria-label='Search', aria-describedby='tsd-search-field-addon', autocomplete="off", spellcheck="false")
+
+ul.list-group.results.card.px-0.border-top-0
   li.state.loading Preparing remote search server...
   li.state.failure The remote search server is not available

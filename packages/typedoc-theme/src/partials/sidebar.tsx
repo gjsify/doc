@@ -7,14 +7,15 @@ export const sidebar = (
   props: PageEvent<Reflection>
 ): JSX.JsxElement => (
   <bs5-sidebar
-    class="bg-theme text-theme-light-dark text-theme-dark-light"
+    class="bg-theme-dark-dark bg-theme-light-white text-theme-light-dark text-theme-dark-light border-end border-gray p-3"
     id="left-sidebar"
-    container-selector=".container-main, .page-header, .page-footer"
+    container-selector="router-view, tsd-footer"
     position="left"
     auto-hide-on-slimmer-than="xl"
     auto-show-on-wider-than="xl"
     mode-on-slimmer-than="xl"
+    width="300px"
   >
-    <div>{context.navigation(props)}</div>
+    <tsd-navigation>{context.navigation(props)}</tsd-navigation>
   </bs5-sidebar>
 );

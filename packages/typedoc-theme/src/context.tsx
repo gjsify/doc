@@ -7,7 +7,7 @@ import {
   RendererHooks,
 } from "typedoc";
 import * as JSX from "./jsx";
-import { header, footer, navbar, sidebar } from "./partials";
+import { header, footer, navbar, sidebar, navigation } from "./partials";
 import { defaultLayout } from "./layouts/default";
 import { readFileSync } from "fs";
 import { resolve } from "path";
@@ -46,9 +46,11 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
   override defaultLayout: Partial = bind(defaultLayout, this);
 
   override header: Partial = bind(header, this);
+  override footer: Partial = bind(footer, this);
+  override navigation: Partial = bind(navigation, this);
+
   public navbar: Partial = bind(navbar, this);
   public sidebar: Partial = bind(sidebar, this);
-  override footer: Partial = bind(footer, this);
 
   public absoluteUrl = (url: string | undefined): string => {
     if (!url) return "";

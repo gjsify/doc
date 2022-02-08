@@ -148,7 +148,7 @@ export class SearchComponent extends Component {
       const row = res[i];
 
       const item = document.createElement("li");
-      item.classList.value = row.classes;
+      item.classList.add(...row.classes.split(" "), "list-group-item");
 
       const anchor = document.createElement("a");
       anchor.href = this.scope.base + row.url;
@@ -164,18 +164,18 @@ export class SearchComponent extends Component {
    * Move the highlight within the result set.
    */
   setCurrentResult(results: HTMLElement, dir: number) {
-    let current = results.querySelector(".current");
-    if (!current) {
-      current = results.querySelector(
+    let active = results.querySelector(".active");
+    if (!active) {
+      active = results.querySelector(
         dir == 1 ? "li:first-child" : "li:last-child"
       );
-      if (current) {
-        current.classList.add("current");
+      if (active) {
+        active.classList.add("active");
       }
     } else {
-      let rel: Element | undefined = current;
+      let rel: Element | undefined = active;
       // Tricky: We have to check that rel has an offsetParent so that users can't mark a hidden result as
-      // current with the arrow keys.
+      // active with the arrow keys.
       if (dir === 1) {
         do {
           rel = rel.nextElementSibling || undefined;
@@ -187,8 +187,8 @@ export class SearchComponent extends Component {
       }
 
       if (rel) {
-        current.classList.remove("current");
-        rel.classList.add("current");
+        active.classList.remove("active");
+        rel.classList.add("active");
       }
     }
   }
@@ -197,14 +197,14 @@ export class SearchComponent extends Component {
    * Navigate to the highlighted result.
    */
   gotoCurrentResult(results: HTMLElement, field: HTMLInputElement) {
-    let current = results.querySelector(".current");
+    let active = results.querySelector(".active");
 
-    if (!current) {
-      current = results.querySelector("li:first-child");
+    if (!active) {
+      active = results.querySelector("li:first-child");
     }
 
-    if (current) {
-      const link = current.querySelector("a");
+    if (active) {
+      const link = active.querySelector("a");
       if (link) {
         window.location.href = link.href;
       }

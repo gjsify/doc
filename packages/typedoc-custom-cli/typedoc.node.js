@@ -5,5 +5,6 @@ exports.default = {
     tsconfig: "./tsconfig.node.json",
     entryPointStrategy: "resolve",
     exclude: ["index.d.ts"],
-    disableSources: true,
+    disableSources: false,
+    name: "node-gtk",
 };

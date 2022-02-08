@@ -90,18 +90,16 @@ export const defaultLayout = (
       {context.navbar(props)}
 
       <router-view id="main" listen-all-links="true">
-        <div>
+        <div class="container-main">
           {context.header(props)}
-          <div class="container container-main">
+          <div class="container">
             <div class="row">
-              <div class="col-8 col-content">{props.template(props)}</div>
-              {/* TODO move this to sidebar */}
-              <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-                {/* TODO create template of this to inject this into the sidebar */}
-                {context.navigation(props)}
-              </div>
+              <div class="col-12">{props.template(props)}</div>
             </div>
           </div>
+          <template id="tsd-navigation-template">
+            {context.navigation(props)}
+          </template>
         </div>
       </router-view>
 

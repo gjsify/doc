@@ -5,5 +5,6 @@ exports.default = {
     tsconfig: "./tsconfig.gjs.json",
     entryPointStrategy: "resolve",
     exclude: ["index.d.ts"],
-    disableSources: true,
+    disableSources: false,
+    name: "GJS",
 };

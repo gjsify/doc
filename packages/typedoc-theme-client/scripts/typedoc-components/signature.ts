@@ -143,10 +143,12 @@ export class Signature extends Component {
 
   /**
    * Triggered when the user clicks onto a signature header.
+   * @example http://localhost:3024/classes/Zeitgeist.ConnmanManagerDBus.html#emit
    *
    * @param e  The related event object.
    */
   private onClick(e: Event) {
+    console.debug("[Signature] onClick", this);
     this.groups.forEach((group, index) => {
       if (group.signature === e.currentTarget) {
         this.setIndex(index);

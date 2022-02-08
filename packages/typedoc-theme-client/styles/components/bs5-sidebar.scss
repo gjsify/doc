@@ -1,0 +1,5 @@
+bs5-sidebar {
+    margin-top: $default-navbar-height;
+    max-height: calc(100vh - $default-navbar-height);
+    overflow: auto;
+}

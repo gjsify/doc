@@ -16,7 +16,7 @@ export interface JsxMetaElementProps extends JsxHtmlGlobalProps {
   charSet?: "utf-8";
   content?: string;
   name?: string;
-  // This is missing in JsxLinkElementProps of typedoc
+  // This is missing in JsxMetaElementProps of typedoc
   media?: string;
 }
 
@@ -61,6 +61,12 @@ export interface JsxTsdSearchProps extends JsxHtmlGlobalProps {
 
 export type JsxTsdNavbarProps = JsxHtmlGlobalProps;
 
+export type JsxTsdNavigationProps = JsxHtmlGlobalProps;
+
+export type JsxTsdHeaderProps = JsxHtmlGlobalProps;
+
+export type JsxTsdFooterProps = JsxHtmlGlobalProps;
+
 export interface JsxBs5ThemeButtonProps extends JsxHtmlGlobalProps {
   mode?: "dropdown" | "icon";
   labels?: string; // JSON string
@@ -70,16 +76,30 @@ export interface JsxBs5ThemeButtonProps extends JsxHtmlGlobalProps {
 }
 
 export interface JsxBs5SidebarProps extends JsxHtmlGlobalProps {
+  "container-selector"?: string;
   position?: "left" | "right";
-  // .. todo more
+  mode?: "overlap" | "move" | "side";
+  width?: string;
+  "auto-show-on-wider-than"?: string;
+  "auto-hide-on-slimmer-than"?: string;
+  "force-hide-on-location-pathnames"?: string;
+  "force-show-on-location-pathnames"?: string;
+  "mode-on-slimmer-than"?: string;
+  "watch-new-page-ready-event"?: string;
+  "close-on-swipe"?: string;
 }
 
-export type JsxBs5ToggleButtonProps = JsxHtmlGlobalProps;
+export interface JsxBs5ToggleButtonProps extends JsxHtmlGlobalProps {
+  "target-id": string;
+}
 
 export interface JsxBs5IconProps extends JsxHtmlGlobalProps {
-  src: string;
   size?: string;
-  // .. todo more
+  width?: string;
+  height?: string;
+  src: string;
+  color?: string;
+  direction?: string;
 }
 
 export interface IntrinsicElements extends JSX.JSX.IntrinsicElements {
@@ -88,7 +108,10 @@ export interface IntrinsicElements extends JSX.JSX.IntrinsicElements {
   // Custom Elements
   "router-view": JsxHtmlGlobalProps;
   "tsd-search": JsxTsdSearchProps;
+  "tsd-navigation": JsxTsdNavigationProps;
   "tsd-navbar": JsxTsdNavbarProps;
+  "tsd-header": JsxTsdHeaderProps;
+  "tsd-footer": JsxTsdFooterProps;
   "bs5-theme-button": JsxBs5ThemeButtonProps;
   "bs5-sidebar": JsxBs5SidebarProps;
   "bs5-toggle-button": JsxBs5ToggleButtonProps;

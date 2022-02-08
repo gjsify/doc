@@ -7,8 +7,8 @@ import {
   ContainerReflection,
 } from "typedoc";
 import { copyFileSync, readdirSync } from "fs";
-import { resolve, basename, dirname } from "path";
-import { mkdir } from "./lib";
+import { resolve, basename } from "path";
+import { mkdir } from "./utils";
 
 import { GjsifyThemeContext } from "./context";
 
@@ -111,7 +111,13 @@ export class GjsifyTheme extends DefaultTheme {
   onGjsifyRendererEnd(renderer: RendererEvent) {
     this.logger.info("[GjsifyTheme] onRendererEnd");
     this.copyAssets(
-      ["logo.svg", "main.bundle.js", "main.css", "vendors.bundle.js"],
+      [
+        "logo.svg",
+        "logo-light.svg",
+        "main.bundle.js",
+        "main.css",
+        "vendors.bundle.js",
+      ],
       renderer.outputDirectory
     );
     this.copyFavicons(renderer.outputDirectory);

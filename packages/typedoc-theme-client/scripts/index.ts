@@ -12,10 +12,14 @@ import * as formatters from "./formatters";
 
 // From typedoc default theme
 import { typedocBootstrap } from "./typedoc-bootstrap";
+import { EventDispatcher } from "@ribajs/events";
+
+import type { Application } from "./typedoc-app";
 
 declare global {
   interface Window {
     remoteSearchOptions?: Partial<SearchOptions>;
+    app: Application;
   }
 }
 
@@ -23,6 +27,7 @@ export class CSRApp {
   protected view?: View;
   protected riba = new Riba();
   protected model: any = {};
+  protected routerEvents: EventDispatcher;
 
   constructor() {
     this.riba.configure({
@@ -56,10 +61,16 @@ export class CSRApp {
         console.error(error);
       }
     );
+
+    this.routerEvents = new EventDispatcher("main");
+
+    this.routerEvents.on("newPageReady", () => {
+      typedocBootstrap();
+    });
+    typedocBootstrap();
   }
 }
 
 ready(() => {
   new CSRApp();
-  typedocBootstrap();
 });
