@@ -825,7 +825,6 @@ ul.tsd-type-parameters .tsd-comment {
 }
 
 @include media-breakpoint-down(lg) {
-// @media (max-width: 900px) {
     .tsd-widget.options,
     .tsd-widget.menu {
         display: inline-block;

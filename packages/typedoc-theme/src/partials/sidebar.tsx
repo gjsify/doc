@@ -11,9 +11,12 @@ export const sidebar = (
     id="left-sidebar"
     container-selector="router-view, tsd-footer"
     position="left"
-    auto-hide-on-slimmer-than="xl"
-    auto-show-on-wider-than="xl"
-    mode-on-slimmer-than="xl"
+    rv-bs5-co-xs-auto-hide="true"
+    rv-bs5-co-xl-auto-hide="false"
+    rv-bs5-co-xs-auto-show="false"
+    rv-bs5-co-xl-auto-show="true"
+    rv-bs5-co-xs-mode="'overlap'"
+    rv-bs5-co-xl-mode="'side'"
     width="300px"
   >
     <tsd-navigation>{context.navigation(props)}</tsd-navigation>

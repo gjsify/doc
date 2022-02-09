@@ -1,5 +1,4 @@
 tsd-search {
-  max-width: 300px;
   .search-group {
     position: relative;
     display: flex;
@@ -12,8 +11,18 @@ tsd-search {
       margin-right: -28px;
       z-index: 4;
     }
-    #tsd-search-field {
+    input#tsd-search-field {
+      width: 280px;
+      @include transition($transition-collapse-width);
       padding-left: 36px;
+      @include media-breakpoint-down(lg) {
+        &:not(:focus) {
+          border: none;
+          width: 32px;
+          padding-left: map-get($spacers, 2);
+        }
+      }
+
     }
   }
   .results {
@@ -28,15 +37,9 @@ tsd-search {
     list-style: none;
     li.list-group-item {
       border: none;
-      &.state {
-        display: none;
-      }
     }
     a {
       display: block;
-      // &:before {
-      //   top: 10px;
-      // }
     }
     span {
       &.parent {
@@ -48,28 +51,6 @@ tsd-search {
   &.has-focus {
     .results {
       visibility: visible;
-    }
-  }
-  &.loading {
-    .results {
-      li {
-        &.state {
-          &.loading {
-            display: block;
-          }
-        }
-      }
-    }
-  }
-  &.failure {
-    .results {
-      li {
-        &.state {
-          &.failure {
-            display: block;
-          }
-        }
-      }
     }
   }
   .input-group input,

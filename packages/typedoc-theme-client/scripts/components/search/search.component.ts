@@ -1,5 +1,5 @@
 import { Component, TemplateFunction } from "@ribajs/core";
-import { hasChildNodesTrim, debounceCb } from "@ribajs/utils";
+import { hasChildNodesTrim, debounce } from "@ribajs/utils";
 import template from "./search.component.pug";
 
 import type { SearchComponentScope, SearchResult } from "../../types";
@@ -15,6 +15,18 @@ export class SearchComponent extends Component {
     port: 0,
     hostname: "localhost",
     base: "./",
+    isLoading: false,
+    isReady: false,
+    hasFailure: false,
+    results: [],
+    query: "",
+    preventPress: false,
+    setFocus: this.setFocus,
+    onBlur: this.onBlur,
+    onFocus: this.onFocus,
+    onInput: this.onInput,
+    onKeydown: this.onKeydown,
+    onKeypress: this.onKeypress,
   };
 
   constructor() {
@@ -32,6 +44,14 @@ export class SearchComponent extends Component {
     this.initSearch();
   }
 
+  protected async afterBind() {
+    await super.afterBind();
+    this.scope.fieldEl =
+      this.querySelector<HTMLInputElement>("input") || undefined;
+    this.scope.resultsEl =
+      this.querySelector<HTMLElement>(".results") || undefined;
+  }
+
   initSettings() {
     if (
       this.scope.hostname === "localhost" &&
@@ -45,130 +65,134 @@ export class SearchComponent extends Component {
   }
 
   initSearch() {
-    const field = this.querySelector<HTMLInputElement>("input");
-    const results = this.querySelector<HTMLElement>(".results");
-    console.debug("initSearch", field, results);
-
-    if (!field || !results) {
-      console.error(field, results);
-      throw new Error(
-        "[SearchComponent] The input field or the result list wrapper was not found"
-      );
-    }
-
-    let resultClicked = false;
-    results.addEventListener("mousedown", () => (resultClicked = true));
-    results.addEventListener("mouseup", () => {
-      resultClicked = false;
-      this.classList.remove("has-focus");
-    });
-
-    field.addEventListener("focus", () => this.classList.add("has-focus"));
-    field.addEventListener("blur", () => {
-      if (!resultClicked) {
-        resultClicked = false;
-        this.classList.remove("has-focus");
-      }
-    });
-
-    this.bindEvents(results, field);
+    this.initSearchHotkey();
   }
 
-  bindEvents(results: HTMLElement, field: HTMLInputElement) {
-    field.addEventListener(
-      "input",
-      debounceCb(() => {
-        console.debug("input");
-        this.updateResults(results, field);
-      }, 500)
-    );
+  protected setFocus() {
+    this.scope.fieldEl?.focus();
+  }
 
-    let preventPress = false;
-    field.addEventListener("keydown", (e) => {
-      preventPress = true;
-      if (e.key == "Enter") {
-        this.gotoCurrentResult(results, field);
-      } else if (e.key == "Escape") {
-        field.blur();
-      } else if (e.key == "ArrowUp") {
-        this.setCurrentResult(results, -1);
-      } else if (e.key === "ArrowDown") {
-        this.setCurrentResult(results, 1);
-      } else {
-        preventPress = false;
-      }
-    });
-    field.addEventListener("keypress", (e) => {
-      if (preventPress) e.preventDefault();
-    });
+  protected hasFocus() {
+    return this.scope.fieldEl?.matches(":focus");
+  }
 
+  protected onFocus() {
+    this.classList.add("has-focus");
+  }
+
+  protected onBlur() {
+    this.classList.remove("has-focus");
+  }
+
+  protected onInput() {
+    this.updateResults();
+  }
+
+  protected onKeydown(
+    e: KeyboardEvent,
+    scope: SearchComponentScope,
+    field: HTMLInputElement
+  ) {
+    this.scope.preventPress = true;
+
+    if (e.key == "Enter") {
+      this.gotoCurrentResult();
+    } else if (e.key == "Escape") {
+      field.blur();
+    } else if (e.key == "ArrowUp") {
+      this.setCurrentResult(-1);
+    } else if (e.key === "ArrowDown") {
+      this.setCurrentResult(1);
+    } else {
+      this.scope.preventPress = false;
+    }
+  }
+
+  public onKeypress(e: KeyboardEvent) {
+    if (this.scope.preventPress) e.preventDefault();
+  }
+
+  initSearchHotkey() {
     /**
      * Start searching by pressing slash.
      */
     document.body.addEventListener("keydown", (e) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
-      if (!field.matches(":focus") && e.key === "/") {
-        field.focus();
+      if (!this.hasFocus() && e.key === "/") {
+        this.setFocus();
         e.preventDefault();
       }
     });
   }
 
-  async updateResults(results: HTMLElement, query: HTMLInputElement) {
-    results.textContent = "";
+  protected async _updateResults() {
+    this.scope.results = [];
 
-    const searchText = query.value.trim();
+    const searchText = this.scope.query.trim();
+    console.debug("updateResults", searchText);
     if (searchText.length < 2) {
       return;
     }
 
-    this.classList.add("loading");
+    this.scope.isLoading = true;
+    this.scope.isReady = false;
 
     const url = new URL(window.location.toString());
     url.hostname = this.scope.hostname;
     url.port = this.scope.port.toString();
     // Perform a wildcard search
     url.pathname = `search/*${searchText}*`;
-    const res: SearchResult[] = [];
+    const results: SearchResult[] = [];
 
     try {
       const response = await fetch(url.toString());
-      res.push(...(await response.json()));
+      results.push(...(await response.json()));
     } catch (error) {
       console.error(error);
-      this.classList.remove("ready");
-      this.classList.remove("loading");
-      this.classList.add("failure");
+      this.scope.isLoading = false;
+      this.scope.hasFailure = true;
     }
 
-    this.classList.add("ready");
-    this.classList.remove("loading");
+    this.validateResult(results);
 
-    for (let i = 0, c = Math.min(10, res.length); i < c; i++) {
-      const row = res[i];
+    this.scope.results = results;
+    this.scope.isLoading = false;
+    this.scope.isReady = !this.scope.isLoading && !this.scope.hasFailure;
 
-      const item = document.createElement("li");
-      item.classList.add(...row.classes.split(" "), "list-group-item");
+    this.scope.fieldEl =
+      this.querySelector<HTMLInputElement>("input") || undefined;
+    this.scope.resultsEl =
+      this.querySelector<HTMLElement>(".results") || undefined;
+  }
 
-      const anchor = document.createElement("a");
-      anchor.href = this.scope.base + row.url;
-      anchor.classList.add("tsd-kind-icon");
-      anchor.innerHTML = row.name;
-      item.append(anchor);
+  public updateResults = debounce(async () => {
+    console.debug("input");
+    await this._updateResults();
+  }, 500);
 
-      results.appendChild(item);
+  protected validateResult(results: SearchResult[]) {
+    for (const result of results) {
+      if (typeof result.classes !== "string")
+        throw new Error("Property classes must be of type string!");
+      if (typeof result.name !== "string")
+        throw new Error("Property name must be of type string!");
+      if (typeof result.url !== "string")
+        throw new Error("Property url must be of type string!");
     }
   }
 
   /**
    * Move the highlight within the result set.
    */
-  setCurrentResult(results: HTMLElement, dir: number) {
-    let active = results.querySelector(".active");
+  setCurrentResult(dir: number) {
+    console.debug("setCurrentResult");
+    let active = this.scope.resultsEl?.querySelector(".active:not(.disabled)");
+    console.debug("setCurrentResult", active);
     if (!active) {
-      active = results.querySelector(
+      active = this.scope.resultsEl?.querySelector(
         dir == 1 ? "li:first-child" : "li:last-child"
       );
+      console.debug("setCurrentResult", active);
       if (active) {
         active.classList.add("active");
       }
@@ -196,11 +220,13 @@ export class SearchComponent extends Component {
   /**
    * Navigate to the highlighted result.
    */
-  gotoCurrentResult(results: HTMLElement, field: HTMLInputElement) {
-    let active = results.querySelector(".active");
+  gotoCurrentResult() {
+    let active = this.scope.resultsEl?.querySelector(".active:not(.disabled)");
 
     if (!active) {
-      active = results.querySelector("li:first-child");
+      active = this.scope.resultsEl?.querySelector(
+        "li:not(.disabled):first-child"
+      );
     }
 
     if (active) {
@@ -208,7 +234,7 @@ export class SearchComponent extends Component {
       if (link) {
         window.location.href = link.href;
       }
-      field.blur();
+      this.scope.fieldEl?.blur();
     }
   }
 

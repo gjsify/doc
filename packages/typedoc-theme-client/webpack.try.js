@@ -7,7 +7,5 @@ const outputPath = resolve("../../docs/try/assets");
 config.publicPath = outputPath;
 config.output.path = outputPath;
 
-console.debug("config", config);
-
 const webpackConfig = ribaWebpackConfig(config);
 module.exports = webpackConfig;
