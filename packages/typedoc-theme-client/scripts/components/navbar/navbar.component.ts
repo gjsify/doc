@@ -4,6 +4,7 @@ import template from "./navbar.component.pug";
 
 import type { NavbarComponentScope } from "../../types";
 import type { Bs5SidebarComponent } from "@ribajs/bs5";
+import { SearchComponent } from "../search/search.component";
 
 export class NavbarComponent extends Component {
   public static tagName = "tsd-navbar";
@@ -12,7 +13,9 @@ export class NavbarComponent extends Component {
     return [];
   }
 
-  public scope: NavbarComponentScope = {};
+  public scope: NavbarComponentScope = {
+    searchHasFocus: false,
+  };
 
   constructor() {
     super();
@@ -21,15 +24,6 @@ export class NavbarComponent extends Component {
   protected connectedCallback() {
     super.connectedCallback();
     this.init(NavbarComponent.observedAttributes);
-  }
-
-  protected async beforeBind() {
-    await super.beforeBind();
-    this.initNavbar();
-  }
-
-  protected async afterBind() {
-    await super.afterBind();
   }
 
   protected async afterAllBind() {
@@ -41,10 +35,30 @@ export class NavbarComponent extends Component {
       sidebar.style.marginTop = this.offsetHeight + "px";
       sidebar.style.maxHeight = `calc(100vh - ${this.offsetHeight}px)`;
     }
+
+    this.scope.searchEl =
+      (this.getElementsByTagName(SearchComponent.tagName)?.item(
+        0
+      ) as SearchComponent | null) || undefined;
+
+    this.scope.searchEl?.addEventListener("focus", () => {
+      this.onSearchFocus();
+    });
+
+    this.scope.searchEl?.addEventListener("blur", () => {
+      this.onSearchBlur();
+    });
   }
 
-  initNavbar() {
-    //
+  public onSearchFocus() {
+    console.debug("onSearchFocus");
+    this.classList.add("search-has-focus");
+    this.scope.searchHasFocus = true;
+  }
+
+  public onSearchBlur() {
+    this.classList.remove("search-has-focus");
+    this.scope.searchHasFocus = false;
   }
 
   protected template(): ReturnType<TemplateFunction> {

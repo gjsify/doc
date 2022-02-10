@@ -49,11 +49,6 @@ export const navbar = (
         </a>
       </div>
       <div class="d-flex">
-        <tsd-search
-          id="tsd-search"
-          class="table-cell ready"
-          base={context.absoluteUrl("/")}
-        ></tsd-search>
         <bs5-theme-button class="d-flex align-items-center" mode="icon">
           <button class="btn btn-icon" rv-on-click="toggleTheme">
             <bs5-icon
@@ -70,6 +65,12 @@ export const navbar = (
             ></bs5-icon>
           </button>
         </bs5-theme-button>
+        <tsd-search
+          rv-element="searchEl"
+          id="tsd-search"
+          class="table-cell ready"
+          base={context.absoluteUrl("/")}
+        ></tsd-search>
       </div>
     </div>
   </tsd-navbar>

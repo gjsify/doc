@@ -1,28 +1,27 @@
 tsd-search {
   .search-group {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
     width: 100%;
     #tsd-search-field-addon {
       background-color: transparent;
+      transition: $transition-base;
       border: none;
       margin-right: -28px;
       z-index: 4;
     }
     input#tsd-search-field {
       width: 280px;
-      @include transition($transition-collapse-width);
+      max-width: calc(100vw - 90px);
+      transition: $transition-base;
       padding-left: 36px;
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(md) {
         &:not(:focus) {
           border: none;
+          opacity: 0;
           width: 32px;
           padding-left: map-get($spacers, 2);
         }
       }
-
     }
   }
   .results {

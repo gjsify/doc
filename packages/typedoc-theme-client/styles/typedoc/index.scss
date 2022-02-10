@@ -595,7 +595,7 @@ dl.tsd-comment-tags dd:after {
 			}
 		}
 	}
-	& > .tsd-signature {
+	> .tsd-signature {
 		margin-left: -20px;
 		margin-right: -20px;
 		border-width: 1px 0;
@@ -606,7 +606,7 @@ dl.tsd-comment-tags dd:after {
 			}
 		}
 	}
-	& > .tsd-signatures {
+	> .tsd-signatures {
 		margin-left: -20px;
 		margin-right: -20px;
 		border-width: 1px 0;
@@ -619,7 +619,7 @@ dl.tsd-comment-tags dd:after {
 			}
 		}
 	}
-	& > a {
+	> a {
 		&.anchor {
 			& + .tsd-signatures {
 				border-top-width: 0;
@@ -627,17 +627,20 @@ dl.tsd-comment-tags dd:after {
 			}
 		}
 	}
+
+	> h1.tsd-before-signature,
+	> h2.tsd-before-signature,
+	> h3.tsd-before-signature {
+		margin-bottom: 0;
+		border-bottom: 0;
+	}
+
+	table th,
+	table td {
+		padding: 6px 13px;
+	}
 }
-.tsd-panel > h1.tsd-before-signature,
-.tsd-panel > h2.tsd-before-signature,
-.tsd-panel > h3.tsd-before-signature {
-	margin-bottom: 0;
-	border-bottom: 0;
-}
-.tsd-panel table th,
-.tsd-panel table td {
-	padding: 6px 13px;
-}
+
 .tsd-panel-group {
 	margin: map-get($spacers, 5) 0;
 }
@@ -926,6 +929,7 @@ img {
 .tsd-anchor-link {
 	display: flex;
 	align-items: center;
+	overflow: hidden;
 	&:hover {
 		& > .tsd-anchor-icon {
 			display: flex;

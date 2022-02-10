@@ -1,3 +1,6 @@
+import type { SearchComponent } from "../components/search/search.component";
+
 export interface NavbarComponentScope {
-  foobar?: string;
+  searchEl?: SearchComponent;
+  searchHasFocus: boolean;
 }

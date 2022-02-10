@@ -1,5 +1,6 @@
 import type { SearchResult } from ".";
 import type { SearchComponent } from "../components/search/search.component";
+import type { NavbarComponent } from "../components/navbar/navbar.component";
 
 export interface SearchComponentScope {
   /** Port of the search server */
@@ -19,10 +20,12 @@ export interface SearchComponentScope {
   /** The search query */
   query: string;
   preventPress: boolean;
-  // TODO remove
+  /** Reference to the search input field element */
   fieldEl?: HTMLInputElement;
-  // TODO remove
+  /** Reference to the search results container element */
   resultsEl?: HTMLElement;
+  /** Reference to the navbar element in which the search is placed */
+  navbarEl?: NavbarComponent;
   setFocus: SearchComponent["setFocus"];
   onFocus: SearchComponent["onFocus"];
   onBlur: SearchComponent["onBlur"];

@@ -89,13 +89,12 @@ export function footer(
               {"Generated using "}
               <a href="https://typedoc.org/" target="_blank">
                 TypeDoc
-              </a>
-              {" and "}
+              </a>{" "}
               <a
                 href="https://github.com/gjsify/doc/tree/main/packages/typedoc-theme"
                 target="_blank"
               >
-                TypeDoc GJSify Theme
+                Gjsify Theme
               </a>
             </p>
           </div>

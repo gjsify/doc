@@ -1,6 +1,7 @@
 import { Component, TemplateFunction } from "@ribajs/core";
 import { hasChildNodesTrim, debounce } from "@ribajs/utils";
 import template from "./search.component.pug";
+import { NavbarComponent } from "../navbar/navbar.component";
 
 import type { SearchComponentScope, SearchResult } from "../../types";
 
@@ -46,10 +47,12 @@ export class SearchComponent extends Component {
 
   protected async afterBind() {
     await super.afterBind();
-    this.scope.fieldEl =
-      this.querySelector<HTMLInputElement>("input") || undefined;
-    this.scope.resultsEl =
-      this.querySelector<HTMLElement>(".results") || undefined;
+    this.scope.navbarEl =
+      (
+        document.getElementsByTagName(
+          NavbarComponent.tagName
+        ) as HTMLCollectionOf<NavbarComponent>
+      ).item(0) || undefined;
   }
 
   initSettings() {
@@ -68,20 +71,22 @@ export class SearchComponent extends Component {
     this.initSearchHotkey();
   }
 
-  protected setFocus() {
+  public setFocus() {
     this.scope.fieldEl?.focus();
   }
 
-  protected hasFocus() {
+  public hasFocus() {
     return this.scope.fieldEl?.matches(":focus");
   }
 
   protected onFocus() {
     this.classList.add("has-focus");
+    this.dispatchEvent(new Event("focus"));
   }
 
   protected onBlur() {
     this.classList.remove("has-focus");
+    this.dispatchEvent(new Event("blur"));
   }
 
   protected onInput() {
@@ -158,11 +163,6 @@ export class SearchComponent extends Component {
     this.scope.results = results;
     this.scope.isLoading = false;
     this.scope.isReady = !this.scope.isLoading && !this.scope.hasFailure;
-
-    this.scope.fieldEl =
-      this.querySelector<HTMLInputElement>("input") || undefined;
-    this.scope.resultsEl =
-      this.querySelector<HTMLElement>(".results") || undefined;
   }
 
   public updateResults = debounce(async () => {
@@ -187,7 +187,7 @@ export class SearchComponent extends Component {
   setCurrentResult(dir: number) {
     console.debug("setCurrentResult");
     let active = this.scope.resultsEl?.querySelector(".active:not(.disabled)");
-    console.debug("setCurrentResult", active);
+    console.debug("setCurrentResult", this.scope.resultsEl);
     if (!active) {
       active = this.scope.resultsEl?.querySelector(
         dir == 1 ? "li:first-child" : "li:last-child"
