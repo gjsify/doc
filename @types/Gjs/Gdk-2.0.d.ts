@@ -2889,44 +2889,408 @@ class AppLaunchContext {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.AppLaunchContext */
+    /**
+     * Sets the workspace on which applications will be launched when
+     * using this context when running under a window manager that
+     * supports multiple workspaces, as described in the
+     * <ulink url="http://www.freedesktop.org/Standards/wm-spec">Extended
+     * Window Manager Hints</ulink>.
+     * 
+     * When the workspace is not specified or `desktop` is set to -1,
+     * it is up to the window manager to pick one, typically it will
+     * be the current workspace.
+     */
     set_desktop(desktop: number): void
+    /**
+     * Sets the display on which applications will be launched when
+     * using this context. See also gdk_app_launch_context_set_screen().
+     */
     set_display(display: Display): void
+    /**
+     * Sets the icon for applications that are launched with this
+     * context.
+     * 
+     * Window Managers can use this information when displaying startup
+     * notification.
+     * 
+     * See also gdk_app_launch_context_set_icon_name().
+     */
     set_icon(icon?: Gio.Icon | null): void
+    /**
+     * Sets the icon for applications that are launched with this context.
+     * The `icon_name` will be interpreted in the same way as the Icon field
+     * in desktop files. See also gdk_app_launch_context_set_icon().
+     * 
+     * If both `icon` and `icon_name` are set, the `icon_name` takes priority.
+     * If neither `icon` or `icon_name` is set, the icon is taken from either
+     * the file that is passed to launched application or from the #GAppInfo
+     * for the launched application itself.
+     */
     set_icon_name(icon_name?: string | null): void
+    /**
+     * Sets the screen on which applications will be launched when
+     * using this context. See also gdk_app_launch_context_set_display().
+     * 
+     * If both `screen` and `display` are set, the `screen` takes priority.
+     * If neither `screen` or `display` are set, the default screen and
+     * display are used.
+     */
     set_screen(screen: Screen): void
+    /**
+     * Sets the timestamp of `context`. The timestamp should ideally
+     * be taken from the event that triggered the launch.
+     * 
+     * Window managers can use this information to avoid moving the
+     * focus to the newly launched application when the user is busy
+     * typing in another window. This is also known as 'focus stealing
+     * prevention'.
+     */
     set_timestamp(timestamp: number): void
     /* Methods of Gio-2.0.Gio.AppLaunchContext */
+    /**
+     * Gets the display string for the `context`. This is used to ensure new
+     * applications are started on the same display as the launching
+     * application, by setting the `DISPLAY` environment variable.
+     */
     get_display(info: Gio.AppInfo, files: Gio.File[]): string | null
+    /**
+     * Gets the complete environment variable list to be passed to
+     * the child process when `context` is used to launch an application.
+     * This is a %NULL-terminated array of strings, where each string has
+     * the form `KEY=VALUE`.
+     */
     get_environment(): string[]
+    /**
+     * Initiates startup notification for the application and returns the
+     * `DESKTOP_STARTUP_ID` for the launched operation, if supported.
+     * 
+     * Startup notification IDs are defined in the
+     * [FreeDesktop.Org Startup Notifications standard](http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt).
+     */
     get_startup_notify_id(info: Gio.AppInfo, files: Gio.File[]): string | null
+    /**
+     * Called when an application has failed to launch, so that it can cancel
+     * the application startup notification started in g_app_launch_context_get_startup_notify_id().
+     */
     launch_failed(startup_notify_id: string): void
+    /**
+     * Arranges for `variable` to be set to `value` in the child's
+     * environment when `context` is used to launch an application.
+     */
     setenv(variable: string, value: string): void
+    /**
+     * Arranges for `variable` to be unset in the child's environment
+     * when `context` is used to launch an application.
+     */
     unsetenv(variable: string): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * Decreases the reference count of `object`. When its reference count
+     * drops to 0, the object is finalized (i.e. its memory is freed).
+     * 
+     * If the pointer to the #GObject may be reused in future (for example, if it is
+     * an instance variable of another object), it is recommended to clear the
+     * pointer to %NULL rather than retain a dangling pointer to a potentially
+     * invalid #GObject instance. Use g_clear_object() for this.
+     */
     unref(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Gio-2.0.Gio.AppLaunchContext */
+    /**
+     * Gets the display string for the `context`. This is used to ensure new
+     * applications are started on the same display as the launching
+     * application, by setting the `DISPLAY` environment variable.
+     */
     vfunc_get_display(info: Gio.AppInfo, files: Gio.File[]): string | null
+    /**
+     * Initiates startup notification for the application and returns the
+     * `DESKTOP_STARTUP_ID` for the launched operation, if supported.
+     * 
+     * Startup notification IDs are defined in the
+     * [FreeDesktop.Org Startup Notifications standard](http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt).
+     */
     vfunc_get_startup_notify_id(info: Gio.AppInfo, files: Gio.File[]): string | null
+    /**
+     * Called when an application has failed to launch, so that it can cancel
+     * the application startup notification started in g_app_launch_context_get_startup_notify_id().
+     */
     vfunc_launch_failed(startup_notify_id: string): void
     vfunc_launch_started(info: Gio.AppInfo, platform_data: GLib.Variant): void
     vfunc_launched(info: Gio.AppInfo, platform_data: GLib.Variant): void
@@ -2936,19 +3300,92 @@ class AppLaunchContext {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of Gio-2.0.Gio.AppLaunchContext */
+    /**
+     * The #GAppLaunchContext::launch-failed signal is emitted when a #GAppInfo launch
+     * fails. The startup notification id is provided, so that the launcher
+     * can cancel the startup notification.
+     */
     connect(sigName: "launch-failed", callback: (($obj: AppLaunchContext, startup_notify_id: string) => void)): number
     connect_after(sigName: "launch-failed", callback: (($obj: AppLaunchContext, startup_notify_id: string) => void)): number
     emit(sigName: "launch-failed", startup_notify_id: string): void
+    /**
+     * The #GAppLaunchContext::launch-started signal is emitted when a #GAppInfo is
+     * about to be launched. If non-null the `platform_data` is an
+     * GVariant dictionary mapping strings to variants (ie `a{sv}`), which
+     * contains additional, platform-specific data about this launch. On
+     * UNIX, at least the `startup-notification-id` keys will be
+     * present.
+     * 
+     * The value of the `startup-notification-id` key (type `s`) is a startup
+     * notification ID corresponding to the format from the [startup-notification
+     * specification](https://specifications.freedesktop.org/startup-notification-spec/startup-notification-0.1.txt).
+     * It allows tracking the progress of the launchee through startup.
+     * 
+     * It is guaranteed that this signal is followed by either a #GAppLaunchContext::launched or
+     * #GAppLaunchContext::launch-failed signal.
+     */
     connect(sigName: "launch-started", callback: (($obj: AppLaunchContext, info: Gio.AppInfo, platform_data?: GLib.Variant | null) => void)): number
     connect_after(sigName: "launch-started", callback: (($obj: AppLaunchContext, info: Gio.AppInfo, platform_data?: GLib.Variant | null) => void)): number
     emit(sigName: "launch-started", info: Gio.AppInfo, platform_data?: GLib.Variant | null): void
+    /**
+     * The #GAppLaunchContext::launched signal is emitted when a #GAppInfo is successfully
+     * launched. The `platform_data` is an GVariant dictionary mapping
+     * strings to variants (ie `a{sv}`), which contains additional,
+     * platform-specific data about this launch. On UNIX, at least the
+     * `pid` and `startup-notification-id` keys will be present.
+     * 
+     * Since 2.72 the `pid` may be 0 if the process id wasn't known (for
+     * example if the process was launched via D-Bus). The `pid` may not be
+     * set at all in subsequent releases.
+     */
     connect(sigName: "launched", callback: (($obj: AppLaunchContext, info: Gio.AppInfo, platform_data: GLib.Variant) => void)): number
     connect_after(sigName: "launched", callback: (($obj: AppLaunchContext, info: Gio.AppInfo, platform_data: GLib.Variant) => void)): number
     emit(sigName: "launched", info: Gio.AppInfo, platform_data: GLib.Variant): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: AppLaunchContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: AppLaunchContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -2971,32 +3408,320 @@ class Colormap {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Colormap */
+    /**
+     * Allocates a single color from a colormap.
+     */
     alloc_color(color: Color, writeable: boolean, best_match: boolean): boolean
+    /**
+     * Allocates colors from a colormap.
+     */
     alloc_colors(colors: Color, n_colors: number, writeable: boolean, best_match: boolean, success: boolean): number
+    /**
+     * Changes the value of the first `ncolors` in a private colormap
+     * to match the values in the <structfield>colors</structfield>
+     * array in the colormap. This function is obsolete and
+     * should not be used. See gdk_color_change().
+     */
     change(ncolors: number): void
+    /**
+     * Frees previously allocated colors.
+     */
     free_colors(colors: Color, n_colors: number): void
+    /**
+     * Locates the RGB color in `colormap` corresponding to the given
+     * hardware pixel `pixel`. `pixel` must be a valid pixel in the
+     * colormap; it's a programmer error to call this function with a
+     * pixel which is not in the colormap. Hardware pixels are normally
+     * obtained from gdk_colormap_alloc_colors(), or from a #GdkImage. (A
+     * #GdkImage contains image data in hardware format, a #GdkPixbuf
+     * contains image data in a canonical 24-bit RGB format.)
+     * 
+     * This function is rarely useful; it's used for example to
+     * implement the eyedropper feature in #GtkColorSelection.
+     */
     query_color(pixel: number, result: Color): void
+    /**
+     * Deprecated function; use g_object_unref() instead.
+     */
     unref(): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -3004,9 +3729,50 @@ class Colormap {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Colormap, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Colormap, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3019,6 +3785,11 @@ class Colormap {
     _init (config?: Colormap_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(visual: Visual, allocate: boolean): Colormap
+    /**
+     * Returns the size of the system's default colormap.
+     * (See the description of struct #GdkColormap for an
+     * explanation of the size of a colormap.)
+     */
     static get_system_size(): number
     static $gtype: GObject.Type
 }
@@ -3028,15 +3799,52 @@ class Device {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Device */
+    /**
+     * Interprets an array of double as axis values for a given device,
+     * and locates the value in the array for a given axis use.
+     */
     get_axis(axes: number, use: AxisUse, value: number): boolean
+    /**
+     * Returns the axis use for `index`.
+     */
     get_axis_use(index: number): AxisUse
+    /**
+     * Determines whether the pointer follows device motion.
+     */
     get_has_cursor(): boolean
+    /**
+     * Obtains the motion history for a device; given a starting and
+     * ending timestamp, return all events in the motion history for
+     * the device in the given range of time. Some windowing systems
+     * do not support motion history, in which case, %FALSE will
+     * be returned. (This is not distinguishable from the case where
+     * motion history is supported and no events were found.)
+     */
     get_history(window: Window, start: number, stop: number): [ /* returnType */ boolean, /* events */ TimeCoord[] ]
+    /**
+     * If `index` has a valid keyval, this function will
+     * fill in `keyval` and `modifiers` with the keyval settings.
+     */
     get_key(index: number, keyval: number, modifiers: ModifierType): void
+    /**
+     * Determines the mode of the device.
+     */
     get_mode(): InputMode
+    /**
+     * Gets the number of axes of a device.
+     */
     get_n_axes(): number
+    /**
+     * Gets the number of keys of a device.
+     */
     get_n_keys(): number
+    /**
+     * Determines the name of the device.
+     */
     get_name(): string
+    /**
+     * Determines the type of the device.
+     */
     get_source(): InputSource
     get_state(window: Window, axes: number, mask: ModifierType): void
     set_axis_use(index_: number, use: AxisUse): void
@@ -3044,26 +3852,293 @@ class Device {
     set_mode(mode: InputMode): boolean
     set_source(source: InputSource): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * Decreases the reference count of `object`. When its reference count
+     * drops to 0, the object is finalized (i.e. its memory is freed).
+     * 
+     * If the pointer to the #GObject may be reused in future (for example, if it is
+     * an instance variable of another object), it is recommended to clear the
+     * pointer to %NULL rather than retain a dangling pointer to a potentially
+     * invalid #GObject instance. Use g_clear_object() for this.
+     */
     unref(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -3071,9 +4146,50 @@ class Device {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Device, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3085,6 +4201,9 @@ class Device {
     constructor (config?: Device_ConstructProps)
     _init (config?: Device_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    /**
+     * Frees an array of #GdkTimeCoord that was returned by gdk_device_get_history().
+     */
     static free_history(events: TimeCoord, n_events: number): /* events */ TimeCoord
     static $gtype: GObject.Type
 }
@@ -3094,60 +4213,479 @@ class Display {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Display */
+    /**
+     * Emits a short beep on `display`
+     */
     beep(): void
+    /**
+     * Closes the connection to the windowing system for the given display,
+     * and cleans up associated resources.
+     */
     close(): void
+    /**
+     * Flushes any requests queued for the windowing system; this happens automatically
+     * when the main loop blocks waiting for new events, but if your application
+     * is drawing without returning control to the main loop, you may need
+     * to call this function explicitely. A common case where this function
+     * needs to be called is when an application is executing drawing commands
+     * from a thread other than the thread where the main loop is running.
+     * 
+     * This is most useful for X11. On windowing systems where requests are
+     * handled synchronously, this function will do nothing.
+     */
     flush(): void
+    /**
+     * Returns the default size to use for cursors on `display`.
+     */
     get_default_cursor_size(): number
+    /**
+     * Gets the next #GdkEvent to be processed for `display,` fetching events from the
+     * windowing system if necessary.
+     */
     get_event(): Event
+    /**
+     * Gets the maximal size to use for cursors on `display`.
+     */
     get_maximal_cursor_size(): [ /* width */ number, /* height */ number ]
+    /**
+     * Gets the number of screen managed by the `display`.
+     */
     get_n_screens(): number
+    /**
+     * Gets the name of the display.
+     */
     get_name(): string
+    /**
+     * Gets the current location of the pointer and the current modifier
+     * mask for a given display.
+     */
     get_pointer(): [ /* screen */ Screen | null, /* x */ number | null, /* y */ number | null, /* mask */ ModifierType | null ]
+    /**
+     * Obtains the window underneath the mouse pointer, returning the location
+     * of the pointer in that window in `win_x,` `win_y` for `screen`. Returns %NULL
+     * if the window under the mouse pointer is not known to GDK (for example,
+     * belongs to another application).
+     */
     get_window_at_pointer(): [ /* returnType */ Window, /* win_x */ number | null, /* win_y */ number | null ]
+    /**
+     * Finds out if the display has been closed.
+     */
     is_closed(): boolean
+    /**
+     * Release any keyboard grab
+     */
     keyboard_ungrab(time_: number): void
+    /**
+     * Gets a copy of the first #GdkEvent in the `display'`s event queue, without
+     * removing the event from the queue.  (Note that this function will
+     * not get more events from the windowing system.  It only checks the events
+     * that have already been moved to the GDK event queue.)
+     */
     peek_event(): Event
+    /**
+     * Test if the pointer is grabbed.
+     */
     pointer_is_grabbed(): boolean
+    /**
+     * Release any pointer grab.
+     */
     pointer_ungrab(time_: number): void
+    /**
+     * Appends a copy of the given event onto the front of the event
+     * queue for `display`.
+     */
     put_event(event: Event): void
+    /**
+     * Request #GdkEventOwnerChange events for ownership changes
+     * of the selection named by the given atom.
+     */
     request_selection_notification(selection: Atom): boolean
+    /**
+     * Sets the double click distance (two clicks within this distance
+     * count as a double click and result in a #GDK_2BUTTON_PRESS event).
+     * See also gdk_display_set_double_click_time().
+     * Applications should <emphasis>not</emphasis> set this, it is a global
+     * user-configured setting.
+     */
     set_double_click_distance(distance: number): void
+    /**
+     * Sets the double click time (two clicks within this time interval
+     * count as a double click and result in a #GDK_2BUTTON_PRESS event).
+     * Applications should <emphasis>not</emphasis> set this, it is a global
+     * user-configured setting.
+     */
     set_double_click_time(msec: number): void
+    /**
+     * Issues a request to the clipboard manager to store the
+     * clipboard data. On X11, this is a special program that works
+     * according to the freedesktop clipboard specification, available at
+     * <ulink url="http://www.freedesktop.org/Standards/clipboard-manager-spec">
+     * http://www.freedesktop.org/Standards/clipboard-manager-spec</ulink>.
+     */
     store_clipboard(clipboard_window: Window, time_: number, targets: Atom, n_targets: number): void
+    /**
+     * Returns whether the speicifed display supports clipboard
+     * persistance; i.e. if it's possible to store the clipboard data after an
+     * application has quit. On X11 this checks if a clipboard daemon is
+     * running.
+     */
     supports_clipboard_persistence(): boolean
+    /**
+     * Returns %TRUE if gdk_window_set_composited() can be used
+     * to redirect drawing on the window using compositing.
+     * 
+     * Currently this only works on X11 with XComposite and
+     * XDamage extensions available.
+     */
     supports_composite(): boolean
+    /**
+     * Returns %TRUE if cursors can use an 8bit alpha channel
+     * on `display`. Otherwise, cursors are restricted to bilevel
+     * alpha (i.e. a mask).
+     */
     supports_cursor_alpha(): boolean
+    /**
+     * Returns %TRUE if multicolored cursors are supported
+     * on `display`. Otherwise, cursors have only a forground
+     * and a background color.
+     */
     supports_cursor_color(): boolean
+    /**
+     * Returns %TRUE if gdk_window_input_shape_combine_mask() can
+     * be used to modify the input shape of windows on `display`.
+     */
     supports_input_shapes(): boolean
+    /**
+     * Returns whether #GdkEventOwnerChange events will be
+     * sent when the owner of a selection changes.
+     */
     supports_selection_notification(): boolean
+    /**
+     * Returns %TRUE if gdk_window_shape_combine_mask() can
+     * be used to create shaped windows on `display`.
+     */
     supports_shapes(): boolean
+    /**
+     * Flushes any requests queued for the windowing system and waits until all
+     * requests have been handled. This is often used for making sure that the
+     * display is synchronized with the current state of the program. Calling
+     * gdk_display_sync() before gdk_error_trap_pop() makes sure that any errors
+     * generated from earlier requests are handled before the error trap is
+     * removed.
+     * 
+     * This is most useful for X11. On windowing systems where requests are
+     * handled synchronously, this function will do nothing.
+     */
     sync(): void
+    /**
+     * Warps the pointer of `display` to the point `x,``y` on
+     * the screen `screen,` unless the pointer is confined
+     * to a window by a grab, in which case it will be moved
+     * as far as allowed by the grab. Warping the pointer
+     * creates events as if the user had moved the mouse
+     * instantaneously to the destination.
+     * 
+     * Note that the pointer should normally be under the
+     * control of the user. This function was added to cover
+     * some rare use cases like keyboard navigation support
+     * for the color picker in the #GtkColorSelectionDialog.
+     */
     warp_pointer(screen: Screen, x: number, y: number): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * Decreases the reference count of `object`. When its reference count
+     * drops to 0, the object is finalized (i.e. its memory is freed).
+     * 
+     * If the pointer to the #GObject may be reused in future (for example, if it is
+     * an instance variable of another object), it is recommended to clear the
+     * pointer to %NULL rather than retain a dangling pointer to a potentially
+     * invalid #GObject instance. Use g_clear_object() for this.
+     */
     unref(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Gdk-2.0.Gdk.Display */
     vfunc_closed(is_error: boolean): void
     vfunc_get_display_name(): string
+    /**
+     * Gets the number of screen managed by the `display`.
+     */
     vfunc_get_n_screens(): number
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -3155,13 +4693,58 @@ class Display {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of Gdk-2.0.Gdk.Display */
+    /**
+     * The ::closed signal is emitted when the connection to the windowing
+     * system for `display` is closed.
+     */
     connect(sigName: "closed", callback: (($obj: Display, is_error: boolean) => void)): number
     connect_after(sigName: "closed", callback: (($obj: Display, is_error: boolean) => void)): number
     emit(sigName: "closed", is_error: boolean): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Display, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Display, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3173,6 +4756,11 @@ class Display {
     constructor (config?: Display_ConstructProps)
     _init (config?: Display_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    /**
+     * Gets the default #GdkDisplay. This is a convenience
+     * function for
+     * <literal>gdk_display_manager_get_default_display (gdk_display_manager_get ())</literal>.
+     */
     static get_default(): Display
     static $gtype: GObject.Type
 }
@@ -3186,30 +4774,306 @@ class DisplayManager {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.DisplayManager */
+    /**
+     * Gets the default #GdkDisplay.
+     */
     get_default_display(): Display
+    /**
+     * List all currently open displays.
+     */
     list_displays(): Display[]
+    /**
+     * Sets `display` as the default display.
+     */
     set_default_display(display: Display): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * Decreases the reference count of `object`. When its reference count
+     * drops to 0, the object is finalized (i.e. its memory is freed).
+     * 
+     * If the pointer to the #GObject may be reused in future (for example, if it is
+     * an instance variable of another object), it is recommended to clear the
+     * pointer to %NULL rather than retain a dangling pointer to a potentially
+     * invalid #GObject instance. Use g_clear_object() for this.
+     */
     unref(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Gdk-2.0.Gdk.DisplayManager */
     vfunc_display_opened(display: Display): void
@@ -3219,13 +5083,57 @@ class DisplayManager {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of Gdk-2.0.Gdk.DisplayManager */
+    /**
+     * The ::display_opened signal is emitted when a display is opened.
+     */
     connect(sigName: "display-opened", callback: (($obj: DisplayManager, display: Display) => void)): number
     connect_after(sigName: "display-opened", callback: (($obj: DisplayManager, display: Display) => void)): number
     emit(sigName: "display-opened", display: Display): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: DisplayManager, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DisplayManager, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3239,6 +5147,9 @@ class DisplayManager {
     constructor (config?: DisplayManager_ConstructProps)
     _init (config?: DisplayManager_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    /**
+     * Gets the singleton #GdkDisplayManager object.
+     */
     static get(): DisplayManager
     static $gtype: GObject.Type
 }
@@ -3248,35 +5159,321 @@ class DragContext {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.DragContext */
+    /**
+     * Determines the bitmask of actions proposed by the source if
+     * gdk_drag_context_suggested_action() returns GDK_ACTION_ASK.
+     */
     get_actions(): DragAction
+    /**
+     * Returns the destination windw for the DND operation.
+     */
     get_dest_window(): Window
+    /**
+     * Returns the drag protocol thats used by this context.
+     */
     get_protocol(): DragProtocol
+    /**
+     * Determines the action chosen by the drag destination.
+     */
     get_selected_action(): DragAction
+    /**
+     * Returns the #GdkWindow where the DND operation started.
+     */
     get_source_window(): Window
+    /**
+     * Determines the suggested drag action of the context.
+     */
     get_suggested_action(): DragAction
+    /**
+     * Retrieves the list of targets of the context.
+     */
     list_targets(): Atom[]
+    /**
+     * Deprecated function; use g_object_ref() instead.
+     */
     ref(): void
+    /**
+     * Deprecated function; use g_object_unref() instead.
+     */
     unref(): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -3284,9 +5481,50 @@ class DragContext {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: DragContext, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: DragContext, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3307,32 +5545,324 @@ class Drawable {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Drawable */
+    /**
+     * Equivalent to g_object_get_data(); the #GObject variant should be
+     * used instead.
+     */
     get_data(key: string): object | null
+    /**
+     * Obtains the bit depth of the drawable, that is, the number of bits
+     * that make up a pixel in the drawable's visual. Examples are 8 bits
+     * per pixel, 24 bits per pixel, etc.
+     */
     get_depth(): number
+    /**
+     * Fills *`width` and *`height` with the size of `drawable`.
+     * `width` or `height` can be %NULL if you only want the other one.
+     * 
+     * On the X11 platform, if `drawable` is a #GdkWindow, the returned
+     * size is the size reported in the most-recently-processed configure
+     * event, rather than the current size on the X server.
+     */
     get_size(): [ /* width */ number | null, /* height */ number | null ]
+    /**
+     * Sets the colormap associated with `drawable`. Normally this will
+     * happen automatically when the drawable is created; you only need to
+     * use this function if the drawable-creating function did not have a
+     * way to determine the colormap, and you then use drawable operations
+     * that require a colormap. The colormap for all drawables and
+     * graphics contexts you intend to use together should match. i.e.
+     * when using a #GdkGC to draw to a drawable, or copying one drawable
+     * to another, the colormaps should match.
+     */
     set_colormap(colormap: Colormap): void
+    /**
+     * This function is equivalent to g_object_set_data(),
+     * the #GObject variant should be used instead.
+     */
     set_data(key: string, data?: object | null, destroy_func?: GLib.DestroyNotify | null): void
+    /**
+     * Deprecated equivalent of calling g_object_unref() on `drawable`.
+     */
     unref(): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Gdk-2.0.Gdk.Drawable */
     vfunc_create_cairo_surface(width: number, height: number): cairo.Surface
@@ -3351,10 +5881,33 @@ class Drawable {
     vfunc_draw_text(font: Font, gc: GC, x: number, y: number, text: string, text_length: number): void
     vfunc_draw_text_wc(font: Font, gc: GC, x: number, y: number, text: WChar, text_length: number): void
     vfunc_draw_trapezoids(gc: GC, trapezoids: Trapezoid, n_trapezoids: number): void
+    /**
+     * Obtains the bit depth of the drawable, that is, the number of bits
+     * that make up a pixel in the drawable's visual. Examples are 8 bits
+     * per pixel, 24 bits per pixel, etc.
+     */
     vfunc_get_depth(): number
+    /**
+     * Fills *`width` and *`height` with the size of `drawable`.
+     * `width` or `height` can be %NULL if you only want the other one.
+     * 
+     * On the X11 platform, if `drawable` is a #GdkWindow, the returned
+     * size is the size reported in the most-recently-processed configure
+     * event, rather than the current size on the X server.
+     */
     vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
     vfunc_ref_cairo_surface(): cairo.Surface
     vfunc_set_cairo_clip(cr: cairo.Context): void
+    /**
+     * Sets the colormap associated with `drawable`. Normally this will
+     * happen automatically when the drawable is created; you only need to
+     * use this function if the drawable-creating function did not have a
+     * way to determine the colormap, and you then use drawable operations
+     * that require a colormap. The colormap for all drawables and
+     * graphics contexts you intend to use together should match. i.e.
+     * when using a #GdkGC to draw to a drawable, or copying one drawable
+     * to another, the colormaps should match.
+     */
     vfunc_set_colormap(cmap: Colormap): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -3362,9 +5915,50 @@ class Drawable {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Drawable, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Drawable, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3383,54 +5977,475 @@ class GC {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.GC */
+    /**
+     * Copy the set of values from one graphics context
+     * onto another graphics context.
+     */
     copy(src_gc: GC): void
+    /**
+     * Retrieves the current values from a graphics context. Note that
+     * only the pixel values of the `values->`foreground and `values->`background
+     * are filled, use gdk_colormap_query_color() to obtain the rgb values
+     * if you need them.
+     */
     get_values(values: GCValues): void
+    /**
+     * Offset attributes such as the clip and tile-stipple origins
+     * of the GC so that drawing at x - x_offset, y - y_offset with
+     * the offset GC  has the same effect as drawing at x, y with the original
+     * GC.
+     */
     offset(x_offset: number, y_offset: number): void
+    /**
+     * Sets the background color for a graphics context.
+     * Note that this function uses `color->`pixel, use
+     * gdk_gc_set_rgb_bg_color() to specify the background
+     * color as red, green, blue components.
+     */
     set_background(color: Color): void
+    /**
+     * Sets the clip mask for a graphics context from a bitmap.
+     * The clip mask is interpreted relative to the clip
+     * origin. (See gdk_gc_set_clip_origin()).
+     */
     set_clip_mask(mask: Bitmap): void
+    /**
+     * Sets the origin of the clip mask. The coordinates are
+     * interpreted relative to the upper-left corner of
+     * the destination drawable of the current operation.
+     */
     set_clip_origin(x: number, y: number): void
+    /**
+     * Sets the clip mask for a graphics context from a
+     * rectangle. The clip mask is interpreted relative to the clip
+     * origin. (See gdk_gc_set_clip_origin()).
+     */
     set_clip_rectangle(rectangle: Rectangle): void
+    /**
+     * Sets the clip mask for a graphics context from a region structure.
+     * The clip mask is interpreted relative to the clip origin. (See
+     * gdk_gc_set_clip_origin()).
+     */
     set_clip_region(region: Region): void
+    /**
+     * Sets the colormap for the GC to the given colormap. The depth
+     * of the colormap's visual must match the depth of the drawable
+     * for which the GC was created.
+     */
     set_colormap(colormap: Colormap): void
+    /**
+     * Sets the way dashed-lines are drawn. Lines will be
+     * drawn with alternating on and off segments of the
+     * lengths specified in `dash_list`. The manner in
+     * which the on and off segments are drawn is determined
+     * by the `line_style` value of the GC. (This can
+     * be changed with gdk_gc_set_line_attributes().)
+     * 
+     * The `dash_offset` defines the phase of the pattern,
+     * specifying how many pixels into the dash-list the pattern
+     * should actually begin.
+     */
     set_dashes(dash_offset: number, dash_list: number, n: number): void
+    /**
+     * Sets whether copying non-visible portions of a drawable
+     * using this graphics context generate exposure events
+     * for the corresponding regions of the destination
+     * drawable. (See gdk_draw_drawable()).
+     */
     set_exposures(exposures: boolean): void
+    /**
+     * Set the fill mode for a graphics context.
+     */
     set_fill(fill: Fill): void
+    /**
+     * Sets the font for a graphics context. (Note that
+     * all text-drawing functions in GDK take a `font`
+     * argument; the value set here is used when that
+     * argument is %NULL.)
+     */
     set_font(font: Font): void
+    /**
+     * Sets the foreground color for a graphics context.
+     * Note that this function uses `color->`pixel, use
+     * gdk_gc_set_rgb_fg_color() to specify the foreground
+     * color as red, green, blue components.
+     */
     set_foreground(color: Color): void
+    /**
+     * Determines how the current pixel values and the
+     * pixel values being drawn are combined to produce
+     * the final pixel values.
+     */
     set_function(function_: Function): void
+    /**
+     * Sets various attributes of how lines are drawn. See
+     * the corresponding members of #GdkGCValues for full
+     * explanations of the arguments.
+     */
     set_line_attributes(line_width: number, line_style: LineStyle, cap_style: CapStyle, join_style: JoinStyle): void
+    /**
+     * Set the background color of a GC using an unallocated color. The
+     * pixel value for the color will be determined using GdkRGB. If the
+     * colormap for the GC has not previously been initialized for GdkRGB,
+     * then for pseudo-color colormaps (colormaps with a small modifiable
+     * number of colors), a colorcube will be allocated in the colormap.
+     * 
+     * Calling this function for a GC without a colormap is an error.
+     */
     set_rgb_bg_color(color: Color): void
+    /**
+     * Set the foreground color of a GC using an unallocated color. The
+     * pixel value for the color will be determined using GdkRGB. If the
+     * colormap for the GC has not previously been initialized for GdkRGB,
+     * then for pseudo-color colormaps (colormaps with a small modifiable
+     * number of colors), a colorcube will be allocated in the colormap.
+     * 
+     * Calling this function for a GC without a colormap is an error.
+     */
     set_rgb_fg_color(color: Color): void
+    /**
+     * Set the stipple bitmap for a graphics context. The
+     * stipple will only be used if the fill mode is
+     * %GDK_STIPPLED or %GDK_OPAQUE_STIPPLED.
+     */
     set_stipple(stipple: Pixmap): void
+    /**
+     * Sets how drawing with this GC on a window will affect child
+     * windows of that window.
+     */
     set_subwindow(mode: SubwindowMode): void
+    /**
+     * Set a tile pixmap for a graphics context.
+     * This will only be used if the fill mode
+     * is %GDK_TILED.
+     */
     set_tile(tile: Pixmap): void
+    /**
+     * Set the origin when using tiles or stipples with
+     * the GC. The tile or stipple will be aligned such
+     * that the upper left corner of the tile or stipple
+     * will coincide with this point.
+     */
     set_ts_origin(x: number, y: number): void
+    /**
+     * Sets attributes of a graphics context in bulk. For each flag set in
+     * `values_mask,` the corresponding field will be read from `values` and
+     * set as the new value for `gc`. If you're only setting a few values
+     * on `gc,` calling individual "setter" functions is likely more
+     * convenient.
+     */
     set_values(values: GCValues, values_mask: GCValuesMask): void
+    /**
+     * Decrement the reference count of `gc`.
+     */
     unref(): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Gdk-2.0.Gdk.GC */
+    /**
+     * Retrieves the current values from a graphics context. Note that
+     * only the pixel values of the `values->`foreground and `values->`background
+     * are filled, use gdk_colormap_query_color() to obtain the rgb values
+     * if you need them.
+     */
     vfunc_get_values(values: GCValues): void
+    /**
+     * Sets the way dashed-lines are drawn. Lines will be
+     * drawn with alternating on and off segments of the
+     * lengths specified in `dash_list`. The manner in
+     * which the on and off segments are drawn is determined
+     * by the `line_style` value of the GC. (This can
+     * be changed with gdk_gc_set_line_attributes().)
+     * 
+     * The `dash_offset` defines the phase of the pattern,
+     * specifying how many pixels into the dash-list the pattern
+     * should actually begin.
+     */
     vfunc_set_dashes(dash_offset: number, dash_list: number, n: number): void
+    /**
+     * Sets attributes of a graphics context in bulk. For each flag set in
+     * `values_mask,` the corresponding field will be read from `values` and
+     * set as the new value for `gc`. If you're only setting a few values
+     * on `gc,` calling individual "setter" functions is likely more
+     * convenient.
+     */
     vfunc_set_values(values: GCValues, mask: GCValuesMask): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -3438,9 +6453,50 @@ class GC {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: GC, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: GC, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3462,39 +6518,334 @@ class Image {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Image */
+    /**
+     * Determines the number of bits per pixel of the image.
+     */
     get_bits_per_pixel(): number
+    /**
+     * Determines the byte order of the image.
+     */
     get_byte_order(): ByteOrder
+    /**
+     * Determines the number of bytes per line of the image.
+     */
     get_bytes_per_line(): number
+    /**
+     * Determines the number of bytes per pixel of the image.
+     */
     get_bytes_per_pixel(): number
+    /**
+     * Determines the depth of the image.
+     */
     get_depth(): number
+    /**
+     * Determines the height of the image.
+     */
     get_height(): number
+    /**
+     * Determines the type of a given image.
+     */
     get_image_type(): ImageType
     get_pixel(x: number, y: number): number
+    /**
+     * Returns a pointer to the pixel data of the image.
+     */
     get_pixels(): object | null
+    /**
+     * Determines the width of the image.
+     */
     get_width(): number
     put_pixel(x: number, y: number, pixel: number): void
+    /**
+     * Sets the colormap for the image to the given colormap.  Normally
+     * there's no need to use this function, images are created with the
+     * correct colormap if you get the image from a drawable. If you
+     * create the image from scratch, use the colormap of the drawable you
+     * intend to render the image to.
+     */
     set_colormap(colormap: Colormap): void
+    /**
+     * Deprecated function; use g_object_unref() instead.
+     */
     unref(): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -3502,9 +6853,50 @@ class Image {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Image, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Image, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3525,36 +6917,434 @@ class Keymap {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Keymap */
+    /**
+     * Adds virtual modifiers (i.e. Super, Hyper and Meta) which correspond
+     * to the real modifiers (i.e Mod2, Mod3, ...) in `modifiers`.
+     * are set in `state` to their non-virtual counterparts (i.e. Mod2,
+     * Mod3,...) and set the corresponding bits in `state`.
+     * 
+     * GDK already does this before delivering key events, but for
+     * compatibility reasons, it only sets the first virtual modifier
+     * it finds, whereas this function sets all matching virtual modifiers.
+     * 
+     * This function is useful when matching key events against
+     * accelerators.
+     */
     add_virtual_modifiers(state: ModifierType): void
+    /**
+     * Returns whether the Caps Lock modifer is locked.
+     */
     get_caps_lock_state(): boolean
+    /**
+     * Returns the direction of effective layout of the keymap.
+     * 
+     * Note that passing %NULL for `keymap` is deprecated and will stop
+     * to work in GTK+ 3.0. Use gdk_keymap_get_for_display() instead.
+     */
     get_direction(): Pango.Direction
+    /**
+     * Returns the keyvals bound to `hardware_keycode`.
+     * The Nth #GdkKeymapKey in `keys` is bound to the Nth
+     * keyval in `keyvals`. Free the returned arrays with g_free().
+     * When a keycode is pressed by the user, the keyval from
+     * this list of entries is selected by considering the effective
+     * keyboard group and level. See gdk_keymap_translate_keyboard_state().
+     * 
+     * Note that passing %NULL for `keymap` is deprecated and will stop
+     * to work in GTK+ 3.0. Use gdk_keymap_get_for_display() instead.
+     */
     get_entries_for_keycode(hardware_keycode: number, n_entries: number): [ /* returnType */ boolean, /* keys */ KeymapKey, /* keyvals */ number ]
+    /**
+     * Obtains a list of keycode/group/level combinations that will
+     * generate `keyval`. Groups and levels are two kinds of keyboard mode;
+     * in general, the level determines whether the top or bottom symbol
+     * on a key is used, and the group determines whether the left or
+     * right symbol is used. On US keyboards, the shift key changes the
+     * keyboard level, and there are no groups. A group switch key might
+     * convert a keyboard between Hebrew to English modes, for example.
+     * #GdkEventKey contains a %group field that indicates the active
+     * keyboard group. The level is computed from the modifier mask.
+     * The returned array should be freed
+     * with g_free().
+     * 
+     * Note that passing %NULL for `keymap` is deprecated and will stop
+     * to work in GTK+ 3.0. Use gdk_keymap_get_for_display() instead.
+     */
     get_entries_for_keyval(keyval: number): [ /* returnType */ boolean, /* keys */ KeymapKey, /* n_keys */ number ]
+    /**
+     * Determines if keyboard layouts for both right-to-left and left-to-right
+     * languages are in use.
+     * 
+     * Note that passing %NULL for `keymap` is deprecated and will stop
+     * to work in GTK+ 3.0. Use gdk_keymap_get_for_display() instead.
+     */
     have_bidi_layouts(): boolean
+    /**
+     * Looks up the keyval mapped to a keycode/group/level triplet.
+     * If no keyval is bound to `key,` returns 0. For normal user input,
+     * you want to use gdk_keymap_translate_keyboard_state() instead of
+     * this function, since the effective group/level may not be
+     * the same as the current keyboard state.
+     * 
+     * Note that passing %NULL for `keymap` is deprecated and will stop
+     * to work in GTK+ 3.0. Use gdk_keymap_get_for_display() instead.
+     */
     lookup_key(key: KeymapKey): number
+    /**
+     * Maps the virtual modifiers (i.e. Super, Hyper and Meta) which
+     * are set in `state` to their non-virtual counterparts (i.e. Mod2,
+     * Mod3,...) and set the corresponding bits in `state`.
+     * 
+     * This function is useful when matching key events against
+     * accelerators.
+     */
     map_virtual_modifiers(state: ModifierType): boolean
+    /**
+     * Translates the contents of a #GdkEventKey into a keyval, effective
+     * group, and level. Modifiers that affected the translation and
+     * are thus unavailable for application use are returned in
+     * `consumed_modifiers`.  See <xref linkend="key-group-explanation"/> for an explanation of
+     * groups and levels.  The `effective_group` is the group that was
+     * actually used for the translation; some keys such as Enter are not
+     * affected by the active keyboard group. The `level` is derived from
+     * `state`. For convenience, #GdkEventKey already contains the translated
+     * keyval, so this function isn't as useful as you might think.
+     * 
+     * <note><para>
+     * `consumed_modifiers` gives modifiers that should be masked out
+     * from `state` when comparing this key press to a hot key. For
+     * instance, on a US keyboard, the <literal>plus</literal>
+     * symbol is shifted, so when comparing a key press to a
+     * <literal>&lt;Control&gt;plus</literal> accelerator &lt;Shift&gt; should
+     * be masked out.
+     * </para>
+     * <informalexample><programlisting>
+     * &sol;* We want to ignore irrelevant modifiers like ScrollLock *&sol;
+     * &num;define ALL_ACCELS_MASK (GDK_CONTROL_MASK | GDK_SHIFT_MASK | GDK_MOD1_MASK)
+     * gdk_keymap_translate_keyboard_state (keymap, event->hardware_keycode,
+     *                                      event->state, event->group,
+     *                                      &amp;keyval, NULL, NULL, &amp;consumed);
+     * if (keyval == GDK_PLUS &&
+     *     (event->state &amp; ~consumed &amp; ALL_ACCELS_MASK) == GDK_CONTROL_MASK)
+     *   &sol;* Control was pressed *&sol;
+     * </programlisting></informalexample>
+     * <para>
+     * An older interpretation `consumed_modifiers` was that it contained
+     * all modifiers that might affect the translation of the key;
+     * this allowed accelerators to be stored with irrelevant consumed
+     * modifiers, by doing:</para>
+     * <informalexample><programlisting>
+     * &sol;* XXX Don't do this XXX *&sol;
+     * if (keyval == accel_keyval &&
+     *     (event->state &amp; ~consumed &amp; ALL_ACCELS_MASK) == (accel_mods &amp; ~consumed))
+     *   &sol;* Accelerator was pressed *&sol;
+     * </programlisting></informalexample>
+     * <para>
+     * However, this did not work if multi-modifier combinations were
+     * used in the keymap, since, for instance, <literal>&lt;Control&gt;</literal>
+     * would be masked out even if only <literal>&lt;Control&gt;&lt;Alt&gt;</literal>
+     * was used in the keymap. To support this usage as well as well as
+     * possible, all <emphasis>single modifier</emphasis> combinations
+     * that could affect the key for any combination of modifiers will
+     * be returned in `consumed_modifiers;` multi-modifier combinations
+     * are returned only when actually found in `state`. When you store
+     * accelerators, you should always store them with consumed modifiers
+     * removed. Store <literal>&lt;Control&gt;plus</literal>,
+     * not <literal>&lt;Control&gt;&lt;Shift&gt;plus</literal>,
+     * </para></note>
+     * 
+     * Note that passing %NULL for `keymap` is deprecated and will stop
+     * to work in GTK+ 3.0. Use gdk_keymap_get_for_display() instead.
+     */
     translate_keyboard_state(hardware_keycode: number, state: ModifierType, group: number): [ /* returnType */ boolean, /* keyval */ number | null, /* effective_group */ number | null, /* level */ number | null, /* consumed_modifiers */ ModifierType | null ]
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * Decreases the reference count of `object`. When its reference count
+     * drops to 0, the object is finalized (i.e. its memory is freed).
+     * 
+     * If the pointer to the #GObject may be reused in future (for example, if it is
+     * an instance variable of another object), it is recommended to clear the
+     * pointer to %NULL rather than retain a dangling pointer to a potentially
+     * invalid #GObject instance. Use g_clear_object() for this.
+     */
     unref(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Gdk-2.0.Gdk.Keymap */
     vfunc_direction_changed(): void
@@ -3566,19 +7356,73 @@ class Keymap {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of Gdk-2.0.Gdk.Keymap */
+    /**
+     * The ::direction-changed signal gets emitted when the direction of
+     * the keymap changes.
+     */
     connect(sigName: "direction-changed", callback: (($obj: Keymap) => void)): number
     connect_after(sigName: "direction-changed", callback: (($obj: Keymap) => void)): number
     emit(sigName: "direction-changed"): void
+    /**
+     * The ::keys-changed signal is emitted when the mapping represented by
+     * `keymap` changes.
+     */
     connect(sigName: "keys-changed", callback: (($obj: Keymap) => void)): number
     connect_after(sigName: "keys-changed", callback: (($obj: Keymap) => void)): number
     emit(sigName: "keys-changed"): void
+    /**
+     * The ::state-changed signal is emitted when the state of the
+     * keyboard changes, e.g when Caps Lock is turned on or off.
+     * See gdk_keymap_get_caps_lock_state().
+     */
     connect(sigName: "state-changed", callback: (($obj: Keymap) => void)): number
     connect_after(sigName: "state-changed", callback: (($obj: Keymap) => void)): number
     emit(sigName: "state-changed"): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Keymap, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Keymap, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3597,66 +7441,564 @@ interface PangoRenderer_ConstructProps extends Pango.Renderer_ConstructProps {
 }
 class PangoRenderer {
     /* Fields of Pango-1.0.Pango.Renderer */
+    /**
+     * the current transformation matrix for
+     *   the Renderer; may be %NULL, which should be treated the
+     *   same as the identity matrix.
+     */
     readonly matrix: Pango.Matrix
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.PangoRenderer */
+    /**
+     * Sets the drawable the renderer draws to.
+     */
     set_drawable(drawable?: Drawable | null): void
+    /**
+     * Sets the GC the renderer draws with. Note that the GC must not be
+     * modified until it is unset by calling the function again with
+     * %NULL for the `gc` parameter, since GDK may make internal copies
+     * of the GC which won't be updated to follow changes to the
+     * original GC.
+     */
     set_gc(gc?: GC | null): void
+    /**
+     * Sets the color for a particular render part (foreground,
+     * background, underline, etc.), overriding any attributes on the layouts
+     * renderered with this renderer.
+     */
     set_override_color(part: Pango.RenderPart, color?: Color | null): void
+    /**
+     * Sets the stipple for one render part (foreground, background, underline,
+     * etc.) Note that this is overwritten when iterating through the individual
+     * styled runs of a #PangoLayout or #PangoLayoutLine. This function is thus
+     * only useful when you call low level functions like pango_renderer_draw_glyphs()
+     * directly, or in the 'prepare_run' virtual function of a subclass of
+     * #GdkPangoRenderer.
+     */
     set_stipple(part: Pango.RenderPart, stipple: Bitmap): void
     /* Methods of Pango-1.0.Pango.Renderer */
+    /**
+     * Does initial setup before rendering operations on `renderer`.
+     * 
+     * [method`Pango`.Renderer.deactivate] should be called when done drawing.
+     * Calls such as [method`Pango`.Renderer.draw_layout] automatically
+     * activate the layout before drawing on it.
+     * 
+     * Calls to [method`Pango`.Renderer.activate] and
+     * [method`Pango`.Renderer.deactivate] can be nested and the
+     * renderer will only be initialized and deinitialized once.
+     */
     activate(): void
+    /**
+     * Cleans up after rendering operations on `renderer`.
+     * 
+     * See docs for [method`Pango`.Renderer.activate].
+     */
     deactivate(): void
+    /**
+     * Draw a squiggly line that approximately covers the given rectangle
+     * in the style of an underline used to indicate a spelling error.
+     * 
+     * The width of the underline is rounded to an integer number
+     * of up/down segments and the resulting rectangle is centered
+     * in the original rectangle.
+     * 
+     * This should be called while `renderer` is already active.
+     * Use [method`Pango`.Renderer.activate] to activate a renderer.
+     */
     draw_error_underline(x: number, y: number, width: number, height: number): void
+    /**
+     * Draws a single glyph with coordinates in device space.
+     */
     draw_glyph(font: Pango.Font, glyph: Pango.Glyph, x: number, y: number): void
+    /**
+     * Draws the glyphs in `glyph_item` with the specified `PangoRenderer`,
+     * embedding the text associated with the glyphs in the output if the
+     * output format supports it.
+     * 
+     * This is useful for rendering text in PDF.
+     * 
+     * Note that this method does not handle attributes in `glyph_item`.
+     * If you want colors, shapes and lines handled automatically according
+     * to those attributes, you need to use pango_renderer_draw_layout_line()
+     * or pango_renderer_draw_layout().
+     * 
+     * Note that `text` is the start of the text for layout, which is then
+     * indexed by `glyph_item->item->offset`.
+     * 
+     * If `text` is %NULL, this simply calls [method`Pango`.Renderer.draw_glyphs].
+     * 
+     * The default implementation of this method simply falls back to
+     * [method`Pango`.Renderer.draw_glyphs].
+     */
     draw_glyph_item(text: string | null, glyph_item: Pango.GlyphItem, x: number, y: number): void
+    /**
+     * Draws the glyphs in `glyphs` with the specified `PangoRenderer`.
+     */
     draw_glyphs(font: Pango.Font, glyphs: Pango.GlyphString, x: number, y: number): void
+    /**
+     * Draws `layout` with the specified `PangoRenderer`.
+     * 
+     * This is equivalent to drawing the lines of the layout, at their
+     * respective positions relative to `x,` `y`.
+     */
     draw_layout(layout: Pango.Layout, x: number, y: number): void
+    /**
+     * Draws `line` with the specified `PangoRenderer`.
+     * 
+     * This draws the glyph items that make up the line, as well as
+     * shapes, backgrounds and lines that are specified by the attributes
+     * of those items.
+     */
     draw_layout_line(line: Pango.LayoutLine, x: number, y: number): void
+    /**
+     * Draws an axis-aligned rectangle in user space coordinates with the
+     * specified `PangoRenderer`.
+     * 
+     * This should be called while `renderer` is already active.
+     * Use [method`Pango`.Renderer.activate] to activate a renderer.
+     */
     draw_rectangle(part: Pango.RenderPart, x: number, y: number, width: number, height: number): void
+    /**
+     * Draws a trapezoid with the parallel sides aligned with the X axis
+     * using the given `PangoRenderer`; coordinates are in device space.
+     */
     draw_trapezoid(part: Pango.RenderPart, y1_: number, x11: number, x21: number, y2: number, x12: number, x22: number): void
+    /**
+     * Gets the current alpha for the specified part.
+     */
     get_alpha(part: Pango.RenderPart): number
+    /**
+     * Gets the current rendering color for the specified part.
+     */
     get_color(part: Pango.RenderPart): Pango.Color | null
+    /**
+     * Gets the layout currently being rendered using `renderer`.
+     * 
+     * Calling this function only makes sense from inside a subclass's
+     * methods, like in its draw_shape vfunc, for example.
+     * 
+     * The returned layout should not be modified while still being
+     * rendered.
+     */
     get_layout(): Pango.Layout | null
+    /**
+     * Gets the layout line currently being rendered using `renderer`.
+     * 
+     * Calling this function only makes sense from inside a subclass's
+     * methods, like in its draw_shape vfunc, for example.
+     * 
+     * The returned layout line should not be modified while still being
+     * rendered.
+     */
     get_layout_line(): Pango.LayoutLine | null
+    /**
+     * Gets the transformation matrix that will be applied when
+     * rendering.
+     * 
+     * See [method`Pango`.Renderer.set_matrix].
+     */
     get_matrix(): Pango.Matrix | null
+    /**
+     * Informs Pango that the way that the rendering is done
+     * for `part` has changed.
+     * 
+     * This should be called if the rendering changes in a way that would
+     * prevent multiple pieces being joined together into one drawing call.
+     * For instance, if a subclass of `PangoRenderer` was to add a stipple
+     * option for drawing underlines, it needs to call
+     * 
+     * ```
+     * pango_renderer_part_changed (render, PANGO_RENDER_PART_UNDERLINE);
+     * ```
+     * 
+     * When the stipple changes or underlines with different stipples
+     * might be joined together. Pango automatically calls this for
+     * changes to colors. (See [method`Pango`.Renderer.set_color])
+     */
     part_changed(part: Pango.RenderPart): void
+    /**
+     * Sets the alpha for part of the rendering.
+     * 
+     * Note that the alpha may only be used if a color is
+     * specified for `part` as well.
+     */
     set_alpha(part: Pango.RenderPart, alpha: number): void
+    /**
+     * Sets the color for part of the rendering.
+     * 
+     * Also see [method`Pango`.Renderer.set_alpha].
+     */
     set_color(part: Pango.RenderPart, color?: Pango.Color | null): void
+    /**
+     * Sets the transformation matrix that will be applied when rendering.
+     */
     set_matrix(matrix?: Pango.Matrix | null): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * Decreases the reference count of `object`. When its reference count
+     * drops to 0, the object is finalized (i.e. its memory is freed).
+     * 
+     * If the pointer to the #GObject may be reused in future (for example, if it is
+     * an instance variable of another object), it is recommended to clear the
+     * pointer to %NULL rather than retain a dangling pointer to a potentially
+     * invalid #GObject instance. Use g_clear_object() for this.
+     */
     unref(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Pango-1.0.Pango.Renderer */
     vfunc_begin(): void
+    /**
+     * Draw a squiggly line that approximately covers the given rectangle
+     * in the style of an underline used to indicate a spelling error.
+     * 
+     * The width of the underline is rounded to an integer number
+     * of up/down segments and the resulting rectangle is centered
+     * in the original rectangle.
+     * 
+     * This should be called while `renderer` is already active.
+     * Use [method`Pango`.Renderer.activate] to activate a renderer.
+     */
     vfunc_draw_error_underline(x: number, y: number, width: number, height: number): void
+    /**
+     * Draws a single glyph with coordinates in device space.
+     */
     vfunc_draw_glyph(font: Pango.Font, glyph: Pango.Glyph, x: number, y: number): void
+    /**
+     * Draws the glyphs in `glyph_item` with the specified `PangoRenderer`,
+     * embedding the text associated with the glyphs in the output if the
+     * output format supports it.
+     * 
+     * This is useful for rendering text in PDF.
+     * 
+     * Note that this method does not handle attributes in `glyph_item`.
+     * If you want colors, shapes and lines handled automatically according
+     * to those attributes, you need to use pango_renderer_draw_layout_line()
+     * or pango_renderer_draw_layout().
+     * 
+     * Note that `text` is the start of the text for layout, which is then
+     * indexed by `glyph_item->item->offset`.
+     * 
+     * If `text` is %NULL, this simply calls [method`Pango`.Renderer.draw_glyphs].
+     * 
+     * The default implementation of this method simply falls back to
+     * [method`Pango`.Renderer.draw_glyphs].
+     */
     vfunc_draw_glyph_item(text: string | null, glyph_item: Pango.GlyphItem, x: number, y: number): void
+    /**
+     * Draws the glyphs in `glyphs` with the specified `PangoRenderer`.
+     */
     vfunc_draw_glyphs(font: Pango.Font, glyphs: Pango.GlyphString, x: number, y: number): void
+    /**
+     * Draws an axis-aligned rectangle in user space coordinates with the
+     * specified `PangoRenderer`.
+     * 
+     * This should be called while `renderer` is already active.
+     * Use [method`Pango`.Renderer.activate] to activate a renderer.
+     */
     vfunc_draw_rectangle(part: Pango.RenderPart, x: number, y: number, width: number, height: number): void
     vfunc_draw_shape(attr: Pango.AttrShape, x: number, y: number): void
+    /**
+     * Draws a trapezoid with the parallel sides aligned with the X axis
+     * using the given `PangoRenderer`; coordinates are in device space.
+     */
     vfunc_draw_trapezoid(part: Pango.RenderPart, y1_: number, x11: number, x21: number, y2: number, x12: number, x22: number): void
     vfunc_end(): void
+    /**
+     * Informs Pango that the way that the rendering is done
+     * for `part` has changed.
+     * 
+     * This should be called if the rendering changes in a way that would
+     * prevent multiple pieces being joined together into one drawing call.
+     * For instance, if a subclass of `PangoRenderer` was to add a stipple
+     * option for drawing underlines, it needs to call
+     * 
+     * ```
+     * pango_renderer_part_changed (render, PANGO_RENDER_PART_UNDERLINE);
+     * ```
+     * 
+     * When the stipple changes or underlines with different stipples
+     * might be joined together. Pango automatically calls this for
+     * changes to colors. (See [method`Pango`.Renderer.set_color])
+     */
     vfunc_part_changed(part: Pango.RenderPart): void
     vfunc_prepare_run(run: Pango.LayoutRun): void
     /* Virtual methods of GObject-2.0.GObject.Object */
@@ -3665,9 +8007,50 @@ class PangoRenderer {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: PangoRenderer, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: PangoRenderer, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3690,34 +8073,331 @@ class Pixmap {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Pixmap */
+    /**
+     * This function is purely to make it possible to query the size of pixmaps
+     * even when compiling without deprecated symbols and you must use pixmaps.
+     * It is identical to gdk_drawable_get_size(), but for pixmaps.
+     */
     get_size(): [ /* width */ number | null, /* height */ number | null ]
     /* Methods of Gdk-2.0.Gdk.Drawable */
+    /**
+     * Equivalent to g_object_get_data(); the #GObject variant should be
+     * used instead.
+     */
     get_data(key: string): object | null
+    /**
+     * Obtains the bit depth of the drawable, that is, the number of bits
+     * that make up a pixel in the drawable's visual. Examples are 8 bits
+     * per pixel, 24 bits per pixel, etc.
+     */
     get_depth(): number
+    /**
+     * Fills *`width` and *`height` with the size of `drawable`.
+     * `width` or `height` can be %NULL if you only want the other one.
+     * 
+     * On the X11 platform, if `drawable` is a #GdkWindow, the returned
+     * size is the size reported in the most-recently-processed configure
+     * event, rather than the current size on the X server.
+     */
     get_size(): [ /* width */ number | null, /* height */ number | null ]
+    /**
+     * Sets the colormap associated with `drawable`. Normally this will
+     * happen automatically when the drawable is created; you only need to
+     * use this function if the drawable-creating function did not have a
+     * way to determine the colormap, and you then use drawable operations
+     * that require a colormap. The colormap for all drawables and
+     * graphics contexts you intend to use together should match. i.e.
+     * when using a #GdkGC to draw to a drawable, or copying one drawable
+     * to another, the colormaps should match.
+     */
     set_colormap(colormap: Colormap): void
+    /**
+     * This function is equivalent to g_object_set_data(),
+     * the #GObject variant should be used instead.
+     */
     set_data(key: string, data?: object | null, destroy_func?: GLib.DestroyNotify | null): void
+    /**
+     * Deprecated equivalent of calling g_object_unref() on `drawable`.
+     */
     unref(): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Gdk-2.0.Gdk.Drawable */
     vfunc_create_cairo_surface(width: number, height: number): cairo.Surface
@@ -3736,10 +8416,33 @@ class Pixmap {
     vfunc_draw_text(font: Font, gc: GC, x: number, y: number, text: string, text_length: number): void
     vfunc_draw_text_wc(font: Font, gc: GC, x: number, y: number, text: WChar, text_length: number): void
     vfunc_draw_trapezoids(gc: GC, trapezoids: Trapezoid, n_trapezoids: number): void
+    /**
+     * Obtains the bit depth of the drawable, that is, the number of bits
+     * that make up a pixel in the drawable's visual. Examples are 8 bits
+     * per pixel, 24 bits per pixel, etc.
+     */
     vfunc_get_depth(): number
+    /**
+     * Fills *`width` and *`height` with the size of `drawable`.
+     * `width` or `height` can be %NULL if you only want the other one.
+     * 
+     * On the X11 platform, if `drawable` is a #GdkWindow, the returned
+     * size is the size reported in the most-recently-processed configure
+     * event, rather than the current size on the X server.
+     */
     vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
     vfunc_ref_cairo_surface(): cairo.Surface
     vfunc_set_cairo_clip(cr: cairo.Context): void
+    /**
+     * Sets the colormap associated with `drawable`. Normally this will
+     * happen automatically when the drawable is created; you only need to
+     * use this function if the drawable-creating function did not have a
+     * way to determine the colormap, and you then use drawable operations
+     * that require a colormap. The colormap for all drawables and
+     * graphics contexts you intend to use together should match. i.e.
+     * when using a #GdkGC to draw to a drawable, or copying one drawable
+     * to another, the colormaps should match.
+     */
     vfunc_set_colormap(cmap: Colormap): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -3747,9 +8450,50 @@ class Pixmap {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Pixmap, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Pixmap, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3765,9 +8509,22 @@ class Pixmap {
     static foreign_new_for_display(display: Display, anid: NativeWindow): Pixmap
     static foreign_new_for_screen(screen: Screen, anid: NativeWindow, width: number, height: number, depth: number): Pixmap
     static new(drawable: Drawable, width: number, height: number, depth: number): Pixmap
+    /**
+     * Create a pixmap from a XPM file using a particular colormap.
+     */
     static colormap_create_from_xpm(drawable: Drawable, colormap: Colormap, mask: Bitmap, transparent_color: Color, filename: string): Pixmap
+    /**
+     * Create a pixmap from data in XPM format using a particular
+     * colormap.
+     */
     static colormap_create_from_xpm_d(drawable: Drawable, colormap: Colormap, mask: Bitmap, transparent_color: Color, data: string): Pixmap
+    /**
+     * Create a pixmap from a XPM file.
+     */
     static create_from_xpm(drawable: Drawable, transparent_color: Color, filename: string): [ /* returnType */ Pixmap, /* mask */ Bitmap ]
+    /**
+     * Create a pixmap from data in XPM format.
+     */
     static create_from_xpm_d(drawable: Drawable, transparent_color: Color, data: string): [ /* returnType */ Pixmap, /* mask */ Bitmap ]
     static $gtype: GObject.Type
 }
@@ -3784,59 +8541,499 @@ class Screen {
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Screen */
     broadcast_client_message(event: Event): void
+    /**
+     * Gets the default colormap for `screen`.
+     */
     get_default_colormap(): Colormap
+    /**
+     * Gets any options previously set with gdk_screen_set_font_options().
+     */
     get_font_options(): cairo.FontOptions
+    /**
+     * Gets the height of `screen` in pixels
+     */
     get_height(): number
+    /**
+     * Returns the height of `screen` in millimeters.
+     * Note that on some X servers this value will not be correct.
+     */
     get_height_mm(): number
+    /**
+     * Returns the monitor number in which the point (`x,``y)` is located.
+     */
     get_monitor_at_point(x: number, y: number): number
+    /**
+     * Returns the number of the monitor in which the largest area of the
+     * bounding rectangle of `window` resides.
+     */
     get_monitor_at_window(window: Window): number
+    /**
+     * Retrieves the #GdkRectangle representing the size and position of
+     * the individual monitor within the entire screen area.
+     * 
+     * Note that the size of the entire screen area can be retrieved via
+     * gdk_screen_get_width() and gdk_screen_get_height().
+     */
     get_monitor_geometry(monitor_num: number, dest: Rectangle): void
+    /**
+     * Gets the height in millimeters of the specified monitor.
+     */
     get_monitor_height_mm(monitor_num: number): number
+    /**
+     * Returns the output name of the specified monitor.
+     * Usually something like VGA, DVI, or TV, not the actual
+     * product name of the display device.
+     */
     get_monitor_plug_name(monitor_num: number): string
+    /**
+     * Gets the width in millimeters of the specified monitor, if available.
+     */
     get_monitor_width_mm(monitor_num: number): number
+    /**
+     * Returns the number of monitors which `screen` consists of.
+     */
     get_n_monitors(): number
+    /**
+     * Gets the index of `screen` among the screens in the display
+     * to which it belongs. (See gdk_screen_get_display())
+     */
     get_number(): number
+    /**
+     * Gets the primary monitor for `screen`.  The primary monitor
+     * is considered the monitor where the 'main desktop' lives.
+     * While normal application windows typically allow the window
+     * manager to place the windows, specialized desktop applications
+     * such as panels should place themselves on the primary monitor.
+     * 
+     * If no primary monitor is configured by the user, the return value
+     * will be 0, defaulting to the first monitor.
+     */
     get_primary_monitor(): number
+    /**
+     * Gets the resolution for font handling on the screen; see
+     * gdk_screen_set_resolution() for full details.
+     */
     get_resolution(): number
+    /**
+     * Gets the preferred colormap for rendering image data on `screen`.
+     * Not a very useful function; historically, GDK could only render RGB
+     * image data to one colormap and visual, but in the current version
+     * it can render to any colormap and visual. So there's no need to
+     * call this function.
+     */
     get_rgb_colormap(): Colormap
+    /**
+     * Gets a "preferred visual" chosen by GdkRGB for rendering image data
+     * on `screen`. In previous versions of
+     * GDK, this was the only visual GdkRGB could use for rendering. In
+     * current versions, it's simply the visual GdkRGB would have chosen as
+     * the optimal one in those previous versions. GdkRGB can now render to
+     * drawables with any visual.
+     */
     get_rgb_visual(): Visual
+    /**
+     * Gets a colormap to use for creating windows or pixmaps with an
+     * alpha channel. The windowing system on which GTK+ is running
+     * may not support this capability, in which case %NULL will
+     * be returned. Even if a non-%NULL value is returned, its
+     * possible that the window's alpha channel won't be honored
+     * when displaying the window on the screen: in particular, for
+     * X an appropriate windowing manager and compositing manager
+     * must be running to provide appropriate display.
+     * 
+     * This functionality is not implemented in the Windows backend.
+     * 
+     * For setting an overall opacity for a top-level window, see
+     * gdk_window_set_opacity().
+     */
     get_rgba_colormap(): Colormap
+    /**
+     * Gets a visual to use for creating windows or pixmaps with an
+     * alpha channel. See the docs for gdk_screen_get_rgba_colormap()
+     * for caveats.
+     */
     get_rgba_visual(): Visual
+    /**
+     * Gets the root window of `screen`.
+     */
     get_root_window(): Window
     get_setting(name: string, value: any): boolean
+    /**
+     * Gets the system's default colormap for `screen`
+     */
     get_system_colormap(): Colormap
+    /**
+     * Get the system's default visual for `screen`.
+     * This is the visual for the root window of the display.
+     * The return value should not be freed.
+     */
     get_system_visual(): Visual
+    /**
+     * Obtains a list of all toplevel windows known to GDK on the screen `screen`.
+     * A toplevel window is a child of the root window (see
+     * gdk_get_default_root_window()).
+     * 
+     * The returned list should be freed with g_list_free(), but
+     * its elements need not be freed.
+     */
     get_toplevel_windows(): Window[]
+    /**
+     * Gets the width of `screen` in pixels
+     */
     get_width(): number
+    /**
+     * Gets the width of `screen` in millimeters.
+     * Note that on some X servers this value will not be correct.
+     */
     get_width_mm(): number
+    /**
+     * Returns a #GList of #GdkWindow<!-- -->s representing the current
+     * window stack.
+     * 
+     * On X11, this is done by inspecting the _NET_CLIENT_LIST_STACKING
+     * property on the root window, as described in the <ulink
+     * url="http://www.freedesktop.org/Standards/wm-spec">Extended Window
+     * Manager Hints</ulink>. If the window manager does not support the
+     * _NET_CLIENT_LIST_STACKING hint, this function returns %NULL.
+     * 
+     * On other platforms, this function may return %NULL, depending on whether
+     * it is implementable on that platform.
+     * 
+     * The returned list is newly allocated and owns references to the
+     * windows it contains, so it should be freed using g_list_free() and
+     * its windows unrefed using g_object_unref() when no longer needed.
+     */
     get_window_stack(): Window[]
+    /**
+     * Returns whether windows with an RGBA visual can reasonably
+     * be expected to have their alpha channel drawn correctly on
+     * the screen.
+     * 
+     * On X11 this function returns whether a compositing manager is
+     * compositing `screen`.
+     */
     is_composited(): boolean
+    /**
+     * Lists the available visuals for the specified `screen`.
+     * A visual describes a hardware image data format.
+     * For example, a visual might support 24-bit color, or 8-bit color,
+     * and might expect pixels to be in a certain format.
+     * 
+     * Call g_list_free() on the return value when you're finished with it.
+     */
     list_visuals(): Visual[]
+    /**
+     * Determines the name to pass to gdk_display_open() to get
+     * a #GdkDisplay with this screen as the default screen.
+     */
     make_display_name(): string
+    /**
+     * Sets the default `colormap` for `screen`.
+     */
     set_default_colormap(colormap: Colormap): void
+    /**
+     * Sets the default font options for the screen. These
+     * options will be set on any #PangoContext's newly created
+     * with gdk_pango_context_get_for_screen(). Changing the
+     * default set of font options does not affect contexts that
+     * have already been created.
+     */
     set_font_options(options?: cairo.FontOptions | null): void
+    /**
+     * Sets the resolution for font handling on the screen. This is a
+     * scale factor between points specified in a #PangoFontDescription
+     * and cairo units. The default value is 96, meaning that a 10 point
+     * font will be 13 units high. (10 * 96. / 72. = 13.3).
+     */
     set_resolution(dpi: number): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * Decreases the reference count of `object`. When its reference count
+     * drops to 0, the object is finalized (i.e. its memory is freed).
+     * 
+     * If the pointer to the #GObject may be reused in future (for example, if it is
+     * an instance variable of another object), it is recommended to clear the
+     * pointer to %NULL rather than retain a dangling pointer to a potentially
+     * invalid #GObject instance. Use g_clear_object() for this.
+     */
     unref(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Gdk-2.0.Gdk.Screen */
     vfunc_composited_changed(): void
@@ -3848,19 +9045,75 @@ class Screen {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of Gdk-2.0.Gdk.Screen */
+    /**
+     * The ::composited-changed signal is emitted when the composited
+     * status of the screen changes
+     */
     connect(sigName: "composited-changed", callback: (($obj: Screen) => void)): number
     connect_after(sigName: "composited-changed", callback: (($obj: Screen) => void)): number
     emit(sigName: "composited-changed"): void
+    /**
+     * The ::monitors-changed signal is emitted when the number, size
+     * or position of the monitors attached to the screen change.
+     * 
+     * Only for X11 and OS X for now. A future implementation for Win32
+     * may be a possibility.
+     */
     connect(sigName: "monitors-changed", callback: (($obj: Screen) => void)): number
     connect_after(sigName: "monitors-changed", callback: (($obj: Screen) => void)): number
     emit(sigName: "monitors-changed"): void
+    /**
+     * The ::size-changed signal is emitted when the pixel width or
+     * height of a screen changes.
+     */
     connect(sigName: "size-changed", callback: (($obj: Screen) => void)): number
     connect_after(sigName: "size-changed", callback: (($obj: Screen) => void)): number
     emit(sigName: "size-changed"): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Screen, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Screen, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3876,10 +9129,28 @@ class Screen {
     constructor (config?: Screen_ConstructProps)
     _init (config?: Screen_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    /**
+     * Gets the default screen for the default display. (See
+     * gdk_display_get_default ()).
+     */
     static get_default(): Screen
+    /**
+     * Returns the height of the default screen in pixels.
+     */
     static height(): number
+    /**
+     * Returns the height of the default screen in millimeters.
+     * Note that on many X servers this value will not be correct.
+     */
     static height_mm(): number
+    /**
+     * Returns the width of the default screen in pixels.
+     */
     static width(): number
+    /**
+     * Returns the width of the default screen in millimeters.
+     * Note that on many X servers this value will not be correct.
+     */
     static width_mm(): number
     static $gtype: GObject.Type
 }
@@ -3889,36 +9160,342 @@ class Visual {
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Visual */
+    /**
+     * Returns the number of significant bits per red, green and blue value.
+     */
     get_bits_per_rgb(): number
+    /**
+     * Obtains values that are needed to calculate blue pixel values in TrueColor
+     * and DirectColor.  The "mask" is the significant bits within the pixel.
+     * The "shift" is the number of bits left we must shift a primary for it
+     * to be in position (according to the "mask").  Finally, "precision" refers
+     * to how much precision the pixel value contains for a particular primary.
+     */
     get_blue_pixel_details(): [ /* mask */ number | null, /* shift */ number | null, /* precision */ number | null ]
+    /**
+     * Returns the byte order of this visual.
+     */
     get_byte_order(): ByteOrder
+    /**
+     * Returns the size of a colormap for this visual.
+     */
     get_colormap_size(): number
+    /**
+     * Returns the bit depth of this visual.
+     */
     get_depth(): number
+    /**
+     * Obtains values that are needed to calculate green pixel values in TrueColor
+     * and DirectColor.  The "mask" is the significant bits within the pixel.
+     * The "shift" is the number of bits left we must shift a primary for it
+     * to be in position (according to the "mask").  Finally, "precision" refers
+     * to how much precision the pixel value contains for a particular primary.
+     */
     get_green_pixel_details(): [ /* mask */ number | null, /* shift */ number | null, /* precision */ number | null ]
+    /**
+     * Obtains values that are needed to calculate red pixel values in TrueColor
+     * and DirectColor.  The "mask" is the significant bits within the pixel.
+     * The "shift" is the number of bits left we must shift a primary for it
+     * to be in position (according to the "mask").  Finally, "precision" refers
+     * to how much precision the pixel value contains for a particular primary.
+     */
     get_red_pixel_details(): [ /* mask */ number | null, /* shift */ number | null, /* precision */ number | null ]
+    /**
+     * Gets the screen to which this visual belongs
+     */
     get_screen(): Screen
+    /**
+     * Returns the type of visual this is (PseudoColor, TrueColor, etc).
+     */
     get_visual_type(): VisualType
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * Decreases the reference count of `object`. When its reference count
+     * drops to 0, the object is finalized (i.e. its memory is freed).
+     * 
+     * If the pointer to the #GObject may be reused in future (for example, if it is
+     * an instance variable of another object), it is recommended to clear the
+     * pointer to %NULL rather than retain a dangling pointer to a potentially
+     * invalid #GObject instance. Use g_clear_object() for this.
+     */
     unref(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -3926,9 +9503,50 @@ class Visual {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Visual, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Visual, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -3940,176 +9558,1606 @@ class Visual {
     constructor (config?: Visual_ConstructProps)
     _init (config?: Visual_ConstructProps): void
     /* Static methods and pseudo-constructors */
+    /**
+     * Get the visual with the most available colors for the default
+     * GDK screen. The return value should not be freed.
+     */
     static get_best(): Visual
+    /**
+     * Get the best available depth for the default GDK screen.  "Best"
+     * means "largest," i.e. 32 preferred over 24 preferred over 8 bits
+     * per pixel.
+     */
     static get_best_depth(): number
+    /**
+     * Return the best available visual type for the default GDK screen.
+     */
     static get_best_type(): VisualType
+    /**
+     * Combines gdk_visual_get_best_with_depth() and gdk_visual_get_best_with_type().
+     */
     static get_best_with_both(depth: number, visual_type: VisualType): Visual
+    /**
+     * Get the best visual with depth `depth` for the default GDK screen.
+     * Color visuals and visuals with mutable colormaps are preferred
+     * over grayscale or fixed-colormap visuals. The return value should not
+     * be freed. %NULL may be returned if no visual supports `depth`.
+     */
     static get_best_with_depth(depth: number): Visual
+    /**
+     * Get the best visual of the given `visual_type` for the default GDK screen.
+     * Visuals with higher color depths are considered better. The return value
+     * should not be freed. %NULL may be returned if no visual has type
+     * `visual_type`.
+     */
     static get_best_with_type(visual_type: VisualType): Visual
+    /**
+     * Get the system's default visual for the default GDK screen.
+     * This is the visual for the root window of the display.
+     * The return value should not be freed.
+     */
     static get_system(): Visual
     static $gtype: GObject.Type
 }
 interface Window_ConstructProps extends Drawable_ConstructProps {
     /* Constructor properties of Gdk-2.0.Gdk.Window */
+    /**
+     * The mouse pointer for a #GdkWindow. See gdk_window_set_cursor() and
+     * gdk_window_get_cursor() for details.
+     */
     cursor?: Cursor
 }
 class Window {
     /* Properties of Gdk-2.0.Gdk.Window */
+    /**
+     * The mouse pointer for a #GdkWindow. See gdk_window_set_cursor() and
+     * gdk_window_get_cursor() for details.
+     */
     cursor: Cursor
     /* Fields of Gdk-2.0.Gdk.Drawable */
     readonly parent_instance: GObject.Object
     /* Fields of GObject-2.0.GObject.Object */
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Gdk-2.0.Gdk.Window */
+    /**
+     * Emits a short beep associated to `window` in the appropriate
+     * display, if supported. Otherwise, emits a short beep on
+     * the display just as gdk_display_beep().
+     */
     beep(): void
+    /**
+     * Begins a window move operation (for a toplevel window).  You might
+     * use this function to implement a "window move grip," for
+     * example. The function works best with window managers that support
+     * the <ulink url="http://www.freedesktop.org/Standards/wm-spec">Extended
+     * Window Manager Hints</ulink>, but has a fallback implementation for
+     * other window managers.
+     */
     begin_move_drag(button: number, root_x: number, root_y: number, timestamp: number): void
+    /**
+     * A convenience wrapper around gdk_window_begin_paint_region() which
+     * creates a rectangular region for you. See
+     * gdk_window_begin_paint_region() for details.
+     */
     begin_paint_rect(rectangle: Rectangle): void
+    /**
+     * Indicates that you are beginning the process of redrawing `region`.
+     * A backing store (offscreen buffer) large enough to contain `region`
+     * will be created. The backing store will be initialized with the
+     * background color or background pixmap for `window`. Then, all
+     * drawing operations performed on `window` will be diverted to the
+     * backing store.  When you call gdk_window_end_paint(), the backing
+     * store will be copied to `window,` making it visible onscreen. Only
+     * the part of `window` contained in `region` will be modified; that is,
+     * drawing operations are clipped to `region`.
+     * 
+     * The net result of all this is to remove flicker, because the user
+     * sees the finished product appear all at once when you call
+     * gdk_window_end_paint(). If you draw to `window` directly without
+     * calling gdk_window_begin_paint_region(), the user may see flicker
+     * as individual drawing operations are performed in sequence.  The
+     * clipping and background-initializing features of
+     * gdk_window_begin_paint_region() are conveniences for the
+     * programmer, so you can avoid doing that work yourself.
+     * 
+     * When using GTK+, the widget system automatically places calls to
+     * gdk_window_begin_paint_region() and gdk_window_end_paint() around
+     * emissions of the expose_event signal. That is, if you're writing an
+     * expose event handler, you can assume that the exposed area in
+     * #GdkEventExpose has already been cleared to the window background,
+     * is already set as the clip region, and already has a backing store.
+     * Therefore in most cases, application code need not call
+     * gdk_window_begin_paint_region(). (You can disable the automatic
+     * calls around expose events on a widget-by-widget basis by calling
+     * gtk_widget_set_double_buffered().)
+     * 
+     * If you call this function multiple times before calling the
+     * matching gdk_window_end_paint(), the backing stores are pushed onto
+     * a stack. gdk_window_end_paint() copies the topmost backing store
+     * onscreen, subtracts the topmost region from all other regions in
+     * the stack, and pops the stack. All drawing operations affect only
+     * the topmost backing store in the stack. One matching call to
+     * gdk_window_end_paint() is required for each call to
+     * gdk_window_begin_paint_region().
+     */
     begin_paint_region(region: Region): void
+    /**
+     * Begins a window resize operation (for a toplevel window).
+     * You might use this function to implement a "window resize grip," for
+     * example; in fact #GtkStatusbar uses it. The function works best
+     * with window managers that support the <ulink url="http://www.freedesktop.org/Standards/wm-spec">Extended Window Manager Hints</ulink>, but has a
+     * fallback implementation for other window managers.
+     */
     begin_resize_drag(edge: WindowEdge, button: number, root_x: number, root_y: number, timestamp: number): void
+    /**
+     * Clears an entire `window` to the background color or background pixmap.
+     */
     clear(): void
+    /**
+     * Clears an area of `window` to the background color or background pixmap.
+     */
     clear_area(x: number, y: number, width: number, height: number): void
+    /**
+     * Like gdk_window_clear_area(), but also generates an expose event for
+     * the cleared area.
+     * 
+     * This function has a stupid name because it dates back to the mists
+     * time, pre-GDK-1.0.
+     */
     clear_area_e(x: number, y: number, width: number, height: number): void
+    /**
+     * Signal to the window system that the application has finished
+     * handling Configure events it has received. Window Managers can
+     * use this to better synchronize the frame repaint with the
+     * application. GTK+ applications will automatically call this
+     * function when appropriate.
+     * 
+     * This function can only be called if gdk_window_enable_synchronized_configure()
+     * was called previously.
+     */
     configure_finished(): void
+    /**
+     * Transforms window coordinates from a parent window to a child
+     * window, where the parent window is the normal parent as returned by
+     * gdk_window_get_parent() for normal windows, and the window's
+     * embedder as returned by gdk_offscreen_window_get_embedder() for
+     * offscreen windows.
+     * 
+     * For normal windows, calling this function is equivalent to subtracting
+     * the return values of gdk_window_get_position() from the parent coordinates.
+     * For offscreen windows however (which can be arbitrarily transformed),
+     * this function calls the GdkWindow::from-embedder: signal to translate
+     * the coordinates.
+     * 
+     * You should always use this function when writing generic code that
+     * walks down a window hierarchy.
+     * 
+     * See also: gdk_window_coords_to_parent()
+     */
     coords_from_parent(parent_x: number, parent_y: number): [ /* x */ number | null, /* y */ number | null ]
+    /**
+     * Transforms window coordinates from a child window to its parent
+     * window, where the parent window is the normal parent as returned by
+     * gdk_window_get_parent() for normal windows, and the window's
+     * embedder as returned by gdk_offscreen_window_get_embedder() for
+     * offscreen windows.
+     * 
+     * For normal windows, calling this function is equivalent to adding
+     * the return values of gdk_window_get_position() to the child coordinates.
+     * For offscreen windows however (which can be arbitrarily transformed),
+     * this function calls the GdkWindow::to-embedder: signal to translate
+     * the coordinates.
+     * 
+     * You should always use this function when writing generic code that
+     * walks up a window hierarchy.
+     * 
+     * See also: gdk_window_coords_from_parent()
+     */
     coords_to_parent(x: number, y: number): [ /* parent_x */ number | null, /* parent_y */ number | null ]
+    /**
+     * Create a new surface that is as compatible as possible with the
+     * given `window`. For example the new surface will have the same
+     * fallback resolution and font options as `window`. Generally, the new
+     * surface will also use the same backend as `window,` unless that is
+     * not possible for some reason. The type of the returned surface may
+     * be examined with cairo_surface_get_type().
+     * 
+     * Initially the surface contents are all 0 (transparent if contents
+     * have transparency, black otherwise.)
+     */
     create_similar_surface(content: cairo.Content, width: number, height: number): cairo.Surface
+    /**
+     * Attempt to deiconify (unminimize) `window`. On X11 the window manager may
+     * choose to ignore the request to deiconify. When using GTK+,
+     * use gtk_window_deiconify() instead of the #GdkWindow variant. Or better yet,
+     * you probably want to use gtk_window_present(), which raises the window, focuses it,
+     * unminimizes it, and puts it on the current desktop.
+     */
     deiconify(): void
+    /**
+     * Destroys the window system resources associated with `window` and decrements `window'`s
+     * reference count. The window system resources for all children of `window` are also
+     * destroyed, but the children's reference counts are not decremented.
+     * 
+     * Note that a window will not be destroyed automatically when its reference count
+     * reaches zero. You must call this function yourself before that happens.
+     */
     destroy(): void
     destroy_notify(): void
+    /**
+     * Indicates that the application will cooperate with the window
+     * system in synchronizing the window repaint with the window
+     * manager during resizing operations. After an application calls
+     * this function, it must call gdk_window_configure_finished() every
+     * time it has finished all processing associated with a set of
+     * Configure events. Toplevel GTK+ windows automatically use this
+     * protocol.
+     * 
+     * On X, calling this function makes `window` participate in the
+     * _NET_WM_SYNC_REQUEST window manager protocol.
+     */
     enable_synchronized_configure(): void
+    /**
+     * Indicates that the backing store created by the most recent call to
+     * gdk_window_begin_paint_region() should be copied onscreen and
+     * deleted, leaving the next-most-recent backing store or no backing
+     * store at all as the active paint region. See
+     * gdk_window_begin_paint_region() for full details. It is an error to
+     * call this function without a matching
+     * gdk_window_begin_paint_region() first.
+     */
     end_paint(): void
+    /**
+     * Tries to ensure that there is a window-system native window for this
+     * GdkWindow. This may fail in some situations, returning %FALSE.
+     * 
+     * Offscreen window and children of them can never have native windows.
+     * 
+     * Some backends may not support native child windows.
+     */
     ensure_native(): boolean
+    /**
+     * Flush all outstanding cached operations on a window, leaving the
+     * window in a state which reflects all that has been drawn before.
+     * 
+     * Gdk uses multiple kinds of caching to get better performance and
+     * nicer drawing. For instance, during exposes all paints to a window
+     * using double buffered rendering are keep on a pixmap until the last
+     * window has been exposed. It also delays window moves/scrolls until
+     * as long as possible until next update to avoid tearing when moving
+     * windows.
+     * 
+     * Normally this should be completely invisible to applications, as
+     * we automatically flush the windows when required, but this might
+     * be needed if you for instance mix direct native drawing with
+     * gdk drawing. For Gtk widgets that don't use double buffering this
+     * will be called automatically before sending the expose event.
+     */
     flush(): void
+    /**
+     * Sets keyboard focus to `window`. In most cases, gtk_window_present()
+     * should be used on a #GtkWindow, rather than calling this function.
+     */
     focus(timestamp: number): void
+    /**
+     * Temporarily freezes a window and all its descendants such that it won't
+     * receive expose events.  The window will begin receiving expose events
+     * again when gdk_window_thaw_toplevel_updates_libgtk_only() is called. If
+     * gdk_window_freeze_toplevel_updates_libgtk_only()
+     * has been called more than once,
+     * gdk_window_thaw_toplevel_updates_libgtk_only() must be called
+     * an equal number of times to begin processing exposes.
+     * 
+     * This function is not part of the GDK public API and is only
+     * for use by GTK+.
+     */
     freeze_toplevel_updates_libgtk_only(): void
+    /**
+     * Temporarily freezes a window such that it won't receive expose
+     * events.  The window will begin receiving expose events again when
+     * gdk_window_thaw_updates() is called. If gdk_window_freeze_updates()
+     * has been called more than once, gdk_window_thaw_updates() must be called
+     * an equal number of times to begin processing exposes.
+     */
     freeze_updates(): void
+    /**
+     * Moves the window into fullscreen mode. This means the
+     * window covers the entire screen and is above any panels
+     * or task bars.
+     * 
+     * If the window was already fullscreen, then this function does nothing.
+     * 
+     * On X11, asks the window manager to put `window` in a fullscreen
+     * state, if the window manager supports this operation. Not all
+     * window managers support this, and some deliberately ignore it or
+     * don't have a concept of "fullscreen"; so you can't rely on the
+     * fullscreenification actually happening. But it will happen with
+     * most standard window managers, and GDK makes a best effort to get
+     * it to happen.
+     */
     fullscreen(): void
+    /**
+     * This function informs GDK that the geometry of an embedded
+     * offscreen window has changed. This is necessary for GDK to keep
+     * track of which offscreen window the pointer is in.
+     */
     geometry_changed(): void
+    /**
+     * Determines whether or not the desktop environment shuld be hinted that
+     * the window does not want to receive input focus.
+     */
     get_accept_focus(): boolean
+    /**
+     * Gets the pattern used to clear the background on `window`. If `window`
+     * does not have its own background and reuses the parent's, %NULL is
+     * returned and you'll have to query it yourself.
+     */
     get_background_pattern(): cairo.Pattern
+    /**
+     * Gets the list of children of `window` known to GDK.
+     * This function only returns children created via GDK,
+     * so for example it's useless when used with the root window;
+     * it only returns windows an application created itself.
+     * 
+     * The returned list must be freed, but the elements in the
+     * list need not be.
+     */
     get_children(): Window[]
+    /**
+     * Determines whether `window` is composited.
+     * 
+     * See gdk_window_set_composited().
+     */
     get_composited(): boolean
+    /**
+     * Retrieves a #GdkCursor pointer for the cursor currently set on the
+     * specified #GdkWindow, or %NULL.  If the return value is %NULL then
+     * there is no custom cursor set on the specified window, and it is
+     * using the cursor for its parent window.
+     */
     get_cursor(): Cursor
+    /**
+     * Returns the decorations set on the GdkWindow with #gdk_window_set_decorations
+     */
     get_decorations(decorations: WMDecoration): boolean
+    /**
+     * This gets the origin of a #GdkWindow relative to
+     * an Enlightenment-window-manager desktop. As long as you don't
+     * assume that the user's desktop/workspace covers the entire
+     * root window (i.e. you don't assume that the desktop begins
+     * at root window coordinate 0,0) this function is not necessary.
+     * It's deprecated for that reason.
+     */
     get_deskrelative_origin(x: number, y: number): boolean
+    /**
+     * Gets the event mask for `window`. See gdk_window_set_events().
+     */
     get_events(): EventMask
+    /**
+     * Determines whether or not the desktop environment should be hinted that the
+     * window does not want to receive input focus when it is mapped.
+     */
     get_focus_on_map(): boolean
+    /**
+     * Obtains the bounding box of the window, including window manager
+     * titlebar/borders if any. The frame position is given in root window
+     * coordinates. To get the position of the window itself (rather than
+     * the frame) in root window coordinates, use gdk_window_get_origin().
+     */
     get_frame_extents(rect: Rectangle): void
+    /**
+     * Any of the return location arguments to this function may be %NULL,
+     * if you aren't interested in getting the value of that field.
+     * 
+     * The X and Y coordinates returned are relative to the parent window
+     * of `window,` which for toplevels usually means relative to the
+     * window decorations (titlebar, etc.) rather than relative to the
+     * root window (screen-size background window).
+     * 
+     * On the X11 platform, the geometry is obtained from the X server,
+     * so reflects the latest position of `window;` this may be out-of-sync
+     * with the position of `window` delivered in the most-recently-processed
+     * #GdkEventConfigure. gdk_window_get_position() in contrast gets the
+     * position from the most recent configure event.
+     * 
+     * <note>
+     * If `window` is not a toplevel, it is <emphasis>much</emphasis> better
+     * to call gdk_window_get_position() and gdk_drawable_get_size() instead,
+     * because it avoids the roundtrip to the X server and because
+     * gdk_drawable_get_size() supports the full 32-bit coordinate space,
+     * whereas gdk_window_get_geometry() is restricted to the 16-bit
+     * coordinates of X11.
+     * </note>
+     */
     get_geometry(x: number, y: number, width: number, height: number, depth: number): void
+    /**
+     * Returns the height of the given `window`.
+     * 
+     * On the X11 platform the returned size is the size reported in the
+     * most-recently-processed configure event, rather than the current
+     * size on the X server.
+     */
     get_height(): number
+    /**
+     * If you bypass the GDK layer and use windowing system primitives to
+     * draw directly onto a #GdkWindow, then you need to deal with two
+     * details: there may be an offset between GDK coordinates and windowing
+     * system coordinates, and GDK may have redirected drawing to a offscreen
+     * pixmap as the result of a gdk_window_begin_paint_region() calls.
+     * This function allows retrieving the information you need to compensate
+     * for these effects.
+     * 
+     * This function exposes details of the GDK implementation, and is thus
+     * likely to change in future releases of GDK.
+     */
     get_internal_paint_info(): [ /* real_drawable */ Drawable, /* x_offset */ number, /* y_offset */ number ]
+    /**
+     * Determines whether or not the window manager is hinted that `window`
+     * has modal behaviour.
+     */
     get_modal_hint(): boolean
+    /**
+     * Obtains the position of a window in root window coordinates.
+     * (Compare with gdk_window_get_position() and
+     * gdk_window_get_geometry() which return the position of a window
+     * relative to its parent window.)
+     */
     get_origin(x: number, y: number): number
+    /**
+     * Obtains the current pointer position and modifier state.
+     * The position is given in coordinates relative to the upper left
+     * corner of `window`.
+     */
     get_pointer(): [ /* returnType */ Window, /* x */ number | null, /* y */ number | null, /* mask */ ModifierType | null ]
+    /**
+     * Obtains the position of the window as reported in the
+     * most-recently-processed #GdkEventConfigure. Contrast with
+     * gdk_window_get_geometry() which queries the X server for the
+     * current window position, regardless of which events have been
+     * received or processed.
+     * 
+     * The position coordinates are relative to the window's parent window.
+     */
     get_position(): [ /* x */ number | null, /* y */ number | null ]
+    /**
+     * Obtains the position of a window position in root
+     * window coordinates. This is similar to
+     * gdk_window_get_origin() but allows you go pass
+     * in any position in the window, not just the origin.
+     */
     get_root_coords(x: number, y: number): [ /* root_x */ number, /* root_y */ number ]
+    /**
+     * Obtains the top-left corner of the window manager frame in root
+     * window coordinates.
+     */
     get_root_origin(x: number, y: number): void
+    /**
+     * Gets the bitwise OR of the currently active window state flags,
+     * from the #GdkWindowState enumeration.
+     */
     get_state(): WindowState
+    /**
+     * This function returns the type hint set for a window.
+     */
     get_type_hint(): WindowTypeHint
+    /**
+     * Retrieves the user data for `window,` which is normally the widget
+     * that `window` belongs to. See gdk_window_set_user_data().
+     */
     get_user_data(): /* data */ object | null
+    /**
+     * Returns the width of the given `window`.
+     * 
+     * On the X11 platform the returned size is the size reported in the
+     * most-recently-processed configure event, rather than the current
+     * size on the X server.
+     */
     get_width(): number
+    /**
+     * Gets the type of the window. See #GdkWindowType.
+     */
     get_window_type(): WindowType
+    /**
+     * Checks whether the window has a native window or not. Note that
+     * you can use gdk_window_ensure_native() if a native window is needed.
+     */
     has_native(): boolean
+    /**
+     * For toplevel windows, withdraws them, so they will no longer be
+     * known to the window manager; for all windows, unmaps them, so
+     * they won't be displayed. Normally done automatically as
+     * part of gtk_widget_hide().
+     */
     hide(): void
+    /**
+     * Asks to iconify (minimize) `window`. The window manager may choose
+     * to ignore the request, but normally will honor it. Using
+     * gtk_window_iconify() is preferred, if you have a #GtkWindow widget.
+     * 
+     * This function only makes sense when `window` is a toplevel window.
+     */
     iconify(): void
+    /**
+     * Like gdk_window_shape_combine_mask(), but the shape applies
+     * only to event handling. Mouse events which happen while
+     * the pointer position corresponds to an unset bit in the
+     * mask will be passed on the window below `window`.
+     * 
+     * An input shape is typically used with RGBA windows.
+     * The alpha channel of the window defines which pixels are
+     * invisible and allows for nicely antialiased borders,
+     * and the input shape controls where the window is
+     * "clickable".
+     * 
+     * On the X11 platform, this requires version 1.1 of the
+     * shape extension.
+     * 
+     * On the Win32 platform, this functionality is not present and the
+     * function does nothing.
+     */
     input_shape_combine_mask(mask: Bitmap | null, x: number, y: number): void
+    /**
+     * Like gdk_window_shape_combine_region(), but the shape applies
+     * only to event handling. Mouse events which happen while
+     * the pointer position corresponds to an unset bit in the
+     * mask will be passed on the window below `window`.
+     * 
+     * An input shape is typically used with RGBA windows.
+     * The alpha channel of the window defines which pixels are
+     * invisible and allows for nicely antialiased borders,
+     * and the input shape controls where the window is
+     * "clickable".
+     * 
+     * On the X11 platform, this requires version 1.1 of the
+     * shape extension.
+     * 
+     * On the Win32 platform, this functionality is not present and the
+     * function does nothing.
+     */
     input_shape_combine_region(shape_region: Region, offset_x: number, offset_y: number): void
+    /**
+     * Adds `region` to the update area for `window`. The update area is the
+     * region that needs to be redrawn, or "dirty region." The call
+     * gdk_window_process_updates() sends one or more expose events to the
+     * window, which together cover the entire update area. An
+     * application would normally redraw the contents of `window` in
+     * response to those expose events.
+     * 
+     * GDK will call gdk_window_process_all_updates() on your behalf
+     * whenever your program returns to the main loop and becomes idle, so
+     * normally there's no need to do that manually, you just need to
+     * invalidate regions that you know should be redrawn.
+     * 
+     * The `child_func` parameter controls whether the region of
+     * each child window that intersects `region` will also be invalidated.
+     * Only children for which `child_func` returns TRUE will have the area
+     * invalidated.
+     */
     invalidate_maybe_recurse(region: Region, child_func?: object | null, user_data?: object | null): void
+    /**
+     * A convenience wrapper around gdk_window_invalidate_region() which
+     * invalidates a rectangular region. See
+     * gdk_window_invalidate_region() for details.
+     */
     invalidate_rect(rect: Rectangle | null, invalidate_children: boolean): void
+    /**
+     * Adds `region` to the update area for `window`. The update area is the
+     * region that needs to be redrawn, or "dirty region." The call
+     * gdk_window_process_updates() sends one or more expose events to the
+     * window, which together cover the entire update area. An
+     * application would normally redraw the contents of `window` in
+     * response to those expose events.
+     * 
+     * GDK will call gdk_window_process_all_updates() on your behalf
+     * whenever your program returns to the main loop and becomes idle, so
+     * normally there's no need to do that manually, you just need to
+     * invalidate regions that you know should be redrawn.
+     * 
+     * The `invalidate_children` parameter controls whether the region of
+     * each child window that intersects `region` will also be invalidated.
+     * If %FALSE, then the update area for child windows will remain
+     * unaffected. See gdk_window_invalidate_maybe_recurse if you need
+     * fine grained control over which children are invalidated.
+     */
     invalidate_region(region: Region, invalidate_children: boolean): void
+    /**
+     * Check to see if a window is destroyed..
+     */
     is_destroyed(): boolean
+    /**
+     * Determines whether or not the window is an input only window.
+     */
     is_input_only(): boolean
+    /**
+     * Determines whether or not the window is shaped.
+     */
     is_shaped(): boolean
+    /**
+     * Check if the window and all ancestors of the window are
+     * mapped. (This is not necessarily "viewable" in the X sense, since
+     * we only check as far as we have GDK window parents, not to the root
+     * window.)
+     */
     is_viewable(): boolean
+    /**
+     * Checks whether the window has been mapped (with gdk_window_show() or
+     * gdk_window_show_unraised()).
+     */
     is_visible(): boolean
+    /**
+     * Lowers `window` to the bottom of the Z-order (stacking order), so that
+     * other windows with the same parent window appear above `window`.
+     * This is true whether or not the other windows are visible.
+     * 
+     * If `window` is a toplevel, the window manager may choose to deny the
+     * request to move the window in the Z-order, gdk_window_lower() only
+     * requests the restack, does not guarantee it.
+     * 
+     * Note that gdk_window_show() raises the window again, so don't call this
+     * function before gdk_window_show(). (Try gdk_window_show_unraised().)
+     */
     lower(): void
+    /**
+     * Maximizes the window. If the window was already maximized, then
+     * this function does nothing.
+     * 
+     * On X11, asks the window manager to maximize `window,` if the window
+     * manager supports this operation. Not all window managers support
+     * this, and some deliberately ignore it or don't have a concept of
+     * "maximized"; so you can't rely on the maximization actually
+     * happening. But it will happen with most standard window managers,
+     * and GDK makes a best effort to get it to happen.
+     * 
+     * On Windows, reliably maximizes the window.
+     */
     maximize(): void
+    /**
+     * Merges the input shape masks for any child windows into the
+     * input shape mask for `window`. i.e. the union of all input masks
+     * for `window` and its children will become the new input mask
+     * for `window`. See gdk_window_input_shape_combine_mask().
+     * 
+     * This function is distinct from gdk_window_set_child_input_shapes()
+     * because it includes `window'`s input shape mask in the set of
+     * shapes to be merged.
+     */
     merge_child_input_shapes(): void
+    /**
+     * Merges the shape masks for any child windows into the
+     * shape mask for `window`. i.e. the union of all masks
+     * for `window` and its children will become the new mask
+     * for `window`. See gdk_window_shape_combine_mask().
+     * 
+     * This function is distinct from gdk_window_set_child_shapes()
+     * because it includes `window'`s shape mask in the set of shapes to
+     * be merged.
+     */
     merge_child_shapes(): void
+    /**
+     * Repositions a window relative to its parent window.
+     * For toplevel windows, window managers may ignore or modify the move;
+     * you should probably use gtk_window_move() on a #GtkWindow widget
+     * anyway, instead of using GDK functions. For child windows,
+     * the move will reliably succeed.
+     * 
+     * If you're also planning to resize the window, use gdk_window_move_resize()
+     * to both move and resize simultaneously, for a nicer visual effect.
+     */
     move(x: number, y: number): void
+    /**
+     * Move the part of `window` indicated by `region` by `dy` pixels in the Y
+     * direction and `dx` pixels in the X direction. The portions of `region`
+     * that not covered by the new position of `region` are invalidated.
+     * 
+     * Child windows are not moved.
+     */
     move_region(region: Region, dx: number, dy: number): void
+    /**
+     * Equivalent to calling gdk_window_move() and gdk_window_resize(),
+     * except that both operations are performed at once, avoiding strange
+     * visual effects. (i.e. the user may be able to see the window first
+     * move, then resize, if you don't use gdk_window_move_resize().)
+     */
     move_resize(x: number, y: number, width: number, height: number): void
+    /**
+     * Creates a new #GdkWindow using the attributes from
+     * `attributes`. See #GdkWindowAttr and #GdkWindowAttributesType for
+     * more details.  Note: to use this on displays other than the default
+     * display, `parent` must be specified.
+     */
     new(attributes: WindowAttr, attributes_mask: number): Window
+    /**
+     * Like gdk_window_get_children(), but does not copy the list of
+     * children, so the list does not need to be freed.
+     */
     peek_children(): Window[]
+    /**
+     * Sends one or more expose events to `window`. The areas in each
+     * expose event will cover the entire update area for the window (see
+     * gdk_window_invalidate_region() for details). Normally GDK calls
+     * gdk_window_process_all_updates() on your behalf, so there's no
+     * need to call this function unless you want to force expose events
+     * to be delivered immediately and synchronously (vs. the usual
+     * case, where GDK delivers them in an idle handler). Occasionally
+     * this is useful to produce nicer scrolling behavior, for example.
+     */
     process_updates(update_children: boolean): void
+    /**
+     * Raises `window` to the top of the Z-order (stacking order), so that
+     * other windows with the same parent window appear below `window`.
+     * This is true whether or not the windows are visible.
+     * 
+     * If `window` is a toplevel, the window manager may choose to deny the
+     * request to move the window in the Z-order, gdk_window_raise() only
+     * requests the restack, does not guarantee it.
+     */
     raise(): void
+    /**
+     * Redirects drawing into `window` so that drawing to the
+     * window in the rectangle specified by `src_x,` `src_y,`
+     * `width` and `height` is also drawn into `drawable` at
+     * `dest_x,` `dest_y`.
+     * 
+     * Only drawing between gdk_window_begin_paint_region() or
+     * gdk_window_begin_paint_rect() and gdk_window_end_paint() is
+     * redirected.
+     * 
+     * Redirection is active until gdk_window_remove_redirection()
+     * is called.
+     */
     redirect_to_drawable(drawable: Drawable, src_x: number, src_y: number, dest_x: number, dest_y: number, width: number, height: number): void
     register_dnd(): void
+    /**
+     * Removes any active redirection started by
+     * gdk_window_redirect_to_drawable().
+     */
     remove_redirection(): void
+    /**
+     * Reparents `window` into the given `new_parent`. The window being
+     * reparented will be unmapped as a side effect.
+     */
     reparent(new_parent: Window, x: number, y: number): void
+    /**
+     * Resizes `window;` for toplevel windows, asks the window manager to resize
+     * the window. The window manager may not allow the resize. When using GTK+,
+     * use gtk_window_resize() instead of this low-level GDK function.
+     * 
+     * Windows may not be resized below 1x1.
+     * 
+     * If you're also planning to move the window, use gdk_window_move_resize()
+     * to both move and resize simultaneously, for a nicer visual effect.
+     */
     resize(width: number, height: number): void
+    /**
+     * Changes the position of  `window` in the Z-order (stacking order), so that
+     * it is above `sibling` (if `above` is %TRUE) or below `sibling` (if `above` is
+     * %FALSE).
+     * 
+     * If `sibling` is %NULL, then this either raises (if `above` is %TRUE) or
+     * lowers the window.
+     * 
+     * If `window` is a toplevel, the window manager may choose to deny the
+     * request to move the window in the Z-order, gdk_window_restack() only
+     * requests the restack, does not guarantee it.
+     */
     restack(sibling: Window | null, above: boolean): void
+    /**
+     * Scroll the contents of `window,` both pixels and children, by the
+     * given amount. `window` itself does not move. Portions of the window
+     * that the scroll operation brings in from offscreen areas are
+     * invalidated. The invalidated region may be bigger than what would
+     * strictly be necessary.
+     * 
+     * For X11, a minimum area will be invalidated if the window has no
+     * subwindows, or if the edges of the window's parent do not extend
+     * beyond the edges of the window. In other cases, a multi-step process
+     * is used to scroll the window which may produce temporary visual
+     * artifacts and unnecessary invalidations.
+     */
     scroll(dx: number, dy: number): void
+    /**
+     * Setting `accept_focus` to %FALSE hints the desktop environment that the
+     * window doesn't want to receive input focus.
+     * 
+     * On X, it is the responsibility of the window manager to interpret this
+     * hint. ICCCM-compliant window manager usually respect it.
+     */
     set_accept_focus(accept_focus: boolean): void
+    /**
+     * Sets the background pixmap of `window`. May also be used to set a
+     * background of "None" on `window,` by setting a background pixmap
+     * of %NULL.
+     * 
+     * A background pixmap will be tiled, positioning the first tile at
+     * the origin of `window,` or if `parent_relative` is %TRUE, the tiling
+     * will be done based on the origin of the parent window (useful to
+     * align tiles in a parent with tiles in a child).
+     * 
+     * A background pixmap of %NULL means that the window will have no
+     * background.  A window with no background will never have its
+     * background filled by the windowing system, instead the window will
+     * contain whatever pixels were already in the corresponding area of
+     * the display.
+     * 
+     * The windowing system will normally fill a window with its background
+     * when the window is obscured then exposed, and when you call
+     * gdk_window_clear().
+     */
     set_back_pixmap(pixmap: Pixmap | null, parent_relative: boolean): void
+    /**
+     * Sets the background color of `window`. (However, when using GTK+,
+     * set the background of a widget with gtk_widget_modify_bg() - if
+     * you're an application - or gtk_style_set_background() - if you're
+     * implementing a custom widget.)
+     * 
+     * The `color` must be allocated; gdk_rgb_find_color() is the best way
+     * to allocate a color.
+     * 
+     * See also gdk_window_set_back_pixmap().
+     */
     set_background(color: Color): void
+    /**
+     * Sets the input shape mask of `window` to the union of input shape masks
+     * for all children of `window,` ignoring the input shape mask of `window`
+     * itself. Contrast with gdk_window_merge_child_input_shapes() which includes
+     * the input shape mask of `window` in the masks to be merged.
+     */
     set_child_input_shapes(): void
+    /**
+     * Sets the shape mask of `window` to the union of shape masks
+     * for all children of `window,` ignoring the shape mask of `window`
+     * itself. Contrast with gdk_window_merge_child_shapes() which includes
+     * the shape mask of `window` in the masks to be merged.
+     */
     set_child_shapes(): void
+    /**
+     * Sets a #GdkWindow as composited, or unsets it. Composited
+     * windows do not automatically have their contents drawn to
+     * the screen. Drawing is redirected to an offscreen buffer
+     * and an expose event is emitted on the parent of the composited
+     * window. It is the responsibility of the parent's expose handler
+     * to manually merge the off-screen content onto the screen in
+     * whatever way it sees fit. See <xref linkend="composited-window-example"/>
+     * for an example.
+     * 
+     * It only makes sense for child windows to be composited; see
+     * gdk_window_set_opacity() if you need translucent toplevel
+     * windows.
+     * 
+     * An additional effect of this call is that the area of this
+     * window is no longer clipped from regions marked for
+     * invalidation on its parent. Draws done on the parent
+     * window are also no longer clipped by the child.
+     * 
+     * This call is only supported on some systems (currently,
+     * only X11 with new enough Xcomposite and Xdamage extensions).
+     * You must call gdk_display_supports_composite() to check if
+     * setting a window as composited is supported before
+     * attempting to do so.
+     */
     set_composited(composited: boolean): void
+    /**
+     * Sets the mouse pointer for a #GdkWindow. Use gdk_cursor_new_for_display()
+     * or gdk_cursor_new_from_pixmap() to create the cursor. To make the cursor
+     * invisible, use %GDK_BLANK_CURSOR. Passing %NULL for the `cursor` argument
+     * to gdk_window_set_cursor() means that `window` will use the cursor of its
+     * parent window. Most windows should use this default.
+     */
     set_cursor(cursor?: Cursor | null): void
+    /**
+     * "Decorations" are the features the window manager adds to a toplevel #GdkWindow.
+     * This function sets the traditional Motif window manager hints that tell the
+     * window manager which decorations you would like your window to have.
+     * Usually you should use gtk_window_set_decorated() on a #GtkWindow instead of
+     * using the GDK function directly.
+     * 
+     * The `decorations` argument is the logical OR of the fields in
+     * the #GdkWMDecoration enumeration. If #GDK_DECOR_ALL is included in the
+     * mask, the other bits indicate which decorations should be turned off.
+     * If #GDK_DECOR_ALL is not included, then the other bits indicate
+     * which decorations should be turned on.
+     * 
+     * Most window managers honor a decorations hint of 0 to disable all decorations,
+     * but very few honor all possible combinations of bits.
+     */
     set_decorations(decorations: WMDecoration): void
+    /**
+     * The event mask for a window determines which events will be reported
+     * for that window. For example, an event mask including #GDK_BUTTON_PRESS_MASK
+     * means the window should report button press events. The event mask
+     * is the bitwise OR of values from the #GdkEventMask enumeration.
+     */
     set_events(event_mask: EventMask): void
+    /**
+     * Setting `focus_on_map` to %FALSE hints the desktop environment that the
+     * window doesn't want to receive input focus when it is mapped.
+     * focus_on_map should be turned off for windows that aren't triggered
+     * interactively (such as popups from network activity).
+     * 
+     * On X, it is the responsibility of the window manager to interpret
+     * this hint. Window managers following the freedesktop.org window
+     * manager extension specification should respect it.
+     */
     set_focus_on_map(focus_on_map: boolean): void
+    /**
+     * Sets hints about the window management functions to make available
+     * via buttons on the window frame.
+     * 
+     * On the X backend, this function sets the traditional Motif window
+     * manager hint for this purpose. However, few window managers do
+     * anything reliable or interesting with this hint. Many ignore it
+     * entirely.
+     * 
+     * The `functions` argument is the logical OR of values from the
+     * #GdkWMFunction enumeration. If the bitmask includes #GDK_FUNC_ALL,
+     * then the other bits indicate which functions to disable; if
+     * it doesn't include #GDK_FUNC_ALL, it indicates which functions to
+     * enable.
+     */
     set_functions(functions: WMFunction): void
+    /**
+     * Sets the geometry hints for `window`. Hints flagged in `geom_mask`
+     * are set, hints not flagged in `geom_mask` are unset.
+     * To unset all hints, use a `geom_mask` of 0 and a `geometry` of %NULL.
+     * 
+     * This function provides hints to the windowing system about
+     * acceptable sizes for a toplevel window. The purpose of
+     * this is to constrain user resizing, but the windowing system
+     * will typically  (but is not required to) also constrain the
+     * current size of the window to the provided values and
+     * constrain programatic resizing via gdk_window_resize() or
+     * gdk_window_move_resize().
+     * 
+     * Note that on X11, this effect has no effect on windows
+     * of type %GDK_WINDOW_TEMP or windows where override redirect
+     * has been turned on via gdk_window_set_override_redirect()
+     * since these windows are not resizable by the user.
+     * 
+     * Since you can't count on the windowing system doing the
+     * constraints for programmatic resizes, you should generally
+     * call gdk_window_constrain_size() yourself to determine
+     * appropriate sizes.
+     */
     set_geometry_hints(geometry: Geometry, geom_mask: WindowHints): void
+    /**
+     * Sets the group leader window for `window`. By default,
+     * GDK sets the group leader for all toplevel windows
+     * to a global window implicitly created by GDK. With this function
+     * you can override this default.
+     * 
+     * The group leader window allows the window manager to distinguish
+     * all windows that belong to a single application. It may for example
+     * allow users to minimize/unminimize all windows belonging to an
+     * application at once. You should only set a non-default group window
+     * if your application pretends to be multiple applications.
+     */
     set_group(leader: Window): void
+    /**
+     * This function is broken and useless and you should ignore it.
+     * If using GTK+, use functions such as gtk_window_resize(), gtk_window_set_size_request(),
+     * gtk_window_move(), gtk_window_parse_geometry(), and gtk_window_set_geometry_hints(),
+     * depending on what you're trying to do.
+     * 
+     * If using GDK directly, use gdk_window_set_geometry_hints().
+     */
     set_hints(x: number, y: number, min_width: number, min_height: number, max_width: number, max_height: number, flags: number): void
+    /**
+     * Sets the icon of `window` as a pixmap or window. If using GTK+, investigate
+     * gtk_window_set_default_icon_list() first, and then gtk_window_set_icon_list()
+     * and gtk_window_set_icon(). If those don't meet your needs, look at
+     * gdk_window_set_icon_list(). Only if all those are too high-level do you
+     * want to fall back to gdk_window_set_icon().
+     */
     set_icon(icon_window: Window, pixmap: Pixmap, mask: Bitmap): void
+    /**
+     * Sets a list of icons for the window. One of these will be used
+     * to represent the window when it has been iconified. The icon is
+     * usually shown in an icon box or some sort of task bar. Which icon
+     * size is shown depends on the window manager. The window manager
+     * can scale the icon  but setting several size icons can give better
+     * image quality since the window manager may only need to scale the
+     * icon by a small amount or not at all.
+     */
     set_icon_list(pixbufs: GdkPixbuf.Pixbuf[]): void
+    /**
+     * Windows may have a name used while minimized, distinct from the
+     * name they display in their titlebar. Most of the time this is a bad
+     * idea from a user interface standpoint. But you can set such a name
+     * with this function, if you like.
+     * 
+     * After calling this with a non-%NULL `name,` calls to gdk_window_set_title()
+     * will not update the icon title.
+     * 
+     * Using %NULL for `name` unsets the icon title; further calls to
+     * gdk_window_set_title() will again update the icon title as well.
+     */
     set_icon_name(name: string): void
+    /**
+     * Set if `window` must be kept above other windows. If the
+     * window was already above, then this function does nothing.
+     * 
+     * On X11, asks the window manager to keep `window` above, if the window
+     * manager supports this operation. Not all window managers support
+     * this, and some deliberately ignore it or don't have a concept of
+     * "keep above"; so you can't rely on the window being kept above.
+     * But it will happen with most standard window managers,
+     * and GDK makes a best effort to get it to happen.
+     */
     set_keep_above(setting: boolean): void
+    /**
+     * Set if `window` must be kept below other windows. If the
+     * window was already below, then this function does nothing.
+     * 
+     * On X11, asks the window manager to keep `window` below, if the window
+     * manager supports this operation. Not all window managers support
+     * this, and some deliberately ignore it or don't have a concept of
+     * "keep below"; so you can't rely on the window being kept below.
+     * But it will happen with most standard window managers,
+     * and GDK makes a best effort to get it to happen.
+     */
     set_keep_below(setting: boolean): void
+    /**
+     * The application can use this hint to tell the window manager
+     * that a certain window has modal behaviour. The window manager
+     * can use this information to handle modal windows in a special
+     * way.
+     * 
+     * You should only use this on windows for which you have
+     * previously called gdk_window_set_transient_for()
+     */
     set_modal_hint(modal: boolean): void
+    /**
+     * Request the windowing system to make `window` partially transparent,
+     * with opacity 0 being fully transparent and 1 fully opaque. (Values
+     * of the opacity parameter are clamped to the [0,1] range.)
+     * 
+     * On X11, this works only on X screens with a compositing manager
+     * running.
+     * 
+     * For setting up per-pixel alpha, see gdk_screen_get_rgba_colormap().
+     * For making non-toplevel windows translucent, see
+     * gdk_window_set_composited().
+     */
     set_opacity(opacity: number): void
+    /**
+     * An override redirect window is not under the control of the window manager.
+     * This means it won't have a titlebar, won't be minimizable, etc. - it will
+     * be entirely under the control of the application. The window manager
+     * can't see the override redirect window at all.
+     * 
+     * Override redirect should only be used for short-lived temporary
+     * windows, such as popup menus. #GtkMenu uses an override redirect
+     * window in its implementation, for example.
+     */
     set_override_redirect(override_redirect: boolean): void
+    /**
+     * When using GTK+, typically you should use gtk_window_set_role() instead
+     * of this low-level function.
+     * 
+     * The window manager and session manager use a window's role to
+     * distinguish it from other kinds of window in the same application.
+     * When an application is restarted after being saved in a previous
+     * session, all windows with the same title and role are treated as
+     * interchangeable.  So if you have two windows with the same title
+     * that should be distinguished for session management purposes, you
+     * should set the role on those windows. It doesn't matter what string
+     * you use for the role, as long as you have a different role for each
+     * non-interchangeable kind of window.
+     */
     set_role(role: string): void
+    /**
+     * Toggles whether a window should appear in a pager (workspace
+     * switcher, or other desktop utility program that displays a small
+     * thumbnail representation of the windows on the desktop). If a
+     * window's semantic type as specified with gdk_window_set_type_hint()
+     * already fully describes the window, this function should
+     * <emphasis>not</emphasis> be called in addition, instead you should
+     * allow the window to be treated according to standard policy for
+     * its semantic type.
+     */
     set_skip_pager_hint(skips_pager: boolean): void
+    /**
+     * Toggles whether a window should appear in a task list or window
+     * list. If a window's semantic type as specified with
+     * gdk_window_set_type_hint() already fully describes the window, this
+     * function should <emphasis>not</emphasis> be called in addition,
+     * instead you should allow the window to be treated according to
+     * standard policy for its semantic type.
+     */
     set_skip_taskbar_hint(skips_taskbar: boolean): void
+    /**
+     * When using GTK+, typically you should use gtk_window_set_startup_id()
+     * instead of this low-level function.
+     */
     set_startup_id(startup_id: string): void
+    /**
+     * Set the bit gravity of the given window to static, and flag it so
+     * all children get static subwindow gravity. This is used if you are
+     * implementing scary features that involve deep knowledge of the
+     * windowing system. Don't worry about it unless you have to.
+     */
     set_static_gravities(use_static: boolean): boolean
+    /**
+     * Sets the title of a toplevel window, to be displayed in the titlebar.
+     * If you haven't explicitly set the icon name for the window
+     * (using gdk_window_set_icon_name()), the icon name will be set to
+     * `title` as well. `title` must be in UTF-8 encoding (as with all
+     * user-readable strings in GDK/GTK+). `title` may not be %NULL.
+     */
     set_title(title: string): void
+    /**
+     * Indicates to the window manager that `window` is a transient dialog
+     * associated with the application window `parent`. This allows the
+     * window manager to do things like center `window` on `parent` and
+     * keep `window` above `parent`.
+     * 
+     * See gtk_window_set_transient_for() if you're using #GtkWindow or
+     * #GtkDialog.
+     */
     set_transient_for(parent: Window): void
+    /**
+     * The application can use this call to provide a hint to the window
+     * manager about the functionality of a window. The window manager
+     * can use this information when determining the decoration and behaviour
+     * of the window.
+     * 
+     * The hint must be set before the window is mapped.
+     */
     set_type_hint(hint: WindowTypeHint): void
+    /**
+     * Toggles whether a window needs the user's
+     * urgent attention.
+     */
     set_urgency_hint(urgent: boolean): void
+    /**
+     * For most purposes this function is deprecated in favor of
+     * g_object_set_data(). However, for historical reasons GTK+ stores
+     * the #GtkWidget that owns a #GdkWindow as user data on the
+     * #GdkWindow. So, custom widget implementations should use
+     * this function for that. If GTK+ receives an event for a #GdkWindow,
+     * and the user data for the window is non-%NULL, GTK+ will assume the
+     * user data is a #GtkWidget, and forward the event to that widget.
+     */
     set_user_data(user_data?: object | null): void
+    /**
+     * Applies a shape mask to `window`. Pixels in `window` corresponding to
+     * set bits in the `mask` will be visible; pixels in `window`
+     * corresponding to unset bits in the `mask` will be transparent. This
+     * gives a non-rectangular window.
+     * 
+     * If `mask` is %NULL, the shape mask will be unset, and the `x/``y`
+     * parameters are not used.
+     * 
+     * On the X11 platform, this uses an X server extension which is
+     * widely available on most common platforms, but not available on
+     * very old X servers, and occasionally the implementation will be
+     * buggy. On servers without the shape extension, this function
+     * will do nothing.
+     * 
+     * This function works on both toplevel and child windows.
+     */
     shape_combine_mask(mask: Bitmap, x: number, y: number): void
+    /**
+     * Makes pixels in `window` outside `shape_region` be transparent,
+     * so that the window may be nonrectangular. See also
+     * gdk_window_shape_combine_mask() to use a bitmap as the mask.
+     * 
+     * If `shape_region` is %NULL, the shape will be unset, so the whole
+     * window will be opaque again. `offset_x` and `offset_y` are ignored
+     * if `shape_region` is %NULL.
+     * 
+     * On the X11 platform, this uses an X server extension which is
+     * widely available on most common platforms, but not available on
+     * very old X servers, and occasionally the implementation will be
+     * buggy. On servers without the shape extension, this function
+     * will do nothing.
+     * 
+     * This function works on both toplevel and child windows.
+     */
     shape_combine_region(shape_region: Region, offset_x: number, offset_y: number): void
+    /**
+     * Like gdk_window_show_unraised(), but also raises the window to the
+     * top of the window stack (moves the window to the front of the
+     * Z-order).
+     * 
+     * This function maps a window so it's visible onscreen. Its opposite
+     * is gdk_window_hide().
+     * 
+     * When implementing a #GtkWidget, you should call this function on the widget's
+     * #GdkWindow as part of the "map" method.
+     */
     show(): void
+    /**
+     * Shows a #GdkWindow onscreen, but does not modify its stacking
+     * order. In contrast, gdk_window_show() will raise the window
+     * to the top of the window stack.
+     * 
+     * On the X11 platform, in Xlib terms, this function calls
+     * XMapWindow() (it also updates some internal GDK state, which means
+     * that you can't really use XMapWindow() directly on a GDK window).
+     */
     show_unraised(): void
+    /**
+     * "Pins" a window such that it's on all workspaces and does not scroll
+     * with viewports, for window managers that have scrollable viewports.
+     * (When using #GtkWindow, gtk_window_stick() may be more useful.)
+     * 
+     * On the X11 platform, this function depends on window manager
+     * support, so may have no effect with many window managers. However,
+     * GDK will do the best it can to convince the window manager to stick
+     * the window. For window managers that don't support this operation,
+     * there's nothing you can do to force it to happen.
+     */
     stick(): void
+    /**
+     * Thaws a window frozen with
+     * gdk_window_freeze_toplevel_updates_libgtk_only().
+     * 
+     * This function is not part of the GDK public API and is only
+     * for use by GTK+.
+     */
     thaw_toplevel_updates_libgtk_only(): void
+    /**
+     * Thaws a window frozen with gdk_window_freeze_updates().
+     */
     thaw_updates(): void
+    /**
+     * Moves the window out of fullscreen mode. If the window was not
+     * fullscreen, does nothing.
+     * 
+     * On X11, asks the window manager to move `window` out of the fullscreen
+     * state, if the window manager supports this operation. Not all
+     * window managers support this, and some deliberately ignore it or
+     * don't have a concept of "fullscreen"; so you can't rely on the
+     * unfullscreenification actually happening. But it will happen with
+     * most standard window managers, and GDK makes a best effort to get
+     * it to happen.
+     */
     unfullscreen(): void
+    /**
+     * Unmaximizes the window. If the window wasn't maximized, then this
+     * function does nothing.
+     * 
+     * On X11, asks the window manager to unmaximize `window,` if the
+     * window manager supports this operation. Not all window managers
+     * support this, and some deliberately ignore it or don't have a
+     * concept of "maximized"; so you can't rely on the unmaximization
+     * actually happening. But it will happen with most standard window
+     * managers, and GDK makes a best effort to get it to happen.
+     * 
+     * On Windows, reliably unmaximizes the window.
+     */
     unmaximize(): void
+    /**
+     * Reverse operation for gdk_window_stick(); see gdk_window_stick(),
+     * and gtk_window_unstick().
+     */
     unstick(): void
+    /**
+     * Withdraws a window (unmaps it and asks the window manager to forget about it).
+     * This function is not really useful as gdk_window_hide() automatically
+     * withdraws toplevel windows before hiding them.
+     */
     withdraw(): void
     /* Methods of Gdk-2.0.Gdk.Drawable */
+    /**
+     * Equivalent to g_object_get_data(); the #GObject variant should be
+     * used instead.
+     */
     get_data(key: string): object | null
+    /**
+     * Obtains the bit depth of the drawable, that is, the number of bits
+     * that make up a pixel in the drawable's visual. Examples are 8 bits
+     * per pixel, 24 bits per pixel, etc.
+     */
     get_depth(): number
+    /**
+     * Fills *`width` and *`height` with the size of `drawable`.
+     * `width` or `height` can be %NULL if you only want the other one.
+     * 
+     * On the X11 platform, if `drawable` is a #GdkWindow, the returned
+     * size is the size reported in the most-recently-processed configure
+     * event, rather than the current size on the X server.
+     */
     get_size(): [ /* width */ number | null, /* height */ number | null ]
+    /**
+     * Sets the colormap associated with `drawable`. Normally this will
+     * happen automatically when the drawable is created; you only need to
+     * use this function if the drawable-creating function did not have a
+     * way to determine the colormap, and you then use drawable operations
+     * that require a colormap. The colormap for all drawables and
+     * graphics contexts you intend to use together should match. i.e.
+     * when using a #GdkGC to draw to a drawable, or copying one drawable
+     * to another, the colormaps should match.
+     */
     set_colormap(colormap: Colormap): void
+    /**
+     * This function is equivalent to g_object_set_data(),
+     * the #GObject variant should be used instead.
+     */
     set_data(key: string, data?: object | null, destroy_func?: GLib.DestroyNotify | null): void
+    /**
+     * Deprecated equivalent of calling g_object_unref() on `drawable`.
+     */
     unref(): void
     /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
     bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
     bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
     force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
     freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
     get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
     get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
     get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
     getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
     is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
     notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
     ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
     ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
     run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
     set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
     set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
     steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
     steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
     thaw_notify(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
     watch_closure(closure: Function): void
     /* Virtual methods of Gdk-2.0.Gdk.Drawable */
     vfunc_create_cairo_surface(width: number, height: number): cairo.Surface
@@ -4128,10 +11176,33 @@ class Window {
     vfunc_draw_text(font: Font, gc: GC, x: number, y: number, text: string, text_length: number): void
     vfunc_draw_text_wc(font: Font, gc: GC, x: number, y: number, text: WChar, text_length: number): void
     vfunc_draw_trapezoids(gc: GC, trapezoids: Trapezoid, n_trapezoids: number): void
+    /**
+     * Obtains the bit depth of the drawable, that is, the number of bits
+     * that make up a pixel in the drawable's visual. Examples are 8 bits
+     * per pixel, 24 bits per pixel, etc.
+     */
     vfunc_get_depth(): number
+    /**
+     * Fills *`width` and *`height` with the size of `drawable`.
+     * `width` or `height` can be %NULL if you only want the other one.
+     * 
+     * On the X11 platform, if `drawable` is a #GdkWindow, the returned
+     * size is the size reported in the most-recently-processed configure
+     * event, rather than the current size on the X server.
+     */
     vfunc_get_size(): [ /* width */ number | null, /* height */ number | null ]
     vfunc_ref_cairo_surface(): cairo.Surface
     vfunc_set_cairo_clip(cr: cairo.Context): void
+    /**
+     * Sets the colormap associated with `drawable`. Normally this will
+     * happen automatically when the drawable is created; you only need to
+     * use this function if the drawable-creating function did not have a
+     * way to determine the colormap, and you then use drawable operations
+     * that require a colormap. The colormap for all drawables and
+     * graphics contexts you intend to use together should match. i.e.
+     * when using a #GdkGC to draw to a drawable, or copying one drawable
+     * to another, the colormaps should match.
+     */
     vfunc_set_colormap(cmap: Colormap): void
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -4139,19 +11210,76 @@ class Window {
     vfunc_dispose(): void
     vfunc_finalize(): void
     vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
     /* Signals of Gdk-2.0.Gdk.Window */
+    /**
+     * The ::from-embedder signal is emitted to translate coordinates
+     * in the embedder of an offscreen window to the offscreen window.
+     * 
+     * See also #GtkWindow::to-embedder.
+     */
     connect(sigName: "from-embedder", callback: (($obj: Window, embedder_x: number, embedder_y: number) => void)): number
     connect_after(sigName: "from-embedder", callback: (($obj: Window, embedder_x: number, embedder_y: number) => void)): number
     emit(sigName: "from-embedder", embedder_x: number, embedder_y: number): void
+    /**
+     * The ::pick-embedded-child signal is emitted to find an embedded
+     * child at the given position.
+     */
     connect(sigName: "pick-embedded-child", callback: (($obj: Window, x: number, y: number) => Window)): number
     connect_after(sigName: "pick-embedded-child", callback: (($obj: Window, x: number, y: number) => Window)): number
     emit(sigName: "pick-embedded-child", x: number, y: number): void
+    /**
+     * The ::to-embedder signal is emitted to translate coordinates
+     * in an offscreen window to its embedder.
+     * 
+     * See also #GtkWindow::from-embedder.
+     */
     connect(sigName: "to-embedder", callback: (($obj: Window, offscreen_x: number, offscreen_y: number) => void)): number
     connect_after(sigName: "to-embedder", callback: (($obj: Window, offscreen_x: number, offscreen_y: number) => void)): number
     emit(sigName: "to-embedder", offscreen_x: number, offscreen_y: number): void
     /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
     connect(sigName: "notify", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     connect_after(sigName: "notify", callback: (($obj: Window, pspec: GObject.ParamSpec) => void)): number
     emit(sigName: "notify", pspec: GObject.ParamSpec): void
@@ -4191,17 +11319,70 @@ class Color {
     readonly green: number
     readonly blue: number
     /* Methods of Gdk-2.0.Gdk.Color */
+    /**
+     * Makes a copy of a color structure. The result
+     * must be freed using gdk_color_free().
+     */
     copy(): Color
+    /**
+     * Compares two colors.
+     */
     equal(colorb: Color): boolean
+    /**
+     * Frees a color structure created with
+     * gdk_color_copy().
+     */
     free(): void
+    /**
+     * A hash function suitable for using for a hash
+     * table that stores #GdkColor's.
+     */
     hash(): number
+    /**
+     * Returns a textual specification of `color` in the hexadecimal form
+     * <literal>&num;rrrrggggbbbb</literal>, where <literal>r</literal>,
+     * <literal>g</literal> and <literal>b</literal> are hex digits
+     * representing the red, green and blue components respectively.
+     */
     to_string(): string
     static name: string
     /* Static methods and pseudo-constructors */
+    /**
+     * Allocates a single color from a colormap.
+     */
     static alloc(colormap: Colormap, color: Color): number
+    /**
+     * Returns the black color for a given colormap. The resulting
+     * value has already been allocated.
+     */
     static black(colormap: Colormap, color: Color): number
+    /**
+     * Changes the value of a color that has already
+     * been allocated. If `colormap` is not a private
+     * colormap, then the color must have been allocated
+     * using gdk_colormap_alloc_colors() with the
+     * `writeable` set to %TRUE.
+     */
     static change(colormap: Colormap, color: Color): number
+    /**
+     * Parses a textual specification of a color and fill in the
+     * <structfield>red</structfield>, <structfield>green</structfield>,
+     * and <structfield>blue</structfield> fields of a #GdkColor
+     * structure. The color is <emphasis>not</emphasis> allocated, you
+     * must call gdk_colormap_alloc_color() yourself. The string can
+     * either one of a large set of standard names. (Taken from the X11
+     * <filename>rgb.txt</filename> file), or it can be a hex value in the
+     * form '&num;rgb' '&num;rrggbb' '&num;rrrgggbbb' or
+     * '&num;rrrrggggbbbb' where 'r', 'g' and 'b' are hex digits of the
+     * red, green, and blue components of the color, respectively. (White
+     * in the four forms is '&num;fff' '&num;ffffff' '&num;fffffffff' and
+     * '&num;ffffffffffff')
+     */
     static parse(spec: string): [ /* returnType */ boolean, /* color */ Color ]
+    /**
+     * Returns the white color for a given colormap. The resulting
+     * value has already allocated been allocated.
+     */
     static white(colormap: Colormap, color: Color): number
 }
 abstract class ColormapClass {
@@ -4213,8 +11394,18 @@ class Cursor {
     /* Fields of Gdk-2.0.Gdk.Cursor */
     readonly type: CursorType
     /* Methods of Gdk-2.0.Gdk.Cursor */
+    /**
+     * Returns the cursor type for this cursor.
+     */
     get_cursor_type(): CursorType
+    /**
+     * Adds a reference to `cursor`.
+     */
     ref(): Cursor
+    /**
+     * Removes a reference from `cursor,` deallocating the cursor
+     * if no references remain.
+     */
     unref(): void
     static name: string
     static new(cursor_type: CursorType): Cursor
@@ -4521,12 +11712,32 @@ class Font {
     /* Methods of Gdk-2.0.Gdk.Font */
     equal(fontb: Font): boolean
     id(): number
+    /**
+     * Increases the reference count of a font by one.
+     */
     ref(): Font
+    /**
+     * Decreases the reference count of a font by one.
+     * If the result is zero, destroys the font.
+     */
     unref(): void
     static name: string
     /* Static methods and pseudo-constructors */
+    /**
+     * Load a #GdkFont based on a Pango font description. This font will
+     * only be an approximation of the Pango font, and
+     * internationalization will not be handled correctly. This function
+     * should only be used for legacy code that cannot be easily converted
+     * to use Pango. Using Pango directly will produce better results.
+     */
     static from_description(font_desc: Pango.FontDescription): Font
     static from_description_for_display(display: Display, font_desc: Pango.FontDescription): Font
+    /**
+     * Loads a font.
+     * 
+     * The font may be newly loaded or looked up the font in a cache.
+     * You should make no assumptions about the initial reference count.
+     */
     static load(font_name: string): Font
     static load_for_display(display: Display, font_name: string): Font
 }
@@ -4589,6 +11800,10 @@ class KeyboardGrabInfo {
     readonly time: number
     static name: string
     /* Static methods and pseudo-constructors */
+    /**
+     * Determines information about the current keyboard grab.
+     * This is not public API and must not be used by applications.
+     */
     static libgtk_only(display: Display, grab_window: Window, owner_events: boolean): boolean
 }
 abstract class KeymapClass {
@@ -4669,26 +11884,96 @@ class Rectangle {
     readonly width: number
     readonly height: number
     /* Methods of Gdk-2.0.Gdk.Rectangle */
+    /**
+     * Calculates the intersection of two rectangles. It is allowed for
+     * `dest` to be the same as either `src1` or `src2`. If the rectangles
+     * do not intersect, `dest'`s width and height is set to 0 and its x
+     * and y values are undefined. If you are only interested in whether
+     * the rectangles intersect, but not in the intersecting area itself,
+     * pass %NULL for `dest`.
+     */
     intersect(src2: Rectangle): [ /* returnType */ boolean, /* dest */ Rectangle | null ]
+    /**
+     * Calculates the union of two rectangles.
+     * The union of rectangles `src1` and `src2` is the smallest rectangle which
+     * includes both `src1` and `src2` within it.
+     * It is allowed for `dest` to be the same as either `src1` or `src2`.
+     */
     union(src2: Rectangle): /* dest */ Rectangle
     static name: string
 }
 class Region {
     /* Methods of Gdk-2.0.Gdk.Region */
+    /**
+     * Destroys a #GdkRegion.
+     */
     destroy(): void
+    /**
+     * Finds out if the #GdkRegion is empty.
+     */
     empty(): boolean
+    /**
+     * Finds out if the two regions are the same.
+     */
     equal(region2: Region): boolean
+    /**
+     * Obtains the smallest rectangle which includes the entire #GdkRegion.
+     */
     get_clipbox(rectangle: Rectangle): void
+    /**
+     * Obtains the area covered by the region as a list of rectangles.
+     * The array returned in `rectangles` must be freed with g_free().
+     */
     get_rectangles(rectangles: Rectangle[]): void
+    /**
+     * Sets the area of `source1` to the intersection of the areas of `source1`
+     * and `source2`. The resulting area is the set of pixels contained in
+     * both `source1` and `source2`.
+     */
     intersect(source2: Region): void
+    /**
+     * Moves a region the specified distance.
+     */
     offset(dx: number, dy: number): void
+    /**
+     * Finds out if a point is in a region.
+     */
     point_in(x: number, y: number): boolean
+    /**
+     * Finds out if a regions is the same as a rectangle.
+     */
     rect_equal(rectangle: Rectangle): boolean
+    /**
+     * Tests whether a rectangle is within a region.
+     */
     rect_in(rectangle: Rectangle): OverlapType
+    /**
+     * Resizes a region by the specified amount.
+     * Positive values shrink the region. Negative values expand it.
+     */
     shrink(dx: number, dy: number): void
+    /**
+     * Subtracts the area of `source2` from the area `source1`. The resulting
+     * area is the set of pixels contained in `source1` but not in `source2`.
+     */
     subtract(source2: Region): void
+    /**
+     * Sets the area of `source1` to the union of the areas of `source1` and
+     * `source2`. The resulting area is the set of pixels contained in
+     * either `source1` or `source2`.
+     */
     union(source2: Region): void
+    /**
+     * Sets the area of `region` to the union of the areas of `region` and
+     * `rect`. The resulting area is the set of pixels contained in
+     * either `region` or `rect`.
+     */
     union_with_rect(rect: Rectangle): void
+    /**
+     * Sets the area of `source1` to the exclusive-OR of the areas of `source1`
+     * and `source2`. The resulting area is the set of pixels contained in one
+     * or the other of the two sources but not in both.
+     */
     xor(source2: Region): void
     static name: string
 }
@@ -4774,26 +12059,117 @@ class WindowRedirect {
 }
 class Event {
     /* Methods of Gdk-2.0.Gdk.Event */
+    /**
+     * Copies a #GdkEvent, copying or incrementing the reference count of the
+     * resources associated with it (e.g. #GdkWindow's and strings).
+     */
     copy(): Event
+    /**
+     * Frees a #GdkEvent, freeing or decrementing any resources associated with it.
+     * Note that this function should only be called with events returned from
+     * functions such as gdk_event_peek(), gdk_event_get(),
+     * gdk_event_get_graphics_expose() and gdk_event_copy() and gdk_event_new().
+     */
     free(): void
+    /**
+     * Extract the axis value for a particular axis use from
+     * an event structure.
+     */
     get_axis(axis_use: AxisUse): [ /* returnType */ boolean, /* value */ number ]
+    /**
+     * Extract the event window relative x/y coordinates from an event.
+     */
     get_coords(): [ /* returnType */ boolean, /* x_win */ number, /* y_win */ number ]
+    /**
+     * Extract the root window relative x/y coordinates from an event.
+     */
     get_root_coords(): [ /* returnType */ boolean, /* x_root */ number, /* y_root */ number ]
+    /**
+     * If the event contains a "state" field, puts that field in `state`. Otherwise
+     * stores an empty state (0). Returns %TRUE if there was a state field
+     * in the event. `event` may be %NULL, in which case it's treated
+     * as if the event had no state field.
+     */
     get_state(): [ /* returnType */ boolean, /* state */ ModifierType ]
+    /**
+     * Returns the time stamp from `event,` if there is one; otherwise
+     * returns #GDK_CURRENT_TIME. If `event` is %NULL, returns #GDK_CURRENT_TIME.
+     */
     get_time(): number
+    /**
+     * Appends a copy of the given event onto the front of the event
+     * queue for event->any.window's display, or the default event
+     * queue if event->any.window is %NULL. See gdk_display_put_event().
+     */
     put(): void
+    /**
+     * Sends an X ClientMessage event to a given window (which must be
+     * on the default #GdkDisplay.)
+     * This could be used for communicating between different applications,
+     * though the amount of data is limited to 20 bytes.
+     */
     send_client_message(winid: NativeWindow): boolean
+    /**
+     * Sends an X ClientMessage event to all toplevel windows on the default
+     * #GdkScreen.
+     * 
+     * Toplevel windows are determined by checking for the WM_STATE property, as
+     * described in the Inter-Client Communication Conventions Manual (ICCCM).
+     * If no windows are found with the WM_STATE property set, the message is sent
+     * to all children of the root window.
+     */
     send_clientmessage_toall(): void
+    /**
+     * Sets the screen for `event` to `screen`. The event must
+     * have been allocated by GTK+, for instance, by
+     * gdk_event_copy().
+     */
     set_screen(screen: Screen): void
     static name: string
     static new(type: EventType): Event
     constructor(type: EventType)
     /* Static methods and pseudo-constructors */
     static new(type: EventType): Event
+    /**
+     * Checks all open displays for a #GdkEvent to process,to be processed
+     * on, fetching events from the windowing system if necessary.
+     * See gdk_display_get_event().
+     */
     static get(): Event
     static get_graphics_expose(window: Window): Event
+    /**
+     * Sets the function to call to handle all events from GDK.
+     * 
+     * Note that GTK+ uses this to install its own event handler, so it is
+     * usually not useful for GTK+ applications. (Although an application
+     * can call this function then call gtk_main_do_event() to pass
+     * events to GTK+.)
+     */
     static handler_set(func: EventFunc): void
+    /**
+     * If there is an event waiting in the event queue of some open
+     * display, returns a copy of it. See gdk_display_peek_event().
+     */
     static peek(): Event
+    /**
+     * Request more motion notifies if `event` is a motion notify hint event.
+     * This function should be used instead of gdk_window_get_pointer() to
+     * request further motion notifies, because it also works for extension
+     * events where motion notifies are provided for devices other than the
+     * core pointer. Coordinate extraction, processing and requesting more
+     * motion events from a %GDK_MOTION_NOTIFY event usually works like this:
+     * 
+     * |[
+     * {
+     *   /&ast; motion_event handler &ast;/
+     *   x = motion_event->x;
+     *   y = motion_event->y;
+     *   /&ast; handle (x,y) motion &ast;/
+     *   gdk_event_request_motions (motion_event); /&ast; handles is_hint events &ast;/
+     * }
+     * ```
+     * 
+     */
     static request_motions(event: EventMotion): void
     static send_client_message_for_display(display: Display, event: Event, winid: NativeWindow): boolean
 }

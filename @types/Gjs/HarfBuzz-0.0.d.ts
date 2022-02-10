@@ -14,260 +14,1022 @@ import type GLib from './GLib-2.0';
 
 export namespace HarfBuzz {
 
+/**
+ * The selectors defined for specifying AAT feature settings.
+ */
 enum aat_layout_feature_selector_t {
+    /**
+     * Initial, unset feature selector
+     */
     INVALID,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ALL_TYPOGRAPHIC
+     */
     ALL_TYPE_FEATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ALL_TYPOGRAPHIC
+     */
     ALL_TYPE_FEATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     REQUIRED_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     REQUIRED_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     COMMON_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     COMMON_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     RARE_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     RARE_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     LOGOS_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     LOGOS_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     REBUS_PICTURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     REBUS_PICTURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     DIPHTHONG_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     DIPHTHONG_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     SQUARED_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     SQUARED_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     ABBREV_SQUARED_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     ABBREV_SQUARED_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     SYMBOL_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     SYMBOL_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     CONTEXTUAL_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     CONTEXTUAL_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     HISTORICAL_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     HISTORICAL_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     UNCONNECTED,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     PARTIALLY_CONNECTED,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LIGATURES
+     */
     CURSIVE,
+    /**
+     * Deprecated
+     */
     UPPER_AND_LOWER_CASE,
+    /**
+     * Deprecated
+     */
     ALL_CAPS,
+    /**
+     * Deprecated
+     */
     ALL_LOWER_CASE,
+    /**
+     * Deprecated
+     */
     SMALL_CAPS,
+    /**
+     * Deprecated
+     */
     INITIAL_CAPS,
+    /**
+     * Deprecated
+     */
     INITIAL_CAPS_AND_SMALL_CAPS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_VERTICAL_SUBSTITUTION
+     */
     SUBSTITUTE_VERTICAL_FORMS_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_VERTICAL_SUBSTITUTION
+     */
     SUBSTITUTE_VERTICAL_FORMS_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LINGUISTIC_REARRANGEMENT
+     */
     LINGUISTIC_REARRANGEMENT_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LINGUISTIC_REARRANGEMENT
+     */
     LINGUISTIC_REARRANGEMENT_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_NUMBER_SPACING
+     */
     MONOSPACED_NUMBERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_NUMBER_SPACING
+     */
     PROPORTIONAL_NUMBERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_NUMBER_SPACING
+     */
     THIRD_WIDTH_NUMBERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_NUMBER_SPACING
+     */
     QUARTER_WIDTH_NUMBERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     WORD_INITIAL_SWASHES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     WORD_INITIAL_SWASHES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     WORD_FINAL_SWASHES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     WORD_FINAL_SWASHES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     LINE_INITIAL_SWASHES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     LINE_INITIAL_SWASHES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     LINE_FINAL_SWASHES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     LINE_FINAL_SWASHES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     NON_FINAL_SWASHES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_SMART_SWASH_TYPE
+     */
     NON_FINAL_SWASHES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_DIACRITICS_TYPE
+     */
     SHOW_DIACRITICS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_DIACRITICS_TYPE
+     */
     HIDE_DIACRITICS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_DIACRITICS_TYPE
+     */
     DECOMPOSE_DIACRITICS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_VERTICAL_POSITION
+     */
     NORMAL_POSITION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_VERTICAL_POSITION
+     */
     SUPERIORS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_VERTICAL_POSITION
+     */
     INFERIORS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_VERTICAL_POSITION
+     */
     ORDINALS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_VERTICAL_POSITION
+     */
     SCIENTIFIC_INFERIORS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_FRACTIONS
+     */
     NO_FRACTIONS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_FRACTIONS
+     */
     VERTICAL_FRACTIONS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_FRACTIONS
+     */
     DIAGONAL_FRACTIONS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_OVERLAPPING_CHARACTERS_TYPE
+     */
     PREVENT_OVERLAP_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_OVERLAPPING_CHARACTERS_TYPE
+     */
     PREVENT_OVERLAP_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     HYPHENS_TO_EM_DASH_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     HYPHENS_TO_EM_DASH_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     HYPHEN_TO_EN_DASH_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     HYPHEN_TO_EN_DASH_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     SLASHED_ZERO_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     SLASHED_ZERO_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     FORM_INTERROBANG_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     FORM_INTERROBANG_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     SMART_QUOTES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     SMART_QUOTES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     PERIODS_TO_ELLIPSIS_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TYPOGRAPHIC_EXTRAS
+     */
     PERIODS_TO_ELLIPSIS_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     HYPHEN_TO_MINUS_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     HYPHEN_TO_MINUS_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     ASTERISK_TO_MULTIPLY_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     ASTERISK_TO_MULTIPLY_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     SLASH_TO_DIVIDE_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     SLASH_TO_DIVIDE_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     INEQUALITY_LIGATURES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     INEQUALITY_LIGATURES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     EXPONENTS_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     EXPONENTS_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     MATHEMATICAL_GREEK_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_MATHEMATICAL_EXTRAS
+     */
     MATHEMATICAL_GREEK_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ORNAMENT_SETS_TYPE
+     */
     NO_ORNAMENTS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ORNAMENT_SETS_TYPE
+     */
     DINGBATS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ORNAMENT_SETS_TYPE
+     */
     PI_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ORNAMENT_SETS_TYPE
+     */
     FLEURONS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ORNAMENT_SETS_TYPE
+     */
     DECORATIVE_BORDERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ORNAMENT_SETS_TYPE
+     */
     INTERNATIONAL_SYMBOLS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ORNAMENT_SETS_TYPE
+     */
     MATH_SYMBOLS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_ALTERNATIVES
+     */
     NO_ALTERNATES,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_DESIGN_COMPLEXITY_TYPE
+     */
     DESIGN_LEVEL1,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_DESIGN_COMPLEXITY_TYPE
+     */
     DESIGN_LEVEL2,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_DESIGN_COMPLEXITY_TYPE
+     */
     DESIGN_LEVEL3,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_DESIGN_COMPLEXITY_TYPE
+     */
     DESIGN_LEVEL4,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_DESIGN_COMPLEXITY_TYPE
+     */
     DESIGN_LEVEL5,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLE_OPTIONS
+     */
     NO_STYLE_OPTIONS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLE_OPTIONS
+     */
     DISPLAY_TEXT,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLE_OPTIONS
+     */
     ENGRAVED_TEXT,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLE_OPTIONS
+     */
     ILLUMINATED_CAPS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLE_OPTIONS
+     */
     TITLING_CAPS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLE_OPTIONS
+     */
     TALL_CAPS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     TRADITIONAL_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     SIMPLIFIED_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     JIS1978_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     JIS1983_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     JIS1990_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     TRADITIONAL_ALT_ONE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     TRADITIONAL_ALT_TWO,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     TRADITIONAL_ALT_THREE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     TRADITIONAL_ALT_FOUR,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     TRADITIONAL_ALT_FIVE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     EXPERT_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     JIS2004_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     HOJO_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     NLCCHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CHARACTER_SHAPE
+     */
     TRADITIONAL_NAMES_CHARACTERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_NUMBER_CASE
+     */
     LOWER_CASE_NUMBERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_NUMBER_CASE
+     */
     UPPER_CASE_NUMBERS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TEXT_SPACING
+     */
     PROPORTIONAL_TEXT,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TEXT_SPACING
+     */
     MONOSPACED_TEXT,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TEXT_SPACING
+     */
     HALF_WIDTH_TEXT,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TEXT_SPACING
+     */
     THIRD_WIDTH_TEXT,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TEXT_SPACING
+     */
     QUARTER_WIDTH_TEXT,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TEXT_SPACING
+     */
     ALT_PROPORTIONAL_TEXT,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TEXT_SPACING
+     */
     ALT_HALF_WIDTH_TEXT,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     NO_TRANSLITERATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     HANJA_TO_HANGUL,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     HIRAGANA_TO_KATAKANA,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     KATAKANA_TO_HIRAGANA,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     KANA_TO_ROMANIZATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     ROMANIZATION_TO_HIRAGANA,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     ROMANIZATION_TO_KATAKANA,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     HANJA_TO_HANGUL_ALT_ONE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     HANJA_TO_HANGUL_ALT_TWO,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_TRANSLITERATION
+     */
     HANJA_TO_HANGUL_ALT_THREE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     NO_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     BOX_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     ROUNDED_BOX_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     CIRCLE_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     INVERTED_CIRCLE_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     PARENTHESIS_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     PERIOD_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     ROMAN_NUMERAL_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     DIAMOND_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     INVERTED_BOX_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ANNOTATION_TYPE
+     */
     INVERTED_ROUNDED_BOX_ANNOTATION,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_KANA_SPACING_TYPE
+     */
     FULL_WIDTH_KANA,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_KANA_SPACING_TYPE
+     */
     PROPORTIONAL_KANA,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_IDEOGRAPHIC_SPACING_TYPE
+     */
     FULL_WIDTH_IDEOGRAPHS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_IDEOGRAPHIC_SPACING_TYPE
+     */
     PROPORTIONAL_IDEOGRAPHS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_IDEOGRAPHIC_SPACING_TYPE
+     */
     HALF_WIDTH_IDEOGRAPHS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_UNICODE_DECOMPOSITION_TYPE
+     */
     CANONICAL_COMPOSITION_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_UNICODE_DECOMPOSITION_TYPE
+     */
     CANONICAL_COMPOSITION_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_UNICODE_DECOMPOSITION_TYPE
+     */
     COMPATIBILITY_COMPOSITION_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_UNICODE_DECOMPOSITION_TYPE
+     */
     COMPATIBILITY_COMPOSITION_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_UNICODE_DECOMPOSITION_TYPE
+     */
     TRANSCODING_COMPOSITION_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_UNICODE_DECOMPOSITION_TYPE
+     */
     TRANSCODING_COMPOSITION_OFF,
+    /**
+     * Deprecated; use #HB_AAT_LAYOUT_FEATURE_SELECTOR_RUBY_KANA_OFF instead
+     */
     NO_RUBY_KANA,
+    /**
+     * Deprecated; use #HB_AAT_LAYOUT_FEATURE_SELECTOR_RUBY_KANA_ON instead
+     */
     RUBY_KANA,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_RUBY_KANA
+     */
     RUBY_KANA_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_RUBY_KANA
+     */
     RUBY_KANA_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_SYMBOL_ALTERNATIVES_TYPE
+     */
     NO_CJK_SYMBOL_ALTERNATIVES,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_SYMBOL_ALTERNATIVES_TYPE
+     */
     CJK_SYMBOL_ALT_ONE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_SYMBOL_ALTERNATIVES_TYPE
+     */
     CJK_SYMBOL_ALT_TWO,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_SYMBOL_ALTERNATIVES_TYPE
+     */
     CJK_SYMBOL_ALT_THREE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_SYMBOL_ALTERNATIVES_TYPE
+     */
     CJK_SYMBOL_ALT_FOUR,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_SYMBOL_ALTERNATIVES_TYPE
+     */
     CJK_SYMBOL_ALT_FIVE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_IDEOGRAPHIC_ALTERNATIVES_TYPE
+     */
     NO_IDEOGRAPHIC_ALTERNATIVES,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_IDEOGRAPHIC_ALTERNATIVES_TYPE
+     */
     IDEOGRAPHIC_ALT_ONE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_IDEOGRAPHIC_ALTERNATIVES_TYPE
+     */
     IDEOGRAPHIC_ALT_TWO,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_IDEOGRAPHIC_ALTERNATIVES_TYPE
+     */
     IDEOGRAPHIC_ALT_THREE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_IDEOGRAPHIC_ALTERNATIVES_TYPE
+     */
     IDEOGRAPHIC_ALT_FOUR,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_IDEOGRAPHIC_ALTERNATIVES_TYPE
+     */
     IDEOGRAPHIC_ALT_FIVE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_VERTICAL_ROMAN_PLACEMENT_TYPE
+     */
     CJK_VERTICAL_ROMAN_CENTERED,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_VERTICAL_ROMAN_PLACEMENT_TYPE
+     */
     CJK_VERTICAL_ROMAN_HBASELINE,
+    /**
+     * Deprecated; use #HB_AAT_LAYOUT_FEATURE_SELECTOR_CJK_ITALIC_ROMAN_OFF instead
+     */
     NO_CJK_ITALIC_ROMAN,
+    /**
+     * Deprecated; use #HB_AAT_LAYOUT_FEATURE_SELECTOR_CJK_ITALIC_ROMAN_ON instead
+     */
     CJK_ITALIC_ROMAN,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ITALIC_CJK_ROMAN
+     */
     CJK_ITALIC_ROMAN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ITALIC_CJK_ROMAN
+     */
     CJK_ITALIC_ROMAN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CASE_SENSITIVE_LAYOUT
+     */
     CASE_SENSITIVE_LAYOUT_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CASE_SENSITIVE_LAYOUT
+     */
     CASE_SENSITIVE_LAYOUT_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CASE_SENSITIVE_LAYOUT
+     */
     CASE_SENSITIVE_SPACING_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CASE_SENSITIVE_LAYOUT
+     */
     CASE_SENSITIVE_SPACING_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ALTERNATE_KANA
+     */
     ALTERNATE_HORIZ_KANA_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ALTERNATE_KANA
+     */
     ALTERNATE_HORIZ_KANA_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ALTERNATE_KANA
+     */
     ALTERNATE_VERT_KANA_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_ALTERNATE_KANA
+     */
     ALTERNATE_VERT_KANA_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     NO_STYLISTIC_ALTERNATES,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_ONE_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_ONE_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_TWO_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_TWO_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_THREE_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_THREE_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_FOUR_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_FOUR_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_FIVE_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_FIVE_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_SIX_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_SIX_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_SEVEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_SEVEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_EIGHT_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_EIGHT_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_NINE_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_NINE_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_TEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_TEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_ELEVEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_ELEVEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_TWELVE_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_TWELVE_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_THIRTEEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_THIRTEEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_FOURTEEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_FOURTEEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_FIFTEEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_FIFTEEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_SIXTEEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_SIXTEEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_SEVENTEEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_SEVENTEEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_EIGHTEEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_EIGHTEEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_NINETEEN_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_NINETEEN_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_TWENTY_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_STYLISTIC_ALTERNATIVES
+     */
     STYLISTIC_ALT_TWENTY_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CONTEXTUAL_ALTERNATIVES
+     */
     CONTEXTUAL_ALTERNATES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CONTEXTUAL_ALTERNATIVES
+     */
     CONTEXTUAL_ALTERNATES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CONTEXTUAL_ALTERNATIVES
+     */
     SWASH_ALTERNATES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CONTEXTUAL_ALTERNATIVES
+     */
     SWASH_ALTERNATES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CONTEXTUAL_ALTERNATIVES
+     */
     CONTEXTUAL_SWASH_ALTERNATES_ON,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CONTEXTUAL_ALTERNATIVES
+     */
     CONTEXTUAL_SWASH_ALTERNATES_OFF,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LOWER_CASE
+     */
     DEFAULT_LOWER_CASE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LOWER_CASE
+     */
     LOWER_CASE_SMALL_CAPS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_LOWER_CASE
+     */
     LOWER_CASE_PETITE_CAPS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_UPPER_CASE
+     */
     DEFAULT_UPPER_CASE,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_UPPER_CASE
+     */
     UPPER_CASE_SMALL_CAPS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_UPPER_CASE
+     */
     UPPER_CASE_PETITE_CAPS,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_ROMAN_SPACING_TYPE
+     */
     HALF_WIDTH_CJK_ROMAN,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_ROMAN_SPACING_TYPE
+     */
     PROPORTIONAL_CJK_ROMAN,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_ROMAN_SPACING_TYPE
+     */
     DEFAULT_CJK_ROMAN,
+    /**
+     * for #HB_AAT_LAYOUT_FEATURE_TYPE_CJK_ROMAN_SPACING_TYPE
+     */
     FULL_WIDTH_CJK_ROMAN,
 }
+/**
+ * The possible feature types defined for AAT shaping.
+ */
 enum aat_layout_feature_type_t {
+    /**
+     * Initial, unset feature type
+     */
     INVALID,
     ALL_TYPOGRAPHIC,
     LIGATURES,
@@ -310,26 +1072,77 @@ enum aat_layout_feature_type_t {
     CJK_ROMAN_SPACING_TYPE,
 }
 enum buffer_cluster_level_t {
+    /**
+     * Return cluster values grouped by graphemes into
+     *   monotone order.
+     */
     MONOTONE_GRAPHEMES,
+    /**
+     * Return cluster values grouped into monotone order.
+     */
     MONOTONE_CHARACTERS,
+    /**
+     * Don't group cluster values.
+     */
     CHARACTERS,
+    /**
+     * Default cluster level,
+     *   equal to `HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES`.
+     */
     DEFAULT,
 }
 enum buffer_content_type_t {
+    /**
+     * Initial value for new buffer.
+     */
     INVALID,
+    /**
+     * The buffer contains input characters (before shaping).
+     */
     UNICODE,
+    /**
+     * The buffer contains output glyphs (after shaping).
+     */
     GLYPHS,
 }
+/**
+ * The buffer serialization and de-serialization format used in
+ * hb_buffer_serialize_glyphs() and hb_buffer_deserialize_glyphs().
+ */
 enum buffer_serialize_format_t {
+    /**
+     * a human-readable, plain text format.
+     */
     TEXT,
+    /**
+     * a machine-readable JSON format.
+     */
     JSON,
+    /**
+     * invalid format.
+     */
     INVALID,
 }
 enum direction_t {
+    /**
+     * Initial, unset direction.
+     */
     INVALID,
+    /**
+     * Text is set horizontally from left to right.
+     */
     LTR,
+    /**
+     * Text is set horizontally from right to left.
+     */
     RTL,
+    /**
+     * Text is set vertically from top to bottom.
+     */
     TTB,
+    /**
+     * Text is set vertically from bottom to top.
+     */
     BTT,
 }
 enum memory_mode_t {
@@ -338,22 +1151,78 @@ enum memory_mode_t {
     WRITABLE,
     READONLY_MAY_MAKE_WRITABLE,
 }
+/**
+ * Baseline tags from https://docs.microsoft.com/en-us/typography/opentype/spec/baselinetags
+ */
 enum ot_layout_baseline_tag_t {
+    /**
+     * The baseline used by alphabetic scripts such as Latin, Cyrillic and Greek.
+     * In vertical writing mode, the alphabetic baseline for characters rotated 90 degrees clockwise.
+     * (This would not apply to alphabetic characters that remain upright in vertical writing mode, since these
+     * characters are not rotated.)
+     */
     ROMAN,
+    /**
+     * The hanging baseline. In horizontal direction, this is the horizontal
+     * line from which syllables seem, to hang in Tibetan and other similar scripts. In vertical writing mode,
+     * for Tibetan (or some other similar script) characters rotated 90 degrees clockwise.
+     */
     HANGING,
+    /**
+     * Ideographic character face bottom or left edge,
+     * if the direction is horizontal or vertical, respectively.
+     */
     IDEO_FACE_BOTTOM_OR_LEFT,
+    /**
+     * Ideographic character face top or right edge,
+     * if the direction is horizontal or vertical, respectively.
+     */
     IDEO_FACE_TOP_OR_RIGHT,
+    /**
+     * Ideographic em-box bottom or left edge,
+     * if the direction is horizontal or vertical, respectively.
+     */
     IDEO_EMBOX_BOTTOM_OR_LEFT,
+    /**
+     * Ideographic em-box top or right edge baseline,
+     * if the direction is horizontal or vertical, respectively.
+     */
     IDEO_EMBOX_TOP_OR_RIGHT,
+    /**
+     * The baseline about which mathematical characters are centered.
+     * In vertical writing mode when mathematical characters rotated 90 degrees clockwise, are centered.
+     */
     MATH,
 }
+/**
+ * The GDEF classes defined for glyphs.
+ */
 enum ot_layout_glyph_class_t {
+    /**
+     * Glyphs not matching the other classifications
+     */
     UNCLASSIFIED,
+    /**
+     * Spacing, single characters, capable of accepting marks
+     */
     BASE_GLYPH,
+    /**
+     * Glyphs that represent ligation of multiple characters
+     */
     LIGATURE,
+    /**
+     * Non-spacing, combining glyphs that represent marks
+     */
     MARK,
+    /**
+     * Spacing glyphs that represent part of a single character
+     */
     COMPONENT,
 }
+/**
+ * The 'MATH' table constants specified at
+ * https://docs.microsoft.com/en-us/typography/opentype/spec/math
+ */
 enum ot_math_constant_t {
     SCRIPT_PERCENT_SCALE_DOWN,
     SCRIPT_SCRIPT_PERCENT_SCALE_DOWN,
@@ -412,44 +1281,148 @@ enum ot_math_constant_t {
     RADICAL_KERN_AFTER_DEGREE,
     RADICAL_DEGREE_BOTTOM_RAISE_PERCENT,
 }
+/**
+ * The math kerning-table types defined for the four corners
+ * of a glyph.
+ */
 enum ot_math_kern_t {
     TOP_RIGHT,
     TOP_LEFT,
     BOTTOM_RIGHT,
     BOTTOM_LEFT,
 }
+/**
+ * Known metadata tags from https://docs.microsoft.com/en-us/typography/opentype/spec/meta
+ */
 enum ot_meta_tag_t {
+    /**
+     * Design languages. Text, using only
+     * Basic Latin (ASCII) characters. Indicates languages and/or scripts
+     * for the user audiences that the font was primarily designed for.
+     */
     DESIGN_LANGUAGES,
+    /**
+     * Supported languages. Text, using
+     * only Basic Latin (ASCII) characters. Indicates languages and/or scripts
+     * that the font is declared to be capable of supporting.
+     */
     SUPPORTED_LANGUAGES,
 }
+/**
+ * From https://docs.microsoft.com/en-us/typography/opentype/spec/mvar#value-tags
+ */
 enum ot_metrics_tag_t {
+    /**
+     * horizontal ascender.
+     */
     HORIZONTAL_ASCENDER,
+    /**
+     * horizontal descender.
+     */
     HORIZONTAL_DESCENDER,
+    /**
+     * horizontal line gap.
+     */
     HORIZONTAL_LINE_GAP,
+    /**
+     * horizontal clipping ascent.
+     */
     HORIZONTAL_CLIPPING_ASCENT,
+    /**
+     * horizontal clipping descent.
+     */
     HORIZONTAL_CLIPPING_DESCENT,
+    /**
+     * vertical ascender.
+     */
     VERTICAL_ASCENDER,
+    /**
+     * vertical descender.
+     */
     VERTICAL_DESCENDER,
+    /**
+     * vertical line gap.
+     */
     VERTICAL_LINE_GAP,
+    /**
+     * horizontal caret rise.
+     */
     HORIZONTAL_CARET_RISE,
+    /**
+     * horizontal caret run.
+     */
     HORIZONTAL_CARET_RUN,
+    /**
+     * horizontal caret offset.
+     */
     HORIZONTAL_CARET_OFFSET,
+    /**
+     * vertical caret rise.
+     */
     VERTICAL_CARET_RISE,
+    /**
+     * vertical caret run.
+     */
     VERTICAL_CARET_RUN,
+    /**
+     * vertical caret offset.
+     */
     VERTICAL_CARET_OFFSET,
+    /**
+     * x height.
+     */
     X_HEIGHT,
+    /**
+     * cap height.
+     */
     CAP_HEIGHT,
+    /**
+     * subscript em x size.
+     */
     SUBSCRIPT_EM_X_SIZE,
+    /**
+     * subscript em y size.
+     */
     SUBSCRIPT_EM_Y_SIZE,
+    /**
+     * subscript em x offset.
+     */
     SUBSCRIPT_EM_X_OFFSET,
+    /**
+     * subscript em y offset.
+     */
     SUBSCRIPT_EM_Y_OFFSET,
+    /**
+     * superscript em x size.
+     */
     SUPERSCRIPT_EM_X_SIZE,
+    /**
+     * superscript em y size.
+     */
     SUPERSCRIPT_EM_Y_SIZE,
+    /**
+     * superscript em x offset.
+     */
     SUPERSCRIPT_EM_X_OFFSET,
+    /**
+     * superscript em y offset.
+     */
     SUPERSCRIPT_EM_Y_OFFSET,
+    /**
+     * strikeout size.
+     */
     STRIKEOUT_SIZE,
+    /**
+     * strikeout offset.
+     */
     STRIKEOUT_OFFSET,
+    /**
+     * underline size.
+     */
     UNDERLINE_SIZE,
+    /**
+     * underline offset.
+     */
     UNDERLINE_OFFSET,
 }
 enum script_t {
@@ -612,6 +1585,19 @@ enum script_t {
     YEZIDI,
     INVALID,
 }
+/**
+ * `HB_UNICODE_COMBINING_CLASS_NOT_REORDERED`
+ * `HB_UNICODE_COMBINING_CLASS_OVERLAY`
+ * `HB_UNICODE_COMBINING_CLASS_NUKTA`
+ * `HB_UNICODE_COMBINING_CLASS_KANA_VOICING`
+ * `HB_UNICODE_COMBINING_CLASS_VIRAMA`
+ * Data type for the Canonical_Combining_Class (ccc) property
+ * from the Unicode Character Database.
+ * 
+ * <note>Note: newer versions of Unicode may add new values.
+ * Client programs should be ready to handle any value in the 0..254 range
+ * being returned from hb_unicode_combining_class().</note>
+ */
 enum unicode_combining_class_t {
     NOT_REORDERED,
     OVERLAY,
@@ -653,6 +1639,24 @@ enum unicode_combining_class_t {
     CCC122,
     CCC129,
     CCC130,
+    /**
+     * 
+     * `HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW_LEFT`
+     * `HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW`
+     * `HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE`
+     * `HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE_RIGHT`
+     * `HB_UNICODE_COMBINING_CLASS_BELOW_LEFT`
+     * `HB_UNICODE_COMBINING_CLASS_BELOW`
+     * `HB_UNICODE_COMBINING_CLASS_BELOW_RIGHT`
+     * `HB_UNICODE_COMBINING_CLASS_LEFT`
+     * `HB_UNICODE_COMBINING_CLASS_RIGHT`
+     * `HB_UNICODE_COMBINING_CLASS_ABOVE_LEFT`
+     * `HB_UNICODE_COMBINING_CLASS_ABOVE`
+     * `HB_UNICODE_COMBINING_CLASS_ABOVE_RIGHT`
+     * `HB_UNICODE_COMBINING_CLASS_DOUBLE_BELOW`
+     * `HB_UNICODE_COMBINING_CLASS_DOUBLE_ABOVE`
+     * `HB_UNICODE_COMBINING_CLASS_IOTA_SUBSCRIPT`
+     */
     CCC133,
     ATTACHED_BELOW_LEFT,
     ATTACHED_BELOW,
@@ -669,8 +1673,15 @@ enum unicode_combining_class_t {
     DOUBLE_BELOW,
     DOUBLE_ABOVE,
     IOTA_SUBSCRIPT,
+    /**
+     * 255
+     */
     INVALID,
 }
+/**
+ * Data type for the "General_Category" (gc) property from
+ * the Unicode Character Database.
+ */
 enum unicode_general_category_t {
     CONTROL,
     FORMAT,
@@ -715,38 +1726,144 @@ enum buffer_diff_flags_t {
     POSITION_MISMATCH,
 }
 enum buffer_flags_t {
+    /**
+     * the default buffer flag.
+     */
     DEFAULT,
+    /**
+     * flag indicating that special handling of the beginning
+     *                      of text paragraph can be applied to this buffer. Should usually
+     *                      be set, unless you are passing to the buffer only part
+     *                      of the text without the full context.
+     */
     BOT,
+    /**
+     * flag indicating that special handling of the end of text
+     *                      paragraph can be applied to this buffer, similar to
+     *                      `HB_BUFFER_FLAG_BOT`.
+     */
     EOT,
+    /**
+     * flag indication that character with Default_Ignorable
+     *                      Unicode property should use the corresponding glyph
+     *                      from the font, instead of hiding them (done by
+     *                      replacing them with the space glyph and zeroing the
+     *                      advance width.)  This flag takes precedence over
+     *                      `HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES`.
+     */
     PRESERVE_DEFAULT_IGNORABLES,
+    /**
+     * flag indication that character with Default_Ignorable
+     *                      Unicode property should be removed from glyph string
+     *                      instead of hiding them (done by replacing them with the
+     *                      space glyph and zeroing the advance width.)
+     *                      `HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES` takes
+     *                      precedence over this flag. Since: 1.8.0
+     */
     REMOVE_DEFAULT_IGNORABLES,
+    /**
+     * flag indicating that a dotted circle should
+     *                      not be inserted in the rendering of incorrect
+     *                      character sequences (such at <0905 093E>). Since: 2.4
+     */
     DO_NOT_INSERT_DOTTED_CIRCLE,
 }
+/**
+ * Flags that control what glyph information are serialized in hb_buffer_serialize_glyphs().
+ */
 enum buffer_serialize_flags_t {
+    /**
+     * serialize glyph names, clusters and positions.
+     */
     DEFAULT,
+    /**
+     * do not serialize glyph cluster.
+     */
     NO_CLUSTERS,
+    /**
+     * do not serialize glyph position information.
+     */
     NO_POSITIONS,
+    /**
+     * do no serialize glyph name.
+     */
     NO_GLYPH_NAMES,
+    /**
+     * serialize glyph extents.
+     */
     GLYPH_EXTENTS,
+    /**
+     * serialize glyph flags. Since: 1.5.0
+     */
     GLYPH_FLAGS,
+    /**
+     * do not serialize glyph advances,
+     *  glyph offsets will reflect absolute glyph positions. Since: 1.8.0
+     */
     NO_ADVANCES,
 }
 enum glyph_flags_t {
+    /**
+     * Indicates that if input text is broken at the
+     * 				   beginning of the cluster this glyph is part of,
+     * 				   then both sides need to be re-shaped, as the
+     * 				   result might be different.  On the flip side,
+     * 				   it means that when this flag is not present,
+     * 				   then it's safe to break the glyph-run at the
+     * 				   beginning of this cluster, and the two sides
+     * 				   represent the exact same result one would get
+     * 				   if breaking input text at the beginning of
+     * 				   this cluster and shaping the two sides
+     * 				   separately.  This can be used to optimize
+     * 				   paragraph layout, by avoiding re-shaping
+     * 				   of each line after line-breaking, or limiting
+     * 				   the reshaping to a small piece around the
+     * 				   breaking point only.
+     */
     UNSAFE_TO_BREAK,
+    /**
+     * All the currently defined flags.
+     */
     DEFINED,
 }
 enum ot_color_palette_flags_t {
+    /**
+     * Default indicating that there is nothing special
+     *   to note about a color palette.
+     */
     DEFAULT,
+    /**
+     * Flag indicating that the color
+     *   palette is appropriate to use when displaying the font on a light background such as white.
+     */
     USABLE_WITH_LIGHT_BACKGROUND,
+    /**
+     * Flag indicating that the color
+     *   palette is appropriate to use when displaying the font on a dark background such as black.
+     */
     USABLE_WITH_DARK_BACKGROUND,
 }
+/**
+ * Flags for math glyph parts.
+ */
 enum ot_math_glyph_part_flags_t {
     EXTENDER,
 }
 enum ot_var_axis_flags_t {
+    /**
+     * The axis should not be exposed directly in user interfaces.
+     */
     HIDDEN,
 }
+/**
+ * Used when getting or setting AAT feature selectors. Indicates that
+ * there is no selector index corresponding to the selector of interest.
+ */
 const AAT_LAYOUT_NO_SELECTOR_INDEX: number
+/**
+ * The default code point for replacing invalid characters in a given encoding.
+ * Set to U+FFFD REPLACEMENT CHARACTER.
+ */
 const BUFFER_REPLACEMENT_CODEPOINT_DEFAULT: number
 const FEATURE_GLOBAL_START: number
 const LANGUAGE_INVALID: language_t
@@ -760,6 +1877,9 @@ const OT_MAX_TAGS_PER_SCRIPT: number
 const OT_VAR_NO_AXIS_INDEX: number
 const SET_VALUE_INVALID: codepoint_t
 const UNICODE_MAX: number
+/**
+ * See Unicode 6.1 for details on the maximum decomposition length.
+ */
 const UNICODE_MAX_DECOMPOSITION_LEN: number
 const VERSION_MAJOR: number
 const VERSION_MICRO: number
@@ -1155,27 +2275,82 @@ interface font_get_variation_glyph_func_t {
 interface reference_table_func_t {
     (face: face_t, tag: tag_t): blob_t
 }
+/**
+ * A virtual method for the #hb_unicode_funcs_t structure.
+ * 
+ * This method should retrieve the Canonical Combining Class (ccc)
+ * property for a specified Unicode code point.
+ */
 interface unicode_combining_class_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): unicode_combining_class_t
 }
+/**
+ * A virtual method for the #hb_unicode_funcs_t structure.
+ * 
+ * This method should compose a sequence of two input Unicode code
+ * points by canonical equivalence, returning the composed code
+ * point in a #hb_codepoint_t output parameter (if successful).
+ * The method must return an #hb_bool_t indicating the success
+ * of the composition.
+ */
 interface unicode_compose_func_t {
     (ufuncs: unicode_funcs_t, a: codepoint_t, b: codepoint_t, ab: codepoint_t): bool_t
 }
+/**
+ * Fully decompose `u` to its Unicode compatibility decomposition. The codepoints of the decomposition will be written to `decomposed`.
+ * The complete length of the decomposition will be returned.
+ * 
+ * If `u` has no compatibility decomposition, zero should be returned.
+ * 
+ * The Unicode standard guarantees that a buffer of length %HB_UNICODE_MAX_DECOMPOSITION_LEN codepoints will always be sufficient for any
+ * compatibility decomposition plus an terminating value of 0.  Consequently, `decompose` must be allocated by the caller to be at least this length.  Implementations
+ * of this function type must ensure that they do not write past the provided array.
+ */
 interface unicode_decompose_compatibility_func_t {
     (ufuncs: unicode_funcs_t, u: codepoint_t, decomposed: codepoint_t): number
 }
+/**
+ * A virtual method for the #hb_unicode_funcs_t structure.
+ * 
+ * This method should decompose an input Unicode code point,
+ * returning the two decomposed code points in #hb_codepoint_t
+ * output parameters (if successful). The method must return an
+ * #hb_bool_t indicating the success of the composition.
+ */
 interface unicode_decompose_func_t {
     (ufuncs: unicode_funcs_t, ab: codepoint_t, a: codepoint_t, b: codepoint_t): bool_t
 }
 interface unicode_eastasian_width_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): number
 }
+/**
+ * A virtual method for the #hb_unicode_funcs_t structure.
+ * 
+ * This method should retrieve the General Category property for
+ * a specified Unicode code point.
+ */
 interface unicode_general_category_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): unicode_general_category_t
 }
+/**
+ * A virtual method for the #hb_unicode_funcs_t structure.
+ * 
+ * This method should retrieve the Bi-Directional Mirroring Glyph
+ * code point for a specified Unicode code point.
+ * 
+ * <note>Note: If a code point does not have a specified
+ * Bi-Directional Mirroring Glyph defined, the method should
+ * return the original code point.</note>
+ */
 interface unicode_mirroring_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): codepoint_t
 }
+/**
+ * A virtual method for the #hb_unicode_funcs_t structure.
+ * 
+ * This method should retrieve the Script property for a
+ * specified Unicode code point.
+ */
 interface unicode_script_func_t {
     (ufuncs: unicode_funcs_t, unicode: codepoint_t): script_t
 }
@@ -1190,11 +2365,30 @@ class face_t {
 }
 class feature_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.feature_t */
+    /**
+     * a feature tag
+     */
     readonly tag: tag_t
+    /**
+     * 0 disables the feature, non-zero (usually 1) enables the feature.
+     * For features implemented as lookup type 3 (like 'salt') the `value` is a one
+     * based index into the alternates.
+     */
     readonly value: number
+    /**
+     * the cluster to start applying this feature setting (inclusive).
+     */
     readonly start: number
+    /**
+     * the cluster to end applying this feature setting (exclusive).
+     */
     readonly end: number
     /* Methods of HarfBuzz-0.0.HarfBuzz.feature_t */
+    /**
+     * Converts a #hb_feature_t into a %NULL-terminated string in the format
+     * understood by hb_feature_from_string(). The client in responsible for
+     * allocating big enough size for `buf,` 128 bytes is more than enough.
+     */
     _string(): /* buf */ string[]
     static name: string
 }
@@ -1221,20 +2415,56 @@ class glyph_extents_t {
 }
 class glyph_info_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.glyph_info_t */
+    /**
+     * either a Unicode code point (before shaping) or a glyph index
+     *             (after shaping).
+     */
     readonly codepoint: codepoint_t
+    /**
+     * the index of the character in the original text that corresponds
+     *           to this #hb_glyph_info_t, or whatever the client passes to
+     *           hb_buffer_add(). More than one #hb_glyph_info_t can have the same
+     *           `cluster` value, if they resulted from the same character (e.g. one
+     *           to many glyph substitution), and when more than one character gets
+     *           merged in the same glyph (e.g. many to one glyph substitution) the
+     *           #hb_glyph_info_t will have the smallest cluster value of them.
+     *           By default some characters are merged into the same cluster
+     *           (e.g. combining marks have the same cluster as their bases)
+     *           even if they are separate glyphs, hb_buffer_set_cluster_level()
+     *           allow selecting more fine-grained cluster handling.
+     */
     readonly cluster: number
     static name: string
 }
 class glyph_position_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.glyph_position_t */
+    /**
+     * how much the line advances after drawing this glyph when setting
+     *             text in horizontal direction.
+     */
     readonly x_advance: position_t
+    /**
+     * how much the line advances after drawing this glyph when setting
+     *             text in vertical direction.
+     */
     readonly y_advance: position_t
+    /**
+     * how much the glyph moves on the X-axis before drawing it, this
+     *            should not affect how much the line advances.
+     */
     readonly x_offset: position_t
+    /**
+     * how much the glyph moves on the Y-axis before drawing it, this
+     *            should not affect how much the line advances.
+     */
     readonly y_offset: position_t
     static name: string
 }
 class language_t {
     /* Methods of HarfBuzz-0.0.HarfBuzz.language_t */
+    /**
+     * See hb_language_from_string().
+     */
     _string(): string
     static name: string
 }
@@ -1249,33 +2479,81 @@ class ot_color_layer_t {
 }
 class ot_math_glyph_part_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_math_glyph_part_t */
+    /**
+     * The glyph index of the variant part
+     */
     readonly glyph: codepoint_t
+    /**
+     * The length of the connector on the starting side of the variant part
+     */
     readonly start_connector_length: position_t
+    /**
+     * The length of the connector on the ending side of the variant part
+     */
     readonly end_connector_length: position_t
+    /**
+     * The total advance of the part
+     */
     readonly full_advance: position_t
+    /**
+     * #hb_ot_math_glyph_part_flags_t flags for the part
+     */
     readonly flags: ot_math_glyph_part_flags_t
     static name: string
 }
 class ot_math_glyph_variant_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_math_glyph_variant_t */
+    /**
+     * The glyph index of the variant
+     */
     readonly glyph: codepoint_t
+    /**
+     * The advance width of the variant
+     */
     readonly advance: position_t
     static name: string
 }
 class ot_name_entry_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_name_entry_t */
+    /**
+     * name ID
+     */
     readonly name_id: ot_name_id_t
+    /**
+     * language
+     */
     readonly language: language_t
     static name: string
 }
 class ot_var_axis_info_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.ot_var_axis_info_t */
+    /**
+     * Index of the axis in the variation-axis array
+     */
     readonly axis_index: number
+    /**
+     * The #hb_tag_t tag identifying the design variation of the axis
+     */
     readonly tag: tag_t
+    /**
+     * The `name` table Name ID that provides display names for the axis
+     */
     readonly name_id: ot_name_id_t
+    /**
+     * The #hb_ot_var_axis_flags_t flags for the axis
+     */
     readonly flags: ot_var_axis_flags_t
+    /**
+     * The mininum value on the variation axis that the font covers
+     */
     readonly min_value: number
+    /**
+     * The position on the variation axis corresponding to the font's defaults
+     */
     readonly default_value: number
+    /**
+     * The maximum value on the variation axis that the font covers
+     */
     readonly max_value: number
     static name: string
 }
@@ -1290,8 +2568,17 @@ class ot_var_axis_t {
 }
 class segment_properties_t {
     /* Fields of HarfBuzz-0.0.HarfBuzz.segment_properties_t */
+    /**
+     * the #hb_direction_t of the buffer, see hb_buffer_set_direction().
+     */
     readonly direction: direction_t
+    /**
+     * the #hb_script_t of the buffer, see hb_buffer_set_script().
+     */
     readonly script: script_t
+    /**
+     * the #hb_language_t of the buffer, see hb_buffer_set_language().
+     */
     readonly language: language_t
     static name: string
 }
