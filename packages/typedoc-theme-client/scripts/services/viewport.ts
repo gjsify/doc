@@ -31,7 +31,7 @@ export class Viewport extends EventTarget {
   /**
    * The toolbar (contains the search input).
    */
-  toolbar: HTMLDivElement;
+  toolbar?: HTMLDivElement;
 
   /**
    * Boolean indicating whether the toolbar is shown.
@@ -50,18 +50,21 @@ export class Viewport extends EventTarget {
   constructor() {
     super();
 
-    this.toolbar = <HTMLDivElement>document.querySelector(".tsd-page-toolbar");
-    this.secondaryNav = <HTMLElement | undefined>(
-      document.querySelector(".tsd-navigation.secondary")
-    );
+    this.onScroll = throttle(() => this.onScroll, 10);
+    this.onResize = throttle(() => this.onResize, 10);
+
+    this.toolbar = document.querySelector<HTMLDivElement>(".tsd-page-toolbar") || undefined;
+    this.secondaryNav = 
+      document.querySelector<HTMLElement>(".tsd-navigation.secondary") || undefined;
 
     window.addEventListener(
       "scroll",
-      throttle(() => this.onScroll(), 10)
+      this.onScroll
     );
+
     window.addEventListener(
       "resize",
-      throttle(() => this.onResize(), 10)
+      this.onResize
     );
 
     this.onResize();
@@ -76,7 +79,7 @@ export class Viewport extends EventTarget {
       detail: {
         width: this.width,
         height: this.height,
-      },
+      }
     });
 
     this.dispatchEvent(event);

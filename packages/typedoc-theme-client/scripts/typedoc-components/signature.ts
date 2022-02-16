@@ -51,7 +51,7 @@ class SignatureGroup {
 }
 
 /**
- * Controls the tab like behaviour of methods and functions with multiple signatures.
+ * Controls the tab like behavior of methods and functions with multiple signatures.
  */
 export class Signature extends Component {
   /**

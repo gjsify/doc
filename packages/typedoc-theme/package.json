@@ -23,6 +23,6 @@
         "watch": "tsc --watch"
     },
     "dependencies": {
-        "@types/node": "^17.0.16"
+        "@types/node": "^17.0.18"
     }
 }
