@@ -89,7 +89,7 @@ export const defaultLayout = (
       {context.sidebar(props)}
       {context.navbar(props)}
 
-      <router-view id="main" listen-all-links="true">
+      <router-view id="main" listen-all-links={true}>
         <div class="container-main">
           {context.header(props)}
           <div class="container">

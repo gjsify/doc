@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "ES2021",
     "module": "commonjs",
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
@@ -8,7 +8,7 @@
     "outDir": "dist",
     "skipLibCheck": true,
     "inlineSourceMap": true,
-
+    "esModuleInterop": true,
     "jsx": "react",
     "jsxFactory": "JSX.createElement",
     "jsxFragmentFactory": "JSX.Fragment"

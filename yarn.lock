@@ -2046,6 +2046,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gjsify/typedoc-theme@workspace:packages/typedoc-theme"
   dependencies:
+    "@ribajs/bs5": "workspace:^"
+    "@ribajs/jsx": "workspace:^"
+    "@ribajs/router": "workspace:^"
     "@types/node": ^17.0.18
     typedoc: ^0.22.11
     typescript: ^4.5.5
@@ -3485,7 +3488,6 @@ __metadata:
     "@ribajs/core": "workspace:^"
     "@ribajs/tsconfig": "workspace:^"
     "@ribajs/utils": "workspace:^"
-    "@types/node": ^17.0.18
   languageName: unknown
   linkType: soft
 
@@ -4108,6 +4110,7 @@ __metadata:
     "@ribajs/eslint-config": "workspace:^"
     "@ribajs/events": "workspace:^"
     "@ribajs/history": "workspace:^"
+    "@ribajs/jsx": "workspace:^"
     "@ribajs/tsconfig": "workspace:^"
     "@ribajs/utils": "workspace:^"
     "@types/jest": ^27.4.0
@@ -4429,6 +4432,7 @@ __metadata:
     "@ribajs/eslint-config": "workspace:^"
     "@ribajs/tsconfig": "workspace:^"
     "@types/jest": ^27.4.0
+    "@types/node": ^17.0.19
     babel-jest: ^27.5.1
     eslint: ^8.9.0
     typescript: 4.5.5
@@ -5458,6 +5462,13 @@ __metadata:
   version: 17.0.18
   resolution: "@types/node@npm:17.0.18"
   checksum: 6c4edfc2b3ba2342a9c3d56e934c5245948ab752f4dc04bd6790b9603e6ebc53bc4f5befc3662e207f7dba2ddd17ccf657f915e319ea7cdd4f77b851079d1611
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^17.0.19":
+  version: 17.0.19
+  resolution: "@types/node@npm:17.0.19"
+  checksum: 6bbd35bfc23dd50d1aefd4ae49c31f7fd632be209dba67c0322bb4fe8b555f4bb6e894018963146ad7758ae596857d5cbecc2d46ddf90a54f6a4424811cf4351
   languageName: node
   linkType: hard
 
