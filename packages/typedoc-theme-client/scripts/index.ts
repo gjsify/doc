@@ -1,7 +1,9 @@
 import { ready } from "@ribajs/utils/src/dom";
-import { Riba, View, coreModule } from "@ribajs/core";
+import { Riba, coreModule } from "@ribajs/core";
 import { routerModule, FadeTransition } from "@ribajs/router";
-import { bs5Module } from "@ribajs/bs5";
+import { bs5Module, ThemeService } from "@ribajs/bs5";
+import { EventDispatcher } from "@ribajs/events";
+
 import { SearchOptions } from "./types";
 
 // Own
@@ -10,67 +12,63 @@ import * as pages from "./pages";
 import * as binders from "./binders";
 import * as formatters from "./formatters";
 
-// From typedoc default theme
-import { typedocBootstrap } from "./typedoc-bootstrap";
-import { EventDispatcher } from "@ribajs/events";
-
-import type { Application } from "./typedoc-app";
-
 declare global {
   interface Window {
     remoteSearchOptions?: Partial<SearchOptions>;
-    app: Application;
   }
 }
 
-export class CSRApp {
-  protected view?: View;
-  protected riba = new Riba();
-  protected model: any = {};
-  protected routerEvents: EventDispatcher;
+const bootstrap = () => {
+  const riba = new Riba();
+  const model: any = {};
+  const routerEvents = new EventDispatcher("main");
+  const theme = ThemeService.getSingleton();
 
-  constructor() {
-    this.riba.configure({
-      prefix: ["rv", "csr-rv"],
-    });
+  riba.configure({
+    prefix: ["rv", "csr-rv"],
+  });
 
-    // Regist custom components
-    this.riba.module.component.regists({
-      ...components,
-      ...pages,
-    });
-    this.riba.module.binder.regists({ ...binders });
-    this.riba.module.formatter.regists({ ...formatters });
+  // Register custom components
+  riba.module.component.regists({
+    ...components,
+    ...pages,
+  });
+  riba.module.binder.regists({ ...binders });
+  riba.module.formatter.regists({ ...formatters });
 
-    // Regist modules
-    this.riba.module.regist(coreModule.init());
-    this.riba.module.regist(
-      routerModule.init({
-        defaultTransition: new FadeTransition(),
-      })
-    );
-    this.riba.module.regist(bs5Module.init());
+  // Register modules
+  riba.module.regist(coreModule.init());
+  riba.module.regist(
+    routerModule.init({
+      defaultTransition: new FadeTransition(),
+    })
+  );
+  riba.module.regist(bs5Module.init());
 
-    this.view = this.riba.bind(document.body, this.model);
+  const view = riba.bind(document.body, model);
 
-    this.view.registComponents();
+  view.registComponents();
 
-    this.riba.lifecycle.events.on(
-      "ComponentLifecycle:error",
-      (error: Error) => {
-        console.error(error);
+  riba.lifecycle.events.on("ComponentLifecycle:error", (error: Error) => {
+    console.error(error);
+  });
+
+  // Also add theme class to body for TypeDoc Theme backward compatibility
+  theme.onChange((data) => {
+    document.body.classList.remove("os", "dark", "light");
+    if (data.newValue.bySystem) {
+      document.body.classList.add("os");
+    }
+    if (data.newValue.byUser) {
+      if (data.newValue.isDark) {
+        document.body.classList.add("dark");
+      } else {
+        document.body.classList.add("light");
       }
-    );
-
-    this.routerEvents = new EventDispatcher("main");
-
-    this.routerEvents.on("newPageReady", () => {
-      typedocBootstrap();
-    });
-    typedocBootstrap();
-  }
-}
+    }
+  });
+};
 
 ready(() => {
-  new CSRApp();
+  bootstrap();
 });

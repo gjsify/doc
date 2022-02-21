@@ -1,24 +1,26 @@
 import {
-  PageEvent,
-  Reflection,
   DefaultThemeRenderContext,
   Options,
   Logger,
   RendererHooks,
+  DeclarationReflection,
 } from "typedoc";
 import * as JSX from "./jsx";
-import { header, footer, navbar, sidebar, navigation } from "./partials";
+import {
+  header,
+  footer,
+  navbar,
+  sidebar,
+  navigation,
+  memberSignatures,
+} from "./partials";
 import { defaultLayout } from "./layouts/default";
+import { bind } from "./utils";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 
 import type { GjsifyTheme } from "./theme";
-
-function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
-  return (...r: L) => fn(first, ...r);
-}
-
-type Partial = (props: PageEvent<Reflection>) => JSX.JsxElement;
+import type { Partial } from "./types";
 
 /**
  * The theme context is where all of the partials live for rendering a theme,
@@ -47,6 +49,10 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
 
   override header: Partial = bind(header, this);
   override footer: Partial = bind(footer, this);
+  override memberSignatures: Partial<DeclarationReflection> = bind(
+    memberSignatures,
+    this
+  );
   override navigation: Partial = bind(navigation, this);
 
   public navbar: Partial = bind(navbar, this);

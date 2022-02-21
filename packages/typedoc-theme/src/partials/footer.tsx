@@ -2,10 +2,10 @@ import { PageEvent, Reflection } from "typedoc";
 import { GjsifyThemeContext } from "../context";
 import * as JSX from "../jsx";
 
-export function footer(
+export const footer = (
   context: GjsifyThemeContext,
   props: PageEvent<Reflection>
-) {
+) => {
   const hideSettings = true;
   const hideLegend = context.options.getValue("hideLegend");
   const hideGenerator = context.options.getValue("hideGenerator");
@@ -102,4 +102,4 @@ export function footer(
       </footer>
     </tsd-footer>
   );
-}
+};

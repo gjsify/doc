@@ -1,6 +1,4 @@
 import { Component, TemplateFunction } from "@ribajs/core";
-import { hasChildNodesTrim } from "@ribajs/utils";
-import template from "./footer.component.pug";
 
 import type { FooterComponentScope } from "../../types";
 
@@ -32,10 +30,6 @@ export class FooterComponent extends Component {
   }
 
   protected template(): ReturnType<TemplateFunction> {
-    if (!hasChildNodesTrim(this)) {
-      return template(this.scope);
-    } else {
-      return null;
-    }
+    return null;
   }
 }

@@ -1,7 +1,6 @@
 import { Component, TemplateFunction } from "@ribajs/core";
 import { hasChildNodesTrim } from "@ribajs/utils";
 import { EventDispatcher } from "@ribajs/events";
-import template from "./navigation.component.pug";
 
 import type { NavigationComponentScope } from "../../types";
 
@@ -49,6 +48,6 @@ export class NavigationComponent extends Component {
     if (hasChildNodesTrim(this)) {
       this.scope.template = this.innerHTML;
     }
-    return template(this.scope);
+    return <div rv-template="template"></div>;
   }
 }

@@ -683,11 +683,6 @@ dl.tsd-comment-tags dd:after {
 			border-top-width: 0;
 		}
 	}
-	&.active {
-		& > .tsd-signature {
-			cursor: pointer;
-		}
-	}
 }
 ul {
 	&.tsd-descriptions {
@@ -695,27 +690,6 @@ ul {
 		overflow: hidden;
 		padding: 0;
 		list-style: none;
-		&.active {
-			& > .tsd-description {
-				display: none;
-				&.current {
-					display: block;
-				}
-				&.fade-in {
-					animation: fade-in-delayed 0.3s;
-				}
-				&.fade-out {
-					animation: fade-out-delayed 0.3s;
-					position: absolute;
-					display: block;
-					top: 0;
-					left: 0;
-					right: 0;
-					opacity: 0;
-					visibility: hidden;
-				}
-			}
-		}
 	}
 }
 ul.tsd-descriptions h4,

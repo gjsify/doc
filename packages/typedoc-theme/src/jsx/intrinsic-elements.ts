@@ -21,6 +21,8 @@ export type JsxTsdHeaderProps = JsxHtmlGlobalProps;
 
 export type JsxTsdFooterProps = JsxHtmlGlobalProps;
 
+export type JsxTsdMemberSignaturesProps = JsxHtmlGlobalProps;
+
 export interface TsdIntrinsicElements {
   // Custom Elements
   "tsd-search": JsxTsdSearchProps;
@@ -28,6 +30,7 @@ export interface TsdIntrinsicElements {
   "tsd-navbar": JsxTsdNavbarProps;
   "tsd-header": JsxTsdHeaderProps;
   "tsd-footer": JsxTsdFooterProps;
+  "tsd-member-signatures": JsxTsdMemberSignaturesProps;
 }
 
 export interface IntrinsicElements

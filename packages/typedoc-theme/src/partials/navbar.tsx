@@ -1,4 +1,3 @@
-// import { PageEvent, Reflection } from "typedoc";
 import { GjsifyThemeContext } from "../context";
 import * as JSX from "../jsx";
 

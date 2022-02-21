@@ -1,6 +1,4 @@
 import { Component, TemplateFunction } from "@ribajs/core";
-import { hasChildNodesTrim } from "@ribajs/utils";
-import template from "./navbar.component.pug";
 
 import type { NavbarComponentScope } from "../../types";
 import type { Bs5SidebarComponent } from "@ribajs/bs5";
@@ -62,10 +60,6 @@ export class NavbarComponent extends Component {
   }
 
   protected template(): ReturnType<TemplateFunction> {
-    if (!hasChildNodesTrim(this)) {
-      return template(this.scope);
-    } else {
-      return null;
-    }
+    return null;
   }
 }

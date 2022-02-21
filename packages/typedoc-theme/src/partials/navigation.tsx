@@ -15,17 +15,17 @@ import { classNames, wbr, partition } from "../utils";
 const primaryNav = true;
 const secondaryNav = true;
 
-export function navigation(
+export const navigation = (
   context: GjsifyThemeContext,
   props: PageEvent<Reflection>
-) {
+) => {
   return (
     <div>
       {primaryNav && primaryNavigation(context, props)}
       {secondaryNav && secondaryNavigation(context, props)}
     </div>
   );
-}
+};
 
 function primaryNavigation(
   context: GjsifyThemeContext,

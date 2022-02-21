@@ -1,6 +1,5 @@
 import { Component, TemplateFunction } from "@ribajs/core";
 import { hasChildNodesTrim, debounce } from "@ribajs/utils";
-import template from "./search.component.pug";
 import { NavbarComponent } from "../navbar/navbar.component";
 
 import type { SearchComponentScope, SearchResult } from "../../types";
@@ -240,7 +239,79 @@ export class SearchComponent extends Component {
 
   protected template(): ReturnType<TemplateFunction> {
     if (!hasChildNodesTrim(this)) {
-      return template(this.scope);
+      return (
+        <div class="hello">
+          <div class="search-group flex-nowrap d-flex">
+            <button
+              class="btn btn-icon ps-4"
+              id="tsd-search-field-addon"
+              rv-on-click="setFocus"
+            >
+              <bs5-icon
+                src="/assets/iconset/svg/icon_search2.svg"
+                size="16"
+                direction="left"
+              ></bs5-icon>
+            </button>
+            <input
+              class="form-control rounded-pill"
+              id="tsd-search-field"
+              type="search"
+              aria-label="Search"
+              aria-describedby="tsd-search-field-addon"
+              autocomplete="off"
+              spellcheck={false}
+              rv-element="fieldEl"
+              rv-value="query"
+              rv-on-input="onInput"
+              rv-on-focus="onFocus"
+              rv-on-blur="onBlur"
+              rv-on-keydown="onKeydown"
+              rv-on-keypress="onKeypress"
+            />
+          </div>
+          <ul
+            class="list-group results card px-0 border-top-0"
+            rv-if="isReady"
+            rv-element="resultsEl"
+          >
+            <li
+              class="list-group-item"
+              rv-show="results | size | gt 0"
+              rv-each-item="results"
+              rv-add-class="item.classes"
+            >
+              <a
+                class="tsd-kind-icon"
+                rv-href="base | append item.url"
+                rv-html="item.name"
+              ></a>
+            </li>
+            <li class="list-group-item disabled" rv-if="results | size | eq 0">
+              No results...
+            </li>
+          </ul>
+          <ul
+            class="list-group results card px-0 border-top-0"
+            rv-unless="isReady"
+          >
+            <li
+              class="list-group-item disabled"
+              rv-show="isLoading"
+              aria-disabled="true"
+            >
+              Preparing remote search server...
+            </li>
+            <li
+              class="list-group-item disabled"
+              rv-show="hasFailure"
+              aria-disabled="true"
+            >
+              The remote search server is not available
+            </li>
+          </ul>
+        </div>
+      );
     } else {
       return null;
     }
