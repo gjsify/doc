@@ -7,7 +7,7 @@ export const sidebar = (
   props: PageEvent<Reflection>
 ): JSX.JsxElement => (
   <bs5-sidebar
-    class="bg-td-dark bg-tl-white text-tl-dark text-td-light border-end border-gray p-3"
+    class="bg-td-dark bg-tl-white text-tl-dark text-td-light border-end border-tl-gray border-td-black p-3"
     id="left-sidebar"
     container-selector="router-view, tsd-footer"
     position="left"

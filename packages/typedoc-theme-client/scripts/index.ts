@@ -2,7 +2,6 @@ import { ready } from "@ribajs/utils/src/dom";
 import { Riba, coreModule } from "@ribajs/core";
 import { routerModule, FadeTransition } from "@ribajs/router";
 import { bs5Module, ThemeService } from "@ribajs/bs5";
-import { EventDispatcher } from "@ribajs/events";
 
 import { SearchOptions } from "./types";
 
@@ -21,7 +20,6 @@ declare global {
 const bootstrap = () => {
   const riba = new Riba();
   const model: any = {};
-  const routerEvents = new EventDispatcher("main");
   const theme = ThemeService.getSingleton();
 
   riba.configure({

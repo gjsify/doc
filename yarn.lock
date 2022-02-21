@@ -2006,7 +2006,7 @@ __metadata:
     "@ribajs/router": "workspace:*"
     "@ribajs/tsconfig": "workspace:*"
     "@ribajs/types": "workspace:*"
-    "@ribajs/utils": "workspace:*"
+    "@ribajs/utils": "workspace:^"
     "@ribajs/webpack-config": "workspace:*"
     "@types/bootstrap": ^5.1.9
     "@types/component-emitter": ^1.2.11

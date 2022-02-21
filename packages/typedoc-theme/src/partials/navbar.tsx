@@ -5,7 +5,7 @@ export const navbar = (
   context: GjsifyThemeContext
   // props: PageEvent<Reflection>
 ): JSX.JsxElement => (
-  <tsd-navbar class="tsd-page-toolbar navbar fixed-top navbar-expand navbar-os bg-tl-white bg-td-dark border-bottom border-gray">
+  <tsd-navbar class="tsd-page-toolbar navbar fixed-top navbar-expand navbar-os bg-tl-white bg-td-dark border-bottom border-tl-gray border-td-black">
     <div class="container-fluid d-flex justify-content-between">
       <div class="d-flex">
         <bs5-toggle-button
@@ -16,7 +16,7 @@ export const navbar = (
             <li class="nav-item d-flex align-items-center">
               <bs5-icon
                 src={context.absoluteUrl("/assets/iconset/svg/icon_menu.svg")}
-                size="32"
+                size={32}
                 rv-hide="isActive"
                 rv-on-click="toggle"
               ></bs5-icon>
@@ -24,7 +24,7 @@ export const navbar = (
             <li class="nav-item d-flex align-items-center">
               <bs5-icon
                 src={context.absoluteUrl("/assets/iconset/svg/icon_close.svg")}
-                size="32"
+                size={32}
                 rv-show="isActive"
                 rv-on-click="toggle"
               ></bs5-icon>
@@ -54,13 +54,13 @@ export const navbar = (
               class="d-td-none"
               color="warning"
               src={context.absoluteUrl("/assets/iconset/svg/icon_sun_alt.svg")}
-              size="32"
+              size={32}
             ></bs5-icon>
             <bs5-icon
               class="d-tl-none color-orange"
               color="warning"
               src={context.absoluteUrl("/assets/iconset/svg/icon_moon_alt.svg")}
-              size="32"
+              size={32}
             ></bs5-icon>
           </button>
         </bs5-theme-button>

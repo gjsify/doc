@@ -249,7 +249,7 @@ export class SearchComponent extends Component {
             >
               <bs5-icon
                 src="/assets/iconset/svg/icon_search2.svg"
-                size="16"
+                size={16}
                 direction="left"
               ></bs5-icon>
             </button>

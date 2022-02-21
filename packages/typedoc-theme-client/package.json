@@ -78,7 +78,7 @@
     "@ribajs/iconset": "workspace:*",
     "@ribajs/router": "workspace:*",
     "@ribajs/types": "workspace:*",
-    "@ribajs/utils": "workspace:*",
+    "@ribajs/utils": "workspace:^",
     "bootstrap": "^5.1.3"
   }
 }
