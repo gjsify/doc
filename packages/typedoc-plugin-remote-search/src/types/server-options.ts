@@ -11,5 +11,4 @@ export interface ServerOptions {
   limit: number;
   /** Decompress the json file, this option is needed if you compressed the json file */
   decompress: boolean;
-  unpack: boolean;
 }

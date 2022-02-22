@@ -63,13 +63,6 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
       type: ParameterType.Number,
       defaultValue: 6,
     });
-
-    container.addDeclaration({
-      help: "[Remote Search] If true, additional compression is performed by jsonpack. Disabled by default because this can take a long time with large files",
-      name: "pack",
-      type: ParameterType.Boolean,
-      defaultValue: false,
-    });
   }
 
   /**
@@ -191,9 +184,6 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
     let noCompress =
       container.getValue("noCompress") === true ||
       container.getValue("noCompress") === "true";
-    const pack =
-      container.getValue("noCompress") === true ||
-      container.getValue("noCompress") === "true";
 
     let compressLevel = Number(container.getValue("compressLevel"));
     if (compressLevel === 0) {
@@ -219,7 +209,6 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
       script: !noScript,
       compress: !noCompress,
       compressLevel,
-      pack,
     };
     return options;
   }

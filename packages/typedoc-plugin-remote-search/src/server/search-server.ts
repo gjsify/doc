@@ -57,11 +57,7 @@ export class SearchServer {
   async loadIndex() {
     const filename = this.options.decompress ? "search.json.7z" : "search.json";
     const filePath = join(this.options.docDir, "assets", filename);
-    return await this.converter.loadSearch(
-      filePath,
-      this.options.decompress,
-      this.options.unpack
-    );
+    return await this.converter.loadSearch(filePath, this.options.decompress);
   }
 
   getResults(searchQuery: string) {

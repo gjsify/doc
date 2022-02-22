@@ -67,21 +67,6 @@ const options = {
     describe:
       "The compression level 0-9, 0 is no compression, 1 the fastest and 9 the highest",
   } as Options & { name: string },
-  pack: {
-    name: "pack",
-    type: "boolean",
-    normalize: true,
-    default: false,
-    describe:
-      "If true, additional compression is performed by jsonpack. Disabled by default because this can take a long time with large files",
-  } as Options & { name: string },
-  unpack: {
-    name: "unpack",
-    type: "boolean",
-    normalize: true,
-    default: false,
-    describe: "This value must be true if you have packed the json file before",
-  } as Options & { name: string },
   docDir: {
     name: "doc-dir",
     alias: "d",
@@ -161,8 +146,7 @@ async function start() {
           .option(options.noServe.name, options.noServe)
           .option(options.limit.name, options.limit)
           .option(options.decompress.name, options.decompress)
-          .option(options.noDecompress.name, options.noDecompress)
-          .option(options.unpack.name, options.unpack);
+          .option(options.noDecompress.name, options.noDecompress);
       },
       async (yargs) => {
         logger.info("Start serve...");
@@ -173,7 +157,6 @@ async function start() {
           serve: yargs.serve as boolean,
           limit: yargs.limit as number,
           decompress: yargs.decompress as boolean,
-          unpack: yargs.unpack as boolean,
         };
 
         const server = new SearchServer(serverOptions);
@@ -187,7 +170,6 @@ async function start() {
         yargs.option(options.compressSource.name, options.compressSource);
         yargs.option(options.compressTarget.name, options.compressTarget);
         yargs.option(options.compress.name, options.compress);
-        yargs.option(options.pack.name, options.pack);
       },
       async (yargs) => {
         logger.info("Start compression...");
@@ -195,9 +177,8 @@ async function start() {
         const source = yargs.source as string;
         const target = yargs.target as string;
         const compress = yargs.compress as number;
-        const pack = yargs.pack as boolean;
-        const data = await converter.load<any>(source, false, false);
-        await converter.write(data, target, compress, pack);
+        const data = await converter.load<any>(source, false);
+        await converter.write(data, target, compress);
       }
     )
     .command(
@@ -206,16 +187,14 @@ async function start() {
       (yargs) => {
         yargs.option(options.decompressSource.name, options.decompressSource);
         yargs.option(options.decompressTarget.name, options.decompressTarget);
-        yargs.option(options.unpack.name, options.unpack);
       },
       async (yargs) => {
         logger.info("Start decompression...");
         const converter = new Converter(logger);
         const source = yargs.source as string;
         const target = yargs.target as string;
-        const unpack = yargs.unpack as boolean;
-        const data = await converter.load(source, true, unpack);
-        await converter.write(data, target, 0, false);
+        const data = await converter.load(source, true);
+        await converter.write(data, target, 0);
       }
     )
     .command(
@@ -227,7 +206,6 @@ async function start() {
         yargs.option(options.noDeleteSource.name, options.noDeleteSource);
         yargs.option(options.compressTarget.name, options.compressTarget);
         yargs.option(options.compress.name, options.compress);
-        yargs.option(options.pack.name, options.pack);
       },
       async (yargs) => {
         logger.info("Start conversion...");
@@ -235,15 +213,8 @@ async function start() {
         const source = yargs.source as string;
         const target = yargs.target as string;
         const compress = yargs.compress as number;
-        const pack = yargs.pack as boolean;
         const deleteSource = yargs.deleteSource as boolean;
-        await converter.convertSearch(
-          source,
-          target,
-          deleteSource,
-          compress,
-          pack
-        );
+        await converter.convertSearch(source, target, deleteSource, compress);
       }
     )
     .command(
@@ -256,7 +227,6 @@ async function start() {
         yargs.option(options.decompressTarget.name, options.decompressTarget);
         yargs.option(options.decompress.name, options.decompress);
         yargs.option(options.noDecompress.name, options.noDecompress);
-        yargs.option(options.unpack.name, options.unpack);
       },
       async (yargs) => {
         logger.info("Start reversion...");
@@ -264,15 +234,8 @@ async function start() {
         const source = yargs.source as string;
         const target = yargs.target as string;
         const decompress = yargs.decompress as boolean;
-        const unpack = yargs.unpack as boolean;
         const deleteSource = yargs.deleteSource as boolean;
-        await converter.revertSearch(
-          source,
-          target,
-          deleteSource,
-          decompress,
-          unpack
-        );
+        await converter.revertSearch(source, target, deleteSource, decompress);
       }
     )
     .help().argv;

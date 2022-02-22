@@ -1,5 +1,5 @@
 import { Renderer, Logger, JSX, DefaultThemeRenderContext } from "typedoc";
-import { writeFileSync, readFileSync, unlinkSync, existsSync } from "fs";
+import { writeFileSync, readFileSync } from "fs";
 import { Converter } from "../converter";
 import { join } from "path";
 import { PluginOptions } from "../types";
@@ -134,8 +134,7 @@ export class RemoteSearchIndexPlugin {
       source,
       target,
       deleteSource,
-      this.options.compressLevel,
-      this.options.pack
+      this.options.compressLevel
     );
   }
 }

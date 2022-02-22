@@ -11,6 +11,4 @@ export interface PluginOptions {
   compress: boolean;
   /** The compression level 0-9, 0 is no compression, 1 the fastest and 9 the highest */
   compressLevel: number;
-  /** If true, additional compression is performed by jsonpack. Disabled by default because this can take a long time with large files */
-  pack: boolean;
 }

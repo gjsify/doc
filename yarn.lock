@@ -1956,7 +1956,6 @@ __metadata:
   resolution: "@gjsify/typedoc-plugin-remote-search@workspace:packages/typedoc-plugin-remote-search"
   dependencies:
     "@koa/router": ^10.1.1
-    "@types/jsonpack": ^1.1.1
     "@types/koa": ^2
     "@types/koa-compress": ^4.0.3
     "@types/koa-static": ^4.0.2
@@ -1966,7 +1965,6 @@ __metadata:
     "@types/node": ^17.0.19
     "@types/yargs": ^17.0.8
     esbuild: ^0.14.23
-    jsonpack: ^1.1.5
     koa: ^2.13.4
     koa-compress: ^5.1.0
     koa-static: ^5.0.0
@@ -5258,13 +5256,6 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
-  languageName: node
-  linkType: hard
-
-"@types/jsonpack@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@types/jsonpack@npm:1.1.1"
-  checksum: 97bc91421c371bef298d49c7f8a57085484146568917dd58edfc257f5671ec90b8618736b6faddee19f83beea39a20a1fe335f3103c738bdadef76c398ae67cb
   languageName: node
   linkType: hard
 
@@ -14721,13 +14712,6 @@ __metadata:
     graceful-fs:
       optional: true
   checksum: 7af3b8e1ac8fe7f1eccc6263c6ca14e1966fcbc74b618d3c78a0a2075579487547b94f72b7a1114e844a1e15bb00d440e5d1720bfc4612d790a6f285d5ea8354
-  languageName: node
-  linkType: hard
-
-"jsonpack@npm:^1.1.5":
-  version: 1.1.5
-  resolution: "jsonpack@npm:1.1.5"
-  checksum: 60ae0a52343a6bc254ff6677e87c55f4d71347b4a0c981b53cd3fdc184e139e0bf1b6bc127d42c1ab41b3c99d98e1e81559a94ba74a1c91c9143f70c8d751bf6
   languageName: node
   linkType: hard
 

@@ -1,4 +1,3 @@
-import { pack, unpack } from "jsonpack";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 // const lzma: any = require("lzma");
 import lzma, { Preset } from "lzma-native";
@@ -20,22 +19,22 @@ export class Converter {
     }
   }
 
-  async load<T>(filepath: string, decompress: boolean, unpack: boolean) {
+  async load<T>(filepath: string, decompress: boolean) {
     if (!existsSync(filepath)) {
       throw new Error(`File not found "${filepath}"`);
     }
     const jsonBuf = await readFile(filepath);
     let data: T;
     if (decompress) {
-      data = await this.unshrink<T>(jsonBuf, unpack);
+      data = await this.unshrink<T>(jsonBuf);
     } else {
       data = JSON.parse(jsonBuf.toString());
     }
     return data;
   }
 
-  async loadSearch(filepath: string, decompress: boolean, unpack: boolean) {
-    const data = await this.load<SearchData>(filepath, decompress, unpack);
+  async loadSearch(filepath: string, decompress: boolean) {
+    const data = await this.load<SearchData>(filepath, decompress);
     const state: SearchState = {
       data,
       index: Index.load(data.index),
@@ -50,15 +49,13 @@ export class Converter {
    * @param target E.g. ./docs/assets/search.json.7z
    * @param deleteSource if true the source file will be deleted after conversion
    * @param compress Compression level 0-9, 0 is no compression, 1 the fastest and 9 the highest
-   * @param pack If true, additional compression is performed by jsonpack
    * @returns
    */
   async convertSearch(
     source: string,
     target: string,
     deleteSource: boolean,
-    compress: number,
-    pack: boolean
+    compress: number
   ) {
     const removeStart = 'window.searchData = JSON.parse("';
     const removeEnd = '");';
@@ -87,7 +84,7 @@ export class Converter {
       .substring(removeStart.length, searchData.length - removeEnd.length)
       .replace(/\\"/g, '"');
 
-    await this.write(searchData, target, compress, pack);
+    await this.write(searchData, target, compress);
 
     clearInterval(logInterval);
 
@@ -101,10 +98,9 @@ export class Converter {
     source: string,
     target: string,
     deleteSource: boolean,
-    decompress: boolean,
-    unpack: boolean
+    decompress: boolean
   ) {
-    const data = await this.load<SearchData>(source, decompress, unpack);
+    const data = await this.load<SearchData>(source, decompress);
     const jsSource = `window.searchData = JSON.parse("${JSON.stringify(
       data
     )}");`;
@@ -120,43 +116,31 @@ export class Converter {
    * @param data The data to be stored compressed (or uncompressed)
    * @param target Path of the destination file
    * @param compress Compression level 0-9, 0 is no compression, 1 the fastest and 9 the highest
-   * @param pack If true, additional compression is performed by jsonpack
    */
-  async write(data: any, target: string, compress: number, pack: boolean) {
+  async write(data: any, target: string, compress: number) {
     if (compress > 0) {
-      data = await this.shrink(
-        JSON.parse(data.toString()),
-        false,
-        pack,
-        compress
-      );
+      data = await this.shrink(JSON.parse(data.toString()), false, compress);
     }
     await writeFile(target, data);
   }
 
   /**
-   * Shrink objects / json with LZMA (7-zip) compression + optional jsonpack
-   * @see https://github.com/stonkpunk/my-npm-modules/blob/main/json-shrink/index.js
+   * Shrink objects / json with LZMA (7-zip) compression
    * @param obj Your object you want to compress
    * @param outputAsString If true return value is of type `string`, otherwise of type `Buffer`
-   * @param doPack If true the json will be also compressed using jsonpack, see https://github.com/rgcl/jsonpack
    * @param compressMode lzma compression mode, can be 1-9 (1 is fast and pretty good; 9 is slower and probably much better).
    * @returns the string or buffer of the compressed json
    */
   _shrink(
     obj: any,
     outputAsString = false,
-    doPack = true,
     compressLevel = 1,
     cb: (result: Buffer | string) => void
   ) {
-    if (doPack) this.logger.verbose("[shrink] Pack object...");
-    const theObj = doPack ? pack(obj) : obj;
-    if (!doPack) this.logger.verbose("[shrink] Stringify object...");
-    const input_str: string = doPack ? theObj : JSON.stringify(theObj);
+    const inputStr: string = JSON.stringify(obj);
     this.logger.verbose("[shrink] Compress object...");
     lzma.compress(
-      input_str,
+      inputStr,
       {
         preset: compressLevel as Preset,
       },
@@ -168,10 +152,10 @@ export class Converter {
     );
   }
 
-  shrink(obj: any, outputAsString = false, doPack = true, compressLevel = 1) {
+  shrink(obj: any, outputAsString = false, compressLevel = 1) {
     return new Promise((resolve, reject) => {
       try {
-        this._shrink(obj, outputAsString, doPack, compressLevel, resolve);
+        this._shrink(obj, outputAsString, compressLevel, resolve);
       } catch (error) {
         reject(error);
       }
@@ -179,33 +163,25 @@ export class Converter {
   }
 
   /**
-   * Unshrink objects / json with LZMA (7-zip) compression + optional jsonpack unpack
-   * @see https://github.com/stonkpunk/my-npm-modules/blob/main/json-shrink/index.js
+   * Unshrink objects / json with LZMA (7-zip) compression
    * @param compressed_obj The compressed object (using `shrink`)
-   * @param doUnPack This value must be true if you have packed the object before, see https://github.com/rgcl/jsonpack
    * @returns The uncompressed string or buffer
    */
-  _unshrink<T = any>(
-    compressed_obj: Buffer | string,
-    doUnPack = true,
-    cb: (result: T) => void
-  ) {
+  _unshrink<T = any>(compressed_obj: Buffer | string, cb: (result: T) => void) {
     compressed_obj = Buffer.isBuffer(compressed_obj)
       ? compressed_obj
       : Buffer.from(compressed_obj, "base64"); //convert to buffer if it starts off as a string
 
     lzma.decompress(compressed_obj, {}, (compBuf: Buffer) => {
-      const res = doUnPack
-        ? unpack<T>(compBuf.toString())
-        : JSON.parse(compBuf.toString()); //json unpack apparently parses..
+      const res = JSON.parse(compBuf.toString());
       cb(res as T);
     });
   }
 
-  unshrink<T = any>(compressed_obj: Buffer | string, doUnPack = true) {
+  unshrink<T = any>(compressed_obj: Buffer | string) {
     return new Promise<T>((resolve, reject) => {
       try {
-        this._unshrink(compressed_obj, doUnPack, resolve);
+        this._unshrink(compressed_obj, resolve);
       } catch (error) {
         reject(error);
       }
