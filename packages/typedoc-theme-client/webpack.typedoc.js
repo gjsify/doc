@@ -2,13 +2,13 @@
 const ribaWebpackConfig = require("@ribajs/webpack-config");
 const { config } = require("./webpack.base");
 const { resolve } = require("path");
-const outputPath = resolve("../../docs/try/assets");
+const outputPath = resolve("../typedoc-theme/assets");
 
 config.publicPath = outputPath;
 config.output.path = outputPath;
 config.webpackbar = {
-  name: "Try",
-  color: "blue",
+  name: "Typedoc",
+  color: "purple",
 };
 
 const webpackConfig = ribaWebpackConfig(config);

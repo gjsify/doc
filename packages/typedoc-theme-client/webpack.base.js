@@ -1,12 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const ribaWebpackConfig = require("@ribajs/webpack-config");
 const { resolve } = require("path");
-
 const source = resolve(__dirname);
 const tsSourceDir = resolve(source, "scripts");
-const outputPath = resolve("../typedoc-theme/assets");
+const outputPath = resolve(source, "assets");
 const scssSourceDir = resolve(source, "styles");
-const tsIndexPath = resolve(tsSourceDir, "index.ts");
+const tsIndexPath = resolve(tsSourceDir, "csr.ts");
 const scssIndexPath = resolve(scssSourceDir, "main.scss");
 
 const config = {
@@ -33,8 +31,6 @@ const config = {
   },
 };
 
-const webpackConfig = ribaWebpackConfig(config);
 module.exports = {
-  webpackConfig,
   config,
 };

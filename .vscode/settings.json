@@ -42,6 +42,7 @@
     "typedocplugin",
     "unshrink",
     "vala",
+    "webpackbar",
     "yarnpkg"
   ],
   "eslint.nodePath": ".yarn/sdks",

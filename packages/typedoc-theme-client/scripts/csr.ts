@@ -1,4 +1,4 @@
-import { ready } from "@ribajs/utils/src/dom";
+import { ready } from "@ribajs/utils";
 import { Riba, coreModule } from "@ribajs/core";
 import { routerModule, FadeTransition } from "@ribajs/router";
 import { bs5Module, ThemeService } from "@ribajs/bs5";
@@ -7,7 +7,6 @@ import { SearchOptions } from "./types";
 
 // Own
 import * as components from "./components";
-import * as pages from "./pages";
 import * as binders from "./binders";
 import * as formatters from "./formatters";
 
@@ -24,12 +23,13 @@ const bootstrap = () => {
 
   riba.configure({
     prefix: ["rv", "csr-rv"],
+    blockUnknownCustomElements: false,
+    templateDelimiters: ["{", "}"],
   });
 
   // Register custom components
   riba.module.component.regists({
     ...components,
-    ...pages,
   });
   riba.module.binder.regists({ ...binders });
   riba.module.formatter.regists({ ...formatters });

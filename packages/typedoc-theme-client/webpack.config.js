@@ -1,4 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { webpackConfig } = require("./webpack.csr");
+const typedocConfig = require("./webpack.typedoc");
 
-module.exports = [webpackConfig];
+module.exports = [typedocConfig];

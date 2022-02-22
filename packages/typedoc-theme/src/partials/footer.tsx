@@ -9,6 +9,7 @@ export const footer = (
   const hideSettings = true;
   const hideLegend = context.options.getValue("hideLegend");
   const hideGenerator = context.options.getValue("hideGenerator");
+  const excludeExternals = context.options.getValue("excludeExternals");
   return (
     <tsd-footer>
       <footer>
@@ -64,7 +65,7 @@ export const footer = (
                     <label class="tsd-widget" for="tsd-filter-inherited">
                       Inherited
                     </label>
-                    {!context.options.getValue("excludeExternals") && (
+                    {!excludeExternals && (
                       <span>
                         <input
                           type="checkbox"
