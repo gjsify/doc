@@ -2,7 +2,7 @@
   "name": "@gjsify/typedoc-theme-client",
   "version": "0.0.1",
   "description": "",
-  "main": "package.json",
+  "main": "scripts/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --color --env production",

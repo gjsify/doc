@@ -2,13 +2,9 @@ import { ready } from "@ribajs/utils";
 import { Riba, coreModule } from "@ribajs/core";
 import { routerModule, FadeTransition } from "@ribajs/router";
 import { bs5Module, ThemeService } from "@ribajs/bs5";
+import { typedocModule } from "./module";
 
 import { SearchOptions } from "./types";
-
-// Own
-import * as components from "./components";
-import * as binders from "./binders";
-import * as formatters from "./formatters";
 
 declare global {
   interface Window {
@@ -27,13 +23,6 @@ const bootstrap = () => {
     templateDelimiters: ["{", "}"],
   });
 
-  // Register custom components
-  riba.module.component.regists({
-    ...components,
-  });
-  riba.module.binder.regists({ ...binders });
-  riba.module.formatter.regists({ ...formatters });
-
   // Register modules
   riba.module.regist(coreModule.init());
   riba.module.regist(
@@ -42,6 +31,7 @@ const bootstrap = () => {
     })
   );
   riba.module.regist(bs5Module.init());
+  riba.module.regist(typedocModule.init());
 
   const view = riba.bind(document.body, model);
 
