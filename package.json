@@ -35,9 +35,7 @@
     "serve:gjs": "typedoc-server serve ./docs/gjs",
     "serve:try": "typedoc-server serve ./docs/try",
     "typedoc-server": "yarn workspace @gjsify/typedoc-plugin-remote-search run start",
-    "_typedoc-server": "typedoc-server",
-    "typedoc": "yarn workspace @gjsify/typedoc-custom-cli run start",
-    "_typedoc": "gjsify-doc"
+    "typedoc": "yarn workspace @gjsify/typedoc-custom-cli run start"
   },
   "keywords": [
     "gjs",
