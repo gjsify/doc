@@ -1,6 +1,6 @@
 {
     "name": "@gjsify/typedoc-plugin-remote-search",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "main": "dist/index.js",
     "bin": {
         "typedoc-server": "./dist/server/cli.js"
@@ -40,7 +40,7 @@
     "scripts": {
         "clear": "rm -rf dist",
         "build": "npm run clear && npm run build:client:prod && npm run build:server",
-        "build:server": "tsc",
+        "build:server": "tsc && chmod +x ./dist/server/cli.js",
         "build:client:dev": "node esbuild.client.dev.js",
         "build:client:prod": "node esbuild.client.prod.js",
         "plugin:help": "typedoc --plugin @gjsify/typedoc-plugin-remote-search --help",
