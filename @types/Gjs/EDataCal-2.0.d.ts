@@ -106,7 +106,7 @@ class CalBackend {
      * change that affect the live view.
      */
     add_view(view: DataCalView): void
-    create_cache_filename(uid: string, filename: string, fileindex: number): string
+    create_cache_filename(uid: string, filename: string | null, fileindex: number): string
     /**
      * Asynchronously creates one or more new iCalendar objects from `calobjs`.
      * 
@@ -141,7 +141,7 @@ class CalBackend {
      * then call e_cal_backend_discard_alarm_finish() to get the result of
      * the operation.
      */
-    discard_alarm(uid: string, rid: string, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    discard_alarm(uid: string, rid: string | null, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with e_cal_backend_discard_alarm().
      * 
@@ -154,7 +154,7 @@ class CalBackend {
      * 
      * If an error occurs, the function will set `error` and return %FALSE.
      */
-    discard_alarm_sync(uid: string, rid: string, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null): boolean
+    discard_alarm_sync(uid: string, rid: string | null, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null): boolean
     /**
      * Thread-safe variation of e_cal_backend_get_cache_dir().
      * Use this function when accessing `backend` from multiple threads.
@@ -180,7 +180,7 @@ class CalBackend {
      * call e_cal_backend_get_attachment_uris_finish() to get the result of the
      * operation.
      */
-    get_attachment_uris(uid: string, rid: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_attachment_uris(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with e_cal_backend_get_attachment_uris().
      * 
@@ -200,7 +200,7 @@ class CalBackend {
      * If an error occurs, the function will set `error` and return %FALSE.
      * Note that an empty result set does not necessarily imply an error.
      */
-    get_attachment_uris_sync(uid: string, rid: string, out_attachment_uris: GLib.Queue, cancellable?: Gio.Cancellable | null): boolean
+    get_attachment_uris_sync(uid: string, rid: string | null, out_attachment_uris: GLib.Queue, cancellable?: Gio.Cancellable | null): boolean
     /**
      * Obtains the value of the backend property named `prop_name`.
      * Freed the returned string with g_free() when finished with it.
@@ -252,7 +252,7 @@ class CalBackend {
      * When the operation is finished, `callback` will be called.  You can then
      * call e_cal_backend_get_object_finish() to get the result of the operation.
      */
-    get_object(uid: string, rid: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_object(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with e_cal_backend_get_object().
      * 
@@ -300,7 +300,7 @@ class CalBackend {
      * 
      * If an error occurs, the function will set `error` and return %NULL.
      */
-    get_object_sync(uid: string, rid: string, cancellable?: Gio.Cancellable | null): string
+    get_object_sync(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null): string
     /**
      * Returns the data source registry to which #EBackend:source belongs.
      */
@@ -477,7 +477,7 @@ class CalBackend {
      * The returned #EDataCal is referenced for thread-safety and must be
      * unreferenced with g_object_unref() when finished with it.
      */
-    ref_data_cal(): DataCal
+    ref_data_cal(): DataCal | null
     /**
      * Returns the #GProxyResolver for `backend` (if applicable), as indicated
      * by the #ESourceAuthentication:proxy-uid of `backend'`s #EBackend:source
@@ -2053,7 +2053,7 @@ class CalBackendSync {
     /**
      * Calls the get_object_sync method on the given backend.
      */
-    get_object(cal: DataCal, cancellable: Gio.Cancellable | null, uid: string, rid: string): /* calobj */ string
+    get_object(cal: DataCal, cancellable: Gio.Cancellable | null, uid: string, rid?: string | null): /* calobj */ string
     /**
      * Calls the get_object_list_sync method on the given backend.
      */
@@ -2119,7 +2119,7 @@ class CalBackendSync {
      * change that affect the live view.
      */
     add_view(view: DataCalView): void
-    create_cache_filename(uid: string, filename: string, fileindex: number): string
+    create_cache_filename(uid: string, filename: string | null, fileindex: number): string
     /**
      * Asynchronously creates one or more new iCalendar objects from `calobjs`.
      * 
@@ -2154,7 +2154,7 @@ class CalBackendSync {
      * then call e_cal_backend_discard_alarm_finish() to get the result of
      * the operation.
      */
-    discard_alarm(uid: string, rid: string, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    discard_alarm(uid: string, rid: string | null, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with e_cal_backend_discard_alarm().
      * 
@@ -2167,7 +2167,7 @@ class CalBackendSync {
      * 
      * If an error occurs, the function will set `error` and return %FALSE.
      */
-    discard_alarm_sync(uid: string, rid: string, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null): boolean
+    discard_alarm_sync(uid: string, rid: string | null, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null): boolean
     /**
      * Thread-safe variation of e_cal_backend_get_cache_dir().
      * Use this function when accessing `backend` from multiple threads.
@@ -2193,7 +2193,7 @@ class CalBackendSync {
      * call e_cal_backend_get_attachment_uris_finish() to get the result of the
      * operation.
      */
-    get_attachment_uris(uid: string, rid: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_attachment_uris(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with e_cal_backend_get_attachment_uris().
      * 
@@ -2213,7 +2213,7 @@ class CalBackendSync {
      * If an error occurs, the function will set `error` and return %FALSE.
      * Note that an empty result set does not necessarily imply an error.
      */
-    get_attachment_uris_sync(uid: string, rid: string, out_attachment_uris: GLib.Queue, cancellable?: Gio.Cancellable | null): boolean
+    get_attachment_uris_sync(uid: string, rid: string | null, out_attachment_uris: GLib.Queue, cancellable?: Gio.Cancellable | null): boolean
     /**
      * Obtains the value of the backend property named `prop_name`.
      * Freed the returned string with g_free() when finished with it.
@@ -2265,7 +2265,7 @@ class CalBackendSync {
      * When the operation is finished, `callback` will be called.  You can then
      * call e_cal_backend_get_object_finish() to get the result of the operation.
      */
-    get_object(uid: string, rid: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_object(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with e_cal_backend_get_object().
      * 
@@ -2313,7 +2313,7 @@ class CalBackendSync {
      * 
      * If an error occurs, the function will set `error` and return %NULL.
      */
-    get_object_sync(uid: string, rid: string, cancellable?: Gio.Cancellable | null): string
+    get_object_sync(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null): string
     /**
      * Returns the data source registry to which #EBackend:source belongs.
      */
@@ -2490,7 +2490,7 @@ class CalBackendSync {
      * The returned #EDataCal is referenced for thread-safety and must be
      * unreferenced with g_object_unref() when finished with it.
      */
-    ref_data_cal(): DataCal
+    ref_data_cal(): DataCal | null
     /**
      * Returns the #GProxyResolver for `backend` (if applicable), as indicated
      * by the #ESourceAuthentication:proxy-uid of `backend'`s #EBackend:source
@@ -4456,7 +4456,7 @@ class CalMetaBackend {
     /**
      * Calls the get_object_sync method on the given backend.
      */
-    get_object(cal: DataCal, cancellable: Gio.Cancellable | null, uid: string, rid: string): /* calobj */ string
+    get_object(cal: DataCal, cancellable: Gio.Cancellable | null, uid: string, rid?: string | null): /* calobj */ string
     /**
      * Calls the get_object_list_sync method on the given backend.
      */
@@ -4522,7 +4522,7 @@ class CalMetaBackend {
      * change that affect the live view.
      */
     add_view(view: DataCalView): void
-    create_cache_filename(uid: string, filename: string, fileindex: number): string
+    create_cache_filename(uid: string, filename: string | null, fileindex: number): string
     /**
      * Asynchronously creates one or more new iCalendar objects from `calobjs`.
      * 
@@ -4557,7 +4557,7 @@ class CalMetaBackend {
      * then call e_cal_backend_discard_alarm_finish() to get the result of
      * the operation.
      */
-    discard_alarm(uid: string, rid: string, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    discard_alarm(uid: string, rid: string | null, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with e_cal_backend_discard_alarm().
      * 
@@ -4570,7 +4570,7 @@ class CalMetaBackend {
      * 
      * If an error occurs, the function will set `error` and return %FALSE.
      */
-    discard_alarm_sync(uid: string, rid: string, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null): boolean
+    discard_alarm_sync(uid: string, rid: string | null, alarm_uid: string, opflags: ECal.OperationFlags, cancellable?: Gio.Cancellable | null): boolean
     /**
      * Thread-safe variation of e_cal_backend_get_cache_dir().
      * Use this function when accessing `backend` from multiple threads.
@@ -4596,7 +4596,7 @@ class CalMetaBackend {
      * call e_cal_backend_get_attachment_uris_finish() to get the result of the
      * operation.
      */
-    get_attachment_uris(uid: string, rid: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_attachment_uris(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with e_cal_backend_get_attachment_uris().
      * 
@@ -4616,7 +4616,7 @@ class CalMetaBackend {
      * If an error occurs, the function will set `error` and return %FALSE.
      * Note that an empty result set does not necessarily imply an error.
      */
-    get_attachment_uris_sync(uid: string, rid: string, out_attachment_uris: GLib.Queue, cancellable?: Gio.Cancellable | null): boolean
+    get_attachment_uris_sync(uid: string, rid: string | null, out_attachment_uris: GLib.Queue, cancellable?: Gio.Cancellable | null): boolean
     /**
      * Obtains the value of the backend property named `prop_name`.
      * Freed the returned string with g_free() when finished with it.
@@ -4668,7 +4668,7 @@ class CalMetaBackend {
      * When the operation is finished, `callback` will be called.  You can then
      * call e_cal_backend_get_object_finish() to get the result of the operation.
      */
-    get_object(uid: string, rid: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    get_object(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with e_cal_backend_get_object().
      * 
@@ -4716,7 +4716,7 @@ class CalMetaBackend {
      * 
      * If an error occurs, the function will set `error` and return %NULL.
      */
-    get_object_sync(uid: string, rid: string, cancellable?: Gio.Cancellable | null): string
+    get_object_sync(uid: string, rid?: string | null, cancellable?: Gio.Cancellable | null): string
     /**
      * Returns the data source registry to which #EBackend:source belongs.
      */
@@ -4893,7 +4893,7 @@ class CalMetaBackend {
      * The returned #EDataCal is referenced for thread-safety and must be
      * unreferenced with g_object_unref() when finished with it.
      */
-    ref_data_cal(): DataCal
+    ref_data_cal(): DataCal | null
     /**
      * Returns the #GProxyResolver for `backend` (if applicable), as indicated
      * by the #ESourceAuthentication:proxy-uid of `backend'`s #EBackend:source
@@ -6416,7 +6416,7 @@ class DataCalFactory {
      * Free the returned pointer with g_object_unref(), if not NULL and no longer
      * needed.
      */
-    create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend
+    create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend | null
     get_backend_per_process(): number
     /**
      * Returns the #ESourceRegistry owned by `data_factory`.
@@ -6447,7 +6447,7 @@ class DataCalFactory {
      * Unreference the #EBackendFactory with g_object_unref() when finished
      * with it.
      */
-    ref_backend_factory(backend_name: string, extension_name: string): EBackend.BackendFactory
+    ref_backend_factory(backend_name: string, extension_name: string): EBackend.BackendFactory | null
     /**
      * Spawns a new subprocess for a backend type and returns the object path
      * of the new subprocess to the client, in the way the client can talk
@@ -6896,7 +6896,7 @@ class DataCalFactory {
      * Free the returned pointer with g_object_unref(), if not NULL and no longer
      * needed.
      */
-    vfunc_create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend
+    vfunc_create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend | null
     vfunc_open_backend(backend: EBackend.Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null): string
     /**
      * Initializes the object implementing the interface.
@@ -7077,7 +7077,7 @@ class DataCalView {
      * interface is exported.
      */
     get_connection(): Gio.DBusConnection
-    get_fields_of_interest(): GLib.HashTable
+    get_fields_of_interest(): GLib.HashTable | null
     /**
      * Gets the #ECalClientViewFlags that control the behaviour of `view`.
      */
@@ -8597,7 +8597,7 @@ class CalCacheOfflineChange {
      */
     readonly state: EBackend.OfflineState
     /* Methods of EDataCal-2.0.EDataCal.CalCacheOfflineChange */
-    copy(): CalCacheOfflineChange
+    copy(): CalCacheOfflineChange | null
     static name: string
     static new(uid: string, rid: string | null, revision: string | null, object: string | null, state: EBackend.OfflineState): CalCacheOfflineChange
     constructor(uid: string, rid: string | null, revision: string | null, object: string | null, state: EBackend.OfflineState)
@@ -8631,7 +8631,7 @@ class CalCacheSearchData {
      */
     readonly extra: string
     /* Methods of EDataCal-2.0.EDataCal.CalCacheSearchData */
-    copy(): CalCacheSearchData
+    copy(): CalCacheSearchData | null
     static name: string
     static new(uid: string, rid: string | null, object: string, extra?: string | null): CalCacheSearchData
     constructor(uid: string, rid: string | null, object: string, extra?: string | null)

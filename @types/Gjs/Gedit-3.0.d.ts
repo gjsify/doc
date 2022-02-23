@@ -563,6 +563,10 @@ class App {
      * consumed, they will no longer be visible to the default handling
      * (which treats them as filenames to be opened).
      * 
+     * The dict includes options that have been explicitly specified on the parsed
+     * commandline, as well as zero values for numeric options that were not
+     * necessarily specified.
+     * 
      * It is important to use the proper GVariant format when retrieving
      * the options with g_variant_dict_lookup():
      * - for %G_OPTION_ARG_NONE, use `b`

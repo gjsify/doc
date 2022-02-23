@@ -5227,6 +5227,23 @@ class RepoFile {
      */
     move(destination: Gio.File, flags: Gio.FileCopyFlags, cancellable?: Gio.Cancellable | null, progress_callback?: Gio.FileProgressCallback | null): boolean
     /**
+     * Asynchronously moves a file `source` to the location of `destination`. For details of the behaviour, see g_file_move().
+     * 
+     * If `progress_callback` is not %NULL, then that function that will be called
+     * just like in g_file_move(). The callback will run in the default main context
+     * of the thread calling g_file_move_async() — the same context as `callback` is
+     * run in.
+     * 
+     * When the operation is finished, `callback` will be called. You can then call
+     * g_file_move_finish() to get the result of the operation.
+     */
+    move_async(destination: Gio.File, flags: Gio.FileCopyFlags, io_priority: number, cancellable?: Gio.Cancellable | null, progress_callback?: Gio.FileProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
+    /**
+     * Finishes an asynchronous file movement, started with
+     * g_file_move_async().
+     */
+    move_finish(result: Gio.AsyncResult): boolean
+    /**
      * Opens an existing file for reading and writing. The result is
      * a #GFileIOStream that can be used to read and write the contents
      * of the file.
@@ -5648,7 +5665,7 @@ class RepoFile {
      * If the `relative_path` is an absolute path name, the resolution
      * is done absolutely (without taking `file` path as base).
      */
-    resolve_relative_path(relative_path: string): Gio.File | null
+    resolve_relative_path(relative_path: string): Gio.File
     /**
      * Sets an attribute in the file with attribute name `attribute` to `value_p`.
      * 
@@ -6490,6 +6507,23 @@ class RepoFile {
      */
     vfunc_move(destination: Gio.File, flags: Gio.FileCopyFlags, cancellable?: Gio.Cancellable | null, progress_callback?: Gio.FileProgressCallback | null): boolean
     /**
+     * Asynchronously moves a file `source` to the location of `destination`. For details of the behaviour, see g_file_move().
+     * 
+     * If `progress_callback` is not %NULL, then that function that will be called
+     * just like in g_file_move(). The callback will run in the default main context
+     * of the thread calling g_file_move_async() — the same context as `callback` is
+     * run in.
+     * 
+     * When the operation is finished, `callback` will be called. You can then call
+     * g_file_move_finish() to get the result of the operation.
+     */
+    vfunc_move_async(destination: Gio.File, flags: Gio.FileCopyFlags, io_priority: number, cancellable?: Gio.Cancellable | null, progress_callback?: Gio.FileProgressCallback | null, callback?: Gio.AsyncReadyCallback | null): void
+    /**
+     * Finishes an asynchronous file movement, started with
+     * g_file_move_async().
+     */
+    vfunc_move_finish(result: Gio.AsyncResult): boolean
+    /**
      * Opens an existing file for reading and writing. The result is
      * a #GFileIOStream that can be used to read and write the contents
      * of the file.
@@ -6810,7 +6844,7 @@ class RepoFile {
      * If the `relative_path` is an absolute path name, the resolution
      * is done absolutely (without taking `file` path as base).
      */
-    vfunc_resolve_relative_path(relative_path: string): Gio.File | null
+    vfunc_resolve_relative_path(relative_path: string): Gio.File
     /**
      * Sets an attribute in the file with attribute name `attribute` to `value_p`.
      * 

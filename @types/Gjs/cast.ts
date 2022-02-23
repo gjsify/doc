@@ -724,6 +724,9 @@ const inheritanceTable: { [key: string]: string[] } = {
     'AppStream.Artifact': [
     'GObject.Object',
 ],
+    'AppStream.Branding': [
+    'GObject.Object',
+],
     'AppStream.Bundle': [
     'GObject.Object',
 ],
@@ -863,6 +866,13 @@ const inheritanceTable: { [key: string]: string[] } = {
     'AppStreamGlib.Translation': [
     'GObject.Object',
 ],
+    'Arrow.AggregateNodeOptions': [
+    'Arrow.ExecuteNodeOptions',
+    'GObject.Object',
+],
+    'Arrow.Aggregation': [
+    'GObject.Object',
+],
     'Arrow.Array': [
     'GObject.Object',
 ],
@@ -874,8 +884,16 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Object',
 ],
     'Arrow.ArraySortOptions': [
-    'GObject.Object',
     'Arrow.FunctionOptions',
+    'GObject.Object',
+],
+    'Arrow.BaseBinaryScalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
+    'Arrow.BaseListScalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
 ],
     'Arrow.BinaryArray': [
     'Arrow.Array',
@@ -893,6 +911,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.ArrayBuilder',
     'GObject.Object',
 ],
+    'Arrow.BinaryScalar': [
+    'Arrow.BaseBinaryScalar',
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.BooleanArray': [
     'Arrow.PrimitiveArray',
     'Arrow.Array',
@@ -905,6 +928,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.BooleanDataType': [
     'Arrow.FixedWidthDataType',
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.BooleanScalar': [
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.Buffer': [
@@ -930,9 +957,13 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.CSVReader': [
     'GObject.Object',
 ],
-    'Arrow.CastOptions': [
+    'Arrow.CallExpression': [
+    'Arrow.Expression',
     'GObject.Object',
+],
+    'Arrow.CastOptions': [
     'Arrow.FunctionOptions',
+    'GObject.Object',
 ],
     'Arrow.ChunkedArray': [
     'GObject.Object',
@@ -943,10 +974,6 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Arrow.Codec': [
     'GObject.Object',
-],
-    'Arrow.CompareOptions': [
-    'GObject.Object',
-    'Arrow.FunctionOptions',
 ],
     'Arrow.CompressedInputStream': [
     'Arrow.InputStream',
@@ -962,8 +989,8 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Object',
 ],
     'Arrow.CountOptions': [
-    'GObject.Object',
     'Arrow.FunctionOptions',
+    'GObject.Object',
 ],
     'Arrow.DataType': [
     'GObject.Object',
@@ -979,7 +1006,13 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Object',
 ],
     'Arrow.Date32DataType': [
+    'Arrow.TemporalDataType',
+    'Arrow.FixedWidthDataType',
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.Date32Scalar': [
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.Date64Array': [
@@ -993,10 +1026,23 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Object',
 ],
     'Arrow.Date64DataType': [
+    'Arrow.TemporalDataType',
+    'Arrow.FixedWidthDataType',
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.Date64Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.Datum': [
+    'GObject.Object',
+],
+    'Arrow.DayTimeIntervalDataType': [
+    'Arrow.IntervalDataType',
+    'Arrow.TemporalDataType',
+    'Arrow.FixedWidthDataType',
+    'Arrow.DataType',
     'GObject.Object',
 ],
     'Arrow.Decimal128': [
@@ -1020,6 +1066,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.Decimal128Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.Decimal256': [
     'GObject.Object',
 ],
@@ -1041,6 +1091,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.Decimal256Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.DecimalDataType': [
     'Arrow.FixedSizeBinaryDataType',
     'Arrow.FixedWidthDataType',
@@ -1055,6 +1109,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DenseUnionDataType': [
     'Arrow.UnionDataType',
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.DenseUnionScalar': [
+    'Arrow.UnionScalar',
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.DictionaryArray': [
@@ -1083,7 +1142,26 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.DoubleScalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
+    'Arrow.EqualOptions': [
+    'GObject.Object',
+],
     'Arrow.ExecuteContext': [
+    'GObject.Object',
+],
+    'Arrow.ExecuteNode': [
+    'GObject.Object',
+],
+    'Arrow.ExecuteNodeOptions': [
+    'GObject.Object',
+],
+    'Arrow.ExecutePlan': [
+    'GObject.Object',
+],
+    'Arrow.Expression': [
     'GObject.Object',
 ],
     'Arrow.ExtensionArray': [
@@ -1097,6 +1175,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.ExtensionDataTypeRegistry': [
     'GObject.Object',
 ],
+    'Arrow.ExtensionScalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.FeatherFileReader': [
     'GObject.Object',
 ],
@@ -1106,7 +1188,19 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.Field': [
     'GObject.Object',
 ],
+    'Arrow.FieldExpression': [
+    'Arrow.Expression',
+    'GObject.Object',
+],
     'Arrow.FileInfo': [
+    'GObject.Object',
+],
+    'Arrow.FileInputStream': [
+    'Arrow.SeekableInputStream',
+    'Arrow.File',
+    'Arrow.Readable',
+    'Arrow.InputStream',
+    'Gio.InputStream',
     'GObject.Object',
 ],
     'Arrow.FileOutputStream': [
@@ -1122,8 +1216,8 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Object',
 ],
     'Arrow.FilterOptions': [
-    'GObject.Object',
     'Arrow.FunctionOptions',
+    'GObject.Object',
 ],
     'Arrow.FixedSizeBinaryArray': [
     'Arrow.PrimitiveArray',
@@ -1137,6 +1231,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.FixedSizeBinaryDataType': [
     'Arrow.FixedWidthDataType',
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.FixedSizeBinaryScalar': [
+    'Arrow.BaseBinaryScalar',
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.FixedWidthDataType': [
@@ -1160,6 +1259,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.FloatScalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.FloatingPointDataType': [
     'Arrow.NumericDataType',
     'Arrow.FixedWidthDataType',
@@ -1167,6 +1270,12 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Object',
 ],
     'Arrow.Function': [
+    'GObject.Object',
+],
+    'Arrow.FunctionDoc': [
+    'GObject.Object',
+],
+    'Arrow.FunctionOptions': [
     'GObject.Object',
 ],
     'Arrow.GIOInputStream': [
@@ -1185,6 +1294,10 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Arrow.HDFSFileSystem': [
     'Arrow.FileSystem',
+    'GObject.Object',
+],
+    'Arrow.HashJoinNodeOptions': [
+    'Arrow.ExecuteNodeOptions',
     'GObject.Object',
 ],
     'Arrow.InputStream': [
@@ -1210,6 +1323,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.Int16Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.Int32Array': [
     'Arrow.NumericArray',
     'Arrow.PrimitiveArray',
@@ -1225,6 +1342,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.NumericDataType',
     'Arrow.FixedWidthDataType',
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.Int32Scalar': [
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.Int64Array': [
@@ -1244,6 +1365,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.Int64Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.Int8Array': [
     'Arrow.NumericArray',
     'Arrow.PrimitiveArray',
@@ -1261,12 +1386,22 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.Int8Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.IntArrayBuilder': [
     'Arrow.ArrayBuilder',
     'GObject.Object',
 ],
     'Arrow.IntegerDataType': [
     'Arrow.NumericDataType',
+    'Arrow.FixedWidthDataType',
+    'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.IntervalDataType': [
+    'Arrow.TemporalDataType',
     'Arrow.FixedWidthDataType',
     'Arrow.DataType',
     'GObject.Object',
@@ -1289,6 +1424,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.LargeBinaryScalar': [
+    'Arrow.BaseBinaryScalar',
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.LargeListArray': [
     'Arrow.Array',
     'GObject.Object',
@@ -1299,6 +1439,11 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Arrow.LargeListDataType': [
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.LargeListScalar': [
+    'Arrow.BaseListScalar',
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.LargeStringArray': [
@@ -1315,6 +1460,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.LargeStringScalar': [
+    'Arrow.BaseBinaryScalar',
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.ListArray': [
     'Arrow.Array',
     'GObject.Object',
@@ -1325,6 +1475,15 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Arrow.ListDataType': [
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.ListScalar': [
+    'Arrow.BaseListScalar',
+    'Arrow.Scalar',
+    'GObject.Object',
+],
+    'Arrow.LiteralExpression': [
+    'Arrow.Expression',
     'GObject.Object',
 ],
     'Arrow.LocalFileSystem': [
@@ -1348,6 +1507,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.MapScalar': [
+    'Arrow.BaseListScalar',
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.MemoryMappedInputStream': [
     'Arrow.SeekableInputStream',
     'Arrow.File',
@@ -1358,6 +1522,20 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Arrow.MockFileSystem': [
     'Arrow.FileSystem',
+    'GObject.Object',
+],
+    'Arrow.MonthDayNanoIntervalDataType': [
+    'Arrow.IntervalDataType',
+    'Arrow.TemporalDataType',
+    'Arrow.FixedWidthDataType',
+    'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.MonthIntervalDataType': [
+    'Arrow.IntervalDataType',
+    'Arrow.TemporalDataType',
+    'Arrow.FixedWidthDataType',
+    'Arrow.DataType',
     'GObject.Object',
 ],
     'Arrow.MutableBuffer': [
@@ -1376,6 +1554,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.NullScalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.NumericArray': [
     'Arrow.PrimitiveArray',
     'Arrow.Array',
@@ -1384,9 +1566,6 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.NumericDataType': [
     'Arrow.FixedWidthDataType',
     'Arrow.DataType',
-    'GObject.Object',
-],
-    'Arrow.ORCFileReader': [
     'GObject.Object',
 ],
     'Arrow.OutputStream': [
@@ -1441,8 +1620,30 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.Buffer',
     'GObject.Object',
 ],
+    'Arrow.RoundOptions': [
+    'Arrow.FunctionOptions',
+    'GObject.Object',
+],
+    'Arrow.RoundToMultipleOptions': [
+    'Arrow.FunctionOptions',
+    'GObject.Object',
+],
     'Arrow.S3FileSystem': [
     'Arrow.FileSystem',
+    'GObject.Object',
+],
+    'Arrow.S3GlobalOptions': [
+    'GObject.Object',
+],
+    'Arrow.Scalar': [
+    'GObject.Object',
+],
+    'Arrow.ScalarAggregateOptions': [
+    'Arrow.FunctionOptions',
+    'GObject.Object',
+],
+    'Arrow.ScalarDatum': [
+    'Arrow.Datum',
     'GObject.Object',
 ],
     'Arrow.Schema': [
@@ -1455,6 +1656,14 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gio.InputStream',
     'GObject.Object',
 ],
+    'Arrow.SetLookupOptions': [
+    'Arrow.FunctionOptions',
+    'GObject.Object',
+],
+    'Arrow.SinkNodeOptions': [
+    'Arrow.ExecuteNodeOptions',
+    'GObject.Object',
+],
     'Arrow.SlowFileSystem': [
     'Arrow.FileSystem',
     'GObject.Object',
@@ -1463,8 +1672,12 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Object',
 ],
     'Arrow.SortOptions': [
-    'GObject.Object',
     'Arrow.FunctionOptions',
+    'GObject.Object',
+],
+    'Arrow.SourceNodeOptions': [
+    'Arrow.ExecuteNodeOptions',
+    'GObject.Object',
 ],
     'Arrow.SparseUnionArray': [
     'Arrow.UnionArray',
@@ -1474,6 +1687,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.SparseUnionDataType': [
     'Arrow.UnionDataType',
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.SparseUnionScalar': [
+    'Arrow.UnionScalar',
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.StringArray': [
@@ -1494,6 +1712,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.ArrayBuilder',
     'GObject.Object',
 ],
+    'Arrow.StringScalar': [
+    'Arrow.BaseBinaryScalar',
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.StructArray': [
     'Arrow.Array',
     'GObject.Object',
@@ -1504,6 +1727,10 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Arrow.StructDataType': [
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.StructScalar': [
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.SubTreeFileSystem': [
@@ -1517,13 +1744,21 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.RecordBatchReader',
     'GObject.Object',
 ],
+    'Arrow.TableConcatenateOptions': [
+    'GObject.Object',
+],
     'Arrow.TableDatum': [
     'Arrow.Datum',
     'GObject.Object',
 ],
     'Arrow.TakeOptions': [
-    'GObject.Object',
     'Arrow.FunctionOptions',
+    'GObject.Object',
+],
+    'Arrow.TemporalDataType': [
+    'Arrow.FixedWidthDataType',
+    'Arrow.DataType',
+    'GObject.Object',
 ],
     'Arrow.Tensor': [
     'GObject.Object',
@@ -1540,7 +1775,13 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Arrow.Time32DataType': [
     'Arrow.TimeDataType',
+    'Arrow.TemporalDataType',
+    'Arrow.FixedWidthDataType',
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.Time32Scalar': [
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.Time64Array': [
@@ -1555,10 +1796,18 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Arrow.Time64DataType': [
     'Arrow.TimeDataType',
+    'Arrow.TemporalDataType',
+    'Arrow.FixedWidthDataType',
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.Time64Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.TimeDataType': [
+    'Arrow.TemporalDataType',
+    'Arrow.FixedWidthDataType',
     'Arrow.DataType',
     'GObject.Object',
 ],
@@ -1573,7 +1822,13 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Object',
 ],
     'Arrow.TimestampDataType': [
+    'Arrow.TemporalDataType',
+    'Arrow.FixedWidthDataType',
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.TimestampScalar': [
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.UInt16Array': [
@@ -1593,6 +1848,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.UInt16Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.UInt32Array': [
     'Arrow.NumericArray',
     'Arrow.PrimitiveArray',
@@ -1608,6 +1867,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.NumericDataType',
     'Arrow.FixedWidthDataType',
     'Arrow.DataType',
+    'GObject.Object',
+],
+    'Arrow.UInt32Scalar': [
+    'Arrow.Scalar',
     'GObject.Object',
 ],
     'Arrow.UInt64Array': [
@@ -1627,6 +1890,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.UInt64Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.UInt8Array': [
     'Arrow.NumericArray',
     'Arrow.PrimitiveArray',
@@ -1644,8 +1911,16 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.UInt8Scalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
     'Arrow.UIntArrayBuilder': [
     'Arrow.ArrayBuilder',
+    'GObject.Object',
+],
+    'Arrow.UTF8NormalizeOptions': [
+    'Arrow.FunctionOptions',
     'GObject.Object',
 ],
     'Arrow.UnionArray': [
@@ -1656,6 +1931,14 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Arrow.DataType',
     'GObject.Object',
 ],
+    'Arrow.UnionScalar': [
+    'Arrow.Scalar',
+    'GObject.Object',
+],
+    'Arrow.VarianceOptions': [
+    'Arrow.FunctionOptions',
+    'GObject.Object',
+],
     'Arrow.WriteOptions': [
     'GObject.Object',
 ],
@@ -1663,28 +1946,127 @@ const inheritanceTable: { [key: string]: string[] } = {
     'ArrowDataset.FileFormat',
     'GObject.Object',
 ],
+    'ArrowDataset.Dataset': [
+    'GObject.Object',
+],
+    'ArrowDataset.DatasetFactory': [
+    'GObject.Object',
+],
+    'ArrowDataset.DirectoryPartitioning': [
+    'ArrowDataset.KeyValuePartitioning',
+    'ArrowDataset.Partitioning',
+    'GObject.Object',
+],
     'ArrowDataset.FileFormat': [
+    'GObject.Object',
+],
+    'ArrowDataset.FileSystemDataset': [
+    'ArrowDataset.Dataset',
+    'GObject.Object',
+],
+    'ArrowDataset.FileSystemDatasetFactory': [
+    'ArrowDataset.DatasetFactory',
+    'GObject.Object',
+],
+    'ArrowDataset.FileSystemDatasetWriteOptions': [
+    'GObject.Object',
+],
+    'ArrowDataset.FileWriteOptions': [
+    'GObject.Object',
+],
+    'ArrowDataset.FileWriter': [
+    'GObject.Object',
+],
+    'ArrowDataset.Fragment': [
     'GObject.Object',
 ],
     'ArrowDataset.IPCFileFormat': [
     'ArrowDataset.FileFormat',
     'GObject.Object',
 ],
-    'ArrowDataset.InMemoryScanTask': [
-    'ArrowDataset.ScanTask',
+    'ArrowDataset.InMemoryFragment': [
+    'ArrowDataset.Fragment',
+    'GObject.Object',
+],
+    'ArrowDataset.KeyValuePartitioning': [
+    'ArrowDataset.Partitioning',
     'GObject.Object',
 ],
     'ArrowDataset.ParquetFileFormat': [
     'ArrowDataset.FileFormat',
     'GObject.Object',
 ],
-    'ArrowDataset.ScanContext': [
+    'ArrowDataset.Partitioning': [
     'GObject.Object',
 ],
-    'ArrowDataset.ScanOptions': [
+    'ArrowDataset.PartitioningOptions': [
     'GObject.Object',
 ],
-    'ArrowDataset.ScanTask': [
+    'ArrowDataset.Scanner': [
+    'GObject.Object',
+],
+    'ArrowDataset.ScannerBuilder': [
+    'GObject.Object',
+],
+    'ArrowFlight.CallOptions': [
+    'GObject.Object',
+],
+    'ArrowFlight.Client': [
+    'GObject.Object',
+],
+    'ArrowFlight.ClientOptions': [
+    'GObject.Object',
+],
+    'ArrowFlight.CommandDescriptor': [
+    'ArrowFlight.Descriptor',
+    'GObject.Object',
+],
+    'ArrowFlight.Criteria': [
+    'GObject.Object',
+],
+    'ArrowFlight.DataStream': [
+    'GObject.Object',
+],
+    'ArrowFlight.Descriptor': [
+    'GObject.Object',
+],
+    'ArrowFlight.Endpoint': [
+    'GObject.Object',
+],
+    'ArrowFlight.Info': [
+    'GObject.Object',
+],
+    'ArrowFlight.Location': [
+    'GObject.Object',
+],
+    'ArrowFlight.PathDescriptor': [
+    'ArrowFlight.Descriptor',
+    'GObject.Object',
+],
+    'ArrowFlight.RecordBatchReader': [
+    'GObject.Object',
+],
+    'ArrowFlight.RecordBatchStream': [
+    'ArrowFlight.DataStream',
+    'GObject.Object',
+],
+    'ArrowFlight.Server': [
+    'GObject.Object',
+],
+    'ArrowFlight.ServerCallContext': [
+    'GObject.Object',
+],
+    'ArrowFlight.ServerOptions': [
+    'GObject.Object',
+],
+    'ArrowFlight.StreamChunk': [
+    'GObject.Object',
+],
+    'ArrowFlight.StreamReader': [
+    'ArrowFlight.RecordBatchReader',
+    'GObject.Object',
+],
+    'ArrowFlight.Ticket': [
     'GObject.Object',
 ],
     'Atk.GObjectAccessible': [
@@ -5339,6 +5721,17 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.InitiallyUnowned',
     'GObject.Object',
 ],
+    'Eog.DetailsDialog': [
+    'Gtk.Window',
+    'Atk.ImplementorIface',
+    'Gtk.Buildable',
+    'Gtk.Bin',
+    'Gtk.Container',
+    'Gtk.Widget',
+    'Gtk.Object',
+    'GObject.InitiallyUnowned',
+    'GObject.Object',
+],
     'Eog.FileChooser': [
     'Gtk.FileChooserDialog',
     'Atk.ImplementorIface',
@@ -5400,11 +5793,10 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gtk.TreeSortable',
     'GObject.Object',
 ],
-    'Eog.PropertiesDialog': [
-    'Gtk.Dialog',
+    'Eog.RemotePresenter': [
+    'Gtk.Window',
     'Atk.ImplementorIface',
     'Gtk.Buildable',
-    'Gtk.Window',
     'Gtk.Bin',
     'Gtk.Container',
     'Gtk.Widget',
@@ -7630,6 +8022,9 @@ const inheritanceTable: { [key: string]: string[] } = {
     'GObject.Binding': [
     'GObject.Object',
 ],
+    'GObject.BindingGroup': [
+    'GObject.Object',
+],
     'GObject.InitiallyUnowned': [
     'GObject.Object',
 ],
@@ -7701,6 +8096,9 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'GObject.ParamSpecVariant': [
     'GObject.ParamSpec',
+],
+    'GObject.SignalGroup': [
+    'GObject.Object',
 ],
     'GObject.TypeModule': [
     'GObject.Object',
@@ -12510,6 +12908,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gio.Seekable',
     'Gio.OutputStream',
     'GObject.Object',
+],
+    'Gio.DebugControllerDBus': [
+    'GObject.Object',
+    'Gio.DebugController',
+    'Gio.Initable',
 ],
     'Gio.DesktopAppInfo': [
     'GObject.Object',
@@ -25758,49 +26161,62 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Rest.OAuth2Proxy': [
     'Rest.Proxy',
+    'Rest.Proxy',
     'GObject.Object',
 ],
     'Rest.OAuth2ProxyCall': [
+    'Rest.ProxyCall',
     'Rest.ProxyCall',
     'GObject.Object',
 ],
     'Rest.OAuthProxy': [
     'Rest.Proxy',
+    'Rest.Proxy',
     'GObject.Object',
 ],
     'Rest.OAuthProxyCall': [
+    'Rest.ProxyCall',
     'Rest.ProxyCall',
     'GObject.Object',
 ],
     'Rest.Proxy': [
     'GObject.Object',
+    'GObject.Object',
 ],
     'Rest.ProxyAuth': [
+    'GObject.Object',
     'GObject.Object',
 ],
     'Rest.ProxyCall': [
     'GObject.Object',
+    'GObject.Object',
 ],
     'Rest.XmlParser': [
     'GObject.Object',
+    'GObject.Object',
 ],
     'RestExtras.FlickrProxy': [
+    'Rest.Proxy',
     'Rest.Proxy',
     'GObject.Object',
 ],
     'RestExtras.FlickrProxyCall': [
     'Rest.ProxyCall',
+    'Rest.ProxyCall',
     'GObject.Object',
 ],
     'RestExtras.LastfmProxy': [
+    'Rest.Proxy',
     'Rest.Proxy',
     'GObject.Object',
 ],
     'RestExtras.LastfmProxyCall': [
     'Rest.ProxyCall',
+    'Rest.ProxyCall',
     'GObject.Object',
 ],
     'RestExtras.YoutubeProxy': [
+    'Rest.Proxy',
     'Rest.Proxy',
     'GObject.Object',
 ],
@@ -26196,10 +26612,6 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gtk.Accessible',
     'Gtk.Buildable',
     'Gtk.ConstraintTarget',
-    'Gtk.Widget',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
     'Gtk.Object',
     'GObject.InitiallyUnowned',
     'GObject.Object',
@@ -26207,23 +26619,15 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Shumate.Coordinate': [
     'GObject.InitiallyUnowned',
     'Shumate.Location',
-    'GObject.InitiallyUnowned',
-    'Shumate.Location',
     'GObject.Object',
 ],
     'Shumate.DataSource': [
     'GObject.Object',
-    'GObject.Object',
 ],
     'Shumate.FileCache': [
     'GObject.Object',
-    'GObject.Object',
 ],
     'Shumate.Layer': [
-    'Gtk.Widget',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
     'Gtk.Widget',
     'Gtk.Accessible',
     'Gtk.Buildable',
@@ -26237,19 +26641,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gtk.Accessible',
     'Gtk.Buildable',
     'Gtk.ConstraintTarget',
-    'Gtk.Widget',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
     'Gtk.Object',
     'GObject.InitiallyUnowned',
     'GObject.Object',
 ],
     'Shumate.Map': [
-    'Gtk.Widget',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
     'Gtk.Widget',
     'Gtk.Accessible',
     'Gtk.Buildable',
@@ -26263,10 +26659,6 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gtk.Accessible',
     'Gtk.Buildable',
     'Gtk.ConstraintTarget',
-    'Shumate.Layer',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
     'Gtk.Widget',
     'Gtk.Object',
     'GObject.InitiallyUnowned',
@@ -26274,20 +26666,12 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Shumate.MapSource': [
     'GObject.Object',
-    'GObject.Object',
 ],
     'Shumate.MapSourceRegistry': [
     'GObject.Object',
     'Gio.ListModel',
-    'GObject.Object',
-    'Gio.ListModel',
 ],
     'Shumate.Marker': [
-    'Gtk.Widget',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
-    'Shumate.Location',
     'Gtk.Widget',
     'Gtk.Accessible',
     'Gtk.Buildable',
@@ -26302,10 +26686,6 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gtk.Accessible',
     'Gtk.Buildable',
     'Gtk.ConstraintTarget',
-    'Shumate.Layer',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
     'Gtk.Widget',
     'Gtk.Object',
     'GObject.InitiallyUnowned',
@@ -26313,13 +26693,8 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Shumate.MemoryCache': [
     'GObject.Object',
-    'GObject.Object',
 ],
     'Shumate.PathLayer': [
-    'Shumate.Layer',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
     'Shumate.Layer',
     'Gtk.Accessible',
     'Gtk.Buildable',
@@ -26335,18 +26710,12 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gtk.Buildable',
     'Gtk.ConstraintTarget',
     'Shumate.Location',
-    'Shumate.Marker',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
-    'Shumate.Location',
     'Gtk.Widget',
     'Gtk.Object',
     'GObject.InitiallyUnowned',
     'GObject.Object',
 ],
     'Shumate.RasterRenderer': [
-    'Shumate.MapSource',
     'Shumate.MapSource',
     'GObject.Object',
 ],
@@ -26355,6 +26724,11 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gtk.Accessible',
     'Gtk.Buildable',
     'Gtk.ConstraintTarget',
+    'Gtk.Object',
+    'GObject.InitiallyUnowned',
+    'GObject.Object',
+],
+    'Shumate.SimpleMap': [
     'Gtk.Widget',
     'Gtk.Accessible',
     'Gtk.Buildable',
@@ -26368,22 +26742,15 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Gtk.Accessible',
     'Gtk.Buildable',
     'Gtk.ConstraintTarget',
-    'Gtk.Widget',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
     'Gtk.Object',
     'GObject.InitiallyUnowned',
     'GObject.Object',
 ],
     'Shumate.TileDownloader': [
     'Shumate.DataSource',
-    'Shumate.DataSource',
     'GObject.Object',
 ],
     'Shumate.VectorRenderer': [
-    'Shumate.MapSource',
-    'Gio.Initable',
     'Shumate.MapSource',
     'Gio.Initable',
     'GObject.Object',
@@ -26391,17 +26758,6 @@ const inheritanceTable: { [key: string]: string[] } = {
     'Shumate.Viewport': [
     'GObject.Object',
     'Shumate.Location',
-    'GObject.Object',
-    'Shumate.Location',
-],
-    'Shumate.SimpleMap': [
-    'Gtk.Widget',
-    'Gtk.Accessible',
-    'Gtk.Buildable',
-    'Gtk.ConstraintTarget',
-    'Gtk.Object',
-    'GObject.InitiallyUnowned',
-    'GObject.Object',
 ],
     'Signon.AuthService': [
     'GObject.Object',
@@ -28868,6 +29224,42 @@ const inheritanceTable: { [key: string]: string[] } = {
 ],
     'Vgsl.Connection': [
     'Vgda.GProvider',
+    'GObject.Object',
+],
+    'Vips.Foreign': [
+    'Vips.Operation',
+    'Vips.Object',
+    'GObject.Object',
+],
+    'Vips.ForeignLoad': [
+    'Vips.Foreign',
+    'Vips.Operation',
+    'Vips.Object',
+    'GObject.Object',
+],
+    'Vips.ForeignSave': [
+    'Vips.Foreign',
+    'Vips.Operation',
+    'Vips.Object',
+    'GObject.Object',
+],
+    'Vips.Image': [
+    'Vips.Object',
+    'GObject.Object',
+],
+    'Vips.Interpolate': [
+    'Vips.Object',
+    'GObject.Object',
+],
+    'Vips.Object': [
+    'GObject.Object',
+],
+    'Vips.Operation': [
+    'Vips.Object',
+    'GObject.Object',
+],
+    'Vips.Region': [
+    'Vips.Object',
     'GObject.Object',
 ],
     'Vpg.Connection': [

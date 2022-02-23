@@ -1581,6 +1581,9 @@ class Terminal {
      * 
      * This method is unaware of BiDi. The columns returned in `attributes` are
      * logical columns.
+     * 
+     * Note: since 0.68, passing a non-%NULL `array` parameter is deprecated. Starting with
+     * 0.70, passing a non-%NULL `array` parameter will make this function itself return %NULL.
      */
     get_text(is_selected?: SelectionFunc | null): [ /* returnType */ string | null, /* attributes */ CharAttributes[] | null ]
     /**
@@ -1596,6 +1599,9 @@ class Terminal {
      * 
      * This method is unaware of BiDi. The columns returned in `attributes` are
      * logical columns.
+     * 
+     * Note: since 0.68, passing a non-%NULL `array` parameter is deprecated. Starting with
+     * 0.70, passing a non-%NULL `array` parameter will make this function itself return %NULL.
      */
     get_text_include_trailing_spaces(is_selected?: SelectionFunc | null): [ /* returnType */ string, /* attributes */ CharAttributes[] ]
     /**
@@ -1609,6 +1615,9 @@ class Terminal {
      * 
      * This method is unaware of BiDi. The columns passed in `start_col` and `end_row,`
      * and returned in `attributes` are logical columns.
+     * 
+     * Note: since 0.68, passing a non-%NULL `array` parameter is deprecated. Starting with
+     * 0.70, passing a non-%NULL `array` parameter will make this function itself return %NULL.
      */
     get_text_range(start_row: number, start_col: number, end_row: number, end_col: number, is_selected?: SelectionFunc | null): [ /* returnType */ string | null, /* attributes */ CharAttributes[] | null ]
     get_window_title(): string | null

@@ -83,6 +83,12 @@ enum CompareType {
      */
     SENSITIVE,
 }
+enum DBError {
+    /**
+     * database is corrupt
+     */
+    DB_ERROR_CORRUPT,
+}
 /**
  * An enum of all the known columns, which can be used for a quick column lookups.
  */
@@ -1271,8 +1277,8 @@ function content_type_decode(in_: string): ContentType
 function debug(mode: string): boolean
 function debug_demangle_backtrace(bt?: GLib.String | null): /* bt */ GLib.String | null
 function debug_end(): void
-function debug_get_backtrace(): GLib.String
-function debug_get_raw_backtrace(): GLib.String
+function debug_get_backtrace(): GLib.String | null
+function debug_get_raw_backtrace(): GLib.String | null
 function debug_init(): void
 function debug_ref_unref_dump_backtraces(): void
 function debug_ref_unref_push_backtrace(backtrace: GLib.String, object_ref_count: number): void
@@ -1320,7 +1326,7 @@ function header_location_decode(in_: string): string
 function header_mailbox_decode(in_: string, charset: string): HeaderAddress
 function header_mime_decode(in_: string, maj: number, min: number): void
 function header_msgid_decode(in_: string): string
-function header_msgid_generate(domain: string): string
+function header_msgid_generate(domain?: string | null): string
 function header_newsgroups_decode(in_: string): string[]
 function header_param(params: object | null, name: string): string
 function header_param_list_decode(in_?: string | null): object | null
@@ -1332,7 +1338,7 @@ function header_set_param(paramsp: object | null, name: string, value: string): 
 function header_token_decode(in_: string): string
 function header_unfold(in_: string): string
 function headers_dup_mailing_list(headers: NameValueArray): string | null
-function host_idna_to_ascii(host: string): string
+function host_idna_to_ascii(host?: string | null): string | null
 function hostname_utils_requires_ascii(hostname: string): boolean
 function iconv_charset_language(charset: string): string
 function iconv_charset_name(charset: string): string
@@ -1356,12 +1362,12 @@ function provider_init(): void
 function provider_list(load: boolean): Provider[]
 function provider_load(path: string): boolean
 function provider_module_init(): void
-function pstring_add(string: string, own: boolean): string
-function pstring_contains(string: string): boolean
+function pstring_add(string: string | null, own: boolean): string | null
+function pstring_contains(string?: string | null): boolean
 function pstring_dump_stat(): void
-function pstring_free(string: string): void
-function pstring_peek(string: string): string
-function pstring_strdup(string: string): string
+function pstring_free(string?: string | null): void
+function pstring_peek(string?: string | null): string | null
+function pstring_strdup(string?: string | null): string | null
 function quoted_decode_step(in_: Uint8Array, out: Uint8Array, saveme: number[]): [ /* returnType */ number, /* out */ Uint8Array, /* saveme */ number[] ]
 function quoted_encode_close(in_: Uint8Array, out: Uint8Array, save: number[]): [ /* returnType */ number, /* out */ Uint8Array, /* save */ number[] ]
 function quoted_encode_step(in_: Uint8Array, out: Uint8Array, save: number[]): [ /* returnType */ number, /* out */ Uint8Array, /* save */ number[] ]
@@ -1404,7 +1410,7 @@ function url_addrspec_end(in_: string, pos: string, inend: string, match: UrlMat
 function url_addrspec_start(in_: string, pos: string, inend: string, match: UrlMatch): boolean
 function url_decode(part: string): void
 function url_decode_path(path: string): string
-function url_encode(part: string, escape_extra: string): string
+function url_encode(part: string, escape_extra?: string | null): string
 function url_file_end(in_: string, pos: string, inend: string, match: UrlMatch): boolean
 function url_file_start(in_: string, pos: string, inend: string, match: UrlMatch): boolean
 function url_web_end(in_: string, pos: string, inend: string, match: UrlMatch): boolean
@@ -1426,9 +1432,9 @@ function util_decode_user_header_setting(setting_value: string): [ /* out_displa
 function util_encode_user_header_setting(display_name: string | null, header_name: string): string
 function util_fill_message_info_user_headers(info: MessageInfo, headers: NameValueArray): boolean
 function util_get_directory_variants(main_path: string, replace_prefix: string, with_modules_dir: boolean): string[]
-function utils_sanitize_ascii_domain_in_address(email_address: string, do_format: boolean): string | null
+function utils_sanitize_ascii_domain_in_address(email_address: string | null, do_format: boolean): string | null
 function utils_sanitize_ascii_domain_in_url(url: URL): boolean
-function utils_sanitize_ascii_domain_in_url_str(url_str: string): string | null
+function utils_sanitize_ascii_domain_in_url_str(url_str?: string | null): string | null
 function uudecode_step(in_: Uint8Array, out: Uint8Array, save: number[]): [ /* returnType */ number, /* out */ Uint8Array, /* save */ number[] ]
 function uuencode_close(in_: Uint8Array, out: Uint8Array, uubuf: Uint8Array, save: number[]): [ /* returnType */ number, /* out */ Uint8Array, /* uubuf */ Uint8Array, /* save */ number[] ]
 function uuencode_step(in_: Uint8Array, out: Uint8Array, uubuf: Uint8Array, save: number[]): [ /* returnType */ number, /* out */ Uint8Array, /* uubuf */ Uint8Array, /* save */ number[] ]
@@ -1665,7 +1671,7 @@ class NetworkService {
      * name for unencrypted IMAP or encrypted IMAP using STARTTLS is "imap",
      * but the service name for IMAP over SSL is "imaps".
      */
-    get_service_name(method: NetworkSecurityMethod): string
+    get_service_name(method: NetworkSecurityMethod): string | null
     /**
      * Returns the socket endpoint for the network service to which `service`
      * is a client.
@@ -1679,7 +1685,7 @@ class NetworkService {
      * a client.  If `connectable` is %NULL, a #GSocketConnectable is derived
      * from the `service'`s #CamelNetworkSettings.
      */
-    set_connectable(connectable: Gio.SocketConnectable): void
+    set_connectable(connectable?: Gio.SocketConnectable | null): void
     /**
      * Creates a #GTlsClientConnection wrapping `base_stream,` which is
      * assumed to communicate with the server identified by `service'`s
@@ -1688,7 +1694,7 @@ class NetworkService {
      * This should typically be called after issuing a STARTTLS command
      * to a server to initiate a Transport Layer Security handshake.
      */
-    starttls(base_stream: Gio.IOStream): Gio.IOStream
+    starttls(base_stream: Gio.IOStream): Gio.IOStream | null
     /* Methods of Camel-1.2.Camel.Service */
     /**
      * Asynchronously attempts to authenticate `service` using `mechanism` and,
@@ -1796,7 +1802,7 @@ class NetworkService {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_display_name(): string
+    dup_display_name(): string | null
     /**
      * Thread-safe variation of camel_service_get_password().
      * Use this function when accessing `service` from multiple threads.
@@ -1816,7 +1822,7 @@ class NetworkService {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    get_display_name(): string
+    get_display_name(): string | null
     /**
      * This gets the name of the service in a "friendly" (suitable for
      * humans) form. If `brief` is %TRUE, this should be a brief description
@@ -1900,7 +1906,7 @@ class NetworkService {
      * The returned #GProxyResolver is referenced for thread-safety and must
      * be unreferenced with g_object_unref() when finished with it.
      */
-    ref_proxy_resolver(): Gio.ProxyResolver
+    ref_proxy_resolver(): Gio.ProxyResolver | null
     /**
      * Returns the #CamelSession associated with the service.
      * 
@@ -1923,7 +1929,7 @@ class NetworkService {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    set_display_name(display_name: string): void
+    set_display_name(display_name?: string | null): void
     /**
      * Sets the password for `service`.  Use this function to cache the password
      * in memory after obtaining it through camel_session_get_password().  Some
@@ -1935,7 +1941,7 @@ class NetworkService {
      * override this, it should do so prior to calling functions on `service`
      * that may require a network connection.
      */
-    set_proxy_resolver(proxy_resolver: Gio.ProxyResolver): void
+    set_proxy_resolver(proxy_resolver?: Gio.ProxyResolver | null): void
     /**
      * Associates a new #CamelSettings instance with the service.
      * The `settings` instance must match the settings type defined in
@@ -1943,7 +1949,7 @@ class NetworkService {
      * instance of the appropriate type is created with all properties
      * set to defaults.
      */
-    set_settings(settings: Settings): void
+    set_settings(settings?: Settings | null): void
     /* Methods of Camel-1.2.Camel.Object */
     /**
      * Returns the name of the file in which persistent property values for
@@ -2285,7 +2291,7 @@ class NetworkService {
      * name for unencrypted IMAP or encrypted IMAP using STARTTLS is "imap",
      * but the service name for IMAP over SSL is "imaps".
      */
-    vfunc_get_service_name(method: NetworkSecurityMethod): string
+    vfunc_get_service_name(method: NetworkSecurityMethod): string | null
     /* Virtual methods of Camel-1.2.Camel.Service */
     /**
      * Attempts to authenticate `service` using `mechanism` and, if necessary,
@@ -2483,7 +2489,7 @@ class NetworkSettings {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_auth_mechanism(): string
+    dup_auth_mechanism(): string | null
     /**
      * Thread-safe variation of camel_network_settings_get_host().
      * Use this function when accessing `settings` from multiple threads.
@@ -2508,7 +2514,7 @@ class NetworkSettings {
      * Returns the mechanism name used to authenticate to a network service.
      * Often this refers to a SASL mechanism such as "LOGIN" or "GSSAPI".
      */
-    get_auth_mechanism(): string
+    get_auth_mechanism(): string | null
     /**
      * Returns the host name used to authenticate to a network service.
      */
@@ -2532,13 +2538,13 @@ class NetworkSettings {
      * The #CamelNetworkSettings:auth-mechanism property is automatically
      * stripped of leading and trailing whitespace.
      */
-    set_auth_mechanism(auth_mechanism: string): void
+    set_auth_mechanism(auth_mechanism?: string | null): void
     /**
      * Sets the host name used to authenticate to a network service.  The
      * #CamelNetworkSettings:host property is automatically stripped of
      * leading and trailing whitespace.
      */
-    set_host(host: string): void
+    set_host(host?: string | null): void
     /**
      * Sets the port number used to authenticate to a network service.
      */
@@ -2554,7 +2560,7 @@ class NetworkSettings {
      * #CamelNetworkSettings:user property is automatically stripped of
      * leading and trailing whitespace.
      */
-    set_user(user: string): void
+    set_user(user?: string | null): void
     /* Methods of Camel-1.2.Camel.Settings */
     /**
      * Creates a copy of `settings,` such that passing `settings` and the
@@ -3425,7 +3431,7 @@ class Subscribable {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_display_name(): string
+    dup_display_name(): string | null
     /**
      * Thread-safe variation of camel_service_get_password().
      * Use this function when accessing `service` from multiple threads.
@@ -3445,7 +3451,7 @@ class Subscribable {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    get_display_name(): string
+    get_display_name(): string | null
     /**
      * This gets the name of the service in a "friendly" (suitable for
      * humans) form. If `brief` is %TRUE, this should be a brief description
@@ -3529,7 +3535,7 @@ class Subscribable {
      * The returned #GProxyResolver is referenced for thread-safety and must
      * be unreferenced with g_object_unref() when finished with it.
      */
-    ref_proxy_resolver(): Gio.ProxyResolver
+    ref_proxy_resolver(): Gio.ProxyResolver | null
     /**
      * Returns the #CamelSession associated with the service.
      * 
@@ -3552,7 +3558,7 @@ class Subscribable {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    set_display_name(display_name: string): void
+    set_display_name(display_name?: string | null): void
     /**
      * Sets the password for `service`.  Use this function to cache the password
      * in memory after obtaining it through camel_session_get_password().  Some
@@ -3564,7 +3570,7 @@ class Subscribable {
      * override this, it should do so prior to calling functions on `service`
      * that may require a network connection.
      */
-    set_proxy_resolver(proxy_resolver: Gio.ProxyResolver): void
+    set_proxy_resolver(proxy_resolver?: Gio.ProxyResolver | null): void
     /**
      * Associates a new #CamelSettings instance with the service.
      * The `settings` instance must match the settings type defined in
@@ -3572,7 +3578,7 @@ class Subscribable {
      * instance of the appropriate type is created with all properties
      * set to defaults.
      */
-    set_settings(settings: Settings): void
+    set_settings(settings?: Settings | null): void
     /* Methods of Camel-1.2.Camel.Object */
     /**
      * Returns the name of the file in which persistent property values for
@@ -5548,7 +5554,7 @@ class CipherContext {
      * then call camel_cipher_context_encrypt_finish() to get the result of
      * the operation.
      */
-    encrypt(userid: string, recipients: string[], ipart: MimePart, opart: MimePart, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    encrypt(userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with camel_cipher_context_encrypt().
      */
@@ -5557,7 +5563,7 @@ class CipherContext {
      * Encrypts (and optionally signs) the clear-text `ipart` and writes the
      * resulting cipher-text to `opart`.
      */
-    encrypt_sync(userid: string, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
+    encrypt_sync(userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
     get_session(): Session
     hash_to_id(hash: CipherHash): string
     id_to_hash(id: string): CipherHash
@@ -5894,7 +5900,7 @@ class CipherContext {
      * Encrypts (and optionally signs) the clear-text `ipart` and writes the
      * resulting cipher-text to `opart`.
      */
-    vfunc_encrypt_sync(userid: string, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
+    vfunc_encrypt_sync(userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
     vfunc_hash_to_id(hash: CipherHash): string
     vfunc_id_to_hash(id: string): CipherHash
     /**
@@ -6474,6 +6480,7 @@ class DB {
      * Frees the `record` and all of its associated data.
      */
     static camel_mir_free(record?: MIRecord | null): void
+    static error_quark(): GLib.Quark
     /**
      * Frees a string previosuly returned by camel_db_sqlize_string().
      */
@@ -7608,7 +7615,7 @@ class FilterDriver {
      * Filters a folder based on rules defined in the FilterDriver
      * object.
      */
-    filter_folder(folder: Folder, cache: UIDCache, uids: string[], remove: boolean, cancellable?: Gio.Cancellable | null): number
+    filter_folder(folder: Folder, cache: UIDCache, uids: string[] | null, remove: boolean, cancellable?: Gio.Cancellable | null): number
     /**
      * Filters an mbox file based on rules defined in the FilterDriver
      * object. Is more efficient as it doesn't need to open the folder
@@ -7622,7 +7629,7 @@ class FilterDriver {
      * certain cases is more efficient than using the default
      * camel_folder_append_message() function).
      */
-    filter_message(message: MimeMessage, info: MessageInfo, uid: string, source: Folder, store_uid: string, original_store_uid: string, cancellable?: Gio.Cancellable | null): number
+    filter_message(message?: MimeMessage | null, info?: MessageInfo | null, uid?: string | null, source?: Folder | null, store_uid?: string | null, original_store_uid?: string | null, cancellable?: Gio.Cancellable | null): number
     /**
      * Flush all of the only-once filter actions.
      */
@@ -9936,7 +9943,7 @@ class Folder {
     /**
      * Retrieve the #CamelMessageInfo for the specified `uid`.
      */
-    get_message_info(uid: string): MessageInfo
+    get_message_info(uid: string): MessageInfo | null
     /**
      * Gets the message corresponding to `message_uid` from `folder`.
      */
@@ -10552,7 +10559,7 @@ class Folder {
     /**
      * Retrieve the #CamelMessageInfo for the specified `uid`.
      */
-    vfunc_get_message_info(uid: string): MessageInfo
+    vfunc_get_message_info(uid: string): MessageInfo | null
     /**
      * Gets the message corresponding to `message_uid` from `folder`.
      */
@@ -11277,7 +11284,7 @@ class FolderSummary {
      * Note: When searching for values always use uids from the string pool.
      */
     get_hash(): GLib.HashTable
-    get_index(): Index
+    get_index(): Index | null
     /**
      * Retrieve CamelMessageInfo::flags for a message info with UID `uid`.
      * This is much quicker than camel_folder_summary_get(), because it
@@ -11381,7 +11388,7 @@ class FolderSummary {
      * Set the index used to index body content.  If the index is %NULL, or
      * not set (the default), no indexing of body content will take place.
      */
-    set_index(index: Index): void
+    set_index(index?: Index | null): void
     /**
      * Set the next minimum uid available.  This can be used to
      * ensure new uid's do not clash with existing uid's.
@@ -11867,7 +11874,7 @@ class GpgContext {
      * then call camel_cipher_context_encrypt_finish() to get the result of
      * the operation.
      */
-    encrypt(userid: string, recipients: string[], ipart: MimePart, opart: MimePart, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    encrypt(userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with camel_cipher_context_encrypt().
      */
@@ -11876,7 +11883,7 @@ class GpgContext {
      * Encrypts (and optionally signs) the clear-text `ipart` and writes the
      * resulting cipher-text to `opart`.
      */
-    encrypt_sync(userid: string, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
+    encrypt_sync(userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
     get_session(): Session
     hash_to_id(hash: CipherHash): string
     id_to_hash(id: string): CipherHash
@@ -12213,7 +12220,7 @@ class GpgContext {
      * Encrypts (and optionally signs) the clear-text `ipart` and writes the
      * resulting cipher-text to `opart`.
      */
-    vfunc_encrypt_sync(userid: string, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
+    vfunc_encrypt_sync(userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
     vfunc_hash_to_id(hash: CipherHash): string
     vfunc_id_to_hash(id: string): CipherHash
     /**
@@ -14243,7 +14250,7 @@ class InternetAddress {
      * 
      * Note: The value at *`in` will be updated based on any linewrapping done
      */
-    static encode_address(len: number, name: string, addr: string): string
+    static encode_address(len: number | null, name: string, addr: string): string
     /**
      * Function to format a single address, suitable for display.
      */
@@ -16443,7 +16450,7 @@ class MessageInfo {
      * can be cast to #CamelSummaryMessageID.
      */
     dup_references(): number[] | null
-    dup_user_flags(): NamedFlags
+    dup_user_flags(): NamedFlags | null
     dup_user_header(name: string): string | null
     dup_user_headers(): NameValueArray | null
     dup_user_tag(name: string): string | null
@@ -17094,7 +17101,7 @@ class MessageInfo {
      * summary as the one with `mi` is used.
      */
     vfunc_clone(assign_summary?: FolderSummary | null): MessageInfo
-    vfunc_dup_user_flags(): NamedFlags
+    vfunc_dup_user_flags(): NamedFlags | null
     vfunc_dup_user_tags(): NameValueArray | null
     vfunc_get_cc(): string
     vfunc_get_date_received(): number
@@ -17465,7 +17472,7 @@ class MessageInfo {
     _init (config?: MessageInfo_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(summary?: FolderSummary | null): MessageInfo
-    static new_from_headers(summary: FolderSummary, headers: NameValueArray): MessageInfo
+    static new_from_headers(summary: FolderSummary | null, headers: NameValueArray): MessageInfo
     static $gtype: GObject.Type
 }
 interface MessageInfoBase_ConstructProps extends MessageInfo_ConstructProps {
@@ -17601,7 +17608,7 @@ class MessageInfoBase {
      * can be cast to #CamelSummaryMessageID.
      */
     dup_references(): number[] | null
-    dup_user_flags(): NamedFlags
+    dup_user_flags(): NamedFlags | null
     dup_user_header(name: string): string | null
     dup_user_headers(): NameValueArray | null
     dup_user_tag(name: string): string | null
@@ -18252,7 +18259,7 @@ class MessageInfoBase {
      * summary as the one with `mi` is used.
      */
     vfunc_clone(assign_summary?: FolderSummary | null): MessageInfo
-    vfunc_dup_user_flags(): NamedFlags
+    vfunc_dup_user_flags(): NamedFlags | null
     vfunc_dup_user_tags(): NameValueArray | null
     vfunc_get_cc(): string
     vfunc_get_date_received(): number
@@ -26772,7 +26779,7 @@ class MimeParser {
     /**
      * Get the content type defined in the current part.
      */
-    content_type(): ContentType
+    content_type(): ContentType | null
     /**
      * Drop the last step call.  This should only be used
      * in conjunction with seeking of the stream as the
@@ -26787,7 +26794,7 @@ class MimeParser {
      * current state of the parser.  These headers are valid
      * until the next call to camel_mime_parser_step(), or camel_mime_parser_drop_step().
      */
-    dup_headers(): NameValueArray
+    dup_headers(): NameValueArray | null
     errno(): number
     /**
      * Add a filter that will be applied to any body content before it is passed
@@ -26813,11 +26820,11 @@ class MimeParser {
      * The return value will remain valid while in the CAMEL_MIME_PARSER_STATE_FROM
      * state, or any deeper state.
      */
-    from_line(): string
+    from_line(): string | null
     /**
      * Lookup a header by name.
      */
-    header(name: string, offset: number): string
+    header(name: string, offset: number): string | null
     /**
      * Convenience function creates a #GMemoryInputStream from `bytes` and hands
      * it off to camel_mime_parser_init_with_input_stream().
@@ -26848,12 +26855,12 @@ class MimeParser {
      * Only returns valid data when the current state if
      * CAMEL_MIME_PARSER_STATE_MULTIPART_END.
      */
-    postface(): string
+    postface(): string | null
     /**
      * Retrieve the preface text for the current multipart.
      * Can only be used when the state is CAMEL_MIME_PARSER_STATE_MULTIPART_END.
      */
-    preface(): string
+    preface(): string | null
     /**
      * Pre-load a new parser state.  Used to post-parse multipart content
      * without headers.
@@ -28211,7 +28218,7 @@ class Multipart {
     construct_from_parser(parser: MimeParser): number
     get_boundary(): string
     get_number(): number
-    get_part(index: number): MimePart
+    get_part(index: number): MimePart | null
     /**
      * Returns the postface text for `multipart`.
      */
@@ -28740,7 +28747,7 @@ class Multipart {
     vfunc_construct_from_parser(parser: MimeParser): number
     vfunc_get_boundary(): string
     vfunc_get_number(): number
-    vfunc_get_part(index: number): MimePart
+    vfunc_get_part(index: number): MimePart | null
     /**
      * Sets the message boundary for `multipart` to `boundary`. This should
      * be a string which does not occur anywhere in any of `multipart'`s
@@ -28914,7 +28921,7 @@ class MultipartEncrypted {
     construct_from_parser(parser: MimeParser): number
     get_boundary(): string
     get_number(): number
-    get_part(index: number): MimePart
+    get_part(index: number): MimePart | null
     /**
      * Returns the postface text for `multipart`.
      */
@@ -29443,7 +29450,7 @@ class MultipartEncrypted {
     vfunc_construct_from_parser(parser: MimeParser): number
     vfunc_get_boundary(): string
     vfunc_get_number(): number
-    vfunc_get_part(index: number): MimePart
+    vfunc_get_part(index: number): MimePart | null
     /**
      * Sets the message boundary for `multipart` to `boundary`. This should
      * be a string which does not occur anywhere in any of `multipart'`s
@@ -29633,7 +29640,7 @@ class MultipartSigned {
     construct_from_parser(parser: MimeParser): number
     get_boundary(): string
     get_number(): number
-    get_part(index: number): MimePart
+    get_part(index: number): MimePart | null
     /**
      * Returns the postface text for `multipart`.
      */
@@ -30162,7 +30169,7 @@ class MultipartSigned {
     vfunc_construct_from_parser(parser: MimeParser): number
     vfunc_get_boundary(): string
     vfunc_get_number(): number
-    vfunc_get_part(index: number): MimePart
+    vfunc_get_part(index: number): MimePart | null
     /**
      * Sets the message boundary for `multipart` to `boundary`. This should
      * be a string which does not occur anywhere in any of `multipart'`s
@@ -32158,7 +32165,7 @@ class OfflineFolder {
      * call camel_offline_folder_downsync_finish() to get the result of the
      * operation.
      */
-    downsync(expression: string, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    downsync(expression: string | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with camel_offline_folder_downsync().
      */
@@ -32167,7 +32174,7 @@ class OfflineFolder {
      * Synchronizes messages in `folder` described by the search `expression` to
      * the local machine for offline availability.
      */
-    downsync_sync(expression: string, cancellable?: Gio.Cancellable | null): boolean
+    downsync_sync(expression?: string | null, cancellable?: Gio.Cancellable | null): boolean
     get_offline_sync(): ThreeState
     /**
      * The %CAMEL_THREE_STATE_INCONSISTENT means what the parent store has set.
@@ -32325,7 +32332,7 @@ class OfflineFolder {
     /**
      * Retrieve the #CamelMessageInfo for the specified `uid`.
      */
-    get_message_info(uid: string): MessageInfo
+    get_message_info(uid: string): MessageInfo | null
     /**
      * Gets the message corresponding to `message_uid` from `folder`.
      */
@@ -32887,7 +32894,7 @@ class OfflineFolder {
      * Synchronizes messages in `folder` described by the search `expression` to
      * the local machine for offline availability.
      */
-    vfunc_downsync_sync(expression: string, cancellable?: Gio.Cancellable | null): boolean
+    vfunc_downsync_sync(expression?: string | null, cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of Camel-1.2.Camel.Folder */
     /**
      * Appends `message` to `folder`.  Only the flag and tag data from `info`
@@ -32947,7 +32954,7 @@ class OfflineFolder {
     /**
      * Retrieve the #CamelMessageInfo for the specified `uid`.
      */
-    vfunc_get_message_info(uid: string): MessageInfo
+    vfunc_get_message_info(uid: string): MessageInfo | null
     /**
      * Gets the message corresponding to `message_uid` from `folder`.
      */
@@ -34092,7 +34099,7 @@ class OfflineStore {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_display_name(): string
+    dup_display_name(): string | null
     /**
      * Thread-safe variation of camel_service_get_password().
      * Use this function when accessing `service` from multiple threads.
@@ -34112,7 +34119,7 @@ class OfflineStore {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    get_display_name(): string
+    get_display_name(): string | null
     /**
      * This gets the name of the service in a "friendly" (suitable for
      * humans) form. If `brief` is %TRUE, this should be a brief description
@@ -34196,7 +34203,7 @@ class OfflineStore {
      * The returned #GProxyResolver is referenced for thread-safety and must
      * be unreferenced with g_object_unref() when finished with it.
      */
-    ref_proxy_resolver(): Gio.ProxyResolver
+    ref_proxy_resolver(): Gio.ProxyResolver | null
     /**
      * Returns the #CamelSession associated with the service.
      * 
@@ -34219,7 +34226,7 @@ class OfflineStore {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    set_display_name(display_name: string): void
+    set_display_name(display_name?: string | null): void
     /**
      * Sets the password for `service`.  Use this function to cache the password
      * in memory after obtaining it through camel_session_get_password().  Some
@@ -34231,7 +34238,7 @@ class OfflineStore {
      * override this, it should do so prior to calling functions on `service`
      * that may require a network connection.
      */
-    set_proxy_resolver(proxy_resolver: Gio.ProxyResolver): void
+    set_proxy_resolver(proxy_resolver?: Gio.ProxyResolver | null): void
     /**
      * Associates a new #CamelSettings instance with the service.
      * The `settings` instance must match the settings type defined in
@@ -34239,7 +34246,7 @@ class OfflineStore {
      * instance of the appropriate type is created with all properties
      * set to defaults.
      */
-    set_settings(settings: Settings): void
+    set_settings(settings?: Settings | null): void
     /* Methods of Camel-1.2.Camel.Object */
     /**
      * Returns the name of the file in which persistent property values for
@@ -36407,7 +36414,7 @@ class SExp {
      * Converts a search expression to an SQL 'WHERE' part statement,
      * without the 'WHERE' keyword.
      */
-    static to_sql_sexp(sexp: string): string
+    static to_sql_sexp(sexp: string): string | null
     static $gtype: GObject.Type
 }
 interface SMIMEContext_ConstructProps extends CipherContext_ConstructProps {
@@ -36447,7 +36454,7 @@ class SMIMEContext {
      * then call camel_cipher_context_encrypt_finish() to get the result of
      * the operation.
      */
-    encrypt(userid: string, recipients: string[], ipart: MimePart, opart: MimePart, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    encrypt(userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * Finishes the operation started with camel_cipher_context_encrypt().
      */
@@ -36456,7 +36463,7 @@ class SMIMEContext {
      * Encrypts (and optionally signs) the clear-text `ipart` and writes the
      * resulting cipher-text to `opart`.
      */
-    encrypt_sync(userid: string, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
+    encrypt_sync(userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
     get_session(): Session
     hash_to_id(hash: CipherHash): string
     id_to_hash(id: string): CipherHash
@@ -36793,7 +36800,7 @@ class SMIMEContext {
      * Encrypts (and optionally signs) the clear-text `ipart` and writes the
      * resulting cipher-text to `opart`.
      */
-    vfunc_encrypt_sync(userid: string, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
+    vfunc_encrypt_sync(userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null): boolean
     vfunc_hash_to_id(hash: CipherHash): string
     vfunc_id_to_hash(id: string): CipherHash
     /**
@@ -36894,7 +36901,7 @@ class Sasl {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -36917,7 +36924,7 @@ class Sasl {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -36926,7 +36933,7 @@ class Sasl {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -37244,7 +37251,7 @@ class Sasl {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -37340,7 +37347,7 @@ class SaslAnonymous {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -37363,7 +37370,7 @@ class SaslAnonymous {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -37372,7 +37379,7 @@ class SaslAnonymous {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -37690,7 +37697,7 @@ class SaslAnonymous {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -37780,7 +37787,7 @@ class SaslCramMd5 {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -37803,7 +37810,7 @@ class SaslCramMd5 {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -37812,7 +37819,7 @@ class SaslCramMd5 {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -38130,7 +38137,7 @@ class SaslCramMd5 {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -38216,7 +38223,7 @@ class SaslDigestMd5 {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -38239,7 +38246,7 @@ class SaslDigestMd5 {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -38248,7 +38255,7 @@ class SaslDigestMd5 {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -38566,7 +38573,7 @@ class SaslDigestMd5 {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -38659,7 +38666,7 @@ class SaslGssapi {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -38682,7 +38689,7 @@ class SaslGssapi {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -38691,7 +38698,7 @@ class SaslGssapi {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -39009,7 +39016,7 @@ class SaslGssapi {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -39097,7 +39104,7 @@ class SaslLogin {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -39120,7 +39127,7 @@ class SaslLogin {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -39129,7 +39136,7 @@ class SaslLogin {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -39447,7 +39454,7 @@ class SaslLogin {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -39533,7 +39540,7 @@ class SaslNTLM {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -39556,7 +39563,7 @@ class SaslNTLM {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -39565,7 +39572,7 @@ class SaslNTLM {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -39883,7 +39890,7 @@ class SaslNTLM {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -39969,7 +39976,7 @@ class SaslPOPB4SMTP {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -39992,7 +39999,7 @@ class SaslPOPB4SMTP {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -40001,7 +40008,7 @@ class SaslPOPB4SMTP {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -40319,7 +40326,7 @@ class SaslPOPB4SMTP {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -40405,7 +40412,7 @@ class SaslPlain {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -40428,7 +40435,7 @@ class SaslPlain {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -40437,7 +40444,7 @@ class SaslPlain {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -40755,7 +40762,7 @@ class SaslPlain {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -40841,7 +40848,7 @@ class SaslXOAuth2 {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -40864,7 +40871,7 @@ class SaslXOAuth2 {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -40873,7 +40880,7 @@ class SaslXOAuth2 {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -41191,7 +41198,7 @@ class SaslXOAuth2 {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -41277,7 +41284,7 @@ class SaslXOAuth2Google {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -41300,7 +41307,7 @@ class SaslXOAuth2Google {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -41309,7 +41316,7 @@ class SaslXOAuth2Google {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -41627,7 +41634,7 @@ class SaslXOAuth2Google {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -41713,7 +41720,7 @@ class SaslXOAuth2Outlook {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -41736,7 +41743,7 @@ class SaslXOAuth2Outlook {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -41745,7 +41752,7 @@ class SaslXOAuth2Outlook {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -42063,7 +42070,7 @@ class SaslXOAuth2Outlook {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -42149,7 +42156,7 @@ class SaslXOAuth2Yahoo {
      * When the operation is finished, `callback` will be called.  You can then
      * call camel_sasl_challenge_finish() to get the result of the operation.
      */
-    challenge(token: Uint8Array, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    challenge(token: Uint8Array | null, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
      * As with camel_sasl_challenge(), but the challenge `token` and the
      * response are both base64-encoded.
@@ -42172,7 +42179,7 @@ class SaslXOAuth2Yahoo {
      * Finishes the operation started with camel_sasl_challenge().  Free the
      * returned #GByteArray with g_byte_array_free().
      */
-    challenge_finish(result: Gio.AsyncResult): Uint8Array
+    challenge_finish(result: Gio.AsyncResult): Uint8Array | null
     /**
      * If `token` is %NULL, generate the initial SASL message to send to
      * the server.  (This will be %NULL if the client doesn't initiate the
@@ -42181,7 +42188,7 @@ class SaslXOAuth2Yahoo {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     get_authenticated(): boolean
     get_mechanism(): string
     get_service(): Service
@@ -42499,7 +42506,7 @@ class SaslXOAuth2Yahoo {
      * 
      * Free the returned #GByteArray with g_byte_array_free().
      */
-    vfunc_challenge_sync(token: Uint8Array, cancellable?: Gio.Cancellable | null): Uint8Array
+    vfunc_challenge_sync(token?: Uint8Array | null, cancellable?: Gio.Cancellable | null): Uint8Array | null
     vfunc_try_empty_password_sync(cancellable?: Gio.Cancellable | null): boolean
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
@@ -42700,7 +42707,7 @@ class Service {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_display_name(): string
+    dup_display_name(): string | null
     /**
      * Thread-safe variation of camel_service_get_password().
      * Use this function when accessing `service` from multiple threads.
@@ -42720,7 +42727,7 @@ class Service {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    get_display_name(): string
+    get_display_name(): string | null
     /**
      * This gets the name of the service in a "friendly" (suitable for
      * humans) form. If `brief` is %TRUE, this should be a brief description
@@ -42804,7 +42811,7 @@ class Service {
      * The returned #GProxyResolver is referenced for thread-safety and must
      * be unreferenced with g_object_unref() when finished with it.
      */
-    ref_proxy_resolver(): Gio.ProxyResolver
+    ref_proxy_resolver(): Gio.ProxyResolver | null
     /**
      * Returns the #CamelSession associated with the service.
      * 
@@ -42827,7 +42834,7 @@ class Service {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    set_display_name(display_name: string): void
+    set_display_name(display_name?: string | null): void
     /**
      * Sets the password for `service`.  Use this function to cache the password
      * in memory after obtaining it through camel_session_get_password().  Some
@@ -42839,7 +42846,7 @@ class Service {
      * override this, it should do so prior to calling functions on `service`
      * that may require a network connection.
      */
-    set_proxy_resolver(proxy_resolver: Gio.ProxyResolver): void
+    set_proxy_resolver(proxy_resolver?: Gio.ProxyResolver | null): void
     /**
      * Associates a new #CamelSettings instance with the service.
      * The `settings` instance must match the settings type defined in
@@ -42847,7 +42854,7 @@ class Service {
      * instance of the appropriate type is created with all properties
      * set to defaults.
      */
-    set_settings(settings: Settings): void
+    set_settings(settings?: Settings | null): void
     /* Methods of Camel-1.2.Camel.Object */
     /**
      * Returns the name of the file in which persistent property values for
@@ -43500,7 +43507,7 @@ class Session {
      * must implement the interface and install a #CamelJunkFilter instance for
      * junk filtering to take place.
      */
-    get_junk_filter(): JunkFilter
+    get_junk_filter(): JunkFilter | null
     get_junk_headers(): GLib.HashTable
     /**
      * Obtains the OAuth 2.0 access token for `service` along with its expiry
@@ -43612,7 +43619,7 @@ class Session {
      * The returned #CamelService is referenced for thread-safety and must be
      * unreferenced with g_object_unref() when finished with it.
      */
-    ref_service(uid: string): Service
+    ref_service(uid: string): Service | null
     /**
      * Looks up a #CamelService by trying to match its #CamelURL against the
      * given `url` and then checking that the object is of the desired `type`.
@@ -43624,7 +43631,7 @@ class Session {
      * 
      * Note this function is significantly slower than camel_session_ref_service().
      */
-    ref_service_by_url(url: URL, type: ProviderType): Service
+    ref_service_by_url(url: URL, type: ProviderType): Service | null
     /**
      * Removes a #CamelService previously added by camel_session_add_service().
      */
@@ -43645,7 +43652,7 @@ class Session {
      * must implement the interface and install a #CamelJunkFilter instance for
      * junk filtering to take place.
      */
-    set_junk_filter(junk_filter: JunkFilter): void
+    set_junk_filter(junk_filter?: JunkFilter | null): void
     set_junk_headers(headers: string[], values: string[]): void
     /**
      * Sets a network monitor instance for the `session`. This can be used
@@ -45037,7 +45044,7 @@ class Store {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_display_name(): string
+    dup_display_name(): string | null
     /**
      * Thread-safe variation of camel_service_get_password().
      * Use this function when accessing `service` from multiple threads.
@@ -45057,7 +45064,7 @@ class Store {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    get_display_name(): string
+    get_display_name(): string | null
     /**
      * This gets the name of the service in a "friendly" (suitable for
      * humans) form. If `brief` is %TRUE, this should be a brief description
@@ -45141,7 +45148,7 @@ class Store {
      * The returned #GProxyResolver is referenced for thread-safety and must
      * be unreferenced with g_object_unref() when finished with it.
      */
-    ref_proxy_resolver(): Gio.ProxyResolver
+    ref_proxy_resolver(): Gio.ProxyResolver | null
     /**
      * Returns the #CamelSession associated with the service.
      * 
@@ -45164,7 +45171,7 @@ class Store {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    set_display_name(display_name: string): void
+    set_display_name(display_name?: string | null): void
     /**
      * Sets the password for `service`.  Use this function to cache the password
      * in memory after obtaining it through camel_session_get_password().  Some
@@ -45176,7 +45183,7 @@ class Store {
      * override this, it should do so prior to calling functions on `service`
      * that may require a network connection.
      */
-    set_proxy_resolver(proxy_resolver: Gio.ProxyResolver): void
+    set_proxy_resolver(proxy_resolver?: Gio.ProxyResolver | null): void
     /**
      * Associates a new #CamelSettings instance with the service.
      * The `settings` instance must match the settings type defined in
@@ -45184,7 +45191,7 @@ class Store {
      * instance of the appropriate type is created with all properties
      * set to defaults.
      */
-    set_settings(settings: Settings): void
+    set_settings(settings?: Settings | null): void
     /* Methods of Camel-1.2.Camel.Object */
     /**
      * Returns the name of the file in which persistent property values for
@@ -52382,7 +52389,7 @@ class Transport {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_display_name(): string
+    dup_display_name(): string | null
     /**
      * Thread-safe variation of camel_service_get_password().
      * Use this function when accessing `service` from multiple threads.
@@ -52402,7 +52409,7 @@ class Transport {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    get_display_name(): string
+    get_display_name(): string | null
     /**
      * This gets the name of the service in a "friendly" (suitable for
      * humans) form. If `brief` is %TRUE, this should be a brief description
@@ -52486,7 +52493,7 @@ class Transport {
      * The returned #GProxyResolver is referenced for thread-safety and must
      * be unreferenced with g_object_unref() when finished with it.
      */
-    ref_proxy_resolver(): Gio.ProxyResolver
+    ref_proxy_resolver(): Gio.ProxyResolver | null
     /**
      * Returns the #CamelSession associated with the service.
      * 
@@ -52509,7 +52516,7 @@ class Transport {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    set_display_name(display_name: string): void
+    set_display_name(display_name?: string | null): void
     /**
      * Sets the password for `service`.  Use this function to cache the password
      * in memory after obtaining it through camel_session_get_password().  Some
@@ -52521,7 +52528,7 @@ class Transport {
      * override this, it should do so prior to calling functions on `service`
      * that may require a network connection.
      */
-    set_proxy_resolver(proxy_resolver: Gio.ProxyResolver): void
+    set_proxy_resolver(proxy_resolver?: Gio.ProxyResolver | null): void
     /**
      * Associates a new #CamelSettings instance with the service.
      * The `settings` instance must match the settings type defined in
@@ -52529,7 +52536,7 @@ class Transport {
      * instance of the appropriate type is created with all properties
      * set to defaults.
      */
-    set_settings(settings: Settings): void
+    set_settings(settings?: Settings | null): void
     /* Methods of Camel-1.2.Camel.Object */
     /**
      * Returns the name of the file in which persistent property values for
@@ -53384,7 +53391,7 @@ class VTrashFolder {
     /**
      * Retrieve the #CamelMessageInfo for the specified `uid`.
      */
-    get_message_info(uid: string): MessageInfo
+    get_message_info(uid: string): MessageInfo | null
     /**
      * Gets the message corresponding to `message_uid` from `folder`.
      */
@@ -54018,7 +54025,7 @@ class VTrashFolder {
     /**
      * Retrieve the #CamelMessageInfo for the specified `uid`.
      */
-    vfunc_get_message_info(uid: string): MessageInfo
+    vfunc_get_message_info(uid: string): MessageInfo | null
     /**
      * Gets the message corresponding to `message_uid` from `folder`.
      */
@@ -54902,7 +54909,7 @@ class VeeFolder {
     /**
      * Retrieve the #CamelMessageInfo for the specified `uid`.
      */
-    get_message_info(uid: string): MessageInfo
+    get_message_info(uid: string): MessageInfo | null
     /**
      * Gets the message corresponding to `message_uid` from `folder`.
      */
@@ -55536,7 +55543,7 @@ class VeeFolder {
     /**
      * Retrieve the #CamelMessageInfo for the specified `uid`.
      */
-    vfunc_get_message_info(uid: string): MessageInfo
+    vfunc_get_message_info(uid: string): MessageInfo | null
     /**
      * Gets the message corresponding to `message_uid` from `folder`.
      */
@@ -55876,7 +55883,7 @@ class VeeMessageInfo {
      * can be cast to #CamelSummaryMessageID.
      */
     dup_references(): number[] | null
-    dup_user_flags(): NamedFlags
+    dup_user_flags(): NamedFlags | null
     dup_user_header(name: string): string | null
     dup_user_headers(): NameValueArray | null
     dup_user_tag(name: string): string | null
@@ -56527,7 +56534,7 @@ class VeeMessageInfo {
      * summary as the one with `mi` is used.
      */
     vfunc_clone(assign_summary?: FolderSummary | null): MessageInfo
-    vfunc_dup_user_flags(): NamedFlags
+    vfunc_dup_user_flags(): NamedFlags | null
     vfunc_dup_user_tags(): NameValueArray | null
     vfunc_get_cc(): string
     vfunc_get_date_received(): number
@@ -57727,7 +57734,7 @@ class VeeStore {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_display_name(): string
+    dup_display_name(): string | null
     /**
      * Thread-safe variation of camel_service_get_password().
      * Use this function when accessing `service` from multiple threads.
@@ -57747,7 +57754,7 @@ class VeeStore {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    get_display_name(): string
+    get_display_name(): string | null
     /**
      * This gets the name of the service in a "friendly" (suitable for
      * humans) form. If `brief` is %TRUE, this should be a brief description
@@ -57831,7 +57838,7 @@ class VeeStore {
      * The returned #GProxyResolver is referenced for thread-safety and must
      * be unreferenced with g_object_unref() when finished with it.
      */
-    ref_proxy_resolver(): Gio.ProxyResolver
+    ref_proxy_resolver(): Gio.ProxyResolver | null
     /**
      * Returns the #CamelSession associated with the service.
      * 
@@ -57854,7 +57861,7 @@ class VeeStore {
      * Compare this with camel_service_get_name(), which returns a built-in
      * description of the type of service (IMAP, SMTP, etc.).
      */
-    set_display_name(display_name: string): void
+    set_display_name(display_name?: string | null): void
     /**
      * Sets the password for `service`.  Use this function to cache the password
      * in memory after obtaining it through camel_session_get_password().  Some
@@ -57866,7 +57873,7 @@ class VeeStore {
      * override this, it should do so prior to calling functions on `service`
      * that may require a network connection.
      */
-    set_proxy_resolver(proxy_resolver: Gio.ProxyResolver): void
+    set_proxy_resolver(proxy_resolver?: Gio.ProxyResolver | null): void
     /**
      * Associates a new #CamelSettings instance with the service.
      * The `settings` instance must match the settings type defined in
@@ -57874,7 +57881,7 @@ class VeeStore {
      * instance of the appropriate type is created with all properties
      * set to defaults.
      */
-    set_settings(settings: Settings): void
+    set_settings(settings?: Settings | null): void
     /* Methods of Camel-1.2.Camel.Object */
     /**
      * Returns the name of the file in which persistent property values for
@@ -59117,7 +59124,7 @@ class VeeSummary {
      * Note: When searching for values always use uids from the string pool.
      */
     get_hash(): GLib.HashTable
-    get_index(): Index
+    get_index(): Index | null
     /**
      * Retrieve CamelMessageInfo::flags for a message info with UID `uid`.
      * This is much quicker than camel_folder_summary_get(), because it
@@ -59221,7 +59228,7 @@ class VeeSummary {
      * Set the index used to index body content.  If the index is %NULL, or
      * not set (the default), no indexing of body content will take place.
      */
-    set_index(index: Index): void
+    set_index(index?: Index | null): void
     /**
      * Set the next minimum uid available.  This can be used to
      * ensure new uid's do not clash with existing uid's.
@@ -59782,7 +59789,7 @@ abstract class CipherContextClass {
     readonly hash_to_id: (context: CipherContext, hash: CipherHash) => string
     readonly sign_sync: (context: CipherContext, userid: string, hash: CipherHash, ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null) => boolean
     readonly verify_sync: (context: CipherContext, ipart: MimePart, cancellable?: Gio.Cancellable | null) => CipherValidity
-    readonly encrypt_sync: (context: CipherContext, userid: string, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null) => boolean
+    readonly encrypt_sync: (context: CipherContext, userid: string | null, recipients: string[], ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null) => boolean
     readonly decrypt_sync: (context: CipherContext, ipart: MimePart, opart: MimePart, cancellable?: Gio.Cancellable | null) => CipherValidity
     readonly reserved: object[]
     static name: string
@@ -60123,7 +60130,7 @@ abstract class FolderClass {
     readonly search_by_expression: (folder: Folder, expression: string, cancellable?: Gio.Cancellable | null) => string[]
     readonly search_by_uids: (folder: Folder, expression: string, uids: string[], cancellable?: Gio.Cancellable | null) => string[]
     readonly search_free: (folder: Folder, result: string[]) => void
-    readonly get_message_info: (folder: Folder, uid: string) => MessageInfo
+    readonly get_message_info: (folder: Folder, uid: string) => MessageInfo | null
     readonly delete_: (folder: Folder) => void
     readonly rename: (folder: Folder, new_name: string) => void
     readonly freeze: (folder: Folder) => void
@@ -60613,7 +60620,7 @@ class MessageContentInfo {
     readonly encoding: string
     readonly size: number
     /* Methods of Camel-1.2.Camel.MessageContentInfo */
-    copy(): MessageContentInfo
+    copy(): MessageContentInfo | null
     dump(depth: number): void
     /**
      * Recursively frees the content info `ci,` and all associated memory.
@@ -60653,7 +60660,7 @@ abstract class MessageInfoClass {
     readonly get_user_flag: (mi: MessageInfo, name: string) => boolean
     readonly set_user_flag: (mi: MessageInfo, name: string, state: boolean) => boolean
     readonly get_user_flags: (mi: MessageInfo) => NamedFlags | null
-    readonly dup_user_flags: (mi: MessageInfo) => NamedFlags
+    readonly dup_user_flags: (mi: MessageInfo) => NamedFlags | null
     readonly take_user_flags: (mi: MessageInfo, user_flags?: NamedFlags | null) => boolean
     readonly get_user_tag: (mi: MessageInfo, name: string) => string | null
     readonly set_user_tag: (mi: MessageInfo, name: string, value?: string | null) => boolean
@@ -60896,7 +60903,7 @@ abstract class MultipartClass {
     /* Fields of Camel-1.2.Camel.MultipartClass */
     readonly parent_class: DataWrapperClass
     readonly add_part: (multipart: Multipart, part: MimePart) => void
-    readonly get_part: (multipart: Multipart, index: number) => MimePart
+    readonly get_part: (multipart: Multipart, index: number) => MimePart | null
     readonly get_number: (multipart: Multipart) => number
     readonly get_boundary: (multipart: Multipart) => string
     readonly set_boundary: (multipart: Multipart, boundary?: string | null) => void
@@ -61063,7 +61070,7 @@ class NamedFlags {
 abstract class NetworkServiceInterface {
     /* Fields of Camel-1.2.Camel.NetworkServiceInterface */
     readonly parent_interface: GObject.TypeInterface
-    readonly get_service_name: (service: NetworkService, method: NetworkSecurityMethod) => string
+    readonly get_service_name: (service: NetworkService, method: NetworkSecurityMethod) => string | null
     readonly get_default_port: (service: NetworkService, method: NetworkSecurityMethod) => number
     readonly connect_sync: (service: NetworkService, cancellable?: Gio.Cancellable | null) => Gio.IOStream
     readonly reserved: object[]
@@ -61164,7 +61171,7 @@ class ObjectPrivate {
 abstract class OfflineFolderClass {
     /* Fields of Camel-1.2.Camel.OfflineFolderClass */
     readonly parent_class: FolderClass
-    readonly downsync_sync: (folder: OfflineFolder, expression: string, cancellable?: Gio.Cancellable | null) => boolean
+    readonly downsync_sync: (folder: OfflineFolder, expression?: string | null, cancellable?: Gio.Cancellable | null) => boolean
     readonly reserved: object[]
     static name: string
 }
@@ -61408,7 +61415,7 @@ abstract class SaslClass {
     readonly parent_class: GObject.ObjectClass
     readonly auth_type: ServiceAuthType
     readonly try_empty_password_sync: (sasl: Sasl, cancellable?: Gio.Cancellable | null) => boolean
-    readonly challenge_sync: (sasl: Sasl, token: Uint8Array, cancellable?: Gio.Cancellable | null) => Uint8Array
+    readonly challenge_sync: (sasl: Sasl, token?: Uint8Array | null, cancellable?: Gio.Cancellable | null) => Uint8Array | null
     readonly reserved: object[]
     static name: string
 }
@@ -61853,7 +61860,7 @@ class URL {
     /**
      * Get the value of the specified param on the URL.
      */
-    get_param(name: string): string
+    get_param(name: string): string | null
     hash(): number
     /**
      * Parses `url_string` relative to `base`.
@@ -61917,7 +61924,7 @@ class URL {
      * This &percnt;-encodes the given URL part and returns the escaped version
      * in allocated memory, which the caller must free when it is done.
      */
-    static encode(part: string, escape_extra: string): string
+    static encode(part: string, escape_extra?: string | null): string
     static file_end(in_: string, pos: string, inend: string, match: UrlMatch): boolean
     static file_start(in_: string, pos: string, inend: string, match: UrlMatch): boolean
     static web_end(in_: string, pos: string, inend: string, match: UrlMatch): boolean

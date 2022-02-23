@@ -57,8 +57,6 @@ class GLDisplayX11 {
      */
     filter_gl_api(gl_api: GstGL.GLAPI): void
     /**
-     * Deprecated for gst_gl_display_retrieve_window().
-     * 
      * Execute `compare_func` over the list of windows stored by `display`.  The
      * first argument to `compare_func` is the #GstGLWindow being checked and the
      * second argument is `data`.

@@ -121,6 +121,9 @@ function space_with_trc(space: Object, trc: Object): Object
 function trc(name: string): Object
 function trc_gamma(gamma: number): Object
 function type(name: string): Object
+interface FishProcess {
+    (babl: Object, src: string, dst: string, n: number, data?: object | null): void
+}
 interface FuncLinear {
     (conversion: Object, src: string, dst: string, n: number): void
 }

@@ -558,6 +558,8 @@ function type_info_get_tag(info: TypeInfo): TypeTag
 function type_info_hash_pointer_from_argument(info: TypeInfo, arg: Argument): object | null
 function type_info_is_pointer(info: TypeInfo): boolean
 function type_info_is_zero_terminated(info: TypeInfo): boolean
+function type_tag_argument_from_hash_pointer(storage_type: TypeTag, hash_pointer: object | null, arg: Argument): void
+function type_tag_hash_pointer_from_argument(storage_type: TypeTag, arg: Argument): object | null
 function type_tag_to_string(type: TypeTag): string
 function union_info_find_method(info: UnionInfo, name: string): FunctionInfo
 function union_info_get_alignment(info: UnionInfo): number
@@ -620,9 +622,10 @@ class Repository {
      */
     get_c_prefix(namespace_: string): string
     /**
-     * Return an array of all (transitive) versioned dependencies for
-     * `namespace_`. Returned strings are of the form
-     * <code>namespace-version</code>.
+     * Retrieves all (transitive) versioned dependencies for
+     * `namespace_`.
+     * 
+     * The strings are of the form `namespace-version`.
      * 
      * Note: `namespace_` must have already been loaded using a function
      * such as g_irepository_require() before calling this function.
@@ -633,7 +636,7 @@ class Repository {
     get_dependencies(namespace_: string): string[]
     /**
      * Return an array of the immediate versioned dependencies for `namespace_`.
-     * Returned strings are of the form <code>namespace-version</code>.
+     * Returned strings are of the form `namespace-version`.
      * 
      * Note: `namespace_` must have already been loaded using a function
      * such as g_irepository_require() before calling this function.
@@ -1171,9 +1174,8 @@ class BaseInfo {
      * Both the `name` and `value` should be treated as constants
      * and must not be freed.
      * 
-     * <example>
-     * <title>Iterating over attributes</title>
-     * <programlisting>
+     * 
+     * ```c
      * void
      * print_attributes (GIBaseInfo *info)
      * {
@@ -1185,8 +1187,8 @@ class BaseInfo {
      *       g_print ("attribute name: %s value: %s", name, value);
      *     }
      * }
-     * </programlisting>
-     * </example>
+     * ```
+     * 
      */
     iterate_attributes(iterator: AttributeIter): [ /* returnType */ boolean, /* iterator */ AttributeIter, /* name */ string, /* value */ string ]
     static name: string

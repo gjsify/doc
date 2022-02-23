@@ -2129,7 +2129,7 @@ class Address {
      * soup_address_is_resolved() to safely test whether or not an address
      * is resolved before fetching its name or address.
      */
-    get_sockaddr(len: number): object | null
+    get_sockaddr(): [ /* returnType */ object | null, /* len */ number ]
     /**
      * A hash function (for #GHashTable) that corresponds to
      * soup_address_equal_by_ip(), qv
@@ -20929,7 +20929,7 @@ class Socket {
      * boundary string. Thus, `len` normally needs to be at least 1 byte
      * longer than `boundary_len` if you want to make any progress at all.
      */
-    read_until(buffer: Uint8Array, boundary: object | null, boundary_len: number, got_boundary: boolean, cancellable?: Gio.Cancellable | null): [ /* returnType */ SocketIOStatus, /* nread */ number ]
+    read_until(buffer: Uint8Array, boundary: object | null, boundary_len: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ SocketIOStatus, /* nread */ number, /* got_boundary */ boolean ]
     /**
      * Starts using SSL on `socket,` expecting to find a host named
      * `ssl_host`.

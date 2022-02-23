@@ -66,8 +66,17 @@ const GLIBTOP_ERROR_METHOD_ABORT: number
 const GLIBTOP_ERROR_METHOD_IGNORE: number
 const GLIBTOP_ERROR_METHOD_WARN: number
 const GLIBTOP_ERROR_METHOD_WARN_ONCE: number
+/**
+ * Exclude idle processes.
+ */
 const GLIBTOP_EXCLUDE_IDLE: number
+/**
+ * Exclude processes without a controlling terminal.
+ */
 const GLIBTOP_EXCLUDE_NOTTY: number
+/**
+ * Exclude system (on most UNIXes root's) processes.
+ */
 const GLIBTOP_EXCLUDE_SYSTEM: number
 const GLIBTOP_FEATURES_EXCEPT: number
 const GLIBTOP_FEATURES_NO_SERVER: number
@@ -108,13 +117,35 @@ const GLIBTOP_IPC_SHMMAX: number
 const GLIBTOP_IPC_SHMMIN: number
 const GLIBTOP_IPC_SHMMNI: number
 const GLIBTOP_IPC_SHMSEG: number
+/**
+ * Return information about all processes
+ */
 const GLIBTOP_KERN_PROC_ALL: number
 const GLIBTOP_KERN_PROC_MASK: number
+/**
+ * Return all processes in the process group passed in `arg`.
+ */
 const GLIBTOP_KERN_PROC_PGRP: number
+/**
+ * Return all processes with the pid which is passed in `arg`. You can use this to find out whether some process still exists.
+ */
 const GLIBTOP_KERN_PROC_PID: number
+/**
+ * Return all processes with the real uid passed in `arg`.
+ */
 const GLIBTOP_KERN_PROC_RUID: number
+/**
+ * Return all processes in the session passed in `arg`.
+ */
 const GLIBTOP_KERN_PROC_SESSION: number
+/**
+ * Return all processes which have the controlling tty passed in `arg`
+ * (which is interpreted as the device number).
+ */
 const GLIBTOP_KERN_PROC_TTY: number
+/**
+ * Return all processes with the effective uid passed in `arg`.
+ */
 const GLIBTOP_KERN_PROC_UID: number
 const GLIBTOP_LOADAVG_LAST_PID: number
 const GLIBTOP_LOADAVG_LOADAVG: number
@@ -689,6 +720,9 @@ class glibtop_msg_limits {
 class glibtop_netlist {
     /* Fields of GTop-2.0.GTop.glibtop_netlist */
     readonly flags: number
+    /**
+     * Number of entries in the returned list.
+     */
     readonly number: number
     static name: string
 }
@@ -745,9 +779,27 @@ class glibtop_proc_args {
 class glibtop_proc_io {
     /* Fields of GTop-2.0.GTop.glibtop_proc_io */
     readonly flags: number
+    /**
+     * The number of bytes which this task has caused to be read from storage. This
+     * is simply the sum of bytes which this process passed to read() and pread(), also including tty IO,
+     * and it is unaffected by whether or not actual physical disk IO was required.
+     */
     readonly diskRchar: number
+    /**
+     * The number of bytes which this task has caused, or shall cause to be written
+     * to disk. Similar caveats apply here as with rchar.
+     */
     readonly diskWchar: number
+    /**
+     * Attempt to count the number of bytes which this process really did cause to
+     * be fetched from the storage layer. Done at the submit_bio() level, so it is
+     * accurate for block-backed filesystems.
+     */
     readonly diskRbytes: number
+    /**
+     * Attempt to count the number of bytes which this process caused to be sent to
+     * the storage layer. This is done at page-dirtying time.
+     */
     readonly diskWbytes: number
     readonly reserved: number[]
     static name: string
@@ -831,16 +883,50 @@ class glibtop_proc_state {
 }
 class glibtop_proc_time {
     /* Fields of GTop-2.0.GTop.glibtop_proc_time */
+    /**
+     * Start time of process in seconds since the epoch.
+     */
     readonly startTime: number
+    /**
+     * Real time accumulated by process (should be `utime` + `stime)`.
+     */
     readonly rtime: number
+    /**
+     * User-mode CPU time accumulated by process.
+     */
     readonly utime: number
+    /**
+     * Kernel-mode CPU time accumulated by process.
+     */
     readonly stime: number
+    /**
+     * Cumulative utime of process and reaped children.
+     */
     readonly cutime: number
+    /**
+     * Cumulative stime of process and reaped children.
+     */
     readonly cstime: number
+    /**
+     * The time (in jiffies) of the process’s next timeout.
+     */
     readonly timeout: number
+    /**
+     * The time (in jiffies) before the next <type>SIGALRM</type>
+     * is sent to the process due to an interval timer.
+     */
     readonly itRealValue: number
+    /**
+     * Tick frequency.
+     */
     readonly frequency: number
+    /**
+     * SMP user-mode CPU time accumulated by process.
+     */
     readonly xcpuUtime: number[]
+    /**
+     * SMP kernel-mode CPU time accumulated by process
+     */
     readonly xcpuStime: number[]
     static name: string
 }
@@ -878,8 +964,18 @@ class glibtop_proc_wd {
 class glibtop_proclist {
     /* Fields of GTop-2.0.GTop.glibtop_proclist */
     readonly flags: number
+    /**
+     * Number of entries in the returned list.
+     */
     readonly number: number
+    /**
+     * Total size of the returned list (this equals `number` * `size)`.
+     */
     readonly total: number
+    /**
+     * Size of a single entry in the returned list
+     * (this equals <type>sizeof(unsigned)</type>).
+     */
     readonly size: number
     static name: string
 }

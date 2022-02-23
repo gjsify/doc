@@ -25,26 +25,52 @@ enum BackendFlags {
     NONE,
     /**
      * establish a session for transfer of secrets
-     *                               while initializing the #SecretBackend
+     *   while initializing the #SecretBackend
      */
     OPEN_SESSION,
     /**
      * load collections while initializing the
-     *                                   #SecretBackend
+     *   #SecretBackend
      */
     LOAD_COLLECTIONS,
 }
+/**
+ * Errors returned by the Secret Service.
+ * 
+ * None of the errors are appropriate for display to the user. It is up to the
+ * application to handle them appropriately.
+ */
 enum Error {
+    /**
+     * received an invalid data or message from the Secret
+     *   Service
+     */
     PROTOCOL,
+    /**
+     * the item or collection is locked and the operation
+     *   cannot be performed
+     */
     IS_LOCKED,
+    /**
+     * no such item or collection found in the Secret
+     *   Service
+     */
     NO_SUCH_OBJECT,
+    /**
+     * a relevant item or collection already exists
+     */
     ALREADY_EXISTS,
+    /**
+     * the file format is not valid
+     */
     INVALID_FILE_FORMAT,
 }
 /**
- * The type of an attribute in a #SecretSchema. Attributes are stored as strings
- * in the Secret Service, and the attribute types simply define standard ways
- * to store integer and boolean values as strings.
+ * The type of an attribute in a [struct`SecretSchema]`.
+ * 
+ * Attributes are stored as strings in the Secret Service, and the attribute
+ * types simply define standard ways to store integer and boolean values as
+ * strings.
  */
 enum SchemaAttributeType {
     /**
@@ -62,21 +88,76 @@ enum SchemaAttributeType {
 }
 /**
  * Different types of schemas for storing secrets, intended for use with
- * secret_get_schema().
+ * [func`get_schema]`.
+ * 
+ * ## `SECRET_SCHEMA_NOTE`
+ * 
+ * A predefined schema for personal passwords stored by the user in the
+ * password manager. This schema has no attributes, and the items are not
+ * meant to be used automatically by applications.
+ * 
+ * When used to search for items using this schema, it will only match
+ * items that have the same schema. Items stored via libgnome-keyring with the
+ * `GNOME_KEYRING_ITEM_NOTE` item type will match.
+ * 
+ * ## `SECRET_SCHEMA_COMPAT_NETWORK`
+ * 
+ * A predefined schema that is compatible with items stored via the
+ * libgnome-keyring 'network password' functions. This is meant to be used by
+ * applications migrating from libgnome-keyring which stored their secrets as
+ * 'network passwords'. It is not recommended that new code use this schema.
+ * 
+ * When used to search for items using this schema, it will only match
+ * items that have the same schema. Items stored via libgnome-keyring with the
+ * `GNOME_KEYRING_ITEM_NETWORK_PASSWORD` item type will match.
+ * 
+ * The following attributes exist in the schema:
+ * 
+ * ### Attributes:
+ * 
+ * <table>
+ *     <tr>
+ *         <td><tt>user</tt>:</td>
+ *         <td>The user name (string).</td>
+ *     </tr>
+ *     <tr>
+ *         <td><tt>domain</tt>:</td>
+ *         <td>The login domain or realm (string).</td></tr>
+ *     <tr>
+ *         <td><tt>object</tt>:</td>
+ *         <td>The object or path (string).</td>
+ *     </tr>
+ *     <tr>
+ *         <td><tt>protocol</tt>:</td>
+ *         <td>The protocol (a string like 'http').</td>
+ *     </tr>
+ *     <tr>
+ *         <td><tt>port</tt>:</td>
+ *         <td>The network port (integer).</td>
+ *     </tr>
+ *     <tr>
+ *         <td><tt>server</tt>:</td>
+ *         <td>The hostname or server (string).</td>
+ *     </tr>
+ *     <tr>
+ *         <td><tt>authtype</tt>:</td>
+ *         <td>The authentication type (string).</td>
+ *     </tr>
+ * </table>
  */
 enum SchemaType {
     /**
-     * Personal passwords; see %SECRET_SCHEMA_NOTE
+     * Personal passwords
      */
     NOTE,
     /**
      * Network passwords from older
-     *    libgnome-keyring storage; see %SECRET_SCHEMA_COMPAT_NETWORK
+     *    libgnome-keyring storage
      */
     COMPAT_NETWORK,
 }
 /**
- * Flags for secret_collection_create().
+ * Flags for [func`Collection`.create].
  */
 enum CollectionCreateFlags {
     /**
@@ -98,7 +179,7 @@ enum CollectionFlags {
     LOAD_ITEMS,
 }
 /**
- * Flags for secret_item_create().
+ * Flags for [func`Item`.create].
  */
 enum ItemCreateFlags {
     /**
@@ -133,12 +214,12 @@ enum SchemaFlags {
     NONE,
     /**
      * don't match the schema name when looking up or
-     *                                 removing passwords
+     *   removing passwords
      */
     DONT_MATCH_NAME,
 }
 /**
- * Various flags to be used with secret_service_search() and secret_service_search_sync().
+ * Various flags to be used with [method`Service`.search] and [method`Service`.search_sync].
  */
 enum SearchFlags {
     /**
@@ -160,7 +241,7 @@ enum SearchFlags {
 }
 /**
  * Flags which determine which parts of the #SecretService proxy are initialized
- * during a secret_service_get() or secret_service_open() operation.
+ * during a [func`Service`.get] or [func`Service`.open] operation.
  */
 enum ServiceFlags {
     /**
@@ -169,25 +250,31 @@ enum ServiceFlags {
     NONE,
     /**
      * establish a session for transfer of secrets
-     *                               while initializing the #SecretService
+     *   while initializing the #SecretService
      */
     OPEN_SESSION,
     /**
      * load collections while initializing the
-     *                                   #SecretService
+     *   #SecretService
      */
     LOAD_COLLECTIONS,
 }
+/**
+ * Extension point for the secret backend.
+ */
 const BACKEND_EXTENSION_POINT_NAME: string
 /**
- * An alias to the default collection. This can be passed to secret_password_store()
- * secret_collection_for_alias().
+ * An alias to the default collection.
+ * 
+ * This can be passed to [func`password_store]` [func`Collection`.for_alias].
  */
 const COLLECTION_DEFAULT: string
 /**
  * An alias to the session collection, which will be cleared when the user ends
- * the session. This can be passed to secret_password_store(),
- * secret_collection_for_alias() or similar functions.
+ * the session.
+ * 
+ * This can be passed to [func`password_store]`, [func`Collection`.for_alias] or
+ * similar functions.
  */
 const COLLECTION_SESSION: string
 /**
@@ -330,8 +417,9 @@ class Backend {
     static name: string
     /* Static methods and pseudo-constructors */
     /**
-     * Get a #SecretBackend instance. If such a backend already exists,
-     * then the same backend is returned.
+     * Get a #SecretBackend instance.
+     * 
+     * If such a backend already exists, then the same backend is returned.
      * 
      * If `flags` contains any flags of which parts of the secret backend to
      * ensure are initialized, then those will be initialized before completing.
@@ -347,8 +435,10 @@ class Backend {
 class Retrievable {
     /* Properties of Secret-1.Secret.Retrievable */
     /**
-     * The attributes set on this item. Attributes are used to locate an
-     * item. They are not guaranteed to be stored or transferred securely.
+     * The attributes set on this item.
+     * 
+     * Attributes are used to locate an item. They are not guaranteed to be
+     * stored or transferred securely.
      */
     attributes: GLib.HashTable
     /**
@@ -377,8 +467,10 @@ class Retrievable {
      */
     get_attributes(): GLib.HashTable
     /**
-     * Get the created date and time of the object. The return value is
-     * the number of seconds since the unix epoch, January 1st 1970.
+     * Get the created date and time of the object.
+     * 
+     * The return value is the number of seconds since the unix epoch, January 1st
+     * 1970.
      */
     get_created(): number
     /**
@@ -386,8 +478,10 @@ class Retrievable {
      */
     get_label(): string
     /**
-     * Get the modified date and time of the object. The return value is
-     * the number of seconds since the unix epoch, January 1st 1970.
+     * Get the modified date and time of the object.
+     * 
+     * The return value is the number of seconds since the unix epoch, January 1st
+     * 1970.
      */
     get_modified(): number
     /**
@@ -446,7 +540,7 @@ interface Collection_ConstructProps extends Gio.DBusProxy_ConstructProps {
      * 
      * Setting this property will result in the label of the collection being
      * set asynchronously. To properly track the changing of the label use the
-     * secret_collection_set_label() function.
+     * [method`Collection`.set_label] function.
      */
     label?: string
     /**
@@ -455,7 +549,7 @@ interface Collection_ConstructProps extends Gio.DBusProxy_ConstructProps {
      */
     modified?: number
     /**
-     * The #SecretService object that this collection is associated with and
+     * The [class`Service]` object that this collection is associated with and
      * uses to interact with the actual D-Bus Secret Service.
      */
     service?: Service
@@ -472,14 +566,14 @@ class Collection {
      * 
      * Setting this property will result in the label of the collection being
      * set asynchronously. To properly track the changing of the label use the
-     * secret_collection_set_label() function.
+     * [method`Collection`.set_label] function.
      */
     label: string
     /**
      * Whether the collection is locked or not.
      * 
-     * To lock or unlock a collection use the secret_service_lock() or
-     * secret_service_unlock() functions.
+     * To lock or unlock a collection use the [method`Service`.lock] or
+     * [method`Service`.unlock] functions.
      */
     readonly locked: boolean
     /**
@@ -539,7 +633,7 @@ class Collection {
      * Delete this collection.
      * 
      * This method returns immediately and completes asynchronously. The secret
-     * service may prompt the user. secret_service_prompt() will be used to handle
+     * service may prompt the user. [method`Service`.prompt] will be used to handle
      * any prompts that show up.
      */
     delete(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -550,22 +644,24 @@ class Collection {
     /**
      * Delete this collection.
      * 
-     * This method may block indefinitely and should not be used in user
-     * interface threads. The secret service may prompt the user.
-     * secret_service_prompt() will be used to handle any prompts that show up.
+     * This method may block indefinitely and should not be used in user interface
+     * threads. The secret service may prompt the user. [method`Service`.prompt] will
+     * be used to handle any prompts that show up.
      */
     delete_sync(cancellable?: Gio.Cancellable | null): boolean
     /**
-     * Get the created date and time of the collection. The return value is
-     * the number of seconds since the unix epoch, January 1st 1970.
+     * Get the created date and time of the collection.
+     * 
+     * The return value is the number of seconds since the unix epoch, January 1st
+     * 1970.
      */
     get_created(): number
     /**
      * Get the flags representing what features of the #SecretCollection proxy
      * have been initialized.
      * 
-     * Use secret_collection_load_items()  to initialize further features
-     * and change the flags.
+     * Use [method`Collection`.load_items] to initialize further features and change
+     * the flags.
      */
     get_flags(): CollectionFlags
     /**
@@ -579,13 +675,15 @@ class Collection {
     /**
      * Get whether the collection is locked or not.
      * 
-     * Use secret_service_lock() or secret_service_unlock() to lock or unlock the
+     * Use [method`Service`.lock] or [method`Service`.unlock] to lock or unlock the
      * collection.
      */
     get_locked(): boolean
     /**
-     * Get the modified date and time of the collection. The return value is
-     * the number of seconds since the unix epoch, January 1st 1970.
+     * Get the modified date and time of the collection.
+     * 
+     * The return value is the number of seconds since the unix epoch, January 1st
+     * 1970.
      */
     get_modified(): number
     /**
@@ -594,11 +692,12 @@ class Collection {
     get_service(): Service
     /**
      * Ensure that the #SecretCollection proxy has loaded all the items present
-     * in the Secret Service. This affects the result of
-     * secret_collection_get_items().
+     * in the Secret Service.
      * 
-     * For collections returned from secret_service_get_collections() the items
-     * will have already been loaded.
+     * This affects the result of [method`Collection`.get_items].
+     * 
+     * For collections returned from [method`Service`.get_collections] the items will
+     * have already been loaded.
      * 
      * This method will return immediately and complete asynchronously.
      */
@@ -611,9 +710,9 @@ class Collection {
     /**
      * Ensure that the #SecretCollection proxy has loaded all the items present
      * in the Secret Service. This affects the result of
-     * secret_collection_get_items().
+     * [method`Collection`.get_items].
      * 
-     * For collections returned from secret_service_get_collections() the items
+     * For collections returned from [method`Service`.get_collections] the items
      * will have already been loaded.
      * 
      * This method may block indefinitely and should not be used in user interface
@@ -641,7 +740,7 @@ class Collection {
      * search and be returned. If the unlock fails, the search does not fail.
      * 
      * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-     * their secret values loaded and available via secret_item_get_secret().
+     * their secret values loaded and available via [method`Item`.get_secret].
      * 
      * This function returns immediately and completes asynchronously.
      */
@@ -663,7 +762,7 @@ class Collection {
      * search and be returned. If the unlock fails, the search does not fail.
      * 
      * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-     * their secret values loaded and available via secret_item_get_secret().
+     * their secret values loaded and available via [method`Item`.get_secret].
      * 
      * This function may block indefinitely. Use the asynchronous version
      * in user interface threads.
@@ -1511,7 +1610,7 @@ class Collection {
      * Create a new collection in the secret service.
      * 
      * This method returns immediately and completes asynchronously. The secret
-     * service may prompt the user. secret_service_prompt() will be used to handle
+     * service may prompt the user. [method`Service`.prompt] will be used to handle
      * any prompts that are required.
      * 
      * An `alias` is a well-known tag for a collection, such as 'default' (ie: the
@@ -1520,8 +1619,8 @@ class Collection {
      * collection with that alias already exists, then a new collection will not
      * be created. The previous one will be returned instead.
      * 
-     * If `service` is %NULL, then secret_service_get() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get] will be called to get the
+     * default [class`Service]` proxy.
      */
     static create(service: Service | null, label: string, alias: string | null, flags: CollectionCreateFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
@@ -1532,25 +1631,25 @@ class Collection {
      * Create a new collection in the secret service.
      * 
      * This method may block indefinitely and should not be used in user interface
-     * threads. The secret service may prompt the user. secret_service_prompt()
+     * threads. The secret service may prompt the user. [method`Service`.prompt]
      * will be used to handle any prompts that are required.
      * 
-     * An `alias` is a well-known tag for a collection, such as 'default' (ie: the
+     * An `alias` is a well-known tag for a collection, such as `default` (ie: the
      * default collection to store items in). This allows other applications to
      * easily identify and share a collection. If you specify an `alias,` and a
      * collection with that alias already exists, then a new collection will not
      * be created. The previous one will be returned instead.
      * 
-     * If `service` is %NULL, then secret_service_get_sync() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get_sync] will be called to get the
+     * default [class`Service]` proxy.
      */
     static create_sync(service: Service | null, label: string, alias: string | null, flags: CollectionCreateFlags, cancellable?: Gio.Cancellable | null): Collection
     /**
      * Lookup which collection is assigned to this alias. Aliases help determine
      * well known collections, such as 'default'.
      * 
-     * If `service` is %NULL, then secret_service_get() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get] will be called to get the
+     * default [class`Service]` proxy.
      * 
      * This method will return immediately and complete asynchronously.
      */
@@ -1562,10 +1661,10 @@ class Collection {
     static for_alias_finish(result: Gio.AsyncResult): Collection
     /**
      * Lookup which collection is assigned to this alias. Aliases help determine
-     * well known collections, such as 'default'.
+     * well known collections, such as `default`.
      * 
-     * If `service` is %NULL, then secret_service_get_sync() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get_sync] will be called to get the
+     * default [class`Service]` proxy.
      * 
      * This method may block and should not be used in user interface threads.
      */
@@ -1595,14 +1694,16 @@ interface Item_ConstructProps extends Gio.DBusProxy_ConstructProps {
      */
     flags?: ItemFlags
     /**
-     * The #SecretService object that this item is associated with and
+     * The [class`Service]` object that this item is associated with and
      * uses to interact with the actual D-Bus Secret Service.
      */
     service?: Service
     /* Constructor properties of Secret-1.Secret.Retrievable */
     /**
-     * The attributes set on this item. Attributes are used to locate an
-     * item. They are not guaranteed to be stored or transferred securely.
+     * The attributes set on this item.
+     * 
+     * Attributes are used to locate an item. They are not guaranteed to be
+     * stored or transferred securely.
      */
     attributes?: GLib.HashTable
     /**
@@ -1623,11 +1724,13 @@ interface Item_ConstructProps extends Gio.DBusProxy_ConstructProps {
 class Item {
     /* Properties of Secret-1.Secret.Item */
     /**
-     * Whether the item is locked or not. An item may not be independently
-     * lockable separate from other items in its collection.
+     * Whether the item is locked or not.
      * 
-     * To lock or unlock a item use the secret_service_lock() or
-     * secret_service_unlock() functions.
+     * An item may not be independently lockable separate from other items in
+     * its collection.
+     * 
+     * To lock or unlock a item use the [method`Service`.lock] or
+     * [method`Service`.unlock] functions.
      */
     readonly locked: boolean
     /* Properties of Gio-2.0.Gio.DBusProxy */
@@ -1677,8 +1780,10 @@ class Item {
     readonly g_name_owner: string
     /* Properties of Secret-1.Secret.Retrievable */
     /**
-     * The attributes set on this item. Attributes are used to locate an
-     * item. They are not guaranteed to be stored or transferred securely.
+     * The attributes set on this item.
+     * 
+     * Attributes are used to locate an item. They are not guaranteed to be
+     * stored or transferred securely.
      */
     attributes: GLib.HashTable
     /**
@@ -1702,7 +1807,7 @@ class Item {
      * Delete this item.
      * 
      * This method returns immediately and completes asynchronously. The secret
-     * service may prompt the user. secret_service_prompt() will be used to handle
+     * service may prompt the user. [method`Service`.prompt] will be used to handle
      * any prompts that show up.
      */
     delete(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -1715,7 +1820,7 @@ class Item {
      * 
      * This method may block indefinitely and should not be used in user
      * interface threads. The secret service may prompt the user.
-     * secret_service_prompt() will be used to handle any prompts that show up.
+     * [method`Service`.prompt] will be used to handle any prompts that show up.
      */
     delete_sync(cancellable?: Gio.Cancellable | null): boolean
     /**
@@ -1726,19 +1831,21 @@ class Item {
      * or transferred securely by the secret service.
      * 
      * Do not modify the attributes returned by this method. Use
-     * secret_item_set_attributes() instead.
+     * [method`Item`.set_attributes] instead.
      */
     get_attributes(): GLib.HashTable
     /**
-     * Get the created date and time of the item. The return value is
-     * the number of seconds since the unix epoch, January 1st 1970.
+     * Get the created date and time of the item.
+     * 
+     * The return value is the number of seconds since the unix epoch, January 1st
+     * 1970.
      */
     get_created(): number
     /**
      * Get the flags representing what features of the #SecretItem proxy
      * have been initialized.
      * 
-     * Use secret_item_load_secret() to initialize further features
+     * Use [method`Item`.load_secret] to initialize further features
      * and change the flags.
      */
     get_flags(): ItemFlags
@@ -1754,20 +1861,24 @@ class Item {
      */
     get_locked(): boolean
     /**
-     * Get the modified date and time of the item. The return value is
-     * the number of seconds since the unix epoch, January 1st 1970.
+     * Get the modified date and time of the item.
+     * 
+     * The return value is the number of seconds since the unix epoch, January 1st
+     * 1970.
      */
     get_modified(): number
     /**
      * Gets the name of the schema that this item was stored with. This is also
-     * available at the <literal>xdg:schema</literal> attribute.
+     * available at the `xdg:schema` attribute.
      */
     get_schema_name(): string | null
     /**
-     * Get the secret value of this item. If this item is locked or the secret
-     * has not yet been loaded then this will return %NULL.
+     * Get the secret value of this item.
      * 
-     * To load the secret call the secret_item_load_secret() method.
+     * If this item is locked or the secret has not yet been loaded then this will
+     * return %NULL.
+     * 
+     * To load the secret call the [method`Item`.load_secret] method.
      */
     get_secret(): Value | null
     /**
@@ -1789,7 +1900,7 @@ class Item {
      * Complete asynchronous operation to load the secret value of this item.
      * 
      * The newly loaded secret value can be accessed by calling
-     * secret_item_get_secret().
+     * [method`Item`.get_secret].
      */
     load_secret_finish(result: Gio.AsyncResult): boolean
     /**
@@ -1803,8 +1914,10 @@ class Item {
      */
     load_secret_sync(cancellable?: Gio.Cancellable | null): boolean
     /**
-     * Refresh the properties on this item. This fires off a request to
-     * refresh, and the properties will be updated later.
+     * Refresh the properties on this item.
+     * 
+     * This fires off a request to refresh, and the properties will be updated
+     * later.
      * 
      * Calling this method is not normally necessary, as the secret service
      * will notify the client when properties change.
@@ -2743,7 +2856,7 @@ class Item {
      * instead of creating a new one.
      * 
      * This method may block indefinitely and should not be used in user interface
-     * threads. The secret service may prompt the user. secret_service_prompt()
+     * threads. The secret service may prompt the user. [method`Service`.prompt]
      * will be used to handle any prompts that are required.
      */
     static create(collection: Collection, schema: Schema | null, attributes: GLib.HashTable, label: string, value: Value, flags: ItemCreateFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -2759,14 +2872,14 @@ class Item {
      * instead of creating a new one.
      * 
      * This method may block indefinitely and should not be used in user interface
-     * threads. The secret service may prompt the user. secret_service_prompt()
+     * threads. The secret service may prompt the user. [method`Service`.prompt]
      * will be used to handle any prompts that are required.
      */
     static create_sync(collection: Collection, schema: Schema | null, attributes: GLib.HashTable, label: string, value: Value, flags: ItemCreateFlags, cancellable?: Gio.Cancellable | null): Item
     /**
      * Load the secret values for a secret item stored in the service.
      * 
-     * The `items` must all have the same SecretItem::service property.
+     * The `items` must all have the same [property`Item:`service] property.
      * 
      * This function returns immediately and completes asynchronously.
      */
@@ -2781,7 +2894,7 @@ class Item {
     /**
      * Load the secret values for a secret item stored in the service.
      * 
-     * The `items` must all have the same SecretItem::service property.
+     * The `items` must all have the same [property`Item:`service] property.
      * 
      * This method may block indefinitely and should not be used in user interface
      * threads.
@@ -2858,14 +2971,15 @@ class Prompt {
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of Secret-1.Secret.Prompt */
     /**
-     * Runs a prompt and performs the prompting. Returns %TRUE if the prompt
-     * was completed and not dismissed.
+     * Runs a prompt and performs the prompting.
+     * 
+     * Returns %TRUE if the prompt was completed and not dismissed.
      * 
      * If `window_id` is non-null then it is used as an XWindow id on Linux. The API
-     * expects this id to be converted to a string using the <literal>%d</literal>
-     * printf format. The Secret Service can make its prompt transient for the window
-     * with this id. In some Secret Service implementations this is not possible, so
-     * the behavior depending on this should degrade gracefully.
+     * expects this id to be converted to a string using the `%d` printf format. The
+     * Secret Service can make its prompt transient for the window with this id. In
+     * some Secret Service implementations this is not possible, so the behavior
+     * depending on this should degrade gracefully.
      * 
      * This method will return immediately and complete asynchronously.
      */
@@ -2879,32 +2993,34 @@ class Prompt {
      */
     perform_finish(result: Gio.AsyncResult): GLib.Variant
     /**
-     * Runs a prompt and performs the prompting. Returns a variant result if the
-     * prompt was completed and not dismissed. The type of result depends on the
-     * action the prompt is completing, and is defined in the Secret Service DBus
-     * API specification.
+     * Runs a prompt and performs the prompting.
+     * 
+     * Returns a variant result if the prompt was completed and not dismissed. The
+     * type of result depends on the action the prompt is completing, and is defined
+     * in the Secret Service DBus API specification.
      * 
      * If `window_id` is non-null then it is used as an XWindow id on Linux. The API
-     * expects this id to be converted to a string using the <literal>%d</literal>
-     * printf format. The Secret Service can make its prompt transient for the window
-     * with this id. In some Secret Service implementations this is not possible,
-     * so the behavior depending on this should degrade gracefully.
+     * expects this id to be converted to a string using the `%d` printf format. The
+     * Secret Service can make its prompt transient for the window with this id. In
+     * some Secret Service implementations this is not possible, so the behavior
+     * depending on this should degrade gracefully.
      * 
      * This method may block indefinitely and should not be used in user interface
      * threads.
      */
     perform_sync(window_id: string | null, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType): GLib.Variant
     /**
-     * Runs a prompt and performs the prompting. Returns a variant result if the
-     * prompt was completed and not dismissed. The type of result depends on the
-     * action the prompt is completing, and is defined in the Secret Service DBus
-     * API specification.
+     * Runs a prompt and performs the prompting.
+     * 
+     * Returns a variant result if the prompt was completed and not dismissed. The
+     * type of result depends on the action the prompt is completing, and is defined
+     * in the Secret Service DBus API specification.
      * 
      * If `window_id` is non-null then it is used as an XWindow id on Linux. The API
-     * expects this id to be converted to a string using the <literal>%d</literal>
-     * printf format. The Secret Service can make its prompt transient for the window
-     * with this id. In some Secret Service implementations this is not possible, so
-     * the behavior depending on this should degrade gracefully.
+     * expects this id to be converted to a string using the `%d` printf format. The
+     * Secret Service can make its prompt transient for the window with this id. In
+     * some Secret Service implementations this is not possible, so the behavior
+     * depending on this should degrade gracefully.
      * 
      * This runs the dialog in a recursive mainloop. When run from a user interface
      * thread, this means the user interface will remain responsive. Care should be
@@ -3804,8 +3920,8 @@ class Service {
      * 
      * The `attributes` should be a set of key and value string pairs.
      * 
-     * If `service` is %NULL, then secret_service_get() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method will return immediately and complete asynchronously.
      */
@@ -3820,8 +3936,8 @@ class Service {
      * 
      * The `attributes` should be a set of key and value string pairs.
      * 
-     * If `service` is %NULL, then secret_service_get_sync() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method may block indefinitely and should not be used in user interface
      * threads.
@@ -3831,7 +3947,7 @@ class Service {
      * Create a new item in a secret service collection and return its D-Bus
      * object path.
      * 
-     * It is often easier to use secret_password_store_sync() or secret_item_create_sync()
+     * It is often easier to use [func`password_store_sync]` or [func`Item`.create_sync]
      * rather than using this function. Using this method requires that you setup
      * a correct hash table of D-Bus `properties` for the new collection.
      * 
@@ -3841,40 +3957,42 @@ class Service {
      * 
      * `properties` is a set of properties for the new collection. The keys in the
      * hash table should be interface.property strings like
-     * <literal>org.freedesktop.Secret.Item.Label</literal>. The values
-     * in the hash table should be #GVariant values of the properties.
+     * `org.freedesktop.Secret.Item.Label`. The values
+     * in the hash table should be [struct`GLib`.Variant] values of the properties.
      * 
      * This method may block indefinitely and should not be used in user interface
-     * threads. The secret service may prompt the user. secret_service_prompt()
+     * threads. The secret service may prompt the user. [method`Service`.prompt]
      * will be used to handle any prompts that are required.
      */
     create_item_dbus_path_sync(collection_path: string, properties: GLib.HashTable, value: Value, flags: ItemCreateFlags, cancellable?: Gio.Cancellable | null): string
     /**
-     * Decode a #SecretValue into GVariant received with the Secret Service
+     * Decode a [struct`Value]` into [struct`GLib`.Variant] received with the Secret Service
      * DBus API.
      * 
-     * The GVariant should have a <literal>(oayays)</literal> signature.
+     * The [struct`GLib`.Variant] should have a `(oayays)` signature.
      * 
-     * A session must have already been established by the #SecretService, and
+     * A session must have already been established by the [class`Service]`, and
      * the encoded secret must be valid for that session.
      */
     decode_dbus_secret(value: GLib.Variant): Value
     /**
-     * Encodes a #SecretValue into GVariant for use with the Secret Service
-     * DBus API.
+     * Encodes a [struct`Value]` into [struct`GLib`.Variant] for use with the Secret
+     * Service DBus API.
      * 
-     * The resulting GVariant will have a <literal>(oayays)</literal> signature.
+     * The resulting [struct`GLib`.Variant] will have a `(oayays)` signature.
      * 
-     * A session must have already been established by the #SecretService.
+     * A session must have already been established by the [class`Service]`.
      */
     encode_dbus_secret(value: Value): GLib.Variant
     /**
      * Ensure that the #SecretService proxy has established a session with the
-     * Secret Service. This session is used to transfer secrets.
+     * Secret Service.
+     * 
+     * This session is used to transfer secrets.
      * 
      * It is not normally necessary to call this method, as the session is
      * established as necessary. You can also pass the %SECRET_SERVICE_OPEN_SESSION
-     * to secret_service_get() in order to ensure that a session has been established
+     * to [func`Service`.get] in order to ensure that a session has been established
      * by the time you get the #SecretService proxy.
      * 
      * This method will return immediately and complete asynchronously.
@@ -3887,11 +4005,13 @@ class Service {
     ensure_session_finish(result: Gio.AsyncResult): boolean
     /**
      * Ensure that the #SecretService proxy has established a session with the
-     * Secret Service. This session is used to transfer secrets.
+     * Secret Service.
+     * 
+     * This session is used to transfer secrets.
      * 
      * It is not normally necessary to call this method, as the session is
      * established as necessary. You can also pass the %SECRET_SERVICE_OPEN_SESSION
-     * to secret_service_get_sync() in order to ensure that a session has been
+     * to [func`Service`.get_sync] in order to ensure that a session has been
      * established by the time you get the #SecretService proxy.
      * 
      * This method may block indefinitely and should not be used in user interface
@@ -3900,29 +4020,31 @@ class Service {
     ensure_session_sync(cancellable?: Gio.Cancellable | null): boolean
     /**
      * Get the GObject type for collections instantiated by this service.
-     * This will always be either #SecretCollection or derived from it.
+     * 
+     * This will always be either [class`Collection]` or derived from it.
      */
     get_collection_gtype(): GObject.Type
     /**
-     * Get a list of #SecretCollection objects representing all the collections
+     * Get a list of [class`Collection]` objects representing all the collections
      * in the secret service.
      * 
      * If the %SECRET_SERVICE_LOAD_COLLECTIONS flag was not specified when
      * initializing #SecretService proxy object, then this method will return
-     * %NULL. Use secret_service_load_collections() to load the collections.
+     * %NULL. Use [method`Service`.load_collections] to load the collections.
      */
     get_collections(): Collection[] | null
     /**
      * Get the flags representing what features of the #SecretService proxy
      * have been initialized.
      * 
-     * Use secret_service_ensure_session() or secret_service_load_collections()
+     * Use [method`Service`.ensure_session] or [method`Service`.load_collections]
      * to initialize further features and change the flags.
      */
     get_flags(): ServiceFlags
     /**
      * Get the GObject type for items instantiated by this service.
-     * This will always be either #SecretItem or derived from it.
+     * 
+     * This will always be either [class`Item]` or derived from it.
      */
     get_item_gtype(): GObject.Type
     /**
@@ -3930,7 +4052,7 @@ class Service {
      * secret service proxy and the Secret Service itself.
      * 
      * This will be %NULL if no session has been established. Use
-     * secret_service_ensure_session() to establish a session.
+     * [method`Service`.ensure_session] to establish a session.
      */
     get_session_algorithms(): string | null
     /**
@@ -3938,16 +4060,17 @@ class Service {
      * secrets between this secret service proxy and the Secret Service itself.
      * 
      * This will be %NULL if no session has been established. Use
-     * secret_service_ensure_session() to establish a session.
+     * [method`Service`.ensure_session] to establish a session.
      */
     get_session_dbus_path(): string | null
     /**
      * Ensure that the #SecretService proxy has loaded all the collections present
-     * in the Secret Service. This affects the result of
-     * secret_service_get_collections().
+     * in the Secret Service.
+     * 
+     * This affects the result of [method`Service`.get_collections].
      * 
      * You can also pass the %SECRET_SERVICE_LOAD_COLLECTIONS to
-     * secret_service_get_sync() in order to ensure that the collections have been
+     * [func`Service`.get_sync] in order to ensure that the collections have been
      * loaded by the time you get the #SecretService proxy.
      * 
      * This method will return immediately and complete asynchronously.
@@ -3960,11 +4083,12 @@ class Service {
     load_collections_finish(result: Gio.AsyncResult): boolean
     /**
      * Ensure that the #SecretService proxy has loaded all the collections present
-     * in the Secret Service. This affects the result of
-     * secret_service_get_collections().
+     * in the Secret Service.
+     * 
+     * This affects the result of [method`Service`.get_collections].
      * 
      * You can also pass the %SECRET_SERVICE_LOAD_COLLECTIONS to
-     * secret_service_get_sync() in order to ensure that the collections have been
+     * [func`Service`.get_sync] in order to ensure that the collections have been
      * loaded by the time you get the #SecretService proxy.
      * 
      * This method may block indefinitely and should not be used in user interface
@@ -3977,11 +4101,11 @@ class Service {
      * The secret service may not be able to lock items individually, and may
      * lock an entire collection instead.
      * 
-     * If `service` is %NULL, then secret_service_get() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method returns immediately and completes asynchronously. The secret
-     * service may prompt the user. secret_service_prompt() will be used to handle
+     * service may prompt the user. [method`Service`.prompt] will be used to handle
      * any prompts that show up.
      */
     lock(objects: Gio.DBusProxy[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -3999,12 +4123,12 @@ class Service {
      * The secret service may not be able to lock items individually, and may
      * lock an entire collection instead.
      * 
-     * If `service` is %NULL, then secret_service_get_sync() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method may block indefinitely and should not be used in user
      * interface threads. The secret service may prompt the user.
-     * secret_service_prompt() will be used to handle any prompts that show up.
+     * [method`Service`.prompt] will be used to handle any prompts that show up.
      */
     lock_sync(objects: Gio.DBusProxy[], cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* locked */ Gio.DBusProxy[] | null ]
     /**
@@ -4012,8 +4136,8 @@ class Service {
      * 
      * The `attributes` should be a set of key and value string pairs.
      * 
-     * If `service` is %NULL, then secret_service_get() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method will return immediately and complete asynchronously.
      */
@@ -4029,26 +4153,26 @@ class Service {
      * 
      * The `attributes` should be a set of key and value string pairs.
      * 
-     * If `service` is %NULL, then secret_service_get_sync() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method may block indefinitely and should not be used in user interface
      * threads.
      */
     lookup_sync(schema: Schema | null, attributes: GLib.HashTable, cancellable?: Gio.Cancellable | null): Value
     /**
-     * Perform prompting for a #SecretPrompt.
+     * Perform prompting for a [class`Prompt]`.
      * 
      * This function is called by other parts of this library to handle prompts
      * for the various actions that can require prompting.
      * 
-     * Override the #SecretServiceClass <literal>prompt_async</literal> virtual method
+     * Override the #SecretServiceClass [vfunc`Service`.prompt_async] virtual method
      * to change the behavior of the prompting. The default behavior is to simply
-     * run secret_prompt_perform() on the prompt.
+     * run [method`Prompt`.perform] on the prompt.
      */
     prompt(prompt: Prompt, return_type?: GLib.VariantType | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
-     * Complete asynchronous operation to perform prompting for a #SecretPrompt.
+     * Complete asynchronous operation to perform prompting for a [class`Prompt]`.
      * 
      * Returns a variant result if the prompt was completed and not dismissed. The
      * type of result depends on the action the prompt is completing, and is defined
@@ -4056,7 +4180,7 @@ class Service {
      */
     prompt_finish(result: Gio.AsyncResult): GLib.Variant
     /**
-     * Perform prompting for a #SecretPrompt.
+     * Perform prompting for a [class`Prompt]`.
      * 
      * Runs a prompt and performs the prompting. Returns a variant result if the
      * prompt was completed and not dismissed. The type of result depends on the
@@ -4066,17 +4190,19 @@ class Service {
      * This function is called by other parts of this library to handle prompts
      * for the various actions that can require prompting.
      * 
-     * Override the #SecretServiceClass <literal>prompt_sync</literal> virtual method
+     * Override the #SecretServiceClass [vfunc`Service`.prompt_sync] virtual method
      * to change the behavior of the prompting. The default behavior is to simply
-     * run secret_prompt_perform_sync() on the prompt with a %NULL <literal>window_id</literal>.
+     * run [method`Prompt`.perform_sync] on the prompt with a %NULL `window_id`.
      */
     prompt_sync(prompt: Prompt, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType): GLib.Variant
     /**
-     * Search for items matching the `attributes`. All collections are searched.
-     * The `attributes` should be a table of string keys and string values.
+     * Search for items matching the `attributes`.
      * 
-     * If `service` is %NULL, then secret_service_get() will be called to get
-     * the default #SecretService proxy.
+     * All collections are searched. The `attributes` should be a table of string
+     * keys and string values.
+     * 
+     * If `service` is %NULL, then [func`Service`.get] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
      * search will be returned. Otherwise only the first item will be returned.
@@ -4087,7 +4213,7 @@ class Service {
      * search and be returned. If the unlock fails, the search does not fail.
      * 
      * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items will have
-     * their secret values loaded and available via secret_item_get_secret().
+     * their secret values loaded and available via [method`Item`.get_secret].
      * 
      * This function returns immediately and completes asynchronously.
      */
@@ -4097,11 +4223,13 @@ class Service {
      */
     search_finish(result: Gio.AsyncResult): Item[]
     /**
-     * Search for items matching the `attributes`. All collections are searched.
-     * The `attributes` should be a table of string keys and string values.
+     * Search for items matching the `attributes`.
      * 
-     * If `service` is %NULL, then secret_service_get_sync() will be called to get
-     * the default #SecretService proxy.
+     * All collections are searched. The `attributes` should be a table of string
+     * keys and string values.
+     * 
+     * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * If %SECRET_SEARCH_ALL is set in `flags,` then all the items matching the
      * search will be returned. Otherwise only the first item will be returned.
@@ -4113,7 +4241,7 @@ class Service {
      * 
      * If %SECRET_SEARCH_LOAD_SECRETS is set in `flags,` then the items' secret
      * values will be loaded for any unlocked items. Loaded item secret values
-     * are available via secret_item_get_secret(). If the load of a secret values
+     * are available via [method`Item`.get_secret]. If the load of a secret values
      * fail, then the
      * 
      * This function may block indefinitely. Use the asynchronous version
@@ -4121,11 +4249,12 @@ class Service {
      */
     search_sync(schema: Schema | null, attributes: GLib.HashTable, flags: SearchFlags, cancellable?: Gio.Cancellable | null): Item[]
     /**
-     * Assign a collection to this alias. Aliases help determine
-     * well known collections, such as 'default'.
+     * Assign a collection to this alias.
      * 
-     * If `service` is %NULL, then secret_service_get() will be called to get
-     * the default #SecretService proxy.
+     * Aliases help determine well known collections, such as 'default'.
+     * 
+     * If `service` is %NULL, then [func`Service`.get] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method will return immediately and complete asynchronously.
      */
@@ -4138,8 +4267,8 @@ class Service {
      * Assign a collection to this alias. Aliases help determine
      * well known collections, such as 'default'.
      * 
-     * If `service` is %NULL, then secret_service_get_sync() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method may block and should not be used in user interface threads.
      */
@@ -4152,11 +4281,11 @@ class Service {
      * If the attributes match a secret item already stored in the collection, then
      * the item will be updated with these new values.
      * 
-     * If `service` is %NULL, then secret_service_get() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * If `collection` is not specified, then the default collection will be
-     * used. Use #SECRET_COLLECTION_SESSION to store the password in the session
+     * used. Use [const`COLLECTION_SESSION]` to store the password in the session
      * collection, which doesn't get stored across login sessions.
      * 
      * This method will return immediately and complete asynchronously.
@@ -4175,11 +4304,11 @@ class Service {
      * the item will be updated with these new values.
      * 
      * If `collection` is %NULL, then the default collection will be
-     * used. Use #SECRET_COLLECTION_SESSION to store the password in the session
+     * used. Use [const`COLLECTION_SESSION]` to store the password in the session
      * collection, which doesn't get stored across login sessions.
      * 
-     * If `service` is %NULL, then secret_service_get_sync() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method may block indefinitely and should not be used in user interface
      * threads.
@@ -4191,12 +4320,12 @@ class Service {
      * The secret service may not be able to unlock items individually, and may
      * unlock an entire collection instead.
      * 
-     * If `service` is %NULL, then secret_service_get() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method may block indefinitely and should not be used in user
      * interface threads. The secret service may prompt the user.
-     * secret_service_prompt() will be used to handle any prompts that show up.
+     * [method`Service`.prompt] will be used to handle any prompts that show up.
      */
     unlock(objects: Gio.DBusProxy[], cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
@@ -4213,12 +4342,12 @@ class Service {
      * The secret service may not be able to unlock items individually, and may
      * unlock an entire collection instead.
      * 
-     * If `service` is %NULL, then secret_service_get_sync() will be called to get
-     * the default #SecretService proxy.
+     * If `service` is %NULL, then [func`Service`.get_sync] will be called to get
+     * the default [class`Service]` proxy.
      * 
      * This method may block indefinitely and should not be used in user
      * interface threads. The secret service may prompt the user.
-     * secret_service_prompt() will be used to handle any prompts that show up.
+     * [method`Service`.prompt] will be used to handle any prompts that show up.
      */
     unlock_sync(objects: Gio.DBusProxy[], cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* unlocked */ Gio.DBusProxy[] | null ]
     /* Methods of Gio-2.0.Gio.DBusProxy */
@@ -4838,17 +4967,19 @@ class Service {
     /* Virtual methods of Secret-1.Secret.Service */
     /**
      * Get the GObject type for collections instantiated by this service.
-     * This will always be either #SecretCollection or derived from it.
+     * 
+     * This will always be either [class`Collection]` or derived from it.
      */
     vfunc_get_collection_gtype(): GObject.Type
     /**
      * Get the GObject type for items instantiated by this service.
-     * This will always be either #SecretItem or derived from it.
+     * 
+     * This will always be either [class`Item]` or derived from it.
      */
     vfunc_get_item_gtype(): GObject.Type
     vfunc_prompt_async(prompt: Prompt, return_type: GLib.VariantType, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
-     * Complete asynchronous operation to perform prompting for a #SecretPrompt.
+     * Complete asynchronous operation to perform prompting for a [class`Prompt]`.
      * 
      * Returns a variant result if the prompt was completed and not dismissed. The
      * type of result depends on the action the prompt is completing, and is defined
@@ -4856,7 +4987,7 @@ class Service {
      */
     vfunc_prompt_finish(result: Gio.AsyncResult): GLib.Variant
     /**
-     * Perform prompting for a #SecretPrompt.
+     * Perform prompting for a [class`Prompt]`.
      * 
      * Runs a prompt and performs the prompting. Returns a variant result if the
      * prompt was completed and not dismissed. The type of result depends on the
@@ -4866,9 +4997,9 @@ class Service {
      * This function is called by other parts of this library to handle prompts
      * for the various actions that can require prompting.
      * 
-     * Override the #SecretServiceClass <literal>prompt_sync</literal> virtual method
+     * Override the #SecretServiceClass [vfunc`Service`.prompt_sync] virtual method
      * to change the behavior of the prompting. The default behavior is to simply
-     * run secret_prompt_perform_sync() on the prompt with a %NULL <literal>window_id</literal>.
+     * run [method`Prompt`.perform_sync] on the prompt with a %NULL `window_id`.
      */
     vfunc_prompt_sync(prompt: Prompt, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType): GLib.Variant
     /**
@@ -5079,8 +5210,8 @@ class Service {
     _init (config?: Service_ConstructProps): void
     /* Static methods and pseudo-constructors */
     /**
-     * Disconnect the default #SecretService proxy returned by secret_service_get()
-     * and secret_service_get_sync().
+     * Disconnect the default #SecretService proxy returned by [func`Service`.get]
+     * and [func`Service`.get_sync].
      * 
      * It is not necessary to call this function, but you may choose to do so at
      * program exit. It is useful for testing that memory is not leaked.
@@ -5091,8 +5222,9 @@ class Service {
      */
     static disconnect(): void
     /**
-     * Get a #SecretService proxy for the Secret Service. If such a proxy object
-     * already exists, then the same proxy is returned.
+     * Get a #SecretService proxy for the Secret Service.
+     * 
+     * If such a proxy object already exists, then the same proxy is returned.
      * 
      * If `flags` contains any flags of which parts of the secret service to
      * ensure are initialized, then those will be initialized before completing.
@@ -5102,8 +5234,9 @@ class Service {
     static get(flags: ServiceFlags, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /* Function overloads */
     /**
-     * Get a #SecretBackend instance. If such a backend already exists,
-     * then the same backend is returned.
+     * Get a #SecretBackend instance.
+     * 
+     * If such a backend already exists, then the same backend is returned.
      * 
      * If `flags` contains any flags of which parts of the secret backend to
      * ensure are initialized, then those will be initialized before completing.
@@ -5122,8 +5255,9 @@ class Service {
      */
     static get_finish(result: Gio.AsyncResult): Backend
     /**
-     * Get a #SecretService proxy for the Secret Service. If such a proxy object
-     * already exists, then the same proxy is returned.
+     * Get a #SecretService proxy for the Secret Service.
+     * 
+     * If such a proxy object already exists, then the same proxy is returned.
      * 
      * If `flags` contains any flags of which parts of the secret service to
      * ensure are initialized, then those will be initialized before returning.
@@ -5135,7 +5269,7 @@ class Service {
     /**
      * Create a new #SecretService proxy for the Secret Service.
      * 
-     * This function is rarely used, see secret_service_get() instead.
+     * This function is rarely used, see [func`Service`.get] instead.
      * 
      * The `service_gtype` argument should be set to %SECRET_TYPE_SERVICE or a the type
      * of a derived class.
@@ -5156,7 +5290,7 @@ class Service {
     /**
      * Create a new #SecretService proxy for the Secret Service.
      * 
-     * This function is rarely used, see secret_service_get_sync() instead.
+     * This function is rarely used, see [func`Service`.get_sync] instead.
      * 
      * The `service_gtype` argument should be set to %SECRET_TYPE_SERVICE or a the
      * type of a derived class.
@@ -5271,8 +5405,9 @@ class Schema {
      */
     ref(): Schema
     /**
-     * Releases a reference to the #SecretSchema. If the last reference is
-     * released then the schema will be freed.
+     * Releases a reference to the #SecretSchema.
+     * 
+     * If the last reference is released then the schema will be freed.
      * 
      * It is not normally necessary to call this function from C code, and is
      * mainly present for the sake of bindings. It is an error to call this for
@@ -5304,13 +5439,13 @@ abstract class ServiceClass {
      */
     readonly parent_class: Gio.DBusProxyClass
     /**
-     * the #GType of the #SecretCollection objects instantiated
-     *                    by the #SecretService proxy
+     * the [alias`GLib`.Type] of the [class`Collection]` objects instantiated
+     *   by the #SecretService proxy
      */
     readonly collection_gtype: GObject.Type
     /**
-     * the #GType of the #SecretItem objects instantiated by the
-     *              #SecretService proxy
+     * the [alias`GLib`.Type] of the [class`Item]` objects instantiated by the
+     *   #SecretService proxy
      */
     readonly item_gtype: GObject.Type
     readonly prompt_sync: (self: Service, prompt: Prompt, cancellable: Gio.Cancellable | null, return_type: GLib.VariantType) => GLib.Variant
@@ -5326,36 +5461,43 @@ class ServicePrivate {
 class Value {
     /* Methods of Secret-1.Secret.Value */
     /**
-     * Get the secret data in the #SecretValue. The value is not necessarily
-     * null-terminated unless it was created with secret_value_new() or a
-     * null-terminated string was passed to secret_value_new_full().
+     * Get the secret data in the #SecretValue.
+     * 
+     * The value is not necessarily null-terminated unless it was created with
+     * [ctor`Value`.new] or a null-terminated string was passed to
+     * [ctor`Value`.new_full].
      */
     get(): Uint8Array
     /**
      * Get the content type of the secret value, such as
-     * <literal>text/plain</literal>.
+     * `text/plain`.
      */
     get_content_type(): string
     /**
      * Get the secret data in the #SecretValue if it contains a textual
-     * value. The content type must be <literal>text/plain</literal>.
+     * value.
+     * 
+     * The content type must be `text/plain`.
      */
     get_text(): string | null
     /**
-     * Add another reference to the #SecretValue. For each reference
-     * secret_value_unref() should be called to unreference the value.
+     * Add another reference to the #SecretValue.
+     * 
+     * For each reference [method`Value`.unref] should be called to unreference the
+     * value.
      */
     ref(): Value
     /**
-     * Unreference a #SecretValue. When the last reference is gone, then
-     * the value will be freed.
+     * Unreference a #SecretValue.
+     * 
+     * When the last reference is gone, then the value will be freed.
      */
     unref(): void
     /**
      * Unreference a #SecretValue and steal the secret data in
      * #SecretValue as nonpageable memory.
      */
-    unref_to_password(length: number): string
+    unref_to_password(length: number): [ /* returnType */ string, /* length */ number ]
     static name: string
     static new(secret: string, length: number, content_type: string): Value
     constructor(secret: string, length: number, content_type: string)

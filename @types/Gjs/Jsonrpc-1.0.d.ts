@@ -9,7 +9,6 @@
  */
 
 import type * as Gjs from './Gjs';
-import type Json from './Json-1.0';
 import type Gio from './Gio-2.0';
 import type GObject from './GObject-2.0';
 import type GLib from './GLib-2.0';
@@ -46,33 +45,33 @@ interface ServerHandler {
 interface Client_ConstructProps extends GObject.Object_ConstructProps {
     /* Constructor properties of Jsonrpc-1.0.Jsonrpc.Client */
     /**
-     * The "io-stream" property is the #GIOStream to use for communicating
+     * The "io-stream" property is the [class`Gio`.IOStream] to use for communicating
      * with a JSON-RPC peer.
      */
     io_stream?: Gio.IOStream
     /**
-     * The "use-gvariant" property denotes if #GVariant should be used to
+     * The "use-gvariant" property denotes if [struct`GLib`.Variant] should be used to
      * communicate with the peer instead of JSON. You should only set this
      * if you know the peer is also a Jsonrpc-GLib based client.
      * 
      * Setting this property allows the peers to communicate using GVariant
      * instead of JSON. This means that we can access the messages without
      * expensive memory allocations and parsing costs associated with JSON.
-     * #GVariant is much more optimal for memory-bassed message passing.
+     * [struct`GLib`.Variant] is much more optimal for memory-bassed message passing.
      */
     use_gvariant?: boolean
 }
 class Client {
     /* Properties of Jsonrpc-1.0.Jsonrpc.Client */
     /**
-     * The "use-gvariant" property denotes if #GVariant should be used to
+     * The "use-gvariant" property denotes if [struct`GLib`.Variant] should be used to
      * communicate with the peer instead of JSON. You should only set this
      * if you know the peer is also a Jsonrpc-GLib based client.
      * 
      * Setting this property allows the peers to communicate using GVariant
      * instead of JSON. This means that we can access the messages without
      * expensive memory allocations and parsing costs associated with JSON.
-     * #GVariant is much more optimal for memory-bassed message passing.
+     * [struct`GLib`.Variant] is much more optimal for memory-bassed message passing.
      */
     use_gvariant: boolean
     /* Fields of GObject-2.0.GObject.Object */
@@ -92,24 +91,24 @@ class Client {
      * Asynchronously calls `method` with `params` on the remote peer.
      * 
      * Upon completion or failure, `callback` is executed and it should
-     * call jsonrpc_client_call_finish() to complete the request and release
+     * call [method`Client`.call_finish] to complete the request and release
      * any memory held.
      * 
      * If `params` is floating, the floating reference is consumed.
      */
     call_async(method: string, params?: GLib.Variant | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
-     * Completes an asynchronous call to jsonrpc_client_call_async().
+     * Completes an asynchronous call to [method`Client`.call_async].
      */
     call_finish(result: Gio.AsyncResult): [ /* returnType */ boolean, /* return_value */ GLib.Variant | null ]
     /**
      * Asynchronously calls `method` with `params` on the remote peer.
      * 
      * Upon completion or failure, `callback` is executed and it should
-     * call jsonrpc_client_call_finish() to complete the request and release
+     * call [method`Client`.call_finish] to complete the request and release
      * any memory held.
      * 
-     * This function is similar to jsonrpc_client_call_async() except that
+     * This function is similar to [method`Client`.call_async] except that
      * it allows the caller to get the id of the command which might be useful
      * in systems where you can cancel the operation (such as the Language
      * Server Protocol).
@@ -119,7 +118,9 @@ class Client {
     call_with_id_async(method: string, params?: GLib.Variant | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): /* id */ GLib.Variant | null
     /**
      * Closes the underlying streams and cancels any inflight operations of the
-     * #JsonrpcClient. This is important to call when you are done with the
+     * #JsonrpcClient.
+     * 
+     * This is important to call when you are done with the
      * client so that any outstanding operations that have caused `self` to
      * hold additional references are cancelled.
      * 
@@ -127,25 +128,24 @@ class Client {
      */
     close(cancellable?: Gio.Cancellable | null): boolean
     /**
-     * Asynchronous version of jsonrpc_client_close()
+     * Asynchronous version of [method`Client`.close].
      * 
      * Currently this operation is implemented synchronously, but in the future may
      * be converted to using asynchronous operations.
      */
     close_async(cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
-     * `self` A #JsonrpcClient.
-     * Completes an asynchronous request of jsonrpc_client_close_async().
+     * Completes an asynchronous request of [method`Client`.close_async].
      */
     close_finish(result: Gio.AsyncResult): boolean
     /**
-     * Gets the #JsonrpcClient:use-gvariant property.
+     * Gets the [property`Client:`use-gvariant] property.
      * 
-     * Indicates if #GVariant is being used to communicate with the peer.
+     * Indicates if [struct`GLib`.Variant] is being used to communicate with the peer.
      */
     get_use_gvariant(): boolean
     /**
-     * Synchronous variant of jsonrpc_client_reply_async().
+     * Synchronous variant of [method`Client`.reply_async].
      * 
      * If `id` or `result` are floating, there floating references are consumed.
      */
@@ -154,18 +154,19 @@ class Client {
     /**
      * Asynchronously replies to the peer, sending a JSON-RPC error message.
      * 
-     * Call jsonrpc_client_reply_error_finish() to get the result of this operation.
+     * Call [method`Client`.reply_error_finish] to get the result of this operation.
      * 
      * If `id` is floating, it's floating reference is consumed.
      */
     reply_error_async(id: GLib.Variant, code: number, message?: string | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     reply_error_finish(result: Gio.AsyncResult): boolean
     /**
-     * Completes an asynchronous request to jsonrpc_client_reply_async().
+     * Completes an asynchronous request to [method`Client`.reply_async].
      */
     reply_finish(result: Gio.AsyncResult): boolean
     /**
      * Synchronously calls `method` with `params` on the remote peer.
+     * 
      * This function will not wait or expect a reply from the peer.
      * 
      * If `params` is floating then the reference is consumed.
@@ -173,6 +174,7 @@ class Client {
     send_notification(method: string, params?: GLib.Variant | null, cancellable?: Gio.Cancellable | null): boolean
     /**
      * Asynchronously calls `method` with `params` on the remote peer.
+     * 
      * This function will not wait or expect a reply from the peer.
      * 
      * This function is useful when the caller wants to be notified that
@@ -183,7 +185,7 @@ class Client {
      */
     send_notification_async(method: string, params?: GLib.Variant | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
     /**
-     * Completes an asynchronous call to jsonrpc_client_send_notification_async().
+     * Completes an asynchronous call to [method`Client`.send_notification_async].
      * 
      * Successful completion of this function only indicates that the request
      * has been written to the underlying buffer, not that the peer has received
@@ -191,12 +193,12 @@ class Client {
      */
     send_notification_finish(result: Gio.AsyncResult): boolean
     /**
-     * Sets the #JsonrpcClient:use-gvariant property.
+     * Sets the [property`Client:`use-gvariant] property.
      * 
-     * This function sets if #GVariant should be used to communicate with the
+     * This function sets if [struct`GLib`.Variant] should be used to communicate with the
      * peer. Doing so can allow for more efficient communication by avoiding
      * expensive parsing overhead and memory allocations. However, it requires
-     * that the peer also supports #GVariant encoding.
+     * that the peer also supports [struct`GLib`.Variant] encoding.
      */
     set_use_gvariant(use_gvariant: boolean): void
     /**
@@ -532,8 +534,7 @@ class Client {
      * synthesized.
      * 
      * If you handle the message, you are responsible for replying to the peer
-     * in a timely manner using jsonrpc_client_reply() or
-     * jsonrpc_client_reply_async().
+     * in a timely manner using [method`Client`.reply] or [method`Client`.reply_async].
      * 
      * Additionally, since 3.28 you may connect to the "detail" of this signal
      * to handle a specific method call. Use the method name as the detail of
@@ -544,7 +545,7 @@ class Client {
     emit(sigName: "handle-call", method: string, id: GLib.Variant, params?: GLib.Variant | null): void
     /**
      * This signal is emitted when a notification has been received from a
-     * peer.  Unlike #JsonrpcClient::handle-call, this does not have an "id"
+     * peer. Unlike [signal`Client:`:handle-call], this does not have an "id"
      * parameter because notifications do not have ids. They do not round
      * trip.
      */
@@ -2917,7 +2918,7 @@ class Server {
      */
     foreach(foreach_func: GLib.Func): void
     /**
-     * Removes a handler that was previously registered with jsonrpc_server_add_handler().
+     * Removes a handler that was previously registered with [method`Server`.add_handler].
      */
     remove_handler(handler_id: number): void
     /* Methods of GObject-2.0.GObject.Object */
@@ -3251,7 +3252,7 @@ class Server {
      * This method is emitted when the client requests a method call.
      * 
      * If you return %TRUE from this function, you should reply to it (even upon
-     * failure), using jsonrpc_client_reply() or jsonrpc_client_reply_async().
+     * failure), using [method`Client`.reply] or [method`Client`.reply_async].
      */
     connect(sigName: "handle-call", callback: (($obj: Server, client: Client, method: string, id: GLib.Variant, params: GLib.Variant) => boolean)): number
     connect_after(sigName: "handle-call", callback: (($obj: Server, client: Client, method: string, id: GLib.Variant, params: GLib.Variant) => boolean)): number

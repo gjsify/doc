@@ -16,6 +16,13 @@ import type GModule from './GModule-2.0';
 
 export namespace GstPbutils {
 
+/**
+ * Result codes returned by gst_install_plugins_async() and
+ * gst_install_plugins_sync(), and also the result code passed to the
+ * #GstInstallPluginsResultFunc specified with gst_install_plugin_async().
+ * These codes indicate success or failure of starting an external installer
+ * program and to what extent the requested plugins could be installed.
+ */
 enum GstInstallPluginsReturn {
     SUCCESS,
     NOT_FOUND,
@@ -55,6 +62,11 @@ function gstPbUtilsGetEncoderDescription(caps: Gst.Caps): string
 function gstPbUtilsGetSinkDescription(protocol: string): string
 function gstPbUtilsGetSourceDescription(protocol: string): string
 function gstPbUtilsInit(): void
+/**
+ * The prototype of the callback function that will be called once the
+ * external plugin installer program has returned. You only need to provide
+ * a callback function if you are using the asynchronous interface.
+ */
 interface GstInstallPluginsResultFunc {
     (result: GstInstallPluginsReturn): void
 }

@@ -710,8 +710,8 @@ const VCARD_21_VALID_PARAMETERS: string
  * FIXME: Document me!
  */
 const VCARD_21_VALID_PROPERTIES: string
-function address_western_parse(in_address: string): AddressWestern
-function book_client_error_create(code: BookClientError, custom_msg: string): GLib.Error
+function address_western_parse(in_address?: string | null): AddressWestern | null
+function book_client_error_create(code: BookClientError, custom_msg?: string | null): GLib.Error
 function book_client_error_quark(): GLib.Quark
 function book_client_error_to_string(code: BookClientError): string
 function book_query_and(nqs: number, qs: BookQuery, unref: boolean): BookQuery
@@ -2786,7 +2786,7 @@ class AddressWestern {
      * Parses a string representing a mailing address into a
      * structure of type #EAddressWestern.
      */
-    static parse(in_address: string): AddressWestern
+    static parse(in_address?: string | null): AddressWestern | null
 }
 class BookChange {
     /* Fields of EBookContacts-1.2.EBookContacts.BookChange */

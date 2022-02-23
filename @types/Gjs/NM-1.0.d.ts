@@ -2618,6 +2618,10 @@ enum DeviceModemCapabilities {
      * modem has LTE data capability
      */
     LTE,
+    /**
+     * modem has 5GNR data capability (Since: 1.36)
+     */
+    TODO_5GNR,
 }
 /**
  * 802.11 specific device encryption and authentication capabilities.
@@ -6855,7 +6859,7 @@ class Client {
      * You can call nm_active_connection_get_connection() on the returned
      * #NMActiveConnection to find the path of the created #NMConnection.
      */
-    add_and_activate_connection2_finish(result: Gio.AsyncResult, out_result?: GLib.Variant | null): ActiveConnection
+    add_and_activate_connection2_finish(result: Gio.AsyncResult): [ /* returnType */ ActiveConnection, /* out_result */ GLib.Variant | null ]
     /**
      * Adds a new connection using the given details (if any) as a template,
      * automatically filling in missing settings with the capabilities of the given

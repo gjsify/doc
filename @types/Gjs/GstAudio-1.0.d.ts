@@ -21130,6 +21130,7 @@ class AudioInfo {
     constructor()
     /* Static methods and pseudo-constructors */
     static new(): AudioInfo
+    static new_from_caps(caps: Gst.Caps): AudioInfo
     /**
      * Parse `caps` and update `info`.
      */

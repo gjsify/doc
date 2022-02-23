@@ -3474,7 +3474,7 @@ class BookCache {
      * use g_object_unref() when no longer needed.
      * It can be %NULL in some cases, like when running tests.
      */
-    ref_source(): EDataServer.Source
+    ref_source(): EDataServer.Source | null
     /**
      * Removes the contact identified by `uid` from `book_cache`.
      */
@@ -5827,7 +5827,7 @@ class BookSqlite {
      * use g_object_unref() when finished using the source.
      * It can be %NULL in some cases, like when running tests.
      */
-    ref_source(): EDataServer.Source
+    ref_source(): EDataServer.Source | null
     /**
      * Removes the contact indicated by `uid` from `ebsql`.
      */
@@ -6271,7 +6271,7 @@ class BookSqlite {
     _init (config?: BookSqlite_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(path: string, source?: EDataServer.Source | null, cancellable?: Gio.Cancellable | null): BookSqlite
-    static new_full(path: string, source: EDataServer.Source, setup?: EBookContacts.SourceBackendSummarySetup | null, vcard_callback?: bSqlVCardCallback | null, change_callback?: bSqlChangeCallback | null, cancellable?: Gio.Cancellable | null): BookSqlite
+    static new_full(path: string, source?: EDataServer.Source | null, setup?: EBookContacts.SourceBackendSummarySetup | null, vcard_callback?: bSqlVCardCallback | null, change_callback?: bSqlChangeCallback | null, cancellable?: Gio.Cancellable | null): BookSqlite
     static error_quark(): GLib.Quark
     /**
      * Frees an #EbSqlSearchData
@@ -6904,7 +6904,7 @@ class DataBookCursor {
      * An explanation of how stepping is expected to behave can be found
      * in the <link linkend="cursor-iteration">user facing reference documentation</link>.
      */
-    step(revision_guard: string, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
+    step(revision_guard: string | null, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
     /* Methods of GObject-2.0.GObject.Object */
     /**
      * Creates a binding between `source_property` on `source` and `target_property`
@@ -7393,7 +7393,7 @@ class DataBookCursorCache {
      * An explanation of how stepping is expected to behave can be found
      * in the <link linkend="cursor-iteration">user facing reference documentation</link>.
      */
-    step(revision_guard: string, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
+    step(revision_guard: string | null, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
     /* Methods of GObject-2.0.GObject.Object */
     /**
      * Creates a binding between `source_property` on `source` and `target_property`
@@ -7885,7 +7885,7 @@ class DataBookCursorSqlite {
      * An explanation of how stepping is expected to behave can be found
      * in the <link linkend="cursor-iteration">user facing reference documentation</link>.
      */
-    step(revision_guard: string, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
+    step(revision_guard: string | null, flags: EBookContacts.BookCursorStepFlags, origin: EBookContacts.BookCursorOrigin, count: number, cancellable?: Gio.Cancellable | null): [ /* returnType */ number, /* results */ string[] | null ]
     /* Methods of GObject-2.0.GObject.Object */
     /**
      * Creates a binding between `source_property` on `source` and `target_property`
@@ -8660,7 +8660,7 @@ class DataBookFactory {
      * Free the returned pointer with g_object_unref(), if not NULL and no longer
      * needed.
      */
-    create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend
+    create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend | null
     get_backend_per_process(): number
     /**
      * Returns the #ESourceRegistry owned by `data_factory`.
@@ -8691,7 +8691,7 @@ class DataBookFactory {
      * Unreference the #EBackendFactory with g_object_unref() when finished
      * with it.
      */
-    ref_backend_factory(backend_name: string, extension_name: string): EBackend.BackendFactory
+    ref_backend_factory(backend_name: string, extension_name: string): EBackend.BackendFactory | null
     /**
      * Spawns a new subprocess for a backend type and returns the object path
      * of the new subprocess to the client, in the way the client can talk
@@ -9140,7 +9140,7 @@ class DataBookFactory {
      * Free the returned pointer with g_object_unref(), if not NULL and no longer
      * needed.
      */
-    vfunc_create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend
+    vfunc_create_backend(backend_factory: EBackend.BackendFactory, source: EDataServer.Source): EBackend.Backend | null
     vfunc_open_backend(backend: EBackend.Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null): string
     /**
      * Initializes the object implementing the interface.
@@ -10805,10 +10805,10 @@ abstract class BookCacheClass {
 }
 class BookCacheCursor {
     static name: string
-    static new(book_cache: BookCache, sexp: string, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[]): BookCacheCursor
-    constructor(book_cache: BookCache, sexp: string, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[])
+    static new(book_cache: BookCache, sexp: string | null, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[]): BookCacheCursor
+    constructor(book_cache: BookCache, sexp: string | null, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[])
     /* Static methods and pseudo-constructors */
-    static new(book_cache: BookCache, sexp: string, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[]): BookCacheCursor
+    static new(book_cache: BookCache, sexp: string | null, sort_fields: EBookContacts.ContactField[], sort_types: EBookContacts.BookCursorSortType[]): BookCacheCursor
 }
 class BookCachePrivate {
     static name: string
@@ -10828,7 +10828,7 @@ class BookCacheSearchData {
      */
     readonly extra: string
     /* Methods of EDataBook-1.2.EDataBook.BookCacheSearchData */
-    copy(): BookCacheSearchData
+    copy(): BookCacheSearchData | null
     static name: string
     static new(uid: string, vcard: string, extra?: string | null): BookCacheSearchData
     constructor(uid: string, vcard: string, extra?: string | null)
@@ -10863,7 +10863,7 @@ class BookMetaBackendInfo {
     readonly object: string
     readonly extra: string
     /* Methods of EDataBook-1.2.EDataBook.BookMetaBackendInfo */
-    copy(): BookMetaBackendInfo
+    copy(): BookMetaBackendInfo | null
     static name: string
     static new(uid: string, revision?: string | null, object?: string | null, extra?: string | null): BookMetaBackendInfo
     constructor(uid: string, revision?: string | null, object?: string | null, extra?: string | null)

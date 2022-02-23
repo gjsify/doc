@@ -3987,7 +3987,7 @@ class ParamsIter {
      * at as a result of this advancement.  If FALSE is returned, `name` and `param`
      * are not set and the iterator becomes invalid.
      */
-    next(): [ /* returnType */ boolean, /* name */ string, /* param */ Param | null ]
+    next(name: string, param: Param): boolean
     static name: string
 }
 abstract class ProxyAuthClass {

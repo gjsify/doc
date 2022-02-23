@@ -104,6 +104,47 @@ enum WebRTCDataChannelState {
      */
     CLOSED,
 }
+/**
+ * See <https://www.w3.org/TR/webrtc/#dom-rtcerrordetailtype> for more information.
+ */
+enum WebRTCError {
+    /**
+     * data-channel-failure
+     */
+    DATA_CHANNEL_FAILURE,
+    /**
+     * dtls-failure
+     */
+    DTLS_FAILURE,
+    /**
+     * fingerprint-failure
+     */
+    FINGERPRINT_FAILURE,
+    /**
+     * sctp-failure
+     */
+    SCTP_FAILURE,
+    /**
+     * sdp-syntax-error
+     */
+    SDP_SYNTAX_ERROR,
+    /**
+     * hardware-encoder-not-available
+     */
+    HARDWARE_ENCODER_NOT_AVAILABLE,
+    /**
+     * encoder-error
+     */
+    ENCODER_ERROR,
+    /**
+     * invalid-state (part of WebIDL specification)
+     */
+    INVALID_STATE,
+    /**
+     * GStreamer-specific failure, not matching any other value from the specification
+     */
+    INTERNAL_FAILURE,
+}
 enum WebRTCFECType {
     /**
      * none
@@ -416,6 +457,7 @@ enum WebRTCStatsType {
      */
     CERTIFICATE,
 }
+function webrtc_error_quark(): GLib.Quark
 function webrtc_sdp_type_to_string(type: WebRTCSDPType): string
 interface WebRTCDTLSTransport_ConstructProps extends Gst.Object_ConstructProps {
     /* Constructor properties of GstWebRTC-1.0.GstWebRTC.WebRTCDTLSTransport */

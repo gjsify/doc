@@ -55,6 +55,10 @@ class X11AppLaunchContext {
      * This only works when running under a window manager that
      * supports multiple workspaces, as described in the
      * [Extended Window Manager Hints](http://www.freedesktop.org/Standards/wm-spec).
+     * Specifically this sets the `_NET_WM_DESKTOP` property described
+     * in that spec.
+     * 
+     * This only works when using the X11 backend.
      * 
      * When the workspace is not specified or `desktop` is set to -1,
      * it is up to the window manager to pick one, typically it will
@@ -974,7 +978,7 @@ class X11DeviceXI2 {
     /**
      * Retrieves the current tool for `device`.
      */
-    get_device_tool(): Gdk.DeviceTool
+    get_device_tool(): Gdk.DeviceTool | null
     /**
      * Returns the direction of effective layout of the keyboard.
      * 

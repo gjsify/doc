@@ -450,14 +450,14 @@ const STATIC_CAPABILITY_TASK_HANDLE_RECUR: string
  */
 const STATIC_CAPABILITY_TASK_NO_ALARM: string
 function isodate_from_time_t(t: number): string
-function match_tzid(tzid: string): string
+function match_tzid(tzid: string): string | null
 function recur_describe_recurrence(icalcomp: ICalGLib.Component, week_start_day: GLib.DateWeekday, flags: number): string | null
 function recur_describe_recurrence_ex(icalcomp: ICalGLib.Component, week_start_day: GLib.DateWeekday, flags: number, datetime_fmt_func?: RecurFormatDateTimeFunc | null): string | null
 function recur_ensure_end_dates(comp: Component, refresh: boolean, tz_cb: RecurResolveTimezoneCb, cancellable?: Gio.Cancellable | null): boolean
 function recur_generate_instances_sync(icalcomp: ICalGLib.Component, interval_start: ICalGLib.Time, interval_end: ICalGLib.Time, default_timezone: ICalGLib.Timezone, cancellable?: Gio.Cancellable | null): boolean
 function recur_get_localized_nth(nth: number): string
 function recur_obtain_enddate(ir: ICalGLib.Recurrence, prop: ICalGLib.Property, zone: ICalGLib.Timezone, convert_end_date: boolean): number
-function system_timezone_get_location(): string
+function system_timezone_get_location(): string | null
 function time_add_day(time: number, days: number): number
 function time_add_day_with_zone(time: number, days: number, zone: ICalGLib.Timezone): number
 function time_add_month_with_zone(time: number, months: number, zone: ICalGLib.Timezone): number
@@ -502,7 +502,7 @@ function util_generate_alarms_for_comp(comp: Component, start: number, end: numb
 function util_generate_alarms_for_list(comps: Component[], start: number, end: number, omit: ComponentAlarmAction, resolve_tzid: RecurResolveTimezoneCb, default_timezone: ICalGLib.Timezone): [ /* returnType */ number, /* comp_alarms */ ComponentAlarms[] ]
 function util_get_component_occur_times(comp: Component, tz_cb: RecurResolveTimezoneCb, default_timezone: ICalGLib.Timezone, kind: ICalGLib.ComponentKind): [ /* out_start */ number, /* out_end */ number ]
 function util_get_system_timezone(): ICalGLib.Timezone | null
-function util_get_system_timezone_location(): string
+function util_get_system_timezone_location(): string | null
 function util_icaltime_to_tm(itt: ICalGLib.Time): object | null
 function util_icaltime_to_tm_with_zone(itt: ICalGLib.Time, from_zone: ICalGLib.Timezone, to_zone: ICalGLib.Timezone): object | null
 function util_init_recur_task_sync(vtodo: ICalGLib.Component, cal_client: Client, cancellable?: Gio.Cancellable | null): boolean
@@ -2808,7 +2808,7 @@ class Component {
      * Free the returned non-NULL pointer with g_object_unref(), when
      * no longer needed.
      */
-    get_completed(): ICalGLib.Time
+    get_completed(): ICalGLib.Time | null
     /**
      * Queries the contact of a calendar component object.  The contact property can
      * appear several times inside a calendar component, and so a list of
@@ -2821,7 +2821,7 @@ class Component {
      * calendar store. Free the returned non-NULL pointer with g_object_unref(), when
      * no longer needed.
      */
-    get_created(): ICalGLib.Time
+    get_created(): ICalGLib.Time | null
     /**
      * Queries the description of a calendar component object.  Journal components
      * may have more than one description, and as such this function returns a list
@@ -2897,7 +2897,7 @@ class Component {
      * the calendar store. Free the returned non-NULL pointer with g_object_unref(),
      * when no longer needed.
      */
-    get_last_modified(): ICalGLib.Time
+    get_last_modified(): ICalGLib.Time | null
     /**
      * Queries the location property of a calendar component object.
      */
@@ -4922,7 +4922,7 @@ class ReminderData {
     /**
      * Copies given #EReminderData structure. When the `rd` is %NULL, simply returns %NULL as well.
      */
-    copy(): ReminderData
+    copy(): ReminderData | null
     /**
      * Frees previously allocated #EReminderData structure with e_reminder_data_new()
      * or e_reminder_data_copy(). The function does nothing when `rd` is %NULL.

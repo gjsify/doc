@@ -22,6 +22,14 @@ function browseSync(source: Grl.Source, playlist: Grl.Media, keys: Grl.KeyID[], 
 function fileToMedia(content: Grl.Media, file: Gio.File, info: Gio.FileInfo, handlePls: boolean, options: Grl.OperationOptions): Grl.Media
 function getFileAttributes(): string
 function mediaIsPlaylist(media: Grl.Media): boolean
+/**
+ * Callback type to filter, or modify #GrlMedia created
+ * when parsing a playlist using one of grl_pls_browse(),
+ * grl_pls_browse_sync() or grl_pls_browse_by_spec().
+ * 
+ * The callback is responsible for unreffing `media` when returning %NULL or
+ * another #GrlMedia.
+ */
 interface FilterFunc {
     (source: Grl.Source, media: Grl.Media): Grl.Media
 }

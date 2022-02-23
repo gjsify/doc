@@ -18349,10 +18349,6 @@ class DatePicker {
      */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
-    /* Signals of Granite-7.0.Granite.DatePicker */
-    connect(sigName: "date-changed", callback: (($obj: DatePicker) => void)): number
-    connect_after(sigName: "date-changed", callback: (($obj: DatePicker) => void)): number
-    emit(sigName: "date-changed"): void
     /* Signals of Gtk-4.0.Gtk.Entry */
     /**
      * Emitted when the entry is activated.

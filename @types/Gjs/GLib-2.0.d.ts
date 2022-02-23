@@ -2231,6 +2231,10 @@ enum UnicodeScript {
      * Vithkuqi. Since: 2.72
      */
     VITHKUQI,
+    /**
+     * Mathematical notation. Since: 2.72
+     */
+    MATH,
 }
 /**
  * These are the possible character classifications from the
@@ -4249,6 +4253,9 @@ const VERSION_MIN_REQUIRED: number
 const WIN32_MSG_HANDLE: number
 const macro__has_attribute___noreturn__: number
 function access(filename: string, mode: number): number
+function aligned_alloc(n_blocks: number, n_block_bytes: number, alignment: number): object | null
+function aligned_alloc0(n_blocks: number, n_block_bytes: number, alignment: number): object | null
+function aligned_free(mem?: object | null): void
 function ascii_digit_value(c: number): number
 function ascii_dtostr(buffer: string, buf_len: number, d: number): string
 function ascii_formatd(buffer: string, buf_len: number, format: string, d: number): string
@@ -4462,8 +4469,10 @@ function listenv(): string[]
 function locale_from_utf8(utf8string: string, len: number): [ /* returnType */ Uint8Array, /* bytes_read */ number | null ]
 function locale_to_utf8(opsysstring: Uint8Array): [ /* returnType */ string, /* bytes_read */ number | null, /* bytes_written */ number | null ]
 function log_default_handler(log_domain: string | null, log_level: LogLevelFlags, message?: string | null, unused_data?: object | null): void
+function log_get_debug_enabled(): boolean
 function log_remove_handler(log_domain: string, handler_id: number): void
 function log_set_always_fatal(fatal_mask: LogLevelFlags): LogLevelFlags
+function log_set_debug_enabled(enabled: boolean): void
 function log_set_fatal_mask(log_domain: string, fatal_mask: LogLevelFlags): LogLevelFlags
 function log_set_handler(log_domain: string | null, log_levels: LogLevelFlags, log_func: LogFunc): number
 function log_set_writer_func(): void

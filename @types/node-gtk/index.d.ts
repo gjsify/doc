@@ -44,6 +44,9 @@ import type Arrow10 from "./Arrow-1.0";
 import type ArrowDataset10 from "./ArrowDataset-1.0";
         
         
+import type ArrowFlight10 from "./ArrowFlight-1.0";
+        
+        
 import type Atk10 from "./Atk-1.0";
         
         
@@ -848,7 +851,13 @@ import type Qmi10 from "./Qmi-1.0";
 import type Rest07 from "./Rest-0.7";
         
         
+import type Rest10 from "./Rest-1.0";
+        
+        
 import type RestExtras07 from "./RestExtras-0.7";
+        
+        
+import type RestExtras10 from "./RestExtras-1.0";
         
         
 import type Retro014 from "./Retro-0.14";
@@ -879,9 +888,6 @@ import type Secret1 from "./Secret-1";
         
         
 import type SecretUnstable0 from "./SecretUnstable-0";
-        
-        
-import type Shumate00 from "./Shumate-0.0";
         
         
 import type Shumate10 from "./Shumate-1.0";
@@ -995,6 +1001,9 @@ import type Vgpg1 from "./Vgpg-1";
 import type Vgsl1 from "./Vgsl-1";
         
         
+import type Vips80 from "./Vips-8.0";
+        
+        
 import type Vpg1 from "./Vpg-1";
         
         
@@ -1104,6 +1113,7 @@ import type SocialWebClient025 from "./SocialWebClient-0.25";
     export function require(ns: 'AppStreamGlib', ver: '1.0'): typeof AppStreamGlib10;
     export function require(ns: 'Arrow', ver: '1.0'): typeof Arrow10;
     export function require(ns: 'ArrowDataset', ver: '1.0'): typeof ArrowDataset10;
+    export function require(ns: 'ArrowFlight', ver: '1.0'): typeof ArrowFlight10;
     export function require(ns: 'Atk', ver: '1.0'): typeof Atk10;
     export function require(ns: 'Atspi', ver: '2.0'): typeof Atspi20;
     export function require(ns: 'Babl', ver: '0.1'): typeof Babl01;
@@ -1372,7 +1382,9 @@ import type SocialWebClient025 from "./SocialWebClient-0.25";
     export function require(ns: 'Poppler', ver: '0.18'): typeof Poppler018;
     export function require(ns: 'Qmi', ver: '1.0'): typeof Qmi10;
     export function require(ns: 'Rest', ver: '0.7'): typeof Rest07;
+    export function require(ns: 'Rest', ver: '1.0'): typeof Rest10;
     export function require(ns: 'RestExtras', ver: '0.7'): typeof RestExtras07;
+    export function require(ns: 'RestExtras', ver: '1.0'): typeof RestExtras10;
     export function require(ns: 'Retro', ver: '0.14'): typeof Retro014;
     export function require(ns: 'Retro', ver: '1'): typeof Retro1;
     export function require(ns: 'Retro', ver: '2'): typeof Retro2;
@@ -1383,7 +1395,6 @@ import type SocialWebClient025 from "./SocialWebClient-0.25";
     export function require(ns: 'RygelServer', ver: '2.6'): typeof RygelServer26;
     export function require(ns: 'Secret', ver: '1'): typeof Secret1;
     export function require(ns: 'SecretUnstable', ver: '0'): typeof SecretUnstable0;
-    export function require(ns: 'Shumate', ver: '0.0'): typeof Shumate00;
     export function require(ns: 'Shumate', ver: '1.0'): typeof Shumate10;
     export function require(ns: 'Signon', ver: '2.0'): typeof Signon20;
     export function require(ns: 'Snapd', ver: '1'): typeof Snapd1;
@@ -1421,6 +1432,7 @@ import type SocialWebClient025 from "./SocialWebClient-0.25";
     export function require(ns: 'Vgda', ver: '1'): typeof Vgda1;
     export function require(ns: 'Vgpg', ver: '1'): typeof Vgpg1;
     export function require(ns: 'Vgsl', ver: '1'): typeof Vgsl1;
+    export function require(ns: 'Vips', ver: '8.0'): typeof Vips80;
     export function require(ns: 'Vpg', ver: '1'): typeof Vpg1;
     export function require(ns: 'Vsqlite', ver: '1'): typeof Vsqlite1;
     export function require(ns: 'Vte', ver: '2.91'): typeof Vte291;

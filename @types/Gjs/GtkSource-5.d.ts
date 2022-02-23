@@ -23323,6 +23323,13 @@ class LanguageManager {
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of GtkSource-5.GtkSource.LanguageManager */
     /**
+     * Appends `path` to the list of directories where the `manager` looks for
+     * language files.
+     * 
+     * See [method`LanguageManager`.set_search_path] for details.
+     */
+    append_search_path(path: string): void
+    /**
      * Gets the [class`Language]` identified by the given `id` in the language
      * manager.
      */
@@ -23376,6 +23383,13 @@ class LanguageManager {
      */
     guess_language(filename?: string | null, content_type?: string | null): Language | null
     /**
+     * Prepends `path` to the list of directories where the `manager` looks
+     * for language files.
+     * 
+     * See [method`LanguageManager`.set_search_path] for details.
+     */
+    prepend_search_path(path: string): void
+    /**
      * Sets the list of directories where the `lm` looks for
      * language files.
      * 
@@ -23385,6 +23399,10 @@ class LanguageManager {
      * language files are loaded for the first time. In practice
      * to set a custom search path for a `GtkSourceLanguageManager`,
      * you have to call this function right after creating it.
+     * 
+     * Since GtkSourceView 5.4 this function will allow you to provide
+     * paths in the form of "resource:///" URIs to embedded `GResource`s.
+     * They must contain the path of a directory within the `GResource`.
      */
     set_search_path(dirs?: string[] | null): void
     /* Methods of GObject-2.0.GObject.Object */

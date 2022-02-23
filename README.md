@@ -23,6 +23,16 @@ If you want to pull updates from this repository you should also pull the submod
 git pull --recurse-submodules
 ```
 
+## Generate documentations
+
+Simply execute:
+
+```bash
+yarn install
+yarn run build
+yarn run start
+```
+
 ## FAQ
 
 Problem: I get the following error:

@@ -15291,12 +15291,6 @@ abstract class CacheClass {
     readonly padding: object[]
     static name: string
 }
-class ClientMessageIO {
-    static name: string
-}
-class Connection {
-    static name: string
-}
 abstract class ContentDecoderClass {
     /* Fields of Soup-3.0.Soup.ContentDecoderClass */
     readonly parent_class: GObject.ObjectClass
@@ -16054,12 +16048,6 @@ class MessageMetrics {
     get_tls_start(): number
     static name: string
 }
-class MessageQueue {
-    static name: string
-}
-class MessageQueueItem {
-    static name: string
-}
 class Multipart {
     /* Methods of Soup-3.0.Soup.Multipart */
     /**
@@ -16144,9 +16132,6 @@ abstract class SessionClass {
     static name: string
 }
 abstract class SessionFeatureInterface {
-    static name: string
-}
-class Socket {
     static name: string
 }
 abstract class WebsocketConnectionClass {

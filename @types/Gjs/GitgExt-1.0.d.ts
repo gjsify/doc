@@ -59,6 +59,8 @@ class Action {
     readonly g_type_instance: GObject.TypeInstance
     /* Methods of GitgExt-1.0.GitgExt.Action */
     populate_menu(menu: Gtk.Menu): void
+    fetch(_callback_?: Gio.AsyncReadyCallback | null): void
+    fetch_finish(_res_: Gio.AsyncResult): boolean
     /* Methods of GitgExt-1.0.GitgExt.UIElement */
     negotiate_order(other: UIElement): number
     get_application(): Application | null
@@ -362,6 +364,8 @@ class Action {
     watch_closure(closure: Function): void
     /* Virtual methods of GitgExt-1.0.GitgExt.Action */
     vfunc_populate_menu(menu: Gtk.Menu): void
+    vfunc_fetch(_callback_?: Gio.AsyncReadyCallback | null): void
+    vfunc_fetch_finish(_res_: Gio.AsyncResult): boolean
     vfunc_negotiate_order(other: UIElement): number
     vfunc_get_application(): Application | null
     vfunc_set_application(value?: Application | null): void
@@ -1685,6 +1689,8 @@ class CommitAction {
     set_commit(value: Gitg.Commit): void
     /* Methods of GitgExt-1.0.GitgExt.Action */
     populate_menu(menu: Gtk.Menu): void
+    fetch(_callback_?: Gio.AsyncReadyCallback | null): void
+    fetch_finish(_res_: Gio.AsyncResult): boolean
     /* Methods of GitgExt-1.0.GitgExt.UIElement */
     negotiate_order(other: UIElement): number
     get_application(): Application | null
@@ -1992,8 +1998,12 @@ class CommitAction {
     vfunc_get_commit(): Gitg.Commit
     vfunc_set_commit(value: Gitg.Commit): void
     vfunc_populate_menu(menu: Gtk.Menu): void
+    vfunc_fetch(_callback_?: Gio.AsyncReadyCallback | null): void
+    vfunc_fetch_finish(_res_: Gio.AsyncResult): boolean
     /* Virtual methods of GitgExt-1.0.GitgExt.Action */
     vfunc_populate_menu(menu: Gtk.Menu): void
+    vfunc_fetch(_callback_?: Gio.AsyncReadyCallback | null): void
+    vfunc_fetch_finish(_res_: Gio.AsyncResult): boolean
     vfunc_negotiate_order(other: UIElement): number
     vfunc_get_application(): Application | null
     vfunc_set_application(value?: Application | null): void
@@ -4444,6 +4454,8 @@ class RefAction {
     set_reference(value: Gitg.Ref): void
     /* Methods of GitgExt-1.0.GitgExt.Action */
     populate_menu(menu: Gtk.Menu): void
+    fetch(_callback_?: Gio.AsyncReadyCallback | null): void
+    fetch_finish(_res_: Gio.AsyncResult): boolean
     /* Methods of GitgExt-1.0.GitgExt.UIElement */
     negotiate_order(other: UIElement): number
     get_application(): Application | null
@@ -4751,8 +4763,12 @@ class RefAction {
     vfunc_get_reference(): Gitg.Ref
     vfunc_set_reference(value: Gitg.Ref): void
     vfunc_populate_menu(menu: Gtk.Menu): void
+    vfunc_fetch(_callback_?: Gio.AsyncReadyCallback | null): void
+    vfunc_fetch_finish(_res_: Gio.AsyncResult): boolean
     /* Virtual methods of GitgExt-1.0.GitgExt.Action */
     vfunc_populate_menu(menu: Gtk.Menu): void
+    vfunc_fetch(_callback_?: Gio.AsyncReadyCallback | null): void
+    vfunc_fetch_finish(_res_: Gio.AsyncResult): boolean
     vfunc_negotiate_order(other: UIElement): number
     vfunc_get_application(): Application | null
     vfunc_set_application(value?: Application | null): void
@@ -4798,6 +4814,10 @@ class RefAction {
      */
     vfunc_notify(pspec: GObject.ParamSpec): void
     vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of GitgExt-1.0.GitgExt.RefAction */
+    connect(sigName: "finished", callback: (($obj: RefAction) => void)): number
+    connect_after(sigName: "finished", callback: (($obj: RefAction) => void)): number
+    emit(sigName: "finished"): void
     /* Signals of GitgExt-1.0.GitgExt.UIElement */
     connect(sigName: "activate", callback: (($obj: RefAction) => void)): number
     connect_after(sigName: "activate", callback: (($obj: RefAction) => void)): number
@@ -8798,6 +8818,8 @@ class UserQueryPrivate {
 abstract class ActionIface {
     /* Fields of GitgExt-1.0.GitgExt.ActionIface */
     readonly populate_menu: (self: Action, menu: Gtk.Menu) => void
+    readonly fetch: (self: Action, _callback_?: Gio.AsyncReadyCallback | null) => void
+    readonly fetch_finish: (self: Action, _res_: Gio.AsyncResult) => boolean
     static name: string
 }
 abstract class ActivityIface {

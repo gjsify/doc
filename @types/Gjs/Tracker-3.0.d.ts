@@ -32,6 +32,14 @@ enum NotifierEventType {
      */
     UPDATE,
 }
+enum RdfFormat {
+    RDF_FORMAT_TURTLE,
+    RDF_FORMAT_TRIG,
+    N_RDF_FORMATS,
+}
+enum SerializeFlags {
+    SERIALIZE_FLAGS_NONE,
+}
 /**
  * Error domain for Tracker Sparql. Errors in this domain will be from the
  * #TrackerSparqlError enumeration. See #GError for more information on error
@@ -3316,6 +3324,32 @@ class SparqlConnection {
      */
     get_namespace_manager(): NamespaceManager
     /**
+     * Prepares a #TrackerSparqlStatement for the SPARQL query contained as a resource
+     * file at `resource_path`. SPARQL Query files typically have the .rq extension.
+     */
+    load_statement_from_gresource(resource_path: string, cancellable?: Gio.Cancellable | null): SparqlStatement | null
+    /**
+     * Maps `service_connection` so it is available as a "private:`handle_name"` URI
+     * in `connection`. This can be accessed via the SERVICE SPARQL syntax in
+     * queries from `connection`. E.g.:
+     * 
+     * ```sparql
+     * SELECT ?u {
+     *   SERVICE <private:other-connection> {
+     *     ?u a rdfs:Resource
+     *   }
+     * }
+     * ```
+     * 
+     * This is useful to interrelate data from multiple
+     * #TrackerSparqlConnection instances maintained by the same process,
+     * without creating a public endpoint for `service_connection`.
+     * 
+     * `connection` may only be a #TrackerSparqlConnection created via
+     * tracker_sparql_connection_new() and tracker_sparql_connection_new_async().
+     */
+    map_connection(handle_name: string, service_connection: SparqlConnection): void
+    /**
      * Executes a SPARQL query on. The API call is completely synchronous, so
      * it may block.
      * 
@@ -3336,6 +3370,23 @@ class SparqlConnection {
      * Prepares the given `sparql` as a #TrackerSparqlStatement.
      */
     query_statement(sparql: string, cancellable?: Gio.Cancellable | null): SparqlStatement | null
+    /**
+     * Serializes data into the specified RDF format. `query` must be either a
+     * `DESCRIBE` or `CONSTRUCT` query. This is an asynchronous operation,
+     * `callback` will be invoked when the data is available for reading.
+     * 
+     * The SPARQL endpoint may not support the specified format, in that case
+     * an error will be raised.
+     * 
+     * The `flags` argument is reserved for future expansions, currently
+     * %TRACKER_SERIALIZE_FLAGS_NONE must be passed.
+     */
+    serialize_async(flags: SerializeFlags, format: RdfFormat, query: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /**
+     * Finishes a tracker_sparql_connection_serialize_async() operation.
+     * In case of error, %NULL will be returned and `error` will be set.
+     */
+    serialize_finish(result: Gio.AsyncResult): Gio.InputStream
     /**
      * Executes a SPARQL update. The API call is completely
      * synchronous, so it may block.
@@ -4263,6 +4314,26 @@ class SparqlStatement {
      * Returns the SPARQL string that this prepared statement holds.
      */
     get_sparql(): string
+    /**
+     * Serializes data into the specified RDF format. The query `stmt` was
+     * created from must be either a `DESCRIBE` or `CONSTRUCT` query, an
+     * error will be raised otherwise.
+     * 
+     * This is an asynchronous operation, `callback` will be invoked when the
+     * data is available for reading.
+     * 
+     * The SPARQL endpoint may not support the specified format, in that case
+     * an error will be raised.
+     * 
+     * The `flags` argument is reserved for future expansions, currently
+     * %TRACKER_SERIALIZE_FLAGS_NONE must be passed.
+     */
+    serialize_async(flags: SerializeFlags, format: RdfFormat, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /**
+     * Finishes a tracker_sparql_statement_serialize_async() operation.
+     * In case of error, %NULL will be returned and `error` will be set.
+     */
+    serialize_finish(result: Gio.AsyncResult): Gio.InputStream
     /* Methods of GObject-2.0.GObject.Object */
     /**
      * Creates a binding between `source_property` on `source` and `target_property`

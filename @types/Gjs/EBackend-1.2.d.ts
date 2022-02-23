@@ -90,6 +90,10 @@ enum CacheError {
      * An error occured while loading or creating the database.
      */
     LOAD,
+    /**
+     * The database file is corrupt. (Since: 3.44)
+     */
+    CORRUPT,
 }
 /**
  * Indicates the type of lock requested in e_cache_lock().
@@ -2289,7 +2293,7 @@ class CollectionBackend {
      * ```
      * 
      */
-    claim_all_resources(): EDataServer.Source[]
+    claim_all_resources(): EDataServer.Source[] | null
     /**
      * Asynchronously creates a server-side resource described by `source`.
      * For example, if `source` describes a new calendar, an equivalent calendar
@@ -2375,7 +2379,7 @@ class CollectionBackend {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_resource_id(child_source: EDataServer.Source): string
+    dup_resource_id(child_source: EDataServer.Source): string | null
     /**
      * Freezes populate of the backend's content. This is used to avoid calling
      * populate multiple times in parallel.
@@ -3021,7 +3025,7 @@ class CollectionBackend {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    vfunc_dup_resource_id(child_source: EDataServer.Source): string
+    vfunc_dup_resource_id(child_source: EDataServer.Source): string | null
     vfunc_populate(): void
     /* Virtual methods of EBackend-1.2.EBackend.Backend */
     vfunc_authenticate_sync(credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null): EDataServer.SourceAuthenticationResult
@@ -4033,7 +4037,7 @@ class DataFactory {
      * Free the returned pointer with g_object_unref(), if not NULL and no longer
      * needed.
      */
-    create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend
+    create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend | null
     get_backend_per_process(): number
     /**
      * Returns the #ESourceRegistry owned by `data_factory`.
@@ -4064,7 +4068,7 @@ class DataFactory {
      * Unreference the #EBackendFactory with g_object_unref() when finished
      * with it.
      */
-    ref_backend_factory(backend_name: string, extension_name: string): BackendFactory
+    ref_backend_factory(backend_name: string, extension_name: string): BackendFactory | null
     /**
      * Spawns a new subprocess for a backend type and returns the object path
      * of the new subprocess to the client, in the way the client can talk
@@ -4471,7 +4475,7 @@ class DataFactory {
      * Free the returned pointer with g_object_unref(), if not NULL and no longer
      * needed.
      */
-    vfunc_create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend
+    vfunc_create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend | null
     vfunc_open_backend(backend: Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null): string
     /**
      * Initializes the object implementing the interface.
@@ -4661,7 +4665,7 @@ class FileCache {
      * Returns the object corresponding to `key`.  If no such object exists
      * in `cache,` the function returns %NULL.
      */
-    get_object(key: string): string
+    get_object(key: string): string | null
     /**
      * Returns a list of objects in `cache`.  The objects are owned by `cache` and
      * must not be modified or freed.  Free the returned list with g_slist_free().
@@ -5134,7 +5138,7 @@ class ServerSideSource {
      * Requests for OAuth 2.0 access tokens are forwarded to `oauth2`_support,
      * which implements the #EOAuth2SupportInterface.
      */
-    set_oauth2_support(oauth2_support: OAuth2Support): void
+    set_oauth2_support(oauth2_support?: OAuth2Support | null): void
     /**
      * Indicates whether `source` can be used to create resources on a remote
      * server.  Typically this is only set to %TRUE for collection sources.
@@ -5601,7 +5605,7 @@ class ServerSideSource {
      * 
      * Free the returned proxy URIs with g_strfreev() when finished with them.
      */
-    proxy_lookup_finish(result: Gio.AsyncResult): string[]
+    proxy_lookup_finish(result: Gio.AsyncResult): string[] | null
     /**
      * Looks into `source'`s #ESourceProxy extension to determine what proxy,
      * if any, to use to connect to `uri`.  The returned proxy URIs are of the
@@ -5628,7 +5632,7 @@ class ServerSideSource {
      * 
      * Free the returned proxy URIs with g_strfreev() when finished with them.
      */
-    proxy_lookup_sync(uri: string, cancellable?: Gio.Cancellable | null): string[]
+    proxy_lookup_sync(uri: string, cancellable?: Gio.Cancellable | null): string[] | null
     /**
      * Returns the #GDBusObject that was passed to e_source_new().
      * 
@@ -6628,10 +6632,10 @@ class ServerSideSource {
     constructor (config?: ServerSideSource_ConstructProps)
     _init (config?: ServerSideSource_ConstructProps): void
     /* Static methods and pseudo-constructors */
-    static new(server: SourceRegistryServer, file: Gio.File): ServerSideSource
+    static new(server: SourceRegistryServer, file?: Gio.File | null): ServerSideSource
     /* Function overloads */
     static new(dbus_object?: Gio.DBusObject | null, main_context?: GLib.MainContext | null): ServerSideSource
-    static new_memory_only(server: SourceRegistryServer, uid: string): ServerSideSource
+    static new_memory_only(server: SourceRegistryServer, uid?: string | null): ServerSideSource
     /**
      * Returns the directory where user-specific data source files are stored.
      */
@@ -6646,13 +6650,13 @@ class ServerSideSource {
      * 
      * Note the data source file itself is not created here, only its name.
      */
-    static new_user_file(uid: string): Gio.File
+    static new_user_file(uid?: string | null): Gio.File
     /**
      * Extracts a unique identity string from the base name of `file`.
      * If the base name of `file` is missing a '.source' extension, the
      * function sets `error` and returns %NULL.
      */
-    static uid_from_file(file: Gio.File): string
+    static uid_from_file(file: Gio.File): string | null
     /**
      * Helper function for constructing #GInitable object. This is
      * similar to g_object_newv() but also initializes the object
@@ -6728,7 +6732,7 @@ class ServerSideSourceCredentialsProvider {
      * sources. When ther eis no such parent source, a %NULL is returned, which
      * means the `source` holds credentials for itself.
      */
-    ref_credentials_source(source: EDataServer.Source): EDataServer.Source
+    ref_credentials_source(source: EDataServer.Source): EDataServer.Source | null
     /**
      * Returns refenrenced registry associated with this `provider`.
      */
@@ -6736,7 +6740,7 @@ class ServerSideSourceCredentialsProvider {
     /**
      * Returns referenced #ESource with the given `uid,` or %NULL, when it could not be found.
      */
-    ref_source(uid: string): EDataServer.Source
+    ref_source(uid: string): EDataServer.Source | null
     /**
      * Registers a credentials provider implementation and adds its own reference on
      * the `provider_impl`.
@@ -7082,7 +7086,7 @@ class ServerSideSourceCredentialsProvider {
     /**
      * Returns referenced #ESource with the given `uid,` or %NULL, when it could not be found.
      */
-    vfunc_ref_source(uid: string): EDataServer.Source
+    vfunc_ref_source(uid: string): EDataServer.Source | null
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -7200,7 +7204,7 @@ class SourceRegistryServer {
      * ```
      * 
      */
-    list_sources(extension_name: string): EDataServer.Source[]
+    list_sources(extension_name?: string | null): EDataServer.Source[]
     /**
      * Loads data source key files in `path`.  Because multiple errors can
      * occur when loading multiple files, `error` is only set if `path` can
@@ -7294,7 +7298,7 @@ class SourceRegistryServer {
      * Free the returned pointer with g_object_unref(), if not NULL and no longer
      * needed.
      */
-    create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend
+    create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend | null
     get_backend_per_process(): number
     /**
      * Returns the #ESourceRegistry owned by `data_factory`.
@@ -7325,7 +7329,7 @@ class SourceRegistryServer {
      * Unreference the #EBackendFactory with g_object_unref() when finished
      * with it.
      */
-    ref_backend_factory(backend_name: string, extension_name: string): BackendFactory
+    ref_backend_factory(backend_name: string, extension_name: string): BackendFactory | null
     /**
      * Spawns a new subprocess for a backend type and returns the object path
      * of the new subprocess to the client, in the way the client can talk
@@ -7831,7 +7835,7 @@ class SourceRegistryServer {
      * Free the returned pointer with g_object_unref(), if not NULL and no longer
      * needed.
      */
-    vfunc_create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend
+    vfunc_create_backend(backend_factory: BackendFactory, source: EDataServer.Source): Backend | null
     vfunc_open_backend(backend: Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null): string
     /**
      * Initializes the object implementing the interface.
@@ -9902,7 +9906,7 @@ class WebDAVCollectionBackend {
      * ```
      * 
      */
-    claim_all_resources(): EDataServer.Source[]
+    claim_all_resources(): EDataServer.Source[] | null
     /**
      * Asynchronously creates a server-side resource described by `source`.
      * For example, if `source` describes a new calendar, an equivalent calendar
@@ -9988,7 +9992,7 @@ class WebDAVCollectionBackend {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    dup_resource_id(child_source: EDataServer.Source): string
+    dup_resource_id(child_source: EDataServer.Source): string | null
     /**
      * Freezes populate of the backend's content. This is used to avoid calling
      * populate multiple times in parallel.
@@ -10644,7 +10648,7 @@ class WebDAVCollectionBackend {
      * 
      * The returned string should be freed with g_free() when no longer needed.
      */
-    vfunc_dup_resource_id(child_source: EDataServer.Source): string
+    vfunc_dup_resource_id(child_source: EDataServer.Source): string | null
     vfunc_populate(): void
     /* Virtual methods of EBackend-1.2.EBackend.Backend */
     vfunc_authenticate_sync(credentials: EDataServer.NamedParameters, out_certificate_pem: string, out_certificate_errors: Gio.TlsCertificateFlags, cancellable?: Gio.Cancellable | null): EDataServer.SourceAuthenticationResult
@@ -10807,7 +10811,7 @@ class CacheColumnInfo {
     readonly type: string
     readonly index_name: string
     /* Methods of EBackend-1.2.EBackend.CacheColumnInfo */
-    copy(): CacheColumnInfo
+    copy(): CacheColumnInfo | null
     static name: string
     static new(name: string, type: string, index_name?: string | null): CacheColumnInfo
     constructor(name: string, type: string, index_name?: string | null)
@@ -10844,7 +10848,7 @@ class CacheColumnValues {
      * The returned pointer is owned by `other_columns` and is valid until
      * the value is overwritten of the `other_columns` freed.
      */
-    lookup(name: string): string
+    lookup(name: string): string | null
     /**
      * Puts the `value` for column `name`. If contains a value for the same
      * column, then it is replaced. This creates a copy of both `name`
@@ -10896,7 +10900,7 @@ class CacheOfflineChange {
      */
     readonly state: OfflineState
     /* Methods of EBackend-1.2.EBackend.CacheOfflineChange */
-    copy(): CacheOfflineChange
+    copy(): CacheOfflineChange | null
     static name: string
     static new(uid: string, revision: string | null, object: string | null, state: OfflineState): CacheOfflineChange
     constructor(uid: string, revision: string | null, object: string | null, state: OfflineState)
@@ -10917,7 +10921,7 @@ abstract class CacheReaperClass {
 abstract class CollectionBackendClass {
     /* Fields of EBackend-1.2.EBackend.CollectionBackendClass */
     readonly populate: (backend: CollectionBackend) => void
-    readonly dup_resource_id: (backend: CollectionBackend, child_source: EDataServer.Source) => string
+    readonly dup_resource_id: (backend: CollectionBackend, child_source: EDataServer.Source) => string | null
     readonly child_added: (backend: CollectionBackend, child_source: EDataServer.Source) => void
     readonly child_removed: (backend: CollectionBackend, child_source: EDataServer.Source) => void
     readonly create_resource_sync: (backend: CollectionBackend, source: EDataServer.Source, cancellable?: Gio.Cancellable | null) => boolean
@@ -10965,7 +10969,7 @@ abstract class DataFactoryClass {
     readonly subprocess_bus_name_prefix: string
     readonly get_factory_name: (backend_factory: BackendFactory) => string
     readonly complete_open: (data_factory: DataFactory, invocation: Gio.DBusMethodInvocation, object_path: string, bus_name: string, extension_name: string) => void
-    readonly create_backend: (data_factory: DataFactory, backend_factory: BackendFactory, source: EDataServer.Source) => Backend
+    readonly create_backend: (data_factory: DataFactory, backend_factory: BackendFactory, source: EDataServer.Source) => Backend | null
     readonly open_backend: (data_factory: DataFactory, backend: Backend, connection: Gio.DBusConnection, cancellable?: Gio.Cancellable | null) => string
     readonly reserved: object[]
     static name: string

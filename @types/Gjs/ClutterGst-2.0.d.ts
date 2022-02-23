@@ -2225,6 +2225,34 @@ class VideoSink {
      */
     static event_get_type(event: Gst.Event): GstVideo.NavigationEventType
     /**
+     * Create a new navigation event given navigation command..
+     */
+    static event_new_command(command: GstVideo.NavigationCommand): Gst.Event
+    /**
+     * Create a new navigation event for the given key press.
+     */
+    static event_new_key_press(key: string): Gst.Event
+    /**
+     * Create a new navigation event for the given key release.
+     */
+    static event_new_key_release(key: string): Gst.Event
+    /**
+     * Create a new navigation event for the given key mouse button press.
+     */
+    static event_new_mouse_button_press(button: number, x: number, y: number): Gst.Event
+    /**
+     * Create a new navigation event for the given key mouse button release.
+     */
+    static event_new_mouse_button_release(button: number, x: number, y: number): Gst.Event
+    /**
+     * Create a new navigation event for the new mouse location.
+     */
+    static event_new_mouse_move(x: number, y: number): Gst.Event
+    /**
+     * Create a new navigation event for the mouse scroll.
+     */
+    static event_new_mouse_scroll(x: number, y: number, delta_x: number, delta_y: number): Gst.Event
+    /**
      * Inspect a #GstNavigation command event and retrieve the enum value of the
      * associated command.
      */

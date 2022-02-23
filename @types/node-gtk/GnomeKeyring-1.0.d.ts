@@ -13,39 +13,120 @@ import type GLib from './GLib-2.0';
 
 export namespace GnomeKeyring {
 
+/**
+ * Type of access restriction.
+ */
 enum AccessRestriction {
+    /**
+     * Ask permission.
+     */
     ASK,
+    /**
+     * Deny permission.
+     */
     DENY,
+    /**
+     * Give permission.
+     */
     ALLOW,
 }
 enum AttributeType {
     STRING,
     UINT32,
 }
+/**
+ * The types of items.
+ */
 enum ItemType {
+    /**
+     * Generic secret
+     */
     GENERIC_SECRET,
+    /**
+     * Network password
+     */
     NETWORK_PASSWORD,
+    /**
+     * Note
+     */
     NOTE,
+    /**
+     * Keyring password
+     */
     CHAINED_KEYRING_PASSWORD,
+    /**
+     * Password for encryption key
+     */
     ENCRYPTION_KEY_PASSWORD,
+    /**
+     * Key storage password
+     */
     PK_STORAGE,
+    /**
+     * Not used
+     */
     LAST_TYPE,
 }
+/**
+ * Various result codes returned by functions.
+ */
 enum Result {
+    /**
+     * The operation completed successfully.
+     */
     OK,
+    /**
+     * Either the user or daemon denied access.
+     */
     DENIED,
+    /**
+     * Keyring daemon is not available.
+     */
     NO_KEYRING_DAEMON,
+    /**
+     * Keyring was already unlocked.
+     */
     ALREADY_UNLOCKED,
+    /**
+     * No such keyring exists.
+     */
     NO_SUCH_KEYRING,
+    /**
+     * Bad arguments to function.
+     */
     BAD_ARGUMENTS,
+    /**
+     * Problem communicating with daemon.
+     */
     IO_ERROR,
+    /**
+     * Operation was cancelled.
+     */
     CANCELLED,
+    /**
+     * The keyring already exists.
+     */
     KEYRING_ALREADY_EXISTS,
+    /**
+     * No such match found.
+     */
     NO_MATCH,
 }
+/**
+ * Type of access.
+ */
 enum AccessType {
+    /**
+     * Read access
+     */
     READ,
+    /**
+     * Write access
+     */
     WRITE,
+    /**
+     * Delete access
+     */
     REMOVE,
 }
 enum ItemInfoFlags {
@@ -55,6 +136,11 @@ enum ItemInfoFlags {
 const ITEM_APPLICATION_SECRET: number
 const ITEM_INFO_ALL: number
 const ITEM_TYPE_MASK: number
+/**
+ * <para>
+ * A keyring only stored in memory.
+ * </para>
+ */
 const SESSION: string
 function aclCopy(list: AccessControl[]): AccessControl[]
 function aclFree(acl: AccessControl[]): void
@@ -126,7 +212,13 @@ interface OperationGetStringCallback {
 }
 class AccessControl {
     /* Methods of GnomeKeyring-1.0.GnomeKeyring.AccessControl */
+    /**
+     * Copy an access control for an item.
+     */
     copy(): AccessControl
+    /**
+     * Free an access control for an item.
+     */
     free(): void
     static name: string
     static new(application: ApplicationRef, typesAllowed: AccessType): AccessControl
@@ -136,7 +228,13 @@ class AccessControl {
 }
 class ApplicationRef {
     /* Methods of GnomeKeyring-1.0.GnomeKeyring.ApplicationRef */
+    /**
+     * Copy an application reference.
+     */
     copy(): ApplicationRef
+    /**
+     * Free an application reference.
+     */
     free(): void
     static name: string
     static new(): ApplicationRef
@@ -146,57 +244,188 @@ class ApplicationRef {
 }
 class Attribute {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.Attribute */
+    /**
+     * The name of the attribute.
+     */
     readonly name: string
+    /**
+     * The data type.
+     */
     readonly type: AttributeType
     /* Methods of GnomeKeyring-1.0.GnomeKeyring.Attribute */
+    /**
+     * Return the string value. It is an error to call this method if
+     * `attribute`.type is not #GNOME_KEYRING_ATTRIBUTE_TYPE_STRING. This method is
+     * mostly useful for language bindings which do not provide union access. In C
+     * you should just use attribute->value.string.
+     */
     getString(): string
+    /**
+     * Return the uint32 value. It is an error to call this method if
+     * `attribute`.type is not #GNOME_KEYRING_ATTRIBUTE_TYPE_UINT32. This method is
+     * mostly useful for language bindings which do not provide union access. In C
+     * you should just use attribute->value.integer.
+     */
     getUint32(): number
     static name: string
     /* Static methods and pseudo-constructors */
+    /**
+     * Store a key-value-pair with a string value in `attributes`.
+     */
     static listAppendString(attributes: AttributeList, name: string, value: string): void
+    /**
+     * Store a key-value-pair with an unsigned 32bit number value in `attributes`.
+     */
     static listAppendUint32(attributes: AttributeList, name: string, value: number): void
+    /**
+     * Copy a list of item attributes.
+     */
     static listCopy(attributes: AttributeList): AttributeList
+    /**
+     * Free the memory used by `attributes`.
+     * 
+     * If a %NULL pointer is passed, it is ignored.
+     */
     static listFree(attributes: AttributeList): void
+    /**
+     * Create a new #GnomeKeyringAttributeList.
+     */
     static listNew(): AttributeList
+    /**
+     * Create #GList of #GnomeKeyringAttribute pointers from `attributes`. This is
+     * mostly useful in language bindings which cannot directly use a #GArray.
+     */
     static listToGlist(attributes: AttributeList): Attribute[]
 }
 class Found {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.Found */
+    /**
+     * The keyring the item was found in.
+     */
     readonly keyring: string
+    /**
+     * The identifier for the item.
+     */
     readonly itemId: number
+    /**
+     * The item's attributes.
+     */
     readonly attributes: AttributeList
+    /**
+     * The item's secret.
+     */
     readonly secret: string
     /* Methods of GnomeKeyring-1.0.GnomeKeyring.Found */
+    /**
+     * Copy a #GnomeKeyringFound item.
+     */
     copy(): Found
+    /**
+     * Free the memory used by a #GnomeKeyringFound item.
+     * 
+     * You usually want to use gnome_keyring_found_list_free() on the list of
+     * results.
+     */
     free(): void
     static name: string
     /* Static methods and pseudo-constructors */
+    /**
+     * Free the memory used by the #GnomeKeyringFound items in `found_list`.
+     */
     static listFree(foundList: Found[]): void
 }
 class Info {
     /* Methods of GnomeKeyring-1.0.GnomeKeyring.Info */
+    /**
+     * Copy a #GnomeKeyringInfo object.
+     */
     copy(): Info
+    /**
+     * Free a #GnomeKeyringInfo object. If a %NULL pointer is passed
+     * nothing occurs.
+     */
     free(): void
+    /**
+     * Get the time at which the keyring was created.
+     */
     getCtime(): number
+    /**
+     * Get whether the keyring is locked or not.
+     */
     getIsLocked(): boolean
+    /**
+     * Get whether or not to lock a keyring after a certain amount of idle time.
+     * 
+     * See also gnome_keyring_info_get_lock_timeout().
+     */
     getLockOnIdle(): boolean
+    /**
+     * Get the idle timeout, in seconds, after which to lock the keyring.
+     * 
+     * See also gnome_keyring_info_get_lock_on_idle().
+     */
     getLockTimeout(): number
+    /**
+     * Get the time at which the keyring was last modified.
+     */
     getMtime(): number
+    /**
+     * Set whether or not to lock a keyring after a certain amount of idle time.
+     * 
+     * See also gnome_keyring_info_set_lock_timeout().
+     */
     setLockOnIdle(value: boolean): void
+    /**
+     * Set the idle timeout, in seconds, after which to lock the keyring.
+     * 
+     * See also gnome_keyring_info_set_lock_on_idle().
+     */
     setLockTimeout(value: number): void
     static name: string
 }
 class ItemInfo {
     /* Methods of GnomeKeyring-1.0.GnomeKeyring.ItemInfo */
+    /**
+     * Copy a #GnomeKeyringItemInfo object.
+     */
     copy(): ItemInfo
+    /**
+     * Free the #GnomeKeyringItemInfo object.
+     * 
+     * A %NULL pointer may be passed, in which case it will be ignored.
+     */
     free(): void
+    /**
+     * Get the item created time.
+     */
     getCtime(): number
+    /**
+     * Get the item display name.
+     */
     getDisplayName(): string
+    /**
+     * Get the item last modified time.
+     */
     getMtime(): number
+    /**
+     * Get the item secret.
+     */
     getSecret(): string
+    /**
+     * Get the item type.
+     */
     getType(): ItemType
+    /**
+     * Set the display name on an item info.
+     */
     setDisplayName(value: string): void
+    /**
+     * Set the secret on an item info.
+     */
     setSecret(value: string): void
+    /**
+     * Set the type on an item info.
+     */
     setType(type: ItemType): void
     static name: string
     static new(): ItemInfo
@@ -206,27 +435,69 @@ class ItemInfo {
 }
 class NetworkPasswordData {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.NetworkPasswordData */
+    /**
+     * Keyring item stored in.
+     */
     readonly keyring: string
+    /**
+     * The identifier of the item.
+     */
     readonly itemId: number
+    /**
+     * Network protocol or scheme.
+     */
     readonly protocol: string
+    /**
+     * Server or host name.
+     */
     readonly server: string
+    /**
+     * Share or other object on server.
+     */
     readonly object: string
+    /**
+     * Type of authentication.
+     */
     readonly authtype: string
+    /**
+     * TCP port.
+     */
     readonly port: number
+    /**
+     * User name.
+     */
     readonly user: string
+    /**
+     * User domain
+     */
     readonly domain: string
+    /**
+     * The password.
+     */
     readonly password: string
     static name: string
 }
 class PasswordSchema {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.PasswordSchema */
+    /**
+     * The item type for this schema.
+     */
     readonly itemType: ItemType
+    /**
+     * list of attributes
+     */
     readonly attributes: PasswordSchemaAttribute[]
     static name: string
 }
 class PasswordSchemaAttribute {
     /* Fields of GnomeKeyring-1.0.GnomeKeyring.PasswordSchemaAttribute */
+    /**
+     * the attribute name
+     */
     readonly name: string
+    /**
+     * the attribute data type
+     */
     readonly type: AttributeType
     static name: string
 }

@@ -28,5 +28,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: sudo apt-get update
     - run: yarn install
-    - run: yarn run build
-    - run: yarn run start:try
+    - name: Build the packages
+      run: yarn run build
+    - name: Build the types and documentation for Zeitgeist
+      run: yarn run build:try

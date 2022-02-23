@@ -24,15 +24,45 @@ enum SpaceFlags {
     EQUALIZE,
 }
 enum ModelFlag {
+    /**
+     * the model encodes alpha.
+     */
     ALPHA,
+    /**
+     * the alpha is associated alpha.
+     */
     ASSOCIATED,
+    /**
+     * the components are inverted (used for getting the additive complement space of CMYK).
+     */
     INVERTED,
+    /**
+     * the data has no TRC, i.e. is linear
+     */
     LINEAR,
+    /**
+     * the data has a TRC - the TRC from the configured space
+     */
     NONLINEAR,
+    /**
+     * the data has a TRC - a perceptual TRC where 50% gray is 0.5
+     */
     PERCEPTUAL,
+    /**
+     * this is a gray component model
+     */
     GRAY,
+    /**
+     * this is an RGB based component model, the space associated is expected to contain an RGB matrix profile.
+     */
     RGB,
+    /**
+     * this model is part of the CIE family of spaces
+     */
     CIE,
+    /**
+     * the encodings described are CMYK encodings, the space associated is expected to contain an CMYK ICC profile.
+     */
     CMYK,
 }
 const ALPHA_FLOOR: number
@@ -90,6 +120,9 @@ function spaceWithTrc(space: Object, trc: Object): Object
 function trc(name: string): Object
 function trcGamma(gamma: number): Object
 function type(name: string): Object
+interface FishProcess {
+    (babl: Object, src: string, dst: string, n: number, data?: object | null): void
+}
 interface FuncLinear {
     (conversion: Object, src: string, dst: string, n: number): void
 }

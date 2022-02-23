@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "lib": ["es2021"],
     "module": "commonjs",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
+    "target": "es2021",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "outDir": "dist",
     "skipLibCheck": true,
     "inlineSourceMap": true,
+    "esModuleInterop": true,
 
     "jsx": "react",
     "jsxFactory": "JSX.createElement",
     "jsxFragmentFactory": "JSX.Fragment"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/client"]
 }

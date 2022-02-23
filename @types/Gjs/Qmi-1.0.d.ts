@@ -9151,6 +9151,8 @@ enum DeviceReleaseClientFlags {
 }
 /**
  * Frequency band capabilities.
+ * 
+ * This type is bit to bit compatible with #QmiNasBandPreference.
  */
 enum DmsBandCapability {
     /**
@@ -10015,6 +10017,8 @@ enum LocTechnologyUsed {
 }
 /**
  * Flags to specify frequency band preferences.
+ * 
+ * This type is bit to bit compatible with #QmiDmsBandCapability.
  */
 enum NasBandPreference {
     /**
@@ -23805,6 +23809,10 @@ class Device {
      * Checks whether the #QmiDevice is open for I/O.
      */
     is_open(): boolean
+    /**
+     * Synchronously lists all virtual network interfaces that have been previously
+     * created with qmi_device_add_link() in `base_ifname`.
+     */
     list_links(base_ifname: string): [ /* returnType */ boolean, /* out_links */ string[] ]
     /**
      * Asynchronously opens a #QmiDevice for I/O.
@@ -30773,6 +30781,7 @@ class MessageNasGetCellLocationInfoOutput {
      * Get the 'CDMA Info' field from `self`.
      */
     get_cdma_info(): [ /* returnType */ boolean, /* value_cdma_info_system_id */ number | null, /* value_cdma_info_network_id */ number | null, /* value_cdma_info_base_station_id */ number | null, /* value_cdma_info_reference_pn */ number | null, /* value_cdma_info_latitude */ number | null, /* value_cdma_info_longitude */ number | null ]
+    get_compat_context(): object | null
     /**
      * Get the 'GERAN Info v2' field from `self`.
      */
@@ -30825,6 +30834,7 @@ class MessageNasGetCellLocationInfoOutput {
      * Atomically increments the reference count of `self` by one.
      */
     ref(): MessageNasGetCellLocationInfoOutput
+    set_compat_context(compat_context: object | null, compat_context_free: GLib.DestroyNotify): void
     /**
      * Atomically decrements the reference count of `self` by one.
      * If the reference count drops to 0, `self` is completely disposed.

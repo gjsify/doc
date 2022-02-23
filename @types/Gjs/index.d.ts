@@ -43,6 +43,9 @@ import type * as Gjs from "./Gjs";
       import type ArrowDataset10 from "./ArrowDataset-1.0";
     
   
+      import type ArrowFlight10 from "./ArrowFlight-1.0";
+    
+  
       import type Atk10 from "./Atk-1.0";
     
   
@@ -847,7 +850,13 @@ import type * as Gjs from "./Gjs";
       import type Rest07 from "./Rest-0.7";
     
   
+      import type Rest10 from "./Rest-1.0";
+    
+  
       import type RestExtras07 from "./RestExtras-0.7";
+    
+  
+      import type RestExtras10 from "./RestExtras-1.0";
     
   
       import type Retro014 from "./Retro-0.14";
@@ -878,9 +887,6 @@ import type * as Gjs from "./Gjs";
     
   
       import type SecretUnstable0 from "./SecretUnstable-0";
-    
-  
-      import type Shumate00 from "./Shumate-0.0";
     
   
       import type Shumate10 from "./Shumate-1.0";
@@ -992,6 +998,9 @@ import type * as Gjs from "./Gjs";
     
   
       import type Vgsl1 from "./Vgsl-1";
+    
+  
+      import type Vips80 from "./Vips-8.0";
     
   
       import type Vpg1 from "./Vpg-1";
@@ -1112,6 +1121,7 @@ declare global {
             AppStreamGlib:              typeof AppStreamGlib10
             Arrow:              typeof Arrow10
             ArrowDataset:              typeof ArrowDataset10
+            ArrowFlight:              typeof ArrowFlight10
             Atk:              typeof Atk10
             Atspi:              typeof Atspi20
             Babl:              typeof Babl01
@@ -1433,7 +1443,11 @@ declare global {
             Poppler:              typeof Poppler018
             Qmi:              typeof Qmi10
             Rest:              typeof Rest07
+                |
+              typeof Rest10
             RestExtras:              typeof RestExtras07
+                |
+              typeof RestExtras10
             Retro:              typeof Retro014
                 |
               typeof Retro1
@@ -1446,9 +1460,7 @@ declare global {
             RygelServer:              typeof RygelServer26
             Secret:              typeof Secret1
             SecretUnstable:              typeof SecretUnstable0
-            Shumate:              typeof Shumate00
-                |
-              typeof Shumate10
+            Shumate:              typeof Shumate10
             Signon:              typeof Signon20
             Snapd:              typeof Snapd1
             Soup:              typeof Soup24
@@ -1493,6 +1505,7 @@ declare global {
             Vgda:              typeof Vgda1
             Vgpg:              typeof Vgpg1
             Vgsl:              typeof Vgsl1
+            Vips:              typeof Vips80
             Vpg:              typeof Vpg1
             Vsqlite:              typeof Vsqlite1
             Vte:              typeof Vte291
@@ -1537,6 +1550,7 @@ declare global {
             AppStreamGlib:              '1.0'
             Arrow:              '1.0'
             ArrowDataset:              '1.0'
+            ArrowFlight:              '1.0'
             Atk:              '1.0'
             Atspi:              '2.0'
             Babl:              '0.1'
@@ -1858,7 +1872,11 @@ declare global {
             Poppler:              '0.18'
             Qmi:              '1.0'
             Rest:              '0.7'
+                |
+              '1.0'
             RestExtras:              '0.7'
+                |
+              '1.0'
             Retro:              '0.14'
                 |
               '1'
@@ -1871,9 +1889,7 @@ declare global {
             RygelServer:              '2.6'
             Secret:              '1'
             SecretUnstable:              '0'
-            Shumate:              '0.0'
-                |
-              '1.0'
+            Shumate:              '1.0'
             Signon:              '2.0'
             Snapd:              '1'
             Soup:              '2.4'
@@ -1918,6 +1934,7 @@ declare global {
             Vgda:              '1'
             Vgpg:              '1'
             Vgsl:              '1'
+            Vips:              '8.0'
             Vpg:              '1'
             Vsqlite:              '1'
             Vte:              '2.91'

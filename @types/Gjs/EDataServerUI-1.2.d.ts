@@ -778,7 +778,7 @@ class CredentialsPrompter {
      * registered or the current callbacks don't have any suitable window, then there's
      * chosen the last active window from the default GApplication, if any available.
      */
-    get_dialog_parent(): Gtk.Window
+    get_dialog_parent(): Gtk.Window | null
     /**
      * Returns a #GtkWindow, which should be used as a dialog parent for the `auth_source`.
      * 
@@ -788,7 +788,7 @@ class CredentialsPrompter {
      * window, then there's chosen the last active window from the default GApplication,
      * if any available.
      */
-    get_dialog_parent_full(auth_source?: EDataServer.Source | null): Gtk.Window
+    get_dialog_parent_full(auth_source?: EDataServer.Source | null): Gtk.Window | null
     /**
      * Returns an #ESourceCredentialsProvider, which the `prompter` uses.
      */
@@ -1188,7 +1188,7 @@ class CredentialsPrompter {
      * registered or the current callbacks don't have any suitable window, then there's
      * chosen the last active window from the default GApplication, if any available.
      */
-    vfunc_get_dialog_parent(): Gtk.Window
+    vfunc_get_dialog_parent(): Gtk.Window | null
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -1215,16 +1215,16 @@ class CredentialsPrompter {
      * window for it. If the result of the call is %NULL, then it tries
      * to get the window from the default GtkApplication.
      */
-    connect(sigName: "get-dialog-parent", callback: (($obj: CredentialsPrompter) => Gtk.Window)): number
-    connect_after(sigName: "get-dialog-parent", callback: (($obj: CredentialsPrompter) => Gtk.Window)): number
+    connect(sigName: "get-dialog-parent", callback: (($obj: CredentialsPrompter) => Gtk.Window | null)): number
+    connect_after(sigName: "get-dialog-parent", callback: (($obj: CredentialsPrompter) => Gtk.Window | null)): number
     emit(sigName: "get-dialog-parent"): void
     /**
      * Emitted when a new dialog will be shown, to get the right parent
      * window for it. If the result of the call is %NULL, then it tries
      * to get the window from the default GtkApplication.
      */
-    connect(sigName: "get-dialog-parent-full", callback: (($obj: CredentialsPrompter, auth_source?: EDataServer.Source | null) => Gtk.Window)): number
-    connect_after(sigName: "get-dialog-parent-full", callback: (($obj: CredentialsPrompter, auth_source?: EDataServer.Source | null) => Gtk.Window)): number
+    connect(sigName: "get-dialog-parent-full", callback: (($obj: CredentialsPrompter, auth_source?: EDataServer.Source | null) => Gtk.Window | null)): number
+    connect_after(sigName: "get-dialog-parent-full", callback: (($obj: CredentialsPrompter, auth_source?: EDataServer.Source | null) => Gtk.Window | null)): number
     emit(sigName: "get-dialog-parent-full", auth_source?: EDataServer.Source | null): void
     /* Signals of GObject-2.0.GObject.Object */
     /**
@@ -7581,7 +7581,7 @@ class WebDAVDiscoverContent {
      * Get currently selected user address in the `content,` if the server returned any.
      * This value has meaning only with calendar sources.
      */
-    get_user_address(): string
+    get_user_address(): string | null
     /**
      * Asynchronously starts refresh of the `content`. This means to access the server
      * and search it for available sources. The `content` shows a feedback and a Cancel
@@ -18380,7 +18380,7 @@ class CellRendererColorPrivate {
 abstract class CredentialsPrompterClass {
     /* Fields of EDataServerUI-1.2.EDataServerUI.CredentialsPrompterClass */
     readonly parent_class: GObject.ObjectClass
-    readonly get_dialog_parent: (prompter: CredentialsPrompter) => Gtk.Window
+    readonly get_dialog_parent: (prompter: CredentialsPrompter) => Gtk.Window | null
     static name: string
 }
 abstract class CredentialsPrompterImplClass {

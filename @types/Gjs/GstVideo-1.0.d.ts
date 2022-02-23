@@ -169,9 +169,8 @@ enum NavigationEventType {
      */
     COMMAND,
     /**
-     * A mouse scroll event. Use
-     * gst_navigation_event_parse_mouse_scroll_event() to extract the details from
-     * the event. (Since: 1.18)
+     * A mouse scroll event. Use gst_navigation_event_parse_mouse_scroll_event()
+     * to extract the details from the event.
      */
     MOUSE_SCROLL,
 }
@@ -2369,6 +2368,13 @@ function buffer_pool_config_get_video_alignment(config: Gst.Structure, align: Vi
 function buffer_pool_config_set_video_alignment(config: Gst.Structure, align: VideoAlignment): void
 function is_video_overlay_prepare_window_handle_message(msg: Gst.Message): boolean
 function navigation_event_get_type(event: Gst.Event): NavigationEventType
+function navigation_event_new_command(command: NavigationCommand): Gst.Event
+function navigation_event_new_key_press(key: string): Gst.Event
+function navigation_event_new_key_release(key: string): Gst.Event
+function navigation_event_new_mouse_button_press(button: number, x: number, y: number): Gst.Event
+function navigation_event_new_mouse_button_release(button: number, x: number, y: number): Gst.Event
+function navigation_event_new_mouse_move(x: number, y: number): Gst.Event
+function navigation_event_new_mouse_scroll(x: number, y: number, delta_x: number, delta_y: number): Gst.Event
 function navigation_event_parse_command(event: Gst.Event): [ /* returnType */ boolean, /* command */ NavigationCommand | null ]
 function navigation_event_parse_key_event(event: Gst.Event): [ /* returnType */ boolean, /* key */ string | null ]
 function navigation_event_parse_mouse_button_event(event: Gst.Event): [ /* returnType */ boolean, /* button */ number | null, /* x */ number | null, /* y */ number | null ]
@@ -2649,6 +2655,34 @@ class Navigation {
      * #GST_NAVIGATION_EVENT_INVALID if the event is not a #GstNavigation event.
      */
     static event_get_type(event: Gst.Event): NavigationEventType
+    /**
+     * Create a new navigation event given navigation command..
+     */
+    static event_new_command(command: NavigationCommand): Gst.Event
+    /**
+     * Create a new navigation event for the given key press.
+     */
+    static event_new_key_press(key: string): Gst.Event
+    /**
+     * Create a new navigation event for the given key release.
+     */
+    static event_new_key_release(key: string): Gst.Event
+    /**
+     * Create a new navigation event for the given key mouse button press.
+     */
+    static event_new_mouse_button_press(button: number, x: number, y: number): Gst.Event
+    /**
+     * Create a new navigation event for the given key mouse button release.
+     */
+    static event_new_mouse_button_release(button: number, x: number, y: number): Gst.Event
+    /**
+     * Create a new navigation event for the new mouse location.
+     */
+    static event_new_mouse_move(x: number, y: number): Gst.Event
+    /**
+     * Create a new navigation event for the mouse scroll.
+     */
+    static event_new_mouse_scroll(x: number, y: number, delta_x: number, delta_y: number): Gst.Event
     /**
      * Inspect a #GstNavigation command event and retrieve the enum value of the
      * associated command.
@@ -16978,6 +17012,11 @@ class VideoFormatInfo {
      * components are packed in the plane.
      */
     component(plane: number): /* components */ number
+    /**
+     * Extrapolate `plane` stride from the first stride of an image. This helper is
+     * useful to support legacy API were only one stride is supported.
+     */
+    extrapolate_stride(plane: number, stride: number): number
     static name: string
 }
 class VideoFrame {
@@ -17244,6 +17283,7 @@ class VideoInfo {
     constructor()
     /* Static methods and pseudo-constructors */
     static new(): VideoInfo
+    static new_from_caps(caps: Gst.Caps): VideoInfo
     /**
      * Parse `caps` and update `info`.
      */

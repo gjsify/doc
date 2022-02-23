@@ -915,15 +915,15 @@ function debug_log_get_max_lines(): number
 function debug_log_is_domain_enabled(domain: string): boolean
 function debug_log_load_configuration(filename: string): boolean
 function debug_log_set_max_lines(num_lines: number): void
-function eds_check_version(required_major: number, required_minor: number, required_micro: number): string
+function eds_check_version(required_major: number, required_minor: number, required_micro: number): string | null
 function enum_from_string(enum_type: GObject.Type, string: string, enum_value: number): boolean
 function enum_to_string(enum_type: GObject.Type, enum_value: number): string
 function file_recursive_delete(file: Gio.File, io_priority: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
 function file_recursive_delete_finish(file: Gio.File, result: Gio.AsyncResult): boolean
 function file_recursive_delete_sync(file: Gio.File, cancellable?: Gio.Cancellable | null): boolean
 function filename_make_safe(string: string): void
-function filename_mkdir_encoded(basepath: string, fileprefix: string, filename: string, fileindex: number): string
-function free_form_exp_to_sexp(free_form_exp: string, symbols: FreeFormExpSymbol): string
+function filename_mkdir_encoded(basepath: string, fileprefix: string, filename: string | null, fileindex: number): string | null
+function free_form_exp_to_sexp(free_form_exp: string, symbols: FreeFormExpSymbol): string | null
 function get_user_cache_dir(): string
 function get_user_config_dir(): string
 function get_user_data_dir(): string
@@ -954,7 +954,7 @@ function utf8_strftime(string: string, max: number, fmt: string, tm?: object | n
 function util_can_use_collection_as_credential_source(collection_source?: object | null, child_source?: object | null): boolean
 function util_copy_object_slist(copy_to: GObject.Object[] | null, objects: GObject.Object[]): GObject.Object[]
 function util_copy_string_slist(copy_to: string[] | null, strings: string[]): string[]
-function util_ensure_gdbus_string(str: string, gdbus_str: string): string
+function util_ensure_gdbus_string(str: string | null, gdbus_str: string): string
 function util_free_nullable_object_slist(objects: GObject.Object[]): void
 function util_free_object_slist(objects: GObject.Object[]): void
 function util_free_string_slist(strings: string[]): void
@@ -973,14 +973,14 @@ function util_strv_equal(v1: string[], v2: string[]): boolean
 function util_strv_to_slist(strv: string): string[]
 function util_unicode_get_utf8(text: string, out: number): string | null
 function util_unref_in_thread(object?: object | null): void
-function util_utf8_data_make_valid(data: string, data_bytes: number): string
+function util_utf8_data_make_valid(data: string | null, data_bytes: number): string
 function util_utf8_decompose(text: string): string
-function util_utf8_make_valid(str: string): string
+function util_utf8_make_valid(str?: string | null): string
 function util_utf8_normalize(str?: string | null): string | null
-function util_utf8_remove_accents(str: string): string
+function util_utf8_remove_accents(str?: string | null): string | null
 function util_utf8_strcasecmp(s1: string, s2: string): number
 function util_utf8_strstrcase(haystack?: string | null, needle?: string | null): string | null
-function util_utf8_strstrcasedecomp(haystack: string, needle: string): string
+function util_utf8_strstrcasedecomp(haystack: string, needle: string): string | null
 function webdav_access_control_entry_free(ptr?: object | null): void
 function webdav_discover_free_discovered_sources(discovered_sources: WebDAVDiscoveredSource[]): void
 function webdav_discover_sources(source: Source, url_use_path: string | null, only_supports: number, credentials?: NamedParameters | null, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
@@ -2519,7 +2519,7 @@ class GDataOAuth2Authorizer {
     clone_credentials(): NamedParameters | null
     get_service_type(): GObject.Type
     is_expired(): boolean
-    ref_source(): Source
+    ref_source(): Source | null
     /**
      * Updates internally stored credentials, used to get access token.
      * 
@@ -9134,7 +9134,7 @@ class Source {
      * 
      * Free the returned proxy URIs with g_strfreev() when finished with them.
      */
-    proxy_lookup_finish(result: Gio.AsyncResult): string[]
+    proxy_lookup_finish(result: Gio.AsyncResult): string[] | null
     /**
      * Looks into `source'`s #ESourceProxy extension to determine what proxy,
      * if any, to use to connect to `uri`.  The returned proxy URIs are of the
@@ -9161,7 +9161,7 @@ class Source {
      * 
      * Free the returned proxy URIs with g_strfreev() when finished with them.
      */
-    proxy_lookup_sync(uri: string, cancellable?: Gio.Cancellable | null): string[]
+    proxy_lookup_sync(uri: string, cancellable?: Gio.Cancellable | null): string[] | null
     /**
      * Returns the #GDBusObject that was passed to e_source_new().
      * 
@@ -14667,7 +14667,7 @@ class SourceCredentialsProvider {
      * sources. When ther eis no such parent source, a %NULL is returned, which
      * means the `source` holds credentials for itself.
      */
-    ref_credentials_source(source: Source): Source
+    ref_credentials_source(source: Source): Source | null
     /**
      * Returns refenrenced registry associated with this `provider`.
      */
@@ -14675,7 +14675,7 @@ class SourceCredentialsProvider {
     /**
      * Returns referenced #ESource with the given `uid,` or %NULL, when it could not be found.
      */
-    ref_source(uid: string): Source
+    ref_source(uid: string): Source | null
     /**
      * Registers a credentials provider implementation and adds its own reference on
      * the `provider_impl`.
@@ -15004,7 +15004,7 @@ class SourceCredentialsProvider {
     /**
      * Returns referenced #ESource with the given `uid,` or %NULL, when it could not be found.
      */
-    vfunc_ref_source(uid: string): Source
+    vfunc_ref_source(uid: string): Source | null
     /* Virtual methods of GObject-2.0.GObject.Object */
     vfunc_constructed(): void
     vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
@@ -24217,7 +24217,7 @@ class SourceRegistry {
      * The returned #ESource is referenced for thread-safety and must be
      * unreferenced with g_object_unref() when finished with it.
      */
-    ref_default_mail_identity(): Source
+    ref_default_mail_identity(): Source | null
     /**
      * Returns the #ESource most recently passed to
      * e_source_registry_set_default_memo_list() either in this session
@@ -30189,7 +30189,7 @@ class WebDAVSession {
      * 
      * The string is valid until the next request is executed.
      */
-    get_last_dav_error_code(): string
+    get_last_dav_error_code(): string | null
     get_last_dav_error_is_permission(): boolean
     /**
      * Gets list of principal collection href for the `uri,` or, in case it's %NULL,
@@ -32411,7 +32411,7 @@ class SourceContactsPrivate {
 abstract class SourceCredentialsProviderClass {
     /* Fields of EDataServer-1.2.EDataServer.SourceCredentialsProviderClass */
     readonly parent_class: GObject.ObjectClass
-    readonly ref_source: (provider: SourceCredentialsProvider, uid: string) => Source
+    readonly ref_source: (provider: SourceCredentialsProvider, uid: string) => Source | null
     static name: string
 }
 abstract class SourceCredentialsProviderImplClass {
@@ -32698,7 +32698,7 @@ class WebDAVAccessControlEntry {
      * together with the `ace`.
      */
     append_privilege(privilege: WebDAVPrivilege): void
-    copy(): WebDAVAccessControlEntry
+    copy(): WebDAVAccessControlEntry | null
     get_privileges(): WebDAVPrivilege[]
     static name: string
     static new(principal_kind: WebDAVACEPrincipalKind, principal_href: string | null, flags: number, inherited_href?: string | null): WebDAVAccessControlEntry
@@ -32738,7 +32738,7 @@ class WebDAVPrivilege {
     readonly kind: WebDAVPrivilegeKind
     readonly hint: WebDAVPrivilegeHint
     /* Methods of EDataServer-1.2.EDataServer.WebDAVPrivilege */
-    copy(): WebDAVPrivilege
+    copy(): WebDAVPrivilege | null
     static name: string
     static new(ns_uri: string | null, name: string | null, description: string | null, kind: WebDAVPrivilegeKind, hint: WebDAVPrivilegeHint): WebDAVPrivilege
     constructor(ns_uri: string | null, name: string | null, description: string | null, kind: WebDAVPrivilegeKind, hint: WebDAVPrivilegeHint)
@@ -32757,7 +32757,7 @@ class WebDAVPropertyChange {
     readonly name: string
     readonly value: string
     /* Methods of EDataServer-1.2.EDataServer.WebDAVPropertyChange */
-    copy(): WebDAVPropertyChange
+    copy(): WebDAVPropertyChange | null
     static name: string
     /* Static methods and pseudo-constructors */
     static new_remove(ns_uri: string, name: string): WebDAVPropertyChange
@@ -32784,7 +32784,7 @@ class WebDAVResource {
     readonly color: string
     readonly order: number
     /* Methods of EDataServer-1.2.EDataServer.WebDAVResource */
-    copy(): WebDAVResource
+    copy(): WebDAVResource | null
     static name: string
     static new(kind: WebDAVResourceKind, supports: number, href: string, etag: string | null, display_name: string | null, content_type: string | null, content_length: number, creation_date: number, last_modified: number, description: string | null, color: string | null, order: number): WebDAVResource
     constructor(kind: WebDAVResourceKind, supports: number, href: string, etag: string | null, display_name: string | null, content_type: string | null, content_length: number, creation_date: number, last_modified: number, description: string | null, color: string | null, order: number)

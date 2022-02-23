@@ -88,6 +88,10 @@ enum CredentialsType {
      * The native credentials type is a `struct xucred`. Added in 2.66.
      */
     APPLE_XUCRED,
+    /**
+     * The native credentials type is a PID `DWORD`. Added in 2.72.
+     */
+    WIN32_PID,
 }
 /**
  * Error codes for the %G_DBUS_ERROR error domain.
@@ -2553,6 +2557,11 @@ const DBUS_METHOD_INVOCATION_HANDLED: boolean
  * use %FALSE instead.
  */
 const DBUS_METHOD_INVOCATION_UNHANDLED: boolean
+/**
+ * Extension point for debug control functionality.
+ * See [Extending GIO][extending-gio].
+ */
+const DEBUG_CONTROLLER_EXTENSION_POINT_NAME: string
 /**
  * Extension point for default handler to URI association. See
  * [Extending GIO][extending-gio].
@@ -5955,6 +5964,108 @@ class DatagramBased {
      * cancelled, %G_IO_ERROR_CANCELLED is returned as with any other error.
      */
     vfunc_send_messages(messages: OutputMessage[], flags: number, timeout: number, cancellable?: Cancellable | null): number
+    static name: string
+}
+class DebugController {
+    /* Properties of Gio-2.0.Gio.DebugController */
+    /**
+     * %TRUE if debug output should be exposed (for example by forwarding it to
+     * the journal), %FALSE otherwise.
+     */
+    debug_enabled: boolean
+    /* Methods of Gio-2.0.Gio.DebugController */
+    /**
+     * Get the value of #GDebugController:debug-enabled.
+     */
+    get_debug_enabled(): boolean
+    /**
+     * Set the value of #GDebugController:debug-enabled.
+     */
+    set_debug_enabled(debug_enabled: boolean): void
+    /* Methods of Gio-2.0.Gio.Initable */
+    /**
+     * Initializes the object implementing the interface.
+     * 
+     * This method is intended for language bindings. If writing in C,
+     * g_initable_new() should typically be used instead.
+     * 
+     * The object must be initialized before any real use after initial
+     * construction, either with this function or g_async_initable_init_async().
+     * 
+     * Implementations may also support cancellation. If `cancellable` is not %NULL,
+     * then initialization can be cancelled by triggering the cancellable object
+     * from another thread. If the operation was cancelled, the error
+     * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+     * the object doesn't support cancellable initialization the error
+     * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+     * 
+     * If the object is not initialized, or initialization returns with an
+     * error, then all operations on the object except g_object_ref() and
+     * g_object_unref() are considered to be invalid, and have undefined
+     * behaviour. See the [introduction][ginitable] for more details.
+     * 
+     * Callers should not assume that a class which implements #GInitable can be
+     * initialized multiple times, unless the class explicitly documents itself as
+     * supporting this. Generally, a class’ implementation of init() can assume
+     * (and assert) that it will only be called once. Previously, this documentation
+     * recommended all #GInitable implementations should be idempotent; that
+     * recommendation was relaxed in GLib 2.54.
+     * 
+     * If a class explicitly supports being initialized multiple times, it is
+     * recommended that the method is idempotent: multiple calls with the same
+     * arguments should return the same results. Only the first call initializes
+     * the object; further calls return the result of the first call.
+     * 
+     * One reason why a class might need to support idempotent initialization is if
+     * it is designed to be used via the singleton pattern, with a
+     * #GObjectClass.constructor that sometimes returns an existing instance.
+     * In this pattern, a caller would expect to be able to call g_initable_init()
+     * on the result of g_object_new(), regardless of whether it is in fact a new
+     * instance.
+     */
+    init(cancellable?: Cancellable | null): boolean
+    /* Virtual methods of Gio-2.0.Gio.Initable */
+    /**
+     * Initializes the object implementing the interface.
+     * 
+     * This method is intended for language bindings. If writing in C,
+     * g_initable_new() should typically be used instead.
+     * 
+     * The object must be initialized before any real use after initial
+     * construction, either with this function or g_async_initable_init_async().
+     * 
+     * Implementations may also support cancellation. If `cancellable` is not %NULL,
+     * then initialization can be cancelled by triggering the cancellable object
+     * from another thread. If the operation was cancelled, the error
+     * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+     * the object doesn't support cancellable initialization the error
+     * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+     * 
+     * If the object is not initialized, or initialization returns with an
+     * error, then all operations on the object except g_object_ref() and
+     * g_object_unref() are considered to be invalid, and have undefined
+     * behaviour. See the [introduction][ginitable] for more details.
+     * 
+     * Callers should not assume that a class which implements #GInitable can be
+     * initialized multiple times, unless the class explicitly documents itself as
+     * supporting this. Generally, a class’ implementation of init() can assume
+     * (and assert) that it will only be called once. Previously, this documentation
+     * recommended all #GInitable implementations should be idempotent; that
+     * recommendation was relaxed in GLib 2.54.
+     * 
+     * If a class explicitly supports being initialized multiple times, it is
+     * recommended that the method is idempotent: multiple calls with the same
+     * arguments should return the same results. Only the first call initializes
+     * the object; further calls return the result of the first call.
+     * 
+     * One reason why a class might need to support idempotent initialization is if
+     * it is designed to be used via the singleton pattern, with a
+     * #GObjectClass.constructor that sometimes returns an existing instance.
+     * In this pattern, a caller would expect to be able to call g_initable_init()
+     * on the result of g_object_new(), regardless of whether it is in fact a new
+     * instance.
+     */
+    vfunc_init(cancellable?: Cancellable | null): boolean
     static name: string
 }
 class DesktopAppInfoLookup {
@@ -9662,6 +9773,23 @@ class File {
      */
     move(destination: File, flags: FileCopyFlags, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null): boolean
     /**
+     * Asynchronously moves a file `source` to the location of `destination`. For details of the behaviour, see g_file_move().
+     * 
+     * If `progress_callback` is not %NULL, then that function that will be called
+     * just like in g_file_move(). The callback will run in the default main context
+     * of the thread calling g_file_move_async() — the same context as `callback` is
+     * run in.
+     * 
+     * When the operation is finished, `callback` will be called. You can then call
+     * g_file_move_finish() to get the result of the operation.
+     */
+    move_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null, callback?: AsyncReadyCallback | null): void
+    /**
+     * Finishes an asynchronous file movement, started with
+     * g_file_move_async().
+     */
+    move_finish(result: AsyncResult): boolean
+    /**
      * Opens an existing file for reading and writing. The result is
      * a #GFileIOStream that can be used to read and write the contents
      * of the file.
@@ -10083,7 +10211,7 @@ class File {
      * If the `relative_path` is an absolute path name, the resolution
      * is done absolutely (without taking `file` path as base).
      */
-    resolve_relative_path(relative_path: string): File | null
+    resolve_relative_path(relative_path: string): File
     /**
      * Sets an attribute in the file with attribute name `attribute` to `value_p`.
      * 
@@ -10925,6 +11053,23 @@ class File {
      */
     vfunc_move(destination: File, flags: FileCopyFlags, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null): boolean
     /**
+     * Asynchronously moves a file `source` to the location of `destination`. For details of the behaviour, see g_file_move().
+     * 
+     * If `progress_callback` is not %NULL, then that function that will be called
+     * just like in g_file_move(). The callback will run in the default main context
+     * of the thread calling g_file_move_async() — the same context as `callback` is
+     * run in.
+     * 
+     * When the operation is finished, `callback` will be called. You can then call
+     * g_file_move_finish() to get the result of the operation.
+     */
+    vfunc_move_async(destination: File, flags: FileCopyFlags, io_priority: number, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null, callback?: AsyncReadyCallback | null): void
+    /**
+     * Finishes an asynchronous file movement, started with
+     * g_file_move_async().
+     */
+    vfunc_move_finish(result: AsyncResult): boolean
+    /**
      * Opens an existing file for reading and writing. The result is
      * a #GFileIOStream that can be used to read and write the contents
      * of the file.
@@ -11245,7 +11390,7 @@ class File {
      * If the `relative_path` is an absolute path name, the resolution
      * is done absolutely (without taking `file` path as base).
      */
-    vfunc_resolve_relative_path(relative_path: string): File | null
+    vfunc_resolve_relative_path(relative_path: string): File
     /**
      * Sets an attribute in the file with attribute name `attribute` to `value_p`.
      * 
@@ -19482,6 +19627,10 @@ class Application {
      * need to handle these arguments for yourself because once they are
      * consumed, they will no longer be visible to the default handling
      * (which treats them as filenames to be opened).
+     * 
+     * The dict includes options that have been explicitly specified on the parsed
+     * commandline, as well as zero values for numeric options that were not
+     * necessarily specified.
      * 
      * It is important to use the proper GVariant format when retrieving
      * the options with g_variant_dict_lookup():
@@ -37450,6 +37599,530 @@ class DataOutputStream {
     _init (config?: DataOutputStream_ConstructProps): void
     /* Static methods and pseudo-constructors */
     static new(base_stream: OutputStream): DataOutputStream
+    static $gtype: GObject.Type
+}
+interface DebugControllerDBus_ConstructProps extends GObject.Object_ConstructProps {
+    /* Constructor properties of Gio-2.0.Gio.DebugControllerDBus */
+    /**
+     * The D-Bus connection to expose the debugging interface on.
+     * 
+     * Typically this will be the same connection (to the system or session bus)
+     * which the rest of the application or service’s D-Bus objects are registered
+     * on.
+     */
+    connection?: DBusConnection
+    /* Constructor properties of Gio-2.0.Gio.DebugController */
+    /**
+     * %TRUE if debug output should be exposed (for example by forwarding it to
+     * the journal), %FALSE otherwise.
+     */
+    debug_enabled?: boolean
+}
+class DebugControllerDBus {
+    /* Properties of Gio-2.0.Gio.DebugController */
+    /**
+     * %TRUE if debug output should be exposed (for example by forwarding it to
+     * the journal), %FALSE otherwise.
+     */
+    debug_enabled: boolean
+    /* Fields of GObject-2.0.GObject.Object */
+    readonly g_type_instance: GObject.TypeInstance
+    /* Methods of Gio-2.0.Gio.DebugControllerDBus */
+    /**
+     * Stop the debug controller, unregistering its object from the bus.
+     * 
+     * Any pending method calls to the object will complete successfully, but new
+     * ones will return an error. This method will block until all pending
+     * #GDebugControllerDBus::authorize signals have been handled. This is expected
+     * to not take long, as it will just be waiting for threads to join. If any
+     * #GDebugControllerDBus::authorize signal handlers are still executing in other
+     * threads, this will block until after they have returned.
+     * 
+     * This method will be called automatically when the final reference to the
+     * #GDebugControllerDBus is dropped. You may want to call it explicitly to know
+     * when the controller has been fully removed from the bus, or to break
+     * reference count cycles.
+     * 
+     * Calling this method from within a #GDebugControllerDBus::authorize signal
+     * handler will cause a deadlock and must not be done.
+     */
+    stop(): void
+    /* Methods of GObject-2.0.GObject.Object */
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target`.
+     * 
+     * Whenever the `source_property` is changed the `target_property` is
+     * updated using the same value. For instance:
+     * 
+     * 
+     * ```c
+     *   g_object_bind_property (action, "active", widget, "sensitive", 0);
+     * ```
+     * 
+     * 
+     * Will result in the "sensitive" property of the widget #GObject instance to be
+     * updated with the same value of the "active" property of the action #GObject
+     * instance.
+     * 
+     * If `flags` contains %G_BINDING_BIDIRECTIONAL then the binding will be mutual:
+     * if `target_property` on `target` changes then the `source_property` on `source`
+     * will be updated as well.
+     * 
+     * The binding will automatically be removed when either the `source` or the
+     * `target` instances are finalized. To remove the binding without affecting the
+     * `source` and the `target` you can just call g_object_unref() on the returned
+     * #GBinding instance.
+     * 
+     * Removing the binding by calling g_object_unref() on it must only be done if
+     * the binding, `source` and `target` are only used from a single thread and it
+     * is clear that both `source` and `target` outlive the binding. Especially it
+     * is not safe to rely on this if the binding, `source` or `target` can be
+     * finalized from different threads. Keep another reference to the binding and
+     * use g_binding_unbind() instead to be on the safe side.
+     * 
+     * A #GObject can have multiple bindings.
+     */
+    bind_property(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags): GObject.Binding
+    /**
+     * Creates a binding between `source_property` on `source` and `target_property`
+     * on `target,` allowing you to set the transformation functions to be used by
+     * the binding.
+     * 
+     * This function is the language bindings friendly version of
+     * g_object_bind_property_full(), using #GClosures instead of
+     * function pointers.
+     */
+    bind_property_full(source_property: string, target: GObject.Object, target_property: string, flags: GObject.BindingFlags, transform_to: Function, transform_from: Function): GObject.Binding
+    /**
+     * This function is intended for #GObject implementations to re-enforce
+     * a [floating][floating-ref] object reference. Doing this is seldom
+     * required: all #GInitiallyUnowneds are created with a floating reference
+     * which usually just needs to be sunken by calling g_object_ref_sink().
+     */
+    force_floating(): void
+    /**
+     * Increases the freeze count on `object`. If the freeze count is
+     * non-zero, the emission of "notify" signals on `object` is
+     * stopped. The signals are queued until the freeze count is decreased
+     * to zero. Duplicate notifications are squashed so that at most one
+     * #GObject::notify signal is emitted for each property modified while the
+     * object is frozen.
+     * 
+     * This is necessary for accessors that modify multiple properties to prevent
+     * premature notification while the object is still being modified.
+     */
+    freeze_notify(): void
+    /**
+     * Gets a named field from the objects table of associations (see g_object_set_data()).
+     */
+    get_data(key: string): object | null
+    /**
+     * Gets a property of an object.
+     * 
+     * The `value` can be:
+     * 
+     *  - an empty #GValue initialized by %G_VALUE_INIT, which will be
+     *    automatically initialized with the expected type of the property
+     *    (since GLib 2.60)
+     *  - a #GValue initialized with the expected type of the property
+     *  - a #GValue initialized with a type to which the expected type
+     *    of the property can be transformed
+     * 
+     * In general, a copy is made of the property contents and the caller is
+     * responsible for freeing the memory by calling g_value_unset().
+     * 
+     * Note that g_object_get_property() is really intended for language
+     * bindings, g_object_get() is much more convenient for C programming.
+     */
+    get_property(property_name: string, value: any): void
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata().
+     */
+    get_qdata(quark: GLib.Quark): object | null
+    /**
+     * Gets `n_properties` properties for an `object`.
+     * Obtained properties will be set to `values`. All properties must be valid.
+     * Warnings will be emitted and undefined behaviour may result if invalid
+     * properties are passed in.
+     */
+    getv(names: string[], values: any[]): void
+    /**
+     * Checks whether `object` has a [floating][floating-ref] reference.
+     */
+    is_floating(): boolean
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
+    notify(property_name: string): void
+    /**
+     * Emits a "notify" signal for the property specified by `pspec` on `object`.
+     * 
+     * This function omits the property name lookup, hence it is faster than
+     * g_object_notify().
+     * 
+     * One way to avoid using g_object_notify() from within the
+     * class that registered the properties, and using g_object_notify_by_pspec()
+     * instead, is to store the GParamSpec used with
+     * g_object_class_install_property() inside a static array, e.g.:
+     * 
+     * 
+     * ```c
+     *   enum
+     *   {
+     *     PROP_0,
+     *     PROP_FOO,
+     *     PROP_LAST
+     *   };
+     * 
+     *   static GParamSpec *properties[PROP_LAST];
+     * 
+     *   static void
+     *   my_object_class_init (MyObjectClass *klass)
+     *   {
+     *     properties[PROP_FOO] = g_param_spec_int ("foo", "Foo", "The foo",
+     *                                              0, 100,
+     *                                              50,
+     *                                              G_PARAM_READWRITE);
+     *     g_object_class_install_property (gobject_class,
+     *                                      PROP_FOO,
+     *                                      properties[PROP_FOO]);
+     *   }
+     * ```
+     * 
+     * 
+     * and then notify a change on the "foo" property with:
+     * 
+     * 
+     * ```c
+     *   g_object_notify_by_pspec (self, properties[PROP_FOO]);
+     * ```
+     * 
+     */
+    notify_by_pspec(pspec: GObject.ParamSpec): void
+    /**
+     * Increases the reference count of `object`.
+     * 
+     * Since GLib 2.56, if `GLIB_VERSION_MAX_ALLOWED` is 2.56 or greater, the type
+     * of `object` will be propagated to the return type (using the GCC typeof()
+     * extension), so any casting the caller needs to do on the return type must be
+     * explicit.
+     */
+    ref(): GObject.Object
+    /**
+     * Increase the reference count of `object,` and possibly remove the
+     * [floating][floating-ref] reference, if `object` has a floating reference.
+     * 
+     * In other words, if the object is floating, then this call "assumes
+     * ownership" of the floating reference, converting it to a normal
+     * reference by clearing the floating flag while leaving the reference
+     * count unchanged.  If the object is not floating, then this call
+     * adds a new normal reference increasing the reference count by one.
+     * 
+     * Since GLib 2.56, the type of `object` will be propagated to the return type
+     * under the same conditions as for g_object_ref().
+     */
+    ref_sink(): GObject.Object
+    /**
+     * Releases all references to other objects. This can be used to break
+     * reference cycles.
+     * 
+     * This function should only be called from object system implementations.
+     */
+    run_dispose(): void
+    /**
+     * Each object carries around a table of associations from
+     * strings to pointers.  This function lets you set an association.
+     * 
+     * If the object already had an association with that name,
+     * the old association will be destroyed.
+     * 
+     * Internally, the `key` is converted to a #GQuark using g_quark_from_string().
+     * This means a copy of `key` is kept permanently (even after `object` has been
+     * finalized) — so it is recommended to only use a small, bounded set of values
+     * for `key` in your program, to avoid the #GQuark storage growing unbounded.
+     */
+    set_data(key: string, data?: object | null): void
+    /**
+     * Sets a property on an object.
+     */
+    set_property(property_name: string, value: any): void
+    /**
+     * Remove a specified datum from the object's data associations,
+     * without invoking the association's destroy handler.
+     */
+    steal_data(key: string): object | null
+    /**
+     * This function gets back user data pointers stored via
+     * g_object_set_qdata() and removes the `data` from object
+     * without invoking its destroy() function (if any was
+     * set).
+     * Usually, calling this function is only required to update
+     * user data pointers with a destroy notifier, for example:
+     * 
+     * ```c
+     * void
+     * object_add_to_user_list (GObject     *object,
+     *                          const gchar *new_string)
+     * {
+     *   // the quark, naming the object data
+     *   GQuark quark_string_list = g_quark_from_static_string ("my-string-list");
+     *   // retrieve the old string list
+     *   GList *list = g_object_steal_qdata (object, quark_string_list);
+     * 
+     *   // prepend new string
+     *   list = g_list_prepend (list, g_strdup (new_string));
+     *   // this changed 'list', so we need to set it again
+     *   g_object_set_qdata_full (object, quark_string_list, list, free_string_list);
+     * }
+     * static void
+     * free_string_list (gpointer data)
+     * {
+     *   GList *node, *list = data;
+     * 
+     *   for (node = list; node; node = node->next)
+     *     g_free (node->data);
+     *   g_list_free (list);
+     * }
+     * ```
+     * 
+     * Using g_object_get_qdata() in the above example, instead of
+     * g_object_steal_qdata() would have left the destroy function set,
+     * and thus the partial string list would have been freed upon
+     * g_object_set_qdata_full().
+     */
+    steal_qdata(quark: GLib.Quark): object | null
+    /**
+     * Reverts the effect of a previous call to
+     * g_object_freeze_notify(). The freeze count is decreased on `object`
+     * and when it reaches zero, queued "notify" signals are emitted.
+     * 
+     * Duplicate notifications for each property are squashed so that at most one
+     * #GObject::notify signal is emitted for each property, in the reverse order
+     * in which they have been queued.
+     * 
+     * It is an error to call this function when the freeze count is zero.
+     */
+    thaw_notify(): void
+    /**
+     * Decreases the reference count of `object`. When its reference count
+     * drops to 0, the object is finalized (i.e. its memory is freed).
+     * 
+     * If the pointer to the #GObject may be reused in future (for example, if it is
+     * an instance variable of another object), it is recommended to clear the
+     * pointer to %NULL rather than retain a dangling pointer to a potentially
+     * invalid #GObject instance. Use g_clear_object() for this.
+     */
+    unref(): void
+    /**
+     * This function essentially limits the life time of the `closure` to
+     * the life time of the object. That is, when the object is finalized,
+     * the `closure` is invalidated by calling g_closure_invalidate() on
+     * it, in order to prevent invocations of the closure with a finalized
+     * (nonexisting) object. Also, g_object_ref() and g_object_unref() are
+     * added as marshal guards to the `closure,` to ensure that an extra
+     * reference count is held on `object` during invocation of the
+     * `closure`.  Usually, this function will be called on closures that
+     * use this `object` as closure data.
+     */
+    watch_closure(closure: Function): void
+    /* Methods of Gio-2.0.Gio.DebugController */
+    /**
+     * Get the value of #GDebugController:debug-enabled.
+     */
+    get_debug_enabled(): boolean
+    /**
+     * Set the value of #GDebugController:debug-enabled.
+     */
+    set_debug_enabled(debug_enabled: boolean): void
+    /* Methods of Gio-2.0.Gio.Initable */
+    /**
+     * Initializes the object implementing the interface.
+     * 
+     * This method is intended for language bindings. If writing in C,
+     * g_initable_new() should typically be used instead.
+     * 
+     * The object must be initialized before any real use after initial
+     * construction, either with this function or g_async_initable_init_async().
+     * 
+     * Implementations may also support cancellation. If `cancellable` is not %NULL,
+     * then initialization can be cancelled by triggering the cancellable object
+     * from another thread. If the operation was cancelled, the error
+     * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+     * the object doesn't support cancellable initialization the error
+     * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+     * 
+     * If the object is not initialized, or initialization returns with an
+     * error, then all operations on the object except g_object_ref() and
+     * g_object_unref() are considered to be invalid, and have undefined
+     * behaviour. See the [introduction][ginitable] for more details.
+     * 
+     * Callers should not assume that a class which implements #GInitable can be
+     * initialized multiple times, unless the class explicitly documents itself as
+     * supporting this. Generally, a class’ implementation of init() can assume
+     * (and assert) that it will only be called once. Previously, this documentation
+     * recommended all #GInitable implementations should be idempotent; that
+     * recommendation was relaxed in GLib 2.54.
+     * 
+     * If a class explicitly supports being initialized multiple times, it is
+     * recommended that the method is idempotent: multiple calls with the same
+     * arguments should return the same results. Only the first call initializes
+     * the object; further calls return the result of the first call.
+     * 
+     * One reason why a class might need to support idempotent initialization is if
+     * it is designed to be used via the singleton pattern, with a
+     * #GObjectClass.constructor that sometimes returns an existing instance.
+     * In this pattern, a caller would expect to be able to call g_initable_init()
+     * on the result of g_object_new(), regardless of whether it is in fact a new
+     * instance.
+     */
+    init(cancellable?: Cancellable | null): boolean
+    /* Virtual methods of Gio-2.0.Gio.DebugControllerDBus */
+    vfunc_authorize(invocation: DBusMethodInvocation): boolean
+    /**
+     * Initializes the object implementing the interface.
+     * 
+     * This method is intended for language bindings. If writing in C,
+     * g_initable_new() should typically be used instead.
+     * 
+     * The object must be initialized before any real use after initial
+     * construction, either with this function or g_async_initable_init_async().
+     * 
+     * Implementations may also support cancellation. If `cancellable` is not %NULL,
+     * then initialization can be cancelled by triggering the cancellable object
+     * from another thread. If the operation was cancelled, the error
+     * %G_IO_ERROR_CANCELLED will be returned. If `cancellable` is not %NULL and
+     * the object doesn't support cancellable initialization the error
+     * %G_IO_ERROR_NOT_SUPPORTED will be returned.
+     * 
+     * If the object is not initialized, or initialization returns with an
+     * error, then all operations on the object except g_object_ref() and
+     * g_object_unref() are considered to be invalid, and have undefined
+     * behaviour. See the [introduction][ginitable] for more details.
+     * 
+     * Callers should not assume that a class which implements #GInitable can be
+     * initialized multiple times, unless the class explicitly documents itself as
+     * supporting this. Generally, a class’ implementation of init() can assume
+     * (and assert) that it will only be called once. Previously, this documentation
+     * recommended all #GInitable implementations should be idempotent; that
+     * recommendation was relaxed in GLib 2.54.
+     * 
+     * If a class explicitly supports being initialized multiple times, it is
+     * recommended that the method is idempotent: multiple calls with the same
+     * arguments should return the same results. Only the first call initializes
+     * the object; further calls return the result of the first call.
+     * 
+     * One reason why a class might need to support idempotent initialization is if
+     * it is designed to be used via the singleton pattern, with a
+     * #GObjectClass.constructor that sometimes returns an existing instance.
+     * In this pattern, a caller would expect to be able to call g_initable_init()
+     * on the result of g_object_new(), regardless of whether it is in fact a new
+     * instance.
+     */
+    vfunc_init(cancellable?: Cancellable | null): boolean
+    /* Virtual methods of GObject-2.0.GObject.Object */
+    vfunc_constructed(): void
+    vfunc_dispatch_properties_changed(n_pspecs: number, pspecs: GObject.ParamSpec): void
+    vfunc_dispose(): void
+    vfunc_finalize(): void
+    vfunc_get_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /**
+     * Emits a "notify" signal for the property `property_name` on `object`.
+     * 
+     * When possible, eg. when signaling a property change from within the class
+     * that registered the property, you should use g_object_notify_by_pspec()
+     * instead.
+     * 
+     * Note that emission of the notify signal may be blocked with
+     * g_object_freeze_notify(). In this case, the signal emissions are queued
+     * and will be emitted (in reverse order) when g_object_thaw_notify() is
+     * called.
+     */
+    vfunc_notify(pspec: GObject.ParamSpec): void
+    vfunc_set_property(property_id: number, value: any, pspec: GObject.ParamSpec): void
+    /* Signals of Gio-2.0.Gio.DebugControllerDBus */
+    /**
+     * Emitted when a D-Bus peer is trying to change the debug settings and used
+     * to determine if that is authorized.
+     * 
+     * This signal is emitted in a dedicated worker thread, so handlers are
+     * allowed to perform blocking I/O. This means that, for example, it is
+     * appropriate to call `polkit_authority_check_authorization_sync()` to check
+     * authorization using polkit.
+     * 
+     * If %FALSE is returned then no further handlers are run and the request to
+     * change the debug settings is rejected.
+     * 
+     * Otherwise, if %TRUE is returned, signal emission continues. If no handlers
+     * return %FALSE, then the debug settings are allowed to be changed.
+     * 
+     * Signal handlers must not modify `invocation,` or cause it to return a value.
+     * 
+     * The default class handler just returns %TRUE.
+     */
+    connect(sigName: "authorize", callback: (($obj: DebugControllerDBus, invocation: DBusMethodInvocation) => boolean)): number
+    connect_after(sigName: "authorize", callback: (($obj: DebugControllerDBus, invocation: DBusMethodInvocation) => boolean)): number
+    emit(sigName: "authorize", invocation: DBusMethodInvocation): void
+    /* Signals of GObject-2.0.GObject.Object */
+    /**
+     * The notify signal is emitted on an object when one of its properties has
+     * its value set through g_object_set_property(), g_object_set(), et al.
+     * 
+     * Note that getting this signal doesn’t itself guarantee that the value of
+     * the property has actually changed. When it is emitted is determined by the
+     * derived GObject class. If the implementor did not create the property with
+     * %G_PARAM_EXPLICIT_NOTIFY, then any call to g_object_set_property() results
+     * in ::notify being emitted, even if the new value is the same as the old.
+     * If they did pass %G_PARAM_EXPLICIT_NOTIFY, then this signal is emitted only
+     * when they explicitly call g_object_notify() or g_object_notify_by_pspec(),
+     * and common practice is to do that only when the value has actually changed.
+     * 
+     * This signal is typically used to obtain change notification for a
+     * single property, by specifying the property name as a detail in the
+     * g_signal_connect() call, like this:
+     * 
+     * 
+     * ```c
+     * g_signal_connect (text_view->buffer, "notify::paste-target-list",
+     *                   G_CALLBACK (gtk_text_view_target_list_notify),
+     *                   text_view)
+     * ```
+     * 
+     * 
+     * It is important to note that you must use
+     * [canonical parameter names][canonical-parameter-names] as
+     * detail strings for the notify signal.
+     */
+    connect(sigName: "notify", callback: (($obj: DebugControllerDBus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify", callback: (($obj: DebugControllerDBus, pspec: GObject.ParamSpec) => void)): number
+    emit(sigName: "notify", pspec: GObject.ParamSpec): void
+    connect(sigName: "notify::debug-enabled", callback: (($obj: DebugControllerDBus, pspec: GObject.ParamSpec) => void)): number
+    connect_after(sigName: "notify::debug-enabled", callback: (($obj: DebugControllerDBus, pspec: GObject.ParamSpec) => void)): number
+    connect(sigName: string, callback: any): number
+    connect_after(sigName: string, callback: any): number
+    emit(sigName: string, ...args: any[]): void
+    disconnect(id: number): void
+    static name: string
+    constructor (config?: DebugControllerDBus_ConstructProps)
+    _init (config?: DebugControllerDBus_ConstructProps): void
+    /* Static methods and pseudo-constructors */
+    static new(connection: DBusConnection, cancellable?: Cancellable | null): DebugControllerDBus
+    /**
+     * Helper function for constructing #GInitable object. This is
+     * similar to g_object_newv() but also initializes the object
+     * and returns %NULL, setting an error on failure.
+     */
+    static newv(object_type: GObject.Type, parameters: GObject.Parameter[], cancellable?: Cancellable | null): GObject.Object
     static $gtype: GObject.Type
 }
 interface DesktopAppInfo_ConstructProps extends GObject.Object_ConstructProps {
@@ -76968,7 +77641,7 @@ class TlsCertificate {
     static new_from_files(cert_file: string, key_file: string): TlsCertificate
     static new_from_pem(data: string, length: number): TlsCertificate
     static new_from_pkcs11_uris(pkcs11_uri: string, private_key_pkcs11_uri?: string | null): TlsCertificate
-    static new_from_pkcs12(data: number, length: number, password?: string | null): TlsCertificate
+    static new_from_pkcs12(data: Uint8Array, password?: string | null): TlsCertificate
     /**
      * Creates one or more #GTlsCertificates from the PEM-encoded
      * data in `file`. If `file` cannot be read or parsed, the function will
@@ -87400,6 +88073,19 @@ abstract class DatagramBasedInterface {
     readonly condition_wait: (datagram_based: DatagramBased, condition: GLib.IOCondition, timeout: number, cancellable?: Cancellable | null) => boolean
     static name: string
 }
+abstract class DebugControllerDBusClass {
+    /* Fields of Gio-2.0.Gio.DebugControllerDBusClass */
+    /**
+     * The parent class.
+     */
+    readonly parent_class: GObject.ObjectClass
+    readonly authorize: (controller: DebugControllerDBus, invocation: DBusMethodInvocation) => boolean
+    readonly padding: object[]
+    static name: string
+}
+abstract class DebugControllerInterface {
+    static name: string
+}
 abstract class DesktopAppInfoClass {
     /* Fields of Gio-2.0.Gio.DesktopAppInfoClass */
     readonly parent_class: GObject.ObjectClass
@@ -87672,7 +88358,7 @@ abstract class FileIface {
     readonly get_parent: (file: File) => File | null
     readonly prefix_matches: (prefix: File, file: File) => boolean
     readonly get_relative_path: (parent: File, descendant: File) => string | null
-    readonly resolve_relative_path: (file: File, relative_path: string) => File | null
+    readonly resolve_relative_path: (file: File, relative_path: string) => File
     readonly get_child_for_display_name: (file: File, display_name: string) => File
     readonly enumerate_children: (file: File, attributes: string, flags: FileQueryInfoFlags, cancellable?: Cancellable | null) => FileEnumerator
     readonly enumerate_children_async: (file: File, attributes: string, flags: FileQueryInfoFlags, io_priority: number, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
@@ -87721,6 +88407,8 @@ abstract class FileIface {
     readonly copy_async: (source: File, destination: File, flags: FileCopyFlags, io_priority: number, cancellable?: Cancellable | null) => void
     readonly copy_finish: (file: File, res: AsyncResult) => boolean
     readonly move: (source: File, destination: File, flags: FileCopyFlags, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null) => boolean
+    readonly move_async: (source: File, destination: File, flags: FileCopyFlags, io_priority: number, cancellable?: Cancellable | null, progress_callback?: FileProgressCallback | null, callback?: AsyncReadyCallback | null) => void
+    readonly move_finish: (file: File, result: AsyncResult) => boolean
     readonly mount_mountable: (file: File, flags: MountMountFlags, mount_operation?: MountOperation | null, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void
     readonly mount_mountable_finish: (file: File, result: AsyncResult) => File
     readonly unmount_mountable: (file: File, flags: MountUnmountFlags, cancellable?: Cancellable | null, callback?: AsyncReadyCallback | null) => void

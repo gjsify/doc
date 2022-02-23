@@ -114,7 +114,7 @@ class WaylandDevice {
     /**
      * Retrieves the current tool for `device`.
      */
-    get_device_tool(): Gdk.DeviceTool
+    get_device_tool(): Gdk.DeviceTool | null
     /**
      * Returns the direction of effective layout of the keyboard.
      * 

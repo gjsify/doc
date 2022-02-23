@@ -3417,6 +3417,10 @@ class Device {
      * Checks whether the #MbimDevice is open for I/O.
      */
     is_open(): boolean
+    /**
+     * Synchronously lists all virtual network interfaces that have been previously
+     * created with mbim_device_add_link() in `base_ifname`.
+     */
     list_links(base_ifname: string): [ /* returnType */ boolean, /* out_links */ string[] ]
     /**
      * Asynchronously opens a #MbimDevice for I/O.

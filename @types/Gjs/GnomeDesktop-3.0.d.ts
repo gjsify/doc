@@ -1309,12 +1309,29 @@ class DesktopThumbnailFactory {
      */
     create_failed_thumbnail(uri: string, mtime: number): void
     /**
+     * Asynchronous version of gnome_desktop_thumbnail_factory_create_failed_thumbnail()
+     * 
+     * Since 42.0
+     */
+    create_failed_thumbnail_async(uri: string, original_mtime: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /**
+     * Since 42.0
+     */
+    create_failed_thumbnail_finish(result: Gio.AsyncResult): void
+    /**
      * Tries to generate a thumbnail for the specified file. If it succeeds
      * it returns a pixbuf that can be used as a thumbnail.
      * 
      * Usage of this function is threadsafe and does blocking I/O.
      */
     generate_thumbnail(uri: string, mime_type: string): GdkPixbuf.Pixbuf
+    /**
+     * Asynchronous version of gnome_desktop_thumbnail_factory_generate_thumbnail()
+     * 
+     * Since 42.0
+     */
+    generate_thumbnail_async(uri: string, mime_type: string, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    generate_thumbnail_finish(result: Gio.AsyncResult): GdkPixbuf.Pixbuf
     /**
      * Tries to locate an failed thumbnail for the file specified. Writing
      * and looking for failed thumbnails is important to avoid to try to
@@ -1336,6 +1353,16 @@ class DesktopThumbnailFactory {
      * Usage of this function is threadsafe and does blocking I/O.
      */
     save_thumbnail(thumbnail: GdkPixbuf.Pixbuf, uri: string, original_mtime: number): void
+    /**
+     * Asynchronous version of gnome_desktop_thumbnail_factory_save_thumbnail()
+     * 
+     * Since 42.0
+     */
+    save_thumbnail_async(thumbnail: GdkPixbuf.Pixbuf, uri: string, original_mtime: number, cancellable?: Gio.Cancellable | null, callback?: Gio.AsyncReadyCallback | null): void
+    /**
+     * Since 42.0
+     */
+    save_thumbnail_finish(result: Gio.AsyncResult): void
     /* Methods of GObject-2.0.GObject.Object */
     /**
      * Creates a binding between `source_property` on `source` and `target_property`
