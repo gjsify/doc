@@ -8,3 +8,6 @@
 [submodule "vendor/ts-for-gjs"]
 	path = vendor/ts-for-gjs
 	url = https://github.com/gjsify/ts-for-gjs.git
+[submodule "docs"]
+	path = docs
+	url = git@github.com:gjsify/generated-docs.git

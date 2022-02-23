@@ -103,14 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-# search.js exceeds GitHubs file size limit
-docs/*/assets/search.js
-docs/*/assets/search.json
-
-# For internal tests only
-docs/try
-docs/
-
 # Yarn, see https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 .pnp.*
 .yarn/*
