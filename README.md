@@ -1,6 +1,28 @@
 # doc
 Gjs and node-gtk Typescript API documentation
 
+## Submodules
+
+This repository has submodules, so you need to clone this repository including this submodules:
+
+```bash
+git clone --recursive https://github.com/ArtCodeStudio/markus-morische-rechtsanwalt-website.git
+```
+
+You can also clone the submodules afterwards:
+
+```bash
+git clone https://github.com/ArtCodeStudio/markus-morische-rechtsanwalt-website.git
+cd markus-morische-rechtsanwalt-website
+git submodule update --init --recursive
+```
+
+If you want to pull updates from this repository you should also pull the submodules:
+
+```bash
+git pull --recurse-submodules
+```
+
 ## FAQ
 
 Problem: I get the following error:
