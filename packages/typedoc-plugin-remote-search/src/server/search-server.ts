@@ -33,9 +33,9 @@ export class SearchServer {
     this.logger = logger || new ConsoleLogger();
     this.converter = new Converter(this.logger);
 
-    this.router.get("/search/:text", (ctx, next) => {
-      console.info(`Search for ${ctx.params.text}`);
-      const result = this.getResults(ctx.params.text);
+    this.router.get("/search/:query", (ctx, next) => {
+      console.info(`Search for ${ctx.params.query}`);
+      const result = this.getResults(ctx.params.query);
       ctx.body = result;
       return result;
     });

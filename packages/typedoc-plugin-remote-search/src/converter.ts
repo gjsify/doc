@@ -74,9 +74,7 @@ export class Converter {
 
     const logInterval = setInterval(() => {
       this.logger.info(
-        `[RemoteSearch] Convert original search.js file to ${basename(
-          target
-        )}...`
+        "[RemoteSearch] Conversion is in progress, please wait..."
       );
     }, 5000);
 

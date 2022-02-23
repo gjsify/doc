@@ -4,7 +4,11 @@ A plugin for TypeDoc that moves the API search to the server.
 
 ## Why?
 
-This is useful when the API documentation is very large. This can lead to the `search.js` becoming several hundred MB in size and thus unusable on the client side.
+This is useful when the API documentation is very large. This can lead to the `search.js` becoming very large and becomes unusable on the client side.
+
+## How?
+
+This package contains a CLI with which a webserver can be started. This webserver loads the `search.json` or `search.7z` which contains the prepared data for [lunr](https://lunrjs.com/). The default theme of Typedoc uses lunr for the client-side full-text search, but lunr can also be used in node.js. The build-in webserver does just that and runs very similar code with lunr for the search and wraps it in a REST API endpoint. The plugin now only needs to customize the client-side search field by using the API endpoint instead of running the search client-side. With this we have moved the execution of the search to the webserver.
 
 ## Install
 
@@ -20,6 +24,8 @@ Usage is the same as documented at [TypeDoc](https://typedoc.org/guides/installa
 typedoc --plugin @gjsify/typedoc-plugin-remote-search
 ```
 
+Or via the config file:
+
 ```js
 const typeDocOptions = {
   plugin: [
@@ -28,7 +34,15 @@ const typeDocOptions = {
 };
 ```
 
+This will create your documentation as usual. Now you start the web server:
+
+```bash
+typedoc-server serve ./doc
+```
+
 ### Plugin Arguments
+
+To see what arguments there are for this plugin you can run:
 
 ```bash
 $typedoc --plugin @gjsify/typedoc-plugin-remote-search --help
@@ -39,7 +53,6 @@ Options:
  --noCompress                [Remote Search] Disables the compression of the search.json
  --noReplaceElement          [Remote Search] Do not replace the search element with a custom element for out of the box working remote search
  --noScript                  [Remote Search] Do not insert client-side javascript into the theme (this way the search will not work without manual adjustments)
- --pack                      [Remote Search] If true, additional compression is performed by jsonpack. Disabled by default because this can take a long time with large files
  --port                      [Remote Search] Port of remote search server
 ```
 
@@ -78,8 +91,6 @@ Options:
       --decompress     This option should remain true if you have compressed the
                        json file                        [string] [default: true]
       --no-decompress  Disables the decompress option                   [string]
-      --unpack         This value must be true if you have packed the json file
-                       before                          [string] [default: false]
 ```
 
 
@@ -131,8 +142,6 @@ Options:
                                                              [string] [required]
   --compress  The compression level 0-9, 0 is no compression, 1 the fastest and
               9 the highest                                [number] [default: 9]
-  --pack      If true, additional compression is performed by jsonpack. Disabled
-              by default because this can take a long time with large files
                                                        [string] [default: false]
 ```
 
@@ -151,8 +160,6 @@ Options:
                                                              [string] [required]
   --target   The destination file path. E.g ./docs/assets/search.json
                                                              [string] [required]
-  --unpack   This value must be true if you have packed the json file before
-                                                       [string] [default: false]
 ```
 
 ### Convert
@@ -176,9 +183,6 @@ Options:
                       ./docs/assets/search.json.7z           [string] [required]
   --compress          The compression level 0-9, 0 is no compression, 1 the
                       fastest and 9 the highest            [number] [default: 9]
-  --pack              If true, additional compression is performed by jsonpack.
-                      Disabled by default because this can take a long time with
-                      large files                      [string] [default: false]
 ```
 
 ### Revert
@@ -202,9 +206,20 @@ Options:
   --decompress        This option should remain true if you have compressed the
                       json file                         [string] [default: true]
   --no-decompress     Disables the decompress option                    [string]
-  --unpack            This value must be true if you have packed the json file
-                      before                           [string] [default: false]
 ```
+
+## REST API
+
+### GET `search/:query`
+
+This endpoint performs the search with lunr, you have the same features as lunr like wildcards. For example, the following will match all documents with words beginning or ending with `foo`:
+
+```ts
+fetch(`${baseUrl}/search/*foo*`);
+```
+
+But lunr has even more cool features, for more see the [search guide of lunr](https://lunrjs.com/guides/searching.html).
+
 
 ## Theme Integration
 
@@ -212,18 +227,19 @@ You have several ways to integrate the remote search into your theme.
 
 ### Replace automatically
 
-This is the easiest way and the default. The search input is replaced with the custom element provided by this plugin. This makes the most sense if you use the default theme directly or a theme with the same search element.
+This is the easiest way and the default. The search input is replaced with the custom element provided by this plugin. This makes the most sense if you use the default theme or a theme with a compatible search field.
 
 ### Replace manually
-You insert the custom element provided by this plugin into the HTML code yourself.
 
-For this you can set the `--noReplaceElement` option of the plugin.
+You can insert the custom element provided by this plugin into the HTML code yourself.
+
+For this you can set the `--noReplaceElement` option of the plugin to prevent the automatic replace. Now you can change the HTML of your theme to use the custom element:
 
 ```jsx
 <tsd-search id="tsd-search" class="table-cell ready" base={context.relativeURL("./") + "/"}></tsd-search>
 ```
 
-You can also override the child html of the custom element to make adjustments to the style for the search input.
+You can also override the child html of the custom element to make adjustments to the the search:
 
 ```jsx
 <tsd-search id="tsd-search" class="table-cell ready" base={context.relativeURL("./") + "/"} hostname="localhost" port="3024">
@@ -244,40 +260,41 @@ You can also override the child html of the custom element to make adjustments t
 
 ### Build yourself
 
-Of course you can also build your own search. If you want you can use the [search from this plugin](../../packages/typedoc-plugin-remote-search/src/client/search-component.ts) as template.
+Of course you can also build your own search. If you want you can use the [search from this plugin](../../packages/typedoc-plugin-remote-search/src/client/search-component.ts) as a template.
 
-For this it is recommended to set the `--noScript` option of the plugin.
+If you implement your own search it is recommended to set the `--noScript` option of the plugin so that the javascript from this plugin is not included.
 
 ```ts
-    export interface Result {
-        classes: string;
-        url: string;
-        name: string;
-    }
+export interface Result {
+    classes: string;
+    url: string;
+    name: string;
+}
 
-    export interface Options {
-        /** Port of the search server */
-        port: number;
-        /** A domain name or IP address of the search server */
-        hostname: string;
-    }
+export interface Options {
+    /** Port of the search server */
+    port: number;
+    /** A domain name or IP address of the search server */
+    hostname: string;
+}
 
 
-    const options: Options = window.remoteSearchOptions;
-    const url = new URL(window.location.toString());
-    url.hostname = options.hostname;
-    url.port = options.port.toString();
-    url.pathname = `search/*${searchText}*`; // Perform a wildcard search
+const options: Options = window.remoteSearchOptions;
+const url = new URL(window.location.toString());
+url.hostname = options.hostname;
+url.port = options.port.toString();
+url.pathname = `search/*${searchText}*`; // Perform a wildcard search
 
-    const response = await fetch(url.toString());
-    const results: Result[] = await response.json();
-    ...
+const response = await fetch(url.toString());
+const results: Result[] = await response.json();
+...
 ```
 
 ## Examples
 
-An example contains this plugin itself, so checkout this repository and run inside this package
+The example generates the typedoc documentation from and using this plugin itself, to execute the example checkout this repository and run:
 
 ```bash
+cd packages/typedoc-plugin-remote-search
 yarn run example
 ```
