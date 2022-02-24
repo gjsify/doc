@@ -1,1 +1,1 @@
-export type TypedocModuleOptions = Record<string, never>;
+export type GjsifyTypedocModuleOptions = Record<string, never>;

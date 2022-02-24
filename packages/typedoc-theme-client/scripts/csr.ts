@@ -2,9 +2,8 @@ import { ready } from "@ribajs/utils";
 import { Riba, coreModule } from "@ribajs/core";
 import { routerModule, FadeTransition } from "@ribajs/router";
 import { bs5Module, ThemeService } from "@ribajs/bs5";
-import { typedocModule } from "./module";
-
-import { SearchOptions } from "./types";
+import { typedocModule, SearchOptions } from "@ribajs/typedoc";
+import { gjsifyTypedocModule } from "./module";
 
 declare global {
   interface Window {
@@ -32,6 +31,7 @@ const bootstrap = () => {
   );
   riba.module.regist(bs5Module.init());
   riba.module.regist(typedocModule.init());
+  riba.module.regist(gjsifyTypedocModule.init());
 
   const view = riba.bind(document.body, model);
 
