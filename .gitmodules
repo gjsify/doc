@@ -11,3 +11,6 @@
 [submodule "docs"]
 	path = docs
 	url = https://github.com/gjsify/generated-docs.git
+[submodule "@types"]
+	path = @types
+	url = git@github.com:gjsify/types.git
