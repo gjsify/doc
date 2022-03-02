@@ -8,9 +8,8 @@ import type { Bs5IntrinsicElements } from "@ribajs/bs5/src/types/jsx";
 import type { RouterIntrinsicElements } from "@ribajs/router/src/types/jsx";
 
 export interface JsxTsdSearchProps extends JsxHtmlGlobalProps {
-  base?: string;
-  port?: number | string;
-  hostname?: string;
+  /** The base url of the remote search server */
+  "server-base-url"?: string;
 }
 
 export type JsxTsdNavbarProps = JsxHtmlGlobalProps;

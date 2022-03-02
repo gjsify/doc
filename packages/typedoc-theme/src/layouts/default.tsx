@@ -60,10 +60,13 @@ export const defaultLayout = (
         sizes="16x16"
         href={context.relativeURL("assets/favicon-16x16.png")}
       />
-      <link rel="manifest" href={context.relativeURL("site.webmanifest")} />
+      <link
+        rel="manifest"
+        href={context.relativeURL("assets/site.webmanifest")}
+      />
       <link
         rel="mask-icon"
-        href={context.relativeURL("safari-pinned-tab.svg")}
+        href={context.relativeURL("assets/safari-pinned-tab.svg")}
         color="#4a86cf"
       />
 
@@ -105,7 +108,6 @@ export const defaultLayout = (
 
       {context.footer(props)}
 
-      <div class="overlay"></div>
       <script src={context.relativeURL("assets/vendors.bundle.js")}></script>
       <script src={context.relativeURL("assets/main.bundle.js")}></script>
 

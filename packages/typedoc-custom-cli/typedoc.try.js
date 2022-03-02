@@ -7,5 +7,6 @@ exports.default = {
     entryPointStrategy: "resolve",
     exclude: ["index.d.ts"],
     disableSources: false,
-    name: "GJS",
+    serverBaseUrl: "https://gjs-docs.gjsify.org/",
+    name: "GJS API Reference",
 };

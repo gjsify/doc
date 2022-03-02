@@ -5,6 +5,8 @@ export interface ServerOptions {
   port: number;
   /** A domain name or IP address of the search server */
   hostname: string;
+  /** `Access-Control-Allow-Origin`, default is request Origin header */
+  origin?: string;
   /** `true` if the generated documentation should be served */
   serve: boolean;
   /** Limit of the search result (there is no limit when the value is 0) */

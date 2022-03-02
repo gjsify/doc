@@ -75,8 +75,7 @@ export class RemoteSearchIndexPlugin {
 
   private getScriptSettings() {
     return `window.remoteSearchOptions = window.remoteSearchOptions || {
-      hostname: "${this.options.hostname || ""}",
-      port: ${this.options.port || 0},
+      serverBaseUrl: "${this.options.serverBaseUrl || "http://localhost:3024"}",
       replaceElement: ${this.options.replaceElement || false},
       script: ${this.options.script || false},
     };`;

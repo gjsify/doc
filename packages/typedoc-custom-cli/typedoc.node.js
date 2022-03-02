@@ -6,5 +6,5 @@ exports.default = {
     entryPointStrategy: "resolve",
     exclude: ["index.d.ts"],
     disableSources: false,
-    name: "node-gtk",
+    name: "NODE-GTK API Reference",
 };

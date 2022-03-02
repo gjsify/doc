@@ -6,5 +6,5 @@ exports.default = {
     entryPointStrategy: "resolve",
     exclude: ["index.d.ts"],
     disableSources: false,
-    name: "GJS",
+    name: "GJS API Reference",
 };

@@ -6,14 +6,14 @@ Gjs and node-gtk Typescript API documentation
 This repository has submodules, so you need to clone this repository including this submodules:
 
 ```bash
-git clone --recursive https://github.com/ArtCodeStudio/markus-morische-rechtsanwalt-website.git
+git clone --recursive https://github.com/gjsify/doc.git
 ```
 
 You can also clone the submodules afterwards:
 
 ```bash
-git clone https://github.com/ArtCodeStudio/markus-morische-rechtsanwalt-website.git
-cd markus-morische-rechtsanwalt-website
+git clone https://github.com/gjsify/doc.git
+cd doc
 git submodule update --init --recursive
 ```
 

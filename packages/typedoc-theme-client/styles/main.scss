@@ -7,11 +7,10 @@
 @import 'bootstrap';
 @import 'variables-bootstrap';
 
-@import 'typedoc/index';
-
 // Riba
 @import '~@ribajs/core';
 @import '~@ribajs/bs5';
+@import '~@ribajs/typedoc';
 
 // External Components
 @import 'components/index';

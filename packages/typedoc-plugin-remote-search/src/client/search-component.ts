@@ -5,11 +5,10 @@
 import { SearchResult } from "../types";
 import { debounce } from "./debounce";
 import { hasChild } from "./has-child";
+import "./global";
 
 export class Search extends HTMLElement {
-  base = "/";
-  port = 3024;
-  hostname = "localhost";
+  serverBaseUrl = window.location.href;
 
   constructor() {
     super();
@@ -30,39 +29,26 @@ export class Search extends HTMLElement {
 
   getOptionsFromWindowObject() {
     if (window.remoteSearchOptions) {
-      if (window.remoteSearchOptions.hostname)
-        this.hostname = window.remoteSearchOptions.hostname;
-      if (window.remoteSearchOptions.port)
-        this.port = window.remoteSearchOptions.port;
+      if (
+        this.serverBaseUrl === window.location.href &&
+        window.remoteSearchOptions.serverBaseUrl
+      ) {
+        this.serverBaseUrl = window.remoteSearchOptions.serverBaseUrl;
+      }
     }
   }
 
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     switch (name) {
-      case "base":
-        return this.baseChangedCallback(oldValue, newValue);
-      case "port":
-        return this.portChangedCallback(oldValue, newValue);
-      case "hostname":
-        return this.hostChangedCallback(oldValue, newValue);
+      case "server-base-url":
+        return this.serverBaseUrlChangedCallback(oldValue, newValue);
       default:
         break;
     }
   }
 
-  baseChangedCallback(oldValue: string, newValue: string) {
-    this.base = newValue;
-  }
-
-  portChangedCallback(oldValue: string, newValue: string) {
-    const port = Number(newValue);
-    if (!isNaN(port)) {
-      this.port = port;
-    }
-  }
-
-  hostChangedCallback(oldValue: string, newValue: string) {
-    this.hostname = newValue;
+  serverBaseUrlChangedCallback(oldValue: string, newValue: string) {
+    this.serverBaseUrl = newValue;
   }
 
   initSearch() {
@@ -142,11 +128,12 @@ export class Search extends HTMLElement {
 
     this.classList.add("loading");
 
-    const url = new URL(window.location.toString());
-    url.hostname = this.hostname;
-    url.port = this.port.toString();
+    const url = new URL(this.serverBaseUrl);
+    const separator = url.pathname.endsWith("/") ? "" : "/";
+
     // Perform a wildcard search
-    url.pathname = `search/*${searchText}*`;
+    url.pathname += `${separator}search/*${searchText}*`;
+
     const res: SearchResult[] = [];
 
     try {
@@ -167,7 +154,8 @@ export class Search extends HTMLElement {
       item.classList.value = row.classes;
 
       const anchor = document.createElement("a");
-      anchor.href = this.base + row.url;
+      const separator = this.serverBaseUrl.endsWith("/") ? "" : "/";
+      anchor.href = this.serverBaseUrl + separator + row.url;
       anchor.classList.add("tsd-kind-icon");
       anchor.innerHTML = row.name;
       item.append(anchor);

@@ -2,6 +2,8 @@ import Koa from "koa";
 import serve from "koa-static";
 import compress from "koa-compress";
 import Router from "@koa/router";
+import cors from "@koa/cors";
+import type { Options as CorsOptions } from "@koa/cors";
 import { join } from "path";
 import { Converter } from "../converter";
 import { ServerOptions, SearchState, SearchResult } from "../types";
@@ -33,6 +35,11 @@ export class SearchServer {
     this.logger = logger || new ConsoleLogger();
     this.converter = new Converter(this.logger);
 
+    const corsOptions: CorsOptions = {};
+    if (options.origin) {
+      corsOptions.origin = options.origin;
+    }
+
     this.router.get("/search/:query", (ctx, next) => {
       console.info(`Search for ${ctx.params.query}`);
       const result = this.getResults(ctx.params.query);
@@ -44,6 +51,7 @@ export class SearchServer {
     if (options.serve) this.app.use(serve(options.docDir, {}));
     this.app.use(this.router.routes());
     this.app.use(this.router.allowedMethods());
+    this.app.use(cors(corsOptions));
   }
 
   public async start() {

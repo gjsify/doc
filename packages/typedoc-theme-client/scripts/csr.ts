@@ -2,19 +2,12 @@ import { ready } from "@ribajs/utils";
 import { Riba, coreModule } from "@ribajs/core";
 import { routerModule, FadeTransition } from "@ribajs/router";
 import { bs5Module, ThemeService } from "@ribajs/bs5";
-import { typedocModule, SearchOptions } from "@ribajs/typedoc";
+import { typedocModule } from "@ribajs/typedoc";
 import { gjsifyTypedocModule } from "./module";
-
-declare global {
-  interface Window {
-    remoteSearchOptions?: Partial<SearchOptions>;
-  }
-}
 
 const bootstrap = () => {
   const riba = new Riba();
   const model: any = {};
-  const theme = ThemeService.getSingleton();
 
   riba.configure({
     prefix: ["rv", "csr-rv"],
@@ -33,6 +26,7 @@ const bootstrap = () => {
   riba.module.regist(typedocModule.init());
   riba.module.regist(gjsifyTypedocModule.init());
 
+  const theme = ThemeService.getSingleton();
   const view = riba.bind(document.body, model);
 
   view.registComponents();

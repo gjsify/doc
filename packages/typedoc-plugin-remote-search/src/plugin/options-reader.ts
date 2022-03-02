@@ -8,10 +8,6 @@ function isFile(file: string) {
   return existsSync(file) && statSync(file).isFile();
 }
 
-// function isDir(path: string) {
-//   return existsSync(path) && statSync(path).isDirectory();
-// }
-
 function getStringArray(arg: unknown): string[] {
   return Array.isArray(arg) ? arg.map(String) : [String(arg)];
 }
@@ -23,17 +19,10 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
 
   public addDeclarations(container: Options) {
     container.addDeclaration({
-      help: "[Remote Search] Port of remote search server",
-      name: "port",
-      type: ParameterType.Number,
-      defaultValue: 3024,
-    });
-
-    container.addDeclaration({
-      help: "[Remote Search] A domain name or IP address of the search server",
-      name: "hostname",
+      help: "[Remote Search] The base url of the remote search server",
+      name: "serverBaseUrl",
       type: ParameterType.String,
-      defaultValue: "localhost",
+      defaultValue: "http://localhost:3024",
     });
 
     container.addDeclaration({
@@ -173,8 +162,8 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
   }
 
   private parse(container: Options) {
-    const port = Number(container.getValue("port"));
-    const hostname = container.getValue("hostname") as string | undefined;
+    const serverBaseUrl = (container.getValue("serverBaseUrl") ||
+      "http://localhost:3024") as string;
     const noReplaceElement =
       container.getValue("noReplaceElement") === true ||
       container.getValue("noReplaceElement") === "true";
@@ -194,17 +183,12 @@ export class PluginRemoteSearchOptionsReader implements OptionsReader {
       compressLevel = 0;
     }
 
-    if (!port) {
-      throw new Error("port not set!");
-    }
-
-    if (!hostname) {
-      throw new Error("hostname not set!");
+    if (!serverBaseUrl) {
+      throw new Error("serverBaseUrl not set!");
     }
 
     const options: PluginOptions = {
-      port,
-      hostname,
+      serverBaseUrl,
       replaceElement: !noReplaceElement,
       script: !noScript,
       compress: !noCompress,

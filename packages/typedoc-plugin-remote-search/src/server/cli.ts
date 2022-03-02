@@ -90,6 +90,12 @@ const options = {
     default: "localhost",
     describe: "A domain name or IP address of the search server",
   } as Options & { name: string },
+  origin: {
+    name: "origin",
+    type: "string",
+    normalize: true,
+    describe: "`Access-Control-Allow-Origin`, default is request Origin header",
+  } as Options & { name: string },
   serve: {
     name: "serve",
     type: "boolean",
@@ -142,6 +148,7 @@ async function start() {
           .option(options.docDir.name, options.docDir)
           .option(options.port.name, options.port)
           .option(options.hostname.name, options.hostname)
+          .option(options.origin.name, options.origin)
           .option(options.serve.name, options.serve)
           .option(options.noServe.name, options.noServe)
           .option(options.limit.name, options.limit)
@@ -154,6 +161,7 @@ async function start() {
           docDir: yargs.docDir as string,
           port: yargs.port as number,
           hostname: yargs.hostname as string,
+          origin: yargs.origin as string | undefined,
           serve: yargs.serve as boolean,
           limit: yargs.limit as number,
           decompress: yargs.decompress as boolean,

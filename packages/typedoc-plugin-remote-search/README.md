@@ -49,11 +49,10 @@ $typedoc --plugin @gjsify/typedoc-plugin-remote-search --help
 
 Options:
  --compressLevel             [Remote Search] The compression level 0-9, 0 is no compression, 1 the fastest and 9 the highest
- --hostname                  [Remote Search] A domain name or IP address of the search server
+ --serverBaseUrl             [Remote Search] The base url of the remote search server
  --noCompress                [Remote Search] Disables the compression of the search.json
  --noReplaceElement          [Remote Search] Do not replace the search element with a custom element for out of the box working remote search
  --noScript                  [Remote Search] Do not insert client-side javascript into the theme (this way the search will not work without manual adjustments)
- --port                      [Remote Search] Port of remote search server
 ```
 
 ## Cli
@@ -215,7 +214,7 @@ Options:
 This endpoint performs the search with lunr, you have the same features as lunr like wildcards. For example, the following will match all documents with words beginning or ending with `foo`:
 
 ```ts
-fetch(`${baseUrl}/search/*foo*`);
+fetch(`${serverBaseUrl}/search/*foo*`);
 ```
 
 But lunr has even more cool features, for more see the [search guide of lunr](https://lunrjs.com/guides/searching.html).
@@ -236,13 +235,13 @@ You can insert the custom element provided by this plugin into the HTML code you
 For this you can set the `--noReplaceElement` option of the plugin to prevent the automatic replace. Now you can change the HTML of your theme to use the custom element:
 
 ```jsx
-<tsd-search id="tsd-search" class="table-cell ready" base={context.relativeURL("./") + "/"}></tsd-search>
+<tsd-search id="tsd-search" class="table-cell ready"></tsd-search>
 ```
 
 You can also override the child html of the custom element to make adjustments to the the search:
 
 ```jsx
-<tsd-search id="tsd-search" class="table-cell ready" base={context.relativeURL("./") + "/"} hostname="localhost" port="3024">
+<tsd-search id="tsd-search" class="table-cell ready" server-base-url="http://localhost:3024">
     <div class="field">
         <label for="tsd-search-field" class="tsd-widget search no-caption">
             Search
@@ -272,18 +271,14 @@ export interface Result {
 }
 
 export interface Options {
-    /** Port of the search server */
-    port: number;
-    /** A domain name or IP address of the search server */
-    hostname: string;
+    /** The base url of the remote search server */
+    serverBaseUrl: string;
 }
 
 
 const options: Options = window.remoteSearchOptions;
-const url = new URL(window.location.toString());
-url.hostname = options.hostname;
-url.port = options.port.toString();
-url.pathname = `search/*${searchText}*`; // Perform a wildcard search
+const url = new URL(options.serverBaseUrl);
+url.pathname = `/search/*${searchText}*`; // Perform a wildcard search
 
 const response = await fetch(url.toString());
 const results: Result[] = await response.json();
