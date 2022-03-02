@@ -45,14 +45,20 @@ export class SearchServer {
       console.info(`Search for ${ctx.params.query}`);
       const result = this.getResults(ctx.params.query);
       ctx.body = result;
+
+      // WORKAROUND cors middleware not working?
+      if (options.origin) {
+        ctx.set("Access-Control-Allow-Origin", options.origin);
+      }
+
       return result;
     });
 
     this.app.use(compress());
+    this.app.use(cors(corsOptions));
     if (options.serve) this.app.use(serve(options.docDir, {}));
     this.app.use(this.router.routes());
     this.app.use(this.router.allowedMethods());
-    this.app.use(cors(corsOptions));
   }
 
   public async start() {
