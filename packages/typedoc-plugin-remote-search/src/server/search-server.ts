@@ -37,6 +37,7 @@ export class SearchServer {
 
     const corsOptions: CorsOptions = {};
     if (options.origin) {
+      console.info(`Set origin to "${options.origin}"`);
       corsOptions.origin = options.origin;
     }
 

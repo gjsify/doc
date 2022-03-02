@@ -36,9 +36,9 @@
     "clear:types:node-gtk": "rm -rf ./@types/node-gtk",
     "clear:types:gjs": "rm -rf ./@types/Gjs",
     "clear": "yarn run clear:docs",
-    "serve:node-gtk": "typedoc-server serve ./docs/node-gtk --origin *",
-    "serve:gjs": "typedoc-server serve ./docs/gjs --origin *",
-    "serve:try": "typedoc-server serve ./docs/try --origin *",
+    "serve:node-gtk": "typedoc-server serve ./docs/node-gtk --origin '*'",
+    "serve:gjs": "typedoc-server serve ./docs/gjs --origin '*'",
+    "serve:try": "typedoc-server serve ./docs/try --origin '*'",
     "typedoc-server": "yarn workspace @gjsify/typedoc-plugin-remote-search run start",
     "typedoc": "yarn workspace @gjsify/typedoc-custom-cli run start"
   },
