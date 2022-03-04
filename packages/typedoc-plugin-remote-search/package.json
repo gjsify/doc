@@ -48,7 +48,7 @@
         "plugin:help": "typedoc --plugin @gjsify/typedoc-plugin-remote-search --help",
         "start": "node --max_old_space_size=20480 -r ts-node/register ./src/server/cli.ts",
         "_start": "typedoc-server",
-        "build:example": "typedoc src/index.ts src/types/index.ts src/plugin/plugin.tsx src/server/search-server.ts src/client/main.ts --out ./docs --plugin @gjsify/typedoc-plugin-remote-search",
+        "build:example": "typedoc --entryPointStrategy expand src --out ./docs --plugin @gjsify/typedoc-plugin-remote-search",
         "serve:example": "npm run start -- serve ./docs --limit 20",
         "example": "npm run build:example && npm run serve:example"
     },

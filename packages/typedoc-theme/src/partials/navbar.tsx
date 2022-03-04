@@ -78,7 +78,6 @@ export const navbar = (
             rv-element="searchEl"
             id="tsd-search"
             class="table-cell ready"
-            server-base-url={serverBaseUrl}
           ></tsd-search>
         </div>
       </div>
