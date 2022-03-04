@@ -82,6 +82,8 @@ Options:
       --port           Port of the search server        [number] [default: 3024]
       --hostname       A domain name or IP address of the search server
                                                  [string] [default: "localhost"]
+      --origin         `Access-Control-Allow-Origin`, default is request Origin
+                       header                                           [string]
       --serve          Remain this value if the generated documentation should
                        be served                        [string] [default: true]
       --no-serve       Disables the serve option                        [string]

@@ -1,8 +1,8 @@
 import { Renderer, Logger, JSX, DefaultThemeRenderContext } from "typedoc";
 import { writeFileSync, readFileSync } from "fs";
 import { Converter } from "../converter";
+import { PluginOptionsFunction } from "../types";
 import { join } from "path";
-import { PluginOptions } from "../types";
 
 /**
  * A plugin that exports an index of the project to a json file.
@@ -16,23 +16,19 @@ export class RemoteSearchIndexPlugin {
 
   private readonly settingsFilename = "search-settings.js";
   private readonly customElementFilename = "search-custom-element.js";
-  private scriptSettings: string;
-  private scriptCustomElement?: string;
+  private scriptCustomElement: string;
   private converter: Converter;
 
   constructor(
-    public logger: Logger,
-    private renderer: Renderer,
-    private readonly options: PluginOptions
+    public readonly logger: Logger,
+    private readonly renderer: Renderer,
+    private readonly getOptions: PluginOptionsFunction
   ) {
     this.outputDirectory = this.renderer.application.options.getValue("out");
 
-    this.scriptSettings = this.getScriptSettings();
-
     this.converter = new Converter(logger);
 
-    if (options.script)
-      this.scriptCustomElement = this.getScriptCustomElement();
+    this.scriptCustomElement = this.getScriptCustomElement();
 
     this.renderer.hooks.on("body.end", (context) => {
       return this.onBodyEnd(context);
@@ -57,13 +53,15 @@ export class RemoteSearchIndexPlugin {
    * Copies the script elements for the custom element and search settings to the assets path of the rendered documentation
    */
   private copyScripts() {
+    const options = this.getOptions();
+    const scriptSettings = this.getScriptSettings();
     const targetSettings = join(
       this.outputDirectory,
       "assets",
       this.settingsFilename
     );
-    writeFileSync(targetSettings, this.scriptSettings);
-    if (this.options.script && this.scriptCustomElement) {
+    writeFileSync(targetSettings, scriptSettings);
+    if (options.script && this.scriptCustomElement) {
       const targetCustomElement = join(
         this.outputDirectory,
         "assets",
@@ -74,11 +72,12 @@ export class RemoteSearchIndexPlugin {
   }
 
   private getScriptSettings() {
+    const options = this.getOptions();
     return `window.remoteSearchOptions = window.remoteSearchOptions || {
-      serverBaseUrl: "${this.options.serverBaseUrl || "http://localhost:3024"}",
-      replaceElement: ${this.options.replaceElement || false},
-      script: ${this.options.script || false},
-    };`;
+  serverBaseUrl: "${options.serverBaseUrl}",
+  replaceElement: ${options.replaceElement},
+  script: ${options.script},
+};`;
   }
 
   private getScriptCustomElement() {
@@ -92,7 +91,8 @@ export class RemoteSearchIndexPlugin {
    * Adds the script elements for the custom element and search settings to the html
    */
   private getScriptTags(context: DefaultThemeRenderContext) {
-    if (this.options.script && this.scriptCustomElement) {
+    const options = this.getOptions();
+    if (options.script && this.scriptCustomElement) {
       context.relativeURL("./");
       return (
         <>
@@ -117,15 +117,14 @@ export class RemoteSearchIndexPlugin {
    * For this we need to convert the search.js to a search.json
    */
   private async convertSearch() {
+    const options = this.getOptions();
     if (!this.outputDirectory) {
       this.logger.error("[RemoteSearch] outputDirectory not found!");
       return;
     }
 
     const source = join(this.outputDirectory, "assets", "search.js");
-    const targetFilename = this.options.compress
-      ? "search.json.7z"
-      : "search.json";
+    const targetFilename = options.compress ? "search.json.7z" : "search.json";
     const target = join(this.outputDirectory, "assets", targetFilename);
     const deleteSource = true;
 
@@ -133,7 +132,7 @@ export class RemoteSearchIndexPlugin {
       source,
       target,
       deleteSource,
-      this.options.compressLevel
+      options.compressLevel
     );
   }
 }

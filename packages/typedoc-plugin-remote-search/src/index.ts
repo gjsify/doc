@@ -1,10 +1,9 @@
 import { Application } from "typedoc";
 import { RemoteSearchIndexPlugin } from "./plugin/plugin";
-import { PluginRemoteSearchOptionsReader } from "./plugin/options-reader";
+import { addDeclarations, pluginOptions } from "./plugin/options";
 
 export function load(app: Application) {
-  const optionsReader = new PluginRemoteSearchOptionsReader();
-  optionsReader.addDeclarations(app.options);
-  const options = optionsReader.getOptions(app.options, app.logger);
-  new RemoteSearchIndexPlugin(app.logger, app.renderer, options);
+  addDeclarations(app);
+  const getOptions = pluginOptions(app);
+  new RemoteSearchIndexPlugin(app.logger, app.renderer, getOptions);
 }
