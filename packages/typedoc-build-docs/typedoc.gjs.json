@@ -1,0 +1,19 @@
+{
+    "out": "../../docs/gjs/",
+    "readme": "none",
+    "entryPoints": [
+        "../../@types/Gjs"
+    ],
+    "includes": "../../@types/Gjs",
+    "tsconfig": "./tsconfig.gjs.json",
+    "entryPointStrategy": "expand",
+    "exclude": [
+        "index.d.ts"
+    ],
+    "disableSources": false,
+    "name": "GJS API Reference",
+    "noScript": true,
+    "noReplaceElement": true,
+    "serverBaseUrl": "https://gjs-docs.gjsify.org/",
+    "theme": "gjsify"
+}

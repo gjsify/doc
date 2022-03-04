@@ -1,0 +1,40 @@
+{
+  "name": "@gjsify/typedoc-build-docs",
+  "version": "0.0.0",
+  "description": "JavaScript / TypeScript documentations generator scripts",
+  "module": "cli.ts",
+  "type": "commonjs",
+  "repository": "https://github.com/gjsify/doc/tree/main/packages/typedoc-build-docs",
+  "bin": {
+    "gjsify-doc": "./cli.js"
+  },
+  "scripts": {
+    "build:gjs": "yarn run typedoc --options ./typedoc.gjs.json",
+    "build:node-gtk": "yarn run typedoc --options ./typedoc.node.json",
+    "build:try": "yarn run typedoc --options ./typedoc.try.json --serverBaseUrl https://try-docs.gjsify.org/",
+    "build:gjs:local": "yarn run typedoc --options ./typedoc.gjs.json",
+    "build:node-gtk:local": "yarn run typedoc --options ./typedoc.node.json",
+    "build:try:local": "yarn run typedoc --options ./typedoc.try.json",
+    "typedoc": "NODE_OPTIONS=\"--require ../../.pnp.cjs --experimental-loader ../../.pnp.loader.mjs --max-old-space-size=20480\" typedoc --plugin @gjsify/typedoc-theme --plugin @gjsify/typedoc-plugin-remote-search"
+  },
+  "keywords": [
+    "gjs",
+    "node.js",
+    "typescript",
+    "javascript",
+    "tsdoc",
+    "typedoc",
+    "gio",
+    "gtk",
+    "gnome",
+    "gobject-introspection",
+    "node-gtk"
+  ],
+  "author": "Pascal Garber <pascal@artandcode.studio>",
+  "license": "AGPL",
+  "dependencies": {
+    "@gjsify/typedoc-plugin-remote-search": "workspace:^",
+    "@gjsify/typedoc-theme": "workspace:^",
+    "typedoc": "^0.22.12"
+  }
+}

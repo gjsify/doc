@@ -1,0 +1,19 @@
+{
+    "out": "../../docs/node-gtk/",
+    "readme": "none",
+    "entryPoints": [
+        "../../@types/node-gtk"
+    ],
+    "includes": "../../@types/node-gtk",
+    "tsconfig": "./tsconfig.node.json",
+    "entryPointStrategy": "resolve",
+    "exclude": [
+        "index.d.ts"
+    ],
+    "disableSources": false,
+    "name": "NODE-GTK API Reference",
+    "noScript": true,
+    "noReplaceElement": true,
+    "serverBaseUrl": "https://node-gtk-docs.gjsify.org/",
+    "theme": "gjsify"
+}

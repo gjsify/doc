@@ -1,0 +1,22 @@
+{
+  	"compilerOptions": {
+		// General settings for code interpretation
+		"target": "esnext",
+		"module": "esnext",
+		"isolatedModules": true,
+		"allowSyntheticDefaultImports": false,
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"noEmit": true,
+		"noEmitOnError": false,
+		"baseUrl": "../../@types/Gjs/",
+		"rootDir": "../../@types/Gjs",
+		// General settings for code generation
+		"removeComments": false,
+		"inlineSourceMap": false,
+		"inlineSources": false,
+		"newLine": "LF"
+ 	},
+	 "include": ["../../@types/Gjs"],
+	 "exclude": ["../../@types/node-gtk", "../../@types/Gjs/index.d.ts"]
+}
