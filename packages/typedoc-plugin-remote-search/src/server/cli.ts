@@ -2,6 +2,7 @@
 
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import { dirname } from "path";
 import { SearchServer } from "./search-server";
 import { Converter } from "../converter";
 
@@ -42,7 +43,7 @@ const options = {
     name: "target",
     type: "string",
     normalize: true,
-    demandOption: true,
+    demandOption: false,
     describe: "The destination file path. E.g ./docs/assets/search.json.7z",
   } as Options & { name: string },
   decompressSource: {
@@ -134,6 +135,36 @@ const options = {
   } as Options & { name: string },
 };
 
+const setDefaults = (
+  yargs: yargs.ArgumentsCamelCase<any>,
+  command: "serve" | "compress" | "decompress" | "revert" | "convert"
+) => {
+  let defaultTargetFilename = "search";
+  switch (command) {
+    case "serve":
+      break;
+    case "compress":
+      defaultTargetFilename += ".json.7z";
+      break;
+    case "decompress":
+      defaultTargetFilename += ".json.json";
+      break;
+    case "revert":
+      defaultTargetFilename += ".js";
+      break;
+    case "convert":
+      defaultTargetFilename += ".json.7z";
+      break;
+    default:
+      break;
+  }
+
+  if (!yargs.target) {
+    yargs.target =
+      dirname(yargs.source as string) + "/" + defaultTargetFilename;
+  }
+};
+
 async function start() {
   const logger = new ConsoleLogger();
   logger.level = LogLevel.Verbose;
@@ -180,6 +211,8 @@ async function start() {
         yargs.option(options.compress.name, options.compress);
       },
       async (yargs) => {
+        setDefaults(yargs, "compress");
+
         logger.info("Start compression...");
         const converter = new Converter(logger);
         const source = yargs.source as string;
@@ -197,6 +230,8 @@ async function start() {
         yargs.option(options.decompressTarget.name, options.decompressTarget);
       },
       async (yargs) => {
+        setDefaults(yargs, "decompress");
+
         logger.info("Start decompression...");
         const converter = new Converter(logger);
         const source = yargs.source as string;
@@ -216,6 +251,8 @@ async function start() {
         yargs.option(options.compress.name, options.compress);
       },
       async (yargs) => {
+        setDefaults(yargs, "convert");
+
         logger.info("Start conversion...");
         const converter = new Converter(logger);
         const source = yargs.source as string;
@@ -237,6 +274,8 @@ async function start() {
         yargs.option(options.noDecompress.name, options.noDecompress);
       },
       async (yargs) => {
+        setDefaults(yargs, "revert");
+
         logger.info("Start reversion...");
         const converter = new Converter(logger);
         const source = yargs.source as string;
