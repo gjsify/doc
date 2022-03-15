@@ -15,7 +15,7 @@
     "build:gjs:local": "yarn run typedoc --options ./typedoc.gjs.json",
     "build:node-gtk:local": "yarn run typedoc --options ./typedoc.node.json",
     "build:try:local": "yarn run typedoc --options ./typedoc.try.json",
-    "typedoc": "NODE_OPTIONS=\"--require ../../.pnp.cjs --experimental-loader ../../.pnp.loader.mjs --max-old-space-size=20480\" typedoc --plugin @gjsify/typedoc-theme --plugin @gjsify/typedoc-plugin-remote-search"
+    "typedoc": "NODE_OPTIONS=\"--require ../../.pnp.cjs --experimental-loader ../../.pnp.loader.mjs --max-old-space-size=32768\" typedoc --plugin @gjsify/typedoc-theme --plugin @gjsify/typedoc-plugin-remote-search"
   },
   "keywords": [
     "gjs",
@@ -35,6 +35,6 @@
   "dependencies": {
     "@gjsify/typedoc-plugin-remote-search": "workspace:^",
     "@gjsify/typedoc-theme": "workspace:^",
-    "typedoc": "^0.22.12"
+    "typedoc": "^0.22.13"
   }
 }
