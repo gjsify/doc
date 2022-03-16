@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   DefaultTheme,
   Renderer,
   PageEvent,
   RendererEvent,
   Logger,
-  ContainerReflection,
+  ContainerReflection
 } from "typedoc";
 import { copyFileSync, readdirSync } from "fs";
 import { resolve, basename } from "path";
@@ -27,7 +28,7 @@ export class GjsifyTheme extends DefaultTheme {
     this.listenTo(this.owner, {
       [PageEvent.END]: this.onGjsifyPageEnd,
       [RendererEvent.END]: this.onGjsifyRendererEnd,
-      [RendererEvent.BEGIN]: this.onGjsifyRendererBegin,
+      [RendererEvent.BEGIN]: this.onGjsifyRendererBegin
     });
   }
 
@@ -59,7 +60,7 @@ export class GjsifyTheme extends DefaultTheme {
     const destDir = resolve(outputDirectory, "assets");
     const dest = resolve(destDir, basename(filepath));
     mkdir(destDir);
-    this.logger.info(`[GjsifyTheme] ${filepath} -> ${dest}`);
+    this.logger.info(`[GjsifyTheme] ${basename(filepath)} -> ${dest}`);
     copyFileSync(src, dest);
   }
 
@@ -84,7 +85,7 @@ export class GjsifyTheme extends DefaultTheme {
     const destDir = resolve(outputDirectory, "assets/iconset/svg");
     const dest = resolve(destDir, basename(filepath));
     mkdir(destDir);
-    this.logger.info(`[GjsifyTheme] ${filepath} -> ${dest}`);
+    this.logger.info(`[GjsifyTheme] ${basename(filepath)} -> ${dest}`);
     copyFileSync(src, dest);
   }
 
@@ -116,7 +117,7 @@ export class GjsifyTheme extends DefaultTheme {
         "logo-light.svg",
         "main.bundle.js",
         "main.css",
-        "vendors.bundle.js",
+        "vendors.bundle.js"
       ],
       renderer.outputDirectory
     );

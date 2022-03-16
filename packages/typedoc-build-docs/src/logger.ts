@@ -5,14 +5,14 @@ const Colors = {
   yellow: "\u001b[93m",
   cyan: "\u001b[96m",
   gray: "\u001b[90m",
-  reset: "\u001b[0m",
+  reset: "\u001b[0m"
 };
 
 const messagePrefixes = {
   [LogLevel.Error]: "Error: ",
   [LogLevel.Warn]: "Warning: ",
   [LogLevel.Info]: "Info: ",
-  [LogLevel.Verbose]: "Debug: ",
+  [LogLevel.Verbose]: "Debug: "
 };
 
 const coloredMessagePrefixes = {
@@ -27,7 +27,7 @@ const coloredMessagePrefixes = {
   }`,
   [LogLevel.Verbose]: `${Colors.gray}${messagePrefixes[LogLevel.Verbose]}${
     Colors.reset
-  }`,
+  }`
 };
 
 /**
@@ -65,7 +65,7 @@ export class ConsoleLogger extends Logger {
         [LogLevel.Error]: "error",
         [LogLevel.Warn]: "warn",
         [LogLevel.Info]: "info",
-        [LogLevel.Verbose]: "log",
+        [LogLevel.Verbose]: "log"
       } as const
     )[level];
 

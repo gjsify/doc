@@ -2,7 +2,7 @@
   "compilerOptions": {             
     "target": "ESNext",
     "module": "CommonJS",
-    "outDir": ".",
+    "outDir": "dist",
     "strict": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "inlineSourceMap": true,
-    "rootDir": "./",
+    "rootDir": "./src",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
@@ -21,7 +21,7 @@
     "jsxFragmentFactory": "JSX.Fragment"
   },
   "include": [
-    "./cli.ts"
+    "./src/cli.ts"
   ],
   "exclude": [
     "@types",

@@ -1,19 +1,19 @@
 {
-    "out": "../../docs/try/",
+    "out": "../../docs/try-gjs/",
     "readme": "none",
     "entryPoints": [
         "../../@types/Gjs/Zeitgeist-2.0.d.ts"
     ],
-    "tsconfig": "./tsconfig.try.json",
+    "tsconfig": "./tsconfig.try-gjs.json",
     "entryPointStrategy": "resolve",
     "exclude": [
         "index.d.ts",
         "index.js"
     ],
     "disableSources": false,
-    "name": "GJS API Reference",
+    "name": "GJS API Reference (Try build)",
     "noScript": true,
     "noReplaceElement": true,
-    "serverBaseUrl": "https://try-docs.gjsify.org/",
+    "serverBaseUrl": "https://try-gjs-docs.gjsify.org/",
     "theme": "gjsify"
 }

@@ -8,7 +8,7 @@ config.publicPath = outputPath;
 config.output.path = outputPath;
 config.webpackbar = {
   name: "Typedoc",
-  color: "purple",
+  color: "purple"
 };
 
 const webpackConfig = ribaWebpackConfig(config);

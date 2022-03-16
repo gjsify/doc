@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 // const lzma: any = require("lzma");
 import lzma, { Preset } from "lzma-native";
-
+import { resolve } from "path";
 import { existsSync } from "fs";
 import { readFile, unlink, writeFile } from "fs/promises";
 import { SearchState, SearchData } from "./types";
@@ -19,9 +19,12 @@ export class Converter {
     }
   }
 
-  async load<T>(filepath: string, decompress: boolean) {
+  async load<T,>(filepath: string, decompress: boolean) {
     if (!existsSync(filepath)) {
-      throw new Error(`File not found "${filepath}"`);
+      filepath = resolve(process.cwd(), filepath);
+      if (!existsSync(filepath)) {
+        throw new Error(`[RemoteSearch/Converter.load] File not found "${filepath}"`);
+      }
     }
     const jsonBuf = await readFile(filepath);
     let data: T;
@@ -37,7 +40,7 @@ export class Converter {
     const data = await this.load<SearchData>(filepath, decompress);
     const state: SearchState = {
       data,
-      index: Index.load(data.index),
+      index: Index.load(data.index)
     };
     return state;
   }
@@ -61,8 +64,11 @@ export class Converter {
     const removeEnd = '");';
 
     if (!existsSync(source)) {
-      this.logger.error(`[RemoteSearch] File not found "${source}"!`);
-      return;
+      source = resolve(process.cwd(), source);
+      if (!existsSync(source)) {
+        this.logger.error(`[RemoteSearch/Converter.convertSearch] File not found "${source}"!`);
+        return;
+      }
     }
 
     this.logger.info("[RemoteSearch] Load original search.js file...");
@@ -140,7 +146,7 @@ export class Converter {
     lzma.compress(
       inputStr,
       {
-        preset: compressLevel as Preset,
+        preset: compressLevel as Preset
       },
       (buf) => {
         this.logger.verbose("[shrink] Done");
@@ -165,7 +171,7 @@ export class Converter {
    * @param compressed_obj The compressed object (using `shrink`)
    * @returns The uncompressed string or buffer
    */
-  _unshrink<T = any>(compressed_obj: Buffer | string, cb: (result: T) => void) {
+  _unshrink<T = any,>(compressed_obj: Buffer | string, cb: (result: T) => void) {
     compressed_obj = Buffer.isBuffer(compressed_obj)
       ? compressed_obj
       : Buffer.from(compressed_obj, "base64"); //convert to buffer if it starts off as a string
@@ -176,7 +182,7 @@ export class Converter {
     });
   }
 
-  unshrink<T = any>(compressed_obj: Buffer | string) {
+  unshrink<T = any,>(compressed_obj: Buffer | string) {
     return new Promise<T>((resolve, reject) => {
       try {
         this._unshrink(compressed_obj, resolve);

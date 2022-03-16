@@ -14,7 +14,7 @@ const config = {
     enable: true,
     images: true,
     scss: false,
-    iconset: true,
+    iconset: true
   },
   tsSourceDir,
   scssSourceDir,
@@ -22,15 +22,15 @@ const config = {
   scssIndexPath,
   output: {
     path: outputPath,
-    filename: "[name].bundle.js",
+    filename: "[name].bundle.js"
   },
   styles: {
     build: true,
     extract: true,
-    resolveUrl: "onlyImports",
-  },
+    resolveUrl: "onlyImports"
+  }
 };
 
 module.exports = {
-  config,
+  config
 };

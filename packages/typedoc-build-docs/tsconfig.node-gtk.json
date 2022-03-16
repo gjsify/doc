@@ -18,5 +18,5 @@
 		"newLine": "LF"
     },
 	"include": ["../../@types/node-gtk"],
-	"exclude": ["../../@types/Gjs", "../../@types/node-gtk/index.d.ts"]
+	"exclude": ["../../@types/node-gtk/index.d.ts"]
 }

@@ -6,16 +6,23 @@
   "type": "commonjs",
   "repository": "https://github.com/gjsify/doc/tree/main/packages/typedoc-build-docs",
   "bin": {
-    "gjsify-doc": "./cli.js"
+    "custom-cli": "./dist/cli.js"
   },
   "scripts": {
-    "build:gjs": "yarn run typedoc --options ./typedoc.gjs.json",
-    "build:node-gtk": "yarn run typedoc --options ./typedoc.node.json",
-    "build:try": "yarn run typedoc --options ./typedoc.try.json --serverBaseUrl https://try-docs.gjsify.org/",
-    "build:gjs:local": "yarn run typedoc --options ./typedoc.gjs.json",
-    "build:node-gtk:local": "yarn run typedoc --options ./typedoc.node.json",
-    "build:try:local": "yarn run typedoc --options ./typedoc.try.json",
-    "typedoc": "NODE_OPTIONS=\"--require ../../.pnp.cjs --experimental-loader ../../.pnp.loader.mjs --max-old-space-size=32768\" typedoc --plugin @gjsify/typedoc-theme --plugin @gjsify/typedoc-plugin-remote-search"
+    "build": "yarn run build:custom-cli",
+    "start:typedoc-cli": "NODE_OPTIONS=\"--require ../../.pnp.cjs --experimental-loader ../../.pnp.loader.mjs --max-old-space-size=32768\" typedoc --plugin @gjsify/typedoc-theme --plugin @gjsify/typedoc-plugin-remote-search",
+    "start:ts:custom-cli": "node --max_old_space_size=32768 -r ts-node/register src/cli.ts",
+    "start:custom-cli": "node --max_old_space_size=32768 dist/cli.js",
+    "build:custom-cli": "tsc --project ./tsconfig.json && chmod +x ./dist/cli.js",
+    "watch:custom-cli": "tsc --project ./tsconfig.json --watch",
+    "build:gjs": "yarn run start:typedoc-cli --options ./typedoc.gjs.json",
+    "build:node-gtk": "yarn run start:custom-cli --options ./typedoc.node-gtk.json",
+    "build:try:gjs": "yarn run start:typedoc-cli --options ./typedoc.try-gjs.json --serverBaseUrl https://try-gjs-docs.gjsify.org/",
+    "build:try:node-gtk": "yarn run start:custom-cli --options ./typedoc.try-node-gtk.json --serverBaseUrl https://try-node-gtk-docs.gjsify.org/",
+    "build:gjs:local": "yarn run start:typedoc-cli --options ./typedoc.gjs.json",
+    "build:node-gtk:local": "yarn run start:custom-cli --options ./typedoc.node-gtk.json",
+    "build:try:gjs:local": "yarn run start:typedoc-cli --options ./typedoc.try-gjs.json",
+    "build:try:node-gtk:local": "yarn run start:custom-cli --options ./typedoc.try-node-gtk.json"
   },
   "keywords": [
     "gjs",
@@ -32,6 +39,26 @@
   ],
   "author": "Pascal Garber <pascal@artandcode.studio>",
   "license": "AGPL",
+  "devDependencies": {
+    "@babel/runtime": "^7.17.7",
+    "@types/minimatch": "^3.0.5",
+    "@types/node": "^16.11.26",
+    "@types/yargs": "^17.0.9",
+    "@types/yargs-parser": "^21.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "http-server": "^14.1.0",
+    "minimatch": "^5.0.1",
+    "prettier": "^2.5.1",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.7.0",
+    "typedoc": "^0.22.13",
+    "typescript": "^4.6.2",
+    "yargs": "^17.3.1"
+  },
   "dependencies": {
     "@gjsify/typedoc-plugin-remote-search": "workspace:^",
     "@gjsify/typedoc-theme": "workspace:^",
