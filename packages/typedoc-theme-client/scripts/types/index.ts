@@ -1,3 +1,3 @@
-export * from "./footer-component-scope";
-export * from "./header-component-scope";
-export * from "./module-options";
+export * from "./footer-component-scope.js";
+export * from "./header-component-scope.js";
+export * from "./module-options.js";

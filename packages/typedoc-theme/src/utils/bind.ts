@@ -1,4 +1,4 @@
-export function bind<F, L extends any[], R>(
+export function bind<F, L extends any[], R,>(
   fn: (f: F, ...a: L) => R,
   first: F
 ) {

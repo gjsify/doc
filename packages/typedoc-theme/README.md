@@ -18,7 +18,7 @@ typedoc --plugin @gjsify/typedoc-plugin-remote-search --theme gjsify --out docs 
 typedoc-server serve ./doc
 ```
 
-# Development
+## Development
 
 This theme was developed specifically for the requirements of Gjsify, if there is a need we are happy to extend the theme for general use. For example with options to replace the logo. We therefore also gladly accept pull requests, but this is not a must, you are also welcome to just fork the theme to fit your own needs.
 

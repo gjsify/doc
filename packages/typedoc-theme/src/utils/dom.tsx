@@ -6,7 +6,7 @@ import {
   ReflectionFlags,
   SignatureReflection,
   TypeParameterReflection,
-  JSX,
+  JSX
 } from "typedoc";
 
 /**
@@ -33,7 +33,7 @@ export function wbr(str: string): (string | JSX.Element)[] {
   return ret;
 }
 
-export function join<T>(
+export function join<T,>(
   joiner: JSX.Children,
   list: readonly T[],
   cb: (x: T) => JSX.Children

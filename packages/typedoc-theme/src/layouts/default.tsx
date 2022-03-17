@@ -93,20 +93,28 @@ export const defaultLayout = (
       {context.navbar(props)}
 
       <router-view id="main" listen-all-links="true">
-        <div class="container-main">
-          {context.header(props)}
-          <div class="container">
-            <div class="row">
-              <div class="col-12">{props.template(props)}</div>
+        <div>
+          <div class="container-main">
+            {context.header(props)}
+            <div class="container">
+              <div class="row">
+                <div class="col-12">{props.template(props)}</div>
+              </div>
             </div>
           </div>
-          <template id="tsd-navigation-template">
-            {context.navigation(props)}
+
+          {context.footer(props)}
+
+          <template id="tsd-navigation-primary-template">
+            {context.primaryNavigation(props)}
+          </template>
+
+          <template id="tsd-navigation-secondary-template">
+            {context.secondaryNavigation(props)}
           </template>
         </div>
-      </router-view>
 
-      {context.footer(props)}
+      </router-view>
 
       <script src={context.relativeURL("assets/vendors.bundle.js")}></script>
       <script src={context.relativeURL("assets/main.bundle.js")}></script>

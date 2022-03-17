@@ -12,14 +12,14 @@ const bootstrap = () => {
   riba.configure({
     prefix: ["rv", "csr-rv"],
     blockUnknownCustomElements: false,
-    templateDelimiters: ["{", "}"],
+    templateDelimiters: ["{", "}"]
   });
 
   // Register modules
   riba.module.regist(coreModule.init());
   riba.module.regist(
     routerModule.init({
-      defaultTransition: new FadeTransition(),
+      defaultTransition: new FadeTransition()
     })
   );
   riba.module.regist(bs5Module.init());

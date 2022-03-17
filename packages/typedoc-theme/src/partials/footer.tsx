@@ -1,5 +1,6 @@
-import { PageEvent, Reflection } from "typedoc";
-import { GjsifyThemeContext } from "../context";
+import { PageEvent, Reflection, Application } from "typedoc";
+import { GjsifyThemeContext } from "../context.js";
+import { VERSION } from "../constants/index.js";
 import * as JSX from "../jsx";
 
 export const footer = (
@@ -89,13 +90,13 @@ export const footer = (
             <p>
               {"Generated using "}
               <a href="https://typedoc.org/" target="_blank">
-                TypeDoc
+                TypeDoc <small>v{ Application.VERSION }</small>
               </a>{" "}
               <a
                 href="https://github.com/gjsify/doc/tree/main/packages/typedoc-theme"
                 target="_blank"
               >
-                Gjsify Theme
+                Gjsify Theme <small>v{ VERSION }</small>
               </a>
             </p>
           </div>

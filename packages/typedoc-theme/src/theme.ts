@@ -9,9 +9,9 @@ import {
 } from "typedoc";
 import { copyFileSync, readdirSync } from "fs";
 import { resolve, basename } from "path";
-import { mkdir } from "./utils";
+import { mkdir } from "./utils/index.js";
 
-import { GjsifyThemeContext } from "./context";
+import { GjsifyThemeContext } from "./context.js";
 
 /**
  * A near clone of the default theme, that adds some custom text after the footer.

@@ -3,7 +3,7 @@ import {
   Options,
   Logger,
   RendererHooks,
-  DeclarationReflection,
+  DeclarationReflection
 } from "typedoc";
 import * as JSX from "./jsx";
 import {
@@ -11,16 +11,17 @@ import {
   footer,
   navbar,
   sidebar,
-  navigation,
-  memberSignatures,
+  secondaryNavigation,
+  primaryNavigation,
+  memberSignatures
 } from "./partials";
-import { defaultLayout } from "./layouts/default";
-import { bind } from "./utils";
+import { defaultLayout } from "./layouts/default.js";
+import { bind } from "./utils/index.js";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 
-import type { GjsifyTheme } from "./theme";
-import type { Partial } from "./types";
+import type { GjsifyTheme } from "./theme.js";
+import type { Partial } from "./types/index.js";
 
 /**
  * The theme context is where all of the partials live for rendering a theme,
@@ -53,7 +54,9 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
     memberSignatures,
     this
   );
-  override navigation: Partial = bind(navigation, this);
+
+  public primaryNavigation: Partial = bind(primaryNavigation, this);
+  public secondaryNavigation: Partial = bind(secondaryNavigation, this);
 
   public navbar: Partial = bind(navbar, this);
   public sidebar: Partial = bind(sidebar, this);

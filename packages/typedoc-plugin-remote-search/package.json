@@ -30,6 +30,7 @@
         "@types/koa__cors": "^3.1.1",
         "@types/koa__router": "^8.0.11",
         "@types/lzma-native": "^4.0.1",
+        "concurrently": "^7.0.0",
         "esbuild": "^0.14.27",
         "ts-node": "^10.7.0",
         "typedoc": "^0.22.13",
@@ -41,16 +42,19 @@
     },
     "scripts": {
         "clear": "rm -rf dist",
-        "build": "npm run clear && npm run build:client:prod && npm run build:server",
+        "build": "yarn run clear && yarn run build:client:prod && yarn run build:server",
         "build:server": "tsc --project tsconfig.json && chmod +x ./dist/server/cli.js",
         "build:client:dev": "node esbuild.client.dev.js",
         "build:client:prod": "node esbuild.client.prod.js",
+        "watch": "concurrently --kill-others-on-fail 'yarn:watch:*'",
+        "watch:server": "tsc --project tsconfig.json --watch",
+        "watch:client": "node esbuild.client.watch.js",
         "plugin:help": "typedoc --plugin @gjsify/typedoc-plugin-remote-search --help",
         "start": "node --max_old_space_size=20480 -r ts-node/register ./src/server/cli.ts",
         "_start": "typedoc-server",
         "build:example": "typedoc --entryPointStrategy expand src --out ./docs --plugin @gjsify/typedoc-plugin-remote-search",
-        "serve:example": "npm run start -- serve ./docs --limit 20",
-        "example": "npm run build:example && npm run serve:example"
+        "serve:example": "yarn run start -- serve ./docs --limit 20",
+        "example": "yarn run build:example && yarn run serve:example"
     },
     "dependencies": {
         "@koa/cors": "^3.2.0",
