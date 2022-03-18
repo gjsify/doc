@@ -11,9 +11,11 @@ import {
   footer,
   navbar,
   sidebar,
-  secondaryNavigation,
-  primaryNavigation,
-  memberSignatures
+  navigationPrimary,
+  navigationPrimaryObject,
+  navigationSecondary,
+  memberSignatures,
+  navigationSecondaryObject
 } from "./partials";
 import { defaultLayout } from "./layouts/default.js";
 import { bind } from "./utils/index.js";
@@ -21,7 +23,7 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 
 import type { GjsifyTheme } from "./theme.js";
-import type { Partial } from "./types/index.js";
+import type { PartialTemplate } from "./types/index.js";
 
 /**
  * The theme context is where all of the partials live for rendering a theme,
@@ -46,20 +48,22 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
   override hook = (name: keyof RendererHooks): JSX.JsxElement[] =>
     this.ownTheme.owner.hooks.emit(name, this);
 
-  override defaultLayout: Partial = bind(defaultLayout, this);
+  override defaultLayout: PartialTemplate = bind(defaultLayout, this);
 
-  override header: Partial = bind(header, this);
-  override footer: Partial = bind(footer, this);
-  override memberSignatures: Partial<DeclarationReflection> = bind(
+  override header: PartialTemplate = bind(header, this);
+  override footer: PartialTemplate = bind(footer, this);
+  override memberSignatures: PartialTemplate<DeclarationReflection> = bind(
     memberSignatures,
     this
   );
 
-  public primaryNavigation: Partial = bind(primaryNavigation, this);
-  public secondaryNavigation: Partial = bind(secondaryNavigation, this);
+  public navigationPrimary: PartialTemplate = bind(navigationPrimary, this);
+  public navigationPrimaryObject = bind(navigationPrimaryObject, this);
+  public navigationSecondary: PartialTemplate = bind(navigationSecondary, this);
+  public navigationSecondaryObject = bind(navigationSecondaryObject, this);
 
-  public navbar: Partial = bind(navbar, this);
-  public sidebar: Partial = bind(sidebar, this);
+  public navbar: PartialTemplate = bind(navbar, this);
+  public sidebar: PartialTemplate = bind(sidebar, this);
 
   public absoluteUrl = (url: string | undefined): string => {
     if (!url) return "";

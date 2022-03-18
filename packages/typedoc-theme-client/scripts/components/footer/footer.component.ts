@@ -25,6 +25,10 @@ export class FooterComponent extends Component {
     this.initFooter();
   }
 
+  protected async afterBind() {
+    await super.afterBind();
+  }
+
   initFooter() {
     //
   }

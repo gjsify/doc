@@ -1,6 +1,7 @@
 import type { Reflection, PageEvent } from "typedoc";
-import type { GjsifyThemeContext } from "../context";
-import * as JSX from "../jsx";
+import type { GjsifyThemeContext } from "../context.js";
+import { toBase64 } from "../utils/string.js";
+import * as JSX from "../jsx/index.js";
 
 export const defaultLayout = (
   context: GjsifyThemeContext,
@@ -92,28 +93,33 @@ export const defaultLayout = (
       {context.sidebar(props)}
       {context.navbar(props)}
 
-      <router-view id="main" listen-all-links="true">
-        <div>
-          <div class="container-main">
-            {context.header(props)}
-            <div class="container">
-              <div class="row">
-                <div class="col-12">{props.template(props)}</div>
-              </div>
+      <router-view id="main" listen-all-links="true" dataset-to-root-scope="true">
+        <div class="container-main">
+          {context.header(props)}
+          <div class="container">
+            <div class="row">
+              <div class="col-12">{props.template(props)}</div>
             </div>
           </div>
-
           {context.footer(props)}
 
           <template id="tsd-navigation-primary-template">
-            {context.primaryNavigation(props)}
+            {context.navigationPrimary(props)}
+          </template>
+
+          <template id="tsd-navigation-primary-object">
+            {toBase64(context.navigationPrimaryObject(props))}
           </template>
 
           <template id="tsd-navigation-secondary-template">
-            {context.secondaryNavigation(props)}
+            {context.navigationSecondary(props)}
           </template>
-        </div>
 
+          <template id="tsd-navigation-secondary-object">
+            {toBase64(context.navigationSecondaryObject(props))}
+          </template>
+
+        </div>
       </router-view>
 
       <script src={context.relativeURL("assets/vendors.bundle.js")}></script>

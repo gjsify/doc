@@ -5,9 +5,15 @@ import { bs5Module, ThemeService } from "@ribajs/bs5";
 import { typedocModule } from "@ribajs/typedoc";
 import { gjsifyTypedocModule } from "./module";
 
+declare global {
+  interface Window {
+    model: any;
+  }
+} 
+
 const bootstrap = () => {
   const riba = new Riba();
-  const model: any = {};
+  window.model = {};
 
   riba.configure({
     prefix: ["rv", "csr-rv"],
@@ -27,7 +33,7 @@ const bootstrap = () => {
   riba.module.regist(gjsifyTypedocModule.init());
 
   const theme = ThemeService.getSingleton();
-  const view = riba.bind(document.body, model);
+  const view = riba.bind(document.body, window.model);
 
   view.registComponents();
 

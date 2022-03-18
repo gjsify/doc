@@ -17,7 +17,7 @@ import {
  * @param str The string that should be split.
  * @return The original string containing ``<wbr>`` tags where possible.
  */
-export function wbr(str: string): (string | JSX.Element)[] {
+export function wbr(str: string): (string | JSX.Element)[] | string {
   // TODO surely there is a better way to do this, but I'm tired.
   const ret: (string | JSX.Element)[] = [];
   const re = /[\s\S]*?(?:([^_-][_-])(?=[^_-])|([^A-Z])(?=[A-Z][^A-Z]))/g;
@@ -26,10 +26,10 @@ export function wbr(str: string): (string | JSX.Element)[] {
   while ((match = re.exec(str))) {
     ret.push(match[0]);
     ret.push(<wbr />);
+    
     i += match[0].length;
   }
   ret.push(str.slice(i));
-
   return ret;
 }
 

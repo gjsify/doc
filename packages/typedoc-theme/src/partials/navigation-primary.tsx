@@ -6,34 +6,53 @@ import {
   DeclarationReflection,
   ReflectionKind
 } from "typedoc";
-import { GjsifyThemeContext } from "../context";
-import * as JSX from "../jsx";
+import { GjsifyThemeContext } from "../context.jsx";
+import * as JSX from "../jsx/index.js";
+import { Navigation, NavigationPrimary } from "../types/index.js";
+import { classNames, wbr, partition } from "../utils/index.js";
 
-import { classNames, wbr, partition } from "../utils";
-
-/** List of modules */
-export const primaryNavigation = (
+/** List of modules object */
+export const navigationPrimaryObject = (
   context: GjsifyThemeContext,
   props: PageEvent<Reflection>
 ) => {
   // Create the navigation for the current page:
   // If there are modules marked as "external" then put them in their own group.
 
+  const projectLinkName = "Modules";
+
   const modules = props.model.project.getChildrenByKind(
     ReflectionKind.SomeModule
-  );
-  const projectLinkName = "Modules";
+  );  
 
   const [ext, int] = partition(modules, (m) => m.flags.isExternal);
 
-  if (ext.length === 0) {
+  const primaryNav: NavigationPrimary = {
+    name: projectLinkName,
+    href: context.urlTo(props.model.project),
+    classNames: classNames({ current: props.model.isProject() }),
+    intern: int.map((mod) => linkObj(mod, context, props)),
+    extern: ext.map((mod) => linkObj(mod, context, props))
+  }
+
+  return primaryNav;
+}
+
+/** List of modules jsx elements */
+export const navigationPrimary = (
+  context: GjsifyThemeContext,
+  props: PageEvent<Reflection>
+) => {
+  const primaryNav = navigationPrimaryObject(context, props);
+
+  if (primaryNav.extern.length === 0) {
     return (
       <nav class="tsd-navigation primary">
         <ul>
-          <li class={classNames({ current: props.model.isProject() })}>
-            <a href={context.urlTo(props.model.project)}>{projectLinkName}</a>
+          <li class={ primaryNav.classNames }>
+            <a href={ primaryNav.href }>{ wbr(primaryNav.name) }</a>
           </li>
-          {int.map(link)}
+          { primaryNav.extern.map(link) }
         </ul>
       </nav>
     );
@@ -42,40 +61,20 @@ export const primaryNavigation = (
   return (
     <nav class="tsd-navigation primary">
       <ul>
-        <li class={classNames({ current: props.model.isProject() })}>
-          <a href={context.urlTo(props.model.project)}>{projectLinkName}</a>
+        <li class={ primaryNav.classNames }>
+          <a href={ primaryNav.href }>{ wbr(primaryNav.name) }</a>
         </li>
         <li class="label tsd-is-external">
           <span>Internals</span>
         </li>
-        {int.map(link)}
+        { primaryNav.extern.map(link) }
         <li class="label tsd-is-external">
           <span>Externals</span>
         </li>
-        {ext.map(link)}
+        { primaryNav.extern.map(link) }
       </ul>
     </nav>
   );
-
-  function link(mod: DeclarationReflection) {
-    const current = inPath(mod, props.model);
-    let childNav: JSX.JsxElement | undefined;
-    if (current) {
-      const childModules = mod.children?.filter((m) =>
-        m.kindOf(ReflectionKind.SomeModule)
-      );
-      if (childModules?.length) {
-        childNav = <ul>{childModules.map(link)}</ul>;
-      }
-    }
-
-    return (
-      <li class={classNames({ current }) + " " + mod.cssClasses}>
-        <a href={context.urlTo(mod)}>{wbr(mod.name)}</a>
-        {childNav}
-      </li>
-    );
-  }
 }
 
 function inPath(
@@ -91,4 +90,39 @@ function inPath(
   }
 
   return false;
+}
+
+function linkObj(mod: DeclarationReflection, context: GjsifyThemeContext, props: PageEvent<Reflection>) {
+  const current = inPath(mod, props.model);
+  const modulesNav: Navigation = {
+    name: mod.name,
+    href: context.urlTo(mod),
+    classNames: classNames({ current }) + " " + mod.cssClasses,
+    children: []
+  }
+
+  if (current) {
+    const childModules = mod.children?.filter((m) =>
+      m.kindOf(ReflectionKind.SomeModule)
+    );
+    if (childModules?.length) {
+      modulesNav.children = childModules.map((mod) => linkObj(mod, context, props));
+    }
+  }
+
+  return modulesNav;
+}
+
+function link(mod: Navigation) {
+  let childNav: JSX.JsxElement | undefined;
+  if (mod.children.length) {
+    childNav = <ul>{mod.children.map((mod) => link(mod))}</ul>;
+  }
+
+  return (
+    <li class={ mod.classNames }>
+      <a href={ mod.href }>{ wbr(mod.name) }</a>
+      { childNav }
+    </li>
+  );
 }

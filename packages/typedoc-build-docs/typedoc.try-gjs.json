@@ -2,7 +2,8 @@
     "out": "../../docs/try-gjs/",
     "readme": "none",
     "entryPoints": [
-        "../../@types/Gjs/Zeitgeist-2.0.d.ts"
+        "../../@types/Gjs/GLib-2.0.d.ts",
+        "../../@types/Gjs/GObject-2.0.d.ts"
     ],
     "tsconfig": "./tsconfig.try-gjs.json",
     "entryPointStrategy": "resolve",
