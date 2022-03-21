@@ -3,6 +3,7 @@
 import {
   PageEvent,
   Reflection,
+  ContainerReflection,
   DeclarationReflection,
   ReflectionKind
 } from "typedoc";
@@ -11,10 +12,11 @@ import * as JSX from "../jsx/index.js";
 import { Navigation, NavigationPrimary } from "../types/index.js";
 import { classNames, wbr, partition } from "../utils/index.js";
 
-/** List of modules object */
+/** List of modules depending on the current page */
 export const navigationPrimaryObject = (
   context: GjsifyThemeContext,
-  props: PageEvent<Reflection>
+  props: PageEvent<Reflection>,
+  global = false
 ) => {
   // Create the navigation for the current page:
   // If there are modules marked as "external" then put them in their own group.
@@ -29,13 +31,21 @@ export const navigationPrimaryObject = (
 
   const primaryNav: NavigationPrimary = {
     name: projectLinkName,
-    href: context.urlTo(props.model.project),
-    classNames: classNames({ current: props.model.isProject() }),
-    intern: int.map((mod) => linkObj(mod, context, props)),
-    extern: ext.map((mod) => linkObj(mod, context, props))
+    href: global ? context.absoluteUrl(props.model.project.url) : context.urlTo(props.model.project),
+    classNames: classNames( global ? {} : { current: props.model.isProject() }),
+    intern: int.map((mod) => linkObj(mod, context, props, global)),
+    extern: ext.map((mod) => linkObj(mod, context, props, global))
   }
 
   return primaryNav;
+}
+
+/** List of modules */
+export const navigationPrimaryGlobalObject = (
+  context: GjsifyThemeContext,
+  props: PageEvent<Reflection | ContainerReflection>
+) => {
+  return navigationPrimaryObject(context, props, true);
 }
 
 /** List of modules jsx elements */
@@ -92,21 +102,29 @@ function inPath(
   return false;
 }
 
-function linkObj(mod: DeclarationReflection, context: GjsifyThemeContext, props: PageEvent<Reflection>) {
+/**
+ * 
+ * @param mod 
+ * @param context 
+ * @param props 
+ * @param global Set this parameter to `true` to create a global object and `false` to create a local object for the current page
+ * @returns 
+ */
+function linkObj(mod: DeclarationReflection, context: GjsifyThemeContext, props: PageEvent<Reflection>, global = false) {
   const current = inPath(mod, props.model);
   const modulesNav: Navigation = {
     name: mod.name,
-    href: context.urlTo(mod),
-    classNames: classNames({ current }) + " " + mod.cssClasses,
+    href: global ? context.absoluteUrl(mod.url) : context.urlTo(mod),
+    classNames: (classNames( global ? {} : { current }) + " " + mod.cssClasses).trim(),
     children: []
   }
 
-  if (current) {
+  if (current || global) {
     const childModules = mod.children?.filter((m) =>
       m.kindOf(ReflectionKind.SomeModule)
     );
     if (childModules?.length) {
-      modulesNav.children = childModules.map((mod) => linkObj(mod, context, props));
+      modulesNav.children = childModules.map((mod) => linkObj(mod, context, props, global));
     }
   }
 

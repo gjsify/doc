@@ -5,9 +5,11 @@ import {
   PageEvent,
   RendererEvent,
   Logger,
-  ContainerReflection
+  ContainerReflection,
+  Reflection
 } from "typedoc";
-import { copyFileSync, readdirSync } from "fs";
+import { join } from "path";
+import { copyFileSync, readdirSync, writeFileSync } from "fs";
 import { resolve, basename } from "path";
 import { mkdir } from "./utils/index.js";
 
@@ -105,8 +107,16 @@ export class GjsifyTheme extends DefaultTheme {
     }
   }
 
-  onGjsifyPageEnd(page: PageEvent<ContainerReflection>) {
-    this.logger.info(`[GjsifyTheme] Render page "${page.filename}"...`);
+  onGjsifyPageEnd(page: PageEvent<Reflection>) {
+    this.logger.info(`[GjsifyTheme] Render page "${page.url}"...`);
+    if (page.url === "index.html") {
+      this.onGjsifyPageHomeEnd(page);
+    }
+    
+  }
+
+  onGjsifyPageHomeEnd(page: PageEvent<Reflection>) {
+    this.writeNavigationPrimaryGlobalScript(page);
   }
 
   onGjsifyRendererEnd(renderer: RendererEvent) {
@@ -123,6 +133,21 @@ export class GjsifyTheme extends DefaultTheme {
     );
     this.copyFavicons(renderer.outputDirectory);
     this.copyIconset(renderer.outputDirectory);
+  }
+
+  writeNavigationPrimaryGlobalScript(page: PageEvent<Reflection>) {
+    const filename = "primary-navigation.json";
+    this.logger.info(`[GjsifyTheme] Generate ${filename}...`);
+    const context = this.getRenderContext();
+    const outputDirectory = this.application.options.getValue("out");
+    
+    const target = join(
+      outputDirectory,
+      "assets",
+      filename
+    );
+    const navGlobal = context.navigationPrimaryGlobalObject(page);
+    writeFileSync(target, JSON.stringify(navGlobal, null, 0));
   }
 
   onGjsifyRendererBegin(renderer: RendererEvent) {

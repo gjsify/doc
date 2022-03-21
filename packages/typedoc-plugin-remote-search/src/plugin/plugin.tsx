@@ -93,7 +93,6 @@ export class RemoteSearchIndexPlugin {
   private getScriptTags(context: DefaultThemeRenderContext) {
     const options = this.getOptions();
     if (options.script && this.scriptCustomElement) {
-      context.relativeURL("./");
       return (
         <>
           <script

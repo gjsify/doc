@@ -13,6 +13,7 @@ import {
   sidebar,
   navigationPrimary,
   navigationPrimaryObject,
+  navigationPrimaryGlobalObject,
   navigationSecondary,
   memberSignatures,
   navigationSecondaryObject
@@ -20,7 +21,7 @@ import {
 import { defaultLayout } from "./layouts/default.js";
 import { bind } from "./utils/index.js";
 import { readFileSync } from "fs";
-import { resolve } from "path";
+import { resolve, join } from "path";
 
 import type { GjsifyTheme } from "./theme.js";
 import type { PartialTemplate } from "./types/index.js";
@@ -33,7 +34,7 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
   logger: Logger;
 
   /**
-   * Regular expression to test if a string looks like an external url.
+   * Regular expression to test if a string looks like an external / absolute url.
    */
   protected urlPrefix = /^(http|ftp)s?:\/\//;
 
@@ -59,6 +60,7 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
 
   public navigationPrimary: PartialTemplate = bind(navigationPrimary, this);
   public navigationPrimaryObject = bind(navigationPrimaryObject, this);
+  public navigationPrimaryGlobalObject = bind(navigationPrimaryGlobalObject, this);
   public navigationSecondary: PartialTemplate = bind(navigationSecondary, this);
   public navigationSecondaryObject = bind(navigationSecondaryObject, this);
 
@@ -69,10 +71,23 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
     if (!url) return "";
     const isAbsolute = this.urlPrefix.test(url);
     if (isAbsolute) {
-      // TODO append base path from settings
       return url;
     }
-    return this.relativeURL(url) || "";
+    const relativeUrl = this.relativeURL(url) || "";
+
+    url = relativeUrl.replaceAll('../', '');
+
+    if (!url.startsWith("/")) {
+      url = '/' + url;
+    }
+
+    // Option from typedoc-plugin-remote-search
+    // let serverBaseUrl = (this.options.getValue("serverBaseUrl") || "/") as string;
+    // if (serverBaseUrl.endsWith("/")) {
+    //   serverBaseUrl = serverBaseUrl.substring(1);
+    // }
+
+    return url;
   };
 
   public getAssetStr(name: string) {

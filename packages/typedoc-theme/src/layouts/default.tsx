@@ -107,10 +107,6 @@ export const defaultLayout = (
             {context.navigationPrimary(props)}
           </template>
 
-          <template id="tsd-navigation-primary-object">
-            {toBase64(context.navigationPrimaryObject(props))}
-          </template>
-
           <template id="tsd-navigation-secondary-template">
             {context.navigationSecondary(props)}
           </template>
