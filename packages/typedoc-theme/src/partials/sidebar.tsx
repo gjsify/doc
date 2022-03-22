@@ -19,7 +19,7 @@ export const sidebar = (
     rv-bs5-co-xl-mode="'side'"
     width="300px"
   >
-    <tsd-navigation-primary>{context.navigationPrimary(props)}</tsd-navigation-primary>
+    <tsd-navigation-primary class="d-block d-md-none my-2" type="dropdown"></tsd-navigation-primary>
     <tsd-navigation-secondary>{context.navigationSecondary(props)}</tsd-navigation-secondary>
   </bs5-sidebar>
 );

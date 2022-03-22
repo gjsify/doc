@@ -5,9 +5,6 @@ export const navbar = (
   context: GjsifyThemeContext
   // props: PageEvent<Reflection>
 ): JSX.JsxElement => {
-  const serverBaseUrl = (context.options.getValue("serverBaseUrl") ||
-    "") as string;
-
   return (
     <tsd-navbar class="tsd-page-toolbar navbar fixed-top navbar-expand navbar-os bg-tl-white bg-td-dark border-bottom border-tl-gray border-td-black">
       <div class="container-fluid d-flex justify-content-between">
@@ -74,11 +71,15 @@ export const navbar = (
               ></bs5-icon>
             </button>
           </bs5-theme-button>
+
+          <tsd-navigation-primary type="dropdown" class="mx-2 d-none d-md-block"></tsd-navigation-primary>
+
           <tsd-search
             rv-element="searchEl"
             id="tsd-search"
             class="table-cell ready"
           ></tsd-search>
+
         </div>
       </div>
     </tsd-navbar>

@@ -14,6 +14,8 @@ import {
   navigationPrimary,
   navigationPrimaryObject,
   navigationPrimaryGlobalObject,
+  navigationPrimaryGlobalFlatObject,
+  getCurrentModule,
   navigationSecondary,
   memberSignatures,
   navigationSecondaryObject
@@ -21,7 +23,7 @@ import {
 import { defaultLayout } from "./layouts/default.js";
 import { bind } from "./utils/index.js";
 import { readFileSync } from "fs";
-import { resolve, join } from "path";
+import { resolve } from "path";
 
 import type { GjsifyTheme } from "./theme.js";
 import type { PartialTemplate } from "./types/index.js";
@@ -61,6 +63,8 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
   public navigationPrimary: PartialTemplate = bind(navigationPrimary, this);
   public navigationPrimaryObject = bind(navigationPrimaryObject, this);
   public navigationPrimaryGlobalObject = bind(navigationPrimaryGlobalObject, this);
+  public navigationPrimaryGlobalFlatObject = bind(navigationPrimaryGlobalFlatObject, this);
+  public getCurrentModule = bind(getCurrentModule, this);
   public navigationSecondary: PartialTemplate = bind(navigationSecondary, this);
   public navigationSecondaryObject = bind(navigationSecondaryObject, this);
 

@@ -50,7 +50,11 @@ export const navigationSecondaryObject = (
         classNames: child.cssClasses || "",
         href: context.urlTo(child),
         name: child.name,
-        children: []
+        children: [],
+
+        // TODO
+        isExtern: false,
+        isIntern: true
       }
 
       return childNav;

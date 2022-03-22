@@ -22,7 +22,7 @@
         "lunr"
     ],
     "files": [
-        "dist/**/*",
+        "dist/*",
         "assets/*"
     ],
     "devDependencies": {

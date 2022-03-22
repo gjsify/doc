@@ -6,7 +6,8 @@ import * as JSX from "../jsx/index.js";
 export const defaultLayout = (
   context: GjsifyThemeContext,
   props: PageEvent<Reflection>
-) => (
+) => {
+  return (
   <html class="default">
     <head>
       <meta charSet="utf-8" />
@@ -94,7 +95,7 @@ export const defaultLayout = (
       {context.navbar(props)}
 
       <router-view id="main" listen-all-links="true" dataset-to-root-scope="true">
-        <div class="container-main">
+        <div class="container-main" data-project-name={props.model.project.name} data-module={toBase64(context.getCurrentModule(props))}>
           {context.header(props)}
           <div class="container">
             <div class="row">
@@ -102,10 +103,6 @@ export const defaultLayout = (
             </div>
           </div>
           {context.footer(props)}
-
-          <template id="tsd-navigation-primary-template">
-            {context.navigationPrimary(props)}
-          </template>
 
           <template id="tsd-navigation-secondary-template">
             {context.navigationSecondary(props)}
@@ -124,4 +121,4 @@ export const defaultLayout = (
       {context.hook("body.end")}
     </body>
   </html>
-);
+)};

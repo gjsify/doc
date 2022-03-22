@@ -116,7 +116,7 @@ export class GjsifyTheme extends DefaultTheme {
   }
 
   onGjsifyPageHomeEnd(page: PageEvent<Reflection>) {
-    this.writeNavigationPrimaryGlobalScript(page);
+    this.writeNavigationPrimaryJsonFile(page);
   }
 
   onGjsifyRendererEnd(renderer: RendererEvent) {
@@ -135,7 +135,7 @@ export class GjsifyTheme extends DefaultTheme {
     this.copyIconset(renderer.outputDirectory);
   }
 
-  writeNavigationPrimaryGlobalScript(page: PageEvent<Reflection>) {
+  writeNavigationPrimaryJsonFile(page: PageEvent<Reflection>) {
     const filename = "primary-navigation.json";
     this.logger.info(`[GjsifyTheme] Generate ${filename}...`);
     const context = this.getRenderContext();
@@ -146,7 +146,7 @@ export class GjsifyTheme extends DefaultTheme {
       "assets",
       filename
     );
-    const navGlobal = context.navigationPrimaryGlobalObject(page);
+    const navGlobal = context.navigationPrimaryGlobalFlatObject(page);
     writeFileSync(target, JSON.stringify(navGlobal, null, 0));
   }
 

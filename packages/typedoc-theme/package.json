@@ -1,6 +1,6 @@
 {
     "name": "@gjsify/typedoc-theme",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "main": "dist/index.js",
     "homepage": "https://github.com/gjsify/doc/tree/main/packages/typedoc-theme#readme",
     "repository": "https://github.com/gjsify/doc/tree/main/packages/typedoc-theme",
@@ -8,7 +8,14 @@
     "license": "AGPL",
     "keywords": [
         "typedoc",
-        "typedoc-theme"
+        "typedoc-theme",
+        "gjsify",
+        "gjs",
+        "node-gtk"
+    ],
+    "files": [
+        "dist/*",
+        "assets/*"
     ],
     "devDependencies": {
         "typedoc": "^0.22.13",

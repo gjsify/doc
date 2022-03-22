@@ -5,6 +5,9 @@ export function stringify(data: unknown) {
   return JSON.stringify(data);
 }
 
-export const toBase64 = (obj: any) => {
+export const toBase64 = (obj?: any) => {
+  if (!obj) {
+    return ""
+  }
   return "base64:" + Buffer.from(JSON.stringify(obj, null, 0), 'utf-8').toString('base64')
 }

@@ -2,4 +2,11 @@ bs5-sidebar {
     margin-top: $default-navbar-height;
     max-height: calc(100vh - $default-navbar-height);
     overflow: auto;
+    tsd-navigation-primary {
+        .dropdown {
+            .dropdown-toggle, .dropdown-menu {
+                width: 100%;
+            }
+        }
+    }
 }
