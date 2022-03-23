@@ -10,10 +10,12 @@
     "start": "concurrently --kill-others 'yarn:start:gjs' 'yarn:start:node-gtk'",
     "start:gjs": "yarn run build:gjs && yarn run serve:gjs",
     "start:node-gtk": "yarn run build:node-gtk && yarn run serve:node-gtk",
-    "start:try:gjs": "yarn run build:try:gjs && yarn run serve:try:gjs",
+    "start:try:gjs": "yarn run build:docs:try:gjs && yarn run serve:try:gjs",
+    "start:try:node-gtk": "yarn run build:docs:try:node-gtk && yarn run serve:try:node-gtk",
     "start:gjs:local": "yarn run build:gjs:local && yarn run serve:gjs",
     "start:node-gtk:local": "yarn run build:node-gtk:local && yarn run serve:node-gtk",
-    "start:try:gjs:local": "yarn run build:try:gjs:local && yarn run serve:try:gjs",
+    "start:try:gjs:local": "yarn run build:docs:try:gjs:local && yarn run serve:try:gjs",
+    "start:try:node-gtk:local": "yarn run build:docs:try:node-gtk:local && yarn run serve:try:node-gtk",
     "update": "yarn run update:submodules",
     "update:submodules": "git submodule update --init --recursive && git submodule foreach git pull origin master",
     "build:types:node-gtk": "yarn run clear:types:node-gtk && NODE_OPTIONS=\"\" ts-for-gir generate '*' -e node --useNamespace --moduleType commonjs --ignoreConflicts",
@@ -35,7 +37,7 @@
     "build:try:node-gtk": "yarn run build:types:try:node-gtk && yarn run build:docs:try:node-gtk",
     "build:try:node-gtk:local": "yarn run build:types:try:node-gtk && yarn run build:docs:try:node-gtk:local",
     "build:gjs": "yarn run build:types:gjs && yarn run build:docs:gjs",
-    "build:try:gjs": "yarn run build:types:try:gjs && yarn run build:docs:try:gjs",
+    "build:try:gjs": "yarn run build:docs:try:gjs",
     "build:gjs:local": "yarn run build:types:gjs && yarn run build:docs:gjs:local",
     "build:try:gjs:local": "yarn run build:types:try:gjs && yarn run build:docs:try:gjs:local",
     "build:packages:ts-for-gir": "cd vendor/ts-for-gjs && NODE_OPTIONS=\"\" npm install && NODE_OPTIONS=\"\" npm run build && NODE_OPTIONS=\"\" npm link",
@@ -63,8 +65,10 @@
     "serve:node-gtk": "typedoc-server serve ./docs/node-gtk --origin '*'",
     "serve:gjs": "typedoc-server serve ./docs/gjs --origin '*'",
     "serve:try:gjs": "typedoc-server serve ./docs/try-gjs --origin '*'",
+    "serve:try:node-gtk": "typedoc-server serve ./docs/try-node-gtk --origin '*'",
     "typedoc-server": "yarn workspace @gjsify/typedoc-plugin-remote-search run start",
-    "typedoc": "yarn workspace @gjsify/typedoc-build-docs run typedoc"
+    "typedoc": "yarn workspace @gjsify/typedoc-build-docs run typedoc",
+    "printenv": "printenv NODE_OPTIONS"
   },
   "keywords": [
     "gjs",
@@ -107,6 +111,7 @@
     "!vendor/riba/infra/schematics"
   ],
   "resolutions": {
+    "bootstrap": "twbs/bootstrap#main",
     "@ribajs/accessibility": "workspace:^",
     "@ribajs/artcodestudio": "workspace:^",
     "@ribajs/bs4": "workspace:^",

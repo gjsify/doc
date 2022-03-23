@@ -2,6 +2,7 @@ import { ready } from "@ribajs/utils";
 import { Riba, coreModule } from "@ribajs/core";
 import { routerModule, FadeTransition } from "@ribajs/router";
 import { bs5Module, ThemeService } from "@ribajs/bs5";
+import { fuseModule } from "@ribajs/fuse";
 import { typedocModule } from "@ribajs/typedoc";
 import { gjsifyTypedocModule } from "./module";
 
@@ -29,6 +30,7 @@ const bootstrap = () => {
     })
   );
   riba.module.regist(bs5Module.init());
+  riba.module.regist(fuseModule.init());
   riba.module.regist(typedocModule.init());
   riba.module.regist(gjsifyTypedocModule.init());
 

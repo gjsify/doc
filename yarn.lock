@@ -1938,6 +1938,7 @@ __metadata:
     "@ribajs/eslint-config": "workspace:*"
     "@ribajs/events": "workspace:*"
     "@ribajs/extras": "workspace:*"
+    "@ribajs/fuse": "workspace:^"
     "@ribajs/iconset": "workspace:*"
     "@ribajs/router": "workspace:*"
     "@ribajs/tsconfig": "workspace:*"
@@ -3025,7 +3026,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ribajs/fuse@workspace:vendor/riba/packages/fuse":
+"@ribajs/fuse@workspace:^, @ribajs/fuse@workspace:vendor/riba/packages/fuse":
   version: 0.0.0-use.local
   resolution: "@ribajs/fuse@workspace:vendor/riba/packages/fuse"
   dependencies:
@@ -3990,6 +3991,7 @@ __metadata:
     "@ribajs/core": "workspace:^"
     "@ribajs/events": "workspace:^"
     "@ribajs/extras": "workspace:^"
+    "@ribajs/fuse": "workspace:^"
     "@ribajs/iconset": "workspace:^"
     "@ribajs/jsx": "workspace:^"
     "@ribajs/router": "workspace:^"
@@ -7385,22 +7387,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:*, bootstrap@npm:^5.1.3":
+"bootstrap@twbs/bootstrap#main":
   version: 5.1.3
-  resolution: "bootstrap@npm:5.1.3"
+  resolution: "bootstrap@https://github.com/twbs/bootstrap.git#commit=0eb808015fc84effc69300a0a7e6884eb924abc9"
   peerDependencies:
-    "@popperjs/core": ^2.10.2
-  checksum: 301b5ed872efba061104cf22ac93568e3837867fb5527ab9326a51510fb752bd4883e1d488225c8be72f86d9d3a55ef5b166aa7fa62c2fdd077c3f05b65752f8
-  languageName: node
-  linkType: hard
-
-"bootstrap@npm:^4.6.1":
-  version: 4.6.1
-  resolution: "bootstrap@npm:4.6.1"
-  peerDependencies:
-    jquery: 1.9.1 - 3
-    popper.js: ^1.16.1
-  checksum: ff44e13787aafe1e2b8ac77802eae0f19bf957ea53a40ce3d9d4af9b67eab8adc585dc5a62cb6be82a3bc33e7ae67b0efd75f02282c0ddca09272d5c18a0b379
+    "@popperjs/core": ^2.11.4
+  checksum: c4ce4b70486d3ad6180e6f1875f4aca93015059bd5f28adc628eb59972aa3c43618d39c776c1f326f5a0025fcd9ce1391149a432148f646030c4b7fdae1721b9
   languageName: node
   linkType: hard
 

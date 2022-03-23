@@ -1,5 +1,7 @@
-# Typedoc Build Docs
+# TypeDoc Build Docs
 
-This package contains the config files for generating the documentations using typedoc.
+This package contains the config files for generating the documentations using TypeDoc.
 
-For some reason the standard cli of typedoc crashes with the types for node-gtk, for this reason this package also contains a simple cli wrapper for typedoc to create the documentation.
+For some reason the standard CLI of TypeDoc crashes with the types for Node-GTK, for this reason this package contains a simple CLI wrapper for TypeDoc with which the documentation generation works.
+
+To switch between the original TypeDoc CLI and the custom TypeDoc CLI you can replace `start:typedoc-cli` with `start:custom-cli` and vice versa in the `scripts` section of the `package.json`.

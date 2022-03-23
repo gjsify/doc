@@ -44,5 +44,6 @@ FATAL ERROR: Scavenger: semi-space copy Allocation failed - JavaScript heap out 
 Solution:
 
 ```bash
-sudo sysctl -w vm.max_map_count=655300
+sudo sysctl -w vm.max_map_count=262144
+NODE_OPTIONS=--max-old-space-size=25600 yarn run start
 ```

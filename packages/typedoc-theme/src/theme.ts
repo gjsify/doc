@@ -112,7 +112,6 @@ export class GjsifyTheme extends DefaultTheme {
     if (page.url === "index.html") {
       this.onGjsifyPageHomeEnd(page);
     }
-    
   }
 
   onGjsifyPageHomeEnd(page: PageEvent<Reflection>) {

@@ -59,6 +59,13 @@ async function generate(
     ? app.converter.convert(app.getEntryPoints() ?? [])
     : app.convert();
 
+  // Run Garbage Collector if node was started with `--expose-gc`
+  if (global.gc) {
+    logger.info("Run Garbage Collector...");
+    global.gc();
+    global.gc();
+  }
+
   if (project && typeDocOptions.out) {
     mkdirSync(typeDocOptions.out, { recursive: true });
     logger.info("Start generating the docs...");
