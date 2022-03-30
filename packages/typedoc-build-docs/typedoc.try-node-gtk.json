@@ -2,8 +2,8 @@
     "out": "../../docs/try-node-gtk/",
     "readme": "none",
     "entryPoints": [
-        "../../@types/Gjs/GLib-2.0.d.ts",
-        "../../@types/Gjs/GObject-2.0.d.ts"
+        "../../@types/node-gtk/GLib-2.0.d.ts",
+        "../../@types/node-gtk/GObject-2.0.d.ts"
     ],
     "tsconfig": "./tsconfig.try-node-gtk.json",
     "entryPointStrategy": "resolve",
