@@ -1,7 +1,7 @@
 exports.default = {
     modules: ['*'],
     girDirectories: ['./vala-girs/gir-1.0', './girs'],
-    ignoreConflicts: true,
+    ignoreVersionConflicts: true,
     prettify: true,
     moduleType: 'esm',
     ignore: [

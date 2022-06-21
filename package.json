@@ -18,10 +18,10 @@
     "start:try:node-gtk:local": "yarn run build:docs:try:node-gtk:local && yarn run serve:try:node-gtk",
     "update": "yarn run update:submodules",
     "update:submodules": "git submodule update --init --recursive && git submodule foreach git pull origin master",
-    "build:types:node-gtk": "yarn run clear:types:node-gtk && NODE_OPTIONS=\"\" ts-for-gir generate '*' -e node --useNamespace --moduleType commonjs --ignoreConflicts",
-    "build:types:try:node-gtk": "NODE_OPTIONS=\"\" ts-for-gir generate GLib-2.0 GObject-2.0 -e node --useNamespace --moduleType commonjs --ignoreConflicts",
-    "build:types:gjs": "yarn run clear:types:gjs && NODE_OPTIONS=\"\" ts-for-gir generate '*' -e gjs --useNamespace --moduleType esm --ignoreConflicts",
-    "build:types:try:gjs": "NODE_OPTIONS=\"\" ts-for-gir generate GLib-2.0 GObject-2.0 -e gjs --useNamespace --moduleType esm --ignoreConflicts",
+    "build:types:node-gtk": "yarn run clear:types:node-gtk && NODE_OPTIONS=\"\" ts-for-gir generate '*' -e node --useNamespace --moduleType commonjs --ignoreVersionConflicts",
+    "build:types:try:node-gtk": "NODE_OPTIONS=\"\" ts-for-gir generate GLib-2.0 GObject-2.0 -e node --useNamespace --moduleType commonjs --ignoreVersionConflicts",
+    "build:types:gjs": "yarn run clear:types:gjs && NODE_OPTIONS=\"\" ts-for-gir generate '*' -e gjs --useNamespace --moduleType esm --ignoreVersionConflicts",
+    "build:types:try:gjs": "NODE_OPTIONS=\"\" ts-for-gir generate GLib-2.0 GObject-2.0 -e gjs --useNamespace --moduleType esm --ignoreVersionConflicts",
     "build:types": "yarn run build:types:gjs && yarn run build:types:node-gtk",
     "build:docs:node-gtk": "yarn run clear:docs:node-gtk && yarn workspace @gjsify/typedoc-build-docs run build:node-gtk",
     "build:docs:try:node-gtk": "yarn run clear:docs:try:node-gtk && yarn workspace @gjsify/typedoc-build-docs run build:try:node-gtk",
@@ -87,17 +87,17 @@
   "license": "AGPL",
   "devDependencies": {
     "@ribajs/eslint-config": "workspace:^",
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/experimental-utils": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
-    "concurrently": "^7.0.0",
-    "eslint": "^8.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/experimental-utils": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "concurrently": "^7.2.2",
+    "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^2.7.0",
-    "eslint-plugin-import": "^2.25.4",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.0",
-    "typescript": "^4.6.2"
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   },
   "workspaces": [
     "packages/*",
@@ -144,10 +144,10 @@
     "@ribajs/babel-config": "workspace:^",
     "@ribajs/strapi": "workspace:^"
   },
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@3.2.1",
   "dependencies": {
     "@gjsify/typedoc-build-docs": "workspace:^",
     "@gjsify/typedoc-plugin-remote-search": "workspace:^",
-    "@yarnpkg/esbuild-plugin-pnp": "^2.0.1"
+    "@yarnpkg/esbuild-plugin-pnp": "^3.0.0-rc.9"
   }
 }
