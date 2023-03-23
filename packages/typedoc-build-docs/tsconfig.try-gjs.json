@@ -9,14 +9,14 @@
 		"moduleResolution": "node",
 		"noEmit": true,
 		"noEmitOnError": false,
-		"baseUrl": "../../@types/Gjs/",
-		"rootDir": "../../@types/Gjs",
+		"baseUrl": "../../@types/",
+		"rootDir": "../../@types",
 		// General settings for code generation
 		"removeComments": false,
 		"inlineSourceMap": false,
 		"inlineSources": false,
 		"newLine": "LF"
  	},
-	"include": ["../../@types/Gjs"],
-	"exclude": ["../../@types/Gjs/index.d.ts"]
+	"include": ["../../@types/**/*.ts"],
+	"exclude": ["../../@types/node-*/*.ts"]
 }

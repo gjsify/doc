@@ -9,14 +9,14 @@
 		"moduleResolution": "node",
 		"noEmit": true,
 		"noEmitOnError": false,
-		"baseUrl": "../../@types/node-gtk/",
-		"rootDir": "../../@types/node-gtk",
+		"baseUrl": "../../@types/",
+		"rootDir": "../../@types/",
 		// General settings for code generation
 		"removeComments": false,
 		"inlineSourceMap": false,
 		"inlineSources": false,
 		"newLine": "LF"
  	},
-	"include": ["../../@types/node-gtk"],
-	"exclude": ["../../@types/node-gtk/index.d.ts"]
+	"include": ["../../@types/node-*/*.ts"],
+	"exclude": ["../../@types/node-gtk/node-gtk.d.ts"]
 }

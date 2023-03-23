@@ -6,7 +6,7 @@ import {
   RendererEvent,
   Logger,
   ContainerReflection,
-  Reflection
+  Reflection,
 } from "typedoc";
 import { join } from "path";
 import { copyFileSync, readdirSync, writeFileSync } from "fs";
@@ -30,11 +30,11 @@ export class GjsifyTheme extends DefaultTheme {
     this.listenTo(this.owner, {
       [PageEvent.END]: this.onGjsifyPageEnd,
       [RendererEvent.END]: this.onGjsifyRendererEnd,
-      [RendererEvent.BEGIN]: this.onGjsifyRendererBegin
+      [RendererEvent.BEGIN]: this.onGjsifyRendererBegin,
     });
   }
 
-  override getRenderContext(): GjsifyThemeContext {
+  override getRenderContext(_pageEvent: PageEvent<any>): GjsifyThemeContext {
     this._contextCache ||= new GjsifyThemeContext(
       this,
       this.application.options
@@ -126,7 +126,7 @@ export class GjsifyTheme extends DefaultTheme {
         "logo-light.svg",
         "main.bundle.js",
         "main.css",
-        "vendors.bundle.js"
+        "vendors.bundle.js",
       ],
       renderer.outputDirectory
     );
@@ -137,14 +137,10 @@ export class GjsifyTheme extends DefaultTheme {
   writeNavigationPrimaryJsonFile(page: PageEvent<Reflection>) {
     const filename = "primary-navigation.json";
     this.logger.info(`[GjsifyTheme] Generate ${filename}...`);
-    const context = this.getRenderContext();
+    const context = this.getRenderContext(page);
     const outputDirectory = this.application.options.getValue("out");
-    
-    const target = join(
-      outputDirectory,
-      "assets",
-      filename
-    );
+
+    const target = join(outputDirectory, "assets", filename);
     const navGlobal = context.navigationPrimaryGlobalFlatObject(page);
     writeFileSync(target, JSON.stringify(navGlobal, null, 0));
   }

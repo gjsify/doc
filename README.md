@@ -33,6 +33,10 @@ yarn run build
 yarn run start
 ```
 
+## TODO
+
+Get images from https://gitlab.gnome.org/GNOME/gtk/-/tree/main/docs/reference/gtk/images
+
 ## FAQ
 
 Problem: I get the following error:

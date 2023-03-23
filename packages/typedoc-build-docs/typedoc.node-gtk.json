@@ -4,7 +4,7 @@
     "entryPoints": [
         "../../@types/node-gtk"
     ],
-    "includes": "../../@types/node-gtk",
+    "includes": "../../@types/node-*",
     "tsconfig": "./tsconfig.node-gtk.json",
     "entryPointStrategy": "expand",
     "exclude": [

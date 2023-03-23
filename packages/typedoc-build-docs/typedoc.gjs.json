@@ -2,14 +2,15 @@
     "out": "../../docs/gjs/",
     "readme": "none",
     "entryPoints": [
-        "../../@types/Gjs"
+        "../../@types/"
     ],
-    "includes": "../../@types/Gjs",
+    "includes": "../../@types/**/*",
+    "exclude:": "../../@types/node-*",
     "tsconfig": "./tsconfig.gjs.json",
     "entryPointStrategy": "expand",
     "exclude": [
-        "index.d.ts",
-        "index.js"
+        "gjs.d.ts",
+        "gjs.js"
     ],
     "disableSources": false,
     "name": "GJS API Reference",

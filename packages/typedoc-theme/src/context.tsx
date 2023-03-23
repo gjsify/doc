@@ -3,7 +3,7 @@ import {
   Options,
   Logger,
   RendererHooks,
-  DeclarationReflection
+  DeclarationReflection,
 } from "typedoc";
 import * as JSX from "./jsx";
 import {
@@ -18,7 +18,7 @@ import {
   getCurrentModule,
   navigationSecondary,
   memberSignatures,
-  navigationSecondaryObject
+  navigationSecondaryObject,
 } from "./partials";
 import { defaultLayout } from "./layouts/default.js";
 import { bind } from "./utils/index.js";
@@ -26,7 +26,7 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 
 import type { GjsifyTheme } from "./theme.js";
-import type { PartialTemplate } from "./types/index.js";
+import type { PartialTemplate, Template } from "./types/index.js";
 
 /**
  * The theme context is where all of the partials live for rendering a theme,
@@ -54,7 +54,7 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
   override defaultLayout: PartialTemplate = bind(defaultLayout, this);
 
   override header: PartialTemplate = bind(header, this);
-  override footer: PartialTemplate = bind(footer, this);
+  override footer: Template = bind(footer, this);
   override memberSignatures: PartialTemplate<DeclarationReflection> = bind(
     memberSignatures,
     this
@@ -62,8 +62,14 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
 
   public navigationPrimary: PartialTemplate = bind(navigationPrimary, this);
   public navigationPrimaryObject = bind(navigationPrimaryObject, this);
-  public navigationPrimaryGlobalObject = bind(navigationPrimaryGlobalObject, this);
-  public navigationPrimaryGlobalFlatObject = bind(navigationPrimaryGlobalFlatObject, this);
+  public navigationPrimaryGlobalObject = bind(
+    navigationPrimaryGlobalObject,
+    this
+  );
+  public navigationPrimaryGlobalFlatObject = bind(
+    navigationPrimaryGlobalFlatObject,
+    this
+  );
   public getCurrentModule = bind(getCurrentModule, this);
   public navigationSecondary: PartialTemplate = bind(navigationSecondary, this);
   public navigationSecondaryObject = bind(navigationSecondaryObject, this);
@@ -79,10 +85,10 @@ export class GjsifyThemeContext extends DefaultThemeRenderContext {
     }
     const relativeUrl = this.relativeURL(url) || "";
 
-    url = relativeUrl.replaceAll('../', '');
+    url = relativeUrl.replaceAll("../", "");
 
     if (!url.startsWith("/")) {
-      url = '/' + url;
+      url = "/" + url;
     }
 
     // Option from typedoc-plugin-remote-search

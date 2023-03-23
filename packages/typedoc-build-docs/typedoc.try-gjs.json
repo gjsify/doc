@@ -1,15 +1,10 @@
 {
     "out": "../../docs/try-gjs/",
-    "readme": "none",
+    "entryPointStrategy": "packages",
     "entryPoints": [
-        "../../@types/Gjs/GLib-2.0.d.ts",
-        "../../@types/Gjs/GObject-2.0.d.ts"
-    ],
-    "tsconfig": "./tsconfig.try-gjs.json",
-    "entryPointStrategy": "resolve",
-    "exclude": [
-        "index.d.ts",
-        "index.js"
+        "../../@types/glib-2.0",
+        "../../@types/gobject-2.0",
+        "../../@types/gjs"
     ],
     "disableSources": false,
     "name": "GJS API Reference (Try build)",
