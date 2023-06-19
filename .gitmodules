@@ -13,4 +13,4 @@
 	url = https://github.com/gjsify/types.git
 [submodule "vendor/ts-for-gjs"]
 	path = vendor/ts-for-gjs
-	url = https://github.com/sammydre/ts-for-gir.git
+	url = https://github.com/gjsify/ts-for-gir.git

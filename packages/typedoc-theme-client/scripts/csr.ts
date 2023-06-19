@@ -10,7 +10,7 @@ declare global {
   interface Window {
     model: any;
   }
-} 
+}
 
 const bootstrap = () => {
   const riba = new Riba();
@@ -19,25 +19,25 @@ const bootstrap = () => {
   riba.configure({
     prefix: ["rv", "csr-rv"],
     blockUnknownCustomElements: false,
-    templateDelimiters: ["{", "}"]
+    templateDelimiters: ["{", "}"],
   });
 
   // Register modules
-  riba.module.regist(coreModule.init());
-  riba.module.regist(
+  riba.module.register(coreModule.init());
+  riba.module.register(
     routerModule.init({
-      defaultTransition: new FadeTransition()
+      defaultTransition: new FadeTransition(),
     })
   );
-  riba.module.regist(bs5Module.init());
-  riba.module.regist(fuseModule.init());
-  riba.module.regist(typedocModule.init());
-  riba.module.regist(gjsifyTypedocModule.init());
+  riba.module.register(bs5Module.init());
+  riba.module.register(fuseModule.init());
+  riba.module.register(typedocModule.init());
+  riba.module.register(gjsifyTypedocModule.init());
 
   const theme = ThemeService.getSingleton();
   const view = riba.bind(document.body, window.model);
 
-  view.registComponents();
+  view.registerComponents();
 
   riba.lifecycle.events.on("ComponentLifecycle:error", (error: Error) => {
     console.error(error);
