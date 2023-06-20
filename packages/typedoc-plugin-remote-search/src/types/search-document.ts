@@ -1,5 +1,5 @@
 export interface SearchDocument {
-  id: number;
+  // id: number;
   kind: number;
   name: string;
   url: string;

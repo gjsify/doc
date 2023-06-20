@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "yarn run build:custom-cli",
-    "start:typedoc-cli": "NODE_OPTIONS=\"--require ../../.pnp.cjs --experimental-loader ../../.pnp.loader.mjs --max-old-space-size=25600\" typedoc --plugin @gjsify/typedoc-theme --plugin @gjsify/typedoc-plugin-remote-search",
+    "start:typedoc-cli": "typedoc --plugin @gjsify/typedoc-theme --plugin @gjsify/typedoc-plugin-remote-search",
     "start:ts:custom-cli": "node --expose-gc --max-old-space-size=25600 -r ts-node/register src/cli.ts",
     "start:custom-cli": "node --expose-gc --max-old-space-size=25600 dist/cli.js",
     "build:custom-cli": "tsc --project ./tsconfig.json && chmod +x ./dist/cli.js",
@@ -55,13 +55,12 @@
     "prettier": "^2.7.1",
     "source-map-support": "^0.5.21",
     "ts-node": "^10.8.1",
-    "typedoc": "^0.23.28",
-    "typescript": "^4.7.4",
+    "typescript": "^5.1.3",
     "yargs": "^17.5.1"
   },
   "dependencies": {
     "@gjsify/typedoc-plugin-remote-search": "workspace:^",
     "@gjsify/typedoc-theme": "workspace:^",
-    "typedoc": "^0.23.28"
+    "typedoc": "^0.24.8"
   }
 }

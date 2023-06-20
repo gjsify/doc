@@ -1,5 +1,4 @@
 import { Application } from "typedoc";
-
 import { GjsifyTheme } from "./theme.js";
 
 /**

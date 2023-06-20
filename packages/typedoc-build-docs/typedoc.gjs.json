@@ -8,10 +8,6 @@
     "exclude:": "../../@types/node-*",
     "tsconfig": "./tsconfig.gjs.json",
     "entryPointStrategy": "expand",
-    "exclude": [
-        "gjs.d.ts",
-        "gjs.js"
-    ],
     "disableSources": false,
     "name": "GJS API Reference",
     "noScript": true,

@@ -1,28 +1,17 @@
-import { Application } from "typedoc";
-import { GjsifyThemeContext } from "../context.js";
-import { VERSION } from "../constants/index.js";
-import * as JSX from "../jsx";
+import { JSX } from "typedoc";
+import type { GjsifyThemeRenderContext } from "../theme-render-context";
 
-export const footer = (context: GjsifyThemeContext) => {
+export function footer(context: GjsifyThemeRenderContext) {
   const hideGenerator = context.options.getValue("hideGenerator");
-  return (
-    <tsd-footer>
-      {!hideGenerator && (
-        <div class="container tsd-generator">
-          <p>
-            {"Generated using "}
-            <a href="https://typedoc.org/" target="_blank">
-              TypeDoc <small>v{Application.VERSION}</small>
-            </a>{" "}
-            <a
-              href="https://github.com/gjsify/doc/tree/main/packages/typedoc-theme"
-              target="_blank"
-            >
-              Gjsify Theme <small>v{VERSION}</small>
-            </a>
-          </p>
-        </div>
-      )}
-    </tsd-footer>
-  );
-};
+  if (!hideGenerator)
+    return (
+      <div class="tsd-generator">
+        <p>
+          {"Generated using "}
+          <a href="https://typedoc.org/" target="_blank">
+            TypeDoc
+          </a>
+        </p>
+      </div>
+    );
+}

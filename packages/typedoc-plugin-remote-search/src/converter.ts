@@ -19,11 +19,13 @@ export class Converter {
     }
   }
 
-  async load<T,>(filepath: string, decompress: boolean) {
+  async load<T>(filepath: string, decompress: boolean) {
     if (!existsSync(filepath)) {
       filepath = resolve(process.cwd(), filepath);
       if (!existsSync(filepath)) {
-        throw new Error(`[RemoteSearch/Converter.load] File not found "${filepath}"`);
+        throw new Error(
+          `[RemoteSearch/Converter.load] File not found "${filepath}"`
+        );
       }
     }
     const jsonBuf = await readFile(filepath);
@@ -40,7 +42,7 @@ export class Converter {
     const data = await this.load<SearchData>(filepath, decompress);
     const state: SearchState = {
       data,
-      index: Index.load(data.index)
+      index: Index.load(data.index),
     };
     return state;
   }
@@ -66,7 +68,9 @@ export class Converter {
     if (!existsSync(source)) {
       source = resolve(process.cwd(), source);
       if (!existsSync(source)) {
-        this.logger.error(`[RemoteSearch/Converter.convertSearch] File not found "${source}"!`);
+        this.logger.warn(
+          `[RemoteSearch/Converter.convertSearch] File not found "${source}"!`
+        );
         return;
       }
     }
@@ -98,6 +102,27 @@ export class Converter {
     }
   }
 
+  /**
+   * Writes the converted search data directly to the file system
+   * @param searchData The search data to write
+   * @param target E.g. ./docs/assets/search.json.7z
+   * @param compress Compression level 0-9, 0 is no compression, 1 the fastest and 9 the highest
+   * @returns
+   */
+  async writeSearch(searchData: SearchData, target: string, compress: number) {
+    this.logger.info(`[RemoteSearch] Write file to ${basename(target)}...`);
+
+    const logInterval = setInterval(() => {
+      this.logger.info(
+        "[RemoteSearch] Conversion is in progress, please wait..."
+      );
+    }, 5000);
+
+    await this.write(searchData, target, compress);
+
+    clearInterval(logInterval);
+  }
+
   async revertSearch(
     source: string,
     target: string,
@@ -123,7 +148,10 @@ export class Converter {
    */
   async write(data: any, target: string, compress: number) {
     if (compress > 0) {
-      data = await this.shrink(JSON.parse(data.toString()), false, compress);
+      if (typeof data === "string") {
+        data = JSON.parse(data.toString());
+      }
+      data = await this.shrink(data, false, compress);
     }
     await writeFile(target, data);
   }
@@ -146,7 +174,7 @@ export class Converter {
     lzma.compress(
       inputStr,
       {
-        preset: compressLevel as Preset
+        preset: compressLevel as Preset,
       },
       (buf) => {
         this.logger.verbose("[shrink] Done");
@@ -171,7 +199,7 @@ export class Converter {
    * @param compressed_obj The compressed object (using `shrink`)
    * @returns The uncompressed string or buffer
    */
-  _unshrink<T = any,>(compressed_obj: Buffer | string, cb: (result: T) => void) {
+  _unshrink<T = any>(compressed_obj: Buffer | string, cb: (result: T) => void) {
     compressed_obj = Buffer.isBuffer(compressed_obj)
       ? compressed_obj
       : Buffer.from(compressed_obj, "base64"); //convert to buffer if it starts off as a string
@@ -182,7 +210,7 @@ export class Converter {
     });
   }
 
-  unshrink<T = any,>(compressed_obj: Buffer | string) {
+  unshrink<T = any>(compressed_obj: Buffer | string) {
     return new Promise<T>((resolve, reject) => {
       try {
         this._unshrink(compressed_obj, resolve);

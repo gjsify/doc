@@ -1,132 +1,92 @@
-import type { Reflection, PageEvent } from "typedoc";
-import type { GjsifyThemeContext } from "../context.js";
-import { toBase64 } from "../utils/string.js";
-import * as JSX from "../jsx/index.js";
+import type { RenderTemplate } from "typedoc";
+import type { Reflection } from "typedoc";
+import { JSX } from "typedoc";
+import type { PageEvent } from "typedoc";
+import { getDisplayName } from "../lib";
+import type { GjsifyThemeRenderContext } from "../theme-render-context";
+
+const Raw = JSX.Raw;
 
 export const defaultLayout = (
-  context: GjsifyThemeContext,
+  context: GjsifyThemeRenderContext,
+  template: RenderTemplate<PageEvent<Reflection>>,
   props: PageEvent<Reflection>
-) => {
-  return (
-    <html class="default">
-      <head>
-        <meta charSet="utf-8" />
-        {context.hook("head.begin")}
-        <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>
-          {props.model.name === props.project.name
-            ? props.project.name
-            : `${props.model.name} | ${props.project.name}`}
-        </title>
-        <meta
-          name="description"
-          content={"Documentation for " + props.project.name}
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+) => (
+  <html class="default" lang={context.options.getValue("htmlLang")}>
+    <head>
+      <meta charSet="utf-8" />
+      {context.hook("head.begin")}
+      <meta http-equiv="x-ua-compatible" content="IE=edge" />
+      <title>
+        {props.model.isProject()
+          ? getDisplayName(props.model)
+          : `${getDisplayName(props.model)} | ${getDisplayName(props.project)}`}
+      </title>
+      <meta
+        name="description"
+        content={"Documentation for " + props.project.name}
+      />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* The page supports both light and dark color schemes, with light being default */}
-        <meta name="color-scheme" content="light dark" />
-
-        {/* Meta Theme Color is also supported on Safari and Chrome */}
-        <meta
-          name="theme-color"
-          content="#ffffff"
-          media="(prefers-color-scheme: light)"
-        />
-        <meta
-          name="theme-color"
-          content="#eeeeee"
-          media="(prefers-color-scheme: dark)"
-        />
-
-        <meta name="msapplication-TileColor" content="#4a86cf" />
-
-        <link
-          rel="shortcut icon"
-          href={context.relativeURL("assets/favicon.ico")}
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={context.relativeURL("assets/apple-touch-icon.png")}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href={context.relativeURL("assets/favicon-32x32.png")}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href={context.relativeURL("assets/favicon-16x16.png")}
-        />
-        <link
-          rel="manifest"
-          href={context.relativeURL("assets/site.webmanifest")}
-        />
-        <link
-          rel="mask-icon"
-          href={context.relativeURL("assets/safari-pinned-tab.svg")}
-          color="#4a86cf"
-        />
-
+      <link
+        rel="stylesheet"
+        href={context.relativeURL("assets/main.css", true)}
+      />
+      <link
+        rel="stylesheet"
+        href={context.relativeURL("assets/highlight.css", true)}
+      />
+      {context.options.getValue("customCss") && (
         <link
           rel="stylesheet"
-          href={context.relativeURL("assets/highlight.css")}
+          href={context.relativeURL("assets/custom.css", true)}
         />
-        <link rel="stylesheet" href={context.relativeURL("assets/main.css")} />
-        {context.options.getValue("customCss") && (
-          <link
-            rel="stylesheet"
-            href={context.relativeURL("assets/custom.css")}
-          />
-        )}
-        {/* The search is too big to use client-side <script async src={context.relativeURL("assets/search.js")} id="search-script"></script> */}
-        {context.hook("head.end")}
-      </head>
-      <body>
-        {context.hook("body.begin")}
-        <script>
-          <JSX.Raw html='document.documentElement.classList.add(localStorage.getItem("bs5-theme") || "theme-os")' />
-        </script>
-        {context.sidebar(props)}
-        {context.navbar(props)}
+      )}
+      <script
+        async
+        src={context.relativeURL("assets/main.bundle.js", true)}
+      ></script>
+      <script
+        async
+        src={context.relativeURL("assets/search.js", true)}
+        id="tsd-search-script"
+      ></script>
+      {context.hook("head.end")}
+    </head>
+    <body>
+      {context.hook("body.begin")}
+      <script>
+        <Raw html='document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"' />
+      </script>
+      {context.toolbar(props)}
 
-        <router-view
-          id="main"
-          listen-all-links="true"
-          dataset-to-root-scope="true"
-        >
-          <div
-            class="container-main"
-            data-project-name={props.model.project.name}
-            data-module={toBase64(context.getCurrentModule(props))}
-          >
-            {context.header(props)}
-            <div class="container">
-              <div class="row">
-                <div class="col-12">{props.template(props)}</div>
-              </div>
-            </div>
-            {context.footer()}
-
-            <template id="tsd-navigation-secondary-template">
-              {context.navigationSecondary(props)}
-            </template>
-
-            <template id="tsd-navigation-secondary-object">
-              {toBase64(context.navigationSecondaryObject(props))}
-            </template>
+      <div class="container container-main">
+        <div class="col-content">
+          {context.hook("content.begin")}
+          {context.header(props)}
+          {template(props)}
+          {context.hook("content.end")}
+        </div>
+        <div class="col-sidebar">
+          <div class="page-menu">
+            {context.hook("pageSidebar.begin")}
+            {context.pageSidebar(props)}
+            {context.hook("pageSidebar.end")}
           </div>
-        </router-view>
+          <div class="site-menu">
+            {context.hook("sidebar.begin")}
+            {context.sidebar(props)}
+            {context.hook("sidebar.end")}
+          </div>
+        </div>
+      </div>
 
-        <script src={context.relativeURL("assets/vendors.bundle.js")}></script>
-        <script src={context.relativeURL("assets/main.bundle.js")}></script>
+      {context.footer()}
 
-        {context.hook("body.end")}
-      </body>
-    </html>
-  );
-};
+      <div class="overlay"></div>
+
+      {context.analytics()}
+      {context.hook("body.end")}
+    </body>
+  </html>
+);

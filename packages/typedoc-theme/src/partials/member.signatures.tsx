@@ -1,27 +1,29 @@
-import { DeclarationReflection } from "typedoc";
-import { GjsifyThemeContext } from "../context";
-import * as JSX from "../jsx";
+import type { GjsifyThemeRenderContext } from "../theme-render-context";
+import { JSX } from "typedoc";
+import type { DeclarationReflection } from "typedoc";
+import { anchorIcon } from "./anchor-icon";
+import { classNames } from "../lib";
 
 export const memberSignatures = (
-  context: GjsifyThemeContext,
+  context: GjsifyThemeRenderContext,
   props: DeclarationReflection
 ) => (
-  <tsd-member-signatures>
-    <ul class={"tsd-signatures " + props.cssClasses} rv-element="signaturesEl">
-      {props.signatures?.map((item, index) => (
-        <li
-          class="tsd-signature tsd-kind-icon"
-          rv-on-click={`showDescByIndex | args ${index}`}
-        >
-          {context.memberSignatureTitle(item)}
-        </li>
-      ))}
-    </ul>
-
-    <ul class="tsd-descriptions" rv-element="descriptionsEl">
+  <>
+    <ul
+      class={classNames(
+        { "tsd-signatures": true },
+        context.getReflectionClasses(props)
+      )}
+    >
       {props.signatures?.map((item) => (
-        <li class="tsd-description">{context.memberSignatureBody(item)}</li>
+        <>
+          <li class="tsd-signature tsd-anchor-link" id={item.anchor}>
+            {context.memberSignatureTitle(item)}
+            {anchorIcon(context, item.anchor)}
+          </li>
+          <li class="tsd-description">{context.memberSignatureBody(item)}</li>
+        </>
       ))}
     </ul>
-  </tsd-member-signatures>
+  </>
 );

@@ -8,5 +8,5 @@ esbuild.buildSync({
   minify: true,
   sourcemap: false,
   target: ["chrome58", "firefox57", "safari11", "edge16"],
-  outfile: "assets/search-custom-element.js"
+  outfile: "assets/search-custom-element.js",
 });
