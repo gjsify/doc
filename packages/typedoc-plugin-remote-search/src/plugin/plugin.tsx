@@ -49,12 +49,10 @@ export class RemoteSearchIndexPlugin {
     this.scriptCustomElement = this.getScriptCustomElement();
 
     this.renderer.hooks.on("body.end", (context) => {
-      this.logger.info("RemoteSearchIndexPlugin: onBodyEnd");
       return this.onBodyEnd(context);
     });
 
     this.renderer.on(Renderer.EVENT_BEGIN, (event: RendererEvent) => {
-      this.logger.info("RemoteSearchIndexPlugin: onRendererBegin");
       return this.onRendererBegin(event);
     });
   }

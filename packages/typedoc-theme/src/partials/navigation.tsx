@@ -46,6 +46,8 @@ function buildFilterItem(
 }
 
 export function sidebarLinks(context: GjsifyThemeRenderContext) {
+  console.debug("sidebarLinks", context.options.getValue("sidebarLinks"));
+  
   const links = Object.entries(context.options.getValue("sidebarLinks"));
   if (!links.length) return null;
   return (
