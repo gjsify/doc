@@ -12,6 +12,7 @@ export const gjsifyTypedocModule: RibaModule<GjsifyTypedocModuleOptions> = {
   components,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   init(options = {}) {
+    services.TypedocService.setSingleton(options);
     return this;
   }
 };
