@@ -1,5 +1,5 @@
 import { getDisplayName, hasTypeParameters, join, renderFlags } from "../lib";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
 import type { PageEvent } from "typedoc";
 import { Reflection, ReflectionKind } from "typedoc";

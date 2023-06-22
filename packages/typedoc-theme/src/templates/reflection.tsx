@@ -7,9 +7,7 @@ import {
   ReflectionKind,
   ReflectionType,
 } from "typedoc";
-import { JSX } from "typedoc";
-
-const Raw = JSX.Raw;
+import { JSX, Raw } from "../jsx/index.js";
 
 export function reflectionTemplate(
   context: GjsifyThemeRenderContext,

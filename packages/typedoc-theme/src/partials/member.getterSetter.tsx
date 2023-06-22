@@ -1,5 +1,5 @@
 import type { DeclarationReflection } from "typedoc";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 import { classNames } from "../lib";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
 

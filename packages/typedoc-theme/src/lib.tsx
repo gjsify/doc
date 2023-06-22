@@ -10,7 +10,7 @@ import {
   SignatureReflection,
   TypeParameterReflection,
 } from "typedoc";
-import { JSX } from "typedoc";
+import { JSX } from "./jsx/index.js";
 
 export function stringify(data: unknown) {
   if (typeof data === "bigint") {
@@ -60,7 +60,7 @@ export function wbr(str: string): (string | JSX.Element)[] {
   let match: RegExpExecArray | null;
   let i = 0;
   while ((match = re.exec(str))) {
-    ret.push(match[0], <wbr />);
+    ret.push(match[0], (<wbr />) as JSX.Element);
     i += match[0].length;
   }
   ret.push(str.slice(i));
@@ -137,7 +137,8 @@ export function renderTypeParametersSignature(
   context: GjsifyThemeRenderContext,
   typeParameters: readonly TypeParameterReflection[] | undefined
 ): JSX.Element {
-  if (!typeParameters || typeParameters.length === 0) return <></>;
+  if (!typeParameters || typeParameters.length === 0)
+    return (<></>) as JSX.Element;
   const hideParamTypes = context.options.getValue("hideParameterTypesInTitle");
 
   if (hideParamTypes) {
@@ -145,48 +146,50 @@ export function renderTypeParametersSignature(
       <>
         <span class="tsd-signature-symbol">{"<"}</span>
         {join(
-          <span class="tsd-signature-symbol">{", "}</span>,
+          (<span class="tsd-signature-symbol">{", "}</span>) as JSX.Element,
           typeParameters,
-          (item) => (
-            <>
-              {item.flags.isConst && "const "}
-              {item.varianceModifier ? `${item.varianceModifier} ` : ""}
-              <span class="tsd-signature-type tsd-kind-type-parameter">
-                {item.name}
-              </span>
-            </>
-          )
+          (item) =>
+            (
+              <>
+                {item.flags.isConst && "const "}
+                {item.varianceModifier ? `${item.varianceModifier} ` : ""}
+                <span class="tsd-signature-type tsd-kind-type-parameter">
+                  {item.name}
+                </span>
+              </>
+            ) as JSX.Element
         )}
         <span class="tsd-signature-symbol">{">"}</span>
       </>
-    );
+    ) as JSX.Element;
   }
 
   return (
     <>
       <span class="tsd-signature-symbol">{"<"}</span>
       {join(
-        <span class="tsd-signature-symbol">{", "}</span>,
+        (<span class="tsd-signature-symbol">{", "}</span>) as JSX.Element,
         typeParameters,
-        (item) => (
-          <>
-            {item.flags.isConst && "const "}
-            {item.varianceModifier ? `${item.varianceModifier} ` : ""}
-            <span class="tsd-signature-type tsd-kind-type-parameter">
-              {item.name}
-            </span>
-            {!!item.type && (
-              <>
-                <span class="tsd-signature-symbol"> extends </span>
-                {context.type(item.type)}
-              </>
-            )}
-          </>
-        )
+        (item) =>
+          (
+            <>
+              {item.flags.isConst && "const "}
+              {item.varianceModifier ? `${item.varianceModifier} ` : ""}
+              <span class="tsd-signature-type tsd-kind-type-parameter">
+                {item.name}
+              </span>
+              {!!item.type && (
+                <>
+                  <span class="tsd-signature-symbol"> extends </span>
+                  {context.type(item.type)}
+                </>
+              )}
+            </>
+          ) as JSX.Element
       )}
       <span class="tsd-signature-symbol">{">"}</span>
     </>
-  );
+  ) as JSX.Element;
 }
 
 export function camelToTitleCase(text: string) {

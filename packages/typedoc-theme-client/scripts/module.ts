@@ -3,9 +3,9 @@ import * as binders from "./binders/index.js";
 import * as formatters from "./formatters/index.js";
 import * as services from "./services/index.js";
 import * as components from "./components/index.js";
-import { GjsifyTypedocModuleOptions } from "./types/index.js";
+import { TypedocModuleOptions } from "./types/index.js";
 
-export const gjsifyTypedocModule: RibaModule<GjsifyTypedocModuleOptions> = {
+export const gjsifyTypedocModule: RibaModule<TypedocModuleOptions> = {
   binders,
   services,
   formatters,

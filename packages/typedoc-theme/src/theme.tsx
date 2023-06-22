@@ -62,16 +62,23 @@ export class GjsifyTheme extends Theme {
   }
 
   reflectionTemplate = (pageEvent: PageEvent<ContainerReflection>) => {
-    return this.getRenderContext(pageEvent).reflectionTemplate(pageEvent);
+    return this.getRenderContext(pageEvent).reflectionTemplate(
+      pageEvent
+    ) as JSX.Element;
   };
   indexTemplate = (pageEvent: PageEvent<ProjectReflection>) => {
-    return this.getRenderContext(pageEvent).indexTemplate(pageEvent);
+    return this.getRenderContext(pageEvent).indexTemplate(
+      pageEvent
+    ) as JSX.Element;
   };
   defaultLayoutTemplate = (
     pageEvent: PageEvent<Reflection>,
     template: RenderTemplate<PageEvent<Reflection>>
   ) => {
-    return this.getRenderContext(pageEvent).defaultLayout(template, pageEvent);
+    return this.getRenderContext(pageEvent).defaultLayout(
+      template,
+      pageEvent
+    ) as JSX.Element;
   };
 
   getReflectionClasses(reflection: DeclarationReflection) {

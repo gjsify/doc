@@ -1,6 +1,6 @@
 import { getKindClass, join, renderTypeParametersSignature, wbr } from "../lib";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 import {
   ParameterReflection,
   ReflectionKind,
@@ -22,7 +22,7 @@ function renderParameterWithType(
       </span>
       {context.type(item.type)}
     </>
-  );
+  ) as JSX.Element;
 }
 
 function renderParameterWithoutType(item: ParameterReflection) {
@@ -34,7 +34,7 @@ function renderParameterWithoutType(item: ParameterReflection) {
         <span class="tsd-signature-symbol">?</span>
       )}
     </>
-  );
+  ) as JSX.Element;
 }
 
 export function memberSignatureTitle(

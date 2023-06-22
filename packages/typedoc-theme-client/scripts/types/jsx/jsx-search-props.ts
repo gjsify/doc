@@ -1,4 +1,4 @@
-import type { JsxHtmlGlobalProps } from "@ribajs/jsx";
+import type { JsxHtmlGlobalProps } from "@ribajs/jsx/src/types/index";
 
 export interface JsxTsdSearchProps extends JsxHtmlGlobalProps {
   /** The base url of the remote search server */

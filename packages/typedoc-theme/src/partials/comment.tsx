@@ -1,9 +1,7 @@
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
-import { JSX } from "typedoc";
+import { JSX, Raw } from "../jsx/index.js";
 import { Reflection, ReflectionKind } from "typedoc";
 import { camelToTitleCase } from "../lib";
-
-const Raw = JSX.Raw;
 
 // Note: Comment modifiers are handled in `renderFlags`
 

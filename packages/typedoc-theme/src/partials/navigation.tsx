@@ -6,7 +6,7 @@ import {
   ReflectionGroup,
   ReflectionKind,
 } from "typedoc";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 import type { PageEvent } from "typedoc";
 import { camelToTitleCase, classNames, getDisplayName, wbr } from "../lib";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
@@ -42,12 +42,10 @@ function buildFilterItem(
         <span>{displayName}</span>
       </label>
     </li>
-  );
+  ) as JSX.Element;
 }
 
-export function sidebarLinks(context: GjsifyThemeRenderContext) {
-  console.debug("sidebarLinks", context.options.getValue("sidebarLinks"));
-  
+export function sidebarLinks(context: GjsifyThemeRenderContext) {  
   const links = Object.entries(context.options.getValue("sidebarLinks"));
   if (!links.length) return null;
   return (
@@ -291,7 +289,7 @@ export function pageNavigation(
           <li>{l}</li>
         ))}
       </ul>
-    );
+    ) as JSX.Element;
     levels[levels.length - 1].push(built);
   }
 
@@ -309,7 +307,7 @@ export function pageNavigation(
       <a href={heading.link} class={heading.classes}>
         {heading.kind && context.icons[heading.kind]()}
         <span>{wbr(heading.text)}</span>
-      </a>
+      </a> as JSX.Element
     );
   }
 

@@ -1,4 +1,4 @@
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
 
 export function anchorIcon(

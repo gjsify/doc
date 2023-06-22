@@ -1,9 +1,7 @@
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
-import { JSX } from "typedoc";
+import { JSX, Raw } from "../jsx/index.js";
 import { ReflectionType, SignatureReflection } from "typedoc";
 import { hasTypeParameters, renderFlags } from "../lib";
-
-const Raw = JSX.Raw;
 
 export function memberSignatureBody(
   context: GjsifyThemeRenderContext,

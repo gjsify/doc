@@ -1,9 +1,7 @@
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
 import type { ProjectReflection } from "typedoc";
 import type { PageEvent } from "typedoc";
-import { JSX } from "typedoc";
-
-const Raw = JSX.Raw;
+import { JSX, Raw } from "../jsx/index.js";
 
 export const indexTemplate = (
   { markdown }: GjsifyThemeRenderContext,

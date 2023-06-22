@@ -1,12 +1,12 @@
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
 import { ArrayType, ReferenceType, SignatureReflection, Type } from "typedoc";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 
 export const typeAndParent = (
   context: GjsifyThemeRenderContext,
   props: Type
 ): JSX.Element => {
-  if (!props) return <>void</>;
+  if (!props) return (<>void</>) as JSX.Element;
 
   if (props instanceof ArrayType) {
     return (
@@ -14,7 +14,7 @@ export const typeAndParent = (
         {context.typeAndParent(props.elementType)}
         []
       </>
-    );
+    ) as JSX.Element;
   }
 
   if (props instanceof ReferenceType && props.reflection) {
@@ -34,8 +34,8 @@ export const typeAndParent = (
         .
         {refl?.url ? <a href={context.urlTo(refl)}>{refl.name}</a> : refl?.name}
       </>
-    );
+    ) as JSX.Element;
   }
 
-  return <>{props.toString()}</>;
+  return (<>{props.toString()}</>) as JSX.Element;
 };

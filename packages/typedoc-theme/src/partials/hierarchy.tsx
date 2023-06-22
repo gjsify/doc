@@ -1,5 +1,5 @@
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 import type { DeclarationHierarchy } from "typedoc";
 
 export function hierarchy(

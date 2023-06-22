@@ -1,11 +1,9 @@
 import type { RenderTemplate } from "typedoc";
 import type { Reflection } from "typedoc";
-import { JSX } from "typedoc";
+import { JSX, Raw } from "../jsx/index.js";
 import type { PageEvent } from "typedoc";
 import { getDisplayName } from "../lib";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
-
-const Raw = JSX.Raw;
 
 export const defaultLayout = (
   context: GjsifyThemeRenderContext,
@@ -28,13 +26,57 @@ export const defaultLayout = (
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+      {/* The page supports both light and dark color schemes, with light being default */}
+      <meta name="color-scheme" content="light dark" />
+
+      {/* Meta Theme Color is also supported on Safari and Chrome */}
+      <meta
+        name="theme-color"
+        content="#ffffff"
+        media="(prefers-color-scheme: light)"
+      />
+      <meta
+        name="theme-color"
+        content="#eeeeee"
+        media="(prefers-color-scheme: dark)"
+      />
+
+      <meta name="msapplication-TileColor" content="#4a86cf" />
+
+      <link
+        rel="shortcut icon"
+        href={context.relativeURL("assets/favicon.ico")}
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href={context.relativeURL("assets/apple-touch-icon.png")}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href={context.relativeURL("assets/favicon-32x32.png")}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href={context.relativeURL("assets/favicon-16x16.png")}
+      />
+      <link
+        rel="manifest"
+        href={context.relativeURL("assets/site.webmanifest")}
+      />
+      <link
+        rel="mask-icon"
+        href={context.relativeURL("assets/safari-pinned-tab.svg")}
+        color="#4a86cf"
+      />
+
       <link
         rel="stylesheet"
         href={context.relativeURL("assets/main.css", true)}
-      />
-      <link
-        rel="stylesheet"
-        href={context.relativeURL("assets/highlight.css", true)}
       />
       {context.options.getValue("customCss") && (
         <link

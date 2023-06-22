@@ -10,7 +10,7 @@ import {
   TypeContext,
   TypeKindMap,
 } from "typedoc";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 import { getKindClass, join, stringify } from "../lib";
 import { ok } from "assert";
 
@@ -72,26 +72,25 @@ function renderUniquePath(
   reflection: Reflection
 ): JSX.Element {
   return join(
-    <span class="tsd-signature-symbol">.</span>,
+    (<span class="tsd-signature-symbol">.</span>) as JSX.Children,
     getUniquePath(reflection),
-    (item) => (
-      <a
-        href={context.urlTo(item)}
-        class={"tsd-signature-type " + getKindClass(item)}
-      >
-        {item.name}
-      </a>
-    )
-  );
+    (item) =>
+      (
+        <a
+          href={context.urlTo(item)}
+          class={"tsd-signature-type " + getKindClass(item)}
+        >
+          {item.name}
+        </a>
+      ) as JSX.Element
+  ) as JSX.Element;
 }
 
 let indentationDepth = 0;
 function includeIndentation(): JSX.Element {
-  return indentationDepth > 0 ? (
-    <span>{"\u00A0".repeat(indentationDepth * 4)}</span>
-  ) : (
-    <></>
-  );
+  return indentationDepth > 0
+    ? ((<span>{"\u00A0".repeat(indentationDepth * 4)}</span>) as JSX.Element)
+    : ((<></>) as JSX.Element);
 }
 
 export function validateStateIsClean(page: string) {
@@ -117,11 +116,11 @@ const typeRenderers: {
         {renderType(context, type.elementType, TypeContext.arrayElement)}
         <span class="tsd-signature-symbol">[]</span>
       </>
-    );
+    ) as JSX.Element;
   },
   conditional(context, type) {
     indentationDepth++;
-    const parts: JSX.Element[] = [
+    const parts = [
       renderType(context, type.checkType, TypeContext.conditionalCheck),
       <span class="tsd-signature-symbol"> extends </span>,
       renderType(context, type.extendsType, TypeContext.conditionalExtends),
@@ -136,7 +135,7 @@ const typeRenderers: {
     ];
     indentationDepth--;
 
-    return <>{parts}</>;
+    return (<>{parts}</>) as JSX.Element;
   },
   indexedAccess(context, type) {
     let indexType: JSX.Element = renderType(
@@ -155,7 +154,9 @@ const typeRenderers: {
         type.indexType.value,
       ]);
       if (childReflection) {
-        indexType = <a href={context.urlTo(childReflection)}>{indexType}</a>;
+        indexType = (
+          <a href={context.urlTo(childReflection)}>{indexType}</a>
+        ) as JSX.Element;
       }
     }
 
@@ -166,7 +167,7 @@ const typeRenderers: {
         {indexType}
         <span class="tsd-signature-symbol">]</span>
       </>
-    );
+    ) as JSX.Element;
   },
   inferred(context, type) {
     return (
@@ -184,20 +185,22 @@ const typeRenderers: {
           </>
         )}
       </>
-    );
+    ) as JSX.Element;
   },
   intersection(context, type) {
     return join(
-      <span class="tsd-signature-symbol"> &amp; </span>,
+      (<span class="tsd-signature-symbol"> &amp; </span>) as JSX.Children,
       type.types,
       (item) => renderType(context, item, TypeContext.intersectionElement)
-    );
+    ) as JSX.Element;
   },
   intrinsic(_context, type) {
-    return <span class="tsd-signature-type">{type.name}</span>;
+    return (<span class="tsd-signature-type">{type.name}</span>) as JSX.Element;
   },
   literal(_context, type) {
-    return <span class="tsd-signature-type">{stringify(type.value)}</span>;
+    return (
+      <span class="tsd-signature-type">{stringify(type.value)}</span>
+    ) as JSX.Element;
   },
   mapped(context, type) {
     indentationDepth++;
@@ -256,7 +259,7 @@ const typeRenderers: {
         {includeIndentation()}
         <span class="tsd-signature-symbol">{"}"}</span>
       </>
-    );
+    ) as JSX.Element;
   },
   namedTupleMember(context, type) {
     return (
@@ -269,7 +272,7 @@ const typeRenderers: {
         )}
         {renderType(context, type.element, TypeContext.tupleElement)}
       </>
-    );
+    ) as JSX.Element;
   },
   optional(context, type) {
     return (
@@ -277,7 +280,7 @@ const typeRenderers: {
         {renderType(context, type.elementType, TypeContext.optionalElement)}
         <span class="tsd-signature-symbol">?</span>
       </>
-    );
+    ) as JSX.Element;
   },
   predicate(context, type) {
     return (
@@ -291,7 +294,7 @@ const typeRenderers: {
           </>
         )}
       </>
-    );
+    ) as JSX.Element;
   },
   query(context, type) {
     return (
@@ -299,7 +302,7 @@ const typeRenderers: {
         <span class="tsd-signature-symbol">typeof </span>
         {renderType(context, type.queryType, TypeContext.queryTypeTarget)}
       </>
-    );
+    ) as JSX.Element;
   },
   reference(context, type) {
     const reflection = type.reflection;
@@ -313,7 +316,7 @@ const typeRenderers: {
           <span class="tsd-signature-type tsd-kind-type-parameter">
             {reflection.name}
           </span>
-        );
+        ) as JSX.Element;
       } else {
         name = renderUniquePath(context, reflection);
       }
@@ -326,15 +329,17 @@ const typeRenderers: {
         >
           {type.name}
         </a>
-      );
+      ) as JSX.Element;
     } else if (type.refersToTypeParameter) {
       name = (
         <span class="tsd-signature-type tsd-kind-type-parameter">
           {type.name}
         </span>
-      );
+      ) as JSX.Element;
     } else {
-      name = <span class="tsd-signature-type ">{type.name}</span>;
+      name = (
+        <span class="tsd-signature-type ">{type.name}</span>
+      ) as JSX.Element;
     }
 
     if (type.typeArguments?.length) {
@@ -343,14 +348,14 @@ const typeRenderers: {
           {name}
           <span class="tsd-signature-symbol">{"<"}</span>
           {join(
-            <span class="tsd-signature-symbol">, </span>,
+            (<span class="tsd-signature-symbol">, </span>) as JSX.Element,
             type.typeArguments,
             (item) =>
               renderType(context, item, TypeContext.referenceTypeArgument)
           )}
           <span class="tsd-signature-symbol">{">"}</span>
         </>
-      );
+      ) as JSX.Element;
     }
 
     return name;
@@ -364,42 +369,48 @@ const typeRenderers: {
     for (const item of children) {
       if (item.getSignature && item.setSignature) {
         members.push(
-          <>
-            <span class={getKindClass(item)}>{item.name}</span>
-            <span class="tsd-signature-symbol">: </span>
-            {renderType(context, item.getSignature.type, TypeContext.none)}
-          </>
+          (
+            <>
+              <span class={getKindClass(item)}>{item.name}</span>
+              <span class="tsd-signature-symbol">: </span>
+              {renderType(context, item.getSignature.type, TypeContext.none)}
+            </>
+          ) as JSX.Element
         );
         continue;
       }
 
       if (item.getSignature) {
         members.push(
-          <>
-            <span class="tsd-signature-symbol">get </span>
-            <span class={getKindClass(item.getSignature)}>{item.name}</span>
-            <span class="tsd-signature-symbol">(): </span>
-            {renderType(context, item.getSignature.type, TypeContext.none)}
-          </>
+          (
+            <>
+              <span class="tsd-signature-symbol">get </span>
+              <span class={getKindClass(item.getSignature)}>{item.name}</span>
+              <span class="tsd-signature-symbol">(): </span>
+              {renderType(context, item.getSignature.type, TypeContext.none)}
+            </>
+          ) as JSX.Element
         );
         continue;
       }
 
       if (item.setSignature) {
         members.push(
-          <>
-            <span class="tsd-signature-symbol">set </span>
-            <span class={getKindClass(item.setSignature)}>{item.name}</span>
-            <span class="tsd-signature-symbol">(</span>
-            {item.setSignature.parameters?.map((item) => (
-              <>
-                {item.name}
-                <span class="tsd-signature-symbol">: </span>
-                {renderType(context, item.type, TypeContext.none)}
-              </>
-            ))}
-            <span class="tsd-signature-symbol">)</span>
-          </>
+          (
+            <>
+              <span class="tsd-signature-symbol">set </span>
+              <span class={getKindClass(item.setSignature)}>{item.name}</span>
+              <span class="tsd-signature-symbol">(</span>
+              {item.setSignature.parameters?.map((item) => (
+                <>
+                  {item.name}
+                  <span class="tsd-signature-symbol">: </span>
+                  {renderType(context, item.type, TypeContext.none)}
+                </>
+              ))}
+              <span class="tsd-signature-symbol">)</span>
+            </>
+          ) as JSX.Element
         );
         continue;
       }
@@ -407,44 +418,50 @@ const typeRenderers: {
       if (item.signatures) {
         for (const sig of item.signatures) {
           members.push(
-            <>
-              <span class={getKindClass(sig)}>{item.name}</span>
-              {item.flags.isOptional && (
-                <span class="tsd-signature-symbol">?</span>
-              )}
-              {context.memberSignatureTitle(sig, {
-                hideName: true,
-                arrowStyle: true,
-              })}
-            </>
+            (
+              <>
+                <span class={getKindClass(sig)}>{item.name}</span>
+                {item.flags.isOptional && (
+                  <span class="tsd-signature-symbol">?</span>
+                )}
+                {context.memberSignatureTitle(sig, {
+                  hideName: true,
+                  arrowStyle: true,
+                })}
+              </>
+            ) as JSX.Element
           );
         }
         continue;
       }
 
       members.push(
-        <>
-          <span class={getKindClass(item)}>{item.name}</span>
-          <span class="tsd-signature-symbol">
-            {item.flags.isOptional ? "?: " : ": "}
-          </span>
-          {renderType(context, item.type, TypeContext.none)}
-        </>
+        (
+          <>
+            <span class={getKindClass(item)}>{item.name}</span>
+            <span class="tsd-signature-symbol">
+              {item.flags.isOptional ? "?: " : ": "}
+            </span>
+            {renderType(context, item.type, TypeContext.none)}
+          </>
+        ) as JSX.Element
       );
     }
 
     if (type.declaration.indexSignature) {
       const index = type.declaration.indexSignature;
       members.push(
-        <>
-          [
-          <span class={getKindClass(type.declaration.indexSignature)}>
-            {index.parameters![0].name}
-          </span>
-          : {renderType(context, index.parameters![0].type, TypeContext.none)}]
-          <span class="tsd-signature-symbol">: </span>
-          {renderType(context, index.type, TypeContext.none)}
-        </>
+        (
+          <>
+            [
+            <span class={getKindClass(type.declaration.indexSignature)}>
+              {index.parameters![0].name}
+            </span>
+            : {renderType(context, index.parameters![0].type, TypeContext.none)}
+            ]<span class="tsd-signature-symbol">: </span>
+            {renderType(context, index.type, TypeContext.none)}
+          </>
+        ) as JSX.Element
       );
     }
 
@@ -460,11 +477,13 @@ const typeRenderers: {
           })}
           <span class="tsd-signature-symbol">)</span>
         </>
-      );
+      ) as JSX.Element;
     }
 
     for (const item of type.declaration.signatures || []) {
-      members.push(context.memberSignatureTitle(item, { hideName: true }));
+      members.push(
+        context.memberSignatureTitle(item, { hideName: true }) as JSX.Element
+      );
     }
 
     if (members.length) {
@@ -486,11 +505,11 @@ const typeRenderers: {
           {includeIndentation()}
           <span class="tsd-signature-symbol">{"}"}</span>
         </>
-      );
+      ) as JSX.Element;
     }
 
     indentationDepth--;
-    return <span class="tsd-signature-symbol">{"{}"}</span>;
+    return (<span class="tsd-signature-symbol">{"{}"}</span>) as JSX.Element;
   },
   rest(context, type) {
     return (
@@ -498,7 +517,7 @@ const typeRenderers: {
         <span class="tsd-signature-symbol">...</span>
         {renderType(context, type.elementType, TypeContext.restElement)}
       </>
-    );
+    ) as JSX.Element;
   },
   templateLiteral(context, type) {
     return (
@@ -515,20 +534,20 @@ const typeRenderers: {
         ))}
         <span class="tsd-signature-symbol">`</span>
       </>
-    );
+    ) as JSX.Element;
   },
   tuple(context, type) {
     return (
       <>
         <span class="tsd-signature-symbol">[</span>
         {join(
-          <span class="tsd-signature-symbol">, </span>,
+          (<span class="tsd-signature-symbol">, </span>) as JSX.Element,
           type.elements,
           (item) => renderType(context, item, TypeContext.tupleElement)
         )}
         <span class="tsd-signature-symbol">]</span>
       </>
-    );
+    ) as JSX.Element;
   },
   typeOperator(context, type) {
     return (
@@ -536,17 +555,17 @@ const typeRenderers: {
         <span class="tsd-signature-symbol">{type.operator} </span>
         {renderType(context, type.target, TypeContext.typeOperatorTarget)}
       </>
-    );
+    ) as JSX.Element;
   },
   union(context, type) {
     return join(
-      <span class="tsd-signature-symbol"> | </span>,
+      (<span class="tsd-signature-symbol"> | </span>) as JSX.Element,
       type.types,
       (item) => renderType(context, item, TypeContext.unionElement)
-    );
+    ) as JSX.Element;
   },
   unknown(_context, type) {
-    return <>{type.name}</>;
+    return (<>{type.name}</>) as JSX.Element;
   },
 };
 
@@ -554,9 +573,9 @@ function renderType(
   context: GjsifyThemeRenderContext,
   type: Type | undefined,
   where: TypeContext
-) {
+): JSX.Element {
   if (!type) {
-    return <span class="tsd-signature-type">any</span>;
+    return (<span class="tsd-signature-type">any</span>) as JSX.Element;
   }
 
   const renderFn = typeRenderers[type.type];
@@ -569,10 +588,10 @@ function renderType(
         {rendered}
         <span class="tsd-signature-symbol">)</span>
       </>
-    );
+    ) as JSX.Element;
   }
 
-  return rendered;
+  return rendered as JSX.Element;
 }
 
 export function type(

@@ -1,3 +1,3 @@
-import type { JsxHtmlGlobalProps } from "@ribajs/jsx";
+import type { JsxHtmlGlobalProps } from "@ribajs/jsx/src/types/index";
 
 export type JsxTsdNavbarProps = JsxHtmlGlobalProps;

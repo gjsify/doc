@@ -1,6 +1,6 @@
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
 import type { TypeParameterReflection } from "typedoc";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 
 export function typeParameters(
   context: GjsifyThemeRenderContext,

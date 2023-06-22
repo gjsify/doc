@@ -1,6 +1,6 @@
 import { classNames, getDisplayName, renderFlags, wbr } from "../lib";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 import { DeclarationReflection, ReferenceReflection } from "typedoc";
 import { anchorIcon } from "./anchor-icon";
 

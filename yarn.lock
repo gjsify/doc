@@ -17418,7 +17418,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gjsify/typedoc-theme-client@workspace:packages/typedoc-theme-client":
+"@gjsify/typedoc-theme-client@workspace:^, @gjsify/typedoc-theme-client@workspace:packages/typedoc-theme-client":
   version: 0.0.0-use.local
   resolution: "@gjsify/typedoc-theme-client@workspace:packages/typedoc-theme-client"
   dependencies:
@@ -17445,6 +17445,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gjsify/typedoc-theme@workspace:packages/typedoc-theme"
   dependencies:
+    "@gjsify/typedoc-theme-client": "workspace:^"
     "@types/node": ^18.16.18
     typedoc: ^0.24.8
     typescript: ^5.1.3

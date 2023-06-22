@@ -1,6 +1,6 @@
 import { classNames, getKindClass, renderFlags, wbr } from "../lib";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
-import { JSX } from "typedoc";
+import { JSX } from "../jsx/index.js";
 import { DeclarationReflection, ReflectionType } from "typedoc";
 
 export const parameter = (
