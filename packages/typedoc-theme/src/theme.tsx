@@ -8,16 +8,19 @@ import {
   SignatureReflection,
   RenderTemplate,
   UrlMapping,
-  JSX,
   RendererEvent,
   Logger,
+  PageEvent,
 } from "typedoc";
-import type { Renderer, PageEvent } from "typedoc";
+import { JSX } from "./jsx/index.js";
+import type { Renderer } from "typedoc";
 
 import { MarkedPlugin } from "typedoc/dist/lib/output/themes/MarkedPlugin";
 import { toStyleClass } from "./lib";
 import { GjsifyThemeRenderContext } from "./theme-render-context";
 import { AssetService } from "./services/asset.service";
+import { writeFileSync } from "./utils";
+import { join } from "path";
 
 /**
  * Defines a mapping of a {@link Models.Kind} to a template file.
@@ -62,26 +65,19 @@ export class GjsifyTheme extends Theme {
   }
 
   reflectionTemplate = (pageEvent: PageEvent<ContainerReflection>) => {
-    return this.getRenderContext(pageEvent).reflectionTemplate(
-      pageEvent
-    ) as JSX.Element;
+    return this.getRenderContext(pageEvent).reflectionTemplate(pageEvent);
   };
   indexTemplate = (pageEvent: PageEvent<ProjectReflection>) => {
-    return this.getRenderContext(pageEvent).indexTemplate(
-      pageEvent
-    ) as JSX.Element;
+    return this.getRenderContext(pageEvent).indexTemplate(pageEvent);
   };
   defaultLayoutTemplate = (
     pageEvent: PageEvent<Reflection>,
     template: RenderTemplate<PageEvent<Reflection>>
   ) => {
-    return this.getRenderContext(pageEvent).defaultLayout(
-      template,
-      pageEvent
-    ) as JSX.Element;
+    return this.getRenderContext(pageEvent).defaultLayout(template, pageEvent);
   };
 
-  getReflectionClasses(reflection: DeclarationReflection) {
+  getReflectionClasses(reflection: DeclarationReflection | Reflection) {
     const filters = this.application.options.getValue(
       "visibilityFilters"
     ) as Record<string, boolean>;
@@ -142,8 +138,20 @@ export class GjsifyTheme extends Theme {
     this.markedPlugin = renderer.getComponent("marked") as MarkedPlugin;
 
     this.listenTo(this.owner, {
+      [PageEvent.END]: this.onPageEnd,
       [RendererEvent.END]: this.onRendererEnd,
     });
+  }
+
+  onPageEnd(page: PageEvent<Reflection>) {
+    this.logger.info(`[GjsifyTheme] Render page "${page.url}"...`);
+    if (page.url === "index.html") {
+      this.onPageHomeEnd(page);
+    }
+  }
+
+  onPageHomeEnd(page: PageEvent<Reflection>) {
+    this.writeModulesJsonFile(page);
   }
 
   onRendererEnd(event: RendererEvent) {
@@ -296,6 +304,18 @@ export class GjsifyTheme extends Theme {
     return urls;
   }
 
+  writeModulesJsonFile(page: PageEvent<Reflection>) {
+    const filename = "modules.json";
+    this.logger.info(`[GjsifyTheme] Generate ${filename}...`);
+    const context = this.getRenderContext(page);
+    const outputDirectory = this.application.options.getValue("out");
+
+    const target = join(outputDirectory, "assets", filename);
+
+    const modules = context.getModules(page);
+    writeFileSync(target, JSON.stringify(modules, null, 0));
+  }
+
   render(
     page: PageEvent<Reflection>,
     template: RenderTemplate<PageEvent<Reflection>>
@@ -338,7 +358,7 @@ function hasReadme(readme: string) {
 }
 
 function getReflectionClasses(
-  reflection: DeclarationReflection,
+  reflection: DeclarationReflection | Reflection,
   filters: Record<string, boolean>
 ) {
   const classes: string[] = [];
@@ -347,7 +367,7 @@ function getReflectionClasses(
   // partials/navigation.tsx.
   for (const key of Object.keys(filters)) {
     if (key === "inherited") {
-      if (reflection.inheritedFrom) {
+      if ((reflection as DeclarationReflection).inheritedFrom) {
         classes.push("tsd-is-inherited");
       }
     } else if (key === "protected") {

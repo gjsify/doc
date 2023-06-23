@@ -18,7 +18,7 @@ export function memberDeclaration(
         <h4>Type declaration</h4>
         {context.parameter(type.declaration)}
       </div>
-    ) as JSX.Element;
+    );
   }
 
   const visitor = { reflection: renderTypeDeclaration };

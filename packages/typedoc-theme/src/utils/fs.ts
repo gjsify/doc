@@ -2,7 +2,13 @@
  * @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/utils/fs.ts
  */
 
-import { existsSync, mkdirSync, statSync, readdirSync, copyFileSync } from "fs";
+import fs, {
+  existsSync,
+  mkdirSync,
+  statSync,
+  readdirSync,
+  copyFileSync,
+} from "fs";
 import { promises as fsp } from "fs";
 import { dirname, join, basename } from "path";
 
@@ -67,5 +73,5 @@ export function copySync(
  */
 export function writeFileSync(fileName: string, data: string) {
   mkdirSync(dirname(normalizePath(fileName)), { recursive: true });
-  writeFileSync(normalizePath(fileName), data);
+  fs.writeFileSync(normalizePath(fileName), data);
 }

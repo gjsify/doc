@@ -7,9 +7,11 @@ import {
   ReflectionKind,
 } from "typedoc";
 import { JSX } from "../jsx/index.js";
-import type { PageEvent } from "typedoc";
 import { camelToTitleCase, classNames, getDisplayName, wbr } from "../lib";
+
+import type { PageEvent } from "typedoc";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
+import type { Module } from "../types";
 
 export function sidebar(
   context: GjsifyThemeRenderContext,
@@ -42,10 +44,10 @@ function buildFilterItem(
         <span>{displayName}</span>
       </label>
     </li>
-  ) as JSX.Element;
+  );
 }
 
-export function sidebarLinks(context: GjsifyThemeRenderContext) {  
+export function sidebarLinks(context: GjsifyThemeRenderContext) {
   const links = Object.entries(context.options.getValue("sidebarLinks"));
   if (!links.length) return null;
   return (
@@ -165,6 +167,30 @@ function getNavigationElements(
   }
 
   return parent.children || [];
+}
+
+export function getModules(
+  context: GjsifyThemeRenderContext,
+  props: PageEvent<Reflection>
+) {
+  const opts = context.options.getValue("navigation");
+  const elements = getNavigationElements(props.project, opts);
+  const modules: Module[] = [];
+  for (const el of elements) {
+    if (
+      el instanceof DeclarationReflection &&
+      el.kind === ReflectionKind.Module
+    ) {
+      modules.push({
+        name: el.name,
+        // kind: ReflectionKind.singularString(el.kind), // -> "Module"
+        url: "/" + el.url,
+        packageName: el.project.packageName,
+        packageVersion: el.packageVersion || el.project.packageVersion,
+      });
+    }
+  }
+  return modules;
 }
 
 export function navigation(
@@ -289,7 +315,7 @@ export function pageNavigation(
           <li>{l}</li>
         ))}
       </ul>
-    ) as JSX.Element;
+    );
     levels[levels.length - 1].push(built);
   }
 
@@ -307,7 +333,7 @@ export function pageNavigation(
       <a href={heading.link} class={heading.classes}>
         {heading.kind && context.icons[heading.kind]()}
         <span>{wbr(heading.text)}</span>
-      </a> as JSX.Element
+      </a>
     );
   }
 
@@ -336,4 +362,44 @@ export function pageNavigation(
       </div>
     </details>
   );
+}
+
+/** Get the current module */
+export function getCurrentModule(
+  context: GjsifyThemeRenderContext,
+  props: PageEvent<Reflection>
+) {
+  const modules = props.model.project.getChildrenByKind(
+    ReflectionKind.SomeModule
+  );
+  const parentMod = modules.find((mod) => inPath(mod, props.model));
+  const childMod = parentMod?.children?.find(
+    (mod) => mod.kindOf(ReflectionKind.SomeModule) && inPath(mod, props.model)
+  );
+  const currentModule = childMod || parentMod;
+  let module: Module | undefined;
+
+  if (currentModule && currentModule.url) {
+    module = {
+      name: currentModule.name,
+      url: currentModule.url,
+    };
+  }
+
+  return module;
+}
+
+function inPath(
+  thisPage: Reflection,
+  toCheck: Reflection | undefined
+): boolean {
+  while (toCheck) {
+    if (toCheck.isProject()) return false;
+
+    if (thisPage === toCheck) return true;
+
+    toCheck = toCheck.parent;
+  }
+
+  return false;
 }

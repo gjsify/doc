@@ -1,29 +1,29 @@
 // bootstrap
 @import 'charset';
-// @import 'variables-bootstrap';
-// @import 'variables-riba';
-// @import 'variables-theme';
-// @import 'bootstrap';
-// @import 'variables-bootstrap';
+@import 'variables-bootstrap';
+@import 'variables-riba';
+@import 'variables-theme';
+@import 'bootstrap';
+@import 'variables-bootstrap';
 
 // Original TypeDoc style
 @import 'original';
 
 // Riba
-// @import '~@ribajs/core';
-// @import '~@ribajs/bs5';
+@import '@ribajs/core/index';
+@import '@ribajs/bs5/index';
 
 // External Components
-// @import 'components/index';
+@import 'components/index';
 
 // Custom bootstrap extensions
-// @import 'extensions/index';
+@import 'extensions/index';
 
 // Layout styles
-// @import 'layout';
+@import 'layout';
 
 // Template styles
-// @import 'templates/index';
+@import 'templates/index';
 
 // Custom components
-// @import '../scripts/components/index';
+@import '../scripts/components/index';

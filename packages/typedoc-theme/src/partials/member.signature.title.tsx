@@ -22,7 +22,7 @@ function renderParameterWithType(
       </span>
       {context.type(item.type)}
     </>
-  ) as JSX.Element;
+  );
 }
 
 function renderParameterWithoutType(item: ParameterReflection) {
@@ -34,7 +34,7 @@ function renderParameterWithoutType(item: ParameterReflection) {
         <span class="tsd-signature-symbol">?</span>
       )}
     </>
-  ) as JSX.Element;
+  );
 }
 
 export function memberSignatureTitle(

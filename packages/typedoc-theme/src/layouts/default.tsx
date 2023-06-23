@@ -4,6 +4,7 @@ import { JSX, Raw } from "../jsx/index.js";
 import type { PageEvent } from "typedoc";
 import { getDisplayName } from "../lib";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
+import { toBase64 } from "../utils";
 
 export const defaultLayout = (
   context: GjsifyThemeRenderContext,
@@ -100,28 +101,44 @@ export const defaultLayout = (
       <script>
         <Raw html='document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"' />
       </script>
+      {context.gjsifySidebar(props)}
       {context.toolbar(props)}
 
-      <div class="container container-main">
-        <div class="col-content">
-          {context.hook("content.begin")}
-          {context.header(props)}
-          {template(props)}
-          {context.hook("content.end")}
-        </div>
-        <div class="col-sidebar">
-          <div class="page-menu">
-            {context.hook("pageSidebar.begin")}
-            {context.pageSidebar(props)}
-            {context.hook("pageSidebar.end")}
+      <router-view
+        id="main"
+        listen-all-links="true"
+        dataset-to-root-scope="true"
+      >
+        <div
+          class="container container-main"
+          data-project-name={props.model.project.name}
+          data-module={toBase64(context.getCurrentModule(props))}
+        >
+          <div class="col-content">
+            {context.hook("content.begin")}
+            {context.header(props)}
+            {template(props)}
+            {context.hook("content.end")}
           </div>
-          <div class="site-menu">
-            {context.hook("sidebar.begin")}
-            {context.sidebar(props)}
-            {context.hook("sidebar.end")}
+          <div class="col-sidebar">
+            <div class="page-menu">
+              {context.hook("pageSidebar.begin")}
+              {context.pageSidebar(props)}
+              {context.hook("pageSidebar.end")}
+            </div>
+            <div class="site-menu">
+              {context.hook("sidebar.begin")}
+              {context.sidebar(props)}
+              {context.hook("sidebar.end")}
+            </div>
           </div>
+
+          {/* TODO */}
+          <template id="tsd-navigation-secondary-template">
+            {context.navigationSecondary(props)}
+          </template>
         </div>
-      </div>
+      </router-view>
 
       {context.footer()}
 

@@ -1,5 +1,5 @@
 import { Application, registerComponent } from "./typedoc/Application";
-import { initSearch } from "./typedoc/components/Search";
+// import { initSearch } from "./typedoc/components/Search";
 import { Toggle } from "./typedoc/components/Toggle";
 import { Filter } from "./typedoc/components/Filter";
 import { Accordion } from "./typedoc/components/Accordion";
@@ -7,7 +7,7 @@ import { initTheme } from "./typedoc/Theme";
 
 console.debug("bootstrap original...");
 
-initSearch();
+// initSearch();
 
 registerComponent(Toggle, "a[data-toggle]");
 registerComponent(Accordion, ".tsd-index-accordion");

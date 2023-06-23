@@ -8,59 +8,97 @@ export const toolbar = (
   context: GjsifyThemeRenderContext,
   props: PageEvent<Reflection>
 ) => (
-  <header class="tsd-page-toolbar">
-    <div class="tsd-toolbar-contents container">
-      <div
-        class="table-cell"
-        id="tsd-search"
-        data-base={context.relativeURL("./")}
-      >
-        <div class="field">
-          <label
-            for="tsd-search-field"
-            class="tsd-widget tsd-toolbar-icon search no-caption"
+  <>
+    <header class="tsd-page-toolbar">
+      <div class="tsd-toolbar-contents container">
+        <div class="table-cell" id="tsd-widgets">
+          <a
+            href="#"
+            class="tsd-widget tsd-toolbar-icon menu no-caption"
+            data-toggle="menu"
+            aria-label="Menu"
           >
-            {context.icons.search()}
-          </label>
-          <input type="text" id="tsd-search-field" aria-label="Search" />
+            {context.icons.menu()}
+          </a>
         </div>
+      </div>
+    </header>
 
-        <div class="field">
-          <div id="tsd-toolbar-links">
-            {Object.entries(context.options.getValue("navigationLinks")).map(
-              ([label, url]) => (
-                <a href={url}>{label}</a>
-              )
-            )}
-          </div>
+    <tsd-navbar class="tsd-page-toolbar navbar fixed-top navbar-expand navbar-os bg-tl-white bg-td-dark border-bottom border-tl-gray border-td-black">
+      <div class="container-fluid d-flex justify-content-between">
+        <div class="d-flex">
+          <bs5-toggle-button
+            class="d-flex d-xl-none align-items-center me-3"
+            target-id="left-sidebar"
+          >
+            <ul class="nav">
+              <li class="nav-item d-flex align-items-center">
+                <bs5-icon
+                  src={context.absoluteUrl("/assets/iconset/svg/icon_menu.svg")}
+                  size={32}
+                  rv-hide="isActive"
+                  rv-on-click="toggle"
+                ></bs5-icon>
+              </li>
+              <li class="nav-item d-flex align-items-center">
+                <bs5-icon
+                  src={context.absoluteUrl(
+                    "/assets/iconset/svg/icon_close.svg"
+                  )}
+                  size={32}
+                  rv-show="isActive"
+                  rv-on-click="toggle"
+                ></bs5-icon>
+              </li>
+            </ul>
+          </bs5-toggle-button>
+          <a
+            class="navbar-brand d-flex align-items-center"
+            href={context.absoluteUrl("/")}
+          >
+            <img
+              class="img-fluid mh-100 d-td-none"
+              src={context.absoluteUrl("/assets/logo.svg")}
+              alt="Gjsify Logo"
+            />
+            <img
+              class="img-fluid mh-100 d-tl-none"
+              src={context.absoluteUrl("/assets/logo-light.svg")}
+              alt="Gjsify Logo"
+            />
+          </a>
         </div>
+        <div class="d-flex">
+          <bs5-theme-button class="d-flex align-items-center" mode="icon">
+            <button class="btn btn-icon" rv-on-click="toggleTheme">
+              <bs5-icon
+                class="d-td-none"
+                color="warning"
+                src={context.absoluteUrl(
+                  "/assets/iconset/svg/icon_sun_alt.svg"
+                )}
+                size={32}
+              ></bs5-icon>
+              <bs5-icon
+                class="d-tl-none color-orange"
+                color="warning"
+                src={context.absoluteUrl(
+                  "/assets/iconset/svg/icon_moon_alt.svg"
+                )}
+                size={32}
+              ></bs5-icon>
+            </button>
+          </bs5-theme-button>
 
-        <ul class="results">
-          <li class="state loading">Preparing search index...</li>
-          <li class="state failure">The search index is not available</li>
-        </ul>
+          <tsd-navigation-primary class="mx-2 d-none d-md-block"></tsd-navigation-primary>
 
-        <a
-          href={
-            context.options.getValue("titleLink") ||
-            context.relativeURL("index.html")
-          }
-          class="title"
-        >
-          {getDisplayName(props.project)}
-        </a>
+          <tsd-search
+            rv-element="searchEl"
+            id="tsd-search"
+            class="table-cell"
+          ></tsd-search>
+        </div>
       </div>
-
-      <div class="table-cell" id="tsd-widgets">
-        <a
-          href="#"
-          class="tsd-widget tsd-toolbar-icon menu no-caption"
-          data-toggle="menu"
-          aria-label="Menu"
-        >
-          {context.icons.menu()}
-        </a>
-      </div>
-    </div>
-  </header>
+    </tsd-navbar>
+  </>
 );

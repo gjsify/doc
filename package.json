@@ -103,7 +103,6 @@
     "!vendor/riba/infra/schematics"
   ],
   "resolutions": {
-    "bootstrap": "twbs/bootstrap#main",
     "@ribajs/accessibility": "workspace:^",
     "@ribajs/artcodestudio": "workspace:^",
     "@ribajs/bs4": "workspace:^",

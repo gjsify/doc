@@ -34,7 +34,11 @@ import {
   pageNavigation,
   settings,
   sidebarLinks,
+  getModules,
+  getCurrentModule,
 } from "./partials/navigation";
+import { navigationSecondary } from "./partials/navigation-secondary";
+import { gjsifySidebar } from "./partials/gjsify-sidebar";
 import { parameter } from "./partials/parameter";
 import { toolbar } from "./partials/toolbar";
 import { type } from "./partials/type";
@@ -49,6 +53,11 @@ function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
 
 export class GjsifyThemeRenderContext {
   options: Options;
+
+  /**
+   * Regular expression to test if a string looks like an external / absolute url.
+   */
+  protected urlPrefix = /^(http|ftp)s?:\/\//;
 
   constructor(
     private theme: GjsifyTheme,
@@ -76,6 +85,29 @@ export class GjsifyThemeRenderContext {
     return reflection.url ? this.relativeURL(reflection.url) : "";
   };
 
+  public absoluteUrl = (url: string | undefined): string => {
+    if (!url) return "";
+    const isAbsolute = this.urlPrefix.test(url);
+    if (isAbsolute) {
+      return url;
+    }
+    const relativeUrl = this.relativeURL(url) || "";
+
+    url = relativeUrl.replaceAll("../", "");
+
+    if (!url.startsWith("/")) {
+      url = "/" + url;
+    }
+
+    // Option from typedoc-plugin-remote-search
+    // let serverBaseUrl = (this.options.getValue("serverBaseUrl") || "/") as string;
+    // if (serverBaseUrl.endsWith("/")) {
+    //   serverBaseUrl = serverBaseUrl.substring(1);
+    // }
+
+    return url;
+  };
+
   markdown = (
     md: readonly CommentDisplayPart[] | NeverIfInternal<string | undefined>
   ) => {
@@ -97,7 +129,7 @@ export class GjsifyThemeRenderContext {
     return (type as ReferenceType).externalUrl;
   };
 
-  getReflectionClasses = (refl: DeclarationReflection) =>
+  getReflectionClasses = (refl: DeclarationReflection | Reflection) =>
     this.theme.getReflectionClasses(refl);
 
   reflectionTemplate = bind(reflectionTemplate, this);
@@ -129,6 +161,10 @@ export class GjsifyThemeRenderContext {
   sidebarLinks = bind(sidebarLinks, this);
   settings = bind(settings, this);
   navigation = bind(navigation, this);
+  navigationSecondary = bind(navigationSecondary, this);
+  gjsifySidebar = bind(gjsifySidebar, this);
+  getModules = bind(getModules, this);
+  getCurrentModule = bind(getCurrentModule, this);
   pageNavigation = bind(pageNavigation, this);
   parameter = bind(parameter, this);
   toolbar = bind(toolbar, this);

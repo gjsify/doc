@@ -3,9 +3,18 @@
  * @see https://github.com/TypeStrong/typedoc/blob/master/src/lib/utils/jsx.elements.ts
  */
 import { JSX as OJSX } from "typedoc";
-import { JsxElement } from "./jsx-element.js";
-import { IntrinsicElements as TsdIntrinsicElements } from "./intrinsic-elements.js";
-import { JsxChildren } from "./jsx-children.js";
+
+import type { JsxElement } from "./jsx-element.js";
+import type { IntrinsicElements as TsdIntrinsicElements } from "./intrinsic-elements.js";
+import type { JsxChildren } from "./jsx-children.js";
+
+export const Raw = OJSX.Raw;
+
+export type Element = JsxElement;
+
+export type Children = JsxChildren;
+
+export const Fragment = OJSX["Fragment"];
 
 /**
  * JSX factory function to create an "element" that can later be rendered with {@link renderElement}
@@ -14,20 +23,14 @@ import { JsxChildren } from "./jsx-children.js";
  * @param children
  */
 export const createElement = OJSX.createElement as (
-  tag: typeof OJSX.Fragment | string | OJSX.JsxComponent<any>,
+  tag: typeof Fragment | string | OJSX.JsxComponent<any>,
   props: object | null,
   ...children: JsxChildren[]
 ) => JsxElement;
+
 export const setRenderSettings = OJSX.setRenderSettings;
-export const renderElement = OJSX.renderElement as (
-  element: JsxElement | null | undefined
-) => string;
 
-export const Raw = OJSX.Raw;
-
-export type Element = JsxElement;
-
-export type Children = JsxChildren;
+export const renderElement = OJSX.renderElement;
 
 /**
  * TypeScript's rules for looking up the JSX.IntrinsicElements and JSX.Element
@@ -42,8 +45,12 @@ export type Children = JsxChildren;
 export declare namespace JSX {
   export {
     TsdIntrinsicElements as IntrinsicElements,
-    JsxElement as Element,
-    JsxChildren as Children,
+    Element,
+    Children,
+    Fragment,
+    Raw,
+    createElement,
+    renderElement,
   };
 }
 
@@ -58,5 +65,14 @@ declare global {
 
     export type Element = JsxElement;
     export type Children = JsxChildren;
+
+    // export { Raw, createElement, renderElement, Fragment };
   }
 }
+
+// globalThis.JSX ||= JSX;
+
+// globalThis.JSX.Fragment = Fragment;
+// globalThis.JSX.Raw = Raw;
+// globalThis.JSX.createElement = createElement;
+// globalThis.JSX.renderElement = renderElement;

@@ -31,7 +31,7 @@ function renderCategory(
         ))}
       </div>
     </section>
-  ) as JSX.Element;
+  );
 }
 
 export function index(
@@ -72,14 +72,14 @@ export function index(
         </summary>
         <div class="tsd-accordion-details">{content}</div>
       </details>
-    ) as JSX.Element;
+    );
   } else {
     content = (
       <>
         <h3 class="tsd-index-heading uppercase">Index</h3>
         {content}
       </>
-    ) as JSX.Element;
+    );
   }
 
   return (
@@ -88,5 +88,5 @@ export function index(
         <section class="tsd-panel tsd-index-panel">{content}</section>
       </section>
     </>
-  ) as JSX.Element;
+  );
 }
