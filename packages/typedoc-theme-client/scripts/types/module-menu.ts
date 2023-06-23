@@ -1,6 +1,6 @@
 import type { Navigation } from "./navigation.js";
 
-export interface NavigationPrimary {
+export interface ModuleMenu {
   name: string;
   href?: string;
   classNames: string;

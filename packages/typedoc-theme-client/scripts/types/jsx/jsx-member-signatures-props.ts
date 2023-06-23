@@ -1,3 +1,3 @@
-import type { JsxHtmlGlobalProps } from "@ribajs/jsx/src/types/index";
+import type { JsxHtmlGlobalProps } from "@ribajs/jsx";
 
 export type JsxTsdMemberSignaturesProps = JsxHtmlGlobalProps;

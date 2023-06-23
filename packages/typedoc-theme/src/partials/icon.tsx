@@ -282,3 +282,27 @@ export const icons: Record<
     </svg>
   ),
 };
+
+/**
+ * Preload all icons
+ * @returns
+ */
+export const iconSet = () => {
+  clearSeenIconCache();
+  const iconset: JSX.Element[] = [];
+  // for (const key of Object.keys(ReflectionKind) as Array<
+  //   keyof typeof ReflectionKind
+  // >) {
+  //   const kind = ReflectionKind[key] as ReflectionKind;
+  //   if (!icons[kind]) continue;
+  //   iconset.push(
+  //     <span title={ReflectionKind.singularString(kind)}>{icons[kind]()}</span>
+  //   );
+  // }
+
+  for (const key of Object.keys(icons)) {
+    iconset.push(<span title={key}>{icons[key as keyof typeof icons]()}</span>);
+  }
+
+  return <>{iconset.map((icon) => icon)}</>;
+};

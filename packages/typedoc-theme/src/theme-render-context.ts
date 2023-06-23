@@ -1,5 +1,3 @@
-import type { PageEvent, RendererHooks, Options } from "typedoc";
-import type { NeverIfInternal } from "./types";
 import {
   Comment,
   CommentDisplayPart,
@@ -7,7 +5,7 @@ import {
   ReferenceType,
   Reflection,
 } from "typedoc";
-import type { GjsifyTheme } from "./theme";
+import { VERSION } from "./constants";
 import { defaultLayout } from "./layouts/default";
 import { index } from "./partials";
 import { analytics } from "./partials/analytics";
@@ -16,7 +14,7 @@ import { comment, commentSummary, commentTags } from "./partials/comment";
 import { footer } from "./partials/footer";
 import { header } from "./partials/header";
 import { hierarchy } from "./partials/hierarchy";
-import { icons } from "./partials/icon";
+import { icons, iconSet } from "./partials/icon";
 import { member } from "./partials/member";
 import { memberDeclaration } from "./partials/member.declaration";
 import { memberGetterSetter } from "./partials/member.getterSetter";
@@ -28,17 +26,13 @@ import { memberSources } from "./partials/member.sources";
 import { members } from "./partials/members";
 import { membersGroup } from "./partials/members.group";
 import {
-  sidebar,
-  pageSidebar,
   navigation,
   pageNavigation,
-  settings,
   sidebarLinks,
   getModules,
   getCurrentModule,
 } from "./partials/navigation";
-import { navigationSecondary } from "./partials/navigation-secondary";
-import { gjsifySidebar } from "./partials/gjsify-sidebar";
+import { gjsifySidebar, gjsifySidebarContent } from "./partials/gjsify-sidebar";
 import { parameter } from "./partials/parameter";
 import { toolbar } from "./partials/toolbar";
 import { type } from "./partials/type";
@@ -47,12 +41,18 @@ import { typeParameters } from "./partials/typeParameters";
 import { indexTemplate } from "./templates";
 import { reflectionTemplate } from "./templates/reflection";
 
+import type { PageEvent, RendererHooks, Options } from "typedoc";
+import type { NeverIfInternal } from "./types";
+import type { GjsifyTheme } from "./theme";
+
 function bind<F, L extends any[], R>(fn: (f: F, ...a: L) => R, first: F) {
   return (...r: L) => fn(first, ...r);
 }
 
 export class GjsifyThemeRenderContext {
   options: Options;
+
+  VERSION = VERSION;
 
   /**
    * Regular expression to test if a string looks like an external / absolute url.
@@ -68,6 +68,8 @@ export class GjsifyThemeRenderContext {
   }
 
   icons = icons;
+
+  iconSet = iconSet;
 
   hook = (name: keyof RendererHooks) =>
     this.theme.owner.hooks.emit(name, this as any);
@@ -156,13 +158,10 @@ export class GjsifyThemeRenderContext {
   memberSources = bind(memberSources, this);
   members = bind(members, this);
   membersGroup = bind(membersGroup, this);
-  sidebar = bind(sidebar, this);
-  pageSidebar = bind(pageSidebar, this);
   sidebarLinks = bind(sidebarLinks, this);
-  settings = bind(settings, this);
   navigation = bind(navigation, this);
-  navigationSecondary = bind(navigationSecondary, this);
   gjsifySidebar = bind(gjsifySidebar, this);
+  gjsifySidebarContent = bind(gjsifySidebarContent, this);
   getModules = bind(getModules, this);
   getCurrentModule = bind(getCurrentModule, this);
   pageNavigation = bind(pageNavigation, this);

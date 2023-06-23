@@ -9,21 +9,6 @@ export const toolbar = (
   props: PageEvent<Reflection>
 ) => (
   <>
-    <header class="tsd-page-toolbar">
-      <div class="tsd-toolbar-contents container">
-        <div class="table-cell" id="tsd-widgets">
-          <a
-            href="#"
-            class="tsd-widget tsd-toolbar-icon menu no-caption"
-            data-toggle="menu"
-            aria-label="Menu"
-          >
-            {context.icons.menu()}
-          </a>
-        </div>
-      </div>
-    </header>
-
     <tsd-navbar class="tsd-page-toolbar navbar fixed-top navbar-expand navbar-os bg-tl-white bg-td-dark border-bottom border-tl-gray border-td-black">
       <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex">
@@ -31,26 +16,20 @@ export const toolbar = (
             class="d-flex d-xl-none align-items-center me-3"
             target-id="left-sidebar"
           >
-            <ul class="nav">
-              <li class="nav-item d-flex align-items-center">
-                <bs5-icon
-                  src={context.absoluteUrl("/assets/iconset/svg/icon_menu.svg")}
-                  size={32}
-                  rv-hide="isActive"
-                  rv-on-click="toggle"
-                ></bs5-icon>
-              </li>
-              <li class="nav-item d-flex align-items-center">
-                <bs5-icon
-                  src={context.absoluteUrl(
-                    "/assets/iconset/svg/icon_close.svg"
-                  )}
-                  size={32}
-                  rv-show="isActive"
-                  rv-on-click="toggle"
-                ></bs5-icon>
-              </li>
-            </ul>
+            <div class="d-flex align-items-center">
+              <bs5-icon
+                src={context.absoluteUrl("/assets/iconset/svg/icon_menu.svg")}
+                size={32}
+                rv-hide="isActive"
+                rv-on-click="toggle"
+              ></bs5-icon>
+              <bs5-icon
+                src={context.absoluteUrl("/assets/iconset/svg/icon_close.svg")}
+                size={32}
+                rv-show="isActive"
+                rv-on-click="toggle"
+              ></bs5-icon>
+            </div>
           </bs5-toggle-button>
           <a
             class="navbar-brand d-flex align-items-center"
@@ -90,7 +69,7 @@ export const toolbar = (
             </button>
           </bs5-theme-button>
 
-          <tsd-navigation-primary class="mx-2 d-none d-md-block"></tsd-navigation-primary>
+          <tsd-module-menu class="mx-2 d-none d-md-block"></tsd-module-menu>
 
           <tsd-search
             rv-element="searchEl"
@@ -100,5 +79,20 @@ export const toolbar = (
         </div>
       </div>
     </tsd-navbar>
+
+    {/* <header class="tsd-page-toolbar">
+      <div class="tsd-toolbar-contents container">
+        <div class="table-cell" id="tsd-widgets">
+          <a
+            href="#"
+            class="tsd-widget tsd-toolbar-icon menu no-caption"
+            data-toggle="menu"
+            aria-label="Menu"
+          >
+            {context.icons.menu()}
+          </a>
+        </div>
+      </div>
+    </header> */}
   </>
 );

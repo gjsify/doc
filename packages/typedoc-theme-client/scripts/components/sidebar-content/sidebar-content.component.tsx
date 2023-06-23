@@ -2,10 +2,10 @@ import { Component, TemplateFunction } from "@ribajs/core";
 import { hasChildNodesTrim } from "@ribajs/utils";
 import { EventDispatcher } from "@ribajs/events";
 
-import type { NavigationSecondaryComponentScope } from "../../types/index.js";
+import type { SidebarContentComponentScope } from "../../types/index.js";
 
-export class NavigationComponent extends Component {
-  public static tagName = "tsd-navigation-secondary";
+export class SidebarContentComponent extends Component {
+  public static tagName = "tsd-sidebar-content";
 
   static get observedAttributes() {
     return [];
@@ -13,7 +13,7 @@ export class NavigationComponent extends Component {
 
   protected routerEvents = new EventDispatcher("main");
 
-  public scope: NavigationSecondaryComponentScope = {};
+  public scope: SidebarContentComponentScope = {};
 
   constructor() {
     super();
@@ -21,7 +21,7 @@ export class NavigationComponent extends Component {
 
   protected connectedCallback() {
     super.connectedCallback();
-    this.init(NavigationComponent.observedAttributes);
+    this.init(SidebarContentComponent.observedAttributes);
   }
 
   protected async beforeBind() {
@@ -35,10 +35,10 @@ export class NavigationComponent extends Component {
 
   protected onNewPage() {
     const templateEl = document.getElementById(
-      "tsd-navigation-secondary-template"
+      "tsd-sidebar-content-template"
     ) as HTMLTemplateElement | null;
     if (!templateEl) {
-      console.warn("[NavigationComponent] No template found!");
+      console.warn("[SidebarContentComponent] No template found!");
       return;
     }
     this.scope.template = templateEl.innerHTML;

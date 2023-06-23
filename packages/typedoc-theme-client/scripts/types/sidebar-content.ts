@@ -1,6 +1,6 @@
 import type { Navigation } from "./navigation.js";
 
-export interface NavigationSecondary {
+export interface SidebarContent {
   name?: string;
   href?: string;
   classNames?: string;

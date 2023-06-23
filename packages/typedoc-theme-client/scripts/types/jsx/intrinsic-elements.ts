@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import type {
   JsxTsdSearchProps,
-  JsxTsdNavigationPrimaryProps,
-  JsxTsdNavigationSecondaryProps,
+  JsxTsdModuleMenuProps,
+  JsxTsdSidebarContentProps,
   JsxTsdNavbarProps,
   JsxTsdMemberSignaturesProps,
 } from "./index.js";
@@ -11,8 +11,8 @@ import type {
 export interface TsdIntrinsicElements {
   // Custom Elements
   "tsd-search": JsxTsdSearchProps;
-  "tsd-navigation-primary": JsxTsdNavigationPrimaryProps;
-  "tsd-navigation-secondary": JsxTsdNavigationSecondaryProps;
+  "tsd-module-menu": JsxTsdModuleMenuProps;
+  "tsd-sidebar-content": JsxTsdSidebarContentProps;
   "tsd-navbar": JsxTsdNavbarProps;
   "tsd-member-signatures": JsxTsdMemberSignaturesProps;
 }

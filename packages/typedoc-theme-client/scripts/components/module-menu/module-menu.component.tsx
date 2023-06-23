@@ -5,26 +5,26 @@ import { Pjax } from "@ribajs/router";
 import type {} from "@ribajs/fuse";
 
 import type {
-  NavigationPrimaryComponentScope,
+  ModuleMenuScope,
   Module,
-  JsxTsdNavigationPrimaryProps,
+  JsxTsdModuleMenuProps,
   Dataset,
 } from "../../types/index.js";
 
-export class NavigationPrimaryComponent extends Component {
-  public static tagName = "tsd-navigation-primary";
+export class ModuleMenuComponent extends Component {
+  public static tagName = "tsd-module-menu";
 
-  static get observedAttributes(): (keyof JsxTsdNavigationPrimaryProps)[] {
+  static get observedAttributes(): (keyof JsxTsdModuleMenuProps)[] {
     return [];
   }
 
-  protected requiredAttributes(): (keyof JsxTsdNavigationPrimaryProps)[] {
+  protected requiredAttributes(): (keyof JsxTsdModuleMenuProps)[] {
     return [];
   }
 
   protected routerEvents = new EventDispatcher("main");
 
-  public scope: NavigationPrimaryComponentScope = {
+  public scope: ModuleMenuScope = {
     selectedModule: "Modules",
     onModuleSelect: this.onModuleSelect,
   };
@@ -35,7 +35,7 @@ export class NavigationPrimaryComponent extends Component {
 
   protected connectedCallback() {
     super.connectedCallback();
-    this.init(NavigationPrimaryComponent.observedAttributes);
+    this.init(ModuleMenuComponent.observedAttributes);
   }
 
   protected async beforeBind() {
@@ -87,7 +87,7 @@ export class NavigationPrimaryComponent extends Component {
   protected async fetchData() {
     const data = await HttpService.getJSON<Module[]>("/assets/modules.json");
     this.scope.modules = data.body;
-    console.debug("NavigationPrimaryComponent", this.scope.modules);
+    console.debug("ModuleMenu", this.scope.modules);
   }
 
   protected template(): ReturnType<TemplateFunction> {

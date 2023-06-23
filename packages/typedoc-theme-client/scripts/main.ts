@@ -1,12 +1,13 @@
 import { ready } from "@ribajs/utils";
 import { Riba, coreModule } from "@ribajs/core";
+// import { EventDispatcher } from "@ribajs/events";
 import { routerModule, FadeTransition } from "@ribajs/router";
 import { bs5Module, ThemeService } from "@ribajs/bs5";
 import { fuseModule } from "@ribajs/fuse";
 import { gjsifyTypedocModule } from "./module";
 
 // Import original typedoc bootstrap
-import "./original/bootstrap.js";
+import { bootstrap as bootstrapOriginal } from "./original/bootstrap.js";
 
 declare global {
   interface Window {
@@ -44,6 +45,11 @@ const bootstrap = () => {
   riba.lifecycle.events.on("ComponentLifecycle:error", (error: Error) => {
     console.error(error);
   });
+
+  // EventDispatcher.getInstance("main").on("newPageReady", () => {
+  //   bootstrapOriginal();
+  // });
+  bootstrapOriginal();
 
   // Also add theme class to body for TypeDoc Theme backward compatibility
   theme.onChange((data) => {

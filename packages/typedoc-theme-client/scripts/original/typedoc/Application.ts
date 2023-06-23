@@ -37,7 +37,6 @@ export class Application {
    */
   constructor() {
     this.createComponents(document.body);
-    this.ensureActivePageVisible();
     this.ensureFocusedElementVisible();
     this.listenForCodeCopies();
     window.addEventListener("hashchange", () =>
@@ -63,27 +62,6 @@ export class Application {
     this.ensureFocusedElementVisible();
   }
 
-  private ensureActivePageVisible() {
-    const pageLink = document.querySelector(".tsd-navigation .current");
-    let iter = pageLink?.parentElement;
-    while (iter && !iter.classList.contains(".tsd-navigation")) {
-      // Expand parent namespaces if collapsed, and this module
-      if (iter instanceof HTMLDetailsElement) {
-        iter.open = true;
-      }
-      iter = iter.parentElement;
-    }
-
-    if (pageLink) {
-      const top =
-        pageLink.getBoundingClientRect().top -
-        document.documentElement.clientHeight / 4;
-      // If we are showing three columns, this will scroll the site menu down to
-      // show the page we just loaded in the navigation.
-      document.querySelector(".site-menu")!.scrollTop = top;
-    }
-  }
-
   /**
    * Ensures that if a user was linked to a reflection which is hidden because of filter
    * settings, that reflection is still shown.
@@ -91,7 +69,7 @@ export class Application {
   private ensureFocusedElementVisible() {
     if (this.alwaysVisibleMember) {
       this.alwaysVisibleMember.classList.remove("always-visible");
-      this.alwaysVisibleMember.firstElementChild!.remove();
+      this.alwaysVisibleMember.firstElementChild?.remove();
       this.alwaysVisibleMember = null;
     }
 
@@ -100,9 +78,9 @@ export class Application {
     const reflAnchor = document.getElementById(location.hash.substring(1));
     if (!reflAnchor) return;
 
-    let reflContainer = reflAnchor.parentElement!;
+    let reflContainer = reflAnchor.parentElement;
     while (reflContainer && reflContainer.tagName !== "SECTION") {
-      reflContainer = reflContainer.parentElement!;
+      reflContainer = reflContainer.parentElement;
     }
 
     if (!reflContainer) {

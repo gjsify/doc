@@ -101,6 +101,9 @@ export const defaultLayout = (
       <script>
         <Raw html='document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"' />
       </script>
+      <span hidden class="iconset d-none">
+        {context.iconSet()}
+      </span>
       {context.gjsifySidebar(props)}
       {context.toolbar(props)}
 
@@ -120,22 +123,9 @@ export const defaultLayout = (
             {template(props)}
             {context.hook("content.end")}
           </div>
-          <div class="col-sidebar">
-            <div class="page-menu">
-              {context.hook("pageSidebar.begin")}
-              {context.pageSidebar(props)}
-              {context.hook("pageSidebar.end")}
-            </div>
-            <div class="site-menu">
-              {context.hook("sidebar.begin")}
-              {context.sidebar(props)}
-              {context.hook("sidebar.end")}
-            </div>
-          </div>
 
-          {/* TODO */}
-          <template id="tsd-navigation-secondary-template">
-            {context.navigationSecondary(props)}
+          <template id="tsd-sidebar-content-template">
+            {context.gjsifySidebarContent(props)}
           </template>
         </div>
       </router-view>
