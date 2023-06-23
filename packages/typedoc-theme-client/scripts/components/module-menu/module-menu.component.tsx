@@ -61,15 +61,15 @@ export class ModuleMenuComponent extends Component {
     }
   }
 
-  public onModuleSelect(mod: Module) {
-    console.debug("onModuleSelect");
+  public onModuleSelect(mod: Module, event: Event) {
+    console.debug("onModuleSelect", mod, event);
     this.scope.selectedModule = mod.name;
     const pjax = Pjax.getInstance("main");
     if (!pjax || !mod.url) {
       console.warn("No module with href or no pjax instance found!");
       return;
     }
-    Dropdown.hideAll();
+    Dropdown.hideAll(event);
     pjax.goTo(mod.url);
   }
 

@@ -116,6 +116,7 @@ export class SearchServer {
       results.push({
         classes: row.classes,
         url: row.url,
+        kind: row.kind,
         name,
       });
     }

@@ -75,8 +75,8 @@ export function getModules(
       el.kind === ReflectionKind.Module
     ) {
       modules.push({
+        // kind: el.kind,
         name: el.name,
-        // kind: ReflectionKind.singularString(el.kind), // -> "Module"
         url: "/" + el.url,
         packageName: el.project.packageName,
         packageVersion: el.packageVersion || el.project.packageVersion,

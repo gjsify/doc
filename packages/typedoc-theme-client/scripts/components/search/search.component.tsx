@@ -175,6 +175,7 @@ export class SearchComponent extends Component {
 
     this.scope.isLoading = true;
     this.scope.isReady = false;
+    this.scope.hasFailure = false;
 
     const url = new URL(this.scope.serverBaseUrl);
     const separator = url.pathname.endsWith("/") ? "" : "/";
@@ -192,8 +193,17 @@ export class SearchComponent extends Component {
       this.scope.hasFailure = true;
     }
 
-    this.validateResult(results);
-    this.transformResult(results);
+    try {
+      this.validateResult(results);
+      this.transformResult(results);
+    } catch (error) {
+      console.error(error);
+      this.scope.results = [];
+      this.scope.isLoading = false;
+      this.scope.hasFailure = true;
+    }
+
+    if (this.scope.hasFailure) return;
 
     this.scope.results = results;
     this.scope.isLoading = false;
@@ -212,6 +222,8 @@ export class SearchComponent extends Component {
         throw new Error("Property name must be of type string!");
       if (typeof result.url !== "string")
         throw new Error("Property url must be of type string!");
+      if (typeof result.kind !== "number")
+        throw new Error("Property kind must be of type number!");
     }
   }
 
@@ -354,11 +366,12 @@ export class SearchComponent extends Component {
               rv-on-mousedown="onSearchResultClick"
               rv-on-ontouchend="onSearchResultClick"
             >
-              <a
-                class="tsd-kind-icon"
-                rv-href="item.url"
-                rv-html="item.name"
-              ></a>
+              <a class="tsd-index-link" rv-href="item.url">
+                <svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                  <use rv-href="'#icon-' | append item.kind"></use>
+                </svg>
+                <span rv-html="item.name"></span>
+              </a>
             </li>
             <li class="list-group-item disabled" rv-if="results | size | eq 0">
               No results...

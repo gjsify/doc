@@ -13463,7 +13463,6 @@ __metadata:
   resolution: "@girs/node-peas-2@workspace:@types/node-peas-2"
   dependencies:
     "@girs/node-gio-2.0": "workspace:^"
-    "@girs/node-girepository-2.0": "workspace:^"
     "@girs/node-glib-2.0": "workspace:^"
     "@girs/node-gmodule-2.0": "workspace:^"
     "@girs/node-gobject-2.0": "workspace:^"
@@ -14909,6 +14908,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@girs/node-vte-3.91@workspace:@types/node-vte-3.91":
+  version: 0.0.0-use.local
+  resolution: "@girs/node-vte-3.91@workspace:@types/node-vte-3.91"
+  dependencies:
+    "@girs/node-cairo-1.0": "workspace:^"
+    "@girs/node-freetype2-2.0": "workspace:^"
+    "@girs/node-gdk-4.0": "workspace:^"
+    "@girs/node-gdkpixbuf-2.0": "workspace:^"
+    "@girs/node-gio-2.0": "workspace:^"
+    "@girs/node-glib-2.0": "workspace:^"
+    "@girs/node-gmodule-2.0": "workspace:^"
+    "@girs/node-gobject-2.0": "workspace:^"
+    "@girs/node-graphene-1.0": "workspace:^"
+    "@girs/node-gsk-4.0": "workspace:^"
+    "@girs/node-gtk": "workspace:^"
+    "@girs/node-gtk-4.0": "workspace:^"
+    "@girs/node-harfbuzz-0.0": "workspace:^"
+    "@girs/node-pango-1.0": "workspace:^"
+    "@girs/node-pangocairo-1.0": "workspace:^"
+    typescript: "*"
+  peerDependencies:
+    node-gtk: "*"
+  languageName: unknown
+  linkType: soft
+
 "@girs/node-vte-4-2.91@workspace:@types/node-vte-4-2.91":
   version: 0.0.0-use.local
   resolution: "@girs/node-vte-4-2.91@workspace:@types/node-vte-4-2.91"
@@ -15602,7 +15626,6 @@ __metadata:
   resolution: "@girs/peas-2@workspace:@types/peas-2"
   dependencies:
     "@girs/gio-2.0": "workspace:^"
-    "@girs/girepository-2.0": "workspace:^"
     "@girs/gjs": "workspace:^"
     "@girs/glib-2.0": "workspace:^"
     "@girs/gmodule-2.0": "workspace:^"
@@ -16896,6 +16919,29 @@ __metadata:
     "@girs/harfbuzz-0.0": "workspace:^"
     "@girs/pango-1.0": "workspace:^"
     "@girs/xlib-2.0": "workspace:^"
+    typescript: "*"
+  languageName: unknown
+  linkType: soft
+
+"@girs/vte-3.91@workspace:@types/vte-3.91":
+  version: 0.0.0-use.local
+  resolution: "@girs/vte-3.91@workspace:@types/vte-3.91"
+  dependencies:
+    "@girs/cairo-1.0": "workspace:^"
+    "@girs/freetype2-2.0": "workspace:^"
+    "@girs/gdk-4.0": "workspace:^"
+    "@girs/gdkpixbuf-2.0": "workspace:^"
+    "@girs/gio-2.0": "workspace:^"
+    "@girs/gjs": "workspace:^"
+    "@girs/glib-2.0": "workspace:^"
+    "@girs/gmodule-2.0": "workspace:^"
+    "@girs/gobject-2.0": "workspace:^"
+    "@girs/graphene-1.0": "workspace:^"
+    "@girs/gsk-4.0": "workspace:^"
+    "@girs/gtk-4.0": "workspace:^"
+    "@girs/harfbuzz-0.0": "workspace:^"
+    "@girs/pango-1.0": "workspace:^"
+    "@girs/pangocairo-1.0": "workspace:^"
     typescript: "*"
   languageName: unknown
   linkType: soft
