@@ -11,7 +11,7 @@ import { classNames, getDisplayName, wbr } from "../lib";
 
 import type { PageEvent } from "typedoc";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
-import type { Module } from "../types";
+import type { Module, NavigationData } from "../types";
 
 export function sidebarLinks(context: GjsifyThemeRenderContext) {
   const links = Object.entries(context.options.getValue("sidebarLinks"));
@@ -62,7 +62,7 @@ function getNavigationElements(
   return parent.children || [];
 }
 
-export function getModules(
+export function getModulesData(
   context: GjsifyThemeRenderContext,
   props: PageEvent<Reflection>
 ) {
@@ -86,6 +86,111 @@ export function getModules(
   return modules;
 }
 
+export function navigationData(
+  context: GjsifyThemeRenderContext,
+  props: PageEvent<Reflection>,
+  forceOptions: {
+    includeCategories?: boolean;
+    includeGroups?: boolean;
+    fullTree?: boolean;
+  } = {}
+): NavigationData {
+  const opts = { ...context.options.getValue("navigation"), ...forceOptions };
+  // Create the navigation for the current page
+  // Recurse to children if the parent is some kind of module
+
+  return createNavElementData(props.project);
+
+  function linksData(
+    mod: NavigationElement,
+    parents: string[]
+  ): NavigationData {
+    const nameClasses = classNames(
+      { deprecated: mod instanceof Reflection && mod.isDeprecated() },
+      mod instanceof DeclarationReflection
+        ? context.getReflectionClasses(mod)
+        : void 0
+    );
+
+    const _children = getNavigationElements(mod, opts);
+
+    if (
+      !_children.length ||
+      (!opts.fullTree &&
+        mod instanceof Reflection &&
+        !navigationInPath(props, mod))
+    ) {
+      return createNavElementData(mod, parents, nameClasses);
+    }
+
+    const nav = createNavElementData(mod, parents);
+
+    nav.children = _children.map((c) =>
+      linksData(
+        c,
+        mod instanceof Reflection
+          ? [mod.getFullName()]
+          : [...parents, mod.title]
+      )
+    );
+
+    return nav;
+  }
+
+  function createNavElementData(
+    child: NavigationElement | ProjectReflection,
+    parents: string[] = [],
+    nameClasses?: string
+  ): NavigationData {
+    const key =
+      child instanceof Reflection
+        ? child.getFullName()
+        : [...parents, child.title].join("$");
+
+    // const active = child instanceof Reflection && inPath(child);
+    // const current = child === props.model;
+    // const classes = classNames({}, nameClasses);
+
+    const children: NavigationData[] = [];
+
+    for (const c of getNavigationElements(child, opts)) {
+      // Ignore root Modules which are not active / in path on not fullTree
+      if (!opts.fullTree && !navigationInPath(props, c)) continue;
+
+      const parentsNext =
+        child instanceof Reflection
+          ? [child.getFullName()]
+          : [...parents, child.title];
+
+      children.push(linksData(c, parentsNext));
+    }
+
+    if (child instanceof Reflection) {
+      return {
+        key,
+        // active,
+        // current,
+        url: context.absoluteUrl(child.url),
+        title: getDisplayName(child), // TODO wbr
+        // classes,
+        kind: child.kind,
+        children,
+      };
+    }
+
+    return {
+      // key,
+      // active,
+      // current,
+      title: child.title,
+      isGroup: child instanceof ReflectionGroup,
+
+      // classes,
+      children,
+    };
+  }
+}
+
 export function navigation(
   context: GjsifyThemeRenderContext,
   props: PageEvent<Reflection>
@@ -94,13 +199,19 @@ export function navigation(
   // Create the navigation for the current page
   // Recurse to children if the parent is some kind of module
 
+  // console.debug("navigation", navigationData(context, props));
+
+  const addTitle = false;
+
   return (
     <nav class="tsd-navigation">
-      {createNavElement(props.project)}
+      {addTitle ? createNavElement(props.project) : <></>}
       <ul class="tsd-small-nested-navigation">
-        {getNavigationElements(props.project, opts).map((c) => (
-          <li>{links(c, [])}</li>
-        ))}
+        {getNavigationElements(props.project, opts).map((c) => {
+          // Ignore root Modules which are not active / in path
+          if (!opts.fullTree && !navigationInPath(props, c)) return null;
+          return <li>{links(c, [])}</li>;
+        })}
       </ul>
     </nav>
   );
@@ -117,7 +228,9 @@ export function navigation(
 
     if (
       !children.length ||
-      (!opts.fullTree && mod instanceof Reflection && !inPath(mod))
+      (!opts.fullTree &&
+        mod instanceof Reflection &&
+        !navigationInPath(props, mod))
     ) {
       return createNavElement(mod, nameClasses);
     }
@@ -125,7 +238,7 @@ export function navigation(
     return (
       <details
         class={classNames({ "tsd-index-accordion": true }, nameClasses)}
-        open={mod instanceof Reflection && inPath(mod)}
+        open={mod instanceof Reflection && navigationInPath(props, mod)}
         data-key={
           mod instanceof Reflection
             ? mod.getFullName()
@@ -172,15 +285,6 @@ export function navigation(
 
     return <span>{child.title}</span>;
   }
-
-  function inPath(mod: DeclarationReflection | ProjectReflection) {
-    let iter: Reflection | undefined = props.model;
-    do {
-      if (iter == mod) return true;
-      iter = iter.parent;
-    } while (iter);
-    return false;
-  }
 }
 
 export function pageNavigation(
@@ -192,7 +296,7 @@ export function pageNavigation(
   function finalizeLevel() {
     const built = (
       <ul>
-        {levels.pop()!.map((l) => (
+        {levels.pop()?.map((l) => (
           <li>{l}</li>
         ))}
       </ul>
@@ -282,5 +386,17 @@ function inPath(
     toCheck = toCheck.parent;
   }
 
+  return false;
+}
+
+function navigationInPath(
+  props: PageEvent<Reflection>,
+  mod: NavigationElement
+) {
+  let iter: Reflection | undefined = props.model;
+  do {
+    if (iter == mod) return true;
+    iter = iter.parent;
+  } while (iter);
   return false;
 }

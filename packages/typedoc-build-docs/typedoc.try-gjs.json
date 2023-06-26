@@ -11,5 +11,18 @@
     "noScript": true,
     "noReplaceElement": true,
     "serverBaseUrl": "https://try-gjs-docs.gjsify.org/",
-    "theme": "gjsify"
+    "theme": "gjsify",
+    "navigation": {
+        "includeCategories": true,
+        "includeGroups": true
+    },
+    "categorizeByGroup": true,
+    "visibilityFilters": {
+        "protected": true,
+        "private": true,
+        "inherited": true,
+        "external": true,
+        "@alpha": true,
+        "@beta": true
+    }
 }

@@ -212,7 +212,7 @@ export class RemoteSearchIndexPlugin {
 
   private async onRenderDone() {
     this.copyScripts();
-    await this.convertSearch();
+    // await this.convertSearch();
   }
 
   /**

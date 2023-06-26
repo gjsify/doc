@@ -27,9 +27,10 @@ import { members } from "./partials/members";
 import { membersGroup } from "./partials/members.group";
 import {
   navigation,
+  navigationData,
   pageNavigation,
   sidebarLinks,
-  getModules,
+  getModulesData,
   getCurrentModule,
 } from "./partials/navigation";
 import { gjsifySidebar, gjsifySidebarContent } from "./partials/gjsify-sidebar";
@@ -162,7 +163,8 @@ export class GjsifyThemeRenderContext {
   navigation = bind(navigation, this);
   gjsifySidebar = bind(gjsifySidebar, this);
   gjsifySidebarContent = bind(gjsifySidebarContent, this);
-  getModules = bind(getModules, this);
+  getModulesData = bind(getModulesData, this);
+  navigationData = bind(navigationData, this);
   getCurrentModule = bind(getCurrentModule, this);
   pageNavigation = bind(pageNavigation, this);
   parameter = bind(parameter, this);

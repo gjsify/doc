@@ -13,7 +13,6 @@ import {
   PageEvent,
 } from "typedoc";
 import { JSX } from "./jsx/index.js";
-import type { Renderer } from "typedoc";
 
 import { MarkedPlugin } from "typedoc/dist/lib/output/themes/MarkedPlugin";
 import { toStyleClass } from "./lib";
@@ -21,6 +20,9 @@ import { GjsifyThemeRenderContext } from "./theme-render-context";
 import { AssetService } from "./services/asset.service";
 import { writeFileSync } from "./utils";
 import { join } from "path";
+
+import type { Renderer } from "typedoc";
+import type { NavigationData } from "./types";
 
 /**
  * Defines a mapping of a {@link Models.Kind} to a template file.
@@ -152,6 +154,7 @@ export class GjsifyTheme extends Theme {
 
   onPageHomeEnd(page: PageEvent<Reflection>) {
     this.writeModulesJsonFile(page);
+    this.writeModuleNavigationJsonFiles(page);
   }
 
   onRendererEnd(event: RendererEvent) {
@@ -312,8 +315,27 @@ export class GjsifyTheme extends Theme {
 
     const target = join(outputDirectory, "assets", filename);
 
-    const modules = context.getModules(page);
+    const modules = context.getModulesData(page);
     writeFileSync(target, JSON.stringify(modules, null, 0));
+  }
+
+  writeModuleNavigationJsonFiles(page: PageEvent<Reflection>) {
+    const context = this.getRenderContext(page);
+    const navData = context.navigationData(page, { fullTree: true });
+    for (const child of navData.children) {
+      this.writeModuleNavigationJsonFile(child);
+    }
+  }
+
+  writeModuleNavigationJsonFile(mod: NavigationData) {
+    if (mod.kind !== ReflectionKind.Module) {
+      throw new Error(`Expected module, got ${mod.kind}`);
+    }
+    const filename = `navigation-${mod.title.toLowerCase()}.json`;
+    this.logger.info(`[GjsifyTheme] Generate ${filename}...`);
+    const outputDirectory = this.application.options.getValue("out");
+    const target = join(outputDirectory, "assets", filename);
+    writeFileSync(target, JSON.stringify(mod, null, 0));
   }
 
   render(

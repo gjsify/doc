@@ -11,6 +11,3 @@
 [submodule "@types"]
 	path = @types
 	url = https://github.com/gjsify/types.git
-[submodule "vendor/ts-for-gjs"]
-	path = vendor/ts-for-gjs
-	url = https://github.com/gjsify/ts-for-gir.git
