@@ -10,6 +10,8 @@
     "name": "GJS API Reference (Try build)",
     "noScript": true,
     "noReplaceElement": true,
+    "skipErrorChecking": true,
+    "includeVersion": true,
     "serverBaseUrl": "https://try-gjs-docs.gjsify.org/",
     "theme": "gjsify",
     "navigation": {

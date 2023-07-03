@@ -6,7 +6,9 @@ export interface NavigationData {
   url?: string;
   // classes?: string | undefined;
   kind?: ReflectionKind;
-  children: NavigationData[];
   // active: boolean;
   isGroup?: boolean;
+  /** Only defined if the children of this data are outsourced to a separate file */
+  filename?: string;
+  children: NavigationData[];
 }

@@ -1,6 +1,7 @@
 export interface ModuleInfo {
-  name: string;
+  title: string;
+  url: string;
   // fullName: string;
-  path: string;
-  parent?: ModuleInfo;
+  // path: string;
+  // parent?: ModuleInfo;
 }

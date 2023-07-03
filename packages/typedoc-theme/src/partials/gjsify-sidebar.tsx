@@ -7,7 +7,7 @@ export const gjsifySidebar = (
   props: PageEvent<Reflection>
 ): JSX.Element => (
   <bs5-sidebar
-    class="bg-td-dark bg-tl-white text-tl-dark text-td-light border-end border-tl-gray border-td-black p-3"
+    class="border-end"
     id="left-sidebar"
     container-selector="router-view, tsd-footer"
     position="left"
@@ -20,6 +20,7 @@ export const gjsifySidebar = (
     width="300px"
   >
     <tsd-module-menu class="d-block d-md-none my-2"></tsd-module-menu>
+    <tsd-module-navigation class="d-block"></tsd-module-navigation>
     <tsd-sidebar-content>
       {gjsifySidebarContent(context, props)}
     </tsd-sidebar-content>

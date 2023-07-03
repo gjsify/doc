@@ -1,17 +1,30 @@
 {
     "out": "../../docs/gjs/",
-    "readme": "none",
+    "entryPointStrategy": "packages",
     "entryPoints": [
-        "../../@types/"
+        "../../@types/*"
     ],
-    "includes": "../../@types/**/*",
-    "exclude:": "../../@types/node-*",
-    "tsconfig": "./tsconfig.gjs.json",
-    "entryPointStrategy": "expand",
+    "externalPattern": "../../@types/node-*",
+    "excludeExternals": true,
     "disableSources": false,
-    "name": "GJS API Reference",
+    "name": "GJS API Reference (Try build)",
     "noScript": true,
     "noReplaceElement": true,
+    "skipErrorChecking": true,
+    "includeVersion": true,
     "serverBaseUrl": "https://gjs-docs.gjsify.org/",
-    "theme": "gjsify"
+    "theme": "gjsify",
+    "navigation": {
+        "includeCategories": true,
+        "includeGroups": true
+    },
+    "categorizeByGroup": true,
+    "visibilityFilters": {
+        "protected": true,
+        "private": true,
+        "inherited": true,
+        "external": true,
+        "@alpha": true,
+        "@beta": true
+    }
 }

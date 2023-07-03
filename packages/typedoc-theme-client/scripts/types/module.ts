@@ -1,6 +1,6 @@
-export interface Module {
-  name: string;
+export interface ModuleNavigation {
+  title: string;
   url?: string;
-  packageName?: string;
-  packageVersion?: string;
+  /** The filename of the json file which contains the  */
+  filename?: string;
 }

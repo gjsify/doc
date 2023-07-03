@@ -6,7 +6,7 @@ import type {} from "@ribajs/fuse";
 
 import type {
   ModuleMenuScope,
-  Module,
+  ModuleNavigation,
   JsxTsdModuleMenuProps,
   Dataset,
 } from "../../types/index.js";
@@ -61,9 +61,9 @@ export class ModuleMenuComponent extends Component {
     }
   }
 
-  public onModuleSelect(mod: Module, event: Event) {
+  public onModuleSelect(mod: ModuleNavigation, event: Event) {
     console.debug("onModuleSelect", mod, event);
-    this.scope.selectedModule = mod.name;
+    this.scope.selectedModule = mod.title;
     const pjax = Pjax.getInstance("main");
     if (!pjax || !mod.url) {
       console.warn("No module with href or no pjax instance found!");
@@ -75,17 +75,26 @@ export class ModuleMenuComponent extends Component {
 
   protected setSelectedModule(dataset: Dataset) {
     let selectedModule =
-      this.scope.$root?.dataset?.module?.parent?.name ||
-      this.scope.$root?.dataset?.module?.name ||
-      "Modules";
+      // this.scope.$root?.dataset?.module?.parent?.title ||
+      this.scope.$root?.dataset?.module?.title || "Modules";
     if (selectedModule === dataset.projectName) {
-      selectedModule = this.scope.$root?.dataset?.module?.name || "Modules";
+      selectedModule = this.scope.$root?.dataset?.module?.title || "Modules";
     }
     this.scope.selectedModule = selectedModule;
   }
 
   protected async fetchData() {
-    const data = await HttpService.getJSON<Module[]>("/assets/modules.json");
+    const url = "/assets/navigation-modules.json";
+    const data = await HttpService.getJSON<ModuleNavigation[]>(url);
+    if (data.status >= 400) {
+      if (data.status === 404) {
+        throw new Error(`Navigation data not found at ${url}`);
+      } else {
+        throw new Error(
+          `Navigation data could not be fetched from ${url}, status: ${data.status}`
+        );
+      }
+    }
     this.scope.modules = data.body;
     console.debug("ModuleMenu", this.scope.modules);
   }
@@ -111,7 +120,7 @@ export class ModuleMenuComponent extends Component {
           <fuse-search
             rv-parent
             rv-co-items="modules"
-            options="{'keys': ['name', 'packageName']}"
+            options="{'keys': ['title']}"
           >
             <div class="mx-2 mb-2">
               <input
@@ -135,7 +144,7 @@ export class ModuleMenuComponent extends Component {
                   rv-route-class-parent-active="result.item.url"
                   rv-on-click="$parent.$parent.onModuleSelect | args result.item"
                 >
-                  <a rv-href="result.item.url" rv-text="result.item.name"></a>
+                  <a rv-href="result.item.url" rv-text="result.item.title"></a>
                 </div>
               </div>
               <div rv-if="results | size | eq 0" rv-show="searchPattern | size">
@@ -147,7 +156,7 @@ export class ModuleMenuComponent extends Component {
                   rv-route-class-active="item.url"
                   rv-on-click="$parent.$parent.onModuleSelect | args item"
                 >
-                  <a rv-href="item.url" rv-text="item.name"></a>
+                  <a rv-href="item.url" rv-text="item.title"></a>
                 </div>
               </div>
             </div>

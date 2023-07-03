@@ -11,6 +11,8 @@
     "name": "NODE-GTK API Reference",
     "noScript": true,
     "noReplaceElement": true,
+    "skipErrorChecking": true,
+    "includeVersion": true,
     "serverBaseUrl": "https://node-gtk-docs.gjsify.org/",
     "theme": "gjsify"
 }

@@ -30,7 +30,7 @@ import {
   navigationData,
   pageNavigation,
   sidebarLinks,
-  getModulesData,
+  // getModulesData,
   getCurrentModule,
 } from "./partials/navigation";
 import { gjsifySidebar, gjsifySidebarContent } from "./partials/gjsify-sidebar";
@@ -163,7 +163,7 @@ export class GjsifyThemeRenderContext {
   navigation = bind(navigation, this);
   gjsifySidebar = bind(gjsifySidebar, this);
   gjsifySidebarContent = bind(gjsifySidebarContent, this);
-  getModulesData = bind(getModulesData, this);
+  // getModulesData = bind(getModulesData, this);
   navigationData = bind(navigationData, this);
   getCurrentModule = bind(getCurrentModule, this);
   pageNavigation = bind(pageNavigation, this);

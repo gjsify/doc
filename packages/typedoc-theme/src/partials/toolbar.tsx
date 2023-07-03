@@ -1,7 +1,7 @@
 import type { Reflection } from "typedoc";
 import { JSX } from "../jsx/index.js";
 import type { PageEvent } from "typedoc";
-import { getDisplayName } from "../lib";
+// import { getDisplayName } from "../lib";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
 
 export const toolbar = (
@@ -9,7 +9,7 @@ export const toolbar = (
   props: PageEvent<Reflection>
 ) => (
   <>
-    <tsd-navbar class="tsd-page-toolbar navbar fixed-top navbar-expand navbar-os bg-tl-white bg-td-dark border-bottom border-tl-gray border-td-black">
+    <tsd-navbar class="tsd-page-toolbar navbar fixed-top navbar-expand border-bottom">
       <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex">
           <bs5-toggle-button

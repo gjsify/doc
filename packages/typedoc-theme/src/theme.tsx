@@ -22,7 +22,7 @@ import { writeFileSync } from "./utils";
 import { join } from "path";
 
 import type { Renderer } from "typedoc";
-import type { NavigationData } from "./types";
+import type { NavigationData, ModuleNavigation } from "./types";
 
 /**
  * Defines a mapping of a {@link Models.Kind} to a template file.
@@ -153,7 +153,7 @@ export class GjsifyTheme extends Theme {
   }
 
   onPageHomeEnd(page: PageEvent<Reflection>) {
-    this.writeModulesJsonFile(page);
+    // this.writeModulesJsonFile(page);
     this.writeModuleNavigationJsonFiles(page);
   }
 
@@ -307,35 +307,56 @@ export class GjsifyTheme extends Theme {
     return urls;
   }
 
-  writeModulesJsonFile(page: PageEvent<Reflection>) {
-    const filename = "modules.json";
-    this.logger.info(`[GjsifyTheme] Generate ${filename}...`);
-    const context = this.getRenderContext(page);
-    const outputDirectory = this.application.options.getValue("out");
+  // writeModulesJsonFile(page: PageEvent<Reflection>) {
+  //   const filename = "modules.json";
+  //   this.logger.info(`[GjsifyTheme] Generate ${filename}...`);
+  //   const context = this.getRenderContext(page);
+  //   const outputDirectory = this.application.options.getValue("out");
 
-    const target = join(outputDirectory, "assets", filename);
+  //   const target = join(outputDirectory, "assets", filename);
 
-    const modules = context.getModulesData(page);
-    writeFileSync(target, JSON.stringify(modules, null, 0));
-  }
+  //   const modules = context.getModulesData(page);
+  //   writeFileSync(target, JSON.stringify(modules, null, 0));
+  // }
 
   writeModuleNavigationJsonFiles(page: PageEvent<Reflection>) {
     const context = this.getRenderContext(page);
     const navData = context.navigationData(page, { fullTree: true });
+    const modules: ModuleNavigation[] = [];
+
     for (const child of navData.children) {
+      child.filename = `navigation-${child.title.toLowerCase()}.json`;
       this.writeModuleNavigationJsonFile(child);
+      const module = {
+        title: child.title,
+        filename: child.filename,
+        url: child.url,
+      } as ModuleNavigation;
+      modules.push(module);
     }
+
+    this.writeModulesNavigationJsonFile(modules);
   }
 
   writeModuleNavigationJsonFile(mod: NavigationData) {
     if (mod.kind !== ReflectionKind.Module) {
       throw new Error(`Expected module, got ${mod.kind}`);
     }
-    const filename = `navigation-${mod.title.toLowerCase()}.json`;
+    if (!mod.filename) {
+      throw new Error(`Expected module to have a filename`);
+    }
+    this.logger.info(`[GjsifyTheme] Generate ${mod.filename}...`);
+    const outputDirectory = this.application.options.getValue("out");
+    const target = join(outputDirectory, "assets", mod.filename);
+    writeFileSync(target, JSON.stringify(mod, null, 0));
+  }
+
+  writeModulesNavigationJsonFile(modules: ModuleNavigation[]) {
+    const filename = "navigation-modules.json";
     this.logger.info(`[GjsifyTheme] Generate ${filename}...`);
     const outputDirectory = this.application.options.getValue("out");
     const target = join(outputDirectory, "assets", filename);
-    writeFileSync(target, JSON.stringify(mod, null, 0));
+    writeFileSync(target, JSON.stringify(modules, null, 0));
   }
 
   render(

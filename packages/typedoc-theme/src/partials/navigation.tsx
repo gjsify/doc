@@ -11,7 +11,7 @@ import { classNames, getDisplayName, wbr } from "../lib";
 
 import type { PageEvent } from "typedoc";
 import type { GjsifyThemeRenderContext } from "../theme-render-context";
-import type { Module, NavigationData } from "../types";
+import type { NavigationData, ModuleInfo } from "../types";
 
 export function sidebarLinks(context: GjsifyThemeRenderContext) {
   const links = Object.entries(context.options.getValue("sidebarLinks"));
@@ -62,29 +62,29 @@ function getNavigationElements(
   return parent.children || [];
 }
 
-export function getModulesData(
-  context: GjsifyThemeRenderContext,
-  props: PageEvent<Reflection>
-) {
-  const opts = context.options.getValue("navigation");
-  const elements = getNavigationElements(props.project, opts);
-  const modules: Module[] = [];
-  for (const el of elements) {
-    if (
-      el instanceof DeclarationReflection &&
-      el.kind === ReflectionKind.Module
-    ) {
-      modules.push({
-        // kind: el.kind,
-        name: el.name,
-        url: "/" + el.url,
-        packageName: el.project.packageName,
-        packageVersion: el.packageVersion || el.project.packageVersion,
-      });
-    }
-  }
-  return modules;
-}
+// export function getModulesData(
+//   context: GjsifyThemeRenderContext,
+//   props: PageEvent<Reflection>
+// ) {
+//   const opts = context.options.getValue("navigation");
+//   const elements = getNavigationElements(props.project, opts);
+//   const modules: Module[] = [];
+//   for (const el of elements) {
+//     if (
+//       el instanceof DeclarationReflection &&
+//       el.kind === ReflectionKind.Module
+//     ) {
+//       modules.push({
+//         // kind: el.kind,
+//         name: el.name,
+//         url: "/" + el.url,
+//         packageName: el.project.packageName,
+//         packageVersion: el.packageVersion || el.project.packageVersion,
+//       });
+//     }
+//   }
+//   return modules;
+// }
 
 export function navigationData(
   context: GjsifyThemeRenderContext,
@@ -358,16 +358,16 @@ export function getCurrentModule(
     ReflectionKind.SomeModule
   );
   const parentMod = modules.find((mod) => inPath(mod, props.model));
-  const childMod = parentMod?.children?.find(
-    (mod) => mod.kindOf(ReflectionKind.SomeModule) && inPath(mod, props.model)
-  );
-  const currentModule = childMod || parentMod;
-  let module: Module | undefined;
+  // const childMod = parentMod?.children?.find(
+  //   (mod) => mod.kindOf(ReflectionKind.SomeModule) && inPath(mod, props.model)
+  // );
+  // const currentModule = childMod || parentMod;
+  let module: ModuleInfo | undefined;
 
-  if (currentModule && currentModule.url) {
+  if (parentMod && parentMod.url) {
     module = {
-      name: currentModule.name,
-      url: currentModule.url,
+      title: parentMod.name,
+      url: parentMod.url,
     };
   }
 
